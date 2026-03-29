@@ -15,7 +15,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { name, email, phone, org, type, challenge } = req.body;
+  const { name, email, phone, org, type, challenge, lang } = req.body;
 
   if (!name || !email) {
     return res.status(400).json({ error: 'Missing required fields' });
@@ -41,8 +41,8 @@ export default async function handler(req, res) {
     await sendEmail({
       from,
       to: email,
-      subject: 'Votre démo Granit est confirmée ✓',
-      html: confirmationEmail(name),
+      subject: lang === 'en' ? 'Your Granit demo is confirmed ✓' : 'Votre démo Granit est confirmée ✓',
+      html: confirmationEmail(name, lang),
     });
   } catch (e) {
     // Non-blocking : la demande est enregistrée même si la confirmation échoue
@@ -91,9 +91,23 @@ function notificationEmail({ name, email, phone, org, type, challenge }) {
 </html>`;
 }
 
-function confirmationEmail(name) {
+function confirmationEmail(name, lang) {
+  const isEn = lang === 'en';
+
+  const heading = isEn ? `We got it, ${name}!` : `C'est noté, ${name}&nbsp;!`;
+  const intro = isEn
+    ? `We've received your demo request. Our team is preparing a personalized demo on your real workflows — and will contact you <strong style="color:#111">within 24h</strong> with your time slot.`
+    : `Nous avons bien reçu votre demande de démo. Notre équipe prépare une démonstration personnalisée sur vos vrais flux — et vous contactera <strong style="color:#111">sous 24h</strong> avec votre créneau.`;
+  const expectTitle = isEn ? 'What to expect:' : 'Ce qui vous attend :';
+  const bullet1 = isEn ? '15 minutes, no slides' : '15 minutes, pas de slides';
+  const bullet2 = isEn ? 'Granit in action on your real workflows' : 'Granit en action sur vos vrais flux';
+  const bullet3 = isEn ? 'A concrete automation plan at the end' : `Un plan d'automatisation concret à la fin`;
+  const questions = isEn ? 'Questions? Reply directly to this email.' : 'Des questions ? Répondez directement à cet email.';
+  const footer = isEn ? '© 2025 Granit — Your teams care. Granit handles the rest.' : '© 2025 Granit — Vos équipes soignent. Granit gère le reste.';
+  const htmlLang = isEn ? 'en' : 'fr';
+
   return `<!DOCTYPE html>
-<html lang="fr">
+<html lang="${htmlLang}">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"></head>
 <body style="margin:0;padding:0;background:#f9fafb;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">
   <table width="100%" cellpadding="0" cellspacing="0" style="padding:40px 20px">
@@ -106,20 +120,20 @@ function confirmationEmail(name) {
           </tr></table>
         </td></tr>
         <tr><td style="padding:32px 40px">
-          <h1 style="margin:0 0 16px;font-size:24px;font-weight:400;color:#111;line-height:1.2">C'est noté, ${name}&nbsp;!</h1>
-          <p style="margin:0 0 20px;color:#6b7280;font-size:15px;line-height:1.65">Nous avons bien reçu votre demande de démo. Notre équipe prépare une démonstration personnalisée sur vos vrais flux — et vous contactera <strong style="color:#111">sous 24h</strong> avec votre créneau.</p>
+          <h1 style="margin:0 0 16px;font-size:24px;font-weight:400;color:#111;line-height:1.2">${heading}</h1>
+          <p style="margin:0 0 20px;color:#6b7280;font-size:15px;line-height:1.65">${intro}</p>
           <table width="100%" cellpadding="0" cellspacing="0" style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;margin-bottom:24px">
             <tr><td style="padding:20px 24px">
-              <p style="margin:0 0 10px;font-size:13px;font-weight:600;color:#111">Ce qui vous attend :</p>
-              <p style="margin:0 0 6px;font-size:13px;color:#6b7280">✓&nbsp; 15 minutes, pas de slides</p>
-              <p style="margin:0 0 6px;font-size:13px;color:#6b7280">✓&nbsp; Granit en action sur vos vrais flux</p>
-              <p style="margin:0;font-size:13px;color:#6b7280">✓&nbsp; Un plan d'automatisation concret à la fin</p>
+              <p style="margin:0 0 10px;font-size:13px;font-weight:600;color:#111">${expectTitle}</p>
+              <p style="margin:0 0 6px;font-size:13px;color:#6b7280">✓&nbsp; ${bullet1}</p>
+              <p style="margin:0 0 6px;font-size:13px;color:#6b7280">✓&nbsp; ${bullet2}</p>
+              <p style="margin:0;font-size:13px;color:#6b7280">✓&nbsp; ${bullet3}</p>
             </td></tr>
           </table>
-          <p style="margin:0;font-size:13px;color:#9ca3af">Des questions ? Répondez directement à cet email.</p>
+          <p style="margin:0;font-size:13px;color:#9ca3af">${questions}</p>
         </td></tr>
         <tr><td style="padding:20px 40px;background:#f9fafb;border-top:1px solid #f3f4f6">
-          <p style="margin:0;font-size:12px;color:#9ca3af">© 2025 Granit — Vos équipes soignent. Granit gère le reste.</p>
+          <p style="margin:0;font-size:12px;color:#9ca3af">${footer}</p>
         </td></tr>
       </table>
     </td></tr>

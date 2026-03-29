@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blog — Granit</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23C0654A'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700' font-size='20'>G</text></svg>">
 <link rel="alternate" hreflang="fr" href="https://www.getgranit.ai/blog/">
 <link rel="alternate" hreflang="en" href="https://www.getgranit.ai/en/blog/">
 <link rel="alternate" hreflang="x-default" href="https://www.getgranit.ai/blog/">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23C0654A'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700' font-size='20'>G</text></svg>">
-<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../../css/style.css">
 <style>
   /* ── Blog-specific layout ── */
   .blog-page {
@@ -203,8 +203,8 @@
   </div>
   <div class="nr">
     <div class="na act">Blog</div>
-    <button class="nav-cta" onclick="location.href='../#demo'">Réserver une démo</button>
-    <div class="lang-switch"><a class="lang-opt active" href="/blog/" id="langFr">FR</a><a class="lang-opt" href="/en/blog/" id="langEn">EN</a></div>
+    <button class="nav-cta" onclick="location.href='../#demo'">Book a demo</button>
+    <div class="lang-switch"><a class="lang-opt" href="/blog/" id="langFr">FR</a><a class="lang-opt active" href="/en/blog/" id="langEn">EN</a></div>
   </div>
 </nav>
 
@@ -212,8 +212,8 @@
 
   <div class="blog-header">
     <div class="eyebrow">Blog</div>
-    <h1>Ressources &amp; actualités</h1>
-    <p>Conseils pratiques, retours d'expérience et actualités sur l'automatisation administrative dans les établissements de santé.</p>
+    <h1>Resources &amp; news</h1>
+    <p>Practical advice, feedback and news on administrative automation in healthcare facilities.</p>
   </div>
 
   <div class="blog-body">
@@ -223,7 +223,7 @@
         <div class="loading-dot"></div>
         <div class="loading-dot"></div>
         <div class="loading-dot"></div>
-        <span>Chargement des articles…</span>
+        <span>Loading articles...</span>
       </div>
     </div>
   </div>
@@ -233,13 +233,13 @@
 <footer>
   <div class="footer-brand">Granit</div>
   <div class="footer-links">
-    <a href="#">Confidentialité</a>
-    <a href="#">CGU</a>
+    <a href="#">Privacy</a>
+    <a href="#">Terms</a>
     <a href="./index.html">Blog</a>
-    <a href="#">À propos</a>
+    <a href="#">About</a>
   </div>
-  <div class="footer-copy">© 2025 Granit AI - Agents IA pour les professionnels de santé</div>
-  <div class="footer-copy" style="margin-top:4px">Vos équipes soignent. Granit gère le reste.</div>
+  <div class="footer-copy">&copy; 2025 Granit AI - AI agents for healthcare professionals</div>
+  <div class="footer-copy" style="margin-top:4px">Your teams care. Granit handles the rest.</div>
 </footer>
 
 <script>
@@ -252,11 +252,11 @@
 //
 //  [
 //    {
-//      "file":        "mon-article.html",   // required — filename in blog/
-//      "title":       "Mon article",         // optional — falls back to <title>
-//      "date":        "2025-03-13",          // optional — ISO date string
-//      "description": "Résumé court…",       // optional
-//      "tag":         "Conseils"             // optional — category label
+//      "file":        "my-article.html",        // required — filename in blog/
+//      "title":       "My article",              // optional — falls back to <title>
+//      "date":        "2025-03-13",              // optional — ISO date string
+//      "description": "Short summary...",        // optional
+//      "tag":         "Tips"                     // optional — category label
 //    }
 //  ]
 // ─────────────────────────────────────────────
@@ -267,7 +267,7 @@ const count = document.getElementById('blogCount');
 function formatDate(iso) {
   if (!iso) return null;
   try {
-    return new Date(iso).toLocaleDateString('fr-FR', {
+    return new Date(iso).toLocaleDateString('en-US', {
       day: 'numeric', month: 'long', year: 'numeric'
     });
   } catch (_) { return iso; }
@@ -288,7 +288,7 @@ function renderCard(article) {
     ${meta}
     <div class="article-title">${article.title || article.file}</div>
     ${article.description ? `<div class="article-desc">${article.description}</div>` : ''}
-    <div class="article-arrow">Lire l'article →</div>
+    <div class="article-arrow">Read article &rarr;</div>
   `;
 
   return card;
@@ -299,7 +299,7 @@ async function loadArticles() {
 
   try {
     const res = await fetch('articles.json', { cache: 'no-cache' });
-    if (!res.ok) throw new Error('manifest absent');
+    if (!res.ok) throw new Error('manifest missing');
     articles = await res.json();
   } catch (_) {
     // articles.json unavailable — show helpful empty state
@@ -311,8 +311,8 @@ async function loadArticles() {
     grid.innerHTML = `
       <div class="blog-empty">
         <div class="empty-icon">📝</div>
-        <h3>Aucun article pour l'instant</h3>
-        <p>Les articles apparaîtront ici dès que le script les aura publiés.</p>
+        <h3>No articles yet</h3>
+        <p>Articles will appear here once the script has published them.</p>
       </div>`;
     count.textContent = '';
     return;

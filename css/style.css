@@ -237,3 +237,9 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:28px 48px
   .form-row{grid-template-columns:1fr}
   nav{padding:0 16px}
 }
+
+/* ── LANG SWITCH ── */
+.lang-switch{display:inline-flex;align-items:center;border:1px solid var(--border);border-radius:6px;overflow:hidden;margin-left:8px}
+.lang-opt{padding:4px 10px;font-size:12px;font-weight:500;color:var(--text-muted);text-decoration:none;transition:.15s}
+.lang-opt:hover{color:var(--text)}
+.lang-opt.active{background:var(--text);color:#fff}

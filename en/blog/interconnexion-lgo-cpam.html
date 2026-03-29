@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LGO-CPAM interconnection — Granit</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23C0654A'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700' font-size='20'>G</text></svg>">
+<link rel="alternate" hreflang="fr" href="https://www.getgranit.ai/blog/interconnexion-lgo-cpam.html">
+<link rel="alternate" hreflang="en" href="https://www.getgranit.ai/en/blog/interconnexion-lgo-cpam.html">
+<link rel="alternate" hreflang="x-default" href="https://www.getgranit.ai/blog/interconnexion-lgo-cpam.html">
+<link rel="stylesheet" href="https://www.getgranit.ai/css/style.css">
+<style>
+/* Article layout */
+.page{display:block !important}
+.article-wrap{max-width:700px;margin:0 auto;padding:96px 24px 80px}
+.back-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--text-muted);margin-bottom:36px;transition:.15s;text-decoration:none}
+.back-link:hover{color:var(--terra)}
+.back-link::before{content:'← '}
+.article-wrap h1{font-size:clamp(26px,3.2vw,36px);font-weight:400;letter-spacing:-.022em;line-height:1.15;color:var(--text);margin-bottom:32px}
+.article-wrap h2{font-size:20px;font-weight:500;letter-spacing:-.015em;color:var(--text);margin:40px 0 12px}
+.article-wrap h3{font-size:16px;font-weight:500;color:var(--text-soft);margin:28px 0 8px}
+.article-wrap p{font-size:15px;color:var(--text-soft);line-height:1.8;font-weight:300;margin-bottom:16px}
+.article-wrap ul,.article-wrap ol{padding-left:20px;margin-bottom:16px}
+.article-wrap li{font-size:15px;color:var(--text-soft);line-height:1.8;font-weight:300;margin-bottom:6px}
+
+</style>
+</head>
+<body>
+
+<nav>
+<a class="nl" href="https://www.getgranit.ai/en/"><div class="nm">G</div><span>Granit<span style="color:var(--terra)">.</span></span></a>
+<div class="nr">
+<a class="na" href="https://www.getgranit.ai/en/#discover">Our agents</a>
+<a class="na" href="https://www.getgranit.ai/en/blog/">Blog</a>
+<a class="nav-cta" href="https://www.getgranit.ai/en/#demo">Book a demo</a>
+<div class="lang-switch"><a class="lang-opt" href="https://www.getgranit.ai/blog/interconnexion-lgo-cpam.html">FR</a><a class="lang-opt active" href="https://www.getgranit.ai/en/blog/interconnexion-lgo-cpam.html">EN</a></div>
+</div>
+</nav>
+
+<div class="article-wrap">
+  <a class="back-link" href="https://www.getgranit.ai/en/blog/">Back to blog</a>
+  <h1>LGO-CPAM interconnection: challenges, how it works and best practices for healthcare centers</h1>
+
+<p>The <strong>LGO-CPAM interconnection</strong> is now an essential lever for any healthcare facility seeking to make its billing more reliable, reduce rejections and secure its reimbursement flows. Whether you manage a dental center, an optician center or a multi-disciplinary care practice, the quality of the link between your LGO (Logiciel de Gestion d'Officine &mdash; Operational Management Software) and the CPAM (Caisse Primaire d'Assurance Maladie &mdash; Primary Health Insurance Fund) systems directly impacts your cash flow and the workload of your administrative teams.</p>
+
+<p>In an increasingly demanding regulatory environment, understanding the mechanisms of this interconnection is not a technical luxury reserved for IT departments: it is a strategic priority for every healthcare facility director.</p>
+
+<h2>What is the LGO-CPAM interconnection and why is it essential?</h2>
+
+<p>The LGO-CPAM interconnection refers to all automated exchanges between your internal management software and the Health Insurance information systems. These exchanges enable the electronic transmission of care forms, real-time retrieval of patient rights via the Carte Vitale and the Sesam-Vitale protocol, and receipt of payment confirmations or rejection notifications without manual entry.</p>
+
+<p>In practice, when a patient arrives at your front desk, your LGO queries CPAM databases to verify their basic coverage rights, any co-payment exemptions (ALD &mdash; Affection de Longue Dur&eacute;e &mdash; long-term condition, maternity, work-related injury, etc.), and the details of their supplementary health insurance or mutual fund. When properly configured, this flow considerably reduces billing errors at the source and accelerates payment timelines.</p>
+
+<h2>The technical components of this interconnection</h2>
+
+<h3>The Sesam-Vitale protocol</h3>
+<p>At the heart of the interconnection lies the Sesam-Vitale protocol, developed by the GIE SESAM-Vitale consortium, which standardizes exchanges between healthcare software and health insurance organizations. Every certified LGO must integrate this protocol to be able to read Carte Vitale cards, generate electronic care forms (FSE &mdash; Feuilles de Soins &Eacute;lectroniques) and transmit data to the CPAM securely.</p>
+
+<p>Sesam-Vitale certification is issued following an audit of the software by the GIE. For a center director, verifying that your LGO has a current certification is a non-negotiable prerequisite. Software that is not certified or whose certification has expired exposes your facility to massive rejections and extended reimbursement timelines.</p>
+
+<h3>FIDES and electronic transmission</h3>
+<p>For healthcare facilities &mdash; particularly healthcare centers as defined by article L6323-1 of the French Public Health Code &mdash; the FIDES (Facturation Individuelle Des &Eacute;tablissements de Sant&eacute; &mdash; Individual Billing for Healthcare Facilities) framework requires direct and standardized electronic transmission of invoices to the CPAM. The LGO-CPAM interconnection becomes even more critical here: any break in the transmission chain can block the reimbursement of hundreds of pending procedures.</p>
+
+<p>A good LGO must therefore natively integrate FIDES flows, generate slips in the correct format (B2 standard or NOEMIE standard &mdash; Norme Ouverte d'&Eacute;changes entre la Maladie et les Intervenants Ext&eacute;rieurs &mdash; Open Standard for Exchanges between Health Insurance and External Providers), and provide real-time tracking of acknowledgments issued by the CPAM.</p>
+
+<h3>Third-party payment management via Viamedis and Almerys</h3>
+<p>The interconnection is not limited to the CPAM. As part of the generalized third-party payment system, your LGO must also communicate with supplementary health insurance management platforms, notably Viamedis and Almerys, which centralize flows for numerous mutual funds. A poorly configured interconnection with these operators leads to rejections for rights not found, extended payment timelines and, ultimately, a deterioration of your cash flow.</p>
+
+<p>It is recommended to regularly test your electronic transmission flows to these organizations, particularly after each LGO update, and to designate a billing officer responsible for monitoring NOEMIE returns.</p>
+
+<h2>The main risks of a faulty interconnection</h2>
+
+<p>A poorly managed LGO-CPAM interconnection generates direct operational and financial consequences. The first risk is <strong>billing rejections</strong>: a misread social security number, an unrecognized procedure code, a missing prescription date are enough to block reimbursement. These rejections accumulate silently if no monitoring dashboard is in place.</p>
+
+<p>The second risk is <strong>deferred revenue loss</strong>. In some centers, thousands of euros in rejected invoices are never reprocessed, due to lack of time or a clear process. However, the CPAM has limitation periods for the reimbursement of procedures: beyond two years for outpatient care, some of these receivables may be permanently lost. Finally, poor management of patient rights can expose your facility to audits and reimbursement requests from Health Insurance.</p>
+
+<h2>Best practices to optimize your LGO-CPAM interconnection</h2>
+
+<p>The first best practice is to <strong>choose a certified and regularly updated LGO</strong>. Standards evolve &mdash; the Sesam-Vitale standard has moved to version 1.40 in recent years &mdash; and unmaintained software quickly becomes a point of friction. Ask your vendor about their regulatory update schedule and their ability to integrate future changes mandated by Health Insurance.</p>
+
+<p>The second best practice is to <strong>set up daily monitoring of NOEMIE returns</strong>. These return files issued by the CPAM contain payment information and rejection codes. Training a team member to systematically read and process them can drastically reduce the backlog of unpaid invoices. Some LGOs offer automatic analysis modules for these returns: make sure to use them.</p>
+
+<ul>
+  <li>Check your electronic transmission rejection rate monthly and identify recurring causes.</li>
+  <li>Train your teams on reading NOEMIE returns and CPAM acknowledgments.</li>
+  <li>Make sure your LGO's Sesam-Vitale certification is up to date.</li>
+  <li>Test your flows after every software update or network configuration change.</li>
+</ul>
+
+</div>
+
+<footer>
+<div class="footer-brand">Granit</div>
+<div class="footer-links">
+<a href="#">Privacy</a>
+<a href="#">Terms</a>
+<a href="https://www.getgranit.ai/en/blog/">Blog</a>
+<a href="#">About</a>
+</div>
+<div class="footer-copy">&copy; 2025 Granit AI - AI agents for healthcare professionals</div>
+<div class="footer-copy" style="margin-top:4px">Your teams care. Granit handles the rest.</div>
+</footer>
+
+</body>
+</html>

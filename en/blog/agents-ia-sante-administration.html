@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI agents in healthcare administration — Granit</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23C0654A'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700' font-size='20'>G</text></svg>">
+<link rel="alternate" hreflang="fr" href="https://www.getgranit.ai/blog/agents-ia-sante-administration.html">
+<link rel="alternate" hreflang="en" href="https://www.getgranit.ai/en/blog/agents-ia-sante-administration.html">
+<link rel="alternate" hreflang="x-default" href="https://www.getgranit.ai/blog/agents-ia-sante-administration.html">
+<link rel="stylesheet" href="https://www.getgranit.ai/css/style.css">
+<style>
+/* Article layout */
+.page{display:block !important}
+.article-wrap{max-width:700px;margin:0 auto;padding:96px 24px 80px}
+.back-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--text-muted);margin-bottom:36px;transition:.15s;text-decoration:none}
+.back-link:hover{color:var(--terra)}
+.back-link::before{content:'← '}
+.article-wrap h1{font-size:clamp(26px,3.2vw,36px);font-weight:400;letter-spacing:-.022em;line-height:1.15;color:var(--text);margin-bottom:32px}
+.article-wrap h2{font-size:20px;font-weight:500;letter-spacing:-.015em;color:var(--text);margin:40px 0 12px}
+.article-wrap h3{font-size:16px;font-weight:500;color:var(--text-soft);margin:28px 0 8px}
+.article-wrap p{font-size:15px;color:var(--text-soft);line-height:1.8;font-weight:300;margin-bottom:16px}
+.article-wrap ul,.article-wrap ol{padding-left:20px;margin-bottom:16px}
+.article-wrap li{font-size:15px;color:var(--text-soft);line-height:1.8;font-weight:300;margin-bottom:6px}
+
+</style>
+</head>
+<body>
+
+<nav>
+<a class="nl" href="https://www.getgranit.ai/en/"><div class="nm">G</div><span>Granit<span style="color:var(--terra)">.</span></span></a>
+<div class="nr">
+<a class="na" href="https://www.getgranit.ai/en/#discover">Our agents</a>
+<a class="na" href="https://www.getgranit.ai/en/blog/">Blog</a>
+<a class="nav-cta" href="https://www.getgranit.ai/en/#demo">Book a demo</a>
+<div class="lang-switch"><a class="lang-opt" href="https://www.getgranit.ai/blog/agents-ia-sante-administration.html">FR</a><a class="lang-opt active" href="https://www.getgranit.ai/en/blog/agents-ia-sante-administration.html">EN</a></div>
+</div>
+</nav>
+
+<div class="article-wrap">
+  <a class="back-link" href="https://www.getgranit.ai/en/blog/">Back to blog</a>
+  <h1>AI agents in healthcare administration: how to automate the administrative management of your care center</h1>
+
+<p>The administrative burden in French healthcare facilities has never been heavier. Between Sesam-Vitale electronic transmission, eligibility checks with AMC (Assurance Maladie Compl&eacute;mentaire &mdash; Supplementary Health Insurance) providers, billing rejection management and patient follow-ups, administrative teams spend an ever-growing share of their time on repetitive, low-value tasks. <strong>AI agents in healthcare administration</strong> now represent a concrete and operational response to this reality. Far from futuristic promises, these tools act right now, directly within your existing software.</p>
+
+<h2>What is an AI agent in healthcare administration?</h2>
+
+<p>An AI agent is not a simple chatbot or an automated form. It is a program capable of navigating web interfaces autonomously &mdash; exactly as a human collaborator would &mdash; to execute complex sequences of actions: opening a portal, entering data, verifying information, extracting results and reporting them into another piece of software. This approach, known as <em>browser-use</em>, requires neither an API (Application Programming Interface, i.e., a technical connection between two software systems), nor specific development, nor migration of your current tools.</p>
+
+<p>For a director of a dental center, an EHPAD (&Eacute;tablissement d'H&eacute;bergement pour Personnes &Acirc;g&eacute;es D&eacute;pendantes &mdash; Residential Care Facility for Dependent Elderly People) or a hearing aid center, this means concretely: the AI agent can interact with your HIS (Hospital Information System), your LGO (Logiciel de Gestion d'Officine &mdash; Operational Management Software), or any AMC portal such as Viamedis or Almerys, without you having to change anything in your existing infrastructure.</p>
+
+<h2>The most time-consuming administrative tasks in a healthcare center</h2>
+
+<p>To understand the potential impact of AI agents, one must first identify the real bottlenecks. In most healthcare centers, administrative teams spend between 30 and 50% of their time on tasks that could be partially or fully automated.</p>
+
+<p>Among the most common:</p>
+<ul>
+  <li>Verifying rights to mandatory health insurance (AMO &mdash; Assurance Maladie Obligatoire) and supplementary insurance (AMC) before each procedure</li>
+  <li>Managing Sesam-Vitale rejections and electronic transmission anomalies</li>
+  <li>Tracking payments and unpaid claims on CPAM (Caisse Primaire d'Assurance Maladie &mdash; Primary Health Insurance Fund) portals</li>
+  <li>Entering and reconciling reimbursements in the billing software</li>
+  <li>Prior authorization requests to supplementary insurers</li>
+  <li>Monitoring the FIDES framework (Facturation Individuelle Des &Eacute;tablissements de Sant&eacute; &mdash; Individual Billing for Healthcare Facilities) for eligible facilities</li>
+</ul>
+
+<p>Each of these tasks requires qualified human time for actions that are, for the most part, repetitive and rule-based. This is precisely where <strong>AI agents in healthcare administration</strong> come in.</p>
+
+<h2>How an AI agent works concretely within your software</h2>
+
+<p>Let us take an operational example in an optical center. Before each fitting, the AI agent automatically connects to the Viamedis portal, enters the patient's social security number, verifies their supplementary health insurance rights, extracts the applicable reimbursement rate according to the AMC contract, then reports all this information directly into the LGO &mdash; without any team member having to intervene. This entire sequence, which previously took 4 to 8 minutes per patient, is completed in under 60 seconds.</p>
+
+<p>The same principle applies in a dental center for managing quotes and prior authorization requests, or in an EHPAD for monthly CPAM reimbursement tracking. The agent navigates interfaces exactly as a human would: it clicks, fills in fields, reads tables, downloads documents. The difference is that it does so at any hour, without data entry errors and without fatigue. Solutions like Granit rely on this browser-use technology, which allows them to be operational within 48 hours on any existing software environment &mdash; where a traditional API integration would require several months of development.</p>
+
+<h2>Measurable benefits for your facility</h2>
+
+<p>Automating administrative tasks through AI agents produces effects at multiple levels. The first is quantitative: a significant reduction in time spent on data entry, verification and follow-up tasks. In centers where this type of automation has been deployed, teams recover on average between 1.5 and 3 hours per day per administrative staff member.</p>
+
+<p>The second benefit is qualitative. By freeing staff from repetitive tasks, you enable them to focus on patient reception, handling complex situations and improving the overall experience within the center. It is also a powerful lever for retaining teams in a context of tension over administrative human resources. Finally, the reduction in data entry errors translates directly into fewer billing rejections &mdash; a major financial issue for any facility subject to Sesam-Vitale electronic transmission.</p>
+
+<h2>Action items for healthcare center directors</h2>
+
+<p>Before deploying <strong>AI agents in healthcare administration</strong>, it is recommended to conduct an audit of your facility's administrative workflows. The goal is to identify the three or four most time-consuming and standardized tasks &mdash; meaning those that always follow the same sequence of steps. These are the best candidates for automation.</p>
+
+<p>Here is a simple method to get started:</p>
+<ol>
+  <li><strong>Map your workflows:</strong> list all recurring administrative tasks, estimating the average time spent on each per week.</li>
+  <li><strong>Prioritize by frequency and standardization:</strong> a task performed 50 times a week according to a fixed protocol is an ideal candidate for automation.</li>
+  <li><strong>Identify your software interfaces:</strong> CPAM portals, Viamedis, Almerys, billing software, HIS &mdash; list the available access points and credentials used.</li>
+  <li><strong>Test on a limited scope:</strong> start by automating a single task on a single workstation, measure the results, then gradually expand.</li>
+</ol>
+
+</div>
+
+<footer>
+<div class="footer-brand">Granit</div>
+<div class="footer-links">
+<a href="#">Privacy</a>
+<a href="#">Terms</a>
+<a href="https://www.getgranit.ai/en/blog/">Blog</a>
+<a href="#">About</a>
+</div>
+<div class="footer-copy">&copy; 2025 Granit AI - AI agents for healthcare professionals</div>
+<div class="footer-copy" style="margin-top:4px">Your teams care. Granit handles the rest.</div>
+</footer>
+
+</body>
+</html>
