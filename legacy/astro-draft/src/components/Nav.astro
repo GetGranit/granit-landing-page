@@ -1,0 +1,85 @@
+---
+interface Props {
+  lang?: 'fr' | 'en';
+}
+const { lang = 'fr' } = Astro.props;
+
+const t = {
+  fr: {
+    agents: 'Nos agents',
+    sectors: 'Secteurs',
+    blog: 'Journal',
+    cta: 'Réserver une démo',
+    home: '/',
+    blogHref: '/blog',
+  },
+  en: {
+    agents: 'Agents',
+    sectors: 'Sectors',
+    blog: 'Journal',
+    cta: 'Book a demo',
+    home: '/en',
+    blogHref: '/en/blog',
+  },
+}[lang];
+
+const base = t.home === '/' ? '' : t.home;
+---
+
+<header
+  class="fixed inset-x-0 top-0 z-50 border-b border-hair bg-bg/80 backdrop-blur-md"
+>
+  <nav
+    class="mx-auto flex max-w-[1280px] items-center justify-between px-6 py-5 md:px-12"
+  >
+    <!-- Wordmark (placeholder until real logo lands from Claude Design) -->
+    <a
+      href={t.home}
+      class="display text-2xl tracking-tight text-ink transition hover:text-terra-glow"
+      aria-label="Granit"
+    >
+      Granit<span class="text-terra">.</span>
+    </a>
+
+    <div class="hidden items-center gap-8 md:flex">
+      <a
+        href={`${base}/#agents`}
+        class="font-mono text-[13px] uppercase tracking-[0.14em] text-grey transition hover:text-ink"
+        >{t.agents}</a
+      >
+      <a
+        href={`${base}/#sectors`}
+        class="font-mono text-[13px] uppercase tracking-[0.14em] text-grey transition hover:text-ink"
+        >{t.sectors}</a
+      >
+      <a
+        href={t.blogHref}
+        class="font-mono text-[13px] uppercase tracking-[0.14em] text-grey transition hover:text-ink"
+        >{t.blog}</a
+      >
+    </div>
+
+    <div class="flex items-center gap-5">
+      <div
+        class="hidden items-center gap-2 font-mono text-[13px] tracking-[0.14em] md:flex"
+      >
+        <a
+          href="/"
+          class={lang === 'fr' ? 'text-ink' : 'text-grey2 hover:text-grey'}
+          >FR</a
+        >
+        <span class="text-hair2">·</span>
+        <a
+          href="/en"
+          class={lang === 'en' ? 'text-ink' : 'text-grey2 hover:text-grey'}
+          >EN</a
+        >
+      </div>
+      <a
+        href="#demo"
+        class="rounded-full border border-terra/50 bg-terra/10 px-4 py-2 font-mono text-[12px] uppercase tracking-[0.12em] text-terra-glow transition hover:border-terra hover:bg-terra hover:text-white"
+        >{t.cta}</a
+      >
+    </div>
+  </nav>
+</header>

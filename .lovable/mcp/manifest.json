@@ -1,0 +1,109 @@
+{
+  "version": 1,
+  "sdk_version": "0.20.0",
+  "path": "/mcp",
+  "auth": {
+    "type": "none"
+  },
+  "mcp": {
+    "server": {
+      "name": "granit-mcp",
+      "version": "0.1.0",
+      "title": "Granit AI"
+    },
+    "tools": [
+      {
+        "name": "list_agents",
+        "title": "List Granit agents",
+        "description": "List the Granit healthcare AI agents. Optionally filter by vertical (e.g. Dentaire, Optique, Pharmacie) or use case (e.g. Tiers-payant, Recouvrement, Devis).",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "vertical": {
+              "description": "Filter by healthcare vertical.",
+              "type": "string"
+            },
+            "useCase": {
+              "description": "Filter by use case / workflow.",
+              "type": "string"
+            }
+          }
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_articles",
+        "title": "List Granit resources",
+        "description": "List the Granit resource articles (guides, analyses). Optionally search by keyword or filter by language.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "query": {
+              "description": "Keyword to match in title, description or category.",
+              "type": "string"
+            },
+            "lang": {
+              "description": "Language (default fr).",
+              "type": "string",
+              "enum": [
+                "fr",
+                "en"
+              ]
+            },
+            "limit": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 50
+            }
+          }
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_article",
+        "title": "Get a Granit article",
+        "description": "Fetch the full content of a Granit resource article by its slug.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "slug": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Article slug (see list_articles)."
+            },
+            "lang": {
+              "description": "Language (default fr).",
+              "type": "string",
+              "enum": [
+                "fr",
+                "en"
+              ]
+            }
+          },
+          "required": [
+            "slug"
+          ]
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}

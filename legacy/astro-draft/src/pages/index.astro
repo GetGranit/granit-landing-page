@@ -1,0 +1,199 @@
+---
+import Base from '../layouts/Base.astro';
+
+const stats = [
+  { n: '3h', l: 'récupérées par équipe, chaque jour' },
+  { n: '99%', l: 'de précision sur les traitements' },
+  { n: '50+', l: 'intégrations logiciels métier' },
+  { n: '48h', l: 'pour être opérationnel' },
+];
+
+const sectors = [
+  {
+    idx: '01',
+    name: 'Centres optiques',
+    desc: 'Vérification des droits, reste à charge, facturation, rapprochement bancaire.',
+    tags: ['Viamedis', 'OptoAMC', 'Facturation'],
+  },
+  {
+    idx: '02',
+    name: 'Audioprothésistes',
+    desc: 'Dossiers 100% Santé, suivi des remboursements, relances patients.',
+    tags: ['100% Santé', 'Remboursements', 'Relances'],
+  },
+  {
+    idx: '03',
+    name: 'Pharmacies',
+    desc: 'Tiers-payant, gestion des ordonnances, rejets CPAM, inventaire automatisé.',
+    tags: ['Tiers-payant', 'Ordonnances', 'Rejets'],
+  },
+  {
+    idx: '04',
+    name: 'EHPAD & résidences',
+    desc: 'Facturation résidents, prises en charge, relances impayés, coordination CPAM/mutuelle.',
+    tags: ['Facturation', 'Prise en charge', 'Relances'],
+  },
+  {
+    idx: '05',
+    name: 'Cliniques',
+    desc: 'Recouvrement, gestion des séjours, coordination administrative.',
+    tags: ['Recouvrement', 'Facturation'],
+  },
+  {
+    idx: '06',
+    name: 'Laboratoires de biologie',
+    desc: 'Facturation CPAM, gestion des prescriptions, rejets, rapprochement caisse.',
+    tags: ['Facturation', 'Prescriptions', 'Rejets'],
+  },
+];
+
+const logos = ['Cosium', 'Pennylane', 'SESAM-Vitale', 'Viamedis', 'OptoAMC', 'NOEMIE'];
+---
+
+<Base>
+  <!-- ── Hero ─────────────────────────────────────────── -->
+  <section class="relative overflow-hidden">
+    <!-- faint terracotta glow, top-right -->
+    <div
+      class="pointer-events-none absolute -right-40 -top-40 h-[520px] w-[520px] rounded-full opacity-40 blur-[120px]"
+      style="background: radial-gradient(circle, #d4583a 0%, transparent 70%);"
+    >
+    </div>
+
+    <div class="mx-auto max-w-[1280px] px-6 pb-24 pt-40 md:px-12 md:pt-48">
+      <p class="eyebrow rise flex items-center gap-3">
+        <span class="pulse-dot inline-block h-1.5 w-1.5 rounded-full bg-terra"
+        ></span>
+        Agents IA pour la santé
+      </p>
+
+      <h1 class="display rise rise-1 mt-8 max-w-5xl text-[clamp(48px,8.5vw,120px)]">
+        Vos équipes soignent.<br />
+        <span class="italic text-grey">Granit gère </span
+        ><span class="underline-terra text-ink">le reste.</span>
+      </h1>
+
+      <p
+        class="rise rise-2 mt-10 max-w-2xl text-xl leading-relaxed text-ink2 md:text-2xl"
+      >
+        Des agents IA qui automatisent le back-office administratif de vos
+        équipes de santé — tiers-payant, prise en charge, facturation,
+        recouvrement. <span class="hand text-terra-glow text-[1.4em]"
+          >branchés sur vos outils.</span
+        > Opérationnels en 48&nbsp;heures.
+      </p>
+
+      <div class="rise rise-3 mt-12 flex flex-wrap items-center gap-5">
+        <a
+          href="#demo"
+          class="group inline-flex items-center gap-3 rounded-full bg-terra px-7 py-4 font-mono text-[13px] uppercase tracking-[0.12em] text-white transition hover:bg-terra-glow"
+        >
+          Demander une démo
+          <span class="transition group-hover:translate-x-1">→</span>
+        </a>
+        <a
+          href="#sectors"
+          class="font-mono text-[13px] uppercase tracking-[0.14em] text-grey underline-offset-8 transition hover:text-ink hover:underline"
+          >Voir nos agents</a
+        >
+      </div>
+    </div>
+
+    <!-- logo strip -->
+    <div class="rule">
+      <div
+        class="mx-auto flex max-w-[1280px] flex-wrap items-center gap-x-10 gap-y-4 px-6 py-8 md:px-12"
+      >
+        <span class="eyebrow-grey">Connecté nativement à</span>
+        {
+          logos.map((l) => (
+            <span class="font-serif text-lg text-grey">{l}</span>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Stats ────────────────────────────────────────── -->
+  <section class="rule">
+    <div
+      class="mx-auto grid max-w-[1280px] grid-cols-2 md:grid-cols-4"
+    >
+      {
+        stats.map((s, i) => (
+          <div
+            class={`border-hair px-6 py-12 md:px-12 ${i > 0 ? 'md:border-l' : ''} ${i % 2 === 1 ? 'border-l md:border-l' : ''} ${i >= 2 ? 'border-t md:border-t-0' : ''}`}
+          >
+            <div class="display text-6xl text-terra md:text-7xl">{s.n}</div>
+            <div class="eyebrow-grey mt-4">{s.l}</div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- ── Sectors (editorial list) ─────────────────────── -->
+  <section id="sectors" class="scroll-mt-24">
+    <div class="mx-auto max-w-[1280px] px-6 pb-8 pt-28 md:px-12">
+      <p class="eyebrow">Secteurs</p>
+      <h2 class="display mt-6 max-w-3xl text-[clamp(34px,5.5vw,68px)]">
+        Quel que soit votre établissement,
+        <span class="italic text-grey">Granit s'adapte.</span>
+      </h2>
+    </div>
+
+    <div class="mx-auto max-w-[1280px] px-6 md:px-12">
+      {
+        sectors.map((s) => (
+          <article class="group rule grid grid-cols-1 gap-4 py-10 transition md:grid-cols-[80px_1fr_1.1fr] md:items-baseline md:gap-10">
+            <span class="font-mono text-sm text-grey2 transition group-hover:text-terra">
+              {s.idx}
+            </span>
+            <h3 class="display text-3xl text-ink transition group-hover:text-terra-glow md:text-4xl">
+              {s.name}
+            </h3>
+            <div>
+              <p class="text-lg leading-relaxed text-ink2">{s.desc}</p>
+              <div class="mt-4 flex flex-wrap gap-x-5 gap-y-1">
+                {s.tags.map((tag) => (
+                  <span class="font-mono text-[12px] uppercase tracking-[0.1em] text-grey">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- ── Demo CTA ─────────────────────────────────────── -->
+  <section id="demo" class="rule mt-20 scroll-mt-24">
+    <div
+      class="relative mx-auto max-w-[1280px] overflow-hidden px-6 py-32 text-center md:px-12"
+    >
+      <div
+        class="pointer-events-none absolute left-1/2 top-1/2 h-[460px] w-[460px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-30 blur-[130px]"
+        style="background: radial-gradient(circle, #d4583a 0%, transparent 70%);"
+      >
+      </div>
+      <p class="eyebrow relative">Démo</p>
+      <h2
+        class="display relative mx-auto mt-6 max-w-3xl text-[clamp(34px,5.5vw,72px)]"
+      >
+        Prêt à libérer vos équipes des
+        <span class="underline-terra">tâches administratives</span> ?
+      </h2>
+      <p class="hand relative mx-auto mt-6 text-3xl text-grey md:text-4xl">
+        on vous montre vos agents en action, en 30 minutes.
+      </p>
+      <a
+        href="mailto:contact@getgranit.ai?subject=Demande%20de%20d%C3%A9mo%20Granit"
+        class="relative mt-12 inline-flex items-center gap-3 rounded-full bg-terra px-8 py-4 font-mono text-[13px] uppercase tracking-[0.12em] text-white transition hover:bg-terra-glow"
+      >
+        Réserver une démo gratuite <span>→</span>
+      </a>
+    </div>
+  </section>
+</Base>
