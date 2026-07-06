@@ -1,0 +1,16 @@
+# Granit AI
+
+> Granit AI déploie des agents IA autonomes qui automatisent les workflows administratifs des établissements de santé — tiers-payant, facturation, commandes fournisseurs, relances — sans intégration technique. Opérationnel en 48 h, branché sur vos outils existants.
+
+## Pages
+
+- [Accueil](/): Présentation de Granit AI et de ses agents IA pour la santé.
+- [Produit](/produit): Fonctionnalités détaillées de la plateforme et de ses agents autonomes.
+- [Agents](/agents): Catalogue des agents IA spécialisés par vertical (dentaire, optique, audio, clinique, EHPAD, pharmacie, laboratoire).
+- [Cas d'usage](/cas-usage): Exemples concrets d'automatisation dans les établissements de santé.
+- [Tarifs](/tarifs): Grille tarifaire et formules d'abonnement.
+- [Démo](/demo): Essayer la plateforme directement depuis le navigateur.
+- [Ressources](/ressources): Articles, guides et contenus éducatifs sur l'IA en santé.
+- [À propos](/a-propos): Mission, équipe et vision de Granit AI.
+- [Sécurité](/securite): Engagements de sécurité, conformité et protection des données de santé.
+- [CGV](/cgv): Conditions générales de vente.

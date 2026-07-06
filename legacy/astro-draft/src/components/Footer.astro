@@ -1,0 +1,82 @@
+---
+interface Props {
+  lang?: 'fr' | 'en';
+}
+const { lang = 'fr' } = Astro.props;
+const year = new Date().getFullYear();
+
+const t = {
+  fr: {
+    tagline: 'Vos équipes soignent. Granit gère le reste.',
+    product: 'Produit',
+    agents: 'Nos agents',
+    sectors: 'Secteurs',
+    blog: 'Journal',
+    demo: 'Réserver une démo',
+    legal: 'Légal',
+    cgv: 'CGV',
+    rights: 'Tous droits réservés.',
+    blogHref: '/blog',
+    cgvHref: '/cgv',
+  },
+  en: {
+    tagline: 'Your teams care. Granit handles the rest.',
+    product: 'Product',
+    agents: 'Agents',
+    sectors: 'Sectors',
+    blog: 'Journal',
+    demo: 'Book a demo',
+    legal: 'Legal',
+    cgv: 'Terms',
+    rights: 'All rights reserved.',
+    blogHref: '/en/blog',
+    cgvHref: '/en/cgv',
+  },
+}[lang];
+---
+
+<footer class="rule bg-bg2">
+  <div
+    class="mx-auto grid max-w-[1280px] gap-12 px-6 py-20 md:grid-cols-[2fr_1fr_1fr] md:px-12"
+  >
+    <div>
+      <div class="display text-3xl text-ink">
+        Granit<span class="text-terra">.</span>
+      </div>
+      <p class="mt-4 max-w-xs text-lg leading-relaxed text-grey">{t.tagline}</p>
+      <div
+        class="mt-6 flex flex-wrap gap-2 font-mono text-[11px] uppercase tracking-[0.1em] text-grey2"
+      >
+        <span class="rounded-full border border-hair px-3 py-1">HDS</span>
+        <span class="rounded-full border border-hair px-3 py-1">RGPD</span>
+        <span class="rounded-full border border-hair px-3 py-1">ISO 27001</span>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="eyebrow-grey">{t.product}</h3>
+      <ul class="mt-5 space-y-3 text-lg text-ink2">
+        <li><a href="#agents" class="transition hover:text-terra-glow">{t.agents}</a></li>
+        <li><a href="#sectors" class="transition hover:text-terra-glow">{t.sectors}</a></li>
+        <li><a href={t.blogHref} class="transition hover:text-terra-glow">{t.blog}</a></li>
+        <li><a href="#demo" class="transition hover:text-terra-glow">{t.demo}</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="eyebrow-grey">{t.legal}</h3>
+      <ul class="mt-5 space-y-3 text-lg text-ink2">
+        <li><a href={t.cgvHref} class="transition hover:text-terra-glow">{t.cgv}</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="rule">
+    <div
+      class="mx-auto flex max-w-[1280px] items-center justify-between px-6 py-6 font-mono text-[12px] tracking-[0.1em] text-grey2 md:px-12"
+    >
+      <span>© {year} Granit</span>
+      <span>getgranit.ai</span>
+    </div>
+  </div>
+</footer>

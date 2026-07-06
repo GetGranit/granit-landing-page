@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Granit AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Libre+Caslon+Text:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#f7f3ec;--surface:#ffffff;--border:#e8e2d3;
+  --text:#0f0c08;--text2:#3a342d;--text3:#7a7368;--accent:#d4583a;
+  --blue:#c0503a;--blue-bg:#fbe8e0;--blue-b:#f0c8ba;
+  --green:#4f8a5f;--green-bg:#e4efe6;--green-b:#c3ddc9;
+  --amber:#b7791f;--amber-bg:#f7efdd;--amber-b:#e8d5a6;
+  --red:#c0392b;--red-bg:#faeae7;--red-b:#eec6bf;
+  --mono:'JetBrains Mono',ui-monospace,monospace;--sans:'Inter Tight',system-ui,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:13px;height:100vh;overflow:hidden;display:flex;flex-direction:column;-webkit-font-smoothing:antialiased;}
+
+header{height:52px;background:var(--surface);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 20px;gap:14px;flex-shrink:0;}
+.logo{font-family:'Libre Caslon Text','Times New Roman',serif;font-size:19px;font-weight:700;color:var(--text);letter-spacing:-.01em;display:flex;align-items:center;gap:9px;}
+.logo-mark{width:28px;height:26px;display:flex;align-items:center;justify-content:center;}
+.logo-mark svg{width:28px;height:auto;}
+.hdiv{width:1px;height:16px;background:var(--border);}
+.client-tag{font-size:12px;color:var(--text2);font-family:var(--mono);}
+
+.kpi-bar{background:var(--surface);border-bottom:1px solid var(--border);display:flex;align-items:stretch;padding:0 20px;flex-shrink:0;}
+.kbi{display:flex;align-items:center;gap:8px;padding:8px 16px;border-right:1px solid var(--border);}
+.kbi:last-child{border-right:none;}
+.kbl{font-family:var(--mono);font-size:10px;color:var(--text3);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;}
+.kbv{font-family:var(--mono);font-size:15px;font-weight:500;white-space:nowrap;}
+
+.layout{display:flex;flex:1;overflow:hidden;}
+
+nav{width:210px;flex-shrink:0;background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;overflow-y:auto;}
+.ng{font-family:var(--mono);font-size:10px;color:var(--text3);letter-spacing:.1em;text-transform:uppercase;padding:14px 14px 5px;}
+.ni{display:flex;align-items:center;gap:9px;padding:7px 14px;cursor:pointer;border-left:2px solid transparent;transition:all .12s;}
+.ni:hover{background:var(--bg);}
+.ni.active{background:var(--blue-bg);border-left-color:var(--blue);}
+.nicon{width:24px;height:24px;border-radius:5px;background:var(--bg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--text2);transition:all .12s;}
+.ni.active .nicon{background:var(--blue-bg);border-color:var(--blue-b);color:var(--blue);}
+.nlbl{flex:1;font-size:12.5px;font-weight:500;color:var(--text);}
+.ni.active .nlbl{color:var(--blue);}
+.nc{font-family:var(--mono);font-size:10px;font-weight:500;padding:2px 6px;border-radius:4px;}
+.nc.b{background:var(--blue-bg);color:var(--blue);}
+.nc.g{background:var(--green-bg);color:var(--green);}
+.nc.a{background:var(--amber-bg);color:var(--amber);}
+
+.content{flex:1;overflow:hidden;display:flex;flex-direction:column;}
+.tab{display:none;flex-direction:column;height:100%;animation:fi .16s ease;}
+.tab.active{display:flex;}
+@keyframes fi{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:translateY(0)}}
+
+.ahead{background:var(--surface);border-bottom:1px solid var(--border);padding:11px 20px;display:flex;align-items:center;gap:11px;flex-shrink:0;}
+.aicon{width:30px;height:30px;border-radius:6px;background:var(--bg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--text2);flex-shrink:0;}
+.atitle{font-size:14px;font-weight:600;color:var(--text);}
+.adesc{font-size:11px;color:var(--text3);font-family:var(--mono);margin-top:1px;}
+.aright{margin-left:auto;display:flex;align-items:center;gap:7px;}
+.stag{display:flex;align-items:center;gap:5px;font-family:var(--mono);font-size:11px;padding:3px 9px;border-radius:4px;border:1px solid;}
+.stag.r{color:var(--blue);background:var(--blue-bg);border-color:var(--blue-b);}
+.stag.w{color:var(--amber);background:var(--amber-bg);border-color:var(--amber-b);}
+.mtag{font-family:var(--mono);font-size:11px;color:var(--text2);background:var(--bg);border:1px solid var(--border);padding:3px 9px;border-radius:4px;}
+
+.krow{display:grid;gap:1px;background:var(--border);flex-shrink:0;}
+.krow.c4{grid-template-columns:repeat(4,1fr);}
+.kcell{background:var(--surface);padding:13px 18px;}
+.klbl{font-family:var(--mono);font-size:10px;color:var(--text3);letter-spacing:.05em;text-transform:uppercase;margin-bottom:5px;}
+.kv{font-family:var(--mono);font-size:19px;font-weight:500;letter-spacing:-.02em;color:var(--text);}
+.kv.b{color:var(--blue);}.kv.g{color:var(--green);}.kv.a{color:var(--amber);}
+.kd{font-size:11px;color:var(--text3);margin-top:3px;}
+.kd.up{color:var(--green);}.kd.dn{color:var(--red);}
+
+.tbar{background:var(--surface);border-bottom:1px solid var(--border);padding:9px 20px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
+.tbar-t{font-family:var(--mono);font-size:10px;color:var(--text3);letter-spacing:.1em;text-transform:uppercase;}
+.tbar-r{font-family:var(--mono);font-size:11px;color:var(--text3);}
+.tbar-r b{color:var(--text2);font-weight:500;}
+
+.tarea{flex:1;overflow-y:auto;}
+table{width:100%;border-collapse:collapse;background:var(--surface);}
+thead th{font-family:var(--mono);font-size:10px;color:var(--text3);letter-spacing:.07em;text-transform:uppercase;padding:8px 14px;text-align:left;background:var(--bg);border-bottom:1px solid var(--border);white-space:nowrap;position:sticky;top:0;z-index:1;}
+tbody td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--text);font-size:13px;}
+tbody tr:last-child td{border-bottom:none;}
+tbody tr:hover td{background:#FAFBFC;}
+.mono{font-family:var(--mono);font-size:11.5px;}
+.chip{display:inline-flex;align-items:center;gap:4px;font-family:var(--mono);font-size:10px;font-weight:500;padding:2px 7px;border-radius:4px;border:1px solid;white-space:nowrap;}
+.chip.b{background:var(--blue-bg);color:var(--blue);border-color:var(--blue-b);}
+.chip.g{background:var(--green-bg);color:var(--green);border-color:var(--green-b);}
+.chip.a{background:var(--amber-bg);color:var(--amber);border-color:var(--amber-b);}
+.chip.r{background:var(--red-bg);color:var(--red);border-color:var(--red-b);}
+.chip.x{background:var(--bg);color:var(--text2);border-color:var(--border);}
+
+.spin{width:9px;height:9px;border-radius:50%;border:1.5px solid var(--blue-b);border-top-color:var(--blue);animation:sp .8s linear infinite;display:inline-block;vertical-align:middle;}
+@keyframes sp{to{transform:rotate(360deg)}}
+.ldot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s ease-in-out infinite;display:inline-block;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.ptrack{height:3px;background:var(--border);border-radius:2px;overflow:hidden;width:72px;display:inline-block;vertical-align:middle;margin-left:4px;}
+.pfill{height:100%;background:var(--blue);border-radius:2px;transition:width 1s ease;}
+
+::-webkit-scrollbar{width:4px;height:4px;}
+::-webkit-scrollbar-track{background:transparent;}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <div class="logo-mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 52" fill="none"><path d="M4 26 L16 26 L20 14 L26 38 L32 20 L36 30 L44 30" stroke="#1A1A1A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="44" cy="30" r="3.5" fill="#C85C3C"/></svg></div>
+    Granit
+  </div>
+  <div class="hdiv"></div>
+  <span class="client-tag">Optique</span>
+</header>
+
+<div class="kpi-bar">
+  <div class="kbi"><span class="kbl">Dossiers traités</span><span class="kbv" style="color:var(--blue)" id="hkpi-pec">247</span></div>
+  <div class="kbi"><span class="kbl">Automatisé</span><span class="kbv">98.2%</span></div>
+  <div class="kbi"><span class="kbl">Économisé / semaine</span><span class="kbv" style="color:var(--green)" id="hkpi-saved">18.4h</span></div>
+  <div class="kbi"><span class="kbl">Montant validé</span><span class="kbv" id="hkpi-amt">6 888 €</span></div>
+  <div class="kbi"><span class="kbl">Agents actifs</span><span class="kbv" style="color:var(--green);display:flex;align-items:center;gap:5px;"><span class="ldot"></span>7</span></div>
+</div>
+
+<div class="layout">
+  <nav>
+    <div class="ng">Tiers-payant</div>
+    <div class="ni active" onclick="go(0)">
+      <div class="nicon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" style="width:13px;height:13px"><rect x="2" y="3" width="12" height="10" rx="2"/><path d="M2 7h12M6 11h4"/></svg></div>
+      <span class="nlbl">Demande PEC</span><span class="nc b">12</span>
+    </div>
+    <div class="ni" onclick="go(1)">
+      <div class="nicon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" style="width:13px;height:13px"><path d="M4 2h8a1 1 0 0 1 1 1v10l-2-1.5L9 13l-1-1.5L7 13 5 11.5 3 13V3a1 1 0 0 1 1-1z"/><path d="M6 6h4M6 9h3"/></svg></div>
+      <span class="nlbl">Facturation</span><span class="nc g">38</span>
+    </div>
+    <div class="ni" onclick="go(2)">
+      <div class="nicon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" style="width:13px;height:13px"><path d="M3 8a5 5 0 1 0 5-5H5"/><path d="M3 4v4h4"/></svg></div>
+      <span class="nlbl">Recouvrement</span><span class="nc a">3</span>
+    </div>
+    <div class="ni" onclick="go(3)">
+      <div class="nicon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" style="width:13px;height:13px"><path d="M6 8H3a2 2 0 0 0 0 4h3M10 8h3a2 2 0 0 0 0-4h-3M6 10h4"/></svg></div>
+      <span class="nlbl">Rapprochement</span><span class="nc g">94%</span>
+    </div>
+    <div class="ng">Commandes</div>
+    <div class="ni" onclick="go(4)">
+      <div class="nicon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" style="width:13px;height:13px"><circle cx="8" cy="8" r="4"/><circle cx="8" cy="8" r="1.5"/><path d="M2 8h2M12 8h2M8 2v2M8 12v2"/></svg></div>
+      <span class="nlbl">Verres</span><span class="nc g">8</span>
+    </div>
+    <div class="ni" onclick="go(5)">
+      <div class="nicon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" style="width:13px;height:13px"><rect x="1" y="5" width="5" height="5" rx="1.5"/><rect x="10" y="5" width="5" height="5" rx="1.5"/><path d="M6 7.5h4M1 7.5H.5M15.5 7.5H15"/></svg></div>
+      <span class="nlbl">Montures</span><span class="nc g">4</span>
+    </div>
+    <div class="ng">Clients</div>
+    <div class="ni" onclick="go(6)">
+      <div class="nicon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" style="width:13px;height:13px"><path d="M8 2a4 4 0 0 1 4 4v3l1 2H3l1-2V6a4 4 0 0 1 4-4z"/><path d="M6.5 13a1.5 1.5 0 0 0 3 0"/></svg></div>
+      <span class="nlbl">Relances</span><span class="nc b">47</span>
+    </div>
+  </nav>
+
+  <div class="content">
+
+    <!-- 0 — DEMANDE PEC -->
+    <div class="tab active" id="tab-0">
+      <div class="ahead">
+        <div class="aicon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" style="width:14px;height:14px"><rect x="2" y="3" width="12" height="10" rx="2"/><path d="M2 7h12M6 11h4"/></svg></div>
+        <div><div class="atitle">Demande PEC</div><div class="adesc">Demandes de prise en charge — organismes complémentaires</div></div>
+        <div class="aright">
+          <div class="stag r"><span class="spin"></span>En cours</div>
+          <div class="mtag">Session <b id="sess" style="color:var(--text)">14:32</b></div>
+          </div>
+      </div>
+      <div class="krow c4">
+        <div class="kcell"><div class="klbl">PEC traitées</div><div class="kv b" id="k-count">0</div><div class="kd up">+12 vs hier</div></div>
+        <div class="kcell"><div class="klbl">Taux d'accord</div><div class="kv g" id="k-rate">—</div><div class="kd up">+3.2 pts</div></div>
+        <div class="kcell"><div class="klbl">Montant validé</div><div class="kv" id="k-amt">—</div><div class="kd up">+2 847 € vs hier</div></div>
+        <div class="kcell"><div class="klbl">Durée / PEC</div><div class="kv" id="k-spd">—</div><div class="kd">vs 4 min manuel</div></div>
+      </div>
+      <div class="tbar">
+        <span class="tbar-t">File d'attente</span>
+        <span class="tbar-r"><b id="pec-prog">33%</b> traité <span class="ptrack"><span class="pfill" id="pec-bar" style="width:33%"></span></span> · 12 dossiers</span>
+      </div>
+      <div class="tarea">
+        <table>
+          <thead><tr><th>Patient</th><th>N° SS</th><th>Organisme</th><th>Type</th><th>Montant est.</th><th>Étape en cours</th><th>Durée</th><th>Statut</th></tr></thead>
+          <tbody>
+            <tr><td>Martin, Jean</td><td class="mono">1 78 04 75 115 084</td><td>Viamedis</td><td>Verres + Monture</td><td class="mono">470 €</td><td style="color:var(--blue);font-size:12px">Vérification droits</td><td class="mono">1.2 s</td><td><span class="chip b"><span class="spin"></span>En cours</span></td></tr>
+            <tr><td>Dupont, Claire</td><td class="mono">2 91 11 69 042 177</td><td>Almerys</td><td>Verres progressifs</td><td class="mono">780 €</td><td style="color:var(--text3);font-size:12px">—</td><td class="mono">—</td><td><span class="chip a">En attente</span></td></tr>
+            <tr><td>Bernard, Luc</td><td class="mono">1 65 09 13 855 201</td><td>Viamedis</td><td>Lentilles annuelles</td><td class="mono">180 €</td><td style="color:var(--text3);font-size:12px">—</td><td class="mono">—</td><td><span class="chip a">En attente</span></td></tr>
+            <tr><td>Moreau, Isabelle</td><td class="mono">2 83 07 31 267 094</td><td>Carte Blanche</td><td>Monture seule</td><td class="mono">150 €</td><td style="color:var(--text3);font-size:12px">—</td><td class="mono">—</td><td><span class="chip a">En attente</span></td></tr>
+            <tr><td>Petit, Thomas</td><td class="mono">1 99 03 92 088 456</td><td>Almerys</td><td>Verres + Monture</td><td class="mono">470 €</td><td style="color:var(--green);font-size:12px">Terminé</td><td class="mono">38 s</td><td><span class="chip g">Validé</span></td></tr>
+            <tr><td>Simon, Aurelie</td><td class="mono">2 88 06 69 112 304</td><td>Viamedis</td><td>Verres unifocaux</td><td class="mono">240 €</td><td style="color:var(--green);font-size:12px">Terminé</td><td class="mono">41 s</td><td><span class="chip g">Validé</span></td></tr>
+            <tr><td>Garcia, René</td><td class="mono">1 71 03 31 088 217</td><td>Almerys</td><td>Verres + Monture</td><td class="mono">780 €</td><td style="color:var(--green);font-size:12px">Terminé</td><td class="mono">35 s</td><td><span class="chip g">Validé</span></td></tr>
+            <tr><td>Blanc, Nicolas</td><td class="mono">1 90 11 75 302 184</td><td>Carte Blanche</td><td>Lentilles annuelles</td><td class="mono">180 €</td><td style="color:var(--green);font-size:12px">Terminé</td><td class="mono">29 s</td><td><span class="chip g">Validé</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 1 — FACTURATION -->
+    <div class="tab" id="tab-1">
+      <div class="ahead">
+        <div class="aicon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" style="width:14px;height:14px"><path d="M4 2h8a1 1 0 0 1 1 1v10l-2-1.5L9 13l-1-1.5L7 13 5 11.5 3 13V3a1 1 0 0 1 1-1z"/><path d="M6 6h4M6 9h3"/></svg></div>
+        <div><div class="atitle">Facturation</div><div class="adesc">Génération et transmission des feuilles de soin</div></div>
+        <div class="aright"><div class="stag r"><span class="spin"></span>En cours</div><div class="mtag">SESAM-Vitale</div></div>
+      </div>
+      <div class="krow c4">
+        <div class="kcell"><div class="klbl">Factures générées</div><div class="kv b">38</div><div class="kd">Aujourd'hui</div></div>
+        <div class="kcell"><div class="klbl">Montant total</div><div class="kv g">14 820 €</div><div class="kd up">+2 340 € vs hier</div></div>
+        <div class="kcell"><div class="klbl">Transmises AM</div><div class="kv">36 / 38</div><div class="kd">2 en attente</div></div>
+        <div class="kcell"><div class="klbl">Taux d'erreur</div><div class="kv g">0.0 %</div><div class="kd up">vs 4.2 % manuel</div></div>
+      </div>
+      <div class="tbar"><span class="tbar-t">Transmissions du jour</span><span class="tbar-r"><b>38</b> factures</span></div>
+      <div class="tarea">
+        <table>
+          <thead><tr><th>Heure</th><th>Patient</th><th>Type</th><th>Part AM</th><th>Part mutuelle</th><th>RAC patient</th><th>Total</th><th>Statut</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">14:41</td><td>Petit, T.</td><td>Verres + Monture</td><td class="mono">0 €</td><td class="mono">380 €</td><td class="mono">90 €</td><td class="mono">470 €</td><td><span class="chip g">Transmise</span></td></tr>
+            <tr><td class="mono">14:38</td><td>Simon, A.</td><td>100% Santé</td><td class="mono">0 €</td><td class="mono">240 €</td><td class="mono" style="color:var(--green)">0 €</td><td class="mono">240 €</td><td><span class="chip g">Transmise</span></td></tr>
+            <tr><td class="mono">14:35</td><td>Leroy, M.</td><td>100% Santé</td><td class="mono">0 €</td><td class="mono">240 €</td><td class="mono" style="color:var(--green)">0 €</td><td class="mono">240 €</td><td><span class="chip b"><span class="spin"></span>En cours</span></td></tr>
+            <tr><td class="mono">14:30</td><td>Garcia, R.</td><td>Verres progressifs</td><td class="mono">0 €</td><td class="mono">500 €</td><td class="mono">280 €</td><td class="mono">780 €</td><td><span class="chip g">Transmise</span></td></tr>
+            <tr><td class="mono">14:21</td><td>Blanc, N.</td><td>Lentilles annuelles</td><td class="mono">0 €</td><td class="mono">150 €</td><td class="mono">30 €</td><td class="mono">180 €</td><td><span class="chip g">Transmise</span></td></tr>
+            <tr><td class="mono">14:18</td><td>Fontaine, A.</td><td>Monture seule</td><td class="mono">0 €</td><td class="mono">100 €</td><td class="mono">50 €</td><td class="mono">150 €</td><td><span class="chip g">Transmise</span></td></tr>
+            <tr><td class="mono">14:10</td><td>Moreau, I.</td><td>Verres + Monture</td><td class="mono">0 €</td><td class="mono">320 €</td><td class="mono">80 €</td><td class="mono">400 €</td><td><span class="chip g">Transmise</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 2 — RECOUVREMENT -->
+    <div class="tab" id="tab-2">
+      <div class="ahead">
+        <div class="aicon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" style="width:14px;height:14px"><path d="M3 8a5 5 0 1 0 5-5H5"/><path d="M3 4v4h4"/></svg></div>
+        <div><div class="atitle">Recouvrement</div><div class="adesc">Suivi et relances des remboursements en attente auprès des mutuelles</div></div>
+        <div class="aright"><div class="stag w">⚠ 3 alertes actives</div></div>
+      </div>
+      <div class="krow c4">
+        <div class="kcell"><div class="klbl">En attente mutuelles</div><div class="kv a">2 160 €</div><div class="kd dn">+800 € vs sem. dernière</div></div>
+        <div class="kcell"><div class="klbl">Relances mutuelles</div><div class="kv b">17</div><div class="kd">Ce mois</div></div>
+        <div class="kcell"><div class="klbl">Taux remboursement</div><div class="kv g">84 %</div><div class="kd up">+11 pts vs avant Granit</div></div>
+        <div class="kcell"><div class="klbl">Délai moyen retour</div><div class="kv">12 j</div><div class="kd up">vs 28 j avant</div></div>
+      </div>
+      <div class="tbar"><span class="tbar-t">Suivi remboursements mutuelles</span><span class="tbar-r"><b>17</b> dossiers actifs</span></div>
+      <div class="tarea">
+        <table>
+          <thead><tr><th>Organisme</th><th>Ref. facture</th><th>Patient</th><th>Montant</th><th>Date envoi</th><th>Retard</th><th>Relances</th><th>Statut</th></tr></thead>
+          <tbody>
+            <tr><td>Viamedis</td><td class="mono">#2024-08821</td><td>Martin, J.</td><td class="mono" style="color:var(--red)">780 €</td><td class="mono">03/11</td><td class="mono" style="color:var(--red)">32 j</td><td><span class="chip r">3</span></td><td><span class="chip r">Litige</span></td></tr>
+            <tr><td>Almerys</td><td class="mono">#2024-08754</td><td>Dupont, C.</td><td class="mono" style="color:var(--amber)">470 €</td><td class="mono">17/11</td><td class="mono" style="color:var(--amber)">14 j</td><td><span class="chip a">2</span></td><td><span class="chip b"><span class="spin"></span>Relance</span></td></tr>
+            <tr><td>Apicil</td><td class="mono">#2024-08701</td><td>Bernard, L.</td><td class="mono" style="color:var(--amber)">240 €</td><td class="mono">24/11</td><td class="mono" style="color:var(--amber)">7 j</td><td><span class="chip a">1</span></td><td><span class="chip a">Planifiée</span></td></tr>
+            <tr><td>Viamedis</td><td class="mono">#2024-08690</td><td>Moreau, I.</td><td class="mono">400 €</td><td class="mono">25/11</td><td class="mono">6 j</td><td><span class="chip x">0</span></td><td><span class="chip x">Suivi</span></td></tr>
+            <tr><td>Almerys</td><td class="mono">#2024-08655</td><td>Petit, T.</td><td class="mono">470 €</td><td class="mono">26/11</td><td class="mono">5 j</td><td><span class="chip x">0</span></td><td><span class="chip x">Suivi</span></td></tr>
+            <tr><td>Viamedis</td><td class="mono">#2024-08612</td><td>Simon, A.</td><td class="mono">240 €</td><td class="mono">27/11</td><td class="mono">4 j</td><td><span class="chip x">0</span></td><td><span class="chip g">Reçu</span></td></tr>
+            <tr><td>Carte Blanche</td><td class="mono">#2024-08590</td><td>Garcia, R.</td><td class="mono">780 €</td><td class="mono">28/11</td><td class="mono">3 j</td><td><span class="chip x">0</span></td><td><span class="chip g">Reçu</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 3 — RAPPROCHEMENT -->
+    <div class="tab" id="tab-3">
+      <div class="ahead">
+        <div class="aicon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" style="width:14px;height:14px"><path d="M6 8H3a2 2 0 0 0 0 4h3M10 8h3a2 2 0 0 0 0-4h-3M6 10h4"/></svg></div>
+        <div><div class="atitle">Rapprochement bancaire</div><div class="adesc">Réconciliation NOEMIE / virements mutuelles / paiements patients</div></div>
+        <div class="aright"><div class="stag r"><span class="spin"></span>Analyse</div><div class="mtag">NOEMIE B2</div><div class="mtag">Nov. 2024</div></div>
+      </div>
+      <div class="krow c4">
+        <div class="kcell"><div class="klbl">Flux analysés</div><div class="kv b">342</div><div class="kd">Ce mois</div></div>
+        <div class="kcell"><div class="klbl">Rapprochés auto</div><div class="kv g">321</div><div class="kd up">94.0 % taux auto</div></div>
+        <div class="kcell"><div class="klbl">Anomalies</div><div class="kv a">7</div><div class="kd">À traiter manuellement</div></div>
+        <div class="kcell"><div class="klbl">Montant réconcilié</div><div class="kv g">89 420 €</div><div class="kd">sur 95 100 €</div></div>
+      </div>
+      <div class="tbar"><span class="tbar-t">Flux du mois</span><span class="tbar-r"><b>342</b> flux · <b>7</b> anomalies</span></div>
+      <div class="tarea">
+        <table>
+          <thead><tr><th>Ref NOEMIE</th><th>Organisme</th><th>Date</th><th>Attendu</th><th>Reçu</th><th>Ecart</th><th>Virement banque</th><th>Statut</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">VIA-2024-88401</td><td>Viamedis</td><td class="mono">04/11</td><td class="mono">340 €</td><td class="mono">340 €</td><td class="mono" style="color:var(--green)">0 €</td><td class="mono">VIR-GMF-20241104</td><td><span class="chip g">Rapproché</span></td></tr>
+            <tr><td class="mono">ALM-2024-21782</td><td>Almerys</td><td class="mono">04/11</td><td class="mono">520 €</td><td class="mono">520 €</td><td class="mono" style="color:var(--green)">0 €</td><td class="mono">VIR-ALM-20241104</td><td><span class="chip g">Rapproché</span></td></tr>
+            <tr><td class="mono">VIA-2024-88402</td><td>Viamedis</td><td class="mono">04/11</td><td class="mono">180 €</td><td class="mono">180 €</td><td class="mono" style="color:var(--green)">0 €</td><td class="mono">VIR-GMF-20241105</td><td><span class="chip g">Rapproché</span></td></tr>
+            <tr><td class="mono">NOM-2024-88412</td><td>Viamedis</td><td class="mono">04/11</td><td class="mono">340 €</td><td class="mono">310 €</td><td class="mono" style="color:var(--red)">-30 €</td><td class="mono">VIR-VIA-20241106</td><td><span class="chip r">Ecart</span></td></tr>
+            <tr><td class="mono">ALM-2024-21801</td><td>Almerys</td><td class="mono">05/11</td><td class="mono">95 €</td><td class="mono">95 €</td><td class="mono" style="color:var(--green)">0 €</td><td class="mono">VIR-ALM-20241107</td><td><span class="chip g">Rapproché</span></td></tr>
+            <tr><td class="mono">NOM-2024-88511</td><td>Carte Blanche</td><td class="mono">05/11</td><td class="mono">520 €</td><td class="mono">520 €</td><td class="mono" style="color:var(--amber)">—</td><td class="mono">VIR-CB-20241107</td><td><span class="chip a">Doublon?</span></td></tr>
+            <tr><td class="mono">NOM-2024-88620</td><td>Viamedis</td><td class="mono">06/11</td><td class="mono">95 €</td><td class="mono">—</td><td class="mono" style="color:var(--red)">-95 €</td><td class="mono">—</td><td><span class="chip r">Manquant</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 4 — VERRES -->
+    <div class="tab" id="tab-4">
+      <div class="ahead">
+        <div class="aicon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" style="width:14px;height:14px"><circle cx="8" cy="8" r="4"/><circle cx="8" cy="8" r="1.5"/><path d="M2 8h2M12 8h2M8 2v2M8 12v2"/></svg></div>
+        <div><div class="atitle">Commandes verres</div><div class="adesc">Passage automatique des commandes de verres auprès des fournisseurs</div></div>
+        <div class="aright"><div class="stag r"><span class="spin"></span>En cours</div><div class="mtag">Essilor · Hoya · Novacel</div></div>
+      </div>
+      <div class="krow c4">
+        <div class="kcell"><div class="klbl">Commandes passées</div><div class="kv b">8</div><div class="kd">Aujourd'hui</div></div>
+        <div class="kcell"><div class="klbl">Délai moyen</div><div class="kv g">38 s</div><div class="kd up">vs 8 min manuel</div></div>
+        <div class="kcell"><div class="klbl">Erreurs de saisie</div><div class="kv g">0</div><div class="kd up">vs 3.1 % manuel</div></div>
+        <div class="kcell"><div class="klbl">Montant commandé</div><div class="kv">4 700 €</div><div class="kd">Ce jour</div></div>
+      </div>
+      <div class="tbar"><span class="tbar-t">Commandes du jour</span><span class="tbar-r"><b>8</b> commandes</span></div>
+      <div class="tarea">
+        <table>
+          <thead><tr><th>Patient</th><th>Fournisseur</th><th>Référence verre</th><th>Sphère</th><th>Cylindre</th><th>Axe</th><th>Montant</th><th>Statut</th></tr></thead>
+          <tbody>
+            <tr><td>Bernard, Luc</td><td>Essilor</td><td class="mono">Crizal Prevencia 1.67</td><td class="mono">-2.25</td><td class="mono">-0.75</td><td class="mono">180°</td><td class="mono">420 €</td><td><span class="chip b"><span class="spin"></span>En cours</span></td></tr>
+            <tr><td>Fontaine, A.</td><td>Hoya</td><td class="mono">Nulux EP 1.74</td><td class="mono">-5.00</td><td class="mono">—</td><td class="mono">—</td><td class="mono">580 €</td><td><span class="chip g">Confirmée</span></td></tr>
+            <tr><td>Dupuis, C.</td><td>Novacel</td><td class="mono">Stylis 1.60 AR+</td><td class="mono">+1.50</td><td class="mono">-0.50</td><td class="mono">90°</td><td class="mono">340 €</td><td><span class="chip g">Confirmée</span></td></tr>
+            <tr><td>Martin, J.</td><td>Essilor</td><td class="mono">Varilux Comfort 3F</td><td class="mono">+2.00</td><td class="mono">-1.00</td><td class="mono">45°</td><td class="mono">720 €</td><td><span class="chip g">Confirmée</span></td></tr>
+            <tr><td>Renard, S.</td><td>Hoya</td><td class="mono">Nulux 1.50 SHV</td><td class="mono">-1.00</td><td class="mono">—</td><td class="mono">—</td><td class="mono">290 €</td><td><span class="chip a">Att. stock</span></td></tr>
+            <tr><td>Lefevre, M.</td><td>Novacel</td><td class="mono">Orma 1.50 Classic</td><td class="mono">-0.50</td><td class="mono">-0.25</td><td class="mono">170°</td><td class="mono">180 €</td><td><span class="chip g">Confirmée</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 5 — MONTURES -->
+    <div class="tab" id="tab-5">
+      <div class="ahead">
+        <div class="aicon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" style="width:14px;height:14px"><rect x="1" y="5" width="5" height="5" rx="1.5"/><rect x="10" y="5" width="5" height="5" rx="1.5"/><path d="M6 7.5h4M1 7.5H.5M15.5 7.5H15"/></svg></div>
+        <div><div class="atitle">Commandes montures</div><div class="adesc">Passage automatique des commandes montures auprès des fournisseurs</div></div>
+        <div class="aright"><div class="stag r"><span class="spin"></span>En cours</div><div class="mtag">Silhouette · Lindberg · Oakley</div></div>
+      </div>
+      <div class="krow c4">
+        <div class="kcell"><div class="klbl">Commandes passées</div><div class="kv b">4</div><div class="kd">Aujourd'hui</div></div>
+        <div class="kcell"><div class="klbl">Délai moyen</div><div class="kv g">22 s</div><div class="kd up">vs 6 min manuel</div></div>
+        <div class="kcell"><div class="klbl">Erreurs de saisie</div><div class="kv g">0</div><div class="kd up">vs 2.4 % manuel</div></div>
+        <div class="kcell"><div class="klbl">Montant commandé</div><div class="kv">2 140 €</div><div class="kd">Ce jour</div></div>
+      </div>
+      <div class="tbar"><span class="tbar-t">Commandes du jour</span><span class="tbar-r"><b>4</b> commandes</span></div>
+      <div class="tarea">
+        <table>
+          <thead><tr><th>Patient</th><th>Fournisseur</th><th>Référence monture</th><th>Coloris</th><th>Taille</th><th>Nez</th><th>Montant</th><th>Statut</th></tr></thead>
+          <tbody>
+            <tr><td>Dupont, Claire</td><td>Lindberg</td><td class="mono">9700 Col.35</td><td>Titane doré</td><td class="mono">52-16</td><td class="mono">18 mm</td><td class="mono">480 €</td><td><span class="chip b"><span class="spin"></span>En cours</span></td></tr>
+            <tr><td>Moreau, I.</td><td>Silhouette</td><td class="mono">Titan Minimal 5515</td><td>Noir mat</td><td class="mono">54-17</td><td class="mono">16 mm</td><td class="mono">320 €</td><td><span class="chip g">Confirmée</span></td></tr>
+            <tr><td>Garnier, P.</td><td>Oakley</td><td class="mono">OX8046 Crosslink</td><td>Noir/rouge</td><td class="mono">56-18</td><td class="mono">—</td><td class="mono">210 €</td><td><span class="chip g">Confirmée</span></td></tr>
+            <tr><td>Simon, A.</td><td>Lindberg</td><td class="mono">8206 Col.10</td><td>Argent brossé</td><td class="mono">50-15</td><td class="mono">17 mm</td><td class="mono">520 €</td><td><span class="chip a">Att. stock</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 6 — RELANCES -->
+    <div class="tab" id="tab-6">
+      <div class="ahead">
+        <div class="aicon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" style="width:14px;height:14px"><path d="M8 2a4 4 0 0 1 4 4v3l1 2H3l1-2V6a4 4 0 0 1 4-4z"/><path d="M6.5 13a1.5 1.5 0 0 0 3 0"/></svg></div>
+        <div><div class="atitle">Relances renouvellement</div><div class="adesc">Vérification des droits renouvellement sur Amelipro — détection proactive des patients éligibles</div></div>
+        <div class="aright"><div class="stag r"><span class="spin"></span>En cours</div><div class="mtag">Amelipro</div></div>
+      </div>
+      <div class="krow c4">
+        <div class="kcell"><div class="klbl">Patients analysés</div><div class="kv b">312</div><div class="kd">Ce mois</div></div>
+        <div class="kcell"><div class="klbl">Éligibles détectés</div><div class="kv g">47</div><div class="kd up">15 % du fichier</div></div>
+        <div class="kcell"><div class="klbl">Rappels envoyés</div><div class="kv">41</div><div class="kd up">87 % de conversion</div></div>
+        <div class="kcell"><div class="klbl">CA généré estimé</div><div class="kv g">18 400 €</div><div class="kd up">vs 0 sans agent</div></div>
+      </div>
+      <div class="tbar"><span class="tbar-t">Patients éligibles au renouvellement</span><span class="tbar-r"><b>47</b> détectés ce mois</span></div>
+      <div class="tarea">
+        <table>
+          <thead><tr><th>Patient</th><th>N° SS</th><th>Dernier équipement</th><th>Mutuelle</th><th>Plafond dispo.</th><th>Type renouvellement</th><th>Rappel envoyé</th><th>Statut</th></tr></thead>
+          <tbody>
+            <tr><td>Lefevre, Marie</td><td class="mono">2 82 04 69 104 217</td><td class="mono">Avr. 2023</td><td>Viamedis</td><td class="mono" style="color:var(--green)">380 €</td><td>Verres + Monture</td><td class="mono">—</td><td><span class="chip b"><span class="spin"></span>Analyse</span></td></tr>
+            <tr><td>Garnier, Paul</td><td class="mono">1 74 08 31 217 088</td><td class="mono">Mars 2023</td><td>Almerys</td><td class="mono" style="color:var(--green)">500 €</td><td>Verres progressifs</td><td class="mono">01/12</td><td><span class="chip g">Rappel envoyé</span></td></tr>
+            <tr><td>Renard, Sophie</td><td class="mono">2 79 02 75 188 304</td><td class="mono">Fév. 2023</td><td>Viamedis</td><td class="mono" style="color:var(--green)">320 €</td><td>Verres unifocaux</td><td class="mono">01/12</td><td><span class="chip g">Rappel envoyé</span></td></tr>
+            <tr><td>Chevalier, L.</td><td class="mono">1 88 06 92 044 119</td><td class="mono">Juin 2023</td><td>Carte Blanche</td><td class="mono" style="color:var(--amber)">100 €</td><td>Monture seule</td><td class="mono">—</td><td><span class="chip a">En attente</span></td></tr>
+            <tr><td>Morel, Isabelle</td><td class="mono">2 76 01 69 302 417</td><td class="mono">Jan. 2023</td><td>Almerys</td><td class="mono" style="color:var(--green)">470 €</td><td>Verres + Monture</td><td class="mono">28/11</td><td><span class="chip g">RDV pris</span></td></tr>
+            <tr><td>Perrin, Marc</td><td class="mono">1 91 09 13 744 201</td><td class="mono">Mai 2023</td><td>Viamedis</td><td class="mono" style="color:var(--green)">180 €</td><td>Lentilles annuelles</td><td class="mono">30/11</td><td><span class="chip g">Rappel envoyé</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function go(n) {
+  document.querySelectorAll('.tab').forEach((t,i) => t.classList.toggle('active', i===n));
+  document.querySelectorAll('.ni').forEach((el) => {
+    el.classList.toggle('active', el.getAttribute('onclick') === 'go('+n+')');
+  });
+}
+
+let cnt = 0;
+setInterval(() => {
+  if (cnt < 26) cnt++;
+  const pec = 200 + cnt * 2;
+  const saved = (14 + cnt * 0.18).toFixed(1);
+  const amt = (cnt * 287).toLocaleString('fr-FR');
+  document.getElementById('k-count').textContent = cnt;
+  document.getElementById('k-rate').textContent = Math.min(96.2, 72 + cnt * 1.1).toFixed(1) + '%';
+  document.getElementById('k-amt').textContent = amt + ' €';
+  document.getElementById('k-spd').textContent = Math.max(28, 58 - cnt).toFixed(0) + ' s';
+  document.getElementById('hkpi-pec').textContent = pec;
+  document.getElementById('hkpi-saved').textContent = saved + 'h';
+  document.getElementById('hkpi-amt').textContent = amt + ' €';
+  const p = Math.min(100, Math.round(cnt / 26 * 100));
+  document.getElementById('pec-prog').textContent = p + '%';
+  document.getElementById('pec-bar').style.width = p + '%';
+}, 1100);
+
+let ss = 14 * 60 + 32;
+setInterval(() => {
+  ss++;
+  const el = document.getElementById('sess');
+  if (el) el.textContent = String(Math.floor(ss/60)).padStart(2,'0') + ':' + String(ss%60).padStart(2,'0');
+}, 1000);
+</script>
+</body>
+</html>
