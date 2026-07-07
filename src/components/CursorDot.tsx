@@ -50,18 +50,5 @@ export function CursorDot() {
     };
   }, []);
 
-  return (
-    <div ref={ref} className="cursor-dot" aria-hidden>
-      <svg width="34" height="18" viewBox="0 0 34 18" fill="none">
-        <path
-          d="M1 9 H8 L11 3 L15.5 15.5 L19 6.5 L21.5 11 H27"
-          stroke="var(--terra)"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <circle cx="30" cy="11" r="2.6" fill="var(--terra)" />
-      </svg>
-    </div>
-  );
+  return <div ref={ref} className="cursor-dot" aria-hidden />;
 }

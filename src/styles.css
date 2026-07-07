@@ -104,18 +104,24 @@
 
 /* ── Custom cursor: terracotta dot (fine-pointer devices only) ── */
 .cursor-hidden, .cursor-hidden * { cursor: none !important; }
-/* terracotta ECG cursor — the Granit heartbeat mark, constant size */
+/* small terracotta diamond cursor — constant size */
 .cursor-dot {
   position: fixed;
   top: 0; left: 0;
   z-index: 9999;
+  width: 10px; height: 10px;
   pointer-events: none;
   display: none;
   will-change: transform;
-  line-height: 0;
 }
 .cursor-hidden .cursor-dot { display: block; }
-.cursor-dot svg { display: block; }
+.cursor-dot::before {
+  content: "";
+  display: block;
+  width: 100%; height: 100%;
+  border: 1.5px solid var(--terra);
+  transform: rotate(45deg);
+}
 
 @layer components {
   .eyebrow {
