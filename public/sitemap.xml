@@ -126,6 +126,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.getgranit.ai/ressources/audioprothese-renouvellement-tiers-payant</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.getgranit.ai/ressources/reduce-public-payer-rejections</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -197,6 +202,11 @@
   </url>
   <url>
     <loc>https://www.getgranit.ai/ressources/multi-site-groups-console</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.getgranit.ai/ressources/hearing-aid-renewal-billing</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
