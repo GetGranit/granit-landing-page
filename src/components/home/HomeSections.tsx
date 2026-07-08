@@ -966,36 +966,20 @@ export function HomeSections() {
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M5 12l4-4M5 12l4 4"/></svg>
                   {t.integrationsTitle}
                 </div>
-                <div className="mt-5 flex flex-wrap items-center gap-x-8 gap-y-4">
-                  {connectorsList.map((c) => (
-                    <img
-                      key={c.name}
-                      src={`https://logo.clearbit.com/${c.domain}`}
-                      alt={c.name}
-                      loading="lazy"
-                      className="h-7 w-auto opacity-90 transition-opacity hover:opacity-100"
-                      style={{ objectFit: "contain" }}
-                      onError={(e) => {
-                        const el = e.currentTarget;
-                        const step = el.dataset.fallback ?? "0";
-                        if (step === "0") {
-                          el.dataset.fallback = "1";
-                          el.src = `https://icons.duckduckgo.com/ip3/${c.domain}.ico`;
-                        } else if (step === "1") {
-                          el.dataset.fallback = "2";
-                          el.src = `https://www.google.com/s2/favicons?domain=${c.domain}&sz=128`;
-                        } else {
-                          const span = document.createElement("span");
-                          span.textContent = c.name;
-                          span.style.fontFamily = "var(--font-serif)";
-                          span.style.fontSize = "15px";
-                          span.style.color = "var(--text-soft)";
-                          el.replaceWith(span);
-                        }
-                      }}
-                    />
+                <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2.5">
+                  {connectorsList.map((c, i) => (
+                    <span key={c.name} className="inline-flex items-center gap-x-3">
+                      {i > 0 && (
+                        <span className="text-[10px]" style={{ color: "var(--border2)" }} aria-hidden>
+                          ●
+                        </span>
+                      )}
+                      <span className="font-serif text-[17px] leading-none" style={{ color: "var(--text-soft)" }}>
+                        {c.name}
+                      </span>
+                    </span>
                   ))}
-                  <span className="text-[15px]" style={{ color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}>…</span>
+                  <span className="ml-1 text-[15px]" style={{ color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}>…</span>
                 </div>
               </div>
             </div>
