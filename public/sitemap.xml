@@ -51,6 +51,11 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://www.getgranit.ai/ressources/dentaire-paniers-100-sante-tiers-payant</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.getgranit.ai/ressources/reduire-rejets-cpam</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -131,7 +136,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.getgranit.ai/ressources/dentaire-paniers-100-sante-tiers-payant</loc>
+    <loc>https://www.getgranit.ai/ressources/dental-zero-cost-basket-billing</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -212,11 +217,6 @@
   </url>
   <url>
     <loc>https://www.getgranit.ai/ressources/hearing-aid-renewal-billing</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.getgranit.ai/ressources/dental-zero-cost-basket-billing</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
