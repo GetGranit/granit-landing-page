@@ -264,9 +264,6 @@ const connectorsList: { name: string; logo?: string }[] = [
   { name: "Actil", logo: "/logos/actil.png" },
   { name: "Cegedim", logo: "/logos/cegedim.png" },
   { name: "Ameli", logo: "/logos/ameli.png" },
-  { name: "SP Santé" },
-  { name: "Itelis" },
-  { name: "OptoAMC" },
 ];
 
 /* Metrics displayed at the bottom of each agent card. Keyed by agent name. */
