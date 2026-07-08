@@ -254,19 +254,19 @@ const copy = {
   },
 };
 
-const connectorsList: { name: string; domain: string }[] = [
-  { name: "Cosium", domain: "cosium.com" },
-  { name: "Pennylane", domain: "pennylane.com" },
-  { name: "Viamedis", domain: "viamedis.com" },
-  { name: "Almerys", domain: "almerys.com" },
-  { name: "Santéclair", domain: "santeclair.fr" },
-  { name: "Carte Blanche", domain: "carteblanchepartenaires.fr" },
-  { name: "SP Santé", domain: "sp-sante.fr" },
-  { name: "Itelis", domain: "itelis.fr" },
-  { name: "Actil", domain: "actil.com" },
-  { name: "Cegedim", domain: "cegedim.fr" },
-  { name: "OptoAMC", domain: "optoamc.fr" },
-  { name: "Ameli", domain: "ameli.fr" },
+const connectorsList: { name: string; logo?: string }[] = [
+  { name: "Cosium", logo: "/logos/cosium.png" },
+  { name: "Pennylane", logo: "/logos/pennylane.png" },
+  { name: "Viamedis", logo: "/logos/viamedis.png" },
+  { name: "Almerys", logo: "/logos/almerys.webp" },
+  { name: "Santéclair", logo: "/logos/santeclair.svg" },
+  { name: "Carte Blanche", logo: "/logos/carteblanche.svg" },
+  { name: "Actil", logo: "/logos/actil.png" },
+  { name: "Cegedim", logo: "/logos/cegedim.png" },
+  { name: "Ameli", logo: "/logos/ameli.png" },
+  { name: "SP Santé" },
+  { name: "Itelis" },
+  { name: "OptoAMC" },
 ];
 
 /* Metrics displayed at the bottom of each agent card. Keyed by agent name. */
@@ -966,20 +966,24 @@ export function HomeSections() {
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M5 12l4-4M5 12l4 4"/></svg>
                   {t.integrationsTitle}
                 </div>
-                <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2.5">
-                  {connectorsList.map((c, i) => (
-                    <span key={c.name} className="inline-flex items-center gap-x-3">
-                      {i > 0 && (
-                        <span className="text-[10px]" style={{ color: "var(--border2)" }} aria-hidden>
-                          ●
-                        </span>
-                      )}
-                      <span className="font-serif text-[17px] leading-none" style={{ color: "var(--text-soft)" }}>
+                <div className="mt-5 flex flex-wrap items-center gap-x-7 gap-y-4">
+                  {connectorsList.map((c) =>
+                    c.logo ? (
+                      <img
+                        key={c.name}
+                        src={c.logo}
+                        alt={c.name}
+                        loading="lazy"
+                        className="h-6 w-auto object-contain opacity-70 grayscale transition duration-200 hover:opacity-100 hover:grayscale-0"
+                        style={{ maxWidth: "104px" }}
+                      />
+                    ) : (
+                      <span key={c.name} className="font-serif text-[16px] leading-none" style={{ color: "var(--text-soft)" }}>
                         {c.name}
                       </span>
-                    </span>
-                  ))}
-                  <span className="ml-1 text-[15px]" style={{ color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}>…</span>
+                    ),
+                  )}
+                  <span className="text-[15px]" style={{ color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}>…</span>
                 </div>
               </div>
             </div>
