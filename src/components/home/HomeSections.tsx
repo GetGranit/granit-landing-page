@@ -102,9 +102,9 @@ const copy = {
     /* KPI/Integrations */
     kpiSectionTitle: "Conçu pour la santé. Intégré à vos outils.",
     kpiCards: [
-      { pre: "Plus de", value: "50", label: "centres équipés", sub: "nous font confiance" },
-      { value: "80%", pre: "Jusqu'à", label: "de temps gagné", sub: "sur les tâches admin" },
-      { value: "48h", pre: "Déployé en", label: "en moyenne", sub: "" },
+      { pre: "Plus de", value: "250", label: "structures de santé équipées", sub: "nous font confiance" },
+      { value: "97%", pre: "Jusqu'à", label: "de temps gagné", sub: "sur les tâches administratives" },
+      { value: "5 jours", pre: "Déployé en", label: "en moyenne", sub: "" },
     ],
     integrationsTitle: "Connecté à vos outils",
     /* Articles */
@@ -222,9 +222,9 @@ const copy = {
     seeAllAgents: "See all agents",
     kpiSectionTitle: "Built for healthcare. Plugged into your tools.",
     kpiCards: [
-      { pre: "More than", value: "50", label: "healthcare sites", sub: "trust us" },
-      { value: "80%", pre: "Up to", label: "time saved", sub: "on admin tasks" },
-      { value: "48h", pre: "Deployed in", label: "on average", sub: "" },
+      { pre: "More than", value: "250", label: "healthcare organizations", sub: "trust us" },
+      { value: "97%", pre: "Up to", label: "time saved", sub: "on administrative tasks" },
+      { value: "5 days", pre: "Deployed in", label: "on average", sub: "" },
     ],
     integrationsTitle: "Connected to your tools",
     resourcesEyebrow: "Resources",
@@ -255,10 +255,18 @@ const copy = {
 };
 
 const connectorsList: { name: string; domain: string }[] = [
-  { name: "Doctolib", domain: "doctolib.fr" },
-  { name: "VEGA", domain: "cgm.com" },
-  { name: "Hellodoc", domain: "hellodoc.com" },
-  { name: "Cegid", domain: "cegid.com" },
+  { name: "Cosium", domain: "cosium.com" },
+  { name: "Pennylane", domain: "pennylane.com" },
+  { name: "Viamedis", domain: "viamedis.com" },
+  { name: "Almerys", domain: "almerys.com" },
+  { name: "Santéclair", domain: "santeclair.fr" },
+  { name: "Carte Blanche", domain: "carteblanchepartenaires.fr" },
+  { name: "SP Santé", domain: "sp-sante.fr" },
+  { name: "Itelis", domain: "itelis.fr" },
+  { name: "Actil", domain: "actil.com" },
+  { name: "Cegedim", domain: "cegedim.fr" },
+  { name: "OptoAMC", domain: "optoamc.fr" },
+  { name: "Ameli", domain: "ameli.fr" },
 ];
 
 /* Metrics displayed at the bottom of each agent card. Keyed by agent name. */
