@@ -51,6 +51,11 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://www.getgranit.ai/ressources/orthodontie-facturation-traitements-longs</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.getgranit.ai/ressources/dentaire-paniers-100-sante-tiers-payant</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -132,6 +137,11 @@
   </url>
   <url>
     <loc>https://www.getgranit.ai/ressources/audioprothese-renouvellement-tiers-payant</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.getgranit.ai/ressources/orthodontics-long-treatment-billing</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
