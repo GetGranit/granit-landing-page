@@ -56,8 +56,8 @@ const copy = {
   fr: {
     badge: "SILMO 2026",
     eyebrow: "On s'est croisés dans les allées",
-    titleLead: "Vous vendez des lunettes.",
-    titleAccent: "Pas des dossiers.",
+    titleLead: "Vision nette pour vos clients.",
+    titleAccent: "Et pour votre trésorerie.",
     intro:
       "Granit se branche sur vos logiciels et gère le tiers payant de bout en bout : prises en charge, télétransmission, rejets, rapprochement des virements. Rien à installer.",
     pills: ["Sans engagement", "Opérationnel en 48h", "HDS & RGPD", "Sans intégration"],
@@ -109,13 +109,13 @@ const copy = {
       { value: "97%", label: "de temps gagné sur l'administratif" },
       { value: "48h", label: "pour être opérationnel" },
     ],
-    footerNote: "Granit AI · Paris",
+    footerNote: "Paris",
   },
   en: {
     badge: "SILMO 2026",
     eyebrow: "We met in the aisles",
-    titleLead: "You sell glasses.",
-    titleAccent: "Not paperwork.",
+    titleLead: "Clear vision for your customers.",
+    titleAccent: "And for your cash flow.",
     intro:
       "Granit plugs into your software and runs third-party payment end to end: coverage requests, claim submission, rejections, payment matching. Nothing to install.",
     pills: ["No commitment", "Live in 48h", "HDS & GDPR", "No integration"],
@@ -167,7 +167,7 @@ const copy = {
       { value: "97%", label: "of admin time saved" },
       { value: "48h", label: "to go live" },
     ],
-    footerNote: "Granit AI · Paris",
+    footerNote: "Paris",
   },
 };
 
@@ -335,14 +335,15 @@ function SilmoPage() {
         </section>
       </main>
 
-      {/* Une seule ligne : l'éditeur du formulaire, comme l'exige la collecte
-          de données personnelles. Aucun lien de navigation. */}
+      {/* Une mention de lieu, rien de plus. La marque est déjà dans l'en-tête
+          et l'adresse de contact sur l'écran de confirmation : avant l'envoi,
+          la page ne propose aucune sortie. */}
       <footer className="mx-auto max-w-[600px] px-5 pb-8">
         <p
           className="text-[11px]"
           style={{ fontFamily: "var(--font-mono)", color: "var(--text-muted)" }}
         >
-          {t.footerNote} · contact@getgranit.ai
+          {t.footerNote}
         </p>
       </footer>
     </div>
