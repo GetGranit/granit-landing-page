@@ -109,7 +109,6 @@ const copy = {
       { value: "97%", label: "de temps gagné sur l'administratif" },
       { value: "48h", label: "pour être opérationnel" },
     ],
-    footerNote: "Paris",
   },
   en: {
     badge: "SILMO 2026",
@@ -167,7 +166,6 @@ const copy = {
       { value: "97%", label: "of admin time saved" },
       { value: "48h", label: "to go live" },
     ],
-    footerNote: "Paris",
   },
 };
 
@@ -335,17 +333,10 @@ function SilmoPage() {
         </section>
       </main>
 
-      {/* Une mention de lieu, rien de plus. La marque est déjà dans l'en-tête
-          et l'adresse de contact sur l'écran de confirmation : avant l'envoi,
-          la page ne propose aucune sortie. */}
-      <footer className="mx-auto max-w-[600px] px-5 pb-8">
-        <p
-          className="text-[11px]"
-          style={{ fontFamily: "var(--font-mono)", color: "var(--text-muted)" }}
-        >
-          {t.footerNote}
-        </p>
-      </footer>
+      {/* Pas de pied de page. La marque est dans l'en-tête, l'éditeur et son
+          adresse dans les données structurées du site, et l'adresse de contact
+          sur l'écran de confirmation : avant l'envoi, la page ne propose
+          aucune sortie ni rien à lire après le formulaire. */}
     </div>
   );
 }
