@@ -20,6 +20,10 @@
  *
  * Pour tester : bouton "Exécuter" sur testNotify(), puis relevez la boîte.
  *
+ * Ce fichier n'utilise aucun commentaire de fin de ligne : il reste donc
+ * valide même si le copier-coller écrase les retours à la ligne. En cas de
+ * doute, préférez l'import du fichier à un collage depuis un aperçu.
+ *
  * Quota d'envoi : 100 mails par jour sur un compte Google gratuit, 1500 sur
  * Workspace. Au-delà, plus rien ne part et les leads sont perdus : si le salon
  * doit dépasser cette volumétrie, prévenez avant.
@@ -42,8 +46,8 @@ function doPost(e) {
     sendLead(data);
     return json({ ok: true });
   } catch (err) {
-    // Remonté au site, qui le remonte au visiteur : sans Sheet derrière, un
-    // lead qu'on n'a pas su envoyer est un lead perdu.
+    /* Remonté au site, qui le remonte au visiteur : sans Sheet derrière, un
+       lead qu'on n'a pas su envoyer est un lead perdu. */
     Logger.log("Lead non transmis : " + err);
     return json({ ok: false, error: String(err) });
   }
@@ -127,7 +131,7 @@ function json(obj) {
   );
 }
 
-// Test manuel : envoie une notification d'exemple.
+/* Test manuel : envoie une notification d'exemple. */
 function testNotify() {
   sendLead({
     submittedAt: new Date().toISOString(),
