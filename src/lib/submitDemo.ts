@@ -61,5 +61,20 @@ export const submitDemo = createServerFn({ method: "POST" })
     if (!res.ok) {
       throw new Error(`Webhook responded ${res.status}`);
     }
+
+    // Apps Script répond 200 même quand il n'a pas pu traiter le lead : le
+    // verdict est dans le corps. Comme la notification par mail est désormais
+    // la seule trace du lead, un refus doit remonter au visiteur, qui peut
+    // alors réessayer plutôt que de croire sa demande partie.
+    let corps: { ok?: boolean; error?: string } | null = null;
+    try {
+      corps = JSON.parse(await res.text());
+    } catch {
+      // Réponse vide ou illisible : tous les webhooks ne renvoient pas du JSON.
+      // Seul un `ok: false` explicite vaut échec, pas l'absence de verdict.
+    }
+    if (corps?.ok === false) {
+      throw new Error(corps.error || "Webhook rejected the lead");
+    }
     return { ok: true as const, delivered: true as const };
   });
