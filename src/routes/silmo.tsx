@@ -13,23 +13,19 @@ import silmoLogo from "@/assets/silmo-logo.png";
  * visite distribuées dans les allées. Volontairement hors navigation, hors
  * sitemap et en noindex : c'est une page de campagne, pas une page du site.
  *
- * Deux paramètres d'URL, tous deux repris dans le champ `source` du lead :
- *   ?c=<initiales>  qui a donné la carte     → `silmo-2026:pp`
- *   ?t=1|2|3        quelle accroche est testée → `silmo-2026:t2:pp`
- * Un QR code par accroche suffit donc à savoir laquelle fait signer.
+ * Traitement « bordereau » : crème, serif, angles droits, filets nets et zéro
+ * ombre. Granit vend de la paperasse résolue, la page emprunte la rigueur d'un
+ * imprimé administratif bien composé plutôt que la douceur du site.
+ *
+ * `?c=<initiales>` sur l'URL du QR code dit qui a donné la carte ; la valeur
+ * repart dans le champ `source` du lead (ex. `silmo-2026:pp`).
  */
 export const Route = createFileRoute("/silmo")({
-  validateSearch: (search: Record<string, unknown>) => {
-    // Le routeur parse la query string en JSON quand il peut : `?t=2` arrive en
-    // nombre, `?c=pp` en chaîne. On repasse tout en texte avant de valider,
-    // sinon des initiales numériques et les variantes seraient ignorées.
-    const texte = (v: unknown) => (v == null ? "" : String(v));
-    const t = texte(search.t);
-    return {
-      c: texte(search.c).slice(0, 20) || undefined,
-      t: t === "2" || t === "3" ? t : undefined,
-    };
-  },
+  validateSearch: (search: Record<string, unknown>) => ({
+    // Le routeur parse la query string en JSON quand il peut : des initiales
+    // numériques arriveraient en nombre, donc on repasse en texte avant de valider.
+    c: (search.c == null ? "" : String(search.c)).slice(0, 20) || undefined,
+  }),
   head: () => ({
     meta: [
       { title: "Granit au SILMO - Être recontacté" },
@@ -42,7 +38,7 @@ export const Route = createFileRoute("/silmo")({
       { property: "og:title", content: "Granit au SILMO" },
       {
         property: "og:description",
-        content: "Les agents IA qui gèrent le back-office de votre magasin d'optique.",
+        content: "Les agents IA qui font la paperasse de votre magasin d'optique.",
       },
     ],
   }),
@@ -51,29 +47,17 @@ export const Route = createFileRoute("/silmo")({
 
 const CAMPAIGN = "silmo-2026";
 
-/**
- * Démo filmée, affichée au-dessus du formulaire. Tant que `src` est vide, la
- * section entière disparaît : la page reste donc valable sans la vidéo.
- * Héberger le MP4 sur le bucket R2 du site plutôt que dans `public/`, pour ne
- * pas embarquer des dizaines de Mo dans le worker Cloudflare à chaque déploiement.
- */
-const DEMO_VIDEO = {
-  src: "",
-  poster: "",
-};
+/* Filets et surfaces du traitement bordereau, repris des jetons du site. */
+const ENCRE = "var(--text)";
+const CREME = "var(--bg2)";
+const FILET = "var(--border2)";
 
 const copy = {
   fr: {
     badge: "SILMO 2026",
     eyebrow: "On s'est croisés dans les allées",
-    /* Trois accroches à départager, sur trois ressorts différents : le temps
-       pris le soir, l'argent qui dort chez les mutuelles, le métier qu'on
-       n'exerce pas. Le chapeau ne change pas, pour n'isoler que le titre. */
-    titles: [
-      { lead: "Le soir, vous fermez.", accent: "Vos dossiers aussi." },
-      { lead: "L'argent des mutuelles dort.", accent: "Granit va le chercher." },
-      { lead: "Vous vendez des lunettes.", accent: "Pas des dossiers." },
-    ],
+    titleLead: "Vous vendez des lunettes.",
+    titleAccent: "Pas des dossiers.",
     intro:
       "Granit se branche sur votre logiciel d'optique et exécute la paperasse à votre place : prises en charge mutuelles, télétransmission, rejets, rapprochement des virements. Rien à installer.",
     pills: ["Opérationnel en 48h", "HDS & RGPD", "Sans intégration"],
@@ -136,18 +120,13 @@ const copy = {
       { value: "97%", label: "de temps gagné sur l'administratif" },
       { value: "48h", label: "pour être opérationnel" },
     ],
-    videoTitle: "La démo, en deux minutes",
-    videoNote: "Le son n'est pas indispensable, tout est montré à l'écran.",
     footerNote: "Granit AI · Paris",
   },
   en: {
     badge: "SILMO 2026",
     eyebrow: "We met in the aisles",
-    titles: [
-      { lead: "You close for the night.", accent: "So does your paperwork." },
-      { lead: "Your insurer money is asleep.", accent: "Granit goes and gets it." },
-      { lead: "You sell glasses.", accent: "Not paperwork." },
-    ],
+    titleLead: "You sell glasses.",
+    titleAccent: "Not paperwork.",
     intro:
       "Granit plugs into your optical software and runs the paperwork for you: insurer coverage requests, claim submission, rejections, payment matching. Nothing to install.",
     pills: ["Live in 48h", "HDS & GDPR", "No integration"],
@@ -210,94 +189,77 @@ const copy = {
       { value: "97%", label: "of admin time saved" },
       { value: "48h", label: "to go live" },
     ],
-    videoTitle: "The demo, in two minutes",
-    videoNote: "Sound is optional, everything is shown on screen.",
     footerNote: "Granit AI · Paris",
   },
 };
 
 function SilmoPage() {
   const { lang } = useLanguage();
-  const { c, t: variante } = Route.useSearch();
+  const { c } = Route.useSearch();
   const t = copy[lang];
-  const titre = t.titles[variante ? Number(variante) - 1 : 0];
 
   return (
-    <div className="min-h-screen" style={{ background: "var(--bg)" }}>
+    <div className="min-h-screen" style={{ background: CREME, color: ENCRE }}>
+      {/* Pas de lien vers le site : la seule action possible est le formulaire. */}
       <header
-        className="sticky top-0 z-50 border-b"
-        style={{
-          background: "rgba(255,255,255,0.88)",
-          backdropFilter: "blur(16px)",
-          WebkitBackdropFilter: "blur(16px)",
-          borderColor: "var(--border)",
-        }}
+        className="sticky top-0 z-50"
+        style={{ background: CREME, borderBottom: `1px solid ${ENCRE}` }}
       >
-        <div className="mx-auto flex h-14 max-w-[620px] items-center justify-between px-5">
-          {/* Pas de lien vers le site : sur cette page on ne veut aucune sortie
-              avant que le formulaire soit rempli. Le logo reste décoratif. */}
-          <div className="flex items-center gap-2">
-            <img src={logoMonogram} alt="Granit" className="h-7 w-auto" />
+        <div className="mx-auto flex h-[62px] max-w-[600px] items-center justify-between px-5">
+          <div className="flex items-center gap-2.5">
+            <img src={logoMonogram} alt="Granit" className="h-[26px] w-auto" />
             <span className="font-serif text-[19px] tracking-tight" style={{ fontWeight: 700 }}>
               Granit
             </span>
           </div>
-          <span
-            className="rounded-full px-3 py-1 text-[10px]"
-            style={{
-              background: "var(--terra-light)",
-              color: "var(--terra)",
-              fontFamily: "var(--font-mono)",
-              letterSpacing: "0.1em",
-            }}
-          >
-            {t.badge}
-          </span>
+          <img
+            src={silmoLogo}
+            alt="SILMO Paris"
+            className="h-[46px] w-[46px]"
+            style={{ border: `1px solid ${FILET}` }}
+          />
         </div>
       </header>
 
-      <main className="mx-auto max-w-[620px] px-5 pb-16">
-        <section className="pt-10 pb-8">
+      <main className="mx-auto max-w-[600px] px-5 pb-10">
+        <section className="pb-7 pt-8">
           <Reveal>
-            {/* Le logo du salon remplace l'habituel sur-titre : celui qui scanne
-                vient de nous croiser, autant le lui rappeler avant la phrase. */}
-            <div className="flex items-center gap-3">
-              <img
-                src={silmoLogo}
-                alt="SILMO Paris"
-                className="h-12 w-12 shrink-0 rounded-[10px] border"
-                style={{ borderColor: "var(--border)" }}
-              />
-              <p className="eyebrow" style={{ lineHeight: 1.5 }}>
-                {t.eyebrow}
-              </p>
-            </div>
-            <h1
-              className="mt-5 font-serif"
+            <p
+              className="text-[11px]"
               style={{
-                fontSize: "clamp(34px, 8.5vw, 52px)",
-                lineHeight: 1.05,
-                letterSpacing: "-0.025em",
+                fontFamily: "var(--font-mono)",
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                color: "var(--terra)",
+              }}
+            >
+              {t.badge} · {t.eyebrow}
+            </p>
+            <h1
+              className="mt-4 font-serif"
+              style={{
+                fontSize: "clamp(28px, 6.6vw, 40px)",
+                lineHeight: 1.12,
+                letterSpacing: "-0.02em",
                 fontWeight: 400,
               }}
             >
-              {titre.lead}
+              {t.titleLead}
               <br />
-              <span className="accent-italic">{titre.accent}</span>
+              <span className="accent-italic">{t.titleAccent}</span>
             </h1>
-            <p className="mt-5 text-[16px]" style={{ lineHeight: 1.55, color: "var(--text-soft)" }}>
+            <p
+              className="mt-4 text-[15.5px]"
+              style={{ lineHeight: 1.55, color: "var(--text-soft)" }}
+            >
               {t.intro}
             </p>
-            <ul className="mt-6 flex flex-wrap gap-2">
+            <ul className="mt-5 flex flex-wrap gap-2">
               {t.pills.map((p) => (
                 <li
                   key={p}
-                  className="rounded-full border px-3 py-1.5 text-[12px]"
-                  style={{
-                    borderColor: "var(--border)",
-                    background: "var(--bg2)",
-                    color: "var(--text-soft)",
-                  }}
+                  className="px-3 py-1.5 text-[12px]"
+                  style={{ border: `1px solid ${FILET}`, color: "var(--text-soft)" }}
                 >
                   {p}
                 </li>
@@ -306,80 +268,41 @@ function SilmoPage() {
           </Reveal>
         </section>
 
-        {DEMO_VIDEO.src && (
-          <section className="pb-10">
-            <Reveal>
-              <h2
-                className="mb-3 font-serif"
-                style={{
-                  fontSize: "clamp(20px, 5vw, 26px)",
-                  lineHeight: 1.15,
-                  letterSpacing: "-0.02em",
-                }}
-              >
-                {t.videoTitle}
-              </h2>
-              {/* `<video>` et pas une iframe : le fichier est un MP4 servi
-                  directement. `preload="metadata"` ne télécharge que l'entête,
-                  pour ne pas manger le forfait data d'un visiteur en salon. */}
-              <video
-                className="w-full rounded-[14px] border"
-                style={{ borderColor: "var(--border)", background: "var(--bg3)" }}
-                src={DEMO_VIDEO.src}
-                poster={DEMO_VIDEO.poster}
-                controls
-                playsInline
-                preload="metadata"
-              />
-              <p className="mt-2 text-[12px]" style={{ color: "var(--text-muted)" }}>
-                {t.videoNote}
-              </p>
-            </Reveal>
-          </section>
-        )}
-
-        <section id="contact" className="scroll-mt-20">
+        <section id="contact">
           <Reveal delay={0.05}>
-            <SilmoForm t={t} contact={c} variante={variante} />
+            <SilmoForm t={t} contact={c} />
           </Reveal>
         </section>
 
-        <section className="pt-14">
+        <section className="pt-11">
           <Reveal>
             <h2
               className="font-serif"
-              style={{
-                fontSize: "clamp(24px, 6vw, 32px)",
-                lineHeight: 1.1,
-                letterSpacing: "-0.02em",
-              }}
+              style={{ fontSize: "clamp(21px, 5.2vw, 27px)", lineHeight: 1.15, fontWeight: 400 }}
             >
               {t.whatTitle}
             </h2>
-            <ul className="mt-6 space-y-3">
-              {t.what.map((item) => (
+            <ul className="mt-5">
+              {t.what.map((item, i) => (
                 <li
                   key={item.name}
-                  className="card-hover rounded-[14px] border bg-white p-5"
-                  style={{ borderColor: "var(--border)" }}
+                  className="grid grid-cols-[1fr_auto] items-baseline gap-x-3 gap-y-1 py-4"
+                  style={{
+                    borderTop: `1px solid ${FILET}`,
+                    borderBottom: i === t.what.length - 1 ? `1px solid ${FILET}` : undefined,
+                  }}
                 >
-                  <div className="flex items-start justify-between gap-4">
-                    <h3 className="text-[15px]" style={{ fontWeight: 600 }}>
-                      {item.name}
-                    </h3>
-                    <span
-                      className="num-tabular shrink-0 rounded-full px-2.5 py-1 text-[11px]"
-                      style={{
-                        background: "var(--terra-light)",
-                        color: "var(--terra)",
-                        fontFamily: "var(--font-mono)",
-                      }}
-                    >
-                      {item.metric}
-                    </span>
-                  </div>
+                  <h3 className="font-serif text-[16px]" style={{ fontWeight: 400 }}>
+                    {item.name}
+                  </h3>
+                  <span
+                    className="num-tabular whitespace-nowrap text-[11px]"
+                    style={{ fontFamily: "var(--font-mono)", color: "var(--terra)" }}
+                  >
+                    {item.metric}
+                  </span>
                   <p
-                    className="mt-2 text-[14px]"
+                    className="col-span-2 text-[13.5px]"
                     style={{ color: "var(--text-muted)", lineHeight: 1.5 }}
                   >
                     {item.desc}
@@ -390,52 +313,42 @@ function SilmoPage() {
           </Reveal>
         </section>
 
-        <section className="pt-12">
+        <section className="pt-10">
           <Reveal>
-            <div
-              className="grid grid-cols-3 gap-3 rounded-[14px] border p-5"
-              style={{ borderColor: "var(--border)", background: "var(--bg2)" }}
+            <dl
+              className="grid grid-cols-3 gap-x-3 gap-y-4 py-6"
+              style={{ borderTop: `1px solid ${ENCRE}`, borderBottom: `1px solid ${ENCRE}` }}
             >
               {t.kpis.map((k) => (
                 <div key={k.label}>
-                  <div
+                  <dt
                     className="num-tabular font-serif"
-                    style={{
-                      fontSize: "clamp(22px, 6vw, 30px)",
-                      color: "var(--terra)",
-                      lineHeight: 1.1,
-                    }}
+                    style={{ fontSize: "clamp(22px, 5.8vw, 30px)", lineHeight: 1, fontWeight: 400 }}
                   >
                     {k.value}
-                  </div>
-                  <p
-                    className="mt-1.5 text-[11px]"
+                  </dt>
+                  <dd
+                    className="mt-2 ml-0 text-[11.5px]"
                     style={{ color: "var(--text-muted)", lineHeight: 1.35 }}
                   >
                     {k.label}
-                  </p>
+                  </dd>
                 </div>
               ))}
-            </div>
+            </dl>
           </Reveal>
         </section>
       </main>
 
-      {/* Pied de page réduit à la signature et au mail : aucun lien de
-          navigation, pour que la seule sortie possible soit le formulaire. */}
-      <footer className="border-t" style={{ borderColor: "var(--border)" }}>
-        <div
-          className="mx-auto flex max-w-[620px] flex-wrap items-center justify-between gap-3 px-5 py-6 text-[12px]"
-          style={{ color: "var(--text-muted)" }}
+      {/* Une seule ligne : l'éditeur du formulaire, comme l'exige la collecte
+          de données personnelles. Aucun lien de navigation. */}
+      <footer className="mx-auto max-w-[600px] px-5 pb-8">
+        <p
+          className="text-[11px]"
+          style={{ fontFamily: "var(--font-mono)", color: "var(--text-muted)" }}
         >
-          <span style={{ fontFamily: "var(--font-mono)" }}>{t.footerNote}</span>
-          <a
-            href="mailto:contact@getgranit.ai"
-            className="transition-colors hover:text-[color:var(--terra)]"
-          >
-            contact@getgranit.ai
-          </a>
-        </div>
+          {t.footerNote} · contact@getgranit.ai
+        </p>
       </footer>
     </div>
   );
@@ -460,9 +373,17 @@ function Field({
 }) {
   return (
     <label className="mb-4 block">
-      <div className="mb-1.5 text-[12px]" style={{ color: "var(--text-soft)", fontWeight: 500 }}>
+      <span
+        className="mb-1.5 block text-[10.5px]"
+        style={{
+          fontFamily: "var(--font-mono)",
+          letterSpacing: "0.1em",
+          textTransform: "uppercase",
+          color: "var(--text-soft)",
+        }}
+      >
         {label}
-      </div>
+      </span>
       <input
         name={name}
         type={type}
@@ -470,42 +391,35 @@ function Field({
         required={required}
         autoComplete={autoComplete}
         inputMode={inputMode}
-        className="w-full rounded-[8px] border bg-transparent px-3.5 py-3 text-[16px] outline-none transition-colors focus:border-[color:var(--terra)]"
-        style={{ borderColor: "var(--border)" }}
+        className="w-full px-3.5 py-3 text-[16px] outline-none transition-colors"
+        style={{ background: CREME, border: `1px solid ${FILET}`, color: ENCRE }}
+        onFocus={(e) => (e.currentTarget.style.borderColor = "var(--text)")}
+        onBlur={(e) => (e.currentTarget.style.borderColor = "var(--border2)")}
       />
     </label>
   );
 }
 
-function SilmoForm({
-  t,
-  contact,
-  variante,
-}: {
-  t: (typeof copy)["fr"];
-  contact?: string;
-  variante?: string;
-}) {
+function SilmoForm({ t, contact }: { t: (typeof copy)["fr"]; contact?: string }) {
   const submit = useServerFn(submitDemo);
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
-  // `silmo-2026`, puis l'accroche testée, puis qui a donné la carte.
-  // Ex. `silmo-2026:t2:pp`. Une seule colonne du Sheet porte les trois infos.
-  const source = CAMPAIGN + (variante ? `:t${variante}` : "") + (contact ? `:${contact}` : "");
+  // `silmo-2026`, puis qui a donné la carte : `silmo-2026:pp`.
+  const source = CAMPAIGN + (contact ? `:${contact}` : "");
 
   if (status === "success") {
     return (
       <div
-        className="flex flex-col items-center rounded-[14px] border bg-white px-6 py-12 text-center"
-        style={{ borderColor: "var(--border)", boxShadow: "var(--shadow-soft)" }}
+        className="flex flex-col items-center px-6 py-11 text-center"
+        style={{ background: "var(--surface)", border: `1px solid ${ENCRE}` }}
       >
         <span
-          className="flex h-12 w-12 items-center justify-center rounded-full"
-          style={{ background: "var(--terra-light)", color: "var(--terra)" }}
+          className="flex h-11 w-11 items-center justify-center"
+          style={{ border: `1px solid ${ENCRE}`, color: "var(--terra)" }}
         >
           <svg
-            width="22"
-            height="22"
+            width="20"
+            height="20"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -517,8 +431,8 @@ function SilmoForm({
           </svg>
         </span>
         <p
-          className="mt-5 max-w-xs font-serif text-[24px]"
-          style={{ letterSpacing: "-0.01em", lineHeight: 1.2 }}
+          className="mt-5 max-w-xs font-serif text-[23px]"
+          style={{ lineHeight: 1.2, fontWeight: 400 }}
         >
           {t.success}
         </p>
@@ -540,8 +454,8 @@ function SilmoForm({
 
   return (
     <form
-      className="rounded-[14px] border bg-white p-6 md:p-7"
-      style={{ borderColor: "var(--border)", boxShadow: "var(--shadow-soft)" }}
+      className="p-6"
+      style={{ background: "var(--surface)", border: `1px solid ${ENCRE}` }}
       onSubmit={async (e) => {
         e.preventDefault();
         const fd = new FormData(e.currentTarget);
@@ -563,13 +477,13 @@ function SilmoForm({
         }
       }}
     >
-      <h2
-        className="font-serif"
-        style={{ fontSize: "clamp(22px, 5.5vw, 28px)", lineHeight: 1.15, letterSpacing: "-0.02em" }}
-      >
+      <h2 className="font-serif" style={{ fontSize: "clamp(21px, 5.2vw, 26px)", fontWeight: 400 }}>
         {t.formTitle}
       </h2>
-      <p className="mb-6 mt-2 text-[14px]" style={{ color: "var(--text-muted)", lineHeight: 1.5 }}>
+      <p
+        className="mb-6 mt-2 text-[13.5px]"
+        style={{ color: "var(--text-muted)", lineHeight: 1.5 }}
+      >
         {t.formIntro}
       </p>
 
@@ -607,14 +521,22 @@ function SilmoForm({
       />
 
       <label className="mb-5 block">
-        <div className="mb-1.5 text-[12px]" style={{ color: "var(--text-soft)", fontWeight: 500 }}>
+        <span
+          className="mb-1.5 block text-[10.5px]"
+          style={{
+            fontFamily: "var(--font-mono)",
+            letterSpacing: "0.1em",
+            textTransform: "uppercase",
+            color: "var(--text-soft)",
+          }}
+        >
           {t.fields.orgType}
-        </div>
+        </span>
         <select
           name="orgType"
           defaultValue=""
-          className="w-full rounded-[8px] border bg-white px-3.5 py-3 text-[16px] outline-none transition-colors focus:border-[color:var(--terra)]"
-          style={{ borderColor: "var(--border)" }}
+          className="w-full px-3.5 py-3 text-[16px] outline-none"
+          style={{ background: CREME, border: `1px solid ${FILET}`, color: ENCRE }}
         >
           <option value="" disabled>
             {t.choose}
@@ -628,14 +550,18 @@ function SilmoForm({
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="btn-primary w-full justify-center"
-        style={
-          status === "submitting"
-            ? { opacity: 0.7, cursor: "wait", padding: "14px 20px" }
-            : { padding: "14px 20px" }
-        }
+        className="w-full px-5 py-4 text-[13px] transition-opacity"
+        style={{
+          background: ENCRE,
+          color: CREME,
+          fontFamily: "var(--font-mono)",
+          letterSpacing: "0.08em",
+          textTransform: "uppercase",
+          opacity: status === "submitting" ? 0.7 : 1,
+          cursor: status === "submitting" ? "wait" : "pointer",
+        }}
       >
-        {status === "submitting" ? t.sending : t.cta} <span className="arrow">↗</span>
+        {status === "submitting" ? t.sending : t.cta}
       </button>
 
       {status === "error" && (
