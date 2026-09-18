@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TarifsRouteImport } from './routes/tarifs'
+import { Route as SilmoRouteImport } from './routes/silmo'
 import { Route as SecuriteRouteImport } from './routes/securite'
 import { Route as RessourcesRouteImport } from './routes/ressources'
 import { Route as ProduitRouteImport } from './routes/produit'
@@ -25,6 +26,11 @@ import { Route as RessourcesSlugRouteImport } from './routes/ressources.$slug'
 const TarifsRoute = TarifsRouteImport.update({
   id: '/tarifs',
   path: '/tarifs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SilmoRoute = SilmoRouteImport.update({
+  id: '/silmo',
+  path: '/silmo',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SecuriteRoute = SecuriteRouteImport.update({
@@ -93,6 +99,7 @@ export interface FileRoutesByFullPath {
   '/produit': typeof ProduitRoute
   '/ressources': typeof RessourcesRouteWithChildren
   '/securite': typeof SecuriteRoute
+  '/silmo': typeof SilmoRoute
   '/tarifs': typeof TarifsRoute
   '/ressources/$slug': typeof RessourcesSlugRoute
   '/ressources/': typeof RessourcesIndexRoute
@@ -106,6 +113,7 @@ export interface FileRoutesByTo {
   '/demo': typeof DemoRoute
   '/produit': typeof ProduitRoute
   '/securite': typeof SecuriteRoute
+  '/silmo': typeof SilmoRoute
   '/tarifs': typeof TarifsRoute
   '/ressources/$slug': typeof RessourcesSlugRoute
   '/ressources': typeof RessourcesIndexRoute
@@ -121,6 +129,7 @@ export interface FileRoutesById {
   '/produit': typeof ProduitRoute
   '/ressources': typeof RessourcesRouteWithChildren
   '/securite': typeof SecuriteRoute
+  '/silmo': typeof SilmoRoute
   '/tarifs': typeof TarifsRoute
   '/ressources/$slug': typeof RessourcesSlugRoute
   '/ressources/': typeof RessourcesIndexRoute
@@ -137,6 +146,7 @@ export interface FileRouteTypes {
     | '/produit'
     | '/ressources'
     | '/securite'
+    | '/silmo'
     | '/tarifs'
     | '/ressources/$slug'
     | '/ressources/'
@@ -150,6 +160,7 @@ export interface FileRouteTypes {
     | '/demo'
     | '/produit'
     | '/securite'
+    | '/silmo'
     | '/tarifs'
     | '/ressources/$slug'
     | '/ressources'
@@ -164,6 +175,7 @@ export interface FileRouteTypes {
     | '/produit'
     | '/ressources'
     | '/securite'
+    | '/silmo'
     | '/tarifs'
     | '/ressources/$slug'
     | '/ressources/'
@@ -179,6 +191,7 @@ export interface RootRouteChildren {
   ProduitRoute: typeof ProduitRoute
   RessourcesRoute: typeof RessourcesRouteWithChildren
   SecuriteRoute: typeof SecuriteRoute
+  SilmoRoute: typeof SilmoRoute
   TarifsRoute: typeof TarifsRoute
 }
 
@@ -189,6 +202,13 @@ declare module '@tanstack/react-router' {
       path: '/tarifs'
       fullPath: '/tarifs'
       preLoaderRoute: typeof TarifsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/silmo': {
+      id: '/silmo'
+      path: '/silmo'
+      fullPath: '/silmo'
+      preLoaderRoute: typeof SilmoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/securite': {
@@ -295,6 +315,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProduitRoute: ProduitRoute,
   RessourcesRoute: RessourcesRouteWithChildren,
   SecuriteRoute: SecuriteRoute,
+  SilmoRoute: SilmoRoute,
   TarifsRoute: TarifsRoute,
 }
 export const routeTree = rootRouteImport

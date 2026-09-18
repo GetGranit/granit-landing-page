@@ -7,6 +7,9 @@ export type DemoLead = {
   company?: string;
   orgType?: string;
   challenge?: string;
+  /** Where the lead came from. Defaults to the site itself; landing pages
+   *  (salons, campagnes) passent leur propre valeur pour être filtrables. */
+  source?: string;
 };
 
 const emailRe = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
@@ -30,19 +33,23 @@ export const submitDemo = createServerFn({ method: "POST" })
       company: (data.company ?? "").trim().slice(0, 200),
       orgType: (data.orgType ?? "").trim().slice(0, 100),
       challenge: (data.challenge ?? "").trim().slice(0, 2000),
+      source: (data.source ?? "").trim().slice(0, 100),
     };
   })
   .handler(async ({ data }) => {
     const webhook = process.env.DEMO_WEBHOOK_URL;
     const payload = {
       ...data,
-      source: "getgranit.ai",
+      source: data.source || "getgranit.ai",
       submittedAt: new Date().toISOString(),
     };
 
     if (!webhook) {
       // No destination configured yet — log so leads aren't silently lost in dev.
-      console.log("[demo-lead] DEMO_WEBHOOK_URL not set — lead captured but not delivered:", payload);
+      console.log(
+        "[demo-lead] DEMO_WEBHOOK_URL not set — lead captured but not delivered:",
+        payload,
+      );
       return { ok: true as const, delivered: false as const };
     }
 
