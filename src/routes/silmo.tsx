@@ -76,7 +76,7 @@ const copy = {
     ],
     intro:
       "Granit se branche sur votre logiciel d'optique et exécute la paperasse à votre place : prises en charge mutuelles, télétransmission, rejets, rapprochement des virements. Rien à installer.",
-    pills: ["Déployé en 5 jours", "HDS & RGPD", "Sans intégration"],
+    pills: ["Opérationnel en 48h", "HDS & RGPD", "Sans intégration"],
     formTitle: "Laissez-nous vos coordonnées",
     formIntro: "On vous rappelle sous 24h pour 15 minutes de démo, sur vos chiffres à vous.",
     fields: {
@@ -134,7 +134,7 @@ const copy = {
     kpis: [
       { value: "250+", label: "structures de santé équipées" },
       { value: "97%", label: "de temps gagné sur l'administratif" },
-      { value: "5 jours", label: "pour être opérationnel" },
+      { value: "48h", label: "pour être opérationnel" },
     ],
     videoTitle: "La démo, en deux minutes",
     videoNote: "Le son n'est pas indispensable, tout est montré à l'écran.",
@@ -150,7 +150,7 @@ const copy = {
     ],
     intro:
       "Granit plugs into your optical software and runs the paperwork for you: insurer coverage requests, claim submission, rejections, payment matching. Nothing to install.",
-    pills: ["Live in 5 days", "HDS & GDPR", "No integration"],
+    pills: ["Live in 48h", "HDS & GDPR", "No integration"],
     formTitle: "Leave us your details",
     formIntro: "We call you back within 24h for a 15-minute demo, on your own numbers.",
     fields: {
@@ -208,7 +208,7 @@ const copy = {
     kpis: [
       { value: "250+", label: "healthcare organisations equipped" },
       { value: "97%", label: "of admin time saved" },
-      { value: "5 days", label: "to go live" },
+      { value: "48h", label: "to go live" },
     ],
     videoTitle: "The demo, in two minutes",
     videoNote: "Sound is optional, everything is shown on screen.",
