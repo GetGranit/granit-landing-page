@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 
 import { Reveal } from "@/components/Reveal";
@@ -40,14 +40,25 @@ export const Route = createFileRoute("/silmo")({
 
 const CAMPAIGN = "silmo-2026";
 
+/**
+ * Démo filmée, affichée au-dessus du formulaire. Tant que `src` est vide, la
+ * section entière disparaît : la page reste donc valable sans la vidéo.
+ * Héberger le MP4 sur le bucket R2 du site plutôt que dans `public/`, pour ne
+ * pas embarquer des dizaines de Mo dans le worker Cloudflare à chaque déploiement.
+ */
+const DEMO_VIDEO = {
+  src: "",
+  poster: "",
+};
+
 const copy = {
   fr: {
     badge: "SILMO 2026",
     eyebrow: "On s'est croisés dans les allées",
-    title: "Le back-office de votre magasin,",
-    titleAccent: "fait tout seul.",
+    title: "Le soir, vous fermez.",
+    titleAccent: "Vos dossiers aussi.",
     intro:
-      "Granit branche des agents IA sur votre logiciel d'optique et exécute ce qui vous prend vos soirées : prises en charge, télétransmission, rejets, réconciliation bancaire. Rien à installer.",
+      "Granit se branche sur votre logiciel d'optique et exécute la paperasse à votre place : prises en charge mutuelles, télétransmission, rejets, rapprochement des virements. Rien à installer.",
     pills: ["Déployé en 5 jours", "HDS & RGPD", "Sans intégration"],
     formTitle: "Laissez-nous vos coordonnées",
     formIntro: "On vous rappelle sous 24h pour 15 minutes de démo, sur vos chiffres à vous.",
@@ -64,20 +75,21 @@ const copy = {
       phone: "06 12 34 56 78",
       company: "Centre Vision Paris",
     },
-    optional: "facultatif",
     choose: "Choisir…",
     options: [
-      "Opticien indépendant",
+      "Opticien gérant",
+      "Directeur ou manager de magasin",
       "Groupe ou réseau d'optique",
-      "Centre de santé",
-      "Audioprothésiste",
+      "Ophtalmologue",
+      "Fournisseur ou industrie de l'optique",
       "Autre",
     ],
     cta: "Être recontacté",
     sending: "Envoi…",
     note: "Gratuit, sans engagement. Vos données restent chez nous, jamais revendues.",
     success: "C'est noté. On vous rappelle sous 24h.",
-    successSub: "En attendant, vous pouvez parcourir le site.",
+    successSub: "Quinze minutes au téléphone, sur vos chiffres à vous.",
+    successContact: "Une question d'ici là ?",
     error: "Une erreur est survenue. Réessayez, ou écrivez-nous à contact@getgranit.ai.",
     whatTitle: "Ce que Granit fait, concrètement",
     what: [
@@ -107,16 +119,17 @@ const copy = {
       { value: "97%", label: "de temps gagné sur l'administratif" },
       { value: "5 jours", label: "pour être opérationnel" },
     ],
-    visitSite: "Voir le site",
+    videoTitle: "La démo, en deux minutes",
+    videoNote: "Le son n'est pas indispensable, tout est montré à l'écran.",
     footerNote: "Granit AI · Paris",
   },
   en: {
     badge: "SILMO 2026",
     eyebrow: "We met in the aisles",
-    title: "Your store's back-office,",
-    titleAccent: "handled for you.",
+    title: "You close for the night.",
+    titleAccent: "So does your paperwork.",
     intro:
-      "Granit plugs AI agents into your optical software and runs what eats your evenings: coverage requests, claim submission, rejections, bank reconciliation. Nothing to install.",
+      "Granit plugs into your optical software and runs the paperwork for you: insurer coverage requests, claim submission, rejections, payment matching. Nothing to install.",
     pills: ["Live in 5 days", "HDS & GDPR", "No integration"],
     formTitle: "Leave us your details",
     formIntro: "We call you back within 24h for a 15-minute demo, on your own numbers.",
@@ -133,20 +146,21 @@ const copy = {
       phone: "+33 6 12 34 56 78",
       company: "Centre Vision Paris",
     },
-    optional: "optional",
     choose: "Choose…",
     options: [
-      "Independent optician",
+      "Optician, owner",
+      "Store director or manager",
       "Optical group or chain",
-      "Health centre",
-      "Hearing care professional",
+      "Ophthalmologist",
+      "Supplier or optical industry",
       "Other",
     ],
     cta: "Get a call back",
     sending: "Sending…",
     note: "Free, no commitment. Your data stays with us, never resold.",
     success: "Noted. We'll call you within 24h.",
-    successSub: "In the meantime, feel free to browse the site.",
+    successSub: "Fifteen minutes on the phone, on your own numbers.",
+    successContact: "A question before then?",
     error: "Something went wrong. Please retry, or email us at contact@getgranit.ai.",
     whatTitle: "What Granit actually does",
     what: [
@@ -176,7 +190,8 @@ const copy = {
       { value: "97%", label: "of admin time saved" },
       { value: "5 days", label: "to go live" },
     ],
-    visitSite: "Visit the site",
+    videoTitle: "The demo, in two minutes",
+    videoNote: "Sound is optional, everything is shown on screen.",
     footerNote: "Granit AI · Paris",
   },
 };
@@ -198,12 +213,14 @@ function SilmoPage() {
         }}
       >
         <div className="mx-auto flex h-14 max-w-[620px] items-center justify-between px-5">
-          <Link to="/" className="flex items-center gap-2">
+          {/* Pas de lien vers le site : sur cette page on ne veut aucune sortie
+              avant que le formulaire soit rempli. Le logo reste décoratif. */}
+          <div className="flex items-center gap-2">
             <img src={logoMonogram} alt="Granit" className="h-7 w-auto" />
             <span className="font-serif text-[19px] tracking-tight" style={{ fontWeight: 700 }}>
               Granit
             </span>
-          </Link>
+          </div>
           <span
             className="rounded-full px-3 py-1 text-[10px]"
             style={{
@@ -255,6 +272,38 @@ function SilmoPage() {
             </ul>
           </Reveal>
         </section>
+
+        {DEMO_VIDEO.src && (
+          <section className="pb-10">
+            <Reveal>
+              <h2
+                className="mb-3 font-serif"
+                style={{
+                  fontSize: "clamp(20px, 5vw, 26px)",
+                  lineHeight: 1.15,
+                  letterSpacing: "-0.02em",
+                }}
+              >
+                {t.videoTitle}
+              </h2>
+              {/* `<video>` et pas une iframe : le fichier est un MP4 servi
+                  directement. `preload="metadata"` ne télécharge que l'entête,
+                  pour ne pas manger le forfait data d'un visiteur en salon. */}
+              <video
+                className="w-full rounded-[14px] border"
+                style={{ borderColor: "var(--border)", background: "var(--bg3)" }}
+                src={DEMO_VIDEO.src}
+                poster={DEMO_VIDEO.poster}
+                controls
+                playsInline
+                preload="metadata"
+              />
+              <p className="mt-2 text-[12px]" style={{ color: "var(--text-muted)" }}>
+                {t.videoNote}
+              </p>
+            </Reveal>
+          </section>
+        )}
 
         <section id="contact" className="scroll-mt-20">
           <Reveal delay={0.05}>
@@ -339,23 +388,20 @@ function SilmoPage() {
         </section>
       </main>
 
+      {/* Pied de page réduit à la signature et au mail : aucun lien de
+          navigation, pour que la seule sortie possible soit le formulaire. */}
       <footer className="border-t" style={{ borderColor: "var(--border)" }}>
         <div
           className="mx-auto flex max-w-[620px] flex-wrap items-center justify-between gap-3 px-5 py-6 text-[12px]"
           style={{ color: "var(--text-muted)" }}
         >
           <span style={{ fontFamily: "var(--font-mono)" }}>{t.footerNote}</span>
-          <div className="flex items-center gap-4">
-            <a
-              href="mailto:contact@getgranit.ai"
-              className="transition-colors hover:text-[color:var(--terra)]"
-            >
-              contact@getgranit.ai
-            </a>
-            <Link to="/" className="transition-colors hover:text-[color:var(--terra)]">
-              {t.visitSite}
-            </Link>
-          </div>
+          <a
+            href="mailto:contact@getgranit.ai"
+            className="transition-colors hover:text-[color:var(--terra)]"
+          >
+            contact@getgranit.ai
+          </a>
         </div>
       </footer>
     </div>
@@ -368,7 +414,6 @@ function Field({
   type = "text",
   placeholder,
   required,
-  hint,
   autoComplete,
   inputMode,
 }: {
@@ -377,21 +422,13 @@ function Field({
   type?: string;
   placeholder?: string;
   required?: boolean;
-  hint?: string;
   autoComplete?: string;
   inputMode?: "text" | "tel" | "email";
 }) {
   return (
     <label className="mb-4 block">
-      <div className="mb-1.5 flex items-baseline gap-2">
-        <span className="text-[12px]" style={{ color: "var(--text-soft)", fontWeight: 500 }}>
-          {label}
-        </span>
-        {hint && (
-          <span className="text-[11px]" style={{ color: "var(--text-muted)" }}>
-            {hint}
-          </span>
-        )}
+      <div className="mb-1.5 text-[12px]" style={{ color: "var(--text-soft)", fontWeight: 500 }}>
+        {label}
       </div>
       <input
         name={name}
@@ -443,9 +480,15 @@ function SilmoForm({ t, contact }: { t: (typeof copy)["fr"]; contact?: string })
         <p className="mt-3 text-[13px]" style={{ color: "var(--text-muted)" }}>
           {t.successSub}
         </p>
-        <Link to="/" className="btn-ghost mt-6">
-          {t.visitSite} <span className="arrow">↗</span>
-        </Link>
+        <p className="mt-6 text-[12px]" style={{ color: "var(--text-muted)" }}>
+          {t.successContact}{" "}
+          <a
+            href="mailto:contact@getgranit.ai"
+            className="underline transition-colors hover:text-[color:var(--terra)]"
+          >
+            contact@getgranit.ai
+          </a>
+        </p>
       </div>
     );
   }
@@ -506,7 +549,7 @@ function SilmoForm({ t, contact }: { t: (typeof copy)["fr"]; contact?: string })
         label={t.fields.phone}
         type="tel"
         placeholder={t.placeholders.phone}
-        hint={t.optional}
+        required
         autoComplete="tel"
         inputMode="tel"
       />
