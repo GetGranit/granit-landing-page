@@ -6,19 +6,30 @@ import { Reveal } from "@/components/Reveal";
 import { useLanguage } from "@/lib/i18n";
 import { submitDemo } from "@/lib/submitDemo";
 import logoMonogram from "@/assets/logo.svg";
+import silmoLogo from "@/assets/silmo-logo.png";
 
 /**
  * Landing page du SILMO — accessible uniquement par le QR code des cartes de
  * visite distribuées dans les allées. Volontairement hors navigation, hors
  * sitemap et en noindex : c'est une page de campagne, pas une page du site.
  *
- * `?c=<initiales>` sur l'URL du QR code permet de savoir qui a donné la carte ;
- * la valeur repart dans le champ `source` du lead (ex. `silmo-2026:pp`).
+ * Deux paramètres d'URL, tous deux repris dans le champ `source` du lead :
+ *   ?c=<initiales>  qui a donné la carte     → `silmo-2026:pp`
+ *   ?t=1|2|3        quelle accroche est testée → `silmo-2026:t2:pp`
+ * Un QR code par accroche suffit donc à savoir laquelle fait signer.
  */
 export const Route = createFileRoute("/silmo")({
-  validateSearch: (search: Record<string, unknown>) => ({
-    c: typeof search.c === "string" ? search.c.slice(0, 20) : undefined,
-  }),
+  validateSearch: (search: Record<string, unknown>) => {
+    // Le routeur parse la query string en JSON quand il peut : `?t=2` arrive en
+    // nombre, `?c=pp` en chaîne. On repasse tout en texte avant de valider,
+    // sinon des initiales numériques et les variantes seraient ignorées.
+    const texte = (v: unknown) => (v == null ? "" : String(v));
+    const t = texte(search.t);
+    return {
+      c: texte(search.c).slice(0, 20) || undefined,
+      t: t === "2" || t === "3" ? t : undefined,
+    };
+  },
   head: () => ({
     meta: [
       { title: "Granit au SILMO - Être recontacté" },
@@ -55,8 +66,14 @@ const copy = {
   fr: {
     badge: "SILMO 2026",
     eyebrow: "On s'est croisés dans les allées",
-    title: "Le soir, vous fermez.",
-    titleAccent: "Vos dossiers aussi.",
+    /* Trois accroches à départager, sur trois ressorts différents : le temps
+       pris le soir, l'argent qui dort chez les mutuelles, le métier qu'on
+       n'exerce pas. Le chapeau ne change pas, pour n'isoler que le titre. */
+    titles: [
+      { lead: "Le soir, vous fermez.", accent: "Vos dossiers aussi." },
+      { lead: "L'argent des mutuelles dort.", accent: "Granit va le chercher." },
+      { lead: "Vous vendez des lunettes.", accent: "Pas des dossiers." },
+    ],
     intro:
       "Granit se branche sur votre logiciel d'optique et exécute la paperasse à votre place : prises en charge mutuelles, télétransmission, rejets, rapprochement des virements. Rien à installer.",
     pills: ["Déployé en 5 jours", "HDS & RGPD", "Sans intégration"],
@@ -126,8 +143,11 @@ const copy = {
   en: {
     badge: "SILMO 2026",
     eyebrow: "We met in the aisles",
-    title: "You close for the night.",
-    titleAccent: "So does your paperwork.",
+    titles: [
+      { lead: "You close for the night.", accent: "So does your paperwork." },
+      { lead: "Your insurer money is asleep.", accent: "Granit goes and gets it." },
+      { lead: "You sell glasses.", accent: "Not paperwork." },
+    ],
     intro:
       "Granit plugs into your optical software and runs the paperwork for you: insurer coverage requests, claim submission, rejections, payment matching. Nothing to install.",
     pills: ["Live in 5 days", "HDS & GDPR", "No integration"],
@@ -198,8 +218,9 @@ const copy = {
 
 function SilmoPage() {
   const { lang } = useLanguage();
-  const { c } = Route.useSearch();
+  const { c, t: variante } = Route.useSearch();
   const t = copy[lang];
+  const titre = t.titles[variante ? Number(variante) - 1 : 0];
 
   return (
     <div className="min-h-screen" style={{ background: "var(--bg)" }}>
@@ -238,9 +259,21 @@ function SilmoPage() {
       <main className="mx-auto max-w-[620px] px-5 pb-16">
         <section className="pt-10 pb-8">
           <Reveal>
-            <p className="eyebrow">{t.eyebrow}</p>
+            {/* Le logo du salon remplace l'habituel sur-titre : celui qui scanne
+                vient de nous croiser, autant le lui rappeler avant la phrase. */}
+            <div className="flex items-center gap-3">
+              <img
+                src={silmoLogo}
+                alt="SILMO Paris"
+                className="h-12 w-12 shrink-0 rounded-[10px] border"
+                style={{ borderColor: "var(--border)" }}
+              />
+              <p className="eyebrow" style={{ lineHeight: 1.5 }}>
+                {t.eyebrow}
+              </p>
+            </div>
             <h1
-              className="mt-3 font-serif"
+              className="mt-5 font-serif"
               style={{
                 fontSize: "clamp(34px, 8.5vw, 52px)",
                 lineHeight: 1.05,
@@ -248,9 +281,9 @@ function SilmoPage() {
                 fontWeight: 400,
               }}
             >
-              {t.title}
+              {titre.lead}
               <br />
-              <span className="accent-italic">{t.titleAccent}</span>
+              <span className="accent-italic">{titre.accent}</span>
             </h1>
             <p className="mt-5 text-[16px]" style={{ lineHeight: 1.55, color: "var(--text-soft)" }}>
               {t.intro}
@@ -307,7 +340,7 @@ function SilmoPage() {
 
         <section id="contact" className="scroll-mt-20">
           <Reveal delay={0.05}>
-            <SilmoForm t={t} contact={c} />
+            <SilmoForm t={t} contact={c} variante={variante} />
           </Reveal>
         </section>
 
@@ -444,9 +477,21 @@ function Field({
   );
 }
 
-function SilmoForm({ t, contact }: { t: (typeof copy)["fr"]; contact?: string }) {
+function SilmoForm({
+  t,
+  contact,
+  variante,
+}: {
+  t: (typeof copy)["fr"];
+  contact?: string;
+  variante?: string;
+}) {
   const submit = useServerFn(submitDemo);
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+
+  // `silmo-2026`, puis l'accroche testée, puis qui a donné la carte.
+  // Ex. `silmo-2026:t2:pp`. Une seule colonne du Sheet porte les trois infos.
+  const source = CAMPAIGN + (variante ? `:t${variante}` : "") + (contact ? `:${contact}` : "");
 
   if (status === "success") {
     return (
@@ -509,7 +554,7 @@ function SilmoForm({ t, contact }: { t: (typeof copy)["fr"]; contact?: string })
               phone: String(fd.get("phone") || ""),
               company: String(fd.get("company") || ""),
               orgType: String(fd.get("orgType") || ""),
-              source: contact ? `${CAMPAIGN}:${contact}` : CAMPAIGN,
+              source,
             },
           });
           setStatus("success");
