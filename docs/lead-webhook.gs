@@ -16,7 +16,8 @@
  *       - Qui a accès : Tout le monde
  *     → Déployer, autorisez l'envoi de mail, copiez l'URL qui finit par /exec
  *  4. Mettez cette URL dans la variable d'environnement DEMO_WEBHOOK_URL du
- *     site, côté Cloudflare — jamais côté client.
+ *     projet Vercel qui déploie le site, jamais côté client. Une variable
+ *     ajoutée n'atteint pas les déploiements existants : il faut redéployer.
  *
  * Pour tester : bouton "Exécuter" sur testNotify(), puis relevez la boîte.
  *
