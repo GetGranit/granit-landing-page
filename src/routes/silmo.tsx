@@ -59,32 +59,20 @@ const copy = {
     titleLead: "Vous vendez des lunettes.",
     titleAccent: "Pas des dossiers.",
     intro:
-      "Granit se branche sur votre logiciel d'optique et exécute la paperasse à votre place : prises en charge mutuelles, télétransmission, rejets, rapprochement des virements. Rien à installer.",
-    pills: ["Opérationnel en 48h", "HDS & RGPD", "Sans intégration"],
+      "Granit se branche sur vos logiciels et gère le tiers payant de bout en bout : prises en charge, télétransmission, rejets, rapprochement des virements. Rien à installer.",
+    pills: ["Sans engagement", "Opérationnel en 48h", "HDS & RGPD", "Sans intégration"],
     formTitle: "Laissez-nous vos coordonnées",
     formIntro: "On vous rappelle sous 24h pour 15 minutes de démo, sur vos chiffres à vous.",
     fields: {
       name: "Prénom et nom",
-      email: "Email professionnel",
+      email: "Adresse e-mail professionnelle",
       phone: "Téléphone",
-      company: "Votre enseigne",
-      orgType: "Vous êtes",
     },
     placeholders: {
       name: "Marie Dupont",
       email: "marie@centre-vision.fr",
       phone: "06 12 34 56 78",
-      company: "Centre Vision Paris",
     },
-    choose: "Choisir…",
-    options: [
-      "Opticien gérant",
-      "Directeur ou manager de magasin",
-      "Groupe ou réseau d'optique",
-      "Ophtalmologue",
-      "Fournisseur ou industrie de l'optique",
-      "Autre",
-    ],
     cta: "Être recontacté",
     sending: "Envoi…",
     note: "Gratuit, sans engagement. Vos données restent chez nous, jamais revendues.",
@@ -92,17 +80,18 @@ const copy = {
     successSub: "Quinze minutes au téléphone, sur vos chiffres à vous.",
     successContact: "Une question d'ici là ?",
     error: "Une erreur est survenue. Réessayez, ou écrivez-nous à contact@getgranit.ai.",
-    whatTitle: "Ce que Granit fait, concrètement",
+    whatTitle: "Ce que fait Granit, en 4 briques",
+    brique: "Brique",
     what: [
       {
-        name: "Demande de prise en charge",
+        name: "Demande PEC",
         desc: "Interrogation des plateformes AMC, calcul du reste à charge, envoi de la demande.",
         metric: "< 5s",
       },
       {
         name: "Facturation tiers-payant",
         desc: "Facturation AMO/AMC, télétransmission SESAM-Vitale, suivi des retours NOEMIE.",
-        metric: "99% first-pass",
+        metric: "99% du 1er coup",
       },
       {
         name: "Traitement des rejets",
@@ -110,8 +99,8 @@ const copy = {
         metric: "-90% rejets",
       },
       {
-        name: "Réconciliation bancaire",
-        desc: "Matching des virements AMO/AMC avec vos factures, détection des impayés.",
+        name: "Rapprochement bancaire",
+        desc: "Chaque virement AMO/AMC retrouve sa facture, et les impayés ressortent seuls.",
         metric: "-85% temps",
       },
     ],
@@ -128,32 +117,20 @@ const copy = {
     titleLead: "You sell glasses.",
     titleAccent: "Not paperwork.",
     intro:
-      "Granit plugs into your optical software and runs the paperwork for you: insurer coverage requests, claim submission, rejections, payment matching. Nothing to install.",
-    pills: ["Live in 48h", "HDS & GDPR", "No integration"],
+      "Granit plugs into your software and runs third-party payment end to end: coverage requests, claim submission, rejections, payment matching. Nothing to install.",
+    pills: ["No commitment", "Live in 48h", "HDS & GDPR", "No integration"],
     formTitle: "Leave us your details",
     formIntro: "We call you back within 24h for a 15-minute demo, on your own numbers.",
     fields: {
       name: "Full name",
       email: "Work email",
       phone: "Phone",
-      company: "Your store",
-      orgType: "You are",
     },
     placeholders: {
       name: "Marie Dupont",
       email: "marie@centre-vision.fr",
       phone: "+33 6 12 34 56 78",
-      company: "Centre Vision Paris",
     },
-    choose: "Choose…",
-    options: [
-      "Optician, owner",
-      "Store director or manager",
-      "Optical group or chain",
-      "Ophthalmologist",
-      "Supplier or optical industry",
-      "Other",
-    ],
     cta: "Get a call back",
     sending: "Sending…",
     note: "Free, no commitment. Your data stays with us, never resold.",
@@ -161,7 +138,8 @@ const copy = {
     successSub: "Fifteen minutes on the phone, on your own numbers.",
     successContact: "A question before then?",
     error: "Something went wrong. Please retry, or email us at contact@getgranit.ai.",
-    whatTitle: "What Granit actually does",
+    whatTitle: "What Granit does, in 4 steps",
+    brique: "Step",
     what: [
       {
         name: "Coverage requests",
@@ -235,10 +213,13 @@ function SilmoPage() {
             >
               {t.badge} · {t.eyebrow}
             </p>
+            {/* Le titre tient toujours sur deux lignes, une par membre de
+                phrase : le `clamp` descend assez bas pour qu'aucune des deux ne
+                se coupe sur un écran de 320 px, le plus étroit encore en usage. */}
             <h1
               className="mt-4 font-serif"
               style={{
-                fontSize: "clamp(28px, 6.6vw, 40px)",
+                fontSize: "clamp(22px, 7.2vw, 40px)",
                 lineHeight: 1.12,
                 letterSpacing: "-0.02em",
                 fontWeight: 400,
@@ -254,7 +235,7 @@ function SilmoPage() {
             >
               {t.intro}
             </p>
-            <ul className="mt-5 flex flex-wrap gap-2">
+            <ul className="mt-5 flex flex-wrap justify-center gap-2">
               {t.pills.map((p) => (
                 <li
                   key={p}
@@ -292,6 +273,20 @@ function SilmoPage() {
                     borderBottom: i === t.what.length - 1 ? `1px solid ${FILET}` : undefined,
                   }}
                 >
+                  {/* Les quatre briques suivent le dossier dans l'ordre où il
+                      avance : demande, facturation, rejet, encaissement. Le
+                      numéro dit donc une chronologie, pas un simple décompte. */}
+                  <span
+                    className="col-span-2 text-[10.5px]"
+                    style={{
+                      fontFamily: "var(--font-mono)",
+                      letterSpacing: "0.12em",
+                      textTransform: "uppercase",
+                      color: "var(--terra)",
+                    }}
+                  >
+                    {t.brique} {i + 1}
+                  </span>
                   <h3 className="font-serif text-[16px]" style={{ fontWeight: 400 }}>
                     {item.name}
                   </h3>
@@ -316,7 +311,7 @@ function SilmoPage() {
         <section className="pt-10">
           <Reveal>
             <dl
-              className="grid grid-cols-3 gap-x-3 gap-y-4 py-6"
+              className="grid grid-cols-3 gap-x-3 gap-y-4 py-6 text-center"
               style={{ borderTop: `1px solid ${ENCRE}`, borderBottom: `1px solid ${ENCRE}` }}
             >
               {t.kpis.map((k) => (
@@ -466,8 +461,6 @@ function SilmoForm({ t, contact }: { t: (typeof copy)["fr"]; contact?: string })
               name: String(fd.get("name") || ""),
               email: String(fd.get("email") || ""),
               phone: String(fd.get("phone") || ""),
-              company: String(fd.get("company") || ""),
-              orgType: String(fd.get("orgType") || ""),
               source,
             },
           });
@@ -512,41 +505,6 @@ function SilmoForm({ t, contact }: { t: (typeof copy)["fr"]; contact?: string })
         autoComplete="tel"
         inputMode="tel"
       />
-      <Field
-        name="company"
-        label={t.fields.company}
-        placeholder={t.placeholders.company}
-        required
-        autoComplete="organization"
-      />
-
-      <label className="mb-5 block">
-        <span
-          className="mb-1.5 block text-[10.5px]"
-          style={{
-            fontFamily: "var(--font-mono)",
-            letterSpacing: "0.1em",
-            textTransform: "uppercase",
-            color: "var(--text-soft)",
-          }}
-        >
-          {t.fields.orgType}
-        </span>
-        <select
-          name="orgType"
-          defaultValue=""
-          className="w-full px-3.5 py-3 text-[16px] outline-none"
-          style={{ background: CREME, border: `1px solid ${FILET}`, color: ENCRE }}
-        >
-          <option value="" disabled>
-            {t.choose}
-          </option>
-          {t.options.map((o) => (
-            <option key={o}>{o}</option>
-          ))}
-        </select>
-      </label>
-
       <button
         type="submit"
         disabled={status === "submitting"}
