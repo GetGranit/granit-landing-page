@@ -22,6 +22,8 @@ import { Route as AProposRouteImport } from './routes/a-propos'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as RessourcesIndexRouteImport } from './routes/ressources.index'
 import { Route as RessourcesSlugRouteImport } from './routes/ressources.$slug'
+import { Route as BlogSplatRouteImport } from './routes/blog.$'
+import { Route as EnBlogSplatRouteImport } from './routes/en.blog.$'
 
 const TarifsRoute = TarifsRouteImport.update({
   id: '/tarifs',
@@ -88,6 +90,16 @@ const RessourcesSlugRoute = RessourcesSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => RessourcesRoute,
 } as any)
+const BlogSplatRoute = BlogSplatRouteImport.update({
+  id: '/blog/$',
+  path: '/blog/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnBlogSplatRoute = EnBlogSplatRouteImport.update({
+  id: '/en/blog/$',
+  path: '/en/blog/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -101,8 +113,10 @@ export interface FileRoutesByFullPath {
   '/securite': typeof SecuriteRoute
   '/silmo': typeof SilmoRoute
   '/tarifs': typeof TarifsRoute
+  '/blog/$': typeof BlogSplatRoute
   '/ressources/$slug': typeof RessourcesSlugRoute
   '/ressources/': typeof RessourcesIndexRoute
+  '/en/blog/$': typeof EnBlogSplatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -115,8 +129,10 @@ export interface FileRoutesByTo {
   '/securite': typeof SecuriteRoute
   '/silmo': typeof SilmoRoute
   '/tarifs': typeof TarifsRoute
+  '/blog/$': typeof BlogSplatRoute
   '/ressources/$slug': typeof RessourcesSlugRoute
   '/ressources': typeof RessourcesIndexRoute
+  '/en/blog/$': typeof EnBlogSplatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -131,8 +147,10 @@ export interface FileRoutesById {
   '/securite': typeof SecuriteRoute
   '/silmo': typeof SilmoRoute
   '/tarifs': typeof TarifsRoute
+  '/blog/$': typeof BlogSplatRoute
   '/ressources/$slug': typeof RessourcesSlugRoute
   '/ressources/': typeof RessourcesIndexRoute
+  '/en/blog/$': typeof EnBlogSplatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -148,8 +166,10 @@ export interface FileRouteTypes {
     | '/securite'
     | '/silmo'
     | '/tarifs'
+    | '/blog/$'
     | '/ressources/$slug'
     | '/ressources/'
+    | '/en/blog/$'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -162,8 +182,10 @@ export interface FileRouteTypes {
     | '/securite'
     | '/silmo'
     | '/tarifs'
+    | '/blog/$'
     | '/ressources/$slug'
     | '/ressources'
+    | '/en/blog/$'
   id:
     | '__root__'
     | '/'
@@ -177,8 +199,10 @@ export interface FileRouteTypes {
     | '/securite'
     | '/silmo'
     | '/tarifs'
+    | '/blog/$'
     | '/ressources/$slug'
     | '/ressources/'
+    | '/en/blog/$'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -193,6 +217,8 @@ export interface RootRouteChildren {
   SecuriteRoute: typeof SecuriteRoute
   SilmoRoute: typeof SilmoRoute
   TarifsRoute: typeof TarifsRoute
+  BlogSplatRoute: typeof BlogSplatRoute
+  EnBlogSplatRoute: typeof EnBlogSplatRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -288,6 +314,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RessourcesSlugRouteImport
       parentRoute: typeof RessourcesRoute
     }
+    '/blog/$': {
+      id: '/blog/$'
+      path: '/blog/$'
+      fullPath: '/blog/$'
+      preLoaderRoute: typeof BlogSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en/blog/$': {
+      id: '/en/blog/$'
+      path: '/en/blog/$'
+      fullPath: '/en/blog/$'
+      preLoaderRoute: typeof EnBlogSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -317,6 +357,8 @@ const rootRouteChildren: RootRouteChildren = {
   SecuriteRoute: SecuriteRoute,
   SilmoRoute: SilmoRoute,
   TarifsRoute: TarifsRoute,
+  BlogSplatRoute: BlogSplatRoute,
+  EnBlogSplatRoute: EnBlogSplatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
