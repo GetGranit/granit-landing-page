@@ -6,9 +6,9 @@ import { useLanguage } from "@/lib/i18n";
 export const Route = createFileRoute("/tarifs")({
   head: () => ({
     meta: [
-      { title: "Tarifs - Granit AI" },
+      { title: "Tarifs des agents IA pour la santé - Granit AI" },
       { name: "description", content: "Tarification à l'usage : forfait plateforme par centre + un fee par agent selon les volumes traités." },
-      { property: "og:title", content: "Tarifs - Granit AI" },
+      { property: "og:title", content: "Tarifs des agents IA pour la santé - Granit AI" },
       { property: "og:description", content: "Tarification simple et à l'usage. Adapté à votre établissement." },
     ],
   }),

@@ -8,9 +8,9 @@ import { getArticleCover } from "@/lib/articleCovers";
 export const Route = createFileRoute("/ressources/")({
   head: () => ({
     meta: [
-      { title: "Ressources - Granit AI" },
+      { title: "Ressources tiers-payant et facturation santé - Granit AI" },
       { name: "description", content: "Articles Granit AI sur l'automatisation administrative en santé." },
-      { property: "og:title", content: "Ressources - Granit AI" },
+      { property: "og:title", content: "Ressources tiers-payant et facturation santé - Granit AI" },
       { property: "og:description", content: "Guides pratiques pour automatiser le back-office santé." },
     ],
   }),
