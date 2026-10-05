@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
+import { usePostHog } from "posthog-js/react";
 import { useLanguage } from "@/lib/i18n";
 import logoMonogram from "@/assets/logo.svg";
 
@@ -10,6 +11,7 @@ const labels = {
 
 export function Nav() {
   const { lang, toggleLang } = useLanguage();
+  const posthog = usePostHog();
   const t = labels[lang];
   const [scrolled, setScrolled] = useState(false);
 
@@ -75,14 +77,23 @@ export function Nav() {
         <div className="flex items-center gap-2">
           <button
             type="button"
-            onClick={toggleLang}
+            onClick={() => {
+              const languageTo = lang === "fr" ? "en" : "fr";
+              posthog.capture("language_switched", { language_to: languageTo });
+              toggleLang();
+            }}
             className="hidden h-8 items-center rounded-full border px-2.5 text-[11px] transition-colors hover:border-[color:var(--text)] sm:inline-flex"
             style={{ borderColor: "var(--border)", color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}
             aria-label={lang === "fr" ? "Passer en anglais" : "Switch to French"}
           >
             {t.switch}
           </button>
-          <a href="https://app.getgranit.ai" className="hidden text-[13.5px] sm:inline-block sm:px-2" style={{ color: "var(--text-soft)" }}>
+          <a
+            href="https://app.getgranit.ai"
+            className="hidden text-[13.5px] sm:inline-block sm:px-2"
+            style={{ color: "var(--text-soft)" }}
+            onClick={() => posthog.capture("sign_in_clicked", { location: "navigation" })}
+          >
             {t.login}
           </a>
           <Link to="/" hash="demo" className="btn-primary text-[13px]" style={{ padding: "9px 16px" }}>
