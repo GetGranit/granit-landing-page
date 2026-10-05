@@ -22,6 +22,7 @@ export const Route = createFileRoute("/ressources/$slug")({
         { name: "description", content: desc },
         { property: "og:title", content: title },
         { property: "og:description", content: desc },
+        { property: "og:type", content: "article" },
       ],
     };
   },
