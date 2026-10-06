@@ -13,6 +13,7 @@ const copy = {
     company: "Société",
     about: "À propos",
     contact: "Contact",
+    partners: "Devenir partenaire",
     demo: "Demander une démo",
     legal: "Légal",
     cgv: "CGV",
@@ -29,6 +30,7 @@ const copy = {
     company: "Company",
     about: "About",
     contact: "Contact",
+    partners: "Become a partner",
     demo: "Book a demo",
     legal: "Legal",
     cgv: "Terms",
@@ -87,6 +89,7 @@ export function Footer() {
             title={t.company}
             links={[
               { to: "/a-propos", label: t.about },
+              { to: "/affiliation", label: t.partners },
               { to: "/", hash: "demo", label: t.contact },
             ]}
           />
