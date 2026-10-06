@@ -1,5 +1,6 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import type { ReactNode } from "react";
+import { PostHogProvider } from "posthog-js/react";
 import { LanguageProvider } from "@/lib/i18n";
 import { CursorDot } from "@/components/CursorDot";
 import { Seo } from "@/components/Seo";
@@ -64,6 +65,36 @@ export const Route = createRootRoute({
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  // Clé projet PostHog publique (phc_) : lisible dans le navigateur, elle ne sert qu'à envoyer des événements.
+  const apiKey =
+    import.meta.env.VITE_PUBLIC_POSTHOG_PROJECT_TOKEN ??
+    "phc_vocwuFQpcKDfGRNvbdcdbL6QHL9Z3kmhgLd3B2mpE28n";
+  const apiHost = import.meta.env.VITE_PUBLIC_POSTHOG_HOST ?? "https://eu.i.posthog.com";
+
+  // Seul le site en ligne envoie des événements : ni la preview Lovable ni les essais en local.
+  if (!import.meta.env.PROD) {
+    return <RootDocument>{children}</RootDocument>;
+  }
+
+  return (
+    <PostHogProvider
+      apiKey={apiKey}
+      options={{
+        api_host: apiHost,
+        defaults: "2025-05-24",
+        capture_exceptions: true,
+        logs: {
+          serviceName: "granit-landing-page",
+          environment: import.meta.env.MODE,
+        },
+      }}
+    >
+      <RootDocument>{children}</RootDocument>
+    </PostHogProvider>
+  );
+}
+
+function RootDocument({ children }: { children: ReactNode }) {
   return (
     <html lang="fr">
       <head>
