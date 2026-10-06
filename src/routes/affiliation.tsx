@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { usePostHog } from "posthog-js/react";
@@ -9,11 +9,13 @@ import { Reveal } from "@/components/Reveal";
 import { useLanguage } from "@/lib/i18n";
 import { logDemoRequestDelivered, logDemoRequestDeliveryFailed } from "@/lib/posthogLogs";
 import { submitDemo } from "@/lib/submitDemo";
+import { copy, type AffiliationCopy as Copy } from "@/lib/affiliationCopy";
 
 /**
- * Programme d'affiliation : les gens qui accompagnent déjà des opticiens
- * (gestionnaires TP indépendants, consultants, formateurs, experts-comptables)
- * recommandent Granit et touchent une commission par magasin signé.
+ * Programme d'apporteurs d'affaires : les gens qui accompagnent déjà des
+ * professionnels de santé (gestionnaires TP, consultants, formateurs,
+ * experts-comptables, réseaux) recommandent Granit et touchent une commission
+ * par établissement signé, dans toutes les verticales de la page /agents.
  *
  * Les montants ne sont pas affichés : ils dépendent du profil (prime par client
  * ou pourcentage) et se fixent à l'appel. La candidature passe par le même
@@ -26,12 +28,12 @@ export const Route = createFileRoute("/affiliation")({
       {
         name: "description",
         content:
-          "Vous accompagnez des opticiens ? Recommandez Granit et touchez une commission sur chaque magasin qui démarre.",
+          "Vous accompagnez des professionnels de santé ? Recommandez Granit et touchez une commission sur chaque établissement qui démarre.",
       },
       { property: "og:title", content: "Programme partenaires - Granit AI" },
       {
         property: "og:description",
-        content: "Recommandez Granit à vos clients opticiens, on s'occupe du reste.",
+        content: "Recommandez Granit aux professionnels de santé que vous accompagnez, on s'occupe du reste.",
       },
     ],
   }),
@@ -40,224 +42,6 @@ export const Route = createFileRoute("/affiliation")({
 
 const SOURCE = "affiliation";
 
-const copy = {
-  fr: {
-    eyebrow: "Programme partenaires",
-    titleLead: "Recommandez Granit.",
-    titleAccent: "Soyez rémunéré à chaque magasin signé.",
-    intro:
-      "Vous accompagnez des opticiens au quotidien : tiers payant, conseil, formation, comptabilité. Présentez-leur Granit, on s'occupe de la démo et du démarrage, vous touchez une commission.",
-    cta: "Devenir partenaire",
-    flow: [
-      { k: "Vous", v: "présentez Granit à un opticien" },
-      { k: "Granit", v: "fait la démo et le suivi" },
-      { k: "Le magasin", v: "démarre, sans rien installer" },
-      { k: "Vous", v: "êtes rémunéré" },
-    ],
-    whyEyebrow: "Les avantages",
-    whyTitle: "Un programme simple,",
-    whyAccent: "pensé pour le terrain.",
-    why: [
-      {
-        title: "Un sujet que vos clients vivent tous les jours",
-        text: "Prises en charge, rejets, virements à rapprocher, impayés : le tiers payant pèse sur chaque magasin. Granit le prend en charge de bout en bout, branché sur les outils existants.",
-      },
-      {
-        title: "Une commission sur chaque client signé",
-        text: "Prime par magasin ou pourcentage récurrent : on choisit ensemble la formule qui colle à votre activité, et elle est écrite noir sur blanc avant la première recommandation.",
-      },
-      {
-        title: "Vous recommandez, on fait le reste",
-        text: "Pas besoin de vendre. Vous recevez un kit de présentation et un contact dédié chez Granit, qui gère la démo, le démarrage et vous tient au courant.",
-      },
-    ],
-    whoEyebrow: "Pour qui",
-    who: [
-      "Gestionnaires tiers payant indépendants",
-      "Consultants et formateurs optique",
-      "Experts-comptables",
-      "Groupements et réseaux",
-      "Créateurs de contenu optique",
-    ],
-    stepsEyebrow: "Comment ça marche",
-    stepsTitle: "Trois étapes,",
-    stepsAccent: "pas de paperasse.",
-    steps: [
-      { n: "01", title: "Vous candidatez", text: "Deux minutes, via le formulaire ci-dessous." },
-      {
-        n: "02",
-        title: "On s'appelle",
-        text: "Vingt minutes pour se connaître, fixer votre rémunération et vous envoyer le kit partenaire.",
-      },
-      {
-        n: "03",
-        title: "Vous recommandez",
-        text: "Vous nous présentez un opticien, on s'occupe de tout, et vous êtes rémunéré quand il démarre.",
-      },
-    ],
-    formEyebrow: "Candidature",
-    formTitle: "Rejoindre le programme",
-    formIntro: "On revient vers vous sous 48 h pour caler un premier appel.",
-    fields: {
-      name: "Prénom et nom",
-      email: "E-mail",
-      phone: "Téléphone",
-      company: "Structure",
-      profile: "Votre activité",
-      message: "Comment pensez-vous recommander Granit ? (facultatif)",
-    },
-    placeholders: {
-      name: "Marie Dupont",
-      email: "marie@cabinet-tp.fr",
-      phone: "06 12 34 56 78",
-      company: "Cabinet, société, réseau…",
-      message: "Nombre d'opticiens accompagnés, newsletter, formation…",
-    },
-    choose: "Choisir…",
-    profiles: [
-      "Gestionnaire tiers payant",
-      "Consultant / formateur",
-      "Expert-comptable",
-      "Groupement / réseau",
-      "Créateur de contenu",
-      "Autre",
-    ],
-    submit: "Envoyer ma candidature",
-    sending: "Envoi…",
-    note: "Gratuit et sans engagement. Vos données restent chez nous.",
-    success: "Candidature reçue, merci.",
-    successSub: "On revient vers vous sous 48 h pour caler un premier appel.",
-    error: "Une erreur est survenue. Réessayez, ou écrivez-nous à contact@getgranit.ai.",
-    faqTitle: "Questions fréquentes",
-    faq: [
-      {
-        q: "Faut-il être client Granit pour devenir partenaire ?",
-        a: "Non. Le programme s'adresse à celles et ceux qui accompagnent des opticiens, quel que soit leur métier.",
-      },
-      {
-        q: "Combien vais-je toucher ?",
-        a: "Ça dépend de votre activité : une prime fixe par magasin signé, ou un pourcentage récurrent. On le fixe ensemble au premier appel, par écrit.",
-      },
-      {
-        q: "Dois-je vendre Granit moi-même ?",
-        a: "Non. Vous faites la mise en relation, Granit s'occupe de la démo, de la signature et du démarrage.",
-      },
-      {
-        q: "Comment mes recommandations sont-elles suivies ?",
-        a: "Chaque opticien que vous nous présentez est rattaché à votre nom dans notre suivi. Vous savez où il en est, et la commission est due dès qu'il démarre.",
-      },
-    ],
-  },
-  en: {
-    eyebrow: "Partner programme",
-    titleLead: "Recommend Granit.",
-    titleAccent: "Get paid for every store that signs.",
-    intro:
-      "You work with opticians every day: third-party payment, consulting, training, accounting. Introduce them to Granit, we handle the demo and onboarding, you earn a commission.",
-    cta: "Become a partner",
-    flow: [
-      { k: "You", v: "introduce Granit to an optician" },
-      { k: "Granit", v: "runs the demo and follow-up" },
-      { k: "The store", v: "goes live, nothing to install" },
-      { k: "You", v: "get paid" },
-    ],
-    whyEyebrow: "Benefits",
-    whyTitle: "A simple programme,",
-    whyAccent: "built for the field.",
-    why: [
-      {
-        title: "A pain your clients feel every day",
-        text: "Coverage requests, rejections, payments to match, unpaid claims: third-party payment weighs on every store. Granit runs it end to end, on top of their existing tools.",
-      },
-      {
-        title: "A commission on every signed client",
-        text: "A bonus per store or a recurring percentage: we pick the formula that fits your business together, in writing, before your first referral.",
-      },
-      {
-        title: "You refer, we do the rest",
-        text: "No selling required. You get a presentation kit and a dedicated contact at Granit who runs the demo, the onboarding and keeps you posted.",
-      },
-    ],
-    whoEyebrow: "Who it's for",
-    who: [
-      "Independent third-party payment managers",
-      "Optical consultants and trainers",
-      "Accountants",
-      "Buying groups and networks",
-      "Optical content creators",
-    ],
-    stepsEyebrow: "How it works",
-    stepsTitle: "Three steps,",
-    stepsAccent: "no paperwork.",
-    steps: [
-      { n: "01", title: "Apply", text: "Two minutes, with the form below." },
-      {
-        n: "02",
-        title: "Let's talk",
-        text: "Twenty minutes to meet, set your commission and send you the partner kit.",
-      },
-      {
-        n: "03",
-        title: "Refer",
-        text: "Introduce an optician, we handle everything, and you get paid when they go live.",
-      },
-    ],
-    formEyebrow: "Application",
-    formTitle: "Join the programme",
-    formIntro: "We get back to you within 48h to set up a first call.",
-    fields: {
-      name: "Full name",
-      email: "Email",
-      phone: "Phone",
-      company: "Company",
-      profile: "Your business",
-      message: "How would you recommend Granit? (optional)",
-    },
-    placeholders: {
-      name: "Marie Dupont",
-      email: "marie@cabinet-tp.fr",
-      phone: "+33 6 12 34 56 78",
-      company: "Firm, company, network…",
-      message: "Opticians you work with, newsletter, training…",
-    },
-    choose: "Choose…",
-    profiles: [
-      "Third-party payment manager",
-      "Consultant / trainer",
-      "Accountant",
-      "Buying group / network",
-      "Content creator",
-      "Other",
-    ],
-    submit: "Send my application",
-    sending: "Sending…",
-    note: "Free, no commitment. Your data stays with us.",
-    success: "Application received, thank you.",
-    successSub: "We get back to you within 48h to set up a first call.",
-    error: "Something went wrong. Please retry, or email us at contact@getgranit.ai.",
-    faqTitle: "FAQ",
-    faq: [
-      {
-        q: "Do I need to be a Granit client to become a partner?",
-        a: "No. The programme is open to anyone who works with opticians, whatever their job.",
-      },
-      {
-        q: "How much will I earn?",
-        a: "It depends on your business: a fixed bonus per signed store, or a recurring percentage. We set it together on the first call, in writing.",
-      },
-      {
-        q: "Do I have to sell Granit myself?",
-        a: "No. You make the introduction, Granit handles the demo, signature and onboarding.",
-      },
-      {
-        q: "How are my referrals tracked?",
-        a: "Every optician you introduce is tied to your name in our pipeline. You know where they stand, and the commission is due once they go live.",
-      },
-    ],
-  },
-};
-
-type Copy = (typeof copy)["fr"];
 
 function AffiliationPage() {
   const { lang } = useLanguage();
@@ -321,6 +105,25 @@ function AffiliationPage() {
         </div>
         <Reveal>
           <div className="mt-12 flex flex-wrap items-center gap-2">
+            <span className="eyebrow mr-2">{t.sectorsEyebrow}</span>
+            {t.sectors.map((s) => (
+              <span
+                key={s}
+                className="rounded-full px-3.5 py-1.5 text-[13px]"
+                style={{ background: "var(--terra-light)", color: "var(--terra-hover)" }}
+              >
+                {s}
+              </span>
+            ))}
+            <Link
+              to="/agents"
+              className="ml-1 text-[13px] underline-offset-4 hover:underline"
+              style={{ color: "var(--terra)", fontFamily: "var(--font-mono)" }}
+            >
+              {t.sectorsLink} →
+            </Link>
+          </div>
+          <div className="mt-4 flex flex-wrap items-center gap-2">
             <span className="eyebrow mr-2">{t.whoEyebrow}</span>
             {t.who.map((w) => (
               <span
