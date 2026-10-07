@@ -48,6 +48,8 @@ export type RessourceJson = {
   figures?: Figure[];
   internalLinks: LienInterne[];
   liensEntrants: LienInterne[];
+  /** Anciens articles (articles.ts) que celui-ci remplace : ils redirigent vers lui (301). */
+  remplace?: string[];
   /** Vague de la file (ajoutée à la lecture, sert au tri). */
   wave?: number;
   /** Métiers concernés (facultatif ; par défaut l'optique). */

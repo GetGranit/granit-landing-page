@@ -51,7 +51,14 @@ console.log(`Article ${article.id} · ${article.slug} · type ${type}${fp?.faits
 const enLigne = publies(file);
 const cibles = new Map();
 for (const a of enLigne) cibles.set(`/ressources/${a.slug}`, a.title);
-for (const a of anciensArticles()) cibles.set(`/ressources/${a.slug}`, `${a.titre} (ancien article, ${a.categorie})`);
+// anciens articles encore en ligne : ni déjà remplacés, ni remplacés par celui-ci
+const remplaces = new Set([...enLigne, article].flatMap((a) => a.remplace ?? []));
+for (const a of anciensArticles()) {
+  if (remplaces.has(a.slug)) continue;
+  cibles.set(`/ressources/${a.slug}`, `${a.titre} (ancien article, ${a.categorie})`);
+}
+const inconnus = (article.remplace ?? []).filter((s) => !anciensArticles().some((a) => a.slug === s));
+if (inconnus.length) throw new Error(`remplace : ancien article inconnu ${inconnus.join(", ")}`);
 cibles.set("/ressources", "Hub des ressources");
 const slugsEnLigne = new Set(enLigne.map((a) => a.slug));
 const liensPrevus = (article.internalLinks ?? []).filter((l) => slugsEnLigne.has(l.slug));
@@ -218,6 +225,7 @@ const fiche = {
   figures: sortie.figures ?? [],
   internalLinks: liensPrevus,
   liensEntrants: [],
+  remplace: article.remplace ?? [],
   moteur: { model: config.model, genereLe: new Date().toISOString(), avertissements: bilan.avertissements },
 };
 

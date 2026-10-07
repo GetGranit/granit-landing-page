@@ -45,6 +45,7 @@ Il faut aussi cocher, dans les réglages du repo, *Actions → General → Allow
 | `metaDescription`, `contentHtml`, `tocItems`, `faqItems`, `sources` | Réponse de Claude, déjà contrôlée |
 | `internalLinks` | Liens prévus dont la cible était en ligne à la rédaction |
 | `liensEntrants` | `{slug, anchor, type}` des articles publiés après lui qui doivent apparaître dans « À lire ensuite » |
+| `remplace` | Anciens articles de `src/lib/articles.ts` que celui-ci remplace : dès sa publication, ils redirigent en 301 vers lui et sortent des listes et du sitemap (champ `remplace` de la file) |
 | `moteur` | Modèle, date de génération, avertissements |
 
 Un article est en ligne quand son fichier existe **et** que son statut dans la file est `published`. Le sitemap, les pages catégorie, le hub et « À lire ensuite » se calculent à la compilation à partir de ces fichiers. Le moteur n'y touche pas.
