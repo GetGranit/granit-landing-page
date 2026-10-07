@@ -115,6 +115,15 @@ export function controler(out, ctx) {
   // Liens
   const sources = (out.sources ?? []).map((s) => urlNormale(s.url));
   if (sources.length < 2) erreurs.push(`${sources.length} source(s), 2 minimum`);
+  // une source = la page exacte qui porte le fait, jamais la page d'accueil d'un site
+  for (const u of sources) {
+    try {
+      const { pathname, search } = new URL(u);
+      if ((pathname === "/" || pathname === "") && !search) erreurs.push(`source = page d'accueil, citer la page exacte : ${u}`);
+    } catch {
+      erreurs.push(`source illisible : ${u}`);
+    }
+  }
   let internes = 0;
   let produit = 0;
   for (const l of liens(html)) {
@@ -155,7 +164,7 @@ export function controler(out, ctx) {
   }
   const mentions = (corps.match(/\bGranit\b/g) ?? []).length;
   if (mentions > 2) avert.push(`Granit cité ${mentions} fois dans le corps (une mention visée)`);
-  if (!/<blockquote>/.test(html)) avert.push("aucune citation en <blockquote>");
+  if (!/<blockquote>[\s\S]*?<cite>[\s\S]*?<\/blockquote>/.test(html)) erreurs.push("aucune citation en <blockquote> avec sa <cite> (une citation réelle et sourcée est obligatoire)");
 
   // Par type de page
   if (type === "resolution" && !/<ol class="steps">/.test(html)) erreurs.push('page résolution sans <ol class="steps">');
@@ -213,10 +222,22 @@ function controlerFigures(figures, html, erreurs, avert) {
   return textes.join(" ");
 }
 
-/** Vérifie que chaque source répond. 404/410 ou domaine introuvable = erreur. */
-export async function verifierSources(sources, { timeoutMs = 10000 } = {}) {
+/** Citations du corps : [{ texte, cite }] */
+export function citations(html) {
+  return [...html.matchAll(/<blockquote>([\s\S]*?)<\/blockquote>/g)].map((m) => ({
+    texte: texte(m[1].replace(/<cite>[\s\S]*?<\/cite>/, "")).replace(/^[«"\s]+|[»"\s]+$/g, ""),
+    cite: texte(m[1].match(/<cite>([\s\S]*?)<\/cite>/)?.[1] ?? ""),
+  }));
+}
+
+/**
+ * Vérifie que chaque source répond (404/410 ou domaine introuvable = erreur), et que chaque
+ * citation figure mot pour mot dans la page de sa source quand cette page est lisible.
+ */
+export async function verifierSources(sources, cits = [], { timeoutMs = 10000 } = {}) {
   const erreurs = [];
   const avert = [];
+  const pages = new Map();
   await Promise.all(
     sources.map(async ({ url }) => {
       try {
@@ -227,6 +248,7 @@ export async function verifierSources(sources, { timeoutMs = 10000 } = {}) {
         });
         if (r.status === 404 || r.status === 410) erreurs.push(`source introuvable (${r.status}) : ${url}`);
         else if (!r.ok) avert.push(`source non vérifiable (${r.status}) : ${url}`);
+        else pages.set(url, normalise(texte(await r.text())));
       } catch (e) {
         const code = e.cause?.code ?? e.name;
         if (code === "ENOTFOUND") erreurs.push(`domaine introuvable : ${url}`);
@@ -234,5 +256,14 @@ export async function verifierSources(sources, { timeoutMs = 10000 } = {}) {
       }
     }),
   );
+  for (const c of cits) {
+    const src = sources.find((s) => normalise(s.label) === normalise(c.cite));
+    const page = src && pages.get(src.url);
+    if (!page) {
+      avert.push(`citation non vérifiée (page de « ${c.cite} » illisible ou absente des sources) : « ${c.texte.slice(0, 60)} »`);
+    } else if (!page.includes(normalise(c.texte))) {
+      erreurs.push(`citation introuvable mot pour mot sur ${src.url} : « ${c.texte.slice(0, 80)} »`);
+    }
+  }
   return { erreurs, avertissements: avert };
 }

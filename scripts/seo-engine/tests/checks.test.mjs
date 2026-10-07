@@ -13,6 +13,7 @@ function articleValide({ marqueurs = false } = {}) {
     contentHtml:
       `<p><strong>Le tiers payant opticien permet au client de ne pas avancer les frais.</strong> ${remplissage(40)}</p>` +
       `<div class="key-takeaways"><strong>L'essentiel</strong><ul><li>Un point</li></ul></div>` +
+      `<blockquote><p>« Le tiers payant dispense l'assuré de l'avance des frais. »</p><cite>ameli.fr · Tiers payant</cite></blockquote>` +
       h2("qui-paie", "Qui paie quoi ?", marqueurs ? '<div data-bloc="chiffres"></div><div data-bloc="organismes"></div>' : "") +
       h2("portails", "Quels portails utiliser ?", '<p>Voir <a href="/ressources/rapprochement-noemie">le rapprochement NOEMIE</a> et <a href="https://www.ameli.fr/opticien">ameli</a>.</p>') +
       h2("rejets", "Comment éviter les rejets ?", marqueurs ? '<div data-bloc="statuts"></div>' : "") +
@@ -22,7 +23,7 @@ function articleValide({ marqueurs = false } = {}) {
     faqItems: Array.from({ length: 4 }, (_, i) => ({ question: `Question ${i} ?`, answer: "Réponse courte. Deuxième phrase." })),
     sources: [
       { label: "ameli.fr · Opticien", url: "https://www.ameli.fr/opticien" },
-      { label: "service-public.fr", url: "https://www.service-public.fr/" },
+      { label: "service-public.fr · Tiers payant", url: "https://www.service-public.fr/particuliers/vosdroits/F167" },
     ],
   };
 }
@@ -150,4 +151,16 @@ test("page plateforme : taille d'une liste et 100 % Santé admis", () => {
   const a = articleValide({ marqueurs: true });
   a.contentHtml += "<p>Le sélecteur propose 12 complémentaires, y compris pour le 100 % Santé.</p>";
   assert.deepEqual(controler(a, ctx({ type: "plateforme", faits })).erreurs, []);
+});
+
+test("source = page d'accueil refusée", () => {
+  const a = articleValide();
+  a.sources[1].url = "https://www.service-public.fr/";
+  assert.ok(controler(a, ctx()).erreurs.some((e) => e.includes("page d'accueil")));
+});
+
+test("citation sourcée obligatoire", () => {
+  const a = articleValide();
+  a.contentHtml = a.contentHtml.replace(/<blockquote>.*?<\/blockquote>/, "");
+  assert.ok(controler(a, ctx()).erreurs.some((e) => e.includes("blockquote")));
 });
