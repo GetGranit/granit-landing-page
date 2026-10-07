@@ -28,6 +28,7 @@ import { Route as EnCgvRouteImport } from './routes/en.cgv'
 import { Route as RessourcesIndexRouteImport } from './routes/ressources.index'
 import { Route as RessourcesSlugRouteImport } from './routes/ressources.$slug'
 import { Route as EnBlogSplatRouteImport } from './routes/en.blog.$'
+import { Route as RessourcesCategorieCategoryRouteImport } from './routes/ressources.categorie.$category'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -124,6 +125,12 @@ const EnBlogSplatRoute = EnBlogSplatRouteImport.update({
   path: '/en/blog/$',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RessourcesCategorieCategoryRoute =
+  RessourcesCategorieCategoryRouteImport.update({
+    id: '/categorie/$category',
+    path: '/categorie/$category',
+    getParentRoute: () => RessourcesRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -145,6 +152,7 @@ export interface FileRoutesByFullPath {
   '/en/': typeof EnIndexRoute
   '/ressources/': typeof RessourcesIndexRoute
   '/en/blog/$': typeof EnBlogSplatRoute
+  '/ressources/categorie/$category': typeof RessourcesCategorieCategoryRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -165,6 +173,7 @@ export interface FileRoutesByTo {
   '/en': typeof EnIndexRoute
   '/ressources': typeof RessourcesIndexRoute
   '/en/blog/$': typeof EnBlogSplatRoute
+  '/ressources/categorie/$category': typeof RessourcesCategorieCategoryRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -187,6 +196,7 @@ export interface FileRoutesById {
   '/en/': typeof EnIndexRoute
   '/ressources/': typeof RessourcesIndexRoute
   '/en/blog/$': typeof EnBlogSplatRoute
+  '/ressources/categorie/$category': typeof RessourcesCategorieCategoryRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -210,6 +220,7 @@ export interface FileRouteTypes {
     | '/en/'
     | '/ressources/'
     | '/en/blog/$'
+    | '/ressources/categorie/$category'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -230,6 +241,7 @@ export interface FileRouteTypes {
     | '/en'
     | '/ressources'
     | '/en/blog/$'
+    | '/ressources/categorie/$category'
   id:
     | '__root__'
     | '/'
@@ -251,6 +263,7 @@ export interface FileRouteTypes {
     | '/en/'
     | '/ressources/'
     | '/en/blog/$'
+    | '/ressources/categorie/$category'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -408,17 +421,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EnBlogSplatRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ressources/categorie/$category': {
+      id: '/ressources/categorie/$category'
+      path: '/categorie/$category'
+      fullPath: '/ressources/categorie/$category'
+      preLoaderRoute: typeof RessourcesCategorieCategoryRouteImport
+      parentRoute: typeof RessourcesRoute
+    }
   }
 }
 
 interface RessourcesRouteChildren {
   RessourcesSlugRoute: typeof RessourcesSlugRoute
   RessourcesIndexRoute: typeof RessourcesIndexRoute
+  RessourcesCategorieCategoryRoute: typeof RessourcesCategorieCategoryRoute
 }
 
 const RessourcesRouteChildren: RessourcesRouteChildren = {
   RessourcesSlugRoute: RessourcesSlugRoute,
   RessourcesIndexRoute: RessourcesIndexRoute,
+  RessourcesCategorieCategoryRoute: RessourcesCategorieCategoryRoute,
 }
 
 const RessourcesRouteWithChildren = RessourcesRoute._addFileChildren(

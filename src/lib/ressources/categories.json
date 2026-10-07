@@ -1,0 +1,70 @@
+{
+  "ordre": [
+    "guide-tiers-payant",
+    "plateformes",
+    "rejets",
+    "paiements",
+    "gerer-son-tiers-payant",
+    "conformite",
+    "glossaire"
+  ],
+  "categories": {
+    "guide-tiers-payant": {
+      "nom": "Guide du tiers payant",
+      "court": "Guide",
+      "ink": "#3f7a4d",
+      "tint": "#e9f2eb",
+      "description": "Comment fonctionne le tiers payant en optique, de la prise en charge à l'encaissement.",
+      "agent": "L'agent dépose vos prises en charge"
+    },
+    "plateformes": {
+      "nom": "Plateformes et portails",
+      "court": "Plateformes",
+      "ink": "#b94a2f",
+      "tint": "#fbeae3",
+      "description": "Une fiche par portail : espace pro, prise en charge, statuts et paiement.",
+      "agent": "L'agent dépose vos prises en charge"
+    },
+    "rejets": {
+      "nom": "Rejets et corrections",
+      "court": "Rejets",
+      "ink": "#8a6416",
+      "tint": "#f6eedb",
+      "description": "Lire un motif de rejet, corriger le dossier, éviter qu'il revienne.",
+      "agent": "L'agent vérifie la plateforme avant l'envoi"
+    },
+    "paiements": {
+      "nom": "Paiements et rapprochement",
+      "court": "Paiements",
+      "ink": "#3e5f84",
+      "tint": "#e6ecf4",
+      "description": "Rapprocher les virements, comprendre NOEMIE, relancer au bon moment.",
+      "agent": "L'agent rapproche vos virements chaque matin"
+    },
+    "gerer-son-tiers-payant": {
+      "nom": "Gérer son tiers payant",
+      "court": "Gestion",
+      "ink": "#7a4a74",
+      "tint": "#f3e9f1",
+      "description": "En interne, externalisé ou automatisé : organiser le tiers payant d'un magasin.",
+      "agent": "L'agent dépose vos prises en charge"
+    },
+    "conformite": {
+      "nom": "Conformité",
+      "court": "Conformité",
+      "ink": "#2f6f75",
+      "tint": "#e2f0f1",
+      "description": "Devis, codes LPP, contrôles, conservation : ce qu'on doit pouvoir montrer.",
+      "agent": "L'agent dépose vos prises en charge"
+    },
+    "glossaire": {
+      "nom": "Glossaire",
+      "court": "Glossaire",
+      "ink": "#5e574b",
+      "tint": "#f1ede5",
+      "description": "Les sigles du tiers payant optique (AMC, DRE, NOEMIE, LPP…), expliqués simplement.",
+      "agent": "L'agent dépose vos prises en charge"
+    }
+  },
+  "suffixeDescription": " Guides et fiches pratiques pour le comptoir des opticiens."
+}

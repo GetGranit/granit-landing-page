@@ -35,3 +35,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Couvertures générées au build (scripts/ressources/vite-plugin.ts)
+public/covers/
