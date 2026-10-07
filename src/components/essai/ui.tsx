@@ -31,37 +31,6 @@ export function Card({ children, className = "" }: { children: ReactNode; classN
   );
 }
 
-const STEPS = ["Photo", "Lecture", "PEC préparée", "Portail", "Simulation"];
-
-/** Barre de progression du parcours (étapes 1 à 5). */
-export function Progress({ current }: { current: number }) {
-  return (
-    <div aria-label={`Étape ${current} sur ${STEPS.length}`} className="mb-7">
-      <div
-        className="mb-2 flex justify-between text-[11px]"
-        style={{ fontFamily: "var(--font-mono)" }}
-      >
-        <span style={{ color: "var(--terra)" }}>
-          {current}/{STEPS.length} · {STEPS[current - 1]}
-        </span>
-        <span style={{ color: "var(--text-muted)" }}>{current - 1} étapes faites</span>
-      </div>
-      <div className="flex gap-1.5">
-        {STEPS.map((s, i) => (
-          <div
-            key={s}
-            className="h-1.5 flex-1 rounded-full"
-            style={{
-              background:
-                i < current - 1 ? "var(--sage)" : i === current - 1 ? "var(--terra)" : "var(--bg3)",
-            }}
-          />
-        ))}
-      </div>
-    </div>
-  );
-}
-
 /** Coche ronde qui « pop » à l'apparition (sauf mouvement réduit). */
 export function PopCheck({ done, size = 22 }: { done: boolean; size?: number }) {
   const reduce = useReducedMotion();
@@ -139,5 +108,47 @@ export function TextButton({ onClick, children }: { onClick: () => void; childre
     >
       {children}
     </button>
+  );
+}
+
+/** Pastille « Aperçu » sur tout ce qui est fictif. */
+export function ApercuBadge({ children = "Aperçu" }: { children?: ReactNode }) {
+  return (
+    <span
+      className="inline-block shrink-0 rounded-full px-2.5 py-0.5 text-[10px] uppercase"
+      style={{
+        background: "var(--tag-bg)",
+        color: "var(--text-soft)",
+        fontFamily: "var(--font-mono)",
+        letterSpacing: "0.08em",
+      }}
+    >
+      {children}
+    </span>
+  );
+}
+
+/** Ligne libellé / montant. */
+export function Row({
+  label,
+  value,
+  strong,
+  muted,
+}: {
+  label: string;
+  value: string;
+  strong?: boolean;
+  muted?: boolean;
+}) {
+  return (
+    <div className="flex items-baseline justify-between gap-4">
+      <dt style={{ color: muted ? "var(--text-muted)" : "var(--text-soft)" }}>{label}</dt>
+      <dd
+        className="num-tabular"
+        style={{ fontFamily: "var(--font-mono)", fontWeight: strong ? 600 : 400 }}
+      >
+        {value}
+      </dd>
+    </div>
   );
 }
