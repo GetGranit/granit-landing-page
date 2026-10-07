@@ -85,7 +85,8 @@ const categoryPages = ordre
   })
   .filter(Boolean);
 
-// Pages métier : seulement à partir de 3 articles propres (même règle que le noindex de la page).
+// Pages métier : à partir de 3 articles propres (même règle que le noindex de la page),
+// sauf le métier principal (optique), toujours présent.
 const verticalesData = JSON.parse(readFileSync("src/lib/ressources/verticales.json", "utf8"));
 const metierPages = verticalesData.ordre
   .map((v) => {
@@ -99,7 +100,7 @@ const metierPages = verticalesData.ordre
         .filter(([, vs]) => Array.isArray(vs) && vs.includes(v))
         .map(([slug]) => slugDates.get(slug) ?? ""),
     ];
-    if (dates.length < 3) return undefined;
+    if (dates.length < 3 && v !== "optique") return undefined;
     return { v, lastmod: dates.filter(Boolean).sort().at(-1) };
   })
   .filter(Boolean);

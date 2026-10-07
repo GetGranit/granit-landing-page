@@ -3,7 +3,7 @@ import { PageMetier } from "@/components/ressources/PageMetier";
 import { NotFoundRessource } from "@/components/ressources/Introuvable";
 import { fichesVerticale } from "@/lib/ressources/contenu";
 import { breadcrumbLd } from "@/lib/ressources/seo";
-import { photoVerticale, verticale } from "@/lib/ressources/verticales";
+import { VERTICALE_PRINCIPALE, photoVerticale, verticale } from "@/lib/ressources/verticales";
 import { SITE_URL } from "@/lib/seo";
 
 export const Route = createFileRoute("/ressources/metier/$verticale")({
@@ -17,8 +17,10 @@ export const Route = createFileRoute("/ressources/metier/$verticale")({
     const v = loaderData ? verticale(loaderData.verticale) : undefined;
     if (!v) return {};
     const propres = fichesVerticale(v.slug);
-    // Indexée seulement à partir de 3 articles propres (aperçu exclu), comme dans le sitemap.
-    const indexable = propres.filter((f) => !f.preview).length >= 3;
+    // Indexée à partir de 3 articles propres (aperçu exclu), comme dans le sitemap.
+    // Exception : le métier principal (optique) est toujours indexé.
+    const indexable =
+      v.slug === VERTICALE_PRINCIPALE || propres.filter((f) => !f.preview).length >= 3;
     const title = `${v.nom} : tiers payant et gestion administrative - Granit AI`;
     const image = SITE_URL + photoVerticale(v.slug, 1600);
     return {

@@ -18,11 +18,30 @@ export type Verticale = {
   agent: string;
 };
 
+/**
+ * Textes alternatifs des photos (public/ressources/metiers/{métier}-800.jpg et -1600.jpg) :
+ * ce qu'on voit sur l'image. À mettre à jour ici quand une photo change.
+ */
+const ALTS: Record<VerticaleSlug, string> = {
+  optique:
+    "Lunettes en écaille posées sur un linge blanc, leur ombre projetée sur un mur terracotta",
+  audio:
+    "Coquillage clair posé sur un socle en bois à côté d'une coupelle, dans la lumière d'une fenêtre",
+  pharmacie:
+    "Trois flacons de pharmacie en verre ambré et clair, un brin de feuillage et une enveloppe sur un rebord de fenêtre",
+  dentaire:
+    "Miroir de dentiste posé sur un plateau blanc, à côté de petits galets blancs disposés en arc",
+  centres: "Deux chaises en bois et une plante verte contre le mur clair d'un couloir de clinique",
+};
+
+/** Le métier principal : sa page est toujours indexée, quel que soit le nombre d'articles. */
+export const VERTICALE_PRINCIPALE: VerticaleSlug = "optique";
+
 export const ORDRE_VERTICALES = data.ordre as VerticaleSlug[];
 
 export function verticale(slug: string): Verticale | undefined {
-  const v = (data.verticales as Record<string, Omit<Verticale, "slug">>)[slug];
-  return v ? { slug: slug as VerticaleSlug, ...v } : undefined;
+  const v = (data.verticales as Record<string, Omit<Verticale, "slug" | "alt">>)[slug];
+  return v ? { slug: slug as VerticaleSlug, ...v, alt: ALTS[slug as VerticaleSlug] } : undefined;
 }
 
 export const VERTICALES: Verticale[] = ORDRE_VERTICALES.map((v) => verticale(v)!);

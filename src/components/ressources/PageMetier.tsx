@@ -70,7 +70,7 @@ export function PageMetier({ v }: { v: Verticale }) {
               v={v}
               forme="aspect-[16/9] rounded-[18px]"
               tailles="(min-width: 1024px) 760px, 100vw"
-              prioritaire
+              chargement="haute"
             />
           </div>
         </section>

@@ -5,7 +5,6 @@
       "nom": "Optique",
       "court": "Optique",
       "description": "Prises en charge, portails des plateformes, rejets et paiements : le tiers payant au comptoir d'un magasin d'optique.",
-      "alt": "Lunettes en écaille posées sur un linge blanc, leur ombre projetée sur un mur terracotta",
       "teinte": "plateformes",
       "agent": "L'agent dépose vos prises en charge"
     },
@@ -13,7 +12,6 @@
       "nom": "Audioprothèse",
       "court": "Audio",
       "description": "Renouvellements, classes d'appareils et période d'essai : facturer l'audioprothèse en tiers payant.",
-      "alt": "Coquillage clair posé sur un socle en bois à côté d'une coupelle, dans la lumière d'une fenêtre",
       "teinte": "paiements",
       "agent": "L'agent dépose vos prises en charge audio"
     },
@@ -21,7 +19,6 @@
       "nom": "Pharmacie et EHPAD",
       "court": "Pharmacie",
       "description": "Créances de tiers payant, rejets et facturation en établissement : le back-office d'une officine ou d'un EHPAD.",
-      "alt": "Trois flacons de pharmacie en verre ambré et clair, un brin de feuillage et une enveloppe sur un rebord de fenêtre",
       "teinte": "gerer-son-tiers-payant",
       "agent": "L'agent lit les ordonnances et les fiches de traitement"
     },
@@ -29,7 +26,6 @@
       "nom": "Dentaire",
       "court": "Dentaire",
       "description": "Paniers 100 % Santé, devis et traitements longs : le tiers payant au cabinet dentaire.",
-      "alt": "Miroir de dentiste posé sur un plateau blanc, à côté de petits galets blancs disposés en arc",
       "teinte": "conformite",
       "agent": "Parlons de votre tiers payant"
     },
@@ -37,7 +33,6 @@
       "nom": "Centres de santé et cliniques",
       "court": "Centres",
       "description": "Facturation, recouvrement et outils d'un centre de santé, d'une clinique ou d'un groupe multi-sites.",
-      "alt": "Deux chaises en bois et une plante verte contre le mur clair d'un couloir de clinique",
       "teinte": "guide-tiers-payant",
       "agent": "L'agent tient l'agenda et le check-out à jour"
     }
