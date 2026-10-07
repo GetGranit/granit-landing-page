@@ -39,9 +39,7 @@ export function PageCategorie({ cat }: { cat: Categorie }) {
   const anciens = anciensDeCategorie(cat.slug);
   const pilier = cocon.find((f) => f.pillar);
   const annuaire = cat.slug === "plateformes";
-  const autres = cocon.filter(
-    (f) => f !== pilier && !(annuaire && f.slug.startsWith("portail-")),
-  );
+  const autres = cocon.filter((f) => f !== pilier && !(annuaire && f.slug.startsWith("portail-")));
 
   return (
     <SiteLayout>

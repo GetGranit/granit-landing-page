@@ -157,7 +157,10 @@ export function Hub() {
 
 export function Fleche() {
   return (
-    <span aria-hidden className="inline-block transition-transform group-hover/l:translate-x-0.5 group-hover:translate-x-0.5 motion-reduce:transition-none">
+    <span
+      aria-hidden
+      className="inline-block transition-transform group-hover/l:translate-x-0.5 group-hover:translate-x-0.5 motion-reduce:transition-none"
+    >
       →
     </span>
   );
@@ -176,7 +179,9 @@ function Rangee({ cat }: { cat: Categorie }) {
           >
             {cat.nom}
           </h2>
-          <p className="mt-1.5 max-w-[60ch] text-[15px] text-[var(--text-soft)]">{cat.description}</p>
+          <p className="mt-1.5 max-w-[60ch] text-[15px] text-[var(--text-soft)]">
+            {cat.description}
+          </p>
         </div>
         <Link
           to="/ressources/categorie/$category"
@@ -189,7 +194,10 @@ function Rangee({ cat }: { cat: Categorie }) {
       </div>
       <div className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 [scrollbar-width:none] md:mx-0 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:px-0">
         {tout.slice(0, 3).map((f) => (
-          <div key={f.slug} className="w-[78vw] max-w-[320px] shrink-0 snap-start md:w-auto md:max-w-none">
+          <div
+            key={f.slug}
+            className="w-[78vw] max-w-[320px] shrink-0 snap-start md:w-auto md:max-w-none"
+          >
             <CarteArticle fiche={f} />
           </div>
         ))}

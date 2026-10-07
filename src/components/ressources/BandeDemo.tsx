@@ -24,8 +24,9 @@ export function BandeDemo({
             {titre}
           </h2>
           <p className="mt-3 max-w-[52ch] text-[#c9bfb0]">
-            Le magasin poste la carte de tiers payant et l'ordonnance dans Slack. L'agent reconnaît la
-            plateforme, remplit le portail et répond dans le fil : accordée, refusée ou en attente.
+            Le magasin poste la carte de tiers payant et l'ordonnance dans Slack. L'agent reconnaît
+            la plateforme, remplit le portail et répond dans le fil : accordée, refusée ou en
+            attente.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link to="/demo" className="btn-primary">

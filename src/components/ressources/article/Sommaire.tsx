@@ -48,7 +48,10 @@ export function Sommaire({ entrees }: { entrees: Entree[] }) {
   const actif = useSectionLue(entrees.map((e) => e.id).join(" "));
   if (!entrees.length) return null;
   return (
-    <nav aria-label="Sommaire" className="rounded-[14px] border border-[var(--border)] bg-white px-[18px] py-4">
+    <nav
+      aria-label="Sommaire"
+      className="rounded-[14px] border border-[var(--border)] bg-white px-[18px] py-4"
+    >
       <div className="text-[15px] font-semibold">Dans cet article</div>
       <Liste entrees={entrees} actif={actif} />
     </nav>

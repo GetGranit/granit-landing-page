@@ -16,12 +16,15 @@ export const Route = createFileRoute("/ressources/categorie/$category")({
     if (!cat) return {};
     const title = `${cat.nom} : tiers payant optique - Granit AI`;
     const desc = descriptionCategorie(cat);
+    // Une catégorie qui n'existe que par l'aperçu ne doit pas être indexée.
+    const preview = toutCategorie(cat.slug).every((f) => f.preview);
     return {
       meta: [
         { title },
         { name: "description", content: desc },
         { property: "og:title", content: title },
         { property: "og:description", content: desc },
+        ...(preview ? [{ name: "robots", content: "noindex, nofollow" }] : []),
       ],
     };
   },

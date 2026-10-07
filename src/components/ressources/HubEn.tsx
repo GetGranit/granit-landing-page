@@ -9,7 +9,8 @@ const page = {
   fr: {
     eyebrow: "Ressources",
     title: "Articles pour équipes opérationnelles santé.",
-    intro: "Guides pratiques, retours de terrain et analyses pour automatiser le back-office sans perdre le contrôle.",
+    intro:
+      "Guides pratiques, retours de terrain et analyses pour automatiser le back-office sans perdre le contrôle.",
     featured: "À la une",
     read: "Lire l'article",
     all: "Tous les articles",
@@ -17,7 +18,8 @@ const page = {
   en: {
     eyebrow: "Resources",
     title: "Articles for healthcare operations teams.",
-    intro: "Practical guides, field insights and analysis to automate the back-office without losing control.",
+    intro:
+      "Practical guides, field insights and analysis to automate the back-office without losing control.",
     featured: "Featured",
     read: "Read article",
     all: "All articles",
@@ -100,18 +102,29 @@ export function HubEn() {
                 </div>
                 <h2
                   className="mt-4 font-serif"
-                  style={{ fontSize: "clamp(24px,2.6vw,34px)", lineHeight: 1.2, fontWeight: 600, letterSpacing: "-0.015em" }}
+                  style={{
+                    fontSize: "clamp(24px,2.6vw,34px)",
+                    lineHeight: 1.2,
+                    fontWeight: 600,
+                    letterSpacing: "-0.015em",
+                  }}
                 >
                   {featured.title}
                 </h2>
-                <p className="mt-4 text-[15px] leading-[1.65]" style={{ color: "var(--text-soft)" }}>
+                <p
+                  className="mt-4 text-[15px] leading-[1.65]"
+                  style={{ color: "var(--text-soft)" }}
+                >
                   {featured.desc}
                 </p>
                 <div
                   className="mt-auto pt-8 text-[13px]"
                   style={{ color: "var(--terra)", fontWeight: 600 }}
                 >
-                  {t.read} <span className="inline-block transition-transform group-hover:translate-x-0.5">↗</span>
+                  {t.read}{" "}
+                  <span className="inline-block transition-transform group-hover:translate-x-0.5">
+                    ↗
+                  </span>
                 </div>
               </div>
             </Link>
@@ -166,18 +179,27 @@ export function HubEn() {
                     </div>
                     <h2
                       className="mt-3 font-serif"
-                      style={{ fontSize: "20px", lineHeight: 1.25, fontWeight: 600, letterSpacing: "-0.01em" }}
+                      style={{
+                        fontSize: "20px",
+                        lineHeight: 1.25,
+                        fontWeight: 600,
+                        letterSpacing: "-0.01em",
+                      }}
                     >
                       {article.title}
                     </h2>
-                    <p className="mt-3 flex-1 text-[14px] leading-[1.65]" style={{ color: "var(--text-soft)" }}>
+                    <p
+                      className="mt-3 flex-1 text-[14px] leading-[1.65]"
+                      style={{ color: "var(--text-soft)" }}
+                    >
                       {article.desc}
                     </p>
                     <div
                       className="mt-6 inline-flex items-center gap-1 text-[12.5px]"
                       style={{ color: "var(--terra)", fontFamily: "var(--font-mono)" }}
                     >
-                      {t.read} <span className="transition-transform group-hover:translate-x-0.5">↗</span>
+                      {t.read}{" "}
+                      <span className="transition-transform group-hover:translate-x-0.5">↗</span>
                     </div>
                   </div>
                 </Link>

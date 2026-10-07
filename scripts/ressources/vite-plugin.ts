@@ -19,7 +19,10 @@ const ARTICLE = "virtual:ressources/article/";
 
 const estPilier = (level: string) => /^Pilier/.test(level ?? "");
 
-function fiche(a: RessourceJson, plateformes: ReturnType<typeof lireContenu>["plateformes"]): Fiche {
+function fiche(
+  a: RessourceJson,
+  plateformes: ReturnType<typeof lireContenu>["plateformes"],
+): Fiche {
   const fp = a.plateforme ? plateformes[a.plateforme] : undefined;
   return {
     slug: a.slug,
@@ -88,13 +91,17 @@ export function ressources(): Plugin {
         controler(racine, contenu.articles);
         const fiches = contenu.articles.map((a) => fiche(a, contenu.plateformes));
         const charger = contenu.articles
-          .map((a) => `${JSON.stringify(a.slug)}: () => import(${JSON.stringify(ARTICLE + a.slug)})`)
+          .map(
+            (a) => `${JSON.stringify(a.slug)}: () => import(${JSON.stringify(ARTICLE + a.slug)})`,
+          )
           .join(",\n");
         return `export const fiches = ${JSON.stringify(fiches)};\nexport const charger = {\n${charger}\n};\n`;
       }
       const slug = id.slice(("\0" + ARTICLE).length);
       const article = contenu.articles.find((a) => a.slug === slug);
-      const plateforme = article?.plateforme ? (contenu.plateformes[article.plateforme] ?? null) : null;
+      const plateforme = article?.plateforme
+        ? (contenu.plateformes[article.plateforme] ?? null)
+        : null;
       return `export default ${JSON.stringify({ article, plateforme })};\n`;
     },
     buildStart() {
@@ -104,8 +111,11 @@ export function ressources(): Plugin {
       const dossier = join(racine, "public/covers");
       rmSync(dossier, { recursive: true, force: true });
       mkdirSync(dossier, { recursive: true });
-      for (const [slug, svg] of couvertures(lire())) writeFileSync(join(dossier, `${slug}.svg`), svg);
-      console.log(`[ressources] ${readdirSync(dossier).length} couvertures écrites dans public/covers`);
+      for (const [slug, svg] of couvertures(lire()))
+        writeFileSync(join(dossier, `${slug}.svg`), svg);
+      console.log(
+        `[ressources] ${readdirSync(dossier).length} couvertures écrites dans public/covers`,
+      );
     },
     configureServer(server: ViteDevServer) {
       server.middlewares.use((req, res, next) => {

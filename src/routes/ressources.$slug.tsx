@@ -33,7 +33,9 @@ export const Route = createFileRoute("/ressources/$slug")({
         ],
       };
     }
-    const a = loaderData ? (getArticle("fr", loaderData.slug) ?? getArticle("en", loaderData.slug)) : undefined;
+    const a = loaderData
+      ? (getArticle("fr", loaderData.slug) ?? getArticle("en", loaderData.slug))
+      : undefined;
     const title = a ? `${a.title} - Granit AI` : "Article - Granit AI";
     const desc = a?.desc ?? "Article Granit AI.";
     return {
@@ -67,7 +69,11 @@ function ArticleRoute() {
   return (
     <>
       {lds.map((ld, i) => (
-        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }}
+        />
       ))}
       <PageArticle article={article} plateforme={plateforme} />
     </>

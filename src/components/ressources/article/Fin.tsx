@@ -21,10 +21,16 @@ export function Faq({ items }: { items: RessourceJson["faqItems"] }) {
         >
           <summary className="flex cursor-pointer list-none justify-between gap-4 py-3.5 font-semibold text-[var(--text)] [&::-webkit-details-marker]:hidden">
             {f.question}
-            <span aria-hidden className="text-[22px] font-normal leading-none text-[var(--text-muted)] group-open:hidden">
+            <span
+              aria-hidden
+              className="text-[22px] font-normal leading-none text-[var(--text-muted)] group-open:hidden"
+            >
               +
             </span>
-            <span aria-hidden className="hidden text-[22px] font-normal leading-none text-[var(--text-muted)] group-open:inline">
+            <span
+              aria-hidden
+              className="hidden text-[22px] font-normal leading-none text-[var(--text-muted)] group-open:inline"
+            >
               −
             </span>
           </summary>
@@ -36,7 +42,13 @@ export function Faq({ items }: { items: RessourceJson["faqItems"] }) {
 }
 
 /** Sources : « Site · page », liens externes ; pour une plateforme, la mention du relevé Granit. */
-export function Sources({ article, plateforme }: { article: RessourceJson; plateforme: Plateforme | null }) {
+export function Sources({
+  article,
+  plateforme,
+}: {
+  article: RessourceJson;
+  plateforme: Plateforme | null;
+}) {
   const releves = plateforme ? Object.values(plateforme.sources).filter((s) => !s.url) : [];
   if (!article.sources?.length && !releves.length) return null;
   return (
@@ -45,7 +57,11 @@ export function Sources({ article, plateforme }: { article: RessourceJson; plate
       <ul className="list-disc pl-[22px] text-[15px]">
         {article.sources.map((s) => (
           <li key={s.url} className="my-1.5">
-            <a href={s.url} rel="noopener" className="text-[var(--terra-hover)] underline underline-offset-[3px]">
+            <a
+              href={s.url}
+              rel="noopener"
+              className="text-[var(--terra-hover)] underline underline-offset-[3px]"
+            >
               {s.label}
             </a>
           </li>
@@ -115,7 +131,11 @@ export function ALireEnsuite({ article }: { article: RessourceJson }) {
         <h2 className="mt-2 font-serif text-[30px] font-normal leading-tight">À lire ensuite</h2>
         <div className="mt-6 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
           {liens.slice(0, 3).map(({ fiche, type }) => (
-            <CarteArticle key={fiche.slug} fiche={fiche} etiquette={ETIQUETTES[type] ?? "À lire aussi"} />
+            <CarteArticle
+              key={fiche.slug}
+              fiche={fiche}
+              etiquette={ETIQUETTES[type] ?? "À lire aussi"}
+            />
           ))}
         </div>
       </div>

@@ -4,7 +4,11 @@ import { useState, type ReactElement } from "react";
 import { dateFr } from "@/lib/ressources/contenu";
 import type { Plateforme } from "@/lib/ressources/types";
 
-const norm = (s: string) => s.normalize("NFD").replace(/\p{Diacritic}/gu, "").toLowerCase();
+const norm = (s: string) =>
+  s
+    .normalize("NFD")
+    .replace(/\p{Diacritic}/gu, "")
+    .toLowerCase();
 
 /** « Source : … » d'un bloc ; les données du connecteur (sans URL) sont datées du relevé. */
 function Source({ p, cle }: { p: Plateforme; cle?: string }) {
@@ -35,7 +39,9 @@ export function FicheIdentite({ p }: { p: Plateforme }) {
       {p.identite.map((i) => (
         <div key={i.label} className={caseCls}>
           <dt className="text-[13px] text-[var(--text-muted)]">{i.label}</dt>
-          <dd className="mt-0.5 text-[16px] font-semibold leading-snug text-[var(--text)]">{i.valeur}</dd>
+          <dd className="mt-0.5 text-[16px] font-semibold leading-snug text-[var(--text)]">
+            {i.valeur}
+          </dd>
         </div>
       ))}
     </dl>
@@ -51,7 +57,9 @@ export function Chiffres({ p }: { p: Plateforme }) {
         {p.chiffres.map((c) => (
           <div key={c.label} className={`${caseCls} flex flex-col-reverse justify-end`}>
             <dt className="text-[14px] leading-snug text-[var(--text-muted)]">{c.label}</dt>
-            <dd className="whitespace-nowrap font-serif text-[28px] leading-[1.1] text-[var(--text)]">{c.valeur}</dd>
+            <dd className="whitespace-nowrap font-serif text-[28px] leading-[1.1] text-[var(--text)]">
+              {c.valeur}
+            </dd>
           </div>
         ))}
       </dl>
@@ -80,8 +88,13 @@ export function Organismes({ p }: { p: Plateforme }) {
           className="w-full rounded-[14px] border border-[var(--border2)] bg-white px-4 py-3 text-[16px] shadow-[var(--shadow-soft)] focus-visible:outline-2 focus-visible:outline-[var(--terra)]"
         />
       </label>
-      <p className="mt-2 font-mono text-[12px] tracking-[0.04em] text-[var(--text-muted)]" aria-live="polite">
-        {n ? `${visibles.length} résultat${visibles.length > 1 ? "s" : ""} sur ${liste.length}` : `${liste.length} complémentaires`}
+      <p
+        className="mt-2 font-mono text-[12px] tracking-[0.04em] text-[var(--text-muted)]"
+        aria-live="polite"
+      >
+        {n
+          ? `${visibles.length} résultat${visibles.length > 1 ? "s" : ""} sur ${liste.length}`
+          : `${liste.length} complémentaires`}
       </p>
       <ul className="mt-3 flex max-h-[260px] flex-wrap gap-2 overflow-auto p-0.5">
         {liste.map((m) => (
@@ -142,7 +155,11 @@ export function Contacts({ p }: { p: Plateforme }) {
             <dt className="text-[13px] text-[var(--text-muted)]">{c.label}</dt>
             <dd className="mt-0.5 text-[16px] font-semibold leading-snug text-[var(--text)]">
               {c.url ? (
-                <a href={c.url} rel="noopener" className="underline underline-offset-2 hover:text-[var(--terra-hover)]">
+                <a
+                  href={c.url}
+                  rel="noopener"
+                  className="underline underline-offset-2 hover:text-[var(--terra-hover)]"
+                >
                   {c.valeur}
                 </a>
               ) : (

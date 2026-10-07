@@ -17,7 +17,9 @@ export function Annuaire() {
   const fiches = fichesPlateformes();
   const [q, setQ] = useState("");
   if (!fiches.length) return null;
-  const visibles = fiches.filter((f) => norm(f.plateforme?.nom ?? f.title).includes(norm(q.trim())));
+  const visibles = fiches.filter((f) =>
+    norm(f.plateforme?.nom ?? f.title).includes(norm(q.trim())),
+  );
   return (
     <div>
       <label className="relative block max-w-[420px]">
@@ -30,8 +32,13 @@ export function Annuaire() {
           className="w-full rounded-[12px] border border-[var(--border2)] bg-white px-4 py-3 text-[15px] focus-visible:outline-2 focus-visible:outline-[var(--terra)]"
         />
       </label>
-      <p className="mt-2 font-mono text-[11px] uppercase tracking-[0.1em] text-[var(--text-muted)]" aria-live="polite">
-        {q.trim() ? `${visibles.length} sur ${fiches.length}` : `${fiches.length} plateforme${fiches.length > 1 ? "s" : ""}`}
+      <p
+        className="mt-2 font-mono text-[11px] uppercase tracking-[0.1em] text-[var(--text-muted)]"
+        aria-live="polite"
+      >
+        {q.trim()
+          ? `${visibles.length} sur ${fiches.length}`
+          : `${fiches.length} plateforme${fiches.length > 1 ? "s" : ""}`}
       </p>
       <ul className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-3">
         {fiches.map((f) => (

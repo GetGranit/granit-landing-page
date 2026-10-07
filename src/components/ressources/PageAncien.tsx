@@ -29,7 +29,12 @@ export function PageAncien({ slug }: { slug: string }) {
   const memeTheme: Carte[] = cat
     ? toutCategorie(cat.slug)
         .filter((f) => f.slug !== slug)
-        .map((f) => ({ slug: f.slug, label: cat.court, time: tempsLecture(f.readTime), title: f.title }))
+        .map((f) => ({
+          slug: f.slug,
+          label: cat.court,
+          time: tempsLecture(f.readTime),
+          title: f.title,
+        }))
     : [];
   const autres: Carte[] = articles[lang]
     .filter((a) => a.slug !== slug && !memeTheme.some((m) => m.slug === a.slug))
@@ -47,32 +52,58 @@ export function PageAncien({ slug }: { slug: string }) {
 
   return (
     <SiteLayout>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld.article) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(ld.article) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
       <article className="mx-auto max-w-[760px] px-6 pt-24 pb-16">
         <Reveal>
           {cat ? (
             <Fil
               items={[
                 { nom: "Ressources", to: "/ressources" },
-                { nom: cat.nom, to: "/ressources/categorie/$category", params: { category: cat.slug } },
+                {
+                  nom: cat.nom,
+                  to: "/ressources/categorie/$category",
+                  params: { category: cat.slug },
+                },
               ]}
             />
           ) : (
-            <Link to="/ressources" className="text-[13px]" style={{ color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}>
+            <Link
+              to="/ressources"
+              className="text-[13px]"
+              style={{ color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}
+            >
               {t.back}
             </Link>
           )}
           <div className="eyebrow mt-8">
             {article.category} · {article.time}
           </div>
-          <h1 className="font-serif mt-5" style={{ fontSize: "clamp(36px,4.6vw,64px)", lineHeight: 1.1, fontWeight: 400, letterSpacing: "-0.02em" }}>
+          <h1
+            className="font-serif mt-5"
+            style={{
+              fontSize: "clamp(36px,4.6vw,64px)",
+              lineHeight: 1.1,
+              fontWeight: 400,
+              letterSpacing: "-0.02em",
+            }}
+          >
             {article.title}
           </h1>
           <p className="body-lg mt-8">{article.desc}</p>
           <div className="mt-10 space-y-6">
             {article.body.map((p, i) => (
-              <p key={i} className="text-[17px] leading-[1.75]" style={{ color: "var(--text-soft)" }}>
+              <p
+                key={i}
+                className="text-[17px] leading-[1.75]"
+                style={{ color: "var(--text-soft)" }}
+              >
                 {p}
               </p>
             ))}
@@ -92,7 +123,10 @@ export function PageAncien({ slug }: { slug: string }) {
                 className="card-hover flex h-full flex-col rounded-[8px] border bg-white/40 p-6"
                 style={{ borderColor: "var(--border)" }}
               >
-                <div className="text-[10px] uppercase tracking-[0.04em]" style={{ fontFamily: "var(--font-mono)", color: "var(--terra)" }}>
+                <div
+                  className="text-[10px] uppercase tracking-[0.04em]"
+                  style={{ fontFamily: "var(--font-mono)", color: "var(--terra)" }}
+                >
                   {a.label} · {a.time}
                 </div>
                 <div className="mt-4 text-[18px] font-serif leading-[1.25]">{a.title}</div>

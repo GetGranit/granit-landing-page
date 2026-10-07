@@ -6,8 +6,13 @@
 // og : titre et étiquette inclus, à rasteriser au build avec resvg + les fichiers de police.
 
 export type Category =
-  | "guide-tiers-payant" | "plateformes" | "rejets" | "paiements"
-  | "gerer-son-tiers-payant" | "conformite" | "glossaire";
+  | "guide-tiers-payant"
+  | "plateformes"
+  | "rejets"
+  | "paiements"
+  | "gerer-son-tiers-payant"
+  | "conformite"
+  | "glossaire";
 
 export const CATEGORIES: Record<Category, { name: string; ink: string; tint: string }> = {
   "guide-tiers-payant": { name: "Les bases du tiers payant", ink: "#3f7a4d", tint: "#e9f2eb" },
@@ -33,7 +38,15 @@ const DARK = "#1c1108";
 const TERRA = "#d4583a";
 const BAYER = [0, 8, 2, 10, 12, 4, 14, 6, 3, 11, 1, 9, 15, 7, 13, 5];
 // Trait du logo (viewBox 56×52), points de la ligne puis le point final.
-const LOGO = [[4, 26], [16, 26], [20, 14], [26, 38], [32, 20], [36, 30], [44, 30]];
+const LOGO = [
+  [4, 26],
+  [16, 26],
+  [20, 14],
+  [26, 38],
+  [32, 20],
+  [36, 30],
+  [44, 30],
+];
 
 function hash(s: string): number {
   let h = 2166136261;
@@ -50,7 +63,8 @@ function rng(seed: number) {
   };
 }
 
-const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]!);
+const esc = (s: string) =>
+  s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]!);
 const r1 = (n: number) => Math.round(n * 10) / 10;
 
 // Trois familles de champ (0 = vide, 1 = plein), choisies par la graine.
@@ -59,7 +73,10 @@ function makeField(rand: () => number): Field {
   const kind = Math.floor(rand() * 3);
   if (kind === 0) {
     // Strates : bandes ondulées, clin d'œil au granit.
-    const bands = 3 + rand() * 3, amp = 0.08 + rand() * 0.12, freq = 1 + rand() * 2, ph = rand() * 6.28;
+    const bands = 3 + rand() * 3,
+      amp = 0.08 + rand() * 0.12,
+      freq = 1 + rand() * 2,
+      ph = rand() * 6.28;
     return (u, v) => {
       const s = Math.sin((v + amp * Math.sin(u * freq * Math.PI + ph)) * bands * Math.PI);
       return 0.5 + 0.5 * s * Math.abs(s) * 0.9;
@@ -68,12 +85,21 @@ function makeField(rand: () => number): Field {
   if (kind === 1) {
     // Lentilles : deux ou trois masses rondes et douces.
     const blobs = Array.from({ length: 2 + Math.floor(rand() * 2) }, () => ({
-      x: 0.15 + rand() * 0.7, y: 0.15 + rand() * 0.7, r: 0.18 + rand() * 0.22,
+      x: 0.15 + rand() * 0.7,
+      y: 0.15 + rand() * 0.7,
+      r: 0.18 + rand() * 0.22,
     }));
-    return (u, v) => Math.min(1, blobs.reduce((a, b) => a + Math.exp(-((u - b.x) ** 2 + (v - b.y) ** 2) / (b.r * b.r)), 0));
+    return (u, v) =>
+      Math.min(
+        1,
+        blobs.reduce((a, b) => a + Math.exp(-((u - b.x) ** 2 + (v - b.y) ** 2) / (b.r * b.r)), 0),
+      );
   }
   // Onde : dégradé diagonal modulé.
-  const th = rand() * Math.PI, wl = 0.12 + rand() * 0.14, ph = rand() * 6.28, dir = rand() < 0.5;
+  const th = rand() * Math.PI,
+    wl = 0.12 + rand() * 0.14,
+    ph = rand() * 6.28,
+    dir = rand() < 0.5;
   return (u, v) => {
     const d = u * Math.cos(th) + v * Math.sin(th);
     const g = dir ? u : 1 - u;
@@ -85,28 +111,42 @@ function wrap(text: string, max: number): string[] {
   const lines: string[] = [];
   let line = "";
   for (const w of text.split(/\s+/)) {
-    if (line && (line + " " + w).length > max) { lines.push(line); line = w; } else line = line ? line + " " + w : w;
+    if (line && (line + " " + w).length > max) {
+      lines.push(line);
+      line = w;
+    } else line = line ? line + " " + w : w;
   }
   if (line) lines.push(line);
   return lines;
 }
 
-export function coverSvg({ slug, category, title, variant = "card", platform = false, mark }: CoverInput): string {
+export function coverSvg({
+  slug,
+  category,
+  title,
+  variant = "card",
+  platform = false,
+  mark,
+}: CoverInput): string {
   const cat = CATEGORIES[category] ?? CATEGORIES.glossaire;
   const og = variant === "og";
-  const W = og ? 1200 : 800, H = og ? 630 : 600;
+  const W = og ? 1200 : 800,
+    H = og ? 630 : 600;
   const rand = rng(hash(slug));
   const field = makeField(rand);
   const cell = og ? 16 : 14;
   // og : la trame occupe la moitié droite, le texte la gauche.
   const x0 = og ? 672 : 0; // multiple de la cellule : la matrice de Bayer tombe juste
   // Médaillon plateforme : disque central, la trame s'efface autour.
-  const mx = og ? (W + x0) / 2 : W / 2, my = H / 2, mr = H * 0.22;
+  const mx = og ? (W + x0) / 2 : W / 2,
+    my = H / 2,
+    mr = H * 0.22;
 
   let d = "";
   for (let y = 0; y < H; y += cell) {
     for (let x = x0; x < W; x += cell) {
-      const u = (x - x0) / (W - x0), v = y / H;
+      const u = (x - x0) / (W - x0),
+        v = y / H;
       let t = 0.08 + 0.92 * field(u, v);
       if (platform) {
         const dist = Math.hypot(x + cell / 2 - mx, y + cell / 2 - my) / mr;
@@ -141,8 +181,10 @@ export function coverSvg({ slug, category, title, variant = "card", platform = f
   if (platform) {
     medal = `<circle cx="${mx}" cy="${my}" r="${r1(mr)}" fill="#fff" stroke="${cat.ink}" stroke-opacity=".25" stroke-width="2"/>`;
     const side = r1(mr * 1.2);
-    if (og && mark?.logo) medal += `<image href="${esc(mark.logo)}" x="${r1(mx - side / 2)}" y="${r1(my - side / 2)}" width="${side}" height="${side}" preserveAspectRatio="xMidYMid meet"/>`;
-    else if (og && mark?.initial) medal += `<text x="${mx}" y="${r1(my + mr * 0.36)}" text-anchor="middle" font-family="Libre Caslon Text" font-size="${r1(mr)}" fill="${cat.ink}">${esc(mark.initial.slice(0, 1).toUpperCase())}</text>`;
+    if (og && mark?.logo)
+      medal += `<image href="${esc(mark.logo)}" x="${r1(mx - side / 2)}" y="${r1(my - side / 2)}" width="${side}" height="${side}" preserveAspectRatio="xMidYMid meet"/>`;
+    else if (og && mark?.initial)
+      medal += `<text x="${mx}" y="${r1(my + mr * 0.36)}" text-anchor="middle" font-family="Libre Caslon Text" font-size="${r1(mr)}" fill="${cat.ink}">${esc(mark.initial.slice(0, 1).toUpperCase())}</text>`;
   }
 
   let text = "";
@@ -150,26 +192,36 @@ export function coverSvg({ slug, category, title, variant = "card", platform = f
     // Titre façon Function : partie avant « : » en romain, la suite en italique couleur catégorie.
     // Coupure après « : » ou après un « ? » suivi d'une suite.
     const m = title.match(/^(.+?)(?: : |(?<=\?) )(.+)$/);
-    const head = m ? m[1] : title, tail = m?.[2];
+    const head = m ? m[1] : title,
+      tail = m?.[2];
     // Largeur moyenne d'un caractère Libre Caslon ≈ 0,5 em ; zone de texte = 64 → x0 - 48.
     const build = (fs: number) => {
       const max = Math.floor((x0 - 112) / (fs * 0.5));
-      return wrap(head, max).map((l) => ({ l, em: false })).concat(tail ? wrap(tail, max).map((l) => ({ l, em: true })) : []);
+      return wrap(head, max)
+        .map((l) => ({ l, em: false }))
+        .concat(tail ? wrap(tail, max).map((l) => ({ l, em: true })) : []);
     };
-    let fs = 56, lines = build(fs);
+    let fs = 56,
+      lines = build(fs);
     while (lines.length > 5 && fs > 40) lines = build((fs -= 4));
     lines = lines.slice(0, 6);
     const lh = fs * 1.14;
     const top = (H - lines.length * lh) / 2 + fs * 0.8;
     text =
       `<text x="64" y="72" font-family="JetBrains Mono" font-size="17" letter-spacing="2.4" fill="${cat.ink}">${esc(cat.name.toUpperCase())}</text>` +
-      lines.map(({ l, em }, i) =>
-        `<text x="64" y="${r1(top + i * lh)}" font-family="Libre Caslon Text" font-size="${fs}"${em ? ` font-style="italic" fill="${cat.ink}"` : ` fill="${DARK}"`}>${esc(l)}</text>`).join("") +
+      lines
+        .map(
+          ({ l, em }, i) =>
+            `<text x="64" y="${r1(top + i * lh)}" font-family="Libre Caslon Text" font-size="${fs}"${em ? ` font-style="italic" fill="${cat.ink}"` : ` fill="${DARK}"`}>${esc(l)}</text>`,
+        )
+        .join("") +
       `<text x="64" y="${H - 56}" font-family="Inter Tight" font-size="20" font-weight="600" fill="${DARK}">Granit · Le guide du tiers payant</text>`;
   }
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="${esc(title)}">` +
+  return (
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="${esc(title)}">` +
     `<rect width="${W}" height="${H}" fill="${og ? "#faf6ee" : cat.tint}"/>` +
     (og ? `<rect x="${x0}" width="${W - x0}" height="${H}" fill="${cat.tint}"/>` : "") +
-    `<path d="${d}" fill="${cat.ink}" fill-opacity=".82"/>${line}${medal}${text}</svg>`;
+    `<path d="${d}" fill="${cat.ink}" fill-opacity=".82"/>${line}${medal}${text}</svg>`
+  );
 }

@@ -130,9 +130,7 @@ export function aLaUne(): Fiche[] {
     if (f && choix.length < 5 && !choix.some((x) => x.slug === f.slug)) choix.push(f);
   };
   A_LA_UNE.forEach((s) => ajouter(ficheJson(s)));
-  [...fichesCocon]
-    .sort((a, b) => (b.date ?? "").localeCompare(a.date ?? ""))
-    .forEach(ajouter);
+  [...fichesCocon].sort((a, b) => (b.date ?? "").localeCompare(a.date ?? "")).forEach(ajouter);
   anciensRattaches.forEach(ajouter);
   return choix;
 }
@@ -153,8 +151,34 @@ export function couperTitre(t: string): [string, string | undefined] {
   return m ? [m[1], m[2]] : [t, undefined];
 }
 
-const MOIS = ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."];
-const MOIS_LONGS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
+const MOIS = [
+  "janv.",
+  "févr.",
+  "mars",
+  "avr.",
+  "mai",
+  "juin",
+  "juil.",
+  "août",
+  "sept.",
+  "oct.",
+  "nov.",
+  "déc.",
+];
+const MOIS_LONGS = [
+  "janvier",
+  "février",
+  "mars",
+  "avril",
+  "mai",
+  "juin",
+  "juillet",
+  "août",
+  "septembre",
+  "octobre",
+  "novembre",
+  "décembre",
+];
 
 /** « 2026-10-07 » → « 7 oct. 2026 » (ou « 7 octobre 2026 » en version longue). */
 export function dateFr(iso: string | undefined, longue = false): string {

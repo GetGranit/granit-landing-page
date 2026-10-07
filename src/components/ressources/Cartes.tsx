@@ -1,11 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import {
-  categorie,
-  couperTitre,
-  dateFr,
-  tempsLecture,
-  titreCourt,
-} from "@/lib/ressources/contenu";
+import { categorie, couperTitre, dateFr, tempsLecture, titreCourt } from "@/lib/ressources/contenu";
 import type { Fiche } from "@/lib/ressources/types";
 
 /** Titre façon Function : ce qui suit « : » ou « ? » passe en italique, couleur de la catégorie. */
@@ -69,7 +63,10 @@ function Couverture({
   const c = categorie(fiche.category)!;
   const p = fiche.plateforme;
   return (
-    <div className={`relative aspect-[4/3] overflow-hidden ${rayon}`} style={{ background: c.tint }}>
+    <div
+      className={`relative aspect-[4/3] overflow-hidden ${rayon}`}
+      style={{ background: c.tint }}
+    >
       <img
         src={`/covers/${fiche.slug}.svg`}
         width={800}
@@ -116,7 +113,10 @@ export function CarteArticle({ fiche, etiquette }: { fiche: Fiche; etiquette?: s
     <Link to="/ressources/$slug" params={{ slug: fiche.slug }} className={lienCarte}>
       <Couverture fiche={fiche} etiquette={etiquette ?? c.court} rayon="rounded-[14px]" />
       <h3 className="mt-4 line-clamp-3 font-serif text-[19px] font-normal leading-[1.25] tracking-[-0.01em] [text-wrap:balance] md:text-[20px]">
-        <span className="transition-colors group-hover:text-[var(--ink)]" style={{ ["--ink" as string]: c.ink }}>
+        <span
+          className="transition-colors group-hover:text-[var(--ink)]"
+          style={{ ["--ink" as string]: c.ink }}
+        >
           {fiche.title}
         </span>
       </h3>

@@ -28,9 +28,18 @@ function Signature({ a }: { a: RessourceJson }) {
     <div className="mt-5 flex flex-wrap items-center gap-x-[18px] gap-y-2 text-[14px] text-[var(--text-soft)]">
       <span className="flex items-center gap-2">
         {a.author?.photo ? (
-          <img src={a.author.photo} alt="" width={30} height={30} className="size-[30px] rounded-full object-cover" />
+          <img
+            src={a.author.photo}
+            alt=""
+            width={30}
+            height={30}
+            className="size-[30px] rounded-full object-cover"
+          />
         ) : (
-          <span aria-hidden className="grid size-[30px] place-items-center rounded-full border border-[var(--border)] bg-[var(--bg3)] text-[13px] font-semibold">
+          <span
+            aria-hidden
+            className="grid size-[30px] place-items-center rounded-full border border-[var(--border)] bg-[var(--bg3)] text-[13px] font-semibold"
+          >
             {nom.slice(0, 1).toUpperCase()}
           </span>
         )}
@@ -41,7 +50,15 @@ function Signature({ a }: { a: RessourceJson }) {
       </span>
       {a.reviewer && (
         <span className="inline-flex items-center gap-1.5 font-semibold text-[#2e6b3c]">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" aria-hidden>
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.4"
+            aria-hidden
+          >
             <path d="M20 6 9 17l-5-5" />
           </svg>
           Relu par {a.reviewer}
@@ -64,7 +81,13 @@ function titreAgent(a: RessourceJson, p: Plateforme | null): string {
   return categorie(a.category)!.agent;
 }
 
-export function PageArticle({ article: a, plateforme: p }: { article: RessourceJson; plateforme: Plateforme | null }) {
+export function PageArticle({
+  article: a,
+  plateforme: p,
+}: {
+  article: RessourceJson;
+  plateforme: Plateforme | null;
+}) {
   const cat = categorie(a.category)!;
   const estPlateforme = a.type === "plateforme" && p;
   const entrees: Entree[] = [
@@ -85,7 +108,10 @@ export function PageArticle({ article: a, plateforme: p }: { article: RessourceJ
     <SiteLayout>
       {a.preview && <BandeauPreview />}
       <SousNav actif={a.category === "glossaire" ? "glossaire" : a.category} />
-      <header className="relative overflow-hidden border-b border-[var(--border)]" style={{ background: cat.tint }}>
+      <header
+        className="relative overflow-hidden border-b border-[var(--border)]"
+        style={{ background: cat.tint }}
+      >
         {!estPlateforme && (
           <div
             aria-hidden
@@ -101,7 +127,11 @@ export function PageArticle({ article: a, plateforme: p }: { article: RessourceJ
           <Fil
             items={[
               { nom: "Ressources", to: "/ressources" },
-              { nom: cat.nom, to: "/ressources/categorie/$category", params: { category: cat.slug } },
+              {
+                nom: cat.nom,
+                to: "/ressources/categorie/$category",
+                params: { category: cat.slug },
+              },
               { nom: titreCourt(a.title) },
             ]}
           />
@@ -133,7 +163,9 @@ export function PageArticle({ article: a, plateforme: p }: { article: RessourceJ
               <span className="eyebrow" style={{ color: "#f2a48f" }}>
                 Ce que fait Granit
               </span>
-              <h3 className="mt-2 font-serif text-[21px] font-normal leading-[1.2]">{titreAgent(a, p)}</h3>
+              <h3 className="mt-2 font-serif text-[21px] font-normal leading-[1.2]">
+                {titreAgent(a, p)}
+              </h3>
               <p className="mt-2 text-[14.5px] text-[#c9bfb0]">
                 20 minutes avec l'équipe, sur vos propres dossiers.
               </p>
