@@ -17,6 +17,7 @@ const copy = {
     demo: "Demander une démo",
     legal: "Légal",
     cgv: "CGV",
+    privacy: "Confidentialité",
     rights: "Tous droits réservés",
     made: "Made in France",
   },
@@ -34,6 +35,7 @@ const copy = {
     demo: "Book a demo",
     legal: "Legal",
     cgv: "Terms",
+    privacy: "Privacy",
     rights: "All rights reserved",
     made: "Made in France",
   },
@@ -98,6 +100,7 @@ export function Footer() {
             title={t.legal}
             links={[
               { to: "/cgv", label: t.cgv },
+              { to: "/privacy", label: t.privacy },
               { to: "/", hash: "demo", label: t.demo },
             ]}
           />
