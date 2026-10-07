@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Kicker, Muted, Reassure, Screen, TextLink, Title, bigBtn } from "./ui";
 
 const emailRe = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
-const CALCOM = import.meta.env.VITE_PEC_CALCOM_URL || "/#demo";
+const CALCOM = import.meta.env.VITE_PEC_CALCOM_URL || "https://cal.com/paul-pietra-granit/decouvrir-granit";
 
 /**
  * « En parler avec Paul » en pleine page : quand le portail n'est pas encore

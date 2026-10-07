@@ -8,7 +8,7 @@ import {
 } from "@/lib/pec/essaiState";
 import { inputClass } from "./ui";
 
-const CALCOM = import.meta.env.VITE_PEC_CALCOM_URL || "/#demo";
+const CALCOM = import.meta.env.VITE_PEC_CALCOM_URL || "https://cal.com/paul-pietra-granit/decouvrir-granit";
 
 /**
  * Bandeau « en parler avec Paul » : bottom sheet NON bloquante (pas de fond
