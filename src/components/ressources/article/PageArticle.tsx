@@ -1,5 +1,5 @@
 // Page d'un article JSON du moteur (gabarit §3, blocs 1 à 15).
-import type { CSSProperties } from "react";
+import { useRef, type CSSProperties } from "react";
 import { Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { categorie, dateFr, titreCourt } from "@/lib/ressources/contenu";
@@ -10,7 +10,8 @@ import { Fil } from "../Fil";
 import { SousNav } from "../Onglets";
 import { FicheIdentite } from "./BlocsPlateforme";
 import { Corps } from "./Corps";
-import { ALireEnsuite, EncartFinal, Faq, Sources } from "./Fin";
+import { Ancres } from "./Ancres";
+import { ALireEnsuite, EncartFinal, EtapeSuivante, Faq, Sources, Utile } from "./Fin";
 import { Sommaire, SommaireMobile, type Entree } from "./Sommaire";
 
 /** Bandeau des pages d'aperçu (content/apercu), jamais en production. */
@@ -22,7 +23,7 @@ function BandeauPreview() {
   );
 }
 
-function Signature({ a }: { a: RessourceJson }) {
+function Signature({ a, nbSources }: { a: RessourceJson; nbSources: number }) {
   const nom = a.author?.name || "l'équipe Granit";
   return (
     <div className="mt-5 flex flex-wrap items-center gap-x-[18px] gap-y-2 text-[14px] text-[var(--text-soft)]">
@@ -70,6 +71,11 @@ function Signature({ a }: { a: RessourceJson }) {
           : `Mis à jour le ${dateFr(a.dateModified, true)}`}
       </span>
       <span>{a.readTime} min de lecture</span>
+      {nbSources > 0 && (
+        <a href="#sources" className="underline underline-offset-[3px] hover:text-[var(--text)]">
+          {nbSources} source{nbSources > 1 ? "s" : ""}
+        </a>
+      )}
     </div>
   );
 }
@@ -103,83 +109,92 @@ export function PageArticle({
     </div>
   ) : undefined;
   const teinte = { "--ink": cat.ink, "--tint": cat.tint } as CSSProperties;
+  const corps = useRef<HTMLDivElement>(null);
+  const nbSources =
+    (a.sources?.length ?? 0) + (p ? Object.values(p.sources).filter((s) => !s.url).length : 0);
 
   return (
     <SiteLayout fond="var(--bg2)">
-      {a.preview && <BandeauPreview />}
-      <SousNav actif={a.category === "glossaire" ? "glossaire" : a.category} />
-      <header
-        className="relative overflow-hidden border-b border-[var(--border)]"
-        style={{ background: cat.tint }}
-      >
-        {!estPlateforme && (
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-y-0 right-0 hidden w-[38%] bg-cover bg-center min-[980px]:block"
-            style={{
-              backgroundImage: `url(/covers/${a.slug}.svg)`,
-              maskImage: "linear-gradient(to right, transparent, black 60%)",
-              WebkitMaskImage: "linear-gradient(to right, transparent, black 60%)",
-            }}
-          />
-        )}
-        <div className="relative mx-auto max-w-[1280px] px-4 pb-[30px] pt-[34px] md:px-6">
-          <Fil
-            items={[
-              { nom: "Ressources", to: "/ressources" },
-              {
-                nom: cat.nom,
-                to: "/ressources/categorie/$category",
-                params: { category: cat.slug },
-              },
-              { nom: titreCourt(a.title) },
-            ]}
-          />
-          <div className={estPlateforme ? "mt-4 flex items-center gap-[18px]" : "mt-4"}>
-            {estPlateforme && <MarquePlateforme nom={p.nom} logo={p.logo} taille="xl" />}
-            <h1 className="max-w-[22ch] font-serif text-[clamp(32px,4.4vw,54px)] font-normal leading-[1.08] tracking-[-0.015em] [text-wrap:balance]">
-              <TitreItalique titre={a.title} ink={cat.ink} />
-            </h1>
-          </div>
-          <Signature a={a} />
-        </div>
-      </header>
-
-      <div className="bg-white">
-        <div
-          className="mx-auto grid max-w-[1280px] gap-6 px-4 py-10 md:px-6 min-[980px]:grid-cols-[minmax(0,1fr)_300px] min-[980px]:gap-14"
-          style={teinte}
+      <div className="ress">
+        {a.preview && <BandeauPreview />}
+        {a.readTime >= 3 && <div className="lecture-barre" aria-hidden style={teinte} />}
+        <SousNav actif={a.category === "glossaire" ? "glossaire" : a.category} />
+        <header
+          className="relative overflow-hidden border-b border-[var(--border)]"
+          style={{ background: cat.tint }}
         >
-          <div className="ress-corps min-w-0">
-            <SommaireMobile entrees={entrees} />
-            <Corps html={a.contentHtml} plateforme={p} insertion={insertion} />
-            <Faq items={a.faqItems} />
-            <Sources article={a} plateforme={p} />
-            <EncartFinal />
+          {!estPlateforme && (
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-y-0 right-0 hidden w-[38%] bg-cover bg-center min-[980px]:block"
+              style={{
+                backgroundImage: `url(/covers/${a.slug}.svg)`,
+                maskImage: "linear-gradient(to right, transparent, black 60%)",
+                WebkitMaskImage: "linear-gradient(to right, transparent, black 60%)",
+              }}
+            />
+          )}
+          <div className="relative mx-auto max-w-[1160px] px-4 pb-[30px] pt-[34px] md:px-6">
+            <Fil
+              items={[
+                { nom: "Ressources", to: "/ressources" },
+                {
+                  nom: cat.nom,
+                  to: "/ressources/categorie/$category",
+                  params: { category: cat.slug },
+                },
+                { nom: titreCourt(a.title) },
+              ]}
+            />
+            <div className={estPlateforme ? "mt-4 flex items-center gap-[18px]" : "mt-4"}>
+              {estPlateforme && <MarquePlateforme nom={p.nom} logo={p.logo} taille="xl" />}
+              <h1 className="max-w-[22ch] font-serif text-[clamp(32px,4.4vw,54px)] font-normal leading-[1.08] tracking-[-0.015em] [text-wrap:balance]">
+                <TitreItalique titre={a.title} ink={cat.ink} />
+              </h1>
+            </div>
+            <Signature a={a} nbSources={nbSources} />
           </div>
-          {/* Seul le sommaire est collant ; la carte agent, claire, reste en tête de colonne. */}
-          <aside className="hidden flex-col gap-4 min-[980px]:flex">
-            <div className="rounded-[14px] border border-[var(--border)] bg-white p-[18px]">
-              <span className="eyebrow" style={{ color: "var(--ink)" }}>
-                Ce que fait Granit
-              </span>
-              <h3 className="mt-2 font-serif text-[21px] font-normal leading-[1.2] text-[var(--text)]">
-                {titreAgent(a, p)}
-              </h3>
-              <p className="mt-2 text-[14.5px] text-[var(--text-soft)]">
-                20 minutes avec l'équipe, sur vos propres dossiers.
-              </p>
-              <Link to="/demo" className="btn-primary mt-3.5 flex w-full justify-center">
-                Voir la démo
-              </Link>
+        </header>
+
+        <div className="bg-white">
+          <div
+            className="mx-auto grid max-w-[1160px] gap-6 px-4 py-10 md:px-6 min-[980px]:grid-cols-[minmax(0,68ch)_300px] min-[980px]:justify-between min-[980px]:gap-10"
+            style={teinte}
+          >
+            <div ref={corps} className="ress-corps min-w-0">
+              <SommaireMobile entrees={entrees} />
+              <Corps html={a.contentHtml} plateforme={p} insertion={insertion} />
+              <EtapeSuivante article={a} />
+              <Faq items={a.faqItems} />
+              <Sources article={a} plateforme={p} />
+              <Utile slug={a.slug} />
+              <EncartFinal />
+              <Ancres racine={corps} />
             </div>
-            <div className="sticky top-[88px]">
-              <Sommaire entrees={entrees} />
-            </div>
-          </aside>
+            {/* Seul le sommaire est collant ; la carte agent, claire, reste en tête de colonne. */}
+            <aside className="hidden flex-col gap-4 min-[980px]:flex">
+              <div className="rounded-[14px] border border-[var(--border)] bg-white p-[18px]">
+                <span className="eyebrow" style={{ color: "var(--ink)" }}>
+                  Ce que fait Granit
+                </span>
+                <h3 className="mt-2 font-serif text-[21px] font-normal leading-[1.2] text-[var(--text)]">
+                  {titreAgent(a, p)}
+                </h3>
+                <p className="mt-2 text-[14.5px] text-[var(--text-soft)]">
+                  20 minutes avec l'équipe, sur vos propres dossiers.
+                </p>
+                <Link to="/demo" className="btn-primary mt-3.5 flex w-full justify-center">
+                  Voir la démo
+                </Link>
+              </div>
+              <div className="sticky top-[88px]">
+                <Sommaire entrees={entrees} />
+              </div>
+            </aside>
+          </div>
         </div>
+        <ALireEnsuite article={a} />
       </div>
-      <ALireEnsuite article={a} />
     </SiteLayout>
   );
 }

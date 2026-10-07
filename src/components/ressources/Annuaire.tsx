@@ -23,16 +23,16 @@ export function Annuaire() {
   return (
     <div>
       {fiches.length >= 8 && (
-      <label className="relative block max-w-[420px]">
-        <span className="sr-only">Filtrer par nom</span>
-        <input
-          type="search"
-          value={q}
-          onChange={(e) => setQ(e.target.value)}
-          placeholder="Filtrer par nom"
-          className="w-full rounded-[12px] border border-[var(--border2)] bg-white px-4 py-3 text-[15px] focus-visible:outline-2 focus-visible:outline-[var(--terra)]"
-        />
-      </label>
+        <label className="relative block max-w-[420px]">
+          <span className="sr-only">Filtrer par nom</span>
+          <input
+            type="search"
+            value={q}
+            onChange={(e) => setQ(e.target.value)}
+            placeholder="Filtrer par nom"
+            className="w-full rounded-[12px] border border-[var(--border2)] bg-white px-4 py-3 text-[15px] focus-visible:outline-2 focus-visible:outline-[var(--terra)]"
+          />
+        </label>
       )}
       <p
         className="mt-2 font-mono text-[11px] uppercase tracking-[0.1em] text-[var(--text-muted)]"

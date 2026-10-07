@@ -1,5 +1,7 @@
 // Fin d'un article JSON : questions fréquentes, sources, encart final, « À lire ensuite ».
+import { useState } from "react";
 import { Link } from "@tanstack/react-router";
+import { usePostHog } from "posthog-js/react";
 import {
   aLaUne,
   categorie,
@@ -10,6 +12,7 @@ import {
 } from "@/lib/ressources/contenu";
 import type { Fiche, Plateforme, RessourceJson } from "@/lib/ressources/types";
 import { CarteArticle } from "../Cartes";
+import { BoutonAncre } from "./Ancres";
 
 const h2 =
   "mb-3.5 scroll-mt-[96px] font-serif text-[30px] font-normal leading-tight tracking-[-0.015em] text-[var(--text)]";
@@ -18,27 +21,24 @@ const h2 =
 export function Faq({ items }: { items: RessourceJson["faqItems"] }) {
   if (!items?.length) return null;
   return (
-    <section id="faq" className="mt-12">
-      <h2 className={h2}>Questions fréquentes</h2>
+    <section id="faq" className="ress-faq mt-12 scroll-mt-[96px]">
+      <h2 className={`group/titre ${h2}`}>
+        Questions fréquentes
+        <BoutonAncre id="faq" titre="Questions fréquentes" />
+      </h2>
       {items.map((f, i) => (
         <details
           key={f.question}
           open={i === 0}
-          className="group border-t border-[var(--border)] py-1 last:border-b"
+          className="border-t border-[var(--border)] py-1 last:border-b"
         >
-          <summary className="flex cursor-pointer list-none justify-between gap-4 py-3.5 font-semibold text-[var(--text)] [&::-webkit-details-marker]:hidden">
+          <summary className="flex cursor-pointer list-none justify-between gap-4 rounded-[4px] py-3.5 font-semibold text-[var(--text)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--terra)] [&::-webkit-details-marker]:hidden">
             {f.question}
             <span
               aria-hidden
-              className="text-[22px] font-normal leading-none text-[var(--text-muted)] group-open:hidden"
+              className="plus grid size-6 shrink-0 place-items-center text-[22px] font-normal leading-none text-[var(--text-muted)]"
             >
               +
-            </span>
-            <span
-              aria-hidden
-              className="hidden text-[22px] font-normal leading-none text-[var(--text-muted)] group-open:inline"
-            >
-              −
             </span>
           </summary>
           <p className="pb-3.5 text-[16.5px]">{f.answer}</p>
@@ -59,8 +59,11 @@ export function Sources({
   const releves = plateforme ? Object.values(plateforme.sources).filter((s) => !s.url) : [];
   if (!article.sources?.length && !releves.length) return null;
   return (
-    <section id="sources" className="mt-12">
-      <h2 className={h2}>Sources</h2>
+    <section id="sources" className="mt-12 scroll-mt-[96px]">
+      <h2 className={`group/titre ${h2}`}>
+        Sources
+        <BoutonAncre id="sources" titre="Sources" />
+      </h2>
       <ul className="list-disc pl-[22px] text-[15px]">
         {article.sources.map((s) => (
           <li key={s.url} className="my-1.5">
@@ -79,7 +82,48 @@ export function Sources({
           </li>
         ))}
       </ul>
+      <p className="mt-4 text-[14.5px] text-[var(--text-muted)]">
+        Une information est fausse ou a changé ?{" "}
+        <Link
+          to="/contact"
+          className="font-semibold text-[var(--text)] underline underline-offset-[3px]"
+        >
+          Écrivez-nous
+        </Link>
+      </p>
     </section>
+  );
+}
+
+/** « Utile ? » : deux réponses de même poids, un merci, aucune relance ni champ libre. */
+export function Utile({ slug }: { slug: string }) {
+  const posthog = usePostHog();
+  const [repondu, setRepondu] = useState(false);
+  const repondre = (reponse: "oui" | "non") => {
+    posthog?.capture("ressource_utile", { slug, reponse });
+    setRepondu(true);
+  };
+  const bouton =
+    "rounded-full border border-[var(--border2)] bg-white px-4 py-1.5 text-[14.5px] font-medium hover:border-[var(--text-muted)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--terra)]";
+  return (
+    <div
+      className="mt-10 flex flex-wrap items-center gap-3 border-t border-[var(--border)] pt-6 text-[15px]"
+      aria-live="polite"
+    >
+      {repondu ? (
+        <span>Merci, c'est noté.</span>
+      ) : (
+        <>
+          <span className="mr-1">Cet article vous a été utile ?</span>
+          <button type="button" className={bouton} onClick={() => repondre("oui")}>
+            Oui
+          </button>
+          <button type="button" className={bouton} onClick={() => repondre("non")}>
+            Non
+          </button>
+        </>
+      )}
+    </div>
   );
 }
 
@@ -150,7 +194,10 @@ export function EtapeSuivante({ article }: { article: RessourceJson }) {
       params={{ slug: l.fiche.slug }}
       className="group mt-10 block rounded-[14px] border border-[var(--border)] bg-[var(--bg2)] px-5 py-4 transition hover:border-[var(--border2)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--terra)]"
     >
-      <span className="font-mono text-[11px] font-medium uppercase tracking-[0.12em]" style={{ color: c.ink }}>
+      <span
+        className="font-mono text-[11px] font-medium uppercase tracking-[0.12em]"
+        style={{ color: c.ink }}
+      >
         {l.type === "parent" ? "Vue d'ensemble" : "Étape suivante"}
       </span>
       <span className="mt-1.5 block font-serif text-[21px] leading-snug text-[var(--text)] group-hover:underline group-hover:decoration-1 group-hover:underline-offset-[5px]">

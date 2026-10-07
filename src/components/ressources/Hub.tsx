@@ -231,15 +231,19 @@ function ParProbleme() {
     ...cat("Je cherche le portail d'une mutuelle", "plateformes"),
     ...cat("Un paiement n'est pas arrivé", "paiements"),
     ...(pilier
-      ? [{ texte: "Je découvre le tiers payant", to: "/ressources/$slug", params: { slug: pilier.slug } }]
+      ? [
+          {
+            texte: "Je découvre le tiers payant",
+            to: "/ressources/$slug",
+            params: { slug: pilier.slug },
+          },
+        ]
       : cat("Je découvre le tiers payant", "guide-tiers-payant")),
   ];
   if (tuiles.length < 2) return null;
   return (
     <div className="mx-auto mt-8 max-w-[880px] text-left">
-      <p className="text-center text-[13px] font-medium text-[var(--text-muted)]">
-        Vous cherchez…
-      </p>
+      <p className="text-center text-[13px] font-medium text-[var(--text-muted)]">Vous cherchez…</p>
       <ul className="mt-3 grid grid-cols-2 gap-2.5 md:grid-cols-4">
         {tuiles.map((t) => (
           <li key={t.texte}>

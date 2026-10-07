@@ -181,7 +181,9 @@
 .ress {
   --text-muted: #6b6458;
 }
-.ress .eyebrow { color: #b94a2f; }
+.ress .eyebrow {
+  color: #b94a2f;
+}
 
 /* ── Mouvement (blogteam/v2/motion.md) ──
    Le texte ne bouge jamais ; seule la décoration s'anime, une fois, et tout est coupé
@@ -211,44 +213,115 @@
   opacity: 0;
 }
 @media (prefers-reduced-motion: no-preference) {
-  [data-vu] .pouls-trait { animation: pouls var(--m-pouls) var(--ease-pouls) 150ms; }
-  [data-vu] .pouls-point { animation: onde 700ms var(--ease-out-quint) calc(150ms + var(--m-pouls) * 0.8); }
-  .group:hover .pouls-trait { animation: pouls-bis var(--m-pouls) var(--ease-pouls); }
-  .group:hover .pouls-point { animation: onde-bis 700ms var(--ease-out-quint) calc(var(--m-pouls) * 0.8); }
+  [data-vu] .pouls-trait {
+    animation: pouls var(--m-pouls) var(--ease-pouls) 150ms;
+  }
+  [data-vu] .pouls-point {
+    animation: onde 700ms var(--ease-out-quint) calc(150ms + var(--m-pouls) * 0.8);
+  }
+  .group:hover .pouls-trait {
+    animation: pouls-bis var(--m-pouls) var(--ease-pouls);
+  }
+  .group:hover .pouls-point {
+    animation: onde-bis 700ms var(--ease-out-quint) calc(var(--m-pouls) * 0.8);
+  }
 }
 /* -bis : même courbe, autre nom, pour que le survol relance l'animation */
-@keyframes pouls { 0% { stroke-dashoffset: 0.22; opacity: 1; } 90% { opacity: 1; } 100% { stroke-dashoffset: -1; opacity: 0; } }
-@keyframes pouls-bis { 0% { stroke-dashoffset: 0.22; opacity: 1; } 90% { opacity: 1; } 100% { stroke-dashoffset: -1; opacity: 0; } }
-@keyframes onde { from { transform: scale(1); opacity: 0.7; } to { transform: scale(2.4); opacity: 0; } }
-@keyframes onde-bis { from { transform: scale(1); opacity: 0.7; } to { transform: scale(2.4); opacity: 0; } }
+@keyframes pouls {
+  0% {
+    stroke-dashoffset: 0.22;
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: -1;
+    opacity: 0;
+  }
+}
+@keyframes pouls-bis {
+  0% {
+    stroke-dashoffset: 0.22;
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: -1;
+    opacity: 0;
+  }
+}
+@keyframes onde {
+  from {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  to {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+@keyframes onde-bis {
+  from {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  to {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
 
 /* Titre du hub : le trait se trace sous l'italique (ornement, le texte est déjà là). */
-.accent-italic.pouls-souligne { position: relative; }
+.accent-italic.pouls-souligne {
+  position: relative;
+}
 .accent-italic.pouls-souligne::after {
   content: "";
   position: absolute;
   inset: auto 0 -0.12em 0;
   height: 0.32em;
   pointer-events: none;
-  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 20' preserveAspectRatio='none'><path d='M0 12H110L120 12L126 3L134 18L142 7L148 13H192' fill='none' stroke='%23d4583a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' vector-effect='non-scaling-stroke'/></svg>") no-repeat center / 100% 100%;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 20' preserveAspectRatio='none'><path d='M0 12H110L120 12L126 3L134 18L142 7L148 13H192' fill='none' stroke='%23d4583a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' vector-effect='non-scaling-stroke'/></svg>")
+    no-repeat center / 100% 100%;
 }
 @media (prefers-reduced-motion: no-preference) {
-  .accent-italic.pouls-souligne::after { animation: trace-in 900ms var(--ease-pouls) 300ms both; }
+  .accent-italic.pouls-souligne::after {
+    animation: trace-in 900ms var(--ease-pouls) 300ms both;
+  }
 }
-@keyframes trace-in { from { clip-path: inset(0 100% 0 0); } }
+@keyframes trace-in {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+}
 
 /* Rangées : montent de 12 px au défilement, toujours opaques. Sans animation-timeline : rien. */
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
-    .monte { animation: monte linear both; animation-timeline: view(); animation-range: entry 0% entry 60%; }
+    .monte {
+      animation: monte linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 60%;
+    }
   }
 }
-@keyframes monte { from { transform: translateY(12px); } }
+@keyframes monte {
+  from {
+    transform: translateY(12px);
+  }
+}
 
 /* Barre de lecture : la timeline est sur le conteneur unique du corps (.ress-flux),
    pleine à la fin de la dernière section, avant la FAQ et les sources. */
-body { timeline-scope: --lecture; }
-.ress-flux { view-timeline-name: --lecture; }
+body {
+  timeline-scope: --lecture;
+}
+.ress-flux {
+  view-timeline-name: --lecture;
+}
 .lecture-barre {
   position: fixed;
   inset: 0 0 auto 0;
@@ -260,24 +333,32 @@ body { timeline-scope: --lecture; }
   transform: scaleX(0);
 }
 @supports (animation-timeline: view()) {
-  .lecture-barre { animation: remplit linear both; animation-timeline: --lecture; animation-range: contain 0% contain 100%; }
+  .lecture-barre {
+    animation: remplit linear both;
+    animation-timeline: --lecture;
+    animation-range: contain 0% contain 100%;
+  }
 }
-@supports not (animation-timeline: view()) { .lecture-barre { display: none; } }
-@keyframes remplit { to { transform: scaleX(1); } }
+@supports not (animation-timeline: view()) {
+  .lecture-barre {
+    display: none;
+  }
+}
+@keyframes remplit {
+  to {
+    transform: scaleX(1);
+  }
+}
 
-/* Onglets : le soulignement actif glisse d'une page à l'autre (View Transition). */
-.onglet-actif { position: relative; }
-.onglet-actif::after {
-  content: "";
-  position: absolute;
-  inset: auto 0 -1px 0;
-  height: 2px;
-  background: var(--souligne, var(--text));
-  view-transition-name: onglet-souligne;
+/* Onglets : le soulignement actif (view-transition-name posé en ligne) glisse d'une page à l'autre. */
+::view-transition-group(onglet-souligne) {
+  animation-duration: var(--m-moyen);
+  animation-timing-function: var(--ease-out-quint);
 }
-::view-transition-group(onglet-souligne) { animation-duration: var(--m-moyen); animation-timing-function: var(--ease-out-quint); }
 ::view-transition-old(root),
-::view-transition-new(root) { animation: none; }
+::view-transition-new(root) {
+  animation: none;
+}
 
 /* Sommaire : un seul indicateur, qui glisse. */
 .toc-indic {
@@ -293,30 +374,74 @@ body { timeline-scope: --lecture; }
 }
 
 /* FAQ : hauteur fluide là où le navigateur sait faire, repli instantané ailleurs. */
-.ress-faq details { interpolate-size: allow-keywords; }
+.ress-faq details {
+  interpolate-size: allow-keywords;
+}
 @media (prefers-reduced-motion: no-preference) {
   .ress-faq details::details-content {
     height: 0;
     overflow: clip;
-    transition: height var(--m-moyen) var(--ease-out-quint), content-visibility var(--m-moyen) allow-discrete;
+    transition:
+      height var(--m-moyen) var(--ease-out-quint),
+      content-visibility var(--m-moyen) allow-discrete;
   }
-  .ress-faq details[open]::details-content { height: auto; }
+  .ress-faq details[open]::details-content {
+    height: auto;
+  }
 }
-.ress-faq .plus { transition: transform var(--m-moyen) var(--ease-out-quint); }
-.ress-faq details[open] .plus { transform: rotate(45deg); }
+.ress-faq .plus {
+  transition: transform var(--m-moyen) var(--ease-out-quint);
+}
+.ress-faq details[open] .plus {
+  transform: rotate(45deg);
+}
 
 /* Feuille du sommaire mobile et message « Lien copié » */
-.feuille { transition: transform 200ms var(--ease-out-quint); }
-.feuille[data-ferme] { transform: translateY(100%); }
-.toast { transition: opacity var(--m-court) linear; }
+.feuille {
+  transition: transform 200ms var(--ease-out-quint);
+}
+.feuille[data-ferme] {
+  transform: translateY(100%);
+}
+.toast {
+  transition: opacity var(--m-court) linear;
+}
+
+/* Tableaux sur mobile : un fondu à droite dit qu'on peut faire défiler ; il disparaît en bout de course. */
+@media (max-width: 639px) {
+  .ress-corps .tbl {
+    mask-image: linear-gradient(to right, black 88%, transparent);
+  }
+  @supports (animation-timeline: scroll()) {
+    .ress-corps .tbl {
+      animation: tbl-fin linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+}
+@keyframes tbl-fin {
+  96% {
+    mask-image: linear-gradient(to right, black 88%, transparent);
+  }
+  to {
+    mask-image: none;
+  }
+}
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
+  html {
+    scroll-behavior: auto;
+  }
   /* La barre de lecture reste : elle suit le défilement, c'est une information. */
-  .ress *:not(.lecture-barre),
+  .ress *:not(.lecture-barre):not(.tbl),
   .ress ::before,
-  .ress ::after { animation: none !important; transition-duration: 0s !important; }
+  .ress ::after {
+    animation: none !important;
+    transition-duration: 0s !important;
+  }
   ::view-transition-group(*),
   ::view-transition-old(*),
-  ::view-transition-new(*) { animation: none !important; }
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
 }

@@ -3,7 +3,6 @@
 // et « Continuer la lecture » montre d'abord des articles de la même catégorie.
 import { Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
-import { Reveal } from "@/components/Reveal";
 import { useLanguage } from "@/lib/i18n";
 import { articles, getArticle } from "@/lib/articles";
 import { articleLd } from "@/lib/seo";
@@ -61,7 +60,7 @@ export function PageAncien({ slug }: { slug: string }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
       />
       <article className="mx-auto max-w-[760px] px-6 pt-24 pb-16">
-        <Reveal>
+        <div>
           {cat ? (
             <Fil
               items={[
@@ -108,7 +107,7 @@ export function PageAncien({ slug }: { slug: string }) {
               </p>
             ))}
           </div>
-        </Reveal>
+        </div>
       </article>
 
       <section className="mx-auto max-w-[1280px] px-6 pb-28">

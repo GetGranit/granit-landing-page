@@ -140,7 +140,8 @@ export function traceCouverture({
   const k = ((og ? 5 : 6) + rand() * 3) * trait;
   const tirage = rand();
   // Trait réduit : ligne de base dans le tiers inférieur, comme un horizon.
-  const brut = trait < 1 ? H * (0.58 + tirage * 0.08) - 26 * k : H * (0.38 + tirage * 0.34) - 26 * k;
+  const brut =
+    trait < 1 ? H * (0.58 + tirage * 0.08) - 26 * k : H * (0.38 + tirage * 0.34) - 26 * k;
   // Le trait (halo et point compris) reste entièrement dans l'image.
   const ly = Math.min(Math.max(brut, 16 - 11.9 * k), H - 16 - 42.4 * k);
   const lx = x0 + (W - x0) * (0.12 + rand() * 0.3) - 4 * k;

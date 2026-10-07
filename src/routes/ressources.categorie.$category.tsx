@@ -32,7 +32,9 @@ export const Route = createFileRoute("/ressources/categorie/$category")({
         { property: "og:description", content: desc },
         ...(preview ? [{ name: "robots", content: "noindex, nofollow" }] : []),
       ],
-      links: pilier ? [{ rel: "preload", as: "image", href: `/covers/${pilier.slug}--une.svg` }] : [],
+      links: pilier
+        ? [{ rel: "preload", as: "image", href: `/covers/${pilier.slug}--une.svg` }]
+        : [],
     };
   },
   component: CategoriePage,

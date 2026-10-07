@@ -5,9 +5,20 @@ type Item = { nom: string; to?: string; params?: Record<string, string> };
 /** Fil d'Ariane visible : Accueil › … ; tous cliquables sauf le dernier. */
 export function Fil({ items }: { items: Item[] }) {
   const tous: Item[] = [{ nom: "Accueil", to: "/" }, ...items];
+  // Mobile : seulement un retour vers le dernier niveau cliquable.
+  const retour = [...tous].reverse().find((it, i) => it.to && i > 0);
   return (
     <nav aria-label="Fil d'Ariane">
-      <ol className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[14px] text-[var(--text-muted)]">
+      {retour && (
+        <Link
+          to={retour.to}
+          params={retour.params as never}
+          className="rounded-[4px] text-[14px] text-[var(--text-muted)] hover:text-[var(--text)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--terra)] md:hidden"
+        >
+          ‹ {retour.nom}
+        </Link>
+      )}
+      <ol className="hidden md:flex flex-wrap items-center gap-x-2 gap-y-1 text-[14px] text-[var(--text-muted)]">
         {tous.map((it, i) => (
           <li key={i} className="flex items-center gap-2">
             {i > 0 && <span aria-hidden>›</span>}
@@ -15,7 +26,7 @@ export function Fil({ items }: { items: Item[] }) {
               <Link
                 to={it.to}
                 params={it.params as never}
-                className="hover:text-[var(--text)] hover:underline"
+                className="rounded-[4px] hover:text-[var(--text)] hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--terra)]"
               >
                 {it.nom}
               </Link>

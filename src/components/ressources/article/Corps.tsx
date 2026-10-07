@@ -45,11 +45,12 @@ export function Corps({
     dernier = m.index! + m[0].length;
   }
   morceaux.push(<Html key="fin" html={reste.slice(dernier)} />);
+  // Conteneur unique : il porte la timeline de la barre de lecture (pleine avant la FAQ).
   return (
-    <>
+    <div className="ress-flux">
       <Html html={tete} />
       {insertion}
       {morceaux}
-    </>
+    </div>
   );
 }
