@@ -6,7 +6,7 @@ import { categorie, dateFr, ficheJson, titreCourt } from "@/lib/ressources/conte
 import { verticale } from "@/lib/ressources/verticales";
 import type { Plateforme, RessourceJson } from "@/lib/ressources/types";
 import { Annuaire } from "../Annuaire";
-import { MarquePlateforme, PhotoCarte, TitreItalique } from "../Cartes";
+import { EcranPlateforme, MarquePlateforme, PhotoCarte, TitreItalique } from "../Cartes";
 import { photoFiche } from "@/lib/ressources/photos";
 import { logoPlateforme } from "@/lib/ressources/logos";
 import { FIGURE_CSS } from "@/lib/ressources/figures";
@@ -189,13 +189,16 @@ export function PageArticle({
                   { nom: titreCourt(a.title) },
                 ]}
               />
-              <div className={estPlateforme ? "mt-4 flex items-center gap-[18px]" : "mt-4"}>
+              <div className="mt-4">
+                {/* Mobile : la photo d'en-tête est masquée, le logo passe au-dessus du H1. */}
                 {estPlateforme && (
-                  <MarquePlateforme
-                    nom={p.nom}
-                    logo={logoPlateforme(p.logo, "carre")}
-                    taille="xl"
-                  />
+                  <div className="mb-4 min-[980px]:hidden">
+                    <MarquePlateforme
+                      nom={p.nom}
+                      logo={logoPlateforme(p.logo, "carre")}
+                      taille="xl"
+                    />
+                  </div>
                 )}
                 <h1 className="max-w-[22ch] font-serif text-[clamp(32px,4.4vw,54px)] font-normal leading-[1.08] tracking-[-0.015em] [text-wrap:balance]">
                   <TitreItalique titre={a.title} ink={cat.ink} />
@@ -206,7 +209,18 @@ export function PageArticle({
             {/* Photo du thème à droite, sur grand écran seulement : la réponse reste visible sans défiler. */}
             {fiche && (
               <div className="group relative hidden aspect-[4/3] overflow-hidden rounded-[16px] min-[980px]:block">
-                <PhotoCarte photo={photoFiche(fiche)} tailles="380px" chargement="haute" />
+                {estPlateforme ? (
+                  // Fiche plateforme : le logo s'affiche sur l'écran du portable, comme sur les cartes.
+                  <EcranPlateforme
+                    photo={photoFiche(fiche)}
+                    nom={p.nom}
+                    logo={logoPlateforme(p.logo, "ecran")}
+                    tailles="380px"
+                    chargement="haute"
+                  />
+                ) : (
+                  <PhotoCarte photo={photoFiche(fiche)} tailles="380px" chargement="haute" />
+                )}
               </div>
             )}
           </div>

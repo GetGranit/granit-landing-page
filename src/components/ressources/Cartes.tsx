@@ -84,7 +84,7 @@ const ECRANS: Record<"a" | "b", { coins: [number, number][]; logo: number }> = {
  * Le cadre garde le ratio 16:9 de la photo et la recadre comme object-cover (centré), quel que
  * soit le format de la carte : les coordonnées de l'écran restent donc justes.
  */
-function EcranPlateforme({
+export function EcranPlateforme({
   photo,
   nom,
   logo,
