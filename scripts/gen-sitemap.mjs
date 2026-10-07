@@ -2,6 +2,7 @@
 // Runs automatically before `vite build` (see package.json).
 import { execFileSync } from "node:child_process";
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
+import { articlesEnLigne, controler } from "./ressources/en-ligne.mjs";
 
 const SITE = "https://www.getgranit.ai";
 const ARTICLES = "src/lib/articles.ts";
@@ -66,6 +67,24 @@ const frSrc = articlesSrc.slice(0, articlesSrc.search(/^\s*en:\s*\[/m));
 const slugs = [...new Set([...frSrc.matchAll(/slug:\s*"([^"]+)"/g)].map((m) => m[1]))];
 const slugDates = articleDates();
 
+// Ressources du moteur SEO : articles JSON en ligne (jamais l'aperçu) et pages catégorie non vides.
+const ressources = articlesEnLigne(process.cwd());
+controler(process.cwd(), ressources);
+const { ordre } = JSON.parse(readFileSync("src/lib/ressources/categories.json", "utf8"));
+const { rattaches } = JSON.parse(readFileSync("src/lib/ressources/anciens.json", "utf8"));
+const categoryPages = ordre
+  .map((category) => {
+    const dates = [
+      ...ressources.filter((a) => a.category === category).map((a) => a.dateModified),
+      ...Object.entries(rattaches)
+        .filter(([, c]) => c === category)
+        .map(([slug]) => slugDates.get(slug)),
+    ];
+    if (!dates.length) return undefined;
+    return { category, lastmod: dates.filter(Boolean).sort().at(-1) };
+  })
+  .filter(Boolean);
+
 // /produit and /cas-usage redirect to /agents: they don't belong in the sitemap.
 const staticPages = [
   {
@@ -79,7 +98,12 @@ const staticPages = [
   { path: "/securite", files: ["src/routes/securite.tsx"], priority: "0.7", freq: "monthly" },
   {
     path: "/ressources",
-    files: ["src/routes/ressources.index.tsx", "src/lib/articles.ts"],
+    files: [
+      "src/routes/ressources.index.tsx",
+      "src/components/ressources/Hub.tsx",
+      "src/lib/articles.ts",
+      "content/ressources",
+    ],
     priority: "0.8",
     freq: "weekly",
   },
@@ -100,6 +124,18 @@ const urls = [
     lastmod: lastModified(p.files),
     freq: p.freq,
     priority: p.priority,
+  })),
+  ...categoryPages.map((c) => ({
+    loc: `${SITE}/ressources/categorie/${c.category}`,
+    lastmod: c.lastmod,
+    freq: "weekly",
+    priority: "0.7",
+  })),
+  ...ressources.map((a) => ({
+    loc: `${SITE}/ressources/${a.slug}`,
+    lastmod: a.dateModified,
+    freq: "monthly",
+    priority: "0.7",
   })),
   ...slugs.map((s) => ({
     loc: `${SITE}/ressources/${s}`,
@@ -126,5 +162,5 @@ ${urls
 writeFileSync("public/sitemap.xml", xml);
 const dated = urls.filter((u) => u.lastmod).length;
 console.log(
-  `sitemap.xml written: ${urls.length} URLs (${slugs.length} articles + ${staticPages.length} pages, ${dated} with lastmod)`,
+  `sitemap.xml written: ${urls.length} URLs (${slugs.length} articles + ${ressources.length} ressources + ${categoryPages.length} catégories + ${staticPages.length} pages, ${dated} with lastmod)`,
 );
