@@ -3,13 +3,14 @@ import { SiteLayout } from "@/components/SiteLayout";
 import {
   anciensDeCategorie,
   fichesCategorie,
+  fichesPlateformes,
   titreCourt,
   type Categorie,
 } from "@/lib/ressources/contenu";
 import type { Fiche } from "@/lib/ressources/types";
 import { Annuaire } from "./Annuaire";
 import { BandeDemo } from "./BandeDemo";
-import { CarteArticle, CarteUne } from "./Cartes";
+import { CarteArticle, CartePilier } from "./Cartes";
 import { Fil } from "./Fil";
 import { SousNav } from "./Onglets";
 
@@ -38,11 +39,13 @@ export function PageCategorie({ cat }: { cat: Categorie }) {
   const cocon = fichesCategorie(cat.slug);
   const anciens = anciensDeCategorie(cat.slug);
   const pilier = cocon.find((f) => f.pillar);
-  const annuaire = cat.slug === "plateformes";
+  // L'annuaire n'a de sens qu'à partir de 3 fiches ; avant, elles rejoignent la grille.
+  const annuaire = cat.slug === "plateformes" && fichesPlateformes().length >= 3;
   const autres = cocon.filter((f) => f !== pilier && !(annuaire && f.slug.startsWith("portail-")));
 
   return (
     <SiteLayout fond="var(--bg2)">
+      <div className="ress">
       <SousNav actif={cat.slug} />
       <section className="border-b border-[var(--border)]" style={{ background: cat.tint }}>
         <div className={`${conteneur} pb-8 pt-8 md:pb-10 md:pt-10`}>
@@ -79,9 +82,7 @@ export function PageCategorie({ cat }: { cat: Categorie }) {
 
         {pilier && (
           <section className={`${conteneur} pt-12`}>
-            <div className="lg:max-w-[60%]">
-              <CarteUne fiche={pilier} />
-            </div>
+            <CartePilier fiche={pilier} />
           </section>
         )}
 
@@ -100,6 +101,7 @@ export function PageCategorie({ cat }: { cat: Categorie }) {
         )}
 
         <BandeDemo titre={cat.agent} />
+      </div>
       </div>
     </SiteLayout>
   );

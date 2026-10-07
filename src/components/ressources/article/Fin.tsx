@@ -1,6 +1,13 @@
 // Fin d'un article JSON : questions fréquentes, sources, encart final, « À lire ensuite ».
 import { Link } from "@tanstack/react-router";
-import { dateFr, ficheJson } from "@/lib/ressources/contenu";
+import {
+  aLaUne,
+  categorie,
+  dateFr,
+  ficheJson,
+  fichesCategorie,
+  tempsLecture,
+} from "@/lib/ressources/contenu";
 import type { Fiche, Plateforme, RessourceJson } from "@/lib/ressources/types";
 import { CarteArticle } from "../Cartes";
 
@@ -103,25 +110,77 @@ const ETIQUETTES: Record<string, string> = {
 };
 const RANG: Record<string, number> = { parent: 0, sœur: 1, soeur: 1 };
 
-/**
- * « À lire ensuite » : 3 cartes depuis internalLinks + liensEntrants, seulement vers des
- * articles en ligne ; le parent d'abord, puis les sœurs, puis le reste.
- */
-export function ALireEnsuite({ article }: { article: RessourceJson }) {
+/** Liens du cocon en ligne, sans l'article lui-même ni (en publié) d'aperçu. */
+function liensEnLigne(article: RessourceJson) {
+  const out: { fiche: Fiche; type: string }[] = [];
   const vus = new Set([article.slug]);
-  const liens: { fiche: Fiche; type: string }[] = [];
-  const candidats = [
+  for (const l of [
     ...(article.parentSlug ? [{ slug: article.parentSlug, type: "parent" }] : []),
     ...(article.internalLinks ?? []),
     ...(article.liensEntrants ?? []),
-  ].sort((a, b) => (RANG[a.type] ?? 2) - (RANG[b.type] ?? 2));
-  for (const l of candidats) {
+  ]) {
     const fiche = ficheJson(l.slug);
     if (!fiche || vus.has(l.slug)) continue;
     // Jamais un article d'aperçu depuis un article publié.
     if (fiche.preview && !article.preview) continue;
     vus.add(l.slug);
-    liens.push({ fiche, type: l.type });
+    out.push({ fiche, type: l.type });
+  }
+  return out;
+}
+
+/** Le prochain article logique : un enfant, sinon une sœur, sinon le parent. */
+export function etapeSuivante(article: RessourceJson) {
+  const liens = liensEnLigne(article);
+  for (const types of [["enfant"], ["sœur", "soeur"], ["parent"]]) {
+    const l = liens.find((x) => types.includes(x.type));
+    if (l) return l;
+  }
+  return undefined;
+}
+
+/** « Étape suivante », juste après la dernière section, avant la FAQ. */
+export function EtapeSuivante({ article }: { article: RessourceJson }) {
+  const l = etapeSuivante(article);
+  if (!l) return null;
+  const c = categorie(l.fiche.category)!;
+  return (
+    <Link
+      to="/ressources/$slug"
+      params={{ slug: l.fiche.slug }}
+      className="group mt-10 block rounded-[14px] border border-[var(--border)] bg-[var(--bg2)] px-5 py-4 transition hover:border-[var(--border2)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--terra)]"
+    >
+      <span className="font-mono text-[11px] font-medium uppercase tracking-[0.12em]" style={{ color: c.ink }}>
+        {l.type === "parent" ? "Vue d'ensemble" : "Étape suivante"}
+      </span>
+      <span className="mt-1.5 block font-serif text-[21px] leading-snug text-[var(--text)] group-hover:underline group-hover:decoration-1 group-hover:underline-offset-[5px]">
+        {l.fiche.title}
+      </span>
+      <span className="mt-1 block text-[14px] text-[var(--text-muted)]">
+        {tempsLecture(l.fiche.readTime)} · {c.nom}{" "}
+        <span aria-hidden className="inline-block transition-transform group-hover:translate-x-1">
+          →
+        </span>
+      </span>
+    </Link>
+  );
+}
+
+/**
+ * « À lire ensuite » : 3 cartes, le parent d'abord, puis les sœurs, puis le reste ;
+ * complété par la même catégorie puis « À la une ». Sans l'étape suivante déjà montrée.
+ */
+export function ALireEnsuite({ article }: { article: RessourceJson }) {
+  const suivante = etapeSuivante(article)?.fiche.slug;
+  const liens = liensEnLigne(article)
+    .filter((l) => l.fiche.slug !== suivante)
+    .sort((a, b) => (RANG[a.type] ?? 2) - (RANG[b.type] ?? 2));
+  const vus = new Set([article.slug, suivante, ...liens.map((l) => l.fiche.slug)]);
+  for (const f of [...fichesCategorie(article.category), ...aLaUne()]) {
+    if (liens.length >= 3) break;
+    if (vus.has(f.slug) || (f.preview && !article.preview)) continue;
+    vus.add(f.slug);
+    liens.push({ fiche: f, type: "sœur" });
   }
   if (!liens.length) return null;
   return (

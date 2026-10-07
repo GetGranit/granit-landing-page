@@ -28,7 +28,7 @@ export interface CoverInput {
   slug: string;
   category: Category;
   title: string;
-  variant?: "card" | "og"; // card = 800×600, og = 1200×630
+  variant?: "card" | "une" | "og"; // card = 800×600, une = 800×500 (grandes cartes), og = 1200×630
   platform?: boolean; // fiche plateforme : médaillon central
   // Échelle du trait du logo (1 par défaut). Les grandes cartes le réduisent pour qu'il ne domine pas.
   trait?: number;
@@ -122,6 +122,44 @@ function wrap(text: string, max: number): string[] {
   return lines;
 }
 
+/**
+ * Géométrie du trait d'une couverture (même graine que coverSvg) : sert aussi au calque
+ * animé posé par-dessus l'image sur le site. Pas de trait sur une fiche plateforme.
+ */
+export function traceCouverture({
+  slug,
+  variant = "card",
+  trait = 1,
+}: Pick<CoverInput, "slug" | "variant" | "trait">) {
+  const og = variant === "og";
+  const W = og ? 1200 : 800,
+    H = og ? 630 : variant === "une" ? 500 : 600;
+  const x0 = og ? 672 : 0;
+  const rand = rng(hash(slug));
+  makeField(rand); // consomme la graine comme coverSvg
+  const k = ((og ? 5 : 6) + rand() * 3) * trait;
+  const tirage = rand();
+  // Trait réduit : ligne de base dans le tiers inférieur, comme un horizon.
+  const brut = trait < 1 ? H * (0.58 + tirage * 0.08) - 26 * k : H * (0.38 + tirage * 0.34) - 26 * k;
+  // Le trait (halo et point compris) reste entièrement dans l'image.
+  const ly = Math.min(Math.max(brut, 16 - 11.9 * k), H - 16 - 42.4 * k);
+  const lx = x0 + (W - x0) * (0.12 + rand() * 0.3) - 4 * k;
+  const pts = LOGO.map(([px, py]) => [r1(lx + px * k), r1(ly + py * k)]);
+  const d = `M${r1(x0 + (og ? k * 2.1 : 0))} ${r1(ly + 26 * k)}L${pts.map((p) => p.join(" ")).join("L")}`;
+  const [cx, cy] = pts[pts.length - 1];
+  return {
+    W,
+    H,
+    d,
+    cx,
+    cy,
+    largeur: r1(k * 1.1),
+    r: r1(k * 1.9),
+    halo: r1(k * (trait < 1 ? 2.6 : 4.2)),
+    rHalo: r1(k * (trait < 1 ? 3 : 4.4)),
+  };
+}
+
 export function coverSvg({
   slug,
   category,
@@ -134,7 +172,7 @@ export function coverSvg({
   const cat = CATEGORIES[category] ?? CATEGORIES.glossaire;
   const og = variant === "og";
   const W = og ? 1200 : 800,
-    H = og ? 630 : 600;
+    H = og ? 630 : variant === "une" ? 500 : 600;
   const rand = rng(hash(slug));
   const field = makeField(rand);
   const cell = og ? 16 : 14;
@@ -166,22 +204,13 @@ export function coverSvg({
 
   // Trait du logo : entre par le bord gauche de la zone, position et échelle tirées de la graine.
   let line = "";
-  if (!platform) {
-    const k = ((og ? 5 : 6) + rand() * 3) * trait;
-    // Le trait (halo et point compris) reste entièrement dans l'image.
-    const ly = Math.min(
-      Math.max(H * (0.38 + rand() * 0.34) - 26 * k, 16 - 11.9 * k),
-      H - 16 - 42.4 * k,
-    );
-    const lx = x0 + (W - x0) * (0.12 + rand() * 0.3) - 4 * k;
-    const pts = LOGO.map(([px, py]) => `${r1(lx + px * k)} ${r1(ly + py * k)}`);
-    const path = `M${r1(x0 + (og ? k * 2.1 : 0))} ${r1(ly + 26 * k)}L${pts.join("L")}`;
-    const end = pts[pts.length - 1].split(" ");
+  const g = platform ? null : traceCouverture({ slug, variant, trait });
+  if (g) {
     line =
-      `<path d="${path}" fill="none" stroke="${cat.tint}" stroke-width="${r1(k * 4.2)}" stroke-linecap="round" stroke-linejoin="round"/>` +
-      `<path d="${path}" fill="none" stroke="${DARK}" stroke-width="${r1(k * 1.1)}" stroke-linecap="round" stroke-linejoin="round"/>` +
-      `<circle cx="${end[0]}" cy="${end[1]}" r="${r1(k * 4.4)}" fill="${cat.tint}"/>` +
-      `<circle cx="${end[0]}" cy="${end[1]}" r="${r1(k * 1.9)}" fill="${TERRA}"/>`;
+      `<path d="${g.d}" fill="none" stroke="${cat.tint}" stroke-width="${g.halo}" stroke-linecap="round" stroke-linejoin="round"/>` +
+      `<path d="${g.d}" fill="none" stroke="${DARK}" stroke-width="${g.largeur}" stroke-linecap="round" stroke-linejoin="round"/>` +
+      `<circle cx="${g.cx}" cy="${g.cy}" r="${g.rHalo}" fill="${cat.tint}"/>` +
+      `<circle cx="${g.cx}" cy="${g.cy}" r="${g.r}" fill="${TERRA}"/>`;
   }
 
   let medal = "";

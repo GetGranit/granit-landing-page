@@ -14,7 +14,7 @@ export function BandeDemo({
   titre?: string;
 }) {
   return (
-    <section className="mx-auto mb-20 mt-16 max-w-[1280px] px-4 md:px-6">
+    <section className="mx-auto mb-20 mt-14 max-w-[1280px] px-4 md:px-6">
       <div className="grid items-center gap-7 rounded-[22px] bg-[#1c1108] p-7 text-[#f6efe4] md:p-10 lg:grid-cols-[1.4fr_1fr]">
         <div>
           <span className="eyebrow" style={{ color: "#f2a48f" }}>

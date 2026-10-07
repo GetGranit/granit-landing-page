@@ -45,7 +45,7 @@ function fiche(
 
 /**
  * Couvertures à produire : articles JSON affichés + anciens articles rattachés au cocon.
- * Chacune en deux tailles : {slug}.svg (cartes) et {slug}--une.svg (grandes cartes, trait réduit).
+ * Chacune en deux tailles : {slug}.svg (cartes) et {slug}--une.svg (grandes cartes, 800×500, trait réduit).
  */
 function couvertures(contenu: ReturnType<typeof lireContenu>) {
   const sources = new Map<string, Parameters<typeof coverSvg>[0]>();
@@ -67,7 +67,7 @@ function couvertures(contenu: ReturnType<typeof lireContenu>) {
   const out = new Map<string, string>();
   for (const [slug, entree] of sources) {
     out.set(slug, coverSvg(entree));
-    out.set(`${slug}--une`, coverSvg({ ...entree, trait: 0.55 }));
+    out.set(`${slug}--une`, coverSvg({ ...entree, variant: "une", trait: 0.4 }));
   }
   return out;
 }
@@ -78,6 +78,8 @@ export function ressources(): Plugin {
   let build = false;
   let ecrit = false;
   const lire = () => lireContenu(racine, { avecApercu });
+  // Dev : couvertures calculées une fois, recalculées quand un fichier de contenu change.
+  let cache: Map<string, string> | undefined;
 
   return {
     name: "granit:ressources",
@@ -125,7 +127,7 @@ export function ressources(): Plugin {
     configureServer(server: ViteDevServer) {
       server.middlewares.use((req, res, next) => {
         const m = req.url?.match(/^\/covers\/([a-z0-9-]+)\.svg$/);
-        const svg = m && couvertures(lire()).get(m[1]);
+        const svg = m && (cache ??= couvertures(lire())).get(m[1]);
         if (!svg) return next();
         res.setHeader("Content-Type", "image/svg+xml");
         res.end(svg);
@@ -134,6 +136,7 @@ export function ressources(): Plugin {
       server.watcher.add([join(racine, "content"), join(racine, "scripts/seo-engine")]);
       const recharger = (fichier: string) => {
         if (!/[/\\](content|seo-engine)[/\\].*\.json$/.test(fichier)) return;
+        cache = undefined;
         for (const env of Object.values(server.environments)) {
           for (const [id, mod] of env.moduleGraph.idToModuleMap) {
             if (id.startsWith("\0" + INDEX)) env.moduleGraph.invalidateModule(mod);

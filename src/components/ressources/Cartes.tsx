@@ -1,5 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { categorie, couperTitre, dateFr, tempsLecture, titreCourt } from "@/lib/ressources/contenu";
+import { traceCouverture } from "@/lib/cover";
+import { useVu } from "@/lib/motion";
 import type { Fiche } from "@/lib/ressources/types";
 
 /** Titre façon Function : ce qui suit « : » ou « ? » passe en italique, couleur de la catégorie. */
@@ -49,34 +51,73 @@ export function MarquePlateforme({
   );
 }
 
+type Format = "carte" | "petite" | "une" | "pilier";
+
+/** Pouls : calque posé sur la couverture, un battement court le long du trait déjà dessiné. */
+function Pouls({ slug, grand }: { slug: string; grand: boolean }) {
+  const t = traceCouverture({ slug, variant: grand ? "une" : "card", trait: grand ? 0.4 : 1 });
+  return (
+    <svg
+      viewBox={`0 0 ${t.W} ${t.H}`}
+      preserveAspectRatio="xMidYMid slice"
+      aria-hidden
+      className="pointer-events-none absolute inset-0 h-full w-full"
+    >
+      <path className="pouls-trait" pathLength={1} strokeWidth={t.largeur * 1.5} d={t.d} />
+      <circle className="pouls-point" cx={t.cx} cy={t.cy} r={t.r} strokeWidth={t.r * 0.4} />
+    </svg>
+  );
+}
+
+/**
+ * Couverture tramée d'une carte. Les grandes cartes prennent la variante {slug}--une (800×500).
+ * En attendant l'image, une trame claire au pas du dither, pas un aplat qui a l'air cassé.
+ */
 function Couverture({
   fiche,
   etiquette,
-  rayon,
-  petite = false,
-  grande = false,
+  format = "carte",
+  prioritaire,
 }: {
   fiche: Fiche;
   etiquette: string;
-  rayon: string;
-  petite?: boolean;
-  grande?: boolean;
+  format?: Format;
+  /** "haute" : image principale de la page ; "oui" : visible au chargement. */
+  prioritaire?: "haute" | "oui";
 }) {
   const c = categorie(fiche.category)!;
   const p = fiche.plateforme;
+  const grand = format === "une" || format === "pilier";
+  const ref = useVu<HTMLDivElement>();
+  const forme = {
+    carte: "aspect-[4/3] rounded-[14px]",
+    petite: "aspect-[4/3] rounded-[12px]",
+    une: "aspect-[4/3] rounded-[16px] lg:aspect-[16/10]",
+    pilier: "aspect-[16/10] rounded-[16px]",
+  }[format];
   return (
     <div
-      className={`relative aspect-[4/3] overflow-hidden ${rayon}`}
-      style={{ background: c.tint }}
+      ref={ref}
+      className={`relative overflow-hidden ${forme}`}
+      style={{
+        backgroundColor: c.tint,
+        backgroundImage: `radial-gradient(circle, color-mix(in oklab, ${c.ink} 22%, transparent) 1.3px, transparent 1.5px)`,
+        backgroundSize: "14px 14px",
+      }}
     >
-      <img
-        src={`/covers/${fiche.slug}${grande ? "--une" : ""}.svg`}
-        width={800}
-        height={600}
-        loading="lazy"
-        alt=""
-        className="h-full w-full object-cover transition-transform duration-500 ease-[var(--ease-out-quint)] group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
-      />
+      <div className="absolute inset-0 transition-transform duration-500 ease-[var(--ease-out-quint)] group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100">
+        <img
+          src={`/covers/${fiche.slug}${grand ? "--une" : ""}.svg`}
+          width={800}
+          height={grand ? 500 : 600}
+          loading={prioritaire ? "eager" : "lazy"}
+          fetchPriority={prioritaire === "haute" ? "high" : undefined}
+          decoding="async"
+          alt=""
+          className="h-full w-full object-cover"
+        />
+        {!p && <Pouls slug={fiche.slug} grand={grand} />}
+      </div>
       {p && (
         <span className="absolute left-1/2 top-1/2 grid w-[26%] -translate-x-1/2 -translate-y-1/2 place-items-center">
           {p.logo ? (
@@ -89,7 +130,7 @@ function Couverture({
         </span>
       )}
       <span
-        className={`absolute left-3 top-3 rounded-[6px] bg-white/90 px-2 py-1 font-mono font-medium uppercase tracking-[0.12em] ${petite ? "text-[9.5px]" : "text-[10.5px]"}`}
+        className="absolute left-3 top-3 rounded-[6px] bg-white/90 px-2 py-1 font-mono text-[10.5px] font-medium uppercase tracking-[0.12em]"
         style={{ color: c.ink }}
       >
         {etiquette}
@@ -98,31 +139,43 @@ function Couverture({
   );
 }
 
-function Meta({ fiche, sansAuteur = false }: { fiche: Fiche; sansAuteur?: boolean }) {
+/** « 7 min · 12 oct. 2026 » ; un ancien article n'a que sa durée (on n'invente pas de date). */
+function Meta({ fiche }: { fiche: Fiche }) {
   const parts = fiche.ancien
     ? [tempsLecture(fiche.readTime)]
-    : [sansAuteur ? "" : (fiche.author ?? ""), dateFr(fiche.date), tempsLecture(fiche.readTime)];
+    : [tempsLecture(fiche.readTime), dateFr(fiche.date)];
   return <>{parts.filter(Boolean).join(" · ")}</>;
 }
 
 const lienCarte =
   "group block rounded-[14px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--terra)]";
+const survolTitre =
+  "transition-colors group-hover:text-[var(--ink)] group-hover:underline decoration-1 underline-offset-[5px]";
+const meta = "text-[13.5px] text-[var(--text-muted)]";
 
-/** Carte article (Seed) : couverture, étiquette, titre, auteur · date · durée. Un seul lien. */
-export function CarteArticle({ fiche, etiquette }: { fiche: Fiche; etiquette?: string }) {
+/** Carte article (Seed) : couverture, étiquette, titre, durée · date. Un seul lien. */
+export function CarteArticle({
+  fiche,
+  etiquette,
+  prioritaire,
+}: {
+  fiche: Fiche;
+  etiquette?: string;
+  prioritaire?: "oui";
+}) {
   const c = categorie(fiche.category)!;
   return (
-    <Link to="/ressources/$slug" params={{ slug: fiche.slug }} className={lienCarte}>
-      <Couverture fiche={fiche} etiquette={etiquette ?? c.court} rayon="rounded-[14px]" />
+    <Link
+      to="/ressources/$slug"
+      params={{ slug: fiche.slug }}
+      className={lienCarte}
+      style={{ ["--ink" as string]: c.ink }}
+    >
+      <Couverture fiche={fiche} etiquette={etiquette ?? c.court} prioritaire={prioritaire} />
       <h3 className="mt-4 line-clamp-3 font-serif text-[19px] font-normal leading-[1.25] tracking-[-0.01em] [text-wrap:balance] md:text-[20px]">
-        <span
-          className="transition-colors group-hover:text-[var(--ink)]"
-          style={{ ["--ink" as string]: c.ink }}
-        >
-          {fiche.title}
-        </span>
+        <span className={survolTitre}>{fiche.title}</span>
       </h3>
-      <p className="mt-2 text-[13.5px] text-[var(--text-muted)]">
+      <p className={`mt-2 ${meta}`}>
         <Meta fiche={fiche} />
       </p>
     </Link>
@@ -135,8 +188,8 @@ export function CarteUne({ fiche, titre = "h2" }: { fiche: Fiche; titre?: "h2" |
   const H = titre;
   return (
     <Link to="/ressources/$slug" params={{ slug: fiche.slug }} className={lienCarte}>
-      <Couverture fiche={fiche} etiquette={c.court} rayon="rounded-[16px]" grande />
-      <H className="mt-5 max-w-[22ch] font-serif text-[clamp(26px,2.6vw,36px)] font-normal leading-[1.15] tracking-[-0.015em]">
+      <Couverture fiche={fiche} etiquette={c.court} format="une" prioritaire="haute" />
+      <H className="mt-5 max-w-[28ch] font-serif text-[clamp(26px,2.6vw,36px)] font-normal leading-[1.15] tracking-[-0.015em]">
         <TitreItalique titre={fiche.title} ink={c.ink} />
       </H>
       {fiche.metaDescription && (
@@ -144,9 +197,41 @@ export function CarteUne({ fiche, titre = "h2" }: { fiche: Fiche; titre?: "h2" |
           {fiche.metaDescription}
         </p>
       )}
-      <p className="mt-3 text-[13.5px] text-[var(--text-muted)]">
+      <p className={`mt-3 ${meta}`}>
         <Meta fiche={fiche} />
       </p>
+    </Link>
+  );
+}
+
+/** Carte horizontale du pilier en tête d'une page catégorie. */
+export function CartePilier({ fiche }: { fiche: Fiche }) {
+  const c = categorie(fiche.category)!;
+  return (
+    <Link
+      to="/ressources/$slug"
+      params={{ slug: fiche.slug }}
+      className={`${lienCarte} grid items-center gap-6 md:grid-cols-12 md:gap-8`}
+    >
+      <div className="md:col-span-7">
+        <Couverture fiche={fiche} etiquette={c.court} format="pilier" prioritaire="haute" />
+      </div>
+      <div className="md:col-span-5">
+        <span className="eyebrow" style={{ color: c.ink }}>
+          Pour commencer
+        </span>
+        <h2 className="mt-3 font-serif text-[clamp(26px,2.6vw,36px)] font-normal leading-[1.15] tracking-[-0.015em]">
+          <TitreItalique titre={fiche.title} ink={c.ink} />
+        </h2>
+        {fiche.metaDescription && (
+          <p className="mt-3 line-clamp-3 text-[16px] leading-[1.6] text-[var(--text-soft)]">
+            {fiche.metaDescription}
+          </p>
+        )}
+        <p className={`mt-3 ${meta}`}>
+          <Meta fiche={fiche} />
+        </p>
+      </div>
     </Link>
   );
 }
@@ -155,10 +240,15 @@ export function CarteUne({ fiche, titre = "h2" }: { fiche: Fiche; titre?: "h2" |
 export function CartePetite({ fiche }: { fiche: Fiche }) {
   const c = categorie(fiche.category)!;
   return (
-    <Link to="/ressources/$slug" params={{ slug: fiche.slug }} className={lienCarte}>
-      <Couverture fiche={fiche} etiquette={c.court} rayon="rounded-[12px]" petite />
+    <Link
+      to="/ressources/$slug"
+      params={{ slug: fiche.slug }}
+      className={lienCarte}
+      style={{ ["--ink" as string]: c.ink }}
+    >
+      <Couverture fiche={fiche} etiquette={c.court} format="petite" prioritaire="oui" />
       <h3 className="mt-3 line-clamp-3 font-serif text-[15px] font-normal leading-[1.3] md:text-[17px]">
-        {titreCourt(fiche.title)}
+        <span className={survolTitre}>{titreCourt(fiche.title)}</span>
       </h3>
       <p className="mt-1.5 text-[12.5px] text-[var(--text-muted)]">
         <span className="hidden md:inline">
@@ -184,7 +274,7 @@ export function TuilePlateforme({ fiche }: { fiche: Fiche }) {
         <span className="block text-[15px] font-semibold leading-tight">{nom}</span>
         {fiche.plateforme?.checkedOn && (
           <span className="mt-1 hidden font-mono text-[10.5px] uppercase tracking-[0.08em] text-[var(--text-muted)] min-[360px]:block">
-            Informations relevées le {dateFr(fiche.plateforme.checkedOn)}
+            Relevé le {dateFr(fiche.plateforme.checkedOn).replace(/ \d{4}$/, "")}
           </span>
         )}
       </span>

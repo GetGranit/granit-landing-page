@@ -3,6 +3,7 @@ import { useLanguage } from "@/lib/i18n";
 import { Hub } from "@/components/ressources/Hub";
 import { HubEn } from "@/components/ressources/HubEn";
 import { SITE_URL } from "@/lib/seo";
+import { aLaUne } from "@/lib/ressources/contenu";
 
 const TITLE = "Guide du tiers payant optique : portails et rejets - Granit AI";
 const DESC =
@@ -18,14 +19,22 @@ const breadcrumb = {
 };
 
 export const Route = createFileRoute("/ressources/")({
-  head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-    ],
-  }),
+  head: () => {
+    const une = aLaUne();
+    return {
+      meta: [
+        { title: TITLE },
+        { name: "description", content: DESC },
+        { property: "og:title", content: TITLE },
+        { property: "og:description", content: DESC },
+      ],
+      // La grande couverture « À la une » est l'image principale de la page.
+      links:
+        une.length >= 3
+          ? [{ rel: "preload", as: "image", href: `/covers/${une[0].slug}--une.svg` }]
+          : [],
+    };
+  },
   component: RessourcesPage,
 });
 
