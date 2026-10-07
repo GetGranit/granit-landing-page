@@ -1,3 +1,5 @@
+import type { Figure } from "./figures";
+
 // Contrat du fichier content/ressources/{slug}.json écrit par le moteur SEO
 // (scripts/seo-engine/README.md, « Contrat du fichier article »).
 
@@ -11,6 +13,9 @@ export type CategorySlug =
   | "glossaire";
 
 export type VerticaleSlug = "optique" | "audio" | "pharmacie" | "dentaire" | "centres";
+
+/** Auteur ou relecteur (config.json du moteur) ; `url` = profil LinkedIn, peut être null. */
+export type Personne = { name: string; jobTitle?: string; photo?: string; url?: string | null };
 
 export type LienInterne = { id?: string; slug: string; anchor: string; type: string };
 
@@ -26,8 +31,9 @@ export type RessourceJson = {
   keywordCluster: string[];
   parentSlug: string | null;
   level: string;
-  author: { name: string; jobTitle?: string; photo?: string };
-  reviewer: string | null;
+  author: Personne;
+  /** Renseigné seulement après une vraie relecture humaine (PR) ; sinon null. */
+  reviewer: Personne | null;
   datePublished: string;
   dateModified: string;
   checkedOn: string | null;
@@ -38,6 +44,8 @@ export type RessourceJson = {
   tocItems: { id: string; label: string }[];
   faqItems: { question: string; answer: string }[];
   sources: { label: string; url: string }[];
+  /** Schémas, placés dans contentHtml par <div data-figure="{id}"></div>. */
+  figures?: Figure[];
   internalLinks: LienInterne[];
   liensEntrants: LienInterne[];
   /** Vague de la file (ajoutée à la lecture, sert au tri). */

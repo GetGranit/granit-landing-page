@@ -22,11 +22,17 @@
   "parentSlug": "portails-tiers-payant",
   "level": "Fille",
   "author": {
-    "name": "Paul Pietra",
-    "jobTitle": "",
-    "photo": ""
+    "name": "Arthur Pelong",
+    "jobTitle": "Rédacteur, expert tiers payant",
+    "photo": "/auteurs/arthur-pelong.jpg",
+    "url": null
   },
-  "reviewer": null,
+  "reviewer": {
+    "name": "Paul Pietra",
+    "jobTitle": "Rédacteur, expert métier optique",
+    "photo": "/auteurs/paul-pietra.jpg",
+    "url": null
+  },
   "datePublished": "2026-10-07",
   "dateModified": "2026-10-07",
   "checkedOn": "2026-10-06",

@@ -8,6 +8,8 @@ import type { Plateforme, RessourceJson } from "@/lib/ressources/types";
 import { Annuaire } from "../Annuaire";
 import { MarquePlateforme, PhotoCarte, TitreItalique } from "../Cartes";
 import { photoFiche } from "@/lib/ressources/photos";
+import { logoPlateforme } from "@/lib/ressources/logos";
+import { FIGURE_CSS } from "@/lib/ressources/figures";
 import { Fil } from "../Fil";
 import { SousNav } from "../Onglets";
 import { FicheIdentite } from "./BlocsPlateforme";
@@ -47,7 +49,18 @@ function Signature({ a, nbSources }: { a: RessourceJson; nbSources: number }) {
           </span>
         )}
         <span>
-          Par {nom}
+          Par{" "}
+          {a.author?.url ? (
+            <a
+              href={a.author.url}
+              rel="author noopener"
+              className="font-semibold text-[var(--text)] underline-offset-[3px] hover:underline"
+            >
+              {nom}
+            </a>
+          ) : (
+            <span className="font-semibold text-[var(--text)]">{nom}</span>
+          )}
           {a.author?.jobTitle ? `, ${a.author.jobTitle}` : ""}
         </span>
       </span>
@@ -64,7 +77,21 @@ function Signature({ a, nbSources }: { a: RessourceJson; nbSources: number }) {
           >
             <path d="M20 6 9 17l-5-5" />
           </svg>
-          Relu par {a.reviewer}
+          <span>
+            Relu par{" "}
+            {a.reviewer.url ? (
+              <a
+                href={a.reviewer.url}
+                rel="noopener"
+                className="underline-offset-[3px] hover:underline"
+              >
+                {a.reviewer.name}
+              </a>
+            ) : (
+              a.reviewer.name
+            )}
+            {a.reviewer.jobTitle ? `, ${a.reviewer.jobTitle}` : ""}
+          </span>
         </span>
       )}
       <span>
@@ -163,7 +190,13 @@ export function PageArticle({
                 ]}
               />
               <div className={estPlateforme ? "mt-4 flex items-center gap-[18px]" : "mt-4"}>
-                {estPlateforme && <MarquePlateforme nom={p.nom} logo={p.logo} taille="xl" />}
+                {estPlateforme && (
+                  <MarquePlateforme
+                    nom={p.nom}
+                    logo={logoPlateforme(p.logo, "carre")}
+                    taille="xl"
+                  />
+                )}
                 <h1 className="max-w-[22ch] font-serif text-[clamp(32px,4.4vw,54px)] font-normal leading-[1.08] tracking-[-0.015em] [text-wrap:balance]">
                   <TitreItalique titre={a.title} ink={cat.ink} />
                 </h1>
@@ -185,8 +218,16 @@ export function PageArticle({
             style={teinte}
           >
             <div ref={corps} className="ress-corps min-w-0">
+              {a.figures?.length ? (
+                <style dangerouslySetInnerHTML={{ __html: FIGURE_CSS }} />
+              ) : null}
               <SommaireMobile entrees={entrees} />
-              <Corps html={a.contentHtml} plateforme={p} insertion={insertion} />
+              <Corps
+                html={a.contentHtml}
+                plateforme={p}
+                figures={a.figures}
+                insertion={insertion}
+              />
               <EtapeSuivante article={a} />
               <Faq items={a.faqItems} />
               <Sources article={a} plateforme={p} />

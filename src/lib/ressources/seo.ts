@@ -1,6 +1,6 @@
 // Données structurées des pages Ressources (gabarit §4).
 import { SITE_URL } from "@/lib/seo";
-import type { Plateforme, RessourceJson } from "./types";
+import type { Personne, Plateforme, RessourceJson } from "./types";
 
 /** BreadcrumbList à partir de [nom, chemin] ; Accueil est ajouté en tête. */
 export function breadcrumbLd(items: [string, string][]) {
@@ -17,6 +17,15 @@ export function breadcrumbLd(items: [string, string][]) {
   };
 }
 
+const personneLd = (p: Personne) => ({
+  "@type": "Person",
+  name: p.name,
+  jobTitle: p.jobTitle || undefined,
+  image: p.photo ? SITE_URL + p.photo : undefined,
+  url: p.url || undefined,
+  sameAs: p.url ? [p.url] : undefined,
+});
+
 export function blogPostingLd(a: RessourceJson, p: Plateforme | null) {
   const url = `${SITE_URL}/ressources/${a.slug}`;
   const site = p ? Object.values(p.sources).find((s) => s.url)?.url : undefined;
@@ -30,10 +39,12 @@ export function blogPostingLd(a: RessourceJson, p: Plateforme | null) {
     dateModified: a.dateModified,
     wordCount: a.wordCount,
     keywords: [a.primaryKeyword, ...(a.keywordCluster ?? [])].join(", "),
-    mainEntityOfPage: { "@type": "WebPage", "@id": url },
-    author: a.author?.name
-      ? { "@type": "Person", name: a.author.name, jobTitle: a.author.jobTitle || undefined }
-      : { "@type": "Organization", name: "Granit" },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": url,
+      reviewedBy: a.reviewer?.name ? personneLd(a.reviewer) : undefined,
+    },
+    author: a.author?.name ? personneLd(a.author) : { "@type": "Organization", name: "Granit" },
     publisher: {
       "@type": "Organization",
       name: "Granit",

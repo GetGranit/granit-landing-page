@@ -1,8 +1,9 @@
 import type { ReactNode } from "react";
 import type { Plateforme } from "@/lib/ressources/types";
+import { figureHtml, type Figure } from "@/lib/ressources/figures";
 import { BLOCS } from "./BlocsPlateforme";
 
-const MARQUEUR = /<div\s+data-bloc=["']([a-z]+)["']\s*>\s*<\/div>/g;
+const MARQUEUR = /<div\s+data-(bloc|figure)=["']([a-z0-9-]+)["']\s*>\s*<\/div>/g;
 
 /**
  * Coupe le HTML juste après l'encadré « L'essentiel » (le premier </div> qui suit
@@ -29,10 +30,12 @@ function Html({ html }: { html: string }) {
 export function Corps({
   html,
   plateforme,
+  figures = [],
   insertion,
 }: {
   html: string;
   plateforme: Plateforme | null;
+  figures?: Figure[];
   insertion?: ReactNode;
 }) {
   const [tete, reste] = insertion ? apresEssentiel(html) : ["", html];
@@ -40,8 +43,17 @@ export function Corps({
   let dernier = 0;
   for (const m of reste.matchAll(MARQUEUR)) {
     morceaux.push(<Html key={`h${dernier}`} html={reste.slice(dernier, m.index)} />);
-    const Bloc = BLOCS[m[1]];
-    if (Bloc && plateforme) morceaux.push(<Bloc key={`b${m.index}`} p={plateforme} />);
+    if (m[1] === "figure") {
+      // Une figure absente du champ `figures` : marqueur ignoré.
+      const f = figures.find((x) => x.id === m[2]);
+      if (f)
+        morceaux.push(
+          <div key={`f${m.index}`} dangerouslySetInnerHTML={{ __html: figureHtml(f) }} />,
+        );
+    } else {
+      const Bloc = BLOCS[m[2]];
+      if (Bloc && plateforme) morceaux.push(<Bloc key={`b${m.index}`} p={plateforme} />);
+    }
     dernier = m.index! + m[0].length;
   }
   morceaux.push(<Html key="fin" html={reste.slice(dernier)} />);

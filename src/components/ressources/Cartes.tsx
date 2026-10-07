@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { categorie, couperTitre, dateFr, tempsLecture, titreCourt } from "@/lib/ressources/contenu";
+import { logoPlateforme } from "@/lib/ressources/logos";
 import { photoFiche, src, srcSet, estFichePlateforme, type Photo } from "@/lib/ressources/photos";
 import type { Fiche } from "@/lib/ressources/types";
 
@@ -201,7 +202,7 @@ function Couverture({
         <EcranPlateforme
           photo={photoFiche(fiche, rang)}
           nom={nom}
-          logo={fiche.plateforme?.logo}
+          logo={logoPlateforme(fiche.plateforme?.logo, "ecran")}
           tailles={tailles}
           chargement={chargement}
         />
@@ -367,7 +368,7 @@ export function TuilePlateforme({ fiche }: { fiche: Fiche }) {
       params={{ slug: fiche.slug }}
       className="flex items-center gap-3 rounded-[12px] border border-[var(--border)] bg-white p-3.5 transition hover:border-[var(--border2)] hover:shadow-[var(--shadow-soft)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--terra)]"
     >
-      <MarquePlateforme nom={nom} logo={fiche.plateforme?.logo} />
+      <MarquePlateforme nom={nom} logo={logoPlateforme(fiche.plateforme?.logo, "carre")} />
       <span className="min-w-0">
         <span className="block text-[15px] font-semibold leading-tight">{nom}</span>
         {fiche.plateforme?.checkedOn && (
