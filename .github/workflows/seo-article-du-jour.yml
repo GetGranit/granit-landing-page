@@ -3,9 +3,8 @@
 name: SEO · article du jour
 
 on:
-  # À décommenter quand la page /ressources/{slug} sait lire content/ressources/*.json
-  # schedule:
-  #   - cron: "17 6 * * 1-5" # 8 h 17 à Paris (heure d'été), du lundi au vendredi
+  schedule:
+    - cron: "17 6 * * 1-5" # 8 h 17 à Paris (heure d'été), du lundi au vendredi
   workflow_dispatch:
     inputs:
       slug:

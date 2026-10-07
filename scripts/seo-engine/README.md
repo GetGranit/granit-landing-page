@@ -1,6 +1,6 @@
 # Moteur SEO · rubrique Ressources
 
-Chaque jour ouvré à 8 h 17 (heure de Paris), le workflow `.github/workflows/seo-article-du-jour.yml` fait les étapes ci-dessous. Le déclenchement automatique reste commenté tant que la page `/ressources/{slug}` ne lit pas `content/ressources/*.json` : en attendant, on le lance à la main.
+Chaque jour ouvré à 8 h 17 (heure de Paris), le workflow `.github/workflows/seo-article-du-jour.yml` fait les étapes ci-dessous.
 
 1. prend le premier article `pending` de `articles-queue.json` ;
 2. demande l'article à Claude (`claude-opus-5-5`, choisi le 07/10/2026 après comparaison avec Sonnet 5, en streaming, JSON imposé par `article-output.schema.json`). Le message système contient `BLOG_CMS_granit.md` en entier, plus les sections 5 et 6 de `GABARIT_ARTICLE_granit.md` ;
