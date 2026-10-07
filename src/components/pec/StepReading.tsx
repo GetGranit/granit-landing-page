@@ -133,7 +133,8 @@ function ExampleCard() {
         </span>
       </div>
       <div className="grid content-start gap-1" style={mono}>
-        <span>Bénéficiaire : Mme C. EXEMPLE</span>
+        <span>Mme C. EXEMPLE · née le 12/05/1985</span>
+        <span>N° SS : 2 85 05 78 006 084 41</span>
         <span>N° AMC : 99999999</span>
         <span>Réseau : Kalixia</span>
       </div>

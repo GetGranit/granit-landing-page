@@ -48,6 +48,8 @@ export const Route = createFileRoute("/pec")({
 
 const ESSAI_ON =
   import.meta.env.DEV || import.meta.env.VITE_PEC_ESSAI === "on" || simulationProposee();
+/** Identité fictive de la carte d'exemple (NIR inventé, clé valide). */
+const EXAMPLE_PATIENT = { nir: "285057800608441", dateNaissance: "12/05/1985" };
 const CASE_KEY = "granit.pec.case";
 
 type Step =
@@ -306,6 +308,9 @@ function PecPage() {
           }
           busy={busy}
           track={track}
+          // Carte d'exemple : identité fictive imprimée sur la carte dessinée. Pour une vraie
+          // photo, le pré-remplissage viendra de l'OCR d'identité côté infra Granit (TODO(CTO)).
+          prefill={source === "exemple" ? EXAMPLE_PATIENT : undefined}
           onProgress={setSimN}
           onBack={() => setStep({ s: "result", res: { kind: "unique", platform: step.platform } })}
           onEmail={(m, r) => void onSimEmail(step.platform, m, r)}
