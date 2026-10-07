@@ -1,0 +1,90 @@
+{
+  "slug": "glossaire-tiers-payant",
+  "id": "F0",
+  "category": "glossaire",
+  "categoryName": "Glossaire",
+  "type": "standard",
+  "plateforme": null,
+  "title": "Glossaire du tiers payant optique",
+  "primaryKeyword": "glossaire tiers payant",
+  "keywordCluster": [],
+  "parentSlug": "tiers-payant-opticien",
+  "level": "Pilier",
+  "author": {
+    "name": "Paul Pietra",
+    "jobTitle": "",
+    "photo": ""
+  },
+  "reviewer": null,
+  "datePublished": "2026-10-07",
+  "dateModified": "2026-10-07",
+  "checkedOn": null,
+  "wordCount": 18,
+  "readTime": 1,
+  "metaDescription": "Aperçu, article pas encore rédigé : Glossaire du tiers payant optique.",
+  "contentHtml": "<p><strong>Article pas encore rédigé.</strong> Ce squelette d'aperçu reprend le titre, la catégorie et les questions de la file.</p>",
+  "tocItems": [],
+  "faqItems": [
+    {
+      "question": "Que veulent dire AMO, AMC, OCAM ?",
+      "answer": "Réponse pas encore rédigée."
+    },
+    {
+      "question": "Qu'est-ce qu'une DPEC ?",
+      "answer": "Réponse pas encore rédigée."
+    },
+    {
+      "question": "Qu'est-ce que NOEMIE ?",
+      "answer": "Réponse pas encore rédigée."
+    }
+  ],
+  "sources": [],
+  "figures": [],
+  "internalLinks": [
+    {
+      "id": "G0",
+      "slug": "tiers-payant-opticien",
+      "anchor": "tiers payant opticien",
+      "type": "parent"
+    },
+    {
+      "id": "F1",
+      "slug": "amo-amc",
+      "anchor": "part amc",
+      "type": "enfant"
+    },
+    {
+      "id": "F2",
+      "slug": "sigles-tiers-payant-noemie",
+      "anchor": "télétransmission noémie",
+      "type": "enfant"
+    },
+    {
+      "id": "F3",
+      "slug": "carte-vitale-carte-tiers-payant",
+      "anchor": "Carte Vitale et carte de tiers payant",
+      "type": "enfant"
+    },
+    {
+      "id": "G3",
+      "slug": "questions-tiers-payant-opticien",
+      "anchor": "Tiers payant opticien",
+      "type": "sœur"
+    },
+    {
+      "id": "G4",
+      "slug": "erreurs-tiers-payant-opticien",
+      "anchor": "Les erreurs de saisie qui coûtent le plus cher en tiers payant",
+      "type": "sœur"
+    }
+  ],
+  "liensEntrants": [],
+  "moteur": {
+    "model": "apercu",
+    "genereLe": "2026-10-07T00:00:00.000Z",
+    "avertissements": [
+      "Fichier d'aperçu écrit à la main, non publié"
+    ]
+  },
+  "wave": 2
+}

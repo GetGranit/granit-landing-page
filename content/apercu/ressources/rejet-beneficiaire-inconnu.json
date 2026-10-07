@@ -1,0 +1,101 @@
+{
+  "slug": "rejet-beneficiaire-inconnu",
+  "id": "B1",
+  "category": "rejets",
+  "categoryName": "Rejets et corrections",
+  "type": "resolution",
+  "plateforme": null,
+  "title": "Rejet mutuelle « bénéficiaire inconnu » : corriger sans doubler l'AMO",
+  "primaryKeyword": "rejet bénéficiaire inconnu mutuelle",
+  "keywordCluster": [],
+  "parentSlug": "rejet-tiers-payant",
+  "level": "Fille",
+  "author": {
+    "name": "Paul Pietra",
+    "jobTitle": "",
+    "photo": ""
+  },
+  "reviewer": null,
+  "datePublished": "2026-10-07",
+  "dateModified": "2026-10-07",
+  "checkedOn": null,
+  "wordCount": 426,
+  "readTime": 2,
+  "metaDescription": "Rejet mutuelle « bénéficiaire inconnu » : ce qu'il veut dire, ses causes fréquentes et comment refacturer la seule part mutuelle sans doubler l'AMO.",
+  "contentHtml": "<p><strong>Le rejet « bénéficiaire inconnu » vient de la complémentaire : elle ne retrouve pas la personne dans ses fichiers.</strong> La part Sécurité sociale est en général déjà réglée ; on corrige l'identité ou la mutuelle, puis on refacture uniquement la part complémentaire, sans renvoyer toute la feuille de soins.</p>\n<div class=\"key-takeaways\"><strong>L'essentiel</strong><ul>\n<li>Le rejet vient de la mutuelle ou de sa plateforme, pas de l'Assurance maladie.</li>\n<li>Les causes fréquentes : carte périmée, mauvais rattachement, numéro d'adhérent mal saisi, mauvais portail.</li>\n<li>On corrige le dossier, puis on refacture la seule part mutuelle.</li>\n</ul></div>\n<h2 id=\"comprendre\">Ce que veut dire le rejet</h2>\n<p>Le message vient de la mutuelle ou de la plateforme qui gère son tiers payant, pas de l'Assurance maladie. Il signifie que le couple « numéro d'adhérent + identité du bénéficiaire » envoyé ne correspond à personne chez elle.</p>\n<p>Avant de toucher au dossier, vérifiez d'où vient le retour : un rejet complémentaire ne remet pas en cause la part obligatoire déjà payée. C'est tout l'enjeu : refacturer uniquement la part mutuelle, pas tout le dossier.</p>\n<h2 id=\"causes\">Les causes les plus fréquentes</h2>\n<div class=\"tbl\"><table><tr><th>Cause</th><th>Où vérifier</th><th>Correction</th></tr>\n<tr><td>Carte d'une ancienne mutuelle</td><td>Date de validité de la carte de tiers payant</td><td>Demander la carte en cours, refaire la prise en charge</td></tr>\n<tr><td>Bénéficiaire rattaché au mauvais assuré</td><td>Ouvrant droit et bénéficiaire sur la carte</td><td>Saisir l'enfant ou le conjoint sous l'ouvrant droit</td></tr>\n<tr><td>Numéro d'adhérent mal saisi</td><td>Numéro sur la carte, caractère par caractère</td><td>Corriger le numéro, renvoyer la part mutuelle</td></tr>\n<tr><td>Mauvais portail</td><td>Le logo de la plateforme sur la carte</td><td>Déposer sur la bonne plateforme</td></tr>\n<tr><td>Date de naissance ou rang erroné</td><td>Fiche client et carte Vitale</td><td>Aligner la fiche sur la carte</td></tr></table></div>\n<div class=\"callout callout--warn\"><p><strong>Le piège :</strong> renvoyer la feuille de soins complète pour corriger la part mutuelle. La Sécurité sociale risque de payer deux fois, et vous de devoir rembourser.</p></div>\n<h2 id=\"corriger\">Corriger le dossier, étape par étape</h2>\n<ol class=\"steps\"><li><strong>Identifier l'émetteur du rejet.</strong> Retour de la plateforme ou de la mutuelle : c'est la part complémentaire qui est en cause.</li>\n<li><strong>Comparer la carte et la fiche client.</strong> Nom, prénom, date de naissance, numéro d'adhérent, validité.</li>\n<li><strong>Vérifier le rattachement.</strong> Pour un enfant ou un conjoint, l'ouvrant droit doit être le bon.</li>\n<li><strong>Corriger et refacturer la seule part mutuelle</strong>, par une demande de remboursement électronique (DRE) ou sur le portail.</li>\n<li><strong>Noter la date de renvoi</strong> pour relancer au bon moment si rien ne bouge.</li></ol>\n<h2 id=\"eviter\">Éviter qu'il revienne</h2>\n<p>La plupart de ces rejets se jouent avant l'envoi : carte du jour scannée, rattachement vérifié, bonne plateforme. La <a href=\"/ressources/checklist-prise-en-charge\">checklist avant d'envoyer une prise en charge</a> reprend ces contrôles en une minute.</p>",
+  "tocItems": [
+    {
+      "id": "comprendre",
+      "label": "Ce que veut dire le rejet"
+    },
+    {
+      "id": "causes",
+      "label": "Les causes les plus fréquentes"
+    },
+    {
+      "id": "corriger",
+      "label": "Corriger le dossier, étape par étape"
+    },
+    {
+      "id": "eviter",
+      "label": "Éviter qu'il revienne"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "Que veut dire « bénéficiaire inconnu » ?",
+      "answer": "La mutuelle ne retrouve pas la personne avec le numéro d'adhérent et l'identité envoyés. Le plus souvent : carte périmée, mauvais rattachement ou numéro mal saisi."
+    },
+    {
+      "question": "Comment corriger sans refacturer la part Sécurité sociale ?",
+      "answer": "On corrige l'identité ou la mutuelle, puis on refacture uniquement la part complémentaire (DRE ou portail), sans renvoyer la feuille de soins complète."
+    },
+    {
+      "question": "Faut-il contacter la mutuelle ou le portail ?",
+      "answer": "Commencez par la plateforme qui a émis le rejet : c'est elle qui gère le tiers payant de la mutuelle et qui voit le dossier."
+    }
+  ],
+  "sources": [],
+  "figures": [],
+  "internalLinks": [
+    {
+      "id": "B0",
+      "slug": "rejet-tiers-payant",
+      "anchor": "motif rejet tiers payant",
+      "type": "parent"
+    },
+    {
+      "id": "B2",
+      "slug": "refacturer-part-mutuelle",
+      "anchor": "Refacturer uniquement la part mutuelle après un rejet (DRE)",
+      "type": "sœur"
+    },
+    {
+      "id": "B3",
+      "slug": "prise-en-charge-refusee",
+      "anchor": "Prise en charge refusée",
+      "type": "sœur"
+    },
+    {
+      "id": "B8",
+      "slug": "checklist-prise-en-charge",
+      "anchor": "checklist avant d'envoyer une prise en charge",
+      "type": "transverse"
+    },
+    {
+      "id": "A13",
+      "slug": "mutuelle-quel-portail",
+      "anchor": "savoir par quel portail passe une mutuelle",
+      "type": "outil"
+    }
+  ],
+  "liensEntrants": [],
+  "moteur": {
+    "model": "apercu",
+    "genereLe": "2026-10-07T00:00:00.000Z",
+    "avertissements": [
+      "Fichier d'aperçu écrit à la main, non publié"
+    ]
+  },
+  "wave": 1
+}

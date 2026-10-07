@@ -1,0 +1,162 @@
+{
+  "slug": "portails-tiers-payant",
+  "id": "A0",
+  "category": "plateformes",
+  "categoryName": "Plateformes et portails",
+  "type": "standard",
+  "plateforme": null,
+  "title": "Portails de tiers payant pour les opticiens : connexion, prise en charge, rejet et paiement",
+  "primaryKeyword": "portail tiers payant opticien",
+  "keywordCluster": [
+    "v2 medisysnet fr",
+    "v2 medisysnet",
+    "v2.medisysnet"
+  ],
+  "parentSlug": "tiers-payant-opticien",
+  "level": "Pilier",
+  "author": {
+    "name": "Paul Pietra",
+    "jobTitle": "",
+    "photo": ""
+  },
+  "reviewer": null,
+  "datePublished": "2026-10-07",
+  "dateModified": "2026-10-07",
+  "checkedOn": null,
+  "wordCount": 18,
+  "readTime": 1,
+  "metaDescription": "Aperçu, article pas encore rédigé : Portails de tiers payant pour les opticiens : connexion, prise en charge, rejet et paiement.",
+  "contentHtml": "<p><strong>Article pas encore rédigé.</strong> Ce squelette d'aperçu reprend le titre, la catégorie et les questions de la file.</p>",
+  "tocItems": [],
+  "faqItems": [
+    {
+      "question": "Qu'est-ce qu'un portail de tiers payant ?",
+      "answer": "Réponse pas encore rédigée."
+    },
+    {
+      "question": "Combien de portails un opticien doit-il utiliser ?",
+      "answer": "Réponse pas encore rédigée."
+    },
+    {
+      "question": "Comment savoir quel portail correspond à la mutuelle du client ?",
+      "answer": "Réponse pas encore rédigée."
+    },
+    {
+      "question": "Faut-il un compte sur chaque portail ?",
+      "answer": "Réponse pas encore rédigée."
+    },
+    {
+      "question": "Que faire quand un portail est en maintenance ?",
+      "answer": "Réponse pas encore rédigée."
+    }
+  ],
+  "sources": [],
+  "figures": [],
+  "internalLinks": [
+    {
+      "id": "G0",
+      "slug": "tiers-payant-opticien",
+      "anchor": "tiers payant opticien",
+      "type": "parent"
+    },
+    {
+      "id": "A1",
+      "slug": "portail-viamedis",
+      "anchor": "viamedis tp",
+      "type": "enfant"
+    },
+    {
+      "id": "A2",
+      "slug": "portail-almerys",
+      "anchor": "almerys tp",
+      "type": "enfant"
+    },
+    {
+      "id": "A3",
+      "slug": "portail-sp-sante",
+      "anchor": "sp sante tp",
+      "type": "enfant"
+    },
+    {
+      "id": "A4",
+      "slug": "portail-isante",
+      "anchor": "isante tp",
+      "type": "enfant"
+    },
+    {
+      "id": "A5",
+      "slug": "portail-itelis",
+      "anchor": "itelis tp",
+      "type": "enfant"
+    },
+    {
+      "id": "A6",
+      "slug": "portail-actil",
+      "anchor": "actil tp",
+      "type": "enfant"
+    },
+    {
+      "id": "A7",
+      "slug": "portail-oxantis",
+      "anchor": "oxantis tp",
+      "type": "enfant"
+    },
+    {
+      "id": "A8",
+      "slug": "portail-seveane",
+      "anchor": "seveane tp",
+      "type": "enfant"
+    },
+    {
+      "id": "A9",
+      "slug": "portail-santeclair",
+      "anchor": "tp santeclair",
+      "type": "enfant"
+    },
+    {
+      "id": "A10",
+      "slug": "portail-kalixia",
+      "anchor": "kalixia optique",
+      "type": "enfant"
+    },
+    {
+      "id": "A11",
+      "slug": "portail-carte-blanche",
+      "anchor": "carte blanche partenaires",
+      "type": "enfant"
+    },
+    {
+      "id": "A12",
+      "slug": "contacts-plateformes-tiers-payant",
+      "anchor": "contacts pros des plateformes de tiers payant",
+      "type": "enfant"
+    },
+    {
+      "id": "A13",
+      "slug": "mutuelle-quel-portail",
+      "anchor": "savoir par quel portail passe une mutuelle",
+      "type": "enfant"
+    },
+    {
+      "id": "B0",
+      "slug": "rejet-tiers-payant",
+      "anchor": "motif rejet tiers payant",
+      "type": "sœur"
+    },
+    {
+      "id": "C0",
+      "slug": "rapprochement-bancaire-tiers-payant",
+      "anchor": "Rapprochement bancaire du tiers payant",
+      "type": "sœur"
+    }
+  ],
+  "liensEntrants": [],
+  "moteur": {
+    "model": "apercu",
+    "genereLe": "2026-10-07T00:00:00.000Z",
+    "avertissements": [
+      "Fichier d'aperçu écrit à la main, non publié"
+    ]
+  },
+  "wave": 1
+}

@@ -1,0 +1,145 @@
+{
+  "slug": "tiers-payant-opticien",
+  "id": "G0",
+  "category": "guide-tiers-payant",
+  "categoryName": "Guide du tiers payant",
+  "type": "standard",
+  "plateforme": null,
+  "title": "Tiers payant opticien : de la prise en charge à l'encaissement",
+  "primaryKeyword": "tiers payant opticien",
+  "keywordCluster": [
+    "opticien mutuelle",
+    "mutuelle opticien",
+    "opticien et mutuelle",
+    "opticien tiers payant",
+    "devis opticien",
+    "tiers payant opticien",
+    "tiers payant optique",
+    "opticien tiers payant mutuelle",
+    "tiers payant mgen opticien",
+    "opticien tiers payant paris"
+  ],
+  "parentSlug": null,
+  "level": "Pilier global",
+  "author": {
+    "name": "Paul Pietra",
+    "jobTitle": "",
+    "photo": ""
+  },
+  "reviewer": null,
+  "datePublished": "2026-10-07",
+  "dateModified": "2026-10-07",
+  "checkedOn": null,
+  "wordCount": 18,
+  "readTime": 1,
+  "metaDescription": "Aperçu, article pas encore rédigé : Tiers payant opticien : de la prise en charge à l'encaissement.",
+  "contentHtml": "<p><strong>Article pas encore rédigé.</strong> Ce squelette d'aperçu reprend le titre, la catégorie et les questions de la file.</p>",
+  "tocItems": [],
+  "faqItems": [
+    {
+      "question": "Comment fonctionne le tiers payant chez l'opticien ?",
+      "answer": "Réponse pas encore rédigée."
+    },
+    {
+      "question": "Qui paie quoi entre la Sécurité sociale (AMO) et la mutuelle (AMC) ?",
+      "answer": "Réponse pas encore rédigée."
+    },
+    {
+      "question": "Le tiers payant est-il obligatoire pour un opticien ?",
+      "answer": "Réponse pas encore rédigée."
+    },
+    {
+      "question": "Combien de temps faut-il pour être payé en tiers payant ?",
+      "answer": "Réponse pas encore rédigée."
+    },
+    {
+      "question": "Que faire quand une mutuelle refuse la prise en charge ?",
+      "answer": "Réponse pas encore rédigée."
+    }
+  ],
+  "sources": [],
+  "figures": [],
+  "internalLinks": [
+    {
+      "id": "G1",
+      "slug": "100-sante-classe-a-b-opticien",
+      "anchor": "lunettes 100 santé",
+      "type": "enfant"
+    },
+    {
+      "id": "G2",
+      "slug": "remboursement-optique-amo-amc",
+      "anchor": "remboursement des lunettes",
+      "type": "enfant"
+    },
+    {
+      "id": "A0",
+      "slug": "portails-tiers-payant",
+      "anchor": "portails de tiers payant",
+      "type": "enfant"
+    },
+    {
+      "id": "B0",
+      "slug": "rejet-tiers-payant",
+      "anchor": "motif rejet tiers payant",
+      "type": "enfant"
+    },
+    {
+      "id": "C0",
+      "slug": "rapprochement-bancaire-tiers-payant",
+      "anchor": "Rapprochement bancaire du tiers payant",
+      "type": "enfant"
+    },
+    {
+      "id": "E0",
+      "slug": "gerer-tiers-payant-magasin",
+      "anchor": "gestion tiers payant",
+      "type": "enfant"
+    },
+    {
+      "id": "F0",
+      "slug": "glossaire-tiers-payant",
+      "anchor": "Glossaire du tiers payant optique",
+      "type": "enfant"
+    },
+    {
+      "id": "G3",
+      "slug": "questions-tiers-payant-opticien",
+      "anchor": "Tiers payant opticien",
+      "type": "enfant"
+    },
+    {
+      "id": "G4",
+      "slug": "erreurs-tiers-payant-opticien",
+      "anchor": "Les erreurs de saisie qui coûtent le plus cher en tiers payant",
+      "type": "enfant"
+    },
+    {
+      "id": "G5",
+      "slug": "tiers-payant-integral-opticien",
+      "anchor": "Tiers payant intégral",
+      "type": "enfant"
+    },
+    {
+      "id": "G6",
+      "slug": "cas-particuliers-tiers-payant-optique",
+      "anchor": "Cas particuliers",
+      "type": "enfant"
+    },
+    {
+      "id": "H0",
+      "slug": "conformite-opticien",
+      "anchor": "Conformité administrative de l'opticien",
+      "type": "enfant"
+    }
+  ],
+  "liensEntrants": [],
+  "moteur": {
+    "model": "apercu",
+    "genereLe": "2026-10-07T00:00:00.000Z",
+    "avertissements": [
+      "Fichier d'aperçu écrit à la main, non publié"
+    ]
+  },
+  "wave": 1
+}

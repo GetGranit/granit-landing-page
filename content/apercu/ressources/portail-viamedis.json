@@ -1,0 +1,163 @@
+{
+  "slug": "portail-viamedis",
+  "id": "A1",
+  "category": "plateformes",
+  "categoryName": "Plateformes et portails",
+  "type": "plateforme",
+  "plateforme": "viamedis",
+  "title": "Viamédis TP pour les opticiens : espace pro, prise en charge, statuts et paiement",
+  "primaryKeyword": "viamedis tp",
+  "keywordCluster": [
+    "viamedis pro",
+    "tp viamedis",
+    "viamedis professionnel de santé",
+    "viamedis professionnel de sante",
+    "www viamedis net",
+    "www.viamedis.net",
+    "viamedis.net",
+    "viamedis net",
+    "viamedis professionnels de santé",
+    "viamedis professionnel"
+  ],
+  "parentSlug": "portails-tiers-payant",
+  "level": "Fille",
+  "author": {
+    "name": "Paul Pietra",
+    "jobTitle": "",
+    "photo": ""
+  },
+  "reviewer": null,
+  "datePublished": "2026-10-07",
+  "dateModified": "2026-10-07",
+  "checkedOn": "2026-10-06",
+  "wordCount": 497,
+  "readTime": 2,
+  "metaDescription": "Viamedis pour les opticiens : conventionnement, connexion à viamedis.net, prise en charge optique, statuts, contacts et liste des complémentaires du portail.",
+  "contentHtml": "<p><strong>Viamedis est un opérateur de tiers payant : il paie l'opticien pour le compte de la complémentaire.</strong> En optique, chaque dossier passe par une demande de prise en charge sur viamedis.net, après un conventionnement gratuit sur viamedispro.com.</p>\n<div class=\"key-takeaways\"><strong>L'essentiel</strong><ul>\n<li>Opérateur de tiers payant fondé en 2000, Viamedis gère le tiers payant de plus de 75 complémentaires santé.</li>\n<li>Le conventionnement est gratuit, sur viamedispro.com ; l'accès à viamedis.net demande une double authentification.</li>\n<li>Chaque prise en charge optique se saisit et se suit sur viamedis.net, jusqu'à la facture.</li>\n<li>Le paiement est garanti pour une carte valide portant le logo Viamedis ; aucun délai propre à l'optique n'est publié.</li>\n</ul></div>\n<h2 id=\"chiffres\">Viamedis en bref</h2>\n<div data-bloc=\"chiffres\"></div>\n<p>En 2025, Viamedis a traité 94 millions de factures et réglé 3,2 milliards d'euros de prestations, selon <a href=\"https://www.viamedis.fr/viamedis-page-ia/\">sa page de référence</a>. L'optique fait partie de son « tiers payant complexe », avec l'audio et le dentaire : 1,9 milliard d'euros réglés sur ces trois métiers.</p>\n<h2 id=\"conventionnement\">Se conventionner</h2>\n<p>Le conventionnement est gratuit et se fait en ligne. Selon la discipline, il est aussi possible de passer par l'Inter-AMC (<a href=\"https://www.viamedis.fr/professionnels-de-sante/\">viamedis.fr</a>).</p>\n<ol class=\"steps\"><li><strong>Créez un compte sur viamedispro.com.</strong></li><li><strong>Déposez vos pièces</strong> depuis votre espace : informations administratives et bancaires.</li><li><strong>Attendez la confirmation</strong> du référencement, envoyée par e-mail une fois le dossier vérifié.</li><li><strong>Activez viamedis.net</strong> grâce au second e-mail, reçu après la validation du RIB.</li><li><strong>Acceptez l'engagement conventionnel</strong> à la première connexion.</li></ol>\n<h2 id=\"connexion\">Se connecter à viamedis.net</h2>\n<p>Chaque magasin se connecte avec son adresse e-mail et son mot de passe. La connexion demande aussi un code d'une <strong>application d'authentification</strong> (Google Authenticator, par exemple) : gardez-la sur un téléphone du magasin, pas sur celui d'un seul collaborateur.</p>\n<h2 id=\"organismes\">Les complémentaires sur le portail</h2>\n<p>Lors d'une demande optique, viamedis.net fait choisir l'organisme dans une liste de <strong>122 complémentaires</strong>, relevée par nos agents sur le portail : mutuelles, assureurs et gestionnaires. Cherchez celle de votre client :</p>\n<div data-bloc=\"organismes\"></div>\n<div class=\"callout callout--tip\"><p><strong>Le bon réflexe :</strong> Viamedis garantit le paiement quand la carte de tiers payant est en cours de validité et porte le nom de la complémentaire, la garantie et le logo Viamedis. Pas de logo Viamedis sur la carte : cherchez le bon portail parmi les <a href=\"/ressources/portails-tiers-payant\">portails de tiers payant</a>.</p></div>\n<h2 id=\"pec\">Faire une prise en charge</h2>\n<p>Viamedis.net sert à consulter les droits des clients en temps réel, saisir et suivre devis, demandes de prise en charge et factures, et voir l'historique des paiements.</p>\n<ol class=\"steps\"><li><strong>Vérifiez les droits</strong> du client sur le portail avant de lancer le devis.</li><li><strong>Saisissez le devis et la demande</strong> en choisissant l'organisme dans la liste.</li><li><strong>Suivez le statut</strong> jusqu'à l'accord (tableau ci-dessous).</li><li><strong>Facturez</strong> le dossier accordé, avec les pièces si elles sont demandées.</li></ol>\n<h2 id=\"statuts\">Lire les statuts</h2>\n<p>Les libellés ci-dessous sont ceux que nos agents lisent chaque jour sur le portail.</p>\n<div data-bloc=\"statuts\"></div>\n<p>Un refus pour un client introuvable se traite comme un <a href=\"/ressources/rejet-beneficiaire-inconnu\">rejet « bénéficiaire inconnu »</a>.</p>\n<h2 id=\"paiement\">Paiement et contacts</h2>\n<p>L'engagement conventionnel garantit le règlement des factures et le respect des délais, pour les cartes valides. Viamedis ne publie pas de délai de paiement propre à l'optique.</p>\n<div data-bloc=\"contacts\"></div>",
+  "tocItems": [
+    {
+      "id": "chiffres",
+      "label": "Viamedis en bref"
+    },
+    {
+      "id": "conventionnement",
+      "label": "Se conventionner"
+    },
+    {
+      "id": "connexion",
+      "label": "Se connecter à viamedis.net"
+    },
+    {
+      "id": "organismes",
+      "label": "Les complémentaires sur le portail"
+    },
+    {
+      "id": "pec",
+      "label": "Faire une prise en charge"
+    },
+    {
+      "id": "statuts",
+      "label": "Lire les statuts"
+    },
+    {
+      "id": "paiement",
+      "label": "Paiement et contacts"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "Comment accéder à l'espace pro Viamédis quand on est opticien ?",
+      "answer": "Il faut d'abord être conventionné : créez un compte sur viamedispro.com et déposez vos pièces administratives et bancaires. Une fois le RIB validé, un e-mail d'activation donne accès à viamedis.net, protégé par une double authentification."
+    },
+    {
+      "question": "Quelles mutuelles passent par Viamédis pour le tiers payant optique ?",
+      "answer": "Sur le portail optique, la liste des organismes compte 122 entrées, de ACTUDATA à YVELIN. Le plus sûr reste la carte : le paiement est garanti si elle est en cours de validité et porte le logo Viamedis."
+    },
+    {
+      "question": "Comment faire une demande de prise en charge optique sur Viamédis ?",
+      "answer": "Sur viamedis.net, vérifiez les droits du client, saisissez le devis et la demande de prise en charge en choisissant l'organisme dans la liste, puis suivez le statut du dossier jusqu'à la facture."
+    },
+    {
+      "question": "Que signifient les statuts d'une prise en charge Viamédis (accordée, en attente, refusée) ?",
+      "answer": "« Accordée » : vous pouvez facturer. « Sous réserve de pièces justificatives » : déposez devis, bon de livraison, ordonnance et facture. « En attente » ou « en instance » : le dossier est en cours d'étude. « Refusée » : lisez le motif avant de corriger."
+    },
+    {
+      "question": "Comment contacter Viamédis quand on est professionnel de santé ?",
+      "answer": "Par téléphone au 0 825 076 076 (0,15 €/min), du lundi au vendredi de 9 h à 18 h. Déjà référencé : le formulaire de contact de viamedis.net. Pas encore référencé : celui de viamedispro.com."
+    },
+    {
+      "question": "Sous quel délai Viamédis paie-t-il l'opticien ?",
+      "answer": "Viamedis ne publie pas de délai pour l'optique. Son engagement conventionnel garantit le règlement et le respect des délais pour les cartes valides ; le délai moyen de 11 jours qu'il annonce concerne l'hospitalier."
+    }
+  ],
+  "sources": [
+    {
+      "label": "viamedis.fr · Professionnels de santé",
+      "url": "https://www.viamedis.fr/professionnels-de-sante/"
+    },
+    {
+      "label": "viamedis.fr · Page de référence de Viamedis (mise à jour juillet 2026)",
+      "url": "https://www.viamedis.fr/viamedis-page-ia/"
+    }
+  ],
+  "figures": [],
+  "internalLinks": [
+    {
+      "id": "A0",
+      "slug": "portails-tiers-payant",
+      "anchor": "portails de tiers payant",
+      "type": "parent"
+    },
+    {
+      "id": "A15",
+      "slug": "viamedis-espace-pro",
+      "anchor": "viamedis espace pro",
+      "type": "enfant"
+    },
+    {
+      "id": "A16",
+      "slug": "viamedis-prise-en-charge",
+      "anchor": "viamedis pec",
+      "type": "enfant"
+    },
+    {
+      "id": "A2",
+      "slug": "portail-almerys",
+      "anchor": "almerys tp",
+      "type": "sœur"
+    },
+    {
+      "id": "A3",
+      "slug": "portail-sp-sante",
+      "anchor": "sp sante tp",
+      "type": "sœur"
+    },
+    {
+      "id": "A13",
+      "slug": "mutuelle-quel-portail",
+      "anchor": "savoir par quel portail passe une mutuelle",
+      "type": "outil"
+    },
+    {
+      "id": "A12",
+      "slug": "contacts-plateformes-tiers-payant",
+      "anchor": "contacts pros des plateformes de tiers payant",
+      "type": "transverse"
+    },
+    {
+      "id": "B8",
+      "slug": "checklist-prise-en-charge",
+      "anchor": "checklist avant d'envoyer une prise en charge",
+      "type": "transverse"
+    }
+  ],
+  "liensEntrants": [],
+  "moteur": {
+    "model": "apercu",
+    "genereLe": "2026-10-07T00:00:00.000Z",
+    "avertissements": [
+      "Fichier d'aperçu écrit à la main, non publié"
+    ]
+  },
+  "wave": 1
+}

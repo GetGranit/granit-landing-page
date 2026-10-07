@@ -1,0 +1,130 @@
+{
+  "slug": "rapprochement-bancaire-tiers-payant",
+  "id": "C0",
+  "category": "paiements",
+  "categoryName": "Paiements et rapprochement",
+  "type": "resolution",
+  "plateforme": null,
+  "title": "Rapprochement bancaire du tiers payant : méthode et tableau de suivi",
+  "primaryKeyword": "rapprochement bancaire tiers payant",
+  "keywordCluster": [],
+  "parentSlug": "tiers-payant-opticien",
+  "level": "Pilier",
+  "author": {
+    "name": "Paul Pietra",
+    "jobTitle": "",
+    "photo": ""
+  },
+  "reviewer": null,
+  "datePublished": "2026-10-07",
+  "dateModified": "2026-10-07",
+  "checkedOn": null,
+  "wordCount": 18,
+  "readTime": 1,
+  "metaDescription": "Aperçu, article pas encore rédigé : Rapprochement bancaire du tiers payant : méthode et tableau de suivi.",
+  "contentHtml": "<p><strong>Article pas encore rédigé.</strong> Ce squelette d'aperçu reprend le titre, la catégorie et les questions de la file.</p>",
+  "tocItems": [],
+  "faqItems": [
+    {
+      "question": "Comment faire le rapprochement bancaire du tiers payant ?",
+      "answer": "Réponse pas encore rédigée."
+    },
+    {
+      "question": "Comment rattacher un virement global aux bons dossiers ?",
+      "answer": "Réponse pas encore rédigée."
+    },
+    {
+      "question": "À quelle fréquence faire le rapprochement ?",
+      "answer": "Réponse pas encore rédigée."
+    },
+    {
+      "question": "Quels outils utiliser ?",
+      "answer": "Réponse pas encore rédigée."
+    }
+  ],
+  "sources": [],
+  "figures": [],
+  "internalLinks": [
+    {
+      "id": "G0",
+      "slug": "tiers-payant-opticien",
+      "anchor": "tiers payant opticien",
+      "type": "parent"
+    },
+    {
+      "id": "C1",
+      "slug": "virement-mutuelle-inferieur",
+      "anchor": "Virement de mutuelle inférieur à la facture",
+      "type": "enfant"
+    },
+    {
+      "id": "C2",
+      "slug": "quand-relancer-mutuelle",
+      "anchor": "quand relancer une mutuelle",
+      "type": "enfant"
+    },
+    {
+      "id": "C3",
+      "slug": "codes-rejets-noemie",
+      "anchor": "liste codes rejets noemie",
+      "type": "enfant"
+    },
+    {
+      "id": "C4",
+      "slug": "retour-noemie-sans-virement",
+      "anchor": "flux noemie",
+      "type": "enfant"
+    },
+    {
+      "id": "C5",
+      "slug": "libelles-virements-tiers-payant",
+      "anchor": "À qui correspond ce virement ? Libellés bancaires des payeurs (CETIP, KALIVIA…)",
+      "type": "enfant"
+    },
+    {
+      "id": "C6",
+      "slug": "delais-paiement-plateformes",
+      "anchor": "Délais de paiement des plateformes de tiers payant (tableau daté)",
+      "type": "enfant"
+    },
+    {
+      "id": "C7",
+      "slug": "impayes-mutuelle-anciens",
+      "anchor": "Impayés mutuelles de plus de 6 mois",
+      "type": "enfant"
+    },
+    {
+      "id": "C8",
+      "slug": "reste-a-charge-impaye",
+      "anchor": "Reste à charge impayé par le client",
+      "type": "enfant"
+    },
+    {
+      "id": "E0",
+      "slug": "gerer-tiers-payant-magasin",
+      "anchor": "gestion tiers payant",
+      "type": "sœur"
+    },
+    {
+      "id": "F0",
+      "slug": "glossaire-tiers-payant",
+      "anchor": "Glossaire du tiers payant optique",
+      "type": "sœur"
+    },
+    {
+      "id": "E4",
+      "slug": "automatiser-saisie-prise-en-charge",
+      "anchor": "Automatiser la saisie des prises en charge",
+      "type": "conversion"
+    }
+  ],
+  "liensEntrants": [],
+  "moteur": {
+    "model": "apercu",
+    "genereLe": "2026-10-07T00:00:00.000Z",
+    "avertissements": [
+      "Fichier d'aperçu écrit à la main, non publié"
+    ]
+  },
+  "wave": 2
+}

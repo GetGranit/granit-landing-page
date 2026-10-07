@@ -1,0 +1,84 @@
+{
+  "slug": "codes-rejets-noemie",
+  "id": "C3",
+  "category": "paiements",
+  "categoryName": "Paiements et rapprochement",
+  "type": "resolution",
+  "plateforme": null,
+  "title": "Codes rejets NOEMIE : liste, signification et action",
+  "primaryKeyword": "liste codes rejets noemie",
+  "keywordCluster": [],
+  "parentSlug": "rapprochement-bancaire-tiers-payant",
+  "level": "Fille",
+  "author": {
+    "name": "Paul Pietra",
+    "jobTitle": "",
+    "photo": ""
+  },
+  "reviewer": null,
+  "datePublished": "2026-10-07",
+  "dateModified": "2026-10-07",
+  "checkedOn": null,
+  "wordCount": 18,
+  "readTime": 1,
+  "metaDescription": "Aperçu, article pas encore rédigé : Codes rejets NOEMIE : liste, signification et action.",
+  "contentHtml": "<p><strong>Article pas encore rédigé.</strong> Ce squelette d'aperçu reprend le titre, la catégorie et les questions de la file.</p>",
+  "tocItems": [],
+  "faqItems": [
+    {
+      "question": "Qu'est-ce qu'un code rejet NOEMIE ?",
+      "answer": "Réponse pas encore rédigée."
+    },
+    {
+      "question": "Où trouver la liste des codes ?",
+      "answer": "Réponse pas encore rédigée."
+    },
+    {
+      "question": "Que faire selon le code reçu ?",
+      "answer": "Réponse pas encore rédigée."
+    }
+  ],
+  "sources": [],
+  "figures": [],
+  "internalLinks": [
+    {
+      "id": "C0",
+      "slug": "rapprochement-bancaire-tiers-payant",
+      "anchor": "Rapprochement bancaire du tiers payant",
+      "type": "parent"
+    },
+    {
+      "id": "C4",
+      "slug": "retour-noemie-sans-virement",
+      "anchor": "flux noemie",
+      "type": "sœur"
+    },
+    {
+      "id": "C5",
+      "slug": "libelles-virements-tiers-payant",
+      "anchor": "À qui correspond ce virement ? Libellés bancaires des payeurs (CETIP, KALIVIA…)",
+      "type": "sœur"
+    },
+    {
+      "id": "C2",
+      "slug": "quand-relancer-mutuelle",
+      "anchor": "quand relancer une mutuelle",
+      "type": "transverse"
+    },
+    {
+      "id": "E4",
+      "slug": "automatiser-saisie-prise-en-charge",
+      "anchor": "Automatiser la saisie des prises en charge",
+      "type": "conversion"
+    }
+  ],
+  "liensEntrants": [],
+  "moteur": {
+    "model": "apercu",
+    "genereLe": "2026-10-07T00:00:00.000Z",
+    "avertissements": [
+      "Fichier d'aperçu écrit à la main, non publié"
+    ]
+  },
+  "wave": 1
+}

@@ -1,0 +1,78 @@
+{
+  "slug": "checklist-prise-en-charge",
+  "id": "B8",
+  "category": "rejets",
+  "categoryName": "Rejets et corrections",
+  "type": "resolution",
+  "plateforme": null,
+  "title": "Checklist avant d'envoyer une prise en charge : les points qui évitent le rejet",
+  "primaryKeyword": "checklist prise en charge optique",
+  "keywordCluster": [],
+  "parentSlug": "rejet-tiers-payant",
+  "level": "Fille",
+  "author": {
+    "name": "Paul Pietra",
+    "jobTitle": "",
+    "photo": ""
+  },
+  "reviewer": null,
+  "datePublished": "2026-10-07",
+  "dateModified": "2026-10-07",
+  "checkedOn": null,
+  "wordCount": 18,
+  "readTime": 1,
+  "metaDescription": "Aperçu, article pas encore rédigé : Checklist avant d'envoyer une prise en charge : les points qui évitent le rejet.",
+  "contentHtml": "<p><strong>Article pas encore rédigé.</strong> Ce squelette d'aperçu reprend le titre, la catégorie et les questions de la file.</p>",
+  "tocItems": [],
+  "faqItems": [
+    {
+      "question": "Quels points vérifier avant d'envoyer une prise en charge ?",
+      "answer": "Réponse pas encore rédigée."
+    },
+    {
+      "question": "Quelles pièces joindre au dossier ?",
+      "answer": "Réponse pas encore rédigée."
+    },
+    {
+      "question": "Comment vérifier les droits du client ?",
+      "answer": "Réponse pas encore rédigée."
+    }
+  ],
+  "sources": [],
+  "figures": [],
+  "internalLinks": [
+    {
+      "id": "B0",
+      "slug": "rejet-tiers-payant",
+      "anchor": "motif rejet tiers payant",
+      "type": "parent"
+    },
+    {
+      "id": "B9",
+      "slug": "client-sans-carte-tiers-payant",
+      "anchor": "Le client arrive sans sa carte de tiers payant",
+      "type": "sœur"
+    },
+    {
+      "id": "B10",
+      "slug": "reduire-taux-rejet-tiers-payant",
+      "anchor": "Faire baisser son taux de rejet",
+      "type": "sœur"
+    },
+    {
+      "id": "A13",
+      "slug": "mutuelle-quel-portail",
+      "anchor": "savoir par quel portail passe une mutuelle",
+      "type": "outil"
+    }
+  ],
+  "liensEntrants": [],
+  "moteur": {
+    "model": "apercu",
+    "genereLe": "2026-10-07T00:00:00.000Z",
+    "avertissements": [
+      "Fichier d'aperçu écrit à la main, non publié"
+    ]
+  },
+  "wave": 1
+}
