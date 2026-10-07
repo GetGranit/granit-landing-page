@@ -1,0 +1,367 @@
+/* ── Corps des articles Ressources ──
+   Le HTML vient du moteur SEO (contentHtml, composants du gabarit §5) : on le stylise ici,
+   pas avec des classes Tailwind. `--ink` = couleur de la catégorie, posée sur .ress-corps. */
+@layer components {
+  .ress-corps {
+    max-width: 68ch;
+    font-size: 17.5px;
+    line-height: 1.7;
+    color: var(--text-soft);
+  }
+  .ress-html > :first-child {
+    margin-top: 0;
+  }
+  .ress-html p {
+    margin: 0 0 14px;
+  }
+  .ress-html h2 {
+    margin: 44px 0 12px;
+    font-family: var(--font-serif);
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    color: var(--text);
+    text-wrap: balance;
+    scroll-margin-top: 96px;
+  }
+  .ress-html h3 {
+    margin: 24px 0 6px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ress-html a {
+    color: var(--terra-hover);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .ress-html strong {
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ress-html ul {
+    list-style: disc;
+    padding-left: 22px;
+    margin: 12px 0;
+  }
+  .ress-html ol {
+    list-style: decimal;
+    padding-left: 22px;
+    margin: 12px 0;
+  }
+  .ress-html li {
+    margin: 6px 0;
+  }
+  .ress-html blockquote {
+    margin: 22px 0;
+    padding-left: 18px;
+    border-left: 2px solid var(--ink);
+    font-family: var(--font-serif);
+    font-size: 19px;
+    color: var(--text);
+  }
+  .ress-html blockquote cite {
+    display: block;
+    margin-top: 6px;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-style: normal;
+    color: var(--text-muted);
+  }
+
+  .ress-corps .key-takeaways {
+    margin: 24px 0 32px;
+    padding: 20px;
+    border: 1px solid var(--border2);
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: var(--shadow-soft);
+    font-size: 16.5px;
+  }
+  .ress-corps .key-takeaways > strong:first-child {
+    display: block;
+    margin-bottom: 6px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .ress-corps .key-takeaways ul {
+    margin-bottom: 0;
+  }
+
+  .ress-corps .callout {
+    margin: 24px 0;
+    padding: 16px;
+    border: 1px solid;
+    border-radius: 12px;
+    font-size: 16px;
+  }
+  .ress-corps .callout p {
+    margin: 0;
+  }
+  .ress-corps .callout--warn {
+    background: #f6eedb;
+    border-color: #ecdfc0;
+  }
+  .ress-corps .callout--warn strong:first-child {
+    color: #8a6416;
+  }
+  .ress-corps .callout--tip {
+    background: #e4efe6;
+    border-color: #cfe2d3;
+  }
+  .ress-corps .callout--tip strong:first-child {
+    color: #3f7a4d;
+  }
+
+  .ress-corps ol.steps {
+    list-style: none;
+    padding: 0;
+    counter-reset: etape;
+  }
+  .ress-corps ol.steps > li {
+    counter-increment: etape;
+    position: relative;
+    margin: 10px 0;
+    padding: 14px 16px 14px 56px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: #fff;
+  }
+  .ress-corps ol.steps > li::before {
+    content: counter(etape);
+    position: absolute;
+    left: 14px;
+    top: 13px;
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--ink);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  .ress-corps .tbl {
+    margin: 18px 0;
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+  }
+  .ress-corps .tbl table {
+    width: 100%;
+    min-width: 560px;
+    border-collapse: collapse;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .ress-corps .tbl th,
+  .ress-corps .tbl td {
+    padding: 11px 14px;
+    border-top: 1px solid var(--border);
+    text-align: left;
+    vertical-align: top;
+  }
+  .ress-corps .tbl th {
+    border-top: 0;
+    background: var(--bg2);
+    font-weight: 600;
+    color: var(--text);
+  }
+}
+
+/* ── Pages Ressources : contrastes AA sur la crème ── */
+.ress {
+  --text-muted: #6b6458;
+}
+.ress .eyebrow {
+  color: #b94a2f;
+}
+
+/* ── Mouvement (blogteam/v2/motion.md) ──
+   Le texte ne bouge jamais ; seule la décoration s'anime, une fois, et tout est coupé
+   sous prefers-reduced-motion. Aucune animation sur la carte agent, l'encart final ou un bouton démo. */
+:root {
+  --ease-pouls: cubic-bezier(0.45, 0, 0.2, 1);
+  --m-court: 160ms;
+  --m-moyen: 320ms;
+}
+
+/* Titre du hub : le trait se trace sous l'italique (ornement, le texte est déjà là). */
+.accent-italic.pouls-souligne {
+  position: relative;
+}
+.accent-italic.pouls-souligne::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 -0.12em 0;
+  height: 0.32em;
+  pointer-events: none;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 20' preserveAspectRatio='none'><path d='M0 12H110L120 12L126 3L134 18L142 7L148 13H192' fill='none' stroke='%23d4583a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' vector-effect='non-scaling-stroke'/></svg>")
+    no-repeat center / 100% 100%;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .accent-italic.pouls-souligne::after {
+    animation: trace-in 900ms var(--ease-pouls) 300ms both;
+  }
+}
+@keyframes trace-in {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+}
+
+/* Rangées : montent de 12 px au défilement, toujours opaques. Sans animation-timeline : rien. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .monte {
+      animation: monte linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 60%;
+    }
+  }
+}
+@keyframes monte {
+  from {
+    transform: translateY(12px);
+  }
+}
+
+/* Barre de lecture : la timeline est sur le conteneur unique du corps (.ress-flux),
+   pleine à la fin de la dernière section, avant la FAQ et les sources. */
+body {
+  timeline-scope: --lecture;
+}
+.ress-flux {
+  view-timeline-name: --lecture;
+}
+.lecture-barre {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 60;
+  height: 2px;
+  pointer-events: none;
+  background: var(--ink, var(--text));
+  transform-origin: left;
+  transform: scaleX(0);
+}
+@supports (animation-timeline: view()) {
+  .lecture-barre {
+    animation: remplit linear both;
+    animation-timeline: --lecture;
+    animation-range: contain 0% contain 100%;
+  }
+}
+@supports not (animation-timeline: view()) {
+  .lecture-barre {
+    display: none;
+  }
+}
+@keyframes remplit {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Onglets : le soulignement actif (view-transition-name posé en ligne) glisse d'une page à l'autre. */
+::view-transition-group(onglet-souligne) {
+  animation-duration: var(--m-moyen);
+  animation-timing-function: var(--ease-out-quint);
+}
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+}
+
+/* Sommaire : un seul indicateur, qui glisse. */
+.toc-indic {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 1px;
+  background: var(--ink, var(--text));
+  transform-origin: top;
+  transform: translateY(var(--y, 0px)) scaleY(var(--h, 0));
+  transition: transform var(--m-moyen) var(--ease-out-quint);
+}
+
+/* FAQ : hauteur fluide là où le navigateur sait faire, repli instantané ailleurs. */
+.ress-faq details {
+  interpolate-size: allow-keywords;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .ress-faq details::details-content {
+    height: 0;
+    overflow: clip;
+    transition:
+      height var(--m-moyen) var(--ease-out-quint),
+      content-visibility var(--m-moyen) allow-discrete;
+  }
+  .ress-faq details[open]::details-content {
+    height: auto;
+  }
+}
+.ress-faq .plus {
+  transition: transform var(--m-moyen) var(--ease-out-quint);
+}
+.ress-faq details[open] .plus {
+  transform: rotate(45deg);
+}
+
+/* Feuille du sommaire mobile et message « Lien copié » */
+.feuille {
+  transition: transform 200ms var(--ease-out-quint);
+}
+.feuille[data-ferme] {
+  transform: translateY(100%);
+}
+.toast {
+  transition: opacity var(--m-court) linear;
+}
+
+/* Tableaux sur mobile : un fondu à droite dit qu'on peut faire défiler ; il disparaît en bout de course. */
+@media (max-width: 639px) {
+  .ress-corps .tbl {
+    mask-image: linear-gradient(to right, black 88%, transparent);
+  }
+  @supports (animation-timeline: scroll()) {
+    .ress-corps .tbl {
+      animation: tbl-fin linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+}
+@keyframes tbl-fin {
+  96% {
+    mask-image: linear-gradient(to right, black 88%, transparent);
+  }
+  to {
+    mask-image: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  /* La barre de lecture reste : elle suit le défilement, c'est une information. */
+  .ress *:not(.lecture-barre):not(.tbl),
+  .ress ::before,
+  .ress ::after {
+    animation: none !important;
+    transition-duration: 0s !important;
+  }
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}

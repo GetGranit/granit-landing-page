@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { useRouterState } from "@tanstack/react-router";
 
 /**
  * Parenthesis-style custom cursor: a small terracotta dot that trails the
@@ -7,10 +8,13 @@ import { useEffect, useRef } from "react";
  */
 export function CursorDot() {
   const ref = useRef<HTMLDivElement>(null);
+  const chemin = useRouterState({ select: (s) => s.location.pathname });
+  // Pages de lecture : on garde le curseur natif (sélection de texte, main sur les liens).
+  const lecture = chemin.startsWith("/ressources") || chemin.startsWith("/blog");
 
   useEffect(() => {
     const fine = window.matchMedia("(hover: hover) and (pointer: fine)");
-    if (!fine.matches) return;
+    if (lecture || !fine.matches) return;
 
     const root = document.documentElement;
     root.classList.add("cursor-hidden");
@@ -48,7 +52,7 @@ export function CursorDot() {
       document.removeEventListener("mouseenter", onEnter);
       root.classList.remove("cursor-hidden");
     };
-  }, []);
+  }, [lecture]);
 
   return <div ref={ref} className="cursor-dot" aria-hidden />;
 }
