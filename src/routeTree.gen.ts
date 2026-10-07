@@ -17,6 +17,7 @@ import { Route as CasUsageRouteImport } from './routes/cas-usage'
 import { Route as CgvRouteImport } from './routes/cgv'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DemoRouteImport } from './routes/demo'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ProduitRouteImport } from './routes/produit'
 import { Route as RessourcesRouteImport } from './routes/ressources'
 import { Route as SecuriteRouteImport } from './routes/securite'
@@ -69,6 +70,11 @@ const ContactRoute = ContactRouteImport.update({
 const DemoRoute = DemoRouteImport.update({
   id: '/demo',
   path: '/demo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProduitRoute = ProduitRouteImport.update({
@@ -148,6 +154,7 @@ export interface FileRoutesByFullPath {
   '/cgv': typeof CgvRoute
   '/contact': typeof ContactRoute
   '/demo': typeof DemoRoute
+  '/privacy': typeof PrivacyRoute
   '/produit': typeof ProduitRoute
   '/ressources': typeof RessourcesRouteWithChildren
   '/securite': typeof SecuriteRoute
@@ -171,6 +178,7 @@ export interface FileRoutesByTo {
   '/cgv': typeof CgvRoute
   '/contact': typeof ContactRoute
   '/demo': typeof DemoRoute
+  '/privacy': typeof PrivacyRoute
   '/produit': typeof ProduitRoute
   '/securite': typeof SecuriteRoute
   '/silmo': typeof SilmoRoute
@@ -194,6 +202,7 @@ export interface FileRoutesById {
   '/cgv': typeof CgvRoute
   '/contact': typeof ContactRoute
   '/demo': typeof DemoRoute
+  '/privacy': typeof PrivacyRoute
   '/produit': typeof ProduitRoute
   '/ressources': typeof RessourcesRouteWithChildren
   '/securite': typeof SecuriteRoute
@@ -219,6 +228,7 @@ export interface FileRouteTypes {
     | '/cgv'
     | '/contact'
     | '/demo'
+    | '/privacy'
     | '/produit'
     | '/ressources'
     | '/securite'
@@ -242,6 +252,7 @@ export interface FileRouteTypes {
     | '/cgv'
     | '/contact'
     | '/demo'
+    | '/privacy'
     | '/produit'
     | '/securite'
     | '/silmo'
@@ -264,6 +275,7 @@ export interface FileRouteTypes {
     | '/cgv'
     | '/contact'
     | '/demo'
+    | '/privacy'
     | '/produit'
     | '/ressources'
     | '/securite'
@@ -288,6 +300,7 @@ export interface RootRouteChildren {
   CgvRoute: typeof CgvRoute
   ContactRoute: typeof ContactRoute
   DemoRoute: typeof DemoRoute
+  PrivacyRoute: typeof PrivacyRoute
   ProduitRoute: typeof ProduitRoute
   RessourcesRoute: typeof RessourcesRouteWithChildren
   SecuriteRoute: typeof SecuriteRoute
@@ -355,6 +368,13 @@ declare module '@tanstack/react-router' {
       path: '/demo'
       fullPath: '/demo'
       preLoaderRoute: typeof DemoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/produit': {
@@ -478,6 +498,7 @@ const rootRouteChildren: RootRouteChildren = {
   CgvRoute: CgvRoute,
   ContactRoute: ContactRoute,
   DemoRoute: DemoRoute,
+  PrivacyRoute: PrivacyRoute,
   ProduitRoute: ProduitRoute,
   RessourcesRoute: RessourcesRouteWithChildren,
   SecuriteRoute: SecuriteRoute,

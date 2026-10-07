@@ -136,6 +136,7 @@ const staticPages = [
   },
   { path: "/demo", files: ["src/routes/demo.tsx"], priority: "0.6", freq: "monthly" },
   { path: "/cgv", files: ["src/routes/cgv.tsx"], priority: "0.3", freq: "yearly" },
+  { path: "/privacy", files: ["src/routes/privacy.tsx"], priority: "0.3", freq: "yearly" },
 ];
 
 const urls = [
