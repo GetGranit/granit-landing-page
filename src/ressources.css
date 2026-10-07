@@ -1,0 +1,107 @@
+/* ── Corps des articles Ressources ──
+   Le HTML vient du moteur SEO (contentHtml, composants du gabarit §5) : on le stylise ici,
+   pas avec des classes Tailwind. `--ink` = couleur de la catégorie, posée sur .ress-corps. */
+@layer components {
+  .ress-corps {
+    max-width: 68ch;
+    font-size: 17.5px;
+    line-height: 1.7;
+    color: var(--text-soft);
+  }
+  .ress-html > :first-child { margin-top: 0; }
+  .ress-html p { margin: 0 0 14px; }
+  .ress-html h2 {
+    margin: 44px 0 12px;
+    font-family: var(--font-serif);
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    color: var(--text);
+    text-wrap: balance;
+    scroll-margin-top: 96px;
+  }
+  .ress-html h3 { margin: 24px 0 6px; font-size: 18px; font-weight: 600; color: var(--text); }
+  .ress-html a { color: var(--terra-hover); text-decoration: underline; text-underline-offset: 3px; }
+  .ress-html strong { font-weight: 600; color: var(--text); }
+  .ress-html ul { list-style: disc; padding-left: 22px; margin: 12px 0; }
+  .ress-html ol { list-style: decimal; padding-left: 22px; margin: 12px 0; }
+  .ress-html li { margin: 6px 0; }
+  .ress-html blockquote {
+    margin: 22px 0;
+    padding-left: 18px;
+    border-left: 2px solid var(--ink);
+    font-family: var(--font-serif);
+    font-size: 19px;
+    color: var(--text);
+  }
+  .ress-html blockquote cite {
+    display: block;
+    margin-top: 6px;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-style: normal;
+    color: var(--text-muted);
+  }
+
+  .ress-corps .key-takeaways {
+    margin: 24px 0 32px;
+    padding: 20px;
+    border: 1px solid var(--border2);
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: var(--shadow-soft);
+    font-size: 16.5px;
+  }
+  .ress-corps .key-takeaways > strong:first-child {
+    display: block;
+    margin-bottom: 6px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .ress-corps .key-takeaways ul { margin-bottom: 0; }
+
+  .ress-corps .callout { margin: 24px 0; padding: 16px; border: 1px solid; border-radius: 12px; font-size: 16px; }
+  .ress-corps .callout p { margin: 0; }
+  .ress-corps .callout--warn { background: #f6eedb; border-color: #ecdfc0; }
+  .ress-corps .callout--warn strong:first-child { color: #8a6416; }
+  .ress-corps .callout--tip { background: #e4efe6; border-color: #cfe2d3; }
+  .ress-corps .callout--tip strong:first-child { color: #3f7a4d; }
+
+  .ress-corps ol.steps { list-style: none; padding: 0; counter-reset: etape; }
+  .ress-corps ol.steps > li {
+    counter-increment: etape;
+    position: relative;
+    margin: 10px 0;
+    padding: 14px 16px 14px 56px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: #fff;
+  }
+  .ress-corps ol.steps > li::before {
+    content: counter(etape);
+    position: absolute;
+    left: 14px;
+    top: 13px;
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--ink);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  .ress-corps .tbl { margin: 18px 0; overflow-x: auto; border: 1px solid var(--border); border-radius: 12px; }
+  .ress-corps .tbl table { width: 100%; min-width: 560px; border-collapse: collapse; font-size: 15px; line-height: 1.5; }
+  .ress-corps .tbl th,
+  .ress-corps .tbl td { padding: 11px 14px; border-top: 1px solid var(--border); text-align: left; vertical-align: top; }
+  .ress-corps .tbl th { border-top: 0; background: var(--bg2); font-weight: 600; color: var(--text); }
+}
