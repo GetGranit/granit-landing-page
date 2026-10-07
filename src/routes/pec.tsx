@@ -212,6 +212,16 @@ function PecPage() {
     await Promise.race([Promise.all([envoi, attente(900)]), attente(1200)]);
     const portail = platformById(p.reseau_via ?? p.id) ?? p;
     ecrireCas({ source, email: mail, card, portail, r, apercu: !simulationEnDirect() });
+    // Test de bout en bout avec le prototype de l'app : on y part avec le seul portail
+    // (jamais l'e-mail ni le n° de sécu dans l'adresse), après l'envoi complet du lead.
+    const app = import.meta.env.VITE_PEC_APP_URL;
+    if (app) {
+      await envoi;
+      window.location.assign(
+        `${String(app).replace(/\/$/, "")}/parcours-plg/acces?depuis=lead-magnet&portail=${encodeURIComponent(portail.id)}`,
+      );
+      return;
+    }
     if (ESSAI_ON) return navigate({ href: "/essai?etape=acces" });
     setBusy(false);
     setStep({ s: "thanks", kind: "essai-off" });
