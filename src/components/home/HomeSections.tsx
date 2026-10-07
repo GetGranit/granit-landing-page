@@ -593,7 +593,7 @@ export function HomeSections() {
                 className="block"
               >
                 {t.h1Line1}
-              </motion.span>
+              </motion.span>{" "}
               <motion.span
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

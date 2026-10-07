@@ -21,8 +21,10 @@ import { Route as RessourcesRouteImport } from './routes/ressources'
 import { Route as SecuriteRouteImport } from './routes/securite'
 import { Route as SilmoRouteImport } from './routes/silmo'
 import { Route as TarifsRouteImport } from './routes/tarifs'
+import { Route as BlogSplatRouteImport } from './routes/blog.$'
 import { Route as RessourcesIndexRouteImport } from './routes/ressources.index'
 import { Route as RessourcesSlugRouteImport } from './routes/ressources.$slug'
+import { Route as EnBlogSplatRouteImport } from './routes/en.blog.$'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -84,6 +86,11 @@ const TarifsRoute = TarifsRouteImport.update({
   path: '/tarifs',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogSplatRoute = BlogSplatRouteImport.update({
+  id: '/blog/$',
+  path: '/blog/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const RessourcesIndexRoute = RessourcesIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -93,6 +100,11 @@ const RessourcesSlugRoute = RessourcesSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
   getParentRoute: () => RessourcesRoute,
+} as any)
+const EnBlogSplatRoute = EnBlogSplatRouteImport.update({
+  id: '/en/blog/$',
+  path: '/en/blog/$',
+  getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -108,8 +120,10 @@ export interface FileRoutesByFullPath {
   '/securite': typeof SecuriteRoute
   '/silmo': typeof SilmoRoute
   '/tarifs': typeof TarifsRoute
+  '/blog/$': typeof BlogSplatRoute
   '/ressources/$slug': typeof RessourcesSlugRoute
   '/ressources/': typeof RessourcesIndexRoute
+  '/en/blog/$': typeof EnBlogSplatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -123,8 +137,10 @@ export interface FileRoutesByTo {
   '/securite': typeof SecuriteRoute
   '/silmo': typeof SilmoRoute
   '/tarifs': typeof TarifsRoute
+  '/blog/$': typeof BlogSplatRoute
   '/ressources/$slug': typeof RessourcesSlugRoute
   '/ressources': typeof RessourcesIndexRoute
+  '/en/blog/$': typeof EnBlogSplatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -140,8 +156,10 @@ export interface FileRoutesById {
   '/securite': typeof SecuriteRoute
   '/silmo': typeof SilmoRoute
   '/tarifs': typeof TarifsRoute
+  '/blog/$': typeof BlogSplatRoute
   '/ressources/$slug': typeof RessourcesSlugRoute
   '/ressources/': typeof RessourcesIndexRoute
+  '/en/blog/$': typeof EnBlogSplatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -158,8 +176,10 @@ export interface FileRouteTypes {
     | '/securite'
     | '/silmo'
     | '/tarifs'
+    | '/blog/$'
     | '/ressources/$slug'
     | '/ressources/'
+    | '/en/blog/$'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -173,8 +193,10 @@ export interface FileRouteTypes {
     | '/securite'
     | '/silmo'
     | '/tarifs'
+    | '/blog/$'
     | '/ressources/$slug'
     | '/ressources'
+    | '/en/blog/$'
   id:
     | '__root__'
     | '/'
@@ -189,8 +211,10 @@ export interface FileRouteTypes {
     | '/securite'
     | '/silmo'
     | '/tarifs'
+    | '/blog/$'
     | '/ressources/$slug'
     | '/ressources/'
+    | '/en/blog/$'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -206,6 +230,8 @@ export interface RootRouteChildren {
   SecuriteRoute: typeof SecuriteRoute
   SilmoRoute: typeof SilmoRoute
   TarifsRoute: typeof TarifsRoute
+  BlogSplatRoute: typeof BlogSplatRoute
+  EnBlogSplatRoute: typeof EnBlogSplatRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -294,6 +320,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TarifsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/$': {
+      id: '/blog/$'
+      path: '/blog/$'
+      fullPath: '/blog/$'
+      preLoaderRoute: typeof BlogSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/ressources/': {
       id: '/ressources/'
       path: '/'
@@ -307,6 +340,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/ressources/$slug'
       preLoaderRoute: typeof RessourcesSlugRouteImport
       parentRoute: typeof RessourcesRoute
+    }
+    '/en/blog/$': {
+      id: '/en/blog/$'
+      path: '/en/blog/$'
+      fullPath: '/en/blog/$'
+      preLoaderRoute: typeof EnBlogSplatRouteImport
+      parentRoute: typeof rootRouteImport
     }
   }
 }
@@ -338,6 +378,8 @@ const rootRouteChildren: RootRouteChildren = {
   SecuriteRoute: SecuriteRoute,
   SilmoRoute: SilmoRoute,
   TarifsRoute: TarifsRoute,
+  BlogSplatRoute: BlogSplatRoute,
+  EnBlogSplatRoute: EnBlogSplatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

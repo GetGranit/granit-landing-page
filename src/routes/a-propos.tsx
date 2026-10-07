@@ -6,9 +6,9 @@ import { useLanguage } from "@/lib/i18n";
 export const Route = createFileRoute("/a-propos")({
   head: () => ({
     meta: [
-      { title: "À propos - Granit AI" },
+      { title: "À propos : agents IA pour l'administratif santé - Granit AI" },
       { name: "description", content: "Granit AI construit la plateforme d'agents IA pour le back-office des établissements de santé en France et en Europe." },
-      { property: "og:title", content: "À propos - Granit AI" },
+      { property: "og:title", content: "À propos : agents IA pour l'administratif santé - Granit AI" },
       { property: "og:description", content: "Construire l'infrastructure administrative invisible du soin." },
     ],
   }),
