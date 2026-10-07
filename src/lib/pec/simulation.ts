@@ -32,7 +32,16 @@ export type SimEchecCause = "identifiants" | "code" | "patient" | "portail" | "i
 export type SimEvent =
   | { type: "etape"; etape: SimEtape }
   | { type: "code_requis"; canal: "totp" | "email"; essai: number }
-  | { type: "resultat"; total: number; partSecu: number; partMutuelle: number; resteACharge: number; dureeSec: number; captureUrl?: string; numero?: string }
+  | {
+      type: "resultat";
+      total: number;
+      partSecu: number;
+      partMutuelle: number;
+      resteACharge: number;
+      dureeSec: number;
+      captureUrl?: string;
+      numero?: string;
+    }
   | { type: "echec"; cause: SimEchecCause };
 
 export interface SimulationSession {
@@ -41,7 +50,13 @@ export interface SimulationSession {
   cancel(): void;
 }
 
-export const SIM_ETAPES: SimEtape[] = ["connexion", "code", "beneficiaire", "formulaire", "chiffrage"];
+export const SIM_ETAPES: SimEtape[] = [
+  "connexion",
+  "code",
+  "beneficiaire",
+  "formulaire",
+  "chiffrage",
+];
 
 /** Équipement d'exemple simulé (le même partout : on ne demande rien de plus au comptoir). */
 export const EQUIPEMENT_EXEMPLE = [
@@ -126,7 +141,11 @@ function startMock(input: SimInput): SimulationSession {
   function suite() {
     emit({ type: "etape", etape: "code" });
     later(1800, () => emit({ type: "etape", etape: "beneficiaire" }));
-    later(7000, () => (introuvable ? emit({ type: "echec", cause: "patient" }) : emit({ type: "etape", etape: "formulaire" })));
+    later(7000, () =>
+      introuvable
+        ? emit({ type: "echec", cause: "patient" })
+        : emit({ type: "etape", etape: "formulaire" }),
+    );
     later(15000, () => emit({ type: "etape", etape: "chiffrage" }));
     later(22000, () => {
       const total = EQUIPEMENT_EXEMPLE.reduce((s, l) => s + l.montant, 0);
@@ -191,7 +210,13 @@ export function dateValide(raw: string): boolean {
   if (!m) return false;
   const [j, mo, a] = [+m[1], +m[2], +m[3]];
   const d = new Date(a, mo - 1, j);
-  return a >= 1900 && d.getFullYear() === a && d.getMonth() === mo - 1 && d.getDate() === j && d <= new Date();
+  return (
+    a >= 1900 &&
+    d.getFullYear() === a &&
+    d.getMonth() === mo - 1 &&
+    d.getDate() === j &&
+    d <= new Date()
+  );
 }
 
 /** L'année du NIR (2e et 3e chiffres) doit correspondre à la date de naissance. */

@@ -30,7 +30,13 @@ const MUTUELLES = (data as { mutuelles: { nom: string; platforms: string[] }[] }
  *  identique au Python (pas de NFD) pour garder le même routage. */
 export function fold(s: string | null | undefined): string {
   let out = (s ?? "").toLowerCase();
-  for (const [a, b] of [["é", "e"], ["è", "e"], ["ê", "e"], ["à", "a"], ["â", "a"]]) {
+  for (const [a, b] of [
+    ["é", "e"],
+    ["è", "e"],
+    ["ê", "e"],
+    ["à", "a"],
+    ["â", "a"],
+  ]) {
     out = out.split(a).join(b);
   }
   return out.split(/\s+/).filter(Boolean).join(" ");
@@ -101,6 +107,9 @@ export function searchMutuelles(query: string, limit = 8): { nom: string; platfo
   const q = norm(query);
   if (q.length < 2) return [];
   const hits = INDEX.filter((m) => m.key.includes(q));
-  hits.sort((a, b) => Number(!a.key.startsWith(q)) - Number(!b.key.startsWith(q)) || a.key.localeCompare(b.key));
+  hits.sort(
+    (a, b) =>
+      Number(!a.key.startsWith(q)) - Number(!b.key.startsWith(q)) || a.key.localeCompare(b.key),
+  );
   return hits.slice(0, limit).map(({ nom, platforms }) => ({ nom, platforms }));
 }

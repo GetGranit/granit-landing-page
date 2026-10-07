@@ -29,12 +29,17 @@ export function StepContact({
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState(initialEmail ?? "");
   const [err, setErr] = useState("");
-  const field = "w-full rounded-xl border-[1.5px] bg-white px-4 py-3 text-[17px] outline-none focus:border-[var(--terra)]";
+  const field =
+    "w-full rounded-xl border-[1.5px] bg-white px-4 py-3 text-[17px] outline-none focus:border-[var(--terra)]";
   const fieldStyle = { borderColor: "var(--border2)", color: "var(--text)" };
 
   return (
     <Screen id="contact">
-      <div className="grid h-16 w-16 place-items-center rounded-full font-serif text-[26px] text-white" style={{ background: "var(--gradient-terra)" }} aria-hidden>
+      <div
+        className="grid h-16 w-16 place-items-center rounded-full font-serif text-[26px] text-white"
+        style={{ background: "var(--gradient-terra)" }}
+        aria-hidden
+      >
         P
       </div>
       <Kicker>Paul, chez Granit</Kicker>
@@ -45,21 +50,66 @@ export function StepContact({
         className="grid w-full gap-3 text-left"
         onSubmit={(e) => {
           e.preventDefault();
-          if (phone.replace(/\D/g, "").length < 9) return setErr("Indiquez un numéro où Paul peut vous joindre.");
+          if (phone.replace(/\D/g, "").length < 9)
+            return setErr("Indiquez un numéro où Paul peut vous joindre.");
           if (!emailRe.test(email.trim())) return setErr("Indiquez un e-mail valide.");
           setErr("");
           onSubmit({ prenom: prenom.trim(), phone: phone.trim(), email: email.trim() });
         }}
       >
-        <input className={field} style={fieldStyle} placeholder="Prénom" autoComplete="given-name" value={prenom} onChange={(e) => setPrenom(e.target.value)} aria-label="Prénom" />
-        <input className={field} style={fieldStyle} placeholder="06 12 34 56 78" type="tel" inputMode="tel" autoComplete="tel" value={phone} onChange={(e) => setPhone(e.target.value)} aria-label="Téléphone" />
-        <input className={field} style={fieldStyle} placeholder="contact@votre-magasin.fr" type="email" inputMode="email" autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} aria-label="E-mail" />
-        {err && <p role="alert" className="text-[14px]" style={{ color: "var(--terra-hover)" }}>{err}</p>}
+        <input
+          className={field}
+          style={fieldStyle}
+          placeholder="Prénom"
+          autoComplete="given-name"
+          value={prenom}
+          onChange={(e) => setPrenom(e.target.value)}
+          aria-label="Prénom"
+        />
+        <input
+          className={field}
+          style={fieldStyle}
+          placeholder="06 12 34 56 78"
+          type="tel"
+          inputMode="tel"
+          autoComplete="tel"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          aria-label="Téléphone"
+        />
+        <input
+          className={field}
+          style={fieldStyle}
+          placeholder="contact@votre-magasin.fr"
+          type="email"
+          inputMode="email"
+          autoComplete="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          aria-label="E-mail"
+        />
+        {err && (
+          <p role="alert" className="text-[14px]" style={{ color: "var(--terra-hover)" }}>
+            {err}
+          </p>
+        )}
         <button type="submit" disabled={busy} className={`${bigBtn} w-full disabled:opacity-60`}>
-          {busy ? "Un instant…" : <>Paul me rappelle <span className="arrow">→</span></>}
+          {busy ? (
+            "Un instant…"
+          ) : (
+            <>
+              Paul me rappelle <span className="arrow">→</span>
+            </>
+          )}
         </button>
       </form>
-      <a href={CALCOM} target="_blank" rel="noopener noreferrer" className="text-[15px] underline underline-offset-4" style={{ color: "var(--text-soft)" }}>
+      <a
+        href={CALCOM}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-[15px] underline underline-offset-4"
+        style={{ color: "var(--text-soft)" }}
+      >
         Je préfère choisir un créneau de 15 min
       </a>
       <Reassure items={["Rappel le jour même (9h-19h)", "Pas de démarchage ensuite"]} />

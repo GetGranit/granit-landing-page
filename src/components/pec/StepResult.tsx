@@ -21,23 +21,40 @@ function expired(fin: string | null | undefined): boolean {
 
 function PortalBox({ card, p, waiting }: { card: CardRead | null; p: Platform; waiting: boolean }) {
   return (
-    <div className="w-full overflow-hidden rounded-xl border text-left text-[13px]" style={{ borderColor: "var(--border2)" }}>
-      <div className="px-3 py-1.5 text-[11px] text-white" style={{ background: "#34495e", fontFamily: "var(--font-mono)", letterSpacing: ".04em" }}>
-        PORTAIL {(p.reseau_via ? labelOf(p.reseau_via) : p.label).toUpperCase()} · DEMANDE DE PRISE EN CHARGE
+    <div
+      className="w-full overflow-hidden rounded-xl border text-left text-[13px]"
+      style={{ borderColor: "var(--border2)" }}
+    >
+      <div
+        className="px-3 py-1.5 text-[11px] text-white"
+        style={{ background: "#34495e", fontFamily: "var(--font-mono)", letterSpacing: ".04em" }}
+      >
+        PORTAIL {(p.reseau_via ? labelOf(p.reseau_via) : p.label).toUpperCase()} · DEMANDE DE PRISE
+        EN CHARGE
       </div>
       <dl className="grid grid-cols-2 gap-2 p-3" style={{ background: "#f5f7f9" }}>
         {readLines(card, p).map(([k, v]) => (
           <div key={k} className="grid gap-0.5">
-            <dt className="text-[11px]" style={{ color: "#56606b" }}>{k}</dt>
-            <dd className="rounded border bg-white px-2 py-1" style={{ borderColor: "#cfd6de", fontFamily: "var(--font-mono)", color: "#111" }}>
+            <dt className="text-[11px]" style={{ color: "#56606b" }}>
+              {k}
+            </dt>
+            <dd
+              className="rounded border bg-white px-2 py-1"
+              style={{ borderColor: "#cfd6de", fontFamily: "var(--font-mono)", color: "#111" }}
+            >
               {v} <span style={{ color: "var(--sage)" }}>✓</span>
             </dd>
           </div>
         ))}
         {waiting && (
           <div className="col-span-2 grid gap-0.5">
-            <dt className="text-[11px]" style={{ color: "#56606b" }}>Équipement</dt>
-            <dd className="rounded border border-dashed bg-white px-2 py-1" style={{ borderColor: "#cfd6de", color: "#56606b" }}>
+            <dt className="text-[11px]" style={{ color: "#56606b" }}>
+              Équipement
+            </dt>
+            <dd
+              className="rounded border border-dashed bg-white px-2 py-1"
+              style={{ borderColor: "#cfd6de", color: "#56606b" }}
+            >
               ⌛ équipement d'exemple, modifiable ensuite
             </dd>
           </div>
@@ -52,32 +69,70 @@ function PortalBox({ card, p, waiting }: { card: CardRead | null; p: Platform; w
  * lance ; sinon (mock invisible aux vrais visiteurs) Paul la montre sur le
  * compte de l'opticien.
  */
-export function ResultSimulable({ card, p, example, proposee, onSimulate, onPaul }: { card: CardRead | null; p: Platform; example?: boolean; proposee: boolean; onSimulate: () => void; onPaul: () => void }) {
+export function ResultSimulable({
+  card,
+  p,
+  example,
+  proposee,
+  onSimulate,
+  onPaul,
+}: {
+  card: CardRead | null;
+  p: Platform;
+  example?: boolean;
+  proposee: boolean;
+  onSimulate: () => void;
+  onPaul: () => void;
+}) {
   const target = p.reseau_via ? labelOf(p.reseau_via) : p.label;
   return (
     <Screen id="result-sim">
-      <span className="rounded-full px-3 py-1 text-[12px]" style={{ background: "var(--sage-light)", color: "#2f6b3d", fontFamily: "var(--font-mono)" }}>
+      <span
+        className="rounded-full px-3 py-1 text-[12px]"
+        style={{
+          background: "var(--sage-light)",
+          color: "#2f6b3d",
+          fontFamily: "var(--font-mono)",
+        }}
+      >
         ✓ Portail trouvé
       </span>
       {example && <Kicker>Carte d'exemple · au prochain client, prenez sa vraie carte</Kicker>}
       {proposee ? (
-        <Title em={target} after=".">Simulons votre PEC sur </Title>
+        <Title em={target} after=".">
+          Simulons votre PEC sur{" "}
+        </Title>
       ) : (
-        <Title em="simulée en direct" after=".">Votre PEC {target} peut être </Title>
+        <Title em="simulée en direct" after=".">
+          Votre PEC {target} peut être{" "}
+        </Title>
       )}
-      {expired(card?.fin_droits) && <Warn>La carte semble expirée ({card?.fin_droits}) : vérifiez les droits du patient.</Warn>}
+      {expired(card?.fin_droits) && (
+        <Warn>La carte semble expirée ({card?.fin_droits}) : vérifiez les droits du patient.</Warn>
+      )}
       <PortalBox card={card} p={p} waiting />
       {proposee ? (
         <>
-          <Muted>Sur votre compte, pour votre client, sans rien envoyer à la mutuelle. Il faudra son n° de sécu et vos identifiants {target}.</Muted>
+          <Muted>
+            Sur votre compte, pour votre client, sans rien envoyer à la mutuelle. Il faudra son n°
+            de sécu et vos identifiants {target}.
+          </Muted>
           <button type="button" className={`${bigBtn} w-full`} onClick={onSimulate}>
             Simuler ma PEC <span className="arrow">→</span>
           </button>
-          <Reassure items={["Rien n'est envoyé à la mutuelle", "Identifiants non conservés", "Photo non conservée"]} />
+          <Reassure
+            items={[
+              "Rien n'est envoyé à la mutuelle",
+              "Vos accès, supprimables à tout moment",
+              "Photo non conservée",
+            ]}
+          />
         </>
       ) : (
         <>
-          <Muted>Paul vous la montre sur votre compte {target}, avec un de vos clients, en 15 minutes.</Muted>
+          <Muted>
+            Paul vous la montre sur votre compte {target}, avec un de vos clients, en 15 minutes.
+          </Muted>
           <button type="button" className={`${bigBtn} w-full`} onClick={onPaul}>
             Paul me la montre <span className="arrow">→</span>
           </button>
@@ -89,21 +144,42 @@ export function ResultSimulable({ card, p, example, proposee, onSimulate, onPaul
 }
 
 /** E3 · portail pas (encore) simulable : la valeur d'abord (où aller), puis l'offre. */
-export function ResultPortal({ card, p, onContact }: { card: CardRead | null; p: Platform; onContact: () => void }) {
+export function ResultPortal({
+  card,
+  p,
+  onContact,
+}: {
+  card: CardRead | null;
+  p: Platform;
+  onContact: () => void;
+}) {
   const target = p.reseau_via ? labelOf(p.reseau_via) : p.label;
   return (
     <Screen id="result-portal">
       <Kicker>Portail trouvé</Kicker>
-      <Title em={target} after=".">Votre PEC se fait sur </Title>
-      {expired(card?.fin_droits) && <Warn>La carte semble expirée ({card?.fin_droits}) : vérifiez les droits du patient.</Warn>}
+      <Title em={target} after=".">
+        Votre PEC se fait sur{" "}
+      </Title>
+      {expired(card?.fin_droits) && (
+        <Warn>La carte semble expirée ({card?.fin_droits}) : vérifiez les droits du patient.</Warn>
+      )}
       {p.note_fermeture && <Warn>{p.note_fermeture}</Warn>}
       <PortalBox card={card} p={p} waiting={false} />
-      <a href={p.url} target="_blank" rel="noopener noreferrer" className="btn-ghost justify-center !px-6 !py-3.5 !text-[16px]">
+      <a
+        href={p.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="btn-ghost justify-center !px-6 !py-3.5 !text-[16px]"
+      >
         Ouvrir le portail {target} ↗
       </a>
       <div className="grid w-full gap-3 border-t pt-5" style={{ borderColor: "var(--border)" }}>
         <p className="font-serif text-[22px] leading-tight" style={{ color: "var(--text)" }}>
-          Et si Granit la faisait <span className="italic" style={{ color: "var(--terra)" }}>pour vous</span> ?
+          Et si Granit la faisait{" "}
+          <span className="italic" style={{ color: "var(--terra)" }}>
+            pour vous
+          </span>{" "}
+          ?
         </p>
         <Muted>
           {p.pec_optique_granit
@@ -119,7 +195,15 @@ export function ResultPortal({ card, p, onContact }: { card: CardRead | null; p:
 }
 
 /** E3 · deux ou trois portails possibles : on ne devine pas, on demande. */
-export function ResultChoice({ platforms, onPick, onType }: { platforms: Platform[]; onPick: (p: Platform) => void; onType: () => void }) {
+export function ResultChoice({
+  platforms,
+  onPick,
+  onType,
+}: {
+  platforms: Platform[];
+  onPick: (p: Platform) => void;
+  onType: () => void;
+}) {
   return (
     <Screen id="result-choice">
       <Kicker>Presque</Kicker>
@@ -145,7 +229,10 @@ export function ResultChoice({ platforms, onPick, onType }: { platforms: Platfor
 
 function Warn({ children }: { children: React.ReactNode }) {
   return (
-    <p className="w-full rounded-xl px-3 py-2 text-[15px]" style={{ background: "#fbf0dc", color: "#7a4f12" }}>
+    <p
+      className="w-full rounded-xl px-3 py-2 text-[15px]"
+      style={{ background: "#fbf0dc", color: "#7a4f12" }}
+    >
       {children}
     </p>
   );

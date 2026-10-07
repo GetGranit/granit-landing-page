@@ -8,6 +8,8 @@ import {
 } from "@/lib/pec/essaiState";
 import { inputClass } from "./ui";
 
+const CALCOM = import.meta.env.VITE_PEC_CALCOM_URL || "/#demo";
+
 /**
  * Bandeau « en parler avec Paul » : bottom sheet NON bloquante (pas de fond
  * opaque, la page reste utilisable), réutilisable sur /pec.
@@ -120,7 +122,7 @@ function SheetBody({
             {status === "done"
               ? mode === "rappel"
                 ? "C'est noté. Paul vous rappelle dans la journée."
-                : "C'est noté. Paul revient vers vous avec ses créneaux."
+                : "Choisissez votre créneau dans l'onglet qui vient de s'ouvrir."
               : (message ?? "Une question ? On peut le faire ensemble, au téléphone.")}
           </p>
         </div>
@@ -179,7 +181,11 @@ function SheetBody({
       {status !== "done" && mode === "creneau" && (
         <button
           type="button"
-          onClick={() => void send({ type: "creneau", phone: knownPhone ?? undefined })}
+          onClick={() => {
+            // Le calendrier s'ouvre dans le geste du clic (sinon le navigateur le bloque).
+            window.open(CALCOM, "_blank", "noopener,noreferrer");
+            void send({ type: "creneau", phone: knownPhone ?? undefined });
+          }}
           disabled={status === "sending"}
           className="btn-primary mt-4 w-full justify-center py-3 text-[15px]"
         >

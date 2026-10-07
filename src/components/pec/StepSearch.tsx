@@ -26,7 +26,11 @@ export function StepSearch({
     <Screen id="search">
       <Kicker>Sans photo</Kicker>
       <Title em="mutuelle">Tapez le nom de la </Title>
-      {reason ? <Muted>{reason}</Muted> : <Muted>Telle qu'elle est écrite sur la carte : MGEN, Harmonie, Malakoff…</Muted>}
+      {reason ? (
+        <Muted>{reason}</Muted>
+      ) : (
+        <Muted>Telle qu'elle est écrite sur la carte : MGEN, Harmonie, Malakoff…</Muted>
+      )}
       <input
         autoFocus
         value={q}
@@ -54,7 +58,11 @@ export function StepSearch({
       )}
       {q.trim().length >= 2 && results.length === 0 && <Muted>On ne la connaît pas encore.</Muted>}
       <div className="flex flex-wrap justify-center gap-x-5 gap-y-2">
-        {q.trim().length >= 2 && <TextLink onClick={() => onNotFound(q.trim())}>Je ne la trouve pas : Paul me répond</TextLink>}
+        {q.trim().length >= 2 && (
+          <TextLink onClick={() => onNotFound(q.trim())}>
+            Je ne la trouve pas : Paul me répond
+          </TextLink>
+        )}
         <TextLink onClick={onBack}>← Reprendre une photo</TextLink>
       </div>
     </Screen>

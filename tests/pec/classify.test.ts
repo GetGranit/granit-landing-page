@@ -9,7 +9,8 @@ import oracle from "./classify.oracle.json" with { type: "json" };
 import platforms from "../../src/lib/pec/platforms.json" with { type: "json" };
 
 const CAS: Record<string, { card: Card; expected: string[] }> = {
-  "Kalixia nommé en colonne OPTI → Viamédis (opérateur optique), puis Oxantis (oxantis.net)": oracle[0],
+  "Kalixia nommé en colonne OPTI → Viamédis (opérateur optique), puis Oxantis (oxantis.net)":
+    oracle[0],
   "réseau Kalixia seul → Viamédis": oracle[1],
   "Groupama en optique → portail Groupama (TPG), jamais Sévéane": oracle[2],
   "MGEN, ambiguë : Viamédis puis Oxantis": oracle[3],
@@ -31,16 +32,21 @@ for (const [nom, { card, expected }] of Object.entries(CAS)) {
 }
 
 test("tout l'oracle Python passe", () => {
-  for (const { card, expected } of oracle) assert.deepEqual(candidatesForCard(card), expected, JSON.stringify(card));
+  for (const { card, expected } of oracle)
+    assert.deepEqual(candidatesForCard(card), expected, JSON.stringify(card));
 });
 
 test("chaque id rendu existe dans platforms.json", () => {
   const ids = new Set(platforms.platforms.map((p) => p.id));
-  for (const { card } of oracle) for (const id of candidatesForCard(card)) assert.ok(ids.has(id), id);
+  for (const { card } of oracle)
+    for (const id of candidatesForCard(card)) assert.ok(ids.has(id), id);
 });
 
 test("seuls Viamédis, Kalixia, Génération et EMOA sont simulables", () => {
-  const sim = platforms.platforms.filter((p) => p.simulable).map((p) => p.id).sort();
+  const sim = platforms.platforms
+    .filter((p) => p.simulable)
+    .map((p) => p.id)
+    .sort();
   assert.deepEqual(sim, ["emoa", "generation", "kalixia", "viamedis"]);
 });
 

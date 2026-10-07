@@ -1,15 +1,20 @@
 import { useEffect, useRef, useState } from "react";
 
 import { PaulSheet, usePaulSheet } from "@/components/essai/PaulSheet";
-import { canalCode, simulationEnDirect, startSimulation, type SimEchecCause, type SimEtape, type SimulationSession } from "@/lib/pec/simulation";
+import {
+  canalCode,
+  simulationEnDirect,
+  startSimulation,
+  type SimEchecCause,
+  type SimEtape,
+  type SimulationSession,
+} from "@/lib/pec/simulation";
 import { StepCode } from "./StepCode";
 import { StepLogin } from "./StepLogin";
 import { StepPatient, type Patient, type PatientPrefill } from "./StepPatient";
 import { StepSimDone, StepSimEchec, type SimResultat } from "./StepSimFin";
 import { StepSimulation } from "./StepSimulation";
 import { ApercuBanner } from "./ui";
-
-const CALCOM = import.meta.env.VITE_PEC_CALCOM_URL || "/#demo";
 
 type Phase =
   | { p: "patient" }
@@ -19,7 +24,14 @@ type Phase =
   | { p: "done"; r: SimResultat }
   | { p: "echec"; cause: SimEchecCause };
 
-const PROGRESS: Record<Phase["p"], number> = { patient: 4, login: 5, code: 6, running: 7, done: 8, echec: 7 };
+const PROGRESS: Record<Phase["p"], number> = {
+  patient: 4,
+  login: 5,
+  code: 6,
+  running: 7,
+  done: 8,
+  echec: 7,
+};
 
 /**
  * E4 → E8 · la simulation en direct sur le portail de l'opticien : patient,
@@ -82,13 +94,20 @@ export function SimFlow({
         if (e.cause === "identifiants") creds.current = null;
         track("pec_simulation_echec", { platform: platformId, cause: e.cause, apercu });
         setPhase({ p: "echec", cause: e.cause });
-        paul.show("creneau", "Le portail fait des siennes ? Paul vous montre la simulation sur votre compte, en 15 minutes.");
+        paul.show(
+          "creneau",
+          "Le portail fait des siennes ? Paul vous montre la simulation sur votre compte, en 15 minutes.",
+        );
       }
     });
   }
 
   function openPaul() {
-    paul.show("creneau", `Paul fait la simulation ${portail} avec vous, sur votre compte, en 15 minutes.`, { force: true });
+    paul.show(
+      "creneau",
+      `Paul fait la simulation ${portail} avec vous, sur votre compte, en 15 minutes.`,
+      { force: true },
+    );
   }
 
   function fix(cause: SimEchecCause) {
@@ -145,9 +164,25 @@ export function SimFlow({
             }}
           />
         )}
-        {phase.p === "running" && patient && <StepSimulation portail={portail} etape={etape} t0={t0.current} patient={patient} />}
-        {phase.p === "done" && <StepSimDone portail={portail} r={phase.r} busy={busy} onEmail={(m) => onEmail(m, phase.r)} />}
-        {phase.p === "echec" && <StepSimEchec portail={portail} cause={phase.cause} onFix={() => fix(phase.cause)} onPaul={openPaul} />}
+        {phase.p === "running" && patient && (
+          <StepSimulation portail={portail} etape={etape} t0={t0.current} patient={patient} />
+        )}
+        {phase.p === "done" && (
+          <StepSimDone
+            portail={portail}
+            r={phase.r}
+            busy={busy}
+            onEmail={(m) => onEmail(m, phase.r)}
+          />
+        )}
+        {phase.p === "echec" && (
+          <StepSimEchec
+            portail={portail}
+            cause={phase.cause}
+            onFix={() => fix(phase.cause)}
+            onPaul={openPaul}
+          />
+        )}
       </div>
       <PaulSheet
         open={paul.open}
@@ -156,7 +191,6 @@ export function SimFlow({
         onClose={paul.close}
         onContact={() => {
           track("pec_paul_creneau", { platform: platformId, phase: phase.p });
-          window.open(CALCOM, "_blank", "noopener,noreferrer");
         }}
       />
     </>

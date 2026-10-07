@@ -121,39 +121,44 @@ export const readCard = createServerFn({ method: "POST" })
     if ((image.length * 3) / 4 > MAX_BYTES) throw new Error("Photo trop lourde.");
     return { image, mediaType: toMediaType(String(data?.mediaType ?? "")) };
   })
-  .handler(async ({ data }): Promise<{ ok: true; card: CardRead } | { ok: false; reason: string }> => {
-    if (!process.env.ANTHROPIC_API_KEY) {
-      return { ok: false, reason: "lecture_indisponible" };
-    }
-    // Import dynamique : le SDK reste hors du bundle client.
-    const { default: Anthropic } = await import("@anthropic-ai/sdk");
-    const { betaZodOutputFormat } = await import("@anthropic-ai/sdk/helpers/beta/zod");
-    const client = new Anthropic({ timeout: 45_000, maxRetries: 1 });
-    try {
-      const res = await client.beta.messages.parse({
-        model: process.env.PEC_CARD_MODEL || "claude-opus-5",
-        max_tokens: 2000,
-        betas: ["server-side-fallback-2026-07-01"],
-        fallbacks: "default",
-        output_config: { effort: "low", format: betaZodOutputFormat(RawCardSchema) },
-        messages: [
-          {
-            role: "user",
-            content: [
-              { type: "image", source: { type: "base64", media_type: data.mediaType, data: data.image } },
-              { type: "text", text: PROMPT },
-            ],
-          },
-        ],
-      });
-      if (res.stop_reason === "refusal" || !res.parsed_output) {
-        return { ok: false, reason: "illisible" };
+  .handler(
+    async ({ data }): Promise<{ ok: true; card: CardRead } | { ok: false; reason: string }> => {
+      if (!process.env.ANTHROPIC_API_KEY) {
+        return { ok: false, reason: "lecture_indisponible" };
       }
-      return { ok: true, card: normalize(res.parsed_output) };
-    } catch (err) {
-      // On ne journalise que le type d'erreur : jamais la requête (elle contient la photo).
-      const status = err instanceof Anthropic.APIError ? err.status : undefined;
-      console.error("[pec] lecture de carte en échec", { status });
-      return { ok: false, reason: "erreur_lecture" };
-    }
-  });
+      // Import dynamique : le SDK reste hors du bundle client.
+      const { default: Anthropic } = await import("@anthropic-ai/sdk");
+      const { betaZodOutputFormat } = await import("@anthropic-ai/sdk/helpers/beta/zod");
+      const client = new Anthropic({ timeout: 45_000, maxRetries: 1 });
+      try {
+        const res = await client.beta.messages.parse({
+          model: process.env.PEC_CARD_MODEL || "claude-opus-5",
+          max_tokens: 2000,
+          betas: ["server-side-fallback-2026-07-01"],
+          fallbacks: "default",
+          output_config: { effort: "low", format: betaZodOutputFormat(RawCardSchema) },
+          messages: [
+            {
+              role: "user",
+              content: [
+                {
+                  type: "image",
+                  source: { type: "base64", media_type: data.mediaType, data: data.image },
+                },
+                { type: "text", text: PROMPT },
+              ],
+            },
+          ],
+        });
+        if (res.stop_reason === "refusal" || !res.parsed_output) {
+          return { ok: false, reason: "illisible" };
+        }
+        return { ok: true, card: normalize(res.parsed_output) };
+      } catch (err) {
+        // On ne journalise que le type d'erreur : jamais la requête (elle contient la photo).
+        const status = err instanceof Anthropic.APIError ? err.status : undefined;
+        console.error("[pec] lecture de carte en échec", { status });
+        return { ok: false, reason: "erreur_lecture" };
+      }
+    },
+  );

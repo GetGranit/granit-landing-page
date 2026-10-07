@@ -5,14 +5,33 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { resolveCard, type Resolution } from "../../src/lib/pec/resolve.ts";
 
-const base = { est_carte_tp: true, lisible: true, assureur: null, gestionnaire: null, reseau: null, tp_optique: null, amc: null, fin_droits: null };
-const ids = (r: Resolution) => (r.kind === "unique" ? [r.platform.id] : r.kind === "plusieurs" ? r.platforms.map((p) => p.id) : []);
+const base = {
+  est_carte_tp: true,
+  lisible: true,
+  assureur: null,
+  gestionnaire: null,
+  reseau: null,
+  tp_optique: null,
+  amc: null,
+  fin_droits: null,
+};
+const ids = (r: Resolution) =>
+  r.kind === "unique"
+    ? [r.platform.id]
+    : r.kind === "plusieurs"
+      ? r.platforms.map((p) => p.id)
+      : [];
 
 test("gérée par SP Santé → SP Santé, jamais « PEC Viamédis prête »", () => {
-  assert.deepEqual(ids(resolveCard({ ...base, assureur: "AXA", gestionnaire: "SP santé" })), ["sp_sante"]);
+  assert.deepEqual(ids(resolveCard({ ...base, assureur: "AXA", gestionnaire: "SP santé" })), [
+    "sp_sante",
+  ]);
 });
 test("iSanté nommé → on demande, iSanté en premier", () => {
-  assert.deepEqual(ids(resolveCard({ ...base, assureur: "Mutuelle X", tp_optique: "iSanté" })), ["isante", "viamedis"]);
+  assert.deepEqual(ids(resolveCard({ ...base, assureur: "Mutuelle X", tp_optique: "iSanté" })), [
+    "isante",
+    "viamedis",
+  ]);
 });
 test("réseau Kalixia → Viamédis seul (simulable)", () => {
   const r = resolveCard({ ...base, reseau: "Kalixia", tp_optique: "KALIXIA" });

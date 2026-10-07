@@ -7,7 +7,19 @@ import { Kicker, Muted, Screen, TextLink, Title, bigBtn } from "./ui";
  * d'authentification (Viamédis, Kalixia) ou e-mail (EMOA, Génération).
  * Envoi automatique au sixième chiffre.
  */
-export function StepCode({ portail, canal, essai, onSubmit, onPaul }: { portail: string; canal: "totp" | "email"; essai: number; onSubmit: (code: string) => void; onPaul: () => void }) {
+export function StepCode({
+  portail,
+  canal,
+  essai,
+  onSubmit,
+  onPaul,
+}: {
+  portail: string;
+  canal: "totp" | "email";
+  essai: number;
+  onSubmit: (code: string) => void;
+  onPaul: () => void;
+}) {
   const [code, setCode] = useState("");
   const ref = useRef<HTMLInputElement>(null);
   const sent = useRef(false);
@@ -25,10 +37,19 @@ export function StepCode({ portail, canal, essai, onSubmit, onPaul }: { portail:
   return (
     <Screen id={`code-${essai}`}>
       <Kicker>Double authentification</Kicker>
-      <Title em="un code" after=".">{portail} demande </Title>
+      <Title em="un code" after=".">
+        {portail} demande{" "}
+      </Title>
       {essai > 1 ? (
-        <p role="alert" className="w-full rounded-xl px-3 py-2 text-[15px]" style={{ background: "#fbf0dc", color: "#7a4f12" }}>
-          Ce code n'a pas été accepté (essai {essai} sur 3). {canal === "totp" ? "Attendez le code suivant dans l'appli." : "Prenez le dernier e-mail reçu."}
+        <p
+          role="alert"
+          className="w-full rounded-xl px-3 py-2 text-[15px]"
+          style={{ background: "#fbf0dc", color: "#7a4f12" }}
+        >
+          Ce code n'a pas été accepté (essai {essai} sur 3).{" "}
+          {canal === "totp"
+            ? "Attendez le code suivant dans l'appli."
+            : "Prenez le dernier e-mail reçu."}
         </p>
       ) : (
         <Muted>
@@ -49,7 +70,12 @@ export function StepCode({ portail, canal, essai, onSubmit, onPaul }: { portail:
           ref={ref}
           aria-label="Code à 6 chiffres"
           className="w-full max-w-[300px] rounded-2xl border-[1.5px] bg-white px-4 py-4 text-center text-[34px] outline-none focus:border-[var(--terra)]"
-          style={{ borderColor: "var(--border2)", color: "var(--text)", fontFamily: "var(--font-mono)", letterSpacing: ".35em" }}
+          style={{
+            borderColor: "var(--border2)",
+            color: "var(--text)",
+            fontFamily: "var(--font-mono)",
+            letterSpacing: ".35em",
+          }}
           inputMode="numeric"
           autoComplete="one-time-code"
           pattern="\d{6}"
@@ -62,7 +88,11 @@ export function StepCode({ portail, canal, essai, onSubmit, onPaul }: { portail:
             send(v);
           }}
         />
-        <button type="submit" disabled={code.length !== 6} className={`${bigBtn} w-full disabled:opacity-50`}>
+        <button
+          type="submit"
+          disabled={code.length !== 6}
+          className={`${bigBtn} w-full disabled:opacity-50`}
+        >
           Valider le code <span className="arrow">→</span>
         </button>
       </form>
