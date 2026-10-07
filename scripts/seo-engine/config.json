@@ -3,9 +3,10 @@
   "model": "claude-opus-5-5",
   "maxTokens": 64000,
   "relectureDesPremiers": 5,
-  "auteur": { "nom": "Paul Pietra", "fonction": "", "photo": "" },
-  "relecteur": "",
-  "pagesProduit": ["/agents", "/demo"],
+  "pagesProduit": [
+    "/agents",
+    "/demo"
+  ],
   "categories": {
     "guide-tiers-payant": "Guide du tiers payant",
     "plateformes": "Plateformes et portails",
@@ -14,5 +15,56 @@
     "gerer-son-tiers-payant": "Gérer son tiers payant",
     "glossaire": "Glossaire",
     "conformite": "Conformité"
+  },
+  "auteurs": {
+    "arthur-pelong": {
+      "nom": "Arthur Pelong",
+      "fonction": "Rédacteur, expert tiers payant",
+      "photo": "/auteurs/arthur-pelong.jpg",
+      "linkedin": ""
+    },
+    "jenny-mansour": {
+      "nom": "Jenny Mansour",
+      "fonction": "Rédactrice, experte santé",
+      "photo": "/auteurs/jenny-mansour.jpg",
+      "linkedin": ""
+    },
+    "paul-pietra": {
+      "nom": "Paul Pietra",
+      "fonction": "Rédacteur, expert métier optique",
+      "photo": "/auteurs/paul-pietra.jpg",
+      "linkedin": ""
+    }
+  },
+  "signatures": {
+    "_explication": "catégorie -> auteur et relecteur (clés de auteurs). Le relecteur n'est affiché que si l'article passe par une PR de relecture.",
+    "plateformes": {
+      "auteur": "arthur-pelong",
+      "relecteur": "paul-pietra"
+    },
+    "rejets": {
+      "auteur": "arthur-pelong",
+      "relecteur": "paul-pietra"
+    },
+    "paiements": {
+      "auteur": "arthur-pelong",
+      "relecteur": "paul-pietra"
+    },
+    "guide-tiers-payant": {
+      "auteur": "paul-pietra",
+      "relecteur": "jenny-mansour"
+    },
+    "glossaire": {
+      "auteur": "paul-pietra",
+      "relecteur": "jenny-mansour"
+    },
+    "gerer-son-tiers-payant": {
+      "auteur": "jenny-mansour",
+      "relecteur": "arthur-pelong"
+    },
+    "conformite": {
+      "auteur": "jenny-mansour",
+      "relecteur": "arthur-pelong"
+    }
   }
 }

@@ -39,7 +39,7 @@ Il faut aussi cocher, dans les réglages du repo, *Actions → General → Allow
 | `slug`, `id`, `category`, `categoryName`, `title`, `primaryKeyword`, `keywordCluster`, `parentSlug`, `level` | Repris de la file |
 | `type` | `standard`, `resolution` ou `plateforme` (gabarit, section 2) |
 | `plateforme` | Nom du fichier de faits `content/plateformes/{nom}.json` (sinon `null`) : source des blocs `data-bloc` et du logo |
-| `author` `{name, jobTitle, photo}`, `reviewer` | Signature (`config.json`) |
+| `author` `{name, jobTitle, photo, url}`, `reviewer` (même forme, ou `null`) | Signature selon la catégorie (`config.json`, `signatures`). Photos dans `public/auteurs/`. `reviewer` n'est renseigné que pour un article passé en relecture (PR) : « Relu par » ne s'affiche que s'il est non nul |
 | `datePublished`, `dateModified`, `checkedOn` | `YYYY-MM-DD` ; `checkedOn` seulement pour une plateforme |
 | `wordCount`, `readTime` | `readTime` en minutes (230 mots par minute) |
 | `metaDescription`, `contentHtml`, `tocItems`, `faqItems`, `sources` | Réponse de Claude, déjà contrôlée |
