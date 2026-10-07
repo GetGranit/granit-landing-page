@@ -1,6 +1,8 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 
+import { dateValide, nirCoherentAvecDate, nirValide } from "./simulation";
+
 /**
  * Lecture d'une carte de tiers payant pour le lead magnet /pec.
  *
@@ -23,6 +25,8 @@ const RawCardSchema = z.object({
   amc: z.string(),
   amc_candidates: z.array(z.string()),
   fin_droits: z.string(),
+  nir: z.string(),
+  date_naissance: z.string(),
 });
 type RawCard = z.infer<typeof RawCardSchema>;
 
@@ -36,6 +40,9 @@ export type CardRead = {
   amc: string | null;
   amc_candidates?: string[] | null;
   fin_droits: string | null;
+  /** Seulement si PEC_LIRE_IDENTITE=on (serveur hébergé sur le cloud HDS de Granit). */
+  nir?: string | null;
+  date_naissance?: string | null;
 };
 
 const orNull = (v: string) => (v.trim() ? v.trim() : null);
@@ -50,7 +57,45 @@ function normalize(r: RawCard): CardRead {
     amc: orNull(r.amc),
     amc_candidates: r.amc_candidates.map((x) => x.trim()).filter(Boolean),
     fin_droits: orNull(r.fin_droits),
+    ...identite(r),
   };
+}
+
+/** Le NIR n'est rendu que s'il est bien formé, avec la bonne clé et cohérent avec la date. */
+function identite(r: RawCard): Pick<CardRead, "nir" | "date_naissance"> {
+  const date = r.date_naissance.trim();
+  const nir = r.nir.replace(/\s/g, "").toUpperCase();
+  const dateOk = dateValide(date);
+  const nirOk = nirValide(nir) && (!dateOk || nirCoherentAvecDate(nir, date));
+  return { nir: nirOk ? nir : null, date_naissance: dateOk ? date : null };
+}
+
+/**
+ * Lire le n° de sécu et la date de naissance = traiter une donnée de santé : seulement
+ * quand le site tourne sur le cloud HDS de Granit (PEC_LIRE_IDENTITE=on). Sinon, la
+ * consigne interdit de les recopier et on ne les rend jamais.
+ */
+const lireIdentite = () => process.env.PEC_LIRE_IDENTITE === "on";
+
+const CONFIDENTIALITE_STRICTE = `CONFIDENTIALITÉ : ne recopie JAMAIS le nom, le prénom, le numéro de sécurité sociale,
+la date de naissance, ni aucun numéro d'adhérent, de contrat ou de bénéficiaire, même
+s'ils sont lisibles. Ces informations ne font pas partie de la sortie : laisse nir et
+date_naissance vides.`;
+
+const CONFIDENTIALITE_IDENTITE = `CONFIDENTIALITÉ : ne recopie JAMAIS le nom ni le prénom, ni aucun numéro d'adhérent, de
+contrat ou de bénéficiaire. Seules exceptions, pour retrouver le patient sur le portail :
+- nir : le n° de sécurité sociale du BÉNÉFICIAIRE (13 chiffres + 2 chiffres de clé = 15),
+  généralement sur la ligne du bénéficiaire (étiquettes « N° SS », « N° INSEE », « N° de
+  Sécurité sociale »), le premier bénéficiaire si plusieurs sont listés. Contrôle : les
+  chiffres 2-3 = année de naissance, 4-5 = mois. NE PAS confondre avec le n° sociétaire /
+  d'adhérent / de contrat. Inclus la clé quand elle est visible. Vide si illisible.
+- date_naissance : la date de naissance de ce même bénéficiaire, JJ/MM/AAAA. Vide si absente.`;
+
+function prompt(): string {
+  return PROMPT.replace(
+    "__CONFIDENTIALITE__",
+    lireIdentite() ? CONFIDENTIALITE_IDENTITE : CONFIDENTIALITE_STRICTE,
+  );
 }
 
 const MAX_BYTES = 5 * 1024 * 1024;
@@ -62,9 +107,7 @@ Extrais EXACTEMENT ce qui est écrit, sans jamais rien inventer. Mets une chaîn
 pour toute information absente, illisible ou non demandée. Attention : la carte peut
 être prise de travers ou pivotée de 90°.
 
-CONFIDENTIALITÉ : ne recopie JAMAIS le nom, le prénom, le numéro de sécurité sociale,
-la date de naissance, ni aucun numéro d'adhérent, de contrat ou de bénéficiaire, même
-s'ils sont lisibles. Ces informations ne font pas partie de la sortie.
+__CONFIDENTIALITE__
 
 Commence par dire ce qu'est l'image :
 - est_carte_tp : true si c'est une carte de mutuelle / attestation de tiers payant
@@ -145,7 +188,7 @@ export const readCard = createServerFn({ method: "POST" })
                   type: "image",
                   source: { type: "base64", media_type: data.mediaType, data: data.image },
                 },
-                { type: "text", text: PROMPT },
+                { type: "text", text: prompt() },
               ],
             },
           ],
@@ -153,7 +196,12 @@ export const readCard = createServerFn({ method: "POST" })
         if (res.stop_reason === "refusal" || !res.parsed_output) {
           return { ok: false, reason: "illisible" };
         }
-        return { ok: true, card: normalize(res.parsed_output) };
+        const card = normalize(res.parsed_output);
+        if (!lireIdentite()) {
+          card.nir = null;
+          card.date_naissance = null;
+        }
+        return { ok: true, card };
       } catch (err) {
         // On ne journalise que le type d'erreur : jamais la requête (elle contient la photo).
         const status = err instanceof Anthropic.APIError ? err.status : undefined;
