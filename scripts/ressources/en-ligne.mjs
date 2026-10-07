@@ -68,6 +68,19 @@ export function lireContenu(racine, { avecApercu = false } = {}) {
   return { articles, plateformes, lus };
 }
 
+/**
+ * Anciens articles remplacés : { ancienSlug: nouveauSlug }, tiré du champ `remplace` des articles
+ * en ligne. Un ancien remplacé redirige (301) vers le nouveau et sort des listes et du sitemap.
+ */
+export function redirections(articles) {
+  const r = {};
+  for (const a of articles) {
+    if (a.preview) continue;
+    for (const ancien of a.remplace ?? []) r[ancien] = a.slug;
+  }
+  return r;
+}
+
 /** Slugs des anciens articles français de src/lib/articles.ts. */
 export function anciensSlugsFr(racine) {
   const src = readFileSync(join(racine, "src/lib/articles.ts"), "utf8");
@@ -83,8 +96,14 @@ export function anciensSlugsFr(racine) {
 export function controler(racine, articles) {
   const erreurs = [];
   const anciens = new Set(anciensSlugsFr(racine));
+  const dejaRemplaces = new Set();
   for (const a of articles) {
     if (anciens.has(a.slug)) erreurs.push(`slug en double (JSON et articles.ts) : ${a.slug}`);
+    for (const r of a.remplace ?? []) {
+      if (!anciens.has(r)) erreurs.push(`${a.slug} remplace un ancien article inconnu : ${r}`);
+      if (dejaRemplaces.has(r)) erreurs.push(`ancien article remplacé deux fois : ${r}`);
+      dejaRemplaces.add(r);
+    }
   }
   const { categories, suffixeDescription } = lireJson(
     join(racine, "src/lib/ressources/categories.json"),

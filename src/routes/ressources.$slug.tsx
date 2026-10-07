@@ -1,6 +1,6 @@
-import { createFileRoute, notFound } from "@tanstack/react-router";
+import { createFileRoute, notFound, redirect } from "@tanstack/react-router";
 import { getArticle } from "@/lib/articles";
-import { chargerArticle, categorie, ficheJson } from "@/lib/ressources/contenu";
+import { chargerArticle, categorie, ficheJson, remplacant } from "@/lib/ressources/contenu";
 import { blogPostingLd, breadcrumbLd, faqLd, titrePage } from "@/lib/ressources/seo";
 import { photoFiche, src } from "@/lib/ressources/photos";
 import { SITE_URL } from "@/lib/seo";
@@ -10,6 +10,12 @@ import { PageArticle } from "@/components/ressources/article/PageArticle";
 
 export const Route = createFileRoute("/ressources/$slug")({
   // Ordre de recherche : articles JSON en ligne (aperçu compris hors production), puis articles.ts.
+  // Ancien article remplacé par un article du moteur : redirection permanente.
+  beforeLoad: ({ params }) => {
+    const cible = remplacant(params.slug);
+    if (cible)
+      throw redirect({ to: "/ressources/$slug", params: { slug: cible }, statusCode: 301 });
+  },
   loader: async ({ params }) => {
     if (ficheJson(params.slug)) {
       const data = await chargerArticle(params.slug);

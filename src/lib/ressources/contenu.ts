@@ -1,7 +1,7 @@
 // Le contenu de la rubrique Ressources, vu par le site :
 // articles JSON en ligne (fournis par le plugin, aperçu compris hors production)
 // et anciens articles de articles.ts, rattachés ou non à une catégorie du cocon.
-import { charger, fiches as fichesJson } from "virtual:ressources";
+import { charger, fiches as fichesJson, redirections } from "virtual:ressources";
 import { articles, type Article } from "@/lib/articles";
 import categoriesData from "./categories.json";
 import anciensData from "./anciens.json";
@@ -54,8 +54,13 @@ function ficheAncien(a: Article): Fiche {
   };
 }
 
-/** Tous les anciens articles FR, dans l'ordre de articles.ts. */
-const anciensFr: Fiche[] = articles.fr.map(ficheAncien);
+/** Slug de l'article qui remplace cet ancien article, s'il est en ligne (redirection 301). */
+export function remplacant(slug: string): string | undefined {
+  return redirections[slug];
+}
+
+/** Tous les anciens articles FR encore en ligne (sans les remplacés), dans l'ordre de articles.ts. */
+const anciensFr: Fiche[] = articles.fr.filter((a) => !redirections[a.slug]).map(ficheAncien);
 
 /** Anciens articles FR rattachés à une catégorie du cocon. */
 const anciensRattaches: Fiche[] = anciensFr.filter((f) => f.rattache);
