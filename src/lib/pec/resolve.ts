@@ -1,5 +1,5 @@
-import { candidatesForCard } from "./classify";
-import data from "./platforms.json";
+import { candidatesForCard, fold } from "./classify.ts";
+import data from "./platforms.json" with { type: "json" };
 import type { CardRead } from "./readCard";
 
 /**
@@ -56,8 +56,40 @@ export function resolveIds(ids: string[]): Resolution {
   return { kind: "plusieurs", platforms: list.slice(0, 3) };
 }
 
+/**
+ * Portails écrits en toutes lettres sur la carte (gestionnaire, colonne OPTI).
+ * Le routage produit en ignore certains (SP Santé n'a aucun alias, une carte
+ * « iSanté » sort d'abord Viamédis) : sans ce garde-fou, on annoncerait « votre
+ * PEC Viamédis est prête » pour une carte gérée par SP Santé.
+ */
+const NAMED: [string, string[]][] = [
+  ["sp_sante", ["sp sante", "spsante", "sp-sante"]],
+  ["isante", ["isante", "i-sante"]],
+  ["almerys", ["almerys"]],
+  ["santeclair", ["santeclair", "tp+"]],
+  ["seveane", ["seveane", "séveane"]],
+  ["actil", ["actil"]],
+  ["oxantis", ["oxantis"]],
+  ["carte_blanche", ["carte blanche"]],
+  ["itelis", ["itelis"]],
+  ["viamedis", ["viamedis"]],
+  ["generation", ["generation"]],
+];
+
+function namedOnCard(card: CardRead): string[] {
+  const text = fold([card.gestionnaire, card.tp_optique, card.reseau].filter(Boolean).join(" / "));
+  return NAMED.filter(([, keys]) => keys.some((k) => text.includes(fold(k)))).map(([id]) => id);
+}
+
 export function resolveCard(card: CardRead): Resolution {
-  return resolveIds(candidatesForCard(card));
+  const fromRouting = candidatesForCard(card);
+  // CGRM : le catalogue Viamédis la connaît encore, mais Viamédis ne trouve plus
+  // ces bénéficiaires depuis 09/2026 (platforms.py:235) → portail CGRM.
+  if (fold(card.assureur).includes("cgrm")) return resolveIds(["cgrm"]);
+  const named = namedOnCard(card);
+  if (named.length === 0) return resolveIds(fromRouting);
+  // Ce que la carte nomme passe devant ; si le routage proposait autre chose, on demande.
+  return resolveIds([...named, ...fromRouting]);
 }
 
 /** Carte fictive pour « Essayer avec une carte d'exemple » : réseau Kalixia, donc Viamédis, donc simulable. */

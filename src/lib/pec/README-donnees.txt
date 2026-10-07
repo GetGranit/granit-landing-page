@@ -9,3 +9,4 @@ url, tfa et note sont des tables écrites à la main dans le script : à revoir 
 Tests : copier dans un dossier, ajouter `with { type: "json" }` aux imports JSON,
 puis `node --experimental-strip-types --test classify.test.ts`. Résultat au 07/10 : 20/20 OK.
 Note de fermeture Oxantis réécrite à la main pour l'opticien dans src/lib/pec/platforms.json (le script d'export met une note interne).
+Tests : node --experimental-strip-types --test tests/pec/*.test.ts (routage + garde-fou d'affichage).
