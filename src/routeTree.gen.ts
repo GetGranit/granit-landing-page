@@ -29,6 +29,7 @@ import { Route as RessourcesIndexRouteImport } from './routes/ressources.index'
 import { Route as RessourcesSlugRouteImport } from './routes/ressources.$slug'
 import { Route as EnBlogSplatRouteImport } from './routes/en.blog.$'
 import { Route as RessourcesCategorieCategoryRouteImport } from './routes/ressources.categorie.$category'
+import { Route as RessourcesMetierVerticaleRouteImport } from './routes/ressources.metier.$verticale'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -131,6 +132,12 @@ const RessourcesCategorieCategoryRoute =
     path: '/categorie/$category',
     getParentRoute: () => RessourcesRoute,
   } as any)
+const RessourcesMetierVerticaleRoute =
+  RessourcesMetierVerticaleRouteImport.update({
+    id: '/metier/$verticale',
+    path: '/metier/$verticale',
+    getParentRoute: () => RessourcesRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -153,6 +160,7 @@ export interface FileRoutesByFullPath {
   '/ressources/': typeof RessourcesIndexRoute
   '/en/blog/$': typeof EnBlogSplatRoute
   '/ressources/categorie/$category': typeof RessourcesCategorieCategoryRoute
+  '/ressources/metier/$verticale': typeof RessourcesMetierVerticaleRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -174,6 +182,7 @@ export interface FileRoutesByTo {
   '/ressources': typeof RessourcesIndexRoute
   '/en/blog/$': typeof EnBlogSplatRoute
   '/ressources/categorie/$category': typeof RessourcesCategorieCategoryRoute
+  '/ressources/metier/$verticale': typeof RessourcesMetierVerticaleRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -197,6 +206,7 @@ export interface FileRoutesById {
   '/ressources/': typeof RessourcesIndexRoute
   '/en/blog/$': typeof EnBlogSplatRoute
   '/ressources/categorie/$category': typeof RessourcesCategorieCategoryRoute
+  '/ressources/metier/$verticale': typeof RessourcesMetierVerticaleRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -221,6 +231,7 @@ export interface FileRouteTypes {
     | '/ressources/'
     | '/en/blog/$'
     | '/ressources/categorie/$category'
+    | '/ressources/metier/$verticale'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -242,6 +253,7 @@ export interface FileRouteTypes {
     | '/ressources'
     | '/en/blog/$'
     | '/ressources/categorie/$category'
+    | '/ressources/metier/$verticale'
   id:
     | '__root__'
     | '/'
@@ -264,6 +276,7 @@ export interface FileRouteTypes {
     | '/ressources/'
     | '/en/blog/$'
     | '/ressources/categorie/$category'
+    | '/ressources/metier/$verticale'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -428,6 +441,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RessourcesCategorieCategoryRouteImport
       parentRoute: typeof RessourcesRoute
     }
+    '/ressources/metier/$verticale': {
+      id: '/ressources/metier/$verticale'
+      path: '/metier/$verticale'
+      fullPath: '/ressources/metier/$verticale'
+      preLoaderRoute: typeof RessourcesMetierVerticaleRouteImport
+      parentRoute: typeof RessourcesRoute
+    }
   }
 }
 
@@ -435,12 +455,14 @@ interface RessourcesRouteChildren {
   RessourcesSlugRoute: typeof RessourcesSlugRoute
   RessourcesIndexRoute: typeof RessourcesIndexRoute
   RessourcesCategorieCategoryRoute: typeof RessourcesCategorieCategoryRoute
+  RessourcesMetierVerticaleRoute: typeof RessourcesMetierVerticaleRoute
 }
 
 const RessourcesRouteChildren: RessourcesRouteChildren = {
   RessourcesSlugRoute: RessourcesSlugRoute,
   RessourcesIndexRoute: RessourcesIndexRoute,
   RessourcesCategorieCategoryRoute: RessourcesCategorieCategoryRoute,
+  RessourcesMetierVerticaleRoute: RessourcesMetierVerticaleRoute,
 }
 
 const RessourcesRouteWithChildren = RessourcesRoute._addFileChildren(

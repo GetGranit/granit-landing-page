@@ -2,7 +2,8 @@
 import { useRef, type CSSProperties } from "react";
 import { Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
-import { categorie, dateFr, titreCourt } from "@/lib/ressources/contenu";
+import { categorie, dateFr, ficheJson, titreCourt } from "@/lib/ressources/contenu";
+import { verticale } from "@/lib/ressources/verticales";
 import type { Plateforme, RessourceJson } from "@/lib/ressources/types";
 import { Annuaire } from "../Annuaire";
 import { MarquePlateforme, TitreItalique } from "../Cartes";
@@ -71,12 +72,35 @@ function Signature({ a, nbSources }: { a: RessourceJson; nbSources: number }) {
           : `Mis à jour le ${dateFr(a.dateModified, true)}`}
       </span>
       <span>{a.readTime} min de lecture</span>
+      <Metiers slug={a.slug} />
       {nbSources > 0 && (
         <a href="#sources" className="underline underline-offset-[3px] hover:text-[var(--text)]">
           {nbSources} source{nbSources > 1 ? "s" : ""}
         </a>
       )}
     </div>
+  );
+}
+
+/** Les métiers de l'article, en liens discrets vers leurs pages. */
+function Metiers({ slug }: { slug: string }) {
+  const vs = (ficheJson(slug)?.verticales ?? []).map((v) => verticale(v)!).filter(Boolean);
+  if (!vs.length) return null;
+  return (
+    <span>
+      {vs.map((v, i) => (
+        <span key={v.slug}>
+          {i > 0 && " · "}
+          <Link
+            to="/ressources/metier/$verticale"
+            params={{ verticale: v.slug }}
+            className="underline-offset-[3px] hover:text-[var(--text)] hover:underline"
+          >
+            {v.court}
+          </Link>
+        </span>
+      ))}
+    </span>
   );
 }
 

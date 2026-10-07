@@ -85,6 +85,25 @@ const categoryPages = ordre
   })
   .filter(Boolean);
 
+// Pages métier : seulement à partir de 3 articles propres (même règle que le noindex de la page).
+const verticalesData = JSON.parse(readFileSync("src/lib/ressources/verticales.json", "utf8"));
+const metierPages = verticalesData.ordre
+  .map((v) => {
+    const dates = [
+      ...ressources
+        .filter((a) =>
+          (verticalesData.surcharges[a.slug] ?? a.verticales ?? ["optique"]).includes(v),
+        )
+        .map((a) => a.dateModified),
+      ...Object.entries(verticalesData.anciens)
+        .filter(([, vs]) => Array.isArray(vs) && vs.includes(v))
+        .map(([slug]) => slugDates.get(slug) ?? ""),
+    ];
+    if (dates.length < 3) return undefined;
+    return { v, lastmod: dates.filter(Boolean).sort().at(-1) };
+  })
+  .filter(Boolean);
+
 // /produit and /cas-usage redirect to /agents: they don't belong in the sitemap.
 const staticPages = [
   {
@@ -131,6 +150,12 @@ const urls = [
     freq: "weekly",
     priority: "0.7",
   })),
+  ...metierPages.map((m) => ({
+    loc: `${SITE}/ressources/metier/${m.v}`,
+    lastmod: m.lastmod,
+    freq: "weekly",
+    priority: "0.7",
+  })),
   ...ressources.map((a) => ({
     loc: `${SITE}/ressources/${a.slug}`,
     lastmod: a.dateModified,
@@ -162,5 +187,5 @@ ${urls
 writeFileSync("public/sitemap.xml", xml);
 const dated = urls.filter((u) => u.lastmod).length;
 console.log(
-  `sitemap.xml written: ${urls.length} URLs (${slugs.length} articles + ${ressources.length} ressources + ${categoryPages.length} catégories + ${staticPages.length} pages, ${dated} with lastmod)`,
+  `sitemap.xml written: ${urls.length} URLs (${slugs.length} articles + ${ressources.length} ressources + ${categoryPages.length} catégories + ${metierPages.length} métiers + ${staticPages.length} pages, ${dated} with lastmod)`,
 );
