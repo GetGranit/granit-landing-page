@@ -1,7 +1,7 @@
 // Generates public/sitemap.xml from static routes + every article slug.
 // Runs automatically before `vite build` (see package.json).
 import { execFileSync } from "node:child_process";
-import { existsSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 
 const SITE = "https://www.getgranit.ai";
 const ARTICLES = "src/lib/articles.ts";
@@ -94,6 +94,18 @@ const staticPages = [
   { path: "/cgv", files: ["src/routes/cgv.tsx"], priority: "0.3", freq: "yearly" },
 ];
 
+// Articles du moteur SEO (content/ressources/*.json), seulement ceux publiés dans la file.
+const QUEUE = "scripts/seo-engine/articles-queue.json";
+const publies = existsSync(QUEUE)
+  ? new Set(JSON.parse(readFileSync(QUEUE, "utf8")).filter((a) => a.status === "published").map((a) => a.slug))
+  : new Set();
+const moteur = existsSync("content/ressources")
+  ? readdirSync("content/ressources")
+      .filter((f) => f.endsWith(".json"))
+      .map((f) => JSON.parse(readFileSync(`content/ressources/${f}`, "utf8")))
+      .filter((a) => publies.has(a.slug) && !slugs.includes(a.slug))
+  : [];
+
 const urls = [
   ...staticPages.map((p) => ({
     loc: SITE + p.path,
@@ -106,6 +118,12 @@ const urls = [
     lastmod: slugDates.get(s),
     freq: "monthly",
     priority: "0.7",
+  })),
+  ...moteur.map((a) => ({
+    loc: `${SITE}/ressources/${a.slug}`,
+    lastmod: a.dateModified,
+    freq: "monthly",
+    priority: a.level?.startsWith("Pilier") ? "0.8" : "0.7",
   })),
 ];
 
@@ -126,5 +144,5 @@ ${urls
 writeFileSync("public/sitemap.xml", xml);
 const dated = urls.filter((u) => u.lastmod).length;
 console.log(
-  `sitemap.xml written: ${urls.length} URLs (${slugs.length} articles + ${staticPages.length} pages, ${dated} with lastmod)`,
+  `sitemap.xml written: ${urls.length} URLs (${slugs.length} articles + ${moteur.length} du moteur + ${staticPages.length} pages, ${dated} with lastmod)`,
 );

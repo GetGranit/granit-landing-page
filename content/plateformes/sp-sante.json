@@ -1,0 +1,225 @@
+{
+  "slug": "portail-sp-sante",
+  "nom": "SP Santé",
+  "logo": "/logos/sp-sante.png",
+  "checkedOn": "2026-10-07",
+  "identite": [
+    {
+      "label": "Type",
+      "valeur": "Marque de tiers payant, opérée par le Cetip (groupe Cegedim)",
+      "source": "sp-pages"
+    },
+    {
+      "label": "Optique",
+      "valeur": "Oui, avec saisie et suivi des demandes de prise en charge en ligne",
+      "source": "sp-pages"
+    },
+    {
+      "label": "Portail",
+      "valeur": "spsante.fr",
+      "source": "sp-accueil"
+    },
+    {
+      "label": "Connexion",
+      "valeur": "Identifiant, mot de passe et code reçu par e-mail",
+      "source": "granit-connecteur"
+    }
+  ],
+  "chiffres": [
+    {
+      "valeur": "+19 M",
+      "label": "assurés bénéficiaires du tiers payant SP Santé",
+      "source": "sp-pages"
+    },
+    {
+      "valeur": "+150 M",
+      "label": "factures traitées en 2025",
+      "source": "sp-pages"
+    },
+    {
+      "valeur": "+200 000",
+      "label": "professionnels de santé et établissements partenaires",
+      "source": "sp-pages"
+    },
+    {
+      "valeur": "24",
+      "label": "codes complémentaires ouverts en optique sur la liste publique",
+      "source": "sp-amc"
+    }
+  ],
+  "faits": [
+    {
+      "fait": "SP Santé est une marque de tiers payant de l'association Santé Pharma. Elle est mise en œuvre par Cegedim, via sa structure Cetip.",
+      "source": "sp-pages"
+    },
+    {
+      "fait": "SP Santé n'est pas une mutuelle. Le service fait le lien entre les complémentaires santé et les professionnels de santé.",
+      "source": "sp-pages"
+    },
+    {
+      "fait": "SP Santé annonce plus de 2 milliards d'euros de flux financiers et plus de 80 complémentaires santé en flux direct.",
+      "source": "sp-pages"
+    },
+    {
+      "fait": "Cegedim présente SP Santé et iSanté ensemble dans son offre de gestion du tiers payant, avec des filtres tarifaires pour l'optique.",
+      "source": "cegedim-solutions"
+    },
+    {
+      "fait": "Un opticien se conventionne directement avec SP Santé, par un formulaire sur spsante.fr. Le passage par l'Inter-AMC est réservé à d'autres professions.",
+      "source": "sp-faq"
+    },
+    {
+      "fait": "Sans contrat avec SP Santé, un magasin ne peut pas pratiquer le tiers payant SP Santé.",
+      "source": "sp-faq"
+    },
+    {
+      "fait": "Le compte en ligne permet de saisir et suivre les demandes de prise en charge optique, de suivre ses règlements et de vérifier les droits des patients en temps réel.",
+      "source": "sp-pages"
+    },
+    {
+      "fait": "Sur l'attestation, seules les dépenses portant la mention « SP » sont prises en charge par SP Santé. Une zone indique, par domaine, un taux ou la nécessité d'une prise en charge.",
+      "source": "sp-pages"
+    },
+    {
+      "fait": "Chaque complémentaire a son propre code AMC. La facture se télétransmet sous le code AMC inscrit sur l'attestation du patient.",
+      "source": "sp-pages"
+    },
+    {
+      "fait": "La facture doit reprendre le numéro INSEE et la date de naissance de l'attestation SP Santé. Ce numéro peut différer de celui de la carte Vitale.",
+      "source": "sp-pages"
+    },
+    {
+      "fait": "SP Santé paie le magasin après contrôle de la complémentaire, qui accepte ou rejette la facture. Le retour indique les motifs de rejet et la référence du virement.",
+      "source": "sp-faq"
+    },
+    {
+      "fait": "Les factures se télétransmettent en gestion séparée, par DRE (SESAM-Vitale 1.40) ou par un concentrateur (OCT). Sans ce réglage du logiciel, les demandes n'arrivent pas.",
+      "source": "sp-faq"
+    },
+    {
+      "fait": "SP Santé annonce au 1er janvier 2026 l'ouverture d'Interiale pour les assurés de la fonction publique, en dentaire et optique, sous le code 29993227. La carte Sigmage du secteur privé garde le code 00403220.",
+      "source": "sp-pages"
+    },
+    {
+      "fait": "La demande de prise en charge optique se fait dans un service à part, ouvert depuis spsante.fr par le bouton « Accéder au service ».",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "Sur ce service, il faut imprimer le dossier avant de pouvoir le transmettre.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "Chaque magasin se connecte avec son identifiant et son mot de passe, puis un code à 6 chiffres envoyé par e-mail par le Cetip.",
+      "source": "granit-connecteur"
+    }
+  ],
+  "conventionnement": [
+    "Ouvrir le formulaire de demande de conventionnement sur spsante.fr et choisir la catégorie Opticien.",
+    "Renseigner l'identifiant FINESS ou Adeli, le numéro RPPS, la raison sociale, le SIRET, l'enseigne et le contact du magasin.",
+    "Indiquer le mode de télétransmission : flux, concentrateur (OCT), logiciel et éditeur.",
+    "Joindre les pièces justificatives et le RIB (IBAN et BIC).",
+    "Lire et accepter la convention, puis valider la demande.",
+    "Recevoir l'e-mail de confirmation, avec les modalités de création du compte."
+  ],
+  "statuts": [
+    {
+      "libelle": "Accordé",
+      "sens": "La complémentaire accepte la prise en charge",
+      "action": "Délivrer l'équipement, puis télétransmettre la facture sous le code AMC de l'attestation"
+    },
+    {
+      "libelle": "Accordé, avec « N° Sécurité sociale inconnu »",
+      "sens": "Le dossier est transmis, mais la couverture n'est pas reconnue : les parts peuvent revenir à zéro",
+      "action": "Vérifier le numéro INSEE de l'attestation et la carte Vitale avant de délivrer"
+    },
+    {
+      "libelle": "En cours d'analyse / traitée sous 48 heures",
+      "sens": "La complémentaire n'a pas encore décidé",
+      "action": "Attendre, puis revenir lire la décision sur le portail"
+    },
+    {
+      "libelle": "Refusé",
+      "sens": "Pas de prise en charge en l'état",
+      "action": "Lire le motif affiché (par exemple : demande à adresser à la plateforme indiquée sur l'attestation), corriger, refaire la demande"
+    },
+    {
+      "libelle": "Service momentanément indisponible",
+      "sens": "La transmission n'est pas passée",
+      "action": "Retenter plus tard"
+    }
+  ],
+  "statutsSource": "granit-connecteur",
+  "contacts": [
+    {
+      "label": "Téléphone opticiens",
+      "valeur": "0820 20 61 88",
+      "detail": "Centre d'appel unique · N° Indigo 0,12 €/min",
+      "source": "sp-pages"
+    },
+    {
+      "label": "Réclamation",
+      "valeur": "CETIP Service Réclamations, BP 50413, 45204 Montargis Cedex",
+      "detail": "Par courrier uniquement, après un premier appel au support · accusé de réception sous 10 jours ouvrables",
+      "source": "sp-pages"
+    }
+  ],
+  "organismes": {
+    "source": "granit-connecteur",
+    "note": "Liste du sélecteur d'organisme du portail optique, relevée par les agents Granit. Formuler : « ce que propose le sélecteur du portail », jamais « cette mutuelle passe uniquement par SP Santé ».",
+    "liste": [
+      "ABEILLE IARD & SANTÉ",
+      "AIAC COURTAGE",
+      "AON",
+      "AXA DSC",
+      "AXA SOGAREP",
+      "COLLECTEAM",
+      "GEREP",
+      "GIEPS",
+      "HELIUM",
+      "INTERIALE SIGMAGE",
+      "MUTUELLE DE POITIERS ASSURANCE",
+      "PLANSANTÉ",
+      "SFP",
+      "SIGMAGE",
+      "TG-ASSUR",
+      "USP (UNI SANTE PREVOYANCE)"
+    ]
+  },
+  "sources": {
+    "sp-accueil": {
+      "label": "spsante.fr · Page d'accueil du portail",
+      "url": "https://www.spsante.fr/",
+      "consulte": "2026-10-07"
+    },
+    "sp-pages": {
+      "label": "spsante.fr · Pages publiques (À propos, Professionnel de santé, Assuré, Attestation, Nous contacter, Réclamation, Nouveautés AMC)",
+      "url": "https://www.spsante.fr/api/cms/blocklists/Pages",
+      "consulte": "2026-10-07"
+    },
+    "sp-faq": {
+      "label": "spsante.fr · Questions/Réponses",
+      "url": "https://www.spsante.fr/api/faq",
+      "consulte": "2026-10-07"
+    },
+    "sp-amc": {
+      "label": "spsante.fr · Liste publique des complémentaires actives par domaine",
+      "url": "https://www.spsante.fr/api/referentiel/list-amc",
+      "consulte": "2026-10-07"
+    },
+    "cegedim-solutions": {
+      "label": "cegedim.fr · Solutions et services (iSanté & SP Santé)",
+      "url": "https://www.cegedim.fr/solutions/Pages/default.aspx",
+      "consulte": "2026-10-07"
+    },
+    "granit-connecteur": {
+      "label": "Connecteur SP Santé de Granit (relevé du 07/10/2026)",
+      "url": "",
+      "consulte": "2026-10-07"
+    },
+    "sp-conv": {
+      "label": "spsante.fr · Formulaire de demande de conventionnement",
+      "url": "https://www.spsante.fr/components/identity/unauthenticated/request-conv.html",
+      "consulte": "2026-10-07"
+    }
+  }
+}

@@ -1,0 +1,275 @@
+{
+  "slug": "portail-isante",
+  "nom": "iSanté",
+  "logo": "/logos/isante.png",
+  "checkedOn": "2026-10-07",
+  "identite": [
+    {
+      "label": "Type",
+      "valeur": "Opérateur de tiers payant (marque de Cetip, groupe Cegedim)",
+      "source": "ca-marques"
+    },
+    {
+      "label": "Optique",
+      "valeur": "Oui, demande de prise en charge en ligne",
+      "source": "granit-connecteur"
+    },
+    {
+      "label": "Portail",
+      "valeur": "tp-isante.fr",
+      "source": "isante-site"
+    },
+    {
+      "label": "Connexion",
+      "valeur": "Mot de passe et code reçu par e-mail",
+      "source": "granit-connecteur"
+    }
+  ],
+  "chiffres": [
+    {
+      "valeur": "38",
+      "label": "complémentaires actives en optique dans la liste publiée au 07/10/2026",
+      "source": "isante-amc"
+    },
+    {
+      "valeur": "3 jours ouvrés",
+      "label": "délai de paiement en télétransmission, contre 7 sinon",
+      "source": "isante-faq"
+    },
+    {
+      "valeur": "près de 20 M",
+      "label": "bénéficiaires de Cetip, avec ses marques iSanté et SP Santé",
+      "source": "ca-marques"
+    },
+    {
+      "valeur": "+200 000",
+      "label": "professionnels de santé conventionnés au tiers payant de Cegedim Assurances",
+      "source": "ca-tiers-payant"
+    }
+  ],
+  "faits": [
+    {
+      "fait": "iSanté est la marque propre de Cetip, filiale de Cegedim Assurances. Cetip opère aussi la marque SP Santé.",
+      "source": "ca-marques"
+    },
+    {
+      "fait": "Le site tp-isante.fr se présente comme « opérateur de tiers-payant ». iSanté n'est pas un réseau de soins.",
+      "source": "isante-site"
+    },
+    {
+      "fait": "Pour un opticien, le conventionnement se fait directement avec iSanté. Le formulaire ne renvoie pas vers l'association Inter-AMC pour cette catégorie.",
+      "source": "isante-conv"
+    },
+    {
+      "fait": "Sans convention iSanté, l'opticien ne peut pas pratiquer le tiers payant iSanté.",
+      "source": "isante-faq"
+    },
+    {
+      "fait": "Le numéro de télétransmission iSanté est unique et figure sur les cartes de tiers payant : 00733931.",
+      "source": "isante-faq"
+    },
+    {
+      "fait": "En télétransmission, iSanté paie en trois jours ouvrés au lieu de sept, à compter de la réception des éléments (article 3.2 de la convention).",
+      "source": "isante-faq"
+    },
+    {
+      "fait": "iSanté privilégie la télétransmission en DRE. La gestion séparée AMO / AMC doit être paramétrée dans le logiciel, sinon les demandes n'arrivent pas.",
+      "source": "isante-faq"
+    },
+    {
+      "fait": "La carte iSanté porte le logo iSanté, la période de validité et, dans la colonne de chaque domaine, le taux de prise en charge ou la procédure de demande de prise en charge à suivre.",
+      "source": "isante-faq"
+    },
+    {
+      "fait": "La liste des complémentaires actives est publiée sur tp-isante.fr. Elle est mise à jour à chaque ouverture ou fermeture d'un segment par une complémentaire.",
+      "source": "isante-faq"
+    },
+    {
+      "fait": "Les demandes de prise en charge optique se font sur IsantePEC, ouvert depuis l'espace tp-isante.fr avec le bouton « Accéder au service ».",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "Pour une demande avec monture, le portail impose de saisir la monture en première ligne, puis les verres.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "L'accord de prise en charge officiel s'imprime en PDF depuis la demande, avec le bouton « Imprimer ».",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "Une demande de prise en charge ne peut pas être supprimée. Elle s'annule avec « Annuler la PEC », en choisissant un motif.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "Certaines complémentaires activent un filtre tarifaire, service en option du tiers payant iSanté. Il permet de refuser un devis ou une prise en charge dont le tarif est jugé « hors marché ». Il est ouvert en optique depuis plusieurs années.",
+      "source": "cp-entis"
+    },
+    {
+      "fait": "Le filtre compare le prix demandé au prix moyen pratiqué pour le même produit, dans une zone géographique donnée. L'opticien peut alors ajuster son tarif selon la grille.",
+      "source": "ca-sinistralite"
+    },
+    {
+      "fait": "Chez les clients d'iSanté qui utilisent ce filtre, les économies représentent un peu moins de 4 % de la dépense en verres : 7,15 millions d'euros sur 181 millions d'euros (communiqué du 7 mai 2026).",
+      "source": "cp-entis"
+    }
+  ],
+  "conventionnement": [
+    "Sur tp-isante.fr, ouvrir le formulaire de demande de conventionnement et choisir la catégorie Opticien.",
+    "Renseigner l'identifiant FINESS ou Adeli, le numéro RPPS, la raison sociale, le SIRET, l'enseigne ou le groupement, le contact, le logiciel utilisé et les coordonnées bancaires.",
+    "Déposer les pièces : RIB au nom et à l'adresse du magasin, Kbis de moins de 3 mois, attestation Adeli de l'ARS, attestation CPAM, pièce d'identité du gérant, convention signée à partir du modèle proposé.",
+    "Accepter la convention et valider. Un e-mail confirme la demande et donne les modalités de création du compte.",
+    "Créer l'accès à l'espace sécurisé (« Je souhaite créer mon compte ») avec l'identifiant FINESS ou Adeli, la raison sociale, le code postal, une adresse e-mail et un mot de passe."
+  ],
+  "statuts": [
+    {
+      "libelle": "Accepté / Accord N° …",
+      "sens": "La complémentaire s'engage sur le montant",
+      "action": "Imprimer l'accord, délivrer l'équipement, puis facturer"
+    },
+    {
+      "libelle": "En instance / en attente / en cours de traitement",
+      "sens": "La demande est encore étudiée",
+      "action": "Attendre, puis vérifier l'état dans la consultation des demandes"
+    },
+    {
+      "libelle": "Refusé",
+      "sens": "Pas de prise en charge en l'état",
+      "action": "Lire le motif, corriger, refaire la demande"
+    },
+    {
+      "libelle": "Annulée",
+      "sens": "La demande n'est plus active",
+      "action": "Refaire une demande si besoin"
+    },
+    {
+      "libelle": "Mutuelle absente du « Choix de l'AMC »",
+      "sens": "La prise en charge de cette mutuelle ne passe pas par iSanté",
+      "action": "Vérifier la plateforme de tiers payant indiquée sur la carte du patient"
+    }
+  ],
+  "statutsSource": "granit-connecteur",
+  "contacts": [
+    {
+      "label": "Téléphone",
+      "valeur": "0 820 03 12 43",
+      "detail": "Numéro iSanté publié par Cegedim Assurances",
+      "source": "ca-coordonnees"
+    },
+    {
+      "label": "Pas encore conventionné",
+      "valeur": "Formulaire de demande de conventionnement",
+      "url": "https://www.tp-isante.fr/login#/request-conv",
+      "source": "isante-conv"
+    },
+    {
+      "label": "Questions fréquentes",
+      "valeur": "Questions/Réponses de tp-isante.fr",
+      "url": "https://www.tp-isante.fr/login#/faq/",
+      "source": "isante-faq"
+    },
+    {
+      "label": "Adresse",
+      "valeur": "114-116 rue d'Aguesseau, 92100 Boulogne-Billancourt",
+      "detail": "Autre site : 136 rue du Gros Moulin, 45200 Amilly",
+      "source": "ca-coordonnees"
+    }
+  ],
+  "organismes": {
+    "source": "granit-connecteur",
+    "note": "Liste du sélecteur d'organisme du portail optique, relevée par les agents Granit. Formuler : « ce que propose le sélecteur du portail », jamais « cette mutuelle passe uniquement par iSanté ».",
+    "liste": [
+      "AGRICA - MSA",
+      "baloo",
+      "BCAC",
+      "CARCEPT Prev - KLESIA MUT",
+      "Cegema",
+      "CGRM",
+      "COGEVIE",
+      "ENTIS",
+      "FORTEGO",
+      "GESTASSUR",
+      "GESTINEO",
+      "GPMA Hospi",
+      "IGESTION",
+      "IRCEM",
+      "KLESIA",
+      "KLESIA Mut' (CSR: 003)",
+      "LA BANQUE POSTALE PREVOYANCE",
+      "LA MUTUELLE FAMILIALE",
+      "Les Cuisiniers de France",
+      "MFCF - Mut. Fam. Chem. de France",
+      "MHV / TERRITORIA MUTUELLE",
+      "MMA Entreprise",
+      "MNH",
+      "MSG",
+      "MUTUALIA - MSA",
+      "Mutuelle de Pontoise",
+      "Mutuelle GEODIS",
+      "MUTUELLE JUST",
+      "MUTUELLE MARSEILLE METROPOLE",
+      "Mutuelle PREVIFRANCE",
+      "Mutuelle SMIRSEP",
+      "MUTUELLES DU SOLEIL",
+      "Néoliane Santé",
+      "PACIFICA - MSA",
+      "Santiane",
+      "SGSANTE",
+      "SMABTP",
+      "UNEO",
+      "VERSPIEREN",
+      "WTW France(Ex Gras Savoye)"
+    ]
+  },
+  "sources": {
+    "isante-site": {
+      "label": "tp-isante.fr · page d'accueil",
+      "url": "https://www.tp-isante.fr/",
+      "consulte": "2026-10-07"
+    },
+    "isante-faq": {
+      "label": "tp-isante.fr · Questions/Réponses",
+      "url": "https://www.tp-isante.fr/login#/faq/",
+      "consulte": "2026-10-07"
+    },
+    "isante-conv": {
+      "label": "tp-isante.fr · Formulaire de demande de conventionnement (catégorie Opticien)",
+      "url": "https://www.tp-isante.fr/login#/request-conv",
+      "consulte": "2026-10-07"
+    },
+    "isante-amc": {
+      "label": "tp-isante.fr · Liste des organismes complémentaires (catégorie Opticien)",
+      "url": "https://www.tp-isante.fr/login#/amc/list",
+      "consulte": "2026-10-07"
+    },
+    "ca-marques": {
+      "label": "cegedim-assurances.com · Nos marques",
+      "url": "https://www.cegedim-assurances.com/fr-fr/references-societe/Pages/nos-marques.aspx",
+      "consulte": "2026-10-07"
+    },
+    "ca-tiers-payant": {
+      "label": "cegedim-assurances.com · Gestion externalisée du tiers payant",
+      "url": "https://www.cegedim-insurance.com/fr-FR/solutions-services/services/Pages/e-tiers-payant.aspx",
+      "consulte": "2026-10-07"
+    },
+    "ca-sinistralite": {
+      "label": "cegedim-assurances.com · Contrôles tarifaires et détection des fraudes",
+      "url": "https://www.cegedim-assurances.com/fr-fr/vos-enjeux/Pages/maitriser-votre-sinistralite.aspx",
+      "consulte": "2026-10-07"
+    },
+    "ca-coordonnees": {
+      "label": "cegedim-insurance.com · Nos coordonnées",
+      "url": "https://www.cegedim-insurance.com/fr-fr/Pages/coordonnees.aspx",
+      "consulte": "2026-10-07"
+    },
+    "cp-entis": {
+      "label": "cegedim.fr · Communiqué Cegedim Assurances et groupe Entis (7 mai 2026)",
+      "url": "https://www.cegedim.fr/Communique/CegedimAssurances_Entis_07052026.pdf",
+      "consulte": "2026-10-07"
+    },
+    "granit-connecteur": {
+      "label": "Connecteur iSanté de Granit (relevé du 07/10/2026)",
+      "url": "",
+      "consulte": "2026-10-07"
+    }
+  }
+}
