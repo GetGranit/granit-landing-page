@@ -1,5 +1,5 @@
 import type { Demande } from "./DemandePec";
-import { ApercuBadge, Reassure } from "./ui";
+import { ApercuBadge } from "./ui";
 
 /** Les demandes lancées depuis l'espace (maquette), sous la 1re PEC. */
 export function MesDemandes({
@@ -40,23 +40,6 @@ export function MesDemandes({
             </button>
           </li>
         ))}
-      </ul>
-    </div>
-  );
-}
-
-/** L'offre gratuite, en texte : aucune logique de paiement. */
-export function Offre({ className = "" }: { className?: string }) {
-  return (
-    <div className={`rounded-[22px] p-5 sm:p-6 ${className}`} style={{ background: "var(--bg2)" }}>
-      <div className="eyebrow mb-3">Votre offre</div>
-      <p className="font-serif text-[22px] leading-[1.25]">
-        Gratuit : vos 20 premières PEC ou 14 jours,{" "}
-        <span className="accent-italic">PEC seulement</span>, sans carte bancaire.
-      </p>
-      <ul className="mt-4 space-y-1.5">
-        <Reassure>Aucune carte bancaire demandée</Reassure>
-        <Reassure>Vos accès restent visibles et supprimables dans votre espace</Reassure>
       </ul>
     </div>
   );

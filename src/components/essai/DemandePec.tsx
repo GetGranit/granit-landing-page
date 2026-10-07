@@ -1,9 +1,15 @@
 import { useState } from "react";
 
 import { DOSSIERS_FICTIFS, euros, type DossierFictif } from "@/lib/pec/essaiState";
+import { QUOTA } from "./quotaStore";
 import { ApercuBadge, Card, Kicker, PopCheck, Row, TextButton, Title } from "./ui";
 
-export type Demande = { dossier: DossierFictif; statut: "en-cours" | "accordee" };
+export type Demande = {
+  dossier: DossierFictif;
+  statut: "en-cours" | "accordee";
+  /** Rang dans les PEC offertes (1 à 20). */
+  rang: number;
+};
 
 type Props = {
   logiciel: string | null;
@@ -137,6 +143,12 @@ function Suivi({
           </p>
           <ApercuBadge />
         </div>
+        <p
+          className="num-tabular mt-1 text-[12px]"
+          style={{ color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}
+        >
+          PEC offerte {demande.rang} / {QUOTA}
+        </p>
         <ol className="mt-4 space-y-3" aria-live="polite">
           <Etape done label={`Demande envoyée sur ${portail ?? "le portail"}`} />
           <Etape done={accordee} label={accordee ? "Accordée par la mutuelle" : "En cours…"} />

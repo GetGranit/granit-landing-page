@@ -50,6 +50,8 @@ export type PecCase = {
   /** Pour l'accueil, si /pec les connaît un jour (facultatifs). */
   prenom?: string;
   magasin?: string;
+  /** Compte gratuit créé sur /pec (« Créer mon compte gratuit »). Jamais de mot de passe. */
+  compte?: { email: string; creeLe: string };
 };
 
 export const CASE_KEY = "granit.pec.case";
@@ -98,7 +100,7 @@ export const EXAMPLE_CASE: PecCase = {
   amc: null,
   reseau: null,
   platform: VIAMEDIS,
-  portailConnecte: false,
+  portailConnecte: true,
   simulation: EXAMPLE_SIMULATION,
 };
 
@@ -154,6 +156,14 @@ function toSimulation(v: unknown): PecSimulation | undefined {
   };
 }
 
+function toCompte(v: unknown): PecCase["compte"] {
+  if (!v || typeof v !== "object") return undefined;
+  const c = v as Record<string, unknown>;
+  const email = str(c.email);
+  const creeLe = str(c.creeLe);
+  return email && creeLe ? { email, creeLe } : undefined;
+}
+
 /** Recopie champ par champ : tout ce qui n'est pas au contrat est ignoré. */
 export function sanitizeCase(v: unknown): PecCase | null {
   if (!v || typeof v !== "object") return null;
@@ -172,6 +182,7 @@ export function sanitizeCase(v: unknown): PecCase | null {
     minutesManuelles: minutes !== null && minutes > 0 ? minutes : undefined,
     prenom: str(c.prenom) ?? undefined,
     magasin: str(c.magasin) ?? undefined,
+    compte: toCompte(c.compte),
   };
 }
 
@@ -235,11 +246,12 @@ export type ContactRequest = { type: "rappel" | "creneau"; phone?: string };
  */
 export async function contactPaul(req: ContactRequest, c: PecCase): Promise<void> {
   if (req.phone) writePhone(req.phone);
-  if (!c.email) return;
+  const email = c.email ?? c.compte?.email;
+  if (!email) return;
   const { sendPecLead } = await import("./lead");
   await sendPecLead({
     kind: req.type,
-    email: c.email,
+    email,
     phone: req.phone ?? readPhone() ?? undefined,
     platform: c.platform?.id ?? null,
   });
@@ -264,29 +276,6 @@ export const DOSSIERS_FICTIFS = [
 ] as const;
 
 export type DossierFictif = (typeof DOSSIERS_FICTIFS)[number];
-
-export type Readiness = { label: string; done: boolean }[];
-
-/** « Votre espace est prêt à X % » : uniquement ce qui est réellement fait sur la page. */
-export function readiness(input: {
-  simulation: boolean;
-  portailCarte: boolean;
-  carteLabel: string | null;
-  logiciel: boolean;
-  autresPortails: number;
-}): { items: Readiness; percent: number } {
-  const items: Readiness = [
-    { label: "Votre 1re PEC simulée", done: input.simulation },
-    {
-      label: input.carteLabel ? `Portail ${input.carteLabel}` : "Un portail TP",
-      done: input.portailCarte,
-    },
-    { label: "Logiciel métier demandé", done: input.logiciel },
-    { label: "Un autre portail", done: input.autresPortails > 0 },
-  ];
-  const percent = Math.round((items.filter((i) => i.done).length / items.length) * 100);
-  return { items, percent };
-}
 
 export function euros(n: number): string {
   return n.toLocaleString("fr-FR", { style: "currency", currency: "EUR" });
