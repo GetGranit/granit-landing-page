@@ -7,9 +7,9 @@ export const Route = createFileRoute("/privacy")({
   head: () => ({
     meta: [
       { title: "Politique de confidentialité - Granit AI" },
-      { name: "description", content: "Quelles données Granit AI collecte, comment elles sont utilisées, conservées et protégées, y compris les données des comptes Google." },
+      { name: "description", content: "Données personnelles traitées par Granit AI : finalités, conservation, sécurité et droits des personnes." },
       { property: "og:title", content: "Politique de confidentialité - Granit AI" },
-      { property: "og:description", content: "Politique de confidentialité Granit AI, données Google comprises." },
+      { property: "og:description", content: "Politique de confidentialité Granit AI - Version 1.1." },
     ],
   }),
   component: PrivacyPage,
@@ -32,145 +32,110 @@ const content: Record<"fr" | "en", Content> = {
   fr: {
     eyebrow: "Mentions légales",
     title: "Politique de confidentialité",
-    version: "Version 1.0 — En vigueur au 7 octobre 2026",
+    version: "Version 1.1 — Applicable au site getgranit.ai et à l'application app.getgranit.ai",
     intro: [
-      "Granit AI édite une plateforme d'agents d'intelligence artificielle destinée aux professionnels de santé (opticiens, audioprothésistes, établissements de soins). Cette politique explique quelles données nous collectons, pourquoi, comment nous les utilisons, les conservons, les partageons et les protégeons, et quels sont vos droits. Elle s'applique au site www.getgranit.ai et à l'application app.getgranit.ai.",
-      "Pour toute question : contact@getgranit.ai.",
+      "La présente politique décrit les données personnelles traitées par Granit AI (le « Prestataire »), leurs finalités, leur durée de conservation et les droits des personnes concernées. Elle complète les Conditions Générales de Vente (CGV) et la page Sécurité, auxquelles elle renvoie.",
     ],
     sections: [
-      { title: "1. Qui sommes-nous", body: [
-        "Granit AI, Paris, France (contact@getgranit.ai).",
-        "Pour les données que nos clients nous confient dans le cadre du service (données de leurs patients, de leurs magasins, de leurs comptes sur des plateformes tierces), Granit AI agit en qualité de sous-traitant au sens de l'article 28 du RGPD : le client professionnel est responsable de traitement. Pour les données des visiteurs du site et des utilisateurs de l'application (comptes, contacts commerciaux), Granit AI est responsable de traitement.",
+      { title: "1. Rôles", body: [
+        "Pour les données que le Client confie au Service (données de ses patients, de ses magasins, de ses comptes sur des plateformes tierces), le Prestataire agit en qualité de Sous-traitant (art. 28 RGPD) et le Client est Responsable de traitement, conformément à l'article 9 des CGV.",
+        "Pour les données de ses propres contacts (utilisateurs de l'application, demandes de démo), le Prestataire est Responsable de traitement.",
       ] },
-      { title: "2. Données que nous collectons", body: [
-        "• Données de compte : nom, adresse e-mail professionnelle et rôle des utilisateurs de l'application.",
-        "• Données de contact : informations transmises via le formulaire de demande de démo (nom, e-mail, téléphone, structure, message).",
-        "• Identifiants de connexion : les accès que le client enregistre pour permettre aux agents de travailler pour lui (logiciel métier, plateformes de tiers payant, banque, messagerie). Ils sont chiffrés et stockés dans un coffre-fort de secrets.",
-        "• Données traitées par les agents : informations nécessaires à la tâche confiée (par exemple bénéficiaire, numéro de sécurité sociale, organisme complémentaire, devis, factures, paiements), lues dans les outils du client.",
-        "• Données techniques : journaux de connexion et d'exécution nécessaires à la sécurité et au bon fonctionnement du service.",
+      { title: "2. Données traitées", body: [
+        "• Comptes : nom, e-mail professionnel et rôle des utilisateurs de l'application.",
+        "• Contacts commerciaux : informations transmises via le formulaire de demande de démo.",
+        "• Accès du Client : identifiants et autorisations des outils que les agents utilisent pour son compte (voir section 3).",
+        "• Données métier : informations nécessaires à la tâche confiée (bénéficiaire, organisme complémentaire, devis, factures, paiements…), lues dans les outils du Client.",
+        "• Journaux : traces horodatées de chaque action d'agent et des connexions, pour la sécurité et l'auditabilité du Service.",
       ] },
-      { title: "3. Données des comptes Google (Gmail)", body: [
-        "Lorsqu'un client connecte une boîte Gmail à Granit via « Se connecter avec Google », nous demandons uniquement les autorisations suivantes :",
-        "• https://www.googleapis.com/auth/gmail.readonly — lecture des e-mails ;",
-        "• https://www.googleapis.com/auth/gmail.send — envoi d'e-mails au nom du client ;",
-        "• openid et email — l'adresse e-mail du compte connecté, pour l'afficher au client et identifier la boîte.",
-        "Utilisation : Granit lit uniquement les e-mails nécessaires à la tâche configurée par le client, en recherchant des expéditeurs précis. Il s'agit principalement des codes de vérification (double authentification) envoyés par les plateformes de tiers payant et les logiciels du client, qui permettent à nos agents de se connecter à ces plateformes pour son compte ; et, lorsque le client l'a demandé, des documents professionnels reçus par e-mail (factures fournisseurs, avis de paiement). Envoi : lorsque le client l'a configuré, Granit envoie depuis sa boîte les e-mails liés à cette tâche (par exemple une relance ou une demande adressée à un organisme, un patient ou un fournisseur), avec le contenu et les destinataires définis par le client ou validés par lui. Granit ne lit pas les autres e-mails, n'envoie aucun e-mail publicitaire ou étranger au service, ne modifie ni ne supprime aucun message.",
-        "Stockage : nous conservons le jeton d'autorisation (refresh token) fourni par Google, chiffré dans Google Cloud Secret Manager, hébergé dans l'Union européenne. Nous ne conservons pas le contenu des e-mails reçus : un code de vérification est utilisé immédiatement puis écarté ; un document professionnel n'est conservé que s'il fait partie du résultat demandé par le client, avec les autres données du service.",
-        "Partage : les données Google ne sont ni vendues, ni louées, ni partagées avec des tiers, ni utilisées à des fins publicitaires. Elles ne sont transmises qu'aux sous-traitants techniques nécessaires au fonctionnement du service (hébergement), dans l'Union européenne. Aucun humain ne lit ces e-mails, sauf accord explicite du client pour résoudre un incident, pour des raisons de sécurité ou pour respecter la loi.",
-        "Intelligence artificielle : les données issues des API Google ne sont jamais utilisées pour développer, améliorer ou entraîner des modèles d'intelligence artificielle ou d'apprentissage automatique généralistes.",
-        "Engagement « Limited Use » : l'utilisation et le transfert par Granit AI des informations reçues des API Google respectent la Google API Services User Data Policy, y compris les exigences de « Limited Use ».",
+      { title: "3. Outils connectés", body: [
+        "Pour réaliser les tâches confiées, les agents se connectent, pour le compte du Client, aux outils qu'il a autorisés : logiciel métier, plateformes de tiers payant, banque, messagerie (Gmail, Outlook, IMAP)… Ils n'accèdent qu'aux informations nécessaires à la tâche configurée par le Client et n'y réalisent que les actions qu'il a configurées ou validées. Les accès (identifiants ou autorisations OAuth) sont conservés chiffrés et révocables à tout moment depuis la page Accès de l'application ou auprès de l'éditeur de l'outil.",
+        "Pour une messagerie, les agents lisent les e-mails utiles à la tâche (par exemple les codes de double authentification des plateformes ou les factures reçues) et envoient ceux que le Client a configurés ; le contenu des e-mails reçus n'est conservé que s'il fait partie du résultat demandé. Pour Gmail, le Service demande les autorisations gmail.readonly, gmail.send, openid et email.",
         LIMITED_USE,
-        "Révocation : le client peut retirer l'accès à tout moment depuis la page Accès de l'application Granit, ou depuis https://myaccount.google.com/permissions. Le jeton est alors inutilisable, et nous le supprimons sur simple demande ou à la fin du contrat.",
       ] },
       { title: "4. Finalités et bases légales", body: [
-        "• Exécuter le service souscrit par le client (exécution du contrat) : faire fonctionner les agents, se connecter aux outils du client, produire les résultats demandés.",
-        "• Sécuriser le service et prévenir les abus (intérêt légitime).",
-        "• Répondre aux demandes de démo et de contact (intérêt légitime, ou consentement lorsque la loi l'exige).",
-        "• Respecter nos obligations légales (obligation légale).",
-        "Les données de santé sont traitées pour le compte du client professionnel de santé, dans le cadre de l'article 9 du RGPD et du Code de la santé publique.",
+        "• Fournir le Service souscrit (exécution du contrat).",
+        "• Sécuriser le Service et tracer les actions des agents (intérêt légitime).",
+        "• Répondre aux demandes de démo et de contact (intérêt légitime).",
+        "• Respecter les obligations légales du Prestataire (obligation légale).",
+        "Les données de santé sont traitées pour le compte du Client dans le cadre de l'article 9 du RGPD et du Code de la santé publique.",
       ] },
-      { title: "5. Partage des données", body: [
-        "Nous ne vendons aucune donnée. Les données ne sont partagées qu'avec :",
-        "• nos sous-traitants techniques (hébergement cloud, fournisseurs de modèles d'IA hébergés en Europe), liés par contrat et soumis à des obligations de confidentialité et de sécurité ;",
-        "• les plateformes et logiciels que le client nous demande d'utiliser pour son compte (par exemple une plateforme de tiers payant pour une demande de prise en charge) ;",
-        "• les autorités, lorsque la loi l'impose.",
+      { title: "5. Sous-traitants et partage", body: [
+        "Le Prestataire ne cède, ne revend ni n'exploite les données à des fins propres. Il recourt à des prestataires techniques (hébergement, modèles d'intelligence artificielle) dans les conditions de l'article 5 des CGV : hébergement au sein de l'Union européenne, niveau de sécurité et de conformité maintenu. Les données sont également transmises aux plateformes que le Client demande d'utiliser pour son compte, et aux autorités lorsque la loi l'impose.",
       ] },
-      { title: "6. Hébergement et transferts", body: [
-        "Les données sont hébergées dans l'Union européenne. Aucun transfert hors de l'Union européenne n'est effectué sans garanties appropriées au sens du RGPD.",
+      { title: "6. Hébergement et sécurité", body: [
+        "Les données sont hébergées au sein de l'Union européenne, chez un hébergeur certifié HDS, sans transfert hors UE. Elles sont chiffrées en transit et au repos, les accès sont restreints selon le principe du moindre privilège et chaque action d'agent est journalisée. Le détail des garanties figure sur la page Sécurité (getgranit.ai/securite).",
+        "Aucune donnée patient n'est utilisée pour entraîner des modèles tiers ; les modèles utilisés sont hébergés en Europe.",
       ] },
-      { title: "7. Durée de conservation", body: [
-        "• Données du service : pendant la durée du contrat, puis restituées et supprimées dans les 30 jours suivant sa fin (voir l'article 10 des CGV).",
-        "• Identifiants et jetons d'autorisation : jusqu'à leur révocation par le client ou la fin du contrat.",
-        "• Contenu des e-mails : non conservé, sauf document faisant partie du résultat demandé (voir section 3).",
-        "• Demandes de contact : 3 ans après le dernier échange.",
-        "• Journaux techniques : 12 mois maximum.",
+      { title: "7. Durées de conservation", body: [
+        "• Données du Service : pendant la durée du contrat, puis restituées et supprimées dans les 30 jours suivant sa fin (article 10 des CGV).",
+        "• Accès et jetons d'autorisation : jusqu'à leur révocation par le Client ou la fin du contrat.",
+        "• Contacts commerciaux : 3 ans après le dernier échange.",
       ] },
-      { title: "8. Sécurité", body: [
-        "Chiffrement en transit (TLS) et au repos, secrets stockés dans un coffre-fort dédié, accès restreints selon le principe du moindre privilège, isolation des données par client, journalisation des accès. Plus de détails sur la page Sécurité : https://www.getgranit.ai/securite.",
+      { title: "8. Droits des personnes", body: [
+        "Toute personne dispose d'un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité, à exercer auprès de contact@getgranit.ai. Lorsque le Prestataire agit comme Sous-traitant, il transmet la demande au Client et l'aide à y répondre. Une réclamation peut être introduite auprès de la CNIL (cnil.fr).",
+        "En cas de violation de données, le Prestataire notifie la CNIL sous 72 heures et informe les Clients concernés.",
       ] },
-      { title: "9. Vos droits", body: [
-        "Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité de vos données. Pour les exercer, écrivez à contact@getgranit.ai. Lorsque Granit AI agit comme sous-traitant, nous transmettons la demande au client responsable de traitement et l'aidons à y répondre.",
-        "Vous pouvez également introduire une réclamation auprès de la CNIL (www.cnil.fr).",
-      ] },
-      { title: "10. Cookies", body: [
-        "Le site et l'application utilisent uniquement les cookies et le stockage local nécessaires à leur fonctionnement (session de connexion, préférence de langue). Aucun cookie publicitaire n'est utilisé.",
-      ] },
-      { title: "11. Modifications", body: [
-        "Nous pouvons mettre à jour cette politique. La date de version en haut de page indique la dernière mise à jour. En cas de changement important, notamment sur l'utilisation des données Google, nous en informons les clients concernés.",
-      ] },
+      { title: "9. Cookies", body: [
+        "Seuls les cookies et le stockage local nécessaires au fonctionnement du site et de l'application sont utilisés (session, préférence de langue). Aucun cookie publicitaire."] },
+      { title: "10. Modifications", body: [
+        "Le Prestataire peut modifier la présente politique. La version en vigueur est celle publiée sur cette page ; toute évolution significative est notifiée aux Clients concernés."] },
     ],
-    end: "Fin de la politique de confidentialité Granit AI — Version 1.0",
+    end: "Fin de la politique de confidentialité Granit AI — Version 1.1",
   },
   en: {
     eyebrow: "Legal",
     title: "Privacy Policy",
-    version: "Version 1.0 — Effective October 7, 2026",
+    version: "Version 1.1 — Applicable to the getgranit.ai website and the app.getgranit.ai application",
     intro: [
-      "Granit AI provides an AI agent platform for healthcare professionals (opticians, hearing care professionals, care facilities). This policy explains what data we collect, why, how we use, store, share and protect it, and what your rights are. It applies to the website www.getgranit.ai and the application app.getgranit.ai.",
-      "Questions: contact@getgranit.ai.",
+      "This policy describes the personal data processed by Granit AI (the \"Provider\"), its purposes, retention periods and the rights of data subjects. It supplements the General Terms and Conditions (GTC) and the Security page, to which it refers.",
     ],
     sections: [
-      { title: "1. Who we are", body: [
-        "Granit AI, Paris, France (contact@getgranit.ai).",
-        "For data our clients entrust to us as part of the service (their patients' data, their stores' data, their accounts on third-party platforms), Granit AI acts as a processor under article 28 GDPR; the professional client is the controller. For data about website visitors and application users (accounts, business contacts), Granit AI is the controller.",
+      { title: "1. Roles", body: [
+        "For data the Client entrusts to the Service (its patients', stores' and third-party platform accounts' data), the Provider acts as Processor (art. 28 GDPR) and the Client is the Controller, in accordance with article 9 of the GTC.",
+        "For data about its own contacts (application users, demo requests), the Provider is the Controller.",
       ] },
-      { title: "2. Data we collect", body: [
-        "• Account data: name, professional email address and role of application users.",
-        "• Contact data: information submitted through the demo request form (name, email, phone, organization, message).",
-        "• Login credentials: the access the client registers so agents can work on its behalf (practice software, third-party payer platforms, bank, mailbox). They are encrypted and stored in a secrets vault.",
-        "• Data processed by agents: information needed for the assigned task (for example beneficiary, social security number, complementary insurer, quotes, invoices, payments), read from the client's tools.",
-        "• Technical data: connection and execution logs needed for security and proper operation of the service.",
+      { title: "2. Data processed", body: [
+        "• Accounts: name, professional email and role of application users.",
+        "• Business contacts: information submitted through the demo request form.",
+        "• Client access: credentials and authorizations for the tools agents use on the Client's behalf (see section 3).",
+        "• Business data: information needed for the assigned task (beneficiary, complementary insurer, quotes, invoices, payments…), read from the Client's tools.",
+        "• Logs: timestamped records of every agent action and connection, for the security and auditability of the Service.",
       ] },
-      { title: "3. Google account data (Gmail)", body: [
-        "When a client connects a Gmail mailbox to Granit using \"Sign in with Google\", we request only the following permissions:",
-        "• https://www.googleapis.com/auth/gmail.readonly — read access to emails;",
-        "• https://www.googleapis.com/auth/gmail.send — send emails on the client's behalf;",
-        "• openid and email — the email address of the connected account, to display it to the client and identify the mailbox.",
-        "Use: Granit reads only the emails needed for the task configured by the client, by searching for specific senders. These are mainly verification codes (two-factor authentication) sent by third-party payer platforms and the client's software, which allow our agents to sign in to those platforms on the client's behalf; and, when the client requested it, business documents received by email (supplier invoices, payment notices). Sending: when the client has configured it, Granit sends emails related to that task from the client's mailbox (for example a follow-up or a request addressed to an insurer, a patient or a supplier), with content and recipients defined or approved by the client. Granit does not read other emails, never sends advertising or emails unrelated to the service, and does not modify or delete any message.",
-        "Storage: we keep the authorization token (refresh token) issued by Google, encrypted in Google Cloud Secret Manager, hosted in the European Union. We do not keep the content of received emails: a verification code is used immediately and then discarded; a business document is kept only if it is part of the output requested by the client, alongside the other service data.",
-        "Sharing: Google user data is not sold, rented, shared with third parties or used for advertising. It is only transmitted to the technical processors required to run the service (hosting), within the European Union. No human reads these emails, unless the client explicitly agrees in order to resolve an incident, for security purposes, or to comply with the law.",
-        "Artificial intelligence: data obtained through Google APIs is never used to develop, improve or train generalized artificial intelligence or machine learning models.",
+      { title: "3. Connected tools", body: [
+        "To perform the assigned tasks, agents connect, on the Client's behalf, to the tools the Client has authorized: practice software, third-party payer platforms, bank, mailbox (Gmail, Outlook, IMAP)… They access only the information needed for the task configured by the Client and only perform the actions the Client has configured or approved. Access (credentials or OAuth authorizations) is stored encrypted and can be revoked at any time from the Access page of the application or with the tool's provider.",
+        "For a mailbox, agents read the emails relevant to the task (for example two-factor authentication codes from platforms or received invoices) and send those configured by the Client; the content of received emails is kept only if it is part of the requested output. For Gmail, the Service requests the gmail.readonly, gmail.send, openid and email permissions.",
         LIMITED_USE,
-        "Revocation: the client can remove access at any time from the Access page of the Granit application, or from https://myaccount.google.com/permissions. The token then becomes unusable, and we delete it upon request or at the end of the contract.",
       ] },
       { title: "4. Purposes and legal bases", body: [
-        "• Deliver the service subscribed by the client (performance of contract): run the agents, connect to the client's tools, produce the requested outputs.",
-        "• Secure the service and prevent abuse (legitimate interest).",
-        "• Answer demo and contact requests (legitimate interest, or consent where required by law).",
-        "• Comply with our legal obligations (legal obligation).",
-        "Health data is processed on behalf of the healthcare professional client, under article 9 GDPR and the French Public Health Code.",
+        "• Deliver the subscribed Service (performance of contract).",
+        "• Secure the Service and trace agent actions (legitimate interest).",
+        "• Answer demo and contact requests (legitimate interest).",
+        "• Comply with the Provider's legal obligations (legal obligation).",
+        "Health data is processed on behalf of the Client under article 9 GDPR and the French Public Health Code.",
       ] },
-      { title: "5. Data sharing", body: [
-        "We do not sell any data. Data is shared only with:",
-        "• our technical processors (cloud hosting, AI model providers hosted in Europe), bound by contract and subject to confidentiality and security obligations;",
-        "• the platforms and software the client asks us to use on its behalf (for example a third-party payer platform for a coverage request);",
-        "• authorities, when required by law.",
+      { title: "5. Processors and sharing", body: [
+        "The Provider does not transfer, resell or exploit data for its own purposes. It uses technical providers (hosting, artificial intelligence models) under the conditions of article 5 of the GTC: hosting within the European Union, security and compliance levels maintained. Data is also sent to the platforms the Client asks the Service to use on its behalf, and to authorities when required by law.",
       ] },
-      { title: "6. Hosting and transfers", body: [
-        "Data is hosted in the European Union. No transfer outside the European Union takes place without appropriate safeguards under the GDPR.",
+      { title: "6. Hosting and security", body: [
+        "Data is hosted within the European Union with an HDS-certified provider, with no transfer outside the EU. It is encrypted in transit and at rest, access follows the least-privilege principle and every agent action is logged. Full details are on the Security page (getgranit.ai/securite).",
+        "No patient data is used to train third-party models; the models used are hosted in Europe.",
       ] },
-      { title: "7. Retention", body: [
-        "• Service data: for the duration of the contract, then returned and deleted within 30 days after its end (see article 10 of the Terms).",
-        "• Credentials and authorization tokens: until revoked by the client or the end of the contract.",
-        "• Email content: not retained, except documents that are part of the requested output (see section 3).",
-        "• Contact requests: 3 years after the last exchange.",
-        "• Technical logs: 12 months maximum.",
+      { title: "7. Retention periods", body: [
+        "• Service data: for the duration of the contract, then returned and deleted within 30 days after its end (article 10 of the GTC).",
+        "• Access credentials and authorization tokens: until revoked by the Client or the end of the contract.",
+        "• Business contacts: 3 years after the last exchange.",
       ] },
-      { title: "8. Security", body: [
-        "Encryption in transit (TLS) and at rest, secrets stored in a dedicated vault, least-privilege access controls, per-client data isolation, access logging. More details on the Security page: https://www.getgranit.ai/securite.",
+      { title: "8. Data subject rights", body: [
+        "Everyone has the right to access, rectify, erase, restrict, object to and port their data, by writing to contact@getgranit.ai. When the Provider acts as Processor, it forwards the request to the Client and helps it respond. A complaint may be lodged with the CNIL (cnil.fr).",
+        "In the event of a data breach, the Provider notifies the CNIL within 72 hours and informs the affected Clients.",
       ] },
-      { title: "9. Your rights", body: [
-        "Under the GDPR, you have the right to access, rectify, erase, restrict, object to and port your data. To exercise these rights, email contact@getgranit.ai. When Granit AI acts as a processor, we forward the request to the client acting as controller and help it respond.",
-        "You may also lodge a complaint with the French data protection authority, the CNIL (www.cnil.fr).",
-      ] },
-      { title: "10. Cookies", body: [
-        "The website and application only use the cookies and local storage needed for them to work (login session, language preference). No advertising cookies are used.",
-      ] },
-      { title: "11. Changes", body: [
-        "We may update this policy. The version date at the top of the page shows the latest update. In case of a significant change, in particular regarding the use of Google data, we inform the affected clients.",
-      ] },
+      { title: "9. Cookies", body: [
+        "Only the cookies and local storage needed for the website and application to work are used (session, language preference). No advertising cookies."] },
+      { title: "10. Changes", body: [
+        "The Provider may modify this policy. The version in force is the one published on this page; any significant change is notified to the affected Clients."] },
     ],
-    end: "End of the Granit AI Privacy Policy — Version 1.0",
+    end: "End of the Granit AI Privacy Policy — Version 1.1",
   },
 };
 
