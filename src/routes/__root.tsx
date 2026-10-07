@@ -1,9 +1,10 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts, redirect } from "@tanstack/react-router";
-import type { ReactNode } from "react";
+import { useEffect, type ReactNode } from "react";
 import { PostHogProvider } from "posthog-js/react";
 import { LanguageProvider } from "@/lib/i18n";
 import { CursorDot } from "@/components/CursorDot";
 import { Seo } from "@/components/Seo";
+import { rememberAttribution } from "@/lib/attribution";
 
 import appCss from "../styles.css?url";
 
@@ -114,6 +115,11 @@ function RootDocument({ children }: { children: ReactNode }) {
 }
 
 function RootComponent() {
+  // Lien tracké (utm_*) : gardé pour l'envoyer avec le formulaire, même plus tard.
+  useEffect(() => {
+    rememberAttribution();
+  }, []);
+
   return (
     <LanguageProvider>
       <Seo />
