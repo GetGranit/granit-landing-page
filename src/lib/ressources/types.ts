@@ -10,6 +10,8 @@ export type CategorySlug =
   | "conformite"
   | "glossaire";
 
+export type VerticaleSlug = "optique" | "audio" | "pharmacie" | "dentaire" | "centres";
+
 export type LienInterne = { id?: string; slug: string; anchor: string; type: string };
 
 export type RessourceJson = {
@@ -40,6 +42,8 @@ export type RessourceJson = {
   liensEntrants: LienInterne[];
   /** Vague de la file (ajoutée à la lecture, sert au tri). */
   wave?: number;
+  /** Métiers concernés (facultatif ; par défaut l'optique). */
+  verticales?: VerticaleSlug[];
   /** Fichier de content/apercu, jamais en production. */
   preview?: boolean;
 };
@@ -75,4 +79,11 @@ export type Fiche = {
   ancien: boolean;
   preview: boolean;
   plateforme?: { nom: string; logo?: string; checkedOn: string };
+  /** Métiers de l'article ; tous les métiers si `transversal`. */
+  verticales: VerticaleSlug[];
+  transversal: boolean;
+  /** Étiquette de la carte quand elle n'est pas le nom court de la catégorie (anciens articles). */
+  etiquette?: string;
+  /** Ancien article rattaché à une catégorie du cocon (les autres n'ont qu'une teinte). */
+  rattache?: boolean;
 };

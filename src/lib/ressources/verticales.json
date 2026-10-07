@@ -1,0 +1,69 @@
+{
+  "ordre": ["optique", "audio", "pharmacie", "dentaire", "centres"],
+  "verticales": {
+    "optique": {
+      "nom": "Optique",
+      "court": "Optique",
+      "description": "Prises en charge, portails des plateformes, rejets et paiements : le tiers payant au comptoir d'un magasin d'optique.",
+      "alt": "Lunettes en écaille posées sur un linge blanc, leur ombre projetée sur un mur terracotta",
+      "teinte": "plateformes",
+      "agent": "L'agent dépose vos prises en charge"
+    },
+    "audio": {
+      "nom": "Audioprothèse",
+      "court": "Audio",
+      "description": "Renouvellements, classes d'appareils et période d'essai : facturer l'audioprothèse en tiers payant.",
+      "alt": "Coquillage clair posé sur un socle en bois à côté d'une coupelle, dans la lumière d'une fenêtre",
+      "teinte": "paiements",
+      "agent": "L'agent dépose vos prises en charge audio"
+    },
+    "pharmacie": {
+      "nom": "Pharmacie et EHPAD",
+      "court": "Pharmacie",
+      "description": "Créances de tiers payant, rejets et facturation en établissement : le back-office d'une officine ou d'un EHPAD.",
+      "alt": "Trois flacons de pharmacie en verre ambré et clair, un brin de feuillage et une enveloppe sur un rebord de fenêtre",
+      "teinte": "gerer-son-tiers-payant",
+      "agent": "L'agent lit les ordonnances et les fiches de traitement"
+    },
+    "dentaire": {
+      "nom": "Dentaire",
+      "court": "Dentaire",
+      "description": "Paniers 100 % Santé, devis et traitements longs : le tiers payant au cabinet dentaire.",
+      "alt": "Miroir de dentiste posé sur un plateau blanc, à côté de petits galets blancs disposés en arc",
+      "teinte": "conformite",
+      "agent": "Parlons de votre tiers payant"
+    },
+    "centres": {
+      "nom": "Centres de santé et cliniques",
+      "court": "Centres",
+      "description": "Facturation, recouvrement et outils d'un centre de santé, d'une clinique ou d'un groupe multi-sites.",
+      "alt": "Deux chaises en bois et une plante verte contre le mur clair d'un couloir de clinique",
+      "teinte": "guide-tiers-payant",
+      "agent": "L'agent tient l'agenda et le check-out à jour"
+    }
+  },
+  "surcharges": {
+    "portail-viamedis": ["optique", "audio", "dentaire"]
+  },
+  "anciens": {
+    "audioprothese-renouvellement-tiers-payant": ["audio"],
+    "officine-balance-agee-tiers-payant": ["pharmacie"],
+    "trois-boucles-pharmacie": ["pharmacie"],
+    "facturation-ehpad-controle-humain": ["pharmacie"],
+    "dentaire-paniers-100-sante-tiers-payant": ["dentaire"],
+    "orthodontie-facturation-traitements-longs": ["dentaire"],
+    "hopital-prive-ordonnancement": ["centres"],
+    "groupes-multi-sites-pilotage": ["centres"],
+    "recouvrement-patient-empathie": ["centres"],
+    "integration-doctolib-lgo": ["centres"],
+    "optique-tiers-payant-amc": ["optique"],
+    "portails-mutuelles-goulot": ["optique"],
+    "reduire-rejets-cpam": "tous",
+    "rapprochement-noemie": "tous",
+    "kpi-back-office-sante": "tous",
+    "logs-agent-sante": "tous",
+    "ia-generative-sante-cadre": "tous",
+    "ia-vs-rpa-sante": "tous",
+    "sesam-vitale-evolutions-2025": "tous"
+  }
+}

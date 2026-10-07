@@ -11,11 +11,23 @@ import type { Plugin, ViteDevServer } from "vite";
 import { controler, lireContenu } from "./en-ligne.mjs";
 import { articles as anciens } from "../../src/lib/articles";
 import anciensMeta from "../../src/lib/ressources/anciens.json";
+import verticalesData from "../../src/lib/ressources/verticales.json";
+import { teinteAncien } from "../../src/lib/ressources/verticales";
 import { coverSvg } from "../../src/lib/cover";
-import type { CategorySlug, Fiche, RessourceJson } from "../../src/lib/ressources/types";
+import type {
+  CategorySlug,
+  Fiche,
+  RessourceJson,
+  VerticaleSlug,
+} from "../../src/lib/ressources/types";
 
 const INDEX = "virtual:ressources";
 const ARTICLE = "virtual:ressources/article/";
+
+const surcharges = verticalesData.surcharges as Record<string, VerticaleSlug[]>;
+/** Métiers d'un article JSON : surcharge éditoriale, sinon le champ du fichier, sinon l'optique. */
+const verticalesDe = (a: RessourceJson): VerticaleSlug[] =>
+  surcharges[a.slug] ?? (a.verticales?.length ? a.verticales : ["optique"]);
 
 const estPilier = (level: string) => /^Pilier/.test(level ?? "");
 
@@ -36,6 +48,8 @@ function fiche(
     wave: a.wave ?? 99,
     ancien: false,
     preview: Boolean(a.preview),
+    verticales: verticalesDe(a),
+    transversal: false,
     plateforme:
       a.type === "plateforme" && fp
         ? { nom: fp.nom, logo: fp.logo, checkedOn: a.checkedOn ?? fp.checkedOn }
@@ -44,7 +58,7 @@ function fiche(
 }
 
 /**
- * Couvertures à produire : articles JSON affichés + anciens articles rattachés au cocon.
+ * Couvertures à produire : articles JSON affichés + anciens articles français.
  * Chacune en deux tailles : {slug}.svg (cartes) et {slug}--une.svg (grandes cartes, 800×500, trait réduit).
  */
 function couvertures(contenu: ReturnType<typeof lireContenu>) {
@@ -57,11 +71,9 @@ function couvertures(contenu: ReturnType<typeof lireContenu>) {
       platform: a.type === "plateforme",
     });
   }
-  const rattaches = anciensMeta.rattaches as Record<string, CategorySlug>;
   for (const a of anciens.fr) {
-    const category = rattaches[a.slug];
-    if (category && !sources.has(a.slug)) {
-      sources.set(a.slug, { slug: a.slug, category, title: a.title });
+    if (!sources.has(a.slug)) {
+      sources.set(a.slug, { slug: a.slug, category: teinteAncien(a.slug), title: a.title });
     }
   }
   const out = new Map<string, string>();

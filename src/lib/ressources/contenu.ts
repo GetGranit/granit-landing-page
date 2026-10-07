@@ -5,7 +5,8 @@ import { charger, fiches as fichesJson } from "virtual:ressources";
 import { articles, type Article } from "@/lib/articles";
 import categoriesData from "./categories.json";
 import anciensData from "./anciens.json";
-import type { CategorySlug, Fiche } from "./types";
+import type { CategorySlug, Fiche, VerticaleSlug } from "./types";
+import { ORDRE_VERTICALES, teinteAncien, verticale, verticalesAncien } from "./verticales";
 
 export type Categorie = {
   slug: CategorySlug;
@@ -34,10 +35,11 @@ export function descriptionCategorie(c: Categorie): string {
 
 const rattaches = anciensData.rattaches as Record<string, CategorySlug>;
 
-function ficheAncien(a: Article, category: CategorySlug): Fiche {
+function ficheAncien(a: Article): Fiche {
+  const rattache = rattaches[a.slug];
   return {
     slug: a.slug,
-    category,
+    category: rattache ?? teinteAncien(a.slug),
     title: a.title,
     readTime: a.time,
     metaDescription: a.desc,
@@ -45,18 +47,18 @@ function ficheAncien(a: Article, category: CategorySlug): Fiche {
     wave: 99,
     ancien: true,
     preview: false,
+    ...verticalesAncien(a.slug),
+    // Hors cocon, la carte porte le métier de l'ancien article (« Pharmacie »), pas une catégorie.
+    etiquette: rattache ? undefined : a.category,
+    rattache: Boolean(rattache),
   };
 }
 
-/** Anciens articles FR rattachés au cocon, dans l'ordre de articles.ts. */
-const anciensRattaches: Fiche[] = articles.fr
-  .filter((a) => rattaches[a.slug])
-  .map((a) => ficheAncien(a, rattaches[a.slug]));
+/** Tous les anciens articles FR, dans l'ordre de articles.ts. */
+const anciensFr: Fiche[] = articles.fr.map(ficheAncien);
 
-/** Les 14 anciens articles hors cocon, dans l'ordre de la spec (audioprothèse d'abord). */
-export const autresMetiers: Article[] = anciensData.autresMetiers
-  .map((s) => articles.fr.find((a) => a.slug === s))
-  .filter((a): a is Article => Boolean(a));
+/** Anciens articles FR rattachés à une catégorie du cocon. */
+const anciensRattaches: Fiche[] = anciensFr.filter((f) => f.rattache);
 
 /** Articles JSON en ligne (aperçu compris hors production). */
 export const fichesCocon: Fiche[] = fichesJson;
@@ -190,4 +192,24 @@ export function dateFr(iso: string | undefined, longue = false): string {
 
 export function tempsLecture(t: number | string): string {
   return typeof t === "number" ? `${t} min` : t;
+}
+
+/** Articles propres à un métier (hors transversaux) : JSON, puis anciens articles. */
+export function fichesVerticale(v: VerticaleSlug): Fiche[] {
+  const parTri = (a: Fiche, b: Fiche) =>
+    Number(b.pillar) - Number(a.pillar) || a.wave - b.wave || parTitre(a, b);
+  return [
+    ...fichesCocon.filter((f) => f.verticales.includes(v)).sort(parTri),
+    ...anciensFr.filter((f) => !f.transversal && f.verticales.includes(v)),
+  ];
+}
+
+/** Anciens articles valables pour tous les métiers. */
+export const fichesTransversales: Fiche[] = anciensFr.filter((f) => f.transversal);
+
+/** Métiers qui ont au moins un article propre, avec leur nombre d'articles. */
+export function verticalesActives() {
+  return ORDRE_VERTICALES.map((v) => ({ v: verticale(v)!, n: fichesVerticale(v).length })).filter(
+    (x) => x.n > 0,
+  );
 }

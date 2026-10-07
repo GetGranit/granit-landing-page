@@ -4,7 +4,7 @@ import {
   GLOSSAIRE_SLUG,
   ORDRE,
   aLaUne,
-  autresMetiers,
+  fichesTransversales,
   categoriesActives,
   ficheJson,
   fichesPlateformes,
@@ -15,6 +15,7 @@ import {
 import type { Fiche } from "@/lib/ressources/types";
 import { BandeDemo } from "./BandeDemo";
 import { CarteArticle, CartePetite, CarteUne, TuilePlateforme } from "./Cartes";
+import { VotreMetier } from "./Metiers";
 import { Onglets } from "./Onglets";
 
 const conteneur = "mx-auto max-w-[1280px] px-4 md:px-6";
@@ -57,7 +58,15 @@ export function Hub() {
             écrites par l'équipe qui automatise le tiers payant de magasins d'optique.
           </p>
           <ParProbleme />
-          <div className="mt-8 text-left">
+        </section>
+
+        <VotreMetier />
+
+        <section className={`${conteneur} pb-8 pt-14 text-center`}>
+          <h2 className="font-serif text-[24px] font-normal leading-tight md:text-[30px]">
+            Le guide du tiers payant optique
+          </h2>
+          <div className="mt-6 text-left">
             <Onglets actif="tout" centre />
           </div>
         </section>
@@ -153,7 +162,7 @@ export function Hub() {
           </section>
         )}
 
-        <AutresMetiers />
+        <PourTous vus={vus} rangees={rangees.flatMap((r) => r.fiches.slice(0, 3))} aussi={aussi} />
 
         <div className="pb-1">
           <BandeDemo />
@@ -262,46 +271,39 @@ function ParProbleme() {
   );
 }
 
-/** Les anciens articles hors optique : une sortie, pas une rubrique. */
-function AutresMetiers() {
-  const lien = (a: (typeof autresMetiers)[number]) => (
-    <li key={a.slug} className="border-t border-[var(--border)]">
-      <Link
-        to="/ressources/$slug"
-        params={{ slug: a.slug }}
-        className="group block py-3.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--terra)]"
-      >
-        <span className="font-mono text-[10.5px] uppercase tracking-[0.12em] text-[var(--text-muted)]">
-          {a.category}
-        </span>
-        <span className="mt-1 block text-[14.5px] font-medium leading-snug group-hover:underline group-hover:underline-offset-4">
-          {a.title}
-        </span>
-      </Link>
-    </li>
-  );
-  const grille = "grid gap-x-8 md:grid-cols-2 lg:grid-cols-3";
+/** Les articles valables pour tous les métiers, en liste compacte, sans ceux déjà montrés. */
+function PourTous({ vus, rangees, aussi }: { vus: Set<string>; rangees: Fiche[]; aussi: Fiche[] }) {
+  const montres = new Set([...vus, ...rangees.map((f) => f.slug), ...aussi.map((f) => f.slug)]);
+  const liste = fichesTransversales.filter((f) => !montres.has(f.slug));
+  if (!liste.length) return null;
   return (
     <section className={`${conteneur} pt-14`}>
-      <span className="eyebrow" style={{ color: "#6b6458" }}>
-        Hors optique
-      </span>
-      <h2 className="mt-2 font-serif text-[22px] font-normal leading-tight">
-        Autres métiers de santé
-      </h2>
-      <p className="mt-2 max-w-[60ch] text-[15px] text-[var(--text-soft)]">
-        Nos articles sur l'audioprothèse, l'officine, le dentaire, les laboratoires et les
-        établissements de soins.
-      </p>
-      <ul className={`mt-5 ${grille}`}>{autresMetiers.slice(0, 6).map(lien)}</ul>
-      {autresMetiers.length > 6 && (
-        <details className="mt-2">
-          <summary className="cursor-pointer py-2 text-[14px] font-semibold underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-[var(--terra)]">
-            Voir les {autresMetiers.length - 6} autres articles
-          </summary>
-          <ul className={grille}>{autresMetiers.slice(6).map(lien)}</ul>
-        </details>
-      )}
+      <div className="border-t border-[var(--border)] pt-5">
+        <span className="eyebrow" style={{ color: "#6b6458" }}>
+          Pour tous les métiers
+        </span>
+        <h2 className="mt-2 font-serif text-[22px] font-normal leading-tight">
+          Rejets, rapprochement, réglementation et outils
+        </h2>
+      </div>
+      <ul className="mt-5 grid gap-x-8 md:grid-cols-2 lg:grid-cols-3">
+        {liste.map((f) => (
+          <li key={f.slug} className="border-t border-[var(--border)]">
+            <Link
+              to="/ressources/$slug"
+              params={{ slug: f.slug }}
+              className="group block py-3.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--terra)]"
+            >
+              <span className="font-mono text-[10.5px] uppercase tracking-[0.12em] text-[var(--text-muted)]">
+                {f.etiquette}
+              </span>
+              <span className="mt-1 block text-[14.5px] font-medium leading-snug group-hover:underline group-hover:underline-offset-4">
+                {f.title}
+              </span>
+            </Link>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }

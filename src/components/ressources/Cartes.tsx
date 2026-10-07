@@ -171,7 +171,11 @@ export function CarteArticle({
       className={lienCarte}
       style={{ ["--ink" as string]: c.ink }}
     >
-      <Couverture fiche={fiche} etiquette={etiquette ?? c.court} prioritaire={prioritaire} />
+      <Couverture
+        fiche={fiche}
+        etiquette={etiquette ?? fiche.etiquette ?? c.court}
+        prioritaire={prioritaire}
+      />
       <h3 className="mt-4 line-clamp-3 font-serif text-[19px] font-normal leading-[1.25] tracking-[-0.01em] [text-wrap:balance] md:text-[20px]">
         <span className={survolTitre}>{fiche.title}</span>
       </h3>
@@ -188,7 +192,12 @@ export function CarteUne({ fiche, titre = "h2" }: { fiche: Fiche; titre?: "h2" |
   const H = titre;
   return (
     <Link to="/ressources/$slug" params={{ slug: fiche.slug }} className={lienCarte}>
-      <Couverture fiche={fiche} etiquette={c.court} format="une" prioritaire="haute" />
+      <Couverture
+        fiche={fiche}
+        etiquette={fiche.etiquette ?? c.court}
+        format="une"
+        prioritaire="haute"
+      />
       <H className="mt-5 max-w-[28ch] font-serif text-[clamp(26px,2.6vw,36px)] font-normal leading-[1.15] tracking-[-0.015em]">
         <TitreItalique titre={fiche.title} ink={c.ink} />
       </H>
@@ -246,7 +255,12 @@ export function CartePetite({ fiche }: { fiche: Fiche }) {
       className={lienCarte}
       style={{ ["--ink" as string]: c.ink }}
     >
-      <Couverture fiche={fiche} etiquette={c.court} format="petite" prioritaire="oui" />
+      <Couverture
+        fiche={fiche}
+        etiquette={fiche.etiquette ?? c.court}
+        format="petite"
+        prioritaire="oui"
+      />
       <h3 className="mt-3 line-clamp-3 font-serif text-[15px] font-normal leading-[1.3] md:text-[17px]">
         <span className={survolTitre}>{titreCourt(fiche.title)}</span>
       </h3>
