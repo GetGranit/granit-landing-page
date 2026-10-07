@@ -65,6 +65,10 @@
     "conformite": {
       "auteur": "jenny-mansour",
       "relecteur": "arthur-pelong"
+    },
+    "comparatifs": {
+      "auteur": "paul-pietra",
+      "relecteur": "jenny-mansour"
     }
   }
 }

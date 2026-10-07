@@ -38,19 +38,28 @@ export function articlesEnLigne(racine) {
 /**
  * Tout le contenu à afficher : articles en ligne, plus l'aperçu si `avecApercu`.
  * Un vrai fichier publié l'emporte sur un fichier d'aperçu du même slug.
- * Renvoie aussi les fichiers de faits des plateformes utilisées, et la liste des fichiers lus
+ * Renvoie aussi les fichiers de faits des plateformes et des acteurs comparés utilisés, et la liste des fichiers lus
  * (pour que le serveur de dev recharge quand ils changent).
  */
 export function lireContenu(racine, { avecApercu = false } = {}) {
   const lus = [join(racine, "scripts/seo-engine/articles-queue.json")];
   const articles = articlesEnLigne(racine);
   const plateformes = {};
+  const concurrents = {};
+  const lireConcurrents = (a) => {
+    for (const slug of a.concurrents ?? []) {
+      const p = join(racine, "content/concurrents", `${slug}.json`);
+      lus.push(p);
+      if (!concurrents[slug] && existsSync(p)) concurrents[slug] = lireJson(p);
+    }
+  };
   const lirePlateforme = (dossier, nom) => {
     const p = join(racine, dossier, `${nom}.json`);
     lus.push(p);
     if (!plateformes[nom] && existsSync(p)) plateformes[nom] = lireJson(p);
   };
   for (const a of articles) if (a.plateforme) lirePlateforme("content/plateformes", a.plateforme);
+  articles.forEach(lireConcurrents);
 
   if (avecApercu) {
     const publies = new Set(articles.map((a) => a.slug));
@@ -59,13 +68,14 @@ export function lireContenu(racine, { avecApercu = false } = {}) {
       const a = lireJson(p);
       if (publies.has(a.slug)) continue;
       articles.push({ ...a, preview: true });
+      lireConcurrents(a);
       if (a.plateforme) {
         lirePlateforme("content/plateformes", a.plateforme);
         lirePlateforme("content/apercu/plateformes", a.plateforme);
       }
     }
   }
-  return { articles, plateformes, lus };
+  return { articles, plateformes, concurrents, lus };
 }
 
 /**

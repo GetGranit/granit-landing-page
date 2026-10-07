@@ -76,7 +76,7 @@ export const Route = createFileRoute("/ressources/$slug")({
 function ArticleRoute() {
   const data = Route.useLoaderData();
   if (data.kind === "ancien") return <PageAncien slug={data.slug} />;
-  const { article, plateforme } = data;
+  const { article, plateforme, concurrents } = data;
   const cat = categorie(article.category)!;
   const lds = [
     blogPostingLd(article, plateforme),
@@ -96,7 +96,7 @@ function ArticleRoute() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }}
         />
       ))}
-      <PageArticle article={article} plateforme={plateforme} />
+      <PageArticle article={article} plateforme={plateforme} concurrents={concurrents ?? {}} />
     </>
   );
 }

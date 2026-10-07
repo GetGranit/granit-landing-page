@@ -1,0 +1,48 @@
+{
+  "slug": "iremia",
+  "nom": "Iremia Santé",
+  "modele": "prestataire",
+  "logo": null,
+  "checkedOn": "2026-10-07",
+  "aRelire": true,
+  "identite": {
+    "raisonSociale": "EMIS SANTÉ (SAS)",
+    "siege": "Riorges (42)",
+    "site": "https://iremia-sante.fr/",
+    "metiers": ["pharmacie", "optique", "audio", "dentaire", "radiologie", "laboratoires", "cliniques", "MSP"]
+  },
+  "axes": {
+    "quiFait": {"valeur": "Un expert tiers payant et un gestionnaire relation client attitrés", "source": "iremia-gestion"},
+    "pec": {"valeur": "oui", "detail": "Saisie des PEC par leurs experts (offre Admin Santé)", "source": "iremia-admin"},
+    "rejets": {"valeur": "oui", "detail": "Identification du motif de rejet et recyclage des factures", "source": "iremia-gestion"},
+    "rapprochement": {"valeur": "oui", "detail": "Plateforme Théo, logiciel Santé Bank", "source": "iremia-accueil"},
+    "avance": {"valeur": "oui", "detail": "J+1 sur les factures télétransmises, avec le groupe BPCE (Avance Santé)", "source": "iremia-avance"},
+    "engagement": {"valeur": "sans engagement", "source": "iremia-gestion"},
+    "hds": {"valeur": "hébergeur certifié HDS (OVH)", "source": "iremia-mentions"},
+    "plateformes": {"valeur": "non publié", "source": null}
+  },
+  "citations": [
+    {"texte": "Pour les opticiens, la gestion des Prises En Charge (PEC) est souvent chronophage. Nos experts s'en occupent pour vous.", "source": "iremia-optique"},
+    {"texte": "Un Expert Tiers-Payant et un Gestionnaire Relation Client (GRC) attitrés qui connaissent votre activité.", "source": "iremia-gestion"},
+    {"texte": "Nos offres s'adaptent à vos besoins et sont totalement sans engagement.", "source": "iremia-gestion"},
+    {"texte": "Reprise des sommes créditées en cas d'impayés à 60 jours", "source": "iremia-avance"}
+  ],
+  "meilleurSi": [
+    "le sujet principal est la trésorerie (avance à J+1)",
+    "on veut tout confier à une équipe avec un interlocuteur attitré",
+    "on exerce plusieurs métiers de santé et on veut un seul prestataire"
+  ],
+  "exclus": {
+    "_pourquoi": "Décision du 07/10/2026 : aucun prix sur les pages comparatives ; chiffres de performance déclarés non comparables",
+    "prix": "Avance Santé 90 à 150 €/mois selon le CA (public, mais non affiché par décision)",
+    "chiffresDeclares": "« Délai de paiement moyen 4 jours », « Taux de recouvrement 99.8% » (iremia-optique)"
+  },
+  "sources": {
+    "iremia-accueil": {"label": "iremia-sante.fr · Accueil", "url": "https://iremia-sante.fr/", "consulte": "2026-10-07"},
+    "iremia-optique": {"label": "iremia-sante.fr · Opticiens", "url": "https://iremia-sante.fr/metier/optique", "consulte": "2026-10-07"},
+    "iremia-admin": {"label": "iremia-sante.fr · Admin Santé", "url": "https://iremia-sante.fr/admin-sante", "consulte": "2026-10-07"},
+    "iremia-gestion": {"label": "iremia-sante.fr · Santé Gestion", "url": "https://iremia-sante.fr/sante-gestion", "consulte": "2026-10-07"},
+    "iremia-avance": {"label": "iremia-sante.fr · Avance Santé", "url": "https://iremia-sante.fr/avance-sante", "consulte": "2026-10-07"},
+    "iremia-mentions": {"label": "iremia-sante.fr · Mentions légales", "url": "https://iremia-sante.fr/mentions-legales", "consulte": "2026-10-07"}
+  }
+}

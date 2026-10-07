@@ -1,7 +1,7 @@
 /// <reference types="node" />
 // Plugin Vite de la rubrique Ressources.
 // - `virtual:ressources` : la liste des articles JSON en ligne (sans leur corps) et, pour chacun,
-//   un import paresseux de `virtual:ressources/article/{slug}` (corps + fichier de faits).
+//   un import paresseux de `virtual:ressources/article/{slug}` (corps + fichiers de faits).
 // L'aperçu (content/apercu) n'est lu qu'en dev ou sur un déploiement Vercel de prévisualisation :
 // il n'entre jamais dans un build de production.
 import { existsSync } from "node:fs";
@@ -83,7 +83,16 @@ export function ressources(): Plugin {
       const plateforme = article?.plateforme
         ? (contenu.plateformes[article.plateforme] ?? null)
         : null;
-      return `export default ${JSON.stringify({ article, plateforme })};\n`;
+      // Page comparative : les fichiers de faits des acteurs, sans le champ « exclus » (jamais affiché).
+      const concurrents = Object.fromEntries(
+        (article?.concurrents ?? [])
+          .filter((s) => contenu.concurrents[s])
+          .map((s) => {
+            const { exclus: _exclus, ...publics } = contenu.concurrents[s];
+            return [s, publics];
+          }),
+      );
+      return `export default ${JSON.stringify({ article, plateforme, concurrents })};\n`;
     },
     configureServer(server: ViteDevServer) {
       // Un fichier de contenu qui change : on recharge les modules virtuels et la page.

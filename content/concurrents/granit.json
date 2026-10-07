@@ -1,0 +1,28 @@
+{
+  "slug": "granit",
+  "nom": "Granit",
+  "modele": "agents-ia",
+  "checkedOn": "2026-10-07",
+  "aRelire": true,
+  "_note": "Nos propres faits suivent la même règle que ceux des concurrents : publiés sur getgranit.ai, sinon absents. À aligner avant la 1re page : 48 h vs 5 jours sur l'accueil, formulation HDS.",
+  "axes": {
+    "quiFait": {"valeur": "Des agents logiciels ; l'équipe Granit reprend les dossiers que l'agent ne peut pas finir", "source": "granit-accueil"},
+    "pec": {"valeur": "oui", "detail": "Interrogation des plateformes, calcul du reste à charge et envoi de la demande de prise en charge", "source": "granit-accueil"},
+    "rejets": {"valeur": "oui", "detail": "Analyse des causes de rejet, correction et renvoi", "source": "granit-accueil"},
+    "rapprochement": {"valeur": "oui", "detail": "Rapprochement des virements Sécu et mutuelles avec les factures", "source": "granit-accueil"},
+    "avance": {"valeur": "non", "source": null},
+    "engagement": {"valeur": "réversibilité totale", "source": "granit-tarifs"},
+    "hds": {"valeur": "hébergement HDS inclus", "source": "granit-tarifs", "aValider": "formulation « certifié HDS » validée par Paul le 07/10, preuve à joindre"},
+    "plateformes": {"valeur": "logos affichés (Viamedis, Almerys, Santéclair, Carte Blanche, Actil…)", "source": "granit-accueil"}
+  },
+  "meilleurSi": [
+    "le temps passé sur les portails pour les PEC est ce qui coûte le plus",
+    "on veut la réponse de la PEC pendant que le client est en magasin",
+    "on veut voir chaque dossier et son statut sans intermédiaire",
+    "on travaille avec beaucoup de plateformes"
+  ],
+  "sources": {
+    "granit-accueil": {"label": "getgranit.ai · Accueil", "url": "https://getgranit.ai/", "consulte": "2026-10-07"},
+    "granit-tarifs": {"label": "getgranit.ai · Tarifs", "url": "https://getgranit.ai/tarifs", "consulte": "2026-10-07"}
+  }
+}

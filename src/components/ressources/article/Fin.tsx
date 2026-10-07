@@ -10,7 +10,7 @@ import {
   fichesCategorie,
   tempsLecture,
 } from "@/lib/ressources/contenu";
-import type { Fiche, Plateforme, RessourceJson } from "@/lib/ressources/types";
+import type { Concurrent, Fiche, Plateforme, RessourceJson } from "@/lib/ressources/types";
 import { CarteArticle } from "../Cartes";
 import { BoutonAncre } from "./Ancres";
 
@@ -55,12 +55,23 @@ export function Faq({ items }: { items: RessourceJson["faqItems"] }) {
 export function Sources({
   article,
   plateforme,
+  acteurs = [],
 }: {
   article: RessourceJson;
   plateforme: Plateforme | null;
+  /** Page comparative : les pages d'où viennent les faits des tableaux, en plus des sources du texte. */
+  acteurs?: Concurrent[];
 }) {
   const releves = plateforme ? Object.values(plateforme.sources).filter((s) => !s.url) : [];
-  if (!article.sources?.length && !releves.length) return null;
+  const dejaCitees = new Set(article.sources.map((s) => s.url.replace(/\/+$/, "")));
+  const faits = acteurs
+    .flatMap((c) => Object.values(c.sources).map((s) => ({ ...s, checkedOn: c.checkedOn })))
+    .filter((s): s is typeof s & { url: string } => Boolean(s.url))
+    .filter(
+      (s, i, tous) =>
+        !dejaCitees.has(s.url.replace(/\/+$/, "")) && tous.findIndex((x) => x.url === s.url) === i,
+    );
+  if (!article.sources?.length && !releves.length && !faits.length) return null;
   return (
     <section id="sources" className="mt-12 scroll-mt-[96px]">
       <h2 className={`group/titre ${h2}`}>
@@ -84,7 +95,27 @@ export function Sources({
             {s.label}. Relevé par les agents Granit le {dateFr(plateforme!.checkedOn, true)}.
           </li>
         ))}
+        {faits.map((s) => (
+          <li key={s.url} className="my-1.5">
+            <a
+              href={s.url}
+              rel="noopener"
+              className="text-[var(--terra-hover)] underline underline-offset-[3px]"
+            >
+              {s.label}
+            </a>{" "}
+            (relevé le {dateFr(s.consulte ?? s.checkedOn, true)})
+          </li>
+        ))}
       </ul>
+      {acteurs.length > 0 && (
+        <p className="mt-4 text-[14.5px] text-[var(--text-muted)]">
+          Comparatif rédigé par Granit, qui en fait partie. Il ne reprend que des informations
+          publiées par chaque acteur, à la date indiquée, et ne compare aucun prix. Publicité
+          comparative au sens de l'article L122-1 du Code de la consommation ; les marques citées
+          appartiennent à leurs titulaires.
+        </p>
+      )}
       {CORRECTIONS_EMAIL && (
         <p className="mt-4 text-[14.5px] text-[var(--text-muted)]">
           Une information est fausse ou a changé ?{" "}

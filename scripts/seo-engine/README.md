@@ -37,10 +37,11 @@ Il faut aussi cocher, dans les réglages du repo, *Actions → General → Allow
 | Champ | Contenu |
 |---|---|
 | `slug`, `id`, `category`, `categoryName`, `title`, `primaryKeyword`, `keywordCluster`, `parentSlug`, `level` | Repris de la file |
-| `type` | `standard`, `resolution` ou `plateforme` (gabarit, section 2) |
+| `type` | `standard`, `resolution`, `plateforme`, `vs` ou `grille` (gabarit, section 2) |
+| `concurrents` | Pages comparatives seulement : slugs des fichiers `content/concurrents/{slug}.json`, dans l'ordre d'affichage (Granit en dernier) |
 | `plateforme` | Nom du fichier de faits `content/plateformes/{nom}.json` (sinon `null`) : source des blocs `data-bloc` et du logo |
 | `author` `{name, jobTitle, photo, url}`, `reviewer` (même forme, ou `null`) | Signature selon la catégorie (`config.json`, `signatures`). Photos dans `public/auteurs/`. `reviewer` n'est renseigné que pour un article passé en relecture (PR) : « Relu par » ne s'affiche que s'il est non nul |
-| `datePublished`, `dateModified`, `checkedOn` | `YYYY-MM-DD` ; `checkedOn` seulement pour une plateforme |
+| `datePublished`, `dateModified`, `checkedOn` | `YYYY-MM-DD` ; `checkedOn` pour une plateforme, ou date du plus ancien relevé pour une page comparative |
 | `wordCount`, `readTime` | `readTime` en minutes (230 mots par minute) |
 | `metaDescription`, `contentHtml`, `tocItems`, `faqItems`, `sources` | Réponse de Claude, déjà contrôlée |
 | `internalLinks` | Liens prévus dont la cible était en ligne à la rédaction |
@@ -57,3 +58,12 @@ Fermez la PR, puis remettez l'article en `pending` pour qu'il soit réécrit au 
 ```bash
 node scripts/seo-engine/set-status.mjs <slug> pending
 ```
+
+## Pages comparatives (Granit vs X, grille du marché)
+
+Décidées à l'atelier du 07/10/2026 (gabarit, section 6 bis). Une entrée de la file avec un champ `concurrents` devient une **fiche VS** (slug `granit-vs-*` ou `granit-ou-*`) ou la **grille** (autre slug).
+
+- Faits : un fichier par acteur dans `content/concurrents/`, Granit compris (`granit.json`). Le champ `exclus` (prix, chiffres déclarés) n'est jamais envoyé à Claude ni affiché.
+- Un fichier avec `aRelire: true` bloque la publication. Après relecture humaine, passer `aRelire` à `false`.
+- Les entrées comparatives sont en statut `waiting` : le moteur ne les prend pas. Pour lancer une page : relire ses fichiers, puis `node scripts/seo-engine/set-status.mjs <slug> pending`.
+- Toujours une PR de relecture. Contrôles en plus : aucun prix, aucun mot de dénigrement près du nom d'un concurrent, nombres et citations tirés des fichiers.

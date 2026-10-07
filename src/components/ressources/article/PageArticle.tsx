@@ -4,7 +4,7 @@ import { Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { categorie, dateFr, ficheJson, titreCourt } from "@/lib/ressources/contenu";
 import { verticale } from "@/lib/ressources/verticales";
-import type { Plateforme, RessourceJson } from "@/lib/ressources/types";
+import type { Concurrent, Plateforme, RessourceJson } from "@/lib/ressources/types";
 import { Annuaire } from "../Annuaire";
 import { EcranPlateforme, MarquePlateforme, PhotoCarte, TitreItalique } from "../Cartes";
 import { photoFiche } from "@/lib/ressources/photos";
@@ -95,7 +95,7 @@ function Signature({ a, nbSources }: { a: RessourceJson; nbSources: number }) {
         </span>
       )}
       <span>
-        {a.type === "plateforme" && a.checkedOn
+        {(a.type === "plateforme" || a.type === "vs" || a.type === "grille") && a.checkedOn
           ? `Informations relevées le ${dateFr(a.checkedOn, true)}`
           : `Mis à jour le ${dateFr(a.dateModified, true)}`}
       </span>
@@ -142,10 +142,14 @@ function titreAgent(a: RessourceJson, p: Plateforme | null): string {
 export function PageArticle({
   article: a,
   plateforme: p,
+  concurrents = {},
 }: {
   article: RessourceJson;
   plateforme: Plateforme | null;
+  /** Page comparative : fichiers content/concurrents/{slug}.json (sans « exclus »). */
+  concurrents?: Record<string, Concurrent>;
 }) {
+  const acteurs = (a.concurrents ?? []).map((s) => concurrents[s]).filter(Boolean);
   const cat = categorie(a.category)!;
   const estPlateforme = a.type === "plateforme" && p;
   const entrees: Entree[] = [
@@ -241,10 +245,11 @@ export function PageArticle({
                 plateforme={p}
                 figures={a.figures}
                 insertion={insertion}
+                acteurs={acteurs}
               />
               <EtapeSuivante article={a} />
               <Faq items={a.faqItems} />
-              <Sources article={a} plateforme={p} />
+              <Sources article={a} plateforme={p} acteurs={acteurs} />
               <Utile slug={a.slug} />
               <EncartFinal />
               <Ancres racine={corps} />

@@ -1517,7 +1517,7 @@
       },
       {
         "id": "E2",
-        "slug": "externaliser-tiers-payant-comparatif",
+        "slug": "solutions-tiers-payant-optique",
         "anchor": "externalisation tiers payant pharmaciens",
         "type": "enfant"
       },
@@ -2272,7 +2272,7 @@
       },
       {
         "id": "E2",
-        "slug": "externaliser-tiers-payant-comparatif",
+        "slug": "solutions-tiers-payant-optique",
         "anchor": "externalisation tiers payant pharmaciens",
         "type": "sœur"
       },
@@ -3494,29 +3494,30 @@
   },
   {
     "id": "E2",
-    "slug": "externaliser-tiers-payant-comparatif",
+    "slug": "solutions-tiers-payant-optique",
     "category": "gerer-son-tiers-payant",
-    "title": "Externaliser son tiers payant : comparatif des prestataires",
-    "primaryKeyword": "externalisation tiers payant pharmaciens",
+    "title": "Gérer le tiers payant d'un magasin d'optique : les solutions comparées",
+    "primaryKeyword": "gestion tiers payant opticien",
     "keywordCluster": [
       "externalisation du tiers payant"
     ],
     "searchVolume": 60,
     "unsplashQuery": "optical store manager",
-    "status": "pending",
+    "status": "waiting",
     "wave": 3,
     "level": "Fille",
     "parentSlug": "gerer-tiers-payant-magasin",
     "reader": "Gérant",
-    "role": "Conversion",
+    "role": "LLM + vente + maillage",
     "granitData": "Base Acteurs TP (34 fiches)",
     "cta": "Démo",
-    "toValidate": "Prix concurrents à sourcer publiquement",
+    "toValidate": "Comparatif : aucun prix, aucun client cité, faits publics des fichiers content/concurrents uniquement. Relecture Jenny + juriste avant la 1re publication.",
     "primaryKeywordMeasured": true,
     "faqQuestions": [
-      "Quels prestataires gèrent le tiers payant des opticiens ?",
-      "Combien coûte l'externalisation ?",
-      "Que garder en interne ?"
+      "Quelle est la meilleure solution de tiers payant pour un opticien ?",
+      "Externaliser son tiers payant, est-ce perdre la main ?",
+      "Une avance de trésorerie règle-t-elle les rejets ?",
+      "Comment vérifier qu'une solution couvre mes plateformes ?"
     ],
     "internalLinks": [
       {
@@ -3542,6 +3543,100 @@
         "slug": "cout-temps-tiers-payant",
         "anchor": "coût du tiers payant pour un magasin",
         "type": "conversion"
+      },
+      {
+        "id": "E2a",
+        "slug": "granit-vs-iremia",
+        "anchor": "Granit vs Iremia Santé",
+        "type": "enfant"
+      },
+      {
+        "id": "E2b",
+        "slug": "granit-vs-optibot",
+        "anchor": "Granit vs OptiBot",
+        "type": "enfant"
+      }
+    ],
+    "concurrents": [
+      "granit",
+      "iremia"
+    ]
+  },
+  {
+    "id": "E2a",
+    "slug": "granit-vs-iremia",
+    "category": "gerer-son-tiers-payant",
+    "title": "Granit ou Iremia Santé : lequel choisir pour le tiers payant de votre magasin ?",
+    "primaryKeyword": "iremia santé",
+    "keywordCluster": [
+      "iremia santé"
+    ],
+    "searchVolume": null,
+    "status": "waiting",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "solutions-tiers-payant-optique",
+    "reader": "Gérant",
+    "role": "Vente + LLM",
+    "granitData": "content/concurrents",
+    "cta": "Démo",
+    "toValidate": "Comparatif : aucun prix, aucun client cité. 1re fiche : relecture Jenny + juriste.",
+    "primaryKeywordMeasured": false,
+    "concurrents": [
+      "iremia",
+      "granit"
+    ],
+    "faqQuestions": [
+      "Iremia Santé et Granit font-ils la même chose ?",
+      "L'avance à J+1 d'Iremia accélère-t-elle mes prises en charge ?",
+      "Peut-on utiliser Iremia et Granit en même temps ?",
+      "Comment passer d'Iremia à Granit ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "E2",
+        "slug": "solutions-tiers-payant-optique",
+        "anchor": "toutes les solutions de tiers payant en optique",
+        "type": "parent"
+      }
+    ]
+  },
+  {
+    "id": "E2b",
+    "slug": "granit-vs-optibot",
+    "category": "gerer-son-tiers-payant",
+    "title": "Granit ou OptiBot : faire ses PEC plus vite, ou les faire faire ?",
+    "primaryKeyword": "optibot",
+    "keywordCluster": [
+      "optibot"
+    ],
+    "searchVolume": null,
+    "status": "waiting",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "solutions-tiers-payant-optique",
+    "reader": "Gérant",
+    "role": "Vente + LLM",
+    "granitData": "content/concurrents",
+    "cta": "Démo",
+    "toValidate": "Comparatif : aucun prix, aucun client cité. Fichier content/concurrents/optibot.json à créer et relire.",
+    "primaryKeywordMeasured": false,
+    "concurrents": [
+      "optibot",
+      "granit"
+    ],
+    "faqQuestions": [
+      "OptiBot et Granit font-ils la même chose ?",
+      "Avec OptiBot, qui fait la demande de prise en charge ?",
+      "Granit remplace-t-il OptiBot ?",
+      "Comment passer d'OptiBot à Granit ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "E2",
+        "slug": "solutions-tiers-payant-optique",
+        "anchor": "toutes les solutions de tiers payant en optique",
+        "type": "parent"
       }
     ]
   },
@@ -4143,7 +4238,7 @@
       },
       {
         "id": "E2",
-        "slug": "externaliser-tiers-payant-comparatif",
+        "slug": "solutions-tiers-payant-optique",
         "anchor": "externalisation tiers payant pharmaciens",
         "type": "sœur"
       },

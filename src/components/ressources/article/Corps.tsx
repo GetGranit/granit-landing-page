@@ -1,7 +1,8 @@
 import type { ReactNode } from "react";
-import type { Plateforme } from "@/lib/ressources/types";
+import type { Concurrent, Plateforme } from "@/lib/ressources/types";
 import { figureHtml, type Figure } from "@/lib/ressources/figures";
 import { BLOCS } from "./BlocsPlateforme";
+import { BLOCS_COMPARATIF } from "./BlocsComparatif";
 
 const MARQUEUR = /<div\s+data-(bloc|figure)=["']([a-z0-9-]+)["']\s*>\s*<\/div>/g;
 
@@ -24,7 +25,8 @@ function Html({ html }: { html: string }) {
 
 /**
  * Le corps d'un article JSON. contentHtml est affiché tel quel (déjà contrôlé par le moteur) ;
- * seuls les marqueurs data-bloc sont remplacés par les blocs du fichier de faits, et
+ * seuls les marqueurs data-bloc sont remplacés par les blocs des fichiers de faits (plateforme,
+ * ou acteurs d'une page comparative), et
  * `apresEssentiel` (fiche d'identité, annuaire) s'insère juste après « L'essentiel ».
  */
 export function Corps({
@@ -32,9 +34,12 @@ export function Corps({
   plateforme,
   figures = [],
   insertion,
+  acteurs = [],
 }: {
   html: string;
   plateforme: Plateforme | null;
+  /** Page comparative : acteurs dans l'ordre de l'article. */
+  acteurs?: Concurrent[];
   figures?: Figure[];
   insertion?: ReactNode;
 }) {
@@ -52,7 +57,10 @@ export function Corps({
         );
     } else {
       const Bloc = BLOCS[m[2]];
+      const BlocComparatif = BLOCS_COMPARATIF[m[2]];
       if (Bloc && plateforme) morceaux.push(<Bloc key={`b${m.index}`} p={plateforme} />);
+      else if (BlocComparatif && acteurs.length)
+        morceaux.push(<BlocComparatif key={`b${m.index}`} acteurs={acteurs} />);
     }
     dernier = m.index! + m[0].length;
   }
