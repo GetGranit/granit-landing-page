@@ -73,9 +73,9 @@ Les champs en **gras** viennent de `articles-queue.json`. Les autres sont produi
 | `datePublished` | moteur | `YYYY-MM-DD`. **Jamais modifiée ensuite.** |
 | `dateModified` | moteur | Égale à `datePublished` au départ, mise à jour à chaque révision. |
 | `readTime` | moteur | Calculé sur le nombre de mots (≈ 230 mots/min). |
-| `author` | fixe | **Paul Pietra**, avec photo et fonction (E-E-A-T). **[À VALIDER : intitulé de fonction et photo]** |
+| `author` | `config.json` | Selon la catégorie : Arthur Pelong (plateformes, rejets, paiements), Paul Pietra (guide, glossaire), Jenny Mansour (gestion, conformité). Vraies personnes, avec photo et fonction (E-E-A-T). |
 | `coverImage`, `coverImageAlt` | moteur | Voir « Image de couverture ». Le alt contient le mot-clé principal. |
-| `reviewer` | fixe | Relecteur affiché (« Relu par… ») s'il est renseigné. |
+| `reviewer` | `config.json` | Un autre membre de l'équipe, affiché (« Relu par… ») seulement si l'article est vraiment passé par une relecture humaine. |
 | `sources` | Claude | Toutes les sources externes citées dans le corps, 2 au minimum (voir « Sources de référence »). Un lien externe du corps doit y figurer. |
 
 ---

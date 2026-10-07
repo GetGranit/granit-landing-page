@@ -175,6 +175,20 @@ if (!sortie) {
 }
 bilan.avertissements.forEach((a) => console.log(`  ! ${a}`));
 
+// Relecture humaine (PR) pour les premiers articles et ceux qui ont des points à valider
+const dejaSortis = file.filter((a) => ["published", "review"].includes(a.status)).length;
+const relecture = dejaSortis < config.relectureDesPremiers || Boolean(article.toValidate);
+
+// Signature : auteur et relecteur selon la catégorie. Le relecteur n'est affiché que si
+// l'article passe vraiment par une relecture humaine (PR), jamais en publication directe.
+const signature = config.signatures[article.category];
+if (!signature) throw new Error(`pas de signature pour la catégorie ${article.category} (config.json)`);
+const personne = (cle) => {
+  const p = config.auteurs[cle];
+  if (!p) throw new Error(`auteur inconnu dans config.json : ${cle}`);
+  return { name: p.nom, jobTitle: p.fonction, photo: p.photo, url: p.linkedin || null };
+};
+
 // 5. Fichier de l'article (lu par la page /ressources/{slug})
 const nbMots = mots(texte(sortie.contentHtml)).length;
 const fiche = {
@@ -189,8 +203,8 @@ const fiche = {
   keywordCluster: article.keywordCluster,
   parentSlug: article.parentSlug,
   level: article.level,
-  author: { name: config.auteur.nom, jobTitle: config.auteur.fonction, photo: config.auteur.photo },
-  reviewer: config.relecteur || null,
+  author: personne(signature.auteur),
+  reviewer: relecture ? personne(signature.relecteur) : null,
   datePublished: aujourdhui,
   dateModified: aujourdhui,
   checkedOn: type === "plateforme" ? fp.faits.checkedOn : null,
@@ -227,9 +241,7 @@ for (const voisin of enLigne) {
   console.log(`Lien ajouté depuis ${voisin.slug}`);
 }
 
-// 7. Statut dans la file : relecture humaine pour les premiers articles et ceux qui ont des points à valider
-const dejaSortis = file.filter((a) => ["published", "review"].includes(a.status)).length;
-const relecture = dejaSortis < config.relectureDesPremiers || Boolean(article.toValidate);
+// 7. Statut dans la file (relecture décidée plus haut)
 article.status = relecture ? "review" : "published";
 article.publishedAt = aujourdhui;
 ecrireFile(file);
