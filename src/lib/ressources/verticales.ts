@@ -26,12 +26,12 @@ const ALTS: Record<VerticaleSlug, string> = {
   optique:
     "Lunettes en écaille posées sur un linge blanc, leur ombre projetée sur un mur terracotta",
   audio:
-    "Coquillage clair posé sur un socle en bois à côté d'une coupelle, dans la lumière d'une fenêtre",
+    "Deux appareils auditifs contour d'oreille posés sur un linge, à côté de leur boîtier de charge ouvert",
   pharmacie:
-    "Trois flacons de pharmacie en verre ambré et clair, un brin de feuillage et une enveloppe sur un rebord de fenêtre",
+    "Pilulier, plaquette de comprimés et sachet blanc sur un comptoir de pharmacie, croix verte allumée au fond",
   dentaire:
-    "Miroir de dentiste posé sur un plateau blanc, à côté de petits galets blancs disposés en arc",
-  centres: "Deux chaises en bois et une plante verte contre le mur clair d'un couloir de clinique",
+    "Moulage de mâchoire dentaire sur un plateau blanc, avec un miroir et une sonde de dentiste",
+  centres: "Stéthoscope posé sur un bureau de consultation en bois, à côté d'un agenda de rendez-vous",
 };
 
 /** Le métier principal : sa page est toujours indexée, quel que soit le nombre d'articles. */
