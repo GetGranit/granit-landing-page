@@ -12,7 +12,9 @@ import {
 import { StepCode } from "./StepCode";
 import { StepLogin } from "./StepLogin";
 import { StepPatient, type Patient, type PatientPrefill } from "./StepPatient";
-import { StepSimDone, StepSimEchec, type SimResultat } from "./StepSimFin";
+import { StepCompte } from "./StepCompte";
+import { StepSimDone } from "./StepResultat";
+import { StepSimEchec, type SimResultat } from "./StepSimFin";
 import { StepSimulation } from "./StepSimulation";
 import { ApercuBanner } from "./ui";
 
@@ -22,6 +24,7 @@ type Phase =
   | { p: "code"; canal: "totp" | "email"; essai: number }
   | { p: "running" }
   | { p: "done"; r: SimResultat }
+  | { p: "compte"; r: SimResultat }
   | { p: "echec"; cause: SimEchecCause };
 
 const PROGRESS: Record<Phase["p"], number> = {
@@ -30,13 +33,15 @@ const PROGRESS: Record<Phase["p"], number> = {
   code: 6,
   running: 7,
   done: 8,
+  compte: 8,
   echec: 7,
 };
 
 /**
- * E4 → E8 · la simulation en direct sur le portail de l'opticien : patient,
- * connexion, code, simulation, résultat (ou échec rattrapable). Le patient et
- * les identifiants ne vivent qu'ici, en mémoire, et ne remontent jamais.
+ * E4 → E9 · la simulation en direct sur le portail de l'opticien : patient,
+ * connexion, code, simulation, résultat (ou échec rattrapable), puis le
+ * compte. Le patient, les identifiants et le mot de passe ne vivent qu'ici,
+ * en mémoire, et ne remontent jamais : seul l'e-mail sort par `onCompte`.
  */
 export function SimFlow({
   platformId,
@@ -46,7 +51,7 @@ export function SimFlow({
   track,
   onProgress,
   onBack,
-  onEmail,
+  onCompte,
 }: {
   /** Portail réel (Kalixia → viamedis). */
   platformId: string;
@@ -56,7 +61,7 @@ export function SimFlow({
   track: (e: string, p?: Record<string, unknown>) => void;
   onProgress: (n: number) => void;
   onBack: () => void;
-  onEmail: (email: string, r: SimResultat) => void;
+  onCompte: (email: string, r: SimResultat) => void;
 }) {
   const [phase, setPhase] = useState<Phase>({ p: "patient" });
   const [patient, setPatient] = useState<Patient>();
@@ -170,9 +175,20 @@ export function SimFlow({
         {phase.p === "done" && (
           <StepSimDone
             portail={portail}
+            platformId={platformId}
             r={phase.r}
-            busy={busy}
-            onEmail={(m) => onEmail(m, phase.r)}
+            track={track}
+            onCreer={() => setPhase({ p: "compte", r: phase.r })}
+          />
+        )}
+        {phase.p === "compte" && (
+          <StepCompte
+            preparing={busy}
+            onBack={() => setPhase({ p: "done", r: phase.r })}
+            onSubmit={(m) => {
+              track("pec_compte_cree", { platform: platformId });
+              onCompte(m, phase.r);
+            }}
           />
         )}
         {phase.p === "echec" && (
