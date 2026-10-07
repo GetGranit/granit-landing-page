@@ -2,9 +2,10 @@
  * État partagé de l'espace d'essai PEC (/essai).
  *
  * /pec écrit le cas scanné dans sessionStorage["granit.pec.case"], /essai le
- * relit. Tout est simulé côté front : aucune donnée n'est envoyée nulle part
- * depuis ce fichier, et les identifiants de portail n'y passent JAMAIS (ils
- * restent dans l'état React local de l'écran « Branchez »).
+ * relit. Tout est simulé côté front : seule une demande de contact (e-mail,
+ * téléphone, portail) part vers le webhook des leads, et les identifiants de
+ * portail n'y passent JAMAIS (ils restent dans l'état React local de l'écran
+ * « Branchez »).
  */
 
 export type TfaKind = "email" | "sms" | "totp" | "aucune" | "inconnu";
@@ -124,15 +125,20 @@ export function markPaulSheetShown(): void {
 export type ContactRequest = { type: "rappel" | "creneau"; phone?: string };
 
 /**
- * Demande de contact depuis /essai.
- * TODO(team-lead) : brancher l'envoi du lead (même canal que /pec), avec le
- * cas courant (mutuelle, portail) et le moment du parcours.
+ * Demande de contact depuis /essai : même canal que /pec (webhook B11), avec
+ * l'e-mail laissé à l'étape précédente. Sans e-mail (cas d'exemple ouvert
+ * directement), il n'y a personne à rappeler : on ne fait rien partir.
  */
 export async function contactPaul(req: ContactRequest, c: PecCase): Promise<void> {
   if (req.phone) writePhone(req.phone);
-  if (import.meta.env.DEV) {
-    console.info("[essai] contactPaul (stub)", req, c.platform?.id);
-  }
+  if (!c.email) return;
+  const { sendPecLead } = await import("./lead");
+  await sendPecLead({
+    kind: req.type,
+    email: c.email,
+    phone: req.phone ?? readPhone() ?? undefined,
+    platform: c.platform?.id ?? null,
+  });
 }
 
 /* ── Données fictives de la simulation (mêmes postes que la vraie simulation de l'app) ── */

@@ -133,7 +133,7 @@ function PecPage() {
     } catch {
       /* stockage bloqué : l'essai repartira sur un cas d'exemple */
     }
-    if (ESSAI_ON) navigate({ to: "/essai" as string });
+    if (ESSAI_ON) navigate({ to: "/essai" });
     else setStep({ s: "thanks", kind: "essai-off" });
   }
 

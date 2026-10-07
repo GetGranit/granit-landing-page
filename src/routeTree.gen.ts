@@ -16,6 +16,7 @@ import { Route as AgentsRouteImport } from './routes/agents'
 import { Route as CasUsageRouteImport } from './routes/cas-usage'
 import { Route as CgvRouteImport } from './routes/cgv'
 import { Route as DemoRouteImport } from './routes/demo'
+import { Route as EssaiRouteImport } from './routes/essai'
 import { Route as PecRouteImport } from './routes/pec'
 import { Route as ProduitRouteImport } from './routes/produit'
 import { Route as RessourcesRouteImport } from './routes/ressources'
@@ -60,6 +61,11 @@ const CgvRoute = CgvRouteImport.update({
 const DemoRoute = DemoRouteImport.update({
   id: '/demo',
   path: '/demo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EssaiRoute = EssaiRouteImport.update({
+  id: '/essai',
+  path: '/essai',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PecRoute = PecRouteImport.update({
@@ -121,6 +127,7 @@ export interface FileRoutesByFullPath {
   '/cas-usage': typeof CasUsageRoute
   '/cgv': typeof CgvRoute
   '/demo': typeof DemoRoute
+  '/essai': typeof EssaiRoute
   '/pec': typeof PecRoute
   '/produit': typeof ProduitRoute
   '/ressources': typeof RessourcesRouteWithChildren
@@ -140,6 +147,7 @@ export interface FileRoutesByTo {
   '/cas-usage': typeof CasUsageRoute
   '/cgv': typeof CgvRoute
   '/demo': typeof DemoRoute
+  '/essai': typeof EssaiRoute
   '/pec': typeof PecRoute
   '/produit': typeof ProduitRoute
   '/securite': typeof SecuriteRoute
@@ -159,6 +167,7 @@ export interface FileRoutesById {
   '/cas-usage': typeof CasUsageRoute
   '/cgv': typeof CgvRoute
   '/demo': typeof DemoRoute
+  '/essai': typeof EssaiRoute
   '/pec': typeof PecRoute
   '/produit': typeof ProduitRoute
   '/ressources': typeof RessourcesRouteWithChildren
@@ -180,6 +189,7 @@ export interface FileRouteTypes {
     | '/cas-usage'
     | '/cgv'
     | '/demo'
+    | '/essai'
     | '/pec'
     | '/produit'
     | '/ressources'
@@ -199,6 +209,7 @@ export interface FileRouteTypes {
     | '/cas-usage'
     | '/cgv'
     | '/demo'
+    | '/essai'
     | '/pec'
     | '/produit'
     | '/securite'
@@ -217,6 +228,7 @@ export interface FileRouteTypes {
     | '/cas-usage'
     | '/cgv'
     | '/demo'
+    | '/essai'
     | '/pec'
     | '/produit'
     | '/ressources'
@@ -237,6 +249,7 @@ export interface RootRouteChildren {
   CasUsageRoute: typeof CasUsageRoute
   CgvRoute: typeof CgvRoute
   DemoRoute: typeof DemoRoute
+  EssaiRoute: typeof EssaiRoute
   PecRoute: typeof PecRoute
   ProduitRoute: typeof ProduitRoute
   RessourcesRoute: typeof RessourcesRouteWithChildren
@@ -296,6 +309,13 @@ declare module '@tanstack/react-router' {
       path: '/demo'
       fullPath: '/demo'
       preLoaderRoute: typeof DemoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/essai': {
+      id: '/essai'
+      path: '/essai'
+      fullPath: '/essai'
+      preLoaderRoute: typeof EssaiRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pec': {
@@ -393,6 +413,7 @@ const rootRouteChildren: RootRouteChildren = {
   CasUsageRoute: CasUsageRoute,
   CgvRoute: CgvRoute,
   DemoRoute: DemoRoute,
+  EssaiRoute: EssaiRoute,
   PecRoute: PecRoute,
   ProduitRoute: ProduitRoute,
   RessourcesRoute: RessourcesRouteWithChildren,
