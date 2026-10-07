@@ -1,0 +1,203 @@
+{
+ "_source": "GetGranit/granit@d016145 tp/platforms.py, connectors/*/constants.py + manifest.json, agents/agent_pec/simulation_optique.py:42",
+ "platforms": [
+  {
+   "id": "viamedis",
+   "label": "Viamédis",
+   "url": "https://www.viamedis.net/ViamedisNet/page/accueil/index",
+   "simulable": true,
+   "tfa": "totp",
+   "pec_optique_granit": true,
+   "reseau_via": null,
+   "note_fermeture": null,
+   "note": null
+  },
+  {
+   "id": "kalixia",
+   "label": "Kalixia",
+   "url": "https://www.viamedis.net/ViamedisNet/page/accueil/index",
+   "simulable": true,
+   "tfa": "totp",
+   "pec_optique_granit": true,
+   "reseau_via": "viamedis",
+   "note_fermeture": null,
+   "note": "Réseau : en optique, la PEC se fait sur Viamédis."
+  },
+  {
+   "id": "oxantis",
+   "label": "Oxantis",
+   "url": "https://www.oxantis.net/HmNet/page/accueil/index",
+   "simulable": false,
+   "tfa": "sms",
+   "pec_optique_granit": true,
+   "reseau_via": null,
+   "note_fermeture": "Le site oxantis.net ferme le 26 octobre 2026. On vous dira où faire ces PEC ensuite.",
+   "note": null
+  },
+  {
+   "id": "santeclair",
+   "label": "Santéclair TP+",
+   "url": "https://services.santeclair.fr/professionnel-sante/connexion",
+   "simulable": false,
+   "tfa": "email",
+   "pec_optique_granit": true,
+   "reseau_via": null,
+   "note_fermeture": null,
+   "note": "Certains comptes seulement ont la double authentification par e-mail."
+  },
+  {
+   "id": "sp_sante",
+   "label": "SP Santé",
+   "url": "https://www.spsante.fr/login#/",
+   "simulable": false,
+   "tfa": "email",
+   "pec_optique_granit": true,
+   "reseau_via": null,
+   "note_fermeture": null,
+   "note": null
+  },
+  {
+   "id": "groupama",
+   "label": "Groupama",
+   "url": "https://www.tpg.groupama.com/tpg/public/login/opticien",
+   "simulable": false,
+   "tfa": "aucune",
+   "pec_optique_granit": true,
+   "reseau_via": null,
+   "note_fermeture": null,
+   "note": null
+  },
+  {
+   "id": "seveane",
+   "label": "Sévéane",
+   "url": "https://www.seveane.com",
+   "simulable": false,
+   "tfa": "email",
+   "pec_optique_granit": false,
+   "reseau_via": null,
+   "note_fermeture": null,
+   "note": "Portail audio (réseau PRO BTP) : pas de PEC optique automatisée."
+  },
+  {
+   "id": "mca",
+   "label": "MCA",
+   "url": "https://extranet.mc-alsace.fr/connexion?typeAcces=MAP.TIE",
+   "simulable": false,
+   "tfa": "aucune",
+   "pec_optique_granit": false,
+   "reseau_via": null,
+   "note_fermeture": null,
+   "note": null
+  },
+  {
+   "id": "muta_sante",
+   "label": "Muta Santé",
+   "url": "https://professionnels.muta-sante.fr/se-connecter",
+   "simulable": false,
+   "tfa": "aucune",
+   "pec_optique_granit": false,
+   "reseau_via": null,
+   "note_fermeture": null,
+   "note": null
+  },
+  {
+   "id": "almerys",
+   "label": "Almerys",
+   "url": "https://www.almerys.com/site/Login.do",
+   "simulable": false,
+   "tfa": "email",
+   "pec_optique_granit": true,
+   "reseau_via": null,
+   "note_fermeture": null,
+   "note": null
+  },
+  {
+   "id": "ociane_matmut",
+   "label": "Ociane Matmut",
+   "url": "https://espace-professionnels-sante.ociane.matmut.fr/utilisateur/connexion",
+   "simulable": false,
+   "tfa": "aucune",
+   "pec_optique_granit": true,
+   "reseau_via": null,
+   "note_fermeture": null,
+   "note": null
+  },
+  {
+   "id": "emoa",
+   "label": "EMOA",
+   "url": "https://ps.mutuelle-emoa.fr/login#/",
+   "simulable": true,
+   "tfa": "email",
+   "pec_optique_granit": true,
+   "reseau_via": null,
+   "note_fermeture": null,
+   "note": null
+  },
+  {
+   "id": "carte_blanche",
+   "label": "Carte Blanche",
+   "url": "https://www.pec.carteblanchepartenaires.fr/#/login",
+   "simulable": false,
+   "tfa": "email",
+   "pec_optique_granit": false,
+   "reseau_via": null,
+   "note_fermeture": null,
+   "note": "Pas de PEC optique automatisée chez Granit (audio seulement)."
+  },
+  {
+   "id": "generation",
+   "label": "Génération",
+   "url": "https://professionnel.generation.fr/View/Login.aspx?ReturnUrl=%2f",
+   "simulable": true,
+   "tfa": "email",
+   "pec_optique_granit": true,
+   "reseau_via": null,
+   "note_fermeture": null,
+   "note": null
+  },
+  {
+   "id": "cgrm",
+   "label": "CGRM",
+   "url": "https://monespace.cgrm.com/professionnels-de-sante",
+   "simulable": false,
+   "tfa": "aucune",
+   "pec_optique_granit": true,
+   "reseau_via": null,
+   "note_fermeture": null,
+   "note": null
+  },
+  {
+   "id": "itelis",
+   "label": "Itelis",
+   "url": "https://www.itelis.fr",
+   "simulable": false,
+   "tfa": "email",
+   "pec_optique_granit": false,
+   "reseau_via": null,
+   "note_fermeture": null,
+   "note": "Pas de PEC automatisée chez Granit (lecture des paiements seulement)."
+  },
+  {
+   "id": "actil",
+   "label": "Actil",
+   "url": "https://v2.actil.com/TPO/servlet/init-login",
+   "simulable": false,
+   "tfa": "email",
+   "pec_optique_granit": true,
+   "reseau_via": null,
+   "note_fermeture": null,
+   "note": "Code par e-mail seulement pour les comptes nominatifs."
+  },
+  {
+   "id": "isante",
+   "label": "iSanté",
+   "url": "https://www.tp-isante.fr/login#/",
+   "simulable": false,
+   "tfa": "email",
+   "pec_optique_granit": true,
+   "reseau_via": null,
+   "note_fermeture": null,
+   "note": null
+  }
+ ]
+}
