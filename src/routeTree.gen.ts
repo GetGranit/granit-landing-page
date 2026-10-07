@@ -21,9 +21,9 @@ import { Route as RessourcesRouteImport } from './routes/ressources'
 import { Route as SecuriteRouteImport } from './routes/securite'
 import { Route as SilmoRouteImport } from './routes/silmo'
 import { Route as TarifsRouteImport } from './routes/tarifs'
+import { Route as BlogSplatRouteImport } from './routes/blog.$'
 import { Route as RessourcesIndexRouteImport } from './routes/ressources.index'
 import { Route as RessourcesSlugRouteImport } from './routes/ressources.$slug'
-import { Route as BlogSplatRouteImport } from './routes/blog.$'
 import { Route as EnBlogSplatRouteImport } from './routes/en.blog.$'
 
 const IndexRoute = IndexRouteImport.update({
@@ -86,6 +86,11 @@ const TarifsRoute = TarifsRouteImport.update({
   path: '/tarifs',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogSplatRoute = BlogSplatRouteImport.update({
+  id: '/blog/$',
+  path: '/blog/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const RessourcesIndexRoute = RessourcesIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -95,11 +100,6 @@ const RessourcesSlugRoute = RessourcesSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
   getParentRoute: () => RessourcesRoute,
-} as any)
-const BlogSplatRoute = BlogSplatRouteImport.update({
-  id: '/blog/$',
-  path: '/blog/$',
-  getParentRoute: () => rootRouteImport,
 } as any)
 const EnBlogSplatRoute = EnBlogSplatRouteImport.update({
   id: '/en/blog/$',
@@ -320,6 +320,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TarifsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/$': {
+      id: '/blog/$'
+      path: '/blog/$'
+      fullPath: '/blog/$'
+      preLoaderRoute: typeof BlogSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/ressources/': {
       id: '/ressources/'
       path: '/'
@@ -333,13 +340,6 @@ declare module '@tanstack/react-router' {
       fullPath: '/ressources/$slug'
       preLoaderRoute: typeof RessourcesSlugRouteImport
       parentRoute: typeof RessourcesRoute
-    }
-    '/blog/$': {
-      id: '/blog/$'
-      path: '/blog/$'
-      fullPath: '/blog/$'
-      preLoaderRoute: typeof BlogSplatRouteImport
-      parentRoute: typeof rootRouteImport
     }
     '/en/blog/$': {
       id: '/en/blog/$'
