@@ -2,7 +2,7 @@ import { createFileRoute, redirect } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/cas-usage")({
   beforeLoad: () => {
-    throw redirect({ to: "/agents" });
+    throw redirect({ to: "/agents", statusCode: 301 });
   },
   head: () => ({
     meta: [

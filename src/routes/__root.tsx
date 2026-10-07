@@ -1,4 +1,4 @@
-import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
+import { Outlet, Link, createRootRoute, HeadContent, Scripts, redirect } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import { PostHogProvider } from "posthog-js/react";
 import { LanguageProvider } from "@/lib/i18n";
@@ -27,6 +27,13 @@ function NotFoundComponent() {
 }
 
 export const Route = createRootRoute({
+  // Routes match case-insensitively: send /Agents to /agents so each page has one URL.
+  beforeLoad: ({ location }) => {
+    const path = location.pathname;
+    if (path !== path.toLowerCase()) {
+      throw redirect({ href: path.toLowerCase() + location.searchStr, statusCode: 301 });
+    }
+  },
   head: () => ({
     meta: [
       { charSet: "utf-8" },
