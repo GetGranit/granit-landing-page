@@ -1,0 +1,149 @@
+{
+  "slug": "rejet-tiers-payant",
+  "id": "B0",
+  "category": "rejets",
+  "categoryName": "Rejets et corrections",
+  "type": "resolution",
+  "plateforme": null,
+  "title": "Rejet de tiers payant en optique : diagnostic et correction",
+  "primaryKeyword": "motif rejet tiers payant",
+  "keywordCluster": [],
+  "parentSlug": "tiers-payant-opticien",
+  "level": "Pilier",
+  "author": {
+    "name": "Arthur Pelong",
+    "jobTitle": "Rédacteur, expert tiers payant",
+    "photo": "/auteurs/arthur-pelong.jpg",
+    "url": null
+  },
+  "reviewer": null,
+  "datePublished": "2026-10-07",
+  "dateModified": "2026-10-07",
+  "checkedOn": null,
+  "wordCount": 18,
+  "readTime": 1,
+  "metaDescription": "Aperçu, article pas encore rédigé : Rejet de tiers payant en optique : diagnostic et correction.",
+  "contentHtml": "<p><strong>Article pas encore rédigé.</strong> Ce squelette d'aperçu reprend le titre, la catégorie et les questions de la file.</p>",
+  "tocItems": [],
+  "faqItems": [
+    {
+      "question": "Pourquoi un dossier de tiers payant est-il rejeté ?",
+      "answer": "Réponse pas encore rédigée."
+    },
+    {
+      "question": "Quelle différence entre un rejet de la Sécurité sociale et un rejet de la mutuelle ?",
+      "answer": "Réponse pas encore rédigée."
+    },
+    {
+      "question": "Comment corriger et renvoyer un dossier rejeté ?",
+      "answer": "Réponse pas encore rédigée."
+    },
+    {
+      "question": "Combien de temps a-t-on pour renvoyer un dossier ?",
+      "answer": "Réponse pas encore rédigée."
+    }
+  ],
+  "sources": [],
+  "figures": [],
+  "internalLinks": [
+    {
+      "id": "G0",
+      "slug": "tiers-payant-opticien",
+      "anchor": "tiers payant opticien",
+      "type": "parent"
+    },
+    {
+      "id": "B1",
+      "slug": "rejet-beneficiaire-inconnu",
+      "anchor": "Rejet mutuelle « bénéficiaire inconnu »",
+      "type": "enfant"
+    },
+    {
+      "id": "B2",
+      "slug": "refacturer-part-mutuelle",
+      "anchor": "Refacturer uniquement la part mutuelle après un rejet (DRE)",
+      "type": "enfant"
+    },
+    {
+      "id": "B3",
+      "slug": "prise-en-charge-refusee",
+      "anchor": "Prise en charge refusée",
+      "type": "enfant"
+    },
+    {
+      "id": "B4",
+      "slug": "renouvellement-lunettes-moins-2-ans",
+      "anchor": "renouvellement lunettes opticien",
+      "type": "enfant"
+    },
+    {
+      "id": "B5",
+      "slug": "tiers-payant-css-opticien",
+      "anchor": "Facturer un bénéficiaire de la CSS (ex-ACS) en optique",
+      "type": "enfant"
+    },
+    {
+      "id": "B6",
+      "slug": "ouvrant-droit-beneficiaire",
+      "anchor": "Ouvrant droit ou bénéficiaire",
+      "type": "enfant"
+    },
+    {
+      "id": "B7",
+      "slug": "contester-refus-prise-en-charge",
+      "anchor": "Contester un refus de prise en charge",
+      "type": "enfant"
+    },
+    {
+      "id": "B8",
+      "slug": "checklist-prise-en-charge",
+      "anchor": "checklist avant d'envoyer une prise en charge",
+      "type": "enfant"
+    },
+    {
+      "id": "B9",
+      "slug": "client-sans-carte-tiers-payant",
+      "anchor": "Le client arrive sans sa carte de tiers payant",
+      "type": "enfant"
+    },
+    {
+      "id": "B10",
+      "slug": "reduire-taux-rejet-tiers-payant",
+      "anchor": "Faire baisser son taux de rejet",
+      "type": "enfant"
+    },
+    {
+      "id": "C0",
+      "slug": "rapprochement-bancaire-tiers-payant",
+      "anchor": "Rapprochement bancaire du tiers payant",
+      "type": "sœur"
+    },
+    {
+      "id": "E0",
+      "slug": "gerer-tiers-payant-magasin",
+      "anchor": "gestion tiers payant",
+      "type": "sœur"
+    },
+    {
+      "id": "C3",
+      "slug": "codes-rejets-noemie",
+      "anchor": "liste codes rejets noemie",
+      "type": "transverse"
+    },
+    {
+      "id": "A0",
+      "slug": "portails-tiers-payant",
+      "anchor": "portails de tiers payant",
+      "type": "transverse"
+    }
+  ],
+  "liensEntrants": [],
+  "moteur": {
+    "model": "apercu",
+    "genereLe": "2026-10-07T00:00:00.000Z",
+    "avertissements": [
+      "Fichier d'aperçu écrit à la main, non publié"
+    ]
+  },
+  "wave": 2
+}

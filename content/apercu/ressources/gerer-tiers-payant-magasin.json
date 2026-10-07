@@ -1,0 +1,130 @@
+{
+  "slug": "gerer-tiers-payant-magasin",
+  "id": "E0",
+  "category": "gerer-son-tiers-payant",
+  "categoryName": "Gérer son tiers payant",
+  "type": "standard",
+  "plateforme": null,
+  "title": "Gérer le tiers payant d'un magasin : en interne, externalisé ou automatisé ?",
+  "primaryKeyword": "gestion tiers payant",
+  "keywordCluster": [
+    "gestion tiers payant pharmacie",
+    "gestion du tiers payant",
+    "gestion tiers payant pyrénées atlantiques",
+    "gestion rejets tiers payant",
+    "gestion des tiers payants opticien",
+    "gestion des rejets tiers payant",
+    "gestion tiers payant opticien",
+    "gestion des tiers payant opticien"
+  ],
+  "parentSlug": "tiers-payant-opticien",
+  "level": "Pilier",
+  "author": {
+    "name": "Jenny Mansour",
+    "jobTitle": "Rédactrice, experte santé",
+    "photo": "/auteurs/jenny-mansour.jpg",
+    "url": null
+  },
+  "reviewer": null,
+  "datePublished": "2026-10-07",
+  "dateModified": "2026-10-07",
+  "checkedOn": null,
+  "wordCount": 18,
+  "readTime": 1,
+  "metaDescription": "Aperçu, article pas encore rédigé : Gérer le tiers payant d'un magasin : en interne, externalisé ou automatisé ?.",
+  "contentHtml": "<p><strong>Article pas encore rédigé.</strong> Ce squelette d'aperçu reprend le titre, la catégorie et les questions de la file.</p>",
+  "tocItems": [],
+  "faqItems": [
+    {
+      "question": "Faut-il gérer le tiers payant en interne ou l'externaliser ?",
+      "answer": "Réponse pas encore rédigée."
+    },
+    {
+      "question": "Combien coûte la gestion du tiers payant ?",
+      "answer": "Réponse pas encore rédigée."
+    },
+    {
+      "question": "Peut-on automatiser le tiers payant ?",
+      "answer": "Réponse pas encore rédigée."
+    }
+  ],
+  "sources": [],
+  "figures": [],
+  "internalLinks": [
+    {
+      "id": "G0",
+      "slug": "tiers-payant-opticien",
+      "anchor": "tiers payant opticien",
+      "type": "parent"
+    },
+    {
+      "id": "E1",
+      "slug": "gestionnaire-tiers-payant",
+      "anchor": "gestionnaire tiers payant",
+      "type": "enfant"
+    },
+    {
+      "id": "E2",
+      "slug": "externaliser-tiers-payant-comparatif",
+      "anchor": "externalisation tiers payant pharmaciens",
+      "type": "enfant"
+    },
+    {
+      "id": "E3",
+      "slug": "logiciel-opticien-tiers-payant",
+      "anchor": "optilys",
+      "type": "enfant"
+    },
+    {
+      "id": "E4",
+      "slug": "automatiser-saisie-prise-en-charge",
+      "anchor": "Automatiser la saisie des prises en charge",
+      "type": "enfant"
+    },
+    {
+      "id": "E5",
+      "slug": "cout-temps-tiers-payant",
+      "anchor": "coût du tiers payant pour un magasin",
+      "type": "enfant"
+    },
+    {
+      "id": "E6",
+      "slug": "indicateurs-tiers-payant",
+      "anchor": "Piloter son tiers payant",
+      "type": "enfant"
+    },
+    {
+      "id": "E7",
+      "slug": "conges-dossiers-tiers-payant",
+      "anchor": "Fermeture pour congés",
+      "type": "enfant"
+    },
+    {
+      "id": "F0",
+      "slug": "glossaire-tiers-payant",
+      "anchor": "Glossaire du tiers payant optique",
+      "type": "sœur"
+    },
+    {
+      "id": "G3",
+      "slug": "questions-tiers-payant-opticien",
+      "anchor": "Tiers payant opticien",
+      "type": "sœur"
+    },
+    {
+      "id": "B10",
+      "slug": "reduire-taux-rejet-tiers-payant",
+      "anchor": "Faire baisser son taux de rejet",
+      "type": "transverse"
+    }
+  ],
+  "liensEntrants": [],
+  "moteur": {
+    "model": "apercu",
+    "genereLe": "2026-10-07T00:00:00.000Z",
+    "avertissements": [
+      "Fichier d'aperçu écrit à la main, non publié"
+    ]
+  },
+  "wave": 2
+}

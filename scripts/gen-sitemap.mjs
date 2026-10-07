@@ -1,7 +1,8 @@
 // Generates public/sitemap.xml from static routes + every article slug.
 // Runs automatically before `vite build` (see package.json).
 import { execFileSync } from "node:child_process";
-import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
+import { articlesEnLigne, controler } from "./ressources/en-ligne.mjs";
 
 const SITE = "https://www.getgranit.ai";
 const ARTICLES = "src/lib/articles.ts";
@@ -66,6 +67,44 @@ const frSrc = articlesSrc.slice(0, articlesSrc.search(/^\s*en:\s*\[/m));
 const slugs = [...new Set([...frSrc.matchAll(/slug:\s*"([^"]+)"/g)].map((m) => m[1]))];
 const slugDates = articleDates();
 
+// Ressources du moteur SEO : articles JSON en ligne (jamais l'aperçu) et pages catégorie non vides.
+const ressources = articlesEnLigne(process.cwd());
+controler(process.cwd(), ressources);
+const { ordre } = JSON.parse(readFileSync("src/lib/ressources/categories.json", "utf8"));
+const { rattaches } = JSON.parse(readFileSync("src/lib/ressources/anciens.json", "utf8"));
+const categoryPages = ordre
+  .map((category) => {
+    const dates = [
+      ...ressources.filter((a) => a.category === category).map((a) => a.dateModified),
+      ...Object.entries(rattaches)
+        .filter(([, c]) => c === category)
+        .map(([slug]) => slugDates.get(slug)),
+    ];
+    if (!dates.length) return undefined;
+    return { category, lastmod: dates.filter(Boolean).sort().at(-1) };
+  })
+  .filter(Boolean);
+
+// Pages métier : à partir de 3 articles propres (même règle que le noindex de la page),
+// sauf le métier principal (optique), toujours présent.
+const verticalesData = JSON.parse(readFileSync("src/lib/ressources/verticales.json", "utf8"));
+const metierPages = verticalesData.ordre
+  .map((v) => {
+    const dates = [
+      ...ressources
+        .filter((a) =>
+          (verticalesData.surcharges[a.slug] ?? a.verticales ?? ["optique"]).includes(v),
+        )
+        .map((a) => a.dateModified),
+      ...Object.entries(verticalesData.anciens)
+        .filter(([, vs]) => Array.isArray(vs) && vs.includes(v))
+        .map(([slug]) => slugDates.get(slug) ?? ""),
+    ];
+    if (dates.length < 3 && v !== "optique") return undefined;
+    return { v, lastmod: dates.filter(Boolean).sort().at(-1) };
+  })
+  .filter(Boolean);
+
 // /produit and /cas-usage redirect to /agents: they don't belong in the sitemap.
 const staticPages = [
   {
@@ -79,7 +118,12 @@ const staticPages = [
   { path: "/securite", files: ["src/routes/securite.tsx"], priority: "0.7", freq: "monthly" },
   {
     path: "/ressources",
-    files: ["src/routes/ressources.index.tsx", "src/lib/articles.ts"],
+    files: [
+      "src/routes/ressources.index.tsx",
+      "src/components/ressources/Hub.tsx",
+      "src/lib/articles.ts",
+      "content/ressources",
+    ],
     priority: "0.8",
     freq: "weekly",
   },
@@ -95,18 +139,6 @@ const staticPages = [
   { path: "/privacy", files: ["src/routes/privacy.tsx"], priority: "0.3", freq: "yearly" },
 ];
 
-// Articles du moteur SEO (content/ressources/*.json), seulement ceux publiés dans la file.
-const QUEUE = "scripts/seo-engine/articles-queue.json";
-const publies = existsSync(QUEUE)
-  ? new Set(JSON.parse(readFileSync(QUEUE, "utf8")).filter((a) => a.status === "published").map((a) => a.slug))
-  : new Set();
-const moteur = existsSync("content/ressources")
-  ? readdirSync("content/ressources")
-      .filter((f) => f.endsWith(".json"))
-      .map((f) => JSON.parse(readFileSync(`content/ressources/${f}`, "utf8")))
-      .filter((a) => publies.has(a.slug) && !slugs.includes(a.slug))
-  : [];
-
 const urls = [
   ...staticPages.map((p) => ({
     loc: SITE + p.path,
@@ -114,17 +146,29 @@ const urls = [
     freq: p.freq,
     priority: p.priority,
   })),
+  ...categoryPages.map((c) => ({
+    loc: `${SITE}/ressources/categorie/${c.category}`,
+    lastmod: c.lastmod,
+    freq: "weekly",
+    priority: "0.7",
+  })),
+  ...metierPages.map((m) => ({
+    loc: `${SITE}/ressources/metier/${m.v}`,
+    lastmod: m.lastmod,
+    freq: "weekly",
+    priority: "0.7",
+  })),
+  ...ressources.map((a) => ({
+    loc: `${SITE}/ressources/${a.slug}`,
+    lastmod: a.dateModified,
+    freq: "monthly",
+    priority: a.level?.startsWith("Pilier") ? "0.8" : "0.7",
+  })),
   ...slugs.map((s) => ({
     loc: `${SITE}/ressources/${s}`,
     lastmod: slugDates.get(s),
     freq: "monthly",
     priority: "0.7",
-  })),
-  ...moteur.map((a) => ({
-    loc: `${SITE}/ressources/${a.slug}`,
-    lastmod: a.dateModified,
-    freq: "monthly",
-    priority: a.level?.startsWith("Pilier") ? "0.8" : "0.7",
   })),
 ];
 
@@ -145,5 +189,5 @@ ${urls
 writeFileSync("public/sitemap.xml", xml);
 const dated = urls.filter((u) => u.lastmod).length;
 console.log(
-  `sitemap.xml written: ${urls.length} URLs (${slugs.length} articles + ${moteur.length} du moteur + ${staticPages.length} pages, ${dated} with lastmod)`,
+  `sitemap.xml written: ${urls.length} URLs (${slugs.length} articles + ${ressources.length} ressources + ${categoryPages.length} catégories + ${metierPages.length} métiers + ${staticPages.length} pages, ${dated} with lastmod)`,
 );

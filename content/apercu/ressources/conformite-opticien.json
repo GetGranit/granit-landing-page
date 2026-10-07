@@ -1,0 +1,109 @@
+{
+  "slug": "conformite-opticien",
+  "id": "H0",
+  "category": "conformite",
+  "categoryName": "Conformité",
+  "type": "standard",
+  "plateforme": null,
+  "title": "Conformité administrative de l'opticien : ce qu'on vous demande en cas de contrôle",
+  "primaryKeyword": "conformite opticien",
+  "keywordCluster": [],
+  "parentSlug": "tiers-payant-opticien",
+  "level": "Pilier",
+  "author": {
+    "name": "Jenny Mansour",
+    "jobTitle": "Rédactrice, experte santé",
+    "photo": "/auteurs/jenny-mansour.jpg",
+    "url": null
+  },
+  "reviewer": null,
+  "datePublished": "2026-10-07",
+  "dateModified": "2026-10-07",
+  "checkedOn": null,
+  "wordCount": 18,
+  "readTime": 1,
+  "metaDescription": "Aperçu, article pas encore rédigé : Conformité administrative de l'opticien : ce qu'on vous demande en cas de contrôle.",
+  "contentHtml": "<p><strong>Article pas encore rédigé.</strong> Ce squelette d'aperçu reprend le titre, la catégorie et les questions de la file.</p>",
+  "tocItems": [],
+  "faqItems": [
+    {
+      "question": "Que contrôle l'Assurance maladie chez l'opticien ?",
+      "answer": "Réponse pas encore rédigée."
+    },
+    {
+      "question": "Quels documents conserver ?",
+      "answer": "Réponse pas encore rédigée."
+    },
+    {
+      "question": "Quelles sont les sanctions possibles ?",
+      "answer": "Réponse pas encore rédigée."
+    }
+  ],
+  "sources": [],
+  "figures": [],
+  "internalLinks": [
+    {
+      "id": "G0",
+      "slug": "tiers-payant-opticien",
+      "anchor": "tiers payant opticien",
+      "type": "parent"
+    },
+    {
+      "id": "H1",
+      "slug": "controle-assurance-maladie-opticien",
+      "anchor": "Contrôle de l'Assurance maladie",
+      "type": "enfant"
+    },
+    {
+      "id": "H2",
+      "slug": "devis-normalise-codes-lpp",
+      "anchor": "Devis normalisé et codes LPP",
+      "type": "enfant"
+    },
+    {
+      "id": "H3",
+      "slug": "conservation-dossiers-tiers-payant",
+      "anchor": "Combien de temps garder les dossiers de tiers payant ?",
+      "type": "enfant"
+    },
+    {
+      "id": "H4",
+      "slug": "fraude-tiers-payant-optique",
+      "anchor": "Fraude au tiers payant",
+      "type": "enfant"
+    },
+    {
+      "id": "H5",
+      "slug": "rgpd-donnees-sante-opticien",
+      "anchor": "Données de santé et RGPD",
+      "type": "enfant"
+    },
+    {
+      "id": "H6",
+      "slug": "reseaux-de-soins-conventionnement",
+      "anchor": "Réseaux de soins",
+      "type": "enfant"
+    },
+    {
+      "id": "G1",
+      "slug": "100-sante-classe-a-b-opticien",
+      "anchor": "lunettes 100 santé",
+      "type": "sœur"
+    },
+    {
+      "id": "G2",
+      "slug": "remboursement-optique-amo-amc",
+      "anchor": "remboursement des lunettes",
+      "type": "sœur"
+    }
+  ],
+  "liensEntrants": [],
+  "moteur": {
+    "model": "apercu",
+    "genereLe": "2026-10-07T00:00:00.000Z",
+    "avertissements": [
+      "Fichier d'aperçu écrit à la main, non publié"
+    ]
+  },
+  "wave": 3
+}
