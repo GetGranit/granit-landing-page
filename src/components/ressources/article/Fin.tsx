@@ -14,6 +14,9 @@ import type { Fiche, Plateforme, RessourceJson } from "@/lib/ressources/types";
 import { CarteArticle } from "../Cartes";
 import { BoutonAncre } from "./Ancres";
 
+/** Adresse pour signaler une erreur ; tant qu'elle est vide, la ligne « Écrivez-nous » n'apparaît pas. */
+const CORRECTIONS_EMAIL = "";
+
 const h2 =
   "mb-3.5 scroll-mt-[96px] font-serif text-[30px] font-normal leading-tight tracking-[-0.015em] text-[var(--text)]";
 
@@ -82,15 +85,17 @@ export function Sources({
           </li>
         ))}
       </ul>
-      <p className="mt-4 text-[14.5px] text-[var(--text-muted)]">
-        Une information est fausse ou a changé ?{" "}
-        <Link
-          to="/contact"
-          className="font-semibold text-[var(--text)] underline underline-offset-[3px]"
-        >
-          Écrivez-nous
-        </Link>
-      </p>
+      {CORRECTIONS_EMAIL && (
+        <p className="mt-4 text-[14.5px] text-[var(--text-muted)]">
+          Une information est fausse ou a changé ?{" "}
+          <a
+            href={`mailto:${CORRECTIONS_EMAIL}?subject=${encodeURIComponent(`Correction : ${article.title.split(" : ")[0]}`)}`}
+            className="font-semibold text-[var(--text)] underline underline-offset-[3px]"
+          >
+            Écrivez-nous
+          </a>
+        </p>
+      )}
     </section>
   );
 }
