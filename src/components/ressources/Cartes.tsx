@@ -105,10 +105,13 @@ function Couverture({
   etiquette,
   format = "carte",
   prioritaire,
+  rang,
 }: {
   fiche: Fiche;
   etiquette: string;
   format?: Format;
+  /** Position dans la liste : fait alterner les photos a/b entre cartes voisines. */
+  rang?: number;
   /** "haute" : image principale de la page ; "oui" : visible au chargement. */
   prioritaire?: "haute" | "oui";
 }) {
@@ -129,7 +132,7 @@ function Couverture({
   return (
     <div className={`relative overflow-hidden ${forme}`} style={{ backgroundColor: c.tint }}>
       <PhotoCarte
-        photo={photoFiche(fiche)}
+        photo={photoFiche(fiche, rang)}
         tailles={tailles}
         chargement={prioritaire === "haute" ? "haute" : prioritaire ? "eager" : "lazy"}
       />
@@ -169,10 +172,12 @@ export function CarteArticle({
   fiche,
   etiquette,
   prioritaire,
+  rang,
 }: {
   fiche: Fiche;
   etiquette?: string;
   prioritaire?: "oui";
+  rang?: number;
 }) {
   const c = categorie(fiche.category)!;
   return (
@@ -186,6 +191,7 @@ export function CarteArticle({
         fiche={fiche}
         etiquette={etiquette ?? fiche.etiquette ?? c.court}
         prioritaire={prioritaire}
+        rang={rang}
       />
       <h3 className="mt-4 line-clamp-3 font-serif text-[19px] font-normal leading-[1.25] tracking-[-0.01em] [text-wrap:balance] md:text-[20px]">
         <span className={survolTitre}>{fiche.title}</span>
@@ -208,6 +214,7 @@ export function CarteUne({ fiche, titre = "h2" }: { fiche: Fiche; titre?: "h2" |
         etiquette={fiche.etiquette ?? c.court}
         format="une"
         prioritaire="haute"
+        rang={0}
       />
       <H className="mt-5 max-w-[28ch] font-serif text-[clamp(26px,2.6vw,36px)] font-normal leading-[1.15] tracking-[-0.015em]">
         <TitreItalique titre={fiche.title} ink={c.ink} />
@@ -257,7 +264,7 @@ export function CartePilier({ fiche }: { fiche: Fiche }) {
 }
 
 /** Petite carte de la grille 2×2 « À la une ». */
-export function CartePetite({ fiche }: { fiche: Fiche }) {
+export function CartePetite({ fiche, rang }: { fiche: Fiche; rang?: number }) {
   const c = categorie(fiche.category)!;
   return (
     <Link
@@ -271,6 +278,7 @@ export function CartePetite({ fiche }: { fiche: Fiche }) {
         etiquette={fiche.etiquette ?? c.court}
         format="petite"
         prioritaire="oui"
+        rang={rang}
       />
       <h3 className="mt-3 line-clamp-3 font-serif text-[15px] font-normal leading-[1.3] md:text-[17px]">
         <span className={survolTitre}>{titreCourt(fiche.title)}</span>

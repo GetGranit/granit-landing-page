@@ -19,24 +19,30 @@ function hash(s: string): number {
   return h >>> 0;
 }
 
-const variante = (slug: string) => (hash(slug) % 2 === 0 ? "a" : "b");
+/**
+ * Variante a/b : dans une liste, elle alterne avec la position (deux cartes voisines n'ont
+ * jamais la même photo) ; hors liste (en-tête d'article, og:image), elle est tirée du slug.
+ */
+const variante = (slug: string, rang?: number) => ((rang ?? hash(slug)) % 2 === 0 ? "a" : "b");
 
 export const estFichePlateforme = (f: Pick<Fiche, "slug" | "category">) =>
   f.category === "plateformes" && f.slug.startsWith("portail-");
 
-export function photoTheme(category: CategorySlug, slug: string): Photo {
-  return { base: `/ressources/themes/${category}-${variante(slug)}`, alt: "" };
+export function photoTheme(category: CategorySlug, slug: string, rang?: number): Photo {
+  return { base: `/ressources/themes/${category}-${variante(slug, rang)}`, alt: "" };
 }
 
-export function photoFiche(f: Fiche): Photo {
+/** Photo d'une fiche ; `rang` = position dans la liste affichée, s'il y en a une. */
+export function photoFiche(f: Fiche, rang?: number): Photo {
   if (estFichePlateforme(f))
-    return { base: `/ressources/themes/plateformes-${variante(f.slug)}`, alt: "" };
+    return { base: `/ressources/themes/plateformes-${variante(f.slug, rang)}`, alt: "" };
   if (f.ancien && !f.rattache) {
     // Hors cocon : la photo du métier ; un transversal prend le thème « gérer son tiers payant ».
-    if (f.transversal || !f.verticales[0]) return photoTheme("gerer-son-tiers-payant", f.slug);
+    if (f.transversal || !f.verticales[0])
+      return photoTheme("gerer-son-tiers-payant", f.slug, rang);
     return { base: `/ressources/metiers/${verticale(f.verticales[0])!.slug}`, alt: "" };
   }
-  return photoTheme(f.category, f.slug);
+  return photoTheme(f.category, f.slug, rang);
 }
 
 export const src = (p: Photo, largeur: 800 | 1600) => `${p.base}-${largeur}.jpg`;

@@ -241,10 +241,11 @@ export function ALireEnsuite({ article }: { article: RessourceJson }) {
         <div className="eyebrow">Dans le même thème</div>
         <h2 className="mt-2 font-serif text-[30px] font-normal leading-tight">À lire ensuite</h2>
         <div className="mt-6 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-          {liens.slice(0, 3).map(({ fiche, type }) => (
+          {liens.slice(0, 3).map(({ fiche, type }, i) => (
             <CarteArticle
               key={fiche.slug}
               fiche={fiche}
+              rang={i}
               etiquette={ETIQUETTES[type] ?? "À lire aussi"}
             />
           ))}

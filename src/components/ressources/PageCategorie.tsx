@@ -19,8 +19,8 @@ const conteneur = "mx-auto max-w-[1280px] px-4 md:px-6";
 function Grille({ fiches }: { fiches: Fiche[] }) {
   return (
     <div className="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-      {fiches.map((f) => (
-        <CarteArticle key={f.slug} fiche={f} />
+      {fiches.map((f, i) => (
+        <CarteArticle key={f.slug} fiche={f} rang={i} />
       ))}
     </div>
   );

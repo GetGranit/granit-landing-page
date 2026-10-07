@@ -118,8 +118,9 @@ export function Hub() {
                 <CarteUne fiche={une[0]} titre="h3" />
               </div>
               <div className="grid grid-cols-2 content-start gap-x-3 gap-y-6 md:gap-x-5 md:gap-y-8 lg:col-span-5">
-                {une.slice(1).map((f) => (
-                  <CartePetite key={f.slug} fiche={f} />
+                {une.slice(1).map((f, i) => (
+                  // Damier décalé d'un cran par rapport à la grande carte (rang 0) : aucune voisine identique.
+                  <CartePetite key={f.slug} fiche={f} rang={(Math.floor(i / 2) + i + 1) % 2} />
                 ))}
               </div>
             </div>
@@ -197,12 +198,12 @@ export function Fleche() {
 function Grille({ fiches }: { fiches: Fiche[] }) {
   return (
     <div className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 [scrollbar-width:none] md:mx-0 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:px-0">
-      {fiches.map((f) => (
+      {fiches.map((f, i) => (
         <div
           key={f.slug}
           className="w-[78vw] max-w-[320px] shrink-0 snap-start md:w-auto md:max-w-none"
         >
-          <CarteArticle fiche={f} />
+          <CarteArticle fiche={f} rang={i} />
         </div>
       ))}
     </div>
