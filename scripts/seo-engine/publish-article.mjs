@@ -6,7 +6,7 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { parseArgs } from "node:util";
-import { controler, typeDePage, verifierSources } from "./lib/checks.mjs";
+import { citations, controler, typeDePage, verifierSources } from "./lib/checks.mjs";
 import { coutDollars, rediger } from "./lib/claude.mjs";
 import { mots, texte } from "./lib/html.mjs";
 import {
@@ -125,7 +125,8 @@ function message(retour) {
       `- Pas de H1, pas de FAQ, pas d'encart final, pas d'image dans contentHtml.\n` +
       `- tocItems : un élément par H2, mêmes id, même ordre.\n` +
       `- metaDescription : 140 à 160 caractères, avec le mot-clé principal.\n` +
-      `- sources : chaque lien externe du corps, 2 minimum, uniquement des pages officielles que tu connais avec certitude.\n` +
+      `- sources : chaque lien externe du corps, 2 minimum. Toujours la page exacte qui porte le fait (ex. la fiche ameli.fr sur le 100 % Santé optique), jamais la page d'accueil d'un site. Uniquement des pages officielles dont tu es certain qu'elles existent : une URL qui ne répond pas fait refuser l'article.\n` +
+      `- Une citation réelle obligatoire : <blockquote><p>« … »</p><cite>…</cite></blockquote>, recopiée mot pour mot depuis une source de la liste, avec dans <cite> exactement le label de cette source (le moteur vérifie que la phrase figure sur la page) (texte officiel, page de plateforme ou fichier de faits). Jamais inventée ni reformulée.\n` +
       `- Mot-clé principal « ${article.primaryKeyword} » dans les 100 premiers mots.`,
   );
   if (retour) parts.push(`## Correction demandée\nLa version précédente a été refusée pour ces raisons. Corrige-les toutes :\n${retour.map((e) => `- ${e}`).join("\n")}`);
@@ -152,7 +153,7 @@ for (let essai = 1; essai <= 2 && !sortie; essai++) {
     continue;
   }
   const c = controler(r.json, { article, type, faits: fp?.faits, cibles, pagesProduit: config.pagesProduit });
-  const s = await verifierSources(r.json.sources ?? []);
+  const s = await verifierSources(r.json.sources ?? [], citations(r.json.contentHtml ?? ""));
   const erreurs = [...c.erreurs, ...s.erreurs];
   console.log(`  ${c.nbMots} mots · ${erreurs.length} erreur(s) · ${c.avertissements.length + s.avertissements.length} avertissement(s)`);
   if (erreurs.length) {
