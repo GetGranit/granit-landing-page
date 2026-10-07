@@ -49,9 +49,9 @@ export function Chiffres({ p }: { p: Plateforme }) {
     <div className="my-4">
       <dl className="grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-2.5">
         {p.chiffres.map((c) => (
-          <div key={c.label} className={`${caseCls} flex flex-col-reverse`}>
+          <div key={c.label} className={`${caseCls} flex flex-col-reverse justify-end`}>
             <dt className="text-[14px] leading-snug text-[var(--text-muted)]">{c.label}</dt>
-            <dd className="font-serif text-[30px] leading-[1.1] text-[var(--text)]">{c.valeur}</dd>
+            <dd className="whitespace-nowrap font-serif text-[28px] leading-[1.1] text-[var(--text)]">{c.valeur}</dd>
           </div>
         ))}
       </dl>
@@ -136,7 +136,7 @@ export function Contacts({ p }: { p: Plateforme }) {
   const sources = [...new Set(p.contacts.map((c) => c.source))];
   return (
     <div className="my-4">
-      <dl className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-2.5">
+      <dl className="grid gap-2.5 sm:grid-cols-2">
         {p.contacts.map((c) => (
           <div key={c.label} className={caseCls}>
             <dt className="text-[13px] text-[var(--text-muted)]">{c.label}</dt>

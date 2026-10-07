@@ -51,7 +51,7 @@ export function Hub() {
               <div className="lg:col-span-7">
                 <CarteUne fiche={une[0]} titre="h3" />
               </div>
-              <div className="grid grid-cols-2 gap-x-3 gap-y-6 md:gap-x-5 md:gap-y-8 lg:col-span-5">
+              <div className="grid grid-cols-2 content-start gap-x-3 gap-y-6 md:gap-x-5 md:gap-y-8 lg:col-span-5">
                 {une.slice(1).map((f) => (
                   <CartePetite key={f.slug} fiche={f} />
                 ))}

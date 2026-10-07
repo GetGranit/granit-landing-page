@@ -5,7 +5,7 @@
 // - Couvertures /covers/{slug}.svg : servies à la volée en dev, écrites dans public/covers au build.
 // L'aperçu (content/apercu) n'est lu qu'en dev ou sur un déploiement Vercel de prévisualisation :
 // il n'entre jamais dans un build de production.
-import { mkdirSync, readdirSync, rmSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import type { Plugin, ViteDevServer } from "vite";
 import { controler, lireContenu } from "./en-ligne.mjs";
@@ -83,7 +83,7 @@ export function ressources(): Plugin {
     load(id) {
       if (!id.startsWith("\0" + INDEX)) return;
       const contenu = lire();
-      contenu.lus.forEach((p) => this.addWatchFile(p));
+      contenu.lus.filter((p) => existsSync(p)).forEach((p) => this.addWatchFile(p));
       if (id === "\0" + INDEX) {
         controler(racine, contenu.articles);
         const fiches = contenu.articles.map((a) => fiche(a, contenu.plateformes));
