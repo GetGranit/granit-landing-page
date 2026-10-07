@@ -52,20 +52,85 @@ export function MarquePlateforme({
 
 type Format = "carte" | "petite" | "une" | "pilier";
 
-/** Médaillon blanc rond d'une plateforme : son vrai logo, sinon son initiale. Jamais généré. */
-export function Medaillon({ nom, logo, taille }: { nom: string; logo?: string; taille: string }) {
+/**
+ * Écran des fonds « plateformes » (ordinateur à l'écran vierge), en % de l'image 16:9 d'origine :
+ * les 4 coins de la dalle (haut gauche, haut droit, bas droit, bas gauche) et la largeur du logo.
+ */
+const ECRANS: Record<"a" | "b", { coins: [number, number][]; logo: number }> = {
+  a: {
+    coins: [
+      [23.6, 29.0],
+      [50.0, 28.0],
+      [53.4, 66.4],
+      [26.9, 67.4],
+    ],
+    logo: 15,
+  },
+  b: {
+    coins: [
+      [49.4, 21.8],
+      [80.6, 28.6],
+      [77.9, 65.4],
+      [48.8, 57.6],
+    ],
+    logo: 17,
+  },
+};
+
+/**
+ * Fond d'une fiche plateforme : l'ordinateur du fond affiche le logo (ou l'initiale) au centre
+ * de son écran, sur un blanc qui épouse la dalle, comme si le portail était ouvert.
+ * Le cadre garde le ratio 16:9 de la photo et la recadre comme object-cover (centré), quel que
+ * soit le format de la carte : les coordonnées de l'écran restent donc justes.
+ */
+function EcranPlateforme({
+  photo,
+  nom,
+  logo,
+  tailles,
+  chargement,
+}: {
+  photo: Photo;
+  nom: string;
+  logo?: string;
+  tailles: string;
+  chargement: "haute" | "eager" | "lazy";
+}) {
+  const e = ECRANS[photo.base.endsWith("-b") ? "b" : "a"];
+  const cx = e.coins.reduce((t, c) => t + c[0], 0) / 4;
+  const cy = e.coins.reduce((t, c) => t + c[1], 0) / 4;
   return (
-    <span
-      className={`absolute left-[14%] top-1/2 grid aspect-square -translate-y-1/2 place-items-center rounded-full bg-white shadow-[0_10px_30px_-10px_rgba(28,17,8,0.35)] ${taille}`}
-    >
-      {logo ? (
-        <img src={logo} alt="" className="h-[58%] w-[58%] object-contain" />
-      ) : (
-        <span className="font-serif text-[clamp(28px,4vw,52px)] leading-none text-[#b94a2f]">
-          {nom.slice(0, 1).toUpperCase()}
-        </span>
-      )}
-    </span>
+    <div className="absolute left-1/2 top-0 aspect-video h-full -translate-x-1/2 transition-transform duration-500 ease-[var(--ease-out-quint)] group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100">
+      <img
+        src={src(photo, 800)}
+        srcSet={srcSet(photo)}
+        sizes={tailles}
+        width={1600}
+        height={900}
+        loading={chargement === "lazy" ? "lazy" : "eager"}
+        fetchPriority={chargement === "haute" ? "high" : undefined}
+        decoding="async"
+        alt=""
+        className="h-full w-full"
+      />
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-white"
+        style={{ clipPath: `polygon(${e.coins.map(([x, y]) => `${x}% ${y}%`).join(", ")})` }}
+      />
+      <div
+        className="absolute grid aspect-[2/1] -translate-x-1/2 -translate-y-1/2 place-items-center"
+        style={{ left: `${cx}%`, top: `${cy}%`, width: `${e.logo}%` }}
+      >
+        {logo ? (
+          <img src={logo} alt="" className="h-full w-full object-contain" />
+        ) : (
+          <span className="font-serif text-[clamp(24px,3.4vw,44px)] leading-none text-[#b94a2f]">
+            {nom.slice(0, 1).toUpperCase()}
+          </span>
+        )}
+      </div>
+    </div>
   );
 }
 
@@ -129,19 +194,19 @@ function Couverture({
     pilier: "(min-width: 768px) 720px, 100vw",
   }[format];
   const nom = fiche.plateforme?.nom ?? titreCourt(fiche.title);
+  const chargement = prioritaire === "haute" ? "haute" : prioritaire ? "eager" : "lazy";
   return (
     <div className={`relative overflow-hidden ${forme}`} style={{ backgroundColor: c.tint }}>
-      <PhotoCarte
-        photo={photoFiche(fiche, rang)}
-        tailles={tailles}
-        chargement={prioritaire === "haute" ? "haute" : prioritaire ? "eager" : "lazy"}
-      />
-      {estFichePlateforme(fiche) && (
-        <Medaillon
+      {estFichePlateforme(fiche) ? (
+        <EcranPlateforme
+          photo={photoFiche(fiche, rang)}
           nom={nom}
           logo={fiche.plateforme?.logo}
-          taille={format === "petite" ? "w-[38%]" : "w-[34%]"}
+          tailles={tailles}
+          chargement={chargement}
         />
+      ) : (
+        <PhotoCarte photo={photoFiche(fiche, rang)} tailles={tailles} chargement={chargement} />
       )}
       <span
         className="absolute left-3 top-3 rounded-[6px] bg-white/90 px-2 py-1 font-mono text-[10.5px] font-medium uppercase tracking-[0.12em]"
