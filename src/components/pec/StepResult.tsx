@@ -1,10 +1,6 @@
-import { useState } from "react";
-
 import type { CardRead } from "@/lib/pec/readCard";
 import { platformById, type Platform } from "@/lib/pec/resolve";
 import { Kicker, Muted, Reassure, Screen, TextLink, Title, bigBtn } from "./ui";
-
-const emailRe = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 
 /** Ce qu'on a lu, sans jamais rien sur le patient. */
 function readLines(card: CardRead | null, p: Platform) {
@@ -51,49 +47,43 @@ function PortalBox({ card, p, waiting }: { card: CardRead | null; p: Platform; w
   );
 }
 
-/** E3 · portail simulable : la PEC existe déjà, le compte ne fait que la débloquer. */
-export function ResultSimulable({ card, p, onLaunch, busy, example }: { card: CardRead | null; p: Platform; onLaunch: (email: string) => void; busy: boolean; example?: boolean }) {
-  const [email, setEmail] = useState("");
-  const [err, setErr] = useState("");
+/**
+ * E3 · portail simulable. Si la simulation en direct est proposée, on la
+ * lance ; sinon (mock invisible aux vrais visiteurs) Paul la montre sur le
+ * compte de l'opticien.
+ */
+export function ResultSimulable({ card, p, example, proposee, onSimulate, onPaul }: { card: CardRead | null; p: Platform; example?: boolean; proposee: boolean; onSimulate: () => void; onPaul: () => void }) {
+  const target = p.reseau_via ? labelOf(p.reseau_via) : p.label;
   return (
     <Screen id="result-sim">
       <span className="rounded-full px-3 py-1 text-[12px]" style={{ background: "var(--sage-light)", color: "#2f6b3d", fontFamily: "var(--font-mono)" }}>
-        ✓ 3 étapes sur 5 déjà faites
+        ✓ Portail trouvé
       </span>
       {example && <Kicker>Carte d'exemple · au prochain client, prenez sa vraie carte</Kicker>}
-      <Title em="est prête" after=".">Votre PEC {p.reseau_via ? labelOf(p.reseau_via) : p.label} </Title>
+      {proposee ? (
+        <Title em={target} after=".">Simulons votre PEC sur </Title>
+      ) : (
+        <Title em="simulée en direct" after=".">Votre PEC {target} peut être </Title>
+      )}
       {expired(card?.fin_droits) && <Warn>La carte semble expirée ({card?.fin_droits}) : vérifiez les droits du patient.</Warn>}
       <PortalBox card={card} p={p} waiting />
-      <p className="text-[15px]" style={{ color: "var(--text)" }}>⏸ Elle attend votre connexion au portail pour être simulée.</p>
-      <form
-        className="grid w-full gap-3 text-left"
-        noValidate
-        onSubmit={(e) => {
-          e.preventDefault();
-          if (!emailRe.test(email.trim())) return setErr("Indiquez un e-mail valide pour retrouver votre PEC.");
-          setErr("");
-          onLaunch(email.trim());
-        }}
-      >
-        <label className="grid gap-1.5 text-[15px]" style={{ color: "var(--text)", fontWeight: 500 }}>
-          Votre e-mail
-          <input
-            type="email"
-            autoComplete="email"
-            inputMode="email"
-            placeholder="contact@votre-magasin.fr"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="w-full rounded-xl border-[1.5px] bg-white px-4 py-3.5 text-[17px] outline-none focus:border-[var(--terra)]"
-            style={{ borderColor: "var(--border2)", color: "var(--text)" }}
-          />
-        </label>
-        {err && <p role="alert" className="text-[14px]" style={{ color: "var(--terra-hover)" }}>{err}</p>}
-        <button type="submit" disabled={busy} className={`${bigBtn} w-full disabled:opacity-60`}>
-          {busy ? "Un instant…" : <>Lancer ma PEC <span className="arrow">→</span></>}
-        </button>
-      </form>
-      <Reassure items={["Rien n'est envoyé à la mutuelle", "Essai gratuit, sans carte bancaire", "Photo non conservée"]} />
+      {proposee ? (
+        <>
+          <Muted>Sur votre compte, pour votre client, sans rien envoyer à la mutuelle. Il faudra son n° de sécu et vos identifiants {target}.</Muted>
+          <button type="button" className={`${bigBtn} w-full`} onClick={onSimulate}>
+            Simuler ma PEC <span className="arrow">→</span>
+          </button>
+          <Reassure items={["Rien n'est envoyé à la mutuelle", "Identifiants non conservés", "Photo non conservée"]} />
+        </>
+      ) : (
+        <>
+          <Muted>Paul vous la montre sur votre compte {target}, avec un de vos clients, en 15 minutes.</Muted>
+          <button type="button" className={`${bigBtn} w-full`} onClick={onPaul}>
+            Paul me la montre <span className="arrow">→</span>
+          </button>
+          <Reassure items={["Rien n'est envoyé à la mutuelle", "Photo non conservée"]} />
+        </>
+      )}
     </Screen>
   );
 }

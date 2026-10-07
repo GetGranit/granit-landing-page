@@ -7,19 +7,22 @@ import { StepCapture } from "@/components/pec/StepCapture";
 import { StepContact, StepThanks } from "@/components/pec/StepContact";
 import { StepReading } from "@/components/pec/StepReading";
 import { ResultChoice, ResultPortal, ResultSimulable } from "@/components/pec/StepResult";
+import { SimFlow } from "@/components/pec/SimFlow";
+import type { SimResultat } from "@/components/pec/StepSimFin";
 import { StepSearch } from "@/components/pec/StepSearch";
 import { Muted, PecShell } from "@/components/pec/ui";
 import { compressImage } from "@/lib/pec/image";
 import { sendPecLead, type PecLeadKind } from "@/lib/pec/lead";
 import { readCard, type CardRead } from "@/lib/pec/readCard";
+import { simulationEnDirect, simulationProposee } from "@/lib/pec/simulation";
 import { EXAMPLE_CARD, platformById, resolveCard, resolveIds, type Platform, type Resolution } from "@/lib/pec/resolve";
 
 /**
  * Lead magnet « votre prochaine PEC, sans la taper » : photo de la carte de
- * tiers payant → portail trouvé → PEC préparée. Sur les 4 portails où Granit
- * sait simuler sans rien envoyer (Viamédis, Kalixia, Génération, EMOA), on
- * propose de lancer la PEC dans l'espace d'essai ; ailleurs on donne le lien
- * du portail et on propose Paul.
+ * tiers payant → portail trouvé. Sur les 4 portails où Granit sait simuler
+ * sans rien envoyer (Viamédis, Kalixia, Génération, EMOA), on simule la PEC en
+ * direct sur le compte de l'opticien, puis l'e-mail ouvre l'espace d'essai ;
+ * ailleurs on donne le lien du portail et on propose Paul.
  */
 export const Route = createFileRoute("/pec")({
   head: () => ({
@@ -40,6 +43,7 @@ type Step =
   | { s: "reading"; previewUrl?: string }
   | { s: "search"; reason?: string }
   | { s: "result"; res: Resolution }
+  | { s: "sim"; platform: Platform }
   | { s: "contact"; kind: PecLeadKind; platform?: Platform; mutuelle?: string }
   | { s: "thanks"; kind: PecLeadKind | "essai-off" };
 
@@ -54,6 +58,7 @@ function PecPage() {
   const [email, setEmail] = useState<string>();
   const pending = useRef<Resolution | null>(null);
   const [readDone, setReadDone] = useState(false);
+  const [simN, setSimN] = useState(4);
   const ref = typeof window === "undefined" ? null : new URLSearchParams(window.location.search).get("p");
 
   const track = useCallback((e: string, p?: Record<string, unknown>) => posthog?.capture(e, { ...p, ref }), [posthog, ref]);
@@ -120,15 +125,23 @@ function PecPage() {
     }
   }
 
-  async function onLaunch(p: Platform, mail: string) {
+  /** Fin de simulation : l'e-mail crée le compte en coulisse. Rien du patient ni du portail (identifiants) ne part. */
+  async function onSimEmail(p: Platform, mail: string, r: SimResultat) {
     setEmail(mail);
-    track("pec_lancer", { platform: p.id, source });
+    track("pec_vers_freemium", { platform: p.id, source });
     await lead("essai", { email: mail }, p);
+    const portail = platformById(p.reseau_via ?? p.id) ?? p;
     try {
       sessionStorage.setItem(CASE_KEY, JSON.stringify({
         source, email: mail,
-        mutuelle: card?.assureur ?? null, amc: card?.amc ?? null, adherent: null, reseau: card?.reseau ?? null,
-        platform: { id: p.reseau_via ?? p.id, label: platformById(p.reseau_via ?? p.id)?.label ?? p.label, url: p.url, simulable: p.simulable, tfa: p.tfa },
+        mutuelle: card?.assureur ?? null, amc: card?.amc ?? null, reseau: card?.reseau ?? null,
+        platform: { id: portail.id, label: portail.label, url: portail.url, simulable: portail.simulable, tfa: portail.tfa },
+        portailConnecte: true,
+        simulation: {
+          total: r.total, partSecu: r.partSecu, partMutuelle: r.partMutuelle, resteACharge: r.resteACharge, dureeSec: r.dureeSec,
+          ...(r.captureUrl ? { captureUrl: r.captureUrl } : {}), ...(r.numero ? { numero: r.numero } : {}),
+          apercu: !simulationEnDirect(),
+        },
       }));
     } catch {
       /* stockage bloqué : l'essai repartira sur un cas d'exemple */
@@ -137,8 +150,8 @@ function PecPage() {
     else setStep({ s: "thanks", kind: "essai-off" });
   }
 
-  const total = 5;
-  const n = { capture: 1, reading: 2, search: 2, result: 3, contact: 4, thanks: 5 }[step.s];
+  const total = 8;
+  const n = step.s === "sim" ? simN : { capture: 1, reading: 2, search: 2, result: 3, contact: 6, thanks: 8 }[step.s];
 
   return (
     <PecShell step={n} total={total}>
@@ -162,7 +175,27 @@ function PecPage() {
           <ResultChoice key="ch" platforms={step.res.platforms} onPick={(p) => showResolution({ kind: "unique", platform: p })} onType={() => setStep({ s: "search" })} />
         )}
         {step.s === "result" && step.res.kind === "unique" && step.res.platform.simulable && (
-          <ResultSimulable key="rs" card={card} p={step.res.platform} busy={busy} example={source === "exemple"} onLaunch={(m) => step.res.kind === "unique" && onLaunch(step.res.platform, m)} />
+          <ResultSimulable
+            key="rs"
+            card={card}
+            p={step.res.platform}
+            example={source === "exemple"}
+            proposee={simulationProposee()}
+            onSimulate={() => step.res.kind === "unique" && setStep({ s: "sim", platform: step.res.platform })}
+            onPaul={() => step.res.kind === "unique" && setStep({ s: "contact", kind: "rappel", platform: step.res.platform })}
+          />
+        )}
+        {step.s === "sim" && (
+          <SimFlow
+            key="sim"
+            platformId={step.platform.reseau_via ?? step.platform.id}
+            portail={platformById(step.platform.reseau_via ?? step.platform.id)?.label ?? step.platform.label}
+            busy={busy}
+            track={track}
+            onProgress={setSimN}
+            onBack={() => setStep({ s: "result", res: { kind: "unique", platform: step.platform } })}
+            onEmail={(m, r) => void onSimEmail(step.platform, m, r)}
+          />
         )}
         {step.s === "result" && step.res.kind === "unique" && !step.res.platform.simulable && (
           <ResultPortal key="rp" card={card} p={step.res.platform} onContact={() => step.res.kind === "unique" && setStep({ s: "contact", kind: "rappel", platform: step.res.platform })} />
