@@ -1,0 +1,18 @@
+{
+  "site": "https://www.getgranit.ai",
+  "model": "claude-opus-5-5",
+  "maxTokens": 64000,
+  "relectureDesPremiers": 5,
+  "auteur": { "nom": "Paul Pietra", "fonction": "", "photo": "" },
+  "relecteur": "",
+  "pagesProduit": ["/agents", "/demo"],
+  "categories": {
+    "guide-tiers-payant": "Guide du tiers payant",
+    "plateformes": "Plateformes et portails",
+    "rejets": "Rejets et corrections",
+    "paiements": "Paiements et rapprochement",
+    "gerer-son-tiers-payant": "Gérer son tiers payant",
+    "glossaire": "Glossaire",
+    "conformite": "Conformité"
+  }
+}

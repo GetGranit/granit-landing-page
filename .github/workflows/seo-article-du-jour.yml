@@ -1,0 +1,88 @@
+# Moteur SEO : un article par jour ouvré, rédigé par Claude à partir de la file
+# scripts/seo-engine/articles-queue.json. Voir scripts/seo-engine/README.md.
+name: SEO · article du jour
+
+on:
+  # À décommenter quand la page /ressources/{slug} sait lire content/ressources/*.json
+  # schedule:
+  #   - cron: "17 6 * * 1-5" # 8 h 17 à Paris (heure d'été), du lundi au vendredi
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: "Slug précis à rédiger (vide = premier article pending)"
+        required: false
+      dry:
+        description: "Essai : rédiger sans publier"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: seo-article-du-jour
+  cancel-in-progress: false
+
+jobs:
+  publier:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Rédiger et contrôler
+        id: run
+        shell: bash
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SLUG_DEMANDE: ${{ inputs.slug }}
+          DRY: ${{ inputs.dry }}
+        run: |
+          set -o pipefail
+          args=()
+          [ -n "$SLUG_DEMANDE" ] && args+=(--slug "$SLUG_DEMANDE")
+          [ "$DRY" = "true" ] && args+=(--dry --out "$RUNNER_TEMP/essai")
+          node scripts/seo-engine/publish-article.mjs "${args[@]}" 2>&1 | tee "$RUNNER_TEMP/run.log"
+
+      - name: Garder l'essai
+        if: inputs.dry
+        uses: actions/upload-artifact@v4
+        with:
+          name: essai-article
+          path: ${{ runner.temp }}/essai
+
+      - name: Publier
+        id: ship
+        if: steps.run.outputs.slug != '' && !inputs.dry
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SLUG: ${{ steps.run.outputs.slug }}
+          TITLE: ${{ steps.run.outputs.title }}
+          REVIEW: ${{ steps.run.outputs.review }}
+        run: bash scripts/seo-engine/ship.sh
+
+      - name: Prévenir sur Slack
+        if: steps.run.outputs.slug != '' && !inputs.dry
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_CANAL_SEO: ${{ secrets.SLACK_CANAL_SEO }}
+          TITLE: ${{ steps.run.outputs.title }}
+          URL: ${{ steps.run.outputs.url }}
+          PR: ${{ steps.ship.outputs.pr }}
+          AVERTISSEMENTS: ${{ steps.run.outputs.avertissements }}
+        run: node scripts/seo-engine/notify.mjs ok
+
+      - name: Alerter sur Slack
+        if: failure()
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_CANAL_SEO: ${{ secrets.SLACK_CANAL_SEO }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: node scripts/seo-engine/notify.mjs erreur

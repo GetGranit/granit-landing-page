@@ -1,0 +1,217 @@
+{
+  "slug": "portail-almerys",
+  "nom": "Almerys",
+  "logo": "/logos/almerys.webp",
+  "checkedOn": "2026-10-07",
+  "identite": [
+    {
+      "label": "Type",
+      "valeur": "Opérateur de tiers payant",
+      "source": "cnil-2024"
+    },
+    {
+      "label": "Optique",
+      "valeur": "Oui, sur devis ou demande de prise en charge",
+      "source": "granit-connecteur"
+    },
+    {
+      "label": "Portail",
+      "valeur": "almerys.com (site des PEC)",
+      "source": "almerys-ps"
+    },
+    {
+      "label": "Connexion",
+      "valeur": "Code à usage unique reçu par e-mail",
+      "source": "granit-connecteur"
+    }
+  ],
+  "chiffres": [
+    {
+      "valeur": "1",
+      "label": "équipement par demande de prise en charge optique",
+      "source": "granit-connecteur"
+    },
+    {
+      "valeur": "8",
+      "label": "états possibles d'une demande dans l'historique du portail",
+      "source": "granit-connecteur"
+    },
+    {
+      "valeur": "11 000",
+      "label": "professionnels sur son tiers payant de 3e génération en 2017",
+      "source": "acuite-2017"
+    }
+  ],
+  "faits": [
+    {
+      "fait": "Almerys gère le tiers payant pour le compte de nombreuses complémentaires santé et mutuelles.",
+      "source": "cnil-2024"
+    },
+    {
+      "fait": "Almerys est un opérateur, pas un réseau de soins. Une mutuelle peut l'associer à un réseau distinct : Aéma Groupe a choisi Almerys pour le tiers payant de ses mutuelles (Aésio mutuelle, Apivia Macif Mutuelle, MNFCT, Math - Prevaris) et Carte Blanche Partenaires comme réseau de soins.",
+      "source": "acuite-aema"
+    },
+    {
+      "fait": "Pour être conventionné, l'opticien envoie une feuille de soins barrée ou son attestation CPAM à la cellule conventionnement d'Almerys.",
+      "source": "almerys-ps"
+    },
+    {
+      "fait": "Pour accéder à l'espace professionnel, il faut être conventionné Almerys et avoir validé son compte selon les indications envoyées par Almerys.",
+      "source": "almerys-extranet"
+    },
+    {
+      "fait": "Les demandes de prise en charge se font sur le « Site des PEC » d'Almerys, avec un identifiant et un mot de passe.",
+      "source": "almerys-ps"
+    },
+    {
+      "fait": "Chaque magasin se connecte avec son identifiant et son mot de passe, puis saisit un code à usage unique de 6 chiffres envoyé par e-mail à chaque connexion.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "Une demande optique peut être un devis ou une demande de prise en charge. Le bouton « Valoriser » crée la demande : un numéro de PEC est attribué et les montants s'affichent.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "Chaque élément est saisi par son code LPP. Pour les verres, c'est le code du fournisseur. Une demande ne porte que sur un équipement : un second équipement demande une seconde demande.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "La réouverture de l'espace professionnel en ligne se fait de façon progressive. Chaque professionnel reçoit un e-mail intitulé « Réouverture site en ligne Almerys » avant de pouvoir s'y connecter.",
+      "source": "almerys-extranet"
+    },
+    {
+      "fait": "Almerys ne traite pas les réclamations des assurés. Il faut les orienter vers leur complémentaire, dont le nom figure sur la carte de tiers payant.",
+      "source": "almerys-ps"
+    },
+    {
+      "fait": "Début 2020, le Rof a contesté par mise en demeure l'exigence d'Almerys de recevoir le devis signé et l'ordonnance pour les demandes de prise en charge.",
+      "source": "acuite-rof-2020"
+    }
+  ],
+  "conventionnement": [
+    "Envoyer une feuille de soins barrée ou l'attestation CPAM à celluleconventionnementalmerys@almerys.com.",
+    "Attendre l'e-mail d'Almerys qui donne les indications pour valider son compte.",
+    "Valider son compte en suivant ces indications.",
+    "Se connecter à l'espace professionnel avec son identifiant et son mot de passe.",
+    "Faire ses devis et demandes de prise en charge sur le site des PEC."
+  ],
+  "statuts": [
+    {
+      "libelle": "Créée",
+      "sens": "La demande est enregistrée, sans décision encore",
+      "action": "Attendre la réponse, puis vérifier l'historique"
+    },
+    {
+      "libelle": "En instance",
+      "sens": "La demande est encore à l'étude",
+      "action": "Attendre, puis relancer si rien ne bouge"
+    },
+    {
+      "libelle": "Validée",
+      "sens": "La complémentaire accepte la prise en charge",
+      "action": "Délivrer l'équipement, puis facturer"
+    },
+    {
+      "libelle": "Refusée",
+      "sens": "Pas de prise en charge en l'état",
+      "action": "Lire le motif, corriger, refaire une demande"
+    },
+    {
+      "libelle": "Périmée",
+      "sens": "L'accord a dépassé sa durée de validité",
+      "action": "Refaire une demande"
+    },
+    {
+      "libelle": "Annulée",
+      "sens": "La demande n'est plus active",
+      "action": "Refaire une demande si l'équipement est toujours délivré"
+    },
+    {
+      "libelle": "Facturée",
+      "sens": "La facture a été envoyée",
+      "action": "Suivre le paiement"
+    },
+    {
+      "libelle": "Soldée",
+      "sens": "Le dossier est réglé",
+      "action": "Rien à faire, vérifier le montant reçu"
+    }
+  ],
+  "statutsSource": "granit-connecteur",
+  "contacts": [
+    {
+      "label": "Téléphone",
+      "valeur": "0 825 826 214",
+      "detail": "0,15 € TTC/min + prix d'appel",
+      "source": "almerys-ps"
+    },
+    {
+      "label": "Conventionnement et compte",
+      "valeur": "celluleconventionnementalmerys@almerys.com",
+      "source": "almerys-contacts"
+    },
+    {
+      "label": "PEC et factures",
+      "valeur": "almerys@almerys.com",
+      "source": "almerys-contacts"
+    },
+    {
+      "label": "Site des PEC",
+      "valeur": "Demande de prise en charge",
+      "url": "https://www.almerys.com/site/Login.do",
+      "source": "almerys-ps"
+    },
+    {
+      "label": "Adresse",
+      "valeur": "almerys service PS, 46 rue du Ressort, 63967 Clermont-Ferrand Cedex 9",
+      "source": "almerys-ps"
+    }
+  ],
+  "organismes": {
+    "source": "granit-connecteur",
+    "note": "Liste du sélecteur d'organisme du portail optique, relevée par les agents Granit. Formuler : « ce que propose le sélecteur du portail », jamais « cette mutuelle passe uniquement par Almerys ». Le portail Almerys n'a pas de sélecteur d'organisme : la complémentaire s'affiche une fois le bénéficiaire trouvé. La liste est donc vide.",
+    "liste": []
+  },
+  "sources": {
+    "almerys-ps": {
+      "label": "almerys.com · Espace professionnels de santé",
+      "url": "https://www.almerys.com/fr/espace-professionnels-de-sante",
+      "consulte": "2026-10-07"
+    },
+    "almerys-extranet": {
+      "label": "almerys.com · Espace professionnel (connexion)",
+      "url": "https://www.almerys.com/accueil/Accueil?isPS=true",
+      "consulte": "2026-10-07"
+    },
+    "almerys-contacts": {
+      "label": "almerys.com · Contactez-nous (espace professionnel)",
+      "url": "https://www.almerys.com/accueil/contacts",
+      "consulte": "2026-10-07"
+    },
+    "cnil-2024": {
+      "label": "CNIL · Violation de données de deux opérateurs de tiers payant (7 février 2024)",
+      "url": "https://www.cnil.fr/fr/violation-de-donnees-de-deux-operateurs-de-tiers-payant-la-cnil-ouvre-une-enquete-et-rappelle-aux",
+      "consulte": "2026-10-07"
+    },
+    "acuite-aema": {
+      "label": "Acuité · Aéma Groupe officialise son opérateur de tiers payant",
+      "url": "https://acuite.fr/actualite/ocam/251022/le-5e-acteur-de-lassurance-officialise-son-operateur-de-tiers-payant-et",
+      "consulte": "2026-10-07"
+    },
+    "acuite-2017": {
+      "label": "Acuité · Almerys étend son tiers payant de 3e génération (2017)",
+      "url": "https://www.acuite.fr/actualite/economie/2017/almerys-etend-son-tiers-payant-de-3eme-generation-lensemble-des",
+      "consulte": "2026-10-07"
+    },
+    "acuite-rof-2020": {
+      "label": "Acuité · Le Rof adresse deux mises en demeure à Viamedis et Almerys (2020)",
+      "url": "https://www.acuite.fr/actualites/profession/regime-obligatoire/le-rof-adresse-deux-mises-en-demeure-aux-176198",
+      "consulte": "2026-10-07"
+    },
+    "granit-connecteur": {
+      "label": "Connecteur Almerys de Granit (relevé du 07/10/2026)",
+      "url": "",
+      "consulte": "2026-10-07"
+    }
+  }
+}

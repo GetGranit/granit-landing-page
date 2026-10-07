@@ -1,0 +1,221 @@
+{
+  "slug": "portail-oxantis",
+  "nom": "Oxantis",
+  "logo": "/logos/oxantis.png",
+  "checkedOn": "2026-10-07",
+  "identite": [
+    {
+      "label": "Type",
+      "valeur": "Opérateur de tiers payant du Groupe VYV",
+      "source": "vyv-cp"
+    },
+    {
+      "label": "Optique",
+      "valeur": "Oui, tiers payant sur accord préalable",
+      "source": "vyv-cp"
+    },
+    {
+      "label": "Portail",
+      "valeur": "oxantis.net",
+      "source": "vyv-cp"
+    },
+    {
+      "label": "Connexion",
+      "valeur": "Double authentification (code par appel ou SMS)",
+      "source": "granit-connecteur"
+    }
+  ],
+  "chiffres": [
+    {
+      "valeur": "31",
+      "label": "complémentaires utilisatrices en 2023",
+      "source": "vyv-cp"
+    },
+    {
+      "valeur": "+10 M",
+      "label": "adhérents protégés par ces complémentaires en 2023",
+      "source": "vyv-cp"
+    },
+    {
+      "valeur": "24 000",
+      "label": "professionnels de santé sur le portail en 2023",
+      "source": "vyv-cp"
+    },
+    {
+      "valeur": "2,2 M",
+      "label": "factures optique traitées en 2022",
+      "source": "vyv-cp"
+    }
+  ],
+  "faits": [
+    {
+      "fait": "Oxantis SA regroupe depuis janvier 2023 la gestion du tiers payant optique, audio et dentaire du Groupe VYV. Avant, deux centres du groupe se la partageaient : Equasanté et UHMs.",
+      "source": "vyv-cp"
+    },
+    {
+      "fait": "Oxantis gère ce tiers payant pour les mutuelles du Groupe VYV (Harmonie Mutuelle, MGEN, MNT), pour celles de VYV Partenariat et pour des mutuelles hors du groupe.",
+      "source": "vyv-cp"
+    },
+    {
+      "fait": "Le tiers payant géré par Oxantis est dit « complexe » : la mutuelle doit donner un accord préalable sur le remboursement prévu par la garantie.",
+      "source": "vyv-cp"
+    },
+    {
+      "fait": "Le portail oxantis.net est une interface en marque blanche fournie par Viamédis, partenaire du Groupe VYV.",
+      "source": "vyv-cp"
+    },
+    {
+      "fait": "Selon le Groupe VYV, les solutions d'Oxantis sont accessibles à l'ensemble des centres optiques.",
+      "source": "vyv-cp"
+    },
+    {
+      "fait": "En 2022, Oxantis a traité 2 245 392 factures en optique et a réglé plus de 1,2 milliard d'euros directement aux professionnels de santé, tous secteurs confondus.",
+      "source": "vyv-cp"
+    },
+    {
+      "fait": "Depuis le 1er février 2022, les adhérents MGEN, MGEN Efficience Santé et MAEE peuvent avoir le tiers payant chez tous les opticiens. Avant, seuls les opticiens du réseau Kalixia pouvaient le faire via Oxantis.",
+      "source": "acuite-2022-mgen"
+    },
+    {
+      "fait": "Depuis le 1er juillet 2025, pour les adhérents passés chez MGEN Accolade, il faut choisir « MGEN Accolade » et non « MGEN » sur le portail. Les devis en cours pour ces adhérents ont été supprimés au 30 juin 2025 et devaient être ressaisis.",
+      "source": "acuite-2025-accolade"
+    },
+    {
+      "fait": "Pour un client MGEN, demander la carte de tiers payant : elle indique l'organisme à choisir sur le portail Oxantis.",
+      "source": "acuite-2025-accolade"
+    },
+    {
+      "fait": "Chaque magasin se connecte à oxantis.net avec son adresse e-mail et son mot de passe. Un code est ensuite envoyé à chaque connexion, par appel téléphonique ou par SMS.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "Le portail Oxantis fonctionne comme celui de Viamedis : mêmes écrans de demande de prise en charge, de suivi et de facturation, sur un autre domaine.",
+      "source": "granit-connecteur"
+    }
+  ],
+  "conventionnement": [
+    "Contacter le service conventionnement Oxantis : 0 821 21 00 07 (0,12 € TTC/min) ou tp-oxantis-convention@oxantis.fr.",
+    "Une fois le compte ouvert, se connecter sur oxantis.net avec son adresse e-mail et son mot de passe, puis le code reçu par appel ou par SMS."
+  ],
+  "statuts": [
+    {
+      "libelle": "Accordée / acceptée / validée",
+      "sens": "La complémentaire s'engage sur le montant",
+      "action": "Délivrer l'équipement, puis facturer sur le portail"
+    },
+    {
+      "libelle": "Accordée sous réserve de pièces justificatives (PECAPJ)",
+      "sens": "Accord, mais la complémentaire attend des documents",
+      "action": "Envoyer les pièces justificatives, par exemple par e-mail avec le numéro de PEC et le nom du client en objet"
+    },
+    {
+      "libelle": "En attente / en instance / en cours",
+      "sens": "Le dossier est encore étudié",
+      "action": "Attendre, puis relancer au bon moment"
+    },
+    {
+      "libelle": "Refusée / rejetée",
+      "sens": "Pas de prise en charge en l'état",
+      "action": "Lire le motif sur la page du dossier, corriger, refaire la demande"
+    },
+    {
+      "libelle": "Expirée / périmée",
+      "sens": "L'accord a dépassé sa durée de validité",
+      "action": "Refaire une demande"
+    },
+    {
+      "libelle": "Annulée / close / supprimée",
+      "sens": "Le dossier n'est plus actif",
+      "action": "Refaire une demande si besoin"
+    },
+    {
+      "libelle": "Facturée",
+      "sens": "La facture est partie",
+      "action": "Suivre le virement"
+    }
+  ],
+  "statutsSource": "granit-connecteur",
+  "contacts": [
+    {
+      "label": "Conventionnement (opticiens)",
+      "valeur": "0 821 21 00 07",
+      "detail": "0,12 € TTC/min · ou tp-oxantis-convention@oxantis.fr",
+      "source": "harmonie-contacts"
+    },
+    {
+      "label": "Factures et prises en charge (optique)",
+      "valeur": "0 821 01 01 02",
+      "detail": "0,12 € TTC/min · ou tp-oxantis-optique@oxantis.fr",
+      "source": "harmonie-contacts"
+    },
+    {
+      "label": "Portail",
+      "valeur": "oxantis.net",
+      "url": "https://www.oxantis.net/HmNet/page/accueil/index",
+      "source": "vyv-cp"
+    }
+  ],
+  "organismes": {
+    "source": "granit-connecteur",
+    "note": "Liste du sélecteur d'organisme du portail optique, relevée par les agents Granit. Formuler : « ce que propose le sélecteur du portail », jamais « cette mutuelle passe uniquement par Oxantis ».",
+    "liste": [
+      "Argedis",
+      "Harmonie Fonction Publique",
+      "HARMONIE MUTUELLE",
+      "Keolis",
+      "Ma mutuelle MGEN",
+      "MAEE",
+      "MAEE ACCOLADE",
+      "MEMF",
+      "MESE",
+      "Meusrec",
+      "MFTGS",
+      "MFTSV",
+      "MGEN",
+      "MGEN ACCOLADE",
+      "MGEN SOLUTIONS",
+      "MGPMH",
+      "MIASC",
+      "MNT",
+      "MOS Dijon",
+      "MPOSS",
+      "MUTAERO",
+      "MUTEST",
+      "Mutuelle asturienne",
+      "Mutuelle des SCOP",
+      "Mutuelle Ouest France",
+      "Safran-Harmonie",
+      "Safran-Ociane",
+      "SMACEM",
+      "SMPS",
+      "TOTAL"
+    ]
+  },
+  "sources": {
+    "vyv-cp": {
+      "label": "groupe-vyv.fr · Communiqué « Le Groupe VYV crée Oxantis SA » (28/03/2023)",
+      "url": "https://www.groupe-vyv.fr/wp-content/uploads/2023/04/20230328_CP_Oxantis.pdf",
+      "consulte": "2026-10-07"
+    },
+    "harmonie-contacts": {
+      "label": "harmonie-mutuelle.fr · Professionnels de santé, contacts utiles (mise à jour 29/06/2026)",
+      "url": "https://www.harmonie-mutuelle.fr/professionnels-de-sante/professionnels-sante-contacts-utiles",
+      "consulte": "2026-10-07"
+    },
+    "acuite-2022-mgen": {
+      "label": "Acuité · « La MGEN modifie son contrat de tiers payant » (04/02/2022)",
+      "url": "https://www.acuite.fr/actualite/ocam/224229/la-mgen-modifie-son-contrat-de-tiers-payant",
+      "consulte": "2026-10-07"
+    },
+    "acuite-2025-accolade": {
+      "label": "Acuité · « Tiers payant : la MGEN apporte des changements » (30/06/2025)",
+      "url": "https://www.acuite.fr/actualites/profession/regime-obligatoire/tiers-payant-la-mgen-apporte-des-changements-313606",
+      "consulte": "2026-10-07"
+    },
+    "granit-connecteur": {
+      "label": "Connecteur Oxantis de Granit (relevé du 07/10/2026)",
+      "url": "",
+      "consulte": "2026-10-07"
+    }
+  }
+}
