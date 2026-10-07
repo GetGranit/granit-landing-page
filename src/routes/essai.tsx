@@ -2,12 +2,15 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { motion, useReducedMotion } from "framer-motion";
 
-import logo from "@/assets/logo.svg";
-import { Connexions } from "@/components/essai/Connexions";
+import { Acces } from "@/components/essai/Acces";
 import { DemandePec, type Demande } from "@/components/essai/DemandePec";
-import { MesDemandes, Offre, PaulButton } from "@/components/essai/Espace";
+import { MesDemandes, PaulButton } from "@/components/essai/Espace";
+import { Logiciel } from "@/components/essai/Logiciel";
 import { PaulSheet, usePaulSheet } from "@/components/essai/PaulSheet";
 import { PremierePec } from "@/components/essai/PremierePec";
+import { EtapePec } from "@/components/essai/Quota";
+import { QUOTA, readQuota, writeQuota } from "@/components/essai/quotaStore";
+import { Shell } from "@/components/essai/Shell";
 import { Kicker } from "@/components/essai/ui";
 import {
   EXAMPLE_CASE,
@@ -15,7 +18,6 @@ import {
   contactPaul,
   readCase,
   readPhone,
-  readiness,
   type ContactRequest,
   type DossierFictif,
   type PecCase,
@@ -23,8 +25,10 @@ import {
 
 /**
  * Espace freemium Granit (aperçu, tout est simulé côté front).
- * On y arrive depuis /pec juste après la vraie simulation, avec le cas dans
- * sessionStorage. Hors navigation, hors sitemap, noindex.
+ * On y arrive depuis /pec (`/essai?etape=acces`) juste après la simulation et
+ * la création du compte, avec le cas dans sessionStorage. Parcours : 1) brancher
+ * ses autres portails, 2) faire ses 20 PEC offertes, 3) continuer avec Paul.
+ * Hors navigation, hors sitemap, noindex.
  */
 export const Route = createFileRoute("/essai")({
   head: () => ({
@@ -41,28 +45,46 @@ export const Route = createFileRoute("/essai")({
 });
 
 const ACCORD_MS = 3500;
+const OFFRE = "Paul vous propose l'offre adaptée à votre magasin.";
 
 function EssaiPage() {
   const reduce = useReducedMotion();
   const [pecCase, setPecCase] = useState<PecCase | null>(null);
   const [phone, setPhone] = useState<string | null>(null);
   const [view, setView] = useState<"espace" | "demande">("espace");
-  const [added, setAdded] = useState<ReadonlySet<string>>(new Set());
+  const [selection, setSelection] = useState<ReadonlySet<string>>(new Set());
+  const [connectes, setConnectes] = useState<ReadonlySet<string>>(new Set());
+  const [choixFait, setChoixFait] = useState(false);
+  const [celebrer, setCelebrer] = useState(false);
   const [logiciel, setLogiciel] = useState<string | null>(null);
   const [demandes, setDemandes] = useState<Demande[]>([]);
   const [courante, setCourante] = useState<number | null>(null);
+  const [faites, setFaites] = useState(0);
   const timers = useRef<number[]>([]);
   const sheet = usePaulSheet();
 
-  // sessionStorage n'existe que côté navigateur : lecture après le montage.
+  // sessionStorage et l'URL n'existent que côté navigateur : lecture après le montage.
   useEffect(() => {
     setPecCase(readCase() ?? EXAMPLE_CASE);
     setPhone(readPhone());
+    const n = readQuota();
+    setFaites(n);
+    // Des PEC déjà faites : les accès l'ont forcément été.
+    if (n > 0) setChoixFait(true);
+    if (new URLSearchParams(window.location.search).get("etape") === "acces") {
+      window.setTimeout(() => document.getElementById("acces")?.scrollIntoView(), 80);
+    }
     const pending = timers.current;
     return () => pending.forEach((t) => window.clearTimeout(t));
   }, []);
 
+  const premierRendu = useRef(true);
   useEffect(() => {
+    // Au montage, on laisse `?etape=acces` placer la page.
+    if (premierRendu.current) {
+      premierRendu.current = false;
+      return;
+    }
     window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
   }, [view, courante, reduce]);
 
@@ -76,16 +98,9 @@ function EssaiPage() {
 
   const carte = pecCase.platform;
   const simulation = pecCase.simulation ?? EXAMPLE_SIMULATION;
-  const portailConnecte = Boolean(pecCase.portailConnecte);
-  const portailCarte = portailConnecte || (carte ? added.has(carte.id) : added.size > 0);
-  const autres = [...added].filter((id) => id !== carte?.id).length - (carte ? 0 : 1);
-  const ready = readiness({
-    simulation: Boolean(pecCase.simulation),
-    portailCarte,
-    carteLabel: carte?.label ?? null,
-    logiciel: logiciel !== null,
-    autresPortails: Math.max(0, autres),
-  });
+  const cochés = [...selection].filter((id) => id !== carte?.id);
+  const restants = cochés.filter((id) => !connectes.has(id)).length;
+  const toutBranche = choixFait && restants === 0;
   const nom = pecCase.prenom ?? pecCase.magasin;
   const portail = carte?.label ?? null;
 
@@ -95,9 +110,27 @@ function EssaiPage() {
     if (req.phone) setPhone(req.phone);
   }
 
+  function toggle(id: string) {
+    setSelection((s) => {
+      const next = new Set(s);
+      if (!next.delete(id)) next.add(id);
+      return next;
+    });
+  }
+
+  function connect(id: string) {
+    const next = new Set(connectes).add(id);
+    setConnectes(next);
+    if (cochés.every((c) => next.has(c))) setCelebrer(true);
+  }
+
   function launch(dossier: DossierFictif) {
+    if (faites >= QUOTA) return;
     const index = demandes.length;
-    setDemandes((ds) => [...ds, { dossier, statut: "en-cours" }]);
+    const rang = faites + 1;
+    setFaites(rang);
+    writeQuota(rang);
+    setDemandes((ds) => [...ds, { dossier, statut: "en-cours", rang }]);
     setCourante(index);
     // Maquette : la mutuelle « répond » au bout de quelques secondes.
     timers.current.push(
@@ -109,6 +142,12 @@ function EssaiPage() {
     );
   }
 
+  function openDemande(index: number | null) {
+    setCelebrer(false);
+    setCourante(index);
+    setView("demande");
+  }
+
   function backToEspace(anchor?: string) {
     setView("espace");
     setCourante(null);
@@ -118,7 +157,7 @@ function EssaiPage() {
   }
 
   return (
-    <Shell exemple={pecCase.source === "exemple"} mutuelle={pecCase.mutuelle}>
+    <Shell exemple={pecCase.source === "exemple"} mutuelle={pecCase.mutuelle} faites={faites}>
       {view === "demande" ? (
         <motion.div
           key={`demande-${courante ?? "new"}`}
@@ -132,69 +171,76 @@ function EssaiPage() {
             portail={portail}
             demande={courante === null ? null : (demandes[courante] ?? null)}
             onLaunch={launch}
-            onChooseLogiciel={() => backToEspace("connexions-titre")}
-            onBack={() => backToEspace()}
+            onChooseLogiciel={() => backToEspace("logiciel-titre")}
+            onBack={() => backToEspace("pec")}
           />
         </motion.div>
       ) : (
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-14">
-          <div>
-            <Kicker>Vos demandes de PEC, gratuitement</Kicker>
-            <h1
-              className="font-serif text-text"
-              style={{
-                fontSize: "clamp(30px, 5vw, 46px)",
-                lineHeight: 1.08,
-                letterSpacing: "-0.02em",
-              }}
-            >
-              Bienvenue{nom ? `, ${nom}` : ""}{" "}
-              <span className="accent-italic">dans votre espace Granit.</span>
-            </h1>
-            <p
-              className="mb-6 mt-3 text-[15px] leading-[1.5]"
-              style={{ color: "var(--text-soft)" }}
-            >
-              Votre première prise en charge est déjà là. Les suivantes partent d'ici.
-            </p>
-            <PremierePec
-              simulation={simulation}
-              portail={portail}
-              mutuelle={pecCase.mutuelle}
-              minutesManuelles={pecCase.minutesManuelles}
-            />
-            <button
-              type="button"
-              onClick={() => {
-                setCourante(null);
-                setView("demande");
-              }}
-              className="btn-primary mt-6 w-full justify-center py-3.5 text-[16px]"
-            >
-              Faire une demande de PEC <span className="arrow">→</span>
-            </button>
-            <MesDemandes
-              demandes={demandes}
-              onOpen={(i) => {
-                setCourante(i);
-                setView("demande");
-              }}
-            />
-            <Offre className="mt-8 hidden lg:block" />
-          </div>
-          <div>
-            <Connexions
+        <div className="mx-auto max-w-[640px]">
+          <Kicker>Votre espace Granit</Kicker>
+          <h1
+            className="font-serif text-text"
+            style={{
+              fontSize: "clamp(30px, 5vw, 44px)",
+              lineHeight: 1.08,
+              letterSpacing: "-0.02em",
+            }}
+          >
+            Bienvenue{nom ? `, ${nom}` : ""}.{" "}
+            <span className="accent-italic">Votre compte est prêt.</span>
+          </h1>
+          <p className="mb-6 mt-3 text-[15px] leading-[1.5]" style={{ color: "var(--text-soft)" }}>
+            {toutBranche
+              ? "Vos portails sont branchés : vos PEC partent d'ici."
+              : "Branchez vos autres portails, puis faites vos PEC d'ici."}
+            {pecCase.compte && (
+              <span className="mt-1 block text-[12px]" style={{ color: "var(--text-muted)" }}>
+                Compte gratuit · {pecCase.compte.email}
+              </span>
+            )}
+          </p>
+          <PremierePec
+            simulation={simulation}
+            portail={portail}
+            mutuelle={pecCase.mutuelle}
+            minutesManuelles={pecCase.minutesManuelles}
+          />
+
+          <div className="mt-10">
+            <Acces
               carte={carte}
-              portailConnecte={portailConnecte}
-              added={added}
-              onAddPortal={(id) => setAdded((s) => new Set(s).add(id))}
-              logiciel={logiciel}
-              onLogiciel={setLogiciel}
-              readiness={ready}
+              selection={selection}
+              onToggle={toggle}
+              choixFait={choixFait}
+              onValider={() => {
+                setChoixFait(true);
+                if (restants === 0) setCelebrer(true);
+              }}
+              onModifier={() => {
+                setChoixFait(false);
+                setCelebrer(false);
+              }}
+              connectes={connectes}
+              onConnect={connect}
               onIdle={onIdle}
+              celebrer={celebrer}
             />
-            <Offre className="mt-8 lg:hidden" />
           </div>
+
+          <EtapePec
+            faites={faites}
+            toutBranche={toutBranche}
+            choixFait={choixFait}
+            restants={restants}
+            minutesManuelles={pecCase.minutesManuelles}
+            dureeSec={simulation.dureeSec}
+            onDemande={() => openDemande(null)}
+            onPaul={(mode) => show(mode, OFFRE, { force: true })}
+          >
+            <MesDemandes demandes={demandes} onOpen={openDemande} />
+          </EtapePec>
+
+          <Logiciel logiciel={logiciel} onLogiciel={setLogiciel} onIdle={onIdle} />
         </div>
       )}
 
@@ -212,48 +258,5 @@ function EssaiPage() {
         onContact={onContact}
       />
     </Shell>
-  );
-}
-
-function Shell({
-  exemple,
-  mutuelle,
-  children,
-}: {
-  exemple: boolean;
-  mutuelle?: string | null;
-  children?: React.ReactNode;
-}) {
-  return (
-    <div className="min-h-screen" style={{ background: "var(--bg)" }}>
-      <div
-        className="px-4 py-2 text-center text-[11px] leading-[1.4]"
-        style={{
-          background: "var(--bg3)",
-          color: "var(--text-soft)",
-          fontFamily: "var(--font-mono)",
-        }}
-      >
-        Aperçu de l'espace Granit · rien n'est encore connecté à votre portail ni à votre logiciel
-      </div>
-      <header className="mx-auto flex max-w-[1080px] items-center justify-between px-4 py-4 sm:px-6">
-        <a href="/" aria-label="Granit, accueil">
-          <img src={logo} alt="Granit" className="h-[24px] w-auto" />
-        </a>
-        {exemple && (
-          <span
-            className="rounded-full px-3 py-1 text-[11px]"
-            style={{
-              background: "var(--tag-bg)",
-              color: "var(--text-soft)",
-              fontFamily: "var(--font-mono)",
-            }}
-          >
-            Cas d'exemple · {mutuelle ?? "Mutuelle Exemple"}
-          </span>
-        )}
-      </header>
-      <main className="mx-auto max-w-[1080px] px-4 pb-40 pt-2 sm:px-6 lg:pt-8">{children}</main>
-    </div>
   );
 }

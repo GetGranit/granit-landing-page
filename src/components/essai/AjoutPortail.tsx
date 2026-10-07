@@ -10,7 +10,7 @@ type Props = {
 };
 
 /**
- * Mini-formulaire « Ajouter [portail] ».
+ * Mini-formulaire « Connecter [portail] ».
  *
  * ⚠️ SÉCURITÉ : l'identifiant et le mot de passe vivent UNIQUEMENT dans l'état
  * React local de ce composant. Ils ne sont ni envoyés, ni écrits dans
@@ -57,7 +57,7 @@ export function AjoutPortail({ platform, onAdded, onCancel }: Props) {
       </Field>
       {platform.tfa !== "aucune" && (
         <p className="mb-3 text-[13px] leading-[1.45]" style={{ color: "var(--text-soft)" }}>
-          Le code de double authentification vous sera demandé à la première PEC sur ce portail.
+          Le code de double authentification vous sera demandé à la 1re PEC sur ce portail.
         </p>
       )}
       <div className="flex items-center gap-4">
@@ -68,7 +68,7 @@ export function AjoutPortail({ platform, onAdded, onCancel }: Props) {
           className="btn-primary flex-1 justify-center py-3 text-[15px]"
           style={ok ? undefined : { opacity: 0.45, cursor: "not-allowed" }}
         >
-          Ajouter {platform.label}
+          Connecter {platform.label}
         </button>
         <TextButton onClick={onCancel}>Annuler</TextButton>
       </div>
