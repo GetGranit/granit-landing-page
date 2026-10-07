@@ -9,6 +9,7 @@ import { useLanguage } from "@/lib/i18n";
 import { articles as articlesData } from "@/lib/articles";
 import { logDemoRequestDelivered, logDemoRequestDeliveryFailed } from "@/lib/posthogLogs";
 import { submitDemo } from "@/lib/submitDemo";
+import { getAttribution } from "@/lib/attribution";
 import heroPhoto from "@/assets/hero-photo.jpg";
 
 /* ============================================================
@@ -1319,6 +1320,7 @@ function DemoForm({ t }: { t: typeof copy["fr"] }) {
               company: String(fd.get("company") || ""),
               orgType: String(fd.get("orgType") || ""),
               challenge: String(fd.get("challenge") || ""),
+              utm: getAttribution(),
             },
           });
           const organizationType = String(fd.get("orgType") || "") || undefined;

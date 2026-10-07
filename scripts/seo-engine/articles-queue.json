@@ -1,0 +1,4143 @@
+[
+ {
+  "id": "G0",
+  "slug": "tiers-payant-opticien",
+  "category": "guide-tiers-payant",
+  "title": "Tiers payant opticien : de la prise en charge à l'encaissement",
+  "primaryKeyword": "tiers payant opticien",
+  "keywordCluster": [
+   "opticien mutuelle",
+   "mutuelle opticien",
+   "opticien et mutuelle",
+   "opticien tiers payant",
+   "devis opticien",
+   "tiers payant opticien",
+   "tiers payant optique",
+   "opticien tiers payant mutuelle",
+   "tiers payant mgen opticien",
+   "opticien tiers payant paris"
+  ],
+  "searchVolume": 1090,
+  "unsplashQuery": "optician store",
+  "status": "pending",
+  "wave": 1,
+  "level": "Pilier global",
+  "parentSlug": null,
+  "reader": "Comptoir + gérant",
+  "role": "Trafic + maillage",
+  "granitData": "fondations.md (5 500 mots sourcés), glossaire 70 termes",
+  "cta": "Démo + outil mutuelle → portail",
+  "toValidate": "Nombre de plateformes à fixer (17 / 11 / 8)",
+  "primaryKeywordMeasured": true,
+  "faqQuestions": [
+   "Comment fonctionne le tiers payant chez l'opticien ?",
+   "Qui paie quoi entre la Sécurité sociale (AMO) et la mutuelle (AMC) ?",
+   "Le tiers payant est-il obligatoire pour un opticien ?",
+   "Combien de temps faut-il pour être payé en tiers payant ?",
+   "Que faire quand une mutuelle refuse la prise en charge ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "G1",
+    "slug": "100-sante-classe-a-b-opticien",
+    "anchor": "lunettes 100 santé",
+    "type": "enfant"
+   },
+   {
+    "id": "G2",
+    "slug": "remboursement-optique-amo-amc",
+    "anchor": "remboursement des lunettes",
+    "type": "enfant"
+   },
+   {
+    "id": "A0",
+    "slug": "portails-tiers-payant",
+    "anchor": "portails de tiers payant",
+    "type": "enfant"
+   },
+   {
+    "id": "B0",
+    "slug": "rejet-tiers-payant",
+    "anchor": "motif rejet tiers payant",
+    "type": "enfant"
+   },
+   {
+    "id": "C0",
+    "slug": "rapprochement-bancaire-tiers-payant",
+    "anchor": "Rapprochement bancaire du tiers payant",
+    "type": "enfant"
+   },
+   {
+    "id": "E0",
+    "slug": "gerer-tiers-payant-magasin",
+    "anchor": "gestion tiers payant",
+    "type": "enfant"
+   },
+   {
+    "id": "F0",
+    "slug": "glossaire-tiers-payant",
+    "anchor": "Glossaire du tiers payant optique",
+    "type": "enfant"
+   },
+   {
+    "id": "G3",
+    "slug": "questions-tiers-payant-opticien",
+    "anchor": "Tiers payant opticien",
+    "type": "enfant"
+   },
+   {
+    "id": "G4",
+    "slug": "erreurs-tiers-payant-opticien",
+    "anchor": "Les erreurs de saisie qui coûtent le plus cher en tiers payant",
+    "type": "enfant"
+   },
+   {
+    "id": "G5",
+    "slug": "tiers-payant-integral-opticien",
+    "anchor": "Tiers payant intégral",
+    "type": "enfant"
+   },
+   {
+    "id": "G6",
+    "slug": "cas-particuliers-tiers-payant-optique",
+    "anchor": "Cas particuliers",
+    "type": "enfant"
+   },
+   {
+    "id": "H0",
+    "slug": "conformite-opticien",
+    "anchor": "Conformité administrative de l'opticien",
+    "type": "enfant"
+   }
+  ]
+ },
+ {
+  "id": "A0",
+  "slug": "portails-tiers-payant",
+  "category": "plateformes",
+  "title": "Portails de tiers payant pour les opticiens : connexion, prise en charge, rejet et paiement",
+  "primaryKeyword": "portail tiers payant opticien",
+  "keywordCluster": [
+   "v2 medisysnet fr",
+   "v2 medisysnet",
+   "v2.medisysnet"
+  ],
+  "searchVolume": 1930,
+  "unsplashQuery": "optician computer paperwork",
+  "status": "pending",
+  "wave": 1,
+  "level": "Pilier",
+  "parentSlug": "tiers-payant-opticien",
+  "reader": "Comptoir",
+  "role": "Trafic",
+  "granitData": "17 plateformes (platforms.py), 11 avec DPEC codée, horaires/maintenance",
+  "cta": "Outil mutuelle → portail",
+  "toValidate": "Ce qu'on peut montrer de l'intérieur des portails (conventions). « v2 medisysnet » (≈1 900/mois) : portail à identifier",
+  "primaryKeywordMeasured": true,
+  "faqQuestions": [
+   "Qu'est-ce qu'un portail de tiers payant ?",
+   "Combien de portails un opticien doit-il utiliser ?",
+   "Comment savoir quel portail correspond à la mutuelle du client ?",
+   "Faut-il un compte sur chaque portail ?",
+   "Que faire quand un portail est en maintenance ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "G0",
+    "slug": "tiers-payant-opticien",
+    "anchor": "tiers payant opticien",
+    "type": "parent"
+   },
+   {
+    "id": "A1",
+    "slug": "portail-viamedis",
+    "anchor": "viamedis tp",
+    "type": "enfant"
+   },
+   {
+    "id": "A2",
+    "slug": "portail-almerys",
+    "anchor": "almerys tp",
+    "type": "enfant"
+   },
+   {
+    "id": "A3",
+    "slug": "portail-sp-sante",
+    "anchor": "sp sante tp",
+    "type": "enfant"
+   },
+   {
+    "id": "A4",
+    "slug": "portail-isante",
+    "anchor": "isante tp",
+    "type": "enfant"
+   },
+   {
+    "id": "A5",
+    "slug": "portail-itelis",
+    "anchor": "itelis tp",
+    "type": "enfant"
+   },
+   {
+    "id": "A6",
+    "slug": "portail-actil",
+    "anchor": "actil tp",
+    "type": "enfant"
+   },
+   {
+    "id": "A7",
+    "slug": "portail-oxantis",
+    "anchor": "oxantis tp",
+    "type": "enfant"
+   },
+   {
+    "id": "A8",
+    "slug": "portail-seveane",
+    "anchor": "seveane tp",
+    "type": "enfant"
+   },
+   {
+    "id": "A9",
+    "slug": "portail-santeclair",
+    "anchor": "tp santeclair",
+    "type": "enfant"
+   },
+   {
+    "id": "A10",
+    "slug": "portail-kalixia",
+    "anchor": "kalixia optique",
+    "type": "enfant"
+   },
+   {
+    "id": "A11",
+    "slug": "portail-carte-blanche",
+    "anchor": "carte blanche partenaires",
+    "type": "enfant"
+   },
+   {
+    "id": "A12",
+    "slug": "contacts-plateformes-tiers-payant",
+    "anchor": "contacts pros des plateformes de tiers payant",
+    "type": "enfant"
+   },
+   {
+    "id": "A13",
+    "slug": "mutuelle-quel-portail",
+    "anchor": "savoir par quel portail passe une mutuelle",
+    "type": "enfant"
+   },
+   {
+    "id": "B0",
+    "slug": "rejet-tiers-payant",
+    "anchor": "motif rejet tiers payant",
+    "type": "sœur"
+   },
+   {
+    "id": "C0",
+    "slug": "rapprochement-bancaire-tiers-payant",
+    "anchor": "Rapprochement bancaire du tiers payant",
+    "type": "sœur"
+   }
+  ]
+ },
+ {
+  "id": "A1",
+  "slug": "portail-viamedis",
+  "category": "plateformes",
+  "title": "Viamédis TP pour les opticiens : espace pro, prise en charge, statuts et paiement",
+  "primaryKeyword": "viamedis tp",
+  "keywordCluster": [
+   "viamedis pro",
+   "tp viamedis",
+   "viamedis professionnel de santé",
+   "viamedis professionnel de sante",
+   "www viamedis net",
+   "www.viamedis.net",
+   "viamedis.net",
+   "viamedis net",
+   "viamedis professionnels de santé",
+   "viamedis professionnel"
+  ],
+  "searchVolume": 24910,
+  "unsplashQuery": "optician computer paperwork",
+  "status": "pending",
+  "wave": 1,
+  "level": "Fille",
+  "parentSlug": "portails-tiers-payant",
+  "reader": "Comptoir",
+  "role": "Trafic",
+  "granitData": "Mutuelles routées vers Viamédis (name_options_*.json), champs obligatoires (fields.py), lecture des statuts (verdict.py)",
+  "cta": "Outil mutuelle → portail + démo",
+  "toValidate": "Gabarit commun Manus.",
+  "primaryKeywordMeasured": true,
+  "faqQuestions": [
+   "Comment accéder à l'espace pro Viamédis quand on est opticien ?",
+   "Quelles mutuelles passent par Viamédis pour le tiers payant optique ?",
+   "Comment faire une demande de prise en charge optique sur Viamédis ?",
+   "Que signifient les statuts d'une prise en charge Viamédis (accordée, en attente, refusée) ?",
+   "Comment contacter Viamédis quand on est professionnel de santé ?",
+   "Sous quel délai Viamédis paie-t-il l'opticien ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "A0",
+    "slug": "portails-tiers-payant",
+    "anchor": "portails de tiers payant",
+    "type": "parent"
+   },
+   {
+    "id": "A15",
+    "slug": "viamedis-espace-pro",
+    "anchor": "viamedis espace pro",
+    "type": "enfant"
+   },
+   {
+    "id": "A16",
+    "slug": "viamedis-prise-en-charge",
+    "anchor": "viamedis pec",
+    "type": "enfant"
+   },
+   {
+    "id": "A2",
+    "slug": "portail-almerys",
+    "anchor": "almerys tp",
+    "type": "sœur"
+   },
+   {
+    "id": "A3",
+    "slug": "portail-sp-sante",
+    "anchor": "sp sante tp",
+    "type": "sœur"
+   },
+   {
+    "id": "A13",
+    "slug": "mutuelle-quel-portail",
+    "anchor": "savoir par quel portail passe une mutuelle",
+    "type": "outil"
+   },
+   {
+    "id": "A12",
+    "slug": "contacts-plateformes-tiers-payant",
+    "anchor": "contacts pros des plateformes de tiers payant",
+    "type": "transverse"
+   },
+   {
+    "id": "B8",
+    "slug": "checklist-prise-en-charge",
+    "anchor": "checklist avant d'envoyer une prise en charge",
+    "type": "transverse"
+   }
+  ]
+ },
+ {
+  "id": "A2",
+  "slug": "portail-almerys",
+  "category": "plateformes",
+  "title": "Almerys TP pour les opticiens : espace pro, prise en charge, statuts et paiement",
+  "primaryKeyword": "almerys tp",
+  "keywordCluster": [
+   "tp almerys",
+   "almerys professionnel de santé",
+   "almerys pro",
+   "almerys espace professionnel",
+   "almerys espace pro",
+   "almerys pro de sante",
+   "almerys professionnels de sante",
+   "almerys mon compte",
+   "www almerys com creer mon compte",
+   "www.almerys.com creer mon compte"
+  ],
+  "searchVolume": 24270,
+  "unsplashQuery": "optician computer paperwork",
+  "status": "pending",
+  "wave": 1,
+  "level": "Fille",
+  "parentSlug": "portails-tiers-payant",
+  "reader": "Comptoir",
+  "role": "Trafic",
+  "granitData": "Mutuelles routées vers Almerys (name_options_*.json), champs obligatoires (fields.py), lecture des statuts (verdict.py)",
+  "cta": "Outil mutuelle → portail + démo",
+  "toValidate": "Gabarit commun Manus.",
+  "primaryKeywordMeasured": true,
+  "faqQuestions": [
+   "Comment accéder à l'espace pro Almerys quand on est opticien ?",
+   "Quelles mutuelles passent par Almerys pour le tiers payant optique ?",
+   "Comment faire une demande de prise en charge optique sur Almerys ?",
+   "Que signifient les statuts d'une prise en charge Almerys (accordée, en attente, refusée) ?",
+   "Comment contacter Almerys quand on est professionnel de santé ?",
+   "Sous quel délai Almerys paie-t-il l'opticien ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "A0",
+    "slug": "portails-tiers-payant",
+    "anchor": "portails de tiers payant",
+    "type": "parent"
+   },
+   {
+    "id": "A14",
+    "slug": "almerys-prise-en-charge",
+    "anchor": "almerys pec",
+    "type": "enfant"
+   },
+   {
+    "id": "A3",
+    "slug": "portail-sp-sante",
+    "anchor": "sp sante tp",
+    "type": "sœur"
+   },
+   {
+    "id": "A4",
+    "slug": "portail-isante",
+    "anchor": "isante tp",
+    "type": "sœur"
+   },
+   {
+    "id": "A13",
+    "slug": "mutuelle-quel-portail",
+    "anchor": "savoir par quel portail passe une mutuelle",
+    "type": "outil"
+   },
+   {
+    "id": "A12",
+    "slug": "contacts-plateformes-tiers-payant",
+    "anchor": "contacts pros des plateformes de tiers payant",
+    "type": "transverse"
+   },
+   {
+    "id": "B8",
+    "slug": "checklist-prise-en-charge",
+    "anchor": "checklist avant d'envoyer une prise en charge",
+    "type": "transverse"
+   }
+  ]
+ },
+ {
+  "id": "A12",
+  "slug": "contacts-plateformes-tiers-payant",
+  "category": "plateformes",
+  "title": "Numéros et contacts pros de toutes les plateformes de tiers payant",
+  "primaryKeyword": "viamedis contact",
+  "keywordCluster": [
+   "numero viamedis",
+   "almerys contact",
+   "viamedis numero",
+   "telephone viamedis",
+   "tel viamedis",
+   "almerys contact téléphone gratuit",
+   "viamedis téléphone",
+   "viamedis telephone",
+   "sp santé téléphone",
+   "sp sante telephone"
+  ],
+  "searchVolume": 20120,
+  "unsplashQuery": "optician computer paperwork",
+  "status": "pending",
+  "wave": 1,
+  "level": "Fille",
+  "parentSlug": "portails-tiers-payant",
+  "reader": "Comptoir",
+  "role": "Trafic",
+  "granitData": "Contacts relevés sur les sites officiels, datés",
+  "cta": "Démo",
+  "toValidate": "Vérifier chaque numéro à la publication, puis chaque trimestre",
+  "primaryKeywordMeasured": true,
+  "faqQuestions": [
+   "Comment joindre Viamédis, Almerys ou Santéclair quand on est opticien ?",
+   "Quel numéro appeler pour une prise en charge bloquée ?",
+   "Existe-t-il une messagerie pro sur les portails ?",
+   "Quels horaires pour l'assistance des plateformes ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "A0",
+    "slug": "portails-tiers-payant",
+    "anchor": "portails de tiers payant",
+    "type": "parent"
+   },
+   {
+    "id": "A13",
+    "slug": "mutuelle-quel-portail",
+    "anchor": "savoir par quel portail passe une mutuelle",
+    "type": "sœur"
+   },
+   {
+    "id": "A1",
+    "slug": "portail-viamedis",
+    "anchor": "viamedis tp",
+    "type": "sœur"
+   },
+   {
+    "id": "A2",
+    "slug": "portail-almerys",
+    "anchor": "almerys tp",
+    "type": "transverse"
+   }
+  ]
+ },
+ {
+  "id": "A5",
+  "slug": "portail-itelis",
+  "category": "plateformes",
+  "title": "Itelis TP pour les opticiens : espace pro, prise en charge, statuts et paiement",
+  "primaryKeyword": "itelis tp",
+  "keywordCluster": [
+   "itelis opticien",
+   "tp itelis",
+   "opticien itelis",
+   "itelis opticiens",
+   "réseau itelis opticien",
+   "reseau itelis opticien",
+   "reseau optique itelis",
+   "reseau itelis optique",
+   "opticien du reseau itelis",
+   "trouver un opticien itelis"
+  ],
+  "searchVolume": 14460,
+  "unsplashQuery": "optician computer paperwork",
+  "status": "pending",
+  "wave": 1,
+  "level": "Fille",
+  "parentSlug": "portails-tiers-payant",
+  "reader": "Comptoir",
+  "role": "Trafic",
+  "granitData": "Mutuelles routées vers Itelis (name_options_*.json), champs obligatoires (fields.py), lecture des statuts (verdict.py)",
+  "cta": "Outil mutuelle → portail + démo",
+  "toValidate": "Gabarit commun Manus.",
+  "primaryKeywordMeasured": true,
+  "faqQuestions": [
+   "Comment accéder à l'espace pro Itelis quand on est opticien ?",
+   "Quelles mutuelles passent par Itelis pour le tiers payant optique ?",
+   "Comment faire une demande de prise en charge optique sur Itelis ?",
+   "Que signifient les statuts d'une prise en charge Itelis (accordée, en attente, refusée) ?",
+   "Comment contacter Itelis quand on est professionnel de santé ?",
+   "Sous quel délai Itelis paie-t-il l'opticien ?",
+   "Comment savoir si un opticien est partenaire Itelis ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "A0",
+    "slug": "portails-tiers-payant",
+    "anchor": "portails de tiers payant",
+    "type": "parent"
+   },
+   {
+    "id": "A19",
+    "slug": "itelis-conventionnement",
+    "anchor": "partenaire itelis opticien",
+    "type": "enfant"
+   },
+   {
+    "id": "A6",
+    "slug": "portail-actil",
+    "anchor": "actil tp",
+    "type": "sœur"
+   },
+   {
+    "id": "A7",
+    "slug": "portail-oxantis",
+    "anchor": "oxantis tp",
+    "type": "sœur"
+   },
+   {
+    "id": "A13",
+    "slug": "mutuelle-quel-portail",
+    "anchor": "savoir par quel portail passe une mutuelle",
+    "type": "outil"
+   },
+   {
+    "id": "A12",
+    "slug": "contacts-plateformes-tiers-payant",
+    "anchor": "contacts pros des plateformes de tiers payant",
+    "type": "transverse"
+   },
+   {
+    "id": "B8",
+    "slug": "checklist-prise-en-charge",
+    "anchor": "checklist avant d'envoyer une prise en charge",
+    "type": "transverse"
+   }
+  ]
+ },
+ {
+  "id": "A4",
+  "slug": "portail-isante",
+  "category": "plateformes",
+  "title": "iSanté TP pour les opticiens : espace pro, prise en charge, statuts et paiement",
+  "primaryKeyword": "isante tp",
+  "keywordCluster": [
+   "tp isante",
+   "isanté professionnel de santé",
+   "tp-isante",
+   "isante professionnel de santé",
+   "isante professionnel de sante",
+   "www.tp-isante.fr",
+   "isante pro de sante",
+   "isante espace professionnel de sante",
+   "isanté tp",
+   "isanté pro"
+  ],
+  "searchVolume": 10790,
+  "unsplashQuery": "optician computer paperwork",
+  "status": "pending",
+  "wave": 1,
+  "level": "Fille",
+  "parentSlug": "portails-tiers-payant",
+  "reader": "Comptoir",
+  "role": "Trafic",
+  "granitData": "Mutuelles routées vers iSanté (name_options_*.json), champs obligatoires (fields.py), lecture des statuts (verdict.py)",
+  "cta": "Outil mutuelle → portail + démo",
+  "toValidate": "Gabarit commun Manus.",
+  "primaryKeywordMeasured": true,
+  "faqQuestions": [
+   "Comment accéder à l'espace pro iSanté quand on est opticien ?",
+   "Quelles mutuelles passent par iSanté pour le tiers payant optique ?",
+   "Comment faire une demande de prise en charge optique sur iSanté ?",
+   "Que signifient les statuts d'une prise en charge iSanté (accordée, en attente, refusée) ?",
+   "Comment contacter iSanté quand on est professionnel de santé ?",
+   "Sous quel délai iSanté paie-t-il l'opticien ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "A0",
+    "slug": "portails-tiers-payant",
+    "anchor": "portails de tiers payant",
+    "type": "parent"
+   },
+   {
+    "id": "A18",
+    "slug": "isante-prise-en-charge",
+    "anchor": "isante pec",
+    "type": "enfant"
+   },
+   {
+    "id": "A5",
+    "slug": "portail-itelis",
+    "anchor": "itelis tp",
+    "type": "sœur"
+   },
+   {
+    "id": "A6",
+    "slug": "portail-actil",
+    "anchor": "actil tp",
+    "type": "sœur"
+   },
+   {
+    "id": "A13",
+    "slug": "mutuelle-quel-portail",
+    "anchor": "savoir par quel portail passe une mutuelle",
+    "type": "outil"
+   },
+   {
+    "id": "A12",
+    "slug": "contacts-plateformes-tiers-payant",
+    "anchor": "contacts pros des plateformes de tiers payant",
+    "type": "transverse"
+   },
+   {
+    "id": "B8",
+    "slug": "checklist-prise-en-charge",
+    "anchor": "checklist avant d'envoyer une prise en charge",
+    "type": "transverse"
+   }
+  ]
+ },
+ {
+  "id": "A3",
+  "slug": "portail-sp-sante",
+  "category": "plateformes",
+  "title": "SP Santé TP pour les opticiens : espace pro, prise en charge, statuts et paiement",
+  "primaryKeyword": "sp sante tp",
+  "keywordCluster": [
+   "tp sp sante",
+   "sp santé professionnel de santé",
+   "sp sante professionnel de sante",
+   "sp santé tp",
+   "sp sante tp optique",
+   "sp sante professionnels de sante",
+   "sp sante pec",
+   "tp sp santé",
+   "sp santé professionnel",
+   "sp santé opticien partenaire"
+  ],
+  "searchVolume": 10730,
+  "unsplashQuery": "optician computer paperwork",
+  "status": "pending",
+  "wave": 1,
+  "level": "Fille",
+  "parentSlug": "portails-tiers-payant",
+  "reader": "Comptoir",
+  "role": "Trafic",
+  "granitData": "Mutuelles routées vers SP Santé (name_options_*.json), champs obligatoires (fields.py), lecture des statuts (verdict.py)",
+  "cta": "Outil mutuelle → portail + démo",
+  "toValidate": "Gabarit commun Manus.",
+  "primaryKeywordMeasured": true,
+  "faqQuestions": [
+   "Comment accéder à l'espace pro SP Santé quand on est opticien ?",
+   "Quelles mutuelles passent par SP Santé pour le tiers payant optique ?",
+   "Comment faire une demande de prise en charge optique sur SP Santé ?",
+   "Que signifient les statuts d'une prise en charge SP Santé (accordée, en attente, refusée) ?",
+   "Comment contacter SP Santé quand on est professionnel de santé ?",
+   "Sous quel délai SP Santé paie-t-il l'opticien ?",
+   "Comment fonctionne le tiers payant SP Santé ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "A0",
+    "slug": "portails-tiers-payant",
+    "anchor": "portails de tiers payant",
+    "type": "parent"
+   },
+   {
+    "id": "A17",
+    "slug": "sp-sante-espace-pro",
+    "anchor": "sp sante pro",
+    "type": "enfant"
+   },
+   {
+    "id": "A4",
+    "slug": "portail-isante",
+    "anchor": "isante tp",
+    "type": "sœur"
+   },
+   {
+    "id": "A5",
+    "slug": "portail-itelis",
+    "anchor": "itelis tp",
+    "type": "sœur"
+   },
+   {
+    "id": "A13",
+    "slug": "mutuelle-quel-portail",
+    "anchor": "savoir par quel portail passe une mutuelle",
+    "type": "outil"
+   },
+   {
+    "id": "A12",
+    "slug": "contacts-plateformes-tiers-payant",
+    "anchor": "contacts pros des plateformes de tiers payant",
+    "type": "transverse"
+   },
+   {
+    "id": "B8",
+    "slug": "checklist-prise-en-charge",
+    "anchor": "checklist avant d'envoyer une prise en charge",
+    "type": "transverse"
+   }
+  ]
+ },
+ {
+  "id": "A8",
+  "slug": "portail-seveane",
+  "category": "plateformes",
+  "title": "Sévéane (Korelio) TP pour les opticiens : espace pro, prise en charge, statuts et paiement",
+  "primaryKeyword": "seveane tp",
+  "keywordCluster": [
+   "tp seveane",
+   "seveane optique",
+   "opticien seveane",
+   "seveane espace pro",
+   "reseau seveane optique",
+   "opticiens seveane",
+   "reseau seveane pro btp",
+   "seveane pro btp",
+   "seveane pro",
+   "seveane partenaire optique"
+  ],
+  "searchVolume": 8510,
+  "unsplashQuery": "optician computer paperwork",
+  "status": "pending",
+  "wave": 1,
+  "level": "Fille",
+  "parentSlug": "portails-tiers-payant",
+  "reader": "Comptoir",
+  "role": "Trafic",
+  "granitData": "Mutuelles routées vers Sévéane (Korelio) (name_options_*.json), champs obligatoires (fields.py), lecture des statuts (verdict.py)",
+  "cta": "Outil mutuelle → portail + démo",
+  "toValidate": "Gabarit commun Manus. Sévéane = PRO BTP / Korelio / Groupama en audio",
+  "primaryKeywordMeasured": true,
+  "faqQuestions": [
+   "Comment accéder à l'espace pro Sévéane quand on est opticien ?",
+   "Quelles mutuelles passent par Sévéane pour le tiers payant optique ?",
+   "Comment faire une demande de prise en charge optique sur Sévéane ?",
+   "Que signifient les statuts d'une prise en charge Sévéane (accordée, en attente, refusée) ?",
+   "Comment contacter Sévéane quand on est professionnel de santé ?",
+   "Sous quel délai Sévéane paie-t-il l'opticien ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "A0",
+    "slug": "portails-tiers-payant",
+    "anchor": "portails de tiers payant",
+    "type": "parent"
+   },
+   {
+    "id": "A9",
+    "slug": "portail-santeclair",
+    "anchor": "tp santeclair",
+    "type": "sœur"
+   },
+   {
+    "id": "A10",
+    "slug": "portail-kalixia",
+    "anchor": "kalixia optique",
+    "type": "sœur"
+   },
+   {
+    "id": "A13",
+    "slug": "mutuelle-quel-portail",
+    "anchor": "savoir par quel portail passe une mutuelle",
+    "type": "outil"
+   },
+   {
+    "id": "A12",
+    "slug": "contacts-plateformes-tiers-payant",
+    "anchor": "contacts pros des plateformes de tiers payant",
+    "type": "transverse"
+   },
+   {
+    "id": "B8",
+    "slug": "checklist-prise-en-charge",
+    "anchor": "checklist avant d'envoyer une prise en charge",
+    "type": "transverse"
+   }
+  ]
+ },
+ {
+  "id": "A6",
+  "slug": "portail-actil",
+  "category": "plateformes",
+  "title": "Actil TP pour les opticiens : espace pro, prise en charge, statuts et paiement",
+  "primaryKeyword": "actil tp",
+  "keywordCluster": [
+   "tp actil",
+   "actil espace pro",
+   "actil professionnel de santé",
+   "actil professionnel de sante",
+   "actil apicil mon compte",
+   "actil pec",
+   "actil professionnels de sante",
+   "actil tp optique",
+   "actil pro",
+   "prise en charge actil"
+  ],
+  "searchVolume": 6520,
+  "unsplashQuery": "optician computer paperwork",
+  "status": "pending",
+  "wave": 1,
+  "level": "Fille",
+  "parentSlug": "portails-tiers-payant",
+  "reader": "Comptoir",
+  "role": "Trafic",
+  "granitData": "Mutuelles routées vers Actil (name_options_*.json), champs obligatoires (fields.py), lecture des statuts (verdict.py)",
+  "cta": "Outil mutuelle → portail + démo",
+  "toValidate": "Gabarit commun Manus. Actil annonce un paiement optique sous 48-72 h",
+  "primaryKeywordMeasured": true,
+  "faqQuestions": [
+   "Comment accéder à l'espace pro Actil quand on est opticien ?",
+   "Quelles mutuelles passent par Actil pour le tiers payant optique ?",
+   "Comment faire une demande de prise en charge optique sur Actil ?",
+   "Que signifient les statuts d'une prise en charge Actil (accordée, en attente, refusée) ?",
+   "Comment contacter Actil quand on est professionnel de santé ?",
+   "Sous quel délai Actil paie-t-il l'opticien ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "A0",
+    "slug": "portails-tiers-payant",
+    "anchor": "portails de tiers payant",
+    "type": "parent"
+   },
+   {
+    "id": "A7",
+    "slug": "portail-oxantis",
+    "anchor": "oxantis tp",
+    "type": "sœur"
+   },
+   {
+    "id": "A8",
+    "slug": "portail-seveane",
+    "anchor": "seveane tp",
+    "type": "sœur"
+   },
+   {
+    "id": "A13",
+    "slug": "mutuelle-quel-portail",
+    "anchor": "savoir par quel portail passe une mutuelle",
+    "type": "outil"
+   },
+   {
+    "id": "A12",
+    "slug": "contacts-plateformes-tiers-payant",
+    "anchor": "contacts pros des plateformes de tiers payant",
+    "type": "transverse"
+   },
+   {
+    "id": "B8",
+    "slug": "checklist-prise-en-charge",
+    "anchor": "checklist avant d'envoyer une prise en charge",
+    "type": "transverse"
+   }
+  ]
+ },
+ {
+  "id": "A9",
+  "slug": "portail-santeclair",
+  "category": "plateformes",
+  "title": "Santéclair TP pour les opticiens : espace pro, prise en charge, statuts et paiement",
+  "primaryKeyword": "tp santeclair",
+  "keywordCluster": [
+   "opticien santeclair",
+   "santeclair mon compte",
+   "partenaires opticiens santeclair",
+   "santeclair pro",
+   "opticiens du reseau santeclair",
+   "opticien reseau santeclair",
+   "santeclair partenaire opticien",
+   "reseau santeclair opticien",
+   "opticiens santeclair",
+   "santeclair devis"
+  ],
+  "searchVolume": 6140,
+  "unsplashQuery": "optician computer paperwork",
+  "status": "pending",
+  "wave": 1,
+  "level": "Fille",
+  "parentSlug": "portails-tiers-payant",
+  "reader": "Comptoir",
+  "role": "Trafic",
+  "granitData": "Mutuelles routées vers Santéclair (name_options_*.json), champs obligatoires (fields.py), lecture des statuts (verdict.py)",
+  "cta": "Outil mutuelle → portail + démo",
+  "toValidate": "Gabarit commun Manus.",
+  "primaryKeywordMeasured": true,
+  "faqQuestions": [
+   "Comment accéder à l'espace pro Santéclair quand on est opticien ?",
+   "Quelles mutuelles passent par Santéclair pour le tiers payant optique ?",
+   "Comment faire une demande de prise en charge optique sur Santéclair ?",
+   "Que signifient les statuts d'une prise en charge Santéclair (accordée, en attente, refusée) ?",
+   "Comment contacter Santéclair quand on est professionnel de santé ?",
+   "Sous quel délai Santéclair paie-t-il l'opticien ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "A0",
+    "slug": "portails-tiers-payant",
+    "anchor": "portails de tiers payant",
+    "type": "parent"
+   },
+   {
+    "id": "A10",
+    "slug": "portail-kalixia",
+    "anchor": "kalixia optique",
+    "type": "sœur"
+   },
+   {
+    "id": "A11",
+    "slug": "portail-carte-blanche",
+    "anchor": "carte blanche partenaires",
+    "type": "sœur"
+   },
+   {
+    "id": "A13",
+    "slug": "mutuelle-quel-portail",
+    "anchor": "savoir par quel portail passe une mutuelle",
+    "type": "outil"
+   },
+   {
+    "id": "A12",
+    "slug": "contacts-plateformes-tiers-payant",
+    "anchor": "contacts pros des plateformes de tiers payant",
+    "type": "transverse"
+   },
+   {
+    "id": "B8",
+    "slug": "checklist-prise-en-charge",
+    "anchor": "checklist avant d'envoyer une prise en charge",
+    "type": "transverse"
+   }
+  ]
+ },
+ {
+  "id": "A7",
+  "slug": "portail-oxantis",
+  "category": "plateformes",
+  "title": "Oxantis TP pour les opticiens : espace pro, prise en charge, statuts et paiement",
+  "primaryKeyword": "oxantis tp",
+  "keywordCluster": [
+   "tp oxantis",
+   "oxantis net",
+   "oxantis pro",
+   "tp oxantis net",
+   "oxantis pec",
+   "oxantis professionnel de santé",
+   "oxantis professionnel de sante",
+   "tp oxanti",
+   "portail oxantis",
+   "pec oxantis"
+  ],
+  "searchVolume": 5340,
+  "unsplashQuery": "optician computer paperwork",
+  "status": "pending",
+  "wave": 1,
+  "level": "Fille",
+  "parentSlug": "portails-tiers-payant",
+  "reader": "Comptoir",
+  "role": "Trafic",
+  "granitData": "Mutuelles routées vers Oxantis (name_options_*.json), champs obligatoires (fields.py), lecture des statuts (verdict.py)",
+  "cta": "Outil mutuelle → portail + démo",
+  "toValidate": "Gabarit commun Manus. Kalixia passe par Oxantis en audio",
+  "primaryKeywordMeasured": true,
+  "faqQuestions": [
+   "Comment accéder à l'espace pro Oxantis quand on est opticien ?",
+   "Quelles mutuelles passent par Oxantis pour le tiers payant optique ?",
+   "Comment faire une demande de prise en charge optique sur Oxantis ?",
+   "Que signifient les statuts d'une prise en charge Oxantis (accordée, en attente, refusée) ?",
+   "Comment contacter Oxantis quand on est professionnel de santé ?",
+   "Sous quel délai Oxantis paie-t-il l'opticien ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "A0",
+    "slug": "portails-tiers-payant",
+    "anchor": "portails de tiers payant",
+    "type": "parent"
+   },
+   {
+    "id": "A8",
+    "slug": "portail-seveane",
+    "anchor": "seveane tp",
+    "type": "sœur"
+   },
+   {
+    "id": "A9",
+    "slug": "portail-santeclair",
+    "anchor": "tp santeclair",
+    "type": "sœur"
+   },
+   {
+    "id": "A13",
+    "slug": "mutuelle-quel-portail",
+    "anchor": "savoir par quel portail passe une mutuelle",
+    "type": "outil"
+   },
+   {
+    "id": "A12",
+    "slug": "contacts-plateformes-tiers-payant",
+    "anchor": "contacts pros des plateformes de tiers payant",
+    "type": "transverse"
+   },
+   {
+    "id": "B8",
+    "slug": "checklist-prise-en-charge",
+    "anchor": "checklist avant d'envoyer une prise en charge",
+    "type": "transverse"
+   }
+  ]
+ },
+ {
+  "id": "A13",
+  "slug": "mutuelle-quel-portail",
+  "category": "plateformes",
+  "title": "Ma mutuelle passe par quel portail ? (outil gratuit + numéro AMC)",
+  "primaryKeyword": "numéro amc c'est quoi",
+  "keywordCluster": [
+   "numeros amc",
+   "numero amc c'est quoi",
+   "optoamc",
+   "liste des amc",
+   "liste code amc mutuelle"
+  ],
+  "searchVolume": 1300,
+  "unsplashQuery": "optician computer paperwork",
+  "status": "pending",
+  "wave": 1,
+  "level": "Fille (outil)",
+  "parentSlug": "portails-tiers-payant",
+  "reader": "Comptoir",
+  "role": "Trafic + lead magnet",
+  "granitData": "281 mutuelles × portail (maquette publiée le 02/10)",
+  "cta": "Saisie e-mail pour la fiche complète",
+  "toValidate": "« Relevé au JJ/MM » : une mutuelle peut être sur plusieurs portails (cas MGEN)",
+  "primaryKeywordMeasured": true,
+  "faqQuestions": [
+   "Comment savoir par quel portail passe une mutuelle ?",
+   "Qu'est-ce que le numéro AMC sur la carte de tiers payant ?",
+   "Une mutuelle peut-elle passer par plusieurs portails ?",
+   "Que faire si la mutuelle n'apparaît dans aucun portail ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "A0",
+    "slug": "portails-tiers-payant",
+    "anchor": "portails de tiers payant",
+    "type": "parent"
+   },
+   {
+    "id": "A1",
+    "slug": "portail-viamedis",
+    "anchor": "viamedis tp",
+    "type": "sœur"
+   },
+   {
+    "id": "A2",
+    "slug": "portail-almerys",
+    "anchor": "almerys tp",
+    "type": "sœur"
+   }
+  ]
+ },
+ {
+  "id": "C3",
+  "slug": "codes-rejets-noemie",
+  "category": "paiements",
+  "title": "Codes rejets NOEMIE : liste, signification et action",
+  "primaryKeyword": "liste codes rejets noemie",
+  "keywordCluster": [],
+  "searchVolume": 110,
+  "unsplashQuery": "bank statement accounting",
+  "status": "pending",
+  "wave": 1,
+  "level": "Fille",
+  "parentSlug": "rapprochement-bancaire-tiers-payant",
+  "reader": "Comptoir",
+  "role": "Résolution + trafic",
+  "granitData": "—",
+  "cta": "Démo",
+  "toValidate": "Codes exacts sourcés uniquement",
+  "primaryKeywordMeasured": true,
+  "faqQuestions": [
+   "Qu'est-ce qu'un code rejet NOEMIE ?",
+   "Où trouver la liste des codes ?",
+   "Que faire selon le code reçu ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "C0",
+    "slug": "rapprochement-bancaire-tiers-payant",
+    "anchor": "Rapprochement bancaire du tiers payant",
+    "type": "parent"
+   },
+   {
+    "id": "C4",
+    "slug": "retour-noemie-sans-virement",
+    "anchor": "flux noemie",
+    "type": "sœur"
+   },
+   {
+    "id": "C5",
+    "slug": "libelles-virements-tiers-payant",
+    "anchor": "À qui correspond ce virement ? Libellés bancaires des payeurs (CETIP, KALIVIA…)",
+    "type": "sœur"
+   },
+   {
+    "id": "C2",
+    "slug": "quand-relancer-mutuelle",
+    "anchor": "quand relancer une mutuelle",
+    "type": "transverse"
+   },
+   {
+    "id": "E4",
+    "slug": "automatiser-saisie-prise-en-charge",
+    "anchor": "Automatiser la saisie des prises en charge",
+    "type": "conversion"
+   }
+  ]
+ },
+ {
+  "id": "C2",
+  "slug": "quand-relancer-mutuelle",
+  "category": "paiements",
+  "title": "Quand relancer une mutuelle ? Calendrier par étape (PEC, facture, ARL, NOEMIE)",
+  "primaryKeyword": "relancer une mutuelle",
+  "keywordCluster": [
+   "impayés tiers payant"
+  ],
+  "searchVolume": 50,
+  "unsplashQuery": "bank statement accounting",
+  "status": "pending",
+  "wave": 1,
+  "level": "Fille",
+  "parentSlug": "rapprochement-bancaire-tiers-payant",
+  "reader": "Comptoir",
+  "role": "Résolution",
+  "granitData": "—",
+  "cta": "Modèle de relance (lead magnet)",
+  "toValidate": "Pas de délai universel : tableau daté et sourcé",
+  "primaryKeywordMeasured": true,
+  "faqQuestions": [
+   "Au bout de combien de temps relancer une mutuelle ?",
+   "Comment relancer : portail, mail ou téléphone ?",
+   "Que faire après plusieurs relances sans réponse ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "C0",
+    "slug": "rapprochement-bancaire-tiers-payant",
+    "anchor": "Rapprochement bancaire du tiers payant",
+    "type": "parent"
+   },
+   {
+    "id": "C3",
+    "slug": "codes-rejets-noemie",
+    "anchor": "liste codes rejets noemie",
+    "type": "sœur"
+   },
+   {
+    "id": "C4",
+    "slug": "retour-noemie-sans-virement",
+    "anchor": "flux noemie",
+    "type": "sœur"
+   },
+   {
+    "id": "E4",
+    "slug": "automatiser-saisie-prise-en-charge",
+    "anchor": "Automatiser la saisie des prises en charge",
+    "type": "conversion"
+   }
+  ]
+ },
+ {
+  "id": "B1",
+  "slug": "rejet-beneficiaire-inconnu",
+  "category": "rejets",
+  "title": "Rejet mutuelle « bénéficiaire inconnu » : corriger sans doubler l'AMO",
+  "primaryKeyword": "rejet bénéficiaire inconnu mutuelle",
+  "keywordCluster": [],
+  "searchVolume": 0,
+  "unsplashQuery": "office paperwork error",
+  "status": "pending",
+  "wave": 1,
+  "level": "Fille",
+  "parentSlug": "rejet-tiers-payant",
+  "reader": "Comptoir",
+  "role": "Résolution",
+  "granitData": "Cas réels des agents (mauvaise mutuelle, MGEN mal routée)",
+  "cta": "Démo",
+  "toValidate": "Faire relire par un pro du TP",
+  "primaryKeywordMeasured": false,
+  "faqQuestions": [
+   "Que veut dire « bénéficiaire inconnu » ?",
+   "Comment corriger sans refacturer la part Sécurité sociale ?",
+   "Faut-il contacter la mutuelle ou le portail ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "B0",
+    "slug": "rejet-tiers-payant",
+    "anchor": "motif rejet tiers payant",
+    "type": "parent"
+   },
+   {
+    "id": "B2",
+    "slug": "refacturer-part-mutuelle",
+    "anchor": "Refacturer uniquement la part mutuelle après un rejet (DRE)",
+    "type": "sœur"
+   },
+   {
+    "id": "B3",
+    "slug": "prise-en-charge-refusee",
+    "anchor": "Prise en charge refusée",
+    "type": "sœur"
+   },
+   {
+    "id": "B8",
+    "slug": "checklist-prise-en-charge",
+    "anchor": "checklist avant d'envoyer une prise en charge",
+    "type": "transverse"
+   },
+   {
+    "id": "A13",
+    "slug": "mutuelle-quel-portail",
+    "anchor": "savoir par quel portail passe une mutuelle",
+    "type": "outil"
+   }
+  ]
+ },
+ {
+  "id": "C1",
+  "slug": "virement-mutuelle-inferieur",
+  "category": "paiements",
+  "title": "Virement de mutuelle inférieur à la facture : comprendre l'écart et relancer",
+  "primaryKeyword": "virement mutuelle inférieur facture",
+  "keywordCluster": [],
+  "searchVolume": 0,
+  "unsplashQuery": "bank statement accounting",
+  "status": "pending",
+  "wave": 1,
+  "level": "Fille",
+  "parentSlug": "rapprochement-bancaire-tiers-payant",
+  "reader": "Comptoir",
+  "role": "Résolution",
+  "granitData": "Cas réels rapprochement (Ideal Audition, Audition JS)",
+  "cta": "Démo",
+  "toValidate": "",
+  "primaryKeywordMeasured": false,
+  "faqQuestions": [
+   "Pourquoi la mutuelle a-t-elle payé moins que prévu ?",
+   "Comment identifier l'écart ?",
+   "Qui relancer : la mutuelle ou le portail ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "C0",
+    "slug": "rapprochement-bancaire-tiers-payant",
+    "anchor": "Rapprochement bancaire du tiers payant",
+    "type": "parent"
+   },
+   {
+    "id": "C2",
+    "slug": "quand-relancer-mutuelle",
+    "anchor": "quand relancer une mutuelle",
+    "type": "sœur"
+   },
+   {
+    "id": "C3",
+    "slug": "codes-rejets-noemie",
+    "anchor": "liste codes rejets noemie",
+    "type": "sœur"
+   },
+   {
+    "id": "E4",
+    "slug": "automatiser-saisie-prise-en-charge",
+    "anchor": "Automatiser la saisie des prises en charge",
+    "type": "conversion"
+   }
+  ]
+ },
+ {
+  "id": "B8",
+  "slug": "checklist-prise-en-charge",
+  "category": "rejets",
+  "title": "Checklist avant d'envoyer une prise en charge : les points qui évitent le rejet",
+  "primaryKeyword": "checklist prise en charge optique",
+  "keywordCluster": [],
+  "searchVolume": 0,
+  "unsplashQuery": "office paperwork error",
+  "status": "pending",
+  "wave": 1,
+  "level": "Fille",
+  "parentSlug": "rejet-tiers-payant",
+  "reader": "Comptoir",
+  "role": "Résolution + lead magnet",
+  "granitData": "Contrôles automatiques des agents avant dépôt",
+  "cta": "Checklist PDF (lead magnet)",
+  "toValidate": "Optique uniquement (audio plus tard)",
+  "primaryKeywordMeasured": false,
+  "faqQuestions": [
+   "Quels points vérifier avant d'envoyer une prise en charge ?",
+   "Quelles pièces joindre au dossier ?",
+   "Comment vérifier les droits du client ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "B0",
+    "slug": "rejet-tiers-payant",
+    "anchor": "motif rejet tiers payant",
+    "type": "parent"
+   },
+   {
+    "id": "B9",
+    "slug": "client-sans-carte-tiers-payant",
+    "anchor": "Le client arrive sans sa carte de tiers payant",
+    "type": "sœur"
+   },
+   {
+    "id": "B10",
+    "slug": "reduire-taux-rejet-tiers-payant",
+    "anchor": "Faire baisser son taux de rejet",
+    "type": "sœur"
+   },
+   {
+    "id": "A13",
+    "slug": "mutuelle-quel-portail",
+    "anchor": "savoir par quel portail passe une mutuelle",
+    "type": "outil"
+   }
+  ]
+ },
+ {
+  "id": "A15",
+  "slug": "viamedis-espace-pro",
+  "category": "plateformes",
+  "title": "Viamédis : créer son compte et accéder à l'espace pro",
+  "primaryKeyword": "viamedis espace pro",
+  "keywordCluster": [
+   "www viamedis net espace client",
+   "www.viamedis.net espace client",
+   "viamedis mon compte",
+   "viamedis espace professionnel de sante",
+   "viamedis espace professionnels de sante",
+   "www viamedis net créer un compte",
+   "viamedis espace professionnel de santé",
+   "www.viamedis.net créer un compte",
+   "viamedis créer un compte",
+   "viamedis espace professionnel"
+  ],
+  "searchVolume": 4420,
+  "unsplashQuery": "optician computer paperwork",
+  "status": "pending",
+  "wave": 1,
+  "level": "Petite-fille",
+  "parentSlug": "portail-viamedis",
+  "reader": "Comptoir",
+  "role": "Trafic",
+  "granitData": "Parcours Viamédis de l'agent",
+  "cta": "Démo",
+  "toValidate": "",
+  "primaryKeywordMeasured": true,
+  "faqQuestions": [
+   "Comment créer un compte Viamédis professionnel ?",
+   "Comment se connecter à l'espace pro Viamédis ?",
+   "Que faire en cas de mot de passe oublié ?",
+   "Qui contacter si le compte est bloqué ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "A1",
+    "slug": "portail-viamedis",
+    "anchor": "viamedis tp",
+    "type": "parent"
+   },
+   {
+    "id": "A16",
+    "slug": "viamedis-prise-en-charge",
+    "anchor": "viamedis pec",
+    "type": "sœur"
+   }
+  ]
+ },
+ {
+  "id": "A14",
+  "slug": "almerys-prise-en-charge",
+  "category": "plateformes",
+  "title": "Almerys : faire une prise en charge (PEC) optique",
+  "primaryKeyword": "almerys pec",
+  "keywordCluster": [
+   "pec almerys",
+   "prise en charge almerys",
+   "almerys prise en charge",
+   "www almerys com demande de prise en charge",
+   "www.almerys.com demande de prise en charge",
+   "almerys demande de prise en charge",
+   "tp almerys pec",
+   "prise en charge optique almerys",
+   "mutuelle almerys pec",
+   "almerys prise en charge optique"
+  ],
+  "searchVolume": 2730,
+  "unsplashQuery": "optician computer paperwork",
+  "status": "pending",
+  "wave": 1,
+  "level": "Petite-fille",
+  "parentSlug": "portail-almerys",
+  "reader": "Comptoir",
+  "role": "Trafic",
+  "granitData": "Parcours DPEC Almerys de l'agent, champs, statuts",
+  "cta": "Démo agent DPEC",
+  "toValidate": "",
+  "primaryKeywordMeasured": true,
+  "faqQuestions": [
+   "Comment faire une demande de prise en charge sur Almerys ?",
+   "Quelles pièces joindre à une PEC Almerys ?",
+   "Combien de temps pour une réponse d'Almerys ?",
+   "Que faire si la PEC Almerys est refusée ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "A2",
+    "slug": "portail-almerys",
+    "anchor": "almerys tp",
+    "type": "parent"
+   },
+   {
+    "id": "B3",
+    "slug": "prise-en-charge-refusee",
+    "anchor": "Prise en charge refusée",
+    "type": "transverse"
+   },
+   {
+    "id": "B8",
+    "slug": "checklist-prise-en-charge",
+    "anchor": "checklist avant d'envoyer une prise en charge",
+    "type": "transverse"
+   }
+  ]
+ },
+ {
+  "id": "E0",
+  "slug": "gerer-tiers-payant-magasin",
+  "category": "gerer-son-tiers-payant",
+  "title": "Gérer le tiers payant d'un magasin : en interne, externalisé ou automatisé ?",
+  "primaryKeyword": "gestion tiers payant",
+  "keywordCluster": [
+   "gestion tiers payant pharmacie",
+   "gestion du tiers payant",
+   "gestion tiers payant pyrénées atlantiques",
+   "gestion rejets tiers payant",
+   "gestion des tiers payants opticien",
+   "gestion des rejets tiers payant",
+   "gestion tiers payant opticien",
+   "gestion des tiers payant opticien"
+  ],
+  "searchVolume": 370,
+  "unsplashQuery": "optical store manager",
+  "status": "pending",
+  "wave": 2,
+  "level": "Pilier",
+  "parentSlug": "tiers-payant-opticien",
+  "reader": "Gérant",
+  "role": "Conversion",
+  "granitData": "Offres et devis TP (faits, sans prix nominatifs)",
+  "cta": "Démo + calcul du temps perdu",
+  "toValidate": "",
+  "primaryKeywordMeasured": true,
+  "faqQuestions": [
+   "Faut-il gérer le tiers payant en interne ou l'externaliser ?",
+   "Combien coûte la gestion du tiers payant ?",
+   "Peut-on automatiser le tiers payant ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "G0",
+    "slug": "tiers-payant-opticien",
+    "anchor": "tiers payant opticien",
+    "type": "parent"
+   },
+   {
+    "id": "E1",
+    "slug": "gestionnaire-tiers-payant",
+    "anchor": "gestionnaire tiers payant",
+    "type": "enfant"
+   },
+   {
+    "id": "E2",
+    "slug": "externaliser-tiers-payant-comparatif",
+    "anchor": "externalisation tiers payant pharmaciens",
+    "type": "enfant"
+   },
+   {
+    "id": "E3",
+    "slug": "logiciel-opticien-tiers-payant",
+    "anchor": "optilys",
+    "type": "enfant"
+   },
+   {
+    "id": "E4",
+    "slug": "automatiser-saisie-prise-en-charge",
+    "anchor": "Automatiser la saisie des prises en charge",
+    "type": "enfant"
+   },
+   {
+    "id": "E5",
+    "slug": "cout-temps-tiers-payant",
+    "anchor": "coût du tiers payant pour un magasin",
+    "type": "enfant"
+   },
+   {
+    "id": "E6",
+    "slug": "indicateurs-tiers-payant",
+    "anchor": "Piloter son tiers payant",
+    "type": "enfant"
+   },
+   {
+    "id": "E7",
+    "slug": "conges-dossiers-tiers-payant",
+    "anchor": "Fermeture pour congés",
+    "type": "enfant"
+   },
+   {
+    "id": "F0",
+    "slug": "glossaire-tiers-payant",
+    "anchor": "Glossaire du tiers payant optique",
+    "type": "sœur"
+   },
+   {
+    "id": "G3",
+    "slug": "questions-tiers-payant-opticien",
+    "anchor": "Tiers payant opticien",
+    "type": "sœur"
+   },
+   {
+    "id": "B10",
+    "slug": "reduire-taux-rejet-tiers-payant",
+    "anchor": "Faire baisser son taux de rejet",
+    "type": "transverse"
+   }
+  ]
+ },
+ {
+  "id": "B0",
+  "slug": "rejet-tiers-payant",
+  "category": "rejets",
+  "title": "Rejet de tiers payant en optique : diagnostic et correction",
+  "primaryKeyword": "motif rejet tiers payant",
+  "keywordCluster": [],
+  "searchVolume": 50,
+  "unsplashQuery": "office paperwork error",
+  "status": "pending",
+  "wave": 2,
+  "level": "Pilier",
+  "parentSlug": "tiers-payant-opticien",
+  "reader": "Comptoir",
+  "role": "Résolution",
+  "granitData": "Messages de refus réels (base prod motif_refus, anonymisée) — accord tech requis",
+  "cta": "Démo + audit gratuit des rejets",
+  "toValidate": "Ne publier un code qu'avec libellé exact, source et date",
+  "primaryKeywordMeasured": true,
+  "faqQuestions": [
+   "Pourquoi un dossier de tiers payant est-il rejeté ?",
+   "Quelle différence entre un rejet de la Sécurité sociale et un rejet de la mutuelle ?",
+   "Comment corriger et renvoyer un dossier rejeté ?",
+   "Combien de temps a-t-on pour renvoyer un dossier ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "G0",
+    "slug": "tiers-payant-opticien",
+    "anchor": "tiers payant opticien",
+    "type": "parent"
+   },
+   {
+    "id": "B1",
+    "slug": "rejet-beneficiaire-inconnu",
+    "anchor": "Rejet mutuelle « bénéficiaire inconnu »",
+    "type": "enfant"
+   },
+   {
+    "id": "B2",
+    "slug": "refacturer-part-mutuelle",
+    "anchor": "Refacturer uniquement la part mutuelle après un rejet (DRE)",
+    "type": "enfant"
+   },
+   {
+    "id": "B3",
+    "slug": "prise-en-charge-refusee",
+    "anchor": "Prise en charge refusée",
+    "type": "enfant"
+   },
+   {
+    "id": "B4",
+    "slug": "renouvellement-lunettes-moins-2-ans",
+    "anchor": "renouvellement lunettes opticien",
+    "type": "enfant"
+   },
+   {
+    "id": "B5",
+    "slug": "tiers-payant-css-opticien",
+    "anchor": "Facturer un bénéficiaire de la CSS (ex-ACS) en optique",
+    "type": "enfant"
+   },
+   {
+    "id": "B6",
+    "slug": "ouvrant-droit-beneficiaire",
+    "anchor": "Ouvrant droit ou bénéficiaire",
+    "type": "enfant"
+   },
+   {
+    "id": "B7",
+    "slug": "contester-refus-prise-en-charge",
+    "anchor": "Contester un refus de prise en charge",
+    "type": "enfant"
+   },
+   {
+    "id": "B8",
+    "slug": "checklist-prise-en-charge",
+    "anchor": "checklist avant d'envoyer une prise en charge",
+    "type": "enfant"
+   },
+   {
+    "id": "B9",
+    "slug": "client-sans-carte-tiers-payant",
+    "anchor": "Le client arrive sans sa carte de tiers payant",
+    "type": "enfant"
+   },
+   {
+    "id": "B10",
+    "slug": "reduire-taux-rejet-tiers-payant",
+    "anchor": "Faire baisser son taux de rejet",
+    "type": "enfant"
+   },
+   {
+    "id": "C0",
+    "slug": "rapprochement-bancaire-tiers-payant",
+    "anchor": "Rapprochement bancaire du tiers payant",
+    "type": "sœur"
+   },
+   {
+    "id": "E0",
+    "slug": "gerer-tiers-payant-magasin",
+    "anchor": "gestion tiers payant",
+    "type": "sœur"
+   },
+   {
+    "id": "C3",
+    "slug": "codes-rejets-noemie",
+    "anchor": "liste codes rejets noemie",
+    "type": "transverse"
+   },
+   {
+    "id": "A0",
+    "slug": "portails-tiers-payant",
+    "anchor": "portails de tiers payant",
+    "type": "transverse"
+   }
+  ]
+ },
+ {
+  "id": "C0",
+  "slug": "rapprochement-bancaire-tiers-payant",
+  "category": "paiements",
+  "title": "Rapprochement bancaire du tiers payant : méthode et tableau de suivi",
+  "primaryKeyword": "rapprochement bancaire tiers payant",
+  "keywordCluster": [],
+  "searchVolume": 0,
+  "unsplashQuery": "bank statement accounting",
+  "status": "pending",
+  "wave": 2,
+  "level": "Pilier",
+  "parentSlug": "tiers-payant-opticien",
+  "reader": "Comptoir + gérant",
+  "role": "Résolution",
+  "granitData": "Libellés bancaires par payeur (canaux.py), fenêtres de matching",
+  "cta": "Démo agent rapprochement",
+  "toValidate": "",
+  "primaryKeywordMeasured": false,
+  "faqQuestions": [
+   "Comment faire le rapprochement bancaire du tiers payant ?",
+   "Comment rattacher un virement global aux bons dossiers ?",
+   "À quelle fréquence faire le rapprochement ?",
+   "Quels outils utiliser ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "G0",
+    "slug": "tiers-payant-opticien",
+    "anchor": "tiers payant opticien",
+    "type": "parent"
+   },
+   {
+    "id": "C1",
+    "slug": "virement-mutuelle-inferieur",
+    "anchor": "Virement de mutuelle inférieur à la facture",
+    "type": "enfant"
+   },
+   {
+    "id": "C2",
+    "slug": "quand-relancer-mutuelle",
+    "anchor": "quand relancer une mutuelle",
+    "type": "enfant"
+   },
+   {
+    "id": "C3",
+    "slug": "codes-rejets-noemie",
+    "anchor": "liste codes rejets noemie",
+    "type": "enfant"
+   },
+   {
+    "id": "C4",
+    "slug": "retour-noemie-sans-virement",
+    "anchor": "flux noemie",
+    "type": "enfant"
+   },
+   {
+    "id": "C5",
+    "slug": "libelles-virements-tiers-payant",
+    "anchor": "À qui correspond ce virement ? Libellés bancaires des payeurs (CETIP, KALIVIA…)",
+    "type": "enfant"
+   },
+   {
+    "id": "C6",
+    "slug": "delais-paiement-plateformes",
+    "anchor": "Délais de paiement des plateformes de tiers payant (tableau daté)",
+    "type": "enfant"
+   },
+   {
+    "id": "C7",
+    "slug": "impayes-mutuelle-anciens",
+    "anchor": "Impayés mutuelles de plus de 6 mois",
+    "type": "enfant"
+   },
+   {
+    "id": "C8",
+    "slug": "reste-a-charge-impaye",
+    "anchor": "Reste à charge impayé par le client",
+    "type": "enfant"
+   },
+   {
+    "id": "E0",
+    "slug": "gerer-tiers-payant-magasin",
+    "anchor": "gestion tiers payant",
+    "type": "sœur"
+   },
+   {
+    "id": "F0",
+    "slug": "glossaire-tiers-payant",
+    "anchor": "Glossaire du tiers payant optique",
+    "type": "sœur"
+   },
+   {
+    "id": "E4",
+    "slug": "automatiser-saisie-prise-en-charge",
+    "anchor": "Automatiser la saisie des prises en charge",
+    "type": "conversion"
+   }
+  ]
+ },
+ {
+  "id": "F0",
+  "slug": "glossaire-tiers-payant",
+  "category": "glossaire",
+  "title": "Glossaire du tiers payant optique",
+  "primaryKeyword": "glossaire tiers payant",
+  "keywordCluster": [],
+  "searchVolume": 0,
+  "unsplashQuery": "dictionary glossary desk",
+  "status": "pending",
+  "wave": 2,
+  "level": "Pilier",
+  "parentSlug": "tiers-payant-opticien",
+  "reader": "Comptoir",
+  "role": "Maillage + citations IA",
+  "granitData": "glossaire.json (70 termes)",
+  "cta": "Démo",
+  "toValidate": "",
+  "primaryKeywordMeasured": false,
+  "faqQuestions": [
+   "Que veulent dire AMO, AMC, OCAM ?",
+   "Qu'est-ce qu'une DPEC ?",
+   "Qu'est-ce que NOEMIE ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "G0",
+    "slug": "tiers-payant-opticien",
+    "anchor": "tiers payant opticien",
+    "type": "parent"
+   },
+   {
+    "id": "F1",
+    "slug": "amo-amc",
+    "anchor": "part amc",
+    "type": "enfant"
+   },
+   {
+    "id": "F2",
+    "slug": "sigles-tiers-payant-noemie",
+    "anchor": "télétransmission noémie",
+    "type": "enfant"
+   },
+   {
+    "id": "F3",
+    "slug": "carte-vitale-carte-tiers-payant",
+    "anchor": "Carte Vitale et carte de tiers payant",
+    "type": "enfant"
+   },
+   {
+    "id": "G3",
+    "slug": "questions-tiers-payant-opticien",
+    "anchor": "Tiers payant opticien",
+    "type": "sœur"
+   },
+   {
+    "id": "G4",
+    "slug": "erreurs-tiers-payant-opticien",
+    "anchor": "Les erreurs de saisie qui coûtent le plus cher en tiers payant",
+    "type": "sœur"
+   }
+  ]
+ },
+ {
+  "id": "A10",
+  "slug": "portail-kalixia",
+  "category": "plateformes",
+  "title": "Kalixia TP pour les opticiens : espace pro, prise en charge, statuts et paiement",
+  "primaryKeyword": "kalixia optique",
+  "keywordCluster": [
+   "reseau kalixia opticien",
+   "réseau kalixia optique",
+   "opticien reseau kalixia",
+   "opticien kalixia",
+   "opticiens kalixia",
+   "kalixia audio",
+   "reseau kalixia optique",
+   "kalixia opticien",
+   "reseau opticien kalixia",
+   "trouver un opticien kalixia"
+  ],
+  "searchVolume": 8880,
+  "unsplashQuery": "optician computer paperwork",
+  "status": "pending",
+  "wave": 2,
+  "level": "Fille",
+  "parentSlug": "portails-tiers-payant",
+  "reader": "Comptoir",
+  "role": "Trafic",
+  "granitData": "Mutuelles routées vers Kalixia (name_options_*.json), champs obligatoires (fields.py), lecture des statuts (verdict.py)",
+  "cta": "Outil mutuelle → portail + démo",
+  "toValidate": "Gabarit commun Manus. Requêtes surtout patients (trouver un opticien)",
+  "primaryKeywordMeasured": true,
+  "faqQuestions": [
+   "Comment accéder à l'espace pro Kalixia quand on est opticien ?",
+   "Quelles mutuelles passent par Kalixia pour le tiers payant optique ?",
+   "Comment faire une demande de prise en charge optique sur Kalixia ?",
+   "Que signifient les statuts d'une prise en charge Kalixia (accordée, en attente, refusée) ?",
+   "Comment contacter Kalixia quand on est professionnel de santé ?",
+   "Sous quel délai Kalixia paie-t-il l'opticien ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "A0",
+    "slug": "portails-tiers-payant",
+    "anchor": "portails de tiers payant",
+    "type": "parent"
+   },
+   {
+    "id": "A11",
+    "slug": "portail-carte-blanche",
+    "anchor": "carte blanche partenaires",
+    "type": "sœur"
+   },
+   {
+    "id": "A12",
+    "slug": "contacts-plateformes-tiers-payant",
+    "anchor": "contacts pros des plateformes de tiers payant",
+    "type": "sœur"
+   },
+   {
+    "id": "A13",
+    "slug": "mutuelle-quel-portail",
+    "anchor": "savoir par quel portail passe une mutuelle",
+    "type": "outil"
+   },
+   {
+    "id": "B8",
+    "slug": "checklist-prise-en-charge",
+    "anchor": "checklist avant d'envoyer une prise en charge",
+    "type": "transverse"
+   }
+  ]
+ },
+ {
+  "id": "G1",
+  "slug": "100-sante-classe-a-b-opticien",
+  "category": "guide-tiers-payant",
+  "title": "100 % Santé et classes A/B : ce que l'opticien vérifie avant la prise en charge",
+  "primaryKeyword": "lunettes 100 santé",
+  "keywordCluster": [
+   "100 santé optique",
+   "100 santé lunettes",
+   "100 santé optique verres progressifs",
+   "monture 100 santé",
+   "lunette 100 santé",
+   "verres 100 santé",
+   "montures 100 santé",
+   "100 santé optique ameli",
+   "verres classe a et b différence qualité",
+   "optique 100 santé"
+  ],
+  "searchVolume": 6180,
+  "unsplashQuery": "optician store",
+  "status": "pending",
+  "wave": 2,
+  "level": "Fille",
+  "parentSlug": "tiers-payant-opticien",
+  "reader": "Comptoir",
+  "role": "Trafic",
+  "granitData": "Grille classe A (99 lignes, publique, à recouper LPP)",
+  "cta": "Guide PDF / démo",
+  "toValidate": "Ne jamais publier la grille plancher classe B client",
+  "primaryKeywordMeasured": true,
+  "faqQuestions": [
+   "Qu'est-ce qu'un équipement 100 % Santé en optique ?",
+   "Quelle différence entre classe A et classe B ?",
+   "Peut-on mélanger monture classe A et verres classe B ?",
+   "Le tiers payant est-il obligatoire sur un panier 100 % Santé ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "G0",
+    "slug": "tiers-payant-opticien",
+    "anchor": "tiers payant opticien",
+    "type": "parent"
+   },
+   {
+    "id": "G2",
+    "slug": "remboursement-optique-amo-amc",
+    "anchor": "remboursement des lunettes",
+    "type": "sœur"
+   },
+   {
+    "id": "A0",
+    "slug": "portails-tiers-payant",
+    "anchor": "portails de tiers payant",
+    "type": "sœur"
+   }
+  ]
+ },
+ {
+  "id": "F2",
+  "slug": "sigles-tiers-payant-noemie",
+  "category": "glossaire",
+  "title": "NOEMIE, ARL, RSP, FSE, DRE, SCOR : les sigles du tiers payant",
+  "primaryKeyword": "télétransmission noémie",
+  "keywordCluster": [
+   "noemie télétransmission",
+   "télétransmission noemie",
+   "teletransmission noemie",
+   "noemie mutuelle",
+   "mutuelle noemie",
+   "noemie teletransmission",
+   "noemie cpam",
+   "noemie ameli",
+   "lien noemie",
+   "cpam noemie"
+  ],
+  "searchVolume": 4790,
+  "unsplashQuery": "dictionary glossary desk",
+  "status": "pending",
+  "wave": 2,
+  "level": "Fille",
+  "parentSlug": "glossaire-tiers-payant",
+  "reader": "Comptoir",
+  "role": "Trafic + maillage",
+  "granitData": "glossaire.json",
+  "cta": "Démo",
+  "toValidate": "",
+  "primaryKeywordMeasured": true,
+  "faqQuestions": [
+   "Que veut dire NOEMIE ?",
+   "Quelle différence entre FSE et DRE ?",
+   "Qu'est-ce qu'un ARL ?",
+   "Qu'est-ce que SCOR ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "F0",
+    "slug": "glossaire-tiers-payant",
+    "anchor": "Glossaire du tiers payant optique",
+    "type": "parent"
+   },
+   {
+    "id": "F3",
+    "slug": "carte-vitale-carte-tiers-payant",
+    "anchor": "Carte Vitale et carte de tiers payant",
+    "type": "sœur"
+   },
+   {
+    "id": "F1",
+    "slug": "amo-amc",
+    "anchor": "part amc",
+    "type": "sœur"
+   },
+   {
+    "id": "G0",
+    "slug": "tiers-payant-opticien",
+    "anchor": "tiers payant opticien",
+    "type": "transverse"
+   }
+  ]
+ },
+ {
+  "id": "A11",
+  "slug": "portail-carte-blanche",
+  "category": "plateformes",
+  "title": "Carte Blanche TP pour les opticiens : espace pro, prise en charge, statuts et paiement",
+  "primaryKeyword": "carte blanche partenaires",
+  "keywordCluster": [
+   "partenaire carte blanche",
+   "carte blanche partenaire",
+   "partenaire carte blanche optique",
+   "opticien partenaire carte blanche",
+   "carte blanche partenaires opticiens",
+   "carte blanche opticien partenaire",
+   "carte blanche partenaire optique",
+   "carte blanche partenaire opticien",
+   "reseau carte blanche partenaires",
+   "photos de carte blanche partenaires"
+  ],
+  "searchVolume": 3740,
+  "unsplashQuery": "optician computer paperwork",
+  "status": "pending",
+  "wave": 2,
+  "level": "Fille",
+  "parentSlug": "portails-tiers-payant",
+  "reader": "Comptoir",
+  "role": "Trafic",
+  "granitData": "Mutuelles routées vers Carte Blanche (name_options_*.json), champs obligatoires (fields.py), lecture des statuts (verdict.py)",
+  "cta": "Outil mutuelle → portail + démo",
+  "toValidate": "Gabarit commun Manus.",
+  "primaryKeywordMeasured": true,
+  "faqQuestions": [
+   "Comment accéder à l'espace pro Carte Blanche quand on est opticien ?",
+   "Quelles mutuelles passent par Carte Blanche pour le tiers payant optique ?",
+   "Comment faire une demande de prise en charge optique sur Carte Blanche ?",
+   "Que signifient les statuts d'une prise en charge Carte Blanche (accordée, en attente, refusée) ?",
+   "Comment contacter Carte Blanche quand on est professionnel de santé ?",
+   "Sous quel délai Carte Blanche paie-t-il l'opticien ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "A0",
+    "slug": "portails-tiers-payant",
+    "anchor": "portails de tiers payant",
+    "type": "parent"
+   },
+   {
+    "id": "A12",
+    "slug": "contacts-plateformes-tiers-payant",
+    "anchor": "contacts pros des plateformes de tiers payant",
+    "type": "sœur"
+   },
+   {
+    "id": "A13",
+    "slug": "mutuelle-quel-portail",
+    "anchor": "savoir par quel portail passe une mutuelle",
+    "type": "sœur"
+   },
+   {
+    "id": "B8",
+    "slug": "checklist-prise-en-charge",
+    "anchor": "checklist avant d'envoyer une prise en charge",
+    "type": "transverse"
+   }
+  ]
+ },
+ {
+  "id": "F1",
+  "slug": "amo-amc",
+  "category": "glossaire",
+  "title": "AMO et AMC : la différence, et comment lire le montant de chaque part",
+  "primaryKeyword": "part amc",
+  "keywordCluster": [
+   "montant amo",
+   "amo amc",
+   "montant amc c'est quoi",
+   "amo mutuelle",
+   "amc amo",
+   "amo et amc",
+   "mutuelle amo",
+   "montant amo amc",
+   "amo amc c'est quoi",
+   "amo amc c est quoi"
+  ],
+  "searchVolume": 2330,
+  "unsplashQuery": "dictionary glossary desk",
+  "status": "pending",
+  "wave": 2,
+  "level": "Fille",
+  "parentSlug": "glossaire-tiers-payant",
+  "reader": "Comptoir",
+  "role": "Trafic",
+  "granitData": "fondations.md",
+  "cta": "Démo",
+  "toValidate": "",
+  "primaryKeywordMeasured": true,
+  "faqQuestions": [
+   "Quelle différence entre AMO et AMC ?",
+   "Comment lire le montant de chaque part ?",
+   "Qu'est-ce que le numéro AMC ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "F0",
+    "slug": "glossaire-tiers-payant",
+    "anchor": "Glossaire du tiers payant optique",
+    "type": "parent"
+   },
+   {
+    "id": "F2",
+    "slug": "sigles-tiers-payant-noemie",
+    "anchor": "télétransmission noémie",
+    "type": "sœur"
+   },
+   {
+    "id": "F3",
+    "slug": "carte-vitale-carte-tiers-payant",
+    "anchor": "Carte Vitale et carte de tiers payant",
+    "type": "sœur"
+   },
+   {
+    "id": "G0",
+    "slug": "tiers-payant-opticien",
+    "anchor": "tiers payant opticien",
+    "type": "transverse"
+   }
+  ]
+ },
+ {
+  "id": "C4",
+  "slug": "retour-noemie-sans-virement",
+  "category": "paiements",
+  "title": "Retour NOEMIE sans virement : dossier payé, rejeté ou perdu ?",
+  "primaryKeyword": "flux noemie",
+  "keywordCluster": [
+   "retour noemie",
+   "flux noemie assurance maladie"
+  ],
+  "searchVolume": 230,
+  "unsplashQuery": "bank statement accounting",
+  "status": "pending",
+  "wave": 2,
+  "level": "Fille",
+  "parentSlug": "rapprochement-bancaire-tiers-payant",
+  "reader": "Comptoir",
+  "role": "Résolution",
+  "granitData": "—",
+  "cta": "Démo",
+  "toValidate": "",
+  "primaryKeywordMeasured": true,
+  "faqQuestions": [
+   "Qu'est-ce qu'un retour NOEMIE ?",
+   "Un retour NOEMIE veut-il dire que le dossier est payé ?",
+   "Que faire si le retour arrive sans virement ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "C0",
+    "slug": "rapprochement-bancaire-tiers-payant",
+    "anchor": "Rapprochement bancaire du tiers payant",
+    "type": "parent"
+   },
+   {
+    "id": "C5",
+    "slug": "libelles-virements-tiers-payant",
+    "anchor": "À qui correspond ce virement ? Libellés bancaires des payeurs (CETIP, KALIVIA…)",
+    "type": "sœur"
+   },
+   {
+    "id": "C6",
+    "slug": "delais-paiement-plateformes",
+    "anchor": "Délais de paiement des plateformes de tiers payant (tableau daté)",
+    "type": "sœur"
+   },
+   {
+    "id": "C2",
+    "slug": "quand-relancer-mutuelle",
+    "anchor": "quand relancer une mutuelle",
+    "type": "transverse"
+   },
+   {
+    "id": "E4",
+    "slug": "automatiser-saisie-prise-en-charge",
+    "anchor": "Automatiser la saisie des prises en charge",
+    "type": "conversion"
+   }
+  ]
+ },
+ {
+  "id": "E1",
+  "slug": "gestionnaire-tiers-payant",
+  "category": "gerer-son-tiers-payant",
+  "title": "Gestionnaire tiers payant : rôle, coût et alternatives",
+  "primaryKeyword": "gestionnaire tiers payant",
+  "keywordCluster": [],
+  "searchVolume": 210,
+  "unsplashQuery": "optical store manager",
+  "status": "pending",
+  "wave": 2,
+  "level": "Fille",
+  "parentSlug": "gerer-tiers-payant-magasin",
+  "reader": "Gérant",
+  "role": "Conversion",
+  "granitData": "Offres d'emploi TP (digest), parc Sirene",
+  "cta": "Démo",
+  "toValidate": "",
+  "primaryKeywordMeasured": true,
+  "faqQuestions": [
+   "Que fait un gestionnaire tiers payant en optique ?",
+   "Combien coûte un gestionnaire tiers payant ?",
+   "Quelles alternatives au recrutement ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "E0",
+    "slug": "gerer-tiers-payant-magasin",
+    "anchor": "gestion tiers payant",
+    "type": "parent"
+   },
+   {
+    "id": "E2",
+    "slug": "externaliser-tiers-payant-comparatif",
+    "anchor": "externalisation tiers payant pharmaciens",
+    "type": "sœur"
+   },
+   {
+    "id": "E3",
+    "slug": "logiciel-opticien-tiers-payant",
+    "anchor": "optilys",
+    "type": "sœur"
+   },
+   {
+    "id": "E5",
+    "slug": "cout-temps-tiers-payant",
+    "anchor": "coût du tiers payant pour un magasin",
+    "type": "conversion"
+   }
+  ]
+ },
+ {
+  "id": "B2",
+  "slug": "refacturer-part-mutuelle",
+  "category": "rejets",
+  "title": "Refacturer uniquement la part mutuelle après un rejet (DRE)",
+  "primaryKeyword": "refacturer part mutuelle",
+  "keywordCluster": [],
+  "searchVolume": 0,
+  "unsplashQuery": "office paperwork error",
+  "status": "pending",
+  "wave": 2,
+  "level": "Fille",
+  "parentSlug": "rejet-tiers-payant",
+  "reader": "Comptoir",
+  "role": "Résolution",
+  "granitData": "—",
+  "cta": "Démo",
+  "toValidate": "Variantes selon logiciel (Cosium, Winoptics…)",
+  "primaryKeywordMeasured": false,
+  "faqQuestions": [
+   "Peut-on refacturer seulement la part mutuelle ?",
+   "Qu'est-ce qu'une DRE ?",
+   "Comment éviter un indu de la Sécurité sociale ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "B0",
+    "slug": "rejet-tiers-payant",
+    "anchor": "motif rejet tiers payant",
+    "type": "parent"
+   },
+   {
+    "id": "B3",
+    "slug": "prise-en-charge-refusee",
+    "anchor": "Prise en charge refusée",
+    "type": "sœur"
+   },
+   {
+    "id": "B4",
+    "slug": "renouvellement-lunettes-moins-2-ans",
+    "anchor": "renouvellement lunettes opticien",
+    "type": "sœur"
+   },
+   {
+    "id": "B8",
+    "slug": "checklist-prise-en-charge",
+    "anchor": "checklist avant d'envoyer une prise en charge",
+    "type": "transverse"
+   },
+   {
+    "id": "A13",
+    "slug": "mutuelle-quel-portail",
+    "anchor": "savoir par quel portail passe une mutuelle",
+    "type": "outil"
+   }
+  ]
+ },
+ {
+  "id": "B3",
+  "slug": "prise-en-charge-refusee",
+  "category": "rejets",
+  "title": "Prise en charge refusée : droits fermés, plafond atteint, PEC expirée",
+  "primaryKeyword": "prise en charge refusee",
+  "keywordCluster": [],
+  "searchVolume": 0,
+  "unsplashQuery": "office paperwork error",
+  "status": "pending",
+  "wave": 2,
+  "level": "Fille",
+  "parentSlug": "rejet-tiers-payant",
+  "reader": "Comptoir",
+  "role": "Résolution",
+  "granitData": "verdict.py (Pecrac impossible, plafond, doublon)",
+  "cta": "Démo",
+  "toValidate": "",
+  "primaryKeywordMeasured": false,
+  "faqQuestions": [
+   "Pourquoi une prise en charge est-elle refusée ?",
+   "Que faire quand le plafond est atteint ?",
+   "Que faire quand la prise en charge a expiré ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "B0",
+    "slug": "rejet-tiers-payant",
+    "anchor": "motif rejet tiers payant",
+    "type": "parent"
+   },
+   {
+    "id": "B4",
+    "slug": "renouvellement-lunettes-moins-2-ans",
+    "anchor": "renouvellement lunettes opticien",
+    "type": "sœur"
+   },
+   {
+    "id": "B5",
+    "slug": "tiers-payant-css-opticien",
+    "anchor": "Facturer un bénéficiaire de la CSS (ex-ACS) en optique",
+    "type": "sœur"
+   },
+   {
+    "id": "B8",
+    "slug": "checklist-prise-en-charge",
+    "anchor": "checklist avant d'envoyer une prise en charge",
+    "type": "transverse"
+   },
+   {
+    "id": "A13",
+    "slug": "mutuelle-quel-portail",
+    "anchor": "savoir par quel portail passe une mutuelle",
+    "type": "outil"
+   }
+  ]
+ },
+ {
+  "id": "C5",
+  "slug": "libelles-virements-tiers-payant",
+  "category": "paiements",
+  "title": "À qui correspond ce virement ? Libellés bancaires des payeurs (CETIP, KALIVIA…)",
+  "primaryKeyword": "libelles virements tiers payant",
+  "keywordCluster": [],
+  "searchVolume": 0,
+  "unsplashQuery": "bank statement accounting",
+  "status": "pending",
+  "wave": 2,
+  "level": "Fille",
+  "parentSlug": "rapprochement-bancaire-tiers-payant",
+  "reader": "Comptoir",
+  "role": "Résolution",
+  "granitData": "canaux.py, payments.py",
+  "cta": "Démo",
+  "toValidate": "",
+  "primaryKeywordMeasured": false,
+  "faqQuestions": [
+   "Comment savoir à quel payeur correspond un virement ?",
+   "Que veut dire le libellé CETIP sur un relevé ?",
+   "Comment rattacher un virement sans référence de dossier ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "C0",
+    "slug": "rapprochement-bancaire-tiers-payant",
+    "anchor": "Rapprochement bancaire du tiers payant",
+    "type": "parent"
+   },
+   {
+    "id": "C6",
+    "slug": "delais-paiement-plateformes",
+    "anchor": "Délais de paiement des plateformes de tiers payant (tableau daté)",
+    "type": "sœur"
+   },
+   {
+    "id": "C7",
+    "slug": "impayes-mutuelle-anciens",
+    "anchor": "Impayés mutuelles de plus de 6 mois",
+    "type": "sœur"
+   },
+   {
+    "id": "C2",
+    "slug": "quand-relancer-mutuelle",
+    "anchor": "quand relancer une mutuelle",
+    "type": "transverse"
+   },
+   {
+    "id": "E4",
+    "slug": "automatiser-saisie-prise-en-charge",
+    "anchor": "Automatiser la saisie des prises en charge",
+    "type": "conversion"
+   }
+  ]
+ },
+ {
+  "id": "G3",
+  "slug": "questions-tiers-payant-opticien",
+  "category": "guide-tiers-payant",
+  "title": "Tiers payant opticien : les 10 questions qu'on se pose au comptoir (et les réponses)",
+  "primaryKeyword": "questions tiers payant opticien",
+  "keywordCluster": [],
+  "searchVolume": 0,
+  "unsplashQuery": "optician store",
+  "status": "pending",
+  "wave": 2,
+  "level": "Fille",
+  "parentSlug": "tiers-payant-opticien",
+  "reader": "Comptoir",
+  "role": "Trafic + citations IA",
+  "granitData": "60 objections Notion + 155 calls Granola (questions réelles)",
+  "cta": "Démo",
+  "toValidate": "",
+  "primaryKeywordMeasured": false,
+  "faqQuestions": [
+   "Que faire si le client n'a pas sa carte de tiers payant ?",
+   "Comment savoir sur quel portail faire la prise en charge ?",
+   "Une prise en charge accordée garantit-elle le paiement ?",
+   "Que faire si la mutuelle a changé entre le devis et la livraison ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "G0",
+    "slug": "tiers-payant-opticien",
+    "anchor": "tiers payant opticien",
+    "type": "parent"
+   },
+   {
+    "id": "G4",
+    "slug": "erreurs-tiers-payant-opticien",
+    "anchor": "Les erreurs de saisie qui coûtent le plus cher en tiers payant",
+    "type": "sœur"
+   },
+   {
+    "id": "G5",
+    "slug": "tiers-payant-integral-opticien",
+    "anchor": "Tiers payant intégral",
+    "type": "sœur"
+   }
+  ]
+ },
+ {
+  "id": "G4",
+  "slug": "erreurs-tiers-payant-opticien",
+  "category": "guide-tiers-payant",
+  "title": "Les erreurs de saisie qui coûtent le plus cher en tiers payant",
+  "primaryKeyword": "erreurs tiers payant opticien",
+  "keywordCluster": [],
+  "searchVolume": 0,
+  "unsplashQuery": "optician store",
+  "status": "pending",
+  "wave": 2,
+  "level": "Fille",
+  "parentSlug": "tiers-payant-opticien",
+  "reader": "Comptoir",
+  "role": "Résolution",
+  "granitData": "Échecs classés par les agents (motifs les plus fréquents)",
+  "cta": "Démo",
+  "toValidate": "Chiffres d'erreurs : seulement s'ils sont mesurés",
+  "primaryKeywordMeasured": false,
+  "faqQuestions": [
+   "Quelles erreurs de saisie font le plus rejeter un dossier ?",
+   "Comment vérifier l'ouvrant droit et le bénéficiaire ?",
+   "Faut-il ressaisir un dossier après une erreur ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "G0",
+    "slug": "tiers-payant-opticien",
+    "anchor": "tiers payant opticien",
+    "type": "parent"
+   },
+   {
+    "id": "G5",
+    "slug": "tiers-payant-integral-opticien",
+    "anchor": "Tiers payant intégral",
+    "type": "sœur"
+   },
+   {
+    "id": "G6",
+    "slug": "cas-particuliers-tiers-payant-optique",
+    "anchor": "Cas particuliers",
+    "type": "sœur"
+   }
+  ]
+ },
+ {
+  "id": "B6",
+  "slug": "ouvrant-droit-beneficiaire",
+  "category": "rejets",
+  "title": "Ouvrant droit ou bénéficiaire : la confusion qui fait rejeter le dossier",
+  "primaryKeyword": "ouvrant droit beneficiaire",
+  "keywordCluster": [],
+  "searchVolume": 0,
+  "unsplashQuery": "office paperwork error",
+  "status": "pending",
+  "wave": 2,
+  "level": "Fille",
+  "parentSlug": "rejet-tiers-payant",
+  "reader": "Comptoir",
+  "role": "Résolution",
+  "granitData": "Champs ouvrant droit / bénéficiaire (fields.py)",
+  "cta": "Démo",
+  "toValidate": "",
+  "primaryKeywordMeasured": false,
+  "faqQuestions": [
+   "Quelle différence entre ouvrant droit et bénéficiaire ?",
+   "Pourquoi cette confusion provoque-t-elle des rejets ?",
+   "Comment le vérifier sur la carte de tiers payant ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "B0",
+    "slug": "rejet-tiers-payant",
+    "anchor": "motif rejet tiers payant",
+    "type": "parent"
+   },
+   {
+    "id": "B7",
+    "slug": "contester-refus-prise-en-charge",
+    "anchor": "Contester un refus de prise en charge",
+    "type": "sœur"
+   },
+   {
+    "id": "B8",
+    "slug": "checklist-prise-en-charge",
+    "anchor": "checklist avant d'envoyer une prise en charge",
+    "type": "sœur"
+   },
+   {
+    "id": "A13",
+    "slug": "mutuelle-quel-portail",
+    "anchor": "savoir par quel portail passe une mutuelle",
+    "type": "outil"
+   }
+  ]
+ },
+ {
+  "id": "B7",
+  "slug": "contester-refus-prise-en-charge",
+  "category": "rejets",
+  "title": "Contester un refus de prise en charge : procédure et modèle de courrier",
+  "primaryKeyword": "contester refus prise en charge",
+  "keywordCluster": [],
+  "searchVolume": 0,
+  "unsplashQuery": "office paperwork error",
+  "status": "pending",
+  "wave": 2,
+  "level": "Fille",
+  "parentSlug": "rejet-tiers-payant",
+  "reader": "Comptoir",
+  "role": "Résolution",
+  "granitData": "—",
+  "cta": "Modèle de courrier (lead magnet)",
+  "toValidate": "",
+  "primaryKeywordMeasured": false,
+  "faqQuestions": [
+   "Comment contester un refus de prise en charge ?",
+   "À qui envoyer la contestation ?",
+   "Combien de temps pour obtenir une réponse ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "B0",
+    "slug": "rejet-tiers-payant",
+    "anchor": "motif rejet tiers payant",
+    "type": "parent"
+   },
+   {
+    "id": "B8",
+    "slug": "checklist-prise-en-charge",
+    "anchor": "checklist avant d'envoyer une prise en charge",
+    "type": "sœur"
+   },
+   {
+    "id": "B9",
+    "slug": "client-sans-carte-tiers-payant",
+    "anchor": "Le client arrive sans sa carte de tiers payant",
+    "type": "sœur"
+   },
+   {
+    "id": "A13",
+    "slug": "mutuelle-quel-portail",
+    "anchor": "savoir par quel portail passe une mutuelle",
+    "type": "outil"
+   }
+  ]
+ },
+ {
+  "id": "B9",
+  "slug": "client-sans-carte-tiers-payant",
+  "category": "rejets",
+  "title": "Le client arrive sans sa carte de tiers payant : que faire ?",
+  "primaryKeyword": "client sans carte tiers payant",
+  "keywordCluster": [],
+  "searchVolume": 0,
+  "unsplashQuery": "office paperwork error",
+  "status": "pending",
+  "wave": 2,
+  "level": "Fille",
+  "parentSlug": "rejet-tiers-payant",
+  "reader": "Comptoir",
+  "role": "Résolution",
+  "granitData": "OCR carte mutuelle des agents",
+  "cta": "Démo",
+  "toValidate": "",
+  "primaryKeywordMeasured": false,
+  "faqQuestions": [
+   "Peut-on faire une prise en charge sans la carte de tiers payant ?",
+   "Comment retrouver les informations de la mutuelle ?",
+   "Faut-il faire avancer les frais au client ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "B0",
+    "slug": "rejet-tiers-payant",
+    "anchor": "motif rejet tiers payant",
+    "type": "parent"
+   },
+   {
+    "id": "B10",
+    "slug": "reduire-taux-rejet-tiers-payant",
+    "anchor": "Faire baisser son taux de rejet",
+    "type": "sœur"
+   },
+   {
+    "id": "B1",
+    "slug": "rejet-beneficiaire-inconnu",
+    "anchor": "Rejet mutuelle « bénéficiaire inconnu »",
+    "type": "sœur"
+   },
+   {
+    "id": "B8",
+    "slug": "checklist-prise-en-charge",
+    "anchor": "checklist avant d'envoyer une prise en charge",
+    "type": "transverse"
+   },
+   {
+    "id": "A13",
+    "slug": "mutuelle-quel-portail",
+    "anchor": "savoir par quel portail passe une mutuelle",
+    "type": "outil"
+   }
+  ]
+ },
+ {
+  "id": "B10",
+  "slug": "reduire-taux-rejet-tiers-payant",
+  "category": "rejets",
+  "title": "Faire baisser son taux de rejet : la méthode en 4 semaines",
+  "primaryKeyword": "reduire taux rejet tiers payant",
+  "keywordCluster": [],
+  "searchVolume": 0,
+  "unsplashQuery": "office paperwork error",
+  "status": "pending",
+  "wave": 2,
+  "level": "Fille",
+  "parentSlug": "rejet-tiers-payant",
+  "reader": "Gérant",
+  "role": "Conversion",
+  "granitData": "Taux d'accord observés (prod) — accord Jenny",
+  "cta": "Audit gratuit des rejets",
+  "toValidate": "Pas de taux non mesuré",
+  "primaryKeywordMeasured": false,
+  "faqQuestions": [
+   "Quel est un bon taux de rejet en tiers payant ?",
+   "Comment mesurer son taux de rejet ?",
+   "Quelles actions le font baisser le plus vite ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "B0",
+    "slug": "rejet-tiers-payant",
+    "anchor": "motif rejet tiers payant",
+    "type": "parent"
+   },
+   {
+    "id": "B1",
+    "slug": "rejet-beneficiaire-inconnu",
+    "anchor": "Rejet mutuelle « bénéficiaire inconnu »",
+    "type": "sœur"
+   },
+   {
+    "id": "B2",
+    "slug": "refacturer-part-mutuelle",
+    "anchor": "Refacturer uniquement la part mutuelle après un rejet (DRE)",
+    "type": "sœur"
+   },
+   {
+    "id": "B8",
+    "slug": "checklist-prise-en-charge",
+    "anchor": "checklist avant d'envoyer une prise en charge",
+    "type": "transverse"
+   },
+   {
+    "id": "A13",
+    "slug": "mutuelle-quel-portail",
+    "anchor": "savoir par quel portail passe une mutuelle",
+    "type": "outil"
+   }
+  ]
+ },
+ {
+  "id": "C7",
+  "slug": "impayes-mutuelle-anciens",
+  "category": "paiements",
+  "title": "Impayés mutuelles de plus de 6 mois : la procédure pour les récupérer",
+  "primaryKeyword": "impayes mutuelle anciens",
+  "keywordCluster": [],
+  "searchVolume": 0,
+  "unsplashQuery": "bank statement accounting",
+  "status": "pending",
+  "wave": 2,
+  "level": "Fille",
+  "parentSlug": "rapprochement-bancaire-tiers-payant",
+  "reader": "Gérant",
+  "role": "Résolution",
+  "granitData": "Reprise de stock (cas clients rapprochement)",
+  "cta": "Démo + audit du stock",
+  "toValidate": "",
+  "primaryKeywordMeasured": false,
+  "faqQuestions": [
+   "Comment récupérer des impayés mutuelles anciens ?",
+   "Un impayé de plus de 6 mois est-il perdu ?",
+   "Par où commencer pour traiter un stock d'impayés ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "C0",
+    "slug": "rapprochement-bancaire-tiers-payant",
+    "anchor": "Rapprochement bancaire du tiers payant",
+    "type": "parent"
+   },
+   {
+    "id": "C8",
+    "slug": "reste-a-charge-impaye",
+    "anchor": "Reste à charge impayé par le client",
+    "type": "sœur"
+   },
+   {
+    "id": "C1",
+    "slug": "virement-mutuelle-inferieur",
+    "anchor": "Virement de mutuelle inférieur à la facture",
+    "type": "sœur"
+   },
+   {
+    "id": "C2",
+    "slug": "quand-relancer-mutuelle",
+    "anchor": "quand relancer une mutuelle",
+    "type": "transverse"
+   },
+   {
+    "id": "E4",
+    "slug": "automatiser-saisie-prise-en-charge",
+    "anchor": "Automatiser la saisie des prises en charge",
+    "type": "conversion"
+   }
+  ]
+ },
+ {
+  "id": "H2",
+  "slug": "devis-normalise-codes-lpp",
+  "category": "conformite",
+  "title": "Devis normalisé et codes LPP : ce qui doit concorder avec la facture",
+  "primaryKeyword": "devis normalise codes lpp",
+  "keywordCluster": [],
+  "searchVolume": 0,
+  "unsplashQuery": "compliance documents",
+  "status": "pending",
+  "wave": 2,
+  "level": "Fille",
+  "parentSlug": "conformite-opticien",
+  "reader": "Comptoir",
+  "role": "Résolution",
+  "granitData": "Correspondances LPP ancien → nouveau (EMOA), contrôle devis/facture des agents",
+  "cta": "Démo",
+  "toValidate": "",
+  "primaryKeywordMeasured": false,
+  "faqQuestions": [
+   "Qu'est-ce que le devis normalisé ?",
+   "Que doit contenir un devis optique ?",
+   "À quoi servent les codes LPP ?",
+   "Que faire si le code LPP du devis ne correspond pas à la facture ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "H0",
+    "slug": "conformite-opticien",
+    "anchor": "Conformité administrative de l'opticien",
+    "type": "parent"
+   },
+   {
+    "id": "H3",
+    "slug": "conservation-dossiers-tiers-payant",
+    "anchor": "Combien de temps garder les dossiers de tiers payant ?",
+    "type": "sœur"
+   },
+   {
+    "id": "H4",
+    "slug": "fraude-tiers-payant-optique",
+    "anchor": "Fraude au tiers payant",
+    "type": "sœur"
+   },
+   {
+    "id": "B8",
+    "slug": "checklist-prise-en-charge",
+    "anchor": "checklist avant d'envoyer une prise en charge",
+    "type": "transverse"
+   }
+  ]
+ },
+ {
+  "id": "H6",
+  "slug": "reseaux-de-soins-conventionnement",
+  "category": "conformite",
+  "title": "Réseaux de soins : ce que le conventionnement change pour vos dossiers",
+  "primaryKeyword": "reseaux de soins conventionnement",
+  "keywordCluster": [],
+  "searchVolume": 0,
+  "unsplashQuery": "compliance documents",
+  "status": "pending",
+  "wave": 2,
+  "level": "Fille",
+  "parentSlug": "conformite-opticien",
+  "reader": "Gérant",
+  "role": "Trafic",
+  "granitData": "Base Acteurs TP (réseaux)",
+  "cta": "Démo",
+  "toValidate": "",
+  "primaryKeywordMeasured": false,
+  "faqQuestions": [
+   "Qu'est-ce qu'un réseau de soins ?",
+   "Que change le conventionnement pour l'opticien ?",
+   "Comment rejoindre un réseau ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "H0",
+    "slug": "conformite-opticien",
+    "anchor": "Conformité administrative de l'opticien",
+    "type": "parent"
+   },
+   {
+    "id": "H1",
+    "slug": "controle-assurance-maladie-opticien",
+    "anchor": "Contrôle de l'Assurance maladie",
+    "type": "sœur"
+   },
+   {
+    "id": "H2",
+    "slug": "devis-normalise-codes-lpp",
+    "anchor": "Devis normalisé et codes LPP",
+    "type": "sœur"
+   },
+   {
+    "id": "B8",
+    "slug": "checklist-prise-en-charge",
+    "anchor": "checklist avant d'envoyer une prise en charge",
+    "type": "transverse"
+   }
+  ]
+ },
+ {
+  "id": "E4",
+  "slug": "automatiser-saisie-prise-en-charge",
+  "category": "gerer-son-tiers-payant",
+  "title": "Automatiser la saisie des prises en charge : ce qui est possible aujourd'hui",
+  "primaryKeyword": "automatiser saisie prise en charge",
+  "keywordCluster": [],
+  "searchVolume": 0,
+  "unsplashQuery": "optical store manager",
+  "status": "pending",
+  "wave": 2,
+  "level": "Fille",
+  "parentSlug": "gerer-tiers-payant-magasin",
+  "reader": "Gérant",
+  "role": "Conversion",
+  "granitData": "Agents Granit (DPEC Slack, Cosium)",
+  "cta": "Démo",
+  "toValidate": "",
+  "primaryKeywordMeasured": false,
+  "faqQuestions": [
+   "Peut-on automatiser la saisie des prises en charge ?",
+   "Qu'est-ce qu'un agent IA pour le tiers payant ?",
+   "Faut-il une API avec les portails ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "E0",
+    "slug": "gerer-tiers-payant-magasin",
+    "anchor": "gestion tiers payant",
+    "type": "parent"
+   },
+   {
+    "id": "E5",
+    "slug": "cout-temps-tiers-payant",
+    "anchor": "coût du tiers payant pour un magasin",
+    "type": "sœur"
+   },
+   {
+    "id": "E6",
+    "slug": "indicateurs-tiers-payant",
+    "anchor": "Piloter son tiers payant",
+    "type": "sœur"
+   }
+  ]
+ },
+ {
+  "id": "E5",
+  "slug": "cout-temps-tiers-payant",
+  "category": "gerer-son-tiers-payant",
+  "title": "Combien coûte une heure de tiers payant par jour à un magasin ?",
+  "primaryKeyword": "cout temps tiers payant",
+  "keywordCluster": [],
+  "searchVolume": 0,
+  "unsplashQuery": "optical store manager",
+  "status": "pending",
+  "wave": 2,
+  "level": "Fille",
+  "parentSlug": "gerer-tiers-payant-magasin",
+  "reader": "Gérant",
+  "role": "Conversion",
+  "granitData": "KPI heures économisées de l'app Granit",
+  "cta": "Calculateur (lead magnet)",
+  "toValidate": "Hypothèses affichées",
+  "primaryKeywordMeasured": false,
+  "faqQuestions": [
+   "Combien de temps un magasin passe-t-il sur le tiers payant ?",
+   "Combien coûte une heure de saisie par jour ?",
+   "Comment calculer le retour sur investissement d'une automatisation ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "E0",
+    "slug": "gerer-tiers-payant-magasin",
+    "anchor": "gestion tiers payant",
+    "type": "parent"
+   },
+   {
+    "id": "E6",
+    "slug": "indicateurs-tiers-payant",
+    "anchor": "Piloter son tiers payant",
+    "type": "sœur"
+   },
+   {
+    "id": "E7",
+    "slug": "conges-dossiers-tiers-payant",
+    "anchor": "Fermeture pour congés",
+    "type": "sœur"
+   }
+  ]
+ },
+ {
+  "id": "A19",
+  "slug": "itelis-conventionnement",
+  "category": "plateformes",
+  "title": "Itelis : conventionnement opticien et accès extranet",
+  "primaryKeyword": "partenaire itelis opticien",
+  "keywordCluster": [
+   "itelis partenaires opticiens",
+   "partenaire optique itelis",
+   "partenaire itelis optique",
+   "itelis partenaire optique",
+   "partenaire opticien itelis",
+   "partenaire itelis",
+   "opticien partenaire itelis",
+   "itelis partenaire",
+   "itelis opticien partenaire",
+   "itelis partenaires"
+  ],
+  "searchVolume": 5850,
+  "unsplashQuery": "optician computer paperwork",
+  "status": "pending",
+  "wave": 2,
+  "level": "Petite-fille",
+  "parentSlug": "portail-itelis",
+  "reader": "Comptoir + gérant",
+  "role": "Trafic",
+  "granitData": "—",
+  "cta": "Démo",
+  "toValidate": "",
+  "primaryKeywordMeasured": true,
+  "faqQuestions": [
+   "Comment devenir opticien partenaire Itelis ?",
+   "Quelles pièces fournir pour le conventionnement ?",
+   "Comment accéder à l'extranet Itelis ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "A5",
+    "slug": "portail-itelis",
+    "anchor": "itelis tp",
+    "type": "parent"
+   },
+   {
+    "id": "B3",
+    "slug": "prise-en-charge-refusee",
+    "anchor": "Prise en charge refusée",
+    "type": "transverse"
+   },
+   {
+    "id": "B8",
+    "slug": "checklist-prise-en-charge",
+    "anchor": "checklist avant d'envoyer une prise en charge",
+    "type": "transverse"
+   }
+  ]
+ },
+ {
+  "id": "A17",
+  "slug": "sp-sante-espace-pro",
+  "category": "plateformes",
+  "title": "SP Santé : espace pro et prise en charge optique",
+  "primaryKeyword": "sp sante pro",
+  "keywordCluster": [
+   "sp sante espace pro",
+   "sp sante espace professionnel",
+   "sp santé mon compte",
+   "sp sante mon compte",
+   "sp santé mutuelle mon compte",
+   "sp sante espace professionnel de sante",
+   "sp santé pro",
+   "sp sante tp pro",
+   "sp sante pro sante",
+   "sp sante compte pro"
+  ],
+  "searchVolume": 3810,
+  "unsplashQuery": "optician computer paperwork",
+  "status": "pending",
+  "wave": 2,
+  "level": "Petite-fille",
+  "parentSlug": "portail-sp-sante",
+  "reader": "Comptoir",
+  "role": "Trafic",
+  "granitData": "Parcours SP Santé de l'agent",
+  "cta": "Démo",
+  "toValidate": "",
+  "primaryKeywordMeasured": true,
+  "faqQuestions": [
+   "Comment accéder à l'espace pro SP Santé ?",
+   "Comment saisir une prise en charge optique sur SP Santé ?",
+   "Comment suivre un remboursement SP Santé ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "A3",
+    "slug": "portail-sp-sante",
+    "anchor": "sp sante tp",
+    "type": "parent"
+   },
+   {
+    "id": "B3",
+    "slug": "prise-en-charge-refusee",
+    "anchor": "Prise en charge refusée",
+    "type": "transverse"
+   },
+   {
+    "id": "B8",
+    "slug": "checklist-prise-en-charge",
+    "anchor": "checklist avant d'envoyer une prise en charge",
+    "type": "transverse"
+   }
+  ]
+ },
+ {
+  "id": "A16",
+  "slug": "viamedis-prise-en-charge",
+  "category": "plateformes",
+  "title": "Viamédis : faire et suivre une prise en charge",
+  "primaryKeyword": "viamedis pec",
+  "keywordCluster": [
+   "www viamedis net prise en charge",
+   "pec viamedis",
+   "www.viamedis.net prise en charge",
+   "viamedis prise en charge",
+   "viamedis professionnel de santé prise en charge",
+   "viamedis prise en charge optique",
+   "viamedis demande de prise en charge",
+   "prise en charge viamedis",
+   "demande de prise en charge viamedis"
+  ],
+  "searchVolume": 1280,
+  "unsplashQuery": "optician computer paperwork",
+  "status": "pending",
+  "wave": 2,
+  "level": "Petite-fille",
+  "parentSlug": "portail-viamedis",
+  "reader": "Comptoir",
+  "role": "Trafic",
+  "granitData": "Idem",
+  "cta": "Démo agent DPEC",
+  "toValidate": "",
+  "primaryKeywordMeasured": true,
+  "faqQuestions": [
+   "Comment faire une prise en charge sur Viamédis ?",
+   "Combien de temps une PEC Viamédis est-elle valable ?",
+   "Comment suivre une prise en charge Viamédis ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "A1",
+    "slug": "portail-viamedis",
+    "anchor": "viamedis tp",
+    "type": "parent"
+   },
+   {
+    "id": "A15",
+    "slug": "viamedis-espace-pro",
+    "anchor": "viamedis espace pro",
+    "type": "sœur"
+   },
+   {
+    "id": "B3",
+    "slug": "prise-en-charge-refusee",
+    "anchor": "Prise en charge refusée",
+    "type": "transverse"
+   },
+   {
+    "id": "B8",
+    "slug": "checklist-prise-en-charge",
+    "anchor": "checklist avant d'envoyer une prise en charge",
+    "type": "transverse"
+   }
+  ]
+ },
+ {
+  "id": "A18",
+  "slug": "isante-prise-en-charge",
+  "category": "plateformes",
+  "title": "iSanté : créer son compte et demander une prise en charge",
+  "primaryKeyword": "isante pec",
+  "keywordCluster": [
+   "pec isante",
+   "www tp isante fr prise en charge",
+   "tp isante prise en charge",
+   "isante pec professionnel de sante",
+   "tp-isante prise en charge"
+  ],
+  "searchVolume": 800,
+  "unsplashQuery": "optician computer paperwork",
+  "status": "pending",
+  "wave": 2,
+  "level": "Petite-fille",
+  "parentSlug": "portail-isante",
+  "reader": "Comptoir",
+  "role": "Trafic",
+  "granitData": "Parcours iSanté de l'agent",
+  "cta": "Démo",
+  "toValidate": "",
+  "primaryKeywordMeasured": true,
+  "faqQuestions": [
+   "Comment créer un compte iSanté ?",
+   "Comment demander une prise en charge sur iSanté ?",
+   "Comment suivre un dossier iSanté ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "A4",
+    "slug": "portail-isante",
+    "anchor": "isante tp",
+    "type": "parent"
+   },
+   {
+    "id": "B3",
+    "slug": "prise-en-charge-refusee",
+    "anchor": "Prise en charge refusée",
+    "type": "transverse"
+   },
+   {
+    "id": "B8",
+    "slug": "checklist-prise-en-charge",
+    "anchor": "checklist avant d'envoyer une prise en charge",
+    "type": "transverse"
+   }
+  ]
+ },
+ {
+  "id": "H0",
+  "slug": "conformite-opticien",
+  "category": "conformite",
+  "title": "Conformité administrative de l'opticien : ce qu'on vous demande en cas de contrôle",
+  "primaryKeyword": "conformite opticien",
+  "keywordCluster": [],
+  "searchVolume": 0,
+  "unsplashQuery": "compliance documents",
+  "status": "pending",
+  "wave": 3,
+  "level": "Pilier",
+  "parentSlug": "tiers-payant-opticien",
+  "reader": "Gérant",
+  "role": "Crédibilité",
+  "granitData": "fondations.md (fraude, normes, calendrier)",
+  "cta": "Démo",
+  "toValidate": "Relecture juridique",
+  "primaryKeywordMeasured": false,
+  "faqQuestions": [
+   "Que contrôle l'Assurance maladie chez l'opticien ?",
+   "Quels documents conserver ?",
+   "Quelles sont les sanctions possibles ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "G0",
+    "slug": "tiers-payant-opticien",
+    "anchor": "tiers payant opticien",
+    "type": "parent"
+   },
+   {
+    "id": "H1",
+    "slug": "controle-assurance-maladie-opticien",
+    "anchor": "Contrôle de l'Assurance maladie",
+    "type": "enfant"
+   },
+   {
+    "id": "H2",
+    "slug": "devis-normalise-codes-lpp",
+    "anchor": "Devis normalisé et codes LPP",
+    "type": "enfant"
+   },
+   {
+    "id": "H3",
+    "slug": "conservation-dossiers-tiers-payant",
+    "anchor": "Combien de temps garder les dossiers de tiers payant ?",
+    "type": "enfant"
+   },
+   {
+    "id": "H4",
+    "slug": "fraude-tiers-payant-optique",
+    "anchor": "Fraude au tiers payant",
+    "type": "enfant"
+   },
+   {
+    "id": "H5",
+    "slug": "rgpd-donnees-sante-opticien",
+    "anchor": "Données de santé et RGPD",
+    "type": "enfant"
+   },
+   {
+    "id": "H6",
+    "slug": "reseaux-de-soins-conventionnement",
+    "anchor": "Réseaux de soins",
+    "type": "enfant"
+   },
+   {
+    "id": "G1",
+    "slug": "100-sante-classe-a-b-opticien",
+    "anchor": "lunettes 100 santé",
+    "type": "sœur"
+   },
+   {
+    "id": "G2",
+    "slug": "remboursement-optique-amo-amc",
+    "anchor": "remboursement des lunettes",
+    "type": "sœur"
+   }
+  ]
+ },
+ {
+  "id": "G2",
+  "slug": "remboursement-optique-amo-amc",
+  "category": "guide-tiers-payant",
+  "title": "Remboursement optique : qui paie quoi entre AMO, AMC et reste à charge",
+  "primaryKeyword": "remboursement des lunettes",
+  "keywordCluster": [
+   "remboursement lunettes sécurité sociale",
+   "remboursement lunettes mutuelle",
+   "remboursement lunette",
+   "lunettes remboursement",
+   "remboursement optique",
+   "remboursement mutuelle pour lunettes",
+   "remboursement lunettes tous les combien",
+   "remboursement des lunettes par la mutuelle",
+   "remboursement sécurité sociale lunettes",
+   "remboursement securite sociale lunette"
+  ],
+  "searchVolume": 22670,
+  "unsplashQuery": "optician store",
+  "status": "pending",
+  "wave": 3,
+  "level": "Fille",
+  "parentSlug": "tiers-payant-opticien",
+  "reader": "Comptoir",
+  "role": "Trafic",
+  "granitData": "fondations.md (Mme Martin, paire à 400 €)",
+  "cta": "Démo",
+  "toValidate": "Intention surtout patient : garder l'angle pro",
+  "primaryKeywordMeasured": true,
+  "faqQuestions": [
+   "Combien rembourse la Sécurité sociale sur une paire de lunettes ?",
+   "Comment se calcule la part mutuelle ?",
+   "Qu'est-ce que le reste à charge ?",
+   "Pourquoi le remboursement est-il plus faible hors réseau de soins ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "G0",
+    "slug": "tiers-payant-opticien",
+    "anchor": "tiers payant opticien",
+    "type": "parent"
+   },
+   {
+    "id": "A0",
+    "slug": "portails-tiers-payant",
+    "anchor": "portails de tiers payant",
+    "type": "sœur"
+   },
+   {
+    "id": "B0",
+    "slug": "rejet-tiers-payant",
+    "anchor": "motif rejet tiers payant",
+    "type": "sœur"
+   }
+  ]
+ },
+ {
+  "id": "E3",
+  "slug": "logiciel-opticien-tiers-payant",
+  "category": "gerer-son-tiers-payant",
+  "title": "Logiciel opticien et tiers payant : ce que fait (ou pas) votre logiciel",
+  "primaryKeyword": "optilys",
+  "keywordCluster": [
+   "as3-2 optimum",
+   "optixt",
+   "as3 optimum",
+   "optowallet",
+   "logiciel opticien",
+   "optilys optique",
+   "logiciel tiers payant"
+  ],
+  "searchVolume": 1430,
+  "unsplashQuery": "optical store manager",
+  "status": "pending",
+  "wave": 3,
+  "level": "Fille",
+  "parentSlug": "gerer-tiers-payant-magasin",
+  "reader": "Gérant",
+  "role": "Conversion",
+  "granitData": "Connecteurs (Cosium, Optimum…)",
+  "cta": "Démo",
+  "toValidate": "",
+  "primaryKeywordMeasured": true,
+  "faqQuestions": [
+   "Que doit faire un logiciel opticien pour le tiers payant ?",
+   "Mon logiciel peut-il faire les prises en charge ?",
+   "Comment changer de logiciel sans perdre de dossiers ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "E0",
+    "slug": "gerer-tiers-payant-magasin",
+    "anchor": "gestion tiers payant",
+    "type": "parent"
+   },
+   {
+    "id": "E4",
+    "slug": "automatiser-saisie-prise-en-charge",
+    "anchor": "Automatiser la saisie des prises en charge",
+    "type": "sœur"
+   },
+   {
+    "id": "E5",
+    "slug": "cout-temps-tiers-payant",
+    "anchor": "coût du tiers payant pour un magasin",
+    "type": "sœur"
+   }
+  ]
+ },
+ {
+  "id": "B4",
+  "slug": "renouvellement-lunettes-moins-2-ans",
+  "category": "rejets",
+  "title": "Refus de tiers payant pour un renouvellement de lunettes de moins de 2 ans",
+  "primaryKeyword": "renouvellement lunettes opticien",
+  "keywordCluster": [
+   "changement lunettes tous les 2 ans"
+  ],
+  "searchVolume": 310,
+  "unsplashQuery": "office paperwork error",
+  "status": "pending",
+  "wave": 3,
+  "level": "Fille",
+  "parentSlug": "rejet-tiers-payant",
+  "reader": "Comptoir",
+  "role": "Résolution",
+  "granitData": "—",
+  "cta": "Démo",
+  "toValidate": "Règle LFSS 2026 (2 ou 3 ans) à vérifier",
+  "primaryKeywordMeasured": true,
+  "faqQuestions": [
+   "Peut-on renouveler des lunettes avant 2 ans ?",
+   "Quelles exceptions permettent un renouvellement anticipé ?",
+   "Que faire si la mutuelle refuse le tiers payant pour un renouvellement ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "B0",
+    "slug": "rejet-tiers-payant",
+    "anchor": "motif rejet tiers payant",
+    "type": "parent"
+   },
+   {
+    "id": "B5",
+    "slug": "tiers-payant-css-opticien",
+    "anchor": "Facturer un bénéficiaire de la CSS (ex-ACS) en optique",
+    "type": "sœur"
+   },
+   {
+    "id": "B6",
+    "slug": "ouvrant-droit-beneficiaire",
+    "anchor": "Ouvrant droit ou bénéficiaire",
+    "type": "sœur"
+   },
+   {
+    "id": "B8",
+    "slug": "checklist-prise-en-charge",
+    "anchor": "checklist avant d'envoyer une prise en charge",
+    "type": "transverse"
+   },
+   {
+    "id": "A13",
+    "slug": "mutuelle-quel-portail",
+    "anchor": "savoir par quel portail passe une mutuelle",
+    "type": "outil"
+   }
+  ]
+ },
+ {
+  "id": "E2",
+  "slug": "externaliser-tiers-payant-comparatif",
+  "category": "gerer-son-tiers-payant",
+  "title": "Externaliser son tiers payant : comparatif des prestataires",
+  "primaryKeyword": "externalisation tiers payant pharmaciens",
+  "keywordCluster": [
+   "externalisation du tiers payant"
+  ],
+  "searchVolume": 60,
+  "unsplashQuery": "optical store manager",
+  "status": "pending",
+  "wave": 3,
+  "level": "Fille",
+  "parentSlug": "gerer-tiers-payant-magasin",
+  "reader": "Gérant",
+  "role": "Conversion",
+  "granitData": "Base Acteurs TP (34 fiches)",
+  "cta": "Démo",
+  "toValidate": "Prix concurrents à sourcer publiquement",
+  "primaryKeywordMeasured": true,
+  "faqQuestions": [
+   "Quels prestataires gèrent le tiers payant des opticiens ?",
+   "Combien coûte l'externalisation ?",
+   "Que garder en interne ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "E0",
+    "slug": "gerer-tiers-payant-magasin",
+    "anchor": "gestion tiers payant",
+    "type": "parent"
+   },
+   {
+    "id": "E3",
+    "slug": "logiciel-opticien-tiers-payant",
+    "anchor": "optilys",
+    "type": "sœur"
+   },
+   {
+    "id": "E4",
+    "slug": "automatiser-saisie-prise-en-charge",
+    "anchor": "Automatiser la saisie des prises en charge",
+    "type": "sœur"
+   },
+   {
+    "id": "E5",
+    "slug": "cout-temps-tiers-payant",
+    "anchor": "coût du tiers payant pour un magasin",
+    "type": "conversion"
+   }
+  ]
+ },
+ {
+  "id": "B5",
+  "slug": "tiers-payant-css-opticien",
+  "category": "rejets",
+  "title": "Facturer un bénéficiaire de la CSS (ex-ACS) en optique",
+  "primaryKeyword": "tiers payant css opticien",
+  "keywordCluster": [],
+  "searchVolume": 0,
+  "unsplashQuery": "office paperwork error",
+  "status": "pending",
+  "wave": 3,
+  "level": "Fille",
+  "parentSlug": "rejet-tiers-payant",
+  "reader": "Comptoir",
+  "role": "Résolution",
+  "granitData": "—",
+  "cta": "Démo",
+  "toValidate": "Validation réglementaire",
+  "primaryKeywordMeasured": false,
+  "faqQuestions": [
+   "Comment facturer un bénéficiaire de la CSS chez l'opticien ?",
+   "La CSS remplace-t-elle l'ACS ?",
+   "Quelles pièces conserver ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "B0",
+    "slug": "rejet-tiers-payant",
+    "anchor": "motif rejet tiers payant",
+    "type": "parent"
+   },
+   {
+    "id": "B6",
+    "slug": "ouvrant-droit-beneficiaire",
+    "anchor": "Ouvrant droit ou bénéficiaire",
+    "type": "sœur"
+   },
+   {
+    "id": "B7",
+    "slug": "contester-refus-prise-en-charge",
+    "anchor": "Contester un refus de prise en charge",
+    "type": "sœur"
+   },
+   {
+    "id": "B8",
+    "slug": "checklist-prise-en-charge",
+    "anchor": "checklist avant d'envoyer une prise en charge",
+    "type": "transverse"
+   },
+   {
+    "id": "A13",
+    "slug": "mutuelle-quel-portail",
+    "anchor": "savoir par quel portail passe une mutuelle",
+    "type": "outil"
+   }
+  ]
+ },
+ {
+  "id": "C6",
+  "slug": "delais-paiement-plateformes",
+  "category": "paiements",
+  "title": "Délais de paiement des plateformes de tiers payant (tableau daté)",
+  "primaryKeyword": "delais paiement plateformes",
+  "keywordCluster": [],
+  "searchVolume": 0,
+  "unsplashQuery": "bank statement accounting",
+  "status": "pending",
+  "wave": 3,
+  "level": "Fille",
+  "parentSlug": "rapprochement-bancaire-tiers-payant",
+  "reader": "Gérant",
+  "role": "Résolution",
+  "granitData": "Stats prod (délais observés) — accord Jenny",
+  "cta": "Démo",
+  "toValidate": "Source et date par ligne",
+  "primaryKeywordMeasured": false,
+  "faqQuestions": [
+   "Quels sont les délais de paiement des plateformes de tiers payant ?",
+   "Pourquoi les délais varient-ils ?",
+   "Que faire quand le délai est dépassé ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "C0",
+    "slug": "rapprochement-bancaire-tiers-payant",
+    "anchor": "Rapprochement bancaire du tiers payant",
+    "type": "parent"
+   },
+   {
+    "id": "C7",
+    "slug": "impayes-mutuelle-anciens",
+    "anchor": "Impayés mutuelles de plus de 6 mois",
+    "type": "sœur"
+   },
+   {
+    "id": "C8",
+    "slug": "reste-a-charge-impaye",
+    "anchor": "Reste à charge impayé par le client",
+    "type": "sœur"
+   },
+   {
+    "id": "C2",
+    "slug": "quand-relancer-mutuelle",
+    "anchor": "quand relancer une mutuelle",
+    "type": "transverse"
+   },
+   {
+    "id": "E4",
+    "slug": "automatiser-saisie-prise-en-charge",
+    "anchor": "Automatiser la saisie des prises en charge",
+    "type": "conversion"
+   }
+  ]
+ },
+ {
+  "id": "G5",
+  "slug": "tiers-payant-integral-opticien",
+  "category": "guide-tiers-payant",
+  "title": "Tiers payant intégral : ce que l'opticien doit proposer, et quand",
+  "primaryKeyword": "tiers payant integral opticien",
+  "keywordCluster": [],
+  "searchVolume": 0,
+  "unsplashQuery": "optician store",
+  "status": "pending",
+  "wave": 3,
+  "level": "Fille",
+  "parentSlug": "tiers-payant-opticien",
+  "reader": "Comptoir + gérant",
+  "role": "Trafic",
+  "granitData": "fondations.md",
+  "cta": "Démo",
+  "toValidate": "Texte réglementaire à citer",
+  "primaryKeywordMeasured": false,
+  "faqQuestions": [
+   "Qu'est-ce que le tiers payant intégral ?",
+   "Quand l'opticien doit-il le proposer ?",
+   "Que faire si la mutuelle ne pratique pas le tiers payant ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "G0",
+    "slug": "tiers-payant-opticien",
+    "anchor": "tiers payant opticien",
+    "type": "parent"
+   },
+   {
+    "id": "G6",
+    "slug": "cas-particuliers-tiers-payant-optique",
+    "anchor": "Cas particuliers",
+    "type": "sœur"
+   },
+   {
+    "id": "H0",
+    "slug": "conformite-opticien",
+    "anchor": "Conformité administrative de l'opticien",
+    "type": "sœur"
+   }
+  ]
+ },
+ {
+  "id": "G6",
+  "slug": "cas-particuliers-tiers-payant-optique",
+  "category": "guide-tiers-payant",
+  "title": "Cas particuliers : ALD, régime Alsace-Moselle, étudiants en rupture de droits",
+  "primaryKeyword": "cas particuliers tiers payant optique",
+  "keywordCluster": [],
+  "searchVolume": 0,
+  "unsplashQuery": "optician store",
+  "status": "pending",
+  "wave": 3,
+  "level": "Fille",
+  "parentSlug": "tiers-payant-opticien",
+  "reader": "Comptoir",
+  "role": "Résolution",
+  "granitData": "—",
+  "cta": "Démo",
+  "toValidate": "",
+  "primaryKeywordMeasured": false,
+  "faqQuestions": [
+   "Comment gérer un client en ALD chez l'opticien ?",
+   "Qu'est-ce qui change avec le régime d'Alsace-Moselle ?",
+   "Pourquoi les dossiers d'étudiants sont-ils souvent rejetés ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "G0",
+    "slug": "tiers-payant-opticien",
+    "anchor": "tiers payant opticien",
+    "type": "parent"
+   },
+   {
+    "id": "H0",
+    "slug": "conformite-opticien",
+    "anchor": "Conformité administrative de l'opticien",
+    "type": "sœur"
+   },
+   {
+    "id": "G1",
+    "slug": "100-sante-classe-a-b-opticien",
+    "anchor": "lunettes 100 santé",
+    "type": "sœur"
+   }
+  ]
+ },
+ {
+  "id": "C8",
+  "slug": "reste-a-charge-impaye",
+  "category": "paiements",
+  "title": "Reste à charge impayé par le client : récupérer sans abîmer la relation",
+  "primaryKeyword": "reste a charge impaye",
+  "keywordCluster": [],
+  "searchVolume": 0,
+  "unsplashQuery": "bank statement accounting",
+  "status": "pending",
+  "wave": 3,
+  "level": "Fille",
+  "parentSlug": "rapprochement-bancaire-tiers-payant",
+  "reader": "Gérant",
+  "role": "Résolution",
+  "granitData": "—",
+  "cta": "Démo",
+  "toValidate": "",
+  "primaryKeywordMeasured": false,
+  "faqQuestions": [
+   "Comment récupérer un reste à charge impayé par un client ?",
+   "Peut-on demander un acompte ?",
+   "Quand passer au recouvrement ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "C0",
+    "slug": "rapprochement-bancaire-tiers-payant",
+    "anchor": "Rapprochement bancaire du tiers payant",
+    "type": "parent"
+   },
+   {
+    "id": "C1",
+    "slug": "virement-mutuelle-inferieur",
+    "anchor": "Virement de mutuelle inférieur à la facture",
+    "type": "sœur"
+   },
+   {
+    "id": "C2",
+    "slug": "quand-relancer-mutuelle",
+    "anchor": "quand relancer une mutuelle",
+    "type": "sœur"
+   },
+   {
+    "id": "E4",
+    "slug": "automatiser-saisie-prise-en-charge",
+    "anchor": "Automatiser la saisie des prises en charge",
+    "type": "conversion"
+   }
+  ]
+ },
+ {
+  "id": "F3",
+  "slug": "carte-vitale-carte-tiers-payant",
+  "category": "glossaire",
+  "title": "Carte Vitale et carte de tiers payant : ce qui change pour le dossier",
+  "primaryKeyword": "carte vitale carte tiers payant",
+  "keywordCluster": [],
+  "searchVolume": 0,
+  "unsplashQuery": "dictionary glossary desk",
+  "status": "pending",
+  "wave": 3,
+  "level": "Fille",
+  "parentSlug": "glossaire-tiers-payant",
+  "reader": "Comptoir",
+  "role": "Trafic",
+  "granitData": "glossaire.json",
+  "cta": "Démo",
+  "toValidate": "",
+  "primaryKeywordMeasured": false,
+  "faqQuestions": [
+   "Quelle différence entre carte Vitale et carte de tiers payant ?",
+   "La carte Vitale suffit-elle pour le tiers payant mutuelle ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "F0",
+    "slug": "glossaire-tiers-payant",
+    "anchor": "Glossaire du tiers payant optique",
+    "type": "parent"
+   },
+   {
+    "id": "F1",
+    "slug": "amo-amc",
+    "anchor": "part amc",
+    "type": "sœur"
+   },
+   {
+    "id": "F2",
+    "slug": "sigles-tiers-payant-noemie",
+    "anchor": "télétransmission noémie",
+    "type": "sœur"
+   },
+   {
+    "id": "G0",
+    "slug": "tiers-payant-opticien",
+    "anchor": "tiers payant opticien",
+    "type": "transverse"
+   }
+  ]
+ },
+ {
+  "id": "H1",
+  "slug": "controle-assurance-maladie-opticien",
+  "category": "conformite",
+  "title": "Contrôle de l'Assurance maladie : les pièces demandées et comment s'y préparer",
+  "primaryKeyword": "controle assurance maladie opticien",
+  "keywordCluster": [],
+  "searchVolume": 0,
+  "unsplashQuery": "compliance documents",
+  "status": "pending",
+  "wave": 3,
+  "level": "Fille",
+  "parentSlug": "conformite-opticien",
+  "reader": "Gérant",
+  "role": "Crédibilité",
+  "granitData": "Traçabilité des agents (captures, vidéos de soumission)",
+  "cta": "Démo",
+  "toValidate": "",
+  "primaryKeywordMeasured": false,
+  "faqQuestions": [
+   "Comment se passe un contrôle de l'Assurance maladie ?",
+   "Quelles pièces sont demandées ?",
+   "Comment s'y préparer ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "H0",
+    "slug": "conformite-opticien",
+    "anchor": "Conformité administrative de l'opticien",
+    "type": "parent"
+   },
+   {
+    "id": "H2",
+    "slug": "devis-normalise-codes-lpp",
+    "anchor": "Devis normalisé et codes LPP",
+    "type": "sœur"
+   },
+   {
+    "id": "H3",
+    "slug": "conservation-dossiers-tiers-payant",
+    "anchor": "Combien de temps garder les dossiers de tiers payant ?",
+    "type": "sœur"
+   },
+   {
+    "id": "B8",
+    "slug": "checklist-prise-en-charge",
+    "anchor": "checklist avant d'envoyer une prise en charge",
+    "type": "transverse"
+   }
+  ]
+ },
+ {
+  "id": "H3",
+  "slug": "conservation-dossiers-tiers-payant",
+  "category": "conformite",
+  "title": "Combien de temps garder les dossiers de tiers payant ?",
+  "primaryKeyword": "conservation dossiers tiers payant",
+  "keywordCluster": [],
+  "searchVolume": 0,
+  "unsplashQuery": "compliance documents",
+  "status": "pending",
+  "wave": 3,
+  "level": "Fille",
+  "parentSlug": "conformite-opticien",
+  "reader": "Gérant",
+  "role": "Crédibilité",
+  "granitData": "—",
+  "cta": "Démo",
+  "toValidate": "Durées à sourcer",
+  "primaryKeywordMeasured": false,
+  "faqQuestions": [
+   "Combien de temps garder les dossiers de tiers payant ?",
+   "Sous quelle forme les conserver ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "H0",
+    "slug": "conformite-opticien",
+    "anchor": "Conformité administrative de l'opticien",
+    "type": "parent"
+   },
+   {
+    "id": "H4",
+    "slug": "fraude-tiers-payant-optique",
+    "anchor": "Fraude au tiers payant",
+    "type": "sœur"
+   },
+   {
+    "id": "H5",
+    "slug": "rgpd-donnees-sante-opticien",
+    "anchor": "Données de santé et RGPD",
+    "type": "sœur"
+   },
+   {
+    "id": "B8",
+    "slug": "checklist-prise-en-charge",
+    "anchor": "checklist avant d'envoyer une prise en charge",
+    "type": "transverse"
+   }
+  ]
+ },
+ {
+  "id": "H4",
+  "slug": "fraude-tiers-payant-optique",
+  "category": "conformite",
+  "title": "Fraude au tiers payant : les signaux à repérer et vos obligations",
+  "primaryKeyword": "fraude tiers payant optique",
+  "keywordCluster": [],
+  "searchVolume": 0,
+  "unsplashQuery": "compliance documents",
+  "status": "pending",
+  "wave": 3,
+  "level": "Fille",
+  "parentSlug": "conformite-opticien",
+  "reader": "Gérant",
+  "role": "Crédibilité",
+  "granitData": "fondations.md (annexe fraude)",
+  "cta": "Démo",
+  "toValidate": "",
+  "primaryKeywordMeasured": false,
+  "faqQuestions": [
+   "Quels signaux doivent alerter un opticien sur une fraude ?",
+   "Quelles sont les obligations de l'opticien ?",
+   "Que faire en cas de doute ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "H0",
+    "slug": "conformite-opticien",
+    "anchor": "Conformité administrative de l'opticien",
+    "type": "parent"
+   },
+   {
+    "id": "H5",
+    "slug": "rgpd-donnees-sante-opticien",
+    "anchor": "Données de santé et RGPD",
+    "type": "sœur"
+   },
+   {
+    "id": "H6",
+    "slug": "reseaux-de-soins-conventionnement",
+    "anchor": "Réseaux de soins",
+    "type": "sœur"
+   },
+   {
+    "id": "B8",
+    "slug": "checklist-prise-en-charge",
+    "anchor": "checklist avant d'envoyer une prise en charge",
+    "type": "transverse"
+   }
+  ]
+ },
+ {
+  "id": "H5",
+  "slug": "rgpd-donnees-sante-opticien",
+  "category": "conformite",
+  "title": "Données de santé et RGPD : ce que le magasin fait des cartes, ordonnances et devis",
+  "primaryKeyword": "rgpd donnees sante opticien",
+  "keywordCluster": [],
+  "searchVolume": 0,
+  "unsplashQuery": "compliance documents",
+  "status": "pending",
+  "wave": 3,
+  "level": "Fille",
+  "parentSlug": "conformite-opticien",
+  "reader": "Gérant",
+  "role": "Crédibilité",
+  "granitData": "Page sécurité Granit",
+  "cta": "Démo",
+  "toValidate": "HDS à trancher avant toute mention",
+  "primaryKeywordMeasured": false,
+  "faqQuestions": [
+   "Le magasin peut-il garder une copie de la carte mutuelle ?",
+   "Combien de temps garder les ordonnances ?",
+   "Quelles obligations RGPD pour les données de santé ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "H0",
+    "slug": "conformite-opticien",
+    "anchor": "Conformité administrative de l'opticien",
+    "type": "parent"
+   },
+   {
+    "id": "H6",
+    "slug": "reseaux-de-soins-conventionnement",
+    "anchor": "Réseaux de soins",
+    "type": "sœur"
+   },
+   {
+    "id": "H1",
+    "slug": "controle-assurance-maladie-opticien",
+    "anchor": "Contrôle de l'Assurance maladie",
+    "type": "sœur"
+   },
+   {
+    "id": "B8",
+    "slug": "checklist-prise-en-charge",
+    "anchor": "checklist avant d'envoyer une prise en charge",
+    "type": "transverse"
+   }
+  ]
+ },
+ {
+  "id": "E6",
+  "slug": "indicateurs-tiers-payant",
+  "category": "gerer-son-tiers-payant",
+  "title": "Piloter son tiers payant : les indicateurs à suivre chaque mois",
+  "primaryKeyword": "indicateurs tiers payant",
+  "keywordCluster": [],
+  "searchVolume": 0,
+  "unsplashQuery": "optical store manager",
+  "status": "pending",
+  "wave": 3,
+  "level": "Fille",
+  "parentSlug": "gerer-tiers-payant-magasin",
+  "reader": "Gérant",
+  "role": "Conversion",
+  "granitData": "KPI de l'app Granit",
+  "cta": "Modèle de tableau de bord",
+  "toValidate": "",
+  "primaryKeywordMeasured": false,
+  "faqQuestions": [
+   "Quels indicateurs suivre pour le tiers payant ?",
+   "Comment calculer le délai moyen d'encaissement ?",
+   "À quelle fréquence faire le point ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "E0",
+    "slug": "gerer-tiers-payant-magasin",
+    "anchor": "gestion tiers payant",
+    "type": "parent"
+   },
+   {
+    "id": "E7",
+    "slug": "conges-dossiers-tiers-payant",
+    "anchor": "Fermeture pour congés",
+    "type": "sœur"
+   },
+   {
+    "id": "E1",
+    "slug": "gestionnaire-tiers-payant",
+    "anchor": "gestionnaire tiers payant",
+    "type": "sœur"
+   },
+   {
+    "id": "E5",
+    "slug": "cout-temps-tiers-payant",
+    "anchor": "coût du tiers payant pour un magasin",
+    "type": "conversion"
+   }
+  ]
+ },
+ {
+  "id": "E7",
+  "slug": "conges-dossiers-tiers-payant",
+  "category": "gerer-son-tiers-payant",
+  "title": "Fermeture pour congés : ne laisser aucun dossier de tiers payant en plan",
+  "primaryKeyword": "conges dossiers tiers payant",
+  "keywordCluster": [],
+  "searchVolume": 0,
+  "unsplashQuery": "optical store manager",
+  "status": "pending",
+  "wave": 3,
+  "level": "Fille",
+  "parentSlug": "gerer-tiers-payant-magasin",
+  "reader": "Gérant",
+  "role": "Résolution",
+  "granitData": "—",
+  "cta": "Démo",
+  "toValidate": "Publier en juin",
+  "primaryKeywordMeasured": false,
+  "faqQuestions": [
+   "Comment préparer le tiers payant avant une fermeture ?",
+   "Que faire des prises en charge en cours ?",
+   "Comment rattraper le retard au retour ?"
+  ],
+  "internalLinks": [
+   {
+    "id": "E0",
+    "slug": "gerer-tiers-payant-magasin",
+    "anchor": "gestion tiers payant",
+    "type": "parent"
+   },
+   {
+    "id": "E1",
+    "slug": "gestionnaire-tiers-payant",
+    "anchor": "gestionnaire tiers payant",
+    "type": "sœur"
+   },
+   {
+    "id": "E2",
+    "slug": "externaliser-tiers-payant-comparatif",
+    "anchor": "externalisation tiers payant pharmaciens",
+    "type": "sœur"
+   },
+   {
+    "id": "E5",
+    "slug": "cout-temps-tiers-payant",
+    "anchor": "coût du tiers payant pour un magasin",
+    "type": "conversion"
+   }
+  ]
+ }
+]

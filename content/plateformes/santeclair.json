@@ -1,0 +1,297 @@
+{
+  "slug": "portail-santeclair",
+  "nom": "Santéclair",
+  "logo": "/logos/santeclair.svg",
+  "checkedOn": "2026-10-07",
+  "identite": [
+    {
+      "label": "Type",
+      "valeur": "Réseau de soins et service de tiers payant (TP+)",
+      "source": "sc-ps"
+    },
+    {
+      "label": "Optique",
+      "valeur": "Oui, en réseau partenaire ou en convention TP+",
+      "source": "sc-ps"
+    },
+    {
+      "label": "Portail",
+      "valeur": "services.santeclair.fr",
+      "source": "sc-qsn"
+    },
+    {
+      "label": "Connexion",
+      "valeur": "Identifiant, mot de passe et code par e-mail",
+      "source": "granit-connecteur"
+    }
+  ],
+  "chiffres": [
+    {
+      "valeur": "+3 700",
+      "label": "opticiens partenaires du réseau (2025)",
+      "source": "acuite-2026"
+    },
+    {
+      "valeur": "+60",
+      "label": "complémentaires santé mises en relation",
+      "source": "sc-ps"
+    },
+    {
+      "valeur": "10 M",
+      "label": "bénéficiaires des services Santéclair",
+      "source": "sc-qsn"
+    },
+    {
+      "valeur": "7 jours",
+      "label": "délai de paiement annoncé en tiers payant",
+      "source": "sc-ps"
+    }
+  ],
+  "faits": [
+    {
+      "fait": "Santéclair est d'abord un réseau de soins. Elle gère aussi le tiers payant pour le compte de complémentaires santé.",
+      "source": "sc-ps"
+    },
+    {
+      "fait": "Santéclair propose trois conventions aux professionnels de santé : Partenariat & tiers-payant, Tiers-payant TP+ et Partenariat simple.",
+      "source": "sc-ps"
+    },
+    {
+      "fait": "TP+ est le service de tiers payant de Santéclair pour les professionnels hors réseau. Lancé en 2018, il avait enregistré près de 20 millions de demandes de prise en charge en avril 2023, tous domaines confondus.",
+      "source": "sc-20ans"
+    },
+    {
+      "fait": "Pour le tiers payant, Santéclair agit comme sous-traitant des complémentaires santé, qui restent responsables des données.",
+      "source": "sc-vieprivee"
+    },
+    {
+      "fait": "Le réseau optique se constitue par appel d'offres. Le réseau actuel couvre 2025 à 2029.",
+      "source": "sc-ao2024"
+    },
+    {
+      "fait": "Au 7 octobre 2026, la page du réseau optique indique qu'aucun appel d'offres n'est en cours.",
+      "source": "sc-optique"
+    },
+    {
+      "fait": "Lors de l'appel d'offres de 2024, la création de l'espace Management d'activités demandait le numéro SIREN et une pièce d'identité (CNI ou passeport).",
+      "source": "sc-ao2024"
+    },
+    {
+      "fait": "Le tableau de bord de l'espace Gestion TP suit les demandes de prise en charge, les accords, les refus, les demandes de remboursement et, en optique, les demandes dérogatoires. Il sert aussi à déposer les pièces complémentaires.",
+      "source": "sc-tableau"
+    },
+    {
+      "fait": "La convention TP+ comprend le frontal de flux (FFL), qui gère les demandes de remboursement depuis le logiciel du magasin.",
+      "source": "sc-tpdemat"
+    },
+    {
+      "fait": "L'EDI au format OptoAMC est réservé à la convention Partenariat & tiers-payant, pas à TP+.",
+      "source": "sc-edi"
+    },
+    {
+      "fait": "Santéclair indique un taux d'automatisation complet de 95,2 % des demandes de prise en charge en optique en 2022.",
+      "source": "sc-tpcompl"
+    },
+    {
+      "fait": "En optique, le dépôt des demandes de prise en charge se fait dans un portail distinct, « Mon portail FFL TP+ Optique », ouvert depuis l'espace services.santeclair.fr. Ce portail est opéré par FFL-Promoteur. Les audioprothésistes passent par un autre portail.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "Chaque magasin se connecte avec son identifiant et son mot de passe, puis saisit un code à 6 chiffres reçu par e-mail. Une case permet de mémoriser le navigateur pour les connexions suivantes.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "Pour créer un dossier, l'opticien choisit l'assureur dans une liste, puis saisit le numéro de contrat, le nom, le prénom et la date de naissance du bénéficiaire.",
+      "source": "granit-connecteur"
+    }
+  ],
+  "conventionnement": [
+    "Sur santeclair.fr, ouvrir la page de la convention choisie (Tiers-payant TP+ ou Partenariat & tiers-payant) et sélectionner le domaine Optique.",
+    "Créer son espace Management d'activités sur services.santeclair.fr.",
+    "Lors de la création de l'espace, sélectionner son domaine et sa convention.",
+    "Pour entrer dans le réseau partenaire, déposer sa candidature depuis cet espace lors d'un appel d'offres. Aucun n'est ouvert au 7 octobre 2026.",
+    "Une fois conventionné, se connecter à l'espace partenaire sur services.santeclair.fr pour gérer le tiers payant."
+  ],
+  "statuts": [
+    {
+      "libelle": "Accordé",
+      "sens": "La complémentaire accepte la prise en charge",
+      "action": "Délivrer l'équipement, puis facturer"
+    },
+    {
+      "libelle": "En attente de traitement / En instance / En cours",
+      "sens": "Le dossier est encore étudié. Le portail peut annoncer un traitement sous quelques heures",
+      "action": "Attendre, puis revenir consulter le dossier"
+    },
+    {
+      "libelle": "Refusé",
+      "sens": "Pas de prise en charge en l'état. Le portail donne la raison et propose d'imprimer la lettre de refus",
+      "action": "Lire le motif, corriger, refaire la demande"
+    },
+    {
+      "libelle": "N° Sécurité sociale inconnu",
+      "sens": "Le dossier est transmis, mais aucune couverture n'est trouvée derrière",
+      "action": "Vérifier le numéro de sécurité sociale et la carte de tiers payant avant de délivrer"
+    },
+    {
+      "libelle": "Service momentanément indisponible",
+      "sens": "Le portail TP+ ne répond pas, la demande n'est pas partie",
+      "action": "Réessayer plus tard"
+    },
+    {
+      "libelle": "Facturé",
+      "sens": "La facture est partie. La recherche de dossiers affiche l'ordre de virement",
+      "action": "Suivre le virement"
+    }
+  ],
+  "statutsSource": "granit-connecteur",
+  "contacts": [
+    {
+      "label": "Téléphone convention TP+",
+      "valeur": "0 892 970 400",
+      "detail": "Du lundi au vendredi, 9 h à 18 h · 0,80 €/min + prix d'un appel",
+      "source": "sc-ps"
+    },
+    {
+      "label": "Téléphone réseau partenaire",
+      "valeur": "0 821 233 050",
+      "detail": "Du lundi au vendredi, 9 h à 18 h · 0,20 €/min + prix d'un appel · choix 2 pour une candidature",
+      "source": "sc-optique"
+    },
+    {
+      "label": "Espace partenaire",
+      "valeur": "services.santeclair.fr",
+      "url": "https://services.santeclair.fr/professionnel-sante/connexion",
+      "source": "sc-qsn"
+    },
+    {
+      "label": "Pas encore conventionné",
+      "valeur": "Créer son espace Management d'activités",
+      "url": "https://services.santeclair.fr/professionnel-sante/compte/creation",
+      "source": "sc-tpplus"
+    },
+    {
+      "label": "Adresse",
+      "valeur": "7 mail Pablo Picasso, 44046 Nantes Cedex 1",
+      "source": "sc-mentions"
+    }
+  ],
+  "organismes": {
+    "source": "granit-connecteur",
+    "note": "Liste du sélecteur d'organisme du portail optique, relevée par les agents Granit. Formuler : « ce que propose le sélecteur du portail », jamais « cette mutuelle passe uniquement par Santéclair ».",
+    "liste": [
+      "Allianz (00410001)",
+      "Allianz Igestion (00410993)",
+      "Apgis",
+      "Areas Assurances",
+      "Baloo",
+      "Bcac",
+      "Bpce Mutuelle",
+      "Collecteam (00402958)",
+      "Collecteam (98532001)",
+      "Complevie",
+      "Cpms",
+      "Diot By Helium",
+      "Gestineo",
+      "Gmf",
+      "Génération",
+      "Helium",
+      "Igsante",
+      "Maaf",
+      "Mapa",
+      "Meilleurtaux Sante (00401323)",
+      "Mgas",
+      "Mgc",
+      "Mma",
+      "Mnpaf (00401737)",
+      "Mspp",
+      "Mut. Des Pays De Vilaine (Mpv)",
+      "Mutuelle De La Boulangerie",
+      "Mutuelle Du Groupe Bnp Paribas",
+      "Roederer",
+      "Safiag",
+      "Sgsanté",
+      "Simax",
+      "Smabtp",
+      "Smi",
+      "Smi-Mma Entreprise",
+      "Spvie Assurances",
+      "Uniced",
+      "Unim",
+      "Verspieren",
+      "Yonivers"
+    ]
+  },
+  "sources": {
+    "sc-ps": {
+      "label": "santeclair.fr · Professionnel de la santé",
+      "url": "https://www.santeclair.fr/fr/professionnel-sante",
+      "consulte": "2026-10-07"
+    },
+    "sc-optique": {
+      "label": "santeclair.fr · Réseau partenaire optique",
+      "url": "https://www.santeclair.fr/fr/professionnel-sante/reseau-partenaire-optique",
+      "consulte": "2026-10-07"
+    },
+    "sc-tpplus": {
+      "label": "santeclair.fr · Convention Tiers-payant TP+",
+      "url": "https://www.santeclair.fr/fr/professionnel-sante/convention-tiers-payant-tpplus",
+      "consulte": "2026-10-07"
+    },
+    "sc-tpdemat": {
+      "label": "santeclair.fr · TP+ · Tiers-payant dématérialisé",
+      "url": "https://www.santeclair.fr/fr/professionnel-sante/convention-tiers-payant/offre-de-services-tiers-payant-dematerialise",
+      "consulte": "2026-10-07"
+    },
+    "sc-tableau": {
+      "label": "santeclair.fr · Tableau de bord",
+      "url": "https://www.santeclair.fr/fr/professionnel-sante/offre-de-services-tiers-payant-dematerialise/tableau-de-bord",
+      "consulte": "2026-10-07"
+    },
+    "sc-edi": {
+      "label": "santeclair.fr · EDI",
+      "url": "https://www.santeclair.fr/fr/professionnel-sante/offre-de-services-tiers-payant-dematerialise/edi",
+      "consulte": "2026-10-07"
+    },
+    "sc-qsn": {
+      "label": "santeclair.fr · Qui sommes-nous ?",
+      "url": "https://www.santeclair.fr/fr/qui-sommes-nous",
+      "consulte": "2026-10-07"
+    },
+    "sc-mentions": {
+      "label": "santeclair.fr · Mentions légales",
+      "url": "https://www.santeclair.fr/fr/mentions-legales",
+      "consulte": "2026-10-07"
+    },
+    "sc-vieprivee": {
+      "label": "santeclair.fr · Vie privée",
+      "url": "https://www.santeclair.fr/fr/vie-privee",
+      "consulte": "2026-10-07"
+    },
+    "sc-20ans": {
+      "label": "santeclair.fr · Les 20 ans de Santéclair (avril 2023)",
+      "url": "https://www.santeclair.fr/fr/actualites-institutionnel/soiree-des-20-ans-santeclair",
+      "consulte": "2026-10-07"
+    },
+    "sc-ao2024": {
+      "label": "santeclair.fr · Réseau optique 2025-2029 : appel d'offres 2024",
+      "url": "https://www.santeclair.fr/fr/ouverture-reseau-optique-2025-2029",
+      "consulte": "2026-10-07"
+    },
+    "sc-tpcompl": {
+      "label": "santeclair.fr · Tiers payant pour les complémentaires",
+      "url": "https://www.santeclair.fr/fr/professionnel-assurance/tiers-payant-complementaire",
+      "consulte": "2026-10-07"
+    },
+    "acuite-2026": {
+      "label": "Acuité · Interview de Christian Acknin, DG de Santéclair (avril 2026)",
+      "url": "https://www.acuite.fr/actualites/profession/secuocam/exclu-tiers-payant-menace-santeclair-alerte-335157",
+      "consulte": "2026-10-07"
+    },
+    "granit-connecteur": {
+      "label": "Connecteur Santéclair de Granit (relevé du 07/10/2026)",
+      "url": "",
+      "consulte": "2026-10-07"
+    }
+  }
+}

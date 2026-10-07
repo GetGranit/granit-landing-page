@@ -9,6 +9,7 @@ import { Reveal } from "@/components/Reveal";
 import { useLanguage } from "@/lib/i18n";
 import { logDemoRequestDelivered, logDemoRequestDeliveryFailed } from "@/lib/posthogLogs";
 import { submitDemo } from "@/lib/submitDemo";
+import { getAttribution } from "@/lib/attribution";
 import { copy, type AffiliationCopy as Copy } from "@/lib/affiliationCopy";
 
 /**
@@ -352,6 +353,7 @@ function AffiliationForm({ t }: { t: Copy }) {
               orgType: profile,
               challenge: String(fd.get("challenge") || ""),
               source: SOURCE,
+              utm: getAttribution(),
             },
           });
           posthog.capture("affiliate_application_submitted", { profile: profile || undefined });

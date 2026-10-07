@@ -7,6 +7,7 @@ import { Reveal } from "@/components/Reveal";
 import { useLanguage } from "@/lib/i18n";
 import { logDemoRequestDelivered, logDemoRequestDeliveryFailed } from "@/lib/posthogLogs";
 import { submitDemo } from "@/lib/submitDemo";
+import { getAttribution } from "@/lib/attribution";
 import logoMonogram from "@/assets/logo.svg";
 import silmoLogo from "@/assets/silmo-logo.png";
 
@@ -457,6 +458,7 @@ function SilmoForm({ t, contact }: { t: (typeof copy)["fr"]; contact?: string })
               email: String(fd.get("email") || ""),
               phone: String(fd.get("phone") || ""),
               source,
+              utm: getAttribution(),
             },
           });
           posthog.capture("demo_request_submitted", { form_location: "silmo_landing" });

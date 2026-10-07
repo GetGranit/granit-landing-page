@@ -161,7 +161,7 @@ const urls = [
     loc: `${SITE}/ressources/${a.slug}`,
     lastmod: a.dateModified,
     freq: "monthly",
-    priority: "0.7",
+    priority: a.level?.startsWith("Pilier") ? "0.8" : "0.7",
   })),
   ...slugs.map((s) => ({
     loc: `${SITE}/ressources/${s}`,
