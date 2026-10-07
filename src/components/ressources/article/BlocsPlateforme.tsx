@@ -94,7 +94,7 @@ export function Organismes({ p }: { p: Plateforme }) {
       >
         {n
           ? `${visibles.length} résultat${visibles.length > 1 ? "s" : ""} sur ${liste.length}`
-          : `${liste.length} complémentaires`}
+          : `${liste.length} complémentaire${liste.length > 1 ? "s" : ""}`}
       </p>
       <ul className="mt-3 flex max-h-[260px] flex-wrap gap-2 overflow-auto p-0.5">
         {liste.map((m) => (

@@ -54,11 +54,13 @@ function Couverture({
   etiquette,
   rayon,
   petite = false,
+  grande = false,
 }: {
   fiche: Fiche;
   etiquette: string;
   rayon: string;
   petite?: boolean;
+  grande?: boolean;
 }) {
   const c = categorie(fiche.category)!;
   const p = fiche.plateforme;
@@ -68,7 +70,7 @@ function Couverture({
       style={{ background: c.tint }}
     >
       <img
-        src={`/covers/${fiche.slug}.svg`}
+        src={`/covers/${fiche.slug}${grande ? "--une" : ""}.svg`}
         width={800}
         height={600}
         loading="lazy"
@@ -133,7 +135,7 @@ export function CarteUne({ fiche, titre = "h2" }: { fiche: Fiche; titre?: "h2" |
   const H = titre;
   return (
     <Link to="/ressources/$slug" params={{ slug: fiche.slug }} className={lienCarte}>
-      <Couverture fiche={fiche} etiquette={c.court} rayon="rounded-[16px]" />
+      <Couverture fiche={fiche} etiquette={c.court} rayon="rounded-[16px]" grande />
       <H className="mt-5 max-w-[22ch] font-serif text-[clamp(26px,2.6vw,36px)] font-normal leading-[1.15] tracking-[-0.015em]">
         <TitreItalique titre={fiche.title} ink={c.ink} />
       </H>

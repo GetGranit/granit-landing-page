@@ -30,6 +30,8 @@ export interface CoverInput {
   title: string;
   variant?: "card" | "og"; // card = 800×600, og = 1200×630
   platform?: boolean; // fiche plateforme : médaillon central
+  // Échelle du trait du logo (1 par défaut). Les grandes cartes le réduisent pour qu'il ne domine pas.
+  trait?: number;
   // og seulement : contenu du médaillon (data URI du logo, sinon initiale). En carte, le logo est posé en HTML.
   mark?: { logo?: string; initial?: string };
 }
@@ -127,6 +129,7 @@ export function coverSvg({
   variant = "card",
   platform = false,
   mark,
+  trait = 1,
 }: CoverInput): string {
   const cat = CATEGORIES[category] ?? CATEGORIES.glossaire;
   const og = variant === "og";
@@ -164,8 +167,12 @@ export function coverSvg({
   // Trait du logo : entre par le bord gauche de la zone, position et échelle tirées de la graine.
   let line = "";
   if (!platform) {
-    const k = (og ? 5 : 6) + rand() * 3;
-    const ly = H * (0.38 + rand() * 0.34) - 26 * k;
+    const k = ((og ? 5 : 6) + rand() * 3) * trait;
+    // Le trait (halo et point compris) reste entièrement dans l'image.
+    const ly = Math.min(
+      Math.max(H * (0.38 + rand() * 0.34) - 26 * k, 16 - 11.9 * k),
+      H - 16 - 42.4 * k,
+    );
     const lx = x0 + (W - x0) * (0.12 + rand() * 0.3) - 4 * k;
     const pts = LOGO.map(([px, py]) => `${r1(lx + px * k)} ${r1(ly + py * k)}`);
     const path = `M${r1(x0 + (og ? k * 2.1 : 0))} ${r1(ly + 26 * k)}L${pts.join("L")}`;

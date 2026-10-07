@@ -43,26 +43,31 @@ function fiche(
   };
 }
 
-/** Couvertures à produire : articles JSON affichés + anciens articles rattachés au cocon. */
+/**
+ * Couvertures à produire : articles JSON affichés + anciens articles rattachés au cocon.
+ * Chacune en deux tailles : {slug}.svg (cartes) et {slug}--une.svg (grandes cartes, trait réduit).
+ */
 function couvertures(contenu: ReturnType<typeof lireContenu>) {
-  const out = new Map<string, string>();
+  const sources = new Map<string, Parameters<typeof coverSvg>[0]>();
   for (const a of contenu.articles) {
-    out.set(
-      a.slug,
-      coverSvg({
-        slug: a.slug,
-        category: a.category,
-        title: a.title,
-        platform: a.type === "plateforme",
-      }),
-    );
+    sources.set(a.slug, {
+      slug: a.slug,
+      category: a.category,
+      title: a.title,
+      platform: a.type === "plateforme",
+    });
   }
   const rattaches = anciensMeta.rattaches as Record<string, CategorySlug>;
   for (const a of anciens.fr) {
     const category = rattaches[a.slug];
-    if (category && !out.has(a.slug)) {
-      out.set(a.slug, coverSvg({ slug: a.slug, category, title: a.title }));
+    if (category && !sources.has(a.slug)) {
+      sources.set(a.slug, { slug: a.slug, category, title: a.title });
     }
+  }
+  const out = new Map<string, string>();
+  for (const [slug, entree] of sources) {
+    out.set(slug, coverSvg(entree));
+    out.set(`${slug}--une`, coverSvg({ ...entree, trait: 0.55 }));
   }
   return out;
 }

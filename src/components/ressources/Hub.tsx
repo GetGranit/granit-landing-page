@@ -79,7 +79,10 @@ export function Hub() {
                 className={lienFleche}
                 style={{ color: "#b94a2f" }}
               >
-                Voir les {plateformes.length} plateformes <Fleche />
+                {plateformes.length > 1
+                  ? `Voir les ${plateformes.length} plateformes`
+                  : "Voir la fiche"}{" "}
+                <Fleche />
               </Link>
             </div>
             <ul className="grid grid-cols-2 gap-3 md:grid-cols-3">

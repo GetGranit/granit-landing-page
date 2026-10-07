@@ -29,7 +29,7 @@ function Liste({ entrees, actif }: { entrees: Entree[]; actif?: string }) {
         <li key={e.id}>
           <a
             href={`#${e.id}`}
-            className={`block border-l-2 py-1.5 pl-3 transition-colors hover:text-[var(--text)] ${
+            className={`block border-l-2 py-1.5 pl-3 hover:text-[var(--text)] ${
               actif === e.id
                 ? "border-[var(--ink)] font-semibold text-[var(--text)]"
                 : "border-[var(--border)] text-[var(--text-muted)]"
