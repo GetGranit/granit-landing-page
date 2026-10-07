@@ -93,3 +93,35 @@ export function TextLink({ onClick, children }: { onClick: () => void; children:
 }
 
 export const bigBtn = "btn-primary justify-center !px-6 !py-4 !text-[16px]";
+
+/** Écrans de simulation en mode mock (DEV ou aperçu) : on ne laisse jamais croire que c'est branché. */
+export function ApercuBanner() {
+  return (
+    <p className="mb-3 rounded-full px-3 py-1.5 text-center text-[12px]" style={{ background: "#fbf0dc", color: "#7a4f12", fontFamily: "var(--font-mono)" }}>
+      Aperçu — résultat d'exemple, rien n'est connecté
+    </p>
+  );
+}
+
+export const fieldClass = "w-full rounded-xl border-[1.5px] bg-white px-4 py-3.5 text-[17px] outline-none focus:border-[var(--terra)]";
+
+/** Champ étiqueté du parcours ; `hint` sous le libellé, `error` en dessous du champ. */
+export function Field({ label, hint, error, badge, children }: { label: string; hint?: string; error?: string; badge?: ReactNode; children: ReactNode }) {
+  return (
+    <label className="grid gap-1.5 text-left text-[15px]" style={{ color: "var(--text)", fontWeight: 500 }}>
+      <span className="flex flex-wrap items-center gap-2">
+        {label}
+        {badge}
+      </span>
+      {hint && <span className="-mt-1 text-[13px]" style={{ color: "var(--text-muted)", fontWeight: 400 }}>{hint}</span>}
+      {children}
+      {error && <span role="alert" className="text-[14px]" style={{ color: "var(--terra-hover)", fontWeight: 400 }}>{error}</span>}
+    </label>
+  );
+}
+
+export function fieldStyle(error?: string) {
+  return { borderColor: error ? "var(--terra)" : "var(--border2)", color: "var(--text)" };
+}
+
+export const euros = (n: number) => n.toLocaleString("fr-FR", { style: "currency", currency: "EUR" });
