@@ -50,7 +50,7 @@ export function Sommaire({ entrees }: { entrees: Entree[] }) {
   return (
     <nav
       aria-label="Sommaire"
-      className="rounded-[14px] border border-[var(--border)] bg-white px-[18px] py-4"
+      className="max-h-[calc(100dvh-112px)] overflow-y-auto overscroll-contain rounded-[14px] border border-[var(--border)] bg-white px-[18px] py-4"
     >
       <div className="text-[15px] font-semibold">Dans cet article</div>
       <Liste entrees={entrees} actif={actif} />

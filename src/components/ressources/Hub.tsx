@@ -26,7 +26,7 @@ export function Hub() {
   const glossaire = glossaireEnLigne();
 
   return (
-    <SiteLayout>
+    <SiteLayout fond="var(--bg2)">
       <div className="bg-[var(--bg2)]">
         <section className={`${conteneur} pb-8 pt-12 text-center md:pb-10 md:pt-20`}>
           <div className="eyebrow">Ressources · Le guide du tiers payant</div>

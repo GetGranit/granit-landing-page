@@ -105,7 +105,7 @@ export function PageArticle({
   const teinte = { "--ink": cat.ink, "--tint": cat.tint } as CSSProperties;
 
   return (
-    <SiteLayout>
+    <SiteLayout fond="var(--bg2)">
       {a.preview && <BandeauPreview />}
       <SousNav actif={a.category === "glossaire" ? "glossaire" : a.category} />
       <header
@@ -145,36 +145,39 @@ export function PageArticle({
         </div>
       </header>
 
-      <div
-        className="mx-auto grid max-w-[1280px] gap-6 px-4 py-10 md:px-6 min-[980px]:grid-cols-[minmax(0,1fr)_300px] min-[980px]:gap-14"
-        style={teinte}
-      >
-        <div className="ress-corps min-w-0">
-          <SommaireMobile entrees={entrees} />
-          <Corps html={a.contentHtml} plateforme={p} insertion={insertion} />
-          <Faq items={a.faqItems} />
-          <Sources article={a} plateforme={p} />
-          <EncartFinal />
-        </div>
-        <aside className="hidden min-[980px]:block">
-          <div className="sticky top-[88px] flex flex-col gap-4">
-            <Sommaire entrees={entrees} />
-            <div className="rounded-[14px] bg-[#1c1108] p-[18px] text-[#f6efe4]">
-              <span className="eyebrow" style={{ color: "#f2a48f" }}>
+      <div className="bg-white">
+        <div
+          className="mx-auto grid max-w-[1280px] gap-6 px-4 py-10 md:px-6 min-[980px]:grid-cols-[minmax(0,1fr)_300px] min-[980px]:gap-14"
+          style={teinte}
+        >
+          <div className="ress-corps min-w-0">
+            <SommaireMobile entrees={entrees} />
+            <Corps html={a.contentHtml} plateforme={p} insertion={insertion} />
+            <Faq items={a.faqItems} />
+            <Sources article={a} plateforme={p} />
+            <EncartFinal />
+          </div>
+          {/* Seul le sommaire est collant ; la carte agent, claire, reste en tête de colonne. */}
+          <aside className="hidden flex-col gap-4 min-[980px]:flex">
+            <div className="rounded-[14px] border border-[var(--border)] bg-white p-[18px]">
+              <span className="eyebrow" style={{ color: "var(--ink)" }}>
                 Ce que fait Granit
               </span>
-              <h3 className="mt-2 font-serif text-[21px] font-normal leading-[1.2]">
+              <h3 className="mt-2 font-serif text-[21px] font-normal leading-[1.2] text-[var(--text)]">
                 {titreAgent(a, p)}
               </h3>
-              <p className="mt-2 text-[14.5px] text-[#c9bfb0]">
+              <p className="mt-2 text-[14.5px] text-[var(--text-soft)]">
                 20 minutes avec l'équipe, sur vos propres dossiers.
               </p>
               <Link to="/demo" className="btn-primary mt-3.5 flex w-full justify-center">
                 Voir la démo
               </Link>
             </div>
-          </div>
-        </aside>
+            <div className="sticky top-[88px]">
+              <Sommaire entrees={entrees} />
+            </div>
+          </aside>
+        </div>
       </div>
       <ALireEnsuite article={a} />
     </SiteLayout>
