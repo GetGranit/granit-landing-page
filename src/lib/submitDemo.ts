@@ -10,6 +10,8 @@ export type DemoLead = {
   /** Where the lead came from. Defaults to the site itself; landing pages
    *  (salons, campagnes) passent leur propre valeur pour être filtrables. */
   source?: string;
+  /** Paramètres utm_* du lien d'arrivée (voir attribution.ts), ex. le post d'un apporteur. */
+  utm?: string;
 };
 
 const emailRe = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
@@ -34,6 +36,7 @@ export const submitDemo = createServerFn({ method: "POST" })
       orgType: (data.orgType ?? "").trim().slice(0, 100),
       challenge: (data.challenge ?? "").trim().slice(0, 2000),
       source: (data.source ?? "").trim().slice(0, 100),
+      utm: (data.utm ?? "").trim().slice(0, 400),
     };
   })
   .handler(async ({ data }) => {
