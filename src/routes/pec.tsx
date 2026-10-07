@@ -7,8 +7,10 @@ import { StepCapture } from "@/components/pec/StepCapture";
 import { StepContact, StepThanks } from "@/components/pec/StepContact";
 import { StepReading } from "@/components/pec/StepReading";
 import { ResultChoice, ResultPortal, ResultSimulable } from "@/components/pec/StepResult";
+import { ecrireCas } from "@/components/pec/cas";
 import { SimFlow } from "@/components/pec/SimFlow";
 import type { SimResultat } from "@/components/pec/StepSimFin";
+import type { PatientPrefill } from "@/components/pec/StepPatient";
 import { StepSearch } from "@/components/pec/StepSearch";
 import { Muted, PecShell } from "@/components/pec/ui";
 import { compressImage } from "@/lib/pec/image";
@@ -28,7 +30,7 @@ import {
  * Lead magnet « votre prochaine PEC, sans la taper » : photo de la carte de
  * tiers payant → portail trouvé. Sur les 4 portails où Granit sait simuler
  * sans rien envoyer (Viamédis, Kalixia, Génération, EMOA), on simule la PEC en
- * direct sur le compte de l'opticien, puis l'e-mail ouvre l'espace d'essai ;
+ * direct sur le compte de l'opticien, puis le compte gratuit ouvre l'espace ;
  * ailleurs on donne le lien du portail et on propose Paul.
  */
 export const Route = createFileRoute("/pec")({
@@ -50,7 +52,15 @@ const ESSAI_ON =
   import.meta.env.DEV || import.meta.env.VITE_PEC_ESSAI === "on" || simulationProposee();
 /** Identité fictive de la carte d'exemple (NIR inventé, clé valide). */
 const EXAMPLE_PATIENT = { nir: "285057800608441", dateNaissance: "12/05/1985" };
-const CASE_KEY = "granit.pec.case";
+
+/** Identité lue sur la carte (champs facultatifs, absents des anciennes lectures). */
+type CardIdentite = CardRead & { nir?: string | null; date_naissance?: string | null };
+
+function prefillOcr(card: CardIdentite | null): PatientPrefill | undefined {
+  const nir = card?.nir?.trim() || undefined;
+  const dateNaissance = card?.date_naissance?.trim() || undefined;
+  return nir || dateNaissance ? { nir, dateNaissance } : undefined;
+}
 
 type Step =
   | { s: "capture"; error?: string }
@@ -183,46 +193,28 @@ function PecPage() {
     }
   }
 
-  /** Fin de simulation : l'e-mail crée le compte en coulisse. Rien du patient ni du portail (identifiants) ne part. */
-  async function onSimEmail(p: Platform, mail: string, r: SimResultat) {
+  /**
+   * Compte créé à la fin de la simulation : seul l'e-mail part (lead B11), le
+   * mot de passe n'a pas quitté l'écran. Rien du patient ni du portail
+   * (identifiants) n'est envoyé ni stocké. TODO(CTO) : création de compte réelle.
+   */
+  async function onSimCompte(p: Platform, mail: string, r: SimResultat) {
     setEmail(mail);
+    setBusy(true);
     track("pec_vers_freemium", { platform: p.id, source });
-    await lead("essai", { email: mail }, p);
+    const envoi = sendPecLead({ kind: "essai", email: mail, platform: p.id, ref }).then(
+      () => track("pec_contact", { kind: "essai", platform: p.id }),
+      () => undefined,
+    );
+    // « Votre espace se prépare… » : entre 0,9 et 1,2 s ; un envoi plus lent finit en arrière-plan
+    // (la navigation vers /essai reste dans la même page).
+    const attente = (ms: number) => new Promise((ok) => setTimeout(ok, ms));
+    await Promise.race([Promise.all([envoi, attente(900)]), attente(1200)]);
     const portail = platformById(p.reseau_via ?? p.id) ?? p;
-    try {
-      sessionStorage.setItem(
-        CASE_KEY,
-        JSON.stringify({
-          source,
-          email: mail,
-          mutuelle: card?.assureur ?? null,
-          amc: card?.amc ?? null,
-          reseau: card?.reseau ?? null,
-          platform: {
-            id: portail.id,
-            label: portail.label,
-            url: portail.url,
-            simulable: portail.simulable,
-            tfa: portail.tfa,
-          },
-          portailConnecte: true,
-          simulation: {
-            total: r.total,
-            partSecu: r.partSecu,
-            partMutuelle: r.partMutuelle,
-            resteACharge: r.resteACharge,
-            dureeSec: r.dureeSec,
-            ...(r.captureUrl ? { captureUrl: r.captureUrl } : {}),
-            ...(r.numero ? { numero: r.numero } : {}),
-            apercu: !simulationEnDirect(),
-          },
-        }),
-      );
-    } catch {
-      /* stockage bloqué : l'essai repartira sur un cas d'exemple */
-    }
-    if (ESSAI_ON) navigate({ to: "/essai" });
-    else setStep({ s: "thanks", kind: "essai-off" });
+    ecrireCas({ source, email: mail, card, portail, r, apercu: !simulationEnDirect() });
+    if (ESSAI_ON) return navigate({ href: "/essai?etape=acces" });
+    setBusy(false);
+    setStep({ s: "thanks", kind: "essai-off" });
   }
 
   const total = 8;
@@ -308,12 +300,12 @@ function PecPage() {
           }
           busy={busy}
           track={track}
-          // Carte d'exemple : identité fictive imprimée sur la carte dessinée. Pour une vraie
-          // photo, le pré-remplissage viendra de l'OCR d'identité côté infra Granit (TODO(CTO)).
-          prefill={source === "exemple" ? EXAMPLE_PATIENT : undefined}
+          // Carte d'exemple : identité fictive imprimée sur la carte dessinée. Vraie photo :
+          // n° de sécu et date de naissance lus par l'OCR, s'ils y sont.
+          prefill={source === "exemple" ? EXAMPLE_PATIENT : prefillOcr(card)}
           onProgress={setSimN}
           onBack={() => setStep({ s: "result", res: { kind: "unique", platform: step.platform } })}
-          onEmail={(m, r) => void onSimEmail(step.platform, m, r)}
+          onCompte={(m, r) => void onSimCompte(step.platform, m, r)}
         />
       )}
       {step.s === "result" && step.res.kind === "unique" && !step.res.platform.simulable && (
