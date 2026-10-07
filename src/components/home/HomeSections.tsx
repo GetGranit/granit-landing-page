@@ -2,10 +2,12 @@ import { type ReactElement, useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { motion } from "framer-motion";
+import { usePostHog } from "posthog-js/react";
 
 import { Reveal } from "@/components/Reveal";
 import { useLanguage } from "@/lib/i18n";
 import { articles as articlesData } from "@/lib/articles";
+import { logDemoRequestDelivered, logDemoRequestDeliveryFailed } from "@/lib/posthogLogs";
 import { submitDemo } from "@/lib/submitDemo";
 import heroPhoto from "@/assets/hero-photo.jpg";
 
@@ -533,6 +535,7 @@ function PlatformPreview({ t, lang }: { t: typeof copy["fr"]; lang: "fr" | "en" 
    ============================================================ */
 export function HomeSections() {
   const { lang } = useLanguage();
+  const posthog = usePostHog();
   const t = copy[lang];
   const [filter, setFilter] = useState<string>(t.filters[0]);
 
@@ -787,7 +790,10 @@ export function HomeSections() {
                   <button
                     key={f}
                     type="button"
-                    onClick={() => setFilter(f)}
+                    onClick={() => {
+                      setFilter(f);
+                      posthog.capture("agent_catalog_filtered", { healthcare_segment: f });
+                    }}
                     className="rounded-full border px-3.5 py-1.5 text-[12.5px] transition-all"
                     style={{
                       borderColor: active ? "var(--terra)" : "var(--border)",
@@ -1279,6 +1285,7 @@ function DemoArea({ label, placeholder, name }: { label: string; placeholder?: s
 
 function DemoForm({ t }: { t: typeof copy["fr"] }) {
   const submit = useServerFn(submitDemo);
+  const posthog = usePostHog();
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
   if (status === "success") {
@@ -1314,8 +1321,15 @@ function DemoForm({ t }: { t: typeof copy["fr"] }) {
               challenge: String(fd.get("challenge") || ""),
             },
           });
+          const organizationType = String(fd.get("orgType") || "") || undefined;
+          posthog.capture("demo_request_submitted", {
+            form_location: "homepage",
+            organization_type: organizationType,
+          });
+          logDemoRequestDelivered(posthog, "homepage", organizationType);
           setStatus("success");
         } catch {
+          logDemoRequestDeliveryFailed(posthog, "homepage");
           setStatus("error");
         }
       }}

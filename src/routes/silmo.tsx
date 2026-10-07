@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
+import { usePostHog } from "posthog-js/react";
 
 import { Reveal } from "@/components/Reveal";
 import { useLanguage } from "@/lib/i18n";
+import { logDemoRequestDelivered, logDemoRequestDeliveryFailed } from "@/lib/posthogLogs";
 import { submitDemo } from "@/lib/submitDemo";
 import logoMonogram from "@/assets/logo.svg";
 import silmoLogo from "@/assets/silmo-logo.png";
@@ -389,6 +391,7 @@ function Field({
 
 function SilmoForm({ t, contact }: { t: (typeof copy)["fr"]; contact?: string }) {
   const submit = useServerFn(submitDemo);
+  const posthog = usePostHog();
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
   // `silmo-2026`, puis qui a donné la carte : `silmo-2026:pp`.
@@ -456,8 +459,11 @@ function SilmoForm({ t, contact }: { t: (typeof copy)["fr"]; contact?: string })
               source,
             },
           });
+          posthog.capture("demo_request_submitted", { form_location: "silmo_landing" });
+          logDemoRequestDelivered(posthog, "silmo_landing");
           setStatus("success");
         } catch {
+          logDemoRequestDeliveryFailed(posthog, "silmo_landing");
           setStatus("error");
         }
       }}

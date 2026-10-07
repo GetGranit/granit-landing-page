@@ -9,65 +9,26 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as TarifsRouteImport } from './routes/tarifs'
-import { Route as SilmoRouteImport } from './routes/silmo'
-import { Route as SecuriteRouteImport } from './routes/securite'
-import { Route as RessourcesRouteImport } from './routes/ressources'
-import { Route as ProduitRouteImport } from './routes/produit'
-import { Route as DemoRouteImport } from './routes/demo'
-import { Route as CgvRouteImport } from './routes/cgv'
-import { Route as CasUsageRouteImport } from './routes/cas-usage'
-import { Route as AgentsRouteImport } from './routes/agents'
-import { Route as AProposRouteImport } from './routes/a-propos'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AProposRouteImport } from './routes/a-propos'
+import { Route as AffiliationRouteImport } from './routes/affiliation'
+import { Route as AgentsRouteImport } from './routes/agents'
+import { Route as CasUsageRouteImport } from './routes/cas-usage'
+import { Route as CgvRouteImport } from './routes/cgv'
+import { Route as DemoRouteImport } from './routes/demo'
+import { Route as ProduitRouteImport } from './routes/produit'
+import { Route as RessourcesRouteImport } from './routes/ressources'
+import { Route as SecuriteRouteImport } from './routes/securite'
+import { Route as SilmoRouteImport } from './routes/silmo'
+import { Route as TarifsRouteImport } from './routes/tarifs'
 import { Route as RessourcesIndexRouteImport } from './routes/ressources.index'
 import { Route as RessourcesSlugRouteImport } from './routes/ressources.$slug'
 import { Route as BlogSplatRouteImport } from './routes/blog.$'
 import { Route as EnBlogSplatRouteImport } from './routes/en.blog.$'
 
-const TarifsRoute = TarifsRouteImport.update({
-  id: '/tarifs',
-  path: '/tarifs',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SilmoRoute = SilmoRouteImport.update({
-  id: '/silmo',
-  path: '/silmo',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SecuriteRoute = SecuriteRouteImport.update({
-  id: '/securite',
-  path: '/securite',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RessourcesRoute = RessourcesRouteImport.update({
-  id: '/ressources',
-  path: '/ressources',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProduitRoute = ProduitRouteImport.update({
-  id: '/produit',
-  path: '/produit',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DemoRoute = DemoRouteImport.update({
-  id: '/demo',
-  path: '/demo',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CgvRoute = CgvRouteImport.update({
-  id: '/cgv',
-  path: '/cgv',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CasUsageRoute = CasUsageRouteImport.update({
-  id: '/cas-usage',
-  path: '/cas-usage',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AgentsRoute = AgentsRouteImport.update({
-  id: '/agents',
-  path: '/agents',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AProposRoute = AProposRouteImport.update({
@@ -75,9 +36,54 @@ const AProposRoute = AProposRouteImport.update({
   path: '/a-propos',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const AffiliationRoute = AffiliationRouteImport.update({
+  id: '/affiliation',
+  path: '/affiliation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AgentsRoute = AgentsRouteImport.update({
+  id: '/agents',
+  path: '/agents',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CasUsageRoute = CasUsageRouteImport.update({
+  id: '/cas-usage',
+  path: '/cas-usage',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CgvRoute = CgvRouteImport.update({
+  id: '/cgv',
+  path: '/cgv',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DemoRoute = DemoRouteImport.update({
+  id: '/demo',
+  path: '/demo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProduitRoute = ProduitRouteImport.update({
+  id: '/produit',
+  path: '/produit',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RessourcesRoute = RessourcesRouteImport.update({
+  id: '/ressources',
+  path: '/ressources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SecuriteRoute = SecuriteRouteImport.update({
+  id: '/securite',
+  path: '/securite',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SilmoRoute = SilmoRouteImport.update({
+  id: '/silmo',
+  path: '/silmo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TarifsRoute = TarifsRouteImport.update({
+  id: '/tarifs',
+  path: '/tarifs',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RessourcesIndexRoute = RessourcesIndexRouteImport.update({
@@ -104,6 +110,7 @@ const EnBlogSplatRoute = EnBlogSplatRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/a-propos': typeof AProposRoute
+  '/affiliation': typeof AffiliationRoute
   '/agents': typeof AgentsRoute
   '/cas-usage': typeof CasUsageRoute
   '/cgv': typeof CgvRoute
@@ -121,6 +128,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/a-propos': typeof AProposRoute
+  '/affiliation': typeof AffiliationRoute
   '/agents': typeof AgentsRoute
   '/cas-usage': typeof CasUsageRoute
   '/cgv': typeof CgvRoute
@@ -138,6 +146,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/a-propos': typeof AProposRoute
+  '/affiliation': typeof AffiliationRoute
   '/agents': typeof AgentsRoute
   '/cas-usage': typeof CasUsageRoute
   '/cgv': typeof CgvRoute
@@ -157,6 +166,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/a-propos'
+    | '/affiliation'
     | '/agents'
     | '/cas-usage'
     | '/cgv'
@@ -174,6 +184,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/a-propos'
+    | '/affiliation'
     | '/agents'
     | '/cas-usage'
     | '/cgv'
@@ -190,6 +201,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/a-propos'
+    | '/affiliation'
     | '/agents'
     | '/cas-usage'
     | '/cgv'
@@ -208,6 +220,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AProposRoute: typeof AProposRoute
+  AffiliationRoute: typeof AffiliationRoute
   AgentsRoute: typeof AgentsRoute
   CasUsageRoute: typeof CasUsageRoute
   CgvRoute: typeof CgvRoute
@@ -223,67 +236,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/tarifs': {
-      id: '/tarifs'
-      path: '/tarifs'
-      fullPath: '/tarifs'
-      preLoaderRoute: typeof TarifsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/silmo': {
-      id: '/silmo'
-      path: '/silmo'
-      fullPath: '/silmo'
-      preLoaderRoute: typeof SilmoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/securite': {
-      id: '/securite'
-      path: '/securite'
-      fullPath: '/securite'
-      preLoaderRoute: typeof SecuriteRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/ressources': {
-      id: '/ressources'
-      path: '/ressources'
-      fullPath: '/ressources'
-      preLoaderRoute: typeof RessourcesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/produit': {
-      id: '/produit'
-      path: '/produit'
-      fullPath: '/produit'
-      preLoaderRoute: typeof ProduitRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/demo': {
-      id: '/demo'
-      path: '/demo'
-      fullPath: '/demo'
-      preLoaderRoute: typeof DemoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/cgv': {
-      id: '/cgv'
-      path: '/cgv'
-      fullPath: '/cgv'
-      preLoaderRoute: typeof CgvRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/cas-usage': {
-      id: '/cas-usage'
-      path: '/cas-usage'
-      fullPath: '/cas-usage'
-      preLoaderRoute: typeof CasUsageRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/agents': {
-      id: '/agents'
-      path: '/agents'
-      fullPath: '/agents'
-      preLoaderRoute: typeof AgentsRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/a-propos': {
@@ -293,11 +250,74 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AProposRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/affiliation': {
+      id: '/affiliation'
+      path: '/affiliation'
+      fullPath: '/affiliation'
+      preLoaderRoute: typeof AffiliationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/agents': {
+      id: '/agents'
+      path: '/agents'
+      fullPath: '/agents'
+      preLoaderRoute: typeof AgentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cas-usage': {
+      id: '/cas-usage'
+      path: '/cas-usage'
+      fullPath: '/cas-usage'
+      preLoaderRoute: typeof CasUsageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cgv': {
+      id: '/cgv'
+      path: '/cgv'
+      fullPath: '/cgv'
+      preLoaderRoute: typeof CgvRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/demo': {
+      id: '/demo'
+      path: '/demo'
+      fullPath: '/demo'
+      preLoaderRoute: typeof DemoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/produit': {
+      id: '/produit'
+      path: '/produit'
+      fullPath: '/produit'
+      preLoaderRoute: typeof ProduitRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ressources': {
+      id: '/ressources'
+      path: '/ressources'
+      fullPath: '/ressources'
+      preLoaderRoute: typeof RessourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/securite': {
+      id: '/securite'
+      path: '/securite'
+      fullPath: '/securite'
+      preLoaderRoute: typeof SecuriteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/silmo': {
+      id: '/silmo'
+      path: '/silmo'
+      fullPath: '/silmo'
+      preLoaderRoute: typeof SilmoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tarifs': {
+      id: '/tarifs'
+      path: '/tarifs'
+      fullPath: '/tarifs'
+      preLoaderRoute: typeof TarifsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/ressources/': {
@@ -348,6 +368,7 @@ const RessourcesRouteWithChildren = RessourcesRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AProposRoute: AProposRoute,
+  AffiliationRoute: AffiliationRoute,
   AgentsRoute: AgentsRoute,
   CasUsageRoute: CasUsageRoute,
   CgvRoute: CgvRoute,
