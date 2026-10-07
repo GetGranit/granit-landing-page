@@ -97,7 +97,7 @@ export function startSimulation(input: SimInput): SimulationSession {
 
 /* ── Mock : aucune donnée envoyée, résultat d'exemple ──────────────────────
  * identifiant « refus » → échec identifiants ; « panne » → portail en panne ;
- * prescripteur 999999999 → patient introuvable ; code 000000 → code refusé
+ * prescripteur 999999999 → patient introuvable ; code 999999 → code refusé
  * (trois fois = échec code) ; tout autre code à 6 chiffres passe. */
 
 function startMock(input: SimInput): SimulationSession {
@@ -173,7 +173,7 @@ function startMock(input: SimInput): SimulationSession {
       attendCode = false;
       emit({ type: "etape", etape: "code" });
       later(1500, () => {
-        if (!/^\d{6}$/.test(code) || code === "000000") {
+        if (!/^\d{6}$/.test(code) || code === "999999") {
           return essai >= 3 ? emit({ type: "echec", cause: "code" }) : demanderCode();
         }
         suite();

@@ -12,6 +12,7 @@ export function StepCode({
   canal,
   essai,
   onSubmit,
+  apercu,
   onPaul,
 }: {
   portail: string;
@@ -19,6 +20,8 @@ export function StepCode({
   essai: number;
   onSubmit: (code: string) => void;
   onPaul: () => void;
+  /** Aperçu (simulation factice) : on dit qu'un code inventé suffit. */
+  apercu?: boolean;
 }) {
   const [code, setCode] = useState("");
   const ref = useRef<HTMLInputElement>(null);
@@ -57,6 +60,11 @@ export function StepCode({
             ? `Ouvrez votre appli d'authentification et tapez le code ${portail} à 6 chiffres.`
             : `${portail} vient d'envoyer un code à 6 chiffres à l'adresse e-mail du compte.`}
         </Muted>
+      )}
+      {apercu && (
+        <p className="text-[13px]" style={{ color: "var(--text-muted)" }}>
+          Aperçu : tapez n&apos;importe quel code à 6 chiffres (999999 montre un code refusé).
+        </p>
       )}
       <form
         noValidate

@@ -163,6 +163,7 @@ export function SimFlow({
             canal={phase.canal}
             essai={phase.essai}
             onPaul={openPaul}
+            apercu={apercu}
             onSubmit={(code) => {
               track("pec_code_saisi", { platform: platformId, essai: phase.essai });
               session.current?.submitCode(code);
