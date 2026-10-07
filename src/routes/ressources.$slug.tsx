@@ -2,6 +2,8 @@ import { createFileRoute, notFound } from "@tanstack/react-router";
 import { getArticle } from "@/lib/articles";
 import { chargerArticle, categorie, ficheJson } from "@/lib/ressources/contenu";
 import { blogPostingLd, breadcrumbLd, faqLd, titrePage } from "@/lib/ressources/seo";
+import { photoFiche, src } from "@/lib/ressources/photos";
+import { SITE_URL } from "@/lib/seo";
 import { PageAncien } from "@/components/ressources/PageAncien";
 import { NotFoundRessource } from "@/components/ressources/Introuvable";
 import { PageArticle } from "@/components/ressources/article/PageArticle";
@@ -22,6 +24,9 @@ export const Route = createFileRoute("/ressources/$slug")({
     if (loaderData?.kind === "json") {
       const a = loaderData.article;
       const title = titrePage(a.title);
+      const fiche = ficheJson(a.slug);
+      // og:image : la photo du thème (pour une plateforme, le fond suffit).
+      const image = fiche ? SITE_URL + src(photoFiche(fiche), 1600) : undefined;
       return {
         meta: [
           { title },
@@ -29,6 +34,16 @@ export const Route = createFileRoute("/ressources/$slug")({
           { property: "og:title", content: title },
           { property: "og:description", content: a.metaDescription },
           { property: "og:type", content: "article" },
+          ...(image
+            ? [
+                { property: "og:image", content: image },
+                { property: "og:image:width", content: "1600" },
+                { property: "og:image:height", content: "900" },
+                { property: "og:image:alt", content: a.title },
+                { name: "twitter:card", content: "summary_large_image" },
+                { name: "twitter:image", content: image },
+              ]
+            : []),
           ...(a.preview ? [{ name: "robots", content: "noindex, nofollow" }] : []),
         ],
       };

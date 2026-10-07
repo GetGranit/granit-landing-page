@@ -36,5 +36,3 @@ dist-ssr
 *.sln
 *.sw?
 
-# Couvertures générées au build (scripts/ressources/vite-plugin.ts)
-public/covers/

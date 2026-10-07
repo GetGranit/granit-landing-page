@@ -31,7 +31,8 @@ const ALTS: Record<VerticaleSlug, string> = {
     "Pilulier, plaquette de comprimés et sachet blanc sur un comptoir de pharmacie, croix verte allumée au fond",
   dentaire:
     "Moulage de mâchoire dentaire sur un plateau blanc, avec un miroir et une sonde de dentiste",
-  centres: "Stéthoscope posé sur un bureau de consultation en bois, à côté d'un agenda de rendez-vous",
+  centres:
+    "Stéthoscope posé sur un bureau de consultation en bois, à côté d'un agenda de rendez-vous",
 };
 
 /** Le métier principal : sa page est toujours indexée, quel que soit le nombre d'articles. */
@@ -62,7 +63,7 @@ export function verticalesAncien(slug: string): {
   return { verticales: v ?? [], transversal: false };
 }
 
-/** Teinte de couverture d'un ancien article : sa catégorie s'il est rattaché, sinon celle de son métier. */
+/** Teinte de la carte d'un ancien article (étiquette, fond d'attente) : sa catégorie s'il est rattaché, sinon celle de son métier. */
 export function teinteAncien(slug: string): CategorySlug {
   const rattache = (anciensData.rattaches as Record<string, CategorySlug>)[slug];
   if (rattache) return rattache;

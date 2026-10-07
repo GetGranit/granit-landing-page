@@ -2,24 +2,14 @@
 // Plugin Vite de la rubrique Ressources.
 // - `virtual:ressources` : la liste des articles JSON en ligne (sans leur corps) et, pour chacun,
 //   un import paresseux de `virtual:ressources/article/{slug}` (corps + fichier de faits).
-// - Couvertures /covers/{slug}.svg : servies à la volée en dev, écrites dans public/covers au build.
 // L'aperçu (content/apercu) n'est lu qu'en dev ou sur un déploiement Vercel de prévisualisation :
 // il n'entre jamais dans un build de production.
-import { existsSync, mkdirSync, readdirSync, rmSync, writeFileSync } from "node:fs";
+import { existsSync } from "node:fs";
 import { join } from "node:path";
 import type { Plugin, ViteDevServer } from "vite";
 import { controler, lireContenu } from "./en-ligne.mjs";
-import { articles as anciens } from "../../src/lib/articles";
-import anciensMeta from "../../src/lib/ressources/anciens.json";
 import verticalesData from "../../src/lib/ressources/verticales.json";
-import { teinteAncien } from "../../src/lib/ressources/verticales";
-import { coverSvg } from "../../src/lib/cover";
-import type {
-  CategorySlug,
-  Fiche,
-  RessourceJson,
-  VerticaleSlug,
-} from "../../src/lib/ressources/types";
+import type { Fiche, RessourceJson, VerticaleSlug } from "../../src/lib/ressources/types";
 
 const INDEX = "virtual:ressources";
 const ARTICLE = "virtual:ressources/article/";
@@ -57,47 +47,15 @@ function fiche(
   };
 }
 
-/**
- * Couvertures à produire : articles JSON affichés + anciens articles français.
- * Chacune en deux tailles : {slug}.svg (cartes) et {slug}--une.svg (grandes cartes, 800×500, trait réduit).
- */
-function couvertures(contenu: ReturnType<typeof lireContenu>) {
-  const sources = new Map<string, Parameters<typeof coverSvg>[0]>();
-  for (const a of contenu.articles) {
-    sources.set(a.slug, {
-      slug: a.slug,
-      category: a.category,
-      title: a.title,
-      platform: a.type === "plateforme",
-    });
-  }
-  for (const a of anciens.fr) {
-    if (!sources.has(a.slug)) {
-      sources.set(a.slug, { slug: a.slug, category: teinteAncien(a.slug), title: a.title });
-    }
-  }
-  const out = new Map<string, string>();
-  for (const [slug, entree] of sources) {
-    out.set(slug, coverSvg(entree));
-    out.set(`${slug}--une`, coverSvg({ ...entree, variant: "une", trait: 0.4 }));
-  }
-  return out;
-}
-
 export function ressources(): Plugin {
   const racine = process.cwd();
   let avecApercu = false;
-  let build = false;
-  let ecrit = false;
   const lire = () => lireContenu(racine, { avecApercu });
-  // Dev : couvertures calculées une fois, recalculées quand un fichier de contenu change.
-  let cache: Map<string, string> | undefined;
 
   return {
     name: "granit:ressources",
     config(_, { command }) {
-      build = command === "build";
-      avecApercu = !build || process.env.VERCEL_ENV === "preview";
+      avecApercu = command !== "build" || process.env.VERCEL_ENV === "preview";
     },
     resolveId(id) {
       if (id === INDEX || id.startsWith(ARTICLE)) return "\0" + id;
@@ -123,32 +81,11 @@ export function ressources(): Plugin {
         : null;
       return `export default ${JSON.stringify({ article, plateforme })};\n`;
     },
-    buildStart() {
-      // Une seule fois par build (le build passe par plusieurs environnements).
-      if (!build || ecrit) return;
-      ecrit = true;
-      const dossier = join(racine, "public/covers");
-      rmSync(dossier, { recursive: true, force: true });
-      mkdirSync(dossier, { recursive: true });
-      for (const [slug, svg] of couvertures(lire()))
-        writeFileSync(join(dossier, `${slug}.svg`), svg);
-      console.log(
-        `[ressources] ${readdirSync(dossier).length} couvertures écrites dans public/covers`,
-      );
-    },
     configureServer(server: ViteDevServer) {
-      server.middlewares.use((req, res, next) => {
-        const m = req.url?.match(/^\/covers\/([a-z0-9-]+)\.svg$/);
-        const svg = m && (cache ??= couvertures(lire())).get(m[1]);
-        if (!svg) return next();
-        res.setHeader("Content-Type", "image/svg+xml");
-        res.end(svg);
-      });
       // Un fichier de contenu qui change : on recharge les modules virtuels et la page.
       server.watcher.add([join(racine, "content"), join(racine, "scripts/seo-engine")]);
       const recharger = (fichier: string) => {
         if (!/[/\\](content|seo-engine)[/\\].*\.json$/.test(fichier)) return;
-        cache = undefined;
         for (const env of Object.values(server.environments)) {
           for (const [id, mod] of env.moduleGraph.idToModuleMap) {
             if (id.startsWith("\0" + INDEX)) env.moduleGraph.invalidateModule(mod);

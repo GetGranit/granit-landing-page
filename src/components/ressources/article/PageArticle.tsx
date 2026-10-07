@@ -6,7 +6,8 @@ import { categorie, dateFr, ficheJson, titreCourt } from "@/lib/ressources/conte
 import { verticale } from "@/lib/ressources/verticales";
 import type { Plateforme, RessourceJson } from "@/lib/ressources/types";
 import { Annuaire } from "../Annuaire";
-import { MarquePlateforme, TitreItalique } from "../Cartes";
+import { MarquePlateforme, PhotoCarte, TitreItalique } from "../Cartes";
+import { photoFiche } from "@/lib/ressources/photos";
 import { Fil } from "../Fil";
 import { SousNav } from "../Onglets";
 import { FicheIdentite } from "./BlocsPlateforme";
@@ -134,6 +135,7 @@ export function PageArticle({
   ) : undefined;
   const teinte = { "--ink": cat.ink, "--tint": cat.tint } as CSSProperties;
   const corps = useRef<HTMLDivElement>(null);
+  const fiche = ficheJson(a.slug);
   const nbSources =
     (a.sources?.length ?? 0) + (p ? Object.values(p.sources).filter((s) => !s.url).length : 0);
 
@@ -147,36 +149,33 @@ export function PageArticle({
           className="relative overflow-hidden border-b border-[var(--border)]"
           style={{ background: cat.tint }}
         >
-          {!estPlateforme && (
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-y-0 right-0 hidden w-[38%] bg-cover bg-center min-[980px]:block"
-              style={{
-                backgroundImage: `url(/covers/${a.slug}.svg)`,
-                maskImage: "linear-gradient(to right, transparent, black 60%)",
-                WebkitMaskImage: "linear-gradient(to right, transparent, black 60%)",
-              }}
-            />
-          )}
-          <div className="relative mx-auto max-w-[1160px] px-4 pb-[30px] pt-[34px] md:px-6">
-            <Fil
-              items={[
-                { nom: "Ressources", to: "/ressources" },
-                {
-                  nom: cat.nom,
-                  to: "/ressources/categorie/$category",
-                  params: { category: cat.slug },
-                },
-                { nom: titreCourt(a.title) },
-              ]}
-            />
-            <div className={estPlateforme ? "mt-4 flex items-center gap-[18px]" : "mt-4"}>
-              {estPlateforme && <MarquePlateforme nom={p.nom} logo={p.logo} taille="xl" />}
-              <h1 className="max-w-[22ch] font-serif text-[clamp(32px,4.4vw,54px)] font-normal leading-[1.08] tracking-[-0.015em] [text-wrap:balance]">
-                <TitreItalique titre={a.title} ink={cat.ink} />
-              </h1>
+          <div className="relative mx-auto grid max-w-[1160px] items-center gap-10 px-4 pb-[30px] pt-[34px] md:px-6 min-[980px]:grid-cols-[minmax(0,1fr)_380px]">
+            <div>
+              <Fil
+                items={[
+                  { nom: "Ressources", to: "/ressources" },
+                  {
+                    nom: cat.nom,
+                    to: "/ressources/categorie/$category",
+                    params: { category: cat.slug },
+                  },
+                  { nom: titreCourt(a.title) },
+                ]}
+              />
+              <div className={estPlateforme ? "mt-4 flex items-center gap-[18px]" : "mt-4"}>
+                {estPlateforme && <MarquePlateforme nom={p.nom} logo={p.logo} taille="xl" />}
+                <h1 className="max-w-[22ch] font-serif text-[clamp(32px,4.4vw,54px)] font-normal leading-[1.08] tracking-[-0.015em] [text-wrap:balance]">
+                  <TitreItalique titre={a.title} ink={cat.ink} />
+                </h1>
+              </div>
+              <Signature a={a} nbSources={nbSources} />
             </div>
-            <Signature a={a} nbSources={nbSources} />
+            {/* Photo du thème à droite, sur grand écran seulement : la réponse reste visible sans défiler. */}
+            {fiche && (
+              <div className="group relative hidden aspect-[4/3] overflow-hidden rounded-[16px] min-[980px]:block">
+                <PhotoCarte photo={photoFiche(fiche)} tailles="380px" chargement="haute" />
+              </div>
+            )}
           </div>
         </header>
 

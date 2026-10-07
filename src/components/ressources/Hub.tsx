@@ -41,6 +41,8 @@ export function Hub() {
     .flatMap((r) => r.fiches);
   const aussi = reste.length >= 3 ? reste.slice(0, reste.length - (reste.length % 3)) : reste;
   const plateformes = fichesPlateformes();
+  // Les plateformes sont communes à tous les métiers : section dès 1 fiche en aperçu, 3 en ligne.
+  const seuilPlateformes = plateformes.some((f) => f.preview) ? 1 : 3;
   const glossaire = glossaireEnLigne();
 
   return (
@@ -62,10 +64,45 @@ export function Hub() {
 
         <VotreMetier />
 
+        {plateformes.length >= seuilPlateformes && (
+          <section className={`${conteneur} pt-14`}>
+            <div className="mb-6 flex flex-wrap items-end justify-between gap-4 border-t border-[var(--border)] pt-5">
+              <div>
+                <h2 className={titreSection}>Les plateformes de tiers payant</h2>
+                <p className="mt-1.5 max-w-[60ch] text-[15px] text-[var(--text-soft)]">
+                  Une fiche par portail : espace pro, prise en charge, statuts et paiement. Communes
+                  à tous les métiers.
+                </p>
+              </div>
+              <Link
+                to="/ressources/categorie/$category"
+                params={{ category: "plateformes" }}
+                className={lienFleche}
+                style={{ color: "#b94a2f" }}
+              >
+                {plateformes.length > 1
+                  ? `Voir les ${plateformes.length} plateformes`
+                  : "Voir la fiche"}{" "}
+                <Fleche />
+              </Link>
+            </div>
+            <ul className="grid grid-cols-2 gap-3 md:grid-cols-3">
+              {plateformes.map((f) => (
+                <li key={f.slug}>
+                  <TuilePlateforme fiche={f} />
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
         <section className={`${conteneur} pb-8 pt-14 text-center`}>
           <h2 className="font-serif text-[24px] font-normal leading-tight md:text-[30px]">
-            Le guide du tiers payant optique
+            Par thème
           </h2>
+          <p className="mt-2 text-[15px] text-[var(--text-soft)]">
+            Valable pour tous les métiers, sauf mention.
+          </p>
           <div className="mt-6 text-left">
             <Onglets actif="tout" centre />
           </div>
@@ -99,32 +136,6 @@ export function Hub() {
               <h2 className={titreSection}>Aussi dans le guide</h2>
             </div>
             <Grille fiches={aussi} />
-          </section>
-        )}
-
-        {plateformes.length >= 3 && (
-          <section className={`${conteneur} monte pt-14`}>
-            <div className="mb-6 flex flex-wrap items-end justify-between gap-4 border-t border-[var(--border)] pt-5">
-              <div>
-                <div className="eyebrow">Trouver sa plateforme</div>
-                <h2 className={`mt-2 ${titreSection}`}>Chaque portail a sa fiche</h2>
-              </div>
-              <Link
-                to="/ressources/categorie/$category"
-                params={{ category: "plateformes" }}
-                className={lienFleche}
-                style={{ color: "#b94a2f" }}
-              >
-                Voir les {plateformes.length} plateformes <Fleche />
-              </Link>
-            </div>
-            <ul className="grid grid-cols-2 gap-3 md:grid-cols-3">
-              {plateformes.map((f) => (
-                <li key={f.slug}>
-                  <TuilePlateforme fiche={f} />
-                </li>
-              ))}
-            </ul>
           </section>
         )}
 
