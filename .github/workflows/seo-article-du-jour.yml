@@ -4,7 +4,9 @@ name: SEO · article du jour
 
 on:
   schedule:
-    - cron: "17 6 * * 1-5" # 8 h 17 à Paris (heure d'été), du lundi au vendredi
+    # 8 h 17 à Paris (heure d'été), du lundi au vendredi. GitHub ne garantit pas l'horaire :
+    # seo-garde-article.yml alerte #seo si rien n'est parti à 10 h.
+    - cron: "17 6 * * 1-5"
   workflow_dispatch:
     inputs:
       slug:
