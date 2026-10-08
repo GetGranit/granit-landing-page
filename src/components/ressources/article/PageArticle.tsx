@@ -2,7 +2,7 @@
 import { useRef, type CSSProperties } from "react";
 import { Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
-import { categorie, dateFr, ficheJson, titreCourt } from "@/lib/ressources/contenu";
+import { categorie, dateFr, ficheJson, metierDe, titreCourt } from "@/lib/ressources/contenu";
 import { verticale } from "@/lib/ressources/verticales";
 import type { Plateforme, RessourceJson } from "@/lib/ressources/types";
 import { Annuaire } from "../Annuaire";
@@ -10,7 +10,7 @@ import { FenetrePlateforme, MarquePlateforme, PhotoCarte, TitreItalique } from "
 import { estFicheTousPortails, photoFiche } from "@/lib/ressources/photos";
 import { logoPlateforme, statutsCarte } from "@/lib/ressources/logos";
 import { FIGURE_CSS } from "@/lib/ressources/figures";
-import { Fil } from "../Fil";
+import { Fil, itemMetier } from "../Fil";
 import { SousNav } from "../Onglets";
 import { FicheIdentite } from "./BlocsPlateforme";
 import { Corps } from "./Corps";
@@ -202,6 +202,7 @@ export function PageArticle({
   const teinte = { "--ink": cat.ink, "--tint": cat.tint } as CSSProperties;
   const corps = useRef<HTMLDivElement>(null);
   const fiche = ficheJson(a.slug);
+  const metier = metierDe(a.slug);
   const nbSources =
     (a.sources?.length ?? 0) + (p ? Object.values(p.sources).filter((s) => !s.url).length : 0);
 
@@ -210,7 +211,7 @@ export function PageArticle({
       <div className="ress">
         {a.preview && <BandeauPreview />}
         {a.readTime >= 3 && <div className="lecture-barre" aria-hidden style={teinte} />}
-        <SousNav actif={a.category === "glossaire" ? "glossaire" : a.category} />
+        <SousNav actif={metier?.slug ?? "tout"} />
         <header
           className="relative overflow-hidden border-b border-[var(--border)]"
           style={{ background: cat.tint }}
@@ -220,11 +221,7 @@ export function PageArticle({
               <Fil
                 items={[
                   { nom: "Ressources", to: "/ressources" },
-                  {
-                    nom: cat.nom,
-                    to: "/ressources/categorie/$category",
-                    params: { category: cat.slug },
-                  },
+                  ...(metier ? [itemMetier(metier)] : []),
                   { nom: titreCourt(a.title) },
                 ]}
               />

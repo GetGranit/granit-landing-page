@@ -1,6 +1,14 @@
 import { Link } from "@tanstack/react-router";
+import type { Verticale } from "@/lib/ressources/verticales";
 
 type Item = { nom: string; to?: string; params?: Record<string, string> };
+
+/** Le niveau métier du fil d'Ariane (lien vers /ressources/metier/{v}). */
+export const itemMetier = (v: Verticale): Item => ({
+  nom: v.nom,
+  to: "/ressources/metier/$verticale",
+  params: { verticale: v.slug },
+});
 
 /** Fil d'Ariane visible : Accueil › … ; tous cliquables sauf le dernier. */
 export function Fil({ items }: { items: Item[] }) {

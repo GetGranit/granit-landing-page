@@ -12,7 +12,14 @@ export type CategorySlug =
   | "conformite"
   | "glossaire";
 
-export type VerticaleSlug = "optique" | "audio" | "pharmacie" | "dentaire" | "centres";
+export type VerticaleSlug =
+  | "optique"
+  | "dentaire"
+  | "cliniques-ehpad"
+  | "centres"
+  | "laboratoires"
+  | "audio"
+  | "pharmacie";
 
 /** Auteur ou relecteur (config.json du moteur) ; `url` = profil LinkedIn, peut être null. */
 export type Personne = { name: string; jobTitle?: string; photo?: string; url?: string | null };

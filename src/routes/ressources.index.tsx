@@ -8,7 +8,7 @@ import { aCouvertureFenetre, photoFiche, src } from "@/lib/ressources/photos";
 
 const TITLE = "Ressources pour les professionnels de santé : mutuelles, paiements - Granit AI";
 const DESC =
-  "Opticiens, audioprothésistes, pharmaciens, dentistes, centres de santé : des réponses pratiques sur les mutuelles, les remboursements, les paiements et la réglementation.";
+  "Opticiens, dentistes, cliniques et EHPAD, centres de santé, laboratoires, audioprothésistes, pharmaciens : des réponses pratiques sur les mutuelles, les remboursements, les paiements et la réglementation.";
 
 const breadcrumb = {
   "@context": "https://schema.org",

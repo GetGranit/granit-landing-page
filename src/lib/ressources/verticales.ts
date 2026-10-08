@@ -33,6 +33,10 @@ const ALTS: Record<VerticaleSlug, string> = {
     "Moulage de mâchoire dentaire sur un plateau blanc, avec un miroir et une sonde de dentiste",
   centres:
     "Stéthoscope posé sur un bureau de consultation en bois, à côté d'un agenda de rendez-vous",
+  "cliniques-ehpad":
+    "Lit médicalisé au soleil, oreiller et couverture bleu pâle pliée, verre d'eau et gobelet à médicaments sur la table de chevet",
+  laboratoires:
+    "Paillasse de laboratoire avec un portoir de tubes de prélèvement à bouchons colorés, des gants et une centrifugeuse",
 };
 
 /** Le métier principal : sa page est toujours indexée, quel que soit le nombre d'articles. */
