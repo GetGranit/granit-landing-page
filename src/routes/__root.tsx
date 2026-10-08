@@ -75,7 +75,8 @@ function RootShell({ children }: { children: ReactNode }) {
   const apiKey =
     import.meta.env.VITE_PUBLIC_POSTHOG_PROJECT_TOKEN ??
     "phc_vocwuFQpcKDfGRNvbdcdbL6QHL9Z3kmhgLd3B2mpE28n";
-  const apiHost = import.meta.env.VITE_PUBLIC_POSTHOG_HOST ?? "https://eu.i.posthog.com";
+  // /rel : relais PostHog sous notre domaine (voir nitro.config.ts).
+  const apiHost = import.meta.env.VITE_PUBLIC_POSTHOG_HOST ?? "/rel";
 
   // Seul le site en ligne envoie des événements : ni la preview Lovable ni les essais en local.
   if (!import.meta.env.PROD) {
@@ -87,6 +88,7 @@ function RootShell({ children }: { children: ReactNode }) {
       apiKey={apiKey}
       options={{
         api_host: apiHost,
+        ui_host: "https://eu.posthog.com",
         defaults: "2025-05-24",
         capture_exceptions: true,
         logs: {
