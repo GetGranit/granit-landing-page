@@ -86,7 +86,15 @@ export type Fiche = {
   wave: number;
   ancien: boolean;
   preview: boolean;
-  plateforme?: { nom: string; logo?: string; checkedOn: string };
+  /** Image d'aperçu dessinée (public/ressources/og/{slug}.jpg), si elle existe. */
+  og?: string;
+  plateforme?: {
+    nom: string;
+    logo?: string;
+    checkedOn: string;
+    /** Accord et attente, dans les mots du portail (couverture des cartes). */
+    statuts: { accord: string; attente: string };
+  };
   /** Métiers de l'article ; tous les métiers si `transversal`. */
   verticales: VerticaleSlug[];
   transversal: boolean;

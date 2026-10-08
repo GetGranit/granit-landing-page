@@ -25,8 +25,9 @@ export const Route = createFileRoute("/ressources/$slug")({
       const a = loaderData.article;
       const title = titrePage(a.title);
       const fiche = ficheJson(a.slug);
-      // og:image : la photo du thème (pour une plateforme, le fond suffit).
-      const image = fiche ? SITE_URL + src(photoFiche(fiche), 1600) : undefined;
+      // og:image : l'aperçu dessiné s'il existe (fiches plateformes), sinon la photo du thème.
+      const image = fiche ? SITE_URL + (fiche.og ?? src(photoFiche(fiche), 1600)) : undefined;
+      const [largeur, hauteur] = fiche?.og ? ["1200", "630"] : ["1600", "900"];
       return {
         meta: [
           { title },
@@ -37,8 +38,8 @@ export const Route = createFileRoute("/ressources/$slug")({
           ...(image
             ? [
                 { property: "og:image", content: image },
-                { property: "og:image:width", content: "1600" },
-                { property: "og:image:height", content: "900" },
+                { property: "og:image:width", content: largeur },
+                { property: "og:image:height", content: hauteur },
                 { property: "og:image:alt", content: a.title },
                 { name: "twitter:card", content: "summary_large_image" },
                 { name: "twitter:image", content: image },
