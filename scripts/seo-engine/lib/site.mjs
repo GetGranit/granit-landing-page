@@ -1,4 +1,5 @@
 // Accès aux fichiers du repo : file d'articles, articles publiés, anciens articles, faits.
+import { execFileSync } from "node:child_process";
 import { appendFileSync, existsSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
@@ -34,6 +35,14 @@ export function anciensArticles() {
     categorie: m[2],
     titre: m[3],
   }));
+}
+
+/** Ancien article complet (titre, description, paragraphes) lu dans src/lib/articles.ts. */
+export function ancienArticle(slug) {
+  const src = join(RACINE, "src/lib/articles.ts");
+  const code = `import(${JSON.stringify("file://" + src)}).then(({ articles }) => process.stdout.write(JSON.stringify(articles.fr.find((a) => a.slug === ${JSON.stringify(slug)}) ?? null)))`;
+  const out = execFileSync(process.execPath, ["--experimental-strip-types", "--no-warnings", "-e", code], { encoding: "utf8" });
+  return JSON.parse(out);
 }
 
 /** Nom du fichier de faits d'une plateforme : portail-viamedis -> viamedis */

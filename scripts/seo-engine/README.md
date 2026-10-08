@@ -11,6 +11,10 @@ Chaque jour ouvré à 8 h 17 (heure de Paris), le workflow `.github/workflows/se
    - **direct** dans tous les autres cas : commit sur main, puis Vercel redéploie ;
 6. poste une ligne dans le canal Slack SEO (ou une alerte avec le lien des logs).
 
+## Refontes d'anciens articles
+
+Une entrée de la file avec `"refonte": true` réécrit un ancien article de `src/lib/articles.ts` **à la même adresse**. L'ancien texte est donné à Claude comme matière première. Le lecteur et le métier viennent de `reader` et `verticales`, la signature de `auteur` et `relecteur`. Une refonte passe toujours par une PR de relecture. Une fois publiée, la version JSON remplace l'ancienne sur la page, dans les listes et dans le sitemap. Le build accepte ce slug partagé uniquement pour une refonte.
+
 ## Lancer à la main
 
 ```bash
@@ -45,6 +49,7 @@ Il faut aussi cocher, dans les réglages du repo, *Actions → General → Allow
 | `metaDescription`, `contentHtml`, `tocItems`, `faqItems`, `sources` | Réponse de Claude, déjà contrôlée |
 | `internalLinks` | Liens prévus dont la cible était en ligne à la rédaction |
 | `liensEntrants` | `{slug, anchor, type}` des articles publiés après lui qui doivent apparaître dans « À lire ensuite » |
+| `refonte`, `verticales` | Refonte d'un ancien article à la même adresse ; métiers concernés (`optique`, `audio`, `pharmacie`, `dentaire`, `centres`) |
 | `remplace` | Anciens articles de `src/lib/articles.ts` que celui-ci remplace : dès sa publication, ils redirigent en 301 vers lui et sortent des listes et du sitemap (champ `remplace` de la file) |
 | `moteur` | Modèle, date de génération, avertissements |
 

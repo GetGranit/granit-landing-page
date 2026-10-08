@@ -1471,6 +1471,539 @@
     ]
   },
   {
+    "id": "R1",
+    "slug": "orthodontie-facturation-traitements-longs",
+    "category": "guide-tiers-payant",
+    "title": "Orthodontie : fiabiliser la facturation des traitements longs, semestre après semestre",
+    "primaryKeyword": "facturation orthodontie",
+    "keywordCluster": [
+      "semestre orthodontie",
+      "demande d'entente préalable orthodontie",
+      "orthodontie 16 ans remboursement",
+      "forfait orthodontie mutuelle",
+      "tiers payant orthodontie"
+    ],
+    "searchVolume": null,
+    "status": "pending",
+    "wave": 1.5,
+    "level": "Refonte",
+    "parentSlug": null,
+    "reader": "Assistante orthodontique, gérant de cabinet",
+    "role": "Refonte d'un ancien article",
+    "granitData": "aucune",
+    "cta": "Démo",
+    "toValidate": "Refonte d'un ancien article : vérifier que le sens et l'angle sont conservés ; mot-clé principal à confirmer dans Semrush",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Comment se facture un traitement d'orthodontie par semestre ?",
+      "Que change le seizième anniversaire pour la prise en charge ?",
+      "Faut-il une demande d'entente préalable en orthodontie ?",
+      "Comment rapprocher les mensualités des remboursements ?"
+    ],
+    "internalLinks": [],
+    "refonte": true,
+    "verticales": [
+      "dentaire"
+    ],
+    "auteur": "jenny-mansour",
+    "relecteur": "arthur-pelong"
+  },
+  {
+    "id": "R2",
+    "slug": "facturation-ehpad-controle-humain",
+    "category": "gerer-son-tiers-payant",
+    "title": "Automatiser la facturation résident sans perdre le contrôle humain",
+    "primaryKeyword": "logiciel facturation résident",
+    "keywordCluster": [
+      "facturation ehpad",
+      "facturation résident ehpad",
+      "forfait dépendance facturation",
+      "automatiser facturation ehpad"
+    ],
+    "searchVolume": null,
+    "status": "pending",
+    "wave": 1.5,
+    "level": "Refonte",
+    "parentSlug": null,
+    "reader": "Direction administrative d'EHPAD",
+    "role": "Refonte d'un ancien article",
+    "granitData": "aucune",
+    "cta": "Démo",
+    "toValidate": "Refonte d'un ancien article : vérifier que le sens et l'angle sont conservés ; mot-clé principal à confirmer dans Semrush",
+    "primaryKeywordMeasured": true,
+    "faqQuestions": [
+      "Comment se compose la facture d'un résident en EHPAD ?",
+      "Que peut-on automatiser dans la facturation résident ?",
+      "Comment garder une validation humaine sur les factures ?",
+      "Quelles erreurs de facturation reviennent le plus en EHPAD ?"
+    ],
+    "internalLinks": [],
+    "refonte": true,
+    "verticales": [
+      "pharmacie"
+    ],
+    "auteur": "jenny-mansour",
+    "relecteur": "arthur-pelong"
+  },
+  {
+    "id": "R3",
+    "slug": "officine-balance-agee-tiers-payant",
+    "category": "paiements",
+    "title": "Officine : solder le stock de créances tiers-payant avant qu'il ne devienne une perte",
+    "primaryKeyword": "créances tiers payant pharmacie",
+    "keywordCluster": [
+      "balance âgée pharmacie",
+      "impayés tiers payant officine",
+      "ARL négatif",
+      "rejet tiers payant pharmacie"
+    ],
+    "searchVolume": null,
+    "status": "pending",
+    "wave": 1.5,
+    "level": "Refonte",
+    "parentSlug": null,
+    "reader": "Titulaire et préparateur en officine",
+    "role": "Refonte d'un ancien article",
+    "granitData": "aucune",
+    "cta": "Démo",
+    "toValidate": "Refonte d'un ancien article : vérifier que le sens et l'angle sont conservés ; mot-clé principal à confirmer dans Semrush",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Qu'est-ce qu'une balance âgée en officine ?",
+      "Comment traiter un ARL négatif ?",
+      "Jusqu'à quand peut-on représenter une facture de tiers payant ?",
+      "Faut-il abandonner les petites créances ?"
+    ],
+    "internalLinks": [],
+    "refonte": true,
+    "verticales": [
+      "pharmacie"
+    ],
+    "auteur": "jenny-mansour",
+    "relecteur": "paul-pietra"
+  },
+  {
+    "id": "R4",
+    "slug": "dentaire-paniers-100-sante-tiers-payant",
+    "category": "guide-tiers-payant",
+    "title": "Dentaire : sécuriser le tiers-payant sur les paniers 100 % Santé",
+    "primaryKeyword": "panier 100 santé dentaire",
+    "keywordCluster": [
+      "RAC 0 dentaire",
+      "panier maîtrisé dentaire",
+      "devis dentaire normalisé",
+      "tiers payant prothèse dentaire"
+    ],
+    "searchVolume": null,
+    "status": "pending",
+    "wave": 1.5,
+    "level": "Refonte",
+    "parentSlug": null,
+    "reader": "Assistante dentaire, gérant de cabinet",
+    "role": "Refonte d'un ancien article",
+    "granitData": "aucune",
+    "cta": "Démo",
+    "toValidate": "Refonte d'un ancien article : vérifier que le sens et l'angle sont conservés ; mot-clé principal à confirmer dans Semrush",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Quelle différence entre panier 100 % Santé, maîtrisé et libre ?",
+      "Le tiers payant est-il obligatoire sur le panier 100 % Santé ?",
+      "Que doit contenir le devis dentaire ?",
+      "Pourquoi une prothèse est-elle rejetée par la mutuelle ?"
+    ],
+    "internalLinks": [],
+    "refonte": true,
+    "verticales": [
+      "dentaire"
+    ],
+    "auteur": "jenny-mansour",
+    "relecteur": "arthur-pelong"
+  },
+  {
+    "id": "R5",
+    "slug": "audioprothese-renouvellement-tiers-payant",
+    "category": "guide-tiers-payant",
+    "title": "Audioprothèse : maîtriser le tiers-payant sur le renouvellement d'appareillage",
+    "primaryKeyword": "renouvellement appareil auditif",
+    "keywordCluster": [
+      "classe 1 classe 2 audioprothèse",
+      "renouvellement 4 ans audioprothèse",
+      "tiers payant audioprothésiste",
+      "période d'essai audioprothèse"
+    ],
+    "searchVolume": null,
+    "status": "pending",
+    "wave": 1.5,
+    "level": "Refonte",
+    "parentSlug": null,
+    "reader": "Audioprothésiste, assistante",
+    "role": "Refonte d'un ancien article",
+    "granitData": "aucune",
+    "cta": "Démo",
+    "toValidate": "Refonte d'un ancien article : vérifier que le sens et l'angle sont conservés ; mot-clé principal à confirmer dans Semrush",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Tous les combien peut-on renouveler un appareil auditif ?",
+      "Quelle différence entre classe I et classe II ?",
+      "Quand facturer après la période d'essai ?",
+      "Pourquoi un renouvellement est-il refusé ?"
+    ],
+    "internalLinks": [],
+    "refonte": true,
+    "verticales": [
+      "audio"
+    ],
+    "auteur": "jenny-mansour",
+    "relecteur": "arthur-pelong"
+  },
+  {
+    "id": "R6",
+    "slug": "trois-boucles-pharmacie",
+    "category": "gerer-son-tiers-payant",
+    "title": "Ordonnances, rejets et réassort : les trois boucles à automatiser en officine",
+    "primaryKeyword": "automatisation pharmacie",
+    "keywordCluster": [
+      "automatiser officine",
+      "rejets pharmacie",
+      "gestion ordonnances pharmacie",
+      "réassort officine"
+    ],
+    "searchVolume": null,
+    "status": "pending",
+    "wave": 1.5,
+    "level": "Refonte",
+    "parentSlug": null,
+    "reader": "Titulaire d'officine",
+    "role": "Refonte d'un ancien article",
+    "granitData": "aucune",
+    "cta": "Démo",
+    "toValidate": "Refonte d'un ancien article : vérifier que le sens et l'angle sont conservés ; mot-clé principal à confirmer dans Semrush",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Quelles tâches automatiser en premier en officine ?",
+      "Comment réduire les rejets en pharmacie ?",
+      "L'automatisation remplace-t-elle le préparateur ?",
+      "Comment garder la main sur les ordonnances ?"
+    ],
+    "internalLinks": [],
+    "refonte": true,
+    "verticales": [
+      "pharmacie"
+    ],
+    "auteur": "jenny-mansour",
+    "relecteur": "arthur-pelong"
+  },
+  {
+    "id": "R7",
+    "slug": "hopital-prive-ordonnancement",
+    "category": "gerer-son-tiers-payant",
+    "title": "Hôpital privé : ordonnancer les flux administratifs autour du parcours patient",
+    "primaryKeyword": "pré-admission clinique",
+    "keywordCluster": [
+      "parcours administratif patient",
+      "facturation clinique",
+      "accord préalable hospitalisation",
+      "admission clinique privée"
+    ],
+    "searchVolume": null,
+    "status": "pending",
+    "wave": 1.5,
+    "level": "Refonte",
+    "parentSlug": null,
+    "reader": "Direction administrative de clinique",
+    "role": "Refonte d'un ancien article",
+    "granitData": "aucune",
+    "cta": "Démo",
+    "toValidate": "Refonte d'un ancien article : vérifier que le sens et l'angle sont conservés ; mot-clé principal à confirmer dans Semrush",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Que vérifier avant l'admission d'un patient ?",
+      "Quand demander l'accord préalable de la mutuelle ?",
+      "Comment réduire le délai de facturation en clinique ?",
+      "Qui fait quoi entre admissions et facturation ?"
+    ],
+    "internalLinks": [],
+    "refonte": true,
+    "verticales": [
+      "centres"
+    ],
+    "auteur": "jenny-mansour",
+    "relecteur": "arthur-pelong"
+  },
+  {
+    "id": "R8",
+    "slug": "groupes-multi-sites-pilotage",
+    "category": "gerer-son-tiers-payant",
+    "title": "Groupes multi-sites : piloter tous ses centres avec une seule console",
+    "primaryKeyword": "pilotage centres de santé",
+    "keywordCluster": [
+      "reporting multi-sites santé",
+      "indicateurs centre de santé",
+      "consolidation groupe de santé"
+    ],
+    "searchVolume": null,
+    "status": "pending",
+    "wave": 1.5,
+    "level": "Refonte",
+    "parentSlug": null,
+    "reader": "Direction de groupe de santé",
+    "role": "Refonte d'un ancien article",
+    "granitData": "aucune",
+    "cta": "Démo",
+    "toValidate": "Refonte d'un ancien article : vérifier que le sens et l'angle sont conservés ; mot-clé principal à confirmer dans Semrush",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Quels indicateurs suivre dans un groupe de centres ?",
+      "Comment comparer des sites qui n'ont pas les mêmes outils ?",
+      "Faut-il centraliser la facturation ?",
+      "À quelle fréquence faire le reporting ?"
+    ],
+    "internalLinks": [],
+    "refonte": true,
+    "verticales": [
+      "centres"
+    ],
+    "auteur": "jenny-mansour",
+    "relecteur": "arthur-pelong"
+  },
+  {
+    "id": "R9",
+    "slug": "recouvrement-patient-empathie",
+    "category": "paiements",
+    "title": "Recouvrement patient : relancer sans abîmer la relation",
+    "primaryKeyword": "recouvrement patient",
+    "keywordCluster": [
+      "impayé patient",
+      "relance patient facture",
+      "reste à charge impayé",
+      "recouvrement centre de santé"
+    ],
+    "searchVolume": null,
+    "status": "pending",
+    "wave": 1.5,
+    "level": "Refonte",
+    "parentSlug": null,
+    "reader": "Accueil et facturation de centre de santé",
+    "role": "Refonte d'un ancien article",
+    "granitData": "aucune",
+    "cta": "Démo",
+    "toValidate": "Refonte d'un ancien article : vérifier que le sens et l'angle sont conservés ; mot-clé principal à confirmer dans Semrush",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Comment relancer un patient qui n'a pas payé ?",
+      "Quand passer de la relance au recouvrement ?",
+      "Quels patients ne pas relancer comme les autres ?",
+      "Quels indicateurs suivre en recouvrement ?"
+    ],
+    "internalLinks": [],
+    "refonte": true,
+    "verticales": [
+      "centres"
+    ],
+    "auteur": "jenny-mansour",
+    "relecteur": "paul-pietra"
+  },
+  {
+    "id": "R10",
+    "slug": "integration-doctolib-lgo",
+    "category": "gerer-son-tiers-payant",
+    "title": "Brancher des agents sur Doctolib et votre logiciel métier",
+    "primaryKeyword": "agenda doctolib centre de santé",
+    "keywordCluster": [
+      "doctolib logiciel métier",
+      "synchroniser agenda doctolib",
+      "automatisation doctolib",
+      "intégration doctolib"
+    ],
+    "searchVolume": null,
+    "status": "pending",
+    "wave": 1.5,
+    "level": "Refonte",
+    "parentSlug": null,
+    "reader": "Direction de centre médical",
+    "role": "Refonte d'un ancien article",
+    "granitData": "aucune",
+    "cta": "Démo",
+    "toValidate": "Refonte d'un ancien article : vérifier que le sens et l'angle sont conservés ; mot-clé principal à confirmer dans Semrush",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Peut-on automatiser la gestion d'agenda Doctolib ?",
+      "Comment éviter les doubles saisies entre Doctolib et le logiciel métier ?",
+      "Qui garde la main sur les écritures ?",
+      "Par où commencer un déploiement ?"
+    ],
+    "internalLinks": [],
+    "refonte": true,
+    "verticales": [
+      "centres"
+    ],
+    "auteur": "jenny-mansour",
+    "relecteur": "arthur-pelong"
+  },
+  {
+    "id": "R11",
+    "slug": "logs-agent-sante",
+    "category": "conformite",
+    "title": "Ce qu'un agent IA doit journaliser en environnement de santé",
+    "primaryKeyword": "traçabilité données de santé",
+    "keywordCluster": [
+      "journalisation HDS",
+      "logs accès données patient",
+      "audit HDS",
+      "RGPD santé traçabilité"
+    ],
+    "searchVolume": null,
+    "status": "pending",
+    "wave": 1.5,
+    "level": "Refonte",
+    "parentSlug": null,
+    "reader": "DPO, RSSI, direction",
+    "role": "Refonte d'un ancien article",
+    "granitData": "aucune",
+    "cta": "Démo",
+    "toValidate": "Refonte d'un ancien article : vérifier que le sens et l'angle sont conservés ; mot-clé principal à confirmer dans Semrush",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Que faut-il journaliser quand un agent accède à des données de santé ?",
+      "Combien de temps conserver les journaux ?",
+      "Que regarde un audit HDS ?",
+      "Qui doit pouvoir consulter les journaux ?"
+    ],
+    "internalLinks": [],
+    "refonte": true,
+    "verticales": [
+      "optique",
+      "audio",
+      "pharmacie",
+      "dentaire",
+      "centres"
+    ],
+    "auteur": "jenny-mansour",
+    "relecteur": "arthur-pelong"
+  },
+  {
+    "id": "R12",
+    "slug": "ia-generative-sante-cadre",
+    "category": "conformite",
+    "title": "IA générative en santé : ce que le cadre réglementaire impose vraiment",
+    "primaryKeyword": "IA santé réglementation",
+    "keywordCluster": [
+      "AI Act santé",
+      "HDS IA",
+      "RGPD IA santé",
+      "dispositif médical IA"
+    ],
+    "searchVolume": null,
+    "status": "pending",
+    "wave": 1.5,
+    "level": "Refonte",
+    "parentSlug": null,
+    "reader": "DPO, direction",
+    "role": "Refonte d'un ancien article",
+    "granitData": "aucune",
+    "cta": "Démo",
+    "toValidate": "Refonte d'un ancien article : vérifier que le sens et l'angle sont conservés ; mot-clé principal à confirmer dans Semrush",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Un agent administratif est-il un dispositif médical ?",
+      "Que change l'AI Act pour un établissement de santé ?",
+      "L'hébergement HDS est-il obligatoire pour une IA ?",
+      "Quelles questions poser au DPO avant un projet IA ?"
+    ],
+    "internalLinks": [],
+    "refonte": true,
+    "verticales": [
+      "optique",
+      "audio",
+      "pharmacie",
+      "dentaire",
+      "centres"
+    ],
+    "auteur": "jenny-mansour",
+    "relecteur": "arthur-pelong"
+  },
+  {
+    "id": "R13",
+    "slug": "ia-vs-rpa-sante",
+    "category": "gerer-son-tiers-payant",
+    "title": "IA agentique ou RPA : ce qui marche vraiment pour le back-office santé",
+    "primaryKeyword": "RPA santé",
+    "keywordCluster": [
+      "robotisation administrative santé",
+      "IA agentique santé",
+      "automatisation back-office santé"
+    ],
+    "searchVolume": null,
+    "status": "pending",
+    "wave": 1.5,
+    "level": "Refonte",
+    "parentSlug": null,
+    "reader": "Direction administrative",
+    "role": "Refonte d'un ancien article",
+    "granitData": "aucune",
+    "cta": "Démo",
+    "toValidate": "Refonte d'un ancien article : vérifier que le sens et l'angle sont conservés ; mot-clé principal à confirmer dans Semrush",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Quelle différence entre RPA et agent IA ?",
+      "Pourquoi les robots RPA cassent-ils souvent ?",
+      "Quelles tâches confier à un agent ?",
+      "Comment garder une validation humaine ?"
+    ],
+    "internalLinks": [],
+    "refonte": true,
+    "verticales": [
+      "optique",
+      "audio",
+      "pharmacie",
+      "dentaire",
+      "centres"
+    ],
+    "auteur": "jenny-mansour",
+    "relecteur": "arthur-pelong"
+  },
+  {
+    "id": "R14",
+    "slug": "sesam-vitale-evolutions-2025",
+    "category": "guide-tiers-payant",
+    "title": "SESAM-Vitale : les évolutions à anticiper",
+    "primaryKeyword": "SESAM-Vitale 1.40",
+    "keywordCluster": [
+      "appli carte vitale",
+      "téléservices ameli pro",
+      "ADRi",
+      "facturation SESAM-Vitale"
+    ],
+    "searchVolume": null,
+    "status": "pending",
+    "wave": 1.5,
+    "level": "Refonte",
+    "parentSlug": null,
+    "reader": "Tous professionnels de santé",
+    "role": "Refonte d'un ancien article",
+    "granitData": "aucune",
+    "cta": "Démo",
+    "toValidate": "Refonte d'un ancien article : vérifier que le sens et l'angle sont conservés ; mot-clé principal à confirmer dans Semrush",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Que change l'appli carte Vitale pour la facturation ?",
+      "Qu'est-ce qu'ADRi et quand l'utiliser ?",
+      "Quelles évolutions SESAM-Vitale arrivent ?",
+      "Le logiciel suit-il seul les mises à jour ?"
+    ],
+    "internalLinks": [],
+    "refonte": true,
+    "verticales": [
+      "optique",
+      "audio",
+      "pharmacie",
+      "dentaire",
+      "centres"
+    ],
+    "auteur": "jenny-mansour",
+    "relecteur": "arthur-pelong"
+  },
+  {
     "id": "E0",
     "slug": "gerer-tiers-payant-magasin",
     "category": "gerer-son-tiers-payant",
