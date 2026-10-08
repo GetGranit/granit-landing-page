@@ -46,9 +46,9 @@
       "agent": "L'agent tient l'agenda et le check-out à jour"
     },
     "laboratoires": {
-      "nom": "Laboratoires de biologie médicale",
+      "nom": "Laboratoires",
       "court": "Laboratoires",
-      "description": "Tiers payant, rejets et paiements : la facturation d'un laboratoire de biologie médicale.",
+      "description": "Tiers payant, rejets et paiements : la facturation d'un laboratoire.",
       "teinte": "glossaire",
       "agent": "Parlons de votre tiers payant"
     },
