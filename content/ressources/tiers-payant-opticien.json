@@ -1,0 +1,227 @@
+{
+  "slug": "tiers-payant-opticien",
+  "id": "G0",
+  "category": "guide-tiers-payant",
+  "categoryName": "Guide du tiers payant",
+  "type": "standard",
+  "plateforme": null,
+  "title": "Tiers payant opticien : de la prise en charge à l'encaissement",
+  "primaryKeyword": "tiers payant opticien",
+  "keywordCluster": [
+    "opticien mutuelle",
+    "mutuelle opticien",
+    "opticien et mutuelle",
+    "opticien tiers payant",
+    "devis opticien",
+    "tiers payant opticien",
+    "tiers payant optique",
+    "opticien tiers payant mutuelle",
+    "tiers payant mgen opticien",
+    "opticien tiers payant paris"
+  ],
+  "parentSlug": null,
+  "level": "Pilier global",
+  "author": {
+    "name": "Paul Pietra",
+    "jobTitle": "Rédacteur, expert métier optique",
+    "photo": "/auteurs/paul-pietra.jpg",
+    "url": null
+  },
+  "reviewer": {
+    "name": "Jenny Mansour",
+    "jobTitle": "Rédactrice, experte santé",
+    "photo": "/auteurs/jenny-mansour.jpg",
+    "url": null
+  },
+  "datePublished": "2026-10-08",
+  "dateModified": "2026-10-08",
+  "checkedOn": null,
+  "wordCount": 2380,
+  "readTime": 10,
+  "metaDescription": "Tiers payant opticien : AMO, mutuelle, prise en charge, devis 100 % Santé, paiement, rejets. Le circuit complet pour encaisser chaque dossier sans retard.",
+  "contentHtml": "<p><strong>Le tiers payant opticien permet au client de ne pas avancer tout ou partie du prix de ses lunettes : l'Assurance maladie et la mutuelle paient directement le magasin, chacune pour sa part.</strong> Le circuit tient en quatre temps : un devis, une demande de prise en charge auprès de la complémentaire, une facture transmise aux deux payeurs, puis un paiement à rapprocher de chaque dossier. Le magasin n'est payé qu'au bout de cette chaîne. Une erreur à n'importe quelle étape bloque l'encaissement, parfois plusieurs semaines après la remise des lunettes.</p><p>Ce guide suit un dossier optique de bout en bout : qui paie quoi, comment obtenir l'accord de la mutuelle, ce que change le 100 % Santé, comment vous êtes payé et quoi faire quand un dossier coince. Il s'adresse à la personne qui saisit les dossiers au comptoir comme au gérant qui suit la trésorerie.</p><div class=\"key-takeaways\"><strong>L'essentiel</strong><ul><li>Deux payeurs, deux circuits : la part de l'Assurance maladie passe par la feuille de soins électronique (SESAM-Vitale), la part mutuelle par la plateforme de tiers payant de la complémentaire.</li><li>C'est l'accord de prise en charge de la mutuelle qui l'engage, pas le devis : sans accord valide, la part complémentaire n'est pas garantie.</li><li>Depuis la réforme 100 % Santé, le devis optique doit proposer au moins un équipement de classe A, sans reste à charge pour le client couvert par un contrat responsable.</li><li>Il n'existe pas de délai de paiement universel : chaque payeur a le sien, et seul le rapprochement dossier par dossier montre ce qui manque.</li><li>À faire aujourd'hui : listez les dossiers facturés et non payés depuis plus d'un mois, puis vérifiez leur statut chez chaque payeur.</li></ul></div><h2 id=\"comment-fonctionne-tiers-payant-opticien\">Comment fonctionne le tiers payant chez l'opticien ?</h2><p><strong>Le tiers payant est une dispense d'avance de frais : le magasin n'encaisse que le reste à charge du client et se fait payer le reste par l'assurance maladie obligatoire et par la complémentaire.</strong> Concrètement, le magasin devient créancier de deux organismes à la place de son client.</p><p>Deux sigles reviennent à chaque dossier. L'AMO (assurance maladie obligatoire) est le régime de base, la CPAM pour la plupart des assurés. L'AMC (assurance maladie complémentaire) est la mutuelle, l'institution de prévoyance ou l'assureur qui couvre tout ou partie de ce que l'AMO ne prend pas. Chacun a son propre circuit de facturation et son propre calendrier de paiement.</p><p>Le tiers payant optique suit toujours le même enchaînement, que vous soyez un magasin indépendant en région ou un opticien tiers payant à Paris avec un fort volume. Ce qui change d'un dossier à l'autre, c'est la mutuelle, la plateforme qui la gère et les pièces demandées.</p><ol class=\"steps\"><li><strong>Vérifier les droits.</strong> Carte Vitale à jour, carte de tiers payant de la mutuelle valide à la date de délivrance, ordonnance en cours de validité.</li><li><strong>Établir le devis normalisé.</strong> Il présente l'offre 100 % Santé et l'équipement choisi, avec le détail des montants.</li><li><strong>Demander la prise en charge.</strong> Le devis est transmis à la complémentaire, en général via le portail de sa plateforme, qui renvoie un accord ou un refus.</li><li><strong>Délivrer et facturer.</strong> La part AMO part en feuille de soins électronique, la part AMC en facture adressée à la complémentaire.</li><li><strong>Recevoir les paiements.</strong> Chaque payeur vire sa part, avec son propre relevé.</li><li><strong>Rapprocher.</strong> Chaque virement est relié aux dossiers qu'il solde ; les écarts sont repris un par un.</li></ol><div data-figure=\"circuit-dossier-optique\"></div><h2 id=\"qui-paie-quoi-amo-amc\">Qui paie quoi entre l'AMO et l'AMC ?</h2><p><strong>L'AMO rembourse sur une base fixée par la nomenclature, l'AMC complète selon les garanties du contrat, et le client paie le reste éventuel.</strong> Sur un équipement à prix libre, la part AMO est faible : l'essentiel du montant repose sur la mutuelle et sur le client.</p><p>La base de remboursement AMO vient de la LPP (liste des produits et prestations remboursables), qui code chaque verre et chaque monture. La part AMC dépend du contrat de l'assuré : forfait optique, pourcentage, plafond, fréquence de renouvellement. Deux clients avec la même ordonnance et le même équipement peuvent donc avoir des restes à charge très différents.</p><p>Deux notions évitent beaucoup d'erreurs. L'ouvrant droit est l'assuré titulaire du contrat. Le bénéficiaire est la personne qui porte les lunettes : le titulaire lui-même, son conjoint ou un enfant rattaché. Une demande saisie au nom de l'ouvrant droit alors que les lunettes sont pour un enfant fait partie des incohérences qui reviennent le plus dans les refus.</p><div data-figure=\"amo-amc\"></div><p>Le circuit AMO est très normé : la feuille de soins électronique (FSE) est produite par le logiciel du magasin et transmise via le système SESAM-Vitale. Le circuit AMC est beaucoup plus éclaté, parce que chaque complémentaire choisit sa plateforme et ses règles. C'est là que se concentre l'essentiel du travail au comptoir. Les évolutions du côté AMO sont détaillées dans notre article sur <a href=\"/ressources/sesam-vitale-evolutions-2025\">les évolutions SESAM-Vitale à anticiper</a>.</p><h2 id=\"prise-en-charge-mutuelle-opticien\">Comment faire une prise en charge mutuelle chez l'opticien ?</h2><p><strong>La prise en charge (PEC) est une demande d'accord envoyée à la complémentaire avant la délivrance, avec le devis : la réponse fixe le montant que la mutuelle s'engage à payer.</strong> Sans cet accord, la part mutuelle n'est pas garantie, même si le client affirme être bien couvert.</p><h3>Lire la carte de tiers payant</h3><p>La carte de tiers payant de la mutuelle donne trois informations à vérifier avant toute saisie : la plateforme qui gère le tiers payant (souvent visible par son logo), les dates de validité et les personnes couvertes. Pour une carte MGEN comme pour n'importe quelle autre, le réflexe est le même : identifier le gestionnaire du tiers payant sur la carte, pas seulement le nom de la mutuelle. Le portail à utiliser en découle.</p><h3>Choisir le bon portail</h3><p>La plupart des complémentaires délèguent le tiers payant à une plateforme. Il en existe deux familles. Les opérateurs de tiers payant, comme Viamedis ou Almerys, gèrent les demandes et les paiements pour le compte de nombreuses mutuelles. Les réseaux de soins, comme Santéclair, Kalixia ou Itelis, ajoutent une convention signée avec l'opticien, souvent assortie de conditions tarifaires. Chaque portail a son identifiant, ses champs obligatoires et ses libellés de statut.</p><h3>Lire la réponse</h3><p>La réponse prend en général l'une de ces formes : accord, accord sous réserve de pièces, demande en instance, refus. Un accord sous réserve n'est pas un accord : tant que la pièce demandée (ordonnance, devis signé) n'est pas fournie, le paiement n'est pas acquis. Une demande en instance doit être suivie, car elle ne se débloque pas toujours seule.</p><div class=\"callout callout--tip\"><p><strong>Le bon réflexe :</strong> comparez le montant accordé au devis avant de délivrer. Si l'accord est inférieur, le client doit le savoir avant de partir avec ses lunettes, pas au moment de la facture.</p></div><p>Le vrai coût de cette étape, c'est la multiplication des portails : un identifiant par plateforme, des écrans différents, des relances manuelles. Nous l'avions détaillé dans <a href=\"/ressources/portails-mutuelles-goulot\">pourquoi les portails mutuelles restent le vrai goulot</a>. Quand ces demandes se comptent par dizaines chaque jour, la saisie devient le point de blocage du magasin. C'est ce que prend en charge <a href=\"/agents\">Granit</a> : des agents saisissent les prises en charge directement sur les portails des plateformes, puis renvoient le statut de chaque dossier à l'équipe.</p><h2 id=\"devis-opticien-100-sante\">Quel rôle jouent le devis opticien et le 100 % Santé ?</h2><p><strong>Le devis normalisé est le document de référence du dossier : il informe le client, sert de base à la demande de prise en charge et doit contenir une offre 100 % Santé.</strong> Si l'équipement change après l'accord, l'accord ne couvre plus ce qui est délivré.</p><p>La réforme 100 % Santé a été créée par la <a href=\"https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000037847595\">loi de financement de la sécurité sociale pour 2019</a> et s'applique à l'optique depuis 2020. Elle répartit les équipements en deux classes. La classe A regroupe des montures et des verres à prix limités, intégralement couverts par l'AMO et l'AMC pour un client titulaire d'un contrat responsable. La classe B regroupe les équipements à prix libres, remboursés selon les garanties du contrat.</p><p>Pour l'opticien, la conséquence est pratique : le devis doit toujours présenter au moins un équipement de classe A, même si le client choisit finalement une monture ou des verres de classe B. Un équipement peut aussi mélanger les deux classes, par exemple des verres de classe A dans une monture de classe B. La demande de prise en charge doit refléter ce mélange exact, sinon l'accord renvoyé ne correspond pas à la facture.</p><div class=\"callout callout--warn\"><p><strong>Le piège :</strong> le client change de monture ou d'option de verres entre la prise en charge et la délivrance. La facture ne correspond plus à l'accord, et la mutuelle peut rejeter ou réduire le paiement. Toute modification du devis appelle une nouvelle demande.</p></div><p>La logique est proche de celle des paniers 100 % Santé en dentaire, que nous avons décrite pour <a href=\"/ressources/dentaire-paniers-100-sante-tiers-payant\">sécuriser le tiers payant sur les paniers 100 % Santé</a> : le dossier tient si le devis, l'accord et la facture racontent la même chose.</p><h2 id=\"paiement-opticien-delai\">Comment l'opticien est-il payé, et en combien de temps ?</h2><p><strong>Les deux parts arrivent séparément, à des dates différentes et avec des relevés différents : l'AMO d'un côté, chaque plateforme de l'autre.</strong> Aucun délai n'est universel : seul celui annoncé par chaque payeur fait foi.</p><p>Côté AMO, le paiement s'accompagne d'un retour NOEMIE, la norme d'échange par laquelle l'Assurance maladie indique au professionnel ce qu'elle a payé, rejeté ou mis en attente, facture par facture. Ce retour est lu par le logiciel du magasin, qui peut lettrer automatiquement une partie des dossiers.</p><p>Côté AMC, la facture part vers la complémentaire, souvent sous forme de DRE (demande de remboursement électronique), le flux qui transmet la part mutuelle à l'organisme. Le paiement arrive en général par virement groupé de la plateforme, avec un libellé propre au payeur. Le détail par dossier se trouve dans un relevé, souvent consultable sur le portail.</p><h3>Pourquoi le rapprochement est indispensable</h3><p>Un virement groupé ne dit pas, à lui seul, quels dossiers il solde. Sans rapprochement, un paiement partiel passe inaperçu : la mutuelle a payé 30 € de moins que l'accord et personne ne s'en rend compte. La méthode la plus sûre est de rapprocher chaque matin les relevés et les virements bancaires, puis de traiter les écarts tant qu'ils sont récents. Nous détaillons cette routine dans <a href=\"/ressources/rapprochement-noemie\">rapprocher flux NOEMIE et virements bancaires chaque matin</a>.</p><p>Un dossier facturé n'est donc pas un dossier encaissé. Pour le gérant, la question utile n'est pas « combien avons-nous facturé ? » mais « combien de dossiers attendent encore un paiement, chez quel payeur, et depuis quand ? ».</p><h2 id=\"refus-prise-en-charge-mutuelle\">Que faire quand une mutuelle refuse la prise en charge ?</h2><p><strong>Commencez par lire le motif exact du refus, puis corrigez la cause avant de renvoyer : un renvoi à l'identique produit le même refus.</strong> Il faut distinguer le refus de prise en charge, avant délivrance, du rejet de paiement, après facturation.</p><p>Le refus de prise en charge se règle avec le client encore au magasin : droits, bénéficiaire, garanties. Le rejet de paiement arrive plus tard, souvent quand le client est reparti, et touche directement la trésorerie. Dans les deux cas, il y a cinq familles de causes, de la plus courante à la plus rare.</p><div class=\"tbl\"><table><tr><th>Cause</th><th>Où vérifier</th><th>Correction</th></tr><tr><td>Droits fermés ou carte périmée</td><td>Dates de validité de la carte de tiers payant</td><td>Demander au client une attestation à jour, ressaisir</td></tr><tr><td>Bénéficiaire inconnu</td><td>Personnes couvertes sur la carte</td><td>Saisir le bon bénéficiaire, pas l'ouvrant droit</td></tr><tr><td>Renouvellement non atteint</td><td>Date du dernier équipement remboursé</td><td>Vérifier si un cas de renouvellement anticipé s'applique, sinon informer le client</td></tr><tr><td>Montant hors garantie</td><td>Montant accordé comparé au devis</td><td>Revoir le devis ou faire régler la différence au client</td></tr><tr><td>Pièce manquante</td><td>Statut « sous réserve » sur le portail</td><td>Joindre l'ordonnance ou le devis signé</td></tr></table></div><p>Gardez une trace de chaque échange : capture du statut, date de la demande, pièce envoyée. Si le refus vous paraît injustifié après correction, contactez le service professionnels de la plateforme, puis la complémentaire elle-même si la plateforme renvoie vers elle. Côté AMO, les rejets suivent une autre logique, décrite dans <a href=\"/ressources/reduire-rejets-cpam\">réduire les rejets CPAM sans changer de logiciel métier</a>.</p><h2 id=\"tiers-payant-obligatoire-opticien\">Le tiers payant est-il obligatoire pour un opticien ?</h2><p><strong>Il n'existe pas d'obligation générale de pratiquer le tiers payant sur la part mutuelle : c'est un service que la plupart des opticiens proposent, souvent encadré par les conventions signées avec les plateformes.</strong> En pratique, le client s'attend à ne pas avancer les frais, et le tiers payant pèse dans le choix du magasin.</p><p>Le texte qui a organisé l'extension du tiers payant est la loi de modernisation du système de santé :</p><blockquote><p>« LOI n° 2016-41 du 26 janvier 2016 de modernisation de notre système de santé »</p><cite>legifrance.gouv.fr · LOI n° 2016-41 du 26 janvier 2016 de modernisation de notre système de santé</cite></blockquote><p>Cette <a href=\"https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000031912641\">loi du 26 janvier 2016</a> prévoyait une généralisation du tiers payant. Pour la part complémentaire, cette généralisation n'est pas devenue une obligation. Le paysage réel est donc fait d'engagements contractuels : en signant avec un réseau de soins ou un opérateur, l'opticien accepte en général de pratiquer le tiers payant pour les adhérents concernés, selon les règles de la convention.</p><p>La question utile pour un magasin n'est donc pas « suis-je obligé ? » mais « avec quelles plateformes suis-je conventionné, et à quelles conditions ? ». La liste de vos conventions détermine les portails à surveiller, les pièces à fournir et les délais à suivre.</p><h2 id=\"organiser-tiers-payant-optique\">Comment organiser le tiers payant optique au magasin ?</h2><p><strong>Un tiers payant qui tourne repose sur trois routines : vérifier avant de délivrer, suivre chaque statut, rapprocher chaque paiement.</strong> Le reste découle de la régularité avec laquelle ces trois routines sont faites.</p><p>Au comptoir, la vérification se fait avec le client présent : droits, bénéficiaire, accord de prise en charge comparé au devis. Une erreur corrigée à ce moment coûte quelques minutes. La même erreur découverte au rejet coûte une relance, un appel au client et parfois une créance perdue.</p><p>En back-office, le suivi des statuts et le rapprochement demandent un créneau fixe, idéalement quotidien. Repousser ces tâches au vendredi crée des piles où les dossiers anciens deviennent les plus difficiles à récupérer.</p><h3>Les indicateurs à suivre</h3><ul><li>Le nombre de demandes de prise en charge en attente de réponse, par plateforme.</li><li>Le nombre de dossiers facturés non payés, classés par ancienneté.</li><li>Les rejets par cause, pour corriger ce qui se répète à la saisie.</li><li>Les écarts entre montant accordé et montant payé.</li></ul><p>Ces indicateurs s'inscrivent dans un pilotage plus large du back-office, présenté dans <a href=\"/ressources/kpi-back-office-sante\">les 7 KPI back-office santé</a>. Pour un gérant de plusieurs magasins, ils permettent de repérer le point de blocage de chaque site : la saisie des prises en charge, le suivi des réponses ou l'encaissement.</p>",
+  "tocItems": [
+    {
+      "id": "comment-fonctionne-tiers-payant-opticien",
+      "label": "Le fonctionnement du tiers payant opticien"
+    },
+    {
+      "id": "qui-paie-quoi-amo-amc",
+      "label": "Qui paie quoi : AMO et AMC"
+    },
+    {
+      "id": "prise-en-charge-mutuelle-opticien",
+      "label": "Faire une prise en charge mutuelle"
+    },
+    {
+      "id": "devis-opticien-100-sante",
+      "label": "Devis opticien et 100 % Santé"
+    },
+    {
+      "id": "paiement-opticien-delai",
+      "label": "Paiement et délais"
+    },
+    {
+      "id": "refus-prise-en-charge-mutuelle",
+      "label": "Refus de prise en charge"
+    },
+    {
+      "id": "tiers-payant-obligatoire-opticien",
+      "label": "Le tiers payant est-il obligatoire ?"
+    },
+    {
+      "id": "organiser-tiers-payant-optique",
+      "label": "Organiser le tiers payant au magasin"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "Comment fonctionne le tiers payant chez l'opticien ?",
+      "answer": "Le tiers payant chez l'opticien dispense le client d'avancer tout ou partie du prix de ses lunettes. Le magasin établit un devis, obtient l'accord de prise en charge de la mutuelle, facture la part de l'Assurance maladie par feuille de soins électronique et la part mutuelle à la complémentaire. Chaque payeur vire ensuite sa part, que le magasin rapproche de chaque dossier."
+    },
+    {
+      "question": "Qui paie quoi entre la Sécurité sociale (AMO) et la mutuelle (AMC) ?",
+      "answer": "L'assurance maladie obligatoire (AMO) rembourse sur une base fixée par la liste des produits et prestations (LPP). La complémentaire (AMC) complète selon les garanties du contrat, et le client paie le reste éventuel. Sur un équipement à prix libre, la part AMO est faible et l'essentiel repose sur la mutuelle et le client."
+    },
+    {
+      "question": "Le tiers payant est-il obligatoire pour un opticien ?",
+      "answer": "Il n'existe pas d'obligation générale de pratiquer le tiers payant sur la part mutuelle. La loi du 26 janvier 2016 prévoyait une généralisation, qui n'est pas devenue obligatoire pour la part complémentaire. En pratique, les conventions signées avec les réseaux de soins et les opérateurs engagent l'opticien à le pratiquer pour les adhérents concernés."
+    },
+    {
+      "question": "Combien de temps faut-il pour être payé en tiers payant ?",
+      "answer": "Il n'existe pas de délai universel : l'Assurance maladie et chaque plateforme de tiers payant ont leur propre calendrier. Seul le délai annoncé par chaque payeur fait foi. Un rapprochement quotidien des relevés et des virements permet de repérer rapidement les dossiers qui tardent ou les paiements partiels."
+    },
+    {
+      "question": "Que faire quand une mutuelle refuse la prise en charge ?",
+      "answer": "Il faut lire le motif exact du refus et corriger la cause avant de renvoyer la demande, car un renvoi à l'identique produit le même refus. Les causes les plus courantes sont des droits fermés, un mauvais bénéficiaire, un renouvellement non atteint, un montant hors garantie ou une pièce manquante. Si le refus persiste après correction, contactez le service professionnels de la plateforme, puis la complémentaire."
+    }
+  ],
+  "sources": [
+    {
+      "label": "legifrance.gouv.fr · LOI n° 2018-1203 du 22 décembre 2018 de financement de la sécurité sociale pour 2019",
+      "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000037847595"
+    },
+    {
+      "label": "legifrance.gouv.fr · LOI n° 2016-41 du 26 janvier 2016 de modernisation de notre système de santé",
+      "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000031912641"
+    }
+  ],
+  "figures": [
+    {
+      "id": "circuit-dossier-optique",
+      "type": "etapes",
+      "titre": "Le circuit d'un dossier optique en tiers payant",
+      "legende": "L'accord de prise en charge engage la mutuelle : c'est l'étape qui conditionne tout l'encaissement.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "Vérifier les droits",
+          "detail": "Carte Vitale, carte de tiers payant, ordonnance",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Devis normalisé",
+          "detail": "Avec au moins une offre de classe A",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Prise en charge",
+          "detail": "Accord de la complémentaire avant délivrance",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Facturation",
+          "detail": "FSE pour l'AMO, facture pour l'AMC",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Paiements",
+          "detail": "Chaque payeur vire sa part séparément",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Rapprochement",
+          "detail": "Chaque virement relié aux dossiers soldés",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    },
+    {
+      "id": "amo-amc",
+      "type": "comparaison",
+      "titre": "Deux payeurs, deux circuits",
+      "legende": "Le circuit AMO est normé ; le circuit AMC change selon la plateforme de chaque mutuelle.",
+      "colonnes": [
+        "AMO",
+        "AMC"
+      ],
+      "elements": [
+        {
+          "label": "Qui paie",
+          "detail": "",
+          "valeurs": [
+            "Assurance maladie",
+            "Mutuelle ou assureur"
+          ],
+          "focus": false
+        },
+        {
+          "label": "Base",
+          "detail": "",
+          "valeurs": [
+            "Nomenclature LPP",
+            "Garanties du contrat"
+          ],
+          "focus": false
+        },
+        {
+          "label": "Accord préalable",
+          "detail": "",
+          "valeurs": [
+            "Non",
+            "Prise en charge"
+          ],
+          "focus": true
+        },
+        {
+          "label": "Transmission",
+          "detail": "",
+          "valeurs": [
+            "FSE via SESAM-Vitale",
+            "Plateforme ou portail"
+          ],
+          "focus": false
+        },
+        {
+          "label": "Retour de paiement",
+          "detail": "",
+          "valeurs": [
+            "Retour NOEMIE",
+            "Relevé du payeur"
+          ],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [],
+  "liensEntrants": [],
+  "remplace": [
+    "optique-tiers-payant-amc"
+  ],
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-08T09:58:38.920Z",
+    "avertissements": [
+      "source non vérifiable (403) : https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000031912641",
+      "source non vérifiable (403) : https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000037847595",
+      "citation non vérifiée (page de « legifrance.gouv.fr · LOI n° 2016-41 du 26 janvier 2016 de modernisation de notre système de santé » illisible ou absente des sources) : « LOI n° 2016-41 du 26 janvier 2016 de modernisation de notre  »"
+    ]
+  }
+}
