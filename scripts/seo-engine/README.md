@@ -1,6 +1,6 @@
 # Moteur SEO · rubrique Ressources
 
-Chaque jour ouvré à 8 h 17 (heure de Paris), le workflow `.github/workflows/seo-article-du-jour.yml` fait les étapes ci-dessous. Le déclenchement automatique reste commenté tant que la page `/ressources/{slug}` ne lit pas `content/ressources/*.json` : en attendant, on le lance à la main.
+Chaque jour ouvré à 8 h 17 (heure de Paris), le workflow `.github/workflows/seo-article-du-jour.yml` fait les étapes ci-dessous.
 
 1. prend le premier article `pending` de `articles-queue.json` ;
 2. demande l'article à Claude (`claude-opus-5-5`, choisi le 07/10/2026 après comparaison avec Sonnet 5, en streaming, JSON imposé par `article-output.schema.json`). Le message système contient `BLOG_CMS_granit.md` en entier, plus les sections 5 et 6 de `GABARIT_ARTICLE_granit.md` ;
@@ -45,6 +45,7 @@ Il faut aussi cocher, dans les réglages du repo, *Actions → General → Allow
 | `metaDescription`, `contentHtml`, `tocItems`, `faqItems`, `sources` | Réponse de Claude, déjà contrôlée |
 | `internalLinks` | Liens prévus dont la cible était en ligne à la rédaction |
 | `liensEntrants` | `{slug, anchor, type}` des articles publiés après lui qui doivent apparaître dans « À lire ensuite » |
+| `remplace` | Anciens articles de `src/lib/articles.ts` que celui-ci remplace : dès sa publication, ils redirigent en 301 vers lui et sortent des listes et du sitemap (champ `remplace` de la file) |
 | `moteur` | Modèle, date de génération, avertissements |
 
 Un article est en ligne quand son fichier existe **et** que son statut dans la file est `published`. Le sitemap, les pages catégorie, le hub et « À lire ensuite » se calculent à la compilation à partir de ces fichiers. Le moteur n'y touche pas.

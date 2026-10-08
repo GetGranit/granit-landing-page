@@ -7,7 +7,7 @@
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 import type { Plugin, ViteDevServer } from "vite";
-import { controler, lireContenu } from "./en-ligne.mjs";
+import { controler, lireContenu, redirections } from "./en-ligne.mjs";
 import verticalesData from "../../src/lib/ressources/verticales.json";
 import { statutsCarte } from "../../src/lib/ressources/logos";
 import type { Fiche, RessourceJson, VerticaleSlug } from "../../src/lib/ressources/types";
@@ -82,7 +82,11 @@ export function ressources(): Plugin {
             (a) => `${JSON.stringify(a.slug)}: () => import(${JSON.stringify(ARTICLE + a.slug)})`,
           )
           .join(",\n");
-        return `export const fiches = ${JSON.stringify(fiches)};\nexport const charger = {\n${charger}\n};\n`;
+        return (
+          `export const fiches = ${JSON.stringify(fiches)};\n` +
+          `export const redirections = ${JSON.stringify(redirections(contenu.articles))};\n` +
+          `export const charger = {\n${charger}\n};\n`
+        );
       }
       const slug = id.slice(("\0" + ARTICLE).length);
       const article = contenu.articles.find((a) => a.slug === slug);

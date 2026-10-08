@@ -2,7 +2,7 @@
 // Runs automatically before `vite build` (see package.json).
 import { execFileSync } from "node:child_process";
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
-import { articlesEnLigne, controler } from "./ressources/en-ligne.mjs";
+import { articlesEnLigne, controler, redirections } from "./ressources/en-ligne.mjs";
 
 const SITE = "https://www.getgranit.ai";
 const ARTICLES = "src/lib/articles.ts";
@@ -69,6 +69,8 @@ const slugDates = articleDates();
 
 // Ressources du moteur SEO : articles JSON en ligne (jamais l'aperçu) et pages catégorie non vides.
 const ressources = articlesEnLigne(process.cwd());
+// Anciens articles remplacés (301 vers le nouveau) : hors sitemap.
+const remplaces = redirections(ressources);
 controler(process.cwd(), ressources);
 const { ordre } = JSON.parse(readFileSync("src/lib/ressources/categories.json", "utf8"));
 const { rattaches } = JSON.parse(readFileSync("src/lib/ressources/anciens.json", "utf8"));
@@ -136,6 +138,7 @@ const staticPages = [
   },
   { path: "/demo", files: ["src/routes/demo.tsx"], priority: "0.6", freq: "monthly" },
   { path: "/cgv", files: ["src/routes/cgv.tsx"], priority: "0.3", freq: "yearly" },
+  { path: "/privacy", files: ["src/routes/privacy.tsx"], priority: "0.3", freq: "yearly" },
 ];
 
 const urls = [
@@ -163,12 +166,14 @@ const urls = [
     freq: "monthly",
     priority: a.level?.startsWith("Pilier") ? "0.8" : "0.7",
   })),
-  ...slugs.map((s) => ({
-    loc: `${SITE}/ressources/${s}`,
-    lastmod: slugDates.get(s),
-    freq: "monthly",
-    priority: "0.7",
-  })),
+  ...slugs
+    .filter((s) => !remplaces[s])
+    .map((s) => ({
+      loc: `${SITE}/ressources/${s}`,
+      lastmod: slugDates.get(s),
+      freq: "monthly",
+      priority: "0.7",
+    })),
 ];
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
