@@ -29,7 +29,7 @@ En local, la clé est lue dans `ANTHROPIC_API_KEY`, sinon dans `~/.config/granit
 | Secret | Usage |
 |---|---|
 | `ANTHROPIC_API_KEY` | Rédaction |
-| `SLACK_BOT_TOKEN` | Bot qui poste dans le canal (celui de la revue hebdo) |
+| `SLACK_BOT_TOKEN` | Bot qui poste dans le canal (celui de la revue hebdo). Le message donne le lien de la PR, les mots-clés, la taille, la signature, le coût et les avertissements (`lib/slack.mjs`) |
 | `SLACK_CANAL_SEO` | ID du canal Slack SEO |
 
 Il faut aussi cocher, dans les réglages du repo, *Actions → General → Allow GitHub Actions to create and approve pull requests*.
