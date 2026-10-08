@@ -17,54 +17,54 @@
     "conformite": "Conformité"
   },
   "auteurs": {
-    "arthur-pelong": {
-      "nom": "Arthur Pelong",
+    "olivier": {
+      "nom": "Olivier",
       "fonction": "Rédacteur, expert tiers payant",
-      "photo": "/auteurs/arthur-pelong.jpg",
+      "photo": "/auteurs/olivier.jpg",
       "linkedin": ""
     },
-    "jenny-mansour": {
-      "nom": "Jenny Mansour",
+    "laura": {
+      "nom": "Laura",
       "fonction": "Rédactrice, experte santé",
-      "photo": "/auteurs/jenny-mansour.jpg",
+      "photo": "/auteurs/laura.jpg",
       "linkedin": ""
     },
-    "paul-pietra": {
-      "nom": "Paul Pietra",
-      "fonction": "Rédacteur, expert métier optique",
-      "photo": "/auteurs/paul-pietra.jpg",
+    "nathalie": {
+      "nom": "Nathalie",
+      "fonction": "Rédactrice, experte métier optique",
+      "photo": "/auteurs/nathalie.jpg",
       "linkedin": ""
     }
   },
   "signatures": {
     "_explication": "catégorie -> auteur et relecteur (clés de auteurs). Le relecteur n'est affiché que si l'article passe par une PR de relecture.",
     "plateformes": {
-      "auteur": "arthur-pelong",
-      "relecteur": "paul-pietra"
+      "auteur": "olivier",
+      "relecteur": "nathalie"
     },
     "rejets": {
-      "auteur": "arthur-pelong",
-      "relecteur": "paul-pietra"
+      "auteur": "olivier",
+      "relecteur": "nathalie"
     },
     "paiements": {
-      "auteur": "arthur-pelong",
-      "relecteur": "paul-pietra"
+      "auteur": "olivier",
+      "relecteur": "nathalie"
     },
     "guide-tiers-payant": {
-      "auteur": "paul-pietra",
-      "relecteur": "jenny-mansour"
+      "auteur": "nathalie",
+      "relecteur": "laura"
     },
     "glossaire": {
-      "auteur": "paul-pietra",
-      "relecteur": "jenny-mansour"
+      "auteur": "nathalie",
+      "relecteur": "laura"
     },
     "gerer-son-tiers-payant": {
-      "auteur": "jenny-mansour",
-      "relecteur": "arthur-pelong"
+      "auteur": "laura",
+      "relecteur": "olivier"
     },
     "conformite": {
-      "auteur": "jenny-mansour",
-      "relecteur": "arthur-pelong"
+      "auteur": "laura",
+      "relecteur": "olivier"
     }
   }
 }

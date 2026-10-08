@@ -22,15 +22,15 @@
   "parentSlug": null,
   "level": "Pilier global",
   "author": {
-    "name": "Paul Pietra",
-    "jobTitle": "Rédacteur, expert métier optique",
-    "photo": "/auteurs/paul-pietra.jpg",
+    "name": "Nathalie",
+    "jobTitle": "Rédactrice, experte métier optique",
+    "photo": "/auteurs/nathalie.jpg",
     "url": null
   },
   "reviewer": {
-    "name": "Jenny Mansour",
+    "name": "Laura",
     "jobTitle": "Rédactrice, experte santé",
-    "photo": "/auteurs/jenny-mansour.jpg",
+    "photo": "/auteurs/laura.jpg",
     "url": null
   },
   "datePublished": "2026-10-08",
