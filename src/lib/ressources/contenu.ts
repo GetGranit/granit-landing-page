@@ -6,7 +6,14 @@ import { articles, type Article } from "@/lib/articles";
 import categoriesData from "./categories.json";
 import anciensData from "./anciens.json";
 import type { CategorySlug, Fiche, VerticaleSlug } from "./types";
-import { ORDRE_VERTICALES, teinteAncien, verticale, verticalesAncien } from "./verticales";
+import {
+  ORDRE_VERTICALES,
+  VERTICALE_PRINCIPALE,
+  teinteAncien,
+  verticale,
+  verticalesAncien,
+  type Verticale,
+} from "./verticales";
 
 export type Categorie = {
   slug: CategorySlug;
@@ -16,6 +23,10 @@ export type Categorie = {
   tint: string;
   description: string;
   agent: string;
+  /** Titre de l'encart de fin d'article (CtaAgent.tsx). */
+  fin: string;
+  /** Ce que l'agent montre en animation : saisie de PEC, contrôle avant envoi ou virements. */
+  animation: "pec" | "controle" | "virements";
 };
 
 const CATS = categoriesData.categories as Record<CategorySlug, Omit<Categorie, "slug">>;
@@ -60,7 +71,10 @@ export function remplacant(slug: string): string | undefined {
 }
 
 /** Tous les anciens articles FR encore en ligne (sans les remplacés), dans l'ordre de articles.ts. */
-const anciensFr: Fiche[] = articles.fr.filter((a) => !redirections[a.slug]).map(ficheAncien);
+const anciensFr: Fiche[] = articles.fr
+  // remplacés (301) ou réécrits par le moteur à la même adresse (refonte) : on n'affiche que le nouveau
+  .filter((a) => !redirections[a.slug] && !fichesJson.some((f) => f.slug === a.slug))
+  .map(ficheAncien);
 
 /** Anciens articles FR rattachés à une catégorie du cocon. */
 const anciensRattaches: Fiche[] = anciensFr.filter((f) => f.rattache);
@@ -212,9 +226,18 @@ export function fichesVerticale(v: VerticaleSlug): Fiche[] {
 /** Anciens articles valables pour tous les métiers. */
 export const fichesTransversales: Fiche[] = anciensFr.filter((f) => f.transversal);
 
-/** Métiers qui ont au moins un article propre, avec leur nombre d'articles. */
+/** Tous les métiers, dans l'ordre, avec leur nombre d'articles propres. */
 export function verticalesActives() {
-  return ORDRE_VERTICALES.map((v) => ({ v: verticale(v)!, n: fichesVerticale(v).length })).filter(
-    (x) => x.n > 0,
-  );
+  return ORDRE_VERTICALES.map((v) => ({ v: verticale(v)!, n: fichesVerticale(v).length }));
+}
+
+/**
+ * Métier d'un article pour le fil d'Ariane et l'onglet actif : son premier métier
+ * (l'optique par défaut). Aucun pour un ancien article valable pour tous les métiers.
+ */
+export function metierDe(slug: string): Verticale | undefined {
+  const f = ficheJson(slug);
+  if (f) return verticale(f.verticales[0] ?? VERTICALE_PRINCIPALE);
+  const a = verticalesAncien(slug);
+  return a.transversal || !a.verticales[0] ? undefined : verticale(a.verticales[0]);
 }

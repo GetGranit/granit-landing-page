@@ -2,7 +2,7 @@
 import { useRef, type CSSProperties } from "react";
 import { Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
-import { categorie, dateFr, ficheJson, titreCourt } from "@/lib/ressources/contenu";
+import { categorie, dateFr, ficheJson, metierDe, titreCourt } from "@/lib/ressources/contenu";
 import { verticale } from "@/lib/ressources/verticales";
 import type { Plateforme, RessourceJson } from "@/lib/ressources/types";
 import { Annuaire } from "../Annuaire";
@@ -10,12 +10,12 @@ import { FenetrePlateforme, MarquePlateforme, PhotoCarte, TitreItalique } from "
 import { estFicheTousPortails, photoFiche } from "@/lib/ressources/photos";
 import { logoPlateforme, statutsCarte } from "@/lib/ressources/logos";
 import { FIGURE_CSS } from "@/lib/ressources/figures";
-import { Fil } from "../Fil";
+import { Fil, itemMetier } from "../Fil";
 import { SousNav } from "../Onglets";
 import { FicheIdentite } from "./BlocsPlateforme";
 import { Corps } from "./Corps";
 import { Ancres } from "./Ancres";
-import { BandeDemo } from "../BandeDemo";
+import { CarteAgent, EncartAgent } from "./CtaAgent";
 import { ALireEnsuite, EtapeSuivante, Faq, Sources, Utile } from "./Fin";
 import { Sommaire, SommaireMobile, type Entree } from "./Sommaire";
 
@@ -133,51 +133,6 @@ function Metiers({ slug }: { slug: string }) {
   );
 }
 
-/** Titre de la carte démo ; « vos PEC {nom} » seulement si Granit a un connecteur pour ce portail. */
-function titreAgent(a: RessourceJson, p: Plateforme | null): string {
-  const connecteur = p && Object.keys(p.sources).some((k) => k.startsWith("granit"));
-  if (a.type === "plateforme" && p && connecteur) return `Vos PEC ${p.nom}, déposées pour vous`;
-  return categorie(a.category)!.agent;
-}
-
-/**
- * Carte démo de la colonne de droite, collante sous le sommaire : fond terracotta foncé (le blanc
- * y reste lisible ; la bande sombre est déjà en bas de page), bouton pilule blanc, et la fenêtre
- * de prise en charge rognée par le bas, dont une demande passe à l'accord.
- */
-function CarteDemo({
-  a,
-  p,
-  estPlateforme,
-}: {
-  a: RessourceJson;
-  p: Plateforme | null;
-  estPlateforme: boolean;
-}) {
-  return (
-    <div className="ress-carte-demo">
-      <p className="font-serif text-[22px] leading-[1.2] text-white">{titreAgent(a, p)}</p>
-      <Link to="/demo" className="ress-carte-demo-bouton">
-        Demander une démo
-      </Link>
-      <div className="ress-carte-demo-fenetre">
-        {estPlateforme && p ? (
-          <FenetrePlateforme
-            anime
-            plateforme={{
-              nom: p.nom,
-              logo: logoPlateforme(p.logo, "fenetre"),
-              statuts: statutsCarte(p.statuts),
-            }}
-          />
-        ) : (
-          <FenetrePlateforme anime />
-        )}
-      </div>
-    </div>
-  );
-}
-
 export function PageArticle({
   article: a,
   plateforme: p,
@@ -202,6 +157,7 @@ export function PageArticle({
   const teinte = { "--ink": cat.ink, "--tint": cat.tint } as CSSProperties;
   const corps = useRef<HTMLDivElement>(null);
   const fiche = ficheJson(a.slug);
+  const metier = metierDe(a.slug);
   const nbSources =
     (a.sources?.length ?? 0) + (p ? Object.values(p.sources).filter((s) => !s.url).length : 0);
 
@@ -210,7 +166,7 @@ export function PageArticle({
       <div className="ress">
         {a.preview && <BandeauPreview />}
         {a.readTime >= 3 && <div className="lecture-barre" aria-hidden style={teinte} />}
-        <SousNav actif={a.category === "glossaire" ? "glossaire" : a.category} />
+        <SousNav actif={metier?.slug ?? "tout"} />
         <header
           className="relative overflow-hidden border-b border-[var(--border)]"
           style={{ background: cat.tint }}
@@ -220,11 +176,7 @@ export function PageArticle({
               <Fil
                 items={[
                   { nom: "Ressources", to: "/ressources" },
-                  {
-                    nom: cat.nom,
-                    to: "/ressources/categorie/$category",
-                    params: { category: cat.slug },
-                  },
+                  ...(metier ? [itemMetier(metier)] : []),
                   { nom: titreCourt(a.title) },
                 ]}
               />
@@ -291,16 +243,16 @@ export function PageArticle({
               <Utile slug={a.slug} />
               <Ancres racine={corps} />
             </div>
-            {/* Sommaire et carte démo collent ensemble ; la colonne s'arrête avant la bande démo. */}
+            {/* Sommaire et carte de l'agent collent ensemble ; la colonne s'arrête avant l'encart de fin. */}
             <aside className="hidden min-[980px]:block">
               <div className="sticky top-[88px] flex flex-col gap-4">
                 <Sommaire entrees={entrees} />
-                <CarteDemo a={a} p={p} estPlateforme={Boolean(estPlateforme)} />
+                <CarteAgent article={a} plateforme={p} />
               </div>
             </aside>
           </div>
         </div>
-        <BandeDemo />
+        <EncartAgent article={a} plateforme={p} />
         <ALireEnsuite article={a} />
       </div>
     </SiteLayout>

@@ -14,6 +14,7 @@ import { CarteArticle } from "./Cartes";
 import { Fil } from "./Fil";
 import { Fleche } from "./Hub";
 import { PhotoMetier } from "./Metiers";
+import { SousNav } from "./Onglets";
 
 const conteneur = "mx-auto max-w-[1280px] px-4 md:px-6";
 const titreSection =
@@ -55,6 +56,7 @@ export function PageMetier({ v }: { v: Verticale }) {
   return (
     <SiteLayout fond="var(--bg2)">
       <div className="ress bg-[var(--bg2)] pb-1">
+        <SousNav actif={v.slug} />
         <section
           className={`${conteneur} grid items-center gap-8 pb-10 pt-8 md:pt-12 lg:grid-cols-12`}
         >

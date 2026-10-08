@@ -1,5 +1,14 @@
 {
-  "ordre": ["optique", "audio", "pharmacie", "dentaire", "centres"],
+  "ordre": [
+    "optique",
+    "dentaire",
+    "cliniques",
+    "ehpad",
+    "centres",
+    "laboratoires",
+    "audio",
+    "pharmacie"
+  ],
   "verticales": {
     "optique": {
       "nom": "Optique",
@@ -8,33 +17,54 @@
       "teinte": "plateformes",
       "agent": "L'agent dépose vos prises en charge"
     },
-    "audio": {
-      "nom": "Audioprothèse",
-      "court": "Audio",
-      "description": "Renouvellements, classes d'appareils et période d'essai : facturer l'audioprothèse en tiers payant.",
-      "teinte": "paiements",
-      "agent": "L'agent dépose vos prises en charge audio"
-    },
-    "pharmacie": {
-      "nom": "Pharmacie et EHPAD",
-      "court": "Pharmacie",
-      "description": "Créances de tiers payant, rejets et facturation en établissement : le back-office d'une officine ou d'un EHPAD.",
-      "teinte": "gerer-son-tiers-payant",
-      "agent": "L'agent lit les ordonnances et les fiches de traitement"
-    },
     "dentaire": {
       "nom": "Dentaire",
       "court": "Dentaire",
-      "description": "Paniers 100 % Santé, devis et traitements longs : le tiers payant au cabinet dentaire.",
+      "description": "Paniers 100 % Santé, devis et traitements d'orthodontie : le tiers payant au cabinet dentaire.",
+      "teinte": "conformite",
+      "agent": "Parlons de votre tiers payant"
+    },
+    "cliniques": {
+      "nom": "Cliniques",
+      "court": "Cliniques",
+      "description": "Ordonnancement des flux administratifs autour du séjour : le back-office d'une clinique ou d'un hôpital privé.",
+      "teinte": "gerer-son-tiers-payant",
+      "agent": "Parlons de votre tiers payant"
+    },
+    "ehpad": {
+      "nom": "EHPAD",
+      "court": "EHPAD",
+      "description": "Facturation des résidents, dépendance et hébergement : le back-office d'un EHPAD.",
       "teinte": "conformite",
       "agent": "Parlons de votre tiers payant"
     },
     "centres": {
-      "nom": "Centres de santé et cliniques",
-      "court": "Centres",
-      "description": "Facturation, recouvrement et outils d'un centre de santé, d'une clinique ou d'un groupe multi-sites.",
-      "teinte": "guide-tiers-payant",
+      "nom": "Centres de santé",
+      "court": "Centres de santé",
+      "description": "Facturation, recouvrement et outils d'un centre de santé ou d'un groupe multi-sites.",
+      "teinte": "rejets",
       "agent": "L'agent tient l'agenda et le check-out à jour"
+    },
+    "laboratoires": {
+      "nom": "Laboratoires",
+      "court": "Laboratoires",
+      "description": "Tiers payant, rejets et paiements : la facturation d'un laboratoire.",
+      "teinte": "glossaire",
+      "agent": "Parlons de votre tiers payant"
+    },
+    "audio": {
+      "nom": "Audition",
+      "court": "Audition",
+      "description": "Renouvellements, classes d'appareils et période d'essai : facturer les appareils auditifs en tiers payant.",
+      "teinte": "paiements",
+      "agent": "L'agent dépose vos prises en charge audio"
+    },
+    "pharmacie": {
+      "nom": "Pharmacie",
+      "court": "Pharmacie",
+      "description": "Créances de tiers payant, rejets et réassort : le back-office d'une officine.",
+      "teinte": "guide-tiers-payant",
+      "agent": "L'agent lit les ordonnances"
     }
   },
   "surcharges": {
@@ -44,10 +74,10 @@
     "audioprothese-renouvellement-tiers-payant": ["audio"],
     "officine-balance-agee-tiers-payant": ["pharmacie"],
     "trois-boucles-pharmacie": ["pharmacie"],
-    "facturation-ehpad-controle-humain": ["pharmacie"],
+    "facturation-ehpad-controle-humain": ["ehpad"],
     "dentaire-paniers-100-sante-tiers-payant": ["dentaire"],
     "orthodontie-facturation-traitements-longs": ["dentaire"],
-    "hopital-prive-ordonnancement": ["centres"],
+    "hopital-prive-ordonnancement": ["cliniques"],
     "groupes-multi-sites-pilotage": ["centres"],
     "recouvrement-patient-empathie": ["centres"],
     "integration-doctolib-lgo": ["centres"],

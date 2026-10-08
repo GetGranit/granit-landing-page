@@ -126,7 +126,7 @@ function svgHtml({ svg, defs, W, H }, titre, classe = "") {
   return `<svg${classe ? ` class="${classe}"` : ""} viewBox="0 0 ${W} ${H}" width="${W}" role="img" aria-label="${esc(titre)}" xmlns="http://www.w3.org/2000/svg">${defs}${svg}</svg>`;
 }
 
-/** <figure> complète : étiquette, titre, schéma, légende. */
+/** <figure> complète : titre, schéma, légende. */
 export function figureHtml(f) {
   const uid = `fig-${f.id}`;
   // flux court : version en ligne pour écran large, en colonne pour téléphone
@@ -136,7 +136,6 @@ export function figureHtml(f) {
       : svgHtml(DESSINS[f.type](f, uid), f.titre);
   return (
     `<figure class="granit-figure" id="${esc(uid)}">` +
-    `<div class="granit-figure__eyebrow">Schéma</div>` +
     `<div class="granit-figure__titre">${esc(f.titre)}</div>` +
     `<div class="granit-figure__dessin">${dessin}</div>` +
     `<figcaption>${esc(f.legende)}</figcaption>` +
@@ -147,8 +146,7 @@ export function figureHtml(f) {
 /** Styles de la figure, à reprendre dans la feuille du site. */
 export const FIGURE_CSS = `
 .granit-figure{margin:2em 0;padding:20px 22px 16px;background:${C.creme};border:1px solid ${C.trait};border-radius:8px}
-.granit-figure__eyebrow{font:500 10px/1 ${MONO};letter-spacing:.12em;text-transform:uppercase;color:${C.accent}}
-.granit-figure__titre{font:400 20px/1.3 ${SERIF};color:${C.encre};margin:8px 0 14px;text-wrap:balance}
+.granit-figure__titre{font:400 20px/1.3 ${SERIF};color:${C.encre};margin:0 0 14px;text-wrap:balance}
 .granit-figure__dessin{overflow-x:auto}
 .granit-figure__dessin svg{display:block;max-width:100%;height:auto}
 .granit-figure--etroit{display:none!important}

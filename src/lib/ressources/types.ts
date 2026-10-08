@@ -12,7 +12,15 @@ export type CategorySlug =
   | "conformite"
   | "glossaire";
 
-export type VerticaleSlug = "optique" | "audio" | "pharmacie" | "dentaire" | "centres";
+export type VerticaleSlug =
+  | "optique"
+  | "dentaire"
+  | "cliniques"
+  | "ehpad"
+  | "centres"
+  | "laboratoires"
+  | "audio"
+  | "pharmacie";
 
 /** Auteur ou relecteur (config.json du moteur) ; `url` = profil LinkedIn, peut être null. */
 export type Personne = { name: string; jobTitle?: string; photo?: string; url?: string | null };
@@ -50,6 +58,8 @@ export type RessourceJson = {
   liensEntrants: LienInterne[];
   /** Anciens articles (articles.ts) que celui-ci remplace : ils redirigent vers lui (301). */
   remplace?: string[];
+  /** Réécriture d'un ancien article de articles.ts, à la même adresse : remplace l'ancien. */
+  refonte?: boolean;
   /** Vague de la file (ajoutée à la lecture, sert au tri). */
   wave?: number;
   /** Métiers concernés (facultatif ; par défaut l'optique). */
