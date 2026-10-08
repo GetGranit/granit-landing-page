@@ -1,6 +1,7 @@
 // Page d'un ancien article (src/lib/articles.ts) : le rendu d'avant le guide, avec deux ajouts :
 // le fil d'Ariane passe par la catégorie quand l'article est rattaché au cocon,
-// et « Continuer la lecture » montre d'abord des articles de la même catégorie.
+// « Continuer la lecture » montre d'abord des articles de la même catégorie,
+// et la bande démo des nouvelles pages ferme l'article.
 import { Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { useLanguage } from "@/lib/i18n";
@@ -8,6 +9,7 @@ import { articles, getArticle } from "@/lib/articles";
 import { articleLd } from "@/lib/seo";
 import { categorieDeAncien, tempsLecture, toutCategorie } from "@/lib/ressources/contenu";
 import { breadcrumbLd } from "@/lib/ressources/seo";
+import { BandeDemo } from "./BandeDemo";
 import { Fil } from "./Fil";
 import { NotFoundRessource } from "./Introuvable";
 
@@ -109,6 +111,8 @@ export function PageAncien({ slug }: { slug: string }) {
           </div>
         </div>
       </article>
+
+      {lang === "fr" && <BandeDemo />}
 
       <section className="mx-auto max-w-[1280px] px-6 pb-28">
         <div className="border-t pt-12" style={{ borderColor: "var(--border)" }}>
