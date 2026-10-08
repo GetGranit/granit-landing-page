@@ -33,8 +33,10 @@ const ALTS: Record<VerticaleSlug, string> = {
     "Moulage de mâchoire dentaire sur un plateau blanc, avec un miroir et une sonde de dentiste",
   centres:
     "Stéthoscope posé sur un bureau de consultation en bois, à côté d'un agenda de rendez-vous",
-  "cliniques-ehpad":
-    "Lit médicalisé au soleil, oreiller et couverture bleu pâle pliée, verre d'eau et gobelet à médicaments sur la table de chevet",
+  cliniques:
+    "Lit de clinique au soleil, couverture grise pliée, pied à perfusion et dossier médical sur pince",
+  ehpad:
+    "Fauteuil vert près d'une fenêtre, plaid en laine, canne en bois, tasse de thé, lunettes et pilulier sur une petite table",
   laboratoires:
     "Paillasse de laboratoire avec un portoir de tubes de prélèvement à bouchons colorés, des gants et une centrifugeuse",
 };

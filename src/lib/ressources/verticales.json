@@ -2,7 +2,8 @@
   "ordre": [
     "optique",
     "dentaire",
-    "cliniques-ehpad",
+    "cliniques",
+    "ehpad",
     "centres",
     "laboratoires",
     "audio",
@@ -23,11 +24,18 @@
       "teinte": "conformite",
       "agent": "Parlons de votre tiers payant"
     },
-    "cliniques-ehpad": {
-      "nom": "Cliniques et EHPAD",
-      "court": "Cliniques et EHPAD",
-      "description": "Facturation des résidents, flux administratifs autour du séjour : le back-office d'une clinique ou d'un EHPAD.",
+    "cliniques": {
+      "nom": "Cliniques",
+      "court": "Cliniques",
+      "description": "Ordonnancement des flux administratifs autour du séjour : le back-office d'une clinique ou d'un hôpital privé.",
       "teinte": "gerer-son-tiers-payant",
+      "agent": "Parlons de votre tiers payant"
+    },
+    "ehpad": {
+      "nom": "EHPAD",
+      "court": "EHPAD",
+      "description": "Facturation des résidents, dépendance et hébergement : le back-office d'un EHPAD.",
+      "teinte": "conformite",
       "agent": "Parlons de votre tiers payant"
     },
     "centres": {
@@ -45,9 +53,9 @@
       "agent": "Parlons de votre tiers payant"
     },
     "audio": {
-      "nom": "Audioprothèse",
-      "court": "Audio",
-      "description": "Renouvellements, classes d'appareils et période d'essai : facturer l'audioprothèse en tiers payant.",
+      "nom": "Audition",
+      "court": "Audition",
+      "description": "Renouvellements, classes d'appareils et période d'essai : facturer les appareils auditifs en tiers payant.",
       "teinte": "paiements",
       "agent": "L'agent dépose vos prises en charge audio"
     },
@@ -66,10 +74,10 @@
     "audioprothese-renouvellement-tiers-payant": ["audio"],
     "officine-balance-agee-tiers-payant": ["pharmacie"],
     "trois-boucles-pharmacie": ["pharmacie"],
-    "facturation-ehpad-controle-humain": ["cliniques-ehpad"],
+    "facturation-ehpad-controle-humain": ["ehpad"],
     "dentaire-paniers-100-sante-tiers-payant": ["dentaire"],
     "orthodontie-facturation-traitements-longs": ["dentaire"],
-    "hopital-prive-ordonnancement": ["cliniques-ehpad"],
+    "hopital-prive-ordonnancement": ["cliniques"],
     "groupes-multi-sites-pilotage": ["centres"],
     "recouvrement-patient-empathie": ["centres"],
     "integration-doctolib-lgo": ["centres"],

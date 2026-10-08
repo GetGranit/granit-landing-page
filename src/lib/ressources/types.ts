@@ -15,7 +15,8 @@ export type CategorySlug =
 export type VerticaleSlug =
   | "optique"
   | "dentaire"
-  | "cliniques-ehpad"
+  | "cliniques"
+  | "ehpad"
   | "centres"
   | "laboratoires"
   | "audio"
