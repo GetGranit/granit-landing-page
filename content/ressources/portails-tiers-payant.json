@@ -152,7 +152,13 @@
       "type": "parent"
     }
   ],
-  "liensEntrants": [],
+  "liensEntrants": [
+    {
+      "slug": "portail-viamedis",
+      "anchor": "viamedis tp",
+      "type": "enfant"
+    }
+  ],
   "remplace": [
     "portails-mutuelles-goulot"
   ],
