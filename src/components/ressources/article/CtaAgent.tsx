@@ -216,8 +216,8 @@ function BoutonSecondaire({
 }
 
 /**
- * La fenêtre animée. Rendue dans son état final ; à l'entrée dans l'écran, elle se rejoue deux
- * fois puis se fige (bouton « Revoir »). Hors écran ou mouvement réduit : état final.
+ * La fenêtre animée. Rendue dans son état final ; elle tourne en boucle tant qu'elle est à
+ * l'écran (bouton « Pause »). Hors écran ou mouvement réduit : état final.
  */
 function FenetreAgent({ c }: { c: Contenu }) {
   const racine = useRef<HTMLDivElement>(null);
@@ -237,7 +237,7 @@ function FenetreAgent({ c }: { c: Contenu }) {
     const texte = q<HTMLSpanElement>(".ress-cta-etat-texte");
     const revoir = q<HTMLButtonElement>(".ress-cta-revoir");
     let jeton = 0;
-    let vu = false;
+    let enPause = false;
     const reduit = matchMedia("(prefers-reduced-motion: reduce)");
 
     const final = () => {
@@ -253,10 +253,17 @@ function FenetreAgent({ c }: { c: Contenu }) {
       texte.textContent = s.etat[5];
     };
 
-    const jouer = async (tours: number) => {
+    const arreter = () => {
+      jeton++;
+      final();
+      el.classList.remove("joue");
+    };
+
+    const jouer = async () => {
       const t = ++jeton;
       el.classList.remove("termine");
       if (reduit.matches) return final();
+      revoir.textContent = "❙❙ Pause";
       const vivant = () => t === jeton && el.isConnected;
       const attendre = (ms: number) => new Promise((r) => setTimeout(r, ms));
       const vers = (cible: Element) => {
@@ -270,7 +277,7 @@ function FenetreAgent({ c }: { c: Contenu }) {
         cur.classList.add("clic");
       };
       el.classList.add("joue");
-      for (let n = 0; n < tours && vivant(); n++) {
+      while (vivant()) {
         champs.forEach((f) => {
           f.textContent = "";
           f.className = "ress-cta-champ";
@@ -328,26 +335,21 @@ function FenetreAgent({ c }: { c: Contenu }) {
         if (!vivant()) return;
         defile = false;
         final();
-        await attendre(2600);
-      }
-      if (vivant()) {
-        el.classList.remove("joue");
-        el.classList.add("termine");
+        await attendre(3200);
       }
     };
 
-    revoir.onclick = () => void jouer(1);
+    revoir.onclick = () => {
+      enPause = !enPause;
+      if (!enPause) return void jouer();
+      arreter();
+      el.classList.add("termine");
+      revoir.textContent = "▶ Relancer";
+    };
     const io = new IntersectionObserver(
       ([e]) => {
-        if (e.isIntersecting && !vu) {
-          vu = true;
-          void jouer(2);
-        } else if (!e.isIntersecting && vu && !el.classList.contains("termine")) {
-          jeton++;
-          final();
-          el.classList.remove("joue");
-          el.classList.add("termine");
-        }
+        if (e.isIntersecting && !enPause && !el.classList.contains("joue")) void jouer();
+        else if (!e.isIntersecting && el.classList.contains("joue")) arreter();
       },
       { threshold: 0.5 },
     );
@@ -379,8 +381,8 @@ function FenetreAgent({ c }: { c: Contenu }) {
     );
 
   return (
-    <div ref={racine} className="ress-cta-demo" role="img" aria-label={s.etat[5]}>
-      <div className="ress-cta-fenetre">
+    <div ref={racine} className="ress-cta-demo">
+      <div className="ress-cta-fenetre" role="img" aria-label={s.etat[5]}>
         <div className="ress-cta-barre">
           <span className="ress-cta-points" aria-hidden>
             <i />
@@ -418,10 +420,12 @@ function FenetreAgent({ c }: { c: Contenu }) {
           <span>Agent Granit</span>
         </div>
       </div>
-      <div className="ress-cta-etat repos" aria-hidden>
-        <span className="ress-cta-etat-texte">{s.etat[5]}</span>
-        <button type="button" className="ress-cta-revoir" tabIndex={-1}>
-          ↻ Revoir
+      <div className="ress-cta-etat repos">
+        <span className="ress-cta-etat-texte" aria-hidden>
+          {s.etat[5]}
+        </span>
+        <button type="button" className="ress-cta-revoir">
+          ❙❙ Pause
         </button>
       </div>
     </div>
