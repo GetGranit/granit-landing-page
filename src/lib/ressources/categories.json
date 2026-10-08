@@ -15,7 +15,9 @@
       "ink": "#3f7a4d",
       "tint": "#e9f2eb",
       "description": "Comment fonctionne le tiers payant en optique, de la prise en charge à l'encaissement.",
-      "agent": "L'agent dépose vos prises en charge"
+      "agent": "L'agent dépose vos prises en charge",
+      "fin": "Vos prochaines PEC, laissez l'agent les saisir.",
+      "animation": "pec"
     },
     "plateformes": {
       "nom": "Plateformes et portails",
@@ -23,7 +25,9 @@
       "ink": "#b94a2f",
       "tint": "#fbeae3",
       "description": "Une fiche par portail : espace pro, prise en charge, statuts et paiement.",
-      "agent": "L'agent dépose vos prises en charge"
+      "agent": "L'agent dépose vos prises en charge",
+      "fin": "Un portail par mutuelle ? L'agent les connaît tous.",
+      "animation": "pec"
     },
     "rejets": {
       "nom": "Rejets et corrections",
@@ -31,7 +35,9 @@
       "ink": "#8a6416",
       "tint": "#f6eedb",
       "description": "Lire un motif de rejet, corriger le dossier, éviter qu'il revienne.",
-      "agent": "L'agent vérifie la plateforme avant l'envoi"
+      "agent": "L'agent vérifie la plateforme avant l'envoi",
+      "fin": "Le rejet que vous ne verrez pas : l'agent contrôle avant d'envoyer.",
+      "animation": "controle"
     },
     "paiements": {
       "nom": "Paiements et rapprochement",
@@ -39,7 +45,9 @@
       "ink": "#3e5f84",
       "tint": "#e6ecf4",
       "description": "Rapprocher les virements, comprendre NOEMIE, relancer au bon moment.",
-      "agent": "L'agent rapproche vos virements chaque matin"
+      "agent": "L'agent rapproche vos virements chaque matin",
+      "fin": "Qui vous a payé, pour quel dossier ? L'agent le sait avant l'ouverture.",
+      "animation": "virements"
     },
     "gerer-son-tiers-payant": {
       "nom": "Gérer son tiers payant",
@@ -47,7 +55,9 @@
       "ink": "#7a4a74",
       "tint": "#f3e9f1",
       "description": "En interne, externalisé ou automatisé : organiser le tiers payant d'un magasin.",
-      "agent": "L'agent dépose vos prises en charge"
+      "agent": "L'agent dépose vos prises en charge",
+      "fin": "Ni en interne, ni externalisé : délégué à l'agent.",
+      "animation": "pec"
     },
     "conformite": {
       "nom": "Conformité",
@@ -55,7 +65,9 @@
       "ink": "#2f6f75",
       "tint": "#e2f0f1",
       "description": "Devis, codes LPP, contrôles, conservation : ce qu'on doit pouvoir montrer.",
-      "agent": "L'agent dépose vos prises en charge"
+      "agent": "L'agent dépose vos prises en charge",
+      "fin": "Chaque demande saisie, tracée et retrouvable.",
+      "animation": "pec"
     },
     "glossaire": {
       "nom": "Glossaire",
@@ -63,7 +75,9 @@
       "ink": "#5e574b",
       "tint": "#f1ede5",
       "description": "Les sigles du tiers payant optique (AMC, DRE, NOEMIE, LPP…), expliqués simplement.",
-      "agent": "L'agent dépose vos prises en charge"
+      "agent": "L'agent dépose vos prises en charge",
+      "fin": "Les sigles, l'agent s'en occupe. Vous, vous vendez.",
+      "animation": "pec"
     }
   },
   "suffixeDescription": " Guides et fiches pratiques pour le comptoir des opticiens."
