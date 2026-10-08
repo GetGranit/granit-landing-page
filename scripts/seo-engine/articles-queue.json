@@ -128,7 +128,7 @@
     ],
     "searchVolume": 1930,
     "unsplashQuery": "optician computer paperwork",
-    "status": "pending",
+    "status": "review",
     "wave": 1,
     "level": "Pilier",
     "parentSlug": "tiers-payant-opticien",
@@ -245,7 +245,8 @@
     ],
     "remplace": [
       "portails-mutuelles-goulot"
-    ]
+    ],
+    "publishedAt": "2026-10-08"
   },
   {
     "id": "A1",
