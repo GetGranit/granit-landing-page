@@ -77,7 +77,8 @@ jobs:
           TITLE: ${{ steps.run.outputs.title }}
           URL: ${{ steps.run.outputs.url }}
           PR: ${{ steps.ship.outputs.pr }}
-          AVERTISSEMENTS: ${{ steps.run.outputs.avertissements }}
+          SLUG: ${{ steps.run.outputs.slug }}
+          COUT: ${{ steps.run.outputs.cout }}
         run: node scripts/seo-engine/notify.mjs ok
 
       - name: Alerter sur Slack
