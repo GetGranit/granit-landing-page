@@ -56,9 +56,10 @@ export function Hub() {
             <em className="accent-italic pouls-souligne whitespace-nowrap">sans le casse-tête</em>.
           </h1>
           <p className="body-lg mx-auto mt-10 max-w-[60ch]">
-            Opticiens, audioprothésistes, pharmaciens, dentistes, centres de santé : des réponses
-            pratiques sur les mutuelles, les remboursements, les paiements et la réglementation.
-            Partez de votre métier ou de votre question.
+            Opticiens, dentistes, cliniques, EHPAD, centres de santé, laboratoires,
+            audioprothésistes, pharmaciens : des réponses pratiques sur les mutuelles, les
+            remboursements, les paiements et la réglementation. Partez de votre métier ou de votre
+            question.
           </p>
           <ParProbleme />
         </section>

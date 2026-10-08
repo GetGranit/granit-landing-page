@@ -9,8 +9,8 @@ import { SITE_URL } from "@/lib/seo";
 export const Route = createFileRoute("/ressources/metier/$verticale")({
   loader: ({ params }) => {
     const v = verticale(params.verticale);
-    // Un métier sans article propre n'a pas de page.
-    if (!v || fichesVerticale(v.slug).length === 0) throw notFound();
+    // Chaque métier a sa page (onglet du guide) ; sans article propre, elle montre les transversaux.
+    if (!v) throw notFound();
     return { verticale: v.slug };
   },
   head: ({ loaderData }) => {

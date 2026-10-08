@@ -8,6 +8,7 @@ import {
   toutCategorie,
 } from "@/lib/ressources/contenu";
 import { breadcrumbLd } from "@/lib/ressources/seo";
+import { VERTICALE_PRINCIPALE, verticale } from "@/lib/ressources/verticales";
 import { aCouvertureFenetre, photoFiche, src } from "@/lib/ressources/photos";
 
 export const Route = createFileRoute("/ressources/categorie/$category")({
@@ -46,8 +47,10 @@ export const Route = createFileRoute("/ressources/categorie/$category")({
 function CategoriePage() {
   const { category } = Route.useLoaderData();
   const cat = categorie(category)!;
+  const principale = verticale(VERTICALE_PRINCIPALE)!;
   const ld = breadcrumbLd([
     ["Ressources", "/ressources"],
+    [principale.nom, `/ressources/metier/${principale.slug}`],
     [cat.nom, `/ressources/categorie/${cat.slug}`],
   ]);
   return (

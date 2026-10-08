@@ -1,6 +1,6 @@
 import { createFileRoute, notFound, redirect } from "@tanstack/react-router";
 import { getArticle } from "@/lib/articles";
-import { chargerArticle, categorie, ficheJson, remplacant } from "@/lib/ressources/contenu";
+import { chargerArticle, ficheJson, metierDe, remplacant } from "@/lib/ressources/contenu";
 import { blogPostingLd, breadcrumbLd, faqLd, titrePage } from "@/lib/ressources/seo";
 import { photoFiche, src } from "@/lib/ressources/photos";
 import { SITE_URL } from "@/lib/seo";
@@ -78,13 +78,13 @@ function ArticleRoute() {
   const data = Route.useLoaderData();
   if (data.kind === "ancien") return <PageAncien slug={data.slug} />;
   const { article, plateforme } = data;
-  const cat = categorie(article.category)!;
+  const metier = metierDe(article.slug);
   const lds = [
     blogPostingLd(article, plateforme),
     faqLd(article),
     breadcrumbLd([
       ["Ressources", "/ressources"],
-      [cat.nom, `/ressources/categorie/${cat.slug}`],
+      ...(metier ? [[metier.nom, `/ressources/metier/${metier.slug}`] as [string, string]] : []),
       [article.title, `/ressources/${article.slug}`],
     ]),
   ].filter(Boolean);

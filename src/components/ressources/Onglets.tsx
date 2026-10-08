@@ -1,6 +1,13 @@
 import { useEffect, useRef, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
-import { GLOSSAIRE_SLUG, categoriesActives, glossaireEnLigne } from "@/lib/ressources/contenu";
+import {
+  GLOSSAIRE_SLUG,
+  categorie,
+  categoriesActives,
+  glossaireEnLigne,
+} from "@/lib/ressources/contenu";
+import { VERTICALES } from "@/lib/ressources/verticales";
+import type { VerticaleSlug } from "@/lib/ressources/types";
 
 const onglet =
   "relative -mb-px snap-start whitespace-nowrap rounded-[4px] py-3 text-[14px] text-[var(--text-soft)] transition-colors duration-150 hover:text-[var(--text)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--terra)]";
@@ -43,15 +50,19 @@ function Onglet({
   );
 }
 
-/**
- * Onglets du guide : de vrais liens vers les pages catégorie (rendus serveur), pas des filtres.
- * Sert d'en-tête au hub (centré) et de sous-navigation sur les pages catégorie et article.
- */
-export function Onglets({ actif, centre = false }: { actif: string; centre?: boolean }) {
-  const cats = categoriesActives();
-  const glossaire = glossaireEnLigne();
+/** Rangée d'onglets défilante ; l'onglet actif est ramené dans la vue sur mobile. */
+function Rangee({
+  actif,
+  label,
+  centre = false,
+  children,
+}: {
+  actif: string;
+  label: string;
+  centre?: boolean;
+  children: ReactNode;
+}) {
   const nav = useRef<HTMLElement>(null);
-  // Mobile : l'onglet actif est ramené dans la vue.
   useEffect(() => {
     if (actif === "tout") return;
     nav.current
@@ -61,9 +72,23 @@ export function Onglets({ actif, centre = false }: { actif: string; centre?: boo
   return (
     <nav
       ref={nav}
-      aria-label="Thèmes du guide"
+      aria-label={label}
       className={`flex snap-x scroll-px-4 gap-5 overflow-x-auto border-b border-[var(--border)] [scrollbar-width:none] max-md:[mask-image:linear-gradient(to_right,black_82%,transparent)] md:gap-7 ${centre ? "md:justify-center" : ""}`}
     >
+      {children}
+    </nav>
+  );
+}
+
+/**
+ * Onglets des thèmes : de vrais liens vers les pages catégorie (rendus serveur), pas des filtres.
+ * Section « Par thème » du hub.
+ */
+export function Onglets({ actif, centre = false }: { actif: string; centre?: boolean }) {
+  const cats = categoriesActives();
+  const glossaire = glossaireEnLigne();
+  return (
+    <Rangee actif={actif} label="Thèmes du guide" centre={centre}>
       <Onglet to="/ressources" actif={actif === "tout"} couleur="var(--text)">
         Tout le guide
       </Onglet>
@@ -88,16 +113,38 @@ export function Onglets({ actif, centre = false }: { actif: string; centre?: boo
           Glossaire
         </Onglet>
       )}
-    </nav>
+    </Rangee>
   );
 }
 
-/** La rangée d'onglets en sous-navigation (pages catégorie et article), non collante. */
-export function SousNav({ actif }: { actif: string }) {
+/** Onglets des métiers, dans l'ordre de verticales.json : la structure du guide. */
+function OngletsMetiers({ actif }: { actif: VerticaleSlug | "tout" }) {
+  return (
+    <Rangee actif={actif} label="Métiers du guide">
+      <Onglet to="/ressources" actif={actif === "tout"} couleur="var(--text)">
+        Tout le guide
+      </Onglet>
+      {VERTICALES.map((v) => (
+        <Onglet
+          key={v.slug}
+          to="/ressources/metier/$verticale"
+          params={{ verticale: v.slug }}
+          actif={actif === v.slug}
+          couleur={categorie(v.teinte)!.ink}
+        >
+          {v.court}
+        </Onglet>
+      ))}
+    </Rangee>
+  );
+}
+
+/** Sous-navigation par métier (pages métier, catégorie et article), non collante. */
+export function SousNav({ actif }: { actif: VerticaleSlug | "tout" }) {
   return (
     <div className="bg-[var(--bg2)]">
       <div className="mx-auto max-w-[1280px] px-4 md:px-6">
-        <Onglets actif={actif} />
+        <OngletsMetiers actif={actif} />
       </div>
     </div>
   );

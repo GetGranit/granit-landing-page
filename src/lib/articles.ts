@@ -349,7 +349,7 @@ export const articles: ArticleSet = {
     },
     {
       slug: "audioprothese-renouvellement-tiers-payant",
-      category: "Audioprothèse",
+      category: "Audition",
       title: "Audioprothèse : maîtriser le tiers-payant sur le renouvellement d'appareillage",
       desc: "LPP, 100% Santé, garantie de renouvellement à 4 ans : les règles spécifiques au tiers-payant audio et comment sécuriser chaque dossier.",
       time: "9 min",

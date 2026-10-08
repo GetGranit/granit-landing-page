@@ -11,7 +11,8 @@ import type { Fiche } from "@/lib/ressources/types";
 import { Annuaire } from "./Annuaire";
 import { BandeDemo } from "./BandeDemo";
 import { CarteArticle, CartePilier } from "./Cartes";
-import { Fil } from "./Fil";
+import { VERTICALE_PRINCIPALE, verticale } from "@/lib/ressources/verticales";
+import { Fil, itemMetier } from "./Fil";
 import { SousNav } from "./Onglets";
 
 const conteneur = "mx-auto max-w-[1280px] px-4 md:px-6";
@@ -46,10 +47,16 @@ export function PageCategorie({ cat }: { cat: Categorie }) {
   return (
     <SiteLayout fond="var(--bg2)">
       <div className="ress">
-        <SousNav actif={cat.slug} />
+        <SousNav actif={VERTICALE_PRINCIPALE} />
         <section className="border-b border-[var(--border)]" style={{ background: cat.tint }}>
           <div className={`${conteneur} pb-8 pt-8 md:pb-10 md:pt-10`}>
-            <Fil items={[{ nom: "Ressources", to: "/ressources" }, { nom: cat.nom }]} />
+            <Fil
+              items={[
+                { nom: "Ressources", to: "/ressources" },
+                itemMetier(verticale(VERTICALE_PRINCIPALE)!),
+                { nom: cat.nom },
+              ]}
+            />
             <h1 className="mt-4 max-w-[22ch] font-serif text-[clamp(32px,4.4vw,54px)] font-normal leading-[1.08] tracking-[-0.015em]">
               {cat.nom}
             </h1>
