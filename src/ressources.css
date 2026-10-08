@@ -1026,6 +1026,7 @@ body {
   text-decoration: underline;
   text-underline-offset: 2px;
 }
+.ress-cta-demo.joue .ress-cta-revoir,
 .ress-cta-demo.termine .ress-cta-revoir {
   display: inline;
 }
