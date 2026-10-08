@@ -16,6 +16,10 @@ export type Categorie = {
   tint: string;
   description: string;
   agent: string;
+  /** Titre de l'encart de fin d'article (CtaAgent.tsx). */
+  fin: string;
+  /** Ce que l'agent montre en animation : saisie de PEC, contrôle avant envoi ou virements. */
+  animation: "pec" | "controle" | "virements";
 };
 
 const CATS = categoriesData.categories as Record<CategorySlug, Omit<Categorie, "slug">>;

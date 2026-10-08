@@ -15,7 +15,7 @@ import { SousNav } from "../Onglets";
 import { FicheIdentite } from "./BlocsPlateforme";
 import { Corps } from "./Corps";
 import { Ancres } from "./Ancres";
-import { BandeDemo } from "../BandeDemo";
+import { CarteAgent, EncartAgent } from "./CtaAgent";
 import { ALireEnsuite, EtapeSuivante, Faq, Sources, Utile } from "./Fin";
 import { Sommaire, SommaireMobile, type Entree } from "./Sommaire";
 
@@ -133,51 +133,6 @@ function Metiers({ slug }: { slug: string }) {
   );
 }
 
-/** Titre de la carte démo ; « vos PEC {nom} » seulement si Granit a un connecteur pour ce portail. */
-function titreAgent(a: RessourceJson, p: Plateforme | null): string {
-  const connecteur = p && Object.keys(p.sources).some((k) => k.startsWith("granit"));
-  if (a.type === "plateforme" && p && connecteur) return `Vos PEC ${p.nom}, déposées pour vous`;
-  return categorie(a.category)!.agent;
-}
-
-/**
- * Carte démo de la colonne de droite, collante sous le sommaire : fond terracotta foncé (le blanc
- * y reste lisible ; la bande sombre est déjà en bas de page), bouton pilule blanc, et la fenêtre
- * de prise en charge rognée par le bas, dont une demande passe à l'accord.
- */
-function CarteDemo({
-  a,
-  p,
-  estPlateforme,
-}: {
-  a: RessourceJson;
-  p: Plateforme | null;
-  estPlateforme: boolean;
-}) {
-  return (
-    <div className="ress-carte-demo">
-      <p className="font-serif text-[22px] leading-[1.2] text-white">{titreAgent(a, p)}</p>
-      <Link to="/demo" className="ress-carte-demo-bouton">
-        Demander une démo
-      </Link>
-      <div className="ress-carte-demo-fenetre">
-        {estPlateforme && p ? (
-          <FenetrePlateforme
-            anime
-            plateforme={{
-              nom: p.nom,
-              logo: logoPlateforme(p.logo, "fenetre"),
-              statuts: statutsCarte(p.statuts),
-            }}
-          />
-        ) : (
-          <FenetrePlateforme anime />
-        )}
-      </div>
-    </div>
-  );
-}
-
 export function PageArticle({
   article: a,
   plateforme: p,
@@ -291,16 +246,16 @@ export function PageArticle({
               <Utile slug={a.slug} />
               <Ancres racine={corps} />
             </div>
-            {/* Sommaire et carte démo collent ensemble ; la colonne s'arrête avant la bande démo. */}
+            {/* Sommaire et carte de l'agent collent ensemble ; la colonne s'arrête avant l'encart de fin. */}
             <aside className="hidden min-[980px]:block">
               <div className="sticky top-[88px] flex flex-col gap-4">
                 <Sommaire entrees={entrees} />
-                <CarteDemo a={a} p={p} estPlateforme={Boolean(estPlateforme)} />
+                <CarteAgent article={a} plateforme={p} />
               </div>
             </aside>
           </div>
         </div>
-        <BandeDemo />
+        <EncartAgent article={a} plateforme={p} />
         <ALireEnsuite article={a} />
       </div>
     </SiteLayout>
