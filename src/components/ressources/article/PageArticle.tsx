@@ -6,16 +6,17 @@ import { categorie, dateFr, ficheJson, titreCourt } from "@/lib/ressources/conte
 import { verticale } from "@/lib/ressources/verticales";
 import type { Plateforme, RessourceJson } from "@/lib/ressources/types";
 import { Annuaire } from "../Annuaire";
-import { EcranPlateforme, MarquePlateforme, PhotoCarte, TitreItalique } from "../Cartes";
-import { photoFiche } from "@/lib/ressources/photos";
-import { logoPlateforme } from "@/lib/ressources/logos";
+import { FenetrePlateforme, MarquePlateforme, PhotoCarte, TitreItalique } from "../Cartes";
+import { estFicheTousPortails, photoFiche } from "@/lib/ressources/photos";
+import { logoPlateforme, statutsCarte } from "@/lib/ressources/logos";
 import { FIGURE_CSS } from "@/lib/ressources/figures";
 import { Fil } from "../Fil";
 import { SousNav } from "../Onglets";
 import { FicheIdentite } from "./BlocsPlateforme";
 import { Corps } from "./Corps";
 import { Ancres } from "./Ancres";
-import { ALireEnsuite, EncartFinal, EtapeSuivante, Faq, Sources, Utile } from "./Fin";
+import { BandeDemo } from "../BandeDemo";
+import { ALireEnsuite, EtapeSuivante, Faq, Sources, Utile } from "./Fin";
 import { Sommaire, SommaireMobile, type Entree } from "./Sommaire";
 
 /** Bandeau des pages d'aperçu (content/apercu), jamais en production. */
@@ -132,11 +133,49 @@ function Metiers({ slug }: { slug: string }) {
   );
 }
 
-/** Titre de la carte agent ; « vos PEC {nom} » seulement si Granit a un connecteur pour ce portail. */
+/** Titre de la carte démo ; « vos PEC {nom} » seulement si Granit a un connecteur pour ce portail. */
 function titreAgent(a: RessourceJson, p: Plateforme | null): string {
   const connecteur = p && Object.keys(p.sources).some((k) => k.startsWith("granit"));
-  if (a.type === "plateforme" && p && connecteur) return `L'agent dépose vos PEC ${p.nom}`;
+  if (a.type === "plateforme" && p && connecteur) return `Vos PEC ${p.nom}, déposées pour vous`;
   return categorie(a.category)!.agent;
+}
+
+/**
+ * Carte démo de la colonne de droite, collante sous le sommaire : fond terracotta foncé (le blanc
+ * y reste lisible ; la bande sombre est déjà en bas de page), bouton pilule blanc, et la fenêtre
+ * de prise en charge rognée par le bas, dont une demande passe à l'accord.
+ */
+function CarteDemo({
+  a,
+  p,
+  estPlateforme,
+}: {
+  a: RessourceJson;
+  p: Plateforme | null;
+  estPlateforme: boolean;
+}) {
+  return (
+    <div className="ress-carte-demo">
+      <p className="font-serif text-[22px] leading-[1.2] text-white">{titreAgent(a, p)}</p>
+      <Link to="/demo" className="ress-carte-demo-bouton">
+        Demander une démo
+      </Link>
+      <div className="ress-carte-demo-fenetre">
+        {estPlateforme && p ? (
+          <FenetrePlateforme
+            anime
+            plateforme={{
+              nom: p.nom,
+              logo: logoPlateforme(p.logo, "fenetre"),
+              statuts: statutsCarte(p.statuts),
+            }}
+          />
+        ) : (
+          <FenetrePlateforme anime />
+        )}
+      </div>
+    </div>
+  );
 }
 
 export function PageArticle({
@@ -208,16 +247,20 @@ export function PageArticle({
             </div>
             {/* Photo du thème à droite, sur grand écran seulement : la réponse reste visible sans défiler. */}
             {fiche && (
-              <div className="group relative hidden aspect-[4/3] overflow-hidden rounded-[16px] min-[980px]:block">
+              <div
+                className={`group relative hidden aspect-[4/3] overflow-hidden rounded-[16px] min-[980px]:block ${estPlateforme || estFicheTousPortails(fiche) ? "ress-fenetre-entete" : ""}`}
+              >
                 {estPlateforme ? (
-                  // Fiche plateforme : le logo s'affiche sur l'écran du portable, comme sur les cartes.
-                  <EcranPlateforme
-                    photo={photoFiche(fiche)}
-                    nom={p.nom}
-                    logo={logoPlateforme(p.logo, "ecran")}
-                    tailles="380px"
-                    chargement="haute"
+                  // Fiche plateforme : la même fenêtre de prise en charge que sur les cartes.
+                  <FenetrePlateforme
+                    plateforme={{
+                      nom: p.nom,
+                      logo: logoPlateforme(p.logo, "fenetre"),
+                      statuts: statutsCarte(p.statuts),
+                    }}
                   />
+                ) : estFicheTousPortails(fiche) ? (
+                  <FenetrePlateforme />
                 ) : (
                   <PhotoCarte photo={photoFiche(fiche)} tailles="380px" chargement="haute" />
                 )}
@@ -246,31 +289,18 @@ export function PageArticle({
               <Faq items={a.faqItems} />
               <Sources article={a} plateforme={p} />
               <Utile slug={a.slug} />
-              <EncartFinal />
               <Ancres racine={corps} />
             </div>
-            {/* Seul le sommaire est collant ; la carte agent, claire, reste en tête de colonne. */}
-            <aside className="hidden flex-col gap-4 min-[980px]:flex">
-              <div className="rounded-[14px] border border-[var(--border)] bg-white p-[18px]">
-                <span className="eyebrow" style={{ color: "var(--ink)" }}>
-                  Ce que fait Granit
-                </span>
-                <h3 className="mt-2 font-serif text-[21px] font-normal leading-[1.2] text-[var(--text)]">
-                  {titreAgent(a, p)}
-                </h3>
-                <p className="mt-2 text-[14.5px] text-[var(--text-soft)]">
-                  20 minutes avec l'équipe, sur vos propres dossiers.
-                </p>
-                <Link to="/demo" className="btn-primary mt-3.5 flex w-full justify-center">
-                  Voir la démo
-                </Link>
-              </div>
-              <div className="sticky top-[88px]">
+            {/* Sommaire et carte démo collent ensemble ; la colonne s'arrête avant la bande démo. */}
+            <aside className="hidden min-[980px]:block">
+              <div className="sticky top-[88px] flex flex-col gap-4">
                 <Sommaire entrees={entrees} />
+                <CarteDemo a={a} p={p} estPlateforme={Boolean(estPlateforme)} />
               </div>
             </aside>
           </div>
         </div>
+        <BandeDemo />
         <ALireEnsuite article={a} />
       </div>
     </SiteLayout>

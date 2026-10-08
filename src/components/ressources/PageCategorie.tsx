@@ -102,7 +102,7 @@ export function PageCategorie({ cat }: { cat: Categorie }) {
             </section>
           )}
 
-          <BandeDemo titre={cat.agent} />
+          <BandeDemo />
         </div>
       </div>
     </SiteLayout>

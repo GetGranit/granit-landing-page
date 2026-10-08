@@ -49,15 +49,16 @@ export function Hub() {
     <SiteLayout fond="var(--bg2)">
       <div className="ress bg-[var(--bg2)]">
         <section className={`${conteneur} pb-8 pt-12 text-center md:pt-14`}>
-          <div className="eyebrow">Ressources · Le guide du tiers payant</div>
-          <h1 className="mx-auto mt-4 font-serif text-[clamp(40px,5.2vw,64px)] font-normal leading-[1.04] tracking-[-0.02em] [text-wrap:balance]">
-            Le tiers payant optique,
+          <div className="eyebrow">Ressources · Pour les professionnels de santé</div>
+          <h1 className="mx-auto mt-4 font-serif text-[clamp(40px,5.2vw,64px)] font-normal leading-[1.14] tracking-[-0.02em] [text-wrap:balance]">
+            L'administratif de santé,
             <br className="hidden md:block" />{" "}
-            <em className="accent-italic pouls-souligne whitespace-nowrap">sans les rejets</em>.
+            <em className="accent-italic pouls-souligne whitespace-nowrap">sans le casse-tête</em>.
           </h1>
-          <p className="body-lg mx-auto mt-5 max-w-[60ch]">
-            Portails, prises en charge, rejets, paiements : des réponses pratiques pour le comptoir,
-            écrites par l'équipe qui automatise le tiers payant de magasins d'optique.
+          <p className="body-lg mx-auto mt-10 max-w-[60ch]">
+            Opticiens, audioprothésistes, pharmaciens, dentistes, centres de santé : des réponses
+            pratiques sur les mutuelles, les remboursements, les paiements et la réglementation.
+            Partez de votre métier ou de votre question.
           </p>
           <ParProbleme />
         </section>

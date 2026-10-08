@@ -111,7 +111,7 @@ export function PageMetier({ v }: { v: Verticale }) {
           </section>
         )}
 
-        <BandeDemo titre={v.agent} />
+        <BandeDemo />
       </div>
     </SiteLayout>
   );
