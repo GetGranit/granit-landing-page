@@ -12,7 +12,7 @@ export type Figure = {
   elements: { label: string; detail: string; valeurs: string[]; focus: boolean }[];
 };
 
-/** <figure> complète (étiquette, titre, schéma SVG, légende), en HTML. */
+/** <figure> complète (titre, schéma SVG, légende), en HTML. */
 export const figureHtml: (f: Figure) => string = moteur.figureHtml;
 
 /** Styles des figures, à poser une fois dans la page. */
