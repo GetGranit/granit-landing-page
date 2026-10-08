@@ -19,7 +19,7 @@
     ],
     "searchVolume": 1090,
     "unsplashQuery": "optician store",
-    "status": "pending",
+    "status": "review",
     "wave": 1,
     "level": "Pilier global",
     "parentSlug": null,
@@ -112,7 +112,8 @@
     ],
     "remplace": [
       "optique-tiers-payant-amc"
-    ]
+    ],
+    "publishedAt": "2026-10-08"
   },
   {
     "id": "A0",
