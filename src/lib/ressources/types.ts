@@ -58,6 +58,8 @@ export type RessourceJson = {
   liensEntrants: LienInterne[];
   /** Anciens articles (articles.ts) que celui-ci remplace : ils redirigent vers lui (301). */
   remplace?: string[];
+  /** Réécriture d'un ancien article de articles.ts, à la même adresse : remplace l'ancien. */
+  refonte?: boolean;
   /** Vague de la file (ajoutée à la lecture, sert au tri). */
   wave?: number;
   /** Métiers concernés (facultatif ; par défaut l'optique). */

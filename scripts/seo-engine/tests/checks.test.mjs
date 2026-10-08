@@ -159,8 +159,19 @@ test("source = page d'accueil refusée", () => {
   assert.ok(controler(a, ctx()).erreurs.some((e) => e.includes("page d'accueil")));
 });
 
-test("citation sourcée obligatoire", () => {
+test("citation facultative : absente = avertissement, sans <cite> = refus", () => {
   const a = articleValide();
   a.contentHtml = a.contentHtml.replace(/<blockquote>.*?<\/blockquote>/, "");
-  assert.ok(controler(a, ctx()).erreurs.some((e) => e.includes("blockquote")));
+  const r = controler(a, ctx());
+  assert.deepEqual(r.erreurs, []);
+  assert.ok(r.avertissements.some((e) => e.includes("aucune citation")));
+  a.contentHtml += "<blockquote><p>« Une phrase. »</p></blockquote>";
+  assert.ok(controler(a, ctx()).erreurs.some((e) => e.includes("sans <cite>")));
+});
+
+test("citation : trop courte ou reprenant le titre de la source, refusée sans réseau", async () => {
+  const { verifierSources } = await import("../lib/checks.mjs");
+  const src = [{ label: "ameli.fr · Le tiers payant", url: "https://exemple.invalid/x" }];
+  const courte = await verifierSources(src, [{ texte: "Le tiers payant", cite: "ameli.fr · Le tiers payant" }], { timeoutMs: 1 });
+  assert.ok(courte.erreurs.some((e) => e.includes("trop courte")));
 });

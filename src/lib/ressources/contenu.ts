@@ -71,7 +71,10 @@ export function remplacant(slug: string): string | undefined {
 }
 
 /** Tous les anciens articles FR encore en ligne (sans les remplacés), dans l'ordre de articles.ts. */
-const anciensFr: Fiche[] = articles.fr.filter((a) => !redirections[a.slug]).map(ficheAncien);
+const anciensFr: Fiche[] = articles.fr
+  // remplacés (301) ou réécrits par le moteur à la même adresse (refonte) : on n'affiche que le nouveau
+  .filter((a) => !redirections[a.slug] && !fichesJson.some((f) => f.slug === a.slug))
+  .map(ficheAncien);
 
 /** Anciens articles FR rattachés à une catégorie du cocon. */
 const anciensRattaches: Fiche[] = anciensFr.filter((f) => f.rattache);
