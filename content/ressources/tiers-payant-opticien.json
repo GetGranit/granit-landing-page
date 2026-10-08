@@ -206,7 +206,13 @@
     }
   ],
   "internalLinks": [],
-  "liensEntrants": [],
+  "liensEntrants": [
+    {
+      "slug": "portails-tiers-payant",
+      "anchor": "portails de tiers payant",
+      "type": "enfant"
+    }
+  ],
   "remplace": [
     "optique-tiers-payant-amc"
   ],
