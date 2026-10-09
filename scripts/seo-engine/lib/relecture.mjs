@@ -40,7 +40,10 @@ export const REGLES = `## Règles de relecture (en plus du guide)
 - Pas de paragraphe de remplissage (« Cette page reprend / rassemble… ») : le sommaire fait ce travail.
 - Phrases de 25 mots au plus.
 - Ne jamais annoncer un bloc vide ou un relevé absent (« la liste ci-dessous » sans liste).
-- Définir un terme du portail à sa première apparition. Répondre d'abord à l'idée fausse du lecteur.`;
+
+### Ce qui n'est jamais un point
+- Les marqueurs data-bloc (chiffres, organismes, statuts, contacts) : le contrôle du moteur exige chacun une fois, et un bloc dont la liste est vide ne s'affiche pas. Ne jamais demander de retirer, déplacer ou ajouter un marqueur. Seul le texte autour ne doit pas annoncer une liste vide.
+- La citation <blockquote> est facultative. Ne la demande que si le fichier de faits contient un texte exact (citation mot pour mot) ; sinon, n'en parle pas.- Définir un terme du portail à sa première apparition. Répondre d'abord à l'idée fausse du lecteur.`;
 
 const POINT = {
   type: "object",
@@ -96,14 +99,16 @@ export function schemaCorrection(schemaArticle) {
 /** Point qui justifie un tour de correction. */
 export const aCorriger = (p) => p.gravite !== "DETAIL";
 
+/** Point qui empêche « pret » : tout BLOQUANT, et les A_CORRIGER hors style (le style restant ne suffit pas à bloquer). */
+export const bloquant = (p) => p.gravite === "BLOQUANT" || (p.gravite === "A_CORRIGER" && p.angle !== "copy");
+
 /** Une erreur des contrôles du moteur devient un point bloquant pour le tour suivant. */
 export const pointMecanique = (e) => ({ gravite: "BLOQUANT", angle: "conformite", extrait: "contrôle du moteur", correction: e });
 
-/** Verdict final : « pret » seulement si rien ne reste ouvert et que le vérificateur l'a dit. */
+/** Verdict final, calculé sur les restes du vérificateur : « humain » seulement s'il reste un point bloquant, une erreur ou une décision. */
 export function decider({ verif, erreurs = [], decisions = [] }) {
   if (!verif || erreurs.length || decisions.length) return "humain";
-  if (verif.restes.some(aCorriger)) return "humain";
-  return verif.verdict === "pret" ? "pret" : "humain";
+  return verif.restes.some(bloquant) ? "humain" : "pret";
 }
 
 export function cumulCout(usages, coutDollars, model) {
@@ -151,9 +156,10 @@ export function messageCorrecteur(ctx, fiche, points) {
     bloc("Article à corriger", corps(fiche)),
     `## Points de relecture\n${listePoints(points)}`,
     `## Consigne\nRenvoie l'article entier corrigé. Applique tous les points BLOQUANT et A_CORRIGER, et les DETAIL quand c'est simple. ` +
+      `Les points de style (copy) s'appliquent mécaniquement et en totalité : coupe en phrases de 25 mots au plus toute phrase qui dépasse, même hors des points cités. ` +
       `Ne touche à rien d'autre : garde les id des H2, tocItems alignés, les marqueurs data-bloc et data-figure, les sources encore citées. ` +
       `N'invente aucun fait : retire plutôt que remplacer. Tu ne modifies jamais le fichier de faits. ` +
-      `S'il faut changer un fait, ou décider à la place d'un humain (publier ou non, changer la file), mets-le dans decision_humaine. ` +
+      `decision_humaine sert seulement s'il faut changer le fichier de faits, ou décider de publier ou de changer la file ; jamais pour un marqueur data-bloc ni pour une citation (voir « Ce qui n'est jamais un point »). ` +
       `Un point que tu n'appliques pas va dans non_appliques, avec la raison.`,
   ].join("\n\n");
 }
@@ -168,7 +174,7 @@ export function messageVerificateur(ctx, fiche, { points, corr, avertissements }
     `## Décisions renvoyées à un humain\n${corr.decision_humaine.map((d) => `- ${d}`).join("\n") || "Aucune."}`,
     `## Contrôles du moteur\n0 erreur. Avertissements : ${avertissements.join(" ; ") || "aucun"}`,
     `## Consigne\nVérifie point par point que chaque point est réglé, ou que son rejet est justifié. Cherche aussi les défauts introduits par la correction, avec les mêmes règles. ` +
-      `restes = tout ce qui reste ouvert, avec sa gravité. verdict = pret seulement si aucun BLOQUANT ni A_CORRIGER ne reste et qu'aucune décision humaine n'est en attente ; sinon humain. ` +
+      `restes = tout ce qui reste ouvert, avec sa gravité. verdict = pret si aucun BLOQUANT ni A_CORRIGER de fond (faits, conformité, SEO) ne reste et qu'aucune vraie décision humaine n'est en attente : des restes de style seuls n'empêchent pas pret. ` +
       `resume : ce que tu as vérifié, en phrases courtes, sans jargon.`,
   ].join("\n\n");
 }
@@ -233,8 +239,8 @@ export function verdictMarkdown(r, { model, cout }) {
   ];
   const restes = r.verif?.restes ?? [];
   if (r.erreurs.length) l.push("", "**Contrôles du moteur en échec :**", puces(r.erreurs));
-  if (restes.some(aCorriger)) l.push("", "**Restant :**", puces(restes.filter(aCorriger).map(pointMd)));
-  if (restes.some((p) => !aCorriger(p))) l.push("", "**Détails restants :**", puces(restes.filter((p) => !aCorriger(p)).map(pointMd)));
+  if (restes.some(bloquant)) l.push("", "**Restant :**", puces(restes.filter(bloquant).map(pointMd)));
+  if (restes.some((p) => !bloquant(p))) l.push("", "**Retouches de style et détails restants (ne bloquent pas) :**", puces(restes.filter((p) => !bloquant(p)).map(pointMd)));
   if (r.decisions.length) l.push("", "**À trancher par un humain :**", puces(r.decisions));
   if (r.nonAppliques.length) l.push("", "**Retours non appliqués (et pourquoi) :**", puces(r.nonAppliques.map((n) => `${n.point} → ${n.raison}`)));
   if (r.points.length) l.push("", "<details><summary>Points de la première relecture</summary>", "", puces(r.points.map(pointMd)), "", "</details>");

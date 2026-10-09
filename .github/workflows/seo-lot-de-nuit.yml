@@ -49,7 +49,7 @@ jobs:
           set -uo pipefail
           total=0; ok=(); ko=()
           for slug in $SLUGS; do
-            # une estimation prudente par article : rédaction (~0,40 $, 2 essais possibles) + boucle de relecture (~0,40 $ par tour, 2 tours au plus)
+            # une estimation prudente par article : rédaction (~0,40 $ par essai, 2 essais possibles) + boucle de relecture (~1,2 $ mesuré avec 2 tours)
             if awk -v t="$total" -v p="$PLAFOND" 'BEGIN{exit !(t + 2.5 > p)}'; then
               echo "Plafond de $PLAFOND $ bientôt atteint ($total $) : arrêt avant $slug"; ko+=("$slug (plafond)"); continue
             fi

@@ -32,7 +32,7 @@ Après la rédaction, `relire-article.mjs --slug {slug}` relit l'article avec tr
 2. **correcteur** : il renvoie l'article corrigé au schéma de `article-output.schema.json`. Il ne touche jamais au fichier de faits : un fait à changer part dans `decision_humaine` ;
 3. **contrôles du moteur** repassés (`controler` + `verifierSources`), puis **contre-relecture** par un appel qui n'a pas corrigé. Elle rend le verdict `pret` ou `humain`.
 
-Il y a au plus 2 tours de correction. Le verdict en markdown est ajouté au corps de la PR. Avec `humain`, le titre de la PR le dit et la PR reçoit le libellé `decision-humaine`. Rien n'est fusionné automatiquement. Le coût de la boucle compte dans le plafond du lot.
+Il y a au plus 2 tours de correction. Le verdict `humain` ne tombe que s'il reste un point de fond (faits, conformité, SEO), une erreur de contrôle ou une décision humaine : des phrases encore longues ne suffisent pas. Le verdict en markdown est ajouté au corps de la PR. Avec `humain`, le titre de la PR le dit et la PR reçoit le libellé `decision-humaine`. Rien n'est fusionné automatiquement. Le coût de la boucle compte dans le plafond du lot : environ 1,2 $ par article avec 2 tours (essai réel sur portail-actil le 09/10/2026 : 1,17 $).
 
 ```bash
 node scripts/seo-engine/relire-article.mjs --slug portail-actil --simuler --dry --out /tmp/essai   # sans clé ni dépense

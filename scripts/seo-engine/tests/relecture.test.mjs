@@ -27,8 +27,13 @@ test("decider : prêt seulement sans reste à corriger, sans erreur ni décision
   assert.equal(decider({ verif: { ...verif, restes: [point("A_CORRIGER")] } }), "humain");
   assert.equal(decider({ verif, decisions: ["changer un fait"] }), "humain");
   assert.equal(decider({ verif, erreurs: ["lien cassé"] }), "humain");
-  assert.equal(decider({ verif: { ...verif, verdict: "humain" } }), "humain");
   assert.equal(decider({ verif: null }), "humain");
+});
+
+test("decider : des restes de style seuls (phrases longues) ne suffisent pas à donner « humain »", () => {
+  const style = { ...point("A_CORRIGER"), angle: "copy" };
+  assert.equal(decider({ verif: { verdict: "humain", resume: "", restes: [style, point("DETAIL")] } }), "pret");
+  assert.equal(decider({ verif: { verdict: "pret", resume: "", restes: [style, point("BLOQUANT")] } }), "humain");
 });
 
 test("cumul du coût sur tous les appels", () => {
