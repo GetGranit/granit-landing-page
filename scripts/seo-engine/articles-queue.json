@@ -4117,7 +4117,7 @@
       "iremia santé"
     ],
     "searchVolume": null,
-    "status": "pending",
+    "status": "review",
     "wave": 3,
     "level": "Fille",
     "parentSlug": "solutions-tiers-payant-optique",
@@ -4144,7 +4144,8 @@
         "anchor": "toutes les solutions de tiers payant en optique",
         "type": "parent"
       }
-    ]
+    ],
+    "publishedAt": "2026-10-09"
   },
   {
     "id": "E2b",
