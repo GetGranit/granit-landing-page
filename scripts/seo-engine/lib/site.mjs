@@ -66,3 +66,22 @@ export function sortieGithub(valeurs) {
   if (!f) return;
   for (const [k, v] of Object.entries(valeurs)) appendFileSync(f, `${k}=${String(v).replace(/\n/g, " ")}\n`);
 }
+
+/** Message système commun (guide + extrait du gabarit), identique d'un appel à l'autre pour profiter du cache. */
+export function systemeGuide() {
+  return `${readFileSync(join(MOTEUR, "BLOG_CMS_granit.md"), "utf8")}\n\n---\n\n# Extrait du gabarit (GABARIT_ARTICLE_granit.md)\n\n${sectionsGabarit()}`;
+}
+
+/** Liens internes autorisés pour un article déjà écrit (lui-même exclu) : chemin -> titre. */
+export function ciblesDeLiens(file, article) {
+  const enLigne = publies(file).filter((a) => a.slug !== article.slug);
+  const cibles = new Map();
+  for (const a of enLigne) cibles.set(`/ressources/${a.slug}`, a.title);
+  const remplaces = new Set([...enLigne, article].flatMap((a) => a.remplace ?? []));
+  for (const a of anciensArticles()) {
+    if (remplaces.has(a.slug) || a.slug === article.slug) continue;
+    cibles.set(`/ressources/${a.slug}`, a.titre);
+  }
+  cibles.set("/ressources", "Hub des ressources");
+  return cibles;
+}
