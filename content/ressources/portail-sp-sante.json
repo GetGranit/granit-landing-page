@@ -1,0 +1,177 @@
+{
+  "slug": "portail-sp-sante",
+  "id": "A3",
+  "category": "plateformes",
+  "categoryName": "Plateformes et portails",
+  "type": "plateforme",
+  "plateforme": "sp-sante",
+  "title": "SP Santé TP pour les opticiens : espace pro, prise en charge, statuts et paiement",
+  "primaryKeyword": "sp sante tp",
+  "keywordCluster": [
+    "tp sp sante",
+    "sp santé professionnel de santé",
+    "sp sante professionnel de sante",
+    "sp santé tp",
+    "sp sante tp optique",
+    "sp sante professionnels de sante",
+    "sp sante pec",
+    "tp sp santé",
+    "sp santé professionnel",
+    "sp santé opticien partenaire"
+  ],
+  "parentSlug": "portails-tiers-payant",
+  "level": "Fille",
+  "author": {
+    "name": "Olivier",
+    "jobTitle": "Rédacteur, expert tiers payant",
+    "photo": "/auteurs/olivier.jpg",
+    "url": null
+  },
+  "reviewer": {
+    "name": "Nathalie",
+    "jobTitle": "Rédactrice, experte métier optique",
+    "photo": "/auteurs/nathalie.jpg",
+    "url": null
+  },
+  "datePublished": "2026-10-09",
+  "dateModified": "2026-10-09",
+  "checkedOn": "2026-10-07",
+  "wordCount": 2172,
+  "readTime": 9,
+  "metaDescription": "SP Santé TP pour opticiens : conventionnement, connexion à l'espace pro, demande de prise en charge optique, statuts et paiement. Le guide pas à pas.",
+  "contentHtml": "<p><strong>SP Santé n'est pas une mutuelle : c'est une marque de tiers payant, opérée par le Cetip (groupe Cegedim), qui paie l'opticien pour le compte de complémentaires santé, après une demande de prise en charge saisie en ligne.</strong> Pour pratiquer le tiers payant SP Santé (la requête « sp sante tp » que l'on tape au comptoir), le magasin doit d'abord signer une convention directement avec SP Santé. Il saisit ensuite chaque demande optique dans un service dédié, lit la décision de la complémentaire sur le portail, puis télétransmet la facture sous le code AMC de l'attestation du client. Cette page reprend chaque étape, du conventionnement au virement, avec les pièges que nos agents voient passer sur ce portail.</p><div class=\"key-takeaways\"><strong>L'essentiel</strong><ul><li>Un opticien se conventionne directement avec SP Santé, par un formulaire en ligne. Sans contrat, pas de tiers payant SP Santé.</li><li>La prise en charge optique se fait dans un service à part, ouvert par le bouton « Accéder au service », et le dossier doit être imprimé avant d'être transmis.</li><li>Seules les dépenses marquées « SP » sur l'attestation relèvent de SP Santé, et la facture part sous le code AMC inscrit sur cette attestation.</li><li>Le numéro INSEE de l'attestation peut différer de celui de la carte Vitale : c'est celui de l'attestation qu'il faut reprendre.</li><li>Le logiciel doit être réglé en gestion séparée (DRE ou concentrateur), sinon les factures n'arrivent pas.</li></ul></div><h2 id=\"sp-sante-mutuelles\">Qu'est-ce que SP Santé et quelles mutuelles passent par lui ?</h2><p>SP Santé est une marque de tiers payant de l'association Santé Pharma, mise en œuvre par Cegedim via sa structure Cetip : elle fait le lien entre des complémentaires santé et les professionnels de santé, dont les opticiens.</p><div data-bloc=\"chiffres\"></div><p>Concrètement, SP Santé ne rembourse rien sur ses propres fonds de mutuelle. Le service reçoit la demande du magasin, la transmet à la complémentaire (l'AMC, assurance maladie complémentaire), puis paie l'opticien une fois la facture acceptée. Selon les <a href=\"https://www.spsante.fr/api/cms/blocklists/Pages\">pages publiques de SP Santé</a>, le service annonce plus de 2 milliards d'euros de flux financiers et plus de 80 complémentaires santé en flux direct.</p><p>SP Santé appartient au même univers que iSanté : Cegedim présente les deux marques ensemble dans son <a href=\"https://www.cegedim.fr/solutions/Pages/default.aspx\">offre de gestion du tiers payant</a>, avec des filtres tarifaires pour l'optique. Au comptoir, cela explique pourquoi certains écrans et certains courriers portent la mention Cetip ou Cegedim plutôt que SP Santé. Pour situer SP Santé parmi les autres opérateurs, voyez notre panorama des <a href=\"/ressources/portails-tiers-payant\">portails de tiers payant</a>.</p><p>Côté optique, la <a href=\"https://www.spsante.fr/api/referentiel/list-amc\">liste publique des complémentaires actives par domaine</a> recense 24 codes complémentaires ouverts. Lors d'une demande, le portail optique fait aussi choisir l'organisme dans un sélecteur. La liste ci-dessous reprend ce que propose ce sélecteur, relevé par nos agents sur le portail en octobre 2026 : on y trouve par exemple Gerep ou Interiale Sigmage. Elle ne dit pas qu'une mutuelle passe uniquement par SP Santé : un même organisme peut avoir des contrats gérés ailleurs.</p><div data-bloc=\"organismes\"></div><div class=\"callout callout--tip\"><p><strong>Le bon réflexe :</strong> avant de chercher le nom de la mutuelle dans le sélecteur, regardez l'attestation du client. Seules les dépenses portant la mention « SP » sont prises en charge par SP Santé, et une zone indique, par domaine, un taux ou la nécessité d'une prise en charge.</p></div><p>Une évolution récente concerne la fonction publique : SP Santé annonce au 1er janvier 2026 l'ouverture d'Interiale pour les assurés de la fonction publique, en dentaire et optique, sous le code 29993227. La carte Sigmage du secteur privé garde le code 00403220. Deux clients couverts par des noms proches peuvent donc relever de deux codes AMC différents.</p><h2 id=\"sp-sante-espace-pro\">Comment accéder à l'espace pro SP Santé ?</h2><p>Un opticien obtient son accès à l'espace professionnel de santé SP Santé en se conventionnant directement, par le <a href=\"https://www.spsante.fr/components/identity/unauthenticated/request-conv.html\">formulaire de demande de conventionnement</a> en ligne. D'après les <a href=\"https://www.spsante.fr/api/faq\">Questions/Réponses de SP Santé</a>, le passage par l'Inter-AMC est réservé à d'autres professions, et sans contrat avec SP Santé, un magasin ne peut pas pratiquer le tiers payant SP Santé.</p><h3>Les étapes du conventionnement opticien</h3><ol class=\"steps\"><li><strong>Ouvrir le formulaire et choisir la catégorie Opticien.</strong> Le formulaire de demande de conventionnement est accessible sans compte.</li><li><strong>Renseigner l'identité du magasin.</strong> Identifiant FINESS ou Adeli, numéro RPPS, raison sociale, SIRET, enseigne et contact du magasin.</li><li><strong>Indiquer le mode de télétransmission.</strong> Flux, concentrateur (OCT, organisme concentrateur technique), logiciel et éditeur.</li><li><strong>Joindre les pièces justificatives et le RIB.</strong> IBAN et BIC du compte qui recevra les virements.</li><li><strong>Lire et accepter la convention.</strong> Puis valider la demande.</li><li><strong>Recevoir l'e-mail de confirmation.</strong> Il précise les modalités de création du compte en ligne.</li></ol><p>Le mode de télétransmission déclaré à l'étape trois n'est pas un détail administratif. C'est lui qui détermine par où vos factures arriveront chez SP Santé. Si votre éditeur de logiciel ou votre concentrateur change, mettez la convention à jour pour éviter des factures qui se perdent.</p><h3>Se connecter au portail</h3><p>Chaque magasin se connecte avec son identifiant et son mot de passe, puis saisit un code à 6 chiffres envoyé par e-mail par le Cetip, relevé par nos agents sur le portail. L'adresse e-mail rattachée au compte doit donc être lue au moment de la connexion : une boîte partagée du magasin évite de bloquer l'équipe quand la personne titulaire est absente.</p><p>Une fois connecté, le compte permet de saisir et suivre les demandes de prise en charge optique, de suivre ses règlements et de vérifier les droits des patients en temps réel. SP Santé ne publie pas de procédure propre aux opticiens pour un mot de passe oublié ou un compte bloqué : dans ce cas, passez par le centre d'appel indiqué dans la section contact.</p><h2 id=\"sp-sante-prise-en-charge\">Comment faire une prise en charge optique sur SP Santé ?</h2><p>La demande de prise en charge optique SP Santé (la « sp sante pec ») se fait dans un service à part, ouvert depuis le portail par le bouton « Accéder au service », et le dossier doit être imprimé avant de pouvoir être transmis.</p><p>Cette impression obligatoire surprend souvent la première fois : tant qu'elle n'est pas faite, la transmission ne part pas, relevé par nos agents sur le portail. Gardez l'exemplaire imprimé avec le devis : il sert de trace si la décision tarde ou si le montant réglé ne correspond pas.</p><h3>Avant de saisir : lire l'attestation</h3><p>Tout part de l'attestation de tiers payant SP Santé du client, pas de sa carte Vitale. Trois informations y sont décisives :</p><ul><li><strong>La mention « SP » sur la ligne optique.</strong> Sans elle, la dépense n'est pas prise en charge par SP Santé.</li><li><strong>La zone par domaine.</strong> Elle indique un taux ou la nécessité d'une prise en charge pour l'optique.</li><li><strong>Le code AMC.</strong> Chaque complémentaire a son propre code, et c'est sous ce code que la facture sera télétransmise.</li><li><strong>Le numéro INSEE et la date de naissance.</strong> La facture doit les reprendre tels qu'ils figurent sur l'attestation. Ce numéro peut différer de celui de la carte Vitale.</li></ul><h3>La saisie de la demande</h3><ol class=\"steps\"><li><strong>Se connecter au compte SP Santé.</strong> Identifiant, mot de passe, puis code reçu par e-mail.</li><li><strong>Ouvrir le service de prise en charge optique.</strong> Bouton « Accéder au service ».</li><li><strong>Choisir l'organisme dans le sélecteur.</strong> En cohérence avec l'attestation du client.</li><li><strong>Renseigner le bénéficiaire et l'équipement.</strong> Numéro INSEE et date de naissance de l'attestation, éléments du devis.</li><li><strong>Imprimer le dossier.</strong> Étape obligatoire avant la transmission.</li><li><strong>Transmettre, puis suivre la décision.</strong> La réponse de la complémentaire se lit sur le portail.</li></ol><p>Dans les dossiers que traitent nos agents, l'erreur la plus fréquente sur ce portail est de recopier le numéro de la carte Vitale au lieu de celui de l'attestation. Le dossier part, mais la couverture n'est pas reconnue. Pour la vision d'ensemble du circuit, de la demande à l'encaissement, voyez notre guide du <a href=\"/ressources/tiers-payant-opticien\">tiers payant opticien</a>.</p><h2 id=\"sp-sante-statuts\">Que veulent dire les statuts d'une prise en charge SP Santé ?</h2><p>Une demande SP Santé revient avec un statut qui dit ce que la complémentaire a décidé : accordé, en cours d'analyse ou refusé, avec deux cas particuliers à connaître. Le tableau ci-dessous reprend la lecture des statuts relevée par nos agents sur le portail.</p><div data-bloc=\"statuts\"></div><p>Le statut « Accordé » ne suffit pas à lui seul. Il faut lire la ligne entière, et notamment les messages qui l'accompagnent. Un accord affiché avec la mention « N° Sécurité sociale inconnu » signifie que le dossier est transmis, mais que la couverture n'est pas reconnue : les parts peuvent revenir à zéro.</p><div class=\"callout callout--warn\"><p><strong>Le piège :</strong> un « Accordé » accompagné de « N° Sécurité sociale inconnu » ressemble à une réussite. Avant de délivrer, vérifiez le numéro INSEE de l'attestation et la carte Vitale, puis corrigez la demande si besoin.</p></div><p>Le statut « Service momentanément indisponible » n'est pas une décision de la complémentaire. Il signale que la transmission n'est pas passée. Il suffit de retenter plus tard, sans modifier le dossier.</p><h2 id=\"sp-sante-vous-bloquez\">Vous bloquez sur SP Santé ?</h2><p>La plupart des blocages SP Santé se règlent en relisant l'attestation du client et le motif affiché par le portail. Voici les quatre situations que l'on rencontre au comptoir, dans l'ordre où elles se présentent.</p><h3>Je ne trouve pas la mutuelle dans la liste</h3><p>Vérifiez d'abord que la ligne optique de l'attestation porte bien la mention « SP » : sinon, la dépense ne relève pas de SP Santé et le contrat est géré ailleurs. Comparez ensuite le code AMC de l'attestation avec l'organisme proposé par le sélecteur, en pensant aux noms proches (Interiale et Sigmage, par exemple, n'ont pas le même code). Si l'attestation est bien SP Santé et que l'organisme reste introuvable, appelez le centre d'appel opticiens indiqué dans la section contact.</p><h3>La prise en charge est refusée</h3><p>Lisez le motif affiché sur le portail. Il peut par exemple indiquer que la demande est à adresser à la plateforme mentionnée sur l'attestation : dans ce cas, le contrat du client ne passe pas par SP Santé pour ce domaine. Corrigez le point signalé (organisme, numéro INSEE, date de naissance), puis refaites la demande. Si le motif reste incompréhensible, le support téléphonique est le bon interlocuteur.</p><h3>Elle reste en attente, sans réponse</h3><p>Un statut « En cours d'analyse » signifie que la complémentaire n'a pas encore décidé. Revenez lire la décision sur le portail plutôt que de renvoyer une seconde demande, qui créerait un doublon. SP Santé ne publie pas de délai de réponse propre à l'optique au-delà de ce que le portail affiche ; si l'attente se prolonge, appelez le centre d'appel avec la référence du dossier imprimé.</p><h3>L'accord est obtenu, mais le paiement n'arrive pas</h3><p>Vérifiez d'abord que la facture est bien partie : le logiciel doit télétransmettre en gestion séparée, par DRE ou par un concentrateur, sous le code AMC de l'attestation. Consultez ensuite le suivi des règlements dans le compte en ligne, qui indique si la complémentaire a accepté ou rejeté la facture, avec le motif. Si rien n'y figure, contactez le support, puis la réclamation par courrier si le problème persiste.</p><p>Gardez le motif exact affiché par le portail : c'est lui qui dit quoi corriger.</p><h2 id=\"sp-sante-paiement\">Quand et comment SP Santé paie-t-il l'opticien ?</h2><p>SP Santé paie le magasin après contrôle de la complémentaire, qui accepte ou rejette la facture ; le retour indique les motifs de rejet et la référence du virement. SP Santé ne publie pas de délai de paiement propre à l'optique.</p><p>Le paiement dépend d'abord d'un réglage technique. Selon les <a href=\"https://www.spsante.fr/api/faq\">Questions/Réponses de SP Santé</a>, les factures se télétransmettent en gestion séparée, par DRE (demande de remboursement électronique, norme SESAM-Vitale 1.40) ou par un concentrateur (OCT). Sans ce réglage du logiciel, les demandes n'arrivent pas. La gestion séparée signifie que la part complémentaire part dans un flux distinct de la part Assurance maladie obligatoire.</p><div data-figure=\"circuit-paiement-sp-sante\"></div><p>Le circuit se lit dans l'ordre : le magasin télétransmet sa facture sous le code AMC de l'attestation, SP Santé la transmet à la complémentaire, la complémentaire l'accepte ou la rejette, puis SP Santé vire le montant au magasin. Le retour porte la référence du virement : c'est elle qui permet de rapprocher chaque facture de la ligne bancaire. Pour organiser ce pointage au quotidien, voyez notre méthode pour <a href=\"/ressources/rapprochement-noemie\">rapprocher flux NOEMIE et virements bancaires</a>.</p><p>Quand un rejet revient, le motif est indiqué dans le retour. Corrigez la facture (code AMC, numéro INSEE, date de naissance) et retransmettez-la, plutôt que de laisser la créance vieillir. Quand ces demandes et ces suivis se comptent par dizaines chaque jour, la saisie et le pointage deviennent le goulot du magasin : c'est ce que prennent en charge les <a href=\"/agents\">agents Granit</a>, qui saisissent les prises en charge sur les portails et renvoient le statut à l'équipe.</p><h2 id=\"sp-sante-contact\">Comment contacter SP Santé ?</h2><p>Un opticien contacte SP Santé par le centre d'appel unique, au 0820 20 61 88 (numéro Indigo à 0,12 €/min), puis par courrier de réclamation si le problème n'est pas réglé.</p><div data-bloc=\"contacts\"></div><p>La réclamation se fait par courrier uniquement, après un premier appel au support, à l'adresse CETIP Service Réclamations, BP 50413, 45204 Montargis Cedex. Un accusé de réception est annoncé sous 10 jours ouvrables. Joignez au courrier la référence du dossier, le motif affiché par le portail et, pour un paiement, la référence du virement attendu.</p><p>Avant d'appeler, rassemblez l'attestation du client (code AMC, numéro INSEE), le dossier imprimé et le statut exact affiché. Ces éléments raccourcissent l'échange et évitent un second appel. Pour comparer avec un autre opérateur, notre page sur le <a href=\"/ressources/portail-viamedis\">portail Viamedis</a> suit la même structure.</p>",
+  "tocItems": [
+    {
+      "id": "sp-sante-mutuelles",
+      "label": "SP Santé et ses complémentaires"
+    },
+    {
+      "id": "sp-sante-espace-pro",
+      "label": "Accéder à l'espace pro SP Santé"
+    },
+    {
+      "id": "sp-sante-prise-en-charge",
+      "label": "Faire une prise en charge optique"
+    },
+    {
+      "id": "sp-sante-statuts",
+      "label": "Lire les statuts d'une demande"
+    },
+    {
+      "id": "sp-sante-vous-bloquez",
+      "label": "Vous bloquez sur SP Santé ?"
+    },
+    {
+      "id": "sp-sante-paiement",
+      "label": "Quand et comment SP Santé paie"
+    },
+    {
+      "id": "sp-sante-contact",
+      "label": "Contacter SP Santé"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "Comment fonctionne le tiers payant SP Santé ?",
+      "answer": "SP Santé est une marque de tiers payant de l'association Santé Pharma, mise en œuvre par Cegedim via le Cetip. Ce n'est pas une mutuelle : le service fait le lien entre les complémentaires santé et les professionnels de santé. L'opticien saisit la demande de prise en charge, la complémentaire décide, puis SP Santé paie le magasin après contrôle de la facture."
+    },
+    {
+      "question": "Comment accéder à l'espace pro SP Santé quand on est opticien ?",
+      "answer": "Un opticien se conventionne directement avec SP Santé, par un formulaire de demande de conventionnement en ligne, en choisissant la catégorie Opticien. Il renseigne l'identité du magasin, son mode de télétransmission et son RIB, puis accepte la convention. Un e-mail de confirmation donne ensuite les modalités de création du compte, auquel on se connecte avec identifiant, mot de passe et code reçu par e-mail."
+    },
+    {
+      "question": "Quelles mutuelles passent par SP Santé pour le tiers payant optique ?",
+      "answer": "La liste publique de SP Santé recense 24 codes complémentaires ouverts en optique. Le sélecteur du portail optique propose notamment Gerep ou Interiale Sigmage. Le plus sûr reste l'attestation du client : seules les dépenses portant la mention « SP » sont prises en charge par SP Santé."
+    },
+    {
+      "question": "Comment faire une demande de prise en charge optique sur SP Santé ?",
+      "answer": "La demande se fait dans un service à part, ouvert depuis le compte SP Santé par le bouton « Accéder au service ». On choisit l'organisme, on reprend le numéro INSEE et la date de naissance de l'attestation, puis on saisit l'équipement. Le dossier doit être imprimé avant de pouvoir être transmis."
+    },
+    {
+      "question": "Que signifient les statuts d'une prise en charge SP Santé (accordée, en attente, refusée) ?",
+      "answer": "« Accordé » signifie que la complémentaire accepte la prise en charge, sauf si la mention « N° Sécurité sociale inconnu » l'accompagne : la couverture n'est alors pas reconnue. « En cours d'analyse » signifie que la complémentaire n'a pas encore décidé. « Refusé » signifie pas de prise en charge en l'état : il faut lire le motif, corriger et refaire la demande."
+    },
+    {
+      "question": "Sous quel délai SP Santé paie-t-il l'opticien ?",
+      "answer": "SP Santé ne publie pas de délai de paiement propre à l'optique. Le magasin est payé après contrôle de la complémentaire, qui accepte ou rejette la facture. Le retour indique les motifs de rejet éventuels et la référence du virement."
+    },
+    {
+      "question": "Comment contacter SP Santé quand on est professionnel de santé ?",
+      "answer": "Les opticiens disposent d'un centre d'appel unique au 0820 20 61 88, un numéro Indigo à 0,12 €/min. Si le problème persiste après un premier appel, une réclamation se fait par courrier uniquement à CETIP Service Réclamations, BP 50413, 45204 Montargis Cedex. Un accusé de réception est annoncé sous 10 jours ouvrables."
+    }
+  ],
+  "sources": [
+    {
+      "label": "spsante.fr · Pages publiques (À propos, Professionnel de santé, Attestation, Nous contacter, Réclamation, Nouveautés AMC)",
+      "url": "https://www.spsante.fr/api/cms/blocklists/Pages"
+    },
+    {
+      "label": "cegedim.fr · Solutions et services (iSanté & SP Santé)",
+      "url": "https://www.cegedim.fr/solutions/Pages/default.aspx"
+    },
+    {
+      "label": "spsante.fr · Liste publique des complémentaires actives par domaine",
+      "url": "https://www.spsante.fr/api/referentiel/list-amc"
+    },
+    {
+      "label": "spsante.fr · Formulaire de demande de conventionnement",
+      "url": "https://www.spsante.fr/components/identity/unauthenticated/request-conv.html"
+    },
+    {
+      "label": "spsante.fr · Questions/Réponses",
+      "url": "https://www.spsante.fr/api/faq"
+    }
+  ],
+  "figures": [
+    {
+      "id": "circuit-paiement-sp-sante",
+      "type": "flux",
+      "titre": "Du magasin au virement SP Santé",
+      "legende": "Le paiement n'arrive qu'après le contrôle de la complémentaire, qui accepte ou rejette la facture.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "Magasin d'optique",
+          "detail": "Facture en DRE ou OCT, sous le code AMC",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "SP Santé (Cetip)",
+          "detail": "Transmet la facture à la complémentaire",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Complémentaire santé",
+          "detail": "Accepte ou rejette, avec motif",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Virement au magasin",
+          "detail": "Avec la référence du virement",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [
+    {
+      "id": "A0",
+      "slug": "portails-tiers-payant",
+      "anchor": "portails de tiers payant",
+      "type": "parent"
+    }
+  ],
+  "liensEntrants": [],
+  "remplace": [],
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-09T07:37:04.266Z",
+    "avertissements": [
+      "aucune citation (facultative)"
+    ]
+  }
+}

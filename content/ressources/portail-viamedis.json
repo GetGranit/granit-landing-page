@@ -164,7 +164,13 @@
       "type": "parent"
     }
   ],
-  "liensEntrants": [],
+  "liensEntrants": [
+    {
+      "slug": "portail-sp-sante",
+      "anchor": "sp sante tp",
+      "type": "soeur"
+    }
+  ],
   "remplace": [],
   "moteur": {
     "model": "claude-opus-5-5",
