@@ -149,13 +149,13 @@
     {
       "label": "Téléphone convention TP+",
       "valeur": "0 892 970 400",
-      "detail": "Du lundi au vendredi, 9 h à 18 h · 0,80 €/min + prix d'un appel",
+      "detail": "Du lundi au vendredi, 9 h à 18 h · numéro surtaxé",
       "source": "sc-ps"
     },
     {
       "label": "Téléphone réseau partenaire",
       "valeur": "0 821 233 050",
-      "detail": "Du lundi au vendredi, 9 h à 18 h · 0,20 €/min + prix d'un appel · choix 2 pour une candidature",
+      "detail": "Du lundi au vendredi, 9 h à 18 h · numéro surtaxé · choix 2 pour une candidature",
       "source": "sc-optique"
     },
     {
