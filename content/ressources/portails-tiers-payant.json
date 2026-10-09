@@ -197,6 +197,11 @@
       "slug": "portail-actil",
       "anchor": "actil tp",
       "type": "enfant"
+    },
+    {
+      "slug": "contacts-plateformes-tiers-payant",
+      "anchor": "contacts pros des plateformes de tiers payant",
+      "type": "enfant"
     }
   ],
   "remplace": [

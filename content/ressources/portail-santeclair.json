@@ -233,7 +233,13 @@
       "type": "parent"
     }
   ],
-  "liensEntrants": [],
+  "liensEntrants": [
+    {
+      "slug": "contacts-plateformes-tiers-payant",
+      "anchor": "contacts pros des plateformes de tiers payant",
+      "type": "soeur"
+    }
+  ],
   "remplace": [],
   "moteur": {
     "model": "claude-opus-5-5",
