@@ -179,6 +179,11 @@
       "type": "enfant"
     },
     {
+      "slug": "portail-santeclair",
+      "anchor": "tp santeclair",
+      "type": "enfant"
+    },
+    {
       "slug": "portail-seveane",
       "anchor": "seveane tp",
       "type": "enfant"
