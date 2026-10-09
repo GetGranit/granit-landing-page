@@ -166,6 +166,11 @@
   ],
   "liensEntrants": [
     {
+      "slug": "portail-itelis",
+      "anchor": "Itelis TP pour les opticiens : espace pro, prise en charge, statuts et paiement",
+      "type": "soeur"
+    },
+    {
       "slug": "portail-almerys",
       "anchor": "almerys tp",
       "type": "soeur"
