@@ -2,11 +2,11 @@
 // fins, en niveaux de gris qui reprennent leur couleur au survol. Le mur garde la même taille
 // quelle que soit la longueur de l'annuaire : au-delà de l'échantillon, on renvoie à la liste.
 import { Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { dateFr } from "@/lib/ressources/contenu";
 import { GENRES, annuaire, type Entree, type Genre } from "@/lib/ressources/annuaire";
 import { logoPlateforme } from "@/lib/ressources/logos";
-import type { Fiche } from "@/lib/ressources/types";
+import type { Fiche, VerticaleSlug } from "@/lib/ressources/types";
 
 /** Cases du mur, case de fin comprise : 4 rangées de 5 (ou 5 de 4). La vedette compte pour 4. */
 const CASES = 20;
@@ -15,6 +15,22 @@ const CASES_MOBILE = 12;
 
 const FILTRES: (Genre | "tous")[] = ["tous", "plateforme", "reseau", "mutuelle"];
 
+/** Nom court d'un métier sur les étiquettes des cases. */
+const METIER_COURT: Record<VerticaleSlug, string> = {
+  optique: "Optique",
+  audio: "Audio",
+  dentaire: "Dentaire",
+  pharmacie: "Pharmacie",
+  laboratoires: "Labos",
+  cliniques: "Cliniques",
+  centres: "Centres",
+  ehpad: "EHPAD",
+};
+/** Ordre des métiers dans le filtre : les métiers du comptoir d'abord. */
+const ORDRE_METIERS = Object.keys(METIER_COURT) as VerticaleSlug[];
+/** À partir de ce nombre de métiers, l'étiquette dit « Tous métiers ». */
+const TOUS_METIERS = 6;
+
 const mono = "font-mono text-[10.5px] uppercase tracking-[0.1em]";
 const focus =
   "focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-[#b94a2f]";
@@ -22,19 +38,20 @@ const cadre = "relative flex h-[116px] flex-col items-center justify-center px-4
 
 export function MurPlateformes({ fiches }: { fiches: Fiche[] }) {
   const [genre, setGenre] = useState<Genre | "tous">("tous");
+  const [metier, setMetier] = useState<VerticaleSlug | "tous">("tous");
   const entrees = annuaire(fiches);
+  const passe = (e: Entree, g = genre, m = metier) =>
+    (g === "tous" || e.genre === g) && (m === "tous" || e.metiers.includes(m));
+  const metiers = ORDRE_METIERS.filter((v) => entrees.some((e) => e.metiers.includes(v)));
   const enLigne = entrees.filter((e) => e.fiche).length;
-  const annonces = entrees.length - enLigne;
   const dernierReleve = entrees
     .map((e) => e.checkedOn ?? "")
     .sort()
     .at(-1);
 
   // Une seule fiche : elle passe en vedette sur 2×2 cases, les autres attendent en filigrane.
-  const vedette = enLigne === 1 ? entrees[0] : undefined;
-  const filtrees = vedette
-    ? entrees.slice(1)
-    : entrees.filter((e) => genre === "tous" || e.genre === genre);
+  const vedette = enLigne === 1 && passe(entrees[0]) ? entrees[0] : undefined;
+  const filtrees = entrees.filter((e) => e !== vedette && passe(e));
   const place = (cases: number, poidsVedette: number) => cases - 1 - (vedette ? poidsVedette : 0);
   const mur = filtrees.slice(0, place(CASES, 4));
   const surMobile = place(CASES_MOBILE, 2);
@@ -48,7 +65,7 @@ export function MurPlateformes({ fiches }: { fiches: Fiche[] }) {
 
   return (
     <section className="mx-auto max-w-[1280px] px-4 pt-14 md:px-6">
-      <div className="flex flex-wrap items-end justify-between gap-x-10 gap-y-6 border-t border-[var(--border)] pt-5">
+      <div className="border-t border-[var(--border)] pt-5">
         <div className="max-w-[56ch]">
           <p className={`${mono} text-[var(--text-muted)]`}>Annuaire du tiers payant</p>
           <h2 className="mt-2 font-serif text-[26px] font-normal leading-tight md:text-[34px]">
@@ -59,29 +76,16 @@ export function MurPlateformes({ fiches }: { fiches: Fiche[] }) {
             le portail lui-même, communes à tous les métiers.
           </p>
         </div>
-        <dl className="flex items-end gap-6 md:gap-8">
-          <Compteur
-            valeur={enLigne}
-            libelle={enLigne > 1 ? "portails relevés" : "portail relevé"}
-          />
-          {annonces > 0 && (
-            <>
-              <span aria-hidden className="mb-1 h-12 w-px bg-[var(--border)]" />
-              <Compteur valeur={annonces} libelle="en préparation" pale />
-            </>
-          )}
-        </dl>
       </div>
 
-      {!vedette && (
+      <div className="mt-8 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
         <div
           role="group"
           aria-label="Filtrer par type"
-          className="-mx-4 mt-8 flex gap-x-5 overflow-x-auto px-4 md:mx-0 md:flex-wrap md:overflow-visible md:px-0"
+          className="inline-flex max-w-full self-start overflow-x-auto rounded-full border border-[var(--border)] bg-white p-1"
         >
           {FILTRES.map((id) => {
-            const n = entrees.filter((e) => id === "tous" || e.genre === id).length;
-            if (n === 0) return null;
+            const n = entrees.filter((e) => passe(e, id)).length;
             const actif = genre === id;
             return (
               <button
@@ -89,22 +93,48 @@ export function MurPlateformes({ fiches }: { fiches: Fiche[] }) {
                 type="button"
                 aria-pressed={actif}
                 onClick={() => setGenre(id)}
-                className={`${focus} -mb-px shrink-0 whitespace-nowrap border-b py-1.5 text-[14px] transition-colors ${actif ? "border-[var(--text)] font-semibold text-[var(--text)]" : "border-transparent text-[var(--text-soft)] hover:text-[var(--text)]"}`}
+                className={`${focus} shrink-0 whitespace-nowrap rounded-full px-3.5 py-1.5 text-[13.5px] transition-colors ${actif ? "bg-[var(--text)] font-semibold text-white" : "text-[var(--text-soft)] hover:text-[var(--text)]"}`}
               >
                 {id === "tous" ? "Tout" : GENRES[id].filtre}
-                <span className={`${mono} ml-1.5 text-[var(--text-muted)]`}>{n}</span>
+                <span
+                  className={`${mono} ml-1.5 ${actif ? "text-white/70" : "text-[var(--text-muted)]"}`}
+                >
+                  {n}
+                </span>
               </button>
             );
           })}
         </div>
-      )}
+        {metiers.length > 1 && (
+          <div
+            role="group"
+            aria-label="Filtrer par métier"
+            className="-mx-4 flex gap-1.5 overflow-x-auto px-4 pb-1 md:mx-0 md:flex-wrap md:justify-end md:overflow-visible md:px-0 md:pb-0"
+          >
+            {(["tous", ...metiers] as const).map((v) => {
+              const actif = metier === v;
+              return (
+                <button
+                  key={v}
+                  type="button"
+                  aria-pressed={actif}
+                  onClick={() => setMetier(v)}
+                  className={`${focus} shrink-0 whitespace-nowrap rounded-full border px-3 py-1 text-[13px] transition-colors ${actif ? "border-[#b94a2f] bg-[#b94a2f]/10 text-[#b94a2f]" : "border-[var(--border)] text-[var(--text-soft)] hover:border-[var(--text-muted)] hover:text-[var(--text)]"}`}
+                >
+                  {v === "tous" ? "Tous métiers" : METIER_COURT[v]}
+                </button>
+              );
+            })}
+          </div>
+        )}
+      </div>
 
       <ul
-        className={`${vedette ? "mt-8" : "mt-4"} grid grid-cols-2 gap-px overflow-hidden border border-[var(--border)] bg-[var(--border)] md:grid-cols-4 lg:grid-cols-5`}
+        className={`mt-4 grid grid-cols-2 gap-px overflow-hidden border border-[var(--border)] bg-[var(--border)] md:grid-cols-4 lg:grid-cols-5`}
       >
         {vedette && <Vedette e={vedette} />}
         {mur.map((e, i) => (
-          <Case key={e.slug} e={e} cacheMobile={i >= surMobile} />
+          <Case key={e.slug} e={e} metier={metier} cacheMobile={i >= surMobile} />
         ))}
         {enLigne > 1 ? (
           <CaseLien total={entrees.length} reste={reste} resteMobile={resteMobile} />
@@ -127,19 +157,6 @@ export function MurPlateformes({ fiches }: { fiches: Fiche[] }) {
         {dernierReleve && <span>Dernier relevé le {dateFr(dernierReleve)}</span>}
       </p>
     </section>
-  );
-}
-
-function Compteur({ valeur, libelle, pale }: { valeur: number; libelle: string; pale?: boolean }) {
-  return (
-    <div className="flex flex-col-reverse">
-      <dt className={`${mono} mt-1.5 text-[var(--text-muted)]`}>{libelle}</dt>
-      <dd
-        className={`font-serif text-[44px] leading-[0.85] tabular-nums md:text-[60px] ${pale ? "text-[var(--text-muted)]" : "text-[var(--text)]"}`}
-      >
-        {valeur}
-      </dd>
-    </div>
   );
 }
 
@@ -184,7 +201,41 @@ function Marque({ e }: { e: Entree }) {
   );
 }
 
-function Case({ e, cacheMobile }: { e: Entree; cacheMobile?: boolean }) {
+/** Les métiers de l'acteur, en haut de la case ; le métier filtré ressort en couleur. */
+function Etiquettes({
+  metiers,
+  actif,
+}: {
+  metiers: VerticaleSlug[];
+  actif: VerticaleSlug | "tous";
+}) {
+  if (metiers.length === 0) return null;
+  const tous = metiers.length >= TOUS_METIERS;
+  return (
+    <span
+      className={`${mono} absolute inset-x-3 top-2.5 truncate text-[9.5px] tracking-[0.08em] text-[var(--text-muted)]`}
+    >
+      {tous
+        ? "Tous métiers"
+        : metiers.map((m, i) => (
+            <Fragment key={m}>
+              {i > 0 && " · "}
+              <span className={m === actif ? "text-[#b94a2f]" : undefined}>{METIER_COURT[m]}</span>
+            </Fragment>
+          ))}
+    </span>
+  );
+}
+
+function Case({
+  e,
+  metier,
+  cacheMobile,
+}: {
+  e: Entree;
+  metier: VerticaleSlug | "tous";
+  cacheMobile?: boolean;
+}) {
   const li = `bg-[var(--bg2)] ${cacheMobile ? "hidden md:block" : ""}`;
   const pied = (
     <span
@@ -210,9 +261,12 @@ function Case({ e, cacheMobile }: { e: Entree; cacheMobile?: boolean }) {
       <li className={li}>
         <div className={cadre}>
           <span className="sr-only">
-            {e.nom}, {GENRES[e.genre].nom} : fiche bientôt.
+            {e.nom}, {GENRES[e.genre].nom}
+            {e.metiers.length > 0 && ` (${e.metiers.map((m) => METIER_COURT[m]).join(", ")})`} :
+            fiche bientôt.
           </span>
           <span aria-hidden className="contents">
+            <Etiquettes metiers={e.metiers} actif={metier} />
             <Marque e={e} />
             {pied}
           </span>
@@ -228,6 +282,7 @@ function Case({ e, cacheMobile }: { e: Entree; cacheMobile?: boolean }) {
         aria-label={`${e.nom} : la fiche`}
         className={`group ${cadre} ${focus} transition-colors duration-300 hover:bg-white`}
       >
+        <Etiquettes metiers={e.metiers} actif={metier} />
         <Marque e={e} />
         {pied}
       </Link>
