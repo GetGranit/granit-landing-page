@@ -157,6 +157,11 @@
       "slug": "portail-viamedis",
       "anchor": "viamedis tp",
       "type": "enfant"
+    },
+    {
+      "slug": "portail-isante",
+      "anchor": "isante tp",
+      "type": "enfant"
     }
   ],
   "remplace": [
