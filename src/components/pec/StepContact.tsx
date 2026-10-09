@@ -156,12 +156,15 @@ export function StepThanks({
   children,
   creneau = true,
   onCal,
+  onRestart,
 }: {
   title: string;
   children: React.ReactNode;
   /** Proposer un créneau tout de suite (pas pour « Me prévenir »). */
   creneau?: boolean;
   onCal?: () => void;
+  /** Repartir d'une autre carte (évite le cul-de-sac après « Me prévenir »). */
+  onRestart?: () => void;
 }) {
   return (
     <Screen id="thanks">
@@ -179,6 +182,7 @@ export function StepThanks({
           Choisir un créneau maintenant <span className="arrow">→</span>
         </a>
       )}
+      {onRestart && <TextLink onClick={onRestart}>Essayer avec une autre carte</TextLink>}
     </Screen>
   );
 }

@@ -503,6 +503,7 @@ function PecPage() {
           }
           creneau={step.kind !== "oxantis"}
           onCal={() => track("pec_cal_clic", { ecran: "merci", kind: step.kind })}
+          onRestart={() => go({ s: "capture" })}
         >
           <Muted>
             {step.kind === "essai-off"
