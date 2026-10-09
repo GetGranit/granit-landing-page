@@ -27,9 +27,9 @@
   ],
   "chiffres": [
     {
-      "valeur": "+3 700",
-      "label": "opticiens partenaires du réseau (2025)",
-      "source": "acuite-2026"
+      "valeur": "≈ 3 700",
+      "label": "magasins d'optique dans le réseau 2025-2029",
+      "source": "acuite-2025"
     },
     {
       "valeur": "+60",
@@ -149,13 +149,13 @@
     {
       "label": "Téléphone convention TP+",
       "valeur": "0 892 970 400",
-      "detail": "Du lundi au vendredi, 9 h à 18 h · 0,80 €/min + prix d'un appel",
+      "detail": "Du lundi au vendredi, 9 h à 18 h · numéro surtaxé",
       "source": "sc-ps"
     },
     {
       "label": "Téléphone réseau partenaire",
       "valeur": "0 821 233 050",
-      "detail": "Du lundi au vendredi, 9 h à 18 h · 0,20 €/min + prix d'un appel · choix 2 pour une candidature",
+      "detail": "Du lundi au vendredi, 9 h à 18 h · numéro surtaxé · choix 2 pour une candidature",
       "source": "sc-optique"
     },
     {
@@ -283,10 +283,10 @@
       "url": "https://www.santeclair.fr/fr/professionnel-assurance/tiers-payant-complementaire",
       "consulte": "2026-10-07"
     },
-    "acuite-2026": {
-      "label": "Acuité · Interview de Christian Acknin, DG de Santéclair (avril 2026)",
-      "url": "https://www.acuite.fr/actualites/profession/secuocam/exclu-tiers-payant-menace-santeclair-alerte-335157",
-      "consulte": "2026-10-07"
+    "acuite-2025": {
+      "label": "Acuité · Santéclair, chiffres clés 2024 (avril 2025)",
+      "url": "https://www.acuite.fr/actualite/ocam/306513/santeclair-renforce-son-role-dans-lecosysteme-de-sante-chiffres-cles-2024-et",
+      "consulte": "2026-10-09"
     },
     "granit-connecteur": {
       "label": "Connecteur Santéclair de Granit (relevé du 07/10/2026)",
