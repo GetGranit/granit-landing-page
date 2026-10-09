@@ -4,7 +4,7 @@
   "modele": "outil-saisie",
   "logo": null,
   "checkedOn": "2026-10-09",
-  "aRelire": true,
+  "aRelire": false,
   "identite": {
     "raisonSociale": "Vorreiter Activities (SASU)",
     "siege": "Ambérieu-en-Bugey (01)",
@@ -123,5 +123,6 @@
       "url": "https://optibot.fr/legal/sous-traitants",
       "consulte": "2026-10-09"
     }
-  }
+  },
+  "_relu": "Relu par Paul le 09/10/2026."
 }
