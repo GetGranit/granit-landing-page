@@ -344,7 +344,7 @@ function PecPage() {
     const app = import.meta.env.VITE_PEC_APP_URL;
     if (app) {
       window.location.assign(
-        `${String(app).replace(/\/$/, "")}/parcours-plg/acces?depuis=lead-magnet&portail=${encodeURIComponent(portail.id)}`,
+        `${String(app).replace(/\/$/, "")}/parcours-plg/accueil?depuis=lead-magnet&portail=${encodeURIComponent(portail.id)}`,
       );
       return;
     }
