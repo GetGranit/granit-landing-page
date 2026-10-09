@@ -32,8 +32,10 @@ export type RessourceJson = {
   id: string;
   category: CategorySlug;
   categoryName: string;
-  type: "standard" | "resolution" | "plateforme";
+  type: "standard" | "resolution" | "plateforme" | "vs" | "grille";
   plateforme: string | null;
+  /** Page comparative : fichiers content/concurrents/{slug}.json, dans l'ordre (Granit en dernier). */
+  concurrents?: string[];
   title: string;
   primaryKeyword: string;
   keywordCluster: string[];
@@ -81,6 +83,34 @@ export type Plateforme = {
   contacts: { label: string; valeur: string; detail?: string; url?: string; source: string }[];
   organismes?: { source: string; note?: string; liste: string[] };
   sources: Record<string, { label: string; url: string; consulte?: string }>;
+};
+
+/** Un axe comparé : `valeur` = « oui », « non », « non publié » ou un texte court. */
+export type Axe = { valeur: string; detail?: string; source: string | null };
+
+export type AxeCle =
+  | "quiFait"
+  | "pec"
+  | "rejets"
+  | "rapprochement"
+  | "avance"
+  | "engagement"
+  | "hds"
+  | "plateformes";
+
+export type Modele = "interne" | "freelance" | "prestataire" | "outil-saisie" | "agents-ia";
+
+/** Fichier de faits content/concurrents/{slug}.json (gabarit §6 bis). Le champ `exclus` n'est jamais affiché. */
+export type Concurrent = {
+  slug: string;
+  nom: string;
+  modele: Modele;
+  checkedOn: string;
+  aRelire?: boolean;
+  axes: Partial<Record<AxeCle, Axe>>;
+  citations?: { texte: string; source: string }[];
+  meilleurSi: string[];
+  sources: Record<string, { label: string; url: string | null; consulte?: string }>;
 };
 
 /** Ce que le hub et les pages catégorie savent d'un article, sans son corps. */

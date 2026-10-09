@@ -3,6 +3,13 @@
 
 const MARQUEURS = ["chiffres", "organismes", "statuts", "contacts"];
 
+/** Marqueurs data-bloc attendus (une fois chacun) selon le type de page (gabarit §6 et §6 bis). */
+export const MARQUEURS_PAR_TYPE = {
+  plateforme: MARQUEURS,
+  vs: ["coup-doeil", "frise", "choisir"],
+  grille: ["frise", "modeles", "grille"],
+};
+
 const DIV_CLASSES = new Set(["key-takeaways", "callout callout--warn", "callout callout--tip", "tbl"]);
 
 // balise -> attributs autorisés (class est vérifiée à part)
@@ -26,7 +33,7 @@ function attrs(raw) {
 }
 
 /** Balises, attributs et classes hors de la section 5 du gabarit. */
-export function horsListeBlanche(html, { plateforme = false } = {}) {
+export function horsListeBlanche(html, { plateforme = false, marqueurs = plateforme ? MARQUEURS : [] } = {}) {
   const fautes = [];
   for (const m of html.matchAll(TAG_RE)) {
     const nom = m[1].toLowerCase();
@@ -47,8 +54,8 @@ export function horsListeBlanche(html, { plateforme = false } = {}) {
       if (a["data-figure"] !== undefined) {
         if (Object.keys(a).length > 1) fautes.push("<div data-figure> : aucun autre attribut");
       } else if (a["data-bloc"] !== undefined) {
-        if (!plateforme) fautes.push(`marqueur data-bloc="${a["data-bloc"]}" hors page plateforme`);
-        else if (!MARQUEURS.includes(a["data-bloc"])) fautes.push(`marqueur data-bloc="${a["data-bloc"]}" inconnu`);
+        if (!marqueurs.length) fautes.push(`marqueur data-bloc="${a["data-bloc"]}" hors page plateforme ou comparatif`);
+        else if (!marqueurs.includes(a["data-bloc"])) fautes.push(`marqueur data-bloc="${a["data-bloc"]}" inconnu`);
       } else if (!DIV_CLASSES.has(a.class ?? "")) {
         fautes.push(`<div class="${a.class ?? ""}"> interdit`);
       }

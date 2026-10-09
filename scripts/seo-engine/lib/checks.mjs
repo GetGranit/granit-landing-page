@@ -1,6 +1,6 @@
 // Contrôles avant publication : guide (« Contrôles automatiques ») + gabarit (section 8).
 // erreurs = l'article est refusé ; avertissements = publié, mais signalé au relecteur.
-import { compteMarqueur, h2s, horsListeBlanche, liens, MARQUEURS, mots, normalise, texte } from "./html.mjs";
+import { compteMarqueur, h2s, horsListeBlanche, liens, MARQUEURS_PAR_TYPE, mots, normalise, texte } from "./html.mjs";
 
 const SITE = "https://www.getgranit.ai";
 
@@ -23,7 +23,17 @@ const A_SURVEILLER = [
   [/\bprocess\b|\bworkflow\b|best practice|game.changer|\bleverage\b/i, "anglicisme"],
 ];
 
+// Pages comparatives (gabarit §6 bis) : aucun prix, aucun dénigrement près du nom d'un concurrent.
+const PRIX = /€|\beuros?\b|\bHT\b|\/\s?mois\b|par mois\b|\bprix\b|\btarifs?\b/i;
+const DENIGREMENT = [
+  "pire", "mauvais", "nul", "nuls", "depasse", "depasses", "arnaque", "lent", "lents", "lourd", "cher", "chers",
+  "archaique", "obsolete", "incompetent", "incompetents", "decevant", "mediocre", "catastrophique", "inefficace",
+];
+/** Mots minimum par type (cible : fiche VS 1 000 à 1 500, grille 2 000 à 2 800, autres 1 800 à 2 500). */
+export const MOTS_MIN = { vs: 900, grille: 1800 };
+
 export function typeDePage(article) {
+  if (article.concurrents?.length) return /^granit-(vs|ou)-/.test(article.slug) ? "vs" : "grille";
   if (article.category === "plateformes" && article.slug.startsWith("portail-")) return "plateforme";
   if (["rejets", "paiements"].includes(article.category)) return "resolution";
   return "standard";
@@ -64,11 +74,13 @@ export function controler(out, ctx) {
   if (!html) return { erreurs, avertissements: avert };
 
   // Balisage
-  for (const f of horsListeBlanche(html, { plateforme: type === "plateforme" })) erreurs.push(f);
+  const comparatif = type === "vs" || type === "grille";
+  for (const f of horsListeBlanche(html, { marqueurs: MARQUEURS_PAR_TYPE[type] ?? [] })) erreurs.push(f);
 
   const corps = texte(html);
   const nbMots = mots(corps).length;
-  if (nbMots < 1400) erreurs.push(`contentHtml fait ${nbMots} mots (minimum 1 400, cible 1 800 à 2 500)`);
+  const min = MOTS_MIN[type] ?? 1400;
+  if (nbMots < min) erreurs.push(`contentHtml fait ${nbMots} mots (minimum ${min})`);
 
   // Meta description
   const md = out.metaDescription ?? "";
@@ -163,7 +175,7 @@ export function controler(out, ctx) {
     else if (!toutLeTexte.includes("certifié HDS (hébergeur de données de santé)")) avert.push("HDS cité sans la formulation validée");
   }
   const mentions = (corps.match(/\bGranit\b/g) ?? []).length;
-  if (mentions > 2) avert.push(`Granit cité ${mentions} fois dans le corps (une mention visée)`);
+  if (mentions > 2 && !comparatif) avert.push(`Granit cité ${mentions} fois dans le corps (une mention visée)`);
   // Citation facultative : Claude ne lit pas les pages sources, il ne doit citer que ce dont il est sûr.
   // Une citation présente est vérifiée mot pour mot (verifierSources) ; son absence est seulement signalée.
   if (/<blockquote>/.test(html) && !/<blockquote>[\s\S]*?<cite>[\s\S]*?<\/blockquote>/.test(html)) erreurs.push("citation <blockquote> sans <cite>");
@@ -171,11 +183,12 @@ export function controler(out, ctx) {
 
   // Par type de page
   if (type === "resolution" && !/<ol class="steps">/.test(html)) erreurs.push('page résolution sans <ol class="steps">');
+  for (const m of MARQUEURS_PAR_TYPE[type] ?? []) {
+    const n = compteMarqueur(html, m);
+    if (n !== 1) erreurs.push(`marqueur data-bloc="${m}" présent ${n} fois (1 attendu)`);
+  }
+  if (comparatif) controlerComparatif({ html, toutLeTexte, faq, ctx, erreurs, avert });
   if (type === "plateforme") {
-    for (const m of MARQUEURS) {
-      const n = compteMarqueur(html, m);
-      if (n !== 1) erreurs.push(`marqueur data-bloc="${m}" présent ${n} fois (1 attendu)`);
-    }
     // nombres admis : ceux du fichier de faits, la taille de ses listes (ex. 122 organismes), et 100 (100 % Santé)
     const tailles = [];
     (function compter(o) {
@@ -195,6 +208,56 @@ export function controler(out, ctx) {
   }
 
   return { erreurs, avertissements: avert, nbMots };
+}
+
+/**
+ * Pages comparatives (gabarit §6 bis) : fichiers de faits relus, aucun prix, aucun dénigrement
+ * près du nom d'un concurrent, nombres et citations tirés des fichiers concurrents.
+ * ctx.concurrents = { slug: contenu de content/concurrents/{slug}.json }
+ */
+function controlerComparatif({ html, toutLeTexte, faq, ctx, erreurs, avert }) {
+  const fichiers = ctx.concurrents ?? {};
+  for (const slug of ctx.article.concurrents ?? []) {
+    const f = fichiers[slug];
+    if (!f) erreurs.push(`fichier de faits manquant : content/concurrents/${slug}.json`);
+    else if (f.aRelire) {
+      // En essai, on laisse passer pour voir la page ; jamais en publication.
+      (ctx.essai ? avert : erreurs).push(`fichier de faits non relu (aRelire = true) : content/concurrents/${slug}.json`);
+    }
+  }
+  const prix = toutLeTexte.match(PRIX);
+  if (prix) erreurs.push(`prix ou tarif cité (« ${prix[0]} ») : aucun prix sur une page comparative`);
+
+  // Dénigrement : un mot de la liste à moins de 10 mots du nom d'un concurrent (Granit exclu)
+  const motsTexte = normalise(toutLeTexte).split(" ");
+  for (const f of Object.values(fichiers)) {
+    if (f.slug === "granit") continue;
+    const nom = normalise(f.nom).split(" ")[0];
+    motsTexte.forEach((m, i) => {
+      if (m !== nom) return;
+      const voisins = motsTexte.slice(Math.max(0, i - 10), i + 11);
+      const mauvais = voisins.find((v) => DENIGREMENT.includes(v));
+      if (mauvais) erreurs.push(`mot « ${mauvais} » près de « ${f.nom} » : pas de dénigrement`);
+    });
+  }
+
+  // Nombres : seulement ceux des fichiers de faits utilisés (hors « exclus », jamais affiché)
+  const publics = Object.values(fichiers).map(({ exclus, ...reste }) => reste);
+  const connus = new Set([
+    "100",
+    ...nombres(JSON.stringify(publics)),
+    ...nombres([ctx.article.title, ...(ctx.article.faqQuestions ?? [])].join(" ")),
+  ]);
+  const corpsEtFaq = [texte(html), ...faq.map((x) => x.answer)].join(" ");
+  const inconnus = [...new Set(nombres(corpsEtFaq))].filter((n) => n.replace(/\D/g, "").length >= 2 && !connus.has(n));
+  if (inconnus.length) erreurs.push(`nombres absents des fichiers concurrents : ${inconnus.join(", ")}`);
+
+  // Citations : recopiées d'un champ citations[].texte
+  const admises = Object.values(fichiers).flatMap((f) => (f.citations ?? []).map((c) => normalise(c.texte)));
+  for (const c of citations(html)) {
+    if (!admises.includes(normalise(c.texte))) erreurs.push(`citation absente des fichiers concurrents : « ${c.texte.slice(0, 70)} »`);
+  }
+  if ([...new Set(erreurs)].length !== erreurs.length) erreurs.splice(0, erreurs.length, ...new Set(erreurs));
 }
 
 /** Schémas : 0 à 2, chacun placé une fois, libellés courts. Renvoie leur texte. */
@@ -251,7 +314,14 @@ export async function verifierSources(sources, cits = [], { timeoutMs = 10000 } 
         });
         if (r.status === 404 || r.status === 410) erreurs.push(`source introuvable (${r.status}) : ${url}`);
         else if (!r.ok) avert.push(`source non vérifiable (${r.status}) : ${url}`);
-        else pages.set(url, normalise(texte(await r.text())));
+        else {
+          // Une page rendue en JavaScript (coquille vide sans navigateur) ne permet pas de vérifier
+          // une citation : on la traite comme illisible (avertissement), pas comme une citation fausse.
+          const brut = (await r.text()).replace(/<(script|style|noscript)\b[\s\S]*?<\/\1>|<!--[\s\S]*?-->/gi, " ");
+          const lu = texte(brut);
+          if (mots(lu).length < 150) avert.push(`page rendue en JavaScript, citations non vérifiables : ${url}`);
+          else pages.set(url, normalise(lu));
+        }
       } catch (e) {
         const code = e.cause?.code ?? e.name;
         if (code === "ENOTFOUND") erreurs.push(`domaine introuvable : ${url}`);

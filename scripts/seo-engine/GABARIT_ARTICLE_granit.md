@@ -22,7 +22,7 @@ Règle d'or : **Claude ne trouve aucun fait lui-même.** Il rédige à partir de
 
 ---
 
-## 2. Trois types de page
+## 2. Cinq types de page
 
 Le moteur choisit le type à partir de la file, sans le demander à Claude.
 
@@ -31,6 +31,8 @@ Le moteur choisit le type à partir de la file, sans le demander à Claude.
 | **Standard** | `guide-tiers-payant`, `gerer-son-tiers-payant`, `conformite`, `glossaire` | Rien de plus que le gabarit commun |
 | **Résolution** | `rejets`, `paiements` | Plan imposé en 7 temps (cas, ce qu'on voit, diagnostic, action, preuve, délai, escalade : voir le guide). Composant `ol.steps` obligatoire pour l'action |
 | **Plateforme** | `category = plateformes` et slug `portail-*` | Logo et fiche d'identité dans l'en-tête, 7 H2 imposés (voir le guide), blocs de données insérés par marqueurs (section 6) |
+| **Fiche VS** | champ `concurrents` dans la file et slug `granit-vs-*` ou `granit-ou-*` | Comparaison Granit / un acteur, plan imposé, blocs rendus depuis `content/concurrents/*.json` (section 6 bis) |
+| **Grille** | champ `concurrents` dans la file, autre slug | Les solutions du marché comparées, plan imposé (section 6 bis) |
 
 Les piliers (`level` commence par « Pilier ») utilisent le type de leur catégorie. Le pilier `portails-tiers-payant` sert aussi d'annuaire : sous l'ouverture, le gabarit affiche la grille des plateformes publiées avec un filtre par nom.
 
@@ -178,6 +180,57 @@ Claude peut citer un ou deux organismes en exemple dans son texte, jamais en dre
 <h2 id="viamedis-contact">Comment contacter Viamedis ?</h2>
 <div data-bloc="contacts"></div>
 ```
+
+---
+
+## 6 bis. Pages comparatives : faits et marqueurs
+
+Section envoyée à Claude pour les fiches VS et la grille. Décisions de l'atelier du 07/10/2026 (Paul).
+
+### Les règles
+
+1. **Aucun prix**, ni Granit ni les autres (pas de « € », « tarif », « par mois »). On compare des modèles et des capacités.
+2. **Aucun client cité**, aucun témoignage, aucun résultat client.
+3. **Uniquement les fichiers `content/concurrents/{slug}.json`** reçus dans le message : `axes`, `citations`, `meilleurSi`, `identite`. Une information absente s'écrit « {nom} ne le précise pas », jamais supposée.
+4. **On dit où l'autre est meilleur** : c'est le bloc « Choisir {X} si… », rendu depuis `meilleurSi`.
+5. **Aucun chiffre déclaré mis en face** (taux, délais annoncés par un acteur), aucun mot de dénigrement près du nom d'un acteur. On écrit « Iremia ne publie pas… », jamais « Iremia ne sait pas… ».
+6. Pas de vainqueur général, pas de « toutes les plateformes », pas d'offre de bascule.
+7. Granit compte comme un acteur : ses faits viennent de `concurrents/granit.json`, comme les autres.
+
+### Marqueurs
+
+| Marqueur | Page | Où le poser | Ce que le gabarit affiche |
+|---|---|---|---|
+| `<div data-bloc="coup-doeil"></div>` | Fiche VS | Sous le 1er H2, seul | Le tableau « en un coup d'œil » des deux acteurs, depuis `axes`, avec la date du relevé |
+| `<div data-bloc="frise"></div>` | Les deux | Fiche : sous le H3 « À quel moment du dossier agit chaque offre ». Grille : sous le 1er H2 | Les 5 étapes d'un dossier (plateforme, PEC, accord ou refus, facture, paiement) ; sur une fiche, une bande par offre |
+| `<div data-bloc="choisir"></div>` | Fiche VS | Sous le H2 « Comment choisir… », après une phrase | Les cartes « Choisir {X} si » et « Choisir Granit si » |
+| `<div data-bloc="modeles"></div>` | Grille | Sous le H2 « Les cinq façons… » | Les 5 modèles : interne, freelance, prestataire, outil de saisie, agents IA |
+| `<div data-bloc="grille"></div>` | Grille | Sous le H2 « Les solutions du marché… » | Le tableau de tous les acteurs |
+
+Claude ne réécrit jamais ces blocs en texte (pas de tableau des acteurs, pas de liste « Choisir si »).
+
+### Plan d'une fiche VS (modèle Indy vs Jump, 1 000 à 1 500 mots)
+
+```html
+<p><strong>{X} et Granit ne font pas le même métier : … (la différence de modèle, pas un verdict)</strong> …</p>
+<div class="key-takeaways">… 4 à 5 puces : ce qu'est X, ce qu'est Granit, ce que X a en plus, ce qu'ils ont en commun, ce qui fait choisir …</div>
+<h2 id="granit-vs-x-coup-doeil">Que comparer entre Granit et {X} ?</h2>
+<div data-bloc="coup-doeil"></div>
+<h2 id="granit-vs-x-besoin">{X} et Granit répondent-ils au même besoin ?</h2>
+<h3>{X} : … (avec une citation exacte de X en blockquote)</h3>
+<h3>Granit : …</h3>
+<h3>À quel moment du dossier agit chaque offre</h3>
+<div data-bloc="frise"></div>
+<h2 id="granit-vs-x-choisir">Comment choisir entre Granit et {X} ?</h2>
+<p>…</p>
+<div data-bloc="choisir"></div>
+<h3>Peut-on utiliser les deux ?</h3> (seulement si les modèles se complètent)
+<h3>Passer de {X} à Granit</h3> (préavis à vérifier, démarrer sur les nouveaux dossiers, comparer sur un mois)
+```
+
+### Plan de la grille (modèle Agicap, 2 000 à 2 800 mots)
+
+H2 dans l'ordre : que recouvre « gérer le tiers payant » en optique (+ frise) ; les cinq façons de gérer son tiers payant (+ modeles, puis un paragraphe sur l'avance de trésorerie, qui ne gère pas le dossier, et un H3 « gérer en interne : quand ça ne tient plus ») ; les critères pour choisir (4 H3 : ce qui vous coûte, qui garde la main, vos plateformes et votre logiciel, les données et la sortie) ; les solutions du marché, comparées (+ grille) ; chaque solution en détail (un H3 par acteur, 3 à 5 phrases et « Idéal pour ») ; pourquoi des agents plutôt qu'un prestataire ou un outil (doit dire qu'un prestataire avec avance reste plus adapté si la trésorerie est le besoin principal) ; votre organisation tient-elle encore ? (liste de 5 signes et une phrase d'orientation).
 
 ---
 

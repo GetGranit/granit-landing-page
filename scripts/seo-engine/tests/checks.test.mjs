@@ -175,3 +175,59 @@ test("citation : trop courte ou reprenant le titre de la source, refusée sans r
   const courte = await verifierSources(src, [{ texte: "Le tiers payant", cite: "ameli.fr · Le tiers payant" }], { timeoutMs: 1 });
   assert.ok(courte.erreurs.some((e) => e.includes("trop courte")));
 });
+
+// Pages comparatives (gabarit §6 bis)
+const iremia = {
+  slug: "iremia", nom: "Iremia Santé", checkedOn: "2026-10-07", aRelire: false,
+  axes: { pec: { valeur: "oui" } },
+  citations: [{ texte: "Nos experts s'en occupent pour vous.", source: "iremia-optique" }],
+  exclus: { chiffresDeclares: "Taux de recouvrement 99.8%" },
+};
+const granit = { slug: "granit", nom: "Granit", checkedOn: "2026-10-07", aRelire: false, axes: {}, citations: [] };
+
+function ficheVs() {
+  const a = articleValide();
+  a.contentHtml = a.contentHtml
+    .replace(/<blockquote>[\s\S]*?<\/blockquote>/, "<blockquote><p>« Nos experts s'en occupent pour vous. »</p><cite>iremia-sante.fr · Opticiens</cite></blockquote>")
+    .replace('<h2 id="portails">', '<div data-bloc="coup-doeil"></div><div data-bloc="frise"></div><div data-bloc="choisir"></div><h2 id="portails">');
+  return a;
+}
+const ctxVs = (extra = {}) =>
+  ctx({
+    article: { slug: "granit-vs-iremia", category: "gerer-son-tiers-payant", primaryKeyword: "tiers payant opticien", title: "T", faqQuestions: [], concurrents: ["iremia", "granit"] },
+    type: "vs",
+    concurrents: { iremia, granit },
+    ...extra,
+  });
+
+test("type de page : fiche VS et grille", () => {
+  assert.equal(typeDePage({ slug: "granit-vs-iremia", category: "gerer-son-tiers-payant", concurrents: ["iremia"] }), "vs");
+  assert.equal(typeDePage({ slug: "solutions-tiers-payant-optique", category: "gerer-son-tiers-payant", concurrents: ["iremia"] }), "grille");
+});
+
+test("une fiche VS conforme passe", () => {
+  assert.deepEqual(controler(ficheVs(), ctxVs()).erreurs, []);
+});
+
+test("fiche VS : marqueur manquant, prix, dénigrement, citation et chiffre hors fichiers refusés", () => {
+  const a = ficheVs();
+  a.contentHtml = a.contentHtml.replace('<div data-bloc="choisir"></div>', "");
+  a.contentHtml += "<p>Iremia Santé est lent et coûte 90 € par mois, avec 99,8 % de recouvrement.</p>";
+  a.contentHtml += "<blockquote><p>« Une phrase inventée. »</p><cite>iremia-sante.fr</cite></blockquote>";
+  const e = controler(a, ctxVs()).erreurs.join("\n");
+  assert.match(e, /data-bloc="choisir" présent 0 fois/);
+  assert.match(e, /prix ou tarif/);
+  assert.match(e, /« lent » près de « Iremia Santé »/);
+  assert.match(e, /citation absente des fichiers concurrents/);
+  assert.match(e, /nombres absents des fichiers concurrents : 90, 99,8/);
+});
+
+test("fiche VS : fichier de faits non relu refusé", () => {
+  const e = controler(ficheVs(), ctxVs({ concurrents: { iremia: { ...iremia, aRelire: true }, granit } })).erreurs;
+  assert.ok(e.some((x) => x.includes("non relu")));
+});
+
+test("marqueur de comparatif refusé sur une page standard", () => {
+  assert.ok(horsListeBlanche('<div data-bloc="coup-doeil"></div>')[0].includes("hors page"));
+  assert.deepEqual(horsListeBlanche('<div data-bloc="grille"></div>', { marqueurs: ["grille"] }), []);
+});

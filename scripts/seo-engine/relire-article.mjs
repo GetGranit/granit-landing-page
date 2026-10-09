@@ -11,7 +11,7 @@ import { parseArgs } from "node:util";
 import { citations, controler, typeDePage, verifierSources } from "./lib/checks.mjs";
 import { apiKey, coutDollars, rediger } from "./lib/claude.mjs";
 import { CHAMPS_ARTICLE, boucle, contexte, cumulCout, verdictMarkdown } from "./lib/relecture.mjs";
-import { CONTENU, MOTEUR, ciblesDeLiens, ecrireJson, faitsPour, lireFile, lireJson, sortieGithub, systemeGuide } from "./lib/site.mjs";
+import { CONTENU, MOTEUR, ciblesDeLiens, concurrentsPour, ecrireJson, faitsPour, lireFile, lireJson, sortieGithub, systemeGuide } from "./lib/site.mjs";
 
 const { values: opt } = parseArgs({
   options: {
@@ -36,16 +36,21 @@ const fiche = lireJson(chemin);
 const type = typeDePage(article);
 const fp = faitsPour(article);
 const cibles = ciblesDeLiens(file, article);
+// Page comparative : les fichiers des acteurs remplacent le fichier de faits (sans « exclus », jamais affiché)
+const concurrents = concurrentsPour(article);
+const faitsComparatif = article.concurrents?.length
+  ? Object.values(concurrents).map(({ exclus, aRelire, ...publics }) => publics)
+  : undefined;
 console.log(`Relecture ${article.slug} · type ${type}${fp?.faits ? ` · faits ${fp.nom}` : ""}${opt.simuler ? " · SIMULATION" : ""}`);
 
 const ctx = contexte({
   meta: { slug: article.slug, title: article.title, type, primaryKeyword: article.primaryKeyword, keywordCluster: article.keywordCluster, reader: article.reader },
-  faits: fp?.faits,
+  faits: fp?.faits ?? faitsComparatif,
   liens: [...[...cibles].map(([c, t]) => `${c} : ${t}`), `Pages produit (2 liens maximum) : ${config.pagesProduit.join(", ")}`],
 });
 
 async function controle(out) {
-  const c = controler(out, { article, type, faits: fp?.faits, cibles, pagesProduit: config.pagesProduit });
+  const c = controler(out, { article, type, faits: fp?.faits, concurrents, cibles, pagesProduit: config.pagesProduit });
   const s = await verifierSources(out.sources ?? [], citations(out.contentHtml ?? ""));
   return { erreurs: [...c.erreurs, ...s.erreurs], avertissements: [...c.avertissements, ...s.avertissements] };
 }

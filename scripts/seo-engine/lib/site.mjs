@@ -8,6 +8,7 @@ export const MOTEUR = join(RACINE, "scripts/seo-engine");
 export const FILE = join(MOTEUR, "articles-queue.json");
 export const CONTENU = join(RACINE, "content/ressources");
 export const FAITS = join(RACINE, "content/plateformes");
+export const CONCURRENTS = join(RACINE, "content/concurrents");
 
 export const lireJson = (p) => JSON.parse(readFileSync(p, "utf8"));
 export const ecrireJson = (p, d) => writeFileSync(p, JSON.stringify(d, null, 2) + "\n");
@@ -55,7 +56,17 @@ export function faitsPour(article) {
   return existsSync(p) ? { nom, faits: lireJson(p) } : { nom, faits: null };
 }
 
-/** Sections 5 et 6 du gabarit, envoyées à Claude avec le guide. */
+/** Fichiers de faits des acteurs comparés : { slug: contenu } (absent = clé manquante). */
+export function concurrentsPour(article) {
+  const out = {};
+  for (const slug of article.concurrents ?? []) {
+    const p = join(CONCURRENTS, `${slug}.json`);
+    if (existsSync(p)) out[slug] = lireJson(p);
+  }
+  return out;
+}
+
+/** Sections 5, 6 et 6 bis du gabarit, envoyées à Claude avec le guide. */
 export function sectionsGabarit() {
   const g = readFileSync(join(MOTEUR, "GABARIT_ARTICLE_granit.md"), "utf8");
   return g.slice(g.indexOf("## 5."), g.indexOf("## 7."));

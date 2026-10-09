@@ -11,7 +11,7 @@ import { citations, controler, typeDePage, verifierSources } from "./lib/checks.
 import { apiKey, coutDollars, rediger } from "./lib/claude.mjs";
 import { mots, texte } from "./lib/html.mjs";
 import {
-  CONTENU, MOTEUR, ancienArticle, anciensArticles, ecrireFile, ecrireJson, faitsPour, lireFile, lireJson,
+  CONTENU, MOTEUR, ancienArticle, anciensArticles, concurrentsPour, ecrireFile, ecrireJson, faitsPour, lireFile, lireJson,
   publies, sortieGithub, systemeGuide,
 } from "./lib/site.mjs";
 
@@ -39,6 +39,15 @@ if (opt.slug && article.status !== "pending" && !opt.dry) {
 const type = typeDePage(article);
 const fp = faitsPour(article);
 if (type === "plateforme" && !fp?.faits) throw new Error(`fichier de faits manquant : content/plateformes/${fp?.nom}.json`);
+const comparatif = type === "vs" || type === "grille";
+const concurrents = concurrentsPour(article);
+if (comparatif) {
+  const manquants = article.concurrents.filter((s) => !concurrents[s]);
+  if (manquants.length) throw new Error(`fichiers de faits manquants : ${manquants.map((s) => `content/concurrents/${s}.json`).join(", ")}`);
+  const nonRelus = article.concurrents.filter((s) => concurrents[s].aRelire);
+  // En essai (--dry) on rédige quand même, mais les contrôles refuseront la publication.
+  if (nonRelus.length && !opt.dry) throw new Error(`fichiers de faits non relus (aRelire = true) : ${nonRelus.join(", ")}`);
+}
 console.log(`Article ${article.id} · ${article.slug} · type ${type}${fp?.faits ? ` · faits ${fp.nom}` : ""}`);
 
 // 2. Cibles de liens autorisées
@@ -85,7 +94,17 @@ const consignesType = {
     "et les 4 marqueurs data-bloc (chiffres, organismes, statuts, contacts) posés une fois chacun à l'endroit indiqué par la section 6 du gabarit. " +
     "Tout nombre du texte doit figurer dans le fichier de faits. Ne cite pas HDS. " +
     "Si `organismes.liste` est vide, pose quand même le marqueur organismes et dis en une phrase pourquoi la liste n'est pas relevée (voir `organismes.note`).",
+  vs:
+    "Page comparative « fiche VS » (gabarit §6 bis) : plan imposé, rédigée uniquement à partir de `axes`, `citations` et `meilleurSi` des fichiers concurrents ci-dessous. " +
+    "Marqueurs data-bloc coup-doeil, frise et choisir, une fois chacun, à l'endroit indiqué. Aucun prix, aucun client, aucun chiffre déclaré, aucun dénigrement. " +
+    "Dis ce que le concurrent fait mieux. Une information absente des fichiers s'écrit « {nom} ne le précise pas ».",
+  grille:
+    "Page comparative « grille du marché » (gabarit §6 bis) : plan imposé, rédigée uniquement à partir des fichiers concurrents ci-dessous. " +
+    "Marqueurs data-bloc frise, modeles et grille, une fois chacun, à l'endroit indiqué. Granit est un acteur parmi les autres. " +
+    "Aucun prix, aucun client, aucun chiffre déclaré, aucun dénigrement.",
 };
+
+const longueur = { vs: "1 000 à 1 500 mots (jamais moins de 900)", grille: "2 000 à 2 800 mots (jamais moins de 1 800)" };
 
 function message(retour) {
   const parts = [
@@ -125,6 +144,15 @@ function message(retour) {
         `\`\`\`json\n${JSON.stringify(fp.faits, null, 2)}\n\`\`\``,
     );
   }
+  if (comparatif) {
+    // « exclus » n'est jamais envoyé : ce qu'on sait mais qu'on n'affiche pas (prix, chiffres déclarés).
+    const publics = Object.values(concurrents).map(({ exclus, aRelire, ...reste }) => reste);
+    parts.push(
+      `## Fichiers concurrents (faits publics relevés, seule matière autorisée)\n` +
+        `Ordre : ${article.concurrents.join(", ")}. Les citations doivent être recopiées mot pour mot depuis \`citations\`, avec dans <cite> le label de la source.\n` +
+        `\`\`\`json\n${JSON.stringify(publics, null, 2)}\n\`\`\``,
+    );
+  }
   parts.push(
     `## Schémas (champ figures)\n` +
       `0 à 2 schémas, seulement quand un schéma fait comprendre plus vite qu'un paragraphe. Le site les dessine dans la charte Granit : tu ne fournis que le contenu.\n` +
@@ -137,7 +165,7 @@ function message(retour) {
   );
   parts.push(
     `## Rappels de sortie\n` +
-      `- contentHtml : 1 800 à 2 500 mots (jamais moins de 1 500), ouverture en <p>, puis « L'essentiel », puis les H2 en questions avec un id.\n` +
+      `- contentHtml : ${longueur[type] ?? "1 800 à 2 500 mots (jamais moins de 1 500)"}, ouverture en <p>, puis « L'essentiel », puis les H2 en questions avec un id.\n` +
       `- Pas de H1, pas de FAQ, pas d'encart final, pas d'image dans contentHtml.\n` +
       `- tocItems : un élément par H2, mêmes id, même ordre.\n` +
       `- metaDescription : 140 à 160 caractères, avec le mot-clé principal.\n` +
@@ -171,7 +199,7 @@ for (let essai = 1; essai <= 2 && !sortie; essai++) {
     console.log(`  Refusé : ${retour[0]}`);
     continue;
   }
-  const c = controler(r.json, { article, type, faits: fp?.faits, cibles, pagesProduit: config.pagesProduit });
+  const c = controler(r.json, { article, type, faits: fp?.faits, concurrents, cibles, pagesProduit: config.pagesProduit, essai: opt.dry });
   const s = await verifierSources(r.json.sources ?? [], citations(r.json.contentHtml ?? ""));
   const erreurs = [...c.erreurs, ...s.erreurs];
   console.log(`  ${c.nbMots} mots · ${erreurs.length} erreur(s) · ${c.avertissements.length + s.avertissements.length} avertissement(s)`);
@@ -196,7 +224,7 @@ bilan.avertissements.forEach((a) => console.log(`  ! ${a}`));
 
 // Relecture humaine (PR) pour les premiers articles et ceux qui ont des points à valider
 const dejaSortis = file.filter((a) => ["published", "review"].includes(a.status)).length;
-const relecture = opt.relecture || dejaSortis < config.relectureDesPremiers || Boolean(article.toValidate) || Boolean(article.refonte);
+const relecture = opt.relecture || dejaSortis < config.relectureDesPremiers || Boolean(article.toValidate) || Boolean(article.refonte) || comparatif; // comparatif : toujours relu (gabarit §6 bis)
 
 // Signature : auteur et relecteur selon la catégorie. Le relecteur n'est affiché que si
 // l'article passe vraiment par une relecture humaine (PR), jamais en publication directe.
@@ -230,7 +258,13 @@ const fiche = {
   reviewer: relecture ? personne(signature.relecteur) : null,
   datePublished: aujourdhui,
   dateModified: aujourdhui,
-  checkedOn: type === "plateforme" ? fp.faits.checkedOn : null,
+  checkedOn:
+    type === "plateforme"
+      ? fp.faits.checkedOn
+      : comparatif
+        ? Object.values(concurrents).map((f) => f.checkedOn).sort()[0]
+        : null,
+  concurrents: comparatif ? article.concurrents : undefined,
   wordCount: nbMots,
   readTime: Math.max(1, Math.round(nbMots / 230)),
   metaDescription: sortie.metaDescription,
