@@ -11,7 +11,7 @@
     },
     {
       "label": "Optique",
-      "valeur": "Oui, réseau de 3 700 opticiens partenaires",
+      "valeur": "Oui, réseau de plus de 3 700 opticiens partenaires",
       "source": "itelis-opticiens"
     },
     {
@@ -150,7 +150,7 @@
     },
     "itelis-opticiens": {
       "label": "itelis.fr · Réseau d'opticiens partenaires",
-      "url": "https://www.itelis.fr/vos-services-sante/acces-aux-opticiens-partenaires",
+      "url": "https://www.itelis.fr/vos-services-sante/trouver-un-opticien",
       "consulte": "2026-10-07"
     },
     "itelis-adhesion-optique": {

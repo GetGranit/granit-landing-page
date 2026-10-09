@@ -7,7 +7,7 @@
     {
       "label": "Type",
       "valeur": "Opérateur de tiers payant",
-      "source": "cnil-2024"
+      "source": "be-almerys-ps"
     },
     {
       "label": "Optique",
@@ -27,6 +27,11 @@
   ],
   "chiffres": [
     {
+      "valeur": "+305 000",
+      "label": "professionnels de santé conventionnés, selon Almerys",
+      "source": "be-almerys-ps"
+    },
+    {
       "valeur": "1",
       "label": "équipement par demande de prise en charge optique",
       "source": "granit-connecteur"
@@ -44,8 +49,8 @@
   ],
   "faits": [
     {
-      "fait": "Almerys gère le tiers payant pour le compte de nombreuses complémentaires santé et mutuelles.",
-      "source": "cnil-2024"
+      "fait": "Almerys gère le tiers payant pour le compte d'organismes complémentaires : sociétés d'assurance, mutuelles et groupes de protection sociale.",
+      "source": "be-almerys-ps"
     },
     {
       "fait": "Almerys est un opérateur, pas un réseau de soins. Une mutuelle peut l'associer à un réseau distinct : Aéma Groupe a choisi Almerys pour le tiers payant de ses mutuelles (Aésio mutuelle, Apivia Macif Mutuelle, MNFCT, Math - Prevaris) et Carte Blanche Partenaires comme réseau de soins.",
@@ -188,10 +193,10 @@
       "url": "https://www.almerys.com/accueil/contacts",
       "consulte": "2026-10-07"
     },
-    "cnil-2024": {
-      "label": "CNIL · Violation de données de deux opérateurs de tiers payant (7 février 2024)",
-      "url": "https://www.cnil.fr/fr/violation-de-donnees-de-deux-operateurs-de-tiers-payant-la-cnil-ouvre-une-enquete-et-rappelle-aux",
-      "consulte": "2026-10-07"
+    "be-almerys-ps": {
+      "label": "be-almerys.com · Professionnels de santé",
+      "url": "https://www.be-almerys.com/professionnels-de-sante",
+      "consulte": "2026-10-09"
     },
     "acuite-aema": {
       "label": "Acuité · Aéma Groupe officialise son opérateur de tiers payant",

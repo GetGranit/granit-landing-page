@@ -27,9 +27,9 @@
   ],
   "chiffres": [
     {
-      "valeur": "+3 700",
-      "label": "opticiens partenaires du réseau (2025)",
-      "source": "acuite-2026"
+      "valeur": "≈ 3 700",
+      "label": "magasins d'optique dans le réseau 2025-2029",
+      "source": "acuite-2025"
     },
     {
       "valeur": "+60",
@@ -283,10 +283,10 @@
       "url": "https://www.santeclair.fr/fr/professionnel-assurance/tiers-payant-complementaire",
       "consulte": "2026-10-07"
     },
-    "acuite-2026": {
-      "label": "Acuité · Interview de Christian Acknin, DG de Santéclair (avril 2026)",
-      "url": "https://www.acuite.fr/actualites/profession/secuocam/exclu-tiers-payant-menace-santeclair-alerte-335157",
-      "consulte": "2026-10-07"
+    "acuite-2025": {
+      "label": "Acuité · Santéclair, chiffres clés 2024 (avril 2025)",
+      "url": "https://www.acuite.fr/actualite/ocam/306513/santeclair-renforce-son-role-dans-lecosysteme-de-sante-chiffres-cles-2024-et",
+      "consulte": "2026-10-09"
     },
     "granit-connecteur": {
       "label": "Connecteur Santéclair de Granit (relevé du 07/10/2026)",
