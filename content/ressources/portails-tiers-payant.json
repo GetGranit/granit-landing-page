@@ -169,6 +169,11 @@
       "type": "enfant"
     },
     {
+      "slug": "portail-sp-sante",
+      "anchor": "sp sante tp",
+      "type": "enfant"
+    },
+    {
       "slug": "portail-seveane",
       "anchor": "seveane tp",
       "type": "enfant"
