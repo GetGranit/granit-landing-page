@@ -4,7 +4,6 @@ import {
   Field,
   Kicker,
   Muted,
-  Reassure,
   Screen,
   TextLink,
   Title,
@@ -44,7 +43,10 @@ export function StepLogin({
       <Title em={portail} after=".">
         Connectez-vous à{" "}
       </Title>
-      <Muted>Les identifiants que vous tapez d'habitude sur {portail}.</Muted>
+      <Muted>
+        Granit se connecte comme vous le feriez. Rien n'est envoyé à la mutuelle, vos accès ne sont
+        pas conservés.
+      </Muted>
       {refuse && (
         <p
           role="alert"
@@ -70,45 +72,54 @@ export function StepLogin({
           onSubmit(v);
         }}
       >
-        <Field label="Identifiant" error={err.identifiant}>
-          <input
-            className={fieldClass}
-            style={fieldStyle(err.identifiant)}
-            autoComplete="off"
-            autoCapitalize="none"
-            spellCheck={false}
-            value={identifiant}
-            onChange={(e) => setIdentifiant(e.target.value)}
-          />
+        <Field
+          label="Identifiant"
+          hint={`Celui que vous tapez d'habitude sur ${portail}.`}
+          error={err.identifiant}
+        >
+          {(a11y) => (
+            <input
+              {...a11y}
+              className={fieldClass}
+              style={fieldStyle(err.identifiant)}
+              autoComplete="off"
+              autoCapitalize="none"
+              spellCheck={false}
+              value={identifiant}
+              onChange={(e) => setIdentifiant(e.target.value)}
+            />
+          )}
         </Field>
         <Field label="Mot de passe" error={err.motDePasse}>
-          <span className="relative block">
-            <input
-              className={`${fieldClass} pr-20`}
-              style={fieldStyle(err.motDePasse)}
-              type={voir ? "text" : "password"}
-              autoComplete="off"
-              value={motDePasse}
-              onChange={(e) => setMotDePasse(e.target.value)}
-            />
-            <button
-              type="button"
-              onClick={() => setVoir((v) => !v)}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-[13px] underline"
-              style={{ color: "var(--text-muted)" }}
-            >
-              {voir ? "masquer" : "afficher"}
-            </button>
-          </span>
+          {(a11y) => (
+            <span className="relative block">
+              <input
+                {...a11y}
+                className={`${fieldClass} pr-20`}
+                style={fieldStyle(err.motDePasse)}
+                type={voir ? "text" : "password"}
+                autoComplete="off"
+                value={motDePasse}
+                onChange={(e) => setMotDePasse(e.target.value)}
+              />
+              <button
+                type="button"
+                onClick={() => setVoir((v) => !v)}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-[13px] underline"
+                style={{ color: "var(--text-muted)" }}
+              >
+                {voir ? "masquer" : "afficher"}
+              </button>
+            </span>
+          )}
         </Field>
-        <button type="submit" className={`${bigBtn} w-full`}>
-          Lancer la simulation <span className="arrow">→</span>
-        </button>
+        <div className="grid justify-items-center gap-1">
+          <button type="submit" className={`${bigBtn} w-full`}>
+            Lancer la simulation <span className="arrow">→</span>
+          </button>
+          <TextLink onClick={onPaul}>Je préfère le faire avec Paul</TextLink>
+        </div>
       </form>
-      <Reassure
-        items={["Rien n'est envoyé à la mutuelle", "Vos accès, supprimables à tout moment"]}
-      />
-      <TextLink onClick={onPaul}>Je préfère le faire avec Paul</TextLink>
       <TextLink onClick={onBack}>← Retour</TextLink>
     </Screen>
   );

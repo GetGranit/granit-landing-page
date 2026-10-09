@@ -55,11 +55,13 @@ export function StepSimEchec({
   cause,
   onFix,
   onPaul,
+  onBack,
 }: {
   portail: string;
   cause: SimEchecCause;
   onFix: () => void;
   onPaul: () => void;
+  onBack: () => void;
 }) {
   const e = ECHECS[cause];
   return (
@@ -74,6 +76,7 @@ export function StepSimEchec({
       </button>
       <TextLink onClick={onPaul}>Le faire avec Paul</TextLink>
       <Reassure items={["Rien n'a été envoyé à la mutuelle"]} />
+      <TextLink onClick={onBack}>← Retour</TextLink>
     </Screen>
   );
 }

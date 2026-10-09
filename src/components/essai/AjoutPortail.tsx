@@ -31,7 +31,7 @@ export function AjoutPortail({ platform, onAdded, onCancel }: Props) {
   }
 
   return (
-    <div className="mt-3 rounded-[16px] p-4" style={{ background: "var(--bg2)" }}>
+    <div className="ph-no-capture mt-3 rounded-[16px] p-4" style={{ background: "var(--bg2)" }}>
       <Field label={`Identifiant ${platform.label}`}>
         <input
           type="text"

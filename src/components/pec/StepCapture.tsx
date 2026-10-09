@@ -78,7 +78,9 @@ export function StepCapture({
         </div>
       </div>
 
-      <Reassure items={["Photo lue puis effacée", "Gratuit, sans inscription"]} />
+      <Reassure
+        items={["Photo lue par IA, jamais conservée par Granit", "Gratuit, sans inscription"]}
+      />
     </Screen>
   );
 }

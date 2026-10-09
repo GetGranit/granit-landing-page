@@ -1,7 +1,7 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import { searchMutuelles } from "@/lib/pec/classify";
-import { Kicker, Muted, Screen, TextLink, Title } from "./ui";
+import { Kicker, Muted, Screen, TextLink, Title, focusRing } from "./ui";
 
 /**
  * Saisie du nom de la mutuelle : secours quand la photo ne passe pas ou que
@@ -13,14 +13,25 @@ export function StepSearch({
   onPick,
   onNotFound,
   onBack,
+  onRecherche,
 }: {
   reason?: string | null;
   onPick: (nom: string, platforms: string[]) => void;
   onNotFound: (query: string) => void;
   onBack: () => void;
+  /** Saisie posée (après une courte pause) : un nom de mutuelle, jamais de patient. */
+  onRecherche?: (query: string, n: number) => void;
 }) {
   const [q, setQ] = useState("");
   const results = useMemo(() => (q.trim().length >= 2 ? searchMutuelles(q, 8) : []), [q]);
+  const n = results.length;
+
+  useEffect(() => {
+    const requete = q.trim();
+    if (requete.length < 2 || !onRecherche) return;
+    const t = setTimeout(() => onRecherche(requete, n), 900);
+    return () => clearTimeout(t);
+  }, [q, n, onRecherche]);
 
   return (
     <Screen id="search">
@@ -36,7 +47,7 @@ export function StepSearch({
         value={q}
         onChange={(e) => setQ(e.target.value)}
         placeholder="Ex. Harmonie Mutuelle"
-        className="w-full rounded-xl border-[1.5px] bg-white px-4 py-3.5 text-[17px] outline-none focus:border-[var(--terra)]"
+        className={`w-full rounded-xl border-[1.5px] bg-white px-4 py-3.5 text-[17px] ${focusRing}`}
         style={{ borderColor: "var(--border2)", color: "var(--text)" }}
         aria-label="Nom de la mutuelle"
       />

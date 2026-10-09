@@ -99,10 +99,15 @@ function norm(s: string): string {
     .trim();
 }
 
+/** Clé de dédoublonnage : un pluriel en fin de mot ne fait pas une autre mutuelle
+ *  (« MGEN SOLUTION » / « MGEN SOLUTIONS »). */
+const jumelle = (key: string) => key.replace(/s\b/g, "");
+
 const INDEX = MUTUELLES.map((m) => ({ ...m, key: norm(m.nom) }));
 
 /** Saisie manuelle : mutuelles des catalogues optique dont le nom contient la requête.
- *  Les noms qui COMMENCENT par la requête passent devant. */
+ *  Les noms qui COMMENCENT par la requête passent devant. Les noms quasi identiques
+ *  ne sortent qu'une fois, avec les portails des deux. */
 export function searchMutuelles(query: string, limit = 8): { nom: string; platforms: string[] }[] {
   const q = norm(query);
   if (q.length < 2) return [];
@@ -111,5 +116,11 @@ export function searchMutuelles(query: string, limit = 8): { nom: string; platfo
     (a, b) =>
       Number(!a.key.startsWith(q)) - Number(!b.key.startsWith(q)) || a.key.localeCompare(b.key),
   );
-  return hits.slice(0, limit).map(({ nom, platforms }) => ({ nom, platforms }));
+  const parCle = new Map<string, { nom: string; platforms: string[] }>();
+  for (const { nom, platforms, key } of hits) {
+    const deja = parCle.get(jumelle(key));
+    if (!deja) parCle.set(jumelle(key), { nom, platforms: [...platforms] });
+    else for (const p of platforms) if (!deja.platforms.includes(p)) deja.platforms.push(p);
+  }
+  return [...parCle.values()].slice(0, limit);
 }

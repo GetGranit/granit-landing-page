@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 import { motion, useReducedMotion } from "framer-motion";
+import { usePostHog } from "posthog-js/react";
 
 import { Acces } from "@/components/essai/Acces";
 import { DemandePec, type Demande } from "@/components/essai/DemandePec";
@@ -22,15 +23,20 @@ import {
   type DossierFictif,
   type PecCase,
 } from "@/lib/pec/essaiState";
+import { espaceEssaiActif } from "@/lib/pec/simulation";
 
 /**
  * Espace freemium Granit (aperçu, tout est simulé côté front).
  * On y arrive depuis /pec (`/essai?etape=acces`) juste après la simulation et
  * la création du compte, avec le cas dans sessionStorage. Parcours : 1) brancher
- * ses autres portails, 2) faire ses 20 PEC offertes, 3) continuer avec Paul.
- * Hors navigation, hors sitemap, noindex.
+ * ses autres portails, 2) faire ses 20 simulations offertes, 3) continuer avec Paul.
+ * Hors navigation, hors sitemap, noindex. Fermé (redirigé vers /pec) hors DEV,
+ * VITE_PEC_ESSAI=on ou aperçu.
  */
 export const Route = createFileRoute("/essai")({
+  beforeLoad: () => {
+    if (!espaceEssaiActif()) throw redirect({ to: "/pec", replace: true });
+  },
   head: () => ({
     meta: [
       { title: "Votre espace Granit - Granit AI" },
@@ -49,6 +55,7 @@ const OFFRE = "Paul vous propose l'offre adaptée à votre magasin.";
 
 function EssaiPage() {
   const reduce = useReducedMotion();
+  const posthog = usePostHog();
   const [pecCase, setPecCase] = useState<PecCase | null>(null);
   const [phone, setPhone] = useState<string | null>(null);
   const [view, setView] = useState<"espace" | "demande">("espace");
@@ -106,7 +113,8 @@ function EssaiPage() {
 
   async function onContact(req: ContactRequest) {
     if (!pecCase) return;
-    await contactPaul(req, pecCase);
+    const email = await contactPaul(req, pecCase);
+    posthog?.identify(email);
     if (req.phone) setPhone(req.phone);
   }
 
@@ -254,6 +262,7 @@ function EssaiPage() {
         mode={sheet.mode}
         message={sheet.message}
         knownPhone={phone}
+        askEmail={!(pecCase.email ?? pecCase.compte?.email)}
         onClose={sheet.close}
         onContact={onContact}
       />

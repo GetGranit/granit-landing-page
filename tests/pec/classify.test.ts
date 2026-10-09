@@ -61,3 +61,9 @@ test("recherche : trop court ou inconnu → []", () => {
   assert.deepEqual(searchMutuelles("zzzz mutuelle inexistante"), []);
   assert.ok(searchMutuelles("e", 8).length === 0 && searchMutuelles("mut", 3).length <= 3);
 });
+
+test("recherche : noms quasi identiques dédoublonnés, portails fusionnés", () => {
+  const r = searchMutuelles("mgen solution");
+  assert.equal(r.length, 1);
+  assert.deepEqual([...r[0].platforms].sort(), ["oxantis", "viamedis"]);
+});

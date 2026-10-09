@@ -7,7 +7,8 @@ import { Title, euros } from "./ui";
 
 /**
  * Ordre de grandeur d'une PEC tapée à la main sur un portail (connexion,
- * recherche du patient, saisie de l'équipement). Ancrage affiché « ~12 min ».
+ * recherche du patient, saisie de l'équipement). Non mesuré : affiché « ~12 min
+ * (hypothèse) », et seulement en aperçu, face au chrono réel du mock.
  */
 const MINUTES_A_LA_MAIN = 12;
 /** Fin du count-up : l'invitation apparaît après. */
@@ -46,12 +47,15 @@ export function StepSimDone({
   portail,
   platformId,
   r,
+  apercu,
   track,
   onCreer,
 }: {
   portail: string;
   platformId: string;
   r: SimResultat;
+  /** Simulation factice (DEV, démo) : seul cas où l'on montre le chrono face aux ~12 min. */
+  apercu: boolean;
   track: Track;
   onCreer: () => void;
 }) {
@@ -118,7 +122,7 @@ export function StepSimDone({
       >
         ✓ Simulation faite — rien n'a été envoyé à la mutuelle
       </motion.span>
-      <Title em={portail} after=" est prête.">
+      <Title em={portail} after=" est chiffrée.">
         Votre PEC{" "}
       </Title>
 
@@ -152,20 +156,24 @@ export function StepSimDone({
         )}
       </dl>
 
-      <div className="grid w-full gap-2 text-left" id="pec-ancrage">
-        <p className="text-[15px]" style={{ color: "var(--text)" }}>
-          <strong style={{ fontFamily: "var(--font-mono)" }}>{duree(r.dureeSec)}</strong> au lieu de{" "}
-          <span style={{ color: "var(--text-muted)" }}>~{MINUTES_A_LA_MAIN} min</span> à la main
-        </p>
-        <Barre label="Granit" texte={duree(r.dureeSec)} ratio={ratio} couleur="var(--sage)" />
-        <Barre
-          label="À la main"
-          texte={`~${MINUTES_A_LA_MAIN} min`}
-          ratio={1}
-          couleur="var(--bg3)"
-          lent
-        />
-      </div>
+      {apercu && (
+        <div className="grid w-full gap-2 text-left" id="pec-ancrage">
+          <p className="text-[15px]" style={{ color: "var(--text)" }}>
+            <strong style={{ fontFamily: "var(--font-mono)" }}>{duree(r.dureeSec)}</strong> au lieu
+            de{" "}
+            <span style={{ color: "var(--text-muted)" }}>~{MINUTES_A_LA_MAIN} min (hypothèse)</span>{" "}
+            à la main
+          </p>
+          <Barre label="Granit" texte={duree(r.dureeSec)} ratio={ratio} couleur="var(--sage)" />
+          <Barre
+            label="À la main"
+            texte={`~${MINUTES_A_LA_MAIN} min`}
+            ratio={1}
+            couleur="var(--bg3)"
+            lent
+          />
+        </div>
+      )}
 
       {r.captureUrl && (
         <img

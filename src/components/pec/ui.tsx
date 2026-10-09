@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { useId, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { motion, useReducedMotion } from "framer-motion";
 
@@ -136,7 +136,7 @@ export function TextLink({ onClick, children }: { onClick: () => void; children:
     <button
       type="button"
       onClick={onClick}
-      className="text-[15px] underline underline-offset-4"
+      className="inline-flex min-h-[44px] items-center justify-center px-2 py-2.5 text-[15px] underline underline-offset-4"
       style={{ color: "var(--text-soft)" }}
     >
       {children}
@@ -144,7 +144,13 @@ export function TextLink({ onClick, children }: { onClick: () => void; children:
   );
 }
 
-export const bigBtn = "btn-primary justify-center !px-6 !py-4 !text-[16px]";
+/**
+ * Bouton principal du parcours : fond terracotta foncé uni (blanc lisible à
+ * 4,5:1, le dégradé du site ne l'est pas) et focus visible. Local au lead
+ * magnet : `.btn-primary` du site n'est pas modifié.
+ */
+export const bigBtn =
+  "btn-primary justify-center !px-6 !py-4 !text-[16px] ![background:var(--terra-hover)] !font-semibold focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-[var(--text)]";
 
 /** Écrans de simulation en mode mock (DEV ou aperçu) : on ne laisse jamais croire que c'est branché. */
 export function ApercuBanner() {
@@ -158,10 +164,19 @@ export function ApercuBanner() {
   );
 }
 
-export const fieldClass =
-  "w-full rounded-xl border-[1.5px] bg-white px-4 py-3.5 text-[17px] outline-none focus:border-[var(--terra)]";
+/** Focus visible des champs : un anneau, pas seulement la couleur de la bordure. */
+export const focusRing =
+  "outline-none focus:border-[var(--terra)] focus:shadow-[0_0_0_4px_color-mix(in_oklab,var(--terra)_28%,transparent)]";
 
-/** Champ étiqueté du parcours ; `hint` sous le libellé, `error` en dessous du champ. */
+export const fieldClass = `w-full rounded-xl border-[1.5px] bg-white px-4 py-3.5 text-[17px] ${focusRing}`;
+
+/** À poser sur le champ d'un `Field` : état d'erreur annoncé et relié au message. */
+export type FieldA11y = { "aria-invalid"?: true; "aria-describedby"?: string };
+
+/**
+ * Champ étiqueté du parcours ; `hint` sous le libellé, `error` en dessous du
+ * champ. `children` reçoit les attributs aria à poser sur l'input.
+ */
 export function Field({
   label,
   hint,
@@ -173,8 +188,10 @@ export function Field({
   hint?: string;
   error?: string;
   badge?: ReactNode;
-  children: ReactNode;
+  children: (a11y: FieldA11y) => ReactNode;
 }) {
+  const errId = useId();
+  const a11y: FieldA11y = error ? { "aria-invalid": true, "aria-describedby": errId } : {};
   return (
     <label
       className="grid gap-1.5 text-left text-[15px]"
@@ -189,9 +206,10 @@ export function Field({
           {hint}
         </span>
       )}
-      {children}
+      {children(a11y)}
       {error && (
         <span
+          id={errId}
           role="alert"
           className="text-[14px]"
           style={{ color: "var(--terra-hover)", fontWeight: 400 }}

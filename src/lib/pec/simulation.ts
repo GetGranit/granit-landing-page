@@ -74,9 +74,22 @@ function env(): Record<string, string | boolean | undefined> {
   return (import.meta as { env?: Record<string, string | boolean | undefined> }).env ?? {};
 }
 
-/** Vrai si un endpoint de simulation en direct est configuré. */
+/**
+ * Passe à `true` quand `startSimulation` pilotera vraiment le portail (TODO(CTO)).
+ * D'ici là, la seule présence de VITE_PEC_SIMULATION_URL ne suffit pas : on ne
+ * présente jamais le mock comme une simulation en direct.
+ */
+const SIMULATION_REELLE_IMPLEMENTEE = false as boolean;
+
+/** Vrai si la simulation en direct existe ET qu'un endpoint est configuré. */
 export function simulationEnDirect(): boolean {
-  return Boolean(env().VITE_PEC_SIMULATION_URL);
+  return SIMULATION_REELLE_IMPLEMENTEE && Boolean(env().VITE_PEC_SIMULATION_URL);
+}
+
+/** Démos de Paul : DEV ou VITE_PEC_APERCU=on (simulation factice + compte). */
+function apercuActif(): boolean {
+  const e = env();
+  return e.DEV === true || e.VITE_PEC_APERCU === "on";
 }
 
 /**
@@ -85,13 +98,32 @@ export function simulationEnDirect(): boolean {
  * taper de vrais identifiants dans un faux parcours.
  */
 export function simulationProposee(): boolean {
-  const e = env();
-  return simulationEnDirect() || e.DEV === true || e.VITE_PEC_APERCU === "on";
+  return simulationEnDirect() || apercuActif();
+}
+
+/** Ce que voit le visiteur sur un portail simulable (propriété `mode` des événements). */
+export function modeSimulation(): "direct" | "apercu" | "paul" {
+  if (simulationEnDirect()) return "direct";
+  return apercuActif() ? "apercu" : "paul";
+}
+
+/** L'espace /essai : DEV, VITE_PEC_ESSAI=on ou aperçu. Sinon /essai renvoie vers /pec. */
+export function espaceEssaiActif(): boolean {
+  return env().VITE_PEC_ESSAI === "on" || simulationProposee();
 }
 
 export function startSimulation(input: SimInput): SimulationSession {
-  // TODO(CTO) : remplacer par l'endpoint de simulation en direct (VITE_PEC_SIMULATION_URL)
-  // en respectant le contrat décrit en tête de fichier.
+  if (simulationEnDirect()) {
+    // TODO(CTO) : brancher l'endpoint (VITE_PEC_SIMULATION_URL) en respectant le contrat
+    // décrit en tête de fichier, puis passer SIMULATION_REELLE_IMPLEMENTEE à true.
+    throw new Error("Simulation en direct non implémentée");
+  }
+  if (!apercuActif()) {
+    // Garde-fou : jamais le mock devant un vrai visiteur, qui taperait de vrais identifiants.
+    throw new Error(
+      "Simulation en direct non implémentée : seul l'aperçu (DEV, VITE_PEC_APERCU) existe",
+    );
+  }
   return startMock(input);
 }
 
@@ -204,19 +236,22 @@ export function nirValide(raw: string): boolean {
   return 97 - (n % 97) === Number(s.slice(13));
 }
 
-/** JJ/MM/AAAA, date réelle, passée, après 1900. */
-export function dateValide(raw: string): boolean {
+export type DateErreur = "format" | "inexistante" | "future" | "ancienne";
+
+/** Pourquoi une date de naissance ne passe pas ; `null` si elle est bonne. */
+export function dateErreur(raw: string): DateErreur | null {
   const m = raw.trim().match(/^(\d{2})\/(\d{2})\/(\d{4})$/);
-  if (!m) return false;
+  if (!m) return "format";
   const [j, mo, a] = [+m[1], +m[2], +m[3]];
   const d = new Date(a, mo - 1, j);
-  return (
-    a >= 1900 &&
-    d.getFullYear() === a &&
-    d.getMonth() === mo - 1 &&
-    d.getDate() === j &&
-    d <= new Date()
-  );
+  if (d.getFullYear() !== a || d.getMonth() !== mo - 1 || d.getDate() !== j) return "inexistante";
+  if (d > new Date()) return "future";
+  return a < 1900 ? "ancienne" : null;
+}
+
+/** JJ/MM/AAAA, date réelle, passée, après 1900. */
+export function dateValide(raw: string): boolean {
+  return dateErreur(raw) === null;
 }
 
 /** L'année du NIR (2e et 3e chiffres) doit correspondre à la date de naissance. */

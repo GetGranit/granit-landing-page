@@ -3,7 +3,7 @@ import { useState } from "react";
 import {
   EQUIPEMENT_EXEMPLE,
   chiffres,
-  dateValide,
+  dateErreur,
   nirCoherentAvecDate,
   nirValide,
 } from "@/lib/pec/simulation";
@@ -50,6 +50,13 @@ function formatDate(v: string) {
   return [d.slice(0, 2), d.slice(2, 4), d.slice(4)].filter(Boolean).join("/");
 }
 
+const DATE_ERREURS: Record<NonNullable<ReturnType<typeof dateErreur>>, string> = {
+  format: "Au format JJ/MM/AAAA.",
+  inexistante: "Cette date n'existe pas : vérifiez le jour et le mois.",
+  future: "Cette date est dans le futur.",
+  ancienne: "Vérifiez l'année de naissance.",
+};
+
 /** E4 · le patient : trois champs, l'équipement est celui de l'exemple. */
 export function StepPatient({
   portail,
@@ -93,7 +100,8 @@ export function StepPatient({
         chiffres(nir).length === 15
           ? "Ce numéro ne passe pas le contrôle de la clé : un chiffre a dû glisser."
           : "Il faut les 15 chiffres, clé comprise.";
-    if (!dateValide(date)) e.dateNaissance = "Au format JJ/MM/AAAA.";
+    const de = dateErreur(date);
+    if (de) e.dateNaissance = DATE_ERREURS[de];
     else if (!e.nir && !nirCoherentAvecDate(nir, date))
       e.dateNaissance = "L'année ne correspond pas au n° de sécu : vérifiez l'un ou l'autre.";
     if (/^\d{11}$/.test(p))
@@ -132,55 +140,67 @@ export function StepPatient({
           error={err.nir}
           badge={prefill?.nir && !initial ? lu : undefined}
         >
-          <input
-            className={fieldClass}
-            style={{ ...fieldStyle(err.nir), fontFamily: "var(--font-mono)" }}
-            inputMode="numeric"
-            autoComplete="off"
-            placeholder="1 85 05 78 006 084 91"
-            value={nir}
-            onChange={(e) => setNir(formatNir(e.target.value))}
-          />
+          {(a11y) => (
+            <input
+              {...a11y}
+              className={fieldClass}
+              style={{ ...fieldStyle(err.nir), fontFamily: "var(--font-mono)" }}
+              inputMode="numeric"
+              autoComplete="off"
+              placeholder="1 85 05 78 006 084 91"
+              value={nir}
+              onChange={(e) => setNir(formatNir(e.target.value))}
+            />
+          )}
         </Field>
         <Field
           label="Date de naissance"
           error={err.dateNaissance}
           badge={prefill?.dateNaissance && !initial ? lu : undefined}
         >
-          <input
-            className={fieldClass}
-            style={{ ...fieldStyle(err.dateNaissance), fontFamily: "var(--font-mono)" }}
-            inputMode="numeric"
-            autoComplete="off"
-            placeholder="JJ/MM/AAAA"
-            value={date}
-            onChange={(e) => setDate(formatDate(e.target.value))}
-          />
+          {(a11y) => (
+            <input
+              {...a11y}
+              className={fieldClass}
+              style={{ ...fieldStyle(err.dateNaissance), fontFamily: "var(--font-mono)" }}
+              inputMode="numeric"
+              autoComplete="off"
+              placeholder="JJ/MM/AAAA"
+              value={date}
+              onChange={(e) => setDate(formatDate(e.target.value))}
+            />
+          )}
         </Field>
         <Field
           label="N° du prescripteur"
           hint="Le n° du médecin sur l'ordonnance, 9 chiffres — pas le RPPS à 11."
           error={err.prescripteur}
         >
-          <input
-            className={fieldClass}
-            style={{ ...fieldStyle(err.prescripteur), fontFamily: "var(--font-mono)" }}
-            inputMode="numeric"
-            autoComplete="off"
-            placeholder="751234567"
-            value={presc}
-            onChange={(e) => setPresc(e.target.value.replace(/[^\d\s]/g, "").slice(0, 14))}
-          />
+          {(a11y) => (
+            <input
+              {...a11y}
+              className={fieldClass}
+              style={{ ...fieldStyle(err.prescripteur), fontFamily: "var(--font-mono)" }}
+              inputMode="numeric"
+              autoComplete="off"
+              placeholder="751234567"
+              value={presc}
+              onChange={(e) => setPresc(e.target.value.replace(/[^\d\s]/g, "").slice(0, 14))}
+            />
+          )}
         </Field>
         {avecAdherent && (
           <Field label="N° d'adhérent" error={err.adherent}>
-            <input
-              className={fieldClass}
-              style={{ ...fieldStyle(err.adherent), fontFamily: "var(--font-mono)" }}
-              autoComplete="off"
-              value={adherent}
-              onChange={(e) => setAdherent(e.target.value.slice(0, 30))}
-            />
+            {(a11y) => (
+              <input
+                {...a11y}
+                className={fieldClass}
+                style={{ ...fieldStyle(err.adherent), fontFamily: "var(--font-mono)" }}
+                autoComplete="off"
+                value={adherent}
+                onChange={(e) => setAdherent(e.target.value.slice(0, 30))}
+              />
+            )}
           </Field>
         )}
         <Equipement />

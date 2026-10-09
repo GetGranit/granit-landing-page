@@ -1,13 +1,13 @@
+import { CASE_KEY } from "@/lib/pec/essaiState";
 import type { CardRead } from "@/lib/pec/readCard";
 import type { Platform } from "@/lib/pec/resolve";
 import type { SimResultat } from "./StepSimFin";
-
-const CASE_KEY = "granit.pec.case";
 
 /**
  * Laisse à /essai le cas fait sur /pec (contrat `PecCase` de essaiState.ts,
  * plus `compte`). Jamais de NIR, d'identité patient, d'identifiants de
  * portail ni de mot de passe : seulement la carte, le portail et les montants.
+ * La capture du portail n'est pas gardée non plus : elle peut montrer le patient.
  */
 export function ecrireCas(input: {
   source: "photo" | "exemple" | "saisie";
@@ -41,7 +41,6 @@ export function ecrireCas(input: {
           partMutuelle: r.partMutuelle,
           resteACharge: r.resteACharge,
           dureeSec: r.dureeSec,
-          ...(r.captureUrl ? { captureUrl: r.captureUrl } : {}),
           ...(r.numero ? { numero: r.numero } : {}),
           apercu,
         },

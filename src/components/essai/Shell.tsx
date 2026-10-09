@@ -42,7 +42,7 @@ export function Shell({
           )}
           {faites !== undefined && (
             <a href="#pec" className="num-tabular rounded-full px-3 py-1 text-[11px]" style={chip}>
-              {faites} / {QUOTA} PEC offertes
+              {faites} / {QUOTA} simulations offertes
             </a>
           )}
         </div>

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-import { Kicker, Muted, Screen, TextLink, Title, bigBtn } from "./ui";
+import { Kicker, Muted, Screen, TextLink, Title, bigBtn, focusRing } from "./ui";
 
 /**
  * E6 · le code de double authentification, tapé à la main : appli
@@ -77,7 +77,7 @@ export function StepCode({
         <input
           ref={ref}
           aria-label="Code à 6 chiffres"
-          className="w-full max-w-[300px] rounded-2xl border-[1.5px] bg-white px-4 py-4 text-center text-[34px] outline-none focus:border-[var(--terra)]"
+          className={`w-full max-w-[300px] rounded-2xl border-[1.5px] bg-white px-4 py-4 text-center text-[34px] ${focusRing}`}
           style={{
             borderColor: "var(--border2)",
             color: "var(--text)",

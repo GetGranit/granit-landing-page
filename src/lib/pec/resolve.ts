@@ -20,6 +20,11 @@ export type Platform = {
   note_fermeture: string | null;
   note: string | null;
   reseau_via: string | null;
+  /**
+   * « prevenir » : on ne propose pas de faire ces PEC (portail qui ferme), on
+   * propose d'être prévenu de la suite. Ne touche pas à `pec_optique_granit`.
+   */
+  affichage?: "prevenir";
 };
 
 const PLATFORMS: Platform[] = (data as { platforms: Platform[] }).platforms;

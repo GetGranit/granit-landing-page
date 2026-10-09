@@ -3,7 +3,12 @@
 // calculés pour l'occasion (clé = 97 - (13 premiers chiffres mod 97)).
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { dateValide, nirCoherentAvecDate, nirValide } from "../../src/lib/pec/simulation.ts";
+import {
+  dateErreur,
+  dateValide,
+  nirCoherentAvecDate,
+  nirValide,
+} from "../../src/lib/pec/simulation.ts";
 
 test("NIR fictif avec la bonne clé → valide, espaces tolérés", () => {
   assert.equal(nirValide("185057800608491"), true);
@@ -29,4 +34,12 @@ test("date de naissance JJ/MM/AAAA réelle et passée", () => {
 test("l'année du NIR doit correspondre à la date", () => {
   assert.equal(nirCoherentAvecDate("185057800608491", "12/05/1985"), true);
   assert.equal(nirCoherentAvecDate("185057800608491", "12/05/1986"), false);
+});
+
+test("date : la raison du refus est donnée", () => {
+  assert.equal(dateErreur("12/05/1985"), null);
+  assert.equal(dateErreur("12-05-1985"), "format");
+  assert.equal(dateErreur("31/02/1985"), "inexistante");
+  assert.equal(dateErreur("01/01/2999"), "future");
+  assert.equal(dateErreur("01/01/1850"), "ancienne");
 });

@@ -2,18 +2,21 @@ import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 
 import { PORTAILS } from "@/lib/pec/essaiState";
+import { platformById } from "@/lib/pec/resolve";
 import { Reassure, TextLink, bigBtn } from "./ui";
 
-/** Portails mis en avant à côté de celui déjà fait (les plus courants en optique). */
-const EN_AVANT = ["oxantis", "sp_sante", "santeclair", "almerys", "generation", "emoa"];
-const VISIBLES = 4;
+/** Portails simulables, dans cet ordre (Viamédis, souvent celui déjà fait, en dernier). */
+const SIMULABLES = ["generation", "emoa", "viamedis"];
+/** Les plus courants en optique parmi ceux où Granit fait les vraies PEC. */
+const EN_AVANT = ["sp_sante", "santeclair", "almerys"];
+const VISIBLES = 3;
 
 /**
- * Sous le résultat : « En faire d'autres ? ». Leviers assumés et vrais :
- * la 1re PEC est déjà faite (dotation), 1 portail sur N est branché
- * (progression entamée), on a donné avant de demander (réciprocité). Pas de
- * chiffre de preuve sociale tant qu'on n'en a pas de réel, pas d'urgence, et
- * « Plus tard » reste visible et neutre.
+ * Sous le résultat : « En faire d'autres ? ». D'abord les portails où l'on peut
+ * simuler de la même façon, puis, avec un libellé honnête, ceux où Granit fait
+ * les vraies PEC sans simulation. Pas de portail qui ferme (Oxantis) mis en
+ * avant, pas de chiffre de preuve sociale tant qu'on n'en a pas de réel, pas
+ * d'urgence, et « Plus tard » reste visible et neutre.
  */
 export function Invitation({
   portail,
@@ -32,10 +35,12 @@ export function Invitation({
 }) {
   const reduce = useReducedMotion();
   const [plusTard, setPlusTard] = useState(false);
-  const autres = PORTAILS.filter((p) => p.id !== platformId).sort(
-    (a, b) => rang(a.id) - rang(b.id),
+  const simulables = SIMULABLES.map((id) => PORTAILS.find((p) => p.id === id)).filter(
+    (p) => p !== undefined,
   );
-  const total = autres.length + 1;
+  const autres = PORTAILS.filter(
+    (p) => !p.simulable && platformById(p.id)?.affichage !== "prevenir",
+  ).sort((a, b) => rang(a.id) - rang(b.id));
   const reste = autres.length - VISIBLES;
   const entree = (i: number) =>
     reduce
@@ -65,7 +70,7 @@ export function Invitation({
           className="text-[12px]"
           style={{ fontFamily: "var(--font-mono)", color: "var(--sage)", letterSpacing: ".04em" }}
         >
-          ✓ Votre 1re PEC est faite
+          ✓ 1re simulation faite
         </p>
         <h2
           className="font-serif text-[clamp(24px,5.4vw,30px)] leading-tight"
@@ -77,54 +82,47 @@ export function Invitation({
           </span>
         </h2>
         <p className="text-[15px]" style={{ color: "var(--text-muted)" }}>
-          Connectez vos autres portails de tiers payant et faites vos prochaines PEC en quelques
-          secondes.
+          Simulez aussi sur vos autres portails, puis faites vos vraies PEC avec Granit.
         </p>
       </div>
 
-      <ul className="flex flex-wrap justify-center gap-2" aria-label="Portails de tiers payant">
-        <motion.li
-          {...entree(0)}
-          className="rounded-full px-3 py-1.5 text-[13px]"
-          style={{ background: "var(--sage)", color: "#fff", fontWeight: 600 }}
-        >
-          ✓ {portail}
-        </motion.li>
-        {autres.slice(0, VISIBLES).map((p, i) => (
-          <motion.li
-            key={p.id}
-            {...entree(i + 1)}
-            className="rounded-full border border-dashed px-3 py-1.5 text-[13px]"
-            style={{ borderColor: "var(--border2)", color: "var(--text-soft)", background: "#fff" }}
-          >
-            + {p.label}
-          </motion.li>
-        ))}
-        {reste > 0 && (
-          <motion.li
-            {...entree(VISIBLES + 1)}
-            className="px-1 py-1.5 text-[13px]"
-            style={{ color: "var(--text-muted)" }}
-          >
-            et {reste} autres
-          </motion.li>
+      <ul className="flex flex-wrap justify-center gap-2" aria-label="Portails où simuler">
+        {simulables.map((p, i) =>
+          p.id === platformId ? (
+            <motion.li
+              key={p.id}
+              {...entree(i)}
+              className="rounded-full px-3 py-1.5 text-[13px]"
+              style={{ background: "var(--sage)", color: "#fff", fontWeight: 600 }}
+            >
+              ✓ {portail}
+            </motion.li>
+          ) : (
+            <motion.li
+              key={p.id}
+              {...entree(i)}
+              className="rounded-full border border-dashed px-3 py-1.5 text-[13px]"
+              style={{
+                borderColor: "var(--border2)",
+                color: "var(--text-soft)",
+                background: "#fff",
+              }}
+            >
+              + {p.label}
+            </motion.li>
+          ),
         )}
       </ul>
-
-      <div className="grid gap-1.5" id="pec-progression">
-        <div className="h-1.5 overflow-hidden rounded-full" style={{ background: "var(--bg3)" }}>
-          <motion.div
-            className="h-full rounded-full"
-            style={{ background: "var(--sage)" }}
-            initial={reduce ? false : { width: 0 }}
-            animate={{ width: `${Math.round((1 / total) * 100)}%` }}
-            transition={{ duration: 0.6, delay: delay + 0.3 }}
-          />
-        </div>
+      {autres.length > 0 && (
         <p className="text-[13px]" style={{ color: "var(--text-muted)" }}>
-          1 portail sur {total} déjà connecté
+          Pour vos vraies PEC :{" "}
+          {autres
+            .slice(0, VISIBLES)
+            .map((p) => p.label)
+            .join(", ")}
+          {reste > 0 ? ` et ${reste} autres` : ""}.
         </p>
-      </div>
+      )}
 
       {plusTard ? (
         <div className="grid justify-items-center gap-2">
@@ -145,7 +143,7 @@ export function Invitation({
           >
             Créer mon compte gratuit <span className="arrow">→</span>
           </motion.button>
-          <Reassure items={["Gratuit", "20 PEC offertes", "Sans carte bancaire"]} />
+          <Reassure items={["Gratuit", "20 simulations offertes", "Sans carte bancaire"]} />
           <TextLink
             onClick={() => {
               setPlusTard(true);

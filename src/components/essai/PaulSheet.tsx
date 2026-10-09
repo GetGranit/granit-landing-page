@@ -8,7 +8,8 @@ import {
 } from "@/lib/pec/essaiState";
 import { inputClass } from "./ui";
 
-const CALCOM = import.meta.env.VITE_PEC_CALCOM_URL || "https://cal.com/paul-pietra-granit/decouvrir-granit";
+const CALCOM =
+  import.meta.env.VITE_PEC_CALCOM_URL || "https://cal.com/paul-pietra-granit/decouvrir-granit";
 
 /**
  * Bandeau « en parler avec Paul » : bottom sheet NON bloquante (pas de fond
@@ -16,8 +17,9 @@ const CALCOM = import.meta.env.VITE_PEC_CALCOM_URL || "https://cal.com/paul-piet
  *
  * - mode "rappel"  → champ téléphone (1 tap si le numéro est déjà connu)
  * - mode "creneau" → bouton « Choisir un créneau »
- * Les deux appellent `onContact({ type, phone? })` : c'est l'appelant qui
- * envoie le lead (ou ouvre l'agenda).
+ * Les deux appellent `onContact({ type, phone?, email? })` : c'est l'appelant
+ * qui envoie le lead (ou ouvre l'agenda). `askEmail` : on ne connaît pas encore
+ * l'e-mail, la fiche le demande avant d'envoyer quoi que ce soit.
  */
 
 export type PaulSheetMode = ContactRequest["type"];
@@ -31,11 +33,22 @@ export type PaulSheetProps = {
   knownPhone?: string | null;
   /** Phrase de contexte, selon le moment du parcours. */
   message?: string;
+  /** E-mail inconnu : champ e-mail obligatoire dans la fiche. */
+  askEmail?: boolean;
 };
 
 const PHONE_RE = /^(?:\+33\s?|0)[1-9](?:[\s.-]?\d{2}){4}$/;
+const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 
-export function PaulSheet({ open, mode, onClose, onContact, knownPhone, message }: PaulSheetProps) {
+export function PaulSheet({
+  open,
+  mode,
+  onClose,
+  onContact,
+  knownPhone,
+  message,
+  askEmail,
+}: PaulSheetProps) {
   const reduce = useReducedMotion();
   return (
     <AnimatePresence>
@@ -65,6 +78,7 @@ export function PaulSheet({ open, mode, onClose, onContact, knownPhone, message 
               onContact={onContact}
               knownPhone={knownPhone}
               message={message}
+              askEmail={askEmail}
             />
           </div>
         </motion.aside>
@@ -79,11 +93,22 @@ function SheetBody({
   onContact,
   knownPhone,
   message,
+  askEmail,
 }: Omit<PaulSheetProps, "open">) {
   const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
   const [editPhone, setEditPhone] = useState(!knownPhone);
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
   const [invalid, setInvalid] = useState(false);
+  const [emailInvalide, setEmailInvalide] = useState(false);
+
+  /** E-mail à joindre à la demande ; `null` s'il manque (le message d'erreur s'affiche). */
+  function emailSaisi(): string | undefined | null {
+    if (!askEmail) return undefined;
+    if (EMAIL_RE.test(email.trim())) return email.trim();
+    setEmailInvalide(true);
+    return null;
+  }
 
   async function send(req: ContactRequest) {
     setStatus("sending");
@@ -97,11 +122,13 @@ function SheetBody({
 
   function submitRappel() {
     const value = editPhone ? phone.trim() : (knownPhone ?? "");
+    const mail = emailSaisi();
     if (!PHONE_RE.test(value)) {
       setInvalid(true);
       return;
     }
-    void send({ type: "rappel", phone: value });
+    if (mail === null) return;
+    void send({ type: "rappel", phone: value, email: mail });
   }
 
   return (
@@ -121,7 +148,7 @@ function SheetBody({
           <p className="mt-0.5 text-[14px] leading-[1.45]" style={{ color: "var(--text-soft)" }}>
             {status === "done"
               ? mode === "rappel"
-                ? "C'est noté. Paul vous rappelle dans la journée."
+                ? "C'est noté. Paul vous rappelle sous 24 h ouvrées."
                 : "Choisissez votre créneau dans l'onglet qui vient de s'ouvrir."
               : (message ?? "Une question ? On peut le faire ensemble, au téléphone.")}
           </p>
@@ -137,6 +164,37 @@ function SheetBody({
         </button>
       </div>
 
+      {status !== "done" && askEmail && (
+        <div className="mt-4">
+          <input
+            type="email"
+            inputMode="email"
+            autoComplete="email"
+            placeholder="contact@votre-magasin.fr"
+            aria-label="Votre e-mail"
+            aria-invalid={emailInvalide || undefined}
+            aria-describedby={emailInvalide ? "paul-email-erreur" : undefined}
+            value={email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+              setEmailInvalide(false);
+            }}
+            className={inputClass}
+            style={{ borderColor: emailInvalide ? "var(--terra)" : "var(--border)" }}
+          />
+          {emailInvalide && (
+            <p
+              id="paul-email-erreur"
+              role="alert"
+              className="mt-1.5 text-[12px]"
+              style={{ color: "var(--terra-hover)" }}
+            >
+              Indiquez votre e-mail : c'est là que Paul vous répond.
+            </p>
+          )}
+        </div>
+      )}
+
       {status !== "done" && mode === "rappel" && (
         <div className="mt-4">
           {editPhone ? (
@@ -146,6 +204,8 @@ function SheetBody({
               autoComplete="tel"
               placeholder="06 12 34 56 78"
               aria-label="Votre numéro de téléphone"
+              aria-invalid={invalid || undefined}
+              aria-describedby={invalid ? "paul-tel-erreur" : undefined}
               value={phone}
               onChange={(e) => {
                 setPhone(e.target.value);
@@ -163,7 +223,12 @@ function SheetBody({
             </p>
           )}
           {invalid && (
-            <p className="mt-1.5 text-[12px]" style={{ color: "var(--terra-hover)" }}>
+            <p
+              id="paul-tel-erreur"
+              role="alert"
+              className="mt-1.5 text-[12px]"
+              style={{ color: "var(--terra-hover)" }}
+            >
               Ce numéro ne semble pas complet.
             </p>
           )}
@@ -182,9 +247,11 @@ function SheetBody({
         <button
           type="button"
           onClick={() => {
+            const mail = emailSaisi();
+            if (mail === null) return;
             // Le calendrier s'ouvre dans le geste du clic (sinon le navigateur le bloque).
             window.open(CALCOM, "_blank", "noopener,noreferrer");
-            void send({ type: "creneau", phone: knownPhone ?? undefined });
+            void send({ type: "creneau", phone: knownPhone ?? undefined, email: mail });
           }}
           disabled={status === "sending"}
           className="btn-primary mt-4 w-full justify-center py-3 text-[15px]"
@@ -194,7 +261,11 @@ function SheetBody({
       )}
 
       {status === "error" && (
-        <p className="mt-2 text-center text-[12px]" style={{ color: "var(--terra-hover)" }}>
+        <p
+          role="alert"
+          className="mt-2 text-center text-[12px]"
+          style={{ color: "var(--terra-hover)" }}
+        >
           Ça n'est pas parti. Réessayez dans un instant.
         </p>
       )}

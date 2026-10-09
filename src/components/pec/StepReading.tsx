@@ -41,7 +41,9 @@ export function StepReading({
   return (
     <Screen id="reading">
       <Kicker>Lecture de la carte</Kicker>
-      <Title em="quelques secondes">On regarde ça, </Title>
+      <Title em="le bon portail" after=".">
+        On cherche{" "}
+      </Title>
 
       <div
         className="ph-no-capture relative aspect-[1.586] w-full max-w-[340px] overflow-hidden rounded-2xl border"
@@ -110,7 +112,7 @@ export function StepReading({
           );
         })}
       </ol>
-      <Muted>La photo n'est pas conservée.</Muted>
+      {previewUrl && <Muted>Photo lue par IA, jamais conservée par Granit.</Muted>}
     </Screen>
   );
 }

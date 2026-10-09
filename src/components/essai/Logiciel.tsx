@@ -10,6 +10,9 @@ type Props = {
   onIdle: () => void;
 };
 
+/** Seul logiciel où les PEC partent déjà des dossiers ; les autres arrivent. */
+const BRANCHABLE = "Cosium";
+
 /** Logiciel métier : bloc secondaire, optionnel et asynchrone. */
 export function Logiciel({ logiciel, onLogiciel, onIdle }: Props) {
   const [pick, setPick] = useState(false);
@@ -30,7 +33,9 @@ export function Logiciel({ logiciel, onLogiciel, onIdle }: Props) {
             <p className="text-[15px]">{logiciel}</p>
             {/* TODO(CTO) : connecteur logiciel métier */}
             <p className="text-[13px]" style={{ color: "var(--text-soft)" }}>
-              En cours de branchement · on vous prévient par e-mail
+              {logiciel === BRANCHABLE
+                ? "Vos PEC partiront de vos dossiers · en cours de branchement, on vous prévient par e-mail"
+                : "Bientôt — Paul vous dit ce qui est possible avec votre logiciel"}
             </p>
           </div>
         </div>
@@ -56,7 +61,7 @@ export function Logiciel({ logiciel, onLogiciel, onIdle }: Props) {
       ) : (
         <div className="flex items-center justify-between gap-3 py-2">
           <p className="text-[14px] leading-[1.45]" style={{ color: "var(--text-soft)" }}>
-            Branchez votre logiciel pour que les PEC partent de vos dossiers.
+            Avec {BRANCHABLE}, vos PEC partent de vos dossiers. Les autres logiciels : bientôt.
           </p>
           <TextButton onClick={() => setPick(true)}>Choisir</TextButton>
         </div>

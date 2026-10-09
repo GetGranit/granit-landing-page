@@ -29,6 +29,7 @@ export type PecSimulation = {
   partMutuelle: number;
   resteACharge: number;
   dureeSec: number;
+  /** Jamais relue du stockage (elle peut montrer le patient) : seulement si on la passe en direct. */
   captureUrl?: string;
   numero?: string;
   /** Simulation d'aperçu (montants d'exemple), pas un vrai passage sur le portail. */
@@ -125,12 +126,6 @@ function toPlatform(v: unknown): PecPlatform | null {
   return { id, label, url: str(p.url) ?? "", simulable: p.simulable === true, tfa };
 }
 
-/** Capture du portail : seulement une image https ou en data URI. */
-function safeImageUrl(v: unknown): string | undefined {
-  const s = str(v);
-  return s && (s.startsWith("https://") || s.startsWith("data:image/")) ? s : undefined;
-}
-
 function toSimulation(v: unknown): PecSimulation | undefined {
   if (!v || typeof v !== "object") return undefined;
   const s = v as Record<string, unknown>;
@@ -150,7 +145,6 @@ function toSimulation(v: unknown): PecSimulation | undefined {
     partMutuelle,
     resteACharge,
     dureeSec: dureeSec ?? 0,
-    captureUrl: safeImageUrl(s.captureUrl),
     numero: str(s.numero) ?? undefined,
     apercu: s.apercu !== false,
   };
@@ -237,17 +231,18 @@ export function markPaulSheetShown(): void {
   }
 }
 
-export type ContactRequest = { type: "rappel" | "creneau"; phone?: string };
+export type ContactRequest = { type: "rappel" | "creneau"; phone?: string; email?: string };
 
 /**
  * Demande de contact depuis /essai : même canal que /pec (webhook B11), avec
- * l'e-mail laissé sur /pec. Sans e-mail (cas d'exemple ouvert directement),
- * il n'y a personne à rappeler : on ne fait rien partir.
+ * l'e-mail laissé sur /pec, ou celui tapé dans la fiche Paul. Sans e-mail, il
+ * n'y a personne à rappeler : on lève une erreur pour que la fiche ne dise
+ * jamais « C'est noté ». Rend l'e-mail utilisé.
  */
-export async function contactPaul(req: ContactRequest, c: PecCase): Promise<void> {
+export async function contactPaul(req: ContactRequest, c: PecCase): Promise<string> {
   if (req.phone) writePhone(req.phone);
-  const email = c.email ?? c.compte?.email;
-  if (!email) return;
+  const email = req.email?.trim() || c.email || c.compte?.email;
+  if (!email) throw new Error("E-mail manquant : la demande de contact n'est pas envoyée");
   const { sendPecLead } = await import("./lead");
   await sendPecLead({
     kind: req.type,
@@ -255,6 +250,7 @@ export async function contactPaul(req: ContactRequest, c: PecCase): Promise<void
     phone: req.phone ?? readPhone() ?? undefined,
     platform: c.platform?.id ?? null,
   });
+  return email;
 }
 
 /* ── Espace freemium (maquette) ── */

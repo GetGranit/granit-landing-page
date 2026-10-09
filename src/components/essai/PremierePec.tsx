@@ -12,7 +12,7 @@ type Props = {
 };
 
 /**
- * La 1re PEC de l'opticien, celle simulée sur /pec, en version compacte :
+ * La 1re simulation de l'opticien, celle faite sur /pec, en version compacte :
  * l'essentiel sur une ligne, le détail à la demande. Rien n'est parti à la mutuelle.
  */
 export function PremierePec({ simulation, portail, mutuelle, minutesManuelles }: Props) {
@@ -31,7 +31,7 @@ export function PremierePec({ simulation, portail, mutuelle, minutesManuelles }:
             <PopCheck done size={24} />
             <div className="min-w-0">
               <p className="text-[15px]" style={{ fontWeight: 600 }}>
-                Votre 1re PEC
+                Votre 1re simulation
               </p>
               <p
                 className="truncate text-[12px]"
@@ -75,7 +75,7 @@ export function PremierePec({ simulation, portail, mutuelle, minutesManuelles }:
                 href={s.captureUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block overflow-hidden rounded-[12px] border"
+                className="ph-no-capture block overflow-hidden rounded-[12px] border"
                 style={{ borderColor: "var(--border)" }}
               >
                 <img

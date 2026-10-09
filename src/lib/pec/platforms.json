@@ -32,7 +32,8 @@
    "pec_optique_granit": true,
    "reseau_via": null,
    "note_fermeture": "Le site oxantis.net ferme le 26 octobre 2026. On vous dira où faire ces PEC ensuite.",
-   "note": null
+   "note": null,
+   "affichage": "prevenir"
   },
   {
    "id": "santeclair",

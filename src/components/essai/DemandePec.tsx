@@ -7,7 +7,7 @@ import { ApercuBadge, Card, Kicker, PopCheck, Row, TextButton, Title } from "./u
 export type Demande = {
   dossier: DossierFictif;
   statut: "en-cours" | "accordee";
-  /** Rang dans les PEC offertes (1 à 20). */
+  /** Rang dans les simulations offertes (1 à 20). */
   rang: number;
 };
 
@@ -147,7 +147,7 @@ function Suivi({
           className="num-tabular mt-1 text-[12px]"
           style={{ color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}
         >
-          PEC offerte {demande.rang} / {QUOTA}
+          Simulation offerte {demande.rang} / {QUOTA}
         </p>
         <ol className="mt-4 space-y-3" aria-live="polite">
           <Etape done label={`Demande envoyée sur ${portail ?? "le portail"}`} />

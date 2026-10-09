@@ -4,13 +4,13 @@ import { motion, useReducedMotion } from "framer-motion";
 import { Card, Kicker, Reassure, TextButton } from "./ui";
 import { MINUTES_PAR_DEFAUT, QUOTA, QUOTA_RAPPEL, enHeures, tempsGagne } from "./quotaStore";
 
-/** « 3 / 20 PEC offertes » : une case par PEC, remplie à chaque demande. */
+/** « 3 / 20 simulations offertes » : une case par PEC, remplie à chaque demande. */
 export function Compteur({ n }: { n: number }) {
   const reduce = useReducedMotion();
   return (
     <div>
       <div className="mb-2 flex items-baseline justify-between gap-3 text-[13px]">
-        <span style={{ color: "var(--text-soft)" }}>Vos PEC offertes</span>
+        <span style={{ color: "var(--text-soft)" }}>Vos simulations offertes</span>
         <span
           className="num-tabular"
           style={{ fontFamily: "var(--font-mono)", fontWeight: 600 }}
@@ -26,7 +26,7 @@ export function Compteur({ n }: { n: number }) {
         aria-valuenow={n}
         aria-valuemin={0}
         aria-valuemax={QUOTA}
-        aria-label={`${n} PEC faites sur ${QUOTA} offertes`}
+        aria-label={`${n} simulations faites sur ${QUOTA} offertes`}
       >
         {Array.from({ length: QUOTA }, (_, i) => (
           <motion.span
@@ -48,8 +48,9 @@ export function RappelDoux({ n, onPaul }: { n: number; onPaul: () => void }) {
   const reste = QUOTA - n;
   return (
     <p className="mt-3 text-[13px] leading-[1.45]" style={{ color: "var(--text-soft)" }}>
-      Il vous reste {reste} PEC offerte{reste > 1 ? "s" : ""}. Ensuite, Paul vous propose l'offre
-      adaptée à votre magasin. <TextButton onClick={onPaul}>En parler maintenant</TextButton>
+      Il vous reste {reste > 1 ? `${reste} simulations offertes` : "1 simulation offerte"}. Ensuite,
+      Paul vous propose l'offre adaptée à votre magasin.{" "}
+      <TextButton onClick={onPaul}>En parler maintenant</TextButton>
     </p>
   );
 }
@@ -73,12 +74,12 @@ export function Upsell({ n, minutesManuelles, dureeSec, onContinuer, onRappel }:
       transition={{ duration: 0.35 }}
     >
       <Card>
-        <Kicker>Vos PEC offertes</Kicker>
+        <Kicker>Vos simulations offertes</Kicker>
         <h2 className="font-serif text-[28px] leading-[1.15]">
-          Vous avez fait vos {QUOTA} PEC <span className="accent-italic">offertes.</span>
+          Vous avez fait vos {QUOTA} simulations <span className="accent-italic">offertes.</span>
         </h2>
         <dl className="mt-5 grid grid-cols-2 gap-3">
-          <Chiffre label="PEC faites avec Granit" value={String(n)} />
+          <Chiffre label="Simulations faites" value={String(n)} />
           <Chiffre label="Temps gagné, estimé" value={`≈ ${enHeures(gagne)}`} />
         </dl>
         <p className="mt-2 text-[12px]" style={{ color: "var(--text-muted)" }}>
@@ -146,7 +147,7 @@ export function EtapePec(props: EtapeProps) {
     <section id="pec" aria-labelledby="pec-titre" className="mt-10 scroll-mt-6">
       <Kicker>Étape 2 · vos PEC</Kicker>
       <h2 id="pec-titre" className="mb-4 font-serif text-[28px] leading-[1.15]">
-        {QUOTA} PEC <span className="accent-italic">offertes.</span>
+        {QUOTA} simulations <span className="accent-italic">offertes.</span>
       </h2>
       <Compteur n={faites} />
       {faites >= QUOTA ? (

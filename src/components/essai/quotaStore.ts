@@ -1,5 +1,5 @@
 /**
- * Les 20 PEC offertes de l'espace freemium (maquette).
+ * Les 20 simulations offertes de l'espace freemium (maquette).
  * Seul un nombre est stocké, dans sessionStorage : rien du patient ni des accès.
  * `?pec=19` dans l'URL fixe le compteur, pour tester l'upsell sans 20 demandes.
  */

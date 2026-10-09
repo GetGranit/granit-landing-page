@@ -48,6 +48,7 @@ export function SimFlow({
   portail,
   prefill,
   busy,
+  compteError,
   track,
   onProgress,
   onBack,
@@ -58,6 +59,8 @@ export function SimFlow({
   portail: string;
   prefill?: PatientPrefill;
   busy: boolean;
+  /** L'envoi du compte n'est pas parti : l'écran du compte reste affiché avec ce message. */
+  compteError?: string;
   track: (e: string, p?: Record<string, unknown>) => void;
   onProgress: (n: number) => void;
   onBack: () => void;
@@ -80,7 +83,16 @@ export function SimFlow({
     const c = creds.current;
     if (!c) return setPhase({ p: "login" });
     session.current?.cancel();
-    const s = startSimulation({ platformId, ...pat, ...c });
+    paul.close();
+    let s: SimulationSession;
+    try {
+      s = startSimulation({ platformId, ...pat, ...c });
+    } catch (err) {
+      // Pas de simulation en direct ici (voir simulation.ts) : on le dit, Paul prend le relais.
+      console.error(err);
+      track("pec_simulation_echec", { platform: platformId, cause: "indisponible", apercu });
+      return setPhase({ p: "echec", cause: "inconnu" });
+    }
     session.current = s;
     t0.current = Date.now();
     setEtape("connexion");
@@ -93,6 +105,7 @@ export function SimFlow({
         setPhase({ p: "code", canal: e.canal, essai: e.essai });
       } else if (e.type === "resultat") {
         creds.current = null;
+        paul.close();
         track("pec_simulation_ok", { platform: platformId, dureeSec: e.dureeSec, apercu });
         setPhase({ p: "done", r: e });
       } else {
@@ -117,6 +130,8 @@ export function SimFlow({
 
   function fix(cause: SimEchecCause) {
     if (cause === "identifiants") return setPhase({ p: "login", refuse: true });
+    // Panne : on repasse par la connexion, identifiants modifiables avant de relancer.
+    if (cause === "portail") return setPhase({ p: "login" });
     if (cause === "patient") return setPhase({ p: "patient" });
     if (patient) lancer(patient);
   }
@@ -178,6 +193,7 @@ export function SimFlow({
             portail={portail}
             platformId={platformId}
             r={phase.r}
+            apercu={apercu}
             track={track}
             onCreer={() => setPhase({ p: "compte", r: phase.r })}
           />
@@ -185,6 +201,7 @@ export function SimFlow({
         {phase.p === "compte" && (
           <StepCompte
             preparing={busy}
+            error={compteError}
             onBack={() => setPhase({ p: "done", r: phase.r })}
             onSubmit={(m) => {
               track("pec_compte_cree", { platform: platformId });
@@ -198,6 +215,7 @@ export function SimFlow({
             cause={phase.cause}
             onFix={() => fix(phase.cause)}
             onPaul={openPaul}
+            onBack={onBack}
           />
         )}
       </div>
