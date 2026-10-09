@@ -277,9 +277,18 @@ Toujours les mêmes H2, dans cet ordre (formulés en questions avec le nom du po
 2. Comment accéder à l'espace pro {portail} ? (création de compte, connexion, mot de passe, blocage)
 3. Comment faire une prise en charge optique sur {portail} ? (pièces, champs, étapes)
 4. Que veulent dire les statuts d'une prise en charge {portail} ?
-5. Que faire en cas de rejet ou de refus ?
+5. Vous bloquez sur {portail} ? (rejet, refus, attente, paiement absent)
 6. Quand et comment {portail} paie-t-il l'opticien ?
 7. Comment contacter {portail} ?
+
+La section 5 « Vous bloquez sur {portail} ? » aide l'opticien au moment où il est coincé au comptoir. Elle est classée par **symptôme**, avec ses mots, dans cet ordre, un H3 par cas :
+
+1. « Je ne trouve pas la mutuelle dans la liste »
+2. « La prise en charge est refusée »
+3. « Elle reste en attente, sans réponse »
+4. « L'accord est obtenu, mais le paiement n'arrive pas »
+
+Pour chaque cas : où vérifier, quel geste faire, qui appeler (renvoyer à la section contact par une phrase, jamais par un lien #ancre : seuls les liens /ressources/… et les sources sont acceptés). Uniquement ce que le fichier de faits permet d'affirmer : statuts, conventionnement, organismes, contacts, paiement. Si le fichier ne dit rien d'un cas, une seule phrase honnête (« {portail} ne publie pas… ») et on passe au suivant. **Jamais de fréquence, de taux ni de délai qui ne soit pas dans le fichier de faits** : ces chiffres viennent d'un bloc séparé, alimenté par nos données agrégées, que tu n'écris pas. La section se termine par : « Gardez le motif exact affiché par le portail : c'est lui qui dit quoi corriger. »
 
 Les faits viennent **uniquement** du fichier `plateformes/{nom}.json` (voir le gabarit, section 6). La page affiche elle-même « Informations relevées le {checkedOn} ». Les portails changent : la date protège le lecteur et notre crédibilité.
 
