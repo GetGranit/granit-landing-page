@@ -2,20 +2,21 @@
 import { useRef, type CSSProperties } from "react";
 import { Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
-import { categorie, dateFr, ficheJson, titreCourt } from "@/lib/ressources/contenu";
+import { categorie, dateFr, ficheJson, metierDe, titreCourt } from "@/lib/ressources/contenu";
 import { verticale } from "@/lib/ressources/verticales";
 import type { Concurrent, Plateforme, RessourceJson } from "@/lib/ressources/types";
 import { Annuaire } from "../Annuaire";
-import { EcranPlateforme, MarquePlateforme, PhotoCarte, TitreItalique } from "../Cartes";
-import { photoFiche } from "@/lib/ressources/photos";
-import { logoPlateforme } from "@/lib/ressources/logos";
+import { FenetrePlateforme, MarquePlateforme, PhotoCarte, TitreItalique } from "../Cartes";
+import { estFicheTousPortails, photoFiche } from "@/lib/ressources/photos";
+import { logoPlateforme, statutsCarte } from "@/lib/ressources/logos";
 import { FIGURE_CSS } from "@/lib/ressources/figures";
-import { Fil } from "../Fil";
+import { Fil, itemMetier } from "../Fil";
 import { SousNav } from "../Onglets";
 import { FicheIdentite } from "./BlocsPlateforme";
 import { Corps } from "./Corps";
 import { Ancres } from "./Ancres";
-import { ALireEnsuite, EncartFinal, EtapeSuivante, Faq, Sources, Utile } from "./Fin";
+import { CarteAgent, EncartAgent } from "./CtaAgent";
+import { ALireEnsuite, EtapeSuivante, Faq, Sources, Utile } from "./Fin";
 import { Sommaire, SommaireMobile, type Entree } from "./Sommaire";
 
 /** Bandeau des pages d'aperçu (content/apercu), jamais en production. */
@@ -132,13 +133,6 @@ function Metiers({ slug }: { slug: string }) {
   );
 }
 
-/** Titre de la carte agent ; « vos PEC {nom} » seulement si Granit a un connecteur pour ce portail. */
-function titreAgent(a: RessourceJson, p: Plateforme | null): string {
-  const connecteur = p && Object.keys(p.sources).some((k) => k.startsWith("granit"));
-  if (a.type === "plateforme" && p && connecteur) return `L'agent dépose vos PEC ${p.nom}`;
-  return categorie(a.category)!.agent;
-}
-
 export function PageArticle({
   article: a,
   plateforme: p,
@@ -167,6 +161,7 @@ export function PageArticle({
   const teinte = { "--ink": cat.ink, "--tint": cat.tint } as CSSProperties;
   const corps = useRef<HTMLDivElement>(null);
   const fiche = ficheJson(a.slug);
+  const metier = metierDe(a.slug);
   const nbSources =
     (a.sources?.length ?? 0) + (p ? Object.values(p.sources).filter((s) => !s.url).length : 0);
 
@@ -175,7 +170,7 @@ export function PageArticle({
       <div className="ress">
         {a.preview && <BandeauPreview />}
         {a.readTime >= 3 && <div className="lecture-barre" aria-hidden style={teinte} />}
-        <SousNav actif={a.category === "glossaire" ? "glossaire" : a.category} />
+        <SousNav actif={metier?.slug ?? "tout"} />
         <header
           className="relative overflow-hidden border-b border-[var(--border)]"
           style={{ background: cat.tint }}
@@ -185,11 +180,7 @@ export function PageArticle({
               <Fil
                 items={[
                   { nom: "Ressources", to: "/ressources" },
-                  {
-                    nom: cat.nom,
-                    to: "/ressources/categorie/$category",
-                    params: { category: cat.slug },
-                  },
+                  ...(metier ? [itemMetier(metier)] : []),
                   { nom: titreCourt(a.title) },
                 ]}
               />
@@ -212,16 +203,20 @@ export function PageArticle({
             </div>
             {/* Photo du thème à droite, sur grand écran seulement : la réponse reste visible sans défiler. */}
             {fiche && (
-              <div className="group relative hidden aspect-[4/3] overflow-hidden rounded-[16px] min-[980px]:block">
+              <div
+                className={`group relative hidden aspect-[4/3] overflow-hidden rounded-[16px] min-[980px]:block ${estPlateforme || estFicheTousPortails(fiche) ? "ress-fenetre-entete" : ""}`}
+              >
                 {estPlateforme ? (
-                  // Fiche plateforme : le logo s'affiche sur l'écran du portable, comme sur les cartes.
-                  <EcranPlateforme
-                    photo={photoFiche(fiche)}
-                    nom={p.nom}
-                    logo={logoPlateforme(p.logo, "ecran")}
-                    tailles="380px"
-                    chargement="haute"
+                  // Fiche plateforme : la même fenêtre de prise en charge que sur les cartes.
+                  <FenetrePlateforme
+                    plateforme={{
+                      nom: p.nom,
+                      logo: logoPlateforme(p.logo, "fenetre"),
+                      statuts: statutsCarte(p.statuts),
+                    }}
                   />
+                ) : estFicheTousPortails(fiche) ? (
+                  <FenetrePlateforme />
                 ) : (
                   <PhotoCarte photo={photoFiche(fiche)} tailles="380px" chargement="haute" />
                 )}
@@ -251,31 +246,18 @@ export function PageArticle({
               <Faq items={a.faqItems} />
               <Sources article={a} plateforme={p} acteurs={acteurs} />
               <Utile slug={a.slug} />
-              <EncartFinal />
               <Ancres racine={corps} />
             </div>
-            {/* Seul le sommaire est collant ; la carte agent, claire, reste en tête de colonne. */}
-            <aside className="hidden flex-col gap-4 min-[980px]:flex">
-              <div className="rounded-[14px] border border-[var(--border)] bg-white p-[18px]">
-                <span className="eyebrow" style={{ color: "var(--ink)" }}>
-                  Ce que fait Granit
-                </span>
-                <h3 className="mt-2 font-serif text-[21px] font-normal leading-[1.2] text-[var(--text)]">
-                  {titreAgent(a, p)}
-                </h3>
-                <p className="mt-2 text-[14.5px] text-[var(--text-soft)]">
-                  20 minutes avec l'équipe, sur vos propres dossiers.
-                </p>
-                <Link to="/demo" className="btn-primary mt-3.5 flex w-full justify-center">
-                  Voir la démo
-                </Link>
-              </div>
-              <div className="sticky top-[88px]">
+            {/* Sommaire et carte de l'agent collent ensemble ; la colonne s'arrête avant l'encart de fin. */}
+            <aside className="hidden min-[980px]:block">
+              <div className="sticky top-[88px] flex flex-col gap-4">
                 <Sommaire entrees={entrees} />
+                <CarteAgent article={a} plateforme={p} />
               </div>
             </aside>
           </div>
         </div>
+        <EncartAgent article={a} plateforme={p} />
         <ALireEnsuite article={a} />
       </div>
     </SiteLayout>

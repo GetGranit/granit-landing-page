@@ -28,12 +28,23 @@ const variante = (slug: string, rang?: number) => ((rang ?? hash(slug)) % 2 === 
 export const estFichePlateforme = (f: Pick<Fiche, "slug" | "category">) =>
   f.category === "plateformes" && f.slug.startsWith("portail-");
 
+/**
+ * Fiche de la catégorie plateformes sans plateforme propre (l'introduction aux portails) : sa
+ * couverture est la fenêtre « tous portails ». Un ancien article non rattaché n'a qu'une teinte.
+ */
+export const estFicheTousPortails = (f: Fiche) =>
+  f.category === "plateformes" && !estFichePlateforme(f) && (!f.ancien || Boolean(f.rattache));
+
+/** Couverture dessinée en CSS (FenetrePlateforme) : pas de photo à précharger. */
+export const aCouvertureFenetre = (f: Fiche) => estFichePlateforme(f) || estFicheTousPortails(f);
+
 export function photoTheme(category: CategorySlug, slug: string, rang?: number): Photo {
   return { base: `/ressources/themes/${category}-${variante(slug, rang)}`, alt: "" };
 }
 
 /** Photo d'une fiche ; `rang` = position dans la liste affichée, s'il y en a une. */
 export function photoFiche(f: Fiche, rang?: number): Photo {
+  // Fiche plateforme : la photo ne sert plus qu'à og:image, la carte dessine sa fenêtre en CSS.
   if (estFichePlateforme(f))
     return { base: `/ressources/themes/plateformes-${variante(f.slug, rang)}`, alt: "" };
   if (f.ancien && !f.rattache) {

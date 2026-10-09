@@ -1,4 +1,5 @@
 // Accès aux fichiers du repo : file d'articles, articles publiés, anciens articles, faits.
+import { execFileSync } from "node:child_process";
 import { appendFileSync, existsSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
@@ -37,6 +38,14 @@ export function anciensArticles() {
   }));
 }
 
+/** Ancien article complet (titre, description, paragraphes) lu dans src/lib/articles.ts. */
+export function ancienArticle(slug) {
+  const src = join(RACINE, "src/lib/articles.ts");
+  const code = `import(${JSON.stringify("file://" + src)}).then(({ articles }) => process.stdout.write(JSON.stringify(articles.fr.find((a) => a.slug === ${JSON.stringify(slug)}) ?? null)))`;
+  const out = execFileSync(process.execPath, ["--experimental-strip-types", "--no-warnings", "-e", code], { encoding: "utf8" });
+  return JSON.parse(out);
+}
+
 /** Nom du fichier de faits d'une plateforme : portail-viamedis -> viamedis */
 export function faitsPour(article) {
   const nom = [article.slug, article.parentSlug]
@@ -67,4 +76,23 @@ export function sortieGithub(valeurs) {
   const f = process.env.GITHUB_OUTPUT;
   if (!f) return;
   for (const [k, v] of Object.entries(valeurs)) appendFileSync(f, `${k}=${String(v).replace(/\n/g, " ")}\n`);
+}
+
+/** Message système commun (guide + extrait du gabarit), identique d'un appel à l'autre pour profiter du cache. */
+export function systemeGuide() {
+  return `${readFileSync(join(MOTEUR, "BLOG_CMS_granit.md"), "utf8")}\n\n---\n\n# Extrait du gabarit (GABARIT_ARTICLE_granit.md)\n\n${sectionsGabarit()}`;
+}
+
+/** Liens internes autorisés pour un article déjà écrit (lui-même exclu) : chemin -> titre. */
+export function ciblesDeLiens(file, article) {
+  const enLigne = publies(file).filter((a) => a.slug !== article.slug);
+  const cibles = new Map();
+  for (const a of enLigne) cibles.set(`/ressources/${a.slug}`, a.title);
+  const remplaces = new Set([...enLigne, article].flatMap((a) => a.remplace ?? []));
+  for (const a of anciensArticles()) {
+    if (remplaces.has(a.slug) || a.slug === article.slug) continue;
+    cibles.set(`/ressources/${a.slug}`, a.titre);
+  }
+  cibles.set("/ressources", "Hub des ressources");
+  return cibles;
 }

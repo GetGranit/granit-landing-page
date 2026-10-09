@@ -167,7 +167,7 @@ const urls = [
     priority: a.level?.startsWith("Pilier") ? "0.8" : "0.7",
   })),
   ...slugs
-    .filter((s) => !remplaces[s])
+    .filter((s) => !remplaces[s] && !ressources.some((a) => a.slug === s))
     .map((s) => ({
       loc: `${SITE}/ressources/${s}`,
       lastmod: slugDates.get(s),

@@ -14,7 +14,8 @@ import {
 } from "@/lib/ressources/contenu";
 import type { Fiche } from "@/lib/ressources/types";
 import { BandeDemo } from "./BandeDemo";
-import { CarteArticle, CartePetite, CarteUne, TuilePlateforme } from "./Cartes";
+import { CarteArticle, CartePetite, CarteUne } from "./Cartes";
+import { MurPlateformes } from "./MurPlateformes";
 import { VotreMetier } from "./Metiers";
 import { Onglets } from "./Onglets";
 
@@ -41,60 +42,31 @@ export function Hub() {
     .flatMap((r) => r.fiches);
   const aussi = reste.length >= 3 ? reste.slice(0, reste.length - (reste.length % 3)) : reste;
   const plateformes = fichesPlateformes();
-  // Les plateformes sont communes à tous les métiers : section dès 1 fiche en aperçu, 3 en ligne.
-  const seuilPlateformes = plateformes.some((f) => f.preview) ? 1 : 3;
   const glossaire = glossaireEnLigne();
 
   return (
     <SiteLayout fond="var(--bg2)">
       <div className="ress bg-[var(--bg2)]">
         <section className={`${conteneur} pb-8 pt-12 text-center md:pt-14`}>
-          <div className="eyebrow">Ressources · Le guide du tiers payant</div>
-          <h1 className="mx-auto mt-4 font-serif text-[clamp(40px,5.2vw,64px)] font-normal leading-[1.04] tracking-[-0.02em] [text-wrap:balance]">
-            Le tiers payant optique,
+          <div className="eyebrow">Ressources · Pour les professionnels de santé</div>
+          <h1 className="mx-auto mt-4 font-serif text-[clamp(40px,5.2vw,64px)] font-normal leading-[1.14] tracking-[-0.02em] [text-wrap:balance]">
+            L'administratif de santé,
             <br className="hidden md:block" />{" "}
-            <em className="accent-italic pouls-souligne whitespace-nowrap">sans les rejets</em>.
+            <em className="accent-italic pouls-souligne whitespace-nowrap">sans le casse-tête</em>.
           </h1>
-          <p className="body-lg mx-auto mt-5 max-w-[60ch]">
-            Portails, prises en charge, rejets, paiements : des réponses pratiques pour le comptoir,
-            écrites par l'équipe qui automatise le tiers payant de magasins d'optique.
+          <p className="body-lg mx-auto mt-10 max-w-[60ch]">
+            Opticiens, dentistes, cliniques, EHPAD, centres de santé, laboratoires,
+            audioprothésistes, pharmaciens : des réponses pratiques sur les mutuelles, les
+            remboursements, les paiements et la réglementation. Partez de votre métier ou de votre
+            question.
           </p>
           <ParProbleme />
         </section>
 
         <VotreMetier />
 
-        {plateformes.length >= seuilPlateformes && (
-          <section className={`${conteneur} pt-14`}>
-            <div className="mb-6 flex flex-wrap items-end justify-between gap-4 border-t border-[var(--border)] pt-5">
-              <div>
-                <h2 className={titreSection}>Les plateformes de tiers payant</h2>
-                <p className="mt-1.5 max-w-[60ch] text-[15px] text-[var(--text-soft)]">
-                  Une fiche par portail : espace pro, prise en charge, statuts et paiement. Communes
-                  à tous les métiers.
-                </p>
-              </div>
-              <Link
-                to="/ressources/categorie/$category"
-                params={{ category: "plateformes" }}
-                className={lienFleche}
-                style={{ color: "#b94a2f" }}
-              >
-                {plateformes.length > 1
-                  ? `Voir les ${plateformes.length} plateformes`
-                  : "Voir la fiche"}{" "}
-                <Fleche />
-              </Link>
-            </div>
-            <ul className="grid grid-cols-2 gap-3 md:grid-cols-3">
-              {plateformes.map((f) => (
-                <li key={f.slug}>
-                  <TuilePlateforme fiche={f} />
-                </li>
-              ))}
-            </ul>
-          </section>
-        )}
+        {/* Dès la première fiche : seule, elle passe en vedette devant le reste de l'annuaire. */}
+        {plateformes.length > 0 && <MurPlateformes fiches={plateformes} />}
 
         <section className={`${conteneur} pb-8 pt-14 text-center`}>
           <h2 className="font-serif text-[24px] font-normal leading-tight md:text-[30px]">

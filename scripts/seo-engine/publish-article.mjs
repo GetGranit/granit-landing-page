@@ -1,34 +1,28 @@
 #!/usr/bin/env node
 // Moteur SEO Granit : rédige le prochain article de la file et l'écrit dans content/ressources/.
-// Usage : node scripts/seo-engine/publish-article.mjs [--slug portail-viamedis] [--dry] [--out dossier] [--model claude-opus-5-5]
+// Usage : node scripts/seo-engine/publish-article.mjs [--slug portail-viamedis] [--dry] [--out dossier] [--model claude-opus-5-5] [--relecture]
+//   --relecture : force la PR de relecture humaine (lot de nuit), quel que soit le nombre d'articles sortis.
 //   --dry : n'écrit que l'article (dans --out), ne touche ni à la file ni aux autres articles.
 // Le commit, la PR et la notification sont faits par le workflow (ship.sh, notify.mjs).
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { mkdirSync } from "node:fs";
 import { join } from "node:path";
 import { parseArgs } from "node:util";
 import { citations, controler, typeDePage, verifierSources } from "./lib/checks.mjs";
-import { coutDollars, rediger } from "./lib/claude.mjs";
+import { apiKey, coutDollars, rediger } from "./lib/claude.mjs";
 import { mots, texte } from "./lib/html.mjs";
 import {
-  CONTENU, MOTEUR, anciensArticles, concurrentsPour, ecrireFile, ecrireJson, faitsPour, lireFile, lireJson,
-  publies, sectionsGabarit, sortieGithub,
+  CONTENU, MOTEUR, ancienArticle, anciensArticles, concurrentsPour, ecrireFile, ecrireJson, faitsPour, lireFile, lireJson,
+  publies, sortieGithub, systemeGuide,
 } from "./lib/site.mjs";
 
 const { values: opt } = parseArgs({
-  options: { slug: { type: "string" }, dry: { type: "boolean", default: false }, out: { type: "string" }, model: { type: "string" } },
+  options: { slug: { type: "string" }, dry: { type: "boolean", default: false }, out: { type: "string" }, model: { type: "string" }, relecture: { type: "boolean", default: false } },
 });
 
 const config = lireJson(join(MOTEUR, "config.json"));
 if (opt.model) config.model = opt.model;
 const schema = lireJson(join(MOTEUR, "article-output.schema.json"));
 const aujourdhui = new Date().toISOString().slice(0, 10);
-
-function apiKey() {
-  if (process.env.ANTHROPIC_API_KEY) return process.env.ANTHROPIC_API_KEY;
-  const local = join(process.env.HOME ?? "", ".config/granit/anthropic.key");
-  if (existsSync(local)) return readFileSync(local, "utf8").trim();
-  throw new Error("ANTHROPIC_API_KEY manquante");
-}
 
 // 1. Choix de l'article
 const file = lireFile();
@@ -63,7 +57,7 @@ for (const a of enLigne) cibles.set(`/ressources/${a.slug}`, a.title);
 // anciens articles encore en ligne : ni déjà remplacés, ni remplacés par celui-ci
 const remplaces = new Set([...enLigne, article].flatMap((a) => a.remplace ?? []));
 for (const a of anciensArticles()) {
-  if (remplaces.has(a.slug)) continue;
+  if (remplaces.has(a.slug) || a.slug === article.slug) continue;
   cibles.set(`/ressources/${a.slug}`, `${a.titre} (ancien article, ${a.categorie})`);
 }
 const inconnus = (article.remplace ?? []).filter((s) => !anciensArticles().some((a) => a.slug === s));
@@ -71,6 +65,10 @@ if (inconnus.length) throw new Error(`remplace : ancien article inconnu ${inconn
 cibles.set("/ressources", "Hub des ressources");
 const slugsEnLigne = new Set(enLigne.map((a) => a.slug));
 const liensPrevus = (article.internalLinks ?? []).filter((l) => slugsEnLigne.has(l.slug));
+
+// Refonte : l'ancien article sert de matière première, à la même adresse
+const ancien = article.refonte ? ancienArticle(article.slug) : null;
+if (article.refonte && !ancien) throw new Error(`refonte : ancien article introuvable dans articles.ts : ${article.slug}`);
 
 // 3. Message envoyé à Claude
 const meta = {
@@ -85,6 +83,7 @@ const meta = {
   level: article.level,
   reader: article.reader,
   granitData: article.granitData,
+  ...(article.verticales ? { verticales: article.verticales } : {}),
 };
 
 const consignesType = {
@@ -113,6 +112,16 @@ function message(retour) {
     `## Métadonnées\n\`\`\`json\n${JSON.stringify(meta, null, 2)}\n\`\`\``,
     `## Type de page\n${consignesType[type]}`,
   ];
+  if (ancien) {
+    parts.push(
+      `## Refonte d'un ancien article (même adresse /ressources/${article.slug})\n` +
+        `Réécris cet article au format du gabarit et dans le style du guide. Garde le sujet, l'angle et les idées justes. ` +
+        `Le lecteur n'est pas l'opticien : c'est ${article.reader} (métier : ${(article.verticales ?? []).join(", ")}). ` +
+        `Adapte le vocabulaire et les exemples à ce métier, mais garde toutes les règles du guide (faits sourcés, liste rouge, FAQ, ton).\n` +
+        `L'ancien texte contient des affirmations sans source : n'en reprends aucune qui ne soit pas sourcée. Un chiffre de l'ancien texte sans source disparaît.\n\n` +
+        `Titre d'origine : ${ancien.title}\nDescription d'origine : ${ancien.desc}\n\nTexte d'origine :\n${ancien.body.map((p) => `> ${p}`).join("\n>\n")}`,
+    );
+  }
   if (article.toValidate) {
     parts.push(`## Points non tranchés\n${article.toValidate}\nN'affirme rien sur ces points : contourne-les ou reste général.`);
   }
@@ -161,14 +170,17 @@ function message(retour) {
       `- tocItems : un élément par H2, mêmes id, même ordre.\n` +
       `- metaDescription : 140 à 160 caractères, avec le mot-clé principal.\n` +
       `- sources : chaque lien externe du corps, 2 minimum. Toujours la page exacte qui porte le fait (ex. la fiche ameli.fr sur le 100 % Santé optique), jamais la page d'accueil d'un site. Uniquement des pages officielles dont tu es certain qu'elles existent : une URL qui ne répond pas fait refuser l'article.\n` +
-      `- Une citation réelle obligatoire : <blockquote><p>« … »</p><cite>…</cite></blockquote>, recopiée mot pour mot depuis une source de la liste, avec dans <cite> exactement le label de cette source (le moteur vérifie que la phrase figure sur la page) (texte officiel, page de plateforme ou fichier de faits). Jamais inventée ni reformulée.\n` +
+      `- Citation facultative : <blockquote><p>« … »</p><cite>…</cite></blockquote>, seulement si tu connais la phrase exacte, mot pour mot, d'une source de la liste ou du fichier de faits, avec dans <cite> exactement le label de cette source. Le moteur ouvre la page et refuse l'article si la phrase n'y figure pas. Au moindre doute, ne mets pas de citation.\n` +
       `- Mot-clé principal « ${article.primaryKeyword} » dans les 100 premiers mots.`,
   );
-  if (retour) parts.push(`## Correction demandée\nLa version précédente a été refusée pour ces raisons. Corrige-les toutes :\n${retour.map((e) => `- ${e}`).join("\n")}`);
+  if (retour) {
+    const citation = retour.some((e) => e.includes("citation")) ? "\nPour une citation refusée : supprime-la plutôt que d'en proposer une autre." : "";
+    parts.push(`## Correction demandée\nLa version précédente a été refusée pour ces raisons. Corrige-les toutes :\n${retour.map((e) => `- ${e}`).join("\n")}${citation}`);
+  }
   return parts.join("\n\n");
 }
 
-const system = `${readFileSync(join(MOTEUR, "BLOG_CMS_granit.md"), "utf8")}\n\n---\n\n# Extrait du gabarit (GABARIT_ARTICLE_granit.md)\n\n${sectionsGabarit()}`;
+const system = systemeGuide();
 
 // 4. Rédaction + contrôles, 2 essais maximum
 const key = apiKey();
@@ -212,13 +224,16 @@ bilan.avertissements.forEach((a) => console.log(`  ! ${a}`));
 
 // Relecture humaine (PR) pour les premiers articles et ceux qui ont des points à valider
 const dejaSortis = file.filter((a) => ["published", "review"].includes(a.status)).length;
-// Une page comparative passe toujours par une relecture (gabarit §6 bis, règle 8).
-const relecture = dejaSortis < config.relectureDesPremiers || Boolean(article.toValidate) || comparatif;
+const relecture = opt.relecture || dejaSortis < config.relectureDesPremiers || Boolean(article.toValidate) || Boolean(article.refonte) || comparatif; // comparatif : toujours relu (gabarit §6 bis)
 
 // Signature : auteur et relecteur selon la catégorie. Le relecteur n'est affiché que si
 // l'article passe vraiment par une relecture humaine (PR), jamais en publication directe.
-const signature = (comparatif && config.signatures.comparatifs) || config.signatures[article.category];
-if (!signature) throw new Error(`pas de signature pour la catégorie ${article.category} (config.json)`);
+const signature = {
+  ...config.signatures[article.category],
+  ...(article.auteur ? { auteur: article.auteur } : {}),
+  ...(article.relecteur ? { relecteur: article.relecteur } : {}),
+};
+if (!signature.auteur) throw new Error(`pas de signature pour la catégorie ${article.category} (config.json)`);
 const personne = (cle) => {
   const p = config.auteurs[cle];
   if (!p) throw new Error(`auteur inconnu dans config.json : ${cle}`);
@@ -261,6 +276,8 @@ const fiche = {
   internalLinks: liensPrevus,
   liensEntrants: [],
   remplace: article.remplace ?? [],
+  ...(article.verticales ? { verticales: article.verticales } : {}),
+  ...(article.refonte ? { refonte: true } : {}),
   moteur: { model: config.model, genereLe: new Date().toISOString(), avertissements: bilan.avertissements },
 };
 

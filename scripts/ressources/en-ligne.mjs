@@ -108,7 +108,9 @@ export function controler(racine, articles) {
   const anciens = new Set(anciensSlugsFr(racine));
   const dejaRemplaces = new Set();
   for (const a of articles) {
-    if (anciens.has(a.slug)) erreurs.push(`slug en double (JSON et articles.ts) : ${a.slug}`);
+    // une refonte remplace l'ancien article à la même adresse : seul cas où le slug est partagé
+    if (anciens.has(a.slug) && !a.refonte)
+      erreurs.push(`slug en double (JSON et articles.ts) : ${a.slug}`);
     for (const r of a.remplace ?? []) {
       if (!anciens.has(r)) erreurs.push(`${a.slug} remplace un ancien article inconnu : ${r}`);
       if (dejaRemplaces.has(r)) erreurs.push(`ancien article remplacé deux fois : ${r}`);

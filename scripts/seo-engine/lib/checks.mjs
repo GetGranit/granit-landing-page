@@ -176,7 +176,10 @@ export function controler(out, ctx) {
   }
   const mentions = (corps.match(/\bGranit\b/g) ?? []).length;
   if (mentions > 2 && !comparatif) avert.push(`Granit cité ${mentions} fois dans le corps (une mention visée)`);
-  if (!/<blockquote>[\s\S]*?<cite>[\s\S]*?<\/blockquote>/.test(html)) erreurs.push("aucune citation en <blockquote> avec sa <cite> (une citation réelle et sourcée est obligatoire)");
+  // Citation facultative : Claude ne lit pas les pages sources, il ne doit citer que ce dont il est sûr.
+  // Une citation présente est vérifiée mot pour mot (verifierSources) ; son absence est seulement signalée.
+  if (/<blockquote>/.test(html) && !/<blockquote>[\s\S]*?<cite>[\s\S]*?<\/blockquote>/.test(html)) erreurs.push("citation <blockquote> sans <cite>");
+  if (!/<blockquote>/.test(html)) avert.push("aucune citation (facultative)");
 
   // Par type de page
   if (type === "resolution" && !/<ol class="steps">/.test(html)) erreurs.push('page résolution sans <ol class="steps">');
@@ -329,8 +332,15 @@ export async function verifierSources(sources, cits = [], { timeoutMs = 10000 } 
   for (const c of cits) {
     const src = sources.find((s) => normalise(s.label) === normalise(c.cite));
     const page = src && pages.get(src.url);
-    if (!page) {
-      avert.push(`citation non vérifiée (page de « ${c.cite} » illisible ou absente des sources) : « ${c.texte.slice(0, 60)} »`);
+    const nbMots = mots(c.texte).length;
+    if (nbMots < 8) {
+      erreurs.push(`citation trop courte (${nbMots} mots) : « ${c.texte} ». Recopie une vraie phrase de la source, pas un titre`);
+    } else if (normalise(src?.label ?? c.cite).includes(normalise(c.texte))) {
+      erreurs.push(`la citation reprend le titre de sa source : « ${c.texte.slice(0, 80)} »`);
+    } else if (!page) {
+      erreurs.push(
+        `citation invérifiable (page de « ${c.cite} » illisible par le moteur ou absente des sources) : choisis une phrase d'une source que le moteur peut lire (ameli.fr, service-public.fr, site de la plateforme…)`,
+      );
     } else if (!page.includes(normalise(c.texte))) {
       erreurs.push(`citation introuvable mot pour mot sur ${src.url} : « ${c.texte.slice(0, 80)} »`);
     }

@@ -9,6 +9,7 @@ import { join } from "node:path";
 import type { Plugin, ViteDevServer } from "vite";
 import { controler, lireContenu, redirections } from "./en-ligne.mjs";
 import verticalesData from "../../src/lib/ressources/verticales.json";
+import { statutsCarte } from "../../src/lib/ressources/logos";
 import type { Fiche, RessourceJson, VerticaleSlug } from "../../src/lib/ressources/types";
 
 const INDEX = "virtual:ressources";
@@ -18,6 +19,9 @@ const surcharges = verticalesData.surcharges as Record<string, VerticaleSlug[]>;
 /** Métiers d'un article JSON : surcharge éditoriale, sinon le champ du fichier, sinon l'optique. */
 const verticalesDe = (a: RessourceJson): VerticaleSlug[] =>
   surcharges[a.slug] ?? (a.verticales?.length ? a.verticales : ["optique"]);
+
+/** Image d'aperçu d'une fiche, produite par scripts/ressources/og-plateformes.mjs. */
+const og = (slug: string) => `/ressources/og/${slug}.jpg`;
 
 const estPilier = (level: string) => /^Pilier/.test(level ?? "");
 
@@ -40,9 +44,15 @@ function fiche(
     preview: Boolean(a.preview),
     verticales: verticalesDe(a),
     transversal: false,
+    og: existsSync(join(process.cwd(), "public", og(a.slug))) ? og(a.slug) : undefined,
     plateforme:
       a.type === "plateforme" && fp
-        ? { nom: fp.nom, logo: fp.logo, checkedOn: a.checkedOn ?? fp.checkedOn }
+        ? {
+            nom: fp.nom,
+            logo: fp.logo,
+            checkedOn: a.checkedOn ?? fp.checkedOn,
+            statuts: statutsCarte(fp.statuts),
+          }
         : undefined,
   };
 }

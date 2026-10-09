@@ -1,0 +1,179 @@
+{
+  "slug": "portail-almerys",
+  "id": "A2",
+  "category": "plateformes",
+  "categoryName": "Plateformes et portails",
+  "type": "plateforme",
+  "plateforme": "almerys",
+  "title": "Almerys TP pour les opticiens : espace pro, prise en charge, statuts et paiement",
+  "primaryKeyword": "almerys tp",
+  "keywordCluster": [
+    "tp almerys",
+    "almerys professionnel de santé",
+    "almerys pro",
+    "almerys espace professionnel",
+    "almerys espace pro",
+    "almerys pro de sante",
+    "almerys professionnels de sante",
+    "almerys mon compte",
+    "www almerys com creer mon compte",
+    "www.almerys.com creer mon compte"
+  ],
+  "parentSlug": "portails-tiers-payant",
+  "level": "Fille",
+  "author": {
+    "name": "Olivier",
+    "jobTitle": "Rédacteur, expert tiers payant",
+    "photo": "/auteurs/olivier.jpg",
+    "url": null
+  },
+  "reviewer": {
+    "name": "Nathalie",
+    "jobTitle": "Rédactrice, experte métier optique",
+    "photo": "/auteurs/nathalie.jpg",
+    "url": null
+  },
+  "datePublished": "2026-10-09",
+  "dateModified": "2026-10-09",
+  "checkedOn": "2026-10-07",
+  "wordCount": 2046,
+  "readTime": 9,
+  "metaDescription": "Almerys TP pour opticiens : accès à l'espace pro, prise en charge optique, 8 statuts expliqués, paiement et contacts. Connexion sur almerys.com expliquée.",
+  "contentHtml": "<p><strong>Almerys TP se fait sur <a href=\"https://www.almerys.com/accueil/Accueil?isPS=true\">almerys.com</a>, dans le Site des PEC : l'opticien conventionné y fait ses devis et ses demandes de prise en charge, un équipement par demande.</strong> Almerys est un opérateur qui traite les prises en charge pour le compte d'organismes complémentaires santé. Pour y accéder, il faut être conventionné et valider son compte. On se connecte ensuite avec un identifiant, un mot de passe et un code à usage unique reçu par e-mail. Ensuite, c'est le statut affiché dans l'historique du portail, et non le devis, qui dit où en est le dossier.</p><div class=\"key-takeaways\"><strong>L'essentiel</strong><ul><li>Almerys est un opérateur de tiers payant, pas un réseau de soins : une mutuelle peut l'associer à un réseau distinct.</li><li>L'espace pro se trouve sur almerys.com, dans le Site des PEC.</li><li>L'accès suit trois temps : conventionnement, validation du compte, puis connexion avec un code de 6 chiffres reçu par e-mail.</li><li>Une demande ne porte que sur un équipement, saisi par codes LPP (code du fournisseur pour les verres). Le bouton « Valoriser » attribue le numéro de PEC et affiche les montants.</li><li>L'historique du portail connaît huit états. Seul « Validée » vous autorise à délivrer l'équipement puis à facturer.</li><li>Almerys ne publie pas de délai de paiement sur ses pages professionnelles : suivez le passage de « Facturée » à « Soldée » et vérifiez le montant reçu.</li></ul></div><h2 id=\"almerys-mutuelles\">Qu'est-ce qu'Almerys TP et quelles mutuelles passent par lui ?</h2><p>Almerys est un opérateur de tiers payant : il gère le tiers payant pour le compte d'organismes complémentaires : sociétés d'assurance, mutuelles et groupes de protection sociale.</p><div data-bloc=\"chiffres\"></div><p>Un opérateur de tiers payant est l'intermédiaire qui reçoit les demandes de prise en charge et les factures de l'opticien pour le compte de l'AMC. L'AMC, c'est l'assurance maladie complémentaire : la mutuelle ou l'assureur du client. Il ne faut pas le confondre avec un réseau de soins, qui est un dispositif distinct choisi par la complémentaire. Exemple : les mutuelles d'Aéma Groupe (Aésio mutuelle, Apivia Macif Mutuelle, MNFCT…) passent par Almerys pour le tiers payant, selon <a href=\"https://acuite.fr/actualite/ocam/251022/le-5e-acteur-de-lassurance-officialise-son-operateur-de-tiers-payant-et\">Acuité</a>. Leur réseau de soins est Carte Blanche Partenaires. Concrètement, pour un même client, vous pouvez donc avoir affaire à Almerys pour la prise en charge et à un autre acteur pour les conditions du réseau.</p><p>Almerys n'est pas un nouveau venu pour les opticiens. En 2017, <a href=\"https://www.acuite.fr/actualite/economie/2017/almerys-etend-son-tiers-payant-de-3eme-generation-lensemble-des\">Acuité</a> indiquait que 11 000 professionnels utilisaient son tiers payant de 3e génération. Ce chiffre est ancien : il donne un ordre d'idée de l'implantation de l'opérateur, pas sa taille actuelle.</p><p>Le portail Almerys n'a pas de sélecteur d'organisme : la complémentaire s'affiche une fois le bénéficiaire trouvé.</p><div data-bloc=\"organismes\"></div><div class=\"callout callout--tip\"><p><strong>Le bon réflexe :</strong> lisez la carte de tiers payant du client avant toute saisie. Le nom de la complémentaire y figure. C'est vers elle qu'il faut orienter un client qui a une réclamation. Selon la page <a href=\"https://www.almerys.com/fr/espace-professionnels-de-sante\">professionnels de santé d'Almerys</a>, l'opérateur ne traite pas les réclamations des assurés.</p></div><p>Pour situer Almerys parmi les autres <a href=\"/ressources/portails-tiers-payant\">portails de tiers payant</a>, la page parente fait le tour des plateformes que croise un magasin d'optique.</p><h2 id=\"almerys-espace-pro\">Comment accéder à l'espace pro Almerys ?</h2><p>L'espace professionnel Almerys, sur almerys.com, s'ouvre en trois temps : être conventionné, valider son compte selon les indications envoyées par Almerys, puis se connecter. Le compte ne s'ouvre qu'après le conventionnement : inutile de chercher à le créer avant.</p><p>Selon la page <a href=\"https://www.almerys.com/accueil/Accueil?isPS=true\">de connexion de l'espace professionnel</a>, il faut être conventionné Almerys et avoir validé son compte pour y accéder. Le parcours complet tient en cinq étapes :</p><ol class=\"steps\"><li><strong>Envoyer la demande de conventionnement.</strong> Adressez une feuille de soins barrée ou votre attestation CPAM à celluleconventionnementalmerys@almerys.com.</li><li><strong>Attendre l'e-mail d'Almerys.</strong> Il donne les indications pour valider votre compte.</li><li><strong>Valider le compte.</strong> Suivez ces indications à la lettre, sans quoi la connexion reste impossible.</li><li><strong>Se connecter à l'espace professionnel.</strong> Utilisez l'identifiant et le mot de passe du magasin.</li><li><strong>Travailler sur le site des PEC.</strong> C'est là que se font les devis et les demandes de prise en charge.</li></ol><h3>La connexion : identifiant, mot de passe et code à usage unique</h3><p>Chaque magasin se connecte avec son identifiant et son mot de passe, puis saisit un code à usage unique de 6 chiffres envoyé par e-mail, à chaque connexion. C'est ce que relèvent nos agents sur le portail. En pratique, la personne au comptoir doit avoir accès à la boîte mail qui reçoit ce code au moment où elle se connecte.</p><p>Dans un magasin où plusieurs collaborateurs font le tiers payant, réglez ce point une fois pour toutes. Quelle adresse reçoit le code ? Qui peut la consulter ? Que faire quand la personne titulaire est absente ? Sans cela, une demande urgente peut attendre simplement parce que personne ne voit passer le code.</p><h3>Créer son compte, mot de passe oublié ou compte bloqué</h3><p>Le compte se crée en validant les indications reçues d'Almerys après le conventionnement. Les pages professionnelles consultées ne détaillent pas la procédure de réinitialisation du mot de passe. Pour tout problème de compte, l'adresse dédiée est celle de la cellule conventionnement, indiquée dans la section contact.</p><h2 id=\"almerys-prise-en-charge\">Comment faire une prise en charge optique sur Almerys ?</h2><p>Une prise en charge optique Almerys se fait sur le « Site des PEC ». Vous retrouvez le bénéficiaire et choisissez devis ou demande de prise en charge. Vous saisissez chaque élément par son code LPP, puis cliquez sur « Valoriser ». La PEC (prise en charge) est l'accord de la complémentaire sur le montant qu'elle réglera directement au magasin.</p><p>Le code LPP est le code de la liste des produits et prestations remboursables, la nomenclature qui identifie chaque monture et chaque verre. Sur Almerys, nos agents relèvent ce déroulé :</p><ol class=\"steps\"><li><strong>Se connecter au site des PEC.</strong> Identifiant, mot de passe, puis code reçu par e-mail.</li><li><strong>Retrouver le bénéficiaire.</strong> La complémentaire s'affiche une fois le bénéficiaire trouvé, sans liste d'organismes à parcourir.</li><li><strong>Choisir le type de demande.</strong> Une demande optique peut être un devis ou une demande de prise en charge.</li><li><strong>Saisir l'équipement par codes LPP.</strong> Monture et verres, chaque élément avec son code. Pour les verres, c'est le code du fournisseur.</li><li><strong>Cliquer sur « Valoriser ».</strong> La demande est créée, un numéro de PEC est attribué et les montants s'affichent.</li><li><strong>Suivre le statut dans l'historique.</strong> C'est lui qui dit si vous pouvez délivrer.</li></ol><h3>Un seul équipement par demande</h3><p>Une demande Almerys ne porte que sur un équipement. Si le client prend une seconde paire, il faut une seconde demande, avec son propre numéro de PEC. Gardez les deux numéros dans le dossier client : ils serviront à suivre chaque accord, chaque facture et chaque règlement séparément.</p><div class=\"callout callout--warn\"><p><strong>Le piège :</strong> oublier que, pour les verres, c'est le code du fournisseur. Vérifiez-le sur le bon de commande avant de valoriser.</p></div><h3>Quelles pièces joindre ?</h3><p>Almerys ne publie pas de liste de pièces : joignez ce que le portail demande et gardez ordonnance et devis au dossier.</p><p>Une demande par équipement, un code à saisir à chaque connexion, un statut à surveiller : sur un samedi chargé, ces étapes s'additionnent vite. C'est ce que font les <a href=\"/agents\">agents de Granit</a> : ils saisissent les demandes sur le site des PEC Almerys. Ils renvoient ensuite le numéro de PEC et le statut à l'équipe du magasin. Pour revoir toute la chaîne, de la demande au règlement, lisez aussi notre guide <a href=\"/ressources/tiers-payant-opticien\">tiers payant opticien : de la prise en charge à l'encaissement</a>.</p><h2 id=\"almerys-statuts\">Que veulent dire les statuts d'une prise en charge Almerys ?</h2><p>L'historique du portail affiche huit états possibles, relevés par nos agents : Créée, En instance, Validée, Refusée, Périmée, Annulée, Facturée et Soldée.</p><div data-bloc=\"statuts\"></div><p>Le statut qui compte avant de délivrer est « Validée » : la complémentaire accepte la prise en charge. « Créée » signifie seulement que la demande est enregistrée, sans décision. « En instance » veut dire qu'elle est encore à l'étude. Dans ces deux cas, l'équipement ne doit pas partir sur la seule foi du devis.</p><p>Une fois l'équipement délivré et la facture envoyée, la demande passe à « Facturée ». Le dossier est clos quand il apparaît « Soldée » : il est réglé, et il reste à vérifier que le montant reçu correspond à celui de la valorisation.</p><div data-figure=\"cycle-pec-almerys\"></div><p>Trois statuts imposent de refaire une demande. « Refusée » : pas de prise en charge en l'état, il faut lire le motif, corriger, puis recommencer. « Périmée » : l'accord a dépassé sa durée de validité, que les pages consultées ne précisent pas. « Annulée » : la demande n'est plus active, et il faut en refaire une si l'équipement est toujours délivré.</p><h2 id=\"almerys-vous-bloquez\">Vous bloquez sur Almerys ?</h2><p>Partez du symptôme que vous voyez à l'écran : chaque cas ci-dessous dit où vérifier, quel geste faire et vers qui se tourner.</p><h3>Je ne trouve pas la mutuelle dans la liste</h3><p>Sur Almerys, il n'y a pas de liste d'organismes à parcourir : la complémentaire s'affiche une fois le bénéficiaire trouvé. Si rien ne s'affiche, revenez à la carte de tiers payant du client. Vérifiez qu'elle mentionne bien Almerys et qu'elle est en cours de validité. Contrôlez ensuite les informations saisies pour retrouver le bénéficiaire. Si la carte renvoie vers un autre opérateur, la demande se fait sur son portail, par exemple sur <a href=\"/ressources/portail-viamedis\">l'espace pro Viamedis</a>. En cas de doute persistant, appelez le service professionnels de santé (voir la section contact).</p><h3>La prise en charge est refusée</h3><p>Lisez d'abord le motif affiché dans l'historique. Vérifiez ensuite les points propres à Almerys : un seul équipement par demande, chaque élément saisi par son code LPP, le code du fournisseur pour les verres. Corrigez, puis refaites une demande : une demande refusée ne se transforme pas en accord. Si le motif vous semble lié aux droits du client, c'est sa complémentaire, dont le nom figure sur la carte, qui peut l'éclairer.</p><h3>Elle reste en attente, sans réponse</h3><p>Une demande « Créée » ou « En instance » n'a pas encore de décision. Almerys ne publie pas de délai de réponse pour l'optique. Consultez l'historique, attendez, puis relancez si rien ne bouge : l'adresse dédiée aux PEC et aux factures figure dans la section contact. Ne délivrez pas l'équipement en comptant sur un accord qui n'est pas affiché.</p><h3>L'accord est obtenu, mais le paiement n'arrive pas</h3><p>Commencez par l'historique : si la demande est encore « Validée », la facture n'est peut-être pas partie. Si elle est « Périmée », l'accord a expiré et il faut refaire une demande. Si elle est « Facturée » depuis longtemps sans passer à « Soldée », écrivez au service PEC et factures en rappelant le numéro de PEC. Almerys ne publie pas de délai de paiement sur ses pages professionnelles.</p><p>Gardez le motif exact affiché par le portail : c'est lui qui dit quoi corriger.</p><h2 id=\"almerys-paiement\">Quand et comment Almerys paie-t-il l'opticien ?</h2><p>Almerys ne publie pas de délai de paiement propre à l'optique sur ses pages professionnelles. Le portail permet de suivre le cycle du dossier. « Validée » pour délivrer, « Facturée » une fois la facture envoyée, « Soldée » quand le dossier est réglé.</p><p>La méthode la plus sûre est donc de suivre chaque numéro de PEC jusqu'au statut « Soldée ». À ce moment, comparez le montant reçu à celui affiché lors de la valorisation. Un écart se traite avec le numéro de PEC en main, auprès du service PEC et factures.</p><p>Côté banque, le rapprochement entre les règlements reçus et les dossiers facturés reste à faire au magasin. Le principe est le même que pour les autres flux de tiers payant : partir de ce qui est attendu, pointer ce qui est arrivé, isoler ce qui manque. Notre article sur le <a href=\"/ressources/rapprochement-noemie\">rapprochement des flux NOEMIE et des virements bancaires</a> détaille une routine quotidienne qui s'applique aussi à l'optique.</p><p>Un dernier point de vigilance : surveillez les dossiers « Facturée » qui ne bougent plus. Une liste hebdomadaire des demandes facturées mais non soldées, triée par ancienneté, suffit à repérer les relances à faire avant qu'elles ne s'accumulent.</p><h2 id=\"almerys-contact\">Comment contacter Almerys ?</h2><p>Le bon contact dépend de la question. Compte et accès : la cellule conventionnement. Un dossier : l'adresse PEC et factures. Le reste : le téléphone du service professionnels de santé.</p><div data-bloc=\"contacts\"></div><p>Selon la page <a href=\"https://www.almerys.com/accueil/contacts\">contact de l'espace professionnel</a>, les questions de conventionnement et de compte vont à celluleconventionnementalmerys@almerys.com, et les questions de PEC et de factures à almerys@almerys.com. Selon la page <a href=\"https://www.almerys.com/fr/espace-professionnels-de-sante\">professionnels de santé</a>, le service professionnels de santé répond au 0 825 826 214, un numéro surtaxé. Le courrier s'adresse à almerys service PS, 46 rue du Ressort, 63967 Clermont-Ferrand Cedex 9.</p><p>Avant d'écrire ou d'appeler, préparez le numéro de PEC, le nom du bénéficiaire tel qu'il figure sur la carte et le statut affiché dans l'historique. Pour une réclamation d'un client, rappelez-vous qu'Almerys ne traite pas les réclamations des assurés : orientez-le vers sa complémentaire, dont le nom figure sur sa carte de tiers payant.</p>",
+  "tocItems": [
+    {
+      "id": "almerys-mutuelles",
+      "label": "Almerys TP et les mutuelles concernées"
+    },
+    {
+      "id": "almerys-espace-pro",
+      "label": "Accéder à l'espace pro Almerys"
+    },
+    {
+      "id": "almerys-prise-en-charge",
+      "label": "Faire une prise en charge optique"
+    },
+    {
+      "id": "almerys-statuts",
+      "label": "Les statuts d'une PEC Almerys"
+    },
+    {
+      "id": "almerys-vous-bloquez",
+      "label": "Vous bloquez sur Almerys ?"
+    },
+    {
+      "id": "almerys-paiement",
+      "label": "Le paiement de l'opticien"
+    },
+    {
+      "id": "almerys-contact",
+      "label": "Contacter Almerys"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "Comment accéder à l'espace pro Almerys quand on est opticien ?",
+      "answer": "Il faut d'abord être conventionné : l'opticien envoie une feuille de soins barrée ou son attestation CPAM à la cellule conventionnement d'Almerys. L'espace pro se trouve sur almerys.com, dans l'espace professionnels de santé. L'opticien valide ensuite son compte selon les indications reçues par e-mail. La connexion se fait avec un identifiant, un mot de passe et un code à usage unique de 6 chiffres envoyé par e-mail à chaque connexion."
+    },
+    {
+      "question": "Quelles mutuelles passent par Almerys pour le tiers payant optique ?",
+      "answer": "Almerys gère le tiers payant pour le compte d'organismes complémentaires : sociétés d'assurance, mutuelles et groupes de protection sociale. Par exemple, Aéma Groupe l'a choisi pour ses mutuelles, dont Aésio mutuelle, Apivia Macif Mutuelle, MNFCT et Math - Prevaris. Le portail n'a pas de sélecteur d'organisme : la complémentaire s'affiche une fois le bénéficiaire trouvé, et son nom figure sur la carte de tiers payant du client."
+    },
+    {
+      "question": "Comment faire une demande de prise en charge optique sur Almerys ?",
+      "answer": "La demande se fait sur le Site des PEC d'Almerys : on retrouve le bénéficiaire, on choisit devis ou demande de prise en charge, puis on saisit chaque élément par son code LPP, avec le code du fournisseur pour les verres. Le bouton Valoriser crée la demande, attribue un numéro de PEC et affiche les montants. Une demande ne porte que sur un équipement : une seconde paire demande une seconde demande."
+    },
+    {
+      "question": "Que signifient les statuts d'une prise en charge Almerys (accordée, en attente, refusée) ?",
+      "answer": "L'historique du portail Almerys compte huit états : Créée, En instance, Validée, Refusée, Périmée, Annulée, Facturée et Soldée. Validée signifie que la complémentaire accepte la prise en charge et que l'on peut délivrer puis facturer. Créée et En instance indiquent une demande sans décision. Refusée, Périmée ou Annulée imposent de refaire une demande."
+    },
+    {
+      "question": "Comment contacter Almerys quand on est professionnel de santé ?",
+      "answer": "Le service professionnels de santé d'Almerys répond au 0 825 826 214, un numéro surtaxé. Les questions de conventionnement et de compte vont à celluleconventionnementalmerys@almerys.com, celles sur les PEC et les factures à almerys@almerys.com. Les réclamations des assurés ne sont pas traitées par Almerys : elles vont à leur complémentaire."
+    },
+    {
+      "question": "Sous quel délai Almerys paie-t-il l'opticien ?",
+      "answer": "Almerys ne publie pas de délai de paiement propre à l'optique sur ses pages professionnelles. L'opticien suit le dossier dans l'historique du portail : Facturée une fois la facture envoyée, puis Soldée quand le dossier est réglé. En cas de retard, il écrit au service PEC et factures en rappelant le numéro de PEC."
+    }
+  ],
+  "sources": [
+    {
+      "label": "Acuité · Aéma Groupe officialise son opérateur de tiers payant",
+      "url": "https://acuite.fr/actualite/ocam/251022/le-5e-acteur-de-lassurance-officialise-son-operateur-de-tiers-payant-et"
+    },
+    {
+      "label": "Acuité · Almerys étend son tiers payant de 3e génération (2017)",
+      "url": "https://www.acuite.fr/actualite/economie/2017/almerys-etend-son-tiers-payant-de-3eme-generation-lensemble-des"
+    },
+    {
+      "label": "almerys.com · Espace professionnels de santé",
+      "url": "https://www.almerys.com/fr/espace-professionnels-de-sante"
+    },
+    {
+      "label": "almerys.com · Espace professionnel (connexion)",
+      "url": "https://www.almerys.com/accueil/Accueil?isPS=true"
+    },
+    {
+      "label": "almerys.com · Contactez-nous (espace professionnel)",
+      "url": "https://www.almerys.com/accueil/contacts"
+    }
+  ],
+  "figures": [
+    {
+      "id": "cycle-pec-almerys",
+      "type": "flux",
+      "titre": "Le parcours d'une demande Almerys",
+      "legende": "Seul le statut Validée autorise à délivrer l'équipement, puis à facturer.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "Créée",
+          "detail": "Demande valorisée, numéro de PEC attribué",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "En instance",
+          "detail": "Demande encore à l'étude",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Validée",
+          "detail": "Accord de la complémentaire : délivrer",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Facturée",
+          "detail": "Facture envoyée, paiement à suivre",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Soldée",
+          "detail": "Dossier réglé, montant à vérifier",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [
+    {
+      "id": "A0",
+      "slug": "portails-tiers-payant",
+      "anchor": "portails de tiers payant",
+      "type": "parent"
+    }
+  ],
+  "liensEntrants": [],
+  "remplace": [],
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-09T07:30:20.805Z",
+    "avertissements": [
+      "aucune citation (facultative)"
+    ]
+  }
+}

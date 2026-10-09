@@ -2,7 +2,7 @@
   "slug": "portail-itelis",
   "nom": "Itelis",
   "logo": "/logos/itelis.png",
-  "checkedOn": "2026-10-07",
+  "checkedOn": "2026-10-09",
   "identite": [
     {
       "label": "Type",
@@ -11,7 +11,7 @@
     },
     {
       "label": "Optique",
-      "valeur": "Oui, réseau de 3 700 opticiens partenaires",
+      "valeur": "Oui, réseau de plus de 3 700 opticiens partenaires",
       "source": "itelis-opticiens"
     },
     {
@@ -93,12 +93,40 @@
       "source": "granit-connecteur"
     },
     {
-      "fait": "Itelis fait partie de l'Association des plateformes de santé (APFS), avec Carte Blanche Partenaires, Kalixia, Santéclair et Sévéane.",
-      "source": "acuite-apfs"
-    },
-    {
       "fait": "Une réclamation reçoit un accusé de réception sous 10 jours ouvrables au plus. Elle est traitée en 15 jours ouvrés, jusqu'à deux mois si le dossier est complexe.",
       "source": "itelis-mentions"
+    },
+    {
+      "fait": "Pour se connecter, l'opticien passe par itelis.fr : menu « Accès professionnels », puis « Professionnels de santé ». Une fenêtre de connexion s'ouvre par-dessus le site.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "La fenêtre demande un « Identifiant » et un « Mot de passe ». L'identifiant est celui fourni par Itelis au magasin (selon les cas, son numéro IFAM ou FINESS).",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "Après le mot de passe, la même fenêtre demande un « Code OTP ». Ce code est envoyé par e-mail à l'adresse du compte, depuis auth@itelis.fr, et il expire au bout de 10 minutes. S'il n'arrive pas, regarder dans les courriers indésirables.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "En cas d'erreur, le site affiche : « L'identifiant et/ou le mot de passe saisi(s) est/sont incorrect(s). Nombre de tentatives restantes : ». Le nombre d'essais est donc limité.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "Une fois connecté, l'opticien arrive sur l'extranet extranet.itelis.fr, qui peut s'ouvrir dans un nouvel onglet.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "Quand la session a expiré, le site renvoie sur la page d'accueil d'itelis.fr : il faut se reconnecter, code e-mail compris. Une adresse de l'extranet ouverte sans session affiche « Une erreur vient de se produire », suivi d'un code.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "Si le dossier de conventionnement du magasin n'est pas à jour, Itelis renvoie, après le code e-mail, vers un formulaire sur conventionnement.itelis.fr. L'extranet reste inaccessible tant que ce formulaire n'est pas complété.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "Dans le logiciel Cosium, une complémentaire qui passe par le réseau Itelis apparaît sous la forme « NOM_DE_LA_MUTUELLE(ITELIS) ».",
+      "source": "granit-connecteur"
     }
   ],
   "conventionnement": [
@@ -150,7 +178,7 @@
     },
     "itelis-opticiens": {
       "label": "itelis.fr · Réseau d'opticiens partenaires",
-      "url": "https://www.itelis.fr/vos-services-sante/acces-aux-opticiens-partenaires",
+      "url": "https://www.itelis.fr/vos-services-sante/trouver-un-opticien",
       "consulte": "2026-10-07"
     },
     "itelis-adhesion-optique": {
@@ -173,15 +201,10 @@
       "url": "https://www.itelis.fr/mentions-legales-et-reclamations",
       "consulte": "2026-10-07"
     },
-    "acuite-apfs": {
-      "label": "Acuité · Fraude et données de santé : les réseaux de soins veulent imposer leur solution de conformité",
-      "url": "https://www.acuite.fr/actualite/ocam/329635/fraude-et-donnees-de-sante-les-reseaux-de-soins-veulent-imposer-leur-solution",
-      "consulte": "2026-10-07"
-    },
     "granit-connecteur": {
-      "label": "Connecteur Itelis de Granit (relevé du 07/10/2026)",
+      "label": "Connecteur Itelis de Granit (relevés des 08/09 et 05/10/2026)",
       "url": "",
-      "consulte": "2026-10-07"
+      "consulte": "2026-10-09"
     }
   }
 }

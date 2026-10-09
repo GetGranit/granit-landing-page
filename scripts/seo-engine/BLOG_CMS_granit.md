@@ -73,7 +73,7 @@ Les champs en **gras** viennent de `articles-queue.json`. Les autres sont produi
 | `datePublished` | moteur | `YYYY-MM-DD`. **Jamais modifiée ensuite.** |
 | `dateModified` | moteur | Égale à `datePublished` au départ, mise à jour à chaque révision. |
 | `readTime` | moteur | Calculé sur le nombre de mots (≈ 230 mots/min). |
-| `author` | `config.json` | Selon la catégorie : Arthur Pelong (plateformes, rejets, paiements), Paul Pietra (guide, glossaire), Jenny Mansour (gestion, conformité). Vraies personnes, avec photo et fonction (E-E-A-T). |
+| `author` | `config.json` | Selon la catégorie : Olivier (plateformes, rejets, paiements), Nathalie (guide, glossaire), Laura (gestion, conformité). Avec photo et fonction (E-E-A-T). |
 | `coverImage`, `coverImageAlt` | moteur | Voir « Image de couverture ». Le alt contient le mot-clé principal. |
 | `reviewer` | `config.json` | Un autre membre de l'équipe, affiché (« Relu par… ») seulement si l'article est vraiment passé par une relecture humaine. |
 | `sources` | Claude | Toutes les sources externes citées dans le corps, 2 au minimum (voir « Sources de référence »). Un lien externe du corps doit y figurer. |
@@ -277,9 +277,18 @@ Toujours les mêmes H2, dans cet ordre (formulés en questions avec le nom du po
 2. Comment accéder à l'espace pro {portail} ? (création de compte, connexion, mot de passe, blocage)
 3. Comment faire une prise en charge optique sur {portail} ? (pièces, champs, étapes)
 4. Que veulent dire les statuts d'une prise en charge {portail} ?
-5. Que faire en cas de rejet ou de refus ?
+5. Vous bloquez sur {portail} ? (rejet, refus, attente, paiement absent)
 6. Quand et comment {portail} paie-t-il l'opticien ?
 7. Comment contacter {portail} ?
+
+La section 5 « Vous bloquez sur {portail} ? » aide l'opticien au moment où il est coincé au comptoir. Elle est classée par **symptôme**, avec ses mots, dans cet ordre, un H3 par cas :
+
+1. « Je ne trouve pas la mutuelle dans la liste »
+2. « La prise en charge est refusée »
+3. « Elle reste en attente, sans réponse »
+4. « L'accord est obtenu, mais le paiement n'arrive pas »
+
+Pour chaque cas : où vérifier, quel geste faire, qui appeler (renvoyer à la section contact par une phrase, jamais par un lien #ancre : seuls les liens /ressources/… et les sources sont acceptés). Uniquement ce que le fichier de faits permet d'affirmer : statuts, conventionnement, organismes, contacts, paiement. Si le fichier ne dit rien d'un cas, une seule phrase honnête (« {portail} ne publie pas… ») et on passe au suivant. **Jamais de fréquence, de taux ni de délai qui ne soit pas dans le fichier de faits** : ces chiffres viennent d'un bloc séparé, alimenté par nos données agrégées, que tu n'écris pas. La section se termine par : « Gardez le motif exact affiché par le portail : c'est lui qui dit quoi corriger. »
 
 Les faits viennent **uniquement** du fichier `plateformes/{nom}.json` (voir le gabarit, section 6). La page affiche elle-même « Informations relevées le {checkedOn} ». Les portails changent : la date protège le lecteur et notre crédibilité.
 

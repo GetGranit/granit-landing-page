@@ -44,15 +44,15 @@ function CarteMetier({ v, n }: { v: Verticale; n: number }) {
     >
       <PhotoMetier
         v={v}
-        forme="aspect-[3/4] rounded-[14px]"
-        tailles="(min-width: 1024px) 240px, (min-width: 768px) 30vw, 62vw"
+        forme="aspect-[3/4] rounded-[14px] lg:aspect-[4/3]"
+        tailles="(min-width: 1024px) 300px, (min-width: 768px) 30vw, 62vw"
         chargement="eager"
       />
       <h3 className="mt-3 font-serif text-[19px] font-normal leading-[1.2] md:text-[21px]">
         <span className="decoration-1 underline-offset-[5px] group-hover:underline">{v.nom}</span>
       </h3>
       <p className="mt-1.5 text-[13.5px] font-semibold" style={{ color: ink }}>
-        {n} article{n > 1 ? "s" : ""}{" "}
+        {n > 0 ? `${n} article${n > 1 ? "s" : ""}` : "Les bases communes"}{" "}
         <span
           aria-hidden
           className="inline-block transition-transform group-hover:translate-x-0.5 motion-reduce:transition-none"
@@ -76,7 +76,7 @@ export function VotreMetier() {
       >
         Votre métier
       </h2>
-      <ul className="-mx-4 flex snap-x snap-mandatory scroll-px-4 gap-4 overflow-x-auto px-4 pb-2 [scrollbar-width:none] max-lg:[mask-image:linear-gradient(to_right,black_82%,transparent)] lg:mx-0 lg:grid lg:grid-cols-5 lg:gap-5 lg:overflow-visible lg:px-0">
+      <ul className="-mx-4 flex snap-x snap-mandatory scroll-px-4 gap-4 overflow-x-auto px-4 pb-2 [scrollbar-width:none] max-lg:[mask-image:linear-gradient(to_right,black_82%,transparent)] lg:mx-0 lg:grid lg:grid-cols-4 lg:gap-x-5 lg:gap-y-8 lg:overflow-visible lg:px-0">
         {actives.map((x) => (
           <li
             key={x.v.slug}

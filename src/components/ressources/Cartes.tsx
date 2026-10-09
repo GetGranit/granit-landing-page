@@ -1,7 +1,22 @@
 import { Link } from "@tanstack/react-router";
 import { categorie, couperTitre, dateFr, tempsLecture, titreCourt } from "@/lib/ressources/contenu";
-import { logoPlateforme } from "@/lib/ressources/logos";
-import { photoFiche, src, srcSet, estFichePlateforme, type Photo } from "@/lib/ressources/photos";
+import {
+  estSymbole,
+  LIGNES_FENETRE,
+  logoPlateforme,
+  nomFenetre,
+  PORTAILS_FENETRE,
+  statutsCarte,
+  type StatutsCarte,
+} from "@/lib/ressources/logos";
+import {
+  photoFiche,
+  src,
+  srcSet,
+  estFichePlateforme,
+  estFicheTousPortails,
+  type Photo,
+} from "@/lib/ressources/photos";
 import type { Fiche } from "@/lib/ressources/types";
 
 /** Titre façon Function : ce qui suit « : » ou « ? » passe en italique, couleur de la catégorie. */
@@ -54,82 +69,76 @@ export function MarquePlateforme({
 type Format = "carte" | "petite" | "une" | "pilier";
 
 /**
- * Écran des fonds « plateformes » (ordinateur à l'écran vierge), en % de l'image 16:9 d'origine :
- * les 4 coins de la dalle (haut gauche, haut droit, bas droit, bas gauche) et la largeur du logo.
+ * Fond d'une fiche de la catégorie plateformes : une fenêtre d'interface dessinée en CSS, à plat,
+ * sur la teinte de la catégorie. Ce n'est pas une capture d'un portail : la fenêtre est la même
+ * pour toutes. Mesures en unités de conteneur (ressources.css) : nette à toute taille de carte.
+ * - Fiche d'une plateforme : son logo (ou son initiale) en tête, des demandes avec ses statuts.
+ * - Sans plateforme (fiche d'introduction) : « Prises en charge » en tête, un portail par ligne.
+ * `anime` : la demande que Granit vient de déposer passe de l'attente à l'accord, en boucle lente
+ * (carte démo des articles, où seule la première ligne est sûre d'être visible).
  */
-const ECRANS: Record<"a" | "b", { coins: [number, number][]; logo: number }> = {
-  a: {
-    coins: [
-      [23.6, 29.0],
-      [50.0, 28.0],
-      [53.4, 66.4],
-      [26.9, 67.4],
-    ],
-    logo: 15,
-  },
-  b: {
-    coins: [
-      [49.4, 21.8],
-      [80.6, 28.6],
-      [77.9, 65.4],
-      [48.8, 57.6],
-    ],
-    logo: 17,
-  },
-};
-
-/**
- * Fond d'une fiche plateforme : l'ordinateur du fond affiche le logo (ou l'initiale) au centre
- * de son écran, sur un blanc qui épouse la dalle, comme si le portail était ouvert.
- * Le cadre garde le ratio 16:9 de la photo et la recadre comme object-cover (centré), quel que
- * soit le format de la carte : les coordonnées de l'écran restent donc justes.
- */
-export function EcranPlateforme({
-  photo,
-  nom,
-  logo,
-  tailles,
-  chargement,
+export function FenetrePlateforme({
+  plateforme,
+  anime,
 }: {
-  photo: Photo;
-  nom: string;
-  logo?: string;
-  tailles: string;
-  chargement: "haute" | "eager" | "lazy";
+  plateforme?: { nom: string; logo?: string; statuts: StatutsCarte };
+  anime?: boolean;
 }) {
-  const e = ECRANS[photo.base.endsWith("-b") ? "b" : "a"];
-  const cx = e.coins.reduce((t, c) => t + c[0], 0) / 4;
-  const cy = e.coins.reduce((t, c) => t + c[1], 0) / 4;
+  const logo = plateforme?.logo;
+  const attente = plateforme?.statuts.attente ?? "En instance";
+  const badge = (statut: "accord" | "attente", libelle: string, classe: string) =>
+    anime && classe === "vient" ? (
+      <span className="badge attente bascule">
+        <span className="avant">{attente}</span>
+        <span className="apres">{libelle}</span>
+      </span>
+    ) : (
+      <span className={`badge ${statut}`}>{libelle}</span>
+    );
   return (
-    <div className="absolute left-1/2 top-0 aspect-video h-full -translate-x-1/2 transition-transform duration-500 ease-[var(--ease-out-quint)] group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100">
-      <img
-        src={src(photo, 800)}
-        srcSet={srcSet(photo)}
-        sizes={tailles}
-        width={1600}
-        height={900}
-        loading={chargement === "lazy" ? "lazy" : "eager"}
-        fetchPriority={chargement === "haute" ? "high" : undefined}
-        decoding="async"
-        alt=""
-        className="h-full w-full"
-      />
-      <div
-        aria-hidden
-        className="absolute inset-0 bg-white"
-        style={{ clipPath: `polygon(${e.coins.map(([x, y]) => `${x}% ${y}%`).join(", ")})` }}
-      />
-      <div
-        className="absolute grid aspect-[2/1] -translate-x-1/2 -translate-y-1/2 place-items-center"
-        style={{ left: `${cx}%`, top: `${cy}%`, width: `${e.logo}%` }}
-      >
-        {logo ? (
-          <img src={logo} alt="" className="h-full w-full object-contain" />
-        ) : (
-          <span className="font-serif text-[clamp(24px,3.4vw,44px)] leading-none text-[#b94a2f]">
-            {nom.slice(0, 1).toUpperCase()}
-          </span>
-        )}
+    <div aria-hidden className="ress-fenetre-scene">
+      <div className="ress-fenetre">
+        <div className="ress-fenetre-barre">
+          {plateforme ? (
+            <>
+              {logo ? (
+                <img src={logo} alt="" className={estSymbole(logo) ? "symbole" : "logotype"} />
+              ) : (
+                <span className="initiale">{plateforme.nom.slice(0, 1).toUpperCase()}</span>
+              )}
+              {(!logo || estSymbole(logo)) && (
+                <span className="nom">{nomFenetre(plateforme.nom)}</span>
+              )}
+              <span className="ref">Prises en charge</span>
+            </>
+          ) : (
+            <>
+              <span className="nom">Prises en charge</span>
+              <span className="ref">Tous portails</span>
+            </>
+          )}
+        </div>
+        {plateforme
+          ? LIGNES_FENETRE.map((l, i) => (
+              <div key={i} className={`ress-fenetre-ligne ${l.classe}`}>
+                <span className="textes">
+                  <span className="l1" style={{ width: `${l.l1}%` }} />
+                  <span className="l2" style={{ width: `${l.l2}%` }} />
+                </span>
+                <span className="montant" />
+                {badge(l.statut, plateforme.statuts[l.statut], l.classe)}
+              </div>
+            ))
+          : PORTAILS_FENETRE.map((l) => (
+              <div key={l.nom} className={`ress-fenetre-ligne portail ${l.classe}`}>
+                <img src={logoPlateforme(l.logo, "fenetre")} alt="" className="marque" />
+                <span className="textes">
+                  <span className="l1" style={{ width: "58%" }} />
+                  <span className="l2" style={{ width: `${l.l2}%` }} />
+                </span>
+                {badge(l.statut, l.libelle, l.classe)}
+              </div>
+            ))}
       </div>
     </div>
   );
@@ -163,8 +172,8 @@ export function PhotoCarte({
 }
 
 /**
- * Couverture d'une carte : la photo du thème (ou du métier), l'étiquette de catégorie en haut
- * à gauche, et pour une fiche plateforme le médaillon du logo par-dessus le fond.
+ * Couverture d'une carte : la photo du thème (ou du métier), ou pour une fiche plateforme la
+ * fenêtre de prise en charge, et l'étiquette de catégorie en haut à gauche.
  */
 function Couverture({
   fiche,
@@ -199,13 +208,15 @@ function Couverture({
   return (
     <div className={`relative overflow-hidden ${forme}`} style={{ backgroundColor: c.tint }}>
       {estFichePlateforme(fiche) ? (
-        <EcranPlateforme
-          photo={photoFiche(fiche, rang)}
-          nom={nom}
-          logo={logoPlateforme(fiche.plateforme?.logo, "ecran")}
-          tailles={tailles}
-          chargement={chargement}
+        <FenetrePlateforme
+          plateforme={{
+            nom,
+            logo: logoPlateforme(fiche.plateforme?.logo, "fenetre"),
+            statuts: fiche.plateforme?.statuts ?? statutsCarte([]),
+          }}
         />
+      ) : estFicheTousPortails(fiche) ? (
+        <FenetrePlateforme />
       ) : (
         <PhotoCarte photo={photoFiche(fiche, rang)} tailles={tailles} chargement={chargement} />
       )}

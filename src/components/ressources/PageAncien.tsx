@@ -1,14 +1,20 @@
 // Page d'un ancien article (src/lib/articles.ts) : le rendu d'avant le guide, avec deux ajouts :
-// le fil d'Ariane passe par la catégorie quand l'article est rattaché au cocon,
+// le fil d'Ariane passe par le métier de l'article,
 // et « Continuer la lecture » montre d'abord des articles de la même catégorie.
 import { Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { useLanguage } from "@/lib/i18n";
 import { articles, getArticle } from "@/lib/articles";
 import { articleLd } from "@/lib/seo";
-import { categorieDeAncien, tempsLecture, toutCategorie } from "@/lib/ressources/contenu";
+import {
+  categorieDeAncien,
+  metierDe,
+  tempsLecture,
+  titreCourt,
+  toutCategorie,
+} from "@/lib/ressources/contenu";
 import { breadcrumbLd } from "@/lib/ressources/seo";
-import { Fil } from "./Fil";
+import { Fil, itemMetier } from "./Fil";
 import { NotFoundRessource } from "./Introuvable";
 
 const labels = {
@@ -41,13 +47,18 @@ export function PageAncien({ slug }: { slug: string }) {
   const related = [...memeTheme, ...autres].slice(0, 3);
 
   const ld = articleLd({ title: article.title, description: article.desc, slug });
-  const breadcrumb = cat
-    ? breadcrumbLd([
-        ["Ressources", "/ressources"],
-        [cat.nom, `/ressources/categorie/${cat.slug}`],
-        [article.title, `/ressources/${slug}`],
-      ])
-    : ld.breadcrumb;
+  // Fil d'Ariane par métier ; un article valable pour tous les métiers s'arrête à Ressources.
+  const metier = lang === "fr" ? metierDe(slug) : undefined;
+  const breadcrumb =
+    lang === "fr"
+      ? breadcrumbLd([
+          ["Ressources", "/ressources"],
+          ...(metier
+            ? [[metier.nom, `/ressources/metier/${metier.slug}`] as [string, string]]
+            : []),
+          [article.title, `/ressources/${slug}`],
+        ])
+      : ld.breadcrumb;
 
   return (
     <SiteLayout>
@@ -61,15 +72,12 @@ export function PageAncien({ slug }: { slug: string }) {
       />
       <article className="mx-auto max-w-[760px] px-6 pt-24 pb-16">
         <div>
-          {cat ? (
+          {lang === "fr" ? (
             <Fil
               items={[
                 { nom: "Ressources", to: "/ressources" },
-                {
-                  nom: cat.nom,
-                  to: "/ressources/categorie/$category",
-                  params: { category: cat.slug },
-                },
+                ...(metier ? [itemMetier(metier)] : []),
+                { nom: titreCourt(article.title) },
               ]}
             />
           ) : (

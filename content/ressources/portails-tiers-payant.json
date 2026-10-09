@@ -1,0 +1,213 @@
+{
+  "slug": "portails-tiers-payant",
+  "id": "A0",
+  "category": "plateformes",
+  "categoryName": "Plateformes et portails",
+  "type": "standard",
+  "plateforme": null,
+  "title": "Portails de tiers payant pour les opticiens : connexion, prise en charge, rejet et paiement",
+  "primaryKeyword": "portail tiers payant opticien",
+  "keywordCluster": [
+    "v2 medisysnet fr",
+    "v2 medisysnet",
+    "v2.medisysnet"
+  ],
+  "parentSlug": "tiers-payant-opticien",
+  "level": "Pilier",
+  "author": {
+    "name": "Olivier",
+    "jobTitle": "Rédacteur, expert tiers payant",
+    "photo": "/auteurs/olivier.jpg",
+    "url": null
+  },
+  "reviewer": {
+    "name": "Nathalie",
+    "jobTitle": "Rédactrice, experte métier optique",
+    "photo": "/auteurs/nathalie.jpg",
+    "url": null
+  },
+  "datePublished": "2026-10-08",
+  "dateModified": "2026-10-08",
+  "checkedOn": null,
+  "wordCount": 2431,
+  "readTime": 11,
+  "metaDescription": "Portail tiers payant opticien : trouver le bon portail, ouvrir un compte, faire une prise en charge, traiter un rejet, suivre le paiement. Le guide du comptoir.",
+  "contentHtml": "<p><strong>Un portail tiers payant opticien est l'espace en ligne d'une plateforme de tiers payant où le magasin demande la prise en charge d'un équipement, lit la réponse de la complémentaire, puis suit le paiement de la part mutuelle.</strong> Il n'existe pas de portail unique : chaque plateforme a le sien, avec ses identifiants, ses champs de saisie et ses statuts. Le bon portail se déduit de la carte de tiers payant du client, pas du nom de sa mutuelle.</p><p>Cette page est le point d'entrée de notre annuaire des plateformes. Elle décrit ce qui est commun à tous les portails (connexion, prise en charge, rejet, paiement, maintenance) pour que vous sachiez quoi faire, quel que soit l'écran ouvert devant vous.</p><div class=\"key-takeaways\"><strong>L'essentiel</strong><ul><li>Le portail à utiliser se lit sur la carte de tiers payant du client (nom ou logo de la plateforme), pas sur le nom de la mutuelle.</li><li>Chaque portail demande son propre compte, ouvert après le conventionnement du magasin avec la plateforme.</li><li>Une prise en charge suit toujours le même chemin : demande avec le devis, réponse de la complémentaire, facture après délivrance, puis paiement.</li><li>C'est le statut affiché par le portail, et non le devis, qui engage la complémentaire.</li><li>Portail en maintenance : notez la demande, ne la ressaisissez pas en double, revenez vérifier le statut à la réouverture.</li></ul></div><h2 id=\"portail-tiers-payant-definition\">Qu'est-ce qu'un portail de tiers payant pour un opticien ?</h2><p>Un portail de tiers payant est le site professionnel d'une plateforme qui gère, pour le compte de complémentaires santé, les demandes de prise en charge et le paiement de leur part. L'opticien s'y connecte pour obtenir l'accord de la complémentaire avant de délivrer l'équipement, puis pour suivre ce qui lui est versé.</p><p>Le tiers payant lui-même est un mécanisme simple. Selon <a href=\"https://www.service-public.fr/particuliers/vosdroits/F167\">service-public.fr</a>, il dispense le patient d'avancer les frais : le professionnel de santé est payé directement par l'Assurance maladie et, le cas échéant, par la complémentaire. <a href=\"https://www.ameli.fr/assure/remboursements/reste-charge/tiers-payant\">ameli.fr</a> distingue de son côté le tiers payant sur la part obligatoire et le tiers payant sur la part complémentaire.</p><p>Deux sigles reviennent sans cesse. L'AMO (assurance maladie obligatoire) est la part prise en charge par l'Assurance maladie, transmise par la feuille de soins électronique via SESAM-Vitale. L'AMC (assurance maladie complémentaire) est la part de la mutuelle, de l'assurance ou de l'institution de prévoyance du client. Le portail de tiers payant concerne la part AMC : c'est là que se joue la plus grosse partie du montant d'un équipement optique.</p><p>Concrètement, un portail sert à trois choses : vérifier que le client est bien couvert, obtenir l'accord sur un devis, puis suivre le règlement. Pour une vue d'ensemble du dispositif, du 100 % Santé aux cas particuliers, voir notre guide du <a href=\"/ressources/tiers-payant-opticien\">tiers payant opticien</a>.</p><h2 id=\"pourquoi-autant-de-portails\">Pourquoi un opticien doit-il utiliser plusieurs portails ?</h2><p>Un opticien utilise plusieurs portails parce que chaque complémentaire confie la gestion de son tiers payant à une plateforme de son choix. Tant que vos clients sont couverts par des complémentaires différentes, vous passez par des portails différents.</p><p>Les complémentaires santé sont nombreuses. Peu d'entre elles gèrent elles-mêmes les demandes de milliers de magasins : elles délèguent ce travail à des opérateurs de tiers payant, ou passent par un réseau de soins qui a son propre portail. Parmi les noms que l'on croise au comptoir : Viamedis, Almerys, Santéclair, Itelis, Kalixia, SP Santé, Actil, iSanté, Sévéane, Carte Blanche.</p><p>Il faut distinguer deux familles, car elles ne demandent pas la même chose à l'opticien.</p><div class=\"tbl\"><table><tr><th>Critère</th><th>Opérateur de tiers payant</th><th>Réseau de soins</th></tr><tr><td>Rôle</td><td>Gère la demande et le paiement pour le compte de la complémentaire</td><td>Regroupe des opticiens partenaires autour d'engagements négociés</td></tr><tr><td>Accès pour l'opticien</td><td>Conventionnement avec la plateforme</td><td>Adhésion au réseau, en plus de l'accès au portail</td></tr><tr><td>Ce qui est vérifié</td><td>Droits du client, garanties, cohérence du devis</td><td>Les mêmes points, plus le respect des conditions du réseau</td></tr></table></div><p>Combien de portails faut-il au total ? Il n'y a pas de chiffre universel : tout dépend des complémentaires de votre clientèle et des réseaux auxquels le magasin adhère. Un magasin qui refuse un réseau peut quand même voir passer ses clients, mais sans tiers payant sur la part complémentaire, ou avec un remboursement différent pour le client.</p><h2 id=\"trouver-le-bon-portail\">Comment savoir quel portail correspond à la mutuelle du client ?</h2><p>La méthode la plus sûre est de lire la carte de tiers payant du client : elle indique la plateforme qui gère son tiers payant, par un nom, un logo ou un code. Le nom de la mutuelle seul ne suffit pas, car une même complémentaire peut changer de plateforme, ou en utiliser plusieurs selon les contrats.</p><ol class=\"steps\"><li><strong>Demander la carte de l'année en cours.</strong> Une ancienne carte peut renvoyer vers une plateforme que la complémentaire a quittée.</li><li><strong>Repérer la plateforme sur la carte.</strong> Le nom ou le logo figure en général au recto ou au verso, souvent près des coordonnées réservées aux professionnels de santé.</li><li><strong>Vérifier la période de validité imprimée.</strong> Une carte expirée est une cause classique de rejet.</li><li><strong>Ouvrir le portail correspondant et chercher l'organisme dans son sélecteur.</strong> Si la complémentaire n'apparaît pas dans la liste, arrêtez-vous : c'est probablement le mauvais portail.</li><li><strong>En cas de doute, appeler le numéro professionnel indiqué sur la carte.</strong> C'est la réponse la plus fiable, avant toute saisie.</li></ol><p>Les adresses de portail circulent aussi entre collègues, dans les favoris du navigateur ou dans les résultats de recherche, comme v2.medisysnet. Avant de vous y connecter, vérifiez que le lien vient bien de la plateforme inscrite sur la carte ou de son site officiel. Une adresse retrouvée par une recherche ne dit pas, à elle seule, quelles complémentaires elle gère.</p><div class=\"callout callout--tip\"><p><strong>Le bon réflexe :</strong> photographiez ou scannez la carte de tiers payant à chaque nouvelle demande, et rangez-la avec le dossier. En cas de rejet, c'est la première pièce que l'on vous demandera.</p></div><h2 id=\"compte-sur-chaque-portail\">Faut-il un compte sur chaque portail ?</h2><p>Oui : chaque portail exige son propre compte, et ce compte n'est ouvert qu'une fois le magasin conventionné avec la plateforme. Il n'existe pas d'identifiant unique valable sur tous les portails.</p><p>Le conventionnement est l'accord passé entre le magasin et la plateforme (ou le réseau). Il fixe les conditions de la prise en charge et du paiement. La plateforme demande en général les identifiants professionnels du magasin, ses coordonnées et un relevé d'identité bancaire, puis envoie les accès. Les pièces exactes varient d'une plateforme à l'autre : nous les détaillons dans chaque fiche de l'annuaire.</p><p>Trois points posent souvent problème au quotidien :</p><ul><li><strong>Les comptes par magasin.</strong> Un groupe de plusieurs magasins a souvent un compte par point de vente. Saisir une demande depuis le compte d'un autre magasin crée des écarts au moment du paiement.</li><li><strong>Les mots de passe.</strong> Chaque portail a ses règles d'expiration et de blocage. Un compte bloqué un samedi matin immobilise toutes les demandes de cette plateforme.</li><li><strong>La double authentification.</strong> Certains portails envoient un code par SMS ou par e-mail. Si ce code arrive sur le téléphone d'une seule personne, l'équipe dépend de sa présence.</li><li><strong>Le départ d'un collaborateur.</strong> Les accès personnels doivent être retirés ou transférés, sinon le magasin perd la main sur ses propres dossiers.</li></ul><p>Tenez un registre simple : plateforme, date de conventionnement, titulaire du compte, téléphone qui reçoit les codes, dernier changement de mot de passe. Il se remplit en dix minutes et évite des journées bloquées.</p><h2 id=\"prise-en-charge-sur-portail\">Comment se déroule une prise en charge optique sur un portail ?</h2><p>Une prise en charge optique suit le même chemin sur tous les portails : l'opticien envoie la demande avec le devis, la complémentaire répond, puis l'opticien facture après la délivrance. Les écrans changent, la logique reste.</p><p>La demande de prise en charge (PEC, parfois appelée DPEC) reprend les éléments du devis normalisé, le document obligatoire qui détaille l'équipement proposé, ses codes et ses prix. On y retrouve les codes LPP (liste des produits et prestations remboursables par l'Assurance maladie) de chaque verre et de la monture, ainsi que la classe de l'équipement : classe A pour le panier 100 % Santé, classe B pour les équipements à tarifs libres.</p><ol class=\"steps\"><li><strong>Choisir l'organisme complémentaire.</strong> Dans le sélecteur du portail, à partir de la carte du client.</li><li><strong>Identifier le bénéficiaire.</strong> Numéro d'adhérent, nom, date de naissance. Si le porteur des lunettes est un ayant droit (conjoint, enfant), c'est lui le bénéficiaire, pas l'adhérent.</li><li><strong>Saisir la prescription.</strong> Date de l'ordonnance, prescripteur, corrections.</li><li><strong>Décrire l'équipement.</strong> Verres, monture, codes LPP, classe A ou B, montants du devis.</li><li><strong>Envoyer et noter la référence.</strong> Le numéro de demande attribué par le portail sert à tout suivi ultérieur.</li><li><strong>Lire la réponse.</strong> Accord, accord partiel, demande de pièces ou refus : le montant accordé est celui qui compte.</li></ol><p>Une fois l'accord obtenu et l'équipement délivré, l'opticien facture. La part AMO part par la feuille de soins électronique ; la part AMC est facturée selon les règles de la plateforme, en rappelant la référence de l'accord. Si la facture s'écarte de ce qui a été accordé (autre verre, autre montant), le paiement risque d'être bloqué ou réduit.</p><div data-figure=\"chemin-prise-en-charge\"></div><h2 id=\"rejet-ou-refus\">Que faire quand une prise en charge est rejetée ou refusée ?</h2><p>Un rejet et un refus ne se traitent pas de la même façon : le rejet signale une demande ou une facture mal formée, que l'on peut corriger et renvoyer ; le refus est une décision de la complémentaire sur le fond, qu'il faut d'abord comprendre avant de contester.</p><p>Dans les dossiers que traitent nos agents, la cause la plus fréquente d'un rejet n'est pas technique : c'est un écart entre ce qui est saisi et ce que la complémentaire connaît du client. Mauvais bénéficiaire, mauvais organisme, carte périmée. Le tableau ci-dessous suit l'ordre dans lequel vérifier.</p><div class=\"tbl\"><table><tr><th>Cause</th><th>Où vérifier</th><th>Correction</th></tr><tr><td>Bénéficiaire inconnu ou droits fermés</td><td>Carte de tiers payant, ayant droit concerné</td><td>Corriger le bénéficiaire ou demander la carte à jour</td></tr><tr><td>Mauvais organisme choisi</td><td>Sélecteur du portail, mention sur la carte</td><td>Refaire la demande sur le bon organisme ou le bon portail</td></tr><tr><td>Code LPP ou classe incohérents</td><td>Devis normalisé, fiche du verre</td><td>Aligner les codes de la demande sur le devis</td></tr><tr><td>Pièce manquante ou illisible</td><td>Message du portail, statut de la demande</td><td>Joindre la pièce demandée, nette et complète</td></tr><tr><td>Montant au-delà de la garantie</td><td>Réponse détaillée de la complémentaire</td><td>Revoir le devis avec le client sur le reste à charge</td></tr></table></div><div class=\"callout callout--warn\"><p><strong>Le piège :</strong> renvoyer la même demande plusieurs fois en espérant une autre réponse. Les doublons brouillent le suivi, peuvent bloquer le dossier et compliquent le rapprochement des paiements. Corrigez la cause, puis envoyez une seule nouvelle demande.</p></div><p>Pour la part obligatoire, les rejets viennent d'un autre circuit, celui de l'Assurance maladie. Nous les traitons dans notre article sur la façon de <a href=\"/ressources/reduire-rejets-cpam\">réduire les rejets CPAM</a> sans changer de logiciel.</p><h2 id=\"paiement-opticien\">Comment et quand le portail paie-t-il l'opticien ?</h2><p>La plateforme verse la part complémentaire par virement, une fois la facture acceptée ; le portail affiche le détail de ce qui a été payé, dossier par dossier. Aucun délai n'est commun à toutes les plateformes : nous donnons celui que chacune annonce, avec sa source, dans sa fiche de l'annuaire.</p><p>Le virement est souvent groupé : un seul montant sur le relevé bancaire couvre plusieurs factures. Le libellé du virement indique le payeur, mais pas toujours la complémentaire d'origine. Pour savoir quelles factures sont soldées, il faut ouvrir le relevé de paiement du portail et le pointer contre vos factures.</p><p>La part AMO suit un autre chemin. Les retours de l'Assurance maladie arrivent par NOEMIE (norme d'échange qui transmet au professionnel les paiements et les rejets de la part obligatoire), puis le virement correspondant. Rapprocher les deux chaque jour évite d'accumuler des factures que personne ne relance : la méthode est détaillée dans notre article sur le <a href=\"/ressources/rapprochement-noemie\">rapprochement NOEMIE et virements bancaires</a>.</p><ul><li>Pointez les paiements au moins une fois par semaine, plateforme par plateforme.</li><li>Comparez le montant payé au montant accordé lors de la prise en charge, pas au montant du devis.</li><li>Isolez les factures sans paiement ni rejet : ce sont celles qui se perdent.</li><li>Gardez la référence de la demande, la facture et le relevé du portail dans le même dossier.</li></ul><h2 id=\"portail-en-maintenance\">Que faire quand un portail est en maintenance ?</h2><p>Quand un portail est en maintenance, la bonne conduite est de noter la demande, d'informer le client qu'elle sera envoyée à la réouverture, puis de vérifier le statut avant toute nouvelle saisie. Il ne faut pas multiplier les tentatives.</p><p>Les portails ont des plages de maintenance, programmées ou non. Nos agents les rencontrent régulièrement, souvent le soir ou le week-end, et la page de connexion l'annonce en général. Une maintenance imprévue peut aussi couper le portail en pleine saisie : la demande a peut-être été enregistrée, peut-être pas.</p><ol class=\"steps\"><li><strong>Vérifier que le problème vient du portail.</strong> Testez un autre portail : s'il répond, votre connexion fonctionne.</li><li><strong>Noter la demande en attente.</strong> Client, organisme, devis, heure de la tentative.</li><li><strong>Prévenir le client.</strong> Expliquez que l'accord n'est pas encore obtenu et que l'équipement ne part pas en commande sans lui, si c'est votre règle.</li><li><strong>À la réouverture, chercher la demande avant de la ressaisir.</strong> Une saisie interrompue a pu passer.</li><li><strong>Si la coupure dure, appeler le support professionnel de la plateforme.</strong> Notez le nom de l'interlocuteur et l'heure.</li></ol><p>Une maintenance un samedi après-midi, jour de forte affluence, peut repousser plusieurs ventes. Une liste des demandes en attente, tenue sur papier ou dans un tableau partagé, suffit à ne rien oublier le lundi.</p><h2 id=\"organiser-plusieurs-portails\">Comment organiser le travail sur plusieurs portails au magasin ?</h2><p>La méthode la plus efficace est de traiter les portails par série plutôt que dossier par dossier, avec un point quotidien sur les statuts et un responsable désigné pour chaque tâche. Le temps perdu vient surtout des connexions répétées et des dossiers oubliés.</p><p>Trois habitudes changent le quotidien d'une équipe :</p><ul><li><strong>Une liste de suivi unique.</strong> Toutes les demandes envoyées, avec plateforme, référence, statut et date. C'est elle qui dit ce qui reste à relancer.</li><li><strong>Un créneau fixe pour les statuts.</strong> Le matin, avant l'ouverture, on fait le tour des portails pour lire les réponses et les demandes de pièces.</li><li><strong>Des indicateurs simples.</strong> Nombre de demandes en attente, rejets de la semaine, factures payées sans écart. Notre article sur les <a href=\"/ressources/kpi-back-office-sante\">indicateurs back-office santé</a> propose une base.</li></ul><p>Quand les demandes se comptent par dizaines chaque jour, la saisie sur chaque portail devient le goulot du magasin : l'opticienne passe plus de temps devant les écrans de plateformes que devant ses clients. C'est le travail que font les <a href=\"/agents\">agents Granit</a> : ils saisissent les prises en charge directement sur les portails, suivent les statuts et renvoient la réponse à l'équipe. Granit travaille avec toutes les plateformes de tiers payant.</p><p>Que vous gardiez la saisie en interne ou non, la logique reste celle décrite plus haut : la bonne carte, le bon portail, une demande propre, un statut lu, un paiement pointé. Retrouvez les autres guides dans le <a href=\"/ressources\">hub des ressources</a>.</p>",
+  "tocItems": [
+    {
+      "id": "portail-tiers-payant-definition",
+      "label": "Qu'est-ce qu'un portail de tiers payant ?"
+    },
+    {
+      "id": "pourquoi-autant-de-portails",
+      "label": "Pourquoi plusieurs portails ?"
+    },
+    {
+      "id": "trouver-le-bon-portail",
+      "label": "Trouver le portail d'une mutuelle"
+    },
+    {
+      "id": "compte-sur-chaque-portail",
+      "label": "Un compte sur chaque portail ?"
+    },
+    {
+      "id": "prise-en-charge-sur-portail",
+      "label": "Faire une prise en charge optique"
+    },
+    {
+      "id": "rejet-ou-refus",
+      "label": "Rejet ou refus : que faire ?"
+    },
+    {
+      "id": "paiement-opticien",
+      "label": "Paiement de l'opticien"
+    },
+    {
+      "id": "portail-en-maintenance",
+      "label": "Portail en maintenance"
+    },
+    {
+      "id": "organiser-plusieurs-portails",
+      "label": "Organiser le travail sur plusieurs portails"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "Qu'est-ce qu'un portail de tiers payant ?",
+      "answer": "Un portail de tiers payant est le site professionnel d'une plateforme qui gère le tiers payant pour le compte de complémentaires santé. L'opticien s'y connecte pour demander la prise en charge d'un équipement, lire la réponse de la complémentaire et suivre le paiement de la part mutuelle. Chaque plateforme a son propre portail."
+    },
+    {
+      "question": "Combien de portails un opticien doit-il utiliser ?",
+      "answer": "Il n'y a pas de nombre fixe : tout dépend des complémentaires de vos clients et des réseaux de soins auxquels votre magasin adhère. Chaque complémentaire confie son tiers payant à une plateforme de son choix, donc une clientèle variée implique plusieurs portails. Le plus simple est de partir des cartes de tiers payant que vous voyez le plus souvent au comptoir."
+    },
+    {
+      "question": "Comment savoir quel portail correspond à la mutuelle du client ?",
+      "answer": "Lisez la carte de tiers payant de l'année en cours : elle indique la plateforme par un nom, un logo ou un code. Ouvrez ensuite le portail correspondant et vérifiez que la complémentaire figure dans son sélecteur d'organismes. En cas de doute, appelez le numéro réservé aux professionnels inscrit sur la carte avant toute saisie."
+    },
+    {
+      "question": "Faut-il un compte sur chaque portail ?",
+      "answer": "Oui, chaque portail demande son propre compte, ouvert après le conventionnement du magasin avec la plateforme. Il n'existe pas d'identifiant commun à tous les portails. Tenez un registre des comptes, de leurs titulaires et du téléphone qui reçoit les codes d'authentification pour éviter les blocages."
+    },
+    {
+      "question": "Que faire quand un portail est en maintenance ?",
+      "answer": "Notez la demande en attente avec le client, l'organisme et l'heure de la tentative, puis prévenez le client que l'accord n'est pas encore obtenu. À la réouverture, cherchez d'abord la demande dans le portail, car une saisie interrompue a pu être enregistrée. Ne la ressaisissez qu'une fois, et appelez le support professionnel si la coupure dure."
+    }
+  ],
+  "sources": [
+    {
+      "label": "service-public.fr · Tiers payant : dispense d'avance de frais",
+      "url": "https://www.service-public.fr/particuliers/vosdroits/F167"
+    },
+    {
+      "label": "ameli.fr · Le tiers payant",
+      "url": "https://www.ameli.fr/assure/remboursements/reste-charge/tiers-payant"
+    }
+  ],
+  "figures": [
+    {
+      "id": "chemin-prise-en-charge",
+      "type": "flux",
+      "titre": "Le chemin d'une prise en charge optique",
+      "legende": "Le paiement ne suit que si la facture correspond à l'accord donné par la complémentaire.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "Opticien",
+          "detail": "Demande de prise en charge avec le devis",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Portail de la plateforme",
+          "detail": "Demande transmise pour décision",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Complémentaire santé",
+          "detail": "Accord, refus ou demande de pièces",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Facture après délivrance",
+          "detail": "Facture conforme à l'accord",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Paiement par virement",
+          "detail": "Part complémentaire versée à l'opticien",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [
+    {
+      "id": "G0",
+      "slug": "tiers-payant-opticien",
+      "anchor": "tiers payant opticien",
+      "type": "parent"
+    }
+  ],
+  "liensEntrants": [
+    {
+      "slug": "portail-viamedis",
+      "anchor": "viamedis tp",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-itelis",
+      "anchor": "itelis tp",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-almerys",
+      "anchor": "almerys tp",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-isante",
+      "anchor": "isante tp",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-sp-sante",
+      "anchor": "sp sante tp",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-oxantis",
+      "anchor": "oxantis tp",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-santeclair",
+      "anchor": "tp santeclair",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-seveane",
+      "anchor": "seveane tp",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-actil",
+      "anchor": "actil tp",
+      "type": "enfant"
+    }
+  ],
+  "remplace": [
+    "portails-mutuelles-goulot"
+  ],
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-08T16:32:06.030Z",
+    "avertissements": [
+      "aucune citation (facultative)",
+      "source non vérifiable (403) : https://www.ameli.fr/assure/remboursements/reste-charge/tiers-payant"
+    ]
+  }
+}

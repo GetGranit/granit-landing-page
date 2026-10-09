@@ -173,7 +173,9 @@ Claude peut citer un ou deux organismes en exemple dans son texte, jamais en dre
 <h2 id="viamedis-statuts">Que veulent dire les statuts d'une prise en charge Viamedis ?</h2>
 <p>…</p>
 <div data-bloc="statuts"></div>
-<h2 id="viamedis-rejet">Que faire en cas de rejet ou de refus ?</h2>
+<h2 id="viamedis-vous-bloquez">Vous bloquez sur Viamedis ?</h2>
+<h3>Je ne trouve pas la mutuelle dans la liste</h3> <h3>La prise en charge est refusée</h3>
+<h3>Elle reste en attente, sans réponse</h3> <h3>L'accord est obtenu, mais le paiement n'arrive pas</h3>
 <h2 id="viamedis-paiement">Quand et comment Viamedis paie-t-il l'opticien ?</h2>
 <h2 id="viamedis-contact">Comment contacter Viamedis ?</h2>
 <div data-bloc="contacts"></div>

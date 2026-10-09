@@ -11,6 +11,10 @@ Chaque jour ouvré à 8 h 17 (heure de Paris), le workflow `.github/workflows/se
    - **direct** dans tous les autres cas : commit sur main, puis Vercel redéploie ;
 6. poste une ligne dans le canal Slack SEO (ou une alerte avec le lien des logs).
 
+## Refontes d'anciens articles
+
+Une entrée de la file avec `"refonte": true` réécrit un ancien article de `src/lib/articles.ts` **à la même adresse**. L'ancien texte est donné à Claude comme matière première. Le lecteur et le métier viennent de `reader` et `verticales`, la signature de `auteur` et `relecteur`. Une refonte passe toujours par une PR de relecture. Une fois publiée, la version JSON remplace l'ancienne sur la page, dans les listes et dans le sitemap. Le build accepte ce slug partagé uniquement pour une refonte.
+
 ## Lancer à la main
 
 ```bash
@@ -20,12 +24,27 @@ node --test scripts/seo-engine/tests/*.test.mjs                                 
 
 En local, la clé est lue dans `ANTHROPIC_API_KEY`, sinon dans `~/.config/granit/anthropic.key`. Sur GitHub, l'onglet Actions propose « Run workflow » avec un slug et une case « Essai ».
 
+## Boucle de relecture (lot de nuit)
+
+Après la rédaction, `relire-article.mjs --slug {slug}` relit l'article avec trois appels distincts au modèle :
+
+1. **relecteur** : une passe sur 4 angles (faits, conformité, SEO, copy), qui sort une liste de points `BLOQUANT`, `A_CORRIGER` ou `DETAIL`. Les règles sont écrites en dur dans `lib/relecture.mjs` (`REGLES`) ;
+2. **correcteur** : il renvoie l'article corrigé au schéma de `article-output.schema.json`. Il ne touche jamais au fichier de faits : un fait à changer part dans `decision_humaine` ;
+3. **contrôles du moteur** repassés (`controler` + `verifierSources`), puis **contre-relecture** par un appel qui n'a pas corrigé. Elle rend le verdict `pret` ou `humain`.
+
+Il y a au plus 2 tours de correction. Le verdict `humain` ne tombe que s'il reste un point de fond (faits, conformité, SEO), une erreur de contrôle ou une décision humaine : des phrases encore longues ne suffisent pas. Le verdict en markdown est ajouté au corps de la PR. Avec `humain`, le titre de la PR le dit et la PR reçoit le libellé `decision-humaine`. Rien n'est fusionné automatiquement. Le coût de la boucle compte dans le plafond du lot : environ 1,2 $ par article avec 2 tours (essai réel sur portail-actil le 09/10/2026 : 1,17 $).
+
+```bash
+node scripts/seo-engine/relire-article.mjs --slug portail-actil --simuler --dry --out /tmp/essai   # sans clé ni dépense
+node scripts/seo-engine/verifier-article.mjs portail-actil                                           # contrôles seuls
+```
+
 ## Secrets du repo
 
 | Secret | Usage |
 |---|---|
 | `ANTHROPIC_API_KEY` | Rédaction |
-| `SLACK_BOT_TOKEN` | Bot qui poste dans le canal (celui de la revue hebdo) |
+| `SLACK_BOT_TOKEN` | Bot qui poste dans le canal (celui de la revue hebdo). Le message donne le lien de la PR, les mots-clés, la taille, la signature, le coût et les avertissements (`lib/slack.mjs`) |
 | `SLACK_CANAL_SEO` | ID du canal Slack SEO |
 
 Il faut aussi cocher, dans les réglages du repo, *Actions → General → Allow GitHub Actions to create and approve pull requests*.
@@ -46,6 +65,7 @@ Il faut aussi cocher, dans les réglages du repo, *Actions → General → Allow
 | `metaDescription`, `contentHtml`, `tocItems`, `faqItems`, `sources` | Réponse de Claude, déjà contrôlée |
 | `internalLinks` | Liens prévus dont la cible était en ligne à la rédaction |
 | `liensEntrants` | `{slug, anchor, type}` des articles publiés après lui qui doivent apparaître dans « À lire ensuite » |
+| `refonte`, `verticales` | Refonte d'un ancien article à la même adresse ; métiers concernés (`optique`, `audio`, `pharmacie`, `dentaire`, `centres`) |
 | `remplace` | Anciens articles de `src/lib/articles.ts` que celui-ci remplace : dès sa publication, ils redirigent en 301 vers lui et sortent des listes et du sitemap (champ `remplace` de la file) |
 | `moteur` | Modèle, date de génération, avertissements |
 

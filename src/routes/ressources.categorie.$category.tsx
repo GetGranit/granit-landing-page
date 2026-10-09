@@ -8,7 +8,8 @@ import {
   toutCategorie,
 } from "@/lib/ressources/contenu";
 import { breadcrumbLd } from "@/lib/ressources/seo";
-import { photoFiche, src } from "@/lib/ressources/photos";
+import { VERTICALE_PRINCIPALE, verticale } from "@/lib/ressources/verticales";
+import { aCouvertureFenetre, photoFiche, src } from "@/lib/ressources/photos";
 
 export const Route = createFileRoute("/ressources/categorie/$category")({
   loader: ({ params }) => {
@@ -33,7 +34,10 @@ export const Route = createFileRoute("/ressources/categorie/$category")({
         { property: "og:description", content: desc },
         ...(preview ? [{ name: "robots", content: "noindex, nofollow" }] : []),
       ],
-      links: pilier ? [{ rel: "preload", as: "image", href: src(photoFiche(pilier), 1600) }] : [],
+      links:
+        pilier && !aCouvertureFenetre(pilier)
+          ? [{ rel: "preload", as: "image", href: src(photoFiche(pilier), 1600) }]
+          : [],
     };
   },
   component: CategoriePage,
@@ -43,8 +47,10 @@ export const Route = createFileRoute("/ressources/categorie/$category")({
 function CategoriePage() {
   const { category } = Route.useLoaderData();
   const cat = categorie(category)!;
+  const principale = verticale(VERTICALE_PRINCIPALE)!;
   const ld = breadcrumbLd([
     ["Ressources", "/ressources"],
+    [principale.nom, `/ressources/metier/${principale.slug}`],
     [cat.nom, `/ressources/categorie/${cat.slug}`],
   ]);
   return (
