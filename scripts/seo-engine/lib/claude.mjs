@@ -1,7 +1,18 @@
 // Appel à l'API Anthropic en streaming (évite les coupures sur les longs articles),
 // sortie imposée par un schéma JSON. fetch natif, aucune dépendance.
 
+import { existsSync, readFileSync } from "node:fs";
+import { join } from "node:path";
+
 const API = "https://api.anthropic.com/v1/messages";
+
+/** Clé lue dans ANTHROPIC_API_KEY, sinon dans ~/.config/granit/anthropic.key (en local). */
+export function apiKey() {
+  if (process.env.ANTHROPIC_API_KEY) return process.env.ANTHROPIC_API_KEY;
+  const local = join(process.env.HOME ?? "", ".config/granit/anthropic.key");
+  if (existsSync(local)) return readFileSync(local, "utf8").trim();
+  throw new Error("ANTHROPIC_API_KEY manquante");
+}
 
 /**
  * @returns {{ json: object, stopReason: string, usage: object }}

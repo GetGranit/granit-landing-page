@@ -1,4 +1,6 @@
 # Moteur SEO : rédige un lot d'articles à la suite (une nuit), chacun en PR de relecture humaine.
+# Chaque article passe ensuite par la boucle relecture → correction → verdict (relire-article.mjs) ;
+# le verdict va dans le corps de la PR. Rien n'est jamais fusionné automatiquement.
 # Lancé à la main : liste de slugs pending + plafond de dépense. S'arrête avant de dépasser le plafond.
 name: SEO · lot de nuit
 
@@ -47,8 +49,8 @@ jobs:
           set -uo pipefail
           total=0; ok=(); ko=()
           for slug in $SLUGS; do
-            # une estimation prudente par article (~0,40 $ constaté, 2 essais possibles)
-            if awk -v t="$total" -v p="$PLAFOND" 'BEGIN{exit !(t + 1.5 > p)}'; then
+            # une estimation prudente par article : rédaction (~0,40 $, 2 essais possibles) + boucle de relecture (~0,40 $ par tour, 2 tours au plus)
+            if awk -v t="$total" -v p="$PLAFOND" 'BEGIN{exit !(t + 2.5 > p)}'; then
               echo "Plafond de $PLAFOND $ bientôt atteint ($total $) : arrêt avant $slug"; ko+=("$slug (plafond)"); continue
             fi
             git checkout -q main && git pull -q --rebase origin main
@@ -57,7 +59,18 @@ jobs:
               cout=$(grep -oE 'Coût estimé : [0-9.]+' "$RUNNER_TEMP/$slug.log" | tail -1 | grep -oE '[0-9.]+$' || echo 0)
               total=$(awk -v t="$total" -v c="${cout:-0}" 'BEGIN{print t + c}')
               val() { grep -m1 "^$1=" "$out" | cut -d= -f2-; }
-              export SLUG="$slug" TITLE="$(val title)" REVIEW=true URL="$(val url)" COUT="$cout"
+              # boucle relecture → correction → verdict ; si elle plante, l'article part tel quel en décision humaine
+              VERDICT_MD="$RUNNER_TEMP/$slug.verdict.md"
+              if GITHUB_OUTPUT="$out" node scripts/seo-engine/relire-article.mjs --slug "$slug" --verdict "$VERDICT_MD" 2>&1 | tee "$RUNNER_TEMP/$slug.relecture.log"; then
+                VERDICT="$(val verdict)"
+              else
+                VERDICT=humain
+                printf '## Boucle relecture → correction → verdict : 🟡 Décision humaine\n\nLa boucle automatique a échoué (voir les logs du run) : article non relu par les agents.\n' > "$VERDICT_MD"
+              fi
+              crel=$(grep -oE 'Coût estimé : [0-9.]+' "$RUNNER_TEMP/$slug.relecture.log" | tail -1 | grep -oE '[0-9.]+$' || echo 0)
+              cout=$(awk -v a="${cout:-0}" -v b="${crel:-0}" 'BEGIN{print a + b}')
+              total=$(awk -v t="$total" -v c="${crel:-0}" 'BEGIN{print t + c}')
+              export SLUG="$slug" TITLE="$(val title)" REVIEW=true URL="$(val url)" COUT="$cout" VERDICT="${VERDICT:-humain}" VERDICT_MD
               if GITHUB_OUTPUT="$out" bash scripts/seo-engine/ship.sh; then
                 export PR="$(val pr)"; node scripts/seo-engine/notify.mjs ok || true; ok+=("$slug")
               else

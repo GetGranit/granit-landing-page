@@ -24,6 +24,21 @@ node --test scripts/seo-engine/tests/*.test.mjs                                 
 
 En local, la clé est lue dans `ANTHROPIC_API_KEY`, sinon dans `~/.config/granit/anthropic.key`. Sur GitHub, l'onglet Actions propose « Run workflow » avec un slug et une case « Essai ».
 
+## Boucle de relecture (lot de nuit)
+
+Après la rédaction, `relire-article.mjs --slug {slug}` relit l'article avec trois appels distincts au modèle :
+
+1. **relecteur** : une passe sur 4 angles (faits, conformité, SEO, copy), qui sort une liste de points `BLOQUANT`, `A_CORRIGER` ou `DETAIL`. Les règles sont écrites en dur dans `lib/relecture.mjs` (`REGLES`) ;
+2. **correcteur** : il renvoie l'article corrigé au schéma de `article-output.schema.json`. Il ne touche jamais au fichier de faits : un fait à changer part dans `decision_humaine` ;
+3. **contrôles du moteur** repassés (`controler` + `verifierSources`), puis **contre-relecture** par un appel qui n'a pas corrigé. Elle rend le verdict `pret` ou `humain`.
+
+Il y a au plus 2 tours de correction. Le verdict en markdown est ajouté au corps de la PR. Avec `humain`, le titre de la PR le dit et la PR reçoit le libellé `decision-humaine`. Rien n'est fusionné automatiquement. Le coût de la boucle compte dans le plafond du lot.
+
+```bash
+node scripts/seo-engine/relire-article.mjs --slug portail-actil --simuler --dry --out /tmp/essai   # sans clé ni dépense
+node scripts/seo-engine/verifier-article.mjs portail-actil                                           # contrôles seuls
+```
+
 ## Secrets du repo
 
 | Secret | Usage |

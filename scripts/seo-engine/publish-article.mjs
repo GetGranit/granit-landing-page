@@ -4,15 +4,15 @@
 //   --relecture : force la PR de relecture humaine (lot de nuit), quel que soit le nombre d'articles sortis.
 //   --dry : n'écrit que l'article (dans --out), ne touche ni à la file ni aux autres articles.
 // Le commit, la PR et la notification sont faits par le workflow (ship.sh, notify.mjs).
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { mkdirSync } from "node:fs";
 import { join } from "node:path";
 import { parseArgs } from "node:util";
 import { citations, controler, typeDePage, verifierSources } from "./lib/checks.mjs";
-import { coutDollars, rediger } from "./lib/claude.mjs";
+import { apiKey, coutDollars, rediger } from "./lib/claude.mjs";
 import { mots, texte } from "./lib/html.mjs";
 import {
   CONTENU, MOTEUR, ancienArticle, anciensArticles, ecrireFile, ecrireJson, faitsPour, lireFile, lireJson,
-  publies, sectionsGabarit, sortieGithub,
+  publies, sortieGithub, systemeGuide,
 } from "./lib/site.mjs";
 
 const { values: opt } = parseArgs({
@@ -23,13 +23,6 @@ const config = lireJson(join(MOTEUR, "config.json"));
 if (opt.model) config.model = opt.model;
 const schema = lireJson(join(MOTEUR, "article-output.schema.json"));
 const aujourdhui = new Date().toISOString().slice(0, 10);
-
-function apiKey() {
-  if (process.env.ANTHROPIC_API_KEY) return process.env.ANTHROPIC_API_KEY;
-  const local = join(process.env.HOME ?? "", ".config/granit/anthropic.key");
-  if (existsSync(local)) return readFileSync(local, "utf8").trim();
-  throw new Error("ANTHROPIC_API_KEY manquante");
-}
 
 // 1. Choix de l'article
 const file = lireFile();
@@ -159,7 +152,7 @@ function message(retour) {
   return parts.join("\n\n");
 }
 
-const system = `${readFileSync(join(MOTEUR, "BLOG_CMS_granit.md"), "utf8")}\n\n---\n\n# Extrait du gabarit (GABARIT_ARTICLE_granit.md)\n\n${sectionsGabarit()}`;
+const system = systemeGuide();
 
 // 4. Rédaction + contrôles, 2 essais maximum
 const key = apiKey();
