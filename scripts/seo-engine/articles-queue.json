@@ -505,7 +505,7 @@
     ],
     "searchVolume": 14460,
     "unsplashQuery": "optician computer paperwork",
-    "status": "pending",
+    "status": "review",
     "wave": 1,
     "level": "Fille",
     "parentSlug": "portails-tiers-payant",
@@ -567,7 +567,8 @@
         "anchor": "checklist avant d'envoyer une prise en charge",
         "type": "transverse"
       }
-    ]
+    ],
+    "publishedAt": "2026-10-09"
   },
   {
     "id": "A4",
@@ -758,7 +759,7 @@
     ],
     "searchVolume": 8510,
     "unsplashQuery": "optician computer paperwork",
-    "status": "pending",
+    "status": "published",
     "wave": 1,
     "level": "Fille",
     "parentSlug": "portails-tiers-payant",
@@ -813,7 +814,8 @@
         "anchor": "checklist avant d'envoyer une prise en charge",
         "type": "transverse"
       }
-    ]
+    ],
+    "publishedAt": "2026-10-09"
   },
   {
     "id": "A6",
@@ -835,7 +837,7 @@
     ],
     "searchVolume": 6520,
     "unsplashQuery": "optician computer paperwork",
-    "status": "review",
+    "status": "published",
     "wave": 1,
     "level": "Fille",
     "parentSlug": "portails-tiers-payant",
