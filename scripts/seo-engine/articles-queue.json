@@ -835,7 +835,7 @@
     ],
     "searchVolume": 6520,
     "unsplashQuery": "optician computer paperwork",
-    "status": "pending",
+    "status": "review",
     "wave": 1,
     "level": "Fille",
     "parentSlug": "portails-tiers-payant",
@@ -890,7 +890,8 @@
         "anchor": "checklist avant d'envoyer une prise en charge",
         "type": "transverse"
       }
-    ]
+    ],
+    "publishedAt": "2026-10-09"
   },
   {
     "id": "A9",
