@@ -94,7 +94,7 @@
     }
   ],
   "conventionnement": [
-    "Contacter le service conventionnement Oxantis : 0 821 21 00 07 (0,12 € TTC/min) ou tp-oxantis-convention@oxantis.fr.",
+    "Contacter le service conventionnement Oxantis : 0 821 21 00 07 (numéro surtaxé) ou tp-oxantis-convention@oxantis.fr.",
     "Une fois le compte ouvert, se connecter sur oxantis.net avec son adresse e-mail et son mot de passe, puis le code reçu par appel ou par SMS."
   ],
   "statuts": [
@@ -106,7 +106,7 @@
     {
       "libelle": "Accordée sous réserve de pièces justificatives (PECAPJ)",
       "sens": "Accord, mais la complémentaire attend des documents",
-      "action": "Envoyer les pièces justificatives, par exemple par e-mail avec le numéro de PEC et le nom du client en objet"
+      "action": "Envoyer les pièces justificatives par le canal indiqué par le portail ou par Oxantis, en rappelant le numéro de PEC"
     },
     {
       "libelle": "En attente / en instance / en cours",
@@ -139,13 +139,13 @@
     {
       "label": "Conventionnement (opticiens)",
       "valeur": "0 821 21 00 07",
-      "detail": "0,12 € TTC/min · ou tp-oxantis-convention@oxantis.fr",
+      "detail": "Numéro surtaxé · ou tp-oxantis-convention@oxantis.fr",
       "source": "harmonie-contacts"
     },
     {
       "label": "Factures et prises en charge (optique)",
       "valeur": "0 821 01 01 02",
-      "detail": "0,12 € TTC/min · ou tp-oxantis-optique@oxantis.fr",
+      "detail": "Numéro surtaxé · ou tp-oxantis-optique@oxantis.fr",
       "source": "harmonie-contacts"
     },
     {
