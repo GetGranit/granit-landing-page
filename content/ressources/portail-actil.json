@@ -1,0 +1,209 @@
+{
+  "slug": "portail-actil",
+  "id": "A6",
+  "category": "plateformes",
+  "categoryName": "Plateformes et portails",
+  "type": "plateforme",
+  "plateforme": "actil",
+  "title": "Actil TP pour les opticiens : espace pro, prise en charge, statuts et paiement",
+  "primaryKeyword": "actil tp",
+  "keywordCluster": [
+    "tp actil",
+    "actil espace pro",
+    "actil professionnel de santé",
+    "actil professionnel de sante",
+    "actil apicil mon compte",
+    "actil pec",
+    "actil professionnels de sante",
+    "actil tp optique",
+    "actil pro",
+    "prise en charge actil"
+  ],
+  "parentSlug": "portails-tiers-payant",
+  "level": "Fille",
+  "author": {
+    "name": "Olivier",
+    "jobTitle": "Rédacteur, expert tiers payant",
+    "photo": "/auteurs/olivier.jpg",
+    "url": null
+  },
+  "reviewer": {
+    "name": "Nathalie",
+    "jobTitle": "Rédactrice, experte métier optique",
+    "photo": "/auteurs/nathalie.jpg",
+    "url": null
+  },
+  "datePublished": "2026-10-09",
+  "dateModified": "2026-10-09",
+  "checkedOn": "2026-10-07",
+  "wordCount": 2046,
+  "readTime": 9,
+  "metaDescription": "Actil TP pour opticiens : se connecter à l'espace pro actil.com, faire la cotation puis la prise en charge, lire les statuts et suivre le paiement.",
+  "contentHtml": "<p><strong>Actil TP se fait sur <a href=\"https://www.actil.com/connexion/\">actil.com/connexion</a>, l'espace professionnel de santé : l'opticien dépose une cotation, puis la transforme en prise en charge une fois acceptée.</strong> La cotation est une première demande : elle ne garantit pas le paiement, seule la prise en charge le fait, même si les droits du patient se ferment ensuite. Le portail retrouve le patient par son numéro de sécurité sociale, sans liste de mutuelles à choisir.</p><div class=\"key-takeaways\"><strong>L'essentiel</strong><ul><li>L'espace pro Actil des opticiens est sur <a href=\"https://www.actil.com/connexion/\">actil.com/connexion</a>, avec l'identifiant reçu après conventionnement.</li><li>Sur Actil, la demande optique commence par une cotation. La prise en charge vient ensuite, en transformant une cotation acceptée.</li><li>Le patient est retrouvé par son numéro de sécurité sociale : la carte Actil doit reprendre à l'identique les données de la carte Vitale.</li><li>Une prise en charge est une garantie de paiement. Vous pouvez facturer dès la livraison, dans les 2 ans, si vous êtes toujours conventionné.</li><li>Les comptes nominatifs reçoivent un code par e-mail après le mot de passe, et 5 échecs de connexion verrouillent temporairement le compte.</li><li>Avant chaque cotation, vérifiez le numéro de sécurité sociale et le rang de naissance : c'est la vérification à faire en premier devant un « Aucun droit ouvert ».</li></ul></div><h2 id=\"actil-tp-mutuelles\">Qu'est-ce qu'Actil TP et quelles mutuelles passent par lui ?</h2><p>Actil est une plateforme nationale de tiers payant créée à l'initiative du <a href=\"https://mon.apicil.com/salon-client/les-avantages-du-reseau-actil/\">Groupe APICIL</a>, qui fait à la fois le tiers payant et un réseau de soins.</p><div data-bloc=\"chiffres\"></div><p>Concrètement, Actil joue deux rôles pour vous. Comme opérateur de tiers payant, il traite la part complémentaire (AMC, l'assurance maladie complémentaire) d'un équipement à la place du patient, qui n'avance pas cette part. Comme réseau de soins, il porte des offres négociées en optique, en audio et en dentaire, intégrées à son tiers payant. Pour l'opticien, ces deux rôles se rejoignent dans un même espace : celui où l'on dépose la cotation et où l'on suit le règlement.</p><p>Le réseau optique a changé de nature en 2021. Selon Actil, <a href=\"https://www.actil.com/rejoignez-notre-nouveau-reseau-tiers-payant-optique/\">depuis le 1er avril 2021, le réseau de tiers payant optique est ouvert à tous les opticiens qui veulent le rejoindre</a>, et l'opticien choisit l'équipement dans tous les catalogues verriers, lentilles et montures du marché. Le réseau réunit des grandes enseignes et des opticiens indépendants, en métropole et dans les DROM, d'après la <a href=\"https://www.actil.com/professionnel-de-sante/opticiens/\">page Opticiens d'actil.com</a>.</p><p>Reste la question que se pose le comptoir : quelles mutuelles passent par Actil ? Le portail optique Actil n'a pas de sélecteur d'organisme. Il retrouve le patient par son numéro de sécurité sociale et affiche directement ses droits, ou leur absence. Nos agents ne relèvent donc aucune liste de complémentaires sur ce portail, à la différence d'autres plateformes comme <a href=\"/ressources/portail-viamedis\">Viamédis</a>, qui font choisir l'organisme dans une liste.</p><div data-bloc=\"organismes\"></div><p>La conséquence est pratique : la bonne façon de savoir si un patient relève d'Actil est de regarder sa carte de tiers payant et de lancer la recherche par numéro de sécurité sociale. Ne déduisez jamais d'un seul dossier qu'une mutuelle passe uniquement par Actil : un même assureur peut confier des contrats différents à des opérateurs différents. Pour situer Actil parmi les autres <a href=\"/ressources/portails-tiers-payant\">portails de tiers payant</a>, l'annuaire des plateformes donne une vue d'ensemble.</p><div class=\"callout callout--tip\"><p><strong>Le bon réflexe :</strong> comparez la carte Actil et la carte Vitale avant de saisir. Actil demande que la <a href=\"https://www.actil.com/Portail/espacePro/PAGE-EPR-CARTE/page-epr-carte.jsp\">carte Actil reprenne à l'identique les données de la carte Vitale</a> : numéro de sécurité sociale, date de naissance, rang de naissance et ayants droit. En cas de doute, consultez les droits dans votre espace privé.</p></div><h2 id=\"actil-espace-pro\">Comment accéder à l'espace pro Actil ?</h2><p>L'accès à l'espace pro Actil passe par un conventionnement : on ne crée pas son compte seul en ligne, on le reçoit après vérification des pièces. Une fois l'identifiant reçu, la connexion se fait sur la page dédiée de l'espace professionnel de santé d'actil.com.</p><h3>Se conventionner pour obtenir un identifiant</h3><p>Si votre magasin n'est pas encore partenaire, le parcours suit cet ordre :</p><ol class=\"steps\"><li><strong>Remplir le formulaire de la page Contact d'actil.com.</strong> C'est la porte d'entrée pour un opticien qui n'a pas encore de compte.</li><li><strong>Être recontacté par les équipes Actil.</strong> Elles finalisent l'enregistrement avec vous.</li><li><strong>Signer la convention Actil et fournir les pièces justificatives demandées.</strong> Préparez-les en amont pour éviter un aller-retour.</li><li><strong>Recevoir son identifiant d'accès.</strong> Il arrive après vérification des pièces.</li><li><strong>Finaliser l'inscription en ligne.</strong> Vous pouvez ensuite faire vos cotations et vos prises en charge sur actil.com.</li></ol><h3>Se connecter et ne pas se bloquer</h3><p>La connexion demande un identifiant et un mot de passe. Pour les comptes nominatifs, un code à usage unique arrive ensuite par e-mail, valable 5 minutes : relevé par nos agents sur le portail. Ouvrez donc la boîte mail du compte avant de lancer la connexion. Un code expiré oblige à recommencer.</p><p>Le portail prévient aussi qu'au bout de 5 échecs de connexion, le compte est verrouillé temporairement. Les comptes nominatifs sont personnels : chaque collaborateur qui fait le tiers payant doit avoir son propre accès.</p><p>Un point de vocabulaire, enfin : le compte de l'opticien est l'espace professionnel de santé, sur <a href=\"https://www.actil.com/connexion/\">actil.com/connexion</a>.</p><h2 id=\"actil-prise-en-charge\">Comment faire une prise en charge optique sur Actil ?</h2><p>Sur Actil, une prise en charge optique se fait en deux demandes successives : une cotation d'abord, puis la transformation de la cotation acceptée en prise en charge. C'est cette prise en charge, et non la cotation, qui garantit le paiement.</p><p>Depuis son espace privé sur actil.com, l'opticien fait ses demandes de cotation et de prise en charge en ligne. Le patient est identifié par son numéro de sécurité sociale (le NIR). Si les données saisies ne correspondent pas à celles connues d'Actil, le portail ne trouve pas les droits. D'où l'importance du contrôle de la carte décrit plus haut.</p><h3>Le parcours au comptoir</h3><ol class=\"steps\"><li><strong>Vérifier la carte Actil du patient.</strong> Numéro de sécurité sociale, date de naissance, rang de naissance et ayants droit doivent correspondre à la carte Vitale.</li><li><strong>Déposer la cotation.</strong> Saisissez le numéro de sécurité sociale, puis l'équipement choisi dans les catalogues verriers, lentilles et montures.</li><li><strong>Lire la réponse.</strong> Un statut « Accepté / Accord N°… » signifie que la complémentaire accepte la cotation.</li><li><strong>Transformer la cotation en prise en charge.</strong> C'est l'étape qui engage le paiement : ne délivrez pas sur une simple cotation.</li><li><strong>Délivrer l'équipement.</strong> La facturation devient possible dès la livraison.</li><li><strong>Facturer.</strong> Le statut passe alors à « Accord N°… (Facturé) » et le règlement se suit dans les bordereaux.</li></ol><p>Ce découpage a une conséquence pour l'organisation du magasin. Entre la cotation et la facturation, un dossier peut rester ouvert plusieurs jours, le temps du montage et de la livraison. Il faut donc un endroit où l'équipe voit quels dossiers ont une cotation acceptée mais pas encore de prise en charge, et lesquels sont livrés sans être facturés.</p><div data-figure=\"parcours-actil\"></div><div class=\"callout callout--warn\"><p><strong>Le piège :</strong> un devis au-dessus de ce que prévoit le contrat du patient revient en « Refusé », avec un motif du type « Dépassement grille tarifaire ». Relisez le motif avant de rappeler qui que ce soit : il indique ce qu'il faut corriger sur le devis.</p></div><p>Quand ces cotations se comptent par dizaines chaque semaine, la saisie et le suivi sur chaque portail deviennent le goulot du back-office. C'est ce que font les <a href=\"/agents\">agents Granit</a> : ils déposent les demandes directement sur les portails des plateformes, puis renvoient le statut à l'équipe, qui n'a plus qu'à traiter les refus et les cas particuliers.</p><h2 id=\"actil-statuts\">Que veulent dire les statuts d'une prise en charge Actil ?</h2><p>Les statuts d'une demande Actil disent à quelle étape se trouve le dossier et ce que vous devez faire ; voici ceux relevés par nos agents sur le portail.</p><div data-bloc=\"statuts\"></div><p>Trois distinctions aident à lire ces statuts. La première sépare « Accepté / Accord N°… » de « Accord N°… (Facturé) » : le premier attend encore une action de votre part (transformer, délivrer, facturer), le second est clos côté demande et se suit désormais dans les bordereaux.</p><p>La deuxième concerne les statuts d'attente, qui ne disent pas la même chose. « Prise en compte » signifie que la demande est reçue et en cours. « Validation en cours » indique qu'elle est relue à la main chez Actil. « En attente » veut dire qu'elle n'est pas encore traitée. Dans les trois cas, la bonne action est d'attendre puis de relire le statut, mais une relecture manuelle peut expliquer qu'un dossier prenne plus de temps.</p><p>La troisième touche aux statuts négatifs. « Refusé » s'accompagne d'un motif, à lire avant toute nouvelle demande. « Aucun droit ouvert » signifie que le portail ne trouve pas de droits pour ce numéro de sécurité sociale : ce n'est pas un refus sur le devis, c'est un problème d'identification ou de droits. « Annulée » indique que la demande n'est plus active ; refaites-en une si le patient maintient son achat.</p><h2 id=\"actil-vous-bloquez\">Vous bloquez sur Actil ?</h2><p>Chaque blocage au comptoir a son endroit à vérifier et son geste. Les cas ci-dessous sont classés par symptôme, tel que vous le voyez à l'écran.</p><h3>Je ne trouve pas la mutuelle dans la liste</h3><p>C'est normal : le portail optique Actil n'affiche pas de liste de complémentaires. Il cherche le patient par son numéro de sécurité sociale. Si la recherche renvoie « Aucun droit ouvert », vérifiez d'abord le numéro saisi, puis le rang de naissance et la date de naissance, en comparant la carte Actil à la carte Vitale. Consultez ensuite les droits dans votre espace privé. Si rien ne remonte, orientez le patient vers sa complémentaire : sa carte relève peut-être d'un autre opérateur, que vous retrouverez dans l'annuaire des portails.</p><h3>La prise en charge est refusée</h3><p>Lisez le motif affiché sous le statut « Refusé ». Exemple de motif : « Dépassement grille tarifaire », le devis dépasse ce que le contrat permet. Corrigez le devis (équipement, verres, prix) avec le patient, puis refaites la demande.</p><h3>Elle reste en attente, sans réponse</h3><p>Distinguez d'abord le statut exact : « En attente », « Prise en compte » ou « Validation en cours ». Ce dernier signale une relecture manuelle chez Actil, qui peut allonger le traitement. Les pages relevées ne donnent pas de délai de réponse pour une cotation : attendez, relisez le statut, puis relancez via les canaux décrits dans la section contact plus bas si le dossier ne bouge pas.</p><h3>L'accord est obtenu, mais le paiement n'arrive pas</h3><p>Vérifiez d'abord que la cotation acceptée a bien été transformée en prise en charge, puis que le dossier est facturé : le statut doit indiquer « Accord N°… (Facturé) ». Consultez ensuite vos bordereaux dans l'espace privé, disponibles sur 27 mois. Contrôlez aussi que la facture a été émise après la livraison, dans les 2 ans, et alors que le magasin était conventionné : Actil ne règle pas les factures rétroactives. Si tout est en ordre et que le règlement manque, passez par votre espace professionnel de santé, avec le numéro d'accord sous la main.</p><p>Gardez le motif exact affiché par le portail : c'est lui qui dit quoi corriger.</p><h2 id=\"actil-paiement\">Quand et comment Actil paie-t-il l'opticien ?</h2><p>Actil paie l'opticien sur facture, une fois l'équipement livré, et la prise en charge accordée garantit ce paiement. Selon la <a href=\"https://www.actil.com/faq/\">FAQ d'Actil</a>, si les droits du patient sont fermés après la prise en charge, le paiement reste validé pour le professionnel de santé.</p><p>Les règles de facturation tiennent en trois points, tous publiés par Actil :</p><ul><li>Facturez dès la livraison.</li><li>Vous avez 2 ans après la livraison.</li><li>Seulement si le magasin est toujours conventionné : Actil ne règle pas les factures rétroactives.</li></ul><p>Actil traite chaque jour les flux reçus. Les règlements se consultent dans l'espace privé, sur 27 mois.</p><p>Le délai de 2 ans paraît confortable, mais il joue surtout sur les dossiers oubliés : une cotation acceptée jamais transformée, ou un équipement livré sans facture. Un contrôle régulier des dossiers « Accepté » non facturés évite de découvrir trop tard une créance perdue.</p><p>Cette page ne retient pas de délai de virement chiffré. Pour savoir où en est un règlement, la source fiable reste vos bordereaux Actil, à rapprocher de vos relevés bancaires. Le guide <a href=\"/ressources/tiers-payant-opticien\">tiers payant opticien, de la prise en charge à l'encaissement</a> détaille cette étape de rapprochement, tous portails confondus.</p><h2 id=\"actil-contact\">Comment contacter Actil ?</h2><p>Le bon canal dépend de votre situation : un magasin pas encore partenaire passe par le formulaire de la <a href=\"https://www.actil.com/contact/\">page Contact d'actil.com</a>, un magasin déjà conventionné passe par son espace professionnel de santé, sur <a href=\"https://www.actil.com/connexion/\">actil.com/connexion</a>.</p><div data-bloc=\"contacts\"></div><p>Pour une question sur un dossier précis, ayez sous la main le numéro d'accord affiché par le portail, le statut exact et, en cas de refus, le motif mot pour mot. Le siège d'Actil est à Lyon, selon les <a href=\"https://www.actil.com/mentions-legales/\">mentions légales du site</a> ; l'adresse postale sert surtout aux envois officiels, pas au suivi d'un dossier au quotidien.</p>",
+  "tocItems": [
+    {
+      "id": "actil-tp-mutuelles",
+      "label": "Actil TP et les mutuelles"
+    },
+    {
+      "id": "actil-espace-pro",
+      "label": "Accéder à l'espace pro Actil"
+    },
+    {
+      "id": "actil-prise-en-charge",
+      "label": "Faire une prise en charge optique"
+    },
+    {
+      "id": "actil-statuts",
+      "label": "Lire les statuts Actil"
+    },
+    {
+      "id": "actil-vous-bloquez",
+      "label": "Vous bloquez sur Actil ?"
+    },
+    {
+      "id": "actil-paiement",
+      "label": "Paiement de l'opticien"
+    },
+    {
+      "id": "actil-contact",
+      "label": "Contacter Actil"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "Comment accéder à l'espace pro Actil quand on est opticien ?",
+      "answer": "L'espace pro Actil des opticiens est sur actil.com/connexion, l'espace professionnel de santé. Il faut d'abord être conventionné : formulaire de la page Contact d'actil.com, convention signée et pièces fournies. Après vérification, Actil envoie un identifiant. La connexion demande cet identifiant, un mot de passe et, pour les comptes nominatifs, un code reçu par e-mail."
+    },
+    {
+      "question": "Actil, APICIL : sur quel site se connecter ?",
+      "answer": "L'opticien se connecte sur actil.com/connexion, l'espace professionnel de santé d'Actil. Actil est une plateforme de tiers payant créée à l'initiative du Groupe APICIL."
+    },
+    {
+      "question": "Quelles mutuelles passent par Actil pour le tiers payant optique ?",
+      "answer": "Le portail optique Actil n'affiche pas de liste de mutuelles : il retrouve le patient par son numéro de sécurité sociale. Pour savoir si un patient relève d'Actil, il faut regarder sa carte de tiers payant et lancer la recherche sur le portail. Un même assureur peut confier des contrats différents à des opérateurs différents."
+    },
+    {
+      "question": "Comment faire une demande de prise en charge optique sur Actil ?",
+      "answer": "Sur Actil, l'opticien dépose d'abord une cotation depuis son espace professionnel, en identifiant le patient par son numéro de sécurité sociale. Une fois la cotation acceptée, il la transforme en prise en charge. C'est la prise en charge qui garantit le paiement, puis l'opticien délivre et facture."
+    },
+    {
+      "question": "Que signifient les statuts d'une prise en charge Actil (accordée, en attente, refusée) ?",
+      "answer": "« Accepté / Accord N°… » signifie que la complémentaire accepte la cotation, qu'il reste à transformer en prise en charge. « En attente », « Prise en compte » et « Validation en cours » indiquent que la demande est encore en traitement. « Refusé » s'accompagne d'un motif, par exemple un dépassement de grille tarifaire, à corriger avant de refaire la demande."
+    },
+    {
+      "question": "Comment contacter Actil quand on est professionnel de santé ?",
+      "answer": "Un opticien déjà conventionné passe par son espace professionnel de santé, sur actil.com/connexion. Un opticien qui n'est pas encore partenaire utilise le formulaire de la page Contact du site. Pour un dossier précis, gardez le numéro d'accord, le statut et le motif exact affichés par le portail."
+    },
+    {
+      "question": "Sous quel délai Actil paie-t-il l'opticien ?",
+      "answer": "Actil traite chaque jour les flux reçus et permet de consulter les règlements dans l'espace privé, sur 27 mois. L'opticien peut facturer dès la livraison, dans les 2 ans, s'il est toujours conventionné, et Actil ne règle pas les factures rétroactives. Pour suivre un paiement précis, la référence reste les bordereaux Actil rapprochés des relevés bancaires."
+    }
+  ],
+  "sources": [
+    {
+      "label": "mon.apicil.com · Les avantages du réseau ACTIL",
+      "url": "https://mon.apicil.com/salon-client/les-avantages-du-reseau-actil/"
+    },
+    {
+      "label": "actil.com · Rejoignez notre nouveau réseau tiers payant optique",
+      "url": "https://www.actil.com/rejoignez-notre-nouveau-reseau-tiers-payant-optique/"
+    },
+    {
+      "label": "actil.com · Opticiens",
+      "url": "https://www.actil.com/professionnel-de-sante/opticiens/"
+    },
+    {
+      "label": "actil.com · La carte ACTIL",
+      "url": "https://www.actil.com/Portail/espacePro/PAGE-EPR-CARTE/page-epr-carte.jsp"
+    },
+    {
+      "label": "actil.com · Connexion",
+      "url": "https://www.actil.com/connexion/"
+    },
+    {
+      "label": "actil.com · FAQ",
+      "url": "https://www.actil.com/faq/"
+    },
+    {
+      "label": "actil.com · Contact",
+      "url": "https://www.actil.com/contact/"
+    },
+    {
+      "label": "actil.com · Mentions légales",
+      "url": "https://www.actil.com/mentions-legales/"
+    }
+  ],
+  "figures": [
+    {
+      "id": "parcours-actil",
+      "type": "etapes",
+      "titre": "Sur Actil, la cotation précède la prise en charge",
+      "legende": "Regardez l'étape 3 : seule la prise en charge garantit le paiement, pas la cotation acceptée.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "Déposer la cotation",
+          "detail": "Patient retrouvé par son numéro de sécurité sociale",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Lire l'accord",
+          "detail": "Statut « Accepté / Accord N°… »",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Transformer en prise en charge",
+          "detail": "L'étape qui garantit le paiement",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Délivrer l'équipement",
+          "detail": "La facturation devient possible",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Facturer",
+          "detail": "Dans les 2 ans après la livraison",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Suivre le règlement",
+          "detail": "Bordereaux en ligne sur 27 mois",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [
+    {
+      "id": "A0",
+      "slug": "portails-tiers-payant",
+      "anchor": "portails de tiers payant",
+      "type": "parent"
+    }
+  ],
+  "liensEntrants": [],
+  "remplace": [],
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-09T07:40:50.527Z",
+    "avertissements": [
+      "aucune citation (facultative)",
+      "source non vérifiable (403) : https://www.actil.com/faq/",
+      "source non vérifiable (403) : https://www.actil.com/contact/",
+      "source non vérifiable (403) : https://www.actil.com/rejoignez-notre-nouveau-reseau-tiers-payant-optique/",
+      "source non vérifiable (403) : https://www.actil.com/Portail/espacePro/PAGE-EPR-CARTE/page-epr-carte.jsp",
+      "source non vérifiable (403) : https://www.actil.com/connexion/",
+      "source non vérifiable (403) : https://www.actil.com/mentions-legales/",
+      "source non vérifiable (403) : https://www.actil.com/professionnel-de-sante/opticiens/",
+      "source non vérifiable (403) : https://mon.apicil.com/salon-client/les-avantages-du-reseau-actil/"
+    ]
+  }
+}
