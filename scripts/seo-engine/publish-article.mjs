@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // Moteur SEO Granit : rédige le prochain article de la file et l'écrit dans content/ressources/.
-// Usage : node scripts/seo-engine/publish-article.mjs [--slug portail-viamedis] [--dry] [--out dossier] [--model claude-opus-5-5]
+// Usage : node scripts/seo-engine/publish-article.mjs [--slug portail-viamedis] [--dry] [--out dossier] [--model claude-opus-5-5] [--relecture]
+//   --relecture : force la PR de relecture humaine (lot de nuit), quel que soit le nombre d'articles sortis.
 //   --dry : n'écrit que l'article (dans --out), ne touche ni à la file ni aux autres articles.
 // Le commit, la PR et la notification sont faits par le workflow (ship.sh, notify.mjs).
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
@@ -15,7 +16,7 @@ import {
 } from "./lib/site.mjs";
 
 const { values: opt } = parseArgs({
-  options: { slug: { type: "string" }, dry: { type: "boolean", default: false }, out: { type: "string" }, model: { type: "string" } },
+  options: { slug: { type: "string" }, dry: { type: "boolean", default: false }, out: { type: "string" }, model: { type: "string" }, relecture: { type: "boolean", default: false } },
 });
 
 const config = lireJson(join(MOTEUR, "config.json"));
@@ -202,7 +203,7 @@ bilan.avertissements.forEach((a) => console.log(`  ! ${a}`));
 
 // Relecture humaine (PR) pour les premiers articles et ceux qui ont des points à valider
 const dejaSortis = file.filter((a) => ["published", "review"].includes(a.status)).length;
-const relecture = dejaSortis < config.relectureDesPremiers || Boolean(article.toValidate) || Boolean(article.refonte);
+const relecture = opt.relecture || dejaSortis < config.relectureDesPremiers || Boolean(article.toValidate) || Boolean(article.refonte);
 
 // Signature : auteur et relecteur selon la catégorie. Le relecteur n'est affiché que si
 // l'article passe vraiment par une relecture humaine (PR), jamais en publication directe.
