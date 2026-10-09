@@ -162,6 +162,41 @@
       "slug": "portail-itelis",
       "anchor": "itelis tp",
       "type": "enfant"
+    },
+    {
+      "slug": "portail-almerys",
+      "anchor": "almerys tp",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-isante",
+      "anchor": "isante tp",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-sp-sante",
+      "anchor": "sp sante tp",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-oxantis",
+      "anchor": "oxantis tp",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-santeclair",
+      "anchor": "tp santeclair",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-seveane",
+      "anchor": "seveane tp",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-actil",
+      "anchor": "actil tp",
+      "type": "enfant"
     }
   ],
   "remplace": [

@@ -153,7 +153,7 @@
     {
       "label": "Téléphone opticiens",
       "valeur": "0820 20 61 88",
-      "detail": "Centre d'appel unique · N° Indigo 0,12 €/min",
+      "detail": "Centre d'appel unique · numéro surtaxé",
       "source": "sp-pages"
     },
     {
@@ -207,9 +207,9 @@
       "consulte": "2026-10-07"
     },
     "cegedim-solutions": {
-      "label": "cegedim.fr · Solutions et services (iSanté & SP Santé)",
-      "url": "https://www.cegedim.fr/solutions/Pages/default.aspx",
-      "consulte": "2026-10-07"
+      "label": "cegedim-assurances.com · Gestion externalisée du tiers payant",
+      "url": "https://www.cegedim-assurances.com/fr-fr/ext-services-metiers/Pages/gestion-externalise-tiers-payant.aspx",
+      "consulte": "2026-10-09"
     },
     "granit-connecteur": {
       "label": "Connecteur SP Santé de Granit (relevé du 07/10/2026)",
