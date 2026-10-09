@@ -1,0 +1,127 @@
+{
+  "slug": "optibot",
+  "nom": "OptiBot",
+  "modele": "outil-saisie",
+  "logo": null,
+  "checkedOn": "2026-10-09",
+  "aRelire": true,
+  "identite": {
+    "raisonSociale": "Vorreiter Activities (SASU)",
+    "siege": "Ambérieu-en-Bugey (01)",
+    "site": "https://optibot.fr/",
+    "metiers": [
+      "optique"
+    ]
+  },
+  "axes": {
+    "quiFait": {
+      "valeur": "L'opticien, avec une extension Chrome qui lit les documents et remplit les champs du portail",
+      "detail": "Scan de la carte mutuelle et de l'ordonnance, puis un clic sur « Remplir » dans le portail",
+      "source": "optibot-accueil"
+    },
+    "pec": {
+      "valeur": "partiel",
+      "detail": "Pré-remplit l'identité, le NSS et les infos de l'ordonnance ; codes LPP et montants verres / monture restent saisis à la main ; mapping Viamedis en cours de développement",
+      "source": "optibot-almerys"
+    },
+    "rejets": {
+      "valeur": "détection et alertes",
+      "detail": "Détection des rejets AMO et AMC via l'extension, alertes et relances automatiques selon règles ; correction et renvoi non publiés",
+      "source": "optibot-accueil"
+    },
+    "rapprochement": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "avance": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "engagement": {
+      "valeur": "sans engagement",
+      "detail": "Plans Pro, Cabinet et Réseau annulables à tout moment ; plan Franchise sur contrat annuel",
+      "source": "optibot-accueil"
+    },
+    "hds": {
+      "valeur": "hébergeur certifié HDS (Scaleway)",
+      "detail": "Lecture des documents (OCR) dans le navigateur du magasin ; métadonnées de suivi enregistrées côté serveur",
+      "source": "optibot-mentions"
+    },
+    "plateformes": {
+      "valeur": "47 portails annoncés + Smart Fill sur les autres",
+      "detail": "Couverture variable selon le portail : Almerys « Partiel », Viamedis « Smart Fill disponible »",
+      "source": "optibot-accueil"
+    }
+  },
+  "citations": [
+    {
+      "texte": "Un logiciel d'automatisation du tiers payant, livré sous forme d'extension Chrome et d'un tableau de bord web.",
+      "source": "optibot-accueil"
+    },
+    {
+      "texte": "Non, la couverture est partielle. OptiBot remplit le NSS de l'ouvrant droit, le nom, le prénom, la date d'ordonnance, la date de demande et le RPPS. Les codes LPP et les montants verres / monture restent saisis à la main puisqu'ils dépendent de l'équipement vendu.",
+      "source": "optibot-almerys"
+    },
+    {
+      "texte": "Le mapping dédié Viamedis est en cours de développement.",
+      "source": "optibot-viamedis"
+    },
+    {
+      "texte": "OptiBot détecte automatiquement les rejets de tiers payant (AMO et AMC) via l'extension Chrome, les centralise dans votre tableau de bord, et vous envoie des alertes en temps réel.",
+      "source": "optibot-accueil"
+    },
+    {
+      "texte": "On préfère être clairs : la connexion native à l'ERP n'existe pour l'instant que pour la famille Optimum.",
+      "source": "optibot-accueil"
+    }
+  ],
+  "meilleurSi": [
+    "on veut garder la main sur chaque saisie et seulement aller plus vite sur les portails",
+    "on travaille sur Optimum (LivebyOptimum, AS3.2, Atol Pro), seul ERP branché nativement",
+    "on veut que les images d'ordonnance et de carte mutuelle restent lues dans le navigateur du magasin",
+    "on veut tester seul, tout de suite, sans rendez-vous (essai gratuit sans carte bancaire, extension installée le jour même)"
+  ],
+  "exclus": {
+    "_pourquoi": "aucun prix sur les pages comparatives ; chiffres de performance déclarés non comparables",
+    "prix": "Pro 69,90 € HT/mois/poste, Cabinet 179 € HT/mois (3 postes), Réseau 299 € HT/mois (5 postes, +30 €/poste), Franchise sur devis à partir de 500 € HT/mois ; essai gratuit 1 mois (optibot-tarifs, optibot-accueil)",
+    "chiffresDeclares": "« 10 secondes par dossier », « 47 portails mutuelles », « 15 000€ de temps par an », ROI « 1462% », « Taux de rejet moyen […] Réduit significativement » (optibot-accueil, optibot-comparatif)",
+    "incoherences": "L'accueil et /pricing annoncent 1 mois d'essai, les pages /mutuelles/ « 7 jours d'essai gratuit » ; /comparatif affiche « 479€/an (plan Solo) » puis « 839€ » pour le plan Pro"
+  },
+  "sources": {
+    "optibot-accueil": {
+      "label": "optibot.fr · Accueil",
+      "url": "https://optibot.fr/",
+      "consulte": "2026-10-09"
+    },
+    "optibot-comparatif": {
+      "label": "optibot.fr · Comparatif",
+      "url": "https://optibot.fr/comparatif",
+      "consulte": "2026-10-09"
+    },
+    "optibot-almerys": {
+      "label": "optibot.fr · Almerys",
+      "url": "https://optibot.fr/mutuelles/almerys",
+      "consulte": "2026-10-09"
+    },
+    "optibot-viamedis": {
+      "label": "optibot.fr · Viamedis",
+      "url": "https://optibot.fr/mutuelles/viamedis",
+      "consulte": "2026-10-09"
+    },
+    "optibot-tarifs": {
+      "label": "optibot.fr · Tarifs",
+      "url": "https://optibot.fr/pricing",
+      "consulte": "2026-10-09"
+    },
+    "optibot-mentions": {
+      "label": "optibot.fr · Mentions légales",
+      "url": "https://optibot.fr/legal/mentions-legales",
+      "consulte": "2026-10-09"
+    },
+    "optibot-sous-traitants": {
+      "label": "optibot.fr · Sous-traitants",
+      "url": "https://optibot.fr/legal/sous-traitants",
+      "consulte": "2026-10-09"
+    }
+  }
+}
