@@ -44,7 +44,6 @@ export function MurPlateformes({ fiches }: { fiches: Fiche[] }) {
     (g === "tous" || e.genre === g) && (m === "tous" || e.metiers.includes(m));
   const metiers = ORDRE_METIERS.filter((v) => entrees.some((e) => e.metiers.includes(v)));
   const enLigne = entrees.filter((e) => e.fiche).length;
-  const annonces = entrees.length - enLigne;
   const dernierReleve = entrees
     .map((e) => e.checkedOn ?? "")
     .sort()
@@ -66,7 +65,7 @@ export function MurPlateformes({ fiches }: { fiches: Fiche[] }) {
 
   return (
     <section className="mx-auto max-w-[1280px] px-4 pt-14 md:px-6">
-      <div className="flex flex-wrap items-end justify-between gap-x-10 gap-y-6 border-t border-[var(--border)] pt-5">
+      <div className="border-t border-[var(--border)] pt-5">
         <div className="max-w-[56ch]">
           <p className={`${mono} text-[var(--text-muted)]`}>Annuaire du tiers payant</p>
           <h2 className="mt-2 font-serif text-[26px] font-normal leading-tight md:text-[34px]">
@@ -77,18 +76,6 @@ export function MurPlateformes({ fiches }: { fiches: Fiche[] }) {
             le portail lui-même, communes à tous les métiers.
           </p>
         </div>
-        <dl className="flex items-end gap-6 md:gap-8">
-          <Compteur
-            valeur={enLigne}
-            libelle={enLigne > 1 ? "portails relevés" : "portail relevé"}
-          />
-          {annonces > 0 && (
-            <>
-              <span aria-hidden className="mb-1 h-12 w-px bg-[var(--border)]" />
-              <Compteur valeur={annonces} libelle="en préparation" pale />
-            </>
-          )}
-        </dl>
       </div>
 
       <div className="mt-8 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
@@ -170,19 +157,6 @@ export function MurPlateformes({ fiches }: { fiches: Fiche[] }) {
         {dernierReleve && <span>Dernier relevé le {dateFr(dernierReleve)}</span>}
       </p>
     </section>
-  );
-}
-
-function Compteur({ valeur, libelle, pale }: { valeur: number; libelle: string; pale?: boolean }) {
-  return (
-    <div className="flex flex-col-reverse">
-      <dt className={`${mono} mt-1.5 text-[var(--text-muted)]`}>{libelle}</dt>
-      <dd
-        className={`font-serif text-[44px] leading-[0.85] tabular-nums md:text-[60px] ${pale ? "text-[var(--text-muted)]" : "text-[var(--text)]"}`}
-      >
-        {valeur}
-      </dd>
-    </div>
   );
 }
 
