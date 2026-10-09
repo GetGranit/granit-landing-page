@@ -93,10 +93,6 @@
       "source": "granit-connecteur"
     },
     {
-      "fait": "Itelis fait partie de l'Association des plateformes de santé (APFS), avec Carte Blanche Partenaires, Kalixia, Santéclair et Sévéane.",
-      "source": "acuite-apfs"
-    },
-    {
       "fait": "Une réclamation reçoit un accusé de réception sous 10 jours ouvrables au plus. Elle est traitée en 15 jours ouvrés, jusqu'à deux mois si le dossier est complexe.",
       "source": "itelis-mentions"
     },
@@ -203,11 +199,6 @@
     "itelis-mentions": {
       "label": "itelis.fr · Mentions légales et réclamations",
       "url": "https://www.itelis.fr/mentions-legales-et-reclamations",
-      "consulte": "2026-10-07"
-    },
-    "acuite-apfs": {
-      "label": "Acuité · Fraude et données de santé : les réseaux de soins veulent imposer leur solution de conformité",
-      "url": "https://www.acuite.fr/actualite/ocam/329635/fraude-et-donnees-de-sante-les-reseaux-de-soins-veulent-imposer-leur-solution",
       "consulte": "2026-10-07"
     },
     "granit-connecteur": {
