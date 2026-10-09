@@ -1,0 +1,197 @@
+{
+  "slug": "portail-itelis",
+  "id": "A5",
+  "category": "plateformes",
+  "categoryName": "Plateformes et portails",
+  "type": "plateforme",
+  "plateforme": "itelis",
+  "title": "Itelis TP pour les opticiens : espace pro, prise en charge, statuts et paiement",
+  "primaryKeyword": "itelis tp",
+  "keywordCluster": [
+    "itelis opticien",
+    "tp itelis",
+    "opticien itelis",
+    "itelis opticiens",
+    "réseau itelis opticien",
+    "reseau itelis opticien",
+    "reseau optique itelis",
+    "reseau itelis optique",
+    "opticien du reseau itelis",
+    "trouver un opticien itelis"
+  ],
+  "parentSlug": "portails-tiers-payant",
+  "level": "Fille",
+  "author": {
+    "name": "Olivier",
+    "jobTitle": "Rédacteur, expert tiers payant",
+    "photo": "/auteurs/olivier.jpg",
+    "url": null
+  },
+  "reviewer": {
+    "name": "Nathalie",
+    "jobTitle": "Rédactrice, experte métier optique",
+    "photo": "/auteurs/nathalie.jpg",
+    "url": null
+  },
+  "datePublished": "2026-10-09",
+  "dateModified": "2026-10-09",
+  "checkedOn": "2026-10-07",
+  "wordCount": 2104,
+  "readTime": 9,
+  "metaDescription": "Itelis TP pour opticiens : connexion à l'espace pro, conventionnement, prise en charge, statuts, paiement et contacts. Les faits vérifiés, sourcés et datés.",
+  "contentHtml": "<p><strong>Itelis TP, c'est le tiers payant optique pratiqué par les opticiens partenaires du réseau de soins Itelis : pour y accéder, le magasin doit être conventionné, puis il se connecte à l'extranet avec son identifiant (n° IFAM ou FINESS), son mot de passe et un code reçu par e-mail.</strong> Itelis n'est pas un simple payeur. C'est un réseau qui négocie des tarifs avec des opticiens pour le compte de complémentaires santé, et le tiers payant fait partie de ce qu'il promet aux assurés chez un partenaire.</p><p>Cette page rassemble ce qu'Itelis publie lui-même et ce que nos agents relèvent sur son portail : qui est concerné, comment entrer dans l'espace pro, comment se passe le conventionnement, ce que l'on sait (et ce que l'on ne sait pas) des statuts et du paiement, et qui contacter. Pour situer Itelis parmi les autres opérateurs, voyez notre panorama des <a href=\"/ressources/portails-tiers-payant\">portails de tiers payant</a>.</p><div class=\"key-takeaways\"><strong>L'essentiel</strong><ul><li>Itelis est un <a href=\"https://www.itelis.fr/a-propos-ditelis\">réseau de soins, marque de la société Isea depuis 2021</a>, qui revendique <a href=\"https://www.itelis.fr/vos-services-sante/acces-aux-opticiens-partenaires\">3 700 opticiens partenaires</a>.</li><li>Le partenariat se signe magasin par magasin, y compris dans une enseigne : faire partie de Krys, Optical Center ou Optic 2000 ne suffit pas.</li><li>Connexion à l'extranet : identifiant IFAM ou FINESS, mot de passe, puis code envoyé par e-mail, valable 10 minutes.</li><li>Un magasin dont le dossier de conventionnement n'est pas à jour est renvoyé vers un formulaire et n'accède pas à l'extranet.</li><li>Une fois conventionné, contactez Itelis par la messagerie sécurisée de l'extranet, pas par le formulaire du site.</li></ul></div><h2 id=\"itelis-mutuelles\">Qu'est-ce qu'Itelis et quelles mutuelles passent par lui ?</h2><p>Itelis est un réseau de soins : il négocie des tarifs avec des professionnels de santé partenaires, en optique, audio, dentaire et d'autres domaines, pour le compte de complémentaires santé (AMC, assurance maladie complémentaire).</p><div data-bloc=\"chiffres\"></div><p>Créé en 2001, Itelis est depuis 2021 une marque de la société Isea, selon sa page <a href=\"https://www.itelis.fr/a-propos-ditelis\">À propos</a>. En optique, le réseau annonce 3 700 opticiens partenaires et indique que <a href=\"https://www.itelis.fr/professionnels-de-sante/adhesion-au-reseau-dopticiens-itelis\">13 M d'assurés ont accès au réseau</a>. Itelis fait partie de l'Association des plateformes de santé (APFS), avec Carte Blanche Partenaires, Kalixia, Santéclair et Sévéane, comme le rappelle <a href=\"https://www.acuite.fr/actualite/ocam/329635/fraude-et-donnees-de-sante-les-reseaux-de-soins-veulent-imposer-leur-solution\">Acuité</a>.</p><h3>Ce que l'assuré s'attend à trouver chez un opticien Itelis</h3><p>Un client qui vient chez vous parce que vous êtes opticien du réseau Itelis arrive avec des attentes précises. Itelis lui annonce, chez un partenaire, un prix de verre négocié, le tiers payant et une garantie casse incluse. Les opticiens partenaires distribuent les verres de 8 verriers : BBGR, Codir, Essilor, Hoya, Nikon, Novacel, Seiko et Zeiss.</p><p>Certains contrats incluent en plus l'option OPTI, signalée par un logo sur la carte de tiers payant. Elle prévoit notamment des verres haut de gamme 100 % remboursés selon la correction, et une 2e paire solaire à la vue pour 1 € TTC, d'après la <a href=\"https://www.itelis.fr/vos-services-sante/acces-aux-opticiens-partenaires\">page Itelis consacrée aux opticiens partenaires</a>.</p><p>Itelis met aussi en avant ses résultats. Selon le réseau, en 2025, 2 sur 3 équipements optiques ont été vendus sans reste à charge, et 58 % des verres unifocaux comme 69 % des verres progressifs vendus dans le réseau étaient des verres évolués ou individualisés. Ces chiffres sont ceux qu'Itelis publie sur sa <a href=\"https://www.itelis.fr/professionnels-de-sante/adhesion-au-reseau-dopticiens-itelis\">page d'adhésion au réseau d'opticiens</a> ; ils décrivent le réseau, pas votre magasin.</p><h3>Quelles complémentaires donnent accès à Itelis ?</h3><p>Le site itelis.fr <a href=\"https://www.itelis.fr/acceder-vos-services\">liste 61 complémentaires, assureurs et courtiers</a> dont les assurés ont accès aux services Itelis, par exemple AG2R La Mondiale, AXA, Klesia ou Mutuelle Ociane Matmut. Cette liste dit qui a ouvert l'accès au réseau à ses assurés. Elle ne dit pas que chaque contrat de ces organismes passe par Itelis pour l'optique.</p><p>Sur d'autres portails, nous publions la liste du sélecteur d'organisme proposé lors d'une demande optique. Pour Itelis, ce relevé n'existe pas encore : notre connecteur s'arrête à la connexion et ne lit pas de sélecteur d'organisme, si bien que la liste ci-dessous reste vide pour l'instant.</p><div data-bloc=\"organismes\"></div><div class=\"callout callout--tip\"><p><strong>Le bon réflexe :</strong> regardez la carte de tiers payant du client avant d'ouvrir le portail. Si elle porte le logo OPTI, le contrat inclut cette option et ses conditions propres sur les verres et la paire solaire, à prendre en compte dès le devis.</p></div><h2 id=\"itelis-espace-pro\">Comment accéder à l'espace pro Itelis TP ?</h2><p>Deux cas se présentent. Si votre magasin est déjà conventionné, vous vous connectez à l'extranet (extranet.itelis.fr) avec votre identifiant, votre mot de passe et un code reçu par e-mail. S'il ne l'est pas, il faut d'abord passer par l'adhésion en ligne sur conventionnement.itelis.fr.</p><h3>Se connecter quand le magasin est conventionné</h3><p>Chaque magasin a son propre compte. Un groupe de plusieurs points de vente gère donc autant de connexions que de magasins. Voici le parcours tel que nos agents le relèvent sur le portail :</p><ol class=\"steps\"><li><strong>Ouvrir l'accès professionnel depuis itelis.fr.</strong> La connexion mène à l'extranet partenaire.</li><li><strong>Saisir l'identifiant du magasin.</strong> C'est le n° IFAM ou le n° FINESS, avec le mot de passe associé.</li><li><strong>Récupérer le code de vérification.</strong> Il est envoyé par e-mail à l'adresse rattachée au compte.</li><li><strong>Saisir le code sans attendre.</strong> Il expire au bout de 10 minutes ; au-delà, il faut en demander un nouveau.</li></ol><div class=\"callout callout--warn\"><p><strong>Le piège :</strong> le code part vers l'adresse e-mail du compte, pas vers celle de la personne qui se connecte. Si cette boîte n'est pas consultée au comptoir, la connexion échoue, et le code de 10 minutes expire avant d'être lu.</p></div><p>Un autre blocage surprend souvent : un magasin dont le dossier de conventionnement n'est pas à jour est renvoyé, après connexion, vers un formulaire de conventionnement. Il n'accède pas à l'extranet tant que ce formulaire n'est pas complété. Si vous tombez sur cet écran au lieu de votre tableau de bord, ce n'est pas un problème de mot de passe : c'est le dossier qu'il faut compléter.</p><h3>Devenir partenaire : les étapes du conventionnement</h3><p>Le partenariat Itelis est signé avec chaque opticien, un par un, y compris dans les enseignes Krys, Optical Center ou Optic 2000, ainsi qu'avec des indépendants. Itelis décrit un parcours en cinq temps sur sa <a href=\"https://www.itelis.fr/professionnels-de-sante/adhesion-au-reseau-dopticiens-itelis\">page d'adhésion</a> :</p><ol class=\"steps\"><li><strong>Préparer les pièces.</strong> Attestation de certification AFNOR ou Veritas, facture ou attestation du logiciel opticien, attestation IFAM ou relevé de compte CPAM anonymisé, extrait Kbis ou attestation Sirene, photos de l'espace de réfraction et plan du magasin, RIB.</li><li><strong>Remplir la demande d'adhésion en ligne.</strong> Elle se fait sur conventionnement.itelis.fr, rubrique réseau optique.</li><li><strong>Compléter le dossier.</strong> Vous recevez vos identifiants, vous vous connectez et vous déposez les pièces.</li><li><strong>Signer la convention en ligne.</strong> La signature intervient après vérification du dossier par Itelis.</li><li><strong>Saisir les premières demandes.</strong> Vous vous connectez à l'extranet pour vos premières prises en charge.</li></ol><div data-figure=\"itelis-conventionnement\"></div><p>Le partenariat est sans durée d'engagement. L'opticien peut quitter le réseau à tout moment avec un préavis d'un mois, par lettre recommandée avec accusé de réception. Préparez les photos de l'espace de réfraction et le plan du magasin avant de commencer : ce sont souvent les pièces que l'on n'a pas sous la main le jour où l'on remplit la demande.</p><h2 id=\"itelis-prise-en-charge\">Comment faire une prise en charge optique sur Itelis ?</h2><p>La demande de prise en charge se saisit sur l'extranet, par un magasin conventionné et connecté. Itelis ne publie pas en accès libre le détail des champs de cette demande, et notre relevé du portail s'arrête aujourd'hui à l'écran de connexion : nous ne décrivons donc pas ici les écrans de saisie.</p><p>Ce que l'on peut dire avec certitude tient en trois points. D'abord, l'accès passe par la connexion décrite plus haut, code e-mail compris. Ensuite, la demande n'est possible qu'une fois la convention signée et le dossier à jour. Enfin, la carte de tiers payant du client indique si son contrat comporte l'option OPTI, ce qui change ce que vous pouvez proposer.</p><p>Pour le reste, une demande Itelis suit la logique de toute prise en charge optique : vérifier les droits du client, établir l'équipement, transmettre la demande, attendre la réponse avant de facturer en tiers payant. Les étapes communes, de la vérification de la carte jusqu'à l'encaissement, sont détaillées dans notre guide du <a href=\"/ressources/tiers-payant-opticien\">tiers payant opticien</a>. Pour comparer avec un portail dont nous relevons davantage d'écrans, consultez notre page sur le <a href=\"/ressources/portail-viamedis\">portail Viamedis</a>.</p><p>Quand ces connexions se répètent chaque jour sur plusieurs portails, avec un code e-mail différent à chaque fois, la saisie devient le goulot du magasin. C'est ce que prennent en charge les <a href=\"/agents\">agents de Granit</a> : ils se connectent aux portails des plateformes à la place de l'équipe et lui renvoient l'état des dossiers.</p><h2 id=\"itelis-statuts\">Que veulent dire les statuts d'une prise en charge Itelis ?</h2><p>Itelis ne publie pas, sur les pages publiques consultées le 07/10/2026, de liste officielle des statuts d'une prise en charge optique, et notre connecteur ne relève pas encore cet écran. Le tableau ci-dessous sera complété dès que ces statuts seront relevés.</p><div data-bloc=\"statuts\"></div><p>En attendant, une règle de prudence s'applique à tous les portails : lisez le libellé exact affiché par l'extranet, sans l'interpréter. Tant que le portail n'affiche pas un accord, considérez que le dossier n'est pas acquis et ne remettez pas l'équipement en tiers payant sur la seule foi du devis.</p><p>Gardez aussi une trace de chaque statut avec sa date. Si un paiement manque ou si une réclamation devient nécessaire, cette chronologie est la première chose qu'on vous demandera.</p><h2 id=\"itelis-vous-bloquez\">Vous bloquez sur Itelis ?</h2><p>Voici les quatre situations qui coincent le plus souvent au comptoir, classées par symptôme. Pour chacune : où vérifier, quel geste faire, qui contacter (les coordonnées sont dans la section contact plus bas).</p><h3>Je ne trouve pas la mutuelle dans la liste</h3><p>Commencez par la carte de tiers payant du client : c'est elle qui indique par quel réseau passe son contrat, et si l'option OPTI s'applique. Vérifiez ensuite que l'organisme figure parmi les 61 complémentaires, assureurs et courtiers listés sur itelis.fr. Nous ne relevons pas encore le sélecteur d'organisme du portail Itelis : si la mutuelle n'apparaît pas à l'écran, interrogez Itelis par la messagerie sécurisée de l'extranet.</p><h3>La prise en charge est refusée</h3><p>Itelis ne publie pas de liste de motifs de refus sur ses pages publiques. Relevez le motif affiché, vérifiez les droits sur la carte du client, puis corrigez ce que le motif désigne avant de renvoyer une demande. Si le motif reste obscur, posez la question par la messagerie de l'extranet en citant le dossier.</p><h3>Elle reste en attente, sans réponse</h3><p>Itelis ne publie pas de délai de réponse propre aux demandes optiques. Si l'attente se prolonge, passez par la messagerie sécurisée de l'extranet. Si l'échange n'aboutit pas, une réclamation formelle est possible : Itelis s'engage sur un accusé de réception sous 10 jours ouvrables au plus et un traitement en 15 jours ouvrés, jusqu'à deux mois pour un dossier complexe.</p><h3>L'accord est obtenu, mais le paiement n'arrive pas</h3><p>Itelis ne publie pas de délai de paiement. Vérifiez d'abord que le RIB transmis lors du conventionnement est toujours le bon compte, puis rapprochez vos relevés bancaires des factures concernées. Si le virement manque toujours, écrivez via la messagerie de l'extranet, puis ouvrez une réclamation si nécessaire.</p><p>Gardez le motif exact affiché par le portail : c'est lui qui dit quoi corriger.</p><h2 id=\"itelis-paiement\">Quand et comment Itelis paie-t-il l'opticien ?</h2><p>Itelis ne publie pas, sur les pages consultées le 07/10/2026, de délai ni de modalité de paiement propres à l'optique. Nous n'avançons donc aucun délai : tout chiffre que vous lirez ailleurs sans source Itelis est à prendre avec précaution.</p><p>Le seul élément publié qui touche au paiement est le RIB, demandé parmi les pièces du conventionnement. C'est sur ce compte que vous attendez les règlements : si le magasin change de banque, mettez le dossier à jour avant que les virements ne s'égarent.</p><p>Côté magasin, le réflexe utile est de rapprocher chaque règlement de sa facture, dossier par dossier, et de repérer vite ceux qui manquent. Notre guide du <a href=\"/ressources/tiers-payant-opticien\">tiers payant opticien</a> détaille ce suivi, de la prise en charge à l'encaissement. Pour un écart qui persiste, la voie est la même que pour un paiement absent : messagerie de l'extranet d'abord, réclamation ensuite.</p><h2 id=\"itelis-contact\">Comment contacter Itelis ?</h2><p>Le bon canal dépend de votre situation. Un magasin déjà conventionné écrit par la messagerie sécurisée de l'extranet : selon la <a href=\"https://www.itelis.fr/contact\">page contact d'Itelis</a>, le formulaire du site n'est pas prévu pour les partenaires. Un magasin pas encore conventionné utilise ce formulaire en choisissant « Professionnel de santé non conventionné ».</p><div data-bloc=\"contacts\"></div><p>Pour une réclamation, Itelis indique deux voies sur sa page <a href=\"https://www.itelis.fr/mentions-legales-et-reclamations\">mentions légales et réclamations</a> : la messagerie de l'espace partenaire, ou un courrier à ISEA, Service réclamations, 218 avenue Jean Jaurès, 75019 Paris. L'accusé de réception arrive sous 10 jours ouvrables au plus, et le traitement prend 15 jours ouvrés, jusqu'à deux mois si le dossier est complexe.</p><p>Quel que soit le canal, joignez le numéro de dossier, la date de la demande et le libellé exact du statut ou du motif affiché. Un message précis évite un aller-retour et raccourcit la réponse.</p>",
+  "tocItems": [
+    {
+      "id": "itelis-mutuelles",
+      "label": "Itelis et les mutuelles concernées"
+    },
+    {
+      "id": "itelis-espace-pro",
+      "label": "Accéder à l'espace pro Itelis TP"
+    },
+    {
+      "id": "itelis-prise-en-charge",
+      "label": "Faire une prise en charge optique"
+    },
+    {
+      "id": "itelis-statuts",
+      "label": "Les statuts d'une prise en charge"
+    },
+    {
+      "id": "itelis-vous-bloquez",
+      "label": "Vous bloquez sur Itelis ?"
+    },
+    {
+      "id": "itelis-paiement",
+      "label": "Le paiement de l'opticien"
+    },
+    {
+      "id": "itelis-contact",
+      "label": "Contacter Itelis"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "Comment accéder à l'espace pro Itelis quand on est opticien ?",
+      "answer": "Le magasin se connecte à l'extranet Itelis avec son identifiant (n° IFAM ou FINESS) et son mot de passe, puis saisit un code envoyé par e-mail à l'adresse du compte. Ce code expire au bout de 10 minutes. Si le dossier de conventionnement n'est pas à jour, le portail renvoie vers un formulaire et bloque l'accès à l'extranet tant qu'il n'est pas complété."
+    },
+    {
+      "question": "Quelles mutuelles passent par Itelis pour le tiers payant optique ?",
+      "answer": "Le site itelis.fr liste 61 complémentaires, assureurs et courtiers dont les assurés ont accès aux services Itelis, par exemple AG2R La Mondiale, AXA, Klesia ou Mutuelle Ociane Matmut. Cette liste ne signifie pas que chaque contrat de ces organismes passe par Itelis en optique. Vérifiez la carte de tiers payant du client avant d'ouvrir un dossier."
+    },
+    {
+      "question": "Comment faire une demande de prise en charge optique sur Itelis ?",
+      "answer": "La demande se saisit sur l'extranet Itelis, par un magasin conventionné qui s'est connecté avec son identifiant, son mot de passe et le code reçu par e-mail. Itelis ne publie pas en accès libre le détail des champs de la demande. Ayez la carte de tiers payant du client sous la main pour repérer une éventuelle option OPTI."
+    },
+    {
+      "question": "Que signifient les statuts d'une prise en charge Itelis (accordée, en attente, refusée) ?",
+      "answer": "Itelis ne publie pas de liste officielle de ses statuts de prise en charge optique sur ses pages publiques. Lisez le libellé exact affiché par l'extranet et considérez le dossier comme non acquis tant qu'aucun accord n'apparaît. En cas de refus, le motif affiché indique quoi corriger."
+    },
+    {
+      "question": "Comment contacter Itelis quand on est professionnel de santé ?",
+      "answer": "Un opticien déjà conventionné contacte Itelis par la messagerie sécurisée de l'extranet, car le formulaire du site n'est pas prévu pour les partenaires. Un opticien non conventionné utilise le formulaire de contact d'itelis.fr en choisissant « Professionnel de santé non conventionné ». Les réclamations passent par la messagerie de l'espace partenaire ou par courrier à ISEA, Service réclamations, 218 avenue Jean Jaurès, 75019 Paris."
+    },
+    {
+      "question": "Sous quel délai Itelis paie-t-il l'opticien ?",
+      "answer": "Itelis ne publie pas de délai de paiement propre à l'optique sur ses pages publiques. Les règlements sont attendus sur le compte dont le RIB a été fourni lors du conventionnement. Si un paiement manque, écrivez via la messagerie de l'extranet, puis ouvrez une réclamation : accusé de réception sous 10 jours ouvrables au plus, traitement en 15 jours ouvrés, jusqu'à deux mois si le dossier est complexe."
+    },
+    {
+      "question": "Comment savoir si un opticien est partenaire Itelis ?",
+      "answer": "Le partenariat Itelis est signé avec chaque opticien, un par un, y compris dans les enseignes Krys, Optical Center ou Optic 2000. Appartenir à une enseigne ne rend donc pas un magasin partenaire. Un magasin partenaire a signé sa convention en ligne et accède à l'extranet Itelis avec son propre identifiant."
+    }
+  ],
+  "sources": [
+    {
+      "label": "itelis.fr · À propos d'Itelis",
+      "url": "https://www.itelis.fr/a-propos-ditelis"
+    },
+    {
+      "label": "itelis.fr · Réseau d'opticiens partenaires",
+      "url": "https://www.itelis.fr/vos-services-sante/acces-aux-opticiens-partenaires"
+    },
+    {
+      "label": "itelis.fr · Adhésion au réseau d'opticiens Itelis",
+      "url": "https://www.itelis.fr/professionnels-de-sante/adhesion-au-reseau-dopticiens-itelis"
+    },
+    {
+      "label": "Acuité · Fraude et données de santé : les réseaux de soins veulent imposer leur solution de conformité",
+      "url": "https://www.acuite.fr/actualite/ocam/329635/fraude-et-donnees-de-sante-les-reseaux-de-soins-veulent-imposer-leur-solution"
+    },
+    {
+      "label": "itelis.fr · Accéder à vos services",
+      "url": "https://www.itelis.fr/acceder-vos-services"
+    },
+    {
+      "label": "itelis.fr · Contact",
+      "url": "https://www.itelis.fr/contact"
+    },
+    {
+      "label": "itelis.fr · Mentions légales et réclamations",
+      "url": "https://www.itelis.fr/mentions-legales-et-reclamations"
+    }
+  ],
+  "figures": [
+    {
+      "id": "itelis-conventionnement",
+      "type": "etapes",
+      "titre": "Devenir opticien partenaire Itelis",
+      "legende": "La convention se signe en ligne, après vérification du dossier : c'est elle qui ouvre l'extranet.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "Préparer les pièces",
+          "detail": "Certification, Kbis, photos, plan, RIB",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Demande d'adhésion",
+          "detail": "En ligne sur conventionnement.itelis.fr",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Compléter le dossier",
+          "detail": "Identifiants reçus, dépôt des pièces",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Signer la convention",
+          "detail": "Après vérification du dossier par Itelis",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Premières demandes",
+          "detail": "Saisies sur l'extranet",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [
+    {
+      "id": "A0",
+      "slug": "portails-tiers-payant",
+      "anchor": "portails de tiers payant",
+      "type": "parent"
+    }
+  ],
+  "liensEntrants": [],
+  "remplace": [],
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-09T07:45:54.057Z",
+    "avertissements": [
+      "aucune citation (facultative)",
+      "source non vérifiable (403) : https://www.itelis.fr/acceder-vos-services",
+      "source non vérifiable (403) : https://www.itelis.fr/vos-services-sante/acces-aux-opticiens-partenaires",
+      "source non vérifiable (403) : https://www.itelis.fr/a-propos-ditelis",
+      "source non vérifiable (403) : https://www.itelis.fr/contact",
+      "source non vérifiable (403) : https://www.itelis.fr/professionnels-de-sante/adhesion-au-reseau-dopticiens-itelis",
+      "source non vérifiable (403) : https://www.itelis.fr/mentions-legales-et-reclamations"
+    ]
+  }
+}

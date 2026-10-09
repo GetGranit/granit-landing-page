@@ -164,7 +164,13 @@
       "type": "parent"
     }
   ],
-  "liensEntrants": [],
+  "liensEntrants": [
+    {
+      "slug": "portail-itelis",
+      "anchor": "Itelis TP pour les opticiens : espace pro, prise en charge, statuts et paiement",
+      "type": "soeur"
+    }
+  ],
   "remplace": [],
   "moteur": {
     "model": "claude-opus-5-5",
