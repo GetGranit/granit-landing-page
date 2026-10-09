@@ -164,7 +164,13 @@
       "type": "parent"
     }
   ],
-  "liensEntrants": [],
+  "liensEntrants": [
+    {
+      "slug": "portail-almerys",
+      "anchor": "almerys tp",
+      "type": "soeur"
+    }
+  ],
   "remplace": [],
   "moteur": {
     "model": "claude-opus-5-5",
