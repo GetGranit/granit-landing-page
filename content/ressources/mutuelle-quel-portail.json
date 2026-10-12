@@ -1,0 +1,167 @@
+{
+  "slug": "mutuelle-quel-portail",
+  "id": "A13",
+  "category": "plateformes",
+  "categoryName": "Plateformes et portails",
+  "type": "standard",
+  "plateforme": null,
+  "title": "Ma mutuelle passe par quel portail ? (outil gratuit + numéro AMC)",
+  "primaryKeyword": "numéro amc c'est quoi",
+  "keywordCluster": [
+    "numeros amc",
+    "numero amc c'est quoi",
+    "optoamc",
+    "liste des amc",
+    "liste code amc mutuelle"
+  ],
+  "parentSlug": "portails-tiers-payant",
+  "level": "Fille (outil)",
+  "author": {
+    "name": "Olivier",
+    "jobTitle": "Rédacteur, expert tiers payant",
+    "photo": "/auteurs/olivier.jpg",
+    "url": null
+  },
+  "reviewer": {
+    "name": "Nathalie",
+    "jobTitle": "Rédactrice, experte métier optique",
+    "photo": "/auteurs/nathalie.jpg",
+    "url": null
+  },
+  "datePublished": "2026-10-12",
+  "dateModified": "2026-10-12",
+  "checkedOn": null,
+  "wordCount": 2135,
+  "readTime": 9,
+  "metaDescription": "Numéro AMC c'est quoi ? Où le lire sur la carte de tiers payant et comment trouver le bon portail de la mutuelle, avec notre relevé gratuit de 281 mutuelles.",
+  "contentHtml": "<p><strong>Le numéro AMC (AMC pour assurance maladie complémentaire) est le code qui identifie l'organisme complémentaire du client sur sa carte de tiers payant. Avec la plateforme indiquée sur cette carte, il vous dit vers quel portail envoyer la prise en charge.</strong> Si vous cherchez « numéro AMC c'est quoi » au comptoir, retenez ceci : le nom commercial de la mutuelle ne suffit pas, c'est la carte qui tranche. Cette page explique où lire le numéro AMC, comment passer de la carte au bon portail, et comment utiliser notre relevé gratuit mutuelle → portail, établi par nos agents sur 281 mutuelles.</p><p>En optique, la demande de prise en charge part avant la délivrance de l'équipement, sur le portail de la plateforme qui gère le tiers payant pour le compte de la complémentaire. Se tromper de portail, c'est perdre plusieurs minutes au comptoir, ou bloquer un dossier que le client croit réglé. Les sections ci-dessous vont du plus simple (lire la carte) au plus délicat (la mutuelle introuvable).</p><div class=\"key-takeaways\"><strong>L'essentiel</strong><ul><li>Le numéro AMC identifie l'organisme complémentaire qui couvre le client. Il figure sur la carte de tiers payant et ne se confond pas avec le numéro d'adhérent.</li><li>Le portail dépend de la plateforme qui gère le tiers payant pour cet organisme : la carte l'indique souvent par un logo ou une mention.</li><li>Notre relevé couvre 281 mutuelles et montre ce que propose le sélecteur des portails. Il ne dit pas qu'une mutuelle passe uniquement par un portail.</li><li>Au comptoir : lisez la carte, repérez la plateforme, puis vérifiez que l'organisme figure dans le sélecteur du portail avant de saisir.</li><li>Si la mutuelle n'apparaît nulle part, vérifiez la validité de la carte et la ligne optique avant d'appeler l'organisme.</li></ul></div><h2 id=\"numero-amc-c-est-quoi\">Numéro AMC c'est quoi, et où le lire sur la carte ?</h2><p><strong>Le numéro AMC est l'identifiant de l'organisme d'assurance maladie complémentaire qui couvre votre client.</strong> Il désigne l'organisme, pas la personne. Deux clients couverts par le même organisme peuvent donc présenter le même numéro AMC, alors que leurs numéros d'adhérent diffèrent.</p><p>Pour situer ce numéro, il faut repartir des deux étages du remboursement. L'AMO (assurance maladie obligatoire) rembourse la part de base, à partir de la carte Vitale. L'AMC (mutuelle, société d'assurance ou institution de prévoyance) prend en charge tout ou partie du reste. Comme le rappelle <a href=\"https://www.ameli.fr/assure/remboursements/etre-bien-rembourse/tiers-payant\">ameli.fr</a>, le tiers payant dispense le patient de l'avance de frais : le professionnel est réglé directement, par l'Assurance maladie pour la part obligatoire et par la complémentaire pour sa part, quand le contrat le prévoit.</p><p>La fiche de <a href=\"https://www.service-public.fr/particuliers/vosdroits/F167\">service-public.fr</a> sur le tiers payant fait la même distinction entre les deux parts. Pour la part complémentaire, c'est la carte de tiers payant remise par l'organisme qui ouvre le droit, pas la carte Vitale. C'est donc sur cette carte que tout se joue pour la prise en charge optique.</p><h3>Où le trouver sur la carte de tiers payant</h3><p>La présentation des cartes varie d'un organisme à l'autre, et le libellé du champ aussi. Cherchez la zone qui identifie l'organisme complémentaire : un code numérique, souvent placé près de son nom ou de son logo, distinct du numéro d'adhérent. Sur la même carte, vous trouverez en général :</p><ul><li>le nom de l'organisme et son numéro AMC ;</li><li>le numéro d'adhérent et les bénéficiaires couverts (l'ouvrant droit et ses ayants droit) ;</li><li>la période de validité de la carte ;</li><li>les types de soins pour lesquels le tiers payant est ouvert, dont l'optique ;</li><li>la mention ou le logo de la plateforme qui gère le tiers payant, quand l'organisme en a confié la gestion.</li></ul><h3>Numéro AMC, adhérent, NIR : qui identifie quoi</h3><p>Ces identifiants se ressemblent sur une carte remplie de chiffres. Les confondre est la première source de saisie erronée. Le tableau ci-dessous remet chaque information à sa place.</p><div class=\"tbl\"><table><tr><th>Information</th><th>Ce qu'elle identifie</th><th>À quoi elle sert au comptoir</th></tr><tr><td>Numéro AMC</td><td>L'organisme complémentaire</td><td>Choisir le bon organisme dans le portail</td></tr><tr><td>Numéro d'adhérent</td><td>L'assuré dans les fichiers de l'organisme</td><td>Retrouver les droits du client</td></tr><tr><td>NIR (numéro de sécurité sociale)</td><td>La personne auprès de l'AMO</td><td>Traiter la part obligatoire, via la carte Vitale</td></tr><tr><td>Logo ou mention de plateforme</td><td>Le gestionnaire du tiers payant</td><td>Choisir le portail où saisir la demande</td></tr></table></div><h2 id=\"amc-et-portail\">Pourquoi le numéro AMC ne suffit-il pas à trouver le portail ?</h2><p><strong>Parce que le numéro AMC dit qui paie, pas qui gère la demande.</strong> Beaucoup d'organismes complémentaires confient la gestion du tiers payant à une plateforme, aussi appelée opérateur de tiers payant. C'est elle qui reçoit les demandes de prise en charge, répond à l'opticien et organise le paiement. Le portail sur lequel vous saisissez est donc celui de la plateforme, pas celui de la mutuelle.</p><p>Concrètement, la question « par quel portail passe cette mutuelle ? » revient à chercher quelle plateforme gère son tiers payant optique. Viamedis, Almerys, Santéclair, Itelis, SP Santé, Actil, iSanté ou Sévéane en font partie, chacun avec son espace professionnel et ses règles de saisie. Nos fiches détaillent les plus courants, par exemple <a href=\"/ressources/portail-viamedis\">viamedis tp</a>, <a href=\"/ressources/portail-almerys\">almerys tp</a> ou <a href=\"/ressources/portail-itelis\">Itelis TP</a>.</p><p>Le nom donné par le client ne suffit pas non plus. Un contrat peut être vendu sous une marque, porté par un organisme au nom différent, et géré par une plateforme encore distincte. C'est pourquoi la carte reste le point de départ : elle réunit l'organisme, son numéro AMC et, souvent, la plateforme. Le schéma ci-dessous résume le chemin, de la carte jusqu'à la réponse.</p><div data-figure=\"carte-vers-portail\"></div><h2 id=\"trouver-portail-mutuelle\">Comment savoir par quel portail passe une mutuelle ?</h2><p><strong>La méthode la plus sûre combine la carte du client et le sélecteur du portail : la carte indique la plateforme, le sélecteur confirme que l'organisme y est proposé.</strong> Les deux vérifications prennent moins de temps qu'une saisie recommencée sur un autre portail.</p><ol class=\"steps\"><li><strong>Demander la carte de tiers payant en cours de validité.</strong> Vérifiez les dates avant tout le reste : une carte de l'an dernier peut renvoyer vers un organisme ou une plateforme qui ne gère plus le contrat.</li><li><strong>Repérer la plateforme sur la carte.</strong> Cherchez un logo ou une mention de gestionnaire du tiers payant, souvent près des informations destinées aux professionnels de santé.</li><li><strong>Noter le nom de l'organisme et le numéro AMC.</strong> Ce sont eux qui vous permettront de reconnaître l'organisme dans la liste du portail.</li><li><strong>Contrôler la ligne optique.</strong> Assurez-vous que le tiers payant est bien ouvert pour l'optique sur cette carte, pas seulement pour la pharmacie ou d'autres soins.</li><li><strong>Vérifier dans le sélecteur du portail avant de saisir.</strong> Connectez-vous à l'espace pro de la plateforme et cherchez l'organisme dans la liste proposée au début de la demande.</li></ol><p>L'étape 5 compte plus qu'elle n'en a l'air. Lors d'une demande optique, les portails font en général choisir l'organisme dans une liste, au tout début de la saisie. Si l'organisme du client n'y figure pas, inutile d'aller plus loin sur ce portail : la demande doit partir ailleurs, ou le contrat doit être vérifié.</p><div class=\"callout callout--tip\"><p><strong>Le bon réflexe :</strong> notez dans la fiche client le portail utilisé et la période de validité de la carte. Au prochain passage, vous contrôlez simplement que la carte n'a pas changé, au lieu de tout rechercher.</p></div><h2 id=\"outil-mutuelle-portail\">Comment lire le résultat de notre outil mutuelle → portail ?</h2><p><strong>L'outil donne, pour 281 mutuelles, ce que propose le sélecteur des portails de tiers payant, tel que nos agents l'ont relevé en saisissant des demandes.</strong> Il sert à gagner du temps quand la carte n'affiche pas clairement la plateforme, ou quand vous voulez savoir où vous connecter avant d'ouvrir un portail.</p><p>Lisez-le pour ce qu'il est : un relevé. Qu'une mutuelle apparaisse dans le sélecteur d'un portail veut dire qu'elle y était proposée au moment du relevé. Cela ne veut pas dire qu'elle passe uniquement par ce portail, ni que tous ses contrats y sont gérés. Pour un dossier donné, la carte du client reste la référence.</p><h3>Quatre usages au comptoir</h3><ul><li>Confirmer la plateforme quand le logo est absent, effacé ou illisible sur la carte.</li><li>Savoir quel portail ouvrir en premier quand le nom de la mutuelle ne vous dit rien.</li><li>Former un nouveau collaborateur aux plateformes que le magasin rencontre le plus.</li><li>Préparer les demandes de la journée avant l'ouverture, portail par portail.</li></ul><h3>Ce que l'outil ne remplace pas</h3><p>Le relevé ne dit rien des droits du client : validité de sa carte, garanties optique, bénéficiaires couverts. Seule la réponse de la plateforme à la demande de prise en charge vous renseigne sur ce que la complémentaire accepte de régler pour ce dossier. L'outil vous mène à la bonne porte, il ne l'ouvre pas.</p><p>Quand un magasin jongle chaque jour entre plusieurs portails, retrouver le bon puis ressaisir chaque dossier devient vite le goulot du comptoir. C'est le travail que font les <a href=\"/agents\">agents de Granit</a> : ils saisissent les prises en charge directement sur les portails des plateformes, puis renvoient le statut à l'équipe.</p><h2 id=\"liste-codes-amc\">Existe-t-il une liste fiable des numéros AMC ?</h2><p><strong>Les listes de numéros AMC qui circulent aident à s'orienter, mais elles ne remplacent ni la carte ni le portail.</strong> On les trouve en cherchant « liste des AMC », « liste code AMC mutuelle » ou « optoamc » : tables copiées de logiciels, fichiers partagés entre magasins, pages de forums. Leur date de mise à jour est rarement indiquée.</p><p>Le problème tient au mouvement du secteur. Des organismes fusionnent, changent de nom ou confient leur tiers payant à une autre plateforme. Une table figée garde l'ancien état sans prévenir personne. Le numéro AMC peut rester le même alors que le portail où saisir la demande a changé.</p><p>Votre logiciel de facturation tient en général sa propre table des organismes complémentaires, mise à jour par l'éditeur, car il en a besoin pour transmettre la facture. C'est la liste la plus utile au quotidien pour la facturation. Pour savoir où saisir la prise en charge, la carte et le sélecteur du portail restent les deux vérifications qui comptent.</p><h3>Comment utiliser une liste sans se tromper</h3><p>Servez-vous d'une liste pour formuler une hypothèse, jamais pour conclure. Si la liste et la carte disent la même chose, saisissez. Si elles divergent, suivez la carte, puis contrôlez le sélecteur du portail. Une liste sans date ne doit jamais l'emporter sur une carte en cours de validité.</p><h2 id=\"mutuelle-introuvable\">Que faire si la mutuelle n'apparaît dans aucun portail ?</h2><p><strong>Avant de conclure que le contrat n'ouvre pas le tiers payant, vérifiez quatre causes, de la plus simple à la plus rare.</strong> La plupart se règlent avec la carte sous les yeux, sans appeler personne.</p><div class=\"tbl\"><table><tr><th>Cause</th><th>Où vérifier</th><th>Action</th></tr><tr><td>Carte périmée ou d'un ancien organisme</td><td>Période de validité sur la carte</td><td>Demander la carte de l'année en cours</td></tr><tr><td>Organisme affiché sous un autre nom</td><td>Sélecteur du portail (sigle, nom du groupe)</td><td>Chercher des variantes du nom et les rapprocher de la carte</td></tr><tr><td>Mauvaise plateforme</td><td>Logo ou mention de gestionnaire sur la carte</td><td>Repartir de la plateforme indiquée, pas du nom de la mutuelle</td></tr><tr><td>Pas de tiers payant optique sur ce contrat</td><td>Ligne des types de soins sur la carte</td><td>Faire confirmer par l'organisme ou la plateforme</td></tr></table></div><p>Si ces quatre vérifications ne donnent rien, appelez le service destiné aux professionnels de santé indiqué sur la carte, quand il y en a un. Ayez sous les yeux le numéro AMC et le numéro d'adhérent : ce sont les deux informations qu'on vous demandera pour identifier le contrat. Chaque fiche plateforme reprend aussi les contacts publiés par le portail.</p><div class=\"callout callout--warn\"><p><strong>Le piège :</strong> saisir la demande sur le portail « le plus probable » pour gagner du temps. Une demande envoyée au mauvais endroit ne vaut pas accord, et le client repart en pensant que tout est réglé.</p></div><p>S'il se confirme que le contrat n'ouvre pas le tiers payant en optique, la part complémentaire se traite hors tiers payant pour ce dossier. Annoncez-le au client avant la commande, pas le jour de la livraison : c'est là que la discussion est la plus simple.</p><h2 id=\"erreurs-numero-amc\">Quelles erreurs éviter entre numéro AMC, carte et portail ?</h2><p><strong>Cinq erreurs reviennent quand on cherche le portail d'une mutuelle, et toutes se corrigent par une lecture attentive de la carte.</strong> Les voici, avec le geste qui les évite.</p><ul><li><strong>Confondre numéro AMC et numéro d'adhérent.</strong> Le premier désigne l'organisme, le second le client. Le portail vous demandera les deux, à des endroits différents.</li><li><strong>Partir du nom de la mutuelle plutôt que de la carte.</strong> Le nom commercial d'un contrat peut différer de celui de l'organisme et de la plateforme qui le gère.</li><li><strong>Utiliser une carte qui n'est plus valide.</strong> Contrôlez les dates à chaque dossier, surtout en début d'année.</li><li><strong>Oublier la ligne optique.</strong> Une carte peut ouvrir le tiers payant pour certains soins et pas pour d'autres.</li><li><strong>Considérer le portail comme acquis une fois pour toutes.</strong> Un organisme peut changer de plateforme : la carte la plus récente fait foi.</li></ul><p>Pour la vue d'ensemble des plateformes, de leurs espaces pro et de leurs paiements, repartez de notre guide des <a href=\"/ressources/portails-tiers-payant\">portails de tiers payant</a>. Et pour replacer la prise en charge dans le reste du dossier, voyez notre article sur le <a href=\"/ressources/tiers-payant-opticien\">tiers payant opticien, de la prise en charge à l'encaissement</a>.</p>",
+  "tocItems": [
+    {
+      "id": "numero-amc-c-est-quoi",
+      "label": "Numéro AMC : définition et où le lire"
+    },
+    {
+      "id": "amc-et-portail",
+      "label": "Pourquoi le numéro AMC ne suffit pas"
+    },
+    {
+      "id": "trouver-portail-mutuelle",
+      "label": "Trouver le portail d'une mutuelle"
+    },
+    {
+      "id": "outil-mutuelle-portail",
+      "label": "Lire l'outil mutuelle → portail"
+    },
+    {
+      "id": "liste-codes-amc",
+      "label": "Les listes de numéros AMC"
+    },
+    {
+      "id": "mutuelle-introuvable",
+      "label": "Mutuelle introuvable dans les portails"
+    },
+    {
+      "id": "erreurs-numero-amc",
+      "label": "Les erreurs à éviter"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "Comment savoir par quel portail passe une mutuelle ?",
+      "answer": "Partez de la carte de tiers payant du client : elle indique l'organisme complémentaire, son numéro AMC et, souvent, la plateforme qui gère le tiers payant. Vérifiez ensuite que l'organisme est proposé dans le sélecteur du portail de cette plateforme avant de saisir. Un relevé mutuelle → portail aide à s'orienter, mais la carte reste la référence pour le dossier."
+    },
+    {
+      "question": "Qu'est-ce que le numéro AMC sur la carte de tiers payant ?",
+      "answer": "Le numéro AMC est l'identifiant de l'organisme d'assurance maladie complémentaire qui couvre le client. Il désigne l'organisme, pas la personne, et ne se confond pas avec le numéro d'adhérent. Son libellé et sa place varient selon les cartes."
+    },
+    {
+      "question": "Une mutuelle peut-elle passer par plusieurs portails ?",
+      "answer": "Le nom d'une mutuelle ne suffit pas à déterminer le portail : un contrat peut être porté par un organisme et géré par une plateforme aux noms différents. Qu'une mutuelle apparaisse dans le sélecteur d'un portail ne veut pas dire qu'elle passe uniquement par lui. Pour un dossier donné, c'est la carte du client, avec son numéro AMC et la plateforme indiquée, qui dit où envoyer la demande."
+    },
+    {
+      "question": "Que faire si la mutuelle n'apparaît dans aucun portail ?",
+      "answer": "Vérifiez d'abord que la carte est en cours de validité et qu'elle ouvre le tiers payant en optique. Cherchez ensuite l'organisme sous un autre nom, comme un sigle ou le nom du groupe, et repartez de la plateforme indiquée sur la carte plutôt que du nom de la mutuelle. Si rien ne correspond, appelez le service professionnel indiqué sur la carte avec le numéro AMC et le numéro d'adhérent."
+    }
+  ],
+  "sources": [
+    {
+      "label": "ameli.fr · Le tiers payant",
+      "url": "https://www.ameli.fr/assure/remboursements/etre-bien-rembourse/tiers-payant"
+    },
+    {
+      "label": "service-public.fr · Tiers payant",
+      "url": "https://www.service-public.fr/particuliers/vosdroits/F167"
+    }
+  ],
+  "figures": [
+    {
+      "id": "carte-vers-portail",
+      "type": "flux",
+      "titre": "De la carte de tiers payant au bon portail",
+      "legende": "Le numéro AMC dit qui paie ; c'est la plateforme indiquée sur la carte qui désigne le portail.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "Carte de tiers payant",
+          "detail": "donne le numéro AMC de l'organisme",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Organisme complémentaire",
+          "detail": "confie la gestion du tiers payant",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Plateforme de tiers payant",
+          "detail": "ouvre son espace pro à l'opticien",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Portail de la plateforme",
+          "detail": "reçoit la demande de prise en charge",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Réponse à l'opticien",
+          "detail": "",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [
+    {
+      "id": "A0",
+      "slug": "portails-tiers-payant",
+      "anchor": "portails de tiers payant",
+      "type": "parent"
+    },
+    {
+      "id": "A1",
+      "slug": "portail-viamedis",
+      "anchor": "viamedis tp",
+      "type": "sœur"
+    },
+    {
+      "id": "A2",
+      "slug": "portail-almerys",
+      "anchor": "almerys tp",
+      "type": "sœur"
+    }
+  ],
+  "liensEntrants": [],
+  "remplace": [],
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-12T15:23:47.247Z",
+    "avertissements": [
+      "aucune citation (facultative)",
+      "source non vérifiable (403) : https://www.ameli.fr/assure/remboursements/etre-bien-rembourse/tiers-payant"
+    ]
+  }
+}
