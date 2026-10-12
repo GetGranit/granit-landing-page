@@ -1067,7 +1067,7 @@
     ],
     "searchVolume": 1300,
     "unsplashQuery": "optician computer paperwork",
-    "status": "pending",
+    "status": "review",
     "wave": 1,
     "level": "Fille (outil)",
     "parentSlug": "portails-tiers-payant",
@@ -1102,7 +1102,8 @@
         "anchor": "almerys tp",
         "type": "sœur"
       }
-    ]
+    ],
+    "publishedAt": "2026-10-12"
   },
   {
     "id": "C3",
