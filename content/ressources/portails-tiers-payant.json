@@ -197,6 +197,11 @@
       "slug": "portail-actil",
       "anchor": "actil tp",
       "type": "enfant"
+    },
+    {
+      "slug": "mutuelle-quel-portail",
+      "anchor": "savoir par quel portail passe une mutuelle",
+      "type": "enfant"
     }
   ],
   "remplace": [

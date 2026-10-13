@@ -233,7 +233,13 @@
       "type": "parent"
     }
   ],
-  "liensEntrants": [],
+  "liensEntrants": [
+    {
+      "slug": "mutuelle-quel-portail",
+      "anchor": "savoir par quel portail passe une mutuelle",
+      "type": "soeur"
+    }
+  ],
   "remplace": [],
   "moteur": {
     "model": "claude-opus-5-5",
