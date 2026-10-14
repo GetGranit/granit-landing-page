@@ -1174,7 +1174,7 @@
     ],
     "searchVolume": 50,
     "unsplashQuery": "bank statement accounting",
-    "status": "pending",
+    "status": "review",
     "wave": 1,
     "level": "Fille",
     "parentSlug": "rapprochement-bancaire-tiers-payant",
@@ -1214,7 +1214,8 @@
         "anchor": "Automatiser la saisie des prises en charge",
         "type": "conversion"
       }
-    ]
+    ],
+    "publishedAt": "2026-10-14"
   },
   {
     "id": "B1",
