@@ -131,7 +131,13 @@
     }
   ],
   "internalLinks": [],
-  "liensEntrants": [],
+  "liensEntrants": [
+    {
+      "slug": "quand-relancer-mutuelle",
+      "anchor": "quand relancer une mutuelle",
+      "type": "soeur"
+    }
+  ],
   "remplace": [],
   "moteur": {
     "model": "claude-opus-5-5",
