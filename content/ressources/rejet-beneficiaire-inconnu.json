@@ -1,0 +1,159 @@
+{
+  "slug": "rejet-beneficiaire-inconnu",
+  "id": "B1",
+  "category": "rejets",
+  "categoryName": "Rejets et corrections",
+  "type": "resolution",
+  "plateforme": null,
+  "title": "Rejet mutuelle « bénéficiaire inconnu » : corriger sans doubler l'AMO",
+  "primaryKeyword": "rejet bénéficiaire inconnu mutuelle",
+  "keywordCluster": [],
+  "parentSlug": "rejet-tiers-payant",
+  "level": "Fille",
+  "author": {
+    "name": "Olivier",
+    "jobTitle": "Rédacteur, expert tiers payant",
+    "photo": "/auteurs/olivier.jpg",
+    "url": null
+  },
+  "reviewer": {
+    "name": "Nathalie",
+    "jobTitle": "Rédactrice, experte métier optique",
+    "photo": "/auteurs/nathalie.jpg",
+    "url": null
+  },
+  "datePublished": "2026-10-15",
+  "dateModified": "2026-10-15",
+  "checkedOn": null,
+  "wordCount": 2043,
+  "readTime": 9,
+  "metaDescription": "Rejet bénéficiaire inconnu mutuelle : causes, correction pas à pas sans refacturer la part AMO, preuves à garder et quand relancer. La méthode du comptoir.",
+  "contentHtml": "<p><strong>Un rejet bénéficiaire inconnu mutuelle signifie que la complémentaire n'a pas retrouvé la personne sur le contrat que vous avez désigné : on corrige l'identification et on renvoie uniquement la part complémentaire, sans refacturer la part Sécurité sociale déjà traitée.</strong> Ce rejet ne veut pas dire que votre client n'est pas couvert. Il dit que l'organisme, le numéro, la personne ou la date ne correspondent pas à ce que la mutuelle a dans ses fichiers. Le vrai risque n'est pas le rejet lui-même : c'est de tout refacturer, de faire payer l'AMO une deuxième fois et de créer un indu à rembourser plus tard.</p><div class=\"key-takeaways\"><strong>L'essentiel</strong><ul><li>« Bénéficiaire inconnu » est un problème d'identification, pas un refus de garantie : l'organisme ne retrouve pas la personne sur le contrat désigné.</li><li>Dans les dossiers que traitent nos agents, la cause la plus fréquente est le mauvais organisme choisi au moment de la demande, devant les erreurs de numéro ou de rattachement.</li><li>La part AMO (Assurance maladie obligatoire) suit son propre circuit : si elle est payée, on ne corrige que la part AMC (complémentaire).</li><li>Avant toute correction, relevez le motif exact, la date et le canal du rejet, puis demandez au client sa carte de tiers payant en cours de validité.</li><li>Le portail sert à corriger la demande ; la mutuelle sert à vérifier les droits du client. Ce ne sont pas les mêmes appels.</li></ul></div><h2 id=\"que-veut-dire-beneficiaire-inconnu\">Que veut dire « bénéficiaire inconnu » sur un rejet mutuelle ?</h2><p><strong>« Bénéficiaire inconnu » veut dire que l'organisme complémentaire n'a trouvé aucune personne correspondant à l'identité transmise sur le contrat visé.</strong> Le dossier n'est pas jugé sur le fond : la mutuelle n'a pas regardé l'équipement, le devis ou la garantie. Elle s'est arrêtée à l'étape d'avant, celle qui consiste à savoir de qui on parle.</p><p>Quelques rappels de vocabulaire, parce que tout se joue là. L'AMO est l'Assurance maladie obligatoire, c'est-à-dire la part Sécurité sociale. L'AMC est l'assurance maladie complémentaire, la mutuelle ou l'assureur du client. L'ouvrant droit est la personne qui détient le contrat ; le bénéficiaire est la personne soignée, qui peut être l'ouvrant droit lui-même, son conjoint ou un enfant rattaché.</p><p>Le cas type au comptoir : un client repart avec ses lunettes, la part Sécurité sociale est passée, la demande côté mutuelle revient rejetée. Sur un équipement du panier 100 % Santé, la somme en jeu est loin d'être négligeable. <a href=\"https://www.ameli.fr/assure/remboursements/reste-charge-0/optique\">Selon ameli.fr</a>, les équipements optiques de ce panier (classe A) sont pris en charge sans reste à charge par l'Assurance maladie et la complémentaire santé responsable : quand la part AMC ne passe pas, c'est le magasin qui porte le manque.</p><h2 id=\"ou-apparait-le-rejet\">Où voit-on ce rejet et que faut-il relever ?</h2><p><strong>Le rejet apparaît là où la demande a été envoyée : dans le portail de la plateforme si vous avez fait une prise en charge en ligne, ou dans les retours de votre logiciel si la facture est partie par flux.</strong> Avant de corriger quoi que ce soit, notez ce que vous voyez, tel quel.</p><p>Le libellé n'est pas toujours mot pour mot « bénéficiaire inconnu ». Selon le canal, il peut parler d'assuré ou d'adhérent non trouvé, ou s'afficher sous forme de code dans les retours. Si vous recevez un code dans vos retours de facturation, la page <a href=\"/ressources/codes-rejets-noemie\">codes rejets NOEMIE</a> aide à le lire. Dans tous les cas, ne paraphrasez pas : recopiez le motif exact.</p><p>Relevez au minimum ces éléments avant de toucher au dossier :</p><ul><li>le motif exact du rejet, avec sa date et l'heure si le portail l'affiche ;</li><li>le canal concerné : nom du portail, ou flux de retour dans le logiciel ;</li><li>l'organisme complémentaire sélectionné et le numéro d'adhérent saisi ;</li><li>l'identité du bénéficiaire transmise : nom, prénom, date de naissance ;</li><li>l'état de la part AMO pour la même facture : envoyée, payée, en attente.</li></ul><p>Ce dernier point décide de toute la suite. Tant que vous ne savez pas où en est la part Sécurité sociale, ne relancez aucune facturation.</p><h2 id=\"pourquoi-beneficiaire-inconnu\">Pourquoi la mutuelle ne reconnaît-elle pas le bénéficiaire ?</h2><p><strong>Il y a cinq causes possibles, et la première explique la majorité des cas que nous voyons : la demande est partie vers le mauvais organisme.</strong> Les autres tiennent au numéro, au rattachement de la personne, aux dates de droits ou à la saisie de l'identité.</p><h3>1. Le mauvais organisme a été choisi</h3><p>Dans les dossiers que traitent nos agents, c'est la cause la plus fréquente. Le client présente une ancienne carte, ou une carte d'un autre membre de la famille, ou bien l'organisme est sélectionné dans la liste du portail sur un nom proche du bon. Autre cas récurrent chez nous : une demande MGEN mal routée, envoyée par un circuit qui ne correspond pas au contrat du client. Le nom de la mutuelle est juste, le chemin ne l'est pas, et la réponse revient en bénéficiaire inconnu.</p><h3>2. Le numéro d'adhérent ne correspond pas</h3><p>Un chiffre inversé, un numéro d'ouvrant droit saisi à la place de celui demandé par le formulaire, un numéro de contrat confondu avec un numéro d'adhérent. Chaque portail a ses propres champs ; le bon numéro est celui qui figure sur la carte de tiers payant en cours.</p><h3>3. La personne n'est pas rattachée au contrat</h3><p>Un enfant ajouté récemment, un conjoint qui a sa propre mutuelle, un jeune adulte sorti du contrat de ses parents. L'ouvrant droit est bien connu, mais le bénéficiaire ne figure pas, ou plus, sur sa carte.</p><h3>4. Les droits ne couvrent pas la date des soins</h3><p>Le contrat a changé au 1er janvier, le client a résilié, ou la carte présentée est périmée. La personne a existé dans les fichiers de l'organisme, mais pas à la date transmise.</p><h3>5. L'identité saisie diffère de celle du contrat</h3><p>Nom d'usage contre nom de naissance, prénom composé tronqué, date de naissance mal saisie. Ce sont des erreurs rares mais faciles à vérifier.</p><div class=\"tbl\"><table><tr><th>Cause</th><th>Où vérifier</th><th>Correction</th></tr><tr><td>Mauvais organisme</td><td>Carte de tiers payant en cours, sélecteur du portail</td><td>Refaire la demande sur le bon organisme et le bon portail</td></tr><tr><td>Numéro erroné</td><td>Carte du client, champ saisi dans le dossier</td><td>Corriger le numéro et renvoyer la part AMC</td></tr><tr><td>Bénéficiaire non rattaché</td><td>Liste des bénéficiaires sur la carte</td><td>Demander au client de vérifier auprès de sa mutuelle</td></tr><tr><td>Droits hors période</td><td>Dates de validité de la carte</td><td>Obtenir la carte valide à la date des soins</td></tr><tr><td>Identité différente</td><td>Carte et pièce présentée</td><td>Aligner nom et date de naissance sur le contrat</td></tr></table></div><div class=\"callout callout--tip\"><p><strong>Le bon réflexe :</strong> avant d'appeler qui que ce soit, demandez au client sa carte de tiers payant actuelle, en photo si besoin. Une bonne partie des rejets bénéficiaire inconnu se règle avec ce seul document.</p></div><h2 id=\"corriger-rejet-beneficiaire-inconnu-sans-amo\">Comment corriger un rejet bénéficiaire inconnu de la mutuelle sans refacturer l'AMO ?</h2><p><strong>La méthode la plus sûre consiste à traiter la part complémentaire seule : vous identifiez la cause, vous corrigez la donnée fausse, puis vous renvoyez uniquement la demande ou la facture côté mutuelle.</strong> La part Sécurité sociale, si elle est partie ou payée, n'est pas touchée.</p><p>Pourquoi cette précaution ? Parce que les deux parts ne voyagent pas forcément ensemble. <a href=\"https://www.ameli.fr/assure/droits-demarches/principes/tiers-payant\">Selon ameli.fr</a>, le tiers payant dispense le patient d'avancer les frais sur la part de l'Assurance maladie et, quand il est appliqué aussi par la complémentaire, sur la part de celle-ci. Ce sont deux payeurs. Un rejet de l'un ne remet pas en cause le paiement de l'autre.</p><ol class=\"steps\"><li><strong>Vérifier l'état de la part AMO.</strong> Regardez dans votre logiciel si la part Sécurité sociale de cette facture est envoyée, acceptée ou payée. Si elle est payée, elle ne doit plus bouger.</li><li><strong>Récupérer la carte de tiers payant valide.</strong> Celle du client, en cours, à la date des soins, avec le bénéficiaire concerné bien listé.</li><li><strong>Comparer la carte avec ce qui a été transmis.</strong> Organisme, numéro, bénéficiaire, dates, identité : une ligne à la fois, en vous aidant du tableau ci-dessus.</li><li><strong>Vérifier le bon portail.</strong> Si l'organisme était faux, retrouvez par quel canal il passe. L'outil pour <a href=\"/ressources/mutuelle-quel-portail\">savoir par quel portail passe une mutuelle</a> indique ce que propose le sélecteur de chaque portail.</li><li><strong>Renvoyer la seule part complémentaire.</strong> Refaites la prise en charge sur le bon portail, ou utilisez dans votre logiciel la fonction qui permet de refacturer la part AMC seule. Si vous ne la trouvez pas, demandez à votre éditeur avant de relancer la facture entière.</li><li><strong>Noter la correction dans le dossier.</strong> Date, donnée corrigée, nouveau canal, nouvelle référence de demande. C'est ce qui vous permettra de suivre la réponse.</li></ol><div data-figure=\"corriger-sans-doubler-amo\"></div><div class=\"callout callout--warn\"><p><strong>Le piège :</strong> annuler la facture et la renvoyer en entier pour « repartir propre ». Si la part AMO était déjà payée, elle risque de l'être une deuxième fois, et l'excédent finira par vous être réclamé. Corriger la seule part complémentaire évite ce doublon.</p></div><p>Les règles de saisie diffèrent d'une plateforme à l'autre : champs demandés, format du numéro, liste des organismes. Si vous hésitez sur un écran, les fiches de chaque plateforme, réunies dans la page <a href=\"/ressources/portails-tiers-payant\">portails de tiers payant</a>, détaillent la prise en charge portail par portail, par exemple sur <a href=\"/ressources/portail-almerys\">Almerys</a>.</p><p>Quand ces corrections s'accumulent, c'est souvent la ressaisie sur chaque portail qui prend le temps du magasin. Les <a href=\"/agents\">agents de Granit</a> saisissent les prises en charge directement sur les portails des plateformes, retrouvent l'organisme d'après la carte du client, puis renvoient le statut à votre équipe.</p><h2 id=\"preuves-a-garder\">Quelles preuves garder après la correction ?</h2><p><strong>Gardez de quoi montrer ce qui a été rejeté, ce qui a été corrigé et ce qui a été renvoyé, avec les dates.</strong> Si la mutuelle conteste ou si le paiement n'arrive pas, c'est ce dossier qui vous fera gagner du temps.</p><ul><li>le motif exact du premier rejet, recopié ou exporté depuis le portail ou le logiciel ;</li><li>une copie de la carte de tiers payant valide présentée par le client ;</li><li>la référence de la nouvelle demande ou de la nouvelle facture AMC ;</li><li>la preuve que la part AMO n'a pas été refacturée (état de la facture dans le logiciel) ;</li><li>la date de chaque échange, et le nom de l'interlocuteur si vous avez appelé.</li></ul><p>Conservez ces éléments dans le dossier du client, dans votre logiciel, et pas sur une note volante. Ils contiennent des données de santé : ils restent dans les outils prévus pour ça.</p><h2 id=\"quand-relancer\">Quand relancer si la correction reste sans réponse ?</h2><p><strong>Relancez quand le délai de réponse habituel de la plateforme concernée est dépassé, pas avant.</strong> Il n'existe pas de délai universel : chaque plateforme annonce le sien, et il peut changer selon le type de demande.</p><p>Concrètement, suivez la nouvelle demande là où vous l'avez déposée. Sur un portail, regardez son statut : un accord vous permet de passer à la facturation de la part AMC, un nouveau rejet vous donne un nouveau motif à lire. Si le motif est encore « bénéficiaire inconnu », la cause n'était pas celle que vous pensiez : reprenez le tableau des causes à la ligne suivante.</p><p>Une fois l'accord obtenu, le suivi passe du côté du paiement. Le parcours complet, de la prise en charge à l'encaissement, est décrit dans la page <a href=\"/ressources/tiers-payant-opticien\">tiers payant opticien</a>. Vérifiez à l'arrivée que le montant versé correspond bien à la part complémentaire attendue, sans plus.</p><h2 id=\"contacter-mutuelle-ou-portail\">Faut-il contacter la mutuelle ou le portail ?</h2><p><strong>Contactez le portail quand le problème vient de la demande ou de l'écran ; renvoyez le client vers sa mutuelle quand le problème vient de ses droits.</strong> La plateforme transmet la demande et la réponse ; c'est la mutuelle qui sait qui est couvert, et à quelle date.</p><h3>Quand appeler la plateforme</h3><p>L'organisme du client n'apparaît pas dans le sélecteur, le formulaire refuse un numéro pourtant conforme à la carte, ou le statut ne bouge plus après le délai annoncé. Ces questions relèvent du portail. Les coordonnées de chaque plateforme figurent dans sa fiche.</p><h3>Quand faire intervenir la mutuelle</h3><p>La carte est bonne, la saisie est juste, et le rejet revient quand même. Dans ce cas, la personne n'est probablement pas rattachée au contrat à la date des soins, ou ses droits ont changé. C'est le client qui peut le faire corriger auprès de sa complémentaire, car c'est son contrat : expliquez-lui ce qui bloque et demandez-lui une carte à jour.</p><h3>Quand escalader</h3><p>Escaladez si, après une correction documentée et un délai de réponse dépassé, vous n'obtenez ni accord ni motif nouveau. Rassemblez les preuves listées plus haut et adressez-vous au service professionnels de santé de la plateforme, en citant les deux références de demande. Gardez le motif exact affiché par le portail : c'est lui qui dit quoi corriger.</p>",
+  "tocItems": [
+    {
+      "id": "que-veut-dire-beneficiaire-inconnu",
+      "label": "Ce que veut dire « bénéficiaire inconnu »"
+    },
+    {
+      "id": "ou-apparait-le-rejet",
+      "label": "Où voir le rejet et quoi relever"
+    },
+    {
+      "id": "pourquoi-beneficiaire-inconnu",
+      "label": "Les cinq causes possibles"
+    },
+    {
+      "id": "corriger-rejet-beneficiaire-inconnu-sans-amo",
+      "label": "Corriger sans refacturer l'AMO"
+    },
+    {
+      "id": "preuves-a-garder",
+      "label": "Les preuves à garder"
+    },
+    {
+      "id": "quand-relancer",
+      "label": "Quand relancer"
+    },
+    {
+      "id": "contacter-mutuelle-ou-portail",
+      "label": "Mutuelle ou portail : qui contacter"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "Que veut dire « bénéficiaire inconnu » sur un rejet mutuelle ?",
+      "answer": "Cela veut dire que l'organisme complémentaire n'a retrouvé aucune personne correspondant à l'identité transmise sur le contrat visé. Ce n'est pas un refus de garantie : la mutuelle n'a pas examiné l'équipement ni le devis. Le problème porte sur l'identification, c'est-à-dire l'organisme, le numéro, la personne rattachée, les dates de droits ou l'identité saisie."
+    },
+    {
+      "question": "Quelle est la cause la plus fréquente d'un rejet bénéficiaire inconnu ?",
+      "answer": "Dans les dossiers que traitent les agents de Granit, la cause la plus fréquente est le mauvais organisme choisi au moment de la demande. Cela arrive avec une ancienne carte, la carte d'un autre membre de la famille ou une demande envoyée par un circuit qui ne correspond pas au contrat. Vérifier la carte de tiers payant en cours règle souvent le dossier."
+    },
+    {
+      "question": "Comment corriger un rejet bénéficiaire inconnu sans refacturer la part Sécurité sociale ?",
+      "answer": "Il faut traiter la part complémentaire seule. Vérifiez d'abord dans votre logiciel l'état de la part AMO : si elle est payée, elle ne doit plus bouger. Corrigez ensuite la donnée fausse d'après la carte de tiers payant valide, puis refaites la prise en charge sur le bon portail ou refacturez uniquement la part AMC. Renvoyer la facture entière risque de faire payer l'AMO deux fois."
+    },
+    {
+      "question": "Faut-il contacter la mutuelle ou le portail après un rejet bénéficiaire inconnu ?",
+      "answer": "Contactez le portail quand le problème vient de la demande ou de l'écran, par exemple un organisme absent du sélecteur ou un numéro refusé. Si la carte et la saisie sont justes et que le rejet revient, le problème vient des droits du client. C'est alors au client de faire vérifier son rattachement auprès de sa mutuelle et de fournir une carte à jour."
+    }
+  ],
+  "sources": [
+    {
+      "label": "ameli.fr · 100 % Santé : l'optique",
+      "url": "https://www.ameli.fr/assure/remboursements/reste-charge-0/optique"
+    },
+    {
+      "label": "ameli.fr · Le tiers payant",
+      "url": "https://www.ameli.fr/assure/droits-demarches/principes/tiers-payant"
+    }
+  ],
+  "figures": [
+    {
+      "id": "corriger-sans-doubler-amo",
+      "type": "comparaison",
+      "titre": "Refacturer tout ou corriger la seule part AMC",
+      "legende": "Regardez la ligne part AMO : la refacturation complète la fait payer deux fois.",
+      "colonnes": [
+        "Refacturer tout",
+        "Corriger la part AMC"
+      ],
+      "elements": [
+        {
+          "label": "Part AMO",
+          "detail": "",
+          "valeurs": [
+            "Payée deux fois",
+            "Inchangée"
+          ],
+          "focus": true
+        },
+        {
+          "label": "Part AMC",
+          "detail": "",
+          "valeurs": [
+            "Renvoyée",
+            "Renvoyée corrigée"
+          ],
+          "focus": false
+        },
+        {
+          "label": "Suite du dossier",
+          "detail": "",
+          "valeurs": [
+            "Indu à rembourser",
+            "Paiement complémentaire"
+          ],
+          "focus": false
+        },
+        {
+          "label": "Preuves à garder",
+          "detail": "",
+          "valeurs": [
+            "Deux factures à justifier",
+            "Une correction datée"
+          ],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [
+    {
+      "id": "A13",
+      "slug": "mutuelle-quel-portail",
+      "anchor": "savoir par quel portail passe une mutuelle",
+      "type": "outil"
+    }
+  ],
+  "liensEntrants": [],
+  "remplace": [],
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-15T11:27:55.904Z",
+    "avertissements": [
+      "aucune citation (facultative)",
+      "source non vérifiable (403) : https://www.ameli.fr/assure/droits-demarches/principes/tiers-payant",
+      "source non vérifiable (403) : https://www.ameli.fr/assure/remboursements/reste-charge-0/optique"
+    ]
+  }
+}
