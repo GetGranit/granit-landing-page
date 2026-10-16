@@ -142,7 +142,13 @@
       "type": "sœur"
     }
   ],
-  "liensEntrants": [],
+  "liensEntrants": [
+    {
+      "slug": "virement-mutuelle-inferieur",
+      "anchor": "Virement de mutuelle inférieur à la facture : comprendre l'écart et relancer",
+      "type": "soeur"
+    }
+  ],
   "remplace": [],
   "moteur": {
     "model": "claude-opus-5-5",

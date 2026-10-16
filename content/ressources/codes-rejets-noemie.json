@@ -136,6 +136,11 @@
       "slug": "quand-relancer-mutuelle",
       "anchor": "quand relancer une mutuelle",
       "type": "soeur"
+    },
+    {
+      "slug": "virement-mutuelle-inferieur",
+      "anchor": "Virement de mutuelle inférieur à la facture : comprendre l'écart et relancer",
+      "type": "soeur"
     }
   ],
   "remplace": [],
