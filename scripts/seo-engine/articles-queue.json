@@ -1336,7 +1336,7 @@
     "keywordCluster": [],
     "searchVolume": 0,
     "unsplashQuery": "office paperwork error",
-    "status": "pending",
+    "status": "review",
     "wave": 1,
     "level": "Fille",
     "parentSlug": "rejet-tiers-payant",
@@ -1376,7 +1376,8 @@
         "anchor": "savoir par quel portail passe une mutuelle",
         "type": "outil"
       }
-    ]
+    ],
+    "publishedAt": "2026-10-19"
   },
   {
     "id": "A15",
