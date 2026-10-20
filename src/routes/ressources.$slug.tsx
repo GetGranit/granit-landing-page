@@ -55,9 +55,9 @@ export const Route = createFileRoute("/ressources/$slug")({
         ],
       };
     }
-    const a = loaderData
-      ? (getArticle("fr", loaderData.slug) ?? getArticle("en", loaderData.slug))
-      : undefined;
+    const fr = loaderData ? getArticle("fr", loaderData.slug) : undefined;
+    const en = loaderData ? getArticle("en", loaderData.slug) : undefined;
+    const a = fr ?? en;
     const title = a ? `${a.title} - Granit AI` : "Article - Granit AI";
     const desc = a?.desc ?? "Article Granit AI.";
     return {
@@ -67,6 +67,9 @@ export const Route = createFileRoute("/ressources/$slug")({
         { property: "og:title", content: title },
         { property: "og:description", content: desc },
         { property: "og:type", content: "article" },
+        // Marché anglais pas encore lancé : les articles EN restent en ligne (liens
+        // existants) mais hors index, comme pour le sitemap qui ne liste que le FR.
+        ...(en && !fr ? [{ name: "robots", content: "noindex, follow" }] : []),
       ],
     };
   },
