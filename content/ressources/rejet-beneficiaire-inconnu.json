@@ -145,7 +145,13 @@
       "type": "outil"
     }
   ],
-  "liensEntrants": [],
+  "liensEntrants": [
+    {
+      "slug": "checklist-prise-en-charge",
+      "anchor": "checklist avant d'envoyer une prise en charge",
+      "type": "soeur"
+    }
+  ],
   "remplace": [],
   "moteur": {
     "model": "claude-opus-5-5",
