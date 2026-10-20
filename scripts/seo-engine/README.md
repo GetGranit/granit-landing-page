@@ -37,7 +37,11 @@ Il y a au plus 2 tours de correction. Le verdict `humain` ne tombe que s'il rest
 ```bash
 node scripts/seo-engine/relire-article.mjs --slug portail-actil --simuler --dry --out /tmp/essai   # sans clé ni dépense
 node scripts/seo-engine/verifier-article.mjs portail-actil                                           # contrôles seuls
+node scripts/seo-engine/verifier-article.mjs --tous                                                  # tous les articles
 ```
+
+Les mêmes contrôles tournent dans `.github/workflows/seo-verifier-articles.yml` : sur chaque PR qui touche un article
+ou le moteur, et chaque lundi sur tous les articles (une ligne dans #seo s'il y a des articles à corriger).
 
 ## Secrets du repo
 
