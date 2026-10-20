@@ -209,6 +209,11 @@
       "slug": "mutuelle-quel-portail",
       "anchor": "savoir par quel portail passe une mutuelle",
       "type": "soeur"
+    },
+    {
+      "slug": "viamedis-espace-pro",
+      "anchor": "viamedis espace pro",
+      "type": "enfant"
     }
   ],
   "remplace": [],

@@ -1399,7 +1399,7 @@
     ],
     "searchVolume": 4420,
     "unsplashQuery": "optician computer paperwork",
-    "status": "pending",
+    "status": "published",
     "wave": 1,
     "level": "Petite-fille",
     "parentSlug": "portail-viamedis",
@@ -1428,7 +1428,8 @@
         "anchor": "viamedis pec",
         "type": "sœur"
       }
-    ]
+    ],
+    "publishedAt": "2026-10-20"
   },
   {
     "id": "A14",
