@@ -1451,7 +1451,7 @@
     ],
     "searchVolume": 2730,
     "unsplashQuery": "optician computer paperwork",
-    "status": "pending",
+    "status": "published",
     "wave": 1,
     "level": "Petite-fille",
     "parentSlug": "portail-almerys",
@@ -1486,7 +1486,8 @@
         "anchor": "checklist avant d'envoyer une prise en charge",
         "type": "transverse"
       }
-    ]
+    ],
+    "publishedAt": "2026-10-21"
   },
   {
     "id": "R1",

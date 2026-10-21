@@ -172,6 +172,11 @@
       "slug": "mutuelle-quel-portail",
       "anchor": "savoir par quel portail passe une mutuelle",
       "type": "soeur"
+    },
+    {
+      "slug": "almerys-prise-en-charge",
+      "anchor": "almerys pec",
+      "type": "enfant"
     }
   ],
   "remplace": [],
