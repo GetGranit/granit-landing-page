@@ -1,0 +1,90 @@
+# Contrôles du moteur SEO (scripts/seo-engine/lib/checks.mjs) en dehors de la rédaction :
+# - sur chaque PR qui touche un article ou le moteur : les articles modifiés (tous si les contrôles changent) + les tests ;
+# - chaque lundi : tous les articles en ligne, pour voir une source qui tombe en 404 ou un lien interne qui casse.
+#   Une ligne dans #seo seulement s'il y a des articles en erreur.
+# Limite : une PR ouverte par le bot avec le jeton GitHub ne déclenche pas ce check (règle GitHub) ;
+# les PR ouvertes à la main, comme aujourd'hui, le déclenchent.
+name: SEO · contrôle des articles
+
+on:
+  pull_request:
+    paths:
+      - "content/**"
+      - "scripts/seo-engine/**"
+  schedule:
+    # lundi 9 h 37 à Paris (heure d'été)
+    - cron: "37 7 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  controler:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Tests du moteur
+        if: github.event_name == 'pull_request'
+        run: node --test scripts/seo-engine/tests/*.test.mjs
+
+      - name: Articles à contrôler
+        id: cible
+        shell: bash
+        env:
+          BASE: ${{ github.event.pull_request.base.sha }}
+        run: |
+          set -euo pipefail
+          if [ "${{ github.event_name }}" != "pull_request" ]; then echo "args=--tous" >> "$GITHUB_OUTPUT"; exit 0; fi
+          modifs=$(git diff --name-only "$BASE"...HEAD)
+          # Les contrôles, la file ou les fichiers de faits changent : tout repasser.
+          if echo "$modifs" | grep -qE '^(scripts/seo-engine/(lib/|articles-queue\.json|config\.json)|content/(plateformes|concurrents)/)'; then
+            echo "args=--tous" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          slugs=$(echo "$modifs" | grep -E '^content/ressources/[^/]+\.json$' | xargs -r -n1 basename | sed 's/\.json$//' \
+            | while read -r s; do [ -f "content/ressources/$s.json" ] && echo "$s"; done | tr '\n' ' ')
+          echo "args=$slugs" >> "$GITHUB_OUTPUT"
+
+      - name: Contrôler
+        if: steps.cible.outputs.args != ''
+        shell: bash
+        run: |
+          set -o pipefail
+          node scripts/seo-engine/verifier-article.mjs ${{ steps.cible.outputs.args }} --resume "$RUNNER_TEMP/resume.txt" \
+            | tee "$RUNNER_TEMP/controle.log"
+
+      - name: Résumé
+        if: always() && steps.cible.outputs.args != ''
+        shell: bash
+        run: |
+          { echo '### Contrôle des articles'; echo '```'; cat "$RUNNER_TEMP/controle.log" 2>/dev/null; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Alerte #seo
+        if: failure() && github.event_name != 'pull_request'
+        shell: bash
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_CANAL_SEO: ${{ secrets.SLACK_CANAL_SEO }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          [ -s "$RUNNER_TEMP/resume.txt" ] || exit 0
+          [ -z "${SLACK_BOT_TOKEN:-}" ] && { echo "Slack non configuré"; exit 1; }
+          n=$(wc -l < "$RUNNER_TEMP/resume.txt" | tr -d ' ')
+          texte="🔎 Contrôle du lundi : $n article(s) à corriger. <$RUN_URL|Voir le détail>"
+          ts=$(curl -sf -X POST https://slack.com/api/chat.postMessage \
+            -H "Authorization: Bearer $SLACK_BOT_TOKEN" -H "Content-Type: application/json; charset=utf-8" \
+            -d "$(jq -n --arg c "$SLACK_CANAL_SEO" --arg t "$texte" '{channel:$c,text:$t,unfurl_links:false}')" | jq -er '.ts')
+          # Le détail en fil, pour garder le canal léger.
+          curl -sf -X POST https://slack.com/api/chat.postMessage \
+            -H "Authorization: Bearer $SLACK_BOT_TOKEN" -H "Content-Type: application/json; charset=utf-8" \
+            -d "$(jq -n --arg c "$SLACK_CANAL_SEO" --arg ts "$ts" --rawfile t "$RUNNER_TEMP/resume.txt" '{channel:$c,thread_ts:$ts,text:$t,unfurl_links:false}')" \
+            | jq -e '.ok' >/dev/null

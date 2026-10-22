@@ -1,0 +1,155 @@
+{
+  "slug": "codes-rejets-noemie",
+  "id": "C3",
+  "category": "paiements",
+  "categoryName": "Paiements et rapprochement",
+  "type": "resolution",
+  "plateforme": null,
+  "title": "Codes rejets NOEMIE : liste, signification et action",
+  "primaryKeyword": "liste codes rejets noemie",
+  "keywordCluster": [],
+  "parentSlug": "rapprochement-bancaire-tiers-payant",
+  "level": "Fille",
+  "author": {
+    "name": "Olivier",
+    "jobTitle": "Rédacteur, expert tiers payant",
+    "photo": "/auteurs/olivier.jpg",
+    "url": null
+  },
+  "reviewer": {
+    "name": "Nathalie",
+    "jobTitle": "Rédactrice, experte métier optique",
+    "photo": "/auteurs/nathalie.jpg",
+    "url": null
+  },
+  "datePublished": "2026-10-13",
+  "dateModified": "2026-10-13",
+  "checkedOn": null,
+  "wordCount": 2165,
+  "readTime": 9,
+  "metaDescription": "Liste codes rejets NOEMIE : où trouver le libellé fiable, comment classer la cause, corriger et relancer une facture rejetée. La méthode pas à pas.",
+  "contentHtml": "<p><strong>Un code rejet NOEMIE est le motif qu'un organisme payeur renvoie à votre logiciel quand il refuse de payer tout ou partie d'une facture télétransmise. Il dit quoi corriger, à condition de le lire avec son libellé.</strong> Chercher une liste codes rejets NOEMIE complète sur le web donne surtout des tableaux recopiés, sans date ni source. La référence fiable est ailleurs : le libellé affiché par votre logiciel, la documentation de votre éditeur et votre caisse. Cette page explique comment lire un retour, classer la cause, corriger, garder la preuve et relancer, sans vous fier à un code trouvé sur un forum.</p><div class=\"key-takeaways\"><strong>L'essentiel</strong><ul><li>NOEMIE est la norme d'échange qui permet aux organismes de renvoyer au logiciel du magasin les paiements et les rejets de chaque facture.</li><li>Un code rejet ne se lit jamais seul : c'est le libellé associé, affiché par votre logiciel, qui fait foi.</li><li>La liste officielle des codes est diffusée aux éditeurs de logiciels ; votre éditeur est le premier interlocuteur pour l'obtenir à jour.</li><li>Presque tous les rejets se rangent en quatre familles : droits du bénéficiaire, identification du professionnel, contenu de la facture, transmission.</li><li>Action du jour : pointez les retours en rejet, corrigez la cause, renvoyez une facture propre et gardez le retour d'origine.</li></ul></div><h2 id=\"qu-est-ce-qu-un-code-rejet-noemie\">Qu'est-ce qu'un code rejet NOEMIE ?</h2><p>Un code rejet NOEMIE est un identifiant normalisé qui accompagne une facture refusée dans le retour envoyé par l'organisme payeur. Il est toujours associé à un libellé en clair et, selon les cas, au numéro de la facture et au bénéficiaire concernés.</p><p>NOEMIE (norme ouverte d'échanges entre la maladie et les intervenants extérieurs) désigne le format des fichiers que l'Assurance maladie, et certains organismes complémentaires, renvoient aux professionnels de santé. Ces fichiers, appelés retours NOEMIE, arrivent dans votre logiciel de facturation après la télétransmission. Ils annoncent ce qui a été payé, ce qui a été rejeté, et pourquoi.</p><p>Le cas typique au comptoir : une facture optique a été télétransmise, la part AMO (assurance maladie obligatoire) ou la part AMC (assurance maladie complémentaire) n'arrive pas, et le logiciel affiche une ligne en rejet avec un code. Autre cas fréquent : le virement est arrivé, mais il manque une somme par rapport à ce qui était attendu, parce qu'une seule ligne de la facture a été rejetée.</p><p>Le cadre de ces échanges découle des règles de facturation et de tiers payant fixées par le <a href=\"https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006073189\">Code de la sécurité sociale</a>. Concrètement, un rejet n'est pas un refus définitif de payer : c'est une facture que l'organisme ne peut pas traiter en l'état. Corrigée et renvoyée, elle peut être payée.</p><p>Pour replacer ce retour dans l'ensemble du circuit, de la demande de prise en charge à l'encaissement, voyez notre guide du <a href=\"/ressources/tiers-payant-opticien\">tiers payant opticien</a>.</p><h2 id=\"ou-apparait-un-rejet-noemie\">Où apparaît un rejet NOEMIE dans votre logiciel ?</h2><p>Le rejet apparaît dans l'écran de suivi des retours de votre logiciel de facturation, rattaché à la facture d'origine. C'est là, et pas dans le relevé bancaire, que se trouvent le code et son libellé.</p><p>Le circuit est toujours le même. Votre logiciel télétransmet la facture : la FSE (feuille de soins électronique) pour la part obligatoire, la DRE (demande de remboursement électronique) pour la part complémentaire quand elle passe par ce canal. L'organisme contrôle, puis renvoie un retour NOEMIE. Votre logiciel l'intègre et met à jour le statut de chaque facture.</p><div data-figure=\"circuit-retour-noemie\"></div><p>Selon les logiciels, vous verrez trois situations différentes, à ne pas confondre :</p><ul><li><strong>Le rejet total</strong> : aucune part de la facture n'est payée, un ou plusieurs codes sont affichés.</li><li><strong>Le rejet partiel</strong> : une ligne de la facture est refusée, le reste est payé. Le montant reçu est inférieur au montant attendu.</li><li><strong>Le paiement</strong> : la facture est réglée, le retour annonce le montant et la référence du virement.</li><li><strong>L'absence de retour</strong> : aucune information n'est revenue. Ce n'est pas un rejet, c'est une facture à rechercher.</li></ul><p>Le rapprochement entre ces retours et les virements sur le compte du magasin est un travail à part entière. Il est détaillé dans notre article sur le <a href=\"/ressources/rapprochement-noemie\">rapprochement des flux NOEMIE et des virements bancaires</a>.</p><h2 id=\"ou-trouver-la-liste-des-codes-rejets-noemie\">Où trouver la liste des codes rejets NOEMIE ?</h2><p>La liste officielle des codes rejets NOEMIE figure dans la documentation technique de la norme, diffusée aux éditeurs de logiciels. Pour vous, la source la plus sûre est donc le libellé affiché par votre logiciel, complété au besoin par votre éditeur ou votre caisse.</p><p>Les codes évoluent avec les versions de la norme et les règles de facturation. Une liste recopiée sur un site tiers peut être ancienne, incomplète ou propre à une autre profession. Un même code peut aussi ne pas avoir la même portée selon l'organisme qui l'émet. C'est pour cela que cette page ne reproduit aucun code : un code faux vous ferait corriger le mauvais champ.</p><h3>Les trois sources fiables, dans l'ordre</h3><ol><li><strong>Votre logiciel de facturation.</strong> Il affiche le libellé associé au code dans la fiche de la facture ou dans l'écran des retours. C'est la lecture de référence au quotidien.</li><li><strong>Votre éditeur de logiciel.</strong> Il intègre la documentation de la norme et peut vous fournir la table des codes à jour, ou expliquer un libellé peu clair.</li><li><strong>Votre caisse primaire d'assurance maladie.</strong> Pour la part obligatoire, elle peut préciser le motif d'un rejet qui reste incompréhensible.</li></ol><p>Pour la part complémentaire, quand la facture passe par une plateforme de tiers payant, le motif est souvent aussi visible dans l'espace professionnel de la plateforme. Notre page sur les <a href=\"/ressources/portails-tiers-payant\">portails de tiers payant</a> recense où regarder pour chaque opérateur.</p><div class=\"callout callout--warn\"><p><strong>Le piège :</strong> corriger à partir d'un code lu sur un forum, sans regarder le libellé de votre propre retour. Deux sources peuvent donner deux significations différentes. Seul le libellé reçu dit ce que l'organisme reproche à cette facture.</p></div><h2 id=\"pourquoi-une-facture-est-rejetee\">Pourquoi une facture est-elle rejetée ?</h2><p>Il y a quatre familles de causes : les droits du bénéficiaire, l'identification du professionnel ou du prescripteur, le contenu de la facture, et la transmission elle-même. Le libellé du code indique presque toujours à quelle famille vous avez affaire.</p><p>Classer d'abord, corriger ensuite : c'est la méthode la plus sûre. Elle évite de modifier trois champs au hasard et de renvoyer une facture qui sera rejetée une deuxième fois.</p><div class=\"tbl\"><table><tr><th>Famille de cause</th><th>Ce que dit le libellé, en substance</th><th>Où vérifier</th><th>Correction</th></tr><tr><td>Droits du bénéficiaire</td><td>Assuré ou bénéficiaire inconnu, droits fermés, organisme ou contrat non reconnu</td><td>Carte Vitale, attestation de droits, carte de tiers payant du client</td><td>Mettre à jour l'identité, le rang du bénéficiaire, l'organisme ou les dates de droits, puis renvoyer</td></tr><tr><td>Identification</td><td>Professionnel, prescripteur ou numéro d'identification non reconnu</td><td>Paramètres du magasin dans le logiciel, ordonnance</td><td>Corriger l'identifiant du prescripteur ou du magasin, vérifier le paramétrage</td></tr><tr><td>Contenu de la facture</td><td>Code produit, quantité, montant, date ou cohérence avec l'ordonnance</td><td>Lignes de la facture, codes LPP, devis normalisé</td><td>Rectifier la ligne en cause, sans toucher aux lignes déjà payées</td></tr><tr><td>Transmission</td><td>Doublon, facture déjà reçue, format ou lot illisible</td><td>Historique des envois, journal de télétransmission</td><td>Vérifier si la facture a déjà été payée avant de renvoyer ; sinon, contacter l'éditeur</td></tr></table></div><p>La LPP (liste des produits et prestations remboursables) est la nomenclature qui fixe les codes des verres, montures et prestations. Un code LPP incohérent avec l'équipement ou la classe (A pour le panier 100 % Santé, B pour le tarif libre) fait partie des causes de la famille « contenu de la facture ».</p><p>Le doublon mérite une attention à part. Renvoyer une facture déjà payée crée un nouveau rejet, et parfois un indu à régulariser plus tard. Avant tout renvoi, vérifiez dans le logiciel qu'aucun paiement n'a été reçu pour la même facture.</p><p>Beaucoup de ces causes se préviennent avant l'envoi. Notre article sur la façon de <a href=\"/ressources/reduire-rejets-cpam\">réduire les rejets CPAM sans changer de logiciel</a> détaille les contrôles à placer en amont.</p><h2 id=\"que-faire-selon-le-code-recu\">Que faire selon le code reçu ?</h2><p>Lisez le libellé, classez la cause dans une des quatre familles, corrigez la seule donnée en cause, puis renvoyez une facture propre. Ne recréez pas un dossier entier quand une seule ligne est rejetée.</p><ol class=\"steps\"><li><strong>Ouvrir le retour dans le logiciel.</strong> Repérez la facture, le bénéficiaire, le code et son libellé. Notez la date du retour.</li><li><strong>Identifier la part concernée.</strong> Part obligatoire, part complémentaire, ou les deux : l'interlocuteur ne sera pas le même.</li><li><strong>Classer la cause.</strong> Droits, identification, contenu ou transmission. En cas de doute sur le libellé, demandez sa signification à votre éditeur avant de modifier quoi que ce soit.</li><li><strong>Vérifier qu'aucun paiement n'est déjà arrivé.</strong> Contrôlez l'historique de la facture et le rapprochement bancaire, pour éviter un doublon.</li><li><strong>Corriger la donnée en cause.</strong> Identité, rang du bénéficiaire, organisme, code LPP, identifiant du prescripteur : une correction ciblée, documentée.</li><li><strong>Renvoyer la facture corrigée.</strong> Utilisez la fonction de refacturation ou de renvoi de votre logiciel, selon la procédure prévue par votre éditeur.</li><li><strong>Suivre le retour suivant.</strong> Notez la date de renvoi et vérifiez que le retour NOEMIE suivant annonce bien un paiement.</li></ol><p>Quand la cause relève des droits du client, la correction passe souvent par une pièce à demander : une attestation à jour, une nouvelle carte de tiers payant. Prévenez le client au plus tôt, sans lui transférer le travail de correction.</p><p>Quand ces rejets s'accumulent sur plusieurs plateformes et plusieurs magasins, le pointage quotidien devient un poste à part entière. C'est le travail que prennent en charge les <a href=\"/agents\">agents de Granit</a> : ils suivent les retours, repèrent les factures rejetées ou restées sans réponse, et remontent à l'équipe ce qui demande une correction.</p><h2 id=\"quelles-preuves-garder\">Quelles preuves garder après un rejet NOEMIE ?</h2><p>Gardez le retour NOEMIE d'origine, la facture initiale, la facture corrigée et la pièce qui justifie la correction. Ces quatre éléments suffisent à reconstituer le dossier si l'organisme conteste ou si un contrôle a lieu.</p><ul><li><strong>Le retour d'origine</strong> avec le code, le libellé et la date, tel qu'affiché dans le logiciel.</li><li><strong>La facture initiale</strong>, sans la supprimer, même après correction.</li><li><strong>La facture renvoyée</strong>, avec sa date de télétransmission.</li><li><strong>La pièce justificative</strong> : attestation de droits, ordonnance, devis normalisé, carte de tiers payant.</li><li><strong>Les échanges</strong> avec la caisse, la plateforme ou l'éditeur : date, interlocuteur, réponse obtenue.</li></ul><p>Ces documents contiennent des données personnelles et des données de santé. Leur conservation est encadrée par le <a href=\"https://www.cnil.fr/fr/reglement-europeen-protection-donnees\">règlement européen sur la protection des données</a> : accès limité aux personnes qui traitent le dossier, stockage dans le logiciel ou un espace sécurisé, jamais dans une messagerie personnelle.</p><div class=\"callout callout--tip\"><p><strong>Le bon réflexe :</strong> ajoutez une note dans la fiche de la facture à chaque action (« corrigé rang bénéficiaire, renvoyé le … »). Le jour où un collègue reprend le dossier, il sait où en est la facture sans tout relire.</p></div><h2 id=\"au-bout-de-combien-de-temps-relancer\">Au bout de combien de temps relancer après un rejet ?</h2><p>Il n'existe pas de délai unique : chaque organisme a son propre rythme de traitement et de retour. La bonne pratique est de fixer un rythme de pointage interne et de relancer dès qu'une facture renvoyée reste sans retour au-delà de ce que vous constatez d'habitude pour cet organisme.</p><p>Concrètement, la plupart des magasins s'organisent autour de deux rendez-vous. Un pointage régulier des retours, pour traiter les rejets pendant que le dossier est encore frais. Et une revue des factures anciennes, pour repérer celles qui n'ont reçu ni paiement ni rejet.</p><p>Une facture sans aucun retour n'est pas une facture en cours : c'est une facture peut-être jamais reçue. Elle se traite comme une anomalie de transmission, pas comme un rejet. Vérifiez d'abord le journal de télétransmission de votre logiciel.</p><p>Ne laissez pas les rejets vieillir. Plus un dossier est ancien, plus il est difficile d'obtenir une pièce du client ou une explication de l'organisme. Les règles de délai de facturation applicables relèvent du Code de la sécurité sociale et des conventions : en cas de doute sur un dossier ancien, interrogez votre caisse avant de le renvoyer.</p><h2 id=\"quand-escalader-un-rejet-noemie\">Quand escalader un rejet NOEMIE, et vers qui ?</h2><p>Escaladez quand le libellé reste incompréhensible, quand la même facture est rejetée deux fois avec le même motif, ou quand le motif ne correspond pas au dossier. L'interlocuteur dépend de la part rejetée et de la cause.</p><div class=\"tbl\"><table><tr><th>Situation</th><th>Vers qui</th><th>Ce qu'il faut fournir</th></tr><tr><td>Part obligatoire rejetée, motif incompris ou contesté</td><td>Votre caisse primaire, par les canaux réservés aux professionnels de santé</td><td>Numéro de facture, date, code et libellé, correction déjà tentée</td></tr><tr><td>Part complémentaire rejetée via une plateforme</td><td>Le service professionnels de la plateforme concernée</td><td>Référence de la prise en charge, numéro de facture, motif affiché</td></tr><tr><td>Rejet de format, lot illisible, doublon inexpliqué</td><td>Votre éditeur de logiciel</td><td>Journal de télétransmission, date du lot, retour reçu</td></tr><tr><td>Libellé absent ou code inconnu du logiciel</td><td>Votre éditeur de logiciel</td><td>Capture du retour, version du logiciel</td></tr></table></div><p>Pour les parts complémentaires, les coordonnées et les espaces professionnels des principaux opérateurs sont regroupés sur nos pages plateformes, par exemple celles consacrées à <a href=\"/ressources/portail-viamedis\">Viamedis</a> et à <a href=\"/ressources/portail-almerys\">Almerys</a>.</p><p>Avant d'appeler, préparez le dossier complet. Une escalade efficace tient en une phrase : quelle facture, quel motif, quelle correction a déjà été faite, et ce que vous attendez de l'interlocuteur. C'est ce qui fait la différence entre un appel utile et un ticket qui tourne en rond.</p><p>Gardez le libellé exact affiché dans le retour : c'est lui, et pas un code recopié ailleurs, qui dit quoi corriger.</p>",
+  "tocItems": [
+    {
+      "id": "qu-est-ce-qu-un-code-rejet-noemie",
+      "label": "Qu'est-ce qu'un code rejet NOEMIE ?"
+    },
+    {
+      "id": "ou-apparait-un-rejet-noemie",
+      "label": "Où apparaît le rejet dans le logiciel"
+    },
+    {
+      "id": "ou-trouver-la-liste-des-codes-rejets-noemie",
+      "label": "Où trouver la liste des codes"
+    },
+    {
+      "id": "pourquoi-une-facture-est-rejetee",
+      "label": "Les quatre familles de causes"
+    },
+    {
+      "id": "que-faire-selon-le-code-recu",
+      "label": "Que faire selon le code reçu"
+    },
+    {
+      "id": "quelles-preuves-garder",
+      "label": "Les preuves à garder"
+    },
+    {
+      "id": "au-bout-de-combien-de-temps-relancer",
+      "label": "Quand relancer"
+    },
+    {
+      "id": "quand-escalader-un-rejet-noemie",
+      "label": "Quand escalader, et vers qui"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "Qu'est-ce qu'un code rejet NOEMIE ?",
+      "answer": "Un code rejet NOEMIE est le motif normalisé qu'un organisme payeur renvoie au logiciel du magasin quand il refuse de payer tout ou partie d'une facture télétransmise. Il est toujours accompagné d'un libellé en clair. Ce n'est pas un refus définitif : la facture corrigée et renvoyée peut être payée."
+    },
+    {
+      "question": "Où trouver la liste des codes rejets NOEMIE ?",
+      "answer": "La liste officielle figure dans la documentation technique de la norme NOEMIE, diffusée aux éditeurs de logiciels. Au quotidien, la source fiable est le libellé affiché par votre logiciel de facturation à côté du code. Pour une table à jour ou un libellé peu clair, adressez-vous à votre éditeur, puis à votre caisse pour la part obligatoire."
+    },
+    {
+      "question": "Que faire selon le code rejet NOEMIE reçu ?",
+      "answer": "Lisez le libellé, puis classez la cause : droits du bénéficiaire, identification du professionnel ou du prescripteur, contenu de la facture, ou transmission. Vérifiez qu'aucun paiement n'est déjà arrivé, corrigez uniquement la donnée en cause et renvoyez la facture. Suivez ensuite le retour suivant pour confirmer le paiement."
+    },
+    {
+      "question": "Faut-il refaire toute la facture après un rejet NOEMIE ?",
+      "answer": "Non, il faut corriger uniquement la donnée en cause et renvoyer la facture avec la fonction prévue par le logiciel. Quand une seule ligne est rejetée, les lignes déjà payées ne doivent pas être renvoyées, sous peine de créer un doublon. Gardez la facture initiale et le retour d'origine comme preuve."
+    },
+    {
+      "question": "Vers qui se tourner quand un rejet NOEMIE reste incompréhensible ?",
+      "answer": "Pour un rejet de la part obligatoire, contactez votre caisse primaire par les canaux réservés aux professionnels de santé. Pour la part complémentaire, contactez le service professionnels de la plateforme concernée. Pour un problème de format, de lot ou de code inconnu du logiciel, votre éditeur est le bon interlocuteur."
+    }
+  ],
+  "sources": [
+    {
+      "label": "legifrance.gouv.fr · Code de la sécurité sociale",
+      "url": "https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006073189"
+    },
+    {
+      "label": "cnil.fr · Le règlement européen sur la protection des données",
+      "url": "https://www.cnil.fr/fr/reglement-europeen-protection-donnees"
+    }
+  ],
+  "figures": [
+    {
+      "id": "circuit-retour-noemie",
+      "type": "flux",
+      "titre": "D'où vient un code rejet NOEMIE",
+      "legende": "Le code arrive avec le retour NOEMIE, dans le logiciel : c'est là qu'il se lit, avec son libellé.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "Logiciel du magasin",
+          "detail": "Facture télétransmise (FSE ou DRE)",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Organisme payeur",
+          "detail": "Contrôle, puis paiement ou rejet",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Retour NOEMIE",
+          "detail": "Code et libellé du motif",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Suivi des retours",
+          "detail": "Correction, renvoi, rapprochement bancaire",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [],
+  "liensEntrants": [
+    {
+      "slug": "quand-relancer-mutuelle",
+      "anchor": "quand relancer une mutuelle",
+      "type": "soeur"
+    },
+    {
+      "slug": "virement-mutuelle-inferieur",
+      "anchor": "Virement de mutuelle inférieur à la facture : comprendre l'écart et relancer",
+      "type": "soeur"
+    }
+  ],
+  "remplace": [],
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-13T14:11:10.834Z",
+    "avertissements": [
+      "aucune citation (facultative)",
+      "source non vérifiable (403) : https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006073189"
+    ]
+  }
+}

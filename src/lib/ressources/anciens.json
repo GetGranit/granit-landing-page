@@ -1,0 +1,25 @@
+{
+  "rattaches": {
+    "optique-tiers-payant-amc": "guide-tiers-payant",
+    "portails-mutuelles-goulot": "plateformes",
+    "reduire-rejets-cpam": "rejets",
+    "rapprochement-noemie": "paiements",
+    "kpi-back-office-sante": "gerer-son-tiers-payant"
+  },
+  "autresMetiers": [
+    "audioprothese-renouvellement-tiers-payant",
+    "officine-balance-agee-tiers-payant",
+    "trois-boucles-pharmacie",
+    "dentaire-paniers-100-sante-tiers-payant",
+    "orthodontie-facturation-traitements-longs",
+    "facturation-ehpad-controle-humain",
+    "hopital-prive-ordonnancement",
+    "groupes-multi-sites-pilotage",
+    "recouvrement-patient-empathie",
+    "integration-doctolib-lgo",
+    "logs-agent-sante",
+    "ia-generative-sante-cadre",
+    "ia-vs-rpa-sante",
+    "sesam-vitale-evolutions-2025"
+  ]
+}

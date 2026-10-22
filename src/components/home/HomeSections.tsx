@@ -9,6 +9,7 @@ import { useLanguage } from "@/lib/i18n";
 import { articles as articlesData } from "@/lib/articles";
 import { logDemoRequestDelivered, logDemoRequestDeliveryFailed } from "@/lib/posthogLogs";
 import { submitDemo } from "@/lib/submitDemo";
+import { getAttribution } from "@/lib/attribution";
 import heroPhoto from "@/assets/hero-photo.jpg";
 
 /* ============================================================
@@ -106,7 +107,7 @@ const copy = {
     kpiCards: [
       { pre: "Plus de", value: "250", label: "structures de santé équipées", sub: "nous font confiance" },
       { value: "97%", pre: "Jusqu'à", label: "de temps gagné", sub: "sur les tâches administratives" },
-      { value: "5 jours", pre: "Déployé en", label: "en moyenne", sub: "" },
+      { value: "48h", pre: "Déployé en", label: "en moyenne", sub: "" },
     ],
     integrationsTitle: "Connecté à vos outils",
     /* Articles */
@@ -226,7 +227,7 @@ const copy = {
     kpiCards: [
       { pre: "More than", value: "250", label: "healthcare organizations", sub: "trust us" },
       { value: "97%", pre: "Up to", label: "time saved", sub: "on administrative tasks" },
-      { value: "5 days", pre: "Deployed in", label: "on average", sub: "" },
+      { value: "48h", pre: "Deployed in", label: "on average", sub: "" },
     ],
     integrationsTitle: "Connected to your tools",
     resourcesEyebrow: "Resources",
@@ -1319,6 +1320,7 @@ function DemoForm({ t }: { t: typeof copy["fr"] }) {
               company: String(fd.get("company") || ""),
               orgType: String(fd.get("orgType") || ""),
               challenge: String(fd.get("challenge") || ""),
+              utm: getAttribution(),
             },
           });
           const organizationType = String(fd.get("orgType") || "") || undefined;

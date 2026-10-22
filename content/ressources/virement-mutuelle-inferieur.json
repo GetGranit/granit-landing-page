@@ -1,0 +1,155 @@
+{
+  "slug": "virement-mutuelle-inferieur",
+  "id": "C1",
+  "category": "paiements",
+  "categoryName": "Paiements et rapprochement",
+  "type": "resolution",
+  "plateforme": null,
+  "title": "Virement de mutuelle inférieur à la facture : comprendre l'écart et relancer",
+  "primaryKeyword": "virement mutuelle inférieur facture",
+  "keywordCluster": [],
+  "parentSlug": "rapprochement-bancaire-tiers-payant",
+  "level": "Fille",
+  "author": {
+    "name": "Olivier",
+    "jobTitle": "Rédacteur, expert tiers payant",
+    "photo": "/auteurs/olivier.jpg",
+    "url": null
+  },
+  "reviewer": null,
+  "datePublished": "2026-10-16",
+  "dateModified": "2026-10-16",
+  "checkedOn": null,
+  "wordCount": 2073,
+  "readTime": 9,
+  "metaDescription": "Virement mutuelle inférieur facture : trouvez la cause de l'écart en 4 vérifications, gardez les preuves et sachez qui relancer pour récupérer le solde.",
+  "contentHtml": "<p><strong>Quand le virement d'une mutuelle est inférieur à la facture, l'écart vient le plus souvent d'un montant qui a changé entre l'accord de prise en charge, la facture transmise et le décompte de paiement.</strong> Pour traiter un cas de virement mutuelle inférieur facture, comparez donc trois montants, dans cet ordre : celui accordé, celui facturé, celui payé. Le premier qui diffère vous dit où chercher. Dans la plupart des dossiers, la réponse figure déjà dans le décompte du portail, avant même d'appeler qui que ce soit.</p><p>Ce guide suit un dossier type, du relevé bancaire à la relance : ce que vous voyez, les causes possibles de la plus courante à la plus rare, les gestes à faire, les preuves à garder et le bon interlocuteur.</p><div class=\"key-takeaways\"><strong>L'essentiel</strong><ul><li>Un paiement partiel ne génère en général aucun rejet : le dossier passe en « payé » et l'écart reste invisible si personne ne rapproche facture par facture.</li><li>Avant de conclure à une erreur, vérifiez que le virement ne contient pas seulement la part complémentaire, ou plusieurs dossiers regroupés.</li><li>Dans un contrat responsable, la prise en charge de la monture par la complémentaire est plafonnée à 100 € pour un équipement de classe B (article R871-2 du code de la sécurité sociale).</li><li>Le premier interlocuteur est celui qui a payé : l'opérateur de tiers payant dont le nom figure sur le virement.</li><li>Gardez l'accord, la facture, le décompte et la ligne du relevé bancaire : sans ces quatre pièces, la réclamation n'aboutit pas.</li></ul></div><h2 id=\"virement-mutuelle-inferieur-cas\">À quoi ressemble un virement de mutuelle inférieur à la facture ?</h2><p>Le cas type : un équipement est facturé en tiers payant, la prise en charge a été accordée, et le virement de la complémentaire arrive bien, mais pour un montant plus bas que la part attendue. L'écart va de quelques euros à plusieurs dizaines. Il ne s'accompagne d'aucun message de rejet : le dossier est noté payé.</p><p>C'est ce qui le rend piégeux. Un rejet se voit, il bloque le dossier et oblige à agir. Un paiement partiel, lui, passe souvent inaperçu au rapprochement, surtout quand le virement regroupe plusieurs factures. Le reste à percevoir s'installe alors dans la balance, et devient une perte faute de réclamation.</p><h3>Un exemple pour fixer les idées</h3><p>Exemple fictif : l'accord de prise en charge (PEC) indique une part complémentaire de 300 € pour un équipement unifocal. La facture part au même montant. Le relevé bancaire affiche un virement de 260 € au nom de l'opérateur. Il manque 40 €, et rien sur le portail ne signale un refus.</p><p>Deux définitions pour la suite. L'AMO (assurance maladie obligatoire) est la part payée par la caisse d'Assurance maladie. L'AMC (assurance maladie complémentaire) est la part payée par la mutuelle, l'assureur ou l'institution de prévoyance, souvent par l'intermédiaire d'un opérateur de tiers payant qui gère la prise en charge et le paiement pour son compte. Si vous voulez revoir le parcours complet, le guide <a href=\"/ressources/tiers-payant-opticien\">tiers payant opticien, de la prise en charge à l'encaissement</a> reprend chaque étape.</p><h2 id=\"ou-voir-montant-paye\">Où voir le montant réellement payé par la mutuelle ?</h2><p>Le montant payé se lit à trois endroits : le relevé bancaire, le décompte de l'opérateur et les retours électroniques de votre logiciel. Seul le décompte détaille le calcul, facture par facture.</p><ul><li><strong>Le relevé bancaire</strong> : un montant global, le libellé du payeur et parfois une référence de lot. Il dit combien vous avez reçu, jamais pourquoi.</li><li><strong>Le décompte ou relevé de paiement du portail</strong> : une ligne par facture, avec le montant demandé, le montant réglé et, quand il existe, le motif de la différence. C'est la pièce centrale.</li><li><strong>Les retours NOEMIE</strong> : NOEMIE est la norme d'échange qui remonte dans votre logiciel le résultat du traitement de chaque facture, quand l'organisme transmet ces retours. Un code peut y expliquer l'écart.</li><li><strong>Votre logiciel de facturation</strong> : le montant attendu par part (AMO et AMC), celui que vous comparez au reste.</li></ul><p>Lisez toujours le décompte avant d'appeler. Si le retour comporte un code, la <a href=\"/ressources/codes-rejets-noemie\">liste codes rejets noemie</a> vous aide à le traduire. Et si vous rapprochez déjà vos flux chaque matin, la méthode décrite dans l'article sur le <a href=\"/ressources/rapprochement-noemie\">rapprochement des flux NOEMIE et des virements bancaires</a> s'applique telle quelle.</p><p>Un point à ne jamais sauter : un virement unique peut couvrir plusieurs dossiers, voire en déduire un. Ne concluez à un écart qu'après avoir éclaté le virement par facture.</p><h2 id=\"pourquoi-paye-moins\">Pourquoi la mutuelle a-t-elle payé moins que prévu ?</h2><p>Il y a six causes possibles, et la plupart ne sont pas des erreurs de la mutuelle. Dans les dossiers que nous traitons, l'écart vient le plus souvent d'un virement mal éclaté ou d'une facture qui ne correspond plus à l'accord, bien avant l'erreur de calcul de l'organisme.</p><div class=\"tbl\"><table><tr><th>Cause</th><th>Où vérifier</th><th>Correction</th></tr><tr><td>Le virement ne contient que la part AMC, la part AMO arrive séparément</td><td>Relevé bancaire, virement de la caisse d'Assurance maladie</td><td>Rapprocher les deux virements avec la facture</td></tr><tr><td>Le virement regroupe plusieurs dossiers ou en fractionne un</td><td>Décompte détaillé du portail</td><td>Éclater le virement ligne par ligne</td></tr><tr><td>La facture diffère de l'accord (verres changés, supplément, autre monture)</td><td>Accord de PEC face à la facture</td><td>Nouvelle demande ou facture corrigée, selon la règle du portail</td></tr><tr><td>Plafond du contrat atteint (forfait monture, renouvellement déjà consommé)</td><td>Motif sur le décompte, garanties indiquées sur l'accord</td><td>Si le motif est confirmé, le solde relève du reste à charge</td></tr><tr><td>Compensation d'un trop-perçu sur un autre dossier</td><td>Ligne négative ou déduction sur le décompte</td><td>Retrouver le dossier d'origine, contester si la déduction est injustifiée</td></tr><tr><td>Erreur de calcul ou de saisie de l'organisme</td><td>Décompte inférieur à un accord identique à la facture</td><td>Réclamation écrite avec les preuves</td></tr></table></div><h3>Quand la facture ne correspond plus à l'accord</h3><p>L'accord de PEC engage l'organisme sur un équipement précis : codes LPP, quantités, bénéficiaire, date. La LPP (liste des produits et prestations remboursables) est la nomenclature qui code chaque verre et chaque monture. Si le client change de verres entre le devis et la livraison, ou si un supplément s'ajoute, la facture ne colle plus à l'accord. L'organisme paie alors sur la base de ce qu'il a accordé, pas de ce qui est facturé.</p><h3>Le plafond du contrat responsable</h3><p>Un contrat responsable est un contrat complémentaire qui respecte des minimums et des maximums de prise en charge fixés par la réglementation. Pour l'optique, le <a href=\"https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006073189\">code de la sécurité sociale</a> (article R871-2) plafonne la prise en charge de la monture à 100 € dans un équipement de classe B, c'est-à-dire à tarifs libres. Une monture facturée au-dessus de ce montant produit donc un écart côté complémentaire, même si le contrat semble généreux sur les verres. Le même article fixe aussi des plafonds par équipement et une fréquence de renouvellement : un forfait déjà consommé réduit le paiement.</p><h3>Le cas du 100 % Santé</h3><p>Sur un équipement de classe A (100 % Santé), l'AMO et la complémentaire responsable couvrent ensemble le prix, dans la limite des prix limites de vente. L'Assurance maladie détaille ce panier sans reste à charge sur <a href=\"https://www.ameli.fr/assure/remboursements/rembourse/soins-protheses-dentaires-optique-audition/lunettes-lentilles\">sa page lunettes et lentilles</a>. Un paiement partiel sur un équipement de classe A mérite donc une vérification immédiate : soit la facture dépasse un prix limite ou mélange les classes, soit l'organisme a mal traité le dossier. Dans le second cas, l'écart se réclame, il ne se facture pas au client.</p><h2 id=\"identifier-corriger-ecart\">Comment identifier l'écart et le corriger ?</h2><p>La méthode la plus sûre consiste à remonter le dossier dans l'ordre où il a été construit : virement, accord, facture, décompte. Chaque étape élimine une cause.</p><ol class=\"steps\"><li><strong>Éclater le virement par facture.</strong> Rapprochez chaque ligne du décompte d'une facture de votre logiciel, et isolez celles dont le montant réglé diffère du montant demandé.</li><li><strong>Retrouver l'accord de PEC.</strong> Notez son numéro, le montant AMC accordé et sa date de validité : une facture émise après expiration de l'accord est un motif fréquent de réduction.</li><li><strong>Comparer la facture et l'accord.</strong> Mêmes codes LPP, mêmes quantités, même bénéficiaire, même date de délivrance. Une seule différence suffit à expliquer l'écart.</li><li><strong>Lire le motif sur le décompte.</strong> Plafond atteint, compensation, base de calcul : le libellé exact affiché par le portail dit quoi corriger.</li><li><strong>Classer l'écart.</strong> Justifié (plafond, part AMO à venir, renouvellement consommé) ou à réclamer (accord identique à la facture, déduction inexpliquée).</li><li><strong>Agir selon le classement.</strong> Écart justifié : mettez à jour le reste à charge selon les règles du contrat. Erreur de facture : corrigez selon la procédure de la plateforme. Écart non justifié : ouvrez une réclamation.</li><li><strong>Tracer l'état du dossier.</strong> Dans votre logiciel, notez la cause, l'action faite et la date de la prochaine relance, pour qu'un collègue puisse reprendre le dossier.</li></ol><div data-figure=\"diagnostic-ecart\"></div><div class=\"callout callout--tip\"><p><strong>Le bon réflexe :</strong> reportez le numéro d'accord de PEC sur la facture et dans le dossier client dès la délivrance. Au moment du rapprochement, il évite de chercher l'accord sur le portail, et il sert de référence unique quand vous réclamez.</p></div><p>Quand ces rapprochements se comptent par dizaines chaque semaine, c'est souvent la vérification ligne par ligne qui saute. C'est ce que prennent en charge les <a href=\"/agents\">agents de Granit</a> : ils relèvent les paiements sur les portails des plateformes, rapprochent chaque virement de sa facture et signalent à l'équipe les dossiers payés en partie, avec la cause trouvée.</p><h2 id=\"preuves-a-garder\">Quelles preuves garder pour réclamer le solde ?</h2><p>Une réclamation aboutit quand elle tient en quatre pièces : l'accord, la facture, le décompte et le relevé bancaire. Sans l'une d'elles, l'organisme vous renverra une demande de complément, et le dossier repart pour un tour.</p><ul><li><strong>L'accord de PEC</strong> : son numéro, le montant accordé par part et sa date de validité, tels qu'affichés sur le portail.</li><li><strong>La facture transmise</strong> : la version envoyée, avec sa date d'envoi et, si votre logiciel le fournit, l'accusé de réception.</li><li><strong>Le décompte de paiement</strong> : la ligne qui montre le montant réglé et le motif, exportée ou imprimée depuis le portail.</li><li><strong>La ligne du relevé bancaire</strong> : date, montant, libellé du payeur et référence de lot.</li><li><strong>L'historique des échanges</strong> : date, canal, nom de l'interlocuteur et référence de ticket pour chaque contact.</li></ul><p>Classez ces pièces dans le dossier du client, pas dans une boîte mail. Le jour où l'organisme répond, ou le jour où un collègue reprend le dossier, tout doit être au même endroit.</p><div class=\"callout callout--warn\"><p><strong>Le piège :</strong> solder l'écart en perte au moment du rapprochement « pour avancer ». Une fois le dossier fermé dans le logiciel, plus personne ne le relance, et le délai de réclamation finit par expirer.</p></div><h2 id=\"quand-relancer-paiement-partiel\">Quand relancer pour un paiement partiel ?</h2><p>Relancez dès que l'écart est confirmé et classé « à réclamer », sans attendre le prochain paiement. Un écart n'a aucune raison de se corriger seul : un paiement partiel est un dossier traité, pas un dossier en attente.</p><p>Il n'existe pas de délai universel. Chaque opérateur fixe dans sa convention de tiers payant la façon de contester un paiement et le délai pour le faire. Vérifiez ces conditions dans la convention signée avec la plateforme concernée, et notez-les dans votre procédure interne.</p><p>Pour le rythme des relances elles-mêmes, la page <a href=\"/ressources/quand-relancer-mutuelle\">quand relancer une mutuelle</a> détaille l'ordre des relances et les canaux à utiliser. Le principe reste le même ici : une date de relance notée dans le dossier, et une relance écrite plutôt qu'un appel sans trace.</p><h2 id=\"qui-relancer-mutuelle-portail\">Qui relancer : la mutuelle ou le portail ?</h2><p>Relancez d'abord celui qui a payé, c'est-à-dire l'opérateur de tiers payant dont le nom figure sur le virement. La mutuelle elle-même n'intervient que si l'opérateur vous renvoie vers une question de garanties du contrat.</p><p>L'opérateur gère la prise en charge et le paiement pour le compte de la complémentaire : c'est lui qui a calculé le montant réglé, c'est donc lui qui peut le corriger. Si vous ne savez pas quel opérateur gère une mutuelle donnée, l'outil <a href=\"/ressources/mutuelle-quel-portail\">ma mutuelle passe par quel portail</a> vous oriente à partir du nom ou du numéro AMC.</p><h3>Qui contacter selon la cause</h3><ul><li><strong>Part AMO manquante ou inférieure</strong> : la caisse d'Assurance maladie, pas la mutuelle. Le virement de la complémentaire n'a jamais inclus cette part.</li><li><strong>Écart de calcul, compensation ou facture mal traitée</strong> : l'opérateur de tiers payant, par le canal de réclamation de son espace professionnel.</li><li><strong>Contestation d'un plafond ou d'une garantie</strong> : l'opérateur d'abord, qui transmet à la complémentaire si la question porte sur le contrat.</li></ul><h3>Quand escalader</h3><p>Escaladez quand deux relances écrites restent sans réponse, ou quand la réponse ne traite pas l'écart. Passez alors au canal écrit officiel de l'opérateur (formulaire de réclamation ou courrier), en joignant les quatre pièces et l'historique des échanges. Les coordonnées et canaux de chaque plateforme sont rassemblés dans le guide des <a href=\"/ressources/portails-tiers-payant\">portails de tiers payant pour les opticiens</a>.</p><p>Gardez le motif exact affiché par le portail : c'est lui qui dit quoi corriger, et c'est lui que l'interlocuteur vous demandera en premier.</p>",
+  "tocItems": [
+    {
+      "id": "virement-mutuelle-inferieur-cas",
+      "label": "Le cas : un virement inférieur à la facture"
+    },
+    {
+      "id": "ou-voir-montant-paye",
+      "label": "Où voir le montant réellement payé"
+    },
+    {
+      "id": "pourquoi-paye-moins",
+      "label": "Les causes d'un paiement partiel"
+    },
+    {
+      "id": "identifier-corriger-ecart",
+      "label": "Identifier et corriger l'écart"
+    },
+    {
+      "id": "preuves-a-garder",
+      "label": "Les preuves à garder"
+    },
+    {
+      "id": "quand-relancer-paiement-partiel",
+      "label": "Quand relancer"
+    },
+    {
+      "id": "qui-relancer-mutuelle-portail",
+      "label": "Qui relancer : mutuelle ou portail"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "Pourquoi la mutuelle a-t-elle payé moins que prévu ?",
+      "answer": "Le plus souvent, l'écart vient d'un montant qui a changé entre l'accord de prise en charge, la facture et le décompte. Les causes courantes sont un virement qui ne contient que la part complémentaire, un virement regroupant plusieurs dossiers, une facture différente de l'accord ou un plafond du contrat atteint. L'erreur de calcul de l'organisme existe, mais elle arrive après ces vérifications."
+    },
+    {
+      "question": "Comment identifier l'écart sur un virement de mutuelle ?",
+      "answer": "Éclatez d'abord le virement facture par facture à l'aide du décompte du portail. Comparez ensuite, pour chaque dossier en écart, le montant accordé, le montant facturé et le montant payé. Le premier montant qui diffère indique la cause, et le motif affiché sur le décompte la confirme."
+    },
+    {
+      "question": "Qui relancer : la mutuelle ou le portail ?",
+      "answer": "Relancez d'abord l'opérateur de tiers payant dont le nom figure sur le virement, car c'est lui qui calcule et verse le paiement pour le compte de la complémentaire. La mutuelle n'intervient que si l'opérateur renvoie vers une question de garanties. Si c'est la part Assurance maladie qui manque, c'est la caisse d'Assurance maladie qu'il faut contacter."
+    },
+    {
+      "question": "Le virement de la mutuelle comprend-il la part de l'Assurance maladie ?",
+      "answer": "Non, en tiers payant la part de l'Assurance maladie obligatoire et la part complémentaire sont en général versées par des virements distincts. Un virement de mutuelle qui semble trop bas ne couvre souvent que la part complémentaire. Rapprochez les deux virements de la même facture avant de conclure à un écart."
+    },
+    {
+      "question": "Peut-on facturer au client l'écart laissé par la mutuelle ?",
+      "answer": "Seulement si l'écart est justifié par le contrat, par exemple un plafond monture atteint ou un renouvellement déjà consommé, confirmé par le motif du décompte. Sur un équipement 100 % Santé de classe A, l'écart ne se facture pas au client : il signale une erreur de facture ou de traitement à corriger avec l'organisme."
+    }
+  ],
+  "sources": [
+    {
+      "label": "legifrance.gouv.fr · Code de la sécurité sociale",
+      "url": "https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006073189"
+    },
+    {
+      "label": "ameli.fr · Lunettes et lentilles : remboursement et 100 % Santé",
+      "url": "https://www.ameli.fr/assure/remboursements/rembourse/soins-protheses-dentaires-optique-audition/lunettes-lentilles"
+    }
+  ],
+  "figures": [
+    {
+      "id": "diagnostic-ecart",
+      "type": "etapes",
+      "titre": "Remonter un paiement partiel dans l'ordre",
+      "legende": "Chaque étape élimine une cause : le motif du décompte confirme celle qui reste.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "Éclater le virement",
+          "detail": "Une ligne du décompte par facture",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Retrouver l'accord",
+          "detail": "Numéro, montant AMC, date de validité",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Comparer à la facture",
+          "detail": "Codes LPP, quantités, bénéficiaire, date",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Lire le motif",
+          "detail": "Le libellé exact dit quoi corriger",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Classer l'écart",
+          "detail": "Justifié ou à réclamer",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [
+    {
+      "id": "C2",
+      "slug": "quand-relancer-mutuelle",
+      "anchor": "quand relancer une mutuelle",
+      "type": "sœur"
+    },
+    {
+      "id": "C3",
+      "slug": "codes-rejets-noemie",
+      "anchor": "liste codes rejets noemie",
+      "type": "sœur"
+    }
+  ],
+  "liensEntrants": [],
+  "remplace": [],
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-16T11:23:41.215Z",
+    "avertissements": [
+      "aucune citation (facultative)",
+      "source non vérifiable (403) : https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006073189",
+      "source non vérifiable (403) : https://www.ameli.fr/opticien"
+    ]
+  }
+}

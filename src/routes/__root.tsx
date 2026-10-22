@@ -1,9 +1,10 @@
-import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
-import type { ReactNode } from "react";
+import { Outlet, Link, createRootRoute, HeadContent, Scripts, redirect } from "@tanstack/react-router";
+import { useEffect, type ReactNode } from "react";
 import { PostHogProvider } from "posthog-js/react";
 import { LanguageProvider } from "@/lib/i18n";
 import { CursorDot } from "@/components/CursorDot";
 import { Seo } from "@/components/Seo";
+import { rememberAttribution } from "@/lib/attribution";
 
 import appCss from "../styles.css?url";
 
@@ -32,6 +33,13 @@ function NotFoundComponent() {
 }
 
 export const Route = createRootRoute({
+  // Routes match case-insensitively: send /Agents to /agents so each page has one URL.
+  beforeLoad: ({ location }) => {
+    const path = location.pathname;
+    if (path !== path.toLowerCase()) {
+      throw redirect({ href: path.toLowerCase() + location.searchStr, statusCode: 301 });
+    }
+  },
   head: () => ({
     meta: [
       { charSet: "utf-8" },
@@ -88,7 +96,8 @@ function RootShell({ children }: { children: ReactNode }) {
   const apiKey =
     import.meta.env.VITE_PUBLIC_POSTHOG_PROJECT_TOKEN ??
     "phc_vocwuFQpcKDfGRNvbdcdbL6QHL9Z3kmhgLd3B2mpE28n";
-  const apiHost = import.meta.env.VITE_PUBLIC_POSTHOG_HOST ?? "https://eu.i.posthog.com";
+  // /rel : relais PostHog sous notre domaine (voir nitro.config.ts).
+  const apiHost = import.meta.env.VITE_PUBLIC_POSTHOG_HOST ?? "/rel";
 
   // Seul le site en ligne envoie des événements : ni la preview Lovable ni les essais en local
   // (les builds de démo du lead magnet, VITE_PEC_APERCU=on, sont des builds PROD : on les exclut aussi).
@@ -101,6 +110,7 @@ function RootShell({ children }: { children: ReactNode }) {
       apiKey={apiKey}
       options={{
         api_host: apiHost,
+        ui_host: "https://eu.posthog.com",
         defaults: "2025-05-24",
         capture_exceptions: true,
         logs: {
@@ -129,6 +139,11 @@ function RootDocument({ children }: { children: ReactNode }) {
 }
 
 function RootComponent() {
+  // Lien tracké (utm_*) : gardé pour l'envoyer avec le formulaire, même plus tard.
+  useEffect(() => {
+    rememberAttribution();
+  }, []);
+
   return (
     <LanguageProvider>
       <Seo />

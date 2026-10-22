@@ -15,19 +15,25 @@ import { Route as AffiliationRouteImport } from './routes/affiliation'
 import { Route as AgentsRouteImport } from './routes/agents'
 import { Route as CasUsageRouteImport } from './routes/cas-usage'
 import { Route as CgvRouteImport } from './routes/cgv'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DemoRouteImport } from './routes/demo'
 import { Route as EssaiRouteImport } from './routes/essai'
 import { Route as LeadMagnetPecRouteImport } from './routes/lead-magnet-pec'
 import { Route as PecRouteImport } from './routes/pec'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ProduitRouteImport } from './routes/produit'
 import { Route as RessourcesRouteImport } from './routes/ressources'
 import { Route as SecuriteRouteImport } from './routes/securite'
 import { Route as SilmoRouteImport } from './routes/silmo'
 import { Route as TarifsRouteImport } from './routes/tarifs'
 import { Route as BlogSplatRouteImport } from './routes/blog.$'
+import { Route as EnIndexRouteImport } from './routes/en.index'
+import { Route as EnCgvRouteImport } from './routes/en.cgv'
 import { Route as RessourcesIndexRouteImport } from './routes/ressources.index'
 import { Route as RessourcesSlugRouteImport } from './routes/ressources.$slug'
 import { Route as EnBlogSplatRouteImport } from './routes/en.blog.$'
+import { Route as RessourcesCategorieCategoryRouteImport } from './routes/ressources.categorie.$category'
+import { Route as RessourcesMetierVerticaleRouteImport } from './routes/ressources.metier.$verticale'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -59,6 +65,11 @@ const CgvRoute = CgvRouteImport.update({
   path: '/cgv',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DemoRoute = DemoRouteImport.update({
   id: '/demo',
   path: '/demo',
@@ -77,6 +88,11 @@ const LeadMagnetPecRoute = LeadMagnetPecRouteImport.update({
 const PecRoute = PecRouteImport.update({
   id: '/pec',
   path: '/pec',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProduitRoute = ProduitRouteImport.update({
@@ -109,6 +125,16 @@ const BlogSplatRoute = BlogSplatRouteImport.update({
   path: '/blog/$',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EnIndexRoute = EnIndexRouteImport.update({
+  id: '/en/',
+  path: '/en/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnCgvRoute = EnCgvRouteImport.update({
+  id: '/en/cgv',
+  path: '/en/cgv',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const RessourcesIndexRoute = RessourcesIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -124,6 +150,18 @@ const EnBlogSplatRoute = EnBlogSplatRouteImport.update({
   path: '/en/blog/$',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RessourcesCategorieCategoryRoute =
+  RessourcesCategorieCategoryRouteImport.update({
+    id: '/categorie/$category',
+    path: '/categorie/$category',
+    getParentRoute: () => RessourcesRoute,
+  } as any)
+const RessourcesMetierVerticaleRoute =
+  RessourcesMetierVerticaleRouteImport.update({
+    id: '/metier/$verticale',
+    path: '/metier/$verticale',
+    getParentRoute: () => RessourcesRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -132,19 +170,25 @@ export interface FileRoutesByFullPath {
   '/agents': typeof AgentsRoute
   '/cas-usage': typeof CasUsageRoute
   '/cgv': typeof CgvRoute
+  '/contact': typeof ContactRoute
   '/demo': typeof DemoRoute
   '/essai': typeof EssaiRoute
   '/lead-magnet-pec': typeof LeadMagnetPecRoute
   '/pec': typeof PecRoute
+  '/privacy': typeof PrivacyRoute
   '/produit': typeof ProduitRoute
   '/ressources': typeof RessourcesRouteWithChildren
   '/securite': typeof SecuriteRoute
   '/silmo': typeof SilmoRoute
   '/tarifs': typeof TarifsRoute
   '/blog/$': typeof BlogSplatRoute
+  '/en/cgv': typeof EnCgvRoute
   '/ressources/$slug': typeof RessourcesSlugRoute
+  '/en/': typeof EnIndexRoute
   '/ressources/': typeof RessourcesIndexRoute
   '/en/blog/$': typeof EnBlogSplatRoute
+  '/ressources/categorie/$category': typeof RessourcesCategorieCategoryRoute
+  '/ressources/metier/$verticale': typeof RessourcesMetierVerticaleRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -153,18 +197,24 @@ export interface FileRoutesByTo {
   '/agents': typeof AgentsRoute
   '/cas-usage': typeof CasUsageRoute
   '/cgv': typeof CgvRoute
+  '/contact': typeof ContactRoute
   '/demo': typeof DemoRoute
   '/essai': typeof EssaiRoute
   '/lead-magnet-pec': typeof LeadMagnetPecRoute
   '/pec': typeof PecRoute
+  '/privacy': typeof PrivacyRoute
   '/produit': typeof ProduitRoute
   '/securite': typeof SecuriteRoute
   '/silmo': typeof SilmoRoute
   '/tarifs': typeof TarifsRoute
   '/blog/$': typeof BlogSplatRoute
+  '/en/cgv': typeof EnCgvRoute
   '/ressources/$slug': typeof RessourcesSlugRoute
+  '/en': typeof EnIndexRoute
   '/ressources': typeof RessourcesIndexRoute
   '/en/blog/$': typeof EnBlogSplatRoute
+  '/ressources/categorie/$category': typeof RessourcesCategorieCategoryRoute
+  '/ressources/metier/$verticale': typeof RessourcesMetierVerticaleRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -174,19 +224,25 @@ export interface FileRoutesById {
   '/agents': typeof AgentsRoute
   '/cas-usage': typeof CasUsageRoute
   '/cgv': typeof CgvRoute
+  '/contact': typeof ContactRoute
   '/demo': typeof DemoRoute
   '/essai': typeof EssaiRoute
   '/lead-magnet-pec': typeof LeadMagnetPecRoute
   '/pec': typeof PecRoute
+  '/privacy': typeof PrivacyRoute
   '/produit': typeof ProduitRoute
   '/ressources': typeof RessourcesRouteWithChildren
   '/securite': typeof SecuriteRoute
   '/silmo': typeof SilmoRoute
   '/tarifs': typeof TarifsRoute
   '/blog/$': typeof BlogSplatRoute
+  '/en/cgv': typeof EnCgvRoute
   '/ressources/$slug': typeof RessourcesSlugRoute
+  '/en/': typeof EnIndexRoute
   '/ressources/': typeof RessourcesIndexRoute
   '/en/blog/$': typeof EnBlogSplatRoute
+  '/ressources/categorie/$category': typeof RessourcesCategorieCategoryRoute
+  '/ressources/metier/$verticale': typeof RessourcesMetierVerticaleRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -197,19 +253,25 @@ export interface FileRouteTypes {
     | '/agents'
     | '/cas-usage'
     | '/cgv'
+    | '/contact'
     | '/demo'
     | '/essai'
     | '/lead-magnet-pec'
     | '/pec'
+    | '/privacy'
     | '/produit'
     | '/ressources'
     | '/securite'
     | '/silmo'
     | '/tarifs'
     | '/blog/$'
+    | '/en/cgv'
     | '/ressources/$slug'
+    | '/en/'
     | '/ressources/'
     | '/en/blog/$'
+    | '/ressources/categorie/$category'
+    | '/ressources/metier/$verticale'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -218,18 +280,24 @@ export interface FileRouteTypes {
     | '/agents'
     | '/cas-usage'
     | '/cgv'
+    | '/contact'
     | '/demo'
     | '/essai'
     | '/lead-magnet-pec'
     | '/pec'
+    | '/privacy'
     | '/produit'
     | '/securite'
     | '/silmo'
     | '/tarifs'
     | '/blog/$'
+    | '/en/cgv'
     | '/ressources/$slug'
+    | '/en'
     | '/ressources'
     | '/en/blog/$'
+    | '/ressources/categorie/$category'
+    | '/ressources/metier/$verticale'
   id:
     | '__root__'
     | '/'
@@ -238,19 +306,25 @@ export interface FileRouteTypes {
     | '/agents'
     | '/cas-usage'
     | '/cgv'
+    | '/contact'
     | '/demo'
     | '/essai'
     | '/lead-magnet-pec'
     | '/pec'
+    | '/privacy'
     | '/produit'
     | '/ressources'
     | '/securite'
     | '/silmo'
     | '/tarifs'
     | '/blog/$'
+    | '/en/cgv'
     | '/ressources/$slug'
+    | '/en/'
     | '/ressources/'
     | '/en/blog/$'
+    | '/ressources/categorie/$category'
+    | '/ressources/metier/$verticale'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -260,16 +334,20 @@ export interface RootRouteChildren {
   AgentsRoute: typeof AgentsRoute
   CasUsageRoute: typeof CasUsageRoute
   CgvRoute: typeof CgvRoute
+  ContactRoute: typeof ContactRoute
   DemoRoute: typeof DemoRoute
   EssaiRoute: typeof EssaiRoute
   LeadMagnetPecRoute: typeof LeadMagnetPecRoute
   PecRoute: typeof PecRoute
+  PrivacyRoute: typeof PrivacyRoute
   ProduitRoute: typeof ProduitRoute
   RessourcesRoute: typeof RessourcesRouteWithChildren
   SecuriteRoute: typeof SecuriteRoute
   SilmoRoute: typeof SilmoRoute
   TarifsRoute: typeof TarifsRoute
   BlogSplatRoute: typeof BlogSplatRoute
+  EnCgvRoute: typeof EnCgvRoute
+  EnIndexRoute: typeof EnIndexRoute
   EnBlogSplatRoute: typeof EnBlogSplatRoute
 }
 
@@ -317,6 +395,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CgvRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/demo': {
       id: '/demo'
       path: '/demo'
@@ -343,6 +428,13 @@ declare module '@tanstack/react-router' {
       path: '/pec'
       fullPath: '/pec'
       preLoaderRoute: typeof PecRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/produit': {
@@ -387,6 +479,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogSplatRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/en/': {
+      id: '/en/'
+      path: '/en'
+      fullPath: '/en/'
+      preLoaderRoute: typeof EnIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en/cgv': {
+      id: '/en/cgv'
+      path: '/en/cgv'
+      fullPath: '/en/cgv'
+      preLoaderRoute: typeof EnCgvRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/ressources/': {
       id: '/ressources/'
       path: '/'
@@ -408,17 +514,35 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EnBlogSplatRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ressources/categorie/$category': {
+      id: '/ressources/categorie/$category'
+      path: '/categorie/$category'
+      fullPath: '/ressources/categorie/$category'
+      preLoaderRoute: typeof RessourcesCategorieCategoryRouteImport
+      parentRoute: typeof RessourcesRoute
+    }
+    '/ressources/metier/$verticale': {
+      id: '/ressources/metier/$verticale'
+      path: '/metier/$verticale'
+      fullPath: '/ressources/metier/$verticale'
+      preLoaderRoute: typeof RessourcesMetierVerticaleRouteImport
+      parentRoute: typeof RessourcesRoute
+    }
   }
 }
 
 interface RessourcesRouteChildren {
   RessourcesSlugRoute: typeof RessourcesSlugRoute
   RessourcesIndexRoute: typeof RessourcesIndexRoute
+  RessourcesCategorieCategoryRoute: typeof RessourcesCategorieCategoryRoute
+  RessourcesMetierVerticaleRoute: typeof RessourcesMetierVerticaleRoute
 }
 
 const RessourcesRouteChildren: RessourcesRouteChildren = {
   RessourcesSlugRoute: RessourcesSlugRoute,
   RessourcesIndexRoute: RessourcesIndexRoute,
+  RessourcesCategorieCategoryRoute: RessourcesCategorieCategoryRoute,
+  RessourcesMetierVerticaleRoute: RessourcesMetierVerticaleRoute,
 }
 
 const RessourcesRouteWithChildren = RessourcesRoute._addFileChildren(
@@ -432,16 +556,20 @@ const rootRouteChildren: RootRouteChildren = {
   AgentsRoute: AgentsRoute,
   CasUsageRoute: CasUsageRoute,
   CgvRoute: CgvRoute,
+  ContactRoute: ContactRoute,
   DemoRoute: DemoRoute,
   EssaiRoute: EssaiRoute,
   LeadMagnetPecRoute: LeadMagnetPecRoute,
   PecRoute: PecRoute,
+  PrivacyRoute: PrivacyRoute,
   ProduitRoute: ProduitRoute,
   RessourcesRoute: RessourcesRouteWithChildren,
   SecuriteRoute: SecuriteRoute,
   SilmoRoute: SilmoRoute,
   TarifsRoute: TarifsRoute,
   BlogSplatRoute: BlogSplatRoute,
+  EnCgvRoute: EnCgvRoute,
+  EnIndexRoute: EnIndexRoute,
   EnBlogSplatRoute: EnBlogSplatRoute,
 }
 export const routeTree = rootRouteImport

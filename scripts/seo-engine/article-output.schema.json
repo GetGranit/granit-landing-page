@@ -1,0 +1,168 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "metaDescription",
+    "contentHtml",
+    "tocItems",
+    "faqItems",
+    "sources",
+    "figures"
+  ],
+  "properties": {
+    "metaDescription": {
+      "type": "string",
+      "description": "140 à 160 caractères. Contient le mot-clé principal, un bénéfice concret, finit sur une raison de cliquer."
+    },
+    "contentHtml": {
+      "type": "string",
+      "description": "Corps de l'article : ouverture, encadré « L'essentiel », puis les sections H2. Sans H1, sans FAQ, sans encart final, sans image. Uniquement les composants autorisés du gabarit. Pages plateformes : contient chaque marqueur data-bloc demandé, une fois."
+    },
+    "tocItems": {
+      "type": "array",
+      "description": "Un élément par H2, dans l'ordre. id identique à l'attribut id du H2.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "label"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "slug du H2 : minuscules, tirets, sans accent"
+          },
+          "label": {
+            "type": "string",
+            "description": "libellé court du sommaire, 60 caractères max, pas forcément une question"
+          }
+        }
+      }
+    },
+    "faqItems": {
+      "type": "array",
+      "description": "4 à 7 questions, parties des faqQuestions de la file. Réponses de 2 à 4 phrases, compréhensibles seules.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "question",
+          "answer"
+        ],
+        "properties": {
+          "question": {
+            "type": "string"
+          },
+          "answer": {
+            "type": "string",
+            "description": "Texte simple, sans HTML ni lien."
+          }
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "description": "Toutes les sources externes citées dans le corps, dans l'ordre d'apparition. 2 au minimum. Uniquement des URL fournies dans les données ou listées comme sources de référence.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "label",
+          "url"
+        ],
+        "properties": {
+          "label": {
+            "type": "string",
+            "description": "Site · titre de la page, ex. « ameli.fr · Le tiers payant »"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }
+    },
+    "figures": {
+      "type": "array",
+      "description": "0 à 2 schémas, seulement quand un schéma fait comprendre plus vite qu'un paragraphe. Chacun est placé dans contentHtml par <div data-figure=\"{id}\"></div>, une fois.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "type",
+          "titre",
+          "legende",
+          "colonnes",
+          "elements"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "minuscules, tirets, sans accent"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "flux",
+              "etapes",
+              "comparaison"
+            ],
+            "description": "flux = qui envoie quoi à qui, dans l'ordre ; etapes = actions numérotées ; comparaison = 2 ou 3 options côte à côte"
+          },
+          "titre": {
+            "type": "string",
+            "description": "une idée, 60 caractères max"
+          },
+          "legende": {
+            "type": "string",
+            "description": "la phrase-clé : quoi regarder, 120 caractères max"
+          },
+          "colonnes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "comparaison seulement : les 2 ou 3 options comparées. Vide sinon."
+          },
+          "elements": {
+            "type": "array",
+            "description": "2 à 6 éléments",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "label",
+                "detail",
+                "valeurs",
+                "focus"
+              ],
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "description": "1 à 4 mots"
+                },
+                "detail": {
+                  "type": "string",
+                  "description": "flux : ce qui passe vers l'élément suivant ; etapes : précision ; 60 caractères max, peut être vide"
+                },
+                "valeurs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": "comparaison seulement : une valeur courte par colonne. Vide sinon."
+                },
+                "focus": {
+                  "type": "boolean",
+                  "description": "true sur 1 élément au plus : le point à retenir"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

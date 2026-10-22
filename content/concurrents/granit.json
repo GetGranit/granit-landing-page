@@ -1,0 +1,63 @@
+{
+  "slug": "granit",
+  "nom": "Granit",
+  "modele": "agents-ia",
+  "checkedOn": "2026-10-07",
+  "aRelire": false,
+  "_note": "Relu par Paul le 09/10/2026. Mise en route : « 48 h » retenu par Paul (le site doit retirer « 5 jours »). HDS : formulation validée « certifié HDS (hébergeur de données de santé) ».",
+  "axes": {
+    "quiFait": {
+      "valeur": "Des agents logiciels ; l'équipe Granit reprend les dossiers que l'agent ne peut pas finir",
+      "source": "granit-accueil"
+    },
+    "pec": {
+      "valeur": "oui",
+      "detail": "Interrogation des plateformes, calcul du reste à charge et envoi de la demande de prise en charge",
+      "source": "granit-accueil"
+    },
+    "rejets": {
+      "valeur": "oui",
+      "detail": "Analyse des causes de rejet, correction et renvoi",
+      "source": "granit-accueil"
+    },
+    "rapprochement": {
+      "valeur": "oui",
+      "detail": "Rapprochement des virements Sécu et mutuelles avec les factures",
+      "source": "granit-accueil"
+    },
+    "avance": {
+      "valeur": "non",
+      "source": null
+    },
+    "engagement": {
+      "valeur": "réversibilité totale",
+      "source": "granit-tarifs"
+    },
+    "hds": {
+      "valeur": "certifié HDS (hébergeur de données de santé)",
+      "source": "granit-tarifs"
+    },
+    "plateformes": {
+      "valeur": "logos affichés (Viamedis, Almerys, Santéclair, Carte Blanche, Actil…)",
+      "source": "granit-accueil"
+    }
+  },
+  "meilleurSi": [
+    "le temps passé sur les portails pour les PEC est ce qui coûte le plus",
+    "on veut la réponse de la PEC pendant que le client est en magasin",
+    "on veut voir chaque dossier et son statut sans intermédiaire",
+    "on travaille avec beaucoup de plateformes"
+  ],
+  "sources": {
+    "granit-accueil": {
+      "label": "getgranit.ai · Accueil",
+      "url": "https://getgranit.ai/",
+      "consulte": "2026-10-07"
+    },
+    "granit-tarifs": {
+      "label": "getgranit.ai · Tarifs",
+      "url": "https://getgranit.ai/tarifs",
+      "consulte": "2026-10-07"
+    }
+  }
+}

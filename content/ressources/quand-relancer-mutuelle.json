@@ -1,0 +1,163 @@
+{
+  "slug": "quand-relancer-mutuelle",
+  "id": "C2",
+  "category": "paiements",
+  "categoryName": "Paiements et rapprochement",
+  "type": "resolution",
+  "plateforme": null,
+  "title": "Quand relancer une mutuelle ? Calendrier par étape (PEC, facture, ARL, NOEMIE)",
+  "primaryKeyword": "relancer une mutuelle",
+  "keywordCluster": [
+    "impayés tiers payant"
+  ],
+  "parentSlug": "rapprochement-bancaire-tiers-payant",
+  "level": "Fille",
+  "author": {
+    "name": "Olivier",
+    "jobTitle": "Rédacteur, expert tiers payant",
+    "photo": "/auteurs/olivier.jpg",
+    "url": null
+  },
+  "reviewer": {
+    "name": "Nathalie",
+    "jobTitle": "Rédactrice, experte métier optique",
+    "photo": "/auteurs/nathalie.jpg",
+    "url": null
+  },
+  "datePublished": "2026-10-14",
+  "dateModified": "2026-10-14",
+  "checkedOn": null,
+  "wordCount": 2399,
+  "readTime": 10,
+  "metaDescription": "Relancer une mutuelle au bon moment : signaux à surveiller par étape (PEC, facture, ARL, NOEMIE), preuves à garder et quand escalader un impayé.",
+  "contentHtml": "<p><strong>Il faut relancer une mutuelle dès qu'une étape du dossier dépasse le délai habituel de ce payeur, et pas au bout d'un nombre de jours fixé une fois pour toutes.</strong> Un dossier de tiers payant optique passe par quatre points de contrôle : l'accord de prise en charge (PEC), l'envoi de la facture, l'accusé de réception logique (ARL) et le retour de paiement, souvent transmis par NOEMIE. Chaque point a son propre signal. Repérer celui qui manque vous dit qui relancer, par quel canal et avec quelle preuve.</p><p>Aucune règle unique ne fixe un délai valable pour toutes les complémentaires et toutes les plateformes. Les délais de réponse et de paiement dépendent de la convention de tiers payant que vous avez signée et de ce que chaque plateforme annonce. La méthode la plus sûre est donc de bâtir votre propre calendrier, payeur par payeur, à partir de vos dossiers déjà réglés. Cette page vous donne ce calendrier par étape, les causes à vérifier avant d'appeler et le moment où il faut escalader.</p><div class=\"key-takeaways\"><strong>L'essentiel</strong><ul><li>On relance une étape précise (PEC, facture, ARL, retour de paiement), jamais « le dossier » en général.</li><li>Il n'existe pas de délai universel : la référence, c'est votre convention, ce que la plateforme annonce et votre propre historique de paiement par payeur.</li><li>Avant toute relance, vérifiez qu'il n'y a pas de rejet en attente : un rejet se corrige, il ne se relance pas.</li><li>Relancez d'abord par le portail ou par écrit, gardez la trace (date, canal, interlocuteur, réponse), puis escaladez si deux relances restent sans effet.</li><li>Une revue hebdomadaire des dossiers impayés, classés par ancienneté, évite qu'un impayé ne devienne une perte.</li></ul></div><h2 id=\"relancer-mutuelle-cas\">Dans quel cas faut-il relancer une mutuelle ?</h2><p><strong>Vous relancez quand un dossier n'avance plus alors qu'aucun rejet ne vous a été notifié.</strong> Le cas typique : le client est reparti avec ses lunettes, la part de l'Assurance maladie obligatoire (AMO) est arrivée, mais la part de l'Assurance maladie complémentaire (AMC, la mutuelle ou l'assureur du client) ne figure ni sur vos relevés ni sur votre compte. Le dossier n'est ni payé, ni rejeté : il est silencieux.</p><p>Ces dossiers silencieux forment l'essentiel des impayés tiers payant qu'on retrouve en fin de mois. Ils ne coûtent rien tant qu'ils sont récents. Ils coûtent cher quand on les découvre trois mois plus tard, parce que personne ne se souvient plus de ce qui a été envoyé, ni quand.</p><p>Il faut distinguer deux situations. Si le payeur a renvoyé un motif de rejet, il ne sert à rien de relancer : il faut corriger et renvoyer. La <a href=\"/ressources/codes-rejets-noemie\">liste codes rejets noemie</a> vous aide à lire ce motif. Si aucun retour n'est arrivé, c'est bien une relance qu'il faut faire, et cette page s'applique.</p><p>Pour revoir l'ensemble du parcours d'un dossier, de la demande au virement, le guide <a href=\"/ressources/tiers-payant-opticien\">Tiers payant opticien : de la prise en charge à l'encaissement</a> décrit chaque étape en détail.</p><h2 id=\"signaux-dossier-bloque\">Quels signaux montrent qu'un dossier est bloqué, étape par étape ?</h2><p><strong>Un dossier est bloqué quand le signal attendu à la fin d'une étape n'est pas arrivé.</strong> Chaque étape produit une trace précise. Tant que cette trace manque, l'étape suivante ne peut pas démarrer, et relancer l'étape suivante ne sert à rien.</p><h3>Étape 1 : la prise en charge reste sans réponse</h3><p>La demande de prise en charge a été saisie sur le portail de la plateforme, mais le statut n'évolue pas. Elle reste « en attente » ou « en instance », sans accord ni refus. Tant qu'il n'y a pas d'accord, la mutuelle ne s'est engagée sur rien. Le signal attendu est un statut tranché : accord, accord sous réserve de pièces, ou refus.</p><h3>Étape 2 : la facture n'est pas partie ou pas acceptée</h3><p>L'accord est obtenu, l'équipement est délivré, mais la facture n'a pas été transmise, ou elle a été transmise avec des montants différents de l'accord. Sur certains portails, la facturation se fait directement en ligne à partir de la PEC ; ailleurs, elle part par télétransmission depuis votre logiciel. Le signal attendu est une facture visible côté payeur, rattachée au bon accord.</p><h3>Étape 3 : l'ARL n'est pas revenu</h3><p>L'ARL (accusé de réception logique) est le retour qui confirme qu'un lot télétransmis a bien été reçu et lu par le destinataire. Il ne dit rien du paiement : il prouve seulement que le lot est arrivé et qu'il est lisible. Un ARL absent ou négatif signifie que le payeur n'a peut-être jamais eu votre facture entre les mains.</p><h3>Étape 4 : le retour de paiement ou le virement manque</h3><p>NOEMIE est la norme d'échange qui renvoie au professionnel les informations de paiement ou de rejet après traitement. Deux cas se présentent. Soit aucun retour n'est arrivé : le dossier est en traitement, ou perdu. Soit le retour annonce un paiement, mais vous ne retrouvez pas le virement : c'est alors un problème de rapprochement, pas de relance.</p><div data-figure=\"points-controle-dossier\"></div><h2 id=\"causes-impayes-tiers-payant\">Pourquoi un dossier de tiers payant reste-t-il impayé ?</h2><p><strong>La plupart des dossiers silencieux ont une cause vérifiable de votre côté avant même d'appeler.</strong> Mieux vaut éliminer ces causes d'abord : une relance qui débouche sur « nous n'avons rien reçu » ou « le bénéficiaire n'est pas couvert » vous fait perdre une semaine. Les causes ci-dessous sont classées de la plus simple à vérifier à la plus longue à traiter.</p><div class=\"tbl\"><table><tr><th>Cause possible</th><th>Où vérifier</th><th>Correction</th></tr><tr><td>Mauvais organisme ou mauvais portail sélectionné</td><td>Carte de tiers payant du client, numéro AMC, sélecteur du portail</td><td>Refaire la demande auprès du bon payeur</td></tr><tr><td>Droits du bénéficiaire non ouverts à la date des soins</td><td>Carte de tiers payant (dates de validité), réponse du portail</td><td>Contrôler la période de validité, demander une attestation à jour</td></tr><tr><td>Facture différente de l'accord (montant, codes LPP, date)</td><td>Accord de PEC face à la facture envoyée</td><td>Aligner la facture sur l'accord, ou demander un nouvel accord</td></tr><tr><td>Lot télétransmis non reçu</td><td>Absence d'ARL dans votre logiciel</td><td>Renvoyer le lot, vérifier la configuration de télétransmission</td></tr><tr><td>Rejet arrivé mais non vu</td><td>Retours NOEMIE, messagerie du portail</td><td>Lire le motif, corriger, renvoyer</td></tr><tr><td>Paiement reçu mais non rapproché</td><td>Relevé bancaire, libellé du virement, détail du paiement</td><td>Rapprocher le virement groupé avec les dossiers concernés</td></tr><tr><td>Dossier réellement en attente chez le payeur</td><td>Statut sur le portail</td><td>Relancer, avec les preuves</td></tr></table></div><p>La première cause est fréquente quand une mutuelle a changé d'opérateur ou quand le client a changé de contrat. L'outil <a href=\"/ressources/mutuelle-quel-portail\">Ma mutuelle passe par quel portail ?</a> permet de retrouver le portail à partir du numéro AMC inscrit sur la carte.</p><p>La LPP (liste des produits et prestations remboursables) fixe les codes des verres et montures. Un code facturé qui ne correspond pas à celui de l'accord suffit à bloquer le dossier, même si le montant total est identique.</p><div class=\"callout callout--warn\"><p><strong>Le piège :</strong> un payeur règle souvent plusieurs dossiers en un seul virement. Si vous cherchez le montant exact d'une facture sur votre relevé, vous ne le trouverez pas, et vous risquez de relancer un dossier déjà payé. Partez du détail du paiement, pas du relevé bancaire.</p></div><p>Pour ce dernier cas, la méthode décrite dans <a href=\"/ressources/rapprochement-noemie\">Rapprocher flux NOEMIE et virements bancaires chaque matin</a> s'applique aussi aux retours des complémentaires.</p><h2 id=\"comment-relancer-mutuelle\">Comment relancer une mutuelle, étape par étape ?</h2><p><strong>Une relance efficace vise une étape précise, cite les références du dossier et passe par un canal qui laisse une trace.</strong> Concrètement, une relance qui dit « où en est le dossier de Mme X ? » obtient une réponse vague. Une relance qui dit « accord n° …, facture envoyée le …, ARL reçu, aucun retour de paiement » obtient une réponse précise.</p><ol class=\"steps\"><li><strong>Identifier l'étape bloquée.</strong> PEC sans statut, facture non partie, ARL absent ou retour de paiement manquant : chaque cas appelle une action différente.</li><li><strong>Écarter les causes internes.</strong> Vérifiez le payeur, les droits, la concordance accord et facture, l'ARL, les rejets non lus et les virements groupés, avec le tableau ci-dessus.</li><li><strong>Rassembler les références.</strong> Numéro d'accord, numéro de facture, date d'envoi, numéro de lot, identité du bénéficiaire telle qu'elle figure sur la carte.</li><li><strong>Relancer par le canal le plus traçable.</strong> D'abord la messagerie ou la fonction de suivi du portail, ensuite un écrit, le téléphone en dernier pour débloquer un point précis.</li><li><strong>Noter la relance.</strong> Date, canal, interlocuteur, réponse obtenue et date de la prochaine vérification, dans le dossier lui-même.</li><li><strong>Fixer la date de la relance suivante.</strong> Si rien ne bouge à cette date, vous passez à l'escalade, sans attendre la fin du mois.</li></ol><h3>Portail, mail ou téléphone : quel canal choisir ?</h3><p>Le portail de la plateforme vient en premier. Une demande faite depuis le dossier reste rattachée à celui-ci, et le gestionnaire voit tout l'historique. La page <a href=\"/ressources/portails-tiers-payant\">Portails de tiers payant pour les opticiens</a> détaille, portail par portail, où se trouvent le suivi et la messagerie.</p><p>Le mail ou le formulaire de contact vient ensuite. Il laisse une trace écrite datée, utile si le dossier doit être escaladé. Le téléphone sert à débloquer une situation précise : un dossier introuvable, une pièce demandée sans qu'on sache laquelle. Après chaque appel, notez le nom de l'interlocuteur et ce qui a été convenu, puis confirmez par écrit si l'enjeu le justifie.</p><p>Quand ces relances se comptent par dizaines chaque semaine, le suivi des statuts sur chaque portail devient le goulot du magasin. C'est ce que prennent en charge les <a href=\"/agents\">agents de Granit</a> : ils saisissent les prises en charge directement sur les portails des plateformes, suivent les réponses, puis renvoient le statut à l'équipe, qui sait alors quels dossiers relancer.</p><h2 id=\"preuves-relance\">Quelles preuves garder pour relancer une mutuelle ?</h2><p><strong>Gardez une preuve pour chaque étape franchie : c'est elle qui transforme une relance en réclamation recevable.</strong> Sans preuve, le payeur peut répondre qu'il n'a rien reçu, et vous repartez de zéro. Avec la bonne pièce, il doit traiter.</p><ul><li><strong>L'accord de prise en charge</strong>, avec son numéro, sa date et le montant accordé.</li><li><strong>La facture</strong> et sa date d'envoi, telle qu'elle est partie (pas une version corrigée après coup).</li><li><strong>L'ARL</strong> du lot qui contenait la facture, si elle a été télétransmise.</li><li><strong>Les retours de paiement ou de rejet</strong> reçus pour ce dossier, même partiels.</li><li><strong>Le relevé bancaire</strong> de la période, pour prouver qu'aucun virement ne correspond.</li><li><strong>L'historique des relances</strong> : date, canal, interlocuteur, réponse.</li></ul><p>Ces pièces doivent pouvoir être retrouvées en moins d'une minute. Le plus simple est de les rattacher au dossier dans votre logiciel, ou de les classer par payeur et par mois dans un dossier partagé de l'équipe.</p><div class=\"callout callout--tip\"><p><strong>Le bon réflexe :</strong> faites une capture ou un export du statut affiché par le portail au moment de la relance. Les statuts évoluent, et la trace de ce que vous aviez sous les yeux ce jour-là règle bien des discussions.</p></div><h2 id=\"delai-relance-mutuelle\">Au bout de combien de temps relancer une mutuelle ?</h2><p><strong>Relancez quand le délai habituel de ce payeur, pour cette étape, est dépassé.</strong> Il n'existe pas de délai unique applicable à toutes les complémentaires : chaque convention de tiers payant, chaque plateforme et chaque organisme a ses propres délais de traitement. Donner un chiffre universel serait faux pour une partie de vos payeurs.</p><p>Le tableau ci-dessous indique, pour chaque étape, à partir de quand compter et où trouver votre référence de délai.</p><div class=\"tbl\"><table><tr><th>Étape</th><th>Le délai démarre à</th><th>Signal attendu</th><th>Où trouver la référence</th></tr><tr><td>Prise en charge</td><td>L'envoi de la demande sur le portail</td><td>Accord, accord sous réserve ou refus</td><td>Ce qu'annonce la plateforme, vos délais de réponse passés</td></tr><tr><td>Facture</td><td>La délivrance de l'équipement</td><td>Facture envoyée et rattachée à l'accord</td><td>Votre organisation interne, la durée de validité de l'accord</td></tr><tr><td>ARL</td><td>La télétransmission du lot</td><td>ARL positif</td><td>Votre logiciel de télétransmission</td></tr><tr><td>Retour de paiement</td><td>La réception de l'ARL ou de la facture</td><td>Retour de paiement ou de rejet</td><td>Votre convention, vos délais de paiement passés par payeur</td></tr><tr><td>Virement</td><td>Le retour annonçant le paiement</td><td>Virement retrouvé et rapproché</td><td>Vos relevés bancaires</td></tr></table></div><h3>Construire votre propre calendrier</h3><p>La méthode est simple. Prenez vos dossiers payés des derniers mois et notez, pour chaque payeur, le temps écoulé entre l'envoi de la facture et le paiement. Retenez la valeur habituelle, celle autour de laquelle se situent la plupart des dossiers. Un dossier qui dépasse nettement cette valeur doit être relancé.</p><p>Ce calendrier change avec le temps : une plateforme peut modifier ses délais, une mutuelle peut changer d'opérateur. Revoyez-le chaque trimestre, et dès qu'un payeur se met à payer plus lentement que d'habitude sur plusieurs dossiers.</p><h3>Ne pas laisser vieillir un impayé</h3><p>Le cadre juridique d'une complémentaire dépend de sa nature : les mutuelles relèvent du <a href=\"https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006074067/\">Code de la mutualité</a>, les sociétés d'assurance du <a href=\"https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006073984/\">Code des assurances</a> et les institutions de prévoyance du <a href=\"https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006073189/\">Code de la sécurité sociale</a>. Les délais pour agir ne sont donc pas les mêmes partout, et votre convention de tiers payant ajoute ses propres règles. Un dossier relancé tôt se règle souvent avec une pièce manquante. Un dossier oublié depuis des mois devient beaucoup plus difficile à récupérer.</p><h2 id=\"relances-sans-reponse\">Que faire après plusieurs relances sans réponse ?</h2><p><strong>Après deux relances sans effet, changez de niveau : passez par écrit, à un interlocuteur différent, avec un récapitulatif complet du dossier.</strong> Continuer à relancer par le même canal, au même service, ne produit en général que la même réponse.</p><p>Commencez par identifier le bon destinataire. La plateforme de tiers payant gère le dossier pour le compte de la complémentaire : c'est elle qui traite la prise en charge et, souvent, le paiement. Si la plateforme répond que le dossier est transmis à l'organisme, demandez à quelle date et sous quelle référence, puis adressez-vous à l'organisme en citant cette référence.</p><p>Envoyez ensuite un écrit récapitulatif. Il reprend en quelques lignes les références du dossier, les preuves de chaque étape (accord, facture, ARL), la liste des relances déjà faites avec leurs dates, et la demande précise : paiement, ou motif écrit du blocage. Un courrier recommandé avec accusé de réception se justifie pour les montants importants ou les dossiers anciens.</p><p>Relisez aussi votre convention de tiers payant. Elle prévoit souvent un service dédié aux professionnels de santé ou une procédure de réclamation, et elle encadre ce que vous pouvez faire si le tiers payant n'aboutit pas. Avant toute démarche auprès du client, vérifiez ce qu'elle autorise.</p><h3>Organiser le suivi pour ne plus courir après les dossiers</h3><p>Les relances tardives viennent presque toujours d'un manque de suivi régulier. Une revue hebdomadaire suffit : listez les dossiers non payés, classez-les par ancienneté et par payeur, et traitez en priorité ceux qui dépassent votre calendrier. Un payeur qui revient souvent dans cette liste mérite un échange global plutôt que des relances au cas par cas.</p><p>Gardez enfin le motif exact affiché par le portail ou le retour de paiement à chaque étape : c'est lui qui vous dit s'il faut relancer, corriger ou escalader.</p>",
+  "tocItems": [
+    {
+      "id": "relancer-mutuelle-cas",
+      "label": "Dans quel cas relancer une mutuelle"
+    },
+    {
+      "id": "signaux-dossier-bloque",
+      "label": "Les signaux d'un dossier bloqué, par étape"
+    },
+    {
+      "id": "causes-impayes-tiers-payant",
+      "label": "Les causes d'un impayé tiers payant"
+    },
+    {
+      "id": "comment-relancer-mutuelle",
+      "label": "Comment relancer, étape par étape"
+    },
+    {
+      "id": "preuves-relance",
+      "label": "Les preuves à garder"
+    },
+    {
+      "id": "delai-relance-mutuelle",
+      "label": "Au bout de combien de temps relancer"
+    },
+    {
+      "id": "relances-sans-reponse",
+      "label": "Après plusieurs relances sans réponse"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "Au bout de combien de temps relancer une mutuelle ?",
+      "answer": "Il faut relancer une mutuelle quand le délai habituel de ce payeur, pour l'étape concernée, est dépassé. Aucun délai unique ne vaut pour toutes les complémentaires : il dépend de la convention de tiers payant et de ce que chaque plateforme annonce. La méthode la plus sûre est de mesurer, sur vos dossiers déjà payés, le temps habituel entre facture et paiement pour chaque payeur, puis de relancer tout dossier qui le dépasse nettement."
+    },
+    {
+      "question": "Comment relancer une mutuelle : portail, mail ou téléphone ?",
+      "answer": "Le portail de la plateforme vient en premier, car la demande reste rattachée au dossier et le gestionnaire voit tout l'historique. Le mail ou le formulaire de contact vient ensuite, pour laisser une trace écrite datée. Le téléphone sert à débloquer un point précis, à condition de noter le nom de l'interlocuteur et ce qui a été convenu."
+    },
+    {
+      "question": "Que faire après plusieurs relances sans réponse ?",
+      "answer": "Après deux relances sans effet, il faut changer de niveau : passer par écrit, à un autre interlocuteur, avec un récapitulatif complet. Ce récapitulatif reprend les références du dossier, les preuves de chaque étape (accord, facture, ARL) et la liste des relances déjà faites. Il faut aussi relire la convention de tiers payant, qui prévoit souvent un service dédié aux professionnels ou une procédure de réclamation."
+    },
+    {
+      "question": "Qu'est-ce qu'un ARL en tiers payant ?",
+      "answer": "L'ARL, ou accusé de réception logique, est le retour qui confirme qu'un lot télétransmis a bien été reçu et lu par son destinataire. Il ne dit rien du paiement : il prouve seulement que la facture est arrivée et qu'elle est lisible. Un ARL absent ou négatif signifie que le payeur n'a peut-être jamais reçu la facture, et il faut alors renvoyer le lot plutôt que relancer."
+    }
+  ],
+  "sources": [
+    {
+      "label": "legifrance.gouv.fr · Code de la mutualité",
+      "url": "https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006074067/"
+    },
+    {
+      "label": "legifrance.gouv.fr · Code des assurances",
+      "url": "https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006073984/"
+    },
+    {
+      "label": "legifrance.gouv.fr · Code de la sécurité sociale",
+      "url": "https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006073189/"
+    }
+  ],
+  "figures": [
+    {
+      "id": "points-controle-dossier",
+      "type": "etapes",
+      "titre": "Les quatre points de contrôle d'un dossier",
+      "legende": "Relancez l'étape dont le signal manque : tant qu'il n'est pas arrivé, l'étape suivante ne démarre pas.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "Accord de PEC",
+          "detail": "Statut tranché : accord, sous réserve ou refus",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Facture envoyée",
+          "detail": "Rattachée à l'accord, mêmes montants et codes LPP",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "ARL reçu",
+          "detail": "Le lot est arrivé et lisible, pas encore payé",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Retour de paiement",
+          "detail": "Paiement ou rejet, souvent via NOEMIE",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Virement rapproché",
+          "detail": "Partir du détail du paiement, pas du relevé",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [
+    {
+      "id": "C3",
+      "slug": "codes-rejets-noemie",
+      "anchor": "liste codes rejets noemie",
+      "type": "sœur"
+    }
+  ],
+  "liensEntrants": [
+    {
+      "slug": "virement-mutuelle-inferieur",
+      "anchor": "Virement de mutuelle inférieur à la facture : comprendre l'écart et relancer",
+      "type": "soeur"
+    }
+  ],
+  "remplace": [],
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-14T11:51:53.475Z",
+    "avertissements": [
+      "aucune citation (facultative)",
+      "source non vérifiable (403) : https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006074067/",
+      "source non vérifiable (403) : https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006073984/",
+      "source non vérifiable (403) : https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006073189/"
+    ]
+  }
+}

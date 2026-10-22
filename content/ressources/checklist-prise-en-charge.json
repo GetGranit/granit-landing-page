@@ -1,0 +1,158 @@
+{
+  "slug": "checklist-prise-en-charge",
+  "id": "B8",
+  "category": "rejets",
+  "categoryName": "Rejets et corrections",
+  "type": "resolution",
+  "plateforme": null,
+  "title": "Checklist avant d'envoyer une prise en charge : les points qui évitent le rejet",
+  "primaryKeyword": "checklist prise en charge optique",
+  "keywordCluster": [],
+  "parentSlug": "rejet-tiers-payant",
+  "level": "Fille",
+  "author": {
+    "name": "Olivier",
+    "jobTitle": "Rédacteur, expert tiers payant",
+    "photo": "/auteurs/olivier.jpg",
+    "url": null
+  },
+  "reviewer": {
+    "name": "Nathalie",
+    "jobTitle": "Rédactrice, experte métier optique",
+    "photo": "/auteurs/nathalie.jpg",
+    "url": null
+  },
+  "datePublished": "2026-10-19",
+  "dateModified": "2026-10-19",
+  "checkedOn": null,
+  "wordCount": 2201,
+  "readTime": 10,
+  "metaDescription": "Checklist prise en charge optique : droits, portail, ordonnance, devis et pièces à vérifier avant l'envoi. Les 8 contrôles à faire pour éviter le rejet.",
+  "contentHtml": "<p><strong>Une checklist prise en charge optique tient en cinq familles de contrôles : les droits du client à la date du jour, le bon portail pour sa mutuelle, une ordonnance exploitable, un devis cohérent avec les codes de l'équipement, et les pièces demandées par la plateforme.</strong> Un refus évitable vient presque toujours d'un de ces points, pas de la garantie du contrat. Les vérifier avant l'envoi prend deux minutes. Corriger un rejet après coup coûte une nouvelle saisie, un client à rappeler et un dossier qui attend.</p><p>Cette page suit l'ordre d'un dossier au comptoir : le cas, ce que vous voyez sur le portail, les causes, les 8 contrôles à faire, les pièces, les preuves à garder, le moment de relancer et celui d'escalader. Elle vaut pour l'optique, quel que soit le portail.</p><div class=\"key-takeaways\"><strong>L'essentiel</strong><ul><li>La plupart des refus évitables se jouent avant l'envoi : droits fermés, mauvais bénéficiaire, mauvais organisme choisi, ordonnance inexploitable ou devis incohérent.</li><li>Vérifiez les droits à la date de délivrance prévue, pas seulement à la date du jour, et sur la carte de tiers payant en cours de validité.</li><li>Le devis et la demande doivent décrire exactement le même équipement : mêmes verres, même monture, même classe 100 % Santé, mêmes montants.</li><li>Gardez le motif exact affiché par le portail en cas de refus : c'est lui qui dit quoi corriger.</li><li>Action pour aujourd'hui : imprimez les 8 contrôles ci-dessous et faites-les passer avant chaque saisie pendant une semaine.</li></ul></div><h2 id=\"dans-quel-cas-utiliser-la-checklist\">Dans quel cas cette checklist vous sert-elle ?</h2><p>Elle sert au moment précis où le client a validé son devis et où vous allez saisir la demande sur le portail. C'est le dernier moment où une erreur se corrige sans coût.</p><p>Une prise en charge (PEC) est la demande d'accord que l'opticien adresse à la complémentaire santé du client, l'AMC (assurance maladie complémentaire), le plus souvent par l'intermédiaire d'une plateforme de tiers payant. L'accord fixe ce que la mutuelle s'engage à régler. La part de l'AMO (assurance maladie obligatoire, la Sécurité sociale) suit un autre circuit. Pour la chaîne complète, de la demande à l'encaissement, voyez notre guide du <a href=\"/ressources/tiers-payant-opticien\">tiers payant opticien</a>.</p><p>Le cas type ressemble à ceci. Un client choisit des verres progressifs, vous présente sa carte de mutuelle et repart en attendant l'accord. Le lendemain, le portail affiche un refus : le bénéficiaire saisi ne correspond pas au contrat. Il faut rappeler le client, retrouver la bonne carte, ressaisir, attendre de nouveau. Rien de tout cela ne venait de la garantie : l'erreur était dans la saisie.</p><p>La checklist existe pour que ce scénario devienne rare. Elle ne remplace pas la lecture du motif de refus quand il arrive, mais elle supprime les refus qui n'auraient jamais dû exister.</p><h2 id=\"ce-que-vous-voyez-sur-le-portail\">Que voit-on sur le portail quand une demande part incomplète ?</h2><p>Trois situations reviennent : un refus avec un motif, une demande de pièce complémentaire, ou une demande qui reste sans réponse. Chaque plateforme a ses propres libellés, mais la logique est la même partout.</p><p>Les statuts se lisent en quatre grandes familles. L'accord signifie que la mutuelle s'engage sur le montant indiqué. L'accord sous réserve de pièces signifie que l'engagement dépend d'un document à fournir. La demande en instance attend un traitement, parfois manuel. Le refus arrête le dossier, avec un motif plus ou moins précis selon le portail.</p><p>Un quatrième cas se découvre plus tard : la demande a été acceptée, mais le paiement reçu ne correspond pas à l'accord. Il vient souvent d'un écart entre la facture et la demande. Nous l'avons détaillé dans l'article sur le <a href=\"/ressources/virement-mutuelle-inferieur\">virement de mutuelle inférieur à la facture</a>.</p><div class=\"callout callout--tip\"><p><strong>Le bon réflexe :</strong> copiez le motif exact du refus dans votre logiciel ou dans le dossier client, mot pour mot. Une reformulation de mémoire (« problème de droits ») fait perdre l'information qui permet de corriger du premier coup.</p></div><h2 id=\"causes-rejet-prise-en-charge-optique\">Quelles sont les causes d'un rejet de prise en charge optique ?</h2><p>Il y a cinq familles de causes : l'identité et les droits du client, le choix du portail et de l'organisme, l'ordonnance, l'équipement et son devis, et les pièces. Le tableau ci-dessous les classe dans l'ordre où elles se vérifient au comptoir.</p><div class=\"tbl\"><table><tr><th>Cause</th><th>Où vérifier</th><th>Correction</th></tr><tr><td>Droits complémentaires fermés ou pas encore ouverts</td><td>Carte de tiers payant (dates de validité), droits en ligne sur le portail</td><td>Demander la carte en cours au client, ou facturer hors tiers payant</td></tr><tr><td>Bénéficiaire mal identifié (ayant droit saisi comme ouvrant droit, ou l'inverse)</td><td>Carte de tiers payant : nom de l'assuré principal et des bénéficiaires</td><td>Saisir le porteur réel de l'équipement, rattaché au bon assuré</td></tr><tr><td>Mauvais portail ou mauvais organisme choisi dans la liste</td><td>Logo et mentions de la carte, sélecteur d'organisme du portail</td><td>Ressaisir sur le portail indiqué par la carte</td></tr><tr><td>Ordonnance périmée, illisible ou incomplète</td><td>Date, prescripteur, corrections, mention du verre</td><td>Obtenir une ordonnance valable avant la demande</td></tr><tr><td>Renouvellement pas encore ouvert</td><td>Date du dernier équipement remboursé, si le client la connaît</td><td>Vérifier la règle de renouvellement applicable avant de saisir</td></tr><tr><td>Codes, classe ou montants incohérents avec le devis</td><td>Devis normalisé, codes LPP des verres et de la monture</td><td>Aligner la demande ligne par ligne sur le devis signé</td></tr><tr><td>Pièce manquante ou illisible</td><td>Liste des pièces exigées par la plateforme</td><td>Joindre un scan net, complet, dans le bon format</td></tr></table></div><p>Les deux premières lignes concernent la personne, pas l'équipement. Elles sont aussi les plus faciles à éviter, parce que tout est écrit sur la carte. Le cas du bénéficiaire mal rattaché a son propre article : <a href=\"/ressources/rejet-beneficiaire-inconnu\">rejet « bénéficiaire inconnu »</a>, avec la manière de corriger sans toucher à la part AMO.</p><p>La troisième ligne surprend souvent les équipes : une même mutuelle peut apparaître dans plusieurs sélecteurs, ou ne pas apparaître là où on l'attend. Le réflexe est de partir de la carte, puis de <a href=\"/ressources/mutuelle-quel-portail\">savoir par quel portail passe une mutuelle</a> avant la saisie.</p><p>Les quatre dernières lignes portent sur le dossier technique. Elles demandent plus d'attention, parce qu'une demande peut être acceptée sur un montant qui ne correspond plus à ce que vous délivrez, et le problème ressort au paiement.</p><h2 id=\"points-a-verifier-avant-envoi\">Quels points vérifier avant d'envoyer une prise en charge optique ?</h2><p>La méthode la plus sûre est de suivre toujours le même ordre : la personne, le portail, l'ordonnance, l'équipement, les pièces, puis une relecture. Voici les 8 contrôles à faire avant chaque envoi.</p><ol class=\"steps\"><li><strong>Contrôler la carte de tiers payant.</strong> Elle doit être celle de l'année en cours, et ses dates de validité doivent couvrir la date prévue de délivrance de l'équipement.</li><li><strong>Identifier le bon bénéficiaire.</strong> Repérez sur la carte l'ouvrant droit (l'assuré qui porte le contrat) et le bénéficiaire qui portera les lunettes. Un enfant ou un conjoint se saisit comme bénéficiaire, rattaché à l'ouvrant droit.</li><li><strong>Choisir le portail et l'organisme.</strong> Partez du logo et des mentions de la carte, ouvrez le portail correspondant, puis sélectionnez l'organisme exact dans la liste. Un organisme voisin au nom proche fait partir la demande au mauvais endroit.</li><li><strong>Vérifier l'ordonnance.</strong> Date, identité du prescripteur, identité du patient, corrections œil par œil, addition pour des progressifs. Si un élément manque ou ne se lit pas, la demande ne doit pas partir.</li><li><strong>Vérifier la règle de renouvellement.</strong> Demandez au client la date de son dernier équipement remboursé. Un renouvellement anticipé sans justification est une cause classique de refus.</li><li><strong>Aligner la demande sur le devis.</strong> Mêmes verres, même monture, même classe 100 % Santé, mêmes montants, ligne par ligne. Le devis signé fait foi.</li><li><strong>Contrôler les codes de l'équipement.</strong> Chaque verre et la monture correspondent à un code de la LPP. Un code qui ne correspond pas à la correction saisie crée une incohérence visible.</li><li><strong>Joindre les pièces et relire.</strong> Scans nets et complets, puis une relecture de l'écran récapitulatif avant de valider, en particulier le nom du bénéficiaire et les montants.</li></ol><div data-figure=\"checklist-avant-envoi\"></div><p>Les contrôles 6 et 7 méritent une précision. Selon <a href=\"https://www.ameli.fr/assure/remboursements/rembourse/soins-protheses-dentaires-optique-audition/lunettes-lentilles\">ameli.fr</a>, l'offre 100 % Santé optique distingue des équipements de classe A, sans reste à charge, et des équipements de classe B, à tarifs libres. Le devis présenté au client doit faire apparaître cette distinction. Votre demande doit reprendre la classe réellement choisie, y compris quand le client mélange une monture d'une classe et des verres d'une autre.</p><p>La LPP (liste des produits et prestations remboursables) est la nomenclature qui code chaque verre et chaque monture. Elle se consulte sur le <a href=\"http://www.codage.ext.cnamts.fr/codif/tips//index_presentation.php?p_site=AMELI\">site de codage de l'Assurance maladie</a>. En pratique, votre logiciel propose le code ; le contrôle consiste à vérifier qu'il correspond bien au verre commandé et à la correction de l'ordonnance, surtout après une modification du devis.</p><p>Quand ces contrôles se répètent sur des dizaines de dossiers par jour, ils sont souvent les premiers sacrifiés aux heures pleines. C'est ce que prennent en charge les <a href=\"/agents\">agents de Granit</a> : ils passent des contrôles automatiques sur chaque dossier avant de le déposer sur le portail, puis renvoient le statut à l'équipe. Vous gardez la main sur les cas qui demandent un échange avec le client.</p><h2 id=\"comment-verifier-les-droits-du-client\">Comment vérifier les droits du client avant la demande ?</h2><p>On vérifie les droits complémentaires sur la carte de tiers payant présentée par le client, puis, quand le portail le permet, par une consultation en ligne avant de saisir. Les droits AMO se vérifient de leur côté avec la carte Vitale.</p><p>La carte de tiers payant porte trois informations décisives : l'organisme et le portail, la période de validité, et la liste des bénéficiaires. Une carte de l'année précédente est un signal d'alerte, même si le client assure que rien n'a changé. Un changement d'employeur ou de contrat peut avoir fermé les droits sans que le client le sache.</p><p>Regardez aussi la date de délivrance prévue. Si la commande prend du temps et que les droits se terminent avant la remise de l'équipement, l'accord obtenu aujourd'hui peut ne pas tenir au moment de la facture. Dans ce cas, demandez au client s'il a reçu une nouvelle carte, ou prévenez-le du risque.</p><div class=\"callout callout--warn\"><p><strong>Le piège :</strong> saisir l'assuré principal parce que c'est son nom qui est en haut de la carte, alors que les lunettes sont pour son enfant. Le portail attend le porteur de l'équipement, rattaché à l'ouvrant droit.</p></div><h2 id=\"pieces-a-joindre-au-dossier\">Quelles pièces joindre au dossier de prise en charge ?</h2><p>Le socle est presque toujours le même : l'ordonnance et le devis. Les pièces exactes et leur format dépendent de la plateforme, et certaines demandent un justificatif supplémentaire selon le cas.</p><p>Pour chaque pièce, trois règles valent partout. Le scan doit être lisible en entier, sans bord coupé ni reflet. Il doit correspondre au dossier saisi : la bonne ordonnance, le devis dans sa version finale. Et il doit être au format accepté par le portail, sinon le dépôt échoue ou la pièce n'est pas visible par le gestionnaire.</p><p>Un renouvellement anticipé, un changement de correction ou un équipement particulier peuvent appeler une justification. Avant de déposer ce type de dossier, consultez la fiche du portail concerné dans notre annuaire des <a href=\"/ressources/portails-tiers-payant\">portails de tiers payant</a> : chaque page détaille la prise en charge et les statuts de la plateforme.</p><h2 id=\"preuves-a-garder\">Quelles preuves garder une fois la demande envoyée ?</h2><p>Gardez quatre éléments : le numéro ou la référence de la demande, la date d'envoi, le statut affiché avec son libellé exact, et les pièces telles que vous les avez déposées.</p><p>La référence de la demande est ce que le support de la plateforme vous demandera en premier. La date d'envoi sert à savoir quand relancer. Le statut et son libellé disent ce que la mutuelle a accepté, et pour quel montant. Les pièces déposées prouvent que le dossier était complet si on vous affirme le contraire.</p><p>Une fois l'accord obtenu, conservez-le avec le dossier jusqu'au paiement. C'est lui que vous comparerez au virement. Si le montant versé diffère, vous saurez tout de suite si l'écart vient de la facture ou de la mutuelle.</p><h2 id=\"quand-relancer\">Quand relancer si la réponse ne vient pas ?</h2><p>Relancez quand le délai annoncé par la plateforme est dépassé, et seulement après avoir revérifié le statut sur le portail. Il n'existe pas de délai universel : chaque plateforme fixe le sien, quand elle en publie un.</p><p>Une demande en instance n'est pas forcément bloquée. Elle peut attendre une étude manuelle, une pièce, ou une réponse de la mutuelle elle-même. Avant de relancer, ouvrez le dossier : un accord sous réserve de pièces affiché depuis la veille se règle en déposant la pièce, pas par un appel.</p><p>Pour les délais à respecter étape par étape (prise en charge, facture, accusés de réception, retours NOEMIE), suivez notre calendrier : <a href=\"/ressources/quand-relancer-mutuelle\">quand relancer une mutuelle</a>.</p><h2 id=\"quand-escalader\">Quand escalader un rejet, et vers qui ?</h2><p>Escaladez quand le motif de refus ne correspond pas au dossier, ou quand une correction conforme au motif est refusée une seconde fois. L'interlocuteur est d'abord le support de la plateforme, puis la mutuelle si la plateforme renvoie vers elle.</p><p>Avant d'appeler, rassemblez la référence de la demande, le motif exact, la carte de tiers payant et les pièces déposées. Les coordonnées du support figurent dans la section contact de chaque fiche portail de notre annuaire. Un appel préparé se règle souvent en un seul échange.</p><p>Si le problème apparaît après la facture, sous forme de rejet sur le retour de paiement, la logique change : il faut lire le code transmis. Notre liste des <a href=\"/ressources/codes-rejets-noemie\">codes rejets NOEMIE</a> donne la signification de chaque code et l'action à mener.</p><p>Gardez le motif exact affiché par le portail : c'est lui qui dit quoi corriger.</p>",
+  "tocItems": [
+    {
+      "id": "dans-quel-cas-utiliser-la-checklist",
+      "label": "Dans quel cas utiliser la checklist"
+    },
+    {
+      "id": "ce-que-vous-voyez-sur-le-portail",
+      "label": "Ce que vous voyez sur le portail"
+    },
+    {
+      "id": "causes-rejet-prise-en-charge-optique",
+      "label": "Les causes de rejet d'une PEC optique"
+    },
+    {
+      "id": "points-a-verifier-avant-envoi",
+      "label": "Les 8 points à vérifier avant l'envoi"
+    },
+    {
+      "id": "comment-verifier-les-droits-du-client",
+      "label": "Vérifier les droits du client"
+    },
+    {
+      "id": "pieces-a-joindre-au-dossier",
+      "label": "Les pièces à joindre au dossier"
+    },
+    {
+      "id": "preuves-a-garder",
+      "label": "Les preuves à garder"
+    },
+    {
+      "id": "quand-relancer",
+      "label": "Quand relancer"
+    },
+    {
+      "id": "quand-escalader",
+      "label": "Quand escalader, et vers qui"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "Quels points vérifier avant d'envoyer une prise en charge optique ?",
+      "answer": "Vérifiez dans l'ordre la carte de tiers payant et ses dates de validité, le bon bénéficiaire, le portail et l'organisme exact, l'ordonnance, la règle de renouvellement, la cohérence entre la demande et le devis, les codes LPP de l'équipement, puis les pièces jointes. Une relecture de l'écran récapitulatif avant validation évite les erreurs de nom et de montant."
+    },
+    {
+      "question": "Quelles pièces joindre au dossier de prise en charge ?",
+      "answer": "Le socle est l'ordonnance et le devis dans sa version finale. Les pièces exactes et leur format dépendent de la plateforme, et certains cas comme un renouvellement anticipé peuvent demander une justification. Chaque scan doit être lisible en entier et correspondre au dossier saisi."
+    },
+    {
+      "question": "Comment vérifier les droits du client ?",
+      "answer": "Contrôlez la carte de tiers payant présentée par le client : organisme, période de validité et liste des bénéficiaires. Quand le portail le permet, consultez les droits en ligne avant de saisir. Vérifiez aussi que les droits couvrent la date prévue de délivrance de l'équipement, pas seulement la date du jour."
+    },
+    {
+      "question": "Comment savoir par quel portail passe une mutuelle ?",
+      "answer": "Partez du logo et des mentions portés sur la carte de tiers payant du client, puis ouvrez le portail correspondant et choisissez l'organisme exact dans sa liste. Une même mutuelle peut apparaître dans plusieurs sélecteurs, d'où l'intérêt de vérifier avant la saisie plutôt que de deviner."
+    }
+  ],
+  "sources": [
+    {
+      "label": "ameli.fr · Lunettes et lentilles : remboursement et 100 % Santé",
+      "url": "https://www.ameli.fr/assure/remboursements/rembourse/soins-protheses-dentaires-optique-audition/lunettes-lentilles"
+    },
+    {
+      "label": "codage.ext.cnamts.fr · Liste des produits et prestations (LPP)",
+      "url": "http://www.codage.ext.cnamts.fr/codif/tips//index_presentation.php?p_site=AMELI"
+    }
+  ],
+  "figures": [
+    {
+      "id": "checklist-avant-envoi",
+      "type": "etapes",
+      "titre": "Les contrôles avant d'envoyer une prise en charge",
+      "legende": "L'ordre compte : la personne et le portail d'abord, l'équipement ensuite, la relecture en dernier.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "Carte et bénéficiaire",
+          "detail": "Validité à la date de délivrance, bon porteur",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Portail et organisme",
+          "detail": "Partir de la carte, organisme exact dans la liste",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Ordonnance et renouvellement",
+          "detail": "Date, prescripteur, corrections, dernier équipement",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Devis et codes LPP",
+          "detail": "Mêmes verres, monture, classe et montants",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Pièces et relecture",
+          "detail": "Scans nets, écran récapitulatif relu",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [
+    {
+      "id": "A13",
+      "slug": "mutuelle-quel-portail",
+      "anchor": "savoir par quel portail passe une mutuelle",
+      "type": "outil"
+    }
+  ],
+  "liensEntrants": [],
+  "remplace": [],
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-19T13:12:28.494Z",
+    "avertissements": [
+      "aucune citation (facultative)",
+      "source non vérifiable (403) : https://www.ameli.fr/assure/remboursements/offre-100-sante/optique",
+      "page rendue en JavaScript, citations non vérifiables : http://www.codage.ext.cnamts.fr/codif/tips//index_presentation.php?p_site=AMELI"
+    ]
+  }
+}

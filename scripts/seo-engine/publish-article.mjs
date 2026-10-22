@@ -1,0 +1,317 @@
+#!/usr/bin/env node
+// Moteur SEO Granit : rédige le prochain article de la file et l'écrit dans content/ressources/.
+// Usage : node scripts/seo-engine/publish-article.mjs [--slug portail-viamedis] [--dry] [--out dossier] [--model claude-opus-5-5] [--relecture]
+//   --relecture : force la PR de relecture humaine (lot de nuit), quel que soit le nombre d'articles sortis.
+//   --dry : n'écrit que l'article (dans --out), ne touche ni à la file ni aux autres articles.
+// Le commit, la PR et la notification sont faits par le workflow (ship.sh, notify.mjs).
+import { mkdirSync } from "node:fs";
+import { join } from "node:path";
+import { parseArgs } from "node:util";
+import { citations, controler, typeDePage, verifierSources } from "./lib/checks.mjs";
+import { apiKey, coutDollars, rediger } from "./lib/claude.mjs";
+import { mots, texte } from "./lib/html.mjs";
+import {
+  CONTENU, MOTEUR, ancienArticle, anciensArticles, concurrentsPour, ecrireFile, ecrireJson, faitsPour, lireFile, lireJson,
+  publies, sortieGithub, systemeGuide,
+} from "./lib/site.mjs";
+
+const { values: opt } = parseArgs({
+  options: { slug: { type: "string" }, dry: { type: "boolean", default: false }, out: { type: "string" }, model: { type: "string" }, relecture: { type: "boolean", default: false } },
+});
+
+const config = lireJson(join(MOTEUR, "config.json"));
+if (opt.model) config.model = opt.model;
+const schema = lireJson(join(MOTEUR, "article-output.schema.json"));
+const aujourdhui = new Date().toISOString().slice(0, 10);
+
+// 1. Choix de l'article
+const file = lireFile();
+const article = opt.slug ? file.find((a) => a.slug === opt.slug) : file.find((a) => a.status === "pending");
+if (!article) {
+  if (opt.slug) throw new Error(`slug inconnu dans la file : ${opt.slug}`);
+  console.log("File vide : aucun article pending. Rien à faire.");
+  sortieGithub({ slug: "" });
+  process.exit(0);
+}
+if (opt.slug && article.status !== "pending" && !opt.dry) {
+  throw new Error(`« ${article.slug} » a le statut ${article.status} : seul un article pending se publie (ou utiliser --dry)`);
+}
+const type = typeDePage(article);
+const fp = faitsPour(article);
+if (type === "plateforme" && !fp?.faits) throw new Error(`fichier de faits manquant : content/plateformes/${fp?.nom}.json`);
+const comparatif = type === "vs" || type === "grille";
+const concurrents = concurrentsPour(article);
+if (comparatif) {
+  const manquants = article.concurrents.filter((s) => !concurrents[s]);
+  if (manquants.length) throw new Error(`fichiers de faits manquants : ${manquants.map((s) => `content/concurrents/${s}.json`).join(", ")}`);
+  const nonRelus = article.concurrents.filter((s) => concurrents[s].aRelire);
+  // En essai (--dry) on rédige quand même, mais les contrôles refuseront la publication.
+  if (nonRelus.length && !opt.dry) throw new Error(`fichiers de faits non relus (aRelire = true) : ${nonRelus.join(", ")}`);
+}
+console.log(`Article ${article.id} · ${article.slug} · type ${type}${fp?.faits ? ` · faits ${fp.nom}` : ""}`);
+
+// 2. Cibles de liens autorisées
+const enLigne = publies(file);
+const cibles = new Map();
+for (const a of enLigne) cibles.set(`/ressources/${a.slug}`, a.title);
+// anciens articles encore en ligne : ni déjà remplacés, ni remplacés par celui-ci
+const remplaces = new Set([...enLigne, article].flatMap((a) => a.remplace ?? []));
+for (const a of anciensArticles()) {
+  if (remplaces.has(a.slug) || a.slug === article.slug) continue;
+  cibles.set(`/ressources/${a.slug}`, `${a.titre} (ancien article, ${a.categorie})`);
+}
+const inconnus = (article.remplace ?? []).filter((s) => !anciensArticles().some((a) => a.slug === s));
+if (inconnus.length) throw new Error(`remplace : ancien article inconnu ${inconnus.join(", ")}`);
+cibles.set("/ressources", "Hub des ressources");
+const slugsEnLigne = new Set(enLigne.map((a) => a.slug));
+const liensPrevus = (article.internalLinks ?? []).filter((l) => slugsEnLigne.has(l.slug));
+
+// Refonte : l'ancien article sert de matière première, à la même adresse
+const ancien = article.refonte ? ancienArticle(article.slug) : null;
+if (article.refonte && !ancien) throw new Error(`refonte : ancien article introuvable dans articles.ts : ${article.slug}`);
+
+// 3. Message envoyé à Claude
+const meta = {
+  slug: article.slug,
+  category: article.category,
+  categoryName: config.categories[article.category],
+  title: article.title,
+  primaryKeyword: article.primaryKeyword,
+  keywordCluster: article.keywordCluster,
+  faqQuestions: article.faqQuestions,
+  parentSlug: article.parentSlug,
+  level: article.level,
+  reader: article.reader,
+  granitData: article.granitData,
+  ...(article.verticales ? { verticales: article.verticales } : {}),
+};
+
+const consignesType = {
+  standard: "Page standard.",
+  resolution: "Page résolution : plan imposé en 7 temps (voir le guide) et composant <ol class=\"steps\"> obligatoire pour l'action.",
+  plateforme:
+    "Page plateforme : les 7 H2 imposés par le guide, rédigés uniquement à partir de `faits` et `conventionnement` du fichier de faits ci-dessous, " +
+    "et les 4 marqueurs data-bloc (chiffres, organismes, statuts, contacts) posés une fois chacun à l'endroit indiqué par la section 6 du gabarit. " +
+    "Tout nombre du texte doit figurer dans le fichier de faits. Ne cite pas HDS. " +
+    "Si `organismes.liste` est vide, pose quand même le marqueur organismes et dis en une phrase pourquoi la liste n'est pas relevée (voir `organismes.note`).",
+  vs:
+    "Page comparative « fiche VS » (gabarit §6 bis) : plan imposé, rédigée uniquement à partir de `axes`, `citations` et `meilleurSi` des fichiers concurrents ci-dessous. " +
+    "Marqueurs data-bloc coup-doeil, frise et choisir, une fois chacun, à l'endroit indiqué. Aucun prix, aucun client, aucun chiffre déclaré, aucun dénigrement. " +
+    "Dis ce que le concurrent fait mieux. Une information absente des fichiers s'écrit « {nom} ne le précise pas ».",
+  grille:
+    "Page comparative « grille du marché » (gabarit §6 bis) : plan imposé, rédigée uniquement à partir des fichiers concurrents ci-dessous. " +
+    "Marqueurs data-bloc frise, modeles et grille, une fois chacun, à l'endroit indiqué. Granit est un acteur parmi les autres. " +
+    "Aucun prix, aucun client, aucun chiffre déclaré, aucun dénigrement.",
+};
+
+const longueur = { vs: "1 000 à 1 500 mots (jamais moins de 900)", grille: "2 000 à 2 800 mots (jamais moins de 1 800)" };
+
+function message(retour) {
+  const parts = [
+    `Rédige l'article suivant pour la rubrique Ressources de getgranit.ai.`,
+    `## Métadonnées\n\`\`\`json\n${JSON.stringify(meta, null, 2)}\n\`\`\``,
+    `## Type de page\n${consignesType[type]}`,
+  ];
+  if (ancien) {
+    parts.push(
+      `## Refonte d'un ancien article (même adresse /ressources/${article.slug})\n` +
+        `Réécris cet article au format du gabarit et dans le style du guide. Garde le sujet, l'angle et les idées justes. ` +
+        `Le lecteur n'est pas l'opticien : c'est ${article.reader} (métier : ${(article.verticales ?? []).join(", ")}). ` +
+        `Adapte le vocabulaire et les exemples à ce métier, mais garde toutes les règles du guide (faits sourcés, liste rouge, FAQ, ton).\n` +
+        `L'ancien texte contient des affirmations sans source : n'en reprends aucune qui ne soit pas sourcée. Un chiffre de l'ancien texte sans source disparaît.\n\n` +
+        `Titre d'origine : ${ancien.title}\nDescription d'origine : ${ancien.desc}\n\nTexte d'origine :\n${ancien.body.map((p) => `> ${p}`).join("\n>\n")}`,
+    );
+  }
+  if (article.toValidate) {
+    parts.push(`## Points non tranchés\n${article.toValidate}\nN'affirme rien sur ces points : contourne-les ou reste général.`);
+  }
+  parts.push(
+    `## Liens internes autorisés (chemins exacts)\n` +
+      (liensPrevus.length
+        ? `Liens prévus dont la cible est en ligne (ancre conseillée) :\n${liensPrevus.map((l) => `- /ressources/${l.slug} : « ${l.anchor} » (${l.type})`).join("\n")}\n`
+        : "Aucun lien prévu n'est encore en ligne.\n") +
+      `Autres pages en ligne que tu peux lier si c'est pertinent pour un opticien :\n${[...cibles]
+        .filter(([c]) => !liensPrevus.some((l) => `/ressources/${l.slug}` === c))
+        .map(([c, t]) => `- ${c} : ${t}`)
+        .join("\n")}\n` +
+      `Pages produit (2 liens maximum) : ${config.pagesProduit.join(", ")}.\n` +
+      `Aucun autre lien interne. Vise 3 à 8 liens internes.`,
+  );
+  if (fp?.faits) {
+    parts.push(
+      `## Fichier de faits (${fp.nom}, relevé le ${fp.faits.checkedOn})\n` +
+        (type === "plateforme" ? "" : "Contexte seulement : pas de marqueur data-bloc dans cette page.\n") +
+        `\`\`\`json\n${JSON.stringify(fp.faits, null, 2)}\n\`\`\``,
+    );
+  }
+  if (comparatif) {
+    // « exclus » n'est jamais envoyé : ce qu'on sait mais qu'on n'affiche pas (prix, chiffres déclarés).
+    const publics = Object.values(concurrents).map(({ exclus, aRelire, ...reste }) => reste);
+    parts.push(
+      `## Fichiers concurrents (faits publics relevés, seule matière autorisée)\n` +
+        `Ordre : ${article.concurrents.join(", ")}. Les citations doivent être recopiées mot pour mot depuis \`citations\`, avec dans <cite> le label de la source.\n` +
+        `\`\`\`json\n${JSON.stringify(publics, null, 2)}\n\`\`\``,
+    );
+  }
+  parts.push(
+    `## Schémas (champ figures)\n` +
+      `0 à 2 schémas, seulement quand un schéma fait comprendre plus vite qu'un paragraphe. Le site les dessine dans la charte Granit : tu ne fournis que le contenu.\n` +
+      `- flux : qui envoie quoi à qui, dans l'ordre (ex. opticien → plateforme → complémentaire). detail = ce qui passe vers l'élément suivant.\n` +
+      `- etapes : actions dans l'ordre, quand la liste d'étapes du texte gagne à être vue d'un coup d'œil.\n` +
+      `- comparaison : 2 ou 3 options côte à côte (colonnes), une valeur courte par option pour chaque critère.\n` +
+      `Règles : une seule idée par schéma ; libellés de 1 à 4 mots ; detail de 60 caractères max ; focus sur 1 élément au plus (le point à retenir) ; ` +
+      `la légende dit quoi regarder ; aucun fait ni chiffre qui ne soit pas déjà dans le texte. ` +
+      `Place chaque schéma dans contentHtml par <div data-figure="{id}"></div>, juste après le paragraphe qu'il illustre, jamais avant « L'essentiel ».`,
+  );
+  parts.push(
+    `## Rappels de sortie\n` +
+      `- contentHtml : ${longueur[type] ?? "1 800 à 2 500 mots (jamais moins de 1 500)"}, ouverture en <p>, puis « L'essentiel », puis les H2 en questions avec un id.\n` +
+      `- Pas de H1, pas de FAQ, pas d'encart final, pas d'image dans contentHtml.\n` +
+      `- tocItems : un élément par H2, mêmes id, même ordre.\n` +
+      `- metaDescription : 140 à 160 caractères, avec le mot-clé principal.\n` +
+      `- sources : chaque lien externe du corps, 2 minimum. Toujours la page exacte qui porte le fait (ex. la fiche ameli.fr sur le 100 % Santé optique), jamais la page d'accueil d'un site. Uniquement des pages officielles dont tu es certain qu'elles existent : une URL qui ne répond pas fait refuser l'article.\n` +
+      `- Citation facultative : <blockquote><p>« … »</p><cite>…</cite></blockquote>, seulement si tu connais la phrase exacte, mot pour mot, d'une source de la liste ou du fichier de faits, avec dans <cite> exactement le label de cette source. Le moteur ouvre la page et refuse l'article si la phrase n'y figure pas. Au moindre doute, ne mets pas de citation.\n` +
+      `- Mot-clé principal « ${article.primaryKeyword} » dans les 100 premiers mots.`,
+  );
+  if (retour) {
+    const citation = retour.some((e) => e.includes("citation")) ? "\nPour une citation refusée : supprime-la plutôt que d'en proposer une autre." : "";
+    parts.push(`## Correction demandée\nLa version précédente a été refusée pour ces raisons. Corrige-les toutes :\n${retour.map((e) => `- ${e}`).join("\n")}${citation}`);
+  }
+  return parts.join("\n\n");
+}
+
+const system = systemeGuide();
+
+// 4. Rédaction + contrôles, 2 essais maximum
+const key = apiKey();
+let sortie = null;
+let bilan = null;
+let retour = null;
+let cout = 0;
+for (let essai = 1; essai <= 2 && !sortie; essai++) {
+  console.log(`Essai ${essai} : appel à ${config.model}…`);
+  const t0 = Date.now();
+  const r = await rediger({ apiKey: key, model: config.model, maxTokens: config.maxTokens, system, message: message(retour), schema });
+  cout += coutDollars(r.usage, config.model);
+  console.log(`  ${Math.round((Date.now() - t0) / 1000)} s · ${r.usage.output_tokens} tokens en sortie · arrêt ${r.stopReason}`);
+  if (!r.json) {
+    retour = [`réponse incomplète ou illisible (${r.stopReason})`];
+    console.log(`  Refusé : ${retour[0]}`);
+    continue;
+  }
+  const c = controler(r.json, { article, type, faits: fp?.faits, concurrents, cibles, pagesProduit: config.pagesProduit, essai: opt.dry });
+  const s = await verifierSources(r.json.sources ?? [], citations(r.json.contentHtml ?? ""));
+  const erreurs = [...c.erreurs, ...s.erreurs];
+  console.log(`  ${c.nbMots} mots · ${erreurs.length} erreur(s) · ${c.avertissements.length + s.avertissements.length} avertissement(s)`);
+  if (erreurs.length) {
+    erreurs.forEach((e) => console.log(`  ✗ ${e}`));
+    retour = erreurs;
+    if (opt.dry && opt.out) {
+      mkdirSync(opt.out, { recursive: true });
+      ecrireJson(join(opt.out, `${article.slug}.refus-${essai}.json`), { erreurs, ...r.json });
+    }
+    continue;
+  }
+  sortie = r.json;
+  bilan = { nbMots: c.nbMots, avertissements: [...c.avertissements, ...s.avertissements] };
+}
+console.log(`Coût estimé : ${cout.toFixed(2)} $`);
+if (!sortie) {
+  console.error("Deux essais refusés : arrêt sans publier.");
+  process.exit(1);
+}
+bilan.avertissements.forEach((a) => console.log(`  ! ${a}`));
+
+// Relecture humaine (PR) pour les premiers articles et ceux qui ont des points à valider
+const dejaSortis = file.filter((a) => ["published", "review"].includes(a.status)).length;
+const relecture = opt.relecture || dejaSortis < config.relectureDesPremiers || Boolean(article.toValidate) || Boolean(article.refonte) || comparatif; // comparatif : toujours relu (gabarit §6 bis)
+
+// Signature : auteur et relecteur selon la catégorie. Le relecteur n'est affiché que si
+// l'article passe vraiment par une relecture humaine (PR), jamais en publication directe.
+const signature = {
+  ...config.signatures[article.category],
+  ...(article.auteur ? { auteur: article.auteur } : {}),
+  ...(article.relecteur ? { relecteur: article.relecteur } : {}),
+};
+if (!signature.auteur) throw new Error(`pas de signature pour la catégorie ${article.category} (config.json)`);
+const personne = (cle) => {
+  const p = config.auteurs[cle];
+  if (!p) throw new Error(`auteur inconnu dans config.json : ${cle}`);
+  return { name: p.nom, jobTitle: p.fonction, photo: p.photo, url: p.linkedin || null };
+};
+
+// 5. Fichier de l'article (lu par la page /ressources/{slug})
+const nbMots = mots(texte(sortie.contentHtml)).length;
+const fiche = {
+  slug: article.slug,
+  id: article.id,
+  category: article.category,
+  categoryName: config.categories[article.category],
+  type,
+  plateforme: fp?.faits ? fp.nom : null,
+  title: article.title,
+  primaryKeyword: article.primaryKeyword,
+  keywordCluster: article.keywordCluster,
+  parentSlug: article.parentSlug,
+  level: article.level,
+  author: personne(signature.auteur),
+  reviewer: relecture ? personne(signature.relecteur) : null,
+  datePublished: aujourdhui,
+  dateModified: aujourdhui,
+  checkedOn:
+    type === "plateforme"
+      ? fp.faits.checkedOn
+      : comparatif
+        ? Object.values(concurrents).map((f) => f.checkedOn).sort()[0]
+        : null,
+  concurrents: comparatif ? article.concurrents : undefined,
+  wordCount: nbMots,
+  readTime: Math.max(1, Math.round(nbMots / 230)),
+  metaDescription: sortie.metaDescription,
+  contentHtml: sortie.contentHtml,
+  tocItems: sortie.tocItems,
+  faqItems: sortie.faqItems,
+  sources: sortie.sources,
+  figures: sortie.figures ?? [],
+  internalLinks: liensPrevus,
+  liensEntrants: [],
+  remplace: article.remplace ?? [],
+  ...(article.verticales ? { verticales: article.verticales } : {}),
+  ...(article.refonte ? { refonte: true } : {}),
+  moteur: { model: config.model, genereLe: new Date().toISOString(), avertissements: bilan.avertissements },
+};
+
+const dossier = opt.dry ? opt.out ?? join(process.env.TMPDIR ?? "/tmp", "seo-engine") : CONTENU;
+mkdirSync(dossier, { recursive: true });
+ecrireJson(join(dossier, `${article.slug}.json`), fiche);
+console.log(`Écrit : ${join(dossier, `${article.slug}.json`)}`);
+if (opt.dry) process.exit(0);
+
+// 6. Maillage en retour : le parent et les sœurs en ligne pointent vers le nouvel article
+for (const voisin of enLigne) {
+  const estParent = voisin.slug === article.parentSlug;
+  const estSoeur = article.parentSlug && voisin.parentSlug === article.parentSlug;
+  if (!estParent && !estSoeur) continue;
+  const p = join(CONTENU, `${voisin.slug}.json`);
+  const f = lireJson(p);
+  if (f.liensEntrants?.some((l) => l.slug === article.slug)) continue;
+  const prevu = (voisin.internalLinks ?? []).find((l) => l.slug === article.slug);
+  f.liensEntrants = [...(f.liensEntrants ?? []), { slug: article.slug, anchor: prevu?.anchor ?? article.title, type: estParent ? "enfant" : "soeur" }];
+  ecrireJson(p, f);
+  console.log(`Lien ajouté depuis ${voisin.slug}`);
+}
+
+// 7. Statut dans la file (relecture décidée plus haut)
+article.status = relecture ? "review" : "published";
+article.publishedAt = aujourdhui;
+ecrireFile(file);
+
+sortieGithub({
+  slug: article.slug,
+  title: article.title,
+  url: `${config.site}/ressources/${article.slug}`,
+  review: relecture,
+  avertissements: bilan.avertissements.length,
+  cout: cout.toFixed(2),
+});
+console.log(relecture ? "→ relecture humaine (PR)" : "→ publication directe");

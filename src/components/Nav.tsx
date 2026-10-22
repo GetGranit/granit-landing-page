@@ -32,14 +32,14 @@ export function Nav() {
   return (
     <header className="sticky top-0 z-50 px-3 pt-3 sm:px-6 sm:pt-4">
       <div
-        className="mx-auto flex h-14 max-w-[1200px] items-center justify-between rounded-full px-3 pl-5 pr-2 transition-all duration-500 sm:px-4 sm:pl-6 sm:pr-2"
+        className="mx-auto flex h-14 max-w-[1200px] items-center justify-between rounded-full px-3 pl-5 pr-2 transition-[background-color,border-color,box-shadow] duration-200 sm:px-4 sm:pl-6 sm:pr-2"
         style={
           scrolled
             ? {
-                background: "rgba(255,255,255,0.82)",
-                backdropFilter: "blur(20px) saturate(1.4)",
-                WebkitBackdropFilter: "blur(20px) saturate(1.4)",
-                border: "1px solid color-mix(in oklab, var(--terra) 35%, transparent)",
+                background: "rgba(255,253,249,0.96)",
+                backdropFilter: "blur(16px) saturate(1.2)",
+                WebkitBackdropFilter: "blur(16px) saturate(1.2)",
+                border: "1px solid var(--border)",
                 boxShadow: "0 10px 30px -12px rgba(28,17,8,0.12)",
               }
             : { background: "transparent", border: "1px solid transparent" }

@@ -1,0 +1,278 @@
+{
+  "slug": "portail-seveane",
+  "nom": "Sévéane (Korelio)",
+  "logo": "/logos/seveane.png",
+  "checkedOn": "2026-10-07",
+  "identite": [
+    {
+      "label": "Type",
+      "valeur": "Réseau de soins Groupama et PRO BTP, tiers payant géré par Korelio",
+      "source": "probtp-partenaires"
+    },
+    {
+      "label": "Optique",
+      "valeur": "Oui, sur prise en charge",
+      "source": "korelio-convention"
+    },
+    {
+      "label": "Portail",
+      "valeur": "korelio.com, ou seveane.com pour les partenaires Sévéane",
+      "source": "korelio-attestation"
+    },
+    {
+      "label": "Connexion",
+      "valeur": "Code reçu par e-mail",
+      "source": "granit-connecteur"
+    }
+  ],
+  "chiffres": [
+    {
+      "valeur": "2010",
+      "label": "création du GIE Sévéane",
+      "source": "seveane-candidature"
+    },
+    {
+      "valeur": "+5 000",
+      "label": "candidatures d'opticiens retenues pour le réseau 2024",
+      "source": "acuite-renouvellement"
+    },
+    {
+      "valeur": "26 %",
+      "label": "de nouveaux opticiens partenaires dans ce réseau",
+      "source": "acuite-renouvellement"
+    },
+    {
+      "valeur": "6 M",
+      "label": "bénéficiaires Groupama et PRO BTP",
+      "source": "probtp-partenaires"
+    }
+  ],
+  "faits": [
+    {
+      "fait": "Sévéane est un réseau de soins né d'un accord entre Groupama et PRO BTP. Korelio est le réseau de services créé par PRO BTP pour les échanges avec les professionnels de santé, dont le tiers payant.",
+      "source": "probtp-partenaires"
+    },
+    {
+      "fait": "Sévéane est une SAS détenue à parts égales par Groupama Assurances Mutuelles et BTP-Prévoyance, immatriculée en mai 2022. Elle a absorbé le GIE Sévéane le 1er janvier 2023.",
+      "source": "seveane-candidature"
+    },
+    {
+      "fait": "BTP-Prévoyance agit pour le Groupe PRO BTP et pour l'ensemble des organismes qui bénéficient du tiers payant optique Korelio.",
+      "source": "seveane-candidature"
+    },
+    {
+      "fait": "Organismes qui ont confié leur tiers payant à Korelio : BTP-Prévoyance, SAF BTP IARD, MBBTP, SMABTP, Auxiliaire, MGI, Prodigéo Assurances, Audiens et Mutuelle Mieux-Être.",
+      "source": "korelio-partenaires"
+    },
+    {
+      "fait": "Sur la carte de tiers payant Korelio, les opticiens portent le code « OPTI ». La prise en charge se fait sur korelio.com, ou sur seveane.com pour les partenaires Sévéane.",
+      "source": "korelio-attestation"
+    },
+    {
+      "fait": "Korelio se présente comme l'interlocuteur unique du professionnel pour le tiers payant. La carte confirme les droits de l'assuré et garantit le remboursement par Korelio.",
+      "source": "korelio-attestation"
+    },
+    {
+      "fait": "Le réseau Sévéane est fermé : un nombre limité d'opticiens par zone, choisis selon une note (magasin, certification qualité, traçabilité des verres, matériel, services, prix des verres, RSE).",
+      "source": "seveane-candidature"
+    },
+    {
+      "fait": "Les opticiens Sévéane s'engagent sur un prix de vente maximum des verres, fixé selon l'amétropie et le fabricant.",
+      "source": "seveane-candidature"
+    },
+    {
+      "fait": "Le contrat de partenariat optique Sévéane en cours couvre la période 2024 à 2027.",
+      "source": "seveane-optique"
+    },
+    {
+      "fait": "Avant son appel à candidatures de 2023, Sévéane a référencé 11 fabricants de verres : BBGR-Nikon, Carl Zeiss Vision, Codir, Essilor, Hoya, Mega Optic, Novacel, Optiswiss, Rodenstock, Seiko et Shamir.",
+      "source": "acuite-appel"
+    },
+    {
+      "fait": "Hors réseau Sévéane, un opticien peut faire le tiers payant Korelio en signant la convention de délégation de paiement des dépenses optiques.",
+      "source": "korelio-conv-opticiens"
+    },
+    {
+      "fait": "Les demandes de prise en charge se font dans l'espace Korelio. Le navigateur doit accepter les fenêtres popup. Pour une prise en charge validée, un bouton « Facturer » évite l'envoi d'une facture papier.",
+      "source": "korelio-convention"
+    },
+    {
+      "fait": "En juillet 2023, Korelio a demandé aux opticiens de renouveler leur convention en ligne depuis leur espace abonné pour garder le tiers payant.",
+      "source": "korelio-renouvellement"
+    },
+    {
+      "fait": "Sur korelio.com, chaque magasin se connecte avec un identifiant et le mot de passe du compte administrateur, puis un code envoyé par e-mail. L'appareil peut être déclaré de confiance pendant 30 jours.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "Sur Korelio, une facture télétransmise apparaît dans la liste « Demandes de prises en charge » (statut FACTUREE), pas dans la liste des prises en charge optique.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "Sur seveane.com, la connexion demande un identifiant, un mot de passe et un code à 6 chiffres reçu par e-mail. Un identifiant refusé affiche « Service momentanément indisponible », le même message qu'une vraie panne.",
+      "source": "granit-connecteur"
+    }
+  ],
+  "conventionnement": [
+    "Réseau Sévéane : déposer un dossier sur postulerseveane.com pendant un appel à candidatures, un seul dossier par magasin. Le dernier a eu lieu à l'automne 2023.",
+    "Joindre les pièces : attestation de RC professionnelle, photos du magasin, chiffre d'affaires optique certifié par l'expert-comptable, certification qualité AFNOR ou Bureau Veritas, photos du matériel, attestations ADELI et diplômes.",
+    "Entre deux appels, Sévéane sollicite seulement les opticiens de sa liste d'attente. Sans liste d'attente sur un territoire, un mini appel à candidatures peut avoir lieu.",
+    "Tiers payant Korelio : remplir en ligne la demande d'adhésion à la convention optique, avec son numéro d'assurance maladie.",
+    "Transmettre les pièces justificatives via l'espace indiqué par e-mail.",
+    "Signer la convention en ligne, après analyse du dossier par Korelio.",
+    "Créer son compte sur korelio.com. Un mot de passe provisoire arrive par courrier, à changer à la première connexion."
+  ],
+  "statuts": [
+    {
+      "libelle": "Estimée / saisie en cours",
+      "sens": "Le dossier est créé mais pas encore accordé",
+      "action": "Finir la saisie, puis attendre la réponse"
+    },
+    {
+      "libelle": "En instance",
+      "sens": "Le dossier est encore étudié",
+      "action": "Attendre, puis relancer au bon moment"
+    },
+    {
+      "libelle": "Acceptée / validée",
+      "sens": "La complémentaire s'engage sur le montant",
+      "action": "Délivrer l'équipement, puis cliquer sur « Facturer »"
+    },
+    {
+      "libelle": "Refusée",
+      "sens": "Pas de prise en charge en l'état",
+      "action": "Lire le motif, corriger, refaire la demande"
+    },
+    {
+      "libelle": "Annulée",
+      "sens": "Le dossier n'est plus actif",
+      "action": "Refaire une demande si besoin"
+    },
+    {
+      "libelle": "Facturée",
+      "sens": "La facture est partie",
+      "action": "Suivre le virement"
+    }
+  ],
+  "statutsSource": "granit-connecteur",
+  "contacts": [
+    {
+      "label": "Korelio Floirac",
+      "valeur": "05 57 80 72 57",
+      "detail": "PRO BTP - Korelio, Professionnels de santé, CS 60010, 33278 Floirac Cedex",
+      "url": "https://www.korelio.com/contacter-korelio.html",
+      "source": "korelio-contact"
+    },
+    {
+      "label": "Korelio Créteil",
+      "valeur": "01 49 80 85 90",
+      "detail": "PRO BTP - Korelio, Professionnels de santé, 94966 Créteil Cedex 9",
+      "url": "https://www.korelio.com/contacter-korelio.html",
+      "source": "korelio-contact"
+    },
+    {
+      "label": "Korelio Rouen",
+      "valeur": "02 35 15 72 64",
+      "detail": "PRO BTP - Korelio, Professionnels de santé, BP 61054, 76172 Rouen Cedex 1",
+      "url": "https://www.korelio.com/contacter-korelio.html",
+      "source": "korelio-contact"
+    },
+    {
+      "label": "Korelio Sophia-Antipolis",
+      "valeur": "04 93 22 38 88",
+      "detail": "PRO BTP - Korelio, Professionnels de santé, 06922 Sophia Antipolis Cedex",
+      "url": "https://www.korelio.com/contacter-korelio.html",
+      "source": "korelio-contact"
+    },
+    {
+      "label": "Korelio Wasquehal",
+      "valeur": "03 20 25 66 01",
+      "detail": "PRO BTP - Korelio, Professionnels de santé, CS 41001, 59447 Wasquehal Cedex",
+      "url": "https://www.korelio.com/contacter-korelio.html",
+      "source": "korelio-contact"
+    },
+    {
+      "label": "Convention optique Korelio",
+      "valeur": "Formulaire de demande d'adhésion",
+      "url": "https://www.korelio.com/conventionnementOpticiens.html",
+      "source": "korelio-conv-opticiens"
+    },
+    {
+      "label": "Siège Sévéane",
+      "valeur": "8/10 rue d'Astorg, 75008 Paris",
+      "source": "seveane-mentions"
+    }
+  ],
+  "organismes": {
+    "source": "granit-connecteur",
+    "note": "Liste du sélecteur d'organisme du portail optique, relevée par les agents Granit. Formuler : « ce que propose le sélecteur du portail », jamais « cette mutuelle passe uniquement par Sévéane (Korelio) ». Pas encore de relevé côté optique : les agents Granit n'ont lu que le sélecteur du portail audio de Sévéane. Liste vide en attendant.",
+    "liste": []
+  },
+  "sources": {
+    "seveane-optique": {
+      "label": "seveane.com · Le partenariat avec les opticiens Sévéane",
+      "url": "https://www.seveane.com/home/optique.html",
+      "consulte": "2026-10-07"
+    },
+    "seveane-candidature": {
+      "label": "seveane.com · Avis d'appel à candidatures des opticiens du réseau Sévéane 2024 (PDF)",
+      "url": "https://www.seveane.com/files/live/sites/seveane/files/pdf/Appel%20%C3%A0%20candidature%20et%20Pi%C3%A8ces%20%C3%A0%20fournir%20S%C3%A9v%C3%A9ane%202024.pdf",
+      "consulte": "2026-10-07"
+    },
+    "seveane-mentions": {
+      "label": "seveane.com · Mentions légales",
+      "url": "https://www.seveane.com/home/mentions-legales.html",
+      "consulte": "2026-10-07"
+    },
+    "probtp-partenaires": {
+      "label": "groupe.probtp.com · Nos partenaires",
+      "url": "https://groupe.probtp.com/accueil/notre-ecosysteme/nos-partenaires.html",
+      "consulte": "2026-10-07"
+    },
+    "korelio-convention": {
+      "label": "korelio.com · Signer une convention Korelio",
+      "url": "https://www.korelio.com/conventionnement/signer-une-convention-korelio.html",
+      "consulte": "2026-10-07"
+    },
+    "korelio-conv-opticiens": {
+      "label": "korelio.com · Conventionnement opticiens",
+      "url": "https://www.korelio.com/conventionnementOpticiens.html",
+      "consulte": "2026-10-07"
+    },
+    "korelio-partenaires": {
+      "label": "korelio.com · Les partenaires de Korelio",
+      "url": "https://www.korelio.com/partenaires.html",
+      "consulte": "2026-10-07"
+    },
+    "korelio-attestation": {
+      "label": "korelio.com · L'attestation de tiers payant Korelio",
+      "url": "https://www.korelio.com/attestation-tiers-payant.html",
+      "consulte": "2026-10-07"
+    },
+    "korelio-contact": {
+      "label": "korelio.com · Contacter un centre de gestion",
+      "url": "https://www.korelio.com/contacter-korelio.html",
+      "consulte": "2026-10-07"
+    },
+    "korelio-renouvellement": {
+      "label": "korelio.com · Opticiens et audioprothésistes, vos conventions doivent être renouvelées (28/07/2023)",
+      "url": "https://www.korelio.com/contents/actus/opticiens-et-audioprothesistes-vos-conventions-doivent-etre-renouvelees.html",
+      "consulte": "2026-10-07"
+    },
+    "acuite-appel": {
+      "label": "Acuité · Appel à candidatures : Sévéane renouvelle son réseau d'opticiens (21/09/2023)",
+      "url": "https://www.acuite.fr/actualite/ocam/267267/appel-candidatures-seveane-renouvelle-son-reseau-dopticiens",
+      "consulte": "2026-10-07"
+    },
+    "acuite-renouvellement": {
+      "label": "Acuité · Sévéane renouvelle son réseau d'opticiens à la hausse",
+      "url": "https://www.acuite.fr/actualite/ocam/280263/seveane-renouvelle-son-reseau-dopticiens-la-hausse",
+      "consulte": "2026-10-07"
+    },
+    "granit-connecteur": {
+      "label": "Connecteur Sévéane (Korelio) de Granit (relevé du 07/10/2026)",
+      "url": "",
+      "consulte": "2026-10-07"
+    }
+  }
+}

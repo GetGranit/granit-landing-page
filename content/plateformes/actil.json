@@ -1,0 +1,239 @@
+{
+  "slug": "portail-actil",
+  "nom": "Actil",
+  "logo": "/logos/actil.png",
+  "checkedOn": "2026-10-07",
+  "identite": [
+    {
+      "label": "Type",
+      "valeur": "Opérateur de tiers payant et réseau de soins, du Groupe APICIL",
+      "source": "actil-home"
+    },
+    {
+      "label": "Optique",
+      "valeur": "Oui, sur cotation puis prise en charge",
+      "source": "actil-opticiens"
+    },
+    {
+      "label": "Portail",
+      "valeur": "actil.com, espace professionnel de santé",
+      "source": "actil-opticiens"
+    },
+    {
+      "label": "Connexion",
+      "valeur": "Identifiant et mot de passe, plus un code par e-mail pour les comptes nominatifs",
+      "source": "granit-connecteur"
+    }
+  ],
+  "chiffres": [
+    {
+      "valeur": "13 000",
+      "label": "opticiens partenaires",
+      "source": "actil-opticiens"
+    },
+    {
+      "valeur": "+400 000",
+      "label": "professionnels de santé conventionnés",
+      "source": "actil-home"
+    },
+    {
+      "valeur": "2 ans",
+      "label": "pour facturer après la livraison",
+      "source": "actil-faq"
+    },
+    {
+      "valeur": "27 mois",
+      "label": "d'historique des bordereaux en ligne",
+      "source": "actil-faq"
+    }
+  ],
+  "faits": [
+    {
+      "fait": "Actil est une plateforme nationale de tiers payant créée à l'initiative du Groupe APICIL.",
+      "source": "apicil-reseau"
+    },
+    {
+      "fait": "Actil fait à la fois le tiers payant et un réseau de soins : des offres négociées en optique, audio et dentaire, intégrées à son tiers payant.",
+      "source": "actil-home"
+    },
+    {
+      "fait": "Depuis le 1er avril 2021, le réseau de tiers payant optique Actil est ouvert à tous les opticiens qui veulent le rejoindre. L'opticien choisit l'équipement dans tous les catalogues verriers, lentilles et montures du marché.",
+      "source": "actil-reseau-optique"
+    },
+    {
+      "fait": "Le réseau optique compte des grandes enseignes et des opticiens indépendants, en métropole et dans les DROM.",
+      "source": "actil-opticiens"
+    },
+    {
+      "fait": "Depuis son espace privé sur actil.com, l'opticien fait ses demandes de cotation et de prise en charge en ligne.",
+      "source": "actil-opticiens"
+    },
+    {
+      "fait": "Sur le portail optique, la demande déposée est d'abord une cotation. La prise en charge vient ensuite, en transformant une cotation acceptée.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "Le portail retrouve le patient par son numéro de sécurité sociale. Il n'affiche pas de liste de complémentaires à choisir.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "La carte Actil doit reprendre à l'identique les données de la carte Vitale : numéro de sécurité sociale, date de naissance, rang de naissance et ayants droit. En cas de doute, l'opticien peut consulter les droits dans son espace privé.",
+      "source": "actil-carte"
+    },
+    {
+      "fait": "Une prise en charge est une garantie de paiement. Si les droits sont fermés ensuite, le paiement reste validé pour le professionnel de santé.",
+      "source": "actil-faq"
+    },
+    {
+      "fait": "On peut facturer dès que l'équipement est livré, dans les 2 ans qui suivent, à condition d'être toujours conventionné. Actil ne règle pas les factures rétroactives.",
+      "source": "actil-faq"
+    },
+    {
+      "fait": "Actil traite chaque jour les flux reçus. Les règlements se consultent dans l'espace privé, sur 27 mois.",
+      "source": "actil-faq"
+    },
+    {
+      "fait": "Actil annonce un renforcement de la sécurité de l'accès à l'espace professionnel à partir du 30 juin.",
+      "source": "actil-connexion"
+    },
+    {
+      "fait": "Les comptes nominatifs reçoivent par e-mail un code à usage unique, valable 5 minutes, après le mot de passe.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "Le portail prévient qu'au bout de 5 échecs de connexion, le compte est verrouillé temporairement.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "Le siège d'Actil est à Lyon.",
+      "source": "actil-mentions"
+    }
+  ],
+  "conventionnement": [
+    "Remplir le formulaire de la page Contact d'actil.com.",
+    "Être recontacté par les équipes Actil pour finaliser l'enregistrement.",
+    "Signer la convention Actil et fournir les pièces justificatives demandées.",
+    "Après vérification des pièces, recevoir son identifiant d'accès à l'espace professionnel.",
+    "Finaliser l'inscription en ligne, puis faire ses cotations et prises en charge sur actil.com."
+  ],
+  "statuts": [
+    {
+      "libelle": "Accepté / Accord N°…",
+      "sens": "La complémentaire accepte la cotation",
+      "action": "Transformer la cotation en prise en charge, délivrer, puis facturer"
+    },
+    {
+      "libelle": "Accord N°… (Facturé)",
+      "sens": "Le dossier est déjà facturé",
+      "action": "Suivre le règlement dans les bordereaux"
+    },
+    {
+      "libelle": "Refusé",
+      "sens": "Pas de prise en charge en l'état. Le motif suit, par exemple « Dépassement grille tarifaire »",
+      "action": "Lire le motif, corriger le devis, refaire la demande"
+    },
+    {
+      "libelle": "En attente",
+      "sens": "La demande n'est pas encore traitée",
+      "action": "Attendre, puis relancer au bon moment"
+    },
+    {
+      "libelle": "Prise en compte",
+      "sens": "La demande est reçue et en cours",
+      "action": "Attendre la réponse"
+    },
+    {
+      "libelle": "Validation en cours",
+      "sens": "La demande est relue à la main chez Actil",
+      "action": "Attendre, puis relire le statut"
+    },
+    {
+      "libelle": "Annulée",
+      "sens": "La demande n'est plus active",
+      "action": "Refaire une demande si besoin"
+    },
+    {
+      "libelle": "Aucun droit ouvert",
+      "sens": "Le portail ne trouve pas de droits pour ce numéro de sécurité sociale",
+      "action": "Vérifier le numéro, puis orienter le patient vers sa complémentaire"
+    }
+  ],
+  "statutsSource": "granit-connecteur",
+  "contacts": [
+    {
+      "label": "Pas encore conventionné",
+      "valeur": "Formulaire de contact d'actil.com",
+      "url": "https://www.actil.com/contact/",
+      "source": "actil-contact"
+    },
+    {
+      "label": "Déjà conventionné",
+      "valeur": "Espace professionnel de santé",
+      "url": "https://www.actil.com/connexion/",
+      "source": "actil-connexion"
+    },
+    {
+      "label": "Adresse",
+      "valeur": "51 boulevard Marius Vivier Merle, 69003 Lyon",
+      "detail": "Siège social",
+      "source": "actil-mentions"
+    }
+  ],
+  "organismes": {
+    "source": "granit-connecteur",
+    "note": "Le portail optique Actil n'a pas de sélecteur d'organisme : il retrouve le patient par son numéro de sécurité sociale. Aucune liste n'est donc relevée par les agents Granit. Ne jamais écrire « cette mutuelle passe uniquement par Actil ».",
+    "liste": []
+  },
+  "sources": {
+    "actil-home": {
+      "label": "actil.com · Accueil",
+      "url": "https://www.actil.com/",
+      "consulte": "2026-10-07"
+    },
+    "actil-opticiens": {
+      "label": "actil.com · Opticiens",
+      "url": "https://www.actil.com/professionnel-de-sante/opticiens/",
+      "consulte": "2026-10-07"
+    },
+    "actil-faq": {
+      "label": "actil.com · FAQ",
+      "url": "https://www.actil.com/faq/",
+      "consulte": "2026-10-07"
+    },
+    "actil-reseau-optique": {
+      "label": "actil.com · Rejoignez notre nouveau réseau tiers payant optique",
+      "url": "https://www.actil.com/rejoignez-notre-nouveau-reseau-tiers-payant-optique/",
+      "consulte": "2026-10-07"
+    },
+    "actil-carte": {
+      "label": "actil.com · La carte ACTIL",
+      "url": "https://www.actil.com/Portail/espacePro/PAGE-EPR-CARTE/page-epr-carte.jsp",
+      "consulte": "2026-10-07"
+    },
+    "actil-connexion": {
+      "label": "actil.com · Connexion",
+      "url": "https://www.actil.com/connexion/",
+      "consulte": "2026-10-07"
+    },
+    "actil-contact": {
+      "label": "actil.com · Contact",
+      "url": "https://www.actil.com/contact/",
+      "consulte": "2026-10-07"
+    },
+    "actil-mentions": {
+      "label": "actil.com · Mentions légales",
+      "url": "https://www.actil.com/mentions-legales/",
+      "consulte": "2026-10-07"
+    },
+    "apicil-reseau": {
+      "label": "mon.apicil.com · Les avantages du réseau ACTIL",
+      "url": "https://mon.apicil.com/salon-client/les-avantages-du-reseau-actil/",
+      "consulte": "2026-10-07"
+    },
+    "granit-connecteur": {
+      "label": "Connecteur Actil de Granit (relevé du 07/10/2026)",
+      "url": "",
+      "consulte": "2026-10-07"
+    }
+  }
+}

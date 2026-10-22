@@ -1,0 +1,210 @@
+{
+  "slug": "portail-itelis",
+  "nom": "Itelis",
+  "logo": "/logos/itelis.png",
+  "checkedOn": "2026-10-09",
+  "identite": [
+    {
+      "label": "Type",
+      "valeur": "Réseau de soins (marque d'Isea)",
+      "source": "itelis-apropos"
+    },
+    {
+      "label": "Optique",
+      "valeur": "Oui, réseau de plus de 3 700 opticiens partenaires",
+      "source": "itelis-opticiens"
+    },
+    {
+      "label": "Portail",
+      "valeur": "extranet.itelis.fr",
+      "source": "granit-connecteur"
+    },
+    {
+      "label": "Connexion",
+      "valeur": "Mot de passe puis code reçu par e-mail",
+      "source": "granit-connecteur"
+    }
+  ],
+  "chiffres": [
+    {
+      "valeur": "13 M",
+      "label": "assurés ayant accès au réseau",
+      "source": "itelis-adhesion-optique"
+    },
+    {
+      "valeur": "3 700",
+      "label": "opticiens partenaires",
+      "source": "itelis-opticiens"
+    },
+    {
+      "valeur": "2001",
+      "label": "année de création",
+      "source": "itelis-apropos"
+    },
+    {
+      "valeur": "2 sur 3",
+      "label": "équipements optiques vendus sans reste à charge en 2025",
+      "source": "itelis-adhesion-optique"
+    }
+  ],
+  "faits": [
+    {
+      "fait": "Itelis est un réseau de soins. Il négocie des tarifs avec des professionnels de santé partenaires, en optique, audio, dentaire et autres domaines, pour le compte de complémentaires santé.",
+      "source": "itelis-apropos"
+    },
+    {
+      "fait": "Depuis 2021, Itelis est une marque de la société Isea.",
+      "source": "itelis-apropos"
+    },
+    {
+      "fait": "Le partenariat est signé avec chaque opticien, un par un, y compris dans les enseignes Krys, Optical Center ou Optic 2000, ainsi qu'avec des indépendants.",
+      "source": "itelis-opticiens"
+    },
+    {
+      "fait": "Chez un opticien partenaire, Itelis annonce un prix de verre négocié, le tiers payant, une garantie casse incluse et un dépannage sous 24 à 48 h.",
+      "source": "itelis-opticiens"
+    },
+    {
+      "fait": "Les opticiens partenaires distribuent les verres de 8 verriers : BBGR, Codir, Essilor, Hoya, Nikon, Novacel, Seiko et Zeiss.",
+      "source": "itelis-opticiens"
+    },
+    {
+      "fait": "Certains contrats incluent l'option OPTI, signalée par un logo sur la carte de tiers payant. Elle prévoit notamment des verres haut de gamme 100 % remboursés selon la correction et une 2e paire solaire à la vue pour 1 € TTC.",
+      "source": "itelis-opticiens"
+    },
+    {
+      "fait": "Selon Itelis, en 2025, 58 % des verres unifocaux et 69 % des verres progressifs vendus dans le réseau étaient des verres évolués ou individualisés.",
+      "source": "itelis-adhesion-optique"
+    },
+    {
+      "fait": "Le partenariat est sans durée d'engagement. L'opticien peut quitter le réseau à tout moment avec un préavis d'un mois, par lettre recommandée avec accusé de réception.",
+      "source": "itelis-adhesion-optique"
+    },
+    {
+      "fait": "Le site itelis.fr liste 61 complémentaires, assureurs et courtiers dont les assurés ont accès aux services Itelis, par exemple AG2R La Mondiale, AXA, Klesia ou Mutuelle Ociane Matmut.",
+      "source": "itelis-acceder"
+    },
+    {
+      "fait": "Chaque magasin se connecte avec son identifiant (n° IFAM ou FINESS) et son mot de passe sur itelis.fr, puis saisit un code envoyé par e-mail à l'adresse du compte. Ce code expire au bout de 10 minutes.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "Un magasin dont le dossier de conventionnement n'est pas à jour est renvoyé, après connexion, vers un formulaire de conventionnement. Il n'accède pas à l'extranet tant que ce formulaire n'est pas complété.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "Une réclamation reçoit un accusé de réception sous 10 jours ouvrables au plus. Elle est traitée en 15 jours ouvrés, jusqu'à deux mois si le dossier est complexe.",
+      "source": "itelis-mentions"
+    },
+    {
+      "fait": "Pour se connecter, l'opticien passe par itelis.fr : menu « Accès professionnels », puis « Professionnels de santé ». Une fenêtre de connexion s'ouvre par-dessus le site.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "La fenêtre demande un « Identifiant » et un « Mot de passe ». L'identifiant est celui fourni par Itelis au magasin (selon les cas, son numéro IFAM ou FINESS).",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "Après le mot de passe, la même fenêtre demande un « Code OTP ». Ce code est envoyé par e-mail à l'adresse du compte, depuis auth@itelis.fr, et il expire au bout de 10 minutes. S'il n'arrive pas, regarder dans les courriers indésirables.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "En cas d'erreur, le site affiche : « L'identifiant et/ou le mot de passe saisi(s) est/sont incorrect(s). Nombre de tentatives restantes : ». Le nombre d'essais est donc limité.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "Une fois connecté, l'opticien arrive sur l'extranet extranet.itelis.fr, qui peut s'ouvrir dans un nouvel onglet.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "Quand la session a expiré, le site renvoie sur la page d'accueil d'itelis.fr : il faut se reconnecter, code e-mail compris. Une adresse de l'extranet ouverte sans session affiche « Une erreur vient de se produire », suivi d'un code.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "Si le dossier de conventionnement du magasin n'est pas à jour, Itelis renvoie, après le code e-mail, vers un formulaire sur conventionnement.itelis.fr. L'extranet reste inaccessible tant que ce formulaire n'est pas complété.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "Dans le logiciel Cosium, une complémentaire qui passe par le réseau Itelis apparaît sous la forme « NOM_DE_LA_MUTUELLE(ITELIS) ».",
+      "source": "granit-connecteur"
+    }
+  ],
+  "conventionnement": [
+    "Préparer les pièces : attestation de certification AFNOR ou Veritas, facture ou attestation du logiciel opticien, attestation IFAM ou relevé de compte CPAM anonymisé, extrait Kbis ou attestation Sirene, photos de l'espace de réfraction et plan du magasin, RIB.",
+    "Remplir la demande d'adhésion en ligne sur conventionnement.itelis.fr.",
+    "Recevoir ses identifiants, se connecter pour compléter le dossier et déposer les pièces.",
+    "Après vérification du dossier par Itelis, signer la convention en ligne.",
+    "Se connecter à l'extranet pour saisir ses premières demandes de prise en charge."
+  ],
+  "statuts": [],
+  "statutsSource": "",
+  "contacts": [
+    {
+      "label": "Déjà conventionné",
+      "valeur": "Messagerie sécurisée de l'extranet",
+      "detail": "Le formulaire de contact du site n'est pas prévu pour les partenaires",
+      "source": "itelis-contact"
+    },
+    {
+      "label": "Pas encore conventionné",
+      "valeur": "Formulaire de contact d'itelis.fr",
+      "detail": "Choisir « Professionnel de santé non conventionné »",
+      "url": "https://www.itelis.fr/contact",
+      "source": "itelis-contact"
+    },
+    {
+      "label": "Se conventionner",
+      "valeur": "Adhésion en ligne, réseau optique",
+      "url": "https://conventionnement.itelis.fr/adhesion/optique",
+      "source": "itelis-adhesion-optique"
+    },
+    {
+      "label": "Réclamations",
+      "valeur": "ISEA, Service réclamations, 218 avenue Jean Jaurès, 75019 Paris",
+      "detail": "Ou via la messagerie de l'espace partenaire",
+      "source": "itelis-mentions"
+    }
+  ],
+  "organismes": {
+    "source": "granit-connecteur",
+    "note": "Liste du sélecteur d'organisme du portail optique, relevée par les agents Granit. Formuler : « ce que propose le sélecteur du portail », jamais « cette mutuelle passe uniquement par Itelis ». Pour Itelis, le connecteur Granit ne relève pas encore de sélecteur d'organisme : il s'arrête à la connexion. La liste est donc vide.",
+    "liste": []
+  },
+  "sources": {
+    "itelis-apropos": {
+      "label": "itelis.fr · À propos d'Itelis",
+      "url": "https://www.itelis.fr/a-propos-ditelis",
+      "consulte": "2026-10-07"
+    },
+    "itelis-opticiens": {
+      "label": "itelis.fr · Réseau d'opticiens partenaires",
+      "url": "https://www.itelis.fr/vos-services-sante/trouver-un-opticien",
+      "consulte": "2026-10-07"
+    },
+    "itelis-adhesion-optique": {
+      "label": "itelis.fr · Adhésion au réseau d'opticiens Itelis",
+      "url": "https://www.itelis.fr/professionnels-de-sante/adhesion-au-reseau-dopticiens-itelis",
+      "consulte": "2026-10-07"
+    },
+    "itelis-acceder": {
+      "label": "itelis.fr · Accéder à vos services",
+      "url": "https://www.itelis.fr/acceder-vos-services",
+      "consulte": "2026-10-07"
+    },
+    "itelis-contact": {
+      "label": "itelis.fr · Contact",
+      "url": "https://www.itelis.fr/contact",
+      "consulte": "2026-10-07"
+    },
+    "itelis-mentions": {
+      "label": "itelis.fr · Mentions légales et réclamations",
+      "url": "https://www.itelis.fr/mentions-legales-et-reclamations",
+      "consulte": "2026-10-07"
+    },
+    "granit-connecteur": {
+      "label": "Connecteur Itelis de Granit (relevés des 08/09 et 05/10/2026)",
+      "url": "",
+      "consulte": "2026-10-09"
+    }
+  }
+}
