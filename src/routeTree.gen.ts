@@ -17,6 +17,7 @@ import { Route as CasUsageRouteImport } from './routes/cas-usage'
 import { Route as CgvRouteImport } from './routes/cgv'
 import { Route as DemoRouteImport } from './routes/demo'
 import { Route as EssaiRouteImport } from './routes/essai'
+import { Route as LeadMagnetPecRouteImport } from './routes/lead-magnet-pec'
 import { Route as PecRouteImport } from './routes/pec'
 import { Route as ProduitRouteImport } from './routes/produit'
 import { Route as RessourcesRouteImport } from './routes/ressources'
@@ -66,6 +67,11 @@ const DemoRoute = DemoRouteImport.update({
 const EssaiRoute = EssaiRouteImport.update({
   id: '/essai',
   path: '/essai',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeadMagnetPecRoute = LeadMagnetPecRouteImport.update({
+  id: '/lead-magnet-pec',
+  path: '/lead-magnet-pec',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PecRoute = PecRouteImport.update({
@@ -128,6 +134,7 @@ export interface FileRoutesByFullPath {
   '/cgv': typeof CgvRoute
   '/demo': typeof DemoRoute
   '/essai': typeof EssaiRoute
+  '/lead-magnet-pec': typeof LeadMagnetPecRoute
   '/pec': typeof PecRoute
   '/produit': typeof ProduitRoute
   '/ressources': typeof RessourcesRouteWithChildren
@@ -148,6 +155,7 @@ export interface FileRoutesByTo {
   '/cgv': typeof CgvRoute
   '/demo': typeof DemoRoute
   '/essai': typeof EssaiRoute
+  '/lead-magnet-pec': typeof LeadMagnetPecRoute
   '/pec': typeof PecRoute
   '/produit': typeof ProduitRoute
   '/securite': typeof SecuriteRoute
@@ -168,6 +176,7 @@ export interface FileRoutesById {
   '/cgv': typeof CgvRoute
   '/demo': typeof DemoRoute
   '/essai': typeof EssaiRoute
+  '/lead-magnet-pec': typeof LeadMagnetPecRoute
   '/pec': typeof PecRoute
   '/produit': typeof ProduitRoute
   '/ressources': typeof RessourcesRouteWithChildren
@@ -190,6 +199,7 @@ export interface FileRouteTypes {
     | '/cgv'
     | '/demo'
     | '/essai'
+    | '/lead-magnet-pec'
     | '/pec'
     | '/produit'
     | '/ressources'
@@ -210,6 +220,7 @@ export interface FileRouteTypes {
     | '/cgv'
     | '/demo'
     | '/essai'
+    | '/lead-magnet-pec'
     | '/pec'
     | '/produit'
     | '/securite'
@@ -229,6 +240,7 @@ export interface FileRouteTypes {
     | '/cgv'
     | '/demo'
     | '/essai'
+    | '/lead-magnet-pec'
     | '/pec'
     | '/produit'
     | '/ressources'
@@ -250,6 +262,7 @@ export interface RootRouteChildren {
   CgvRoute: typeof CgvRoute
   DemoRoute: typeof DemoRoute
   EssaiRoute: typeof EssaiRoute
+  LeadMagnetPecRoute: typeof LeadMagnetPecRoute
   PecRoute: typeof PecRoute
   ProduitRoute: typeof ProduitRoute
   RessourcesRoute: typeof RessourcesRouteWithChildren
@@ -316,6 +329,13 @@ declare module '@tanstack/react-router' {
       path: '/essai'
       fullPath: '/essai'
       preLoaderRoute: typeof EssaiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lead-magnet-pec': {
+      id: '/lead-magnet-pec'
+      path: '/lead-magnet-pec'
+      fullPath: '/lead-magnet-pec'
+      preLoaderRoute: typeof LeadMagnetPecRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pec': {
@@ -414,6 +434,7 @@ const rootRouteChildren: RootRouteChildren = {
   CgvRoute: CgvRoute,
   DemoRoute: DemoRoute,
   EssaiRoute: EssaiRoute,
+  LeadMagnetPecRoute: LeadMagnetPecRoute,
   PecRoute: PecRoute,
   ProduitRoute: ProduitRoute,
   RessourcesRoute: RessourcesRouteWithChildren,

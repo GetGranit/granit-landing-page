@@ -1,6 +1,6 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
-import { Kicker, Muted, Reassure, Screen, TextLink, Title, bigBtn } from "./ui";
+import { Kicker, Muted, Reassure, Screen, TextLink, Title, bigBtn, focusRing } from "./ui";
 
 /**
  * E1 · la photo. Caméra arrière d'abord, import juste en dessous (la carte est
@@ -31,11 +31,11 @@ export function StepCapture({
       <Kicker>Pour les opticiens qui font leurs PEC eux-mêmes</Kicker>
       <Title em="sans la taper">Votre prochaine PEC, </Title>
       <Muted>
-        Prenez en photo la carte de tiers payant de votre client. On trouve le bon portail et on
-        prépare la demande.
+        Prenez en photo la carte de tiers payant de votre client : on identifie le bon portail et on
+        vous donne une estimation du remboursement. La photo n'est jamais conservée.
       </Muted>
 
-      <CardFrame />
+      <CardFrame onPick={() => gallery.current?.click()} onFile={onFile} />
 
       <input
         ref={camera}
@@ -48,7 +48,7 @@ export function StepCapture({
       <input
         ref={gallery}
         type="file"
-        accept="image/jpeg,image/png,image/webp"
+        accept="image/jpeg,image/png,image/webp,application/pdf"
         hidden
         onChange={pick}
       />
@@ -56,7 +56,7 @@ export function StepCapture({
       <button type="button" className={bigBtn} onClick={() => camera.current?.click()}>
         Prendre la carte en photo <span className="arrow">→</span>
       </button>
-      <TextLink onClick={() => gallery.current?.click()}>Importer une photo déjà prise</TextLink>
+      <TextLink onClick={() => gallery.current?.click()}>Importer une photo ou un PDF</TextLink>
 
       {error && (
         <p
@@ -85,26 +85,61 @@ export function StepCapture({
   );
 }
 
-/** Cadre de visée : montre où mettre la carte, rien de plus. */
-function CardFrame() {
+/**
+ * Cadre de visée : montre où mettre la carte, s'ouvre au clic (Finder) et accepte
+ * aussi le glisser-déposer d'une photo ou d'un PDF.
+ */
+function CardFrame({ onPick, onFile }: { onPick: () => void; onFile: (f: File) => void }) {
   const c = "absolute h-6 w-6 border-[3px]";
   const col = { borderColor: "var(--terra)" };
+  const [survol, setSurvol] = useState(false);
   return (
-    <div
-      className="relative grid aspect-[1.586] w-full max-w-[340px] place-items-center rounded-2xl"
-      style={{ background: "var(--bg2)" }}
-      aria-hidden
+    <button
+      type="button"
+      onClick={onPick}
+      onDragOver={(e) => {
+        e.preventDefault();
+        if (!survol) setSurvol(true);
+      }}
+      onDragLeave={() => setSurvol(false)}
+      onDrop={(e) => {
+        e.preventDefault();
+        setSurvol(false);
+        const f = e.dataTransfer.files?.[0];
+        if (f) onFile(f);
+      }}
+      aria-label="Importer une photo ou un PDF de la carte"
+      className={`relative grid aspect-[1.586] w-full max-w-[340px] cursor-pointer place-items-center rounded-2xl border transition-colors ${
+        survol ? "border-[var(--terra)]" : "border-transparent hover:border-[var(--terra)]"
+      } ${focusRing}`}
+      style={{ background: survol ? "color-mix(in oklab, var(--terra) 8%, var(--bg2))" : "var(--bg2)" }}
     >
-      <span className={`${c} left-2 top-2 rounded-tl-lg border-b-0 border-r-0`} style={col} />
-      <span className={`${c} right-2 top-2 rounded-tr-lg border-b-0 border-l-0`} style={col} />
-      <span className={`${c} bottom-2 left-2 rounded-bl-lg border-r-0 border-t-0`} style={col} />
-      <span className={`${c} bottom-2 right-2 rounded-br-lg border-l-0 border-t-0`} style={col} />
+      <span
+        className={`${c} left-2 top-2 rounded-tl-lg border-b-0 border-r-0`}
+        style={col}
+        aria-hidden
+      />
+      <span
+        className={`${c} right-2 top-2 rounded-tr-lg border-b-0 border-l-0`}
+        style={col}
+        aria-hidden
+      />
+      <span
+        className={`${c} bottom-2 left-2 rounded-bl-lg border-r-0 border-t-0`}
+        style={col}
+        aria-hidden
+      />
+      <span
+        className={`${c} bottom-2 right-2 rounded-br-lg border-l-0 border-t-0`}
+        style={col}
+        aria-hidden
+      />
       <span
         className="text-[13px]"
         style={{ fontFamily: "var(--font-mono)", color: "var(--text-muted)" }}
       >
         carte à plat, recto, bien éclairée
       </span>
-    </div>
+    </button>
   );
 }

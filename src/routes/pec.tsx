@@ -6,14 +6,14 @@ import { usePostHog } from "posthog-js/react";
 import { StepCapture } from "@/components/pec/StepCapture";
 import { StepContact, StepThanks } from "@/components/pec/StepContact";
 import { StepReading } from "@/components/pec/StepReading";
-import { ResultChoice, ResultPortal, ResultSimulable } from "@/components/pec/StepResult";
+import { ResultChoice, ResultEstimation, ResultSimulable } from "@/components/pec/StepResult";
 import { ecrireCas } from "@/components/pec/cas";
 import { SimFlow } from "@/components/pec/SimFlow";
 import type { SimResultat } from "@/components/pec/StepSimFin";
 import type { PatientPrefill } from "@/components/pec/StepPatient";
 import { StepSearch } from "@/components/pec/StepSearch";
 import { Muted, PecShell } from "@/components/pec/ui";
-import { compressImage } from "@/lib/pec/image";
+import { prepareCardFile } from "@/lib/pec/image";
 import { sendPecLead, type PecLeadKind } from "@/lib/pec/lead";
 import { readCard, type CardRead } from "@/lib/pec/readCard";
 import {
@@ -43,18 +43,21 @@ import {
  * Chaque écran est une entrée d'historique : le bouton Retour du téléphone
  * remonte d'une étape au lieu de quitter /pec.
  */
+/** Même <head> pour /pec et /lead-magnet-pec (deux URLs, une seule page). */
+export const pecHead = () => ({
+  meta: [
+    { title: "Votre prochaine PEC, sans la taper - Granit" },
+    {
+      name: "description",
+      content:
+        "Prenez en photo la carte de tiers payant : on trouve le bon portail et on prépare la demande de prise en charge.",
+    },
+    { name: "robots", content: "noindex" },
+  ],
+});
+
 export const Route = createFileRoute("/pec")({
-  head: () => ({
-    meta: [
-      { title: "Votre prochaine PEC, sans la taper - Granit" },
-      {
-        name: "description",
-        content:
-          "Prenez en photo la carte de tiers payant : on trouve le bon portail et on prépare la demande de prise en charge.",
-      },
-      { name: "robots", content: "noindex" },
-    ],
-  }),
+  head: pecHead,
   component: PecPage,
 });
 
@@ -106,14 +109,12 @@ function contactTexte(step: Extract<Step, { s: "contact" }>): { title: string; i
         "Il vous rappelle et fait la simulation avec vous, sur un de vos dossiers, en 15 minutes. Rien n'est envoyé à la mutuelle.",
     };
   return {
-    title: step.platform?.pec_optique_granit
-      ? `On fait vos PEC ${label} pour vous.`
-      : "Paul vous dit ce que Granit peut faire pour vous.",
+    title: label ? `On fait vos PEC ${label} pour vous.` : "On fait vos PEC pour vous.",
     intro: "Paul vous rappelle et vous le montre sur un de vos dossiers, en 15 minutes.",
   };
 }
 
-function PecPage() {
+export function PecPage() {
   const posthog = usePostHog();
   const navigate = useNavigate();
   const router = useRouter();
@@ -230,14 +231,14 @@ function PecPage() {
     setSource("photo");
     setReadDone(false);
     pending.current = null;
-    let payload: Awaited<ReturnType<typeof compressImage>>;
+    let payload: Awaited<ReturnType<typeof prepareCardFile>>;
     try {
-      payload = await compressImage(file);
+      payload = await prepareCardFile(file);
     } catch {
       if (id !== lecture.current) return;
       return refuser(
         "image_illisible",
-        "Cette image ne s'ouvre pas. Reprenez la photo, ou importez-la en JPEG.",
+        "Ce fichier ne s'ouvre pas. Reprenez la photo, ou importez une image (JPEG/PNG) ou un PDF.",
       );
     }
     if (id !== lecture.current) return;
@@ -415,7 +416,10 @@ function PecPage() {
           onBack={back}
         />
       )}
-      {step.s === "result" && step.res.kind === "unique" && step.res.platform.simulable && (
+      {step.s === "result" &&
+        step.res.kind === "unique" &&
+        step.res.platform.simulable &&
+        simulationProposee() && (
         <ResultSimulable
           key="rs"
           card={card}
@@ -452,8 +456,10 @@ function PecPage() {
           onCompte={(m, r) => void onSimCompte(step.platform, m, r)}
         />
       )}
-      {step.s === "result" && step.res.kind === "unique" && !step.res.platform.simulable && (
-        <ResultPortal
+      {step.s === "result" &&
+        step.res.kind === "unique" &&
+        !(step.res.platform.simulable && simulationProposee()) && (
+        <ResultEstimation
           key="rp"
           card={card}
           p={step.res.platform}
@@ -461,13 +467,9 @@ function PecPage() {
           busy={busy}
           error={erreur}
           onBack={back}
-          onOpen={() =>
+          onRdv={() =>
             step.res.kind === "unique" &&
-            track("pec_portail_ouvert", { platform: step.res.platform.id })
-          }
-          onContact={() =>
-            step.res.kind === "unique" &&
-            go({ s: "contact", kind: "rappel", platform: step.res.platform })
+            track("pec_rdv_clic", { platform: step.res.platform.id })
           }
           onPrevenir={async (mail) => {
             if (step.res.kind !== "unique") return;

@@ -10,3 +10,12 @@ Tests : copier dans un dossier, ajouter `with { type: "json" }` aux imports JSON
 puis `node --experimental-strip-types --test classify.test.ts`. Résultat au 07/10 : 20/20 OK.
 Note de fermeture Oxantis réécrite à la main pour l'opticien dans src/lib/pec/platforms.json (le script d'export met une note interne).
 Tests : node --experimental-strip-types --test tests/pec/*.test.ts (routage + garde-fou d'affichage).
+
+estimations.json (21/10/2026) : fourchettes indicatives du remboursement complémentaire par
+portail de gestion, pour l'écran résultat du lead magnet. Source = prod `tp_facturation.part_tp`
+(ce que le TP a réellement payé), agrégé HORS LIGNE en p25/médiane/p75 par portail x équipement,
+seuil n>=10, Oxantis exclu (fermeture 26/10). Que des agrégats anonymes : aucun dossier patient
+n'est embarqué (OK pour Vercel, non-HDS). À régénérer périodiquement (la fenêtre de départ ne fait
+que ~8 jours) : requête lecture seule sur la base prod (granit_readonly), cf. skill
+smoke-test-connecteurs pour le montage de connexion. Ce n'est PAS le remboursement d'un client
+donné (dépend du contrat, de l'équipement, des prix du magasin) — c'est dit explicitement à l'écran.

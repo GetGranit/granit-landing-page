@@ -99,22 +99,22 @@ function prompt(): string {
 }
 
 const MAX_BYTES = 5 * 1024 * 1024;
-const MEDIA_TYPES = ["image/jpeg", "image/png", "image/webp"] as const;
+const MEDIA_TYPES = ["image/jpeg", "image/png", "image/webp", "application/pdf"] as const;
 type MediaType = (typeof MEDIA_TYPES)[number];
 
-const PROMPT = `Tu lis une CARTE DE MUTUELLE / attestation de tiers-payant à partir de l'image jointe.
-Extrais EXACTEMENT ce qui est écrit, sans jamais rien inventer. Mets une chaîne vide ""
-pour toute information absente, illisible ou non demandée. Attention : la carte peut
-être prise de travers ou pivotée de 90°.
+const PROMPT = `Tu lis une CARTE DE MUTUELLE / attestation de tiers-payant à partir du fichier joint
+(une photo ou un PDF). Extrais EXACTEMENT ce qui est écrit, sans jamais rien inventer. Mets
+une chaîne vide "" pour toute information absente, illisible ou non demandée. Attention : une
+photo de carte peut être prise de travers ou pivotée de 90°.
 
 __CONFIDENTIALITE__
 
-Commence par dire ce qu'est l'image :
+Commence par dire ce qu'est le fichier :
 - est_carte_tp : true si c'est une carte de mutuelle / attestation de tiers payant
   (complémentaire santé), false sinon (carte Vitale, ordonnance, autre document, photo
   sans carte).
-- lisible : true si les noms d'organismes de la carte se lisent ; false si l'image est
-  floue, coupée ou trop sombre pour les lire.
+- lisible : true si les noms d'organismes de la carte se lisent ; false si le fichier est
+  flou, coupé ou trop sombre pour les lire.
 Si est_carte_tp est false ou lisible est false, laisse tous les autres champs vides.
 
 Champs à extraire :
@@ -160,8 +160,8 @@ function toMediaType(t: string): MediaType {
 export const readCard = createServerFn({ method: "POST" })
   .inputValidator((data: { image: string; mediaType: string }) => {
     const image = String(data?.image ?? "").replace(/^data:[^,]+,/, "");
-    if (!image) throw new Error("Photo manquante.");
-    if ((image.length * 3) / 4 > MAX_BYTES) throw new Error("Photo trop lourde.");
+    if (!image) throw new Error("Fichier manquant.");
+    if ((image.length * 3) / 4 > MAX_BYTES) throw new Error("Fichier trop lourd.");
     return { image, mediaType: toMediaType(String(data?.mediaType ?? "")) };
   })
   .handler(
@@ -184,10 +184,15 @@ export const readCard = createServerFn({ method: "POST" })
             {
               role: "user",
               content: [
-                {
-                  type: "image",
-                  source: { type: "base64", media_type: data.mediaType, data: data.image },
-                },
+                data.mediaType === "application/pdf"
+                  ? {
+                      type: "document",
+                      source: { type: "base64", media_type: "application/pdf", data: data.image },
+                    }
+                  : {
+                      type: "image",
+                      source: { type: "base64", media_type: data.mediaType, data: data.image },
+                    },
                 { type: "text", text: prompt() },
               ],
             },
