@@ -18,7 +18,6 @@ import { Route as CgvRouteImport } from './routes/cgv'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DemoRouteImport } from './routes/demo'
 import { Route as EssaiRouteImport } from './routes/essai'
-import { Route as LeadMagnetPecRouteImport } from './routes/lead-magnet-pec'
 import { Route as PecRouteImport } from './routes/pec'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ProduitRouteImport } from './routes/produit'
@@ -78,11 +77,6 @@ const DemoRoute = DemoRouteImport.update({
 const EssaiRoute = EssaiRouteImport.update({
   id: '/essai',
   path: '/essai',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LeadMagnetPecRoute = LeadMagnetPecRouteImport.update({
-  id: '/lead-magnet-pec',
-  path: '/lead-magnet-pec',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PecRoute = PecRouteImport.update({
@@ -173,7 +167,6 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/demo': typeof DemoRoute
   '/essai': typeof EssaiRoute
-  '/lead-magnet-pec': typeof LeadMagnetPecRoute
   '/pec': typeof PecRoute
   '/privacy': typeof PrivacyRoute
   '/produit': typeof ProduitRoute
@@ -200,7 +193,6 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/demo': typeof DemoRoute
   '/essai': typeof EssaiRoute
-  '/lead-magnet-pec': typeof LeadMagnetPecRoute
   '/pec': typeof PecRoute
   '/privacy': typeof PrivacyRoute
   '/produit': typeof ProduitRoute
@@ -227,7 +219,6 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/demo': typeof DemoRoute
   '/essai': typeof EssaiRoute
-  '/lead-magnet-pec': typeof LeadMagnetPecRoute
   '/pec': typeof PecRoute
   '/privacy': typeof PrivacyRoute
   '/produit': typeof ProduitRoute
@@ -256,7 +247,6 @@ export interface FileRouteTypes {
     | '/contact'
     | '/demo'
     | '/essai'
-    | '/lead-magnet-pec'
     | '/pec'
     | '/privacy'
     | '/produit'
@@ -283,7 +273,6 @@ export interface FileRouteTypes {
     | '/contact'
     | '/demo'
     | '/essai'
-    | '/lead-magnet-pec'
     | '/pec'
     | '/privacy'
     | '/produit'
@@ -309,7 +298,6 @@ export interface FileRouteTypes {
     | '/contact'
     | '/demo'
     | '/essai'
-    | '/lead-magnet-pec'
     | '/pec'
     | '/privacy'
     | '/produit'
@@ -337,7 +325,6 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   DemoRoute: typeof DemoRoute
   EssaiRoute: typeof EssaiRoute
-  LeadMagnetPecRoute: typeof LeadMagnetPecRoute
   PecRoute: typeof PecRoute
   PrivacyRoute: typeof PrivacyRoute
   ProduitRoute: typeof ProduitRoute
@@ -414,13 +401,6 @@ declare module '@tanstack/react-router' {
       path: '/essai'
       fullPath: '/essai'
       preLoaderRoute: typeof EssaiRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/lead-magnet-pec': {
-      id: '/lead-magnet-pec'
-      path: '/lead-magnet-pec'
-      fullPath: '/lead-magnet-pec'
-      preLoaderRoute: typeof LeadMagnetPecRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pec': {
@@ -559,7 +539,6 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   DemoRoute: DemoRoute,
   EssaiRoute: EssaiRoute,
-  LeadMagnetPecRoute: LeadMagnetPecRoute,
   PecRoute: PecRoute,
   PrivacyRoute: PrivacyRoute,
   ProduitRoute: ProduitRoute,

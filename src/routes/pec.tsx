@@ -43,21 +43,18 @@ import {
  * Chaque écran est une entrée d'historique : le bouton Retour du téléphone
  * remonte d'une étape au lieu de quitter /pec.
  */
-/** Même <head> pour /pec et /lead-magnet-pec (deux URLs, une seule page). */
-export const pecHead = () => ({
-  meta: [
-    { title: "Votre prochaine PEC, sans la taper - Granit" },
-    {
-      name: "description",
-      content:
-        "Prenez en photo la carte de tiers payant : on trouve le bon portail et on prépare la demande de prise en charge.",
-    },
-    { name: "robots", content: "noindex" },
-  ],
-});
-
 export const Route = createFileRoute("/pec")({
-  head: pecHead,
+  head: () => ({
+    meta: [
+      { title: "Votre prochaine PEC, sans la taper - Granit" },
+      {
+        name: "description",
+        content:
+          "Prenez en photo la carte de tiers payant : on trouve le bon portail et on prépare la demande de prise en charge.",
+      },
+      { name: "robots", content: "noindex" },
+    ],
+  }),
   component: PecPage,
 });
 
@@ -114,7 +111,7 @@ function contactTexte(step: Extract<Step, { s: "contact" }>): { title: string; i
   };
 }
 
-export function PecPage() {
+function PecPage() {
   const posthog = usePostHog();
   const navigate = useNavigate();
   const router = useRouter();
