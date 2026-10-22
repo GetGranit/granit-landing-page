@@ -10,9 +10,14 @@ import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center px-4" style={{ background: "var(--bg)" }}>
+    <div
+      className="flex min-h-screen items-center justify-center px-4"
+      style={{ background: "var(--bg)" }}
+    >
       <div className="max-w-md text-center">
-        <h1 className="font-serif text-7xl" style={{ color: "var(--text)" }}>404</h1>
+        <h1 className="font-serif text-7xl" style={{ color: "var(--text)" }}>
+          404
+        </h1>
         <h2 className="mt-4 text-xl">Page introuvable</h2>
         <p className="mt-2 text-sm" style={{ color: "var(--text-muted)" }}>
           Cette page n'existe pas ou a été déplacée.
@@ -47,12 +52,28 @@ export const Route = createRootRoute({
       },
       { name: "author", content: "Granit AI" },
       { property: "og:title", content: "Granit AI - Plateforme d'agents IA pour la santé" },
-      { property: "og:description", content: "Granit AI automates healthcare administrative workflows with AI agents, no integration needed." },
+      {
+        property: "og:description",
+        content:
+          "Granit AI automates healthcare administrative workflows with AI agents, no integration needed.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "description", content: "Granit AI automates healthcare administrative workflows with AI agents, no integration needed." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/1e3c52a3-36dc-4e80-8146-ca8444e17920/id-preview-352504c5--a0c4e6b0-14ec-4357-83be-c6489dcc9ce0.lovable.app-1777045010811.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/1e3c52a3-36dc-4e80-8146-ca8444e17920/id-preview-352504c5--a0c4e6b0-14ec-4357-83be-c6489dcc9ce0.lovable.app-1777045010811.png" },
+      {
+        name: "description",
+        content:
+          "Granit AI automates healthcare administrative workflows with AI agents, no integration needed.",
+      },
+      {
+        property: "og:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/1e3c52a3-36dc-4e80-8146-ca8444e17920/id-preview-352504c5--a0c4e6b0-14ec-4357-83be-c6489dcc9ce0.lovable.app-1777045010811.png",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/1e3c52a3-36dc-4e80-8146-ca8444e17920/id-preview-352504c5--a0c4e6b0-14ec-4357-83be-c6489dcc9ce0.lovable.app-1777045010811.png",
+      },
     ],
     links: [
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
@@ -78,8 +99,9 @@ function RootShell({ children }: { children: ReactNode }) {
   // /rel : relais PostHog sous notre domaine (voir nitro.config.ts).
   const apiHost = import.meta.env.VITE_PUBLIC_POSTHOG_HOST ?? "/rel";
 
-  // Seul le site en ligne envoie des événements : ni la preview Lovable ni les essais en local.
-  if (!import.meta.env.PROD) {
+  // Seul le site en ligne envoie des événements : ni la preview Lovable ni les essais en local
+  // (les builds de démo du lead magnet, VITE_PEC_APERCU=on, sont des builds PROD : on les exclut aussi).
+  if (!import.meta.env.PROD || import.meta.env.VITE_PEC_APERCU === "on") {
     return <RootDocument>{children}</RootDocument>;
   }
 

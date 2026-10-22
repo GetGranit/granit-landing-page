@@ -1,0 +1,157 @@
+[
+ {
+  "card": {
+   "tp_optique": "Kalixia (oxantis.net)"
+  },
+  "expected": [
+   "viamedis",
+   "oxantis"
+  ]
+ },
+ {
+  "card": {
+   "reseau": "KALIXIA",
+   "assureur": "MUTUELLE FICTIVE"
+  },
+  "expected": [
+   "viamedis"
+  ]
+ },
+ {
+  "card": {
+   "assureur": "GROUPAMA PARIS VAL DE LOIRE"
+  },
+  "expected": [
+   "groupama"
+  ]
+ },
+ {
+  "card": {
+   "assureur": "MGEN"
+  },
+  "expected": [
+   "viamedis",
+   "oxantis"
+  ]
+ },
+ {
+  "card": {
+   "assureur": "HELIUM"
+  },
+  "expected": [
+   "viamedis",
+   "santeclair",
+   "sp_sante"
+  ]
+ },
+ {
+  "card": {
+   "assureur": "MUTUELLE INCONNUE DU TEST"
+  },
+  "expected": []
+ },
+ {
+  "card": {
+   "gestionnaire": "Géré par Almerys",
+   "assureur": "MUTUELLE INCONNUE DU TEST"
+  },
+  "expected": [
+   "almerys"
+  ]
+ },
+ {
+  "card": {
+   "tp_optique": "Santéclair TP+"
+  },
+  "expected": [
+   "santeclair"
+  ]
+ },
+ {
+  "card": {
+   "tp_optique": "SP santé",
+   "assureur": "AGRICA PREVOYANCE"
+  },
+  "expected": [
+   "viamedis"
+  ]
+ },
+ {
+  "card": {
+   "gestionnaire": "MCA"
+  },
+  "expected": [
+   "mca"
+  ]
+ },
+ {
+  "card": {
+   "assureur": "MUTUELLE COMPLEMENTAIRE D'ALSACE"
+  },
+  "expected": [
+   "mca"
+  ]
+ },
+ {
+  "card": {
+   "assureur": "MATMUT"
+  },
+  "expected": [
+   "ociane_matmut"
+  ]
+ },
+ {
+  "card": {
+   "tp_optique": "Viamédis",
+   "assureur": "GROUPAMA"
+  },
+  "expected": [
+   "viamedis",
+   "groupama"
+  ]
+ },
+ {
+  "card": {
+   "reseau": "Carte Blanche",
+   "assureur": "GENERATION"
+  },
+  "expected": [
+   "carte_blanche",
+   "viamedis",
+   "santeclair",
+   "generation"
+  ]
+ },
+ {
+  "card": {
+   "assureur": "CGRM"
+  },
+  "expected": [
+   "viamedis"
+  ]
+ },
+ {
+  "card": {
+   "tp_optique": "iSanté"
+  },
+  "expected": [
+   "viamedis",
+   "isante"
+  ]
+ },
+ {
+  "card": {
+   "amc": "AGPM"
+  },
+  "expected": [
+   "viamedis"
+  ]
+ },
+ {
+  "card": {
+   "tp_optique": "",
+   "assureur": ""
+  },
+  "expected": []
+ }
+]

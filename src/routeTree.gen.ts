@@ -17,6 +17,8 @@ import { Route as CasUsageRouteImport } from './routes/cas-usage'
 import { Route as CgvRouteImport } from './routes/cgv'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DemoRouteImport } from './routes/demo'
+import { Route as EssaiRouteImport } from './routes/essai'
+import { Route as PecRouteImport } from './routes/pec'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ProduitRouteImport } from './routes/produit'
 import { Route as RessourcesRouteImport } from './routes/ressources'
@@ -70,6 +72,16 @@ const ContactRoute = ContactRouteImport.update({
 const DemoRoute = DemoRouteImport.update({
   id: '/demo',
   path: '/demo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EssaiRoute = EssaiRouteImport.update({
+  id: '/essai',
+  path: '/essai',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PecRoute = PecRouteImport.update({
+  id: '/pec',
+  path: '/pec',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyRoute = PrivacyRouteImport.update({
@@ -154,6 +166,8 @@ export interface FileRoutesByFullPath {
   '/cgv': typeof CgvRoute
   '/contact': typeof ContactRoute
   '/demo': typeof DemoRoute
+  '/essai': typeof EssaiRoute
+  '/pec': typeof PecRoute
   '/privacy': typeof PrivacyRoute
   '/produit': typeof ProduitRoute
   '/ressources': typeof RessourcesRouteWithChildren
@@ -178,6 +192,8 @@ export interface FileRoutesByTo {
   '/cgv': typeof CgvRoute
   '/contact': typeof ContactRoute
   '/demo': typeof DemoRoute
+  '/essai': typeof EssaiRoute
+  '/pec': typeof PecRoute
   '/privacy': typeof PrivacyRoute
   '/produit': typeof ProduitRoute
   '/securite': typeof SecuriteRoute
@@ -202,6 +218,8 @@ export interface FileRoutesById {
   '/cgv': typeof CgvRoute
   '/contact': typeof ContactRoute
   '/demo': typeof DemoRoute
+  '/essai': typeof EssaiRoute
+  '/pec': typeof PecRoute
   '/privacy': typeof PrivacyRoute
   '/produit': typeof ProduitRoute
   '/ressources': typeof RessourcesRouteWithChildren
@@ -228,6 +246,8 @@ export interface FileRouteTypes {
     | '/cgv'
     | '/contact'
     | '/demo'
+    | '/essai'
+    | '/pec'
     | '/privacy'
     | '/produit'
     | '/ressources'
@@ -252,6 +272,8 @@ export interface FileRouteTypes {
     | '/cgv'
     | '/contact'
     | '/demo'
+    | '/essai'
+    | '/pec'
     | '/privacy'
     | '/produit'
     | '/securite'
@@ -275,6 +297,8 @@ export interface FileRouteTypes {
     | '/cgv'
     | '/contact'
     | '/demo'
+    | '/essai'
+    | '/pec'
     | '/privacy'
     | '/produit'
     | '/ressources'
@@ -300,6 +324,8 @@ export interface RootRouteChildren {
   CgvRoute: typeof CgvRoute
   ContactRoute: typeof ContactRoute
   DemoRoute: typeof DemoRoute
+  EssaiRoute: typeof EssaiRoute
+  PecRoute: typeof PecRoute
   PrivacyRoute: typeof PrivacyRoute
   ProduitRoute: typeof ProduitRoute
   RessourcesRoute: typeof RessourcesRouteWithChildren
@@ -368,6 +394,20 @@ declare module '@tanstack/react-router' {
       path: '/demo'
       fullPath: '/demo'
       preLoaderRoute: typeof DemoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/essai': {
+      id: '/essai'
+      path: '/essai'
+      fullPath: '/essai'
+      preLoaderRoute: typeof EssaiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pec': {
+      id: '/pec'
+      path: '/pec'
+      fullPath: '/pec'
+      preLoaderRoute: typeof PecRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy': {
@@ -498,6 +538,8 @@ const rootRouteChildren: RootRouteChildren = {
   CgvRoute: CgvRoute,
   ContactRoute: ContactRoute,
   DemoRoute: DemoRoute,
+  EssaiRoute: EssaiRoute,
+  PecRoute: PecRoute,
   PrivacyRoute: PrivacyRoute,
   ProduitRoute: ProduitRoute,
   RessourcesRoute: RessourcesRouteWithChildren,
