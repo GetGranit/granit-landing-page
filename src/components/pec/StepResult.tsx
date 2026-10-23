@@ -170,7 +170,7 @@ export function ResultSimulable({
 
 /**
  * E3 · le résultat du lead magnet : on a trouvé le portail, on donne une
- * ESTIMATION indicative du remboursement (fourchette issue de nos facturations
+ * ESTIMATION indicative du remboursement (montant moyen issu de nos facturations
  * réelles, pas le remboursement du client), puis on explique que le montant
  * exact passe par le logiciel métier → rendez-vous. Pas de bouton « ouvrir le
  * portail » (on ne renvoie pas le prospect se débrouiller seul), pas de promesse
@@ -260,13 +260,12 @@ function useCountUp(target: number, run: boolean, ms = 900): number {
 /**
  * L'estimation : le montant pris en charge, en gros, avec une légère animation
  * d'apparition — le chiffre monte et « pop » d'abord, l'explication arrive juste
- * après (effet « waouh »). Honnête : fourchette réelle de nos facturations.
+ * après (effet « waouh »). Honnête : montant moyen (médiane) de nos facturations.
  */
 function Estimation({ estim }: { estim: EstimationLunettes }) {
   const reduce = useReducedMotion();
   const run = !reduce;
-  const bas = useCountUp(estim.f.bas, run);
-  const haut = useCountUp(estim.f.haut, run);
+  const moyenne = useCountUp(estim.f.median, run);
   return (
     <motion.div
       className={sageBox}
@@ -285,9 +284,7 @@ function Estimation({ estim }: { estim: EstimationLunettes }) {
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
       >
-        <span className="text-[40px]">
-          {euros(bas)} à {euros(haut)}
-        </span>
+        <span className="text-[40px]">{euros(moyenne)}</span>
       </motion.p>
       <motion.p
         className="text-[14px]"
@@ -296,7 +293,7 @@ function Estimation({ estim }: { estim: EstimationLunettes }) {
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 0.5 }}
       >
-        pris en charge par la complémentaire, sur une paire de lunettes.
+        pris en charge en moyenne par la complémentaire, sur une paire de lunettes.
       </motion.p>
     </motion.div>
   );
