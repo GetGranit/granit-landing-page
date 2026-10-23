@@ -1,0 +1,187 @@
+{
+  "slug": "facturation-ehpad-controle-humain",
+  "id": "R2",
+  "category": "gerer-son-tiers-payant",
+  "categoryName": "Gérer son tiers payant",
+  "type": "standard",
+  "plateforme": null,
+  "title": "Automatiser la facturation résident sans perdre le contrôle humain",
+  "primaryKeyword": "logiciel facturation résident",
+  "keywordCluster": [
+    "facturation ehpad",
+    "facturation résident ehpad",
+    "forfait dépendance facturation",
+    "automatiser facturation ehpad"
+  ],
+  "parentSlug": null,
+  "level": "Refonte",
+  "author": {
+    "name": "Laura",
+    "jobTitle": "Rédactrice, experte santé",
+    "photo": "/auteurs/laura.jpg",
+    "url": null
+  },
+  "reviewer": {
+    "name": "Olivier",
+    "jobTitle": "Rédacteur, expert tiers payant",
+    "photo": "/auteurs/olivier.jpg",
+    "url": null
+  },
+  "datePublished": "2026-10-23",
+  "dateModified": "2026-10-23",
+  "checkedOn": null,
+  "wordCount": 2229,
+  "readTime": 10,
+  "metaDescription": "Logiciel facturation résident en EHPAD : ce qu'on peut automatiser, où garder la validation humaine et comment éviter les erreurs avant l'envoi aux familles.",
+  "contentHtml": "<p><strong>Un logiciel facturation résident utile en EHPAD pré-calcule les factures et signale les anomalies, mais il laisse la validation finale à votre équipe administrative.</strong> Le facturier ne saisit plus chaque ligne : il contrôle une liste courte de cas douteux avant l'envoi. C'est cette répartition qui permet d'automatiser la facturation résident sans perdre la main sur ce que reçoivent les familles.</p><p>La facture d'un résident croise des règles qui viennent de plusieurs endroits : le tarif hébergement de l'établissement, le tarif dépendance lié au GIR, les aides du département (APA, aide sociale à l'hébergement), le contrat de séjour et les prestations annexes. Chaque mois, ces règles doivent être appliquées à des données qui bougent : absences, hospitalisations, changements de GIR, nouvelles notifications. Cet article détaille ce qui se prête à l'automatisation, ce qui doit rester humain et comment mener le projet sans risque.</p><div class=\"key-takeaways\"><strong>L'essentiel</strong><ul><li>La facture d'un résident repose sur deux tarifs principaux, hébergement et dépendance ; les soins sont financés par l'Assurance maladie et ne sont pas facturés au résident.</li><li>Selon service-public.fr, l'APA en établissement aide à payer le tarif dépendance, mais la part correspondant au tarif des GIR 5 et 6 reste à la charge du résident.</li><li>Le pré-calcul peut être automatisé ; la validation, les cas d'aide sociale et la réponse aux familles restent humains.</li><li>Les anomalies doivent arriver triées par impact financier, avec la source qui les explique.</li><li>Faites tourner l'outil en parallèle de votre méthode actuelle sur plusieurs cycles avant toute bascule.</li></ul></div><h2 id=\"composition-facture-resident\">Comment se compose la facture d'un résident en EHPAD ?</h2><p>La facture mensuelle d'un résident additionne principalement un tarif hébergement et un tarif dépendance, auxquels s'ajoutent d'éventuelles prestations annexes. Le volet soins, lui, est financé par l'Assurance maladie sous forme de forfait versé à l'établissement : il n'apparaît pas comme une ligne à payer par le résident.</p><h3>Le tarif hébergement</h3><p>Le tarif hébergement couvre le logement, la restauration, l'entretien et l'animation. C'est en général la ligne la plus lourde de la facture. Pour un résident qui bénéficie de l'aide sociale à l'hébergement (ASH), le département prend en charge une partie de ces frais, et le résident y contribue avec ses propres ressources selon des règles fixées par le département, comme le détaille <a href=\"https://www.service-public.fr/particuliers/vosdroits/F2444\">la fiche service-public.fr sur l'aide sociale à l'hébergement</a>.</p><h3>Le tarif dépendance et le forfait dépendance</h3><p>Le tarif dépendance couvre l'aide aux actes de la vie quotidienne. Il varie selon le GIR (groupe iso-ressources) du résident, de 1 pour les plus dépendants à 6 pour les plus autonomes, évalué avec la grille AGGIR. L'APA (allocation personnalisée d'autonomie) en établissement finance une partie de ce tarif pour les résidents classés en GIR 1 à 4. Selon <a href=\"https://www.service-public.fr/particuliers/vosdroits/F10009\">la fiche service-public.fr sur l'APA en établissement</a>, une participation équivalente au tarif dépendance des GIR 5 et 6 reste à la charge du résident.</p><p>Concrètement, le forfait dépendance demande au service facturation de savoir trois choses chaque mois : le GIR en vigueur, la forme de versement de l'APA (au résident ou directement à l'établissement, selon le département) et la date d'effet de chaque changement.</p><h3>Les prestations annexes et les cas particuliers</h3><p>Le contrat de séjour peut prévoir des options : blanchisserie du linge personnel, coiffure, repas d'invités, téléphone, sorties. S'y ajoutent les régularisations : absences pour hospitalisation, entrée ou sortie en cours de mois, décès. Chacune obéit à une règle du contrat de séjour ou du règlement départemental d'aide sociale, et c'est souvent là que les erreurs se glissent.</p><h2 id=\"pourquoi-facturation-ehpad-erreurs\">Pourquoi la facturation résident en EHPAD est-elle si exposée aux erreurs ?</h2><p>La facturation EHPAD est exposée parce qu'elle combine des règles stables (tarifs arrêtés, contrats) et des données qui changent pendant le mois (présences, GIR, notifications), saisies dans des outils différents. L'erreur vient rarement d'un mauvais calcul : elle vient d'une information qui n'a pas été reportée à temps.</p><p>Les données nécessaires sont dispersées. Les présences et les hospitalisations sont dans le logiciel de soins. Les prestations annexes sont dans un planning ou un cahier. Les notifications d'APA et d'ASH arrivent du conseil départemental, souvent par courrier. Les options souscrites sont dans le contrat de séjour. Le facturier fait le lien entre tout cela, de mémoire ou par relecture.</p><p>Les règles varient aussi d'un résident à l'autre. Deux résidents de la même chambre peuvent avoir des factures très différentes selon leur GIR, leur statut d'aide sociale et leurs options. Pour un groupe de plusieurs établissements, les règles départementales changent encore d'un site à l'autre.</p><p>Enfin, l'erreur se voit. Une famille qui découvre une ligne facturée pendant une hospitalisation, ou une régularisation d'APA sans explication, perd confiance bien au-delà du montant en jeu. Le service administratif passe ensuite du temps à expliquer, corriger et réémettre.</p><h2 id=\"erreurs-facturation-ehpad\">Quelles erreurs de facturation reviennent le plus en EHPAD ?</h2><p>Les erreurs de facturation résident se rangent en cinq familles : absences non répercutées, changements de GIR non pris en compte, aides mal appliquées, prestations annexes oubliées ou facturées deux fois, et régularisations d'entrée ou de sortie mal proratisées. Toutes ont un point commun : une source de données qui n'a pas été croisée avec la facture.</p><div class=\"tbl\"><table><tr><th>Anomalie</th><th>Source à croiser</th><th>Ce que vérifie l'équipe</th></tr><tr><td>Absence pour hospitalisation non déduite</td><td>Logiciel de soins (mouvements)</td><td>La règle d'absence du contrat de séjour ou du règlement départemental</td></tr><tr><td>Changement de GIR non répercuté</td><td>Évaluation AGGIR, dossier de soins</td><td>La date d'effet et le tarif dépendance appliqué</td></tr><tr><td>APA ou ASH mal appliquée</td><td>Notification du conseil départemental</td><td>Le montant, la période couverte, le mode de versement</td></tr><tr><td>Prestation annexe oubliée ou doublée</td><td>Planning, bons de prestation, contrat</td><td>L'option souscrite et la prestation réellement rendue</td></tr><tr><td>Entrée, sortie ou décès mal proratisé</td><td>Dossier administratif</td><td>Les dates et la règle de facturation applicable</td></tr></table></div><p>Le changement de GIR mérite une attention à part. Il modifie le tarif dépendance, la part restant due par le résident et parfois le montant d'APA. S'il est saisi dans le dossier de soins sans être transmis à la facturation, l'écart peut durer plusieurs mois et donner lieu à une régularisation lourde à expliquer.</p><div class=\"callout callout--warn\"><p><strong>Le piège :</strong> corriger la facture sans corriger la donnée source. Si l'absence n'est pas saisie dans le logiciel de soins, l'erreur reviendra le mois suivant, que la facture soit faite à la main ou par un outil.</p></div><h2 id=\"automatiser-facturation-ehpad\">Que peut-on automatiser dans la facturation résident ?</h2><p>On peut automatiser tout ce qui consiste à rassembler des données et appliquer une règle écrite : le pré-calcul des factures, le croisement des sources et la détection des écarts. On ne délègue pas ce qui demande une appréciation : un cas d'aide sociale ambigu, un geste commercial, la réponse à une famille.</p><h3>Le pré-calcul des factures</h3><p>Le pré-calcul part des règles en vigueur (tarifs arrêtés, contrat de séjour de chaque résident) et des données du mois. Il produit une facture proposée pour chaque résident, ligne par ligne, avec l'origine de chaque montant. Le facturier ne part plus d'une page blanche ni de la facture du mois précédent recopiée.</p><h3>Le rapprochement des sources</h3><p>C'est le cœur de l'automatisation. L'outil réconcilie le logiciel de soins pour les présences et les mouvements, le planning pour les prestations annexes, les notifications du département pour l'APA et l'ASH, et le contrat individuel pour les options. Quand deux sources se contredisent, il ne tranche pas : il signale.</p><div data-figure=\"flux-pre-calcul\"></div><h3>La détection et le tri des anomalies</h3><p>Les anomalies sont classées par impact financier : d'abord les écarts qui changent fortement le montant (aide non appliquée, hospitalisation longue non déduite), puis les incohérences mineures. L'équipe traite une liste courte de cas qualifiés au lieu de relire ligne à ligne toutes les factures du mois.</p><p>C'est la différence entre un outil qui exécute des règles fixes et un outil capable de lire une situation. Une automatisation classique bloque dès que la donnée n'est pas au format attendu ; l'article sur <a href=\"/ressources/ia-vs-rpa-sante\">les limites de la robotisation classique en santé</a> explique pourquoi.</p><h2 id=\"validation-humaine-factures\">Comment garder une validation humaine sur les factures ?</h2><p>La méthode la plus sûre est de rendre la validation obligatoire avant tout envoi : aucune facture ne part sans qu'un membre de l'équipe l'ait approuvée, seule ou par lot. Le facturier devient contrôleur plutôt que saisisseur, et sa signature reste la dernière étape.</p><h3>Définir ce qui se valide par lot et ce qui se valide un par un</h3><p>Les factures sans anomalie, identiques au mois précédent hors variation de présence, peuvent être validées par lot après un contrôle par sondage. Les factures signalées passent une par une. Les situations sensibles restent toujours en revue individuelle : première facture d'un résident, décès, changement de statut d'aide sociale, contestation en cours.</p><h3>Exiger une justification pour chaque montant</h3><p>Chaque ligne proposée doit indiquer d'où elle vient : la règle appliquée, la donnée utilisée, la date. Un validateur qui ne peut pas remonter à la source signe à l'aveugle. Cette traçabilité sert aussi en cas de contrôle ou de réclamation ; l'article sur <a href=\"/ressources/logs-agent-sante\">ce qu'un agent doit journaliser en santé</a> détaille ce qu'il faut conserver.</p><h3>Garder la main sur les règles</h3><p>Les règles de facturation (tarifs, règles d'absence, options) doivent être lisibles et modifiables par la direction administrative, pas enfouies dans un paramétrage technique. Quand le département publie un nouvel arrêté de tarif, c'est l'équipe qui met à jour la règle et qui la vérifie sur quelques factures test.</p><div class=\"callout callout--tip\"><p><strong>Le bon réflexe :</strong> notez dans l'outil la raison de chaque correction manuelle. Au bout de quelques mois, ces notes montrent quelles règles mériteraient d'être revues ou quelles saisies arrivent trop tard.</p></div><h2 id=\"logiciel-facturation-resident-criteres\">Que doit faire un logiciel facturation résident pour rester contrôlable ?</h2><p>Un logiciel facturation résident reste contrôlable s'il montre son raisonnement, s'il ne peut pas envoyer seul et s'il signale au lieu de corriger en silence. Ce sont trois questions à poser à tout éditeur ou prestataire avant de signer.</p><ul><li><strong>Lisibilité :</strong> chaque montant proposé renvoie à sa règle et à sa donnée source.</li><li><strong>Blocage de l'envoi :</strong> aucune facture n'est émise sans validation enregistrée, avec le nom du validateur et la date.</li><li><strong>Signalement plutôt que correction :</strong> en cas de contradiction entre deux sources, l'outil alerte et ne choisit pas à votre place.</li><li><strong>Historique :</strong> les versions successives d'une facture sont conservées, avec le motif de chaque modification.</li><li><strong>Branchement sur l'existant :</strong> l'outil lit votre logiciel de soins et votre logiciel de facturation actuel, sans vous obliger à en changer.</li><li><strong>Données de santé :</strong> les présences et les GIR sont des données de santé ; leur hébergement doit respecter le cadre applicable, présenté dans l'article sur <a href=\"/ressources/ia-generative-sante-cadre\">le cadre réglementaire de l'IA en santé</a>.</li></ul><p>Pour une direction qui gère plusieurs établissements, ajoutez un critère : une vue consolidée des anomalies de tous les sites, avec les règles départementales propres à chacun. L'article sur <a href=\"/ressources/groupes-multi-sites-pilotage\">le pilotage des groupes multi-sites</a> traite de cette organisation.</p><p>Quand le croisement des sources prend plusieurs jours chaque mois, c'est précisément cette partie qu'il est utile de confier. Avec les <a href=\"/agents\">agents Granit</a>, la collecte des données et la liste d'anomalies triée sont préparées avant votre passage ; votre équipe garde la validation et l'envoi.</p><h2 id=\"mettre-en-place-automatisation\">Comment mettre en place l'automatisation sans risque ?</h2><p>Le projet se mène en quatre étapes, et la plus importante est la troisième : faire tourner l'outil en parallèle de votre méthode actuelle avant de lui confier la production. Tant que les deux résultats ne concordent pas, on ne bascule pas.</p><ol class=\"steps\"><li><strong>Auditer les règles existantes.</strong> Recensez les tarifs en vigueur, les règles d'absence, les options du contrat de séjour et les règles départementales propres à chaque site, y compris celles qui ne sont écrites nulle part.</li><li><strong>Paramétrer les règles et brancher les sources.</strong> Traduisez chaque règle dans l'outil et reliez-le au logiciel de soins, au planning et aux notifications du département.</li><li><strong>Faire tourner en parallèle sur plusieurs cycles.</strong> Produisez les factures des deux façons pendant plusieurs mois et analysez chaque écart : erreur de l'outil, erreur manuelle ou règle mal comprise.</li><li><strong>Basculer avec validation maintenue.</strong> L'outil produit, l'équipe valide. La validation humaine n'est pas une phase de transition : elle reste en place.</li></ol><div data-figure=\"etapes-projet\"></div><p>L'audit des règles est souvent la partie la plus instructive. Il révèle des pratiques implicites : une remise accordée à un résident historique, une règle d'absence appliquée différemment selon le facturier. Ces cas doivent être tranchés par la direction avant d'être paramétrés, sinon l'outil reproduira l'incohérence.</p><p>Choisissez le mois de bascule avec soin. Évitez un mois de changement de tarif ou de renouvellement massif de notifications d'APA : vous voulez tester l'outil sur un cycle normal avant de le confronter à un cycle chargé.</p><h2 id=\"mesurer-resultats-facturation\">Comment savoir si l'automatisation tient ses promesses ?</h2><p>On le mesure avec quelques indicateurs suivis chaque mois, avant et après la bascule : le temps passé sur la facturation, le nombre de factures corrigées après envoi, le nombre de réclamations des familles et le délai entre la fin du mois et l'émission des factures. Sans point de départ mesuré, aucune amélioration ne peut être affirmée.</p><p>Le nombre de factures réémises est l'indicateur le plus parlant. Une facture corrigée après envoi signifie une erreur que le contrôle n'a pas vue. Il doit baisser ; s'il ne baisse pas, regardez d'abord les données sources, puis les règles paramétrées.</p><p>La date d'émission compte aussi. Des factures envoyées à date fixe, avec un détail lisible, réduisent les questions des familles et accélèrent l'encaissement. Une facture qui arrive tard ou mal expliquée retarde le paiement et ouvre la porte aux litiges ; l'article sur <a href=\"/ressources/recouvrement-patient-empathie\">le recouvrement sans déshumaniser la relation</a> traite de la suite quand un impayé apparaît.</p><p>Pour aller plus loin sur le choix des indicateurs, l'article sur <a href=\"/ressources/kpi-back-office-sante\">les KPI back-office en santé</a> propose une grille utilisable par une direction administrative. L'essentiel est de mesurer les mêmes choses avant et après, sur le même périmètre de résidents.</p>",
+  "tocItems": [
+    {
+      "id": "composition-facture-resident",
+      "label": "Composition de la facture d'un résident"
+    },
+    {
+      "id": "pourquoi-facturation-ehpad-erreurs",
+      "label": "Pourquoi la facturation EHPAD expose aux erreurs"
+    },
+    {
+      "id": "erreurs-facturation-ehpad",
+      "label": "Les erreurs de facturation les plus courantes"
+    },
+    {
+      "id": "automatiser-facturation-ehpad",
+      "label": "Ce qu'on peut automatiser"
+    },
+    {
+      "id": "validation-humaine-factures",
+      "label": "Garder une validation humaine"
+    },
+    {
+      "id": "logiciel-facturation-resident-criteres",
+      "label": "Critères d'un logiciel contrôlable"
+    },
+    {
+      "id": "mettre-en-place-automatisation",
+      "label": "Mettre en place l'automatisation"
+    },
+    {
+      "id": "mesurer-resultats-facturation",
+      "label": "Mesurer les résultats"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "Comment se compose la facture d'un résident en EHPAD ?",
+      "answer": "La facture d'un résident en EHPAD additionne principalement un tarif hébergement et un tarif dépendance, plus d'éventuelles prestations annexes prévues au contrat de séjour. Les soins sont financés par l'Assurance maladie sous forme de forfait versé à l'établissement et ne sont pas facturés au résident. Selon service-public.fr, l'APA en établissement aide à payer le tarif dépendance, mais une part équivalente au tarif des GIR 5 et 6 reste à la charge du résident."
+    },
+    {
+      "question": "Que peut-on automatiser dans la facturation résident ?",
+      "answer": "On peut automatiser le pré-calcul des factures, le rapprochement des sources (logiciel de soins, planning, notifications du département, contrat de séjour) et la détection des anomalies triées par impact financier. Ce qui demande une appréciation reste humain : les cas d'aide sociale ambigus, les gestes commerciaux et la réponse aux familles. L'envoi des factures reste soumis à validation."
+    },
+    {
+      "question": "Comment garder une validation humaine sur les factures ?",
+      "answer": "La méthode la plus sûre est de bloquer tout envoi tant qu'un membre de l'équipe n'a pas validé la facture, seule ou par lot. Les factures sans anomalie peuvent être validées par lot après sondage, les factures signalées et les situations sensibles une par une. Chaque montant proposé doit indiquer la règle et la donnée qui le justifient."
+    },
+    {
+      "question": "Quelles erreurs de facturation reviennent le plus en EHPAD ?",
+      "answer": "Les erreurs de facturation en EHPAD se rangent en cinq familles : absences pour hospitalisation non déduites, changements de GIR non répercutés, APA ou aide sociale à l'hébergement mal appliquée, prestations annexes oubliées ou doublées, et entrées, sorties ou décès mal proratisés. Elles viennent presque toujours d'une donnée source qui n'a pas été croisée avec la facture. Corriger la donnée à la source évite que l'erreur revienne le mois suivant."
+    }
+  ],
+  "sources": [
+    {
+      "label": "service-public.fr · Aide sociale à l'hébergement (ASH)",
+      "url": "https://www.service-public.fr/particuliers/vosdroits/F2444"
+    },
+    {
+      "label": "service-public.fr · Allocation personnalisée d'autonomie (APA) en établissement",
+      "url": "https://www.service-public.fr/particuliers/vosdroits/F10009"
+    }
+  ],
+  "figures": [
+    {
+      "id": "flux-pre-calcul",
+      "type": "flux",
+      "titre": "Du pré-calcul à la facture validée",
+      "legende": "L'outil rassemble et signale ; seule l'équipe valide avant l'envoi aux familles.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "Sources de données",
+          "detail": "Présences, GIR, notifications, options du contrat",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Pré-calcul",
+          "detail": "Facture proposée, chaque ligne avec sa règle",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Liste d'anomalies",
+          "detail": "Écarts triés par impact financier",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Validation humaine",
+          "detail": "Approbation par lot ou une par une",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Envoi aux familles",
+          "detail": "",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    },
+    {
+      "id": "etapes-projet",
+      "type": "etapes",
+      "titre": "Quatre étapes pour automatiser sans risque",
+      "legende": "La marche en parallèle décide de la bascule ; la validation humaine reste ensuite.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "Auditer les règles",
+          "detail": "Tarifs, absences, options, règles départementales",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Paramétrer et brancher",
+          "detail": "Règles dans l'outil, sources reliées",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Tourner en parallèle",
+          "detail": "Plusieurs cycles, chaque écart analysé",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Basculer avec validation",
+          "detail": "L'outil produit, l'équipe valide",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [],
+  "liensEntrants": [],
+  "remplace": [],
+  "verticales": [
+    "pharmacie"
+  ],
+  "refonte": true,
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-23T11:37:54.579Z",
+    "avertissements": [
+      "aucune citation (facultative)"
+    ]
+  }
+}
