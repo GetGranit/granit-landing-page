@@ -30,6 +30,7 @@ import { Route as EnIndexRouteImport } from './routes/en.index'
 import { Route as EnCgvRouteImport } from './routes/en.cgv'
 import { Route as RessourcesIndexRouteImport } from './routes/ressources.index'
 import { Route as RessourcesSlugRouteImport } from './routes/ressources.$slug'
+import { Route as WebinarIaMagasinRouteImport } from './routes/webinar.ia-magasin'
 import { Route as EnBlogSplatRouteImport } from './routes/en.blog.$'
 import { Route as RessourcesCategorieCategoryRouteImport } from './routes/ressources.categorie.$category'
 import { Route as RessourcesMetierVerticaleRouteImport } from './routes/ressources.metier.$verticale'
@@ -139,6 +140,11 @@ const RessourcesSlugRoute = RessourcesSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => RessourcesRoute,
 } as any)
+const WebinarIaMagasinRoute = WebinarIaMagasinRouteImport.update({
+  id: '/webinar/ia-magasin',
+  path: '/webinar/ia-magasin',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EnBlogSplatRoute = EnBlogSplatRouteImport.update({
   id: '/en/blog/$',
   path: '/en/blog/$',
@@ -177,6 +183,7 @@ export interface FileRoutesByFullPath {
   '/blog/$': typeof BlogSplatRoute
   '/en/cgv': typeof EnCgvRoute
   '/ressources/$slug': typeof RessourcesSlugRoute
+  '/webinar/ia-magasin': typeof WebinarIaMagasinRoute
   '/en/': typeof EnIndexRoute
   '/ressources/': typeof RessourcesIndexRoute
   '/en/blog/$': typeof EnBlogSplatRoute
@@ -202,6 +209,7 @@ export interface FileRoutesByTo {
   '/blog/$': typeof BlogSplatRoute
   '/en/cgv': typeof EnCgvRoute
   '/ressources/$slug': typeof RessourcesSlugRoute
+  '/webinar/ia-magasin': typeof WebinarIaMagasinRoute
   '/en': typeof EnIndexRoute
   '/ressources': typeof RessourcesIndexRoute
   '/en/blog/$': typeof EnBlogSplatRoute
@@ -229,6 +237,7 @@ export interface FileRoutesById {
   '/blog/$': typeof BlogSplatRoute
   '/en/cgv': typeof EnCgvRoute
   '/ressources/$slug': typeof RessourcesSlugRoute
+  '/webinar/ia-magasin': typeof WebinarIaMagasinRoute
   '/en/': typeof EnIndexRoute
   '/ressources/': typeof RessourcesIndexRoute
   '/en/blog/$': typeof EnBlogSplatRoute
@@ -257,6 +266,7 @@ export interface FileRouteTypes {
     | '/blog/$'
     | '/en/cgv'
     | '/ressources/$slug'
+    | '/webinar/ia-magasin'
     | '/en/'
     | '/ressources/'
     | '/en/blog/$'
@@ -282,6 +292,7 @@ export interface FileRouteTypes {
     | '/blog/$'
     | '/en/cgv'
     | '/ressources/$slug'
+    | '/webinar/ia-magasin'
     | '/en'
     | '/ressources'
     | '/en/blog/$'
@@ -308,6 +319,7 @@ export interface FileRouteTypes {
     | '/blog/$'
     | '/en/cgv'
     | '/ressources/$slug'
+    | '/webinar/ia-magasin'
     | '/en/'
     | '/ressources/'
     | '/en/blog/$'
@@ -334,6 +346,7 @@ export interface RootRouteChildren {
   TarifsRoute: typeof TarifsRoute
   BlogSplatRoute: typeof BlogSplatRoute
   EnCgvRoute: typeof EnCgvRoute
+  WebinarIaMagasinRoute: typeof WebinarIaMagasinRoute
   EnIndexRoute: typeof EnIndexRoute
   EnBlogSplatRoute: typeof EnBlogSplatRoute
 }
@@ -487,6 +500,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RessourcesSlugRouteImport
       parentRoute: typeof RessourcesRoute
     }
+    '/webinar/ia-magasin': {
+      id: '/webinar/ia-magasin'
+      path: '/webinar/ia-magasin'
+      fullPath: '/webinar/ia-magasin'
+      preLoaderRoute: typeof WebinarIaMagasinRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/en/blog/$': {
       id: '/en/blog/$'
       path: '/en/blog/$'
@@ -548,6 +568,7 @@ const rootRouteChildren: RootRouteChildren = {
   TarifsRoute: TarifsRoute,
   BlogSplatRoute: BlogSplatRoute,
   EnCgvRoute: EnCgvRoute,
+  WebinarIaMagasinRoute: WebinarIaMagasinRoute,
   EnIndexRoute: EnIndexRoute,
   EnBlogSplatRoute: EnBlogSplatRoute,
 }
