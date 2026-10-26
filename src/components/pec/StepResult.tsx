@@ -295,6 +295,15 @@ function Estimation({ estim }: { estim: EstimationLunettes }) {
       >
         pris en charge en moyenne par la complémentaire, sur une paire de lunettes.
       </motion.p>
+      <motion.p
+        className="text-[12px]"
+        style={{ color: "#6b7d70" }}
+        initial={run ? { opacity: 0 } : false}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.3, duration: 0.5 }}
+      >
+        D'après plus de 10&nbsp;000 prises en charge déjà gérées pour nos clients opticiens.
+      </motion.p>
     </motion.div>
   );
 }
@@ -361,8 +370,10 @@ const ETAPES_MANUELLES = [
 // Le gain de vitesse est déjà dans le comparatif 2-colonnes ci-dessus : on ne
 // répète pas « 30 s / 12 min » en chip (reco design : couper la redondance).
 const ARGUMENTS = [
-  { ico: "🔒", txt: "Hébergé en France, agréé santé (HDS)" },
+  { ico: "✓", txt: "Dérogations gérées" },
+  { ico: "✓", txt: "Contrôle tarifaire" },
   { ico: "✓", txt: "Zéro faute de saisie, zéro rejet à refaire" },
+  { ico: "🔒", txt: "Hébergé en France, agréé santé (HDS)" },
 ];
 
 function GranitFaitPourVous({ target }: { target: string }) {
@@ -450,7 +461,7 @@ function GranitFaitPourVous({ target }: { target: string }) {
               AVEC GRANIT
             </span>
             <span className="text-[12px] font-semibold" style={{ color: "var(--terra)" }}>
-              ~60 s
+              pour vous
             </span>
           </div>
           <ul className="grid gap-1.5">
