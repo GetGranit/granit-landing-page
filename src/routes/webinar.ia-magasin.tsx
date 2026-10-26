@@ -128,14 +128,17 @@ const t = {
   fields: {
     name: "Prénom et nom",
     email: "Adresse e-mail",
+    phone: "Téléphone",
     company: "Nom du magasin",
     stores: "Nombre de magasins",
   },
   placeholders: {
     name: "Marie Dupont",
     email: "marie@centre-vision.fr",
+    phone: "06 12 34 56 78",
     company: "Centre Vision",
   },
+  phoneHint: "Un numéro à 10 chiffres, par exemple 06 12 34 56 78.",
   stores: ["1 magasin", "2 à 3 magasins", "4 à 15 magasins", "Plus de 15 magasins"],
   choose: "Choisir…",
   sending: "Envoi…",
@@ -746,6 +749,7 @@ function WebinarForm() {
             data: {
               name: String(fd.get("name") || ""),
               email: String(fd.get("email") || ""),
+              phone: String(fd.get("phone") || ""),
               company: String(fd.get("company") || ""),
               orgType: stores,
               source: SOURCE,
@@ -784,18 +788,34 @@ function WebinarForm() {
           style={inputStyle}
         />
       </Label>
-      <Label text={t.fields.email}>
-        <input
-          name="email"
-          type="email"
-          required
-          autoComplete="email"
-          inputMode="email"
-          placeholder={t.placeholders.email}
-          className={inputClass}
-          style={inputStyle}
-        />
-      </Label>
+      <div className="grid gap-x-4 sm:grid-cols-2">
+        <Label text={t.fields.email}>
+          <input
+            name="email"
+            type="email"
+            required
+            autoComplete="email"
+            inputMode="email"
+            placeholder={t.placeholders.email}
+            className={inputClass}
+            style={inputStyle}
+          />
+        </Label>
+        <Label text={t.fields.phone}>
+          <input
+            name="phone"
+            type="tel"
+            required
+            autoComplete="tel"
+            inputMode="tel"
+            pattern="[0-9 .+\-\(\)]{10,20}"
+            title={t.phoneHint}
+            placeholder={t.placeholders.phone}
+            className={inputClass}
+            style={inputStyle}
+          />
+        </Label>
+      </div>
       <div className="grid gap-x-4 sm:grid-cols-2">
         <Label text={t.fields.company}>
           <input
