@@ -171,19 +171,30 @@ export function WebinarForm({
         e.preventDefault();
         const fd = new FormData(e.currentTarget);
         const stores = String(fd.get("orgType") || "");
+        const lead = {
+          name: String(fd.get("name") || ""),
+          email: String(fd.get("email") || ""),
+          phone: String(fd.get("phone") || ""),
+          company: String(fd.get("company") || ""),
+          orgType: stores,
+          source: SOURCE,
+          utm: getAttribution(),
+        };
         setStatus("submitting");
+
+        // Copie de secours dans PostHog avant tout envoi : si le webhook (B11,
+        // n8n) est en panne, l'inscription reste récupérable depuis PostHog.
+        // Elle ne compte que si PostHog est réellement chargé (pas bloqué par
+        // un bloqueur de pub), sinon l'échec du webhook reste une erreur.
+        const secours = Boolean(posthog?.__loaded);
+        posthog?.capture(
+          "webinar_registration_backup",
+          { webinar: SOURCE, ...lead },
+          { send_instantly: true, transport: "sendBeacon" },
+        );
+
         try {
-          await submit({
-            data: {
-              name: String(fd.get("name") || ""),
-              email: String(fd.get("email") || ""),
-              phone: String(fd.get("phone") || ""),
-              company: String(fd.get("company") || ""),
-              orgType: stores,
-              source: SOURCE,
-              utm: getAttribution(),
-            },
-          });
+          await submit({ data: lead });
           posthog.capture("webinar_registration_submitted", {
             webinar: SOURCE,
             stores: stores || undefined,
@@ -192,7 +203,7 @@ export function WebinarForm({
           setStatus("success");
         } catch {
           logDemoRequestDeliveryFailed(posthog, "webinar_landing");
-          setStatus("error");
+          setStatus(secours ? "success" : "error");
         }
       }}
     >
