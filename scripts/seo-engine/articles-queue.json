@@ -1579,7 +1579,7 @@
       "rejet tiers payant pharmacie"
     ],
     "searchVolume": null,
-    "status": "pending",
+    "status": "review",
     "wave": 1.5,
     "level": "Refonte",
     "parentSlug": null,
@@ -1601,7 +1601,8 @@
       "pharmacie"
     ],
     "auteur": "laura",
-    "relecteur": "nathalie"
+    "relecteur": "nathalie",
+    "publishedAt": "2026-10-26"
   },
   {
     "id": "R4",
