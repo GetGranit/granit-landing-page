@@ -1,26 +1,24 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion, useReducedMotion } from "framer-motion";
+import { CalendarDays, Check, Clock3, Lock } from "lucide-react";
 
 import { Reveal } from "@/components/Reveal";
 import { Faq, WebinarForm } from "@/components/webinar/WebinarShared";
-import { useJoursRestants } from "@/hooks/useWebinarCountdown";
+import { useCompteARebours } from "@/hooks/useWebinarCountdown";
 import { t } from "@/lib/webinarIa";
 import logoMonogram from "@/assets/logo.svg";
 import photoPaul from "@/assets/paul-pietra.jpg";
-import photoMagasin from "@/assets/webinar-magasin.jpg";
 
 /**
- * Inscription au webinar « 5 usages de l'IA en magasin » du 26 novembre.
- * On y arrive par les liens de la campagne lemlist « Test 3 messages »
- * (approche Webinar IA, cohortes A et B, distinguées par `utm_content`).
+ * Inscription au webinar « 5 usages de l'IA en magasin » du 26 novembre. On y
+ * arrive par les liens de la campagne lemlist « Test 3 messages » (approche
+ * Webinar IA, cohortes A et B, distinguées par `utm_content`).
  *
- * Page de campagne comme /silmo : hors navigation, hors sitemap et en noindex,
- * dont la seule action est le formulaire. Le haut de page est une affiche
- * (photo de magasin, animateur, date) qui dit quoi, quand et qui avant toute
- * lecture. Texte et formulaire sont communs avec la variante
- * /webinar/ia-magasin-b (voir lib/webinarIa.ts et components/webinar).
- *
- * Page en français seulement : la campagne ne vise que des magasins français.
+ * Page de campagne comme /silmo : hors navigation, hors sitemap et en noindex.
+ * Une seule « fiche événement » sur fond dégradé : à gauche le programme et
+ * l'animateur, à droite une carte blanche qui chevauche et porte le compte à
+ * rebours et le formulaire. Une variante « affiche photo » a été essayée puis
+ * écartée par Paul le 26/10 (voir l'historique de ce fichier).
  */
 export const Route = createFileRoute("/webinar/ia-magasin")({
   head: () => ({
@@ -42,9 +40,8 @@ export const Route = createFileRoute("/webinar/ia-magasin")({
   component: WebinarPage,
 });
 
-const ENCRE = "var(--text)";
-const CREME = "var(--bg2)";
-const FILET = "var(--border2)";
+const DEGRADE = "linear-gradient(135deg, #e0654f 0%, #ec8a64 45%, #f6b58c 100%)";
+const BOUTON = "linear-gradient(90deg, #d9583f 0%, #f0956a 100%)";
 
 const mono = {
   fontFamily: "var(--font-mono)",
@@ -54,424 +51,298 @@ const mono = {
 
 function WebinarPage() {
   return (
-    <div className="min-h-screen" style={{ background: CREME, color: ENCRE }}>
-      <header
-        className="sticky top-0 z-50"
-        style={{ background: CREME, borderBottom: `1px solid ${ENCRE}` }}
-      >
-        <div className="mx-auto flex h-[62px] max-w-[1140px] items-center justify-between px-5 md:px-8">
-          <div className="flex items-center gap-2.5">
-            <img src={logoMonogram} alt="Granit" className="h-[26px] w-auto" />
-            <span className="font-serif text-[19px] tracking-tight" style={{ fontWeight: 700 }}>
-              Granit
-            </span>
-          </div>
-          <a
-            href="#inscription"
-            className="px-3.5 py-2 text-[11px]"
-            style={{ ...mono, color: CREME, background: ENCRE }}
+    <div
+      className="relative min-h-screen overflow-hidden"
+      style={{ background: DEGRADE, color: "var(--text)" }}
+    >
+      <Cercles />
+
+      <main className="relative mx-auto max-w-[1180px] px-4 py-10 md:px-8 md:py-16">
+        <div className="flex flex-col items-stretch md:flex-row md:items-center">
+          <Reveal className="md:w-[64%]">
+            <FicheProgramme />
+          </Reveal>
+          <Reveal
+            delay={0.12}
+            className="relative z-10 -mt-6 md:-ml-16 md:mt-0 md:w-[410px] md:shrink-0"
           >
-            S'inscrire
-          </a>
+            <CarteInscription />
+          </Reveal>
         </div>
-      </header>
 
-      <Hero />
-
-      <main className="mx-auto max-w-[1140px] px-5 pb-20 md:px-8">
-        <section className="pt-20">
-          <Reveal>
-            <p className="text-[11px]" style={{ ...mono, color: "var(--terra)" }}>
-              {t.whatEyebrow}
-            </p>
-            <h2
-              className="mt-3 font-serif"
-              style={{ fontSize: "clamp(26px, 4vw, 40px)", lineHeight: 1.12, fontWeight: 400 }}
-            >
-              {t.whatTitle} <span className="accent-italic">{t.whatAccent}</span>
+        <Reveal>
+          <section
+            className="mx-auto mt-10 max-w-[760px] rounded-[24px] p-6 md:mt-14 md:p-8"
+            style={{
+              background: "rgba(255,255,255,0.92)",
+              boxShadow: "0 20px 60px -30px rgba(80,30,10,0.5)",
+            }}
+          >
+            <h2 className="font-serif text-[22px]" style={{ fontWeight: 400 }}>
+              {t.faqTitle}
             </h2>
-          </Reveal>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {t.cas.map((c, i) => (
-              <Reveal key={c.titre} delay={i * 0.08}>
-                <div
-                  className="card-hover flex h-full flex-col rounded-[16px] border p-6"
-                  style={{ borderColor: "var(--border)", background: "var(--surface)" }}
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="text-[30px] leading-none" aria-hidden>
-                      {c.emoji}
-                    </span>
-                    <span
-                      className="num-tabular text-[12px]"
-                      style={{ ...mono, color: "var(--terra)" }}
-                    >
-                      0{i + 1}
-                    </span>
-                  </div>
-                  <h3
-                    className="mt-6 font-serif text-[21px]"
-                    style={{ fontWeight: 400, lineHeight: 1.2 }}
-                  >
-                    {c.titre}
-                  </h3>
-                  <p
-                    className="mt-3 text-[14px]"
-                    style={{ lineHeight: 1.55, color: "var(--text-soft)" }}
-                  >
-                    {c.texte}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
-            <Reveal delay={0.24}>
-              <SurpriseCard />
-            </Reveal>
-          </div>
-        </section>
-
-        <section className="grid gap-4 pt-16 md:grid-cols-3">
-          {t.infos.map((info, i) => (
-            <Reveal key={info.titre} delay={i * 0.08}>
-              <div
-                className="flex h-full gap-4 rounded-[16px] p-6"
-                style={{ background: "var(--terra-light)" }}
-              >
-                <span className="text-[26px] leading-none" aria-hidden>
-                  {info.emoji}
-                </span>
-                <div>
-                  <h3 className="text-[15px]" style={{ fontWeight: 600 }}>
-                    {info.titre}
-                  </h3>
-                  <p
-                    className="mt-1.5 text-[14px]"
-                    style={{ lineHeight: 1.55, color: "var(--text-soft)" }}
-                  >
-                    {info.texte}
-                  </p>
-                </div>
-              </div>
-            </Reveal>
-          ))}
-        </section>
-
-        <section className="pt-16">
-          <Reveal>
-            <p className="text-[11px]" style={{ ...mono, color: "var(--terra)" }}>
-              {t.derouleEyebrow}
-            </p>
-            <Deroule />
-          </Reveal>
-        </section>
-
-        <section
-          id="inscription"
-          className="grid scroll-mt-24 gap-12 pt-20 md:grid-cols-[1fr_1.1fr]"
-        >
-          <Reveal>
-            <h2
-              className="font-serif"
-              style={{ fontSize: "clamp(26px, 4vw, 40px)", lineHeight: 1.12, fontWeight: 400 }}
-            >
-              On vous garde <span className="accent-italic">une place&nbsp;?</span>
-            </h2>
-            <p
-              className="mt-4 max-w-md text-[15px]"
-              style={{ lineHeight: 1.6, color: "var(--text-soft)" }}
-            >
-              📅 {t.date} · ⏰ {t.heure}
-            </p>
-            <div className="mt-10">
-              <h3 className="mb-1 font-serif text-[21px]" style={{ fontWeight: 400 }}>
-                {t.faqTitle}
-              </h3>
-              <Faq />
-            </div>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <WebinarForm variant="a" />
-          </Reveal>
-        </section>
+            <Faq />
+          </section>
+        </Reveal>
       </main>
     </div>
   );
 }
 
-function Hero() {
+/** Grands cercles au trait, comme sur l'affiche de référence, qui dérivent lentement. */
+function Cercles() {
   const reduce = useReducedMotion();
-  const jours = useJoursRestants();
-
+  const cercles = [
+    { size: 520, top: "-12%", left: "-8%", d: 26 },
+    { size: 380, top: "55%", left: "30%", d: 32 },
+    { size: 300, top: "8%", left: "78%", d: 22 },
+  ];
   return (
-    <section className="relative overflow-hidden" style={{ background: "#16120e" }}>
-      <motion.img
-        src={photoMagasin}
-        alt=""
-        aria-hidden
-        className="absolute inset-0 h-full w-full object-cover"
-        initial={reduce ? false : { scale: 1.12 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 14, ease: "easeOut" }}
-      />
-      <div
-        aria-hidden
-        className="absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(100deg, rgba(22,18,14,0.92) 0%, rgba(22,18,14,0.78) 45%, rgba(22,18,14,0.35) 100%)",
-        }}
-      />
-
-      <div className="relative mx-auto grid max-w-[1140px] items-center gap-10 px-5 py-14 md:grid-cols-[1.15fr_1fr] md:px-8 md:py-24">
-        <Reveal>
-          <span
-            className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-[11px]"
-            style={{
-              ...mono,
-              color: "#fff",
-              background: "rgba(255,255,255,0.12)",
-              border: "1px solid rgba(255,255,255,0.25)",
-            }}
-          >
-            <span className="relative flex h-2 w-2">
-              {!reduce && (
-                <span
-                  className="absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"
-                  style={{ background: "var(--terra)" }}
-                />
-              )}
-              <span
-                className="relative inline-flex h-2 w-2 rounded-full"
-                style={{ background: "var(--terra)" }}
-              />
-            </span>
-            🎙️ {t.badge}
-          </span>
-
-          <h1
-            className="mt-6 font-serif text-white"
-            style={{
-              fontSize: "clamp(32px, 5.2vw, 60px)",
-              lineHeight: 1.05,
-              letterSpacing: "-0.02em",
-              fontWeight: 400,
-            }}
-          >
-            {t.titleLead}
-            <br />
-            <span className="accent-italic" style={{ color: "#f0a07e" }}>
-              {t.titleAccent}
-            </span>
-          </h1>
-          <p
-            className="mt-5 max-w-lg text-[16px]"
-            style={{ lineHeight: 1.6, color: "rgba(255,255,255,0.78)" }}
-          >
-            {t.intro}
-          </p>
-
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <a
-              href="#inscription"
-              className="inline-flex items-center gap-2 rounded-full px-6 py-3.5 text-[14px] text-white transition-transform hover:scale-[1.03]"
-              style={{
-                background: "var(--terra)",
-                fontWeight: 600,
-                boxShadow: "0 10px 30px -10px var(--terra-glow)",
-              }}
-            >
-              {t.cta} <span aria-hidden>→</span>
-            </a>
-            <span className="text-[13px]" style={{ color: "rgba(255,255,255,0.7)" }}>
-              🎬 {t.replay}
-            </span>
-          </div>
-        </Reveal>
-
-        <Reveal delay={0.15}>
-          <Affiche jours={jours} />
-        </Reveal>
-      </div>
-    </section>
+    <div aria-hidden className="pointer-events-none absolute inset-0">
+      {cercles.map((c, i) => (
+        <motion.span
+          key={i}
+          className="absolute rounded-full"
+          style={{
+            width: c.size,
+            height: c.size,
+            top: c.top,
+            left: c.left,
+            border: "1px solid rgba(255,255,255,0.35)",
+          }}
+          animate={reduce ? undefined : { x: [0, 24, 0], y: [0, -18, 0] }}
+          transition={{ duration: c.d, repeat: Infinity, ease: "easeInOut" }}
+        />
+      ))}
+    </div>
   );
 }
 
-/** La carte « affiche » du hero : qui, quand, et les cinq cas en un coup d'œil. */
-function Affiche({ jours }: { jours: string | null }) {
-  const emojis = [...t.cas.map((c) => c.emoji), "🔒", "🔒"];
+function FicheProgramme() {
   return (
-    <motion.div
-      className="relative rounded-[20px] p-6 md:p-7"
-      style={{ background: CREME, boxShadow: "0 30px 80px -20px rgba(0,0,0,0.6)" }}
-      initial={{ rotate: 0 }}
-      whileHover={{ rotate: -0.6, y: -4 }}
-      transition={{ type: "spring", stiffness: 200, damping: 18 }}
+    <div
+      className="relative overflow-hidden rounded-[24px] px-6 pb-14 pt-8 md:py-12 md:pl-14 md:pr-28"
+      style={{
+        background: "linear-gradient(160deg, #fff6ef 0%, #fde9e1 100%)",
+        boxShadow: "0 30px 80px -30px rgba(80,30,10,0.55)",
+      }}
     >
-      {jours !== null && (
-        <motion.span
-          className="absolute -right-3 -top-3 rounded-full px-3.5 py-1.5 text-[12px] text-white"
-          style={{
-            ...mono,
-            background: "var(--terra)",
-            boxShadow: "0 8px 20px -6px var(--terra-glow)",
-          }}
-          initial={{ scale: 0, rotate: -12 }}
-          animate={{ scale: 1, rotate: 6 }}
-          transition={{ type: "spring", stiffness: 260, damping: 14, delay: 0.6 }}
-        >
-          {jours}
-        </motion.span>
-      )}
+      <p className="text-[11px]" style={{ ...mono, color: "var(--terra)" }}>
+        🎙️ {t.badge}
+      </p>
+      <h1
+        className="mt-4 font-serif"
+        style={{
+          fontSize: "clamp(28px, 3.6vw, 42px)",
+          lineHeight: 1.1,
+          letterSpacing: "-0.02em",
+          fontWeight: 400,
+        }}
+      >
+        {t.titleLead}
+        <br />
+        <span className="accent-italic">{t.titleAccent}</span>
+      </h1>
 
-      <div className="flex items-center gap-4">
-        <img
+      <div
+        className="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-[14px]"
+        style={{ color: "var(--text-soft)" }}
+      >
+        <span className="inline-flex items-center gap-2">
+          <CalendarDays size={17} strokeWidth={1.75} /> {t.date}
+        </span>
+        <span className="inline-flex items-center gap-2">
+          <Clock3 size={17} strokeWidth={1.75} /> {t.heure} · 45 min · en ligne
+        </span>
+      </div>
+
+      <p
+        className="mt-6 max-w-[560px] text-[15px]"
+        style={{ lineHeight: 1.65, color: "var(--text-soft)" }}
+      >
+        {t.constat}
+      </p>
+
+      <h2 className="mt-9 text-[15px]" style={{ fontWeight: 600 }}>
+        Votre animateur
+      </h2>
+      <div className="mt-4 flex items-center gap-5">
+        <motion.img
           src={photoPaul}
           alt="Paul Pietra"
-          width={76}
-          height={76}
-          className="h-[76px] w-[76px] shrink-0 rounded-full object-cover"
-          style={{ boxShadow: "0 0 0 3px var(--bg2), 0 0 0 5px var(--terra)" }}
+          width={104}
+          height={104}
+          className="h-[104px] w-[104px] shrink-0 rounded-full object-cover"
+          style={{ boxShadow: "0 0 0 6px #fff, 0 12px 30px -10px rgba(80,30,10,0.45)" }}
+          initial={{ scale: 0.85, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ type: "spring", stiffness: 180, damping: 16, delay: 0.3 }}
         />
         <div>
-          <p className="text-[15px]" style={{ fontWeight: 600 }}>
-            {t.host}
+          <p className="text-[16px]" style={{ fontWeight: 600 }}>
+            Paul Pietra
           </p>
-          <p className="mt-1 text-[13px]" style={{ lineHeight: 1.45, color: "var(--text-soft)" }}>
+          <p className="text-[12px]" style={{ ...mono, color: "var(--terra)" }}>
+            {t.hostRole}
+          </p>
+          <p
+            className="mt-2 max-w-[340px] text-[13.5px]"
+            style={{ lineHeight: 1.5, color: "var(--text-soft)" }}
+          >
             {t.hostLine}
           </p>
         </div>
       </div>
 
-      <div className="mt-6 grid gap-3 sm:grid-cols-2">
-        <div
-          className="rounded-[12px] p-4"
-          style={{ background: "var(--surface)", border: `1px solid ${FILET}` }}
-        >
-          <p className="text-[11px]" style={{ ...mono, color: "var(--text-muted)" }}>
-            📅 Date
-          </p>
-          <p className="mt-1.5 font-serif text-[19px]" style={{ fontWeight: 400 }}>
-            {t.date}
-          </p>
-        </div>
-        <div
-          className="rounded-[12px] p-4"
-          style={{ background: "var(--surface)", border: `1px solid ${FILET}` }}
-        >
-          <p className="text-[11px]" style={{ ...mono, color: "var(--text-muted)" }}>
-            ⏰ Horaire
-          </p>
-          <p
-            className="num-tabular mt-1.5 font-serif text-[19px]"
-            style={{ fontWeight: 400, color: "var(--terra)" }}
-          >
-            {t.heure}
-          </p>
-        </div>
-      </div>
-
-      <p className="mt-6 text-[11px]" style={{ ...mono, color: "var(--text-muted)" }}>
-        {t.programme} · 5 cas d'usage
-      </p>
-      <ul className="mt-3 flex gap-2.5">
-        {emojis.map((e, i) => (
+      <h2 className="mt-9 text-[15px]" style={{ fontWeight: 600 }}>
+        Vous apprendrez…
+      </h2>
+      <ul className="mt-4 space-y-3">
+        {t.cas.map((c, i) => (
           <motion.li
-            key={i}
-            className="flex h-12 flex-1 items-center justify-center rounded-[12px] text-[22px]"
-            style={{
-              background: i < 3 ? "var(--terra-light)" : "var(--surface)",
-              border: i < 3 ? "none" : `1px dashed ${FILET}`,
-            }}
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
+            key={c.titre}
+            className="flex items-start gap-3 text-[14.5px]"
+            style={{ lineHeight: 1.5 }}
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4, delay: 0.5 + i * 0.12 }}
-            aria-hidden
           >
-            {e}
+            <span
+              className="mt-[2px] flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-white"
+              style={{ background: "var(--terra)" }}
+            >
+              <Check size={13} strokeWidth={3} />
+            </span>
+            <span>
+              {c.emoji} <span style={{ fontWeight: 600 }}>{c.titre}</span>{" "}
+              <span style={{ color: "var(--text-soft)" }}>: {c.texte}</span>
+            </span>
           </motion.li>
         ))}
+        <motion.li
+          className="flex items-start gap-3 text-[14.5px]"
+          style={{ lineHeight: 1.5 }}
+          initial={{ opacity: 0, x: -10 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.4, delay: 0.5 + t.cas.length * 0.12 }}
+        >
+          <span
+            className="mt-[2px] flex h-5 w-5 shrink-0 items-center justify-center rounded-full"
+            style={{ border: "1.5px dashed var(--terra)", color: "var(--terra)" }}
+          >
+            <Lock size={11} strokeWidth={2.5} />
+          </span>
+          <span style={{ color: "var(--text-soft)" }}>{t.surprise}</span>
+        </motion.li>
       </ul>
-    </motion.div>
+    </div>
   );
 }
 
-/** Les cas 4 et 5, cachés comme dans le mail : la raison de venir en direct. */
-function SurpriseCard() {
-  const reduce = useReducedMotion();
+function CarteInscription() {
   return (
     <div
-      className="relative flex h-full flex-col overflow-hidden rounded-[16px] p-6 text-white"
-      style={{ background: "#16120e" }}
+      className="rounded-[24px] bg-white px-6 py-8 md:px-9 md:py-10"
+      style={{ boxShadow: "0 40px 90px -30px rgba(80,30,10,0.6)" }}
     >
-      {!reduce && (
-        <motion.div
-          aria-hidden
-          className="absolute inset-y-0 w-1/2"
-          style={{
-            background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent)",
-          }}
-          animate={{ x: ["-120%", "320%"] }}
-          transition={{ duration: 2.8, repeat: Infinity, repeatDelay: 1.6, ease: "easeInOut" }}
-        />
-      )}
-      <div className="flex items-center justify-between">
-        <span className="text-[30px] leading-none" aria-hidden>
-          🔒
-        </span>
-        <span className="num-tabular text-[12px]" style={{ ...mono, color: "#f0a07e" }}>
-          04 · 05
+      <div className="flex items-center justify-center gap-2.5">
+        <img src={logoMonogram} alt="Granit" className="h-[24px] w-auto" />
+        <span className="font-serif text-[19px] tracking-tight" style={{ fontWeight: 700 }}>
+          Granit
         </span>
       </div>
-      <h3 className="mt-6 font-serif text-[21px]" style={{ fontWeight: 400, lineHeight: 1.2 }}>
-        {t.surpriseTitre}
-      </h3>
-      <p className="mt-3 text-[14px]" style={{ lineHeight: 1.55, color: "rgba(255,255,255,0.72)" }}>
-        {t.surprise}
+
+      <div className="mt-8 flex items-end justify-between gap-3">
+        <div>
+          <p className="text-[12px]" style={{ color: "var(--text-soft)" }}>
+            Le webinar commence dans
+          </p>
+          <CompteARebours />
+        </div>
+        <div className="text-center">
+          <p className="text-[12px]" style={{ color: "var(--text-soft)" }}>
+            Prix
+          </p>
+          <div
+            className="mt-2 flex h-[52px] w-[52px] flex-col items-center justify-center rounded-[10px]"
+            style={{ background: "#f6f1ec" }}
+          >
+            <span className="text-[17px]" style={{ fontWeight: 700 }}>
+              0 €
+            </span>
+            <span className="text-[9px]" style={{ color: "var(--text-muted)" }}>
+              Gratuit
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-8">
+        <WebinarForm
+          bare
+          stacked
+          inputBackground="#fff"
+          buttonBackground={BOUTON}
+          heading={
+            <p className="mb-5 text-[15px]" style={{ fontWeight: 600 }}>
+              On a hâte de vous voir ! 👋
+            </p>
+          }
+        />
+      </div>
+
+      <p className="mt-5 text-center text-[12px]" style={{ color: "var(--text-muted)" }}>
+        🎬 {t.replay}
       </p>
     </div>
   );
 }
 
-/** Le déroulé en frise, avec un point qui la parcourt. */
-function Deroule() {
+const UNITES = [
+  { k: "j", label: "jours" },
+  { k: "h", label: "heures" },
+  { k: "m", label: "min" },
+  { k: "s", label: "sec" },
+] as const;
+
+/** Compte à rebours en cases, dont les chiffres glissent à chaque changement. */
+function CompteARebours() {
+  const reste = useCompteARebours();
   const reduce = useReducedMotion();
   return (
-    <div className="relative mt-6">
-      <div
-        aria-hidden
-        className="absolute left-0 right-0 top-[7px] hidden h-px md:block"
-        style={{ background: FILET }}
-      >
-        {!reduce && (
-          <motion.span
-            className="absolute -top-[3px] h-[7px] w-[7px] rounded-full"
-            style={{ background: "var(--terra)", boxShadow: "0 0 12px var(--terra-glow)" }}
-            animate={{ left: ["0%", "100%"], opacity: [0, 1, 1, 0] }}
-            transition={{ duration: 4, ease: "easeInOut", repeat: Infinity, repeatDelay: 0.8 }}
-          />
-        )}
-      </div>
-      <ol className="grid gap-5 md:grid-cols-4">
-        {t.deroule.map((d) => (
-          <li key={d.h} className="relative flex gap-4 md:block">
-            <span
-              className="relative z-10 mt-[1px] block h-[15px] w-[15px] shrink-0 rounded-full border-2"
-              style={{ borderColor: "var(--terra)", background: CREME }}
-            />
-            <div className="md:mt-4">
-              <p
-                className="num-tabular text-[13px]"
-                style={{ fontFamily: "var(--font-mono)", color: "var(--terra)" }}
+    <div className="mt-2 flex items-center gap-1.5">
+      {UNITES.map((u, i) => {
+        const v = reste ? String(reste[u.k]).padStart(2, "0") : "--";
+        return (
+          <div key={u.k} className="flex items-center gap-1.5">
+            <div
+              className="flex h-[52px] w-[46px] flex-col items-center justify-center overflow-hidden rounded-[10px]"
+              style={{ background: "#f6f1ec" }}
+            >
+              {/* Le chiffre est remonté à chaque changement et glisse en place :
+                  pas d'animation de sortie, la case n'est donc jamais vide. */}
+              <motion.span
+                key={v}
+                className="num-tabular block h-[20px] text-center text-[17px]"
+                style={{ fontWeight: 700, lineHeight: "20px" }}
+                initial={reduce ? false : { y: -8, opacity: 0.2 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.25 }}
               >
-                {d.h}
-              </p>
-              <p className="mt-1 text-[15px]" style={{ lineHeight: 1.45 }}>
-                {d.t}
-              </p>
+                {v}
+              </motion.span>
+              <span className="text-[9px]" style={{ color: "var(--text-muted)" }}>
+                {u.label}
+              </span>
             </div>
-          </li>
-        ))}
-      </ol>
+            {i < UNITES.length - 1 && (
+              <span className="text-[12px]" style={{ color: "var(--text-muted)" }}>
+                :
+              </span>
+            )}
+          </div>
+        );
+      })}
     </div>
   );
 }

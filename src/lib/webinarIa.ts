@@ -1,10 +1,9 @@
 /**
  * Texte et réglages du webinar « 5 usages de l'IA en magasin » du 26 novembre,
- * partagés par les deux variantes de la page (/webinar/ia-magasin et
- * /webinar/ia-magasin-b) pour qu'elles disent et envoient exactement la même chose.
+ * séparés de la mise en page de /webinar/ia-magasin.
  */
 
-/** Valeur `source` du lead dans B11 et Attio, la même pour les deux variantes. */
+/** Valeur `source` du lead dans B11 et Attio. */
 export const SOURCE = "webinar-ia-2026-11";
 /** Début du webinar, heure de Paris (heure d'hiver). */
 export const DEBUT = new Date("2026-11-26T13:15:00+01:00");
@@ -13,8 +12,6 @@ export const t = {
   badge: "Webinar gratuit · en ligne",
   titleLead: "5 usages concrets de\u00a0l'IA",
   titleAccent: "pour gagner du temps en magasin.",
-  intro:
-    "45 minutes d'exemples en direct, pas de théorie. Vous repartez avec des choses à refaire dès le lendemain.",
   constat:
     "Pointer un virement groupé, vérifier un dossier avant facturation, renvoyer à la mutuelle une pièce jointe déjà dans le dossier client… L'admin prend un temps fou en magasin. On vous montre, en direct, ce que l'IA peut en faire.",
   date: "Jeudi 26 novembre",
@@ -22,15 +19,9 @@ export const t = {
   cta: "Je réserve ma place",
   replay: "Replay envoyé à tous les inscrits",
 
-  host: "Animé par Paul Pietra",
   hostRole: "Granit",
   hostLine:
     "Je passe mes journées avec des opticiens. Je vous montre ce qui marche vraiment en magasin.",
-  programme: "Au programme",
-
-  whatEyebrow: "Ce que vous verrez",
-  whatTitle: "Trois cas montrés pas à pas,",
-  whatAccent: "deux gardés pour la fin.",
   cas: [
     {
       emoji: "⭐",
@@ -50,36 +41,8 @@ export const t = {
       texte: "Un tableau de suivi construit à partir d'un simple export Excel de votre logiciel.",
     },
   ],
-  surpriseTitre: "Les cas 4 et 5",
   surprise:
     "Ce que l'IA peut faire à votre place, sans même ouvrir Excel. On les garde pour la fin 😉",
-
-  infos: [
-    {
-      emoji: "👓",
-      titre: "Pour qui",
-      texte: "Opticiens et équipes en magasin. Aucune connaissance technique nécessaire.",
-    },
-    {
-      emoji: "💻",
-      titre: "Où",
-      texte:
-        "Sur Google Meet, depuis un ordinateur ou un téléphone. Rien à installer, caméra pas nécessaire.",
-    },
-    {
-      emoji: "🎬",
-      titre: "Pas dispo ?",
-      texte: "Inscrivez-vous quand même : le replay part à tous les inscrits le lendemain.",
-    },
-  ],
-
-  derouleEyebrow: "Le déroulé",
-  deroule: [
-    { h: "13h15", t: "Où part le temps en magasin" },
-    { h: "13h20", t: "Les 3 premiers cas, en direct" },
-    { h: "13h45", t: "Les 2 derniers, la surprise" },
-    { h: "13h55", t: "Vos questions" },
-  ],
 
   formTitle: "Réservez votre place",
   formIntro: "L'invitation avec le lien de connexion arrive par mail.",

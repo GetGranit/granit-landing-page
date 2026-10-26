@@ -9,8 +9,8 @@ import { getAttribution } from "@/lib/attribution";
 import { SOURCE, t } from "@/lib/webinarIa";
 
 /**
- * Briques communes aux deux variantes de la page webinar : FAQ et formulaire d'inscription. Le formulaire envoie le même lead quelle que
- * soit la variante ; seule la propriété PostHog `variant` les distingue.
+ * FAQ et formulaire d'inscription de la page webinar, séparés de la mise en
+ * page pour pouvoir en essayer d'autres sans toucher à ce qui part dans B11.
  */
 
 const FILET = "var(--border2)";
@@ -77,8 +77,6 @@ function Label({ text, children }: { text: string; children: ReactNode }) {
 }
 
 type FormProps = {
-  /** Variante de page, envoyée à PostHog pour comparer les deux. */
-  variant: "a" | "b";
   /** Titre et chapeau du formulaire ; `null` quand la page les affiche déjà. */
   heading?: ReactNode | null;
   /** Sans cadre, quand le formulaire est déjà posé dans une carte. */
@@ -92,7 +90,6 @@ type FormProps = {
 };
 
 export function WebinarForm({
-  variant,
   heading,
   bare = false,
   stacked = false,
@@ -189,7 +186,6 @@ export function WebinarForm({
           });
           posthog.capture("webinar_registration_submitted", {
             webinar: SOURCE,
-            variant,
             stores: stores || undefined,
           });
           logDemoRequestDelivered(posthog, "webinar_landing", stores || undefined);
