@@ -9,11 +9,10 @@ export const SOURCE = "webinar-ia-2026-11";
 export const DEBUT = new Date("2026-11-26T13:15:00+01:00");
 /** Fin du webinar, heure de Paris. */
 export const FIN = new Date("2026-11-26T14:00:00+01:00");
-/**
- * Lien de connexion (Google Meet). Vide tant qu'il n'existe pas : l'événement
- * ajouté à l'agenda dit alors que le lien arrive par mail.
- */
-export const MEET_URL = "";
+/** Lien de connexion Google Meet, mis dans le mail de confirmation et l'invitation agenda. */
+export const MEET_URL = "https://meet.google.com/qph-ugvk-sro";
+/** Accès par téléphone au même Meet, pour ceux qui n'ont pas d'ordinateur sous la main. */
+export const MEET_TEL = "+33 1 87 40 12 67, code 271 624 200#";
 
 export const t = {
   badge: "Webinar gratuit · en ligne",
@@ -73,7 +72,7 @@ export const t = {
   note: "Gratuit. Vos données restent chez nous, jamais revendues.",
   success: "C'est noté, votre place est réservée 🎉",
   successSub:
-    "Le lien de connexion vous sera envoyé par mail avant le webinar. Bloquez le créneau dès maintenant :",
+    "Vous allez recevoir un mail de confirmation avec le lien de connexion. Bloquez le créneau dès maintenant :",
   agendaTitre: "Webinar Granit : 5 usages concrets de l'IA en magasin",
   successContact: "Une question d'ici là ?",
   error: "Une erreur est survenue. Réessayez, ou écrivez-nous à contact@getgranit.ai.",
