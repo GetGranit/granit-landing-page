@@ -1,0 +1,53 @@
+name: Security headers
+
+on:
+  pull_request:
+    paths:
+      - "nitro.config.ts"
+      - "server/**"
+      - "scripts/check-*security*.mjs"
+      - "scripts/test-honeypot.mjs"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/security-headers.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  security-headers:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - name: Typecheck
+        run: npx tsc --noEmit
+      - name: Honeypot guards
+        run: npm run test:honeypot
+      - name: Build production HTTP preview
+        run: npm run build
+        env:
+          NITRO_PRESET: node-server
+      - name: Check real HTML, demo, static and 404 responses
+        shell: bash
+        run: |
+          NITRO_PORT=39128 NITRO_HOST=127.0.0.1 node .output/server/index.mjs > /tmp/landing-security-server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
+          for ((ATTEMPT = 0; ATTEMPT < 30; ATTEMPT++)); do
+            if curl --silent --fail http://127.0.0.1:39128/ > /dev/null; then
+              break
+            fi
+            sleep 1
+          done
+          node scripts/check-security-headers.mjs http://127.0.0.1:39128
+      - name: Build Vercel output
+        run: npm run build
+        env:
+          NITRO_PRESET: vercel
+      - name: Check Vercel CDN header and proxy configuration
+        run: node scripts/check-vercel-security.mjs
