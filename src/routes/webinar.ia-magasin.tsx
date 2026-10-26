@@ -252,29 +252,11 @@ function CarteInscription() {
         </span>
       </div>
 
-      <div className="mt-8 flex items-end justify-between gap-3">
-        <div>
-          <p className="text-[12px]" style={{ color: "var(--text-soft)" }}>
-            Le webinar commence dans
-          </p>
-          <CompteARebours />
-        </div>
-        <div className="text-center">
-          <p className="text-[12px]" style={{ color: "var(--text-soft)" }}>
-            Prix
-          </p>
-          <div
-            className="mt-2 flex h-[52px] w-[52px] flex-col items-center justify-center rounded-[10px]"
-            style={{ background: "#f6f1ec" }}
-          >
-            <span className="text-[17px]" style={{ fontWeight: 700 }}>
-              0 €
-            </span>
-            <span className="text-[9px]" style={{ color: "var(--text-muted)" }}>
-              Gratuit
-            </span>
-          </div>
-        </div>
+      <div className="mt-8 text-center">
+        <p className="text-[12px]" style={{ color: "var(--text-soft)" }}>
+          Le webinar commence dans
+        </p>
+        <CompteARebours />
       </div>
 
       <div className="mt-8">
@@ -310,7 +292,7 @@ function CompteARebours() {
   const reste = useCompteARebours();
   const reduce = useReducedMotion();
   return (
-    <div className="mt-2 flex items-center gap-1.5">
+    <div className="mt-2 flex items-center justify-center gap-1.5">
       {UNITES.map((u, i) => {
         const v = reste ? String(reste[u.k]).padStart(2, "0") : "--";
         return (
