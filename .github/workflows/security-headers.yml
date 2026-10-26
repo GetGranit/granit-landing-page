@@ -6,6 +6,7 @@ on:
       - "nitro.config.ts"
       - "server/**"
       - "scripts/check-*security*.mjs"
+      - "scripts/test-honeypot.mjs"
       - "package.json"
       - "package-lock.json"
       - ".github/workflows/security-headers.yml"
@@ -25,6 +26,8 @@ jobs:
       - run: npm ci --no-audit --no-fund
       - name: Typecheck
         run: npx tsc --noEmit
+      - name: Honeypot guards
+        run: npm run test:honeypot
       - name: Build production HTTP preview
         run: npm run build
         env:
