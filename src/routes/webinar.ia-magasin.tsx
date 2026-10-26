@@ -1,13 +1,10 @@
-import { useEffect, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { useServerFn } from "@tanstack/react-start";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { usePostHog } from "posthog-js/react";
+import { motion, useReducedMotion } from "framer-motion";
 
 import { Reveal } from "@/components/Reveal";
-import { logDemoRequestDelivered, logDemoRequestDeliveryFailed } from "@/lib/posthogLogs";
-import { submitDemo } from "@/lib/submitDemo";
-import { getAttribution } from "@/lib/attribution";
+import { Faq, WebinarForm } from "@/components/webinar/WebinarShared";
+import { useJoursRestants } from "@/hooks/useWebinarCountdown";
+import { t } from "@/lib/webinarIa";
 import logoMonogram from "@/assets/logo.svg";
 import photoPaul from "@/assets/paul-pietra.jpg";
 import photoMagasin from "@/assets/webinar-magasin.jpg";
@@ -20,8 +17,8 @@ import photoMagasin from "@/assets/webinar-magasin.jpg";
  * Page de campagne comme /silmo : hors navigation, hors sitemap et en noindex,
  * dont la seule action est le formulaire. Le haut de page est une affiche
  * (photo de magasin, animateur, date) qui dit quoi, quand et qui avant toute
- * lecture. L'inscription part dans le webhook des démos avec
- * `source: "webinar-ia-2026-11"` : c'est B11 qui range le lead dans Attio.
+ * lecture. Texte et formulaire sont communs avec la variante
+ * /webinar/ia-magasin-b (voir lib/webinarIa.ts et components/webinar).
  *
  * Page en français seulement : la campagne ne vise que des magasins français.
  */
@@ -45,127 +42,9 @@ export const Route = createFileRoute("/webinar/ia-magasin")({
   component: WebinarPage,
 });
 
-const SOURCE = "webinar-ia-2026-11";
-/** Début du webinar, heure de Paris (heure d'hiver). */
-const DEBUT = new Date("2026-11-26T13:15:00+01:00");
-
 const ENCRE = "var(--text)";
 const CREME = "var(--bg2)";
 const FILET = "var(--border2)";
-
-const t = {
-  badge: "Webinar gratuit · en ligne",
-  titleLead: "5 usages concrets de\u00a0l'IA",
-  titleAccent: "pour gagner du temps en magasin.",
-  intro:
-    "45 minutes d'exemples en direct, pas de théorie. Vous repartez avec des choses à refaire dès le lendemain.",
-  date: "Jeudi 26 novembre",
-  heure: "13h15 – 14h",
-  cta: "Je réserve ma place",
-  replay: "Replay envoyé à tous les inscrits",
-
-  host: "Animé par Paul Pietra",
-  hostRole: "Granit",
-  hostLine:
-    "Je passe mes journées avec des opticiens. Je vous montre ce qui marche vraiment en magasin.",
-  programme: "Au programme",
-
-  whatEyebrow: "Ce que vous verrez",
-  whatTitle: "Trois cas montrés pas à pas,",
-  whatAccent: "deux gardés pour la fin.",
-  cas: [
-    {
-      emoji: "⭐",
-      titre: "Vos avis Google",
-      texte:
-        "Les analyser pour savoir ce que vos clients disent vraiment de l'accueil, des délais, des prix.",
-    },
-    {
-      emoji: "✉️",
-      titre: "Vos modèles de mails",
-      texte:
-        "Relance mutuelle, lunettes prêtes, devis non signé : écrits une fois, réutilisés tous les jours.",
-    },
-    {
-      emoji: "📊",
-      titre: "Vos impayés mutuelles",
-      texte: "Un tableau de suivi construit à partir d'un simple export Excel de votre logiciel.",
-    },
-  ],
-  surpriseTitre: "Les cas 4 et 5",
-  surprise:
-    "Ce que l'IA peut faire à votre place, sans même ouvrir Excel. On les garde pour la fin 😉",
-
-  infos: [
-    {
-      emoji: "👓",
-      titre: "Pour qui",
-      texte: "Opticiens et équipes en magasin. Aucune connaissance technique nécessaire.",
-    },
-    {
-      emoji: "💻",
-      titre: "Où",
-      texte:
-        "Sur Google Meet, depuis un ordinateur ou un téléphone. Rien à installer, caméra pas nécessaire.",
-    },
-    {
-      emoji: "🎬",
-      titre: "Pas dispo ?",
-      texte: "Inscrivez-vous quand même : le replay part à tous les inscrits le lendemain.",
-    },
-  ],
-
-  derouleEyebrow: "Le déroulé",
-  deroule: [
-    { h: "13h15", t: "Où part le temps en magasin" },
-    { h: "13h20", t: "Les 3 premiers cas, en direct" },
-    { h: "13h45", t: "Les 2 derniers, la surprise" },
-    { h: "13h55", t: "Vos questions" },
-  ],
-
-  formTitle: "Réservez votre place",
-  formIntro: "L'invitation avec le lien de connexion arrive par mail.",
-  fields: {
-    name: "Prénom et nom",
-    email: "Adresse e-mail",
-    phone: "Téléphone",
-    company: "Nom du magasin",
-    stores: "Nombre de magasins",
-  },
-  placeholders: {
-    name: "Marie Dupont",
-    email: "marie@centre-vision.fr",
-    phone: "06 12 34 56 78",
-    company: "Centre Vision",
-  },
-  phoneHint: "Un numéro à 10 chiffres, par exemple 06 12 34 56 78.",
-  stores: ["1 magasin", "2 à 3 magasins", "4 à 15 magasins", "Plus de 15 magasins"],
-  choose: "Choisir…",
-  sending: "Envoi…",
-  note: "Gratuit. Vos données restent chez nous, jamais revendues.",
-  success: "C'est noté, votre place est réservée 🎉",
-  successSub:
-    "L'invitation avec le lien de connexion arrive dans votre boîte mail. À jeudi 26 novembre, 13h15.",
-  successContact: "Une question d'ici là ?",
-  error: "Une erreur est survenue. Réessayez, ou écrivez-nous à contact@getgranit.ai.",
-
-  faqTitle: "Questions fréquentes",
-  faq: [
-    { q: "C'est vraiment gratuit ?", a: "Oui. Pas de carte bancaire, pas d'engagement." },
-    {
-      q: "Je ne pourrai pas être là à 13h15.",
-      a: "Inscrivez-vous quand même : tous les inscrits reçoivent le replay le lendemain.",
-    },
-    {
-      q: "Je ne suis pas à l'aise avec l'informatique.",
-      a: "C'est fait pour vous. Tout est montré pas à pas, avec des outils gratuits que vous avez sans doute déjà.",
-    },
-    {
-      q: "Est-ce que vous allez me vendre quelque chose ?",
-      a: "Le webinar porte sur des usages que vous pouvez refaire seul. On présente Granit en deux minutes à la fin, pour ceux que ça intéresse.",
-    },
-  ],
-};
 
 const mono = {
   fontFamily: "var(--font-mono)",
@@ -311,28 +190,12 @@ function WebinarPage() {
             </div>
           </Reveal>
           <Reveal delay={0.1}>
-            <WebinarForm />
+            <WebinarForm variant="a" />
           </Reveal>
         </section>
       </main>
     </div>
   );
-}
-
-/**
- * « J-31 », « Aujourd'hui », ou rien une fois le webinar commencé. Compté en
- * jours de calendrier à Paris, et calculé dans le navigateur pour ne pas figer
- * la valeur au rendu serveur.
- */
-function useJoursRestants() {
-  const [label, setLabel] = useState<string | null>(null);
-  useEffect(() => {
-    if (Date.now() >= DEBUT.getTime()) return;
-    const aujourdhui = new Date().toLocaleDateString("en-CA", { timeZone: "Europe/Paris" });
-    const jours = Math.round((Date.parse("2026-11-26") - Date.parse(aujourdhui)) / 86_400_000);
-    setLabel(jours > 0 ? `J-${jours}` : "Aujourd'hui");
-  }, []);
-  return label;
 }
 
 function Hero() {
@@ -610,259 +473,5 @@ function Deroule() {
         ))}
       </ol>
     </div>
-  );
-}
-
-function Faq() {
-  const [open, setOpen] = useState<number | null>(null);
-  return (
-    <ul className="mt-2">
-      {t.faq.map((item, i) => (
-        <li key={item.q} style={{ borderBottom: `1px solid ${FILET}` }}>
-          <button
-            type="button"
-            className="flex w-full items-center justify-between gap-4 py-4 text-left text-[15px]"
-            aria-expanded={open === i}
-            onClick={() => setOpen(open === i ? null : i)}
-          >
-            {item.q}
-            <motion.span
-              aria-hidden
-              animate={{ rotate: open === i ? 45 : 0 }}
-              style={{ color: "var(--terra)", fontSize: 20, lineHeight: 1 }}
-            >
-              +
-            </motion.span>
-          </button>
-          <AnimatePresence initial={false}>
-            {open === i && (
-              <motion.p
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: "auto", opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.25 }}
-                className="overflow-hidden pb-4 text-[14px]"
-                style={{ lineHeight: 1.6, color: "var(--text-soft)" }}
-              >
-                {item.a}
-              </motion.p>
-            )}
-          </AnimatePresence>
-        </li>
-      ))}
-    </ul>
-  );
-}
-
-const labelStyle = {
-  fontFamily: "var(--font-mono)",
-  letterSpacing: "0.1em",
-  textTransform: "uppercase" as const,
-  color: "var(--text-soft)",
-};
-const inputClass =
-  "w-full rounded-[10px] px-3.5 py-3 text-[16px] outline-none transition-colors focus:border-[color:var(--terra)]";
-const inputStyle = { background: CREME, border: `1px solid ${FILET}`, color: ENCRE };
-
-function Label({ text, children }: { text: string; children: React.ReactNode }) {
-  return (
-    <label className="mb-4 block">
-      <span className="mb-1.5 block text-[10.5px]" style={labelStyle}>
-        {text}
-      </span>
-      {children}
-    </label>
-  );
-}
-
-function WebinarForm() {
-  const submit = useServerFn(submitDemo);
-  const posthog = usePostHog();
-  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
-  const card = {
-    background: "var(--surface)",
-    border: "1px solid var(--border)",
-    boxShadow: "var(--shadow-soft)",
-  };
-
-  if (status === "success") {
-    return (
-      <motion.div
-        initial={{ opacity: 0, scale: 0.97 }}
-        animate={{ opacity: 1, scale: 1 }}
-        className="flex h-full flex-col items-center justify-center rounded-[20px] px-6 py-12 text-center"
-        style={card}
-      >
-        <span
-          className="flex h-12 w-12 items-center justify-center rounded-full"
-          style={{ background: "var(--terra-light)", color: "var(--terra)" }}
-        >
-          <svg
-            width="22"
-            height="22"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M5 12l5 5L20 7" />
-          </svg>
-        </span>
-        <p
-          className="mt-5 max-w-xs font-serif text-[23px]"
-          style={{ lineHeight: 1.2, fontWeight: 400 }}
-        >
-          {t.success}
-        </p>
-        <p
-          className="mt-3 max-w-sm text-[13.5px]"
-          style={{ color: "var(--text-muted)", lineHeight: 1.5 }}
-        >
-          {t.successSub}
-        </p>
-        <p className="mt-6 text-[12px]" style={{ color: "var(--text-muted)" }}>
-          {t.successContact}{" "}
-          <a
-            href="mailto:contact@getgranit.ai"
-            className="underline transition-colors hover:text-[color:var(--terra)]"
-          >
-            contact@getgranit.ai
-          </a>
-        </p>
-      </motion.div>
-    );
-  }
-
-  return (
-    <form
-      className="rounded-[20px] p-6 md:p-8"
-      style={card}
-      onSubmit={async (e) => {
-        e.preventDefault();
-        const fd = new FormData(e.currentTarget);
-        const stores = String(fd.get("orgType") || "");
-        setStatus("submitting");
-        try {
-          await submit({
-            data: {
-              name: String(fd.get("name") || ""),
-              email: String(fd.get("email") || ""),
-              phone: String(fd.get("phone") || ""),
-              company: String(fd.get("company") || ""),
-              orgType: stores,
-              source: SOURCE,
-              utm: getAttribution(),
-            },
-          });
-          posthog.capture("webinar_registration_submitted", {
-            webinar: SOURCE,
-            stores: stores || undefined,
-          });
-          logDemoRequestDelivered(posthog, "webinar_landing", stores || undefined);
-          setStatus("success");
-        } catch {
-          logDemoRequestDeliveryFailed(posthog, "webinar_landing");
-          setStatus("error");
-        }
-      }}
-    >
-      <h2 className="font-serif" style={{ fontSize: "clamp(22px, 3vw, 28px)", fontWeight: 400 }}>
-        {t.formTitle}
-      </h2>
-      <p
-        className="mb-6 mt-2 text-[13.5px]"
-        style={{ color: "var(--text-muted)", lineHeight: 1.5 }}
-      >
-        {t.formIntro}
-      </p>
-
-      <Label text={t.fields.name}>
-        <input
-          name="name"
-          required
-          autoComplete="name"
-          placeholder={t.placeholders.name}
-          className={inputClass}
-          style={inputStyle}
-        />
-      </Label>
-      <div className="grid gap-x-4 sm:grid-cols-2">
-        <Label text={t.fields.email}>
-          <input
-            name="email"
-            type="email"
-            required
-            autoComplete="email"
-            inputMode="email"
-            placeholder={t.placeholders.email}
-            className={inputClass}
-            style={inputStyle}
-          />
-        </Label>
-        <Label text={t.fields.phone}>
-          <input
-            name="phone"
-            type="tel"
-            required
-            autoComplete="tel"
-            inputMode="tel"
-            pattern="[0-9 .+\-\(\)]{10,20}"
-            title={t.phoneHint}
-            placeholder={t.placeholders.phone}
-            className={inputClass}
-            style={inputStyle}
-          />
-        </Label>
-      </div>
-      <div className="grid gap-x-4 sm:grid-cols-2">
-        <Label text={t.fields.company}>
-          <input
-            name="company"
-            autoComplete="organization"
-            placeholder={t.placeholders.company}
-            className={inputClass}
-            style={inputStyle}
-          />
-        </Label>
-        <Label text={t.fields.stores}>
-          <select name="orgType" defaultValue="" className={inputClass} style={inputStyle}>
-            <option value="" disabled>
-              {t.choose}
-            </option>
-            {t.stores.map((s) => (
-              <option key={s}>{s}</option>
-            ))}
-          </select>
-        </Label>
-      </div>
-
-      <button
-        type="submit"
-        disabled={status === "submitting"}
-        className="mt-1 w-full rounded-full px-5 py-4 text-[14px] text-white transition-transform hover:scale-[1.01]"
-        style={{
-          background: "var(--terra)",
-          fontWeight: 600,
-          opacity: status === "submitting" ? 0.7 : 1,
-          cursor: status === "submitting" ? "wait" : "pointer",
-        }}
-      >
-        {status === "submitting" ? t.sending : `${t.cta} →`}
-      </button>
-
-      {status === "error" && (
-        <p className="mt-3 text-center text-[12px]" style={{ color: "#c0392b" }}>
-          {t.error}
-        </p>
-      )}
-      <p
-        className="mt-4 text-center text-[11px]"
-        style={{ color: "var(--text-muted)", lineHeight: 1.45 }}
-      >
-        {t.note}
-      </p>
-    </form>
   );
 }
