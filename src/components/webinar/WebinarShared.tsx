@@ -5,6 +5,7 @@ import { usePostHog } from "posthog-js/react";
 
 import { logDemoRequestDelivered, logDemoRequestDeliveryFailed } from "@/lib/posthogLogs";
 import { submitDemo } from "@/lib/submitDemo";
+import { envoyerConfirmationWebinar } from "@/lib/webinarConfirmation";
 import { getAttribution } from "@/lib/attribution";
 import { SOURCE, t } from "@/lib/webinarIa";
 import { AjouterAgenda } from "@/components/webinar/AjouterAgenda";
@@ -98,6 +99,7 @@ export function WebinarForm({
   buttonBackground = "var(--terra)",
 }: FormProps) {
   const submit = useServerFn(submitDemo);
+  const confirmer = useServerFn(envoyerConfirmationWebinar);
   const posthog = usePostHog();
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const card: CSSProperties = bare
@@ -194,6 +196,14 @@ export function WebinarForm({
           { webinar: SOURCE, ...lead },
           { send_instantly: true, transport: "sendBeacon" },
         );
+
+        // Mail de confirmation (Resend), en parallèle et sans bloquer : son
+        // échec n'empêche pas l'inscription, il est seulement noté dans PostHog.
+        void confirmer({ data: { name: lead.name, email: lead.email } })
+          .then((r) => posthog?.capture("webinar_confirmation_email", { envoye: r.envoye }))
+          .catch(() =>
+            posthog?.capture("webinar_confirmation_email", { envoye: false, erreur: true }),
+          );
 
         try {
           await submit({ data: lead });
