@@ -370,8 +370,10 @@ const ETAPES_MANUELLES = [
 // Le gain de vitesse est déjà dans le comparatif 2-colonnes ci-dessus : on ne
 // répète pas « 30 s / 12 min » en chip (reco design : couper la redondance).
 const ARGUMENTS = [
-  { ico: "🔒", txt: "Hébergé en France, agréé santé (HDS)" },
+  { ico: "✓", txt: "Dérogations gérées" },
+  { ico: "✓", txt: "Contrôle tarifaire" },
   { ico: "✓", txt: "Zéro faute de saisie, zéro rejet à refaire" },
+  { ico: "🔒", txt: "Hébergé en France, agréé santé (HDS)" },
 ];
 
 function GranitFaitPourVous({ target }: { target: string }) {
@@ -459,7 +461,7 @@ function GranitFaitPourVous({ target }: { target: string }) {
               AVEC GRANIT
             </span>
             <span className="text-[12px] font-semibold" style={{ color: "var(--terra)" }}>
-              ~60 s
+              pour vous
             </span>
           </div>
           <ul className="grid gap-1.5">
