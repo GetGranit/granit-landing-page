@@ -1,5 +1,5 @@
 import { lienGoogle, lienOutlook } from "@/lib/webinarAgenda";
-import { MEET_URL } from "@/lib/webinarIa";
+import { MEET_TEL, MEET_URL } from "@/lib/webinarIa";
 
 /**
  * Contenu du mail de confirmation du webinar (HTML et texte brut), séparé de
@@ -26,6 +26,7 @@ export function corpsTexte(prenom: string) {
     MEET_URL
       ? `Lien de connexion : ${MEET_URL}`
       : "Le lien de connexion vous sera envoyé par mail avant le webinar.",
+    `Ou par téléphone : ${MEET_TEL}`,
     "",
     "Ajoutez-le à votre agenda :",
     `- Google Agenda : ${lienGoogle()}`,
@@ -54,7 +55,7 @@ export function corpsHtml(prenom: string) {
     MEET_URL
       ? `Lien de connexion : <a href="${echapper(MEET_URL)}" style="color:#d9583f">${echapper(MEET_URL)}</a>`
       : "Le lien de connexion vous sera envoyé par mail avant le webinar."
-  }</p>
+  }<br><span style="font-size:13px;color:#7a7067">Ou par téléphone : ${echapper(MEET_TEL)}</span></p>
 <p style="margin:0 0 10px;font-size:14.5px;font-weight:600">Ajoutez-le à votre agenda :</p>
 <div>${lien(lienGoogle(), "📅 Google Agenda")}${lien(lienOutlook(), "Outlook")}</div>
 <p style="margin:4px 0 18px;font-size:13px;color:#7a7067">Apple / iPhone : ouvrez l'invitation jointe à ce mail.</p>

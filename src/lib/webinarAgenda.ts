@@ -1,4 +1,4 @@
-import { DEBUT, FIN, MEET_URL, t } from "@/lib/webinarIa";
+import { DEBUT, FIN, MEET_TEL, MEET_URL, t } from "@/lib/webinarIa";
 
 /**
  * Liens « ajouter à mon agenda » pour le webinar, sans service tiers : Google
@@ -11,6 +11,7 @@ const LIEU = MEET_URL || "En ligne (lien envoyé par mail)";
 const DESCRIPTION = [
   "45 minutes, 5 cas d'usage concrets de l'IA pour gagner du temps en magasin.",
   MEET_URL ? `Lien de connexion : ${MEET_URL}` : "Le lien de connexion vous sera envoyé par mail.",
+  `Par téléphone : ${MEET_TEL}`,
   `Page du webinar : ${PAGE}`,
 ].join("\n");
 
