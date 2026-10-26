@@ -201,8 +201,11 @@ export function WebinarForm({
         // échec n'empêche pas l'inscription, il est seulement noté dans PostHog.
         void confirmer({ data: { name: lead.name, email: lead.email } })
           .then((r) => posthog?.capture("webinar_confirmation_email", { envoye: r.envoye }))
-          .catch(() =>
-            posthog?.capture("webinar_confirmation_email", { envoye: false, erreur: true }),
+          .catch((e: unknown) =>
+            posthog?.capture("webinar_confirmation_email", {
+              envoye: false,
+              erreur: String((e as Error)?.message ?? e).slice(0, 250),
+            }),
           );
 
         try {

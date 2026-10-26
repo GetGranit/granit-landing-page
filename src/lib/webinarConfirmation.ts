@@ -5,15 +5,17 @@ import { OBJET, corpsHtml, corpsTexte } from "@/lib/webinarMail";
 
 /**
  * Mail de confirmation d'inscription au webinar, envoyé par Resend depuis le
- * serveur du site, sans passer par n8n. Le domaine getgranit.ai est déjà
- * vérifié chez Resend (l'appli l'utilise). Sans RESEND_API_KEY, rien ne part :
- * l'inscription n'en dépend pas.
+ * serveur du site, sans passer par n8n. L'expéditeur est sur le sous-domaine
+ * d'envoi notifications.getgranit.ai, celui que l'appli utilise déjà chez
+ * Resend : le 26/10, un envoi depuis paul@getgranit.ai a été refusé (403).
+ * Les réponses vont à paul@. Sans RESEND_API_KEY, rien ne part : l'inscription
+ * n'en dépend pas.
  *
  * Le contenu (webinarMail.ts) est fixe ; seuls le prénom et l'adresse viennent
  * du formulaire.
  */
 
-const EXPEDITEUR = "Paul de Granit <paul@getgranit.ai>";
+const EXPEDITEUR = "Paul de Granit <webinar@notifications.getgranit.ai>";
 const REPONDRE_A = "paul@getgranit.ai";
 
 const emailRe = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
@@ -54,7 +56,17 @@ export const envoyerConfirmationWebinar = createServerFn({ method: "POST" })
     if (!res.ok) {
       const detail = (await res.text()).slice(0, 300);
       console.error("[webinar-confirmation] Resend a refusé l'envoi :", res.status, detail);
-      throw new Error(`Resend responded ${res.status}`);
+      // La raison donnée par Resend (domaine non vérifié, clé limitée…) remonte
+      // jusqu'à PostHog : sans accès aux journaux Vercel, c'est le seul moyen de la lire.
+      let raison = "";
+      try {
+        raison = String((JSON.parse(detail) as { message?: string }).message ?? "");
+      } catch {
+        // Corps illisible : on garde seulement le code.
+      }
+      throw new Error(
+        `Resend responded ${res.status}${raison ? ` : ${raison.slice(0, 200)}` : ""}`,
+      );
     }
     return { envoye: true as const };
   });
