@@ -7,6 +7,7 @@ import { logDemoRequestDelivered, logDemoRequestDeliveryFailed } from "@/lib/pos
 import { submitDemo } from "@/lib/submitDemo";
 import { getAttribution } from "@/lib/attribution";
 import { SOURCE, t } from "@/lib/webinarIa";
+import { AjouterAgenda } from "@/components/webinar/AjouterAgenda";
 
 /**
  * FAQ et formulaire d'inscription de la page webinar, séparés de la mise en
@@ -150,6 +151,7 @@ export function WebinarForm({
         >
           {t.successSub}
         </p>
+        <AjouterAgenda />
         <p className="mt-6 text-[12px]" style={{ color: "var(--text-muted)" }}>
           {t.successContact}{" "}
           <a
