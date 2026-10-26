@@ -295,6 +295,15 @@ function Estimation({ estim }: { estim: EstimationLunettes }) {
       >
         pris en charge en moyenne par la complémentaire, sur une paire de lunettes.
       </motion.p>
+      <motion.p
+        className="text-[12px]"
+        style={{ color: "#6b7d70" }}
+        initial={run ? { opacity: 0 } : false}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.3, duration: 0.5 }}
+      >
+        D'après plus de 10&nbsp;000 prises en charge déjà gérées pour nos clients opticiens.
+      </motion.p>
     </motion.div>
   );
 }
