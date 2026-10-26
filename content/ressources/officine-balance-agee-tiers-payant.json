@@ -1,0 +1,170 @@
+{
+  "slug": "officine-balance-agee-tiers-payant",
+  "id": "R3",
+  "category": "paiements",
+  "categoryName": "Paiements et rapprochement",
+  "type": "resolution",
+  "plateforme": null,
+  "title": "Officine : solder le stock de créances tiers-payant avant qu'il ne devienne une perte",
+  "primaryKeyword": "créances tiers payant pharmacie",
+  "keywordCluster": [
+    "balance âgée pharmacie",
+    "impayés tiers payant officine",
+    "ARL négatif",
+    "rejet tiers payant pharmacie"
+  ],
+  "parentSlug": null,
+  "level": "Refonte",
+  "author": {
+    "name": "Laura",
+    "jobTitle": "Rédactrice, experte santé",
+    "photo": "/auteurs/laura.jpg",
+    "url": null
+  },
+  "reviewer": {
+    "name": "Nathalie",
+    "jobTitle": "Rédactrice, experte métier optique",
+    "photo": "/auteurs/nathalie.jpg",
+    "url": null
+  },
+  "datePublished": "2026-10-26",
+  "dateModified": "2026-10-26",
+  "checkedOn": null,
+  "wordCount": 2279,
+  "readTime": 10,
+  "metaDescription": "Créances tiers payant pharmacie : trier la balance âgée par cause, traiter ARL négatifs, rejets et virements non lettrés avant l'échéance. Méthode pas à pas.",
+  "contentHtml": "<p><strong>Les créances tiers payant pharmacie qui vieillissent ne forment pas un seul stock, mais trois : des factures jamais arrivées chez le payeur (ARL négatif), des factures rejetées puis mises de côté, et des factures payées mais jamais lettrées.</strong> Pour les solder, on les trie par cause et par organisme, puis on traite d'abord celles dont la date limite approche, pas les plus grosses. Le reste se décide une fois, par écrit : représenter, relancer ou abandonner.</p><p>Le tiers payant dispense le patient d'avancer les frais : l'officine est réglée directement par l'Assurance maladie et, pour la part complémentaire, par la mutuelle ou l'opérateur qui paie pour elle (<a href=\"https://www.ameli.fr/assure/remboursements/etre-bien-rembourse/tiers-payant\">ameli.fr</a>). Chaque dispensation crée donc une ou deux créances, qui suivent des circuits différents. Tant qu'elles ne sont pas encaissées et lettrées, elles restent ouvertes dans votre logiciel de gestion d'officine (LGO). Voici une méthode pour vider ce stock sans y passer vos soirées.</p><div class=\"key-takeaways\"><strong>L'essentiel</strong><ul><li>Une créance ancienne a l'une de trois causes : ARL négatif, rejet non retraité, virement reçu mais non lettré. Chacune a son propre traitement.</li><li>Un ARL négatif ne génère ni paiement ni rejet : si personne ne le surveille, la facture disparaît sans bruit.</li><li>Triez par cause et par organisme, jamais patient par patient : une seule correction se réplique sur tout un lot.</li><li>Priorisez par date limite de représentation, pas par montant, et vérifiez cette limite circuit par circuit.</li><li>Fixez par écrit un seuil d'abandon, puis suivez la balance âgée chaque mois.</li></ul></div><h2 id=\"pourquoi-creances-anciennes\">Pourquoi une officine accumule-t-elle des créances tiers payant anciennes ?</h2><p>Parce que chaque dispensation en tiers payant se paie en deux parts, par deux circuits, à des dates différentes, et que l'équipe traite d'abord le flux du jour. Ce qui ne se règle pas en quelques minutes glisse derrière, et vieillit.</p><p>La part obligatoire (AMO, assurance maladie obligatoire) part vers la caisse par la télétransmission des feuilles de soins électroniques (FSE). La part complémentaire (AMC, assurance maladie complémentaire) part vers la mutuelle, souvent via un opérateur de tiers payant qui règle pour le compte de plusieurs organismes. Les références, les retours et les virements ne se ressemblent pas d'un circuit à l'autre.</p><p>Au comptoir, les rejets faciles se corrigent dans la journée : un droit à mettre à jour, une exonération à requalifier, une erreur de saisie. Ceux qui demandent une pièce, un appel au prescripteur ou un retour du patient sont mis de côté « pour plus tard ». Ce sont précisément eux qui vieillissent. Le patient n'est pas revenu, l'ordonnance est classée, et la personne qui avait le contexte en tête est passée à autre chose.</p><p>Le stock reste invisible jusqu'au jour où l'expert-comptable signale un écart entre le chiffre d'affaires facturé et les encaissements. Le traitement du flux quotidien est décrit dans <a href=\"/ressources/trois-boucles-pharmacie\">les trois boucles à automatiser en pharmacie</a>. Cet article traite du résidu : les impayés tiers payant officine qui se sont accumulés derrière.</p><h2 id=\"balance-agee-officine\">Qu'est-ce qu'une balance âgée en officine ?</h2><p>La balance âgée est la liste des créances tiers payant non encore soldées, classées par ancienneté depuis la date de facturation. C'est l'écran qui montre ce que l'officine attend encore, et depuis quand.</p><p>Dans la plupart des LGO, elle se lit dans le module de suivi du tiers payant ou s'exporte vers un tableur. Chaque ligne porte en général la facture, sa date, le patient, l'organisme payeur, le montant attendu (part AMO ou part AMC) et un statut. Les montants se regroupent par tranches d'ancienneté que vous choisissez : moins de 30 jours, 30 à 60, 60 à 90, plus de 90 jours, par exemple.</p><p>Sa limite est simple : la balance âgée pharmacie montre l'âge, pas la cause. Une ligne ancienne peut être une facture payée depuis longtemps mais jamais rapprochée, ou une facture que la caisse n'a jamais reçue. Les deux n'appellent pas du tout le même geste. Avant de travailler le stock, il faut donc ajouter une colonne que le logiciel ne remplit pas : la cause.</p><h2 id=\"trois-causes-creance\">Quelles sont les trois causes d'une créance tiers payant non soldée ?</h2><p>Il y a trois causes possibles : la facture n'est jamais entrée dans le circuit de paiement, elle y est entrée puis a été rejetée, ou elle a été payée sans être lettrée. Les confondre est la première raison pour laquelle les campagnes de nettoyage de balance échouent.</p><h3>1. La facture n'est jamais arrivée : l'ARL négatif</h3><p>L'ARL (accusé de réception logique) est le message que l'organisme renvoie après réception d'un lot de FSE, pour dire si ce lot est techniquement accepté. Un ARL négatif signifie que le lot a été refusé à l'entrée. La facture n'est pas rejetée au sens métier : elle n'existe tout simplement pas côté payeur.</p><p>C'est la population la plus coûteuse, parce qu'elle est silencieuse. Aucun paiement ne viendra. Aucun retour NOEMIE (le flux par lequel l'Assurance maladie renvoie paiements et rejets à l'officine) ne viendra non plus la signaler. Si personne ne surveille les ARL, la créance sort des radars le jour de son émission et ne réapparaît qu'à l'inventaire, souvent trop tard pour être représentée.</p><h3>2. La facture est arrivée, puis rejetée</h3><p>Le rejet tiers payant pharmacie arrive par le retour NOEMIE de la caisse, ou par le relevé et le portail de la complémentaire, avec un motif. Le libellé exact de ce motif est la clé : il dit quoi corriger. La liste des <a href=\"/ressources/codes-rejets-noemie\">codes rejets NOEMIE</a> aide à le lire, et les rejets récurrents sur la part obligatoire ont souvent une cause de paramétrage, traitée dans <a href=\"/ressources/reduire-rejets-cpam\">réduire les rejets CPAM sans changer de logiciel métier</a>.</p><p>Le problème n'est pas de connaître les rejets, mais de les borner. Un rejet mis de côté sans date de reprise ni responsable devient un rejet oublié. Et sa difficulté augmente avec le temps : plus il attend, plus la pièce manquante est dure à obtenir.</p><h3>3. La facture est payée, mais jamais lettrée</h3><p>Ici, la créance est éteinte : l'argent est sur le compte, mais l'écriture n'a jamais été soldée. Le lettrage est l'opération qui associe un encaissement aux factures qu'il règle. Le cas touche surtout la part complémentaire, réglée par des opérateurs qui regroupent de nombreux dossiers dans un seul virement, sans identifiant patient sur la ligne bancaire. Tant que ce virement n'est pas décomposé, les dossiers restent ouverts.</p><p>Le risque dépasse la comptabilité : on relance des organismes qui ont déjà payé, on perd du temps, et la relation avec l'opérateur s'abîme. Pour la routine quotidienne, voyez comment <a href=\"/ressources/rapprochement-noemie\">rapprocher flux NOEMIE et virements bancaires chaque matin</a>. Pour un règlement plus faible que prévu, la page sur le <a href=\"/ressources/virement-mutuelle-inferieur\">virement inférieur à la facture</a> détaille comment lire l'écart.</p><div data-figure=\"trois-populations\"></div><h2 id=\"solder-stock-etapes\">Comment solder le stock de créances tiers payant pharmacie, étape par étape ?</h2><p>La méthode la plus sûre est de traiter le stock par lots homogènes, dans un ordre précis : lettrer d'abord ce qui est déjà payé, puis traiter ARL négatifs et rejets selon leur échéance, et enfin décider des abandons.</p><ol class=\"steps\"><li><strong>Extraire et dater le stock complet.</strong> Exportez la balance âgée en séparant part AMO et part AMC, avec la date de facturation de chaque ligne.</li><li><strong>Ajouter la cause à chaque ligne.</strong> ARL négatif, rejet avec son motif, ou paiement probable non lettré. Une ligne sans retour ni ARL connu se classe à part : c'est souvent la plus urgente.</li><li><strong>Classer par cause, puis par organisme, jamais par patient.</strong> Un tri patient par patient produit une liste de cas uniques. Un tri par cause produit des lots : tous les ARL négatifs d'une période, tous les rejets portant le même motif, tous les dossiers en attente d'un même opérateur.</li><li><strong>Lettrer les virements déjà reçus.</strong> Décomposez chaque virement groupé à l'aide du relevé ou du détail de paiement de l'opérateur. Chaque ligne soldée ici est une relance inutile évitée.</li><li><strong>Noter la date limite de chaque lot.</strong> Pour chaque circuit, relevez la limite au-delà de laquelle une facture ne peut plus être représentée, puis triez les lots par cette date.</li><li><strong>Retransmettre et représenter, lot par lot.</strong> Pour un ARL négatif, corrigez la cause technique puis retransmettez le lot. Pour un rejet, appliquez la correction du motif à toutes les lignes du lot, puis représentez.</li><li><strong>Décider des abandons, par écrit.</strong> Sortez du périmètre les lignes sous votre seuil, avec une note datée validée par le titulaire.</li></ol><p>Si quelques causes dominent votre stock, une seule correction se réplique sur des dizaines de lignes. C'est pour cela que le classement par cause fait gagner plus de temps que n'importe quelle accélération de la saisie.</p><div class=\"callout callout--warn\"><p><strong>Le piège :</strong> traiter d'abord les gros montants encore récupérables dans plusieurs mois, et laisser expirer des petits montants dont l'échéance tombe la semaine suivante. Le montant dit ce que vous perdez ; la date limite dit quand vous le perdez.</p></div><h3>Faut-il abandonner les petites créances ?</h3><p>Oui, sous un seuil que vous fixez vous-même et que vous écrivez. Sur des lignes de quelques euros, le temps de recherche, de correction et de représentation peut dépasser le montant en jeu. Les laisser indéfiniment dans la balance la rend illisible et décourage l'équipe.</p><p>Ce qui compte, c'est que l'abandon soit une décision et non un renoncement par épuisement. Une note précise le seuil, la liste des lignes, la date et le nom de la personne qui valide. Votre expert-comptable s'appuie ensuite sur ce document pour constater la perte.</p><h2 id=\"preuves-a-garder\">Quelles preuves garder pour chaque créance traitée ?</h2><p>Gardez, pour chaque lot, la trace de la cause, de l'action faite et de sa date. Sans ces pièces, une créance retraitée revient dans la balance au prochain contrôle et personne ne sait plus si elle a été traitée.</p><div class=\"tbl\"><table><tr><th>Cause</th><th>Preuve à garder</th><th>Pourquoi</th></tr><tr><td>ARL négatif</td><td>L'ARL négatif, le lot retransmis et son nouvel ARL positif</td><td>Prouver que la facture est enfin entrée dans le circuit</td></tr><tr><td>Rejet</td><td>Le retour avec le libellé exact du motif, la pièce corrigée, la date de représentation</td><td>Savoir quoi répondre si le même rejet revient</td></tr><tr><td>Virement non lettré</td><td>Le relevé bancaire, le détail de paiement de l'opérateur, l'écriture de lettrage</td><td>Ne jamais relancer un organisme qui a déjà payé</td></tr><tr><td>Abandon</td><td>La note datée : seuil, liste des lignes, validation du titulaire</td><td>Justifier la perte auprès du comptable</td></tr></table></div><p>Conservez aussi les pièces justificatives transmises avec la facture, comme l'ordonnance numérisée. Un rejet retraité sans la bonne pièce a de fortes chances de revenir sous le même motif.</p><h2 id=\"delai-representation\">Jusqu'à quand peut-on représenter une facture de tiers payant ?</h2><p>Il n'y a pas de date unique : chaque circuit a sa limite, fixée par le Code de la sécurité sociale, la convention qui lie l'officine à l'Assurance maladie, ou le contrat de tiers payant avec la complémentaire. Vérifiez-la circuit par circuit plutôt que de la supposer.</p><p>Le <a href=\"https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006073189\">Code de la sécurité sociale</a> encadre à la fois les délais de transmission des feuilles de soins électroniques (article R161-47) et la prescription de l'action en paiement des prestations, fixée à deux ans pour l'assuré par l'article L332-1. Pour la part complémentaire, les délais dépendent de chaque organisme ou opérateur : seuls leur convention et leurs conditions font foi.</p><p>Concrètement, relevez ces limites une fois, notez-les dans un tableau par organisme, et reportez-les sur chaque lot de votre stock. Passé la limite, un dossier n'est plus une créance à récupérer : c'est une perte à constater. Pour le rythme des relances avant cette échéance, le <a href=\"/ressources/quand-relancer-mutuelle\">calendrier de relance par étape (facture, ARL, NOEMIE)</a> donne des repères.</p><p>Un ARL négatif ne fait pas courir de délai supplémentaire en votre faveur : la facture n'ayant jamais été reçue, c'est la date de la dispensation qui compte. D'où l'intérêt de contrôler les ARL dès le lendemain de chaque télétransmission.</p><h2 id=\"quand-escalader\">Quand escalader une créance, et vers qui ?</h2><p>Escaladez dès qu'une même créance revient après correction, ou qu'aucune réponse n'arrive alors que l'échéance approche. L'interlocuteur dépend de la cause et du circuit.</p><ul><li><strong>ARL négatifs répétés sur plusieurs lots :</strong> la cause est souvent technique. Contactez l'éditeur de votre LGO, puis le service de votre caisse dédié aux professionnels de santé si le problème persiste.</li><li><strong>Rejet AMO qui revient après correction :</strong> la caisse, avec le libellé exact du motif et la pièce envoyée.</li><li><strong>Rejet ou attente sur la part AMC :</strong> le service professionnel de l'opérateur de tiers payant, puis l'organisme complémentaire lui-même.</li><li><strong>Virement impossible à décomposer :</strong> l'opérateur payeur, pour obtenir le détail des dossiers réglés.</li><li><strong>Décision d'abandon ou de passage en perte :</strong> le titulaire, puis l'expert-comptable.</li></ul><p>Pour chaque escalade, envoyez un lot, pas une ligne isolée. Un interlocuteur traite plus vite une liste de factures de même motif qu'une suite d'appels dossier par dossier.</p><h2 id=\"eviter-nouveau-stock\">Comment éviter que le stock de créances se reconstitue ?</h2><p>En faisant de la balance âgée un indicateur suivi chaque mois, avec un objectif de stock résiduel, plutôt qu'un constat annuel. Une officine qui sait, chaque mois, combien de créances dépassent 60 jours, pour quelle cause et auprès de quel organisme, ne reconstitue pas le stock qu'elle vient de solder.</p><p>Trois réflexes suffisent : contrôler les ARL après chaque télétransmission, donner à chaque rejet mis de côté une date de reprise et un responsable, et lettrer les virements groupés au fil de l'eau. Ces chiffres trouvent naturellement leur place parmi les <a href=\"/ressources/kpi-back-office-sante\">indicateurs back-office à suivre</a>. Pour un groupement ou plusieurs officines, la lecture consolidée fait aussi ressortir les écarts entre points de vente, qui viennent le plus souvent d'une pratique locale de facturation.</p><p>Reconstituer un stock ancien est un travail de volume, répétitif et réglé : parcourir le LGO, les retours et les portails des complémentaires, classer, préparer chaque correction. C'est ce que peuvent prendre en charge les <a href=\"/agents\">agents de Granit</a> : ils reconstituent le stock depuis vos accès, le classent par cause et par échéance, et préparent chaque lot à représenter ou à lettrer. La décision de représenter, relancer ou abandonner reste à l'équipe.</p><div class=\"callout callout--tip\"><p><strong>Le bon réflexe :</strong> bloquez un créneau fixe chaque mois pour relire la balance âgée par cause. Une heure régulière coûte moins cher qu'une campagne de rattrapage à l'inventaire.</p></div>",
+  "tocItems": [
+    {
+      "id": "pourquoi-creances-anciennes",
+      "label": "Pourquoi les créances s'accumulent"
+    },
+    {
+      "id": "balance-agee-officine",
+      "label": "Qu'est-ce qu'une balance âgée ?"
+    },
+    {
+      "id": "trois-causes-creance",
+      "label": "Les trois causes d'une créance non soldée"
+    },
+    {
+      "id": "solder-stock-etapes",
+      "label": "Solder le stock, étape par étape"
+    },
+    {
+      "id": "preuves-a-garder",
+      "label": "Les preuves à garder"
+    },
+    {
+      "id": "delai-representation",
+      "label": "Jusqu'à quand représenter une facture"
+    },
+    {
+      "id": "quand-escalader",
+      "label": "Quand escalader, et vers qui"
+    },
+    {
+      "id": "eviter-nouveau-stock",
+      "label": "Éviter que le stock se reconstitue"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "Qu'est-ce qu'une balance âgée en officine ?",
+      "answer": "La balance âgée est la liste des créances tiers payant non encore soldées, classées par ancienneté depuis la date de facturation. Elle se lit dans le module de suivi du tiers payant du logiciel de gestion d'officine ou dans un export. Elle montre l'âge des créances mais pas leur cause, qu'il faut ajouter avant de la traiter."
+    },
+    {
+      "question": "Comment traiter un ARL négatif ?",
+      "answer": "Un ARL négatif signifie que le lot de feuilles de soins électroniques a été refusé techniquement : la facture n'existe pas côté payeur. Il faut identifier la cause technique, la corriger, retransmettre le lot et vérifier que le nouvel ARL est positif. Si les ARL négatifs se répètent, contactez l'éditeur du logiciel puis la caisse."
+    },
+    {
+      "question": "Jusqu'à quand peut-on représenter une facture de tiers payant ?",
+      "answer": "Il n'existe pas de date unique : chaque circuit a sa limite, fixée par le Code de la sécurité sociale, la convention avec l'Assurance maladie ou le contrat avec la complémentaire. Le Code fixe par exemple à deux ans la prescription de l'action en paiement de l'assuré. Relevez les limites organisme par organisme et triez votre stock selon ces dates."
+    },
+    {
+      "question": "Faut-il abandonner les petites créances ?",
+      "answer": "Oui, sous un seuil que l'officine fixe et écrit, quand le temps de retraitement dépasse le montant en jeu. L'abandon doit être une décision tracée : seuil, liste des lignes, date et validation du titulaire. Cette note sert ensuite à l'expert-comptable pour constater la perte."
+    }
+  ],
+  "sources": [
+    {
+      "label": "ameli.fr · Le tiers payant",
+      "url": "https://www.ameli.fr/assure/remboursements/etre-bien-rembourse/tiers-payant"
+    },
+    {
+      "label": "legifrance.gouv.fr · Code de la sécurité sociale",
+      "url": "https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006073189"
+    }
+  ],
+  "figures": [
+    {
+      "id": "trois-populations",
+      "type": "comparaison",
+      "titre": "Trois créances qui ne se traitent pas pareil",
+      "legende": "Seul l'ARL négatif ne laisse aucune trace ensuite : c'est lui qu'il faut surveiller en premier.",
+      "colonnes": [
+        "ARL négatif",
+        "Rejet",
+        "Non lettré"
+      ],
+      "elements": [
+        {
+          "label": "Côté payeur",
+          "detail": "",
+          "valeurs": [
+            "Facture inconnue",
+            "Facture refusée",
+            "Facture payée"
+          ],
+          "focus": false
+        },
+        {
+          "label": "Signal reçu ensuite",
+          "detail": "",
+          "valeurs": [
+            "Aucun retour",
+            "Motif de rejet",
+            "Virement groupé"
+          ],
+          "focus": true
+        },
+        {
+          "label": "Risque",
+          "detail": "",
+          "valeurs": [
+            "Perte silencieuse",
+            "Dossier oublié",
+            "Relance inutile"
+          ],
+          "focus": false
+        },
+        {
+          "label": "Premier geste",
+          "detail": "",
+          "valeurs": [
+            "Retransmettre",
+            "Corriger, représenter",
+            "Lettrer"
+          ],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [],
+  "liensEntrants": [],
+  "remplace": [],
+  "verticales": [
+    "pharmacie"
+  ],
+  "refonte": true,
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-26T13:01:26.957Z",
+    "avertissements": [
+      "aucune citation (facultative)",
+      "source non vérifiable (403) : https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006073189",
+      "source non vérifiable (403) : https://www.ameli.fr/assure/remboursements/etre-bien-rembourse/tiers-payant"
+    ]
+  }
+}
