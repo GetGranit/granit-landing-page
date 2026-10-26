@@ -36,7 +36,12 @@ export const envoyerConfirmationWebinar = createServerFn({ method: "POST" })
     const prenom = data.prenom;
     const res = await fetch("https://api.resend.com/emails", {
       method: "POST",
-      headers: { authorization: `Bearer ${cle}`, "content-type": "application/json" },
+      headers: {
+        authorization: `Bearer ${cle}`,
+        "content-type": "application/json",
+        // Le pare-feu devant l'API Resend rejette (403, sans message) les appels anonymes.
+        "user-agent": "granit-landing-page/1.0 (+https://www.getgranit.ai)",
+      },
       body: JSON.stringify({
         from: EXPEDITEUR,
         to: [data.email],
@@ -62,11 +67,10 @@ export const envoyerConfirmationWebinar = createServerFn({ method: "POST" })
       try {
         raison = String((JSON.parse(detail) as { message?: string }).message ?? "");
       } catch {
-        // Corps illisible : on garde seulement le code.
+        // Pas de JSON (page d'un pare-feu, corps vide) : on garde le début du corps brut.
       }
-      throw new Error(
-        `Resend responded ${res.status}${raison ? ` : ${raison.slice(0, 200)}` : ""}`,
-      );
+      const motif = raison || detail.replace(/\s+/g, " ").trim().slice(0, 160) || "corps vide";
+      throw new Error(`Resend responded ${res.status} : ${motif.slice(0, 200)}`);
     }
     return { envoye: true as const };
   });
