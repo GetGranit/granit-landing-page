@@ -21,7 +21,7 @@ export const Route = createFileRoute("/ressources/categorie/$category")({
   head: ({ loaderData }) => {
     const cat = loaderData ? categorie(loaderData.category) : undefined;
     if (!cat) return {};
-    const title = `${cat.nom} : tiers payant optique - Granit AI`;
+    const title = `${cat.nom} : tiers payant optique - Granit`;
     const desc = descriptionCategorie(cat);
     // Une catégorie qui n'existe que par l'aperçu ne doit pas être indexée.
     const preview = toutCategorie(cat.slug).every((f) => f.preview);

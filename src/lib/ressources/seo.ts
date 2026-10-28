@@ -70,8 +70,8 @@ export function faqLd(a: RessourceJson) {
   };
 }
 
-/** title + « - Granit AI » si le total tient en 65 caractères, sinon le titre seul. */
+/** title + « - Granit » si le total tient en 65 caractères, sinon le titre seul. */
 export function titrePage(title: string): string {
-  const long = `${title} - Granit AI`;
+  const long = `${title} - Granit`;
   return long.length <= 65 ? long : title;
 }

@@ -8,9 +8,9 @@ import securiteTrust from "@/assets/securite-trust.jpg";
 export const Route = createFileRoute("/securite")({
   head: () => ({
     meta: [
-      { title: "Sécurité & conformité santé - Granit AI" },
+      { title: "Sécurité & conformité santé - Granit" },
       { name: "description", content: "HDS, RGPD, secret médical, chiffrement, MFA, journalisation et réversibilité. Conçu pour les données de santé." },
-      { property: "og:title", content: "Sécurité & conformité santé - Granit AI" },
+      { property: "og:title", content: "Sécurité & conformité santé - Granit" },
       { property: "og:description", content: "Le standard le plus strict du secteur santé français et européen." },
     ],
   }),

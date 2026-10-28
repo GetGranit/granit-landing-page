@@ -5,13 +5,14 @@ export const organizationLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Granit",
-  legalName: "Granit AI",
+  alternateName: "getgranit",
   url: SITE_URL,
   logo: `${SITE_URL}/favicon.svg`,
   description:
     "Granit déploie des agents IA qui automatisent le back-office administratif des établissements de santé — tiers-payant, facturation, traitement des rejets, recouvrement.",
   email: "contact@getgranit.ai",
   areaServed: "FR",
+  sameAs: ["https://www.linkedin.com/company/getgranit-ai/"],
 };
 
 /** Absolute canonical URL for a given pathname (trailing slash stripped). */

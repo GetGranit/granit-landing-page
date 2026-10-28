@@ -25,13 +25,13 @@ import { copy, type AffiliationCopy as Copy } from "@/lib/affiliationCopy";
 export const Route = createFileRoute("/affiliation")({
   head: () => ({
     meta: [
-      { title: "Devenir partenaire - Granit AI" },
+      { title: "Devenir partenaire - Granit" },
       {
         name: "description",
         content:
           "Vous accompagnez des professionnels de santé ? Recommandez Granit et touchez une commission sur chaque établissement qui démarre.",
       },
-      { property: "og:title", content: "Programme partenaires - Granit AI" },
+      { property: "og:title", content: "Programme partenaires - Granit" },
       {
         property: "og:description",
         content: "Recommandez Granit aux professionnels de santé que vous accompagnez, on s'occupe du reste.",

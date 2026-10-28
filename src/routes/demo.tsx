@@ -4,9 +4,9 @@ import { useLanguage } from "@/lib/i18n";
 export const Route = createFileRoute("/demo")({
   head: () => ({
     meta: [
-      { title: "Démo live - Granit AI" },
-      { name: "description", content: "Démo interactive de la plateforme Granit AI. Données fictives, navigation libre." },
-      { property: "og:title", content: "Démo live - Granit AI" },
+      { title: "Démo live - Granit" },
+      { name: "description", content: "Démo interactive de la plateforme Granit. Données fictives, navigation libre." },
+      { property: "og:title", content: "Démo live - Granit" },
       { property: "og:description", content: "Voir la plateforme tourner en conditions réelles." },
     ],
   }),
@@ -14,8 +14,8 @@ export const Route = createFileRoute("/demo")({
 });
 
 const copy = {
-  fr: { badge: "Démo live · données fictives", cta: "Réserver une démo", title: "Granit AI - Démo" },
-  en: { badge: "Live demo · fictitious data", cta: "Book a demo", title: "Granit AI - Demo" },
+  fr: { badge: "Démo live · données fictives", cta: "Réserver une démo", title: "Granit - Démo" },
+  en: { badge: "Live demo · fictitious data", cta: "Book a demo", title: "Granit - Demo" },
 };
 
 function DemoPage() {

@@ -6,7 +6,7 @@ import { SITE_URL } from "@/lib/seo";
 import { aLaUne } from "@/lib/ressources/contenu";
 import { aCouvertureFenetre, photoFiche, src } from "@/lib/ressources/photos";
 
-const TITLE = "Ressources pour les professionnels de santé : mutuelles, paiements - Granit AI";
+const TITLE = "Ressources pour les professionnels de santé : mutuelles, paiements - Granit";
 const DESC =
   "Opticiens, dentistes, cliniques, EHPAD, centres de santé, laboratoires, audioprothésistes, pharmaciens : des réponses pratiques sur les mutuelles, les remboursements, les paiements et la réglementation.";
 

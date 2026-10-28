@@ -6,9 +6,9 @@ export const Route = createFileRoute("/produit")({
   },
   head: () => ({
     meta: [
-      { title: "Produit - Granit AI" },
+      { title: "Produit - Granit" },
       { name: "description", content: "Des agents IA sur mesure pour automatiser tiers-payant, rejets CPAM, recouvrement, rapprochement bancaire." },
-      { property: "og:title", content: "Produit - Granit AI" },
+      { property: "og:title", content: "Produit - Granit" },
       { property: "og:description", content: "Des agents IA sur mesure. Branchés sur vos outils." },
     ],
   }),

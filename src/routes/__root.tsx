@@ -51,25 +51,25 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Granit AI - Plateforme d'agents IA pour la santé" },
+      { title: "Granit - Agents IA pour la santé" },
       {
         name: "description",
         content:
-          "Granit AI déploie des agents IA autonomes qui automatisent les workflows administratifs des établissements de santé. Tiers-payant, facturation, commandes - sans intégration.",
+          "Granit déploie des agents IA autonomes qui automatisent les workflows administratifs des établissements de santé. Tiers-payant, facturation, commandes - sans intégration.",
       },
-      { name: "author", content: "Granit AI" },
-      { property: "og:title", content: "Granit AI - Plateforme d'agents IA pour la santé" },
+      { name: "author", content: "Granit" },
+      { property: "og:title", content: "Granit - Agents IA pour la santé" },
       {
         property: "og:description",
         content:
-          "Granit AI automates healthcare administrative workflows with AI agents, no integration needed.",
+          "Granit automates healthcare administrative workflows with AI agents, no integration needed.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       {
         name: "description",
         content:
-          "Granit AI automates healthcare administrative workflows with AI agents, no integration needed.",
+          "Granit automates healthcare administrative workflows with AI agents, no integration needed.",
       },
       {
         property: "og:image",
