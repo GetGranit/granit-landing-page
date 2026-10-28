@@ -1655,7 +1655,7 @@
       "période d'essai audioprothèse"
     ],
     "searchVolume": null,
-    "status": "pending",
+    "status": "review",
     "wave": 1.5,
     "level": "Refonte",
     "parentSlug": null,
@@ -1677,7 +1677,8 @@
       "audio"
     ],
     "auteur": "laura",
-    "relecteur": "olivier"
+    "relecteur": "olivier",
+    "publishedAt": "2026-10-28"
   },
   {
     "id": "R6",
