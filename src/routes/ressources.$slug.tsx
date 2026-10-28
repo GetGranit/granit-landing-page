@@ -58,8 +58,8 @@ export const Route = createFileRoute("/ressources/$slug")({
     const fr = loaderData ? getArticle("fr", loaderData.slug) : undefined;
     const en = loaderData ? getArticle("en", loaderData.slug) : undefined;
     const a = fr ?? en;
-    const title = a ? `${a.title} - Granit AI` : "Article - Granit AI";
-    const desc = a?.desc ?? "Article Granit AI.";
+    const title = a ? `${a.title} - Granit` : "Article - Granit";
+    const desc = a?.desc ?? "Article Granit.";
     return {
       meta: [
         { title },

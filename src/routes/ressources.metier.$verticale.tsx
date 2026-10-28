@@ -21,7 +21,7 @@ export const Route = createFileRoute("/ressources/metier/$verticale")({
     // Exception : le métier principal (optique) est toujours indexé.
     const indexable =
       v.slug === VERTICALE_PRINCIPALE || propres.filter((f) => !f.preview).length >= 3;
-    const title = `${v.nom} : tiers payant et gestion administrative - Granit AI`;
+    const title = `${v.nom} : tiers payant et gestion administrative - Granit`;
     const image = SITE_URL + photoVerticale(v.slug, 1600);
     return {
       meta: [

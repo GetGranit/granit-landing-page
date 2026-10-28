@@ -6,9 +6,9 @@ import { useLanguage } from "@/lib/i18n";
 export const Route = createFileRoute("/agents")({
   head: () => ({
     meta: [
-      { title: "Agents IA santé - Granit AI" },
+      { title: "Agents IA santé - Granit" },
       { name: "description", content: "Les agents IA Granit par verticale santé et par cas d'usage : tiers-payant, recouvrement, admissions, facturation, conformité." },
-      { property: "og:title", content: "Agents IA santé - Granit AI" },
+      { property: "og:title", content: "Agents IA santé - Granit" },
       { property: "og:description", content: "Des agents opérationnels pour chaque verticale santé et chaque workflow administratif." },
     ],
   }),

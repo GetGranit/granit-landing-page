@@ -39,7 +39,7 @@ export const Route = createFileRoute("/essai")({
   },
   head: () => ({
     meta: [
-      { title: "Votre espace Granit - Granit AI" },
+      { title: "Votre espace Granit - Granit" },
       { name: "robots", content: "noindex, nofollow" },
       {
         name: "description",

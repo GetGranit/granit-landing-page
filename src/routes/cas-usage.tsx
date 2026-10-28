@@ -6,9 +6,9 @@ export const Route = createFileRoute("/cas-usage")({
   },
   head: () => ({
     meta: [
-      { title: "Secteurs - Granit AI" },
+      { title: "Secteurs - Granit" },
       { name: "description", content: "Granit s'adapte à chaque secteur de santé : optique, audio, pharmacie, EHPAD, cliniques, laboratoires, cabinets, centres dentaires." },
-      { property: "og:title", content: "Secteurs - Granit AI" },
+      { property: "og:title", content: "Secteurs - Granit" },
       { property: "og:description", content: "Quel que soit votre établissement, Granit s'adapte." },
     ],
   }),
