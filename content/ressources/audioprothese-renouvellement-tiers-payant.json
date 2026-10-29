@@ -1,0 +1,205 @@
+{
+  "slug": "audioprothese-renouvellement-tiers-payant",
+  "id": "R5",
+  "category": "guide-tiers-payant",
+  "categoryName": "Guide du tiers payant",
+  "type": "standard",
+  "plateforme": null,
+  "title": "Audioprothèse : maîtriser le tiers-payant sur le renouvellement d'appareillage",
+  "primaryKeyword": "renouvellement appareil auditif",
+  "keywordCluster": [
+    "classe 1 classe 2 audioprothèse",
+    "renouvellement 4 ans audioprothèse",
+    "tiers payant audioprothésiste",
+    "période d'essai audioprothèse"
+  ],
+  "parentSlug": null,
+  "level": "Refonte",
+  "author": {
+    "name": "Laura",
+    "jobTitle": "Rédactrice, experte santé",
+    "photo": "/auteurs/laura.jpg",
+    "url": null
+  },
+  "reviewer": {
+    "name": "Olivier",
+    "jobTitle": "Rédacteur, expert tiers payant",
+    "photo": "/auteurs/olivier.jpg",
+    "url": null
+  },
+  "datePublished": "2026-10-28",
+  "dateModified": "2026-10-28",
+  "checkedOn": null,
+  "wordCount": 2219,
+  "readTime": 10,
+  "metaDescription": "Renouvellement appareil auditif : règle des 4 ans par oreille, classe I ou II, période d'essai. Les points qui évitent un refus de tiers payant audio.",
+  "contentHtml": "<p><strong>Un renouvellement appareil auditif n'est pris en charge qu'au bout de 4 ans, oreille par oreille, à compter de la délivrance de l'appareil précédent.</strong> Ce compteur, la classe de l'aide auditive (classe I ou classe II) et la période d'essai obligatoire décident ensemble du sort de votre dossier de tiers payant : accord, refus, ou reste à charge mal calculé. Un dossier envoyé un mois trop tôt revient refusé, même si tout le reste est juste.</p><p>Cet article reprend les règles du point de vue du centre d'audioprothèse : ce qu'il faut vérifier au devis, à quel moment facturer après l'essai, et comment lire un refus de renouvellement. Les règles de remboursement citées viennent d'<a href=\"https://www.ameli.fr/assure/remboursements/rembourse/optique-audition/audition-aides-auditives\">ameli.fr</a> et de <a href=\"https://www.service-public.fr/particuliers/vosdroits/F34759\">service-public.fr</a>. Les règles propres à chaque contrat de complémentaire restent à vérifier dossier par dossier.</p><div class=\"key-takeaways\"><strong>L'essentiel</strong><ul><li>Le renouvellement d'une aide auditive est pris en charge tous les 4 ans par oreille, selon ameli.fr : le délai part de la date de délivrance du précédent appareil, pas de la date de la demande.</li><li>La classe I correspond au 100 % Santé (prix limité, reste à charge nul avec un contrat responsable) ; la classe II est à tarif libre, avec une prise en charge plafonnée.</li><li>La période d'essai précède la vente ferme : la facture définitive part après la décision du patient, pas au moment du devis.</li><li>Avant chaque envoi, vérifiez trois points : la date d'éligibilité de l'oreille concernée, la classe inscrite sur le devis, les pièces demandées par le portail.</li></ul></div><h2 id=\"renouvellement-appareil-auditif-4-ans\">Tous les combien un renouvellement appareil auditif est-il pris en charge ?</h2><p><strong>La règle est de 4 ans par oreille.</strong> Selon <a href=\"https://www.ameli.fr/assure/remboursements/rembourse/optique-audition/audition-aides-auditives\">ameli.fr</a>, l'Assurance maladie ne prend en charge un nouvel appareillage qu'à l'issue d'une période de 4 ans après le précédent. Les contrats responsables de complémentaire santé suivent ce même rythme pour leur part.</p><p>Le point qui fait le plus de refus est le point de départ du délai. Il se calcule à partir de la date de délivrance du précédent appareil, celle qui figure sur la facture d'origine. La date à laquelle le patient revient au centre, ou celle du nouveau devis, ne compte pas. Un patient appareillé le 15 mars d'une année n'est éligible que le 15 mars de la quatrième année suivante.</p><p>Le compteur tourne séparément pour chaque oreille. Un même patient peut donc être éligible à gauche et pas à droite, par exemple s'il a été appareillé d'abord d'un côté, puis de l'autre quelques mois plus tard. Le devis et la demande de prise en charge doivent alors distinguer les deux oreilles, avec leur propre date de référence.</p><h3>Ce que cela change au comptoir</h3><p>Concrètement, la vérification de la date se fait avant le devis, pas après le refus. L'assistante qui ouvre le dossier doit retrouver la facture du précédent appareillage pour chaque oreille, puis calculer la date d'éligibilité. Si le patient a été appareillé ailleurs, il faut la lui demander : sans elle, la date reste une supposition.</p><div class=\"callout callout--warn\"><p><strong>Le piège :</strong> le compteur ne s'arrête pas au changement de centre. Un patient appareillé dans un autre point de vente, même du même réseau, garde sa date de délivrance d'origine. Si votre logiciel métier ne voit que l'historique de votre centre, la date que vous lisez peut être fausse.</p></div><h2 id=\"classe-1-classe-2-audioprothese\">Quelle différence entre classe I et classe II pour le tiers payant ?</h2><p><strong>La classe I est l'offre 100 % Santé : prix de vente plafonné et reste à charge nul pour un patient couvert par un contrat responsable. La classe II est à tarif libre : la prise en charge est plafonnée et un reste à charge peut subsister.</strong> Cette distinction vient de la LPP (liste des produits et prestations remboursables), la nomenclature qui fixe pour chaque aide auditive sa base de remboursement et sa classe.</p><p>Selon <a href=\"https://www.ameli.fr/assure/remboursements/rembourse/optique-audition/audition-aides-auditives\">ameli.fr</a>, le prix d'une aide auditive de classe I est limité à 950 euros par oreille pour un adulte de plus de 20 ans. Pour la classe II, la prise en charge cumulée de l'AMO (assurance maladie obligatoire) et de l'AMC (assurance maladie complémentaire) est plafonnée à 1 700 euros par oreille dans le cadre d'un contrat responsable. Le dispositif 100 % Santé est entièrement en place en audiologie depuis le 1er janvier 2021, comme le rappelle <a href=\"https://www.service-public.fr/particuliers/vosdroits/F34759\">service-public.fr</a>.</p><div data-figure=\"classe-1-classe-2\"></div><p>Pour le tiers payant, l'enjeu est simple : la classe inscrite sur le devis normalisé et sur la facture doit correspondre au code LPP de l'appareil délivré. Une classe erronée produit soit un rejet, soit un calcul de reste à charge faux. Sur des montants de cet ordre, l'écart se voit tout de suite, et c'est le patient qui le découvre le premier.</p><h3>Le devis normalisé, point de départ du dossier</h3><p>Le devis normalisé est le document obligatoire qui présente au patient au moins une offre de classe I, avec le détail des prix et des prestations. C'est aussi la pièce que la complémentaire lit pour rendre sa réponse de prise en charge. Si la classe ou le code LPP y est mal reporté, l'erreur se propage dans la demande, puis dans la facture.</p><h2 id=\"periode-essai-audioprothese\">Quand facturer après la période d'essai audioprothèse ?</h2><p><strong>La facture définitive part après l'essai, une fois que le patient a confirmé son choix.</strong> Le cadre du 100 % Santé prévoit une période d'essai avant la vente ferme de l'aide auditive. Selon <a href=\"https://www.ameli.fr/assure/remboursements/rembourse/optique-audition/audition-aides-auditives\">ameli.fr</a>, cet essai dure au moins 30 jours.</p><p>Cette étape distingue l'audioprothèse de l'optique, où la vente suit en général le devis de près. Entre l'accord de prise en charge et la facture, il s'écoule donc un délai que le centre doit suivre dossier par dossier. Pendant ce temps, l'accord obtenu de la complémentaire reste en attente d'une facture.</p><p>Le risque est double. Facturer trop tôt, c'est émettre une facture avant la décision du patient, avec une annulation à gérer s'il renonce. Facturer trop tard, c'est laisser des dossiers terminés sans paiement, et parfois laisser expirer un accord dont la durée de validité est fixée par la complémentaire.</p><h3>Le circuit d'un dossier de renouvellement</h3><p>Un renouvellement suit toujours le même ordre : prescription médicale, vérification de l'éligibilité par oreille, devis normalisé, demande de prise en charge à la complémentaire, essai, facture, puis paiement. La facture part vers l'AMO par la télétransmission SESAM-Vitale, et vers l'AMC par la DRE (demande de remboursement électronique), le flux qui transmet la part complémentaire à l'organisme ou à la plateforme qui le gère.</p><div data-figure=\"circuit-renouvellement\"></div><div class=\"callout callout--tip\"><p><strong>Le bon réflexe :</strong> notez la date de fin d'essai dans le dossier le jour de la délivrance. C'est cette date, et non le souvenir de l'équipe, qui déclenche la relance du patient puis la facture.</p></div><h2 id=\"pieces-prise-en-charge-audio\">Quelles pièces réunir pour une prise en charge audio ?</h2><p><strong>Une demande de prise en charge en audioprothèse repose sur la prescription médicale et le devis normalisé ; la complémentaire peut demander d'autres pièces selon son portail.</strong> Les demandes passent souvent par les mêmes plateformes de tiers payant que l'optique, chacune avec son espace professionnel et ses champs obligatoires.</p><p>Les pièces que l'on retrouve le plus souvent dans un dossier audio :</p><ul><li>la prescription médicale de l'appareillage ;</li><li>le devis normalisé, avec la classe et le code LPP de chaque aide auditive ;</li><li>les éléments d'identification du patient : numéro de sécurité sociale, carte de tiers payant de la complémentaire, bénéficiaire concerné ;</li><li>pour un renouvellement, la date de délivrance du précédent appareil pour chaque oreille ;</li><li>les pièces supplémentaires que le portail réclame, par exemple un audiogramme.</li></ul><p>La liste exacte dépend de la complémentaire et du portail qu'elle utilise. Pour savoir quel portail traiter, l'outil <a href=\"/ressources/mutuelle-quel-portail\">mutuelle → portail</a> part du nom de la mutuelle ou du numéro AMC inscrit sur la carte. La page <a href=\"/ressources/portails-tiers-payant\">portails de tiers payant</a> détaille ensuite la connexion, la prise en charge et le paiement sur chacun d'eux.</p><p>Les champs d'identité sont la cause de rejet la plus banale, et elle concerne l'audio comme l'optique : bénéficiaire mal saisi, carte périmée, ayant droit confondu avec l'ouvrant droit (l'assuré qui porte le contrat). La <a href=\"/ressources/checklist-prise-en-charge\">checklist avant d'envoyer une prise en charge</a> reprend ces vérifications une par une.</p><h2 id=\"renouvellement-refuse\">Pourquoi un renouvellement d'appareil auditif est-il refusé ?</h2><p><strong>Il y a trois grandes causes de refus : un délai de 4 ans non atteint pour l'oreille concernée, une classe ou un code LPP qui ne correspond pas à l'appareil, et un dossier incomplet ou mal identifié.</strong> Le motif affiché par le portail dit laquelle des trois est en cause. Gardez ce motif exact : c'est lui qui dit quoi corriger.</p><div class=\"tbl\"><table><tr><th>Cause</th><th>Où vérifier</th><th>Correction</th></tr><tr><td>Délai de 4 ans non atteint</td><td>Facture du précédent appareillage, oreille par oreille</td><td>Recalculer la date d'éligibilité ; renvoyer la demande à partir de cette date</td></tr><tr><td>Date de référence inconnue (appareillage dans un autre centre)</td><td>Historique du patient, facture fournie par le patient</td><td>Obtenir la date de délivrance d'origine avant tout nouvel envoi</td></tr><tr><td>Classe ou code LPP incohérent</td><td>Devis normalisé et fiche produit</td><td>Corriger le devis, puis la demande, avant la facture</td></tr><tr><td>Bénéficiaire ou droits non reconnus</td><td>Carte de tiers payant, attestation de droits</td><td>Vérifier l'ayant droit et la période de validité de la carte</td></tr><tr><td>Pièce manquante</td><td>Message du portail</td><td>Ajouter la pièce demandée dans le même dossier</td></tr></table></div><p>Un refus pour délai non atteint ne se conteste pas : il se reporte. Si la date d'éligibilité tombe dans quelques semaines, la bonne décision est de préparer le dossier et de l'envoyer à la bonne date, sans attendre que le patient revienne.</p><p>Quand le refus arrive après la facture, sous forme de rejet sur le retour de paiement, le libellé suit les codes du flux NOEMIE (le retour électronique de l'Assurance maladie). La page <a href=\"/ressources/codes-rejets-noemie\">codes rejets NOEMIE</a> en donne la lecture. Pour savoir à quel moment relancer une complémentaire qui ne répond pas, voir <a href=\"/ressources/quand-relancer-mutuelle\">quand relancer une mutuelle</a>.</p><h2 id=\"eligibilite-oreille-multi-centres\">Comment suivre l'éligibilité oreille par oreille, y compris en multi-centres ?</h2><p><strong>La méthode la plus sûre est d'enregistrer, pour chaque oreille, la date de délivrance et la date d'éligibilité qui en découle, dans un historique que tous les centres consultent.</strong> Sans cette donnée, chaque renouvellement oblige à reconstituer l'historique à la main, à partir du logiciel métier, du dossier patient et parfois d'une facture venue d'ailleurs.</p><p>Dans un centre seul, l'historique du logiciel métier suffit en général, à condition que la date de délivrance soit saisie pour chaque oreille. Le problème apparaît quand le patient a été appareillé ailleurs. Il faut alors lui demander sa facture et reporter la date d'origine dans son dossier, avant de faire le devis.</p><p>Dans un réseau de plusieurs centres, le risque grandit. Un patient appareillé dans un centre peut revenir quatre ans plus tard dans un autre point de vente du même groupe. Si les bases patient ne sont pas reliées, le nouveau centre ne voit pas le premier appareillage, et la date d'éligibilité calculée est fausse. Les enjeux de pilotage d'un réseau sont détaillés dans <a href=\"/ressources/groupes-multi-sites-pilotage\">piloter plusieurs centres</a>.</p><h3>Les trois données à tenir à jour par patient</h3><ul><li>la date de délivrance de l'aide auditive en place, oreille gauche ;</li><li>la date de délivrance de l'aide auditive en place, oreille droite ;</li><li>le centre qui a délivré chaque appareil, pour retrouver la facture en cas de doute.</li></ul><p>À partir de ces trois données, la date d'éligibilité de chaque oreille se calcule sans ambiguïté. Elle peut ensuite servir à prévenir le patient, ou au moins à bloquer un devis de renouvellement trop précoce.</p><h2 id=\"securiser-dossier-tiers-payant-audioprothesiste\">Comment sécuriser chaque dossier de tiers payant audioprothésiste avant l'envoi ?</h2><p><strong>Un dossier de renouvellement est prêt à partir quand trois conditions sont réunies : la date d'éligibilité de l'oreille est atteinte, la classe et le code LPP du devis correspondent à l'appareil, et les pièces demandées par le portail sont complètes.</strong> Tant qu'une des trois manque, envoyer la demande produit un refus.</p><ol class=\"steps\"><li><strong>Retrouver la date de délivrance précédente.</strong> Oreille par oreille, à partir de la facture d'origine, y compris si l'appareillage a été fait dans un autre centre.</li><li><strong>Calculer la date d'éligibilité.</strong> Quatre ans après la délivrance, pour chaque oreille séparément.</li><li><strong>Établir le devis normalisé.</strong> Avec au moins une offre de classe I, et la classe et le code LPP exacts de l'appareil proposé.</li><li><strong>Identifier le portail de la complémentaire.</strong> À partir de la carte de tiers payant du patient.</li><li><strong>Envoyer la demande de prise en charge.</strong> Avec la prescription, le devis et les pièces réclamées par le portail.</li><li><strong>Suivre l'essai.</strong> Noter la date de fin d'essai et recontacter le patient avant cette date.</li><li><strong>Facturer après la décision du patient.</strong> Puis suivre le paiement de l'AMO et de l'AMC jusqu'au rapprochement.</li></ol><p>Ces étapes sont simples une par une. Ce qui les rend fragiles, c'est leur nombre et leur étalement dans le temps : un renouvellement court sur plusieurs semaines, et un centre en suit beaucoup en parallèle. Dans les dossiers qui reviennent refusés, le scénario est souvent le même : une date de référence mal reportée, ou une facture qui attend parce que personne n'a vu la fin de l'essai.</p><p>Quand le volume dépasse ce que l'équipe peut suivre à la main, la saisie sur les portails et le suivi des réponses deviennent le goulot du centre. C'est ce que fait <a href=\"/agents\">Granit</a> : des agents saisissent les demandes de prise en charge directement sur les portails des plateformes, suivent les statuts et renvoient la réponse à l'équipe, qui garde la main sur le conseil au patient.</p><p>Pour une vue d'ensemble du tiers payant, de la prise en charge à l'encaissement, le guide <a href=\"/ressources/tiers-payant-opticien\">tiers payant, de la prise en charge à l'encaissement</a> décrit le circuit complet. Il est écrit pour l'optique, mais les étapes et les plateformes sont en grande partie les mêmes en audioprothèse.</p>",
+  "tocItems": [
+    {
+      "id": "renouvellement-appareil-auditif-4-ans",
+      "label": "La règle des 4 ans par oreille"
+    },
+    {
+      "id": "classe-1-classe-2-audioprothese",
+      "label": "Classe I ou classe II : ce qui change"
+    },
+    {
+      "id": "periode-essai-audioprothese",
+      "label": "Facturer après la période d'essai"
+    },
+    {
+      "id": "pieces-prise-en-charge-audio",
+      "label": "Les pièces d'une prise en charge audio"
+    },
+    {
+      "id": "renouvellement-refuse",
+      "label": "Pourquoi un renouvellement est refusé"
+    },
+    {
+      "id": "eligibilite-oreille-multi-centres",
+      "label": "Suivre l'éligibilité, même en multi-centres"
+    },
+    {
+      "id": "securiser-dossier-tiers-payant-audioprothesiste",
+      "label": "Sécuriser chaque dossier avant l'envoi"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "Tous les combien peut-on renouveler un appareil auditif ?",
+      "answer": "Selon ameli.fr, le renouvellement d'une aide auditive est pris en charge tous les 4 ans. Le délai se calcule oreille par oreille, à partir de la date de délivrance du précédent appareil et non de la date de la nouvelle demande. Un patient peut donc être éligible pour une oreille et pas pour l'autre."
+    },
+    {
+      "question": "Quelle différence entre classe I et classe II en audioprothèse ?",
+      "answer": "La classe I correspond au 100 % Santé : selon ameli.fr, son prix est limité à 950 euros par oreille pour un adulte de plus de 20 ans, et le reste à charge est nul avec un contrat responsable. La classe II est à tarif libre, avec une prise en charge AMO et AMC plafonnée à 1 700 euros par oreille dans le cadre d'un contrat responsable. La classe doit être la même sur le devis normalisé, la demande et la facture."
+    },
+    {
+      "question": "Quand facturer après la période d'essai d'une aide auditive ?",
+      "answer": "La facture définitive part après la période d'essai, une fois que le patient a confirmé son choix. Selon ameli.fr, cet essai dure au moins 30 jours avant la vente ferme. Le plus sûr est de noter la date de fin d'essai dans le dossier dès la délivrance, pour relancer le patient puis facturer sans retard."
+    },
+    {
+      "question": "Pourquoi un renouvellement d'appareil auditif est-il refusé ?",
+      "answer": "Les trois causes principales sont un délai de 4 ans non atteint pour l'oreille concernée, une classe ou un code LPP qui ne correspond pas à l'appareil, et un dossier incomplet ou mal identifié. Le motif affiché par le portail indique laquelle est en cause. Un refus pour délai non atteint ne se conteste pas : il faut renvoyer la demande à partir de la date d'éligibilité."
+    }
+  ],
+  "sources": [
+    {
+      "label": "ameli.fr · Aides auditives : remboursement",
+      "url": "https://www.ameli.fr/assure/remboursements/rembourse/optique-audition/audition-aides-auditives"
+    },
+    {
+      "label": "service-public.fr · 100 % Santé : lunettes, prothèses dentaires et auditives",
+      "url": "https://www.service-public.fr/particuliers/vosdroits/F34759"
+    }
+  ],
+  "figures": [
+    {
+      "id": "classe-1-classe-2",
+      "type": "comparaison",
+      "titre": "Classe I et classe II : deux logiques de prise en charge",
+      "legende": "Regardez le reste à charge : nul en classe I avec un contrat responsable, possible en classe II.",
+      "colonnes": [
+        "Classe I",
+        "Classe II"
+      ],
+      "elements": [
+        {
+          "label": "Prix de vente",
+          "detail": "",
+          "valeurs": [
+            "Limité (950 € par oreille, adulte)",
+            "Libre"
+          ],
+          "focus": false
+        },
+        {
+          "label": "Prise en charge",
+          "detail": "",
+          "valeurs": [
+            "Intégrale avec contrat responsable",
+            "Plafonnée à 1 700 € par oreille"
+          ],
+          "focus": false
+        },
+        {
+          "label": "Reste à charge",
+          "detail": "",
+          "valeurs": [
+            "Nul",
+            "Possible"
+          ],
+          "focus": true
+        },
+        {
+          "label": "Renouvellement",
+          "detail": "",
+          "valeurs": [
+            "4 ans par oreille",
+            "4 ans par oreille"
+          ],
+          "focus": false
+        }
+      ]
+    },
+    {
+      "id": "circuit-renouvellement",
+      "type": "etapes",
+      "titre": "Le circuit d'un renouvellement audio",
+      "legende": "La facture ne part qu'après l'essai : c'est l'étape qui allonge le dossier.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "Prescription médicale",
+          "detail": "Point de départ du dossier",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Éligibilité par oreille",
+          "detail": "4 ans après la délivrance précédente",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Devis et prise en charge",
+          "detail": "Classe et code LPP exacts",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Période d'essai",
+          "detail": "Au moins 30 jours selon ameli.fr",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Facture",
+          "detail": "AMO par SESAM-Vitale, AMC par DRE",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Paiement",
+          "detail": "Suivi jusqu'au rapprochement",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [],
+  "liensEntrants": [],
+  "remplace": [],
+  "verticales": [
+    "audio"
+  ],
+  "refonte": true,
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-28T12:53:40.797Z",
+    "avertissements": [
+      "aucune citation (facultative)",
+      "source non vérifiable (403) : https://www.ameli.fr/assure/remboursements/rembourse/optique-audition/audition-aides-auditives"
+    ]
+  }
+}
