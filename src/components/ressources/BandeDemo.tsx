@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "@tanstack/react-router";
+import { calcomDemoUrl } from "@/lib/calcom";
 
 // Une corvée par métier : chacun s'y reconnaît, puis la voit barrée (soulagement anticipé).
 const CORVEES = [
@@ -37,9 +37,14 @@ export function BandeDemo() {
           </span>
         </h2>
         <div className="mt-9 flex flex-col items-center gap-3">
-          <Link to="/demo" className="btn-primary btn-demo text-[16px]">
+          <a
+            href={calcomDemoUrl("bande-demo")}
+            target="_blank"
+            rel="noopener"
+            className="btn-primary btn-demo text-[16px]"
+          >
             Je veux voir ça <span className="arrow">→</span>
-          </Link>
+          </a>
           <span className="text-[13px] text-[#a99d8c]">Démo personnalisée · sans engagement</span>
         </div>
       </div>

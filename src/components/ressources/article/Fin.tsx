@@ -1,6 +1,7 @@
 // Fin d'un article JSON : questions fréquentes, sources, encart final, « À lire ensuite ».
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
+import { calcomDemoUrl } from "@/lib/calcom";
 import { usePostHog } from "posthog-js/react";
 import {
   aLaUne,
@@ -174,9 +175,14 @@ export function EncartFinal() {
         Granit saisit les demandes sur les portails des plateformes et suit les réponses à votre
         place. Branché sur vos portails en 48 h, sans API à demander.
       </p>
-      <Link to="/demo" className="btn-primary mt-5 inline-flex">
+      <a
+        href={calcomDemoUrl("encart-final")}
+        target="_blank"
+        rel="noopener"
+        className="btn-primary mt-5 inline-flex"
+      >
         Demander une démo
-      </Link>
+      </a>
     </aside>
   );
 }
