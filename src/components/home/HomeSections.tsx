@@ -12,6 +12,13 @@ import { submitDemo } from "@/lib/submitDemo";
 import { getAttribution } from "@/lib/attribution";
 import heroPhoto from "@/assets/hero-photo.jpg";
 
+/* Prise de RDV démo : Cal.com de Paul, UTM par emplacement pour savoir quel bouton convertit */
+const CALCOM_DEMO_URL = "https://cal.com/paul-pietra-granit/decouvrir-granit/";
+function calcomDemoUrl(placement: string) {
+  const params = new URLSearchParams({ utm_source: "getgranit.ai", utm_medium: "site", utm_campaign: "homepage", utm_content: placement });
+  return `${CALCOM_DEMO_URL}?${params.toString()}`;
+}
+
 /* ============================================================
    COPY
    ============================================================ */
@@ -43,7 +50,7 @@ const copy = {
         text: "Vous validez et suivez tout depuis un tableau de bord clair. Vos équipes se concentrent sur les patients, plus sur la paperasse.",
       },
     ],
-    ctaPrimary: "Demander une démo gratuite",
+    ctaPrimary: "Voir une démo du produit",
     ctaSecondary: "Découvrir les agents",
     proofs: [
       { t: "Déployé en 48h", s: "en moyenne" },
@@ -117,14 +124,16 @@ const copy = {
     readArticle: "Lire l'article",
     /* CTA */
     ctaTitle: "Prêt à transformer votre organisation ?",
-    ctaText: "Échangeons sur vos enjeux et voyons comment Granit peut vous aider.",
-    ctaButton: "Demander une démo gratuite",
+    ctaText: "15 minutes en visio : on vous montre les agents Granit au travail, sur vos cas.",
+    ctaButton: "Voir une démo du produit",
     /* Demo form */
     demo: {
       eyebrow: "Démo gratuite",
       title: "Nos experts sont là pour vous.",
       intro: "En 15 minutes, nous vous ferons découvrir comment gagner de nombreuses heures de productivité grâce aux agents Granit.",
       bullets: ["Réponse sous 24h", "Sans engagement", "100% gratuit"],
+      book: "Choisir un créneau de démo",
+      bookOr: "Ou laissez-nous vos coordonnées, on vous rappelle :",
       contact: { email: "contact@getgranit.ai", site: "getgranit.ai", city: "Paris, France" },
       labels: ["Email", "Site", "Adresse"],
       fields: ["Prénom et nom", "Email professionnel", "Téléphone", "Nom de l'établissement", "Type d'établissement", "Quel est votre principal défi administratif ?"],
@@ -165,7 +174,7 @@ const copy = {
         text: "You validate and track everything from a clear dashboard. Your teams focus on patients, not paperwork.",
       },
     ],
-    ctaPrimary: "Book a free demo",
+    ctaPrimary: "See a product demo",
     ctaSecondary: "Explore agents",
     proofs: [
       { t: "Live in 48h", s: "on average" },
@@ -235,13 +244,15 @@ const copy = {
     seeAllResources: "See all resources",
     readArticle: "Read article",
     ctaTitle: "Ready to transform your organization?",
-    ctaText: "Let's discuss your operations and see how Granit can help.",
-    ctaButton: "Book a free demo",
+    ctaText: "15 minutes on video: we show you Granit agents at work, on your use cases.",
+    ctaButton: "See a product demo",
     demo: {
       eyebrow: "Free demo",
       title: "Our experts are here for you.",
       intro: "In 15 minutes, we'll show you how to save hours of productivity with Granit agents.",
       bullets: ["Reply within 24h", "No commitment", "100% free"],
+      book: "Pick a demo slot",
+      bookOr: "Or leave your details and we'll call you back:",
       contact: { email: "contact@getgranit.ai", site: "getgranit.ai", city: "Paris, France" },
       labels: ["Email", "Website", "Address"],
       fields: ["Full name", "Work email", "Phone", "Organization name", "Organization type", "What is your main administrative challenge?"],
@@ -622,9 +633,15 @@ export function HomeSections() {
               transition={{ duration: 0.6, delay: 0.55 }}
               className="mt-9 flex flex-wrap items-center gap-3"
             >
-              <Link to="/" hash="demo" className="btn-primary">
+              <a
+                href={calcomDemoUrl("hero")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+                onClick={() => posthog.capture("demo_booking_clicked", { placement: "hero" })}
+              >
                 {t.ctaPrimary} <span className="arrow">↗</span>
-              </Link>
+              </a>
               <Link
                 to="/agents"
                 className="inline-flex items-center gap-2 rounded-full border bg-white px-5 py-[11px] text-[14px] transition-colors hover:border-[color:var(--text)]"
@@ -1203,13 +1220,16 @@ export function HomeSections() {
                   <div className="mt-1 text-[14px]" style={{ color: "rgba(255,255,255,0.85)" }}>{t.ctaText}</div>
                 </div>
               </div>
-              <Link
-                to="/" hash="demo"
+              <a
+                href={calcomDemoUrl("bandeau_bas")}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex shrink-0 items-center gap-2 rounded-full bg-white px-5 py-3 text-[14px] transition-transform hover:-translate-y-0.5"
                 style={{ color: "var(--terra)", fontWeight: 600 }}
+                onClick={() => posthog.capture("demo_booking_clicked", { placement: "bandeau_bas" })}
               >
                 {t.ctaButton} <span>↗</span>
-              </Link>
+              </a>
             </div>
           </Reveal>
         </div>
@@ -1236,6 +1256,16 @@ export function HomeSections() {
                     </li>
                   ))}
                 </ul>
+                <a
+                  href={calcomDemoUrl("section_demo")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary mt-9"
+                  onClick={() => posthog.capture("demo_booking_clicked", { placement: "section_demo" })}
+                >
+                  {t.demo.book} <span className="arrow">↗</span>
+                </a>
+                <p className="mt-6 text-[13px]" style={{ color: "var(--text-muted)" }}>{t.demo.bookOr}</p>
               </div>
             </Reveal>
             <Reveal delay={0.1}>
