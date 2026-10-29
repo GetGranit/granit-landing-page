@@ -7,6 +7,7 @@
 import { useEffect, useRef } from "react";
 import { Link } from "@tanstack/react-router";
 import { usePostHog } from "posthog-js/react";
+import { calcomDemoUrl } from "@/lib/calcom";
 import { categorie } from "@/lib/ressources/contenu";
 import { estSymbole, logoPlateforme, nomFenetre } from "@/lib/ressources/logos";
 import type { Plateforme, RessourceJson } from "@/lib/ressources/types";
@@ -123,6 +124,7 @@ function contenuCta(a: RessourceJson, p: Plateforme | null) {
   const essai = pec && ESSAI_GRATUIT !== "";
   const logo = logoPlateforme((portail ?? PORTAIL_DEFAUT).logo, "fenetre");
   return {
+    article: a.slug,
     cat,
     s,
     pec,
@@ -179,9 +181,15 @@ function BoutonPrincipal({
       </a>
     );
   return (
-    <Link to="/demo" className={classe} onClick={() => suivi("demo")}>
+    <a
+      href={calcomDemoUrl(position, c.article)}
+      target="_blank"
+      rel="noopener"
+      className={classe}
+      onClick={() => suivi("demo")}
+    >
       {c.pec ? "Demander une démo" : "Voir l'agent en démo"}
-    </Link>
+    </a>
   );
 }
 
@@ -204,9 +212,15 @@ function BoutonSecondaire({
     });
   if (c.essai)
     return (
-      <Link to="/demo" className={classe} onClick={() => suivi("demo")}>
+      <a
+        href={calcomDemoUrl(position, c.article)}
+        target="_blank"
+        rel="noopener"
+        className={classe}
+        onClick={() => suivi("demo")}
+      >
         {position === "carte" ? "ou voir une démo de 20 min" : "Demander une démo"}
-      </Link>
+      </a>
     );
   return (
     <Link to="/agents" className={classe} onClick={() => suivi("agents")}>
