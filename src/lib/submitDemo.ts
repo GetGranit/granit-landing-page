@@ -1,5 +1,7 @@
 import { createServerFn } from "@tanstack/react-start";
 
+import { livrerLead } from "@/lib/livrerLead";
+
 export type DemoLead = {
   name: string;
   email: string;
@@ -21,6 +23,7 @@ const emailRe = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
  * The destination is a single webhook URL (Zapier/Make catch hook, an Airtable
  * or Google Sheet automation, etc.) set via the DEMO_WEBHOOK_URL env var, so it
  * is never exposed client-side and the tool can be swapped without code changes.
+ * Si le webhook échoue, le lead part par mail de secours (voir livrerLead.ts).
  */
 export const submitDemo = createServerFn({ method: "POST" })
   .inputValidator((data: DemoLead) => {
@@ -39,45 +42,9 @@ export const submitDemo = createServerFn({ method: "POST" })
       utm: (data.utm ?? "").trim().slice(0, 400),
     };
   })
-  .handler(async ({ data }) => {
-    const webhook = process.env.DEMO_WEBHOOK_URL;
-    const payload = {
-      ...data,
-      source: data.source || "getgranit.ai",
-      submittedAt: new Date().toISOString(),
-    };
-
-    if (!webhook) {
-      // No destination configured yet — log so leads aren't silently lost in dev.
-      console.log(
-        "[demo-lead] DEMO_WEBHOOK_URL not set — lead captured but not delivered:",
-        payload,
-      );
-      return { ok: true as const, delivered: false as const };
-    }
-
-    const res = await fetch(webhook, {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(payload),
-    });
-    if (!res.ok) {
-      throw new Error(`Webhook responded ${res.status}`);
-    }
-
-    // Apps Script répond 200 même quand il n'a pas pu traiter le lead : le
-    // verdict est dans le corps. Comme la notification par mail est désormais
-    // la seule trace du lead, un refus doit remonter au visiteur, qui peut
-    // alors réessayer plutôt que de croire sa demande partie.
-    let corps: { ok?: boolean; error?: string } | null = null;
-    try {
-      corps = JSON.parse(await res.text());
-    } catch {
-      // Réponse vide ou illisible : tous les webhooks ne renvoient pas du JSON.
-      // Seul un `ok: false` explicite vaut échec, pas l'absence de verdict.
-    }
-    if (corps?.ok === false) {
-      throw new Error(corps.error || "Webhook rejected the lead");
-    }
-    return { ok: true as const, delivered: true as const };
-  });
+  .handler(async ({ data }) =>
+    livrerLead(
+      { ...data, source: data.source || "getgranit.ai", submittedAt: new Date().toISOString() },
+      { webhook: process.env.DEMO_WEBHOOK_URL, resendKey: process.env.RESEND_API_KEY },
+    ),
+  );
