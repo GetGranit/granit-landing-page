@@ -179,7 +179,14 @@ function BoutonPrincipal({
       </a>
     );
   return (
-    <Link to="/demo" className={classe} onClick={() => suivi("demo")}>
+    // « Demander une démo » mène au formulaire de l'accueil ; /demo est la démo
+    // interactive (données fictives), sans formulaire.
+    <Link
+      to={c.pec ? "/" : "/demo"}
+      hash={c.pec ? "demo" : undefined}
+      className={classe}
+      onClick={() => suivi("demo")}
+    >
       {c.pec ? "Demander une démo" : "Voir l'agent en démo"}
     </Link>
   );
@@ -204,7 +211,7 @@ function BoutonSecondaire({
     });
   if (c.essai)
     return (
-      <Link to="/demo" className={classe} onClick={() => suivi("demo")}>
+      <Link to="/" hash="demo" className={classe} onClick={() => suivi("demo")}>
         {position === "carte" ? "ou voir une démo de 20 min" : "Demander une démo"}
       </Link>
     );

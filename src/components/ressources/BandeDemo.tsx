@@ -37,7 +37,7 @@ export function BandeDemo() {
           </span>
         </h2>
         <div className="mt-9 flex flex-col items-center gap-3">
-          <Link to="/demo" className="btn-primary btn-demo text-[16px]">
+          <Link to="/" hash="demo" className="btn-primary btn-demo text-[16px]">
             Je veux voir ça <span className="arrow">→</span>
           </Link>
           <span className="text-[13px] text-[#a99d8c]">Démo personnalisée · sans engagement</span>
