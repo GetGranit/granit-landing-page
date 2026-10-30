@@ -22,13 +22,20 @@ const h2 =
   "mb-3.5 scroll-mt-[96px] font-serif text-[30px] font-normal leading-tight tracking-[-0.015em] text-[var(--text)]";
 
 /** Accordéon, première question ouverte ; même texte que le FAQPage. */
-export function Faq({ items }: { items: RessourceJson["faqItems"] }) {
+export function Faq({
+  items,
+  titre = "Questions fréquentes",
+}: {
+  items: RessourceJson["faqItems"];
+  /** Titre de la section (pages commerciales en anglais). */
+  titre?: string;
+}) {
   if (!items?.length) return null;
   return (
     <section id="faq" className="ress-faq mt-12 scroll-mt-[96px]">
       <h2 className={`group/titre ${h2}`}>
-        Questions fréquentes
-        <BoutonAncre id="faq" titre="Questions fréquentes" />
+        {titre}
+        <BoutonAncre id="faq" titre={titre} />
       </h2>
       {items.map((f, i) => (
         <details
