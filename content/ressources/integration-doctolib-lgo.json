@@ -1,0 +1,148 @@
+{
+  "slug": "integration-doctolib-lgo",
+  "id": "R10",
+  "category": "gerer-son-tiers-payant",
+  "categoryName": "Gérer son tiers payant",
+  "type": "standard",
+  "plateforme": null,
+  "title": "Brancher des agents sur Doctolib et votre logiciel métier",
+  "primaryKeyword": "agenda doctolib centre de santé",
+  "keywordCluster": [
+    "doctolib logiciel métier",
+    "synchroniser agenda doctolib",
+    "automatisation doctolib",
+    "intégration doctolib"
+  ],
+  "parentSlug": null,
+  "level": "Refonte",
+  "author": {
+    "name": "Laura",
+    "jobTitle": "Rédactrice, experte santé",
+    "photo": "/auteurs/laura.jpg",
+    "url": null
+  },
+  "reviewer": {
+    "name": "Olivier",
+    "jobTitle": "Rédacteur, expert tiers payant",
+    "photo": "/auteurs/olivier.jpg",
+    "url": null
+  },
+  "datePublished": "2026-10-30",
+  "dateModified": "2026-10-30",
+  "checkedOn": null,
+  "wordCount": 1965,
+  "readTime": 9,
+  "metaDescription": "Agenda Doctolib centre de santé : connecter des agents à Doctolib et au logiciel métier sans double saisie ni refonte. La méthode par paliers, contrôle gardé.",
+  "contentHtml": "<p><strong>Connecter des agents à Doctolib et au logiciel métier d'un centre ne demande pas de refonte du système d'information. Il faut trois règles : la lecture seule par défaut, l'écriture sur un périmètre explicite et la traçabilité de chaque action.</strong> C'est la réponse courte à la question des directions qui cherchent « agenda Doctolib centre de santé » : comment garder des agendas justes sans que le secrétariat recopie les mêmes informations dans deux outils. Le déploiement se fait ensuite par paliers. Chaque palier est une décision de la direction du centre, pas une décision informatique.</p><p>Cet article s'adresse à la direction d'un centre de santé ou d'un centre médical. Il décrit ce qu'un agent peut faire entre l'agenda en ligne et le logiciel métier, comment supprimer les doubles saisies, qui garde la main sur les écritures et par où commencer sans prendre de risque.</p><div class=\"key-takeaways\"><strong>L'essentiel</strong><ul><li>Un agent travaille dans vos outils existants, avec des droits définis : pas de changement de logiciel ni de chantier d'interfaces sur mesure pour démarrer.</li><li>La première étape est toujours la lecture seule : l'agent observe Doctolib et le logiciel métier, signale les écarts, n'écrit rien.</li><li>L'écriture s'ouvre ensuite cas par cas, d'abord avec validation humaine de chaque action, puis en autonomie quand la fiabilité est démontrée.</li><li>Chaque action est journalisée, attribuée à un superviseur humain et réversible. Le centre reste responsable du traitement au sens du RGPD.</li><li>Action possible dès aujourd'hui : écrire, pour chaque donnée (patient, rendez-vous, absence, acte), quel outil fait foi.</li></ul></div><h2 id=\"projet-informatique-lourd\">Faut-il un projet informatique lourd pour connecter des agents à Doctolib ?</h2><p><strong>Non, pas pour commencer.</strong> L'image du projet d'intégration de plusieurs mois vient des chantiers d'interfaces sur mesure et des changements de logiciel. Un agent ne remplace ni Doctolib ni le logiciel métier : il travaille dedans, comme le ferait un membre de l'équipe avec ses propres accès.</p><p>La différence avec les anciennes approches tient à la façon de travailler. Les robots à scripts fixes reproduisaient une suite de clics et cassaient au moindre changement d'écran. Un agent lit ce qu'il a devant lui et s'adapte au contexte. La différence est détaillée dans notre article sur <a href=\"/ressources/ia-vs-rpa-sante\">IA agentique et robotisation classique en santé</a>.</p><p>Ce qui décide de la réussite n'est donc pas la technique. C'est la gouvernance : qui autorise l'agent à lire, qui l'autorise à écrire, sur quel périmètre, et qui vérifie. Un centre qui a répondu à ces questions avant de brancher quoi que ce soit avance vite. Un centre qui les découvre en cours de route s'arrête.</p><p>Une précaution reste nécessaire. Ce qu'un agent peut faire dépend des accès que vos éditeurs autorisent. Avant de commencer, relisez les conditions de votre contrat Doctolib et de votre logiciel métier, et posez la question à vos interlocuteurs chez chacun d'eux.</p><h2 id=\"agenda-doctolib-centre-de-sante\">Que peut faire un agent sur l'agenda Doctolib d'un centre de santé ?</h2><p><strong>Un agent tient l'agenda en ligne cohérent avec ce que sait le back-office du centre : absences des praticiens, plages ouvertes, rendez-vous à reprogrammer, dossiers patients incomplets.</strong> Ce sont des tâches répétitives, faites aujourd'hui à la main par le secrétariat, souvent en fin de journée.</p><p>Concrètement, dans un centre pluridisciplinaire, l'agenda Doctolib bouge en permanence. Un médecin part en formation, un kinésithérapeute change ses jours de présence, un dentiste ajoute une demi-journée. L'information existe déjà quelque part, dans le planning interne ou chez la direction. Le travail consiste à la répercuter partout, sans oubli.</p><div class=\"tbl\"><table><tr><th>Tâche</th><th>Ce que l'agent lit</th><th>Ce qu'il propose ou écrit</th></tr><tr><td>Absence d'un praticien</td><td>Le planning interne du centre</td><td>La fermeture des plages concernées dans Doctolib</td></tr><tr><td>Rendez-vous à reprogrammer</td><td>Les rendez-vous posés sur une plage fermée</td><td>La liste des patients à rappeler, pour le secrétariat</td></tr><tr><td>Dossier patient incomplet</td><td>Le rendez-vous Doctolib et le dossier dans le logiciel métier</td><td>Un signalement avant la consultation</td></tr><tr><td>Plage ouverte par erreur</td><td>Les créneaux réservables d'un praticien absent</td><td>Une alerte, puis la correction après validation</td></tr></table></div><p>Le dernier maillon compte aussi pour la facturation. Un rendez-vous honoré devient un acte, puis une facture, puis souvent une part de tiers payant à encaisser auprès de l'Assurance maladie obligatoire (AMO) et de la complémentaire (AMC). Un agenda juste en amont, c'est moins d'écarts à corriger en aval.</p><h2 id=\"eviter-doubles-saisies\">Comment éviter les doubles saisies entre Doctolib et le logiciel métier ?</h2><p><strong>La méthode la plus sûre est de désigner, pour chaque donnée, un seul outil qui fait foi, puis de confier les recopies vers les autres outils à l'agent.</strong> La double saisie naît rarement d'un manque d'outil. Elle naît d'une donnée qui n'a pas de propriétaire clair.</p><p>Dans beaucoup de centres, l'identité d'un patient est saisie à la prise de rendez-vous en ligne, puis ressaisie dans le logiciel métier à l'accueil. Les deux versions divergent : une adresse, une orthographe, une date de naissance. La synchronisation de l'agenda Doctolib avec le logiciel métier commence donc par une décision, pas par un connecteur.</p><div class=\"tbl\"><table><tr><th>Donnée</th><th>Outil qui fait foi (exemple)</th><th>Ce que fait l'agent</th></tr><tr><td>Rendez-vous et créneaux</td><td>Doctolib</td><td>Lit les rendez-vous, signale ceux qui n'ont pas de dossier</td></tr><tr><td>Identité et dossier patient</td><td>Logiciel métier</td><td>Compare et signale les écarts, ne corrige rien seul au début</td></tr><tr><td>Absences et présences des praticiens</td><td>Planning interne du centre</td><td>Répercute dans Doctolib</td></tr><tr><td>Actes et facturation</td><td>Logiciel métier</td><td>Lit pour rapprocher rendez-vous honorés et actes facturés</td></tr></table></div><p>Ce tableau est un exemple. Votre centre peut faire d'autres choix, par exemple faire foi au planning tenu dans le logiciel métier. L'important est qu'il n'y ait qu'une réponse par ligne, connue de toute l'équipe.</p><div class=\"callout callout--tip\"><p><strong>Le bon réflexe :</strong> écrivez ce tableau sur une page avant tout branchement et faites-le valider par le secrétariat. Ce sont eux qui savent où naissent les écarts.</p></div><h2 id=\"commencer-lecture-seule\">Pourquoi commencer en lecture seule ?</h2><p><strong>La lecture seule permet de vérifier que l'agent comprend vos flux avant qu'il ne modifie quoi que ce soit.</strong> Pendant cette phase, il se connecte, observe Doctolib et le logiciel métier, et produit des constats. Il n'écrit rien.</p><p>Cette phase sert trois objectifs. D'abord, valider la compréhension des flux : l'agent sait-il distinguer une absence d'un créneau bloqué pour une réunion d'équipe ? Ensuite, calibrer : ajuster ses règles aux habitudes réelles du centre, qui diffèrent toujours un peu des procédures écrites. Enfin, installer la confiance de l'équipe, sans aucun risque pour les patients ni pour les agendas.</p><p>Le livrable typique est une liste quotidienne d'écarts : rendez-vous sans dossier, plages ouvertes pour un praticien absent, identités qui ne concordent pas entre les deux outils. Le secrétariat vérifie chaque ligne. Quand la liste est juste, jour après jour, la question de l'écriture peut se poser.</p><p>Cette liste a souvent une valeur en elle-même. Elle montre à la direction où se trouvent les écarts réels, ce qu'aucun tableau de bord ne montre d'habitude.</p><h2 id=\"ouvrir-ecriture-perimetre\">Comment ouvrir l'écriture sans perdre le contrôle ?</h2><p><strong>On ouvre l'écriture sur un cas précis, avec validation humaine de chaque action, puis on passe en autonomie seulement quand la fiabilité est démontrée sur ce cas.</strong> Le périmètre est écrit noir sur blanc : quelle action, dans quel outil, pour quels praticiens ou quels sites.</p><ol class=\"steps\"><li><strong>Choisir un cas étroit.</strong> Par exemple : fermer dans Doctolib les plages d'un praticien dont l'absence est saisie au planning interne.</li><li><strong>Faire proposer, pas faire écrire.</strong> L'agent prépare la modification, une personne de l'équipe l'accepte ou la refuse.</li><li><strong>Suivre les refus.</strong> Chaque proposition refusée est analysée : règle mal comprise, cas particulier, donnée source fausse.</li><li><strong>Passer en autonomie sur ce cas seulement.</strong> Quand les propositions sont justes de façon régulière, la direction autorise l'agent à écrire seul, avec contrôle a posteriori.</li><li><strong>Ouvrir le cas suivant.</strong> Et recommencer à l'étape 2.</li></ol><p>Cette progression a un coût en temps au début : l'équipe valide des actions qu'elle aurait pu faire elle-même. C'est voulu. C'est pendant cette phase que l'équipe apprend ce que fait l'agent et qu'elle accepte de lui confier la suite.</p><div class=\"callout callout--warn\"><p><strong>Le piège :</strong> ouvrir l'écriture sur « tout l'agenda » d'un coup. Une seule règle mal calibrée peut alors toucher des dizaines de rendez-vous avant que quelqu'un ne s'en aperçoive.</p></div><h2 id=\"qui-garde-la-main\">Qui garde la main sur les écritures ?</h2><p><strong>La direction et l'équipe métier gardent la main : chaque action de l'agent est journalisée, attribuée à un superviseur humain et réversible.</strong> Aucune écriture n'est définitive sans trace. Si une modification pose problème, on sait qui l'a autorisée, quand, et on peut revenir en arrière.</p><p>Cette règle n'est pas qu'une question de confort. Les rendez-vous et les dossiers d'un centre contiennent des données de santé. Le centre est responsable du traitement, et le prestataire qui fournit les agents agit comme sous-traitant. Le <a href=\"https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4\">chapitre IV du RGPD</a> impose dans ce cas un contrat entre les deux (article 28), selon lequel le sous-traitant ne traite les données que sur instruction documentée du responsable. Le même chapitre demande des mesures de sécurité adaptées au risque (article 32) et, pour les traitements susceptibles d'engendrer un risque élevé, une analyse d'impact (article 35).</p><p>Le traitement doit aussi apparaître dans le <a href=\"https://www.cnil.fr/fr/le-registre-des-activites-de-traitement\">registre des activités de traitement</a> du centre, que la CNIL présente comme l'outil de recensement et de pilotage de la conformité. Concrètement, ajoutez une fiche pour l'activité confiée aux agents : finalité, données concernées, durées de conservation, sous-traitant.</p><p>Pour le contenu du journal lui-même (quelles actions tracer, combien de temps, qui y a accès), voyez <a href=\"/ressources/logs-agent-sante\">ce qu'un agent IA doit journaliser en environnement de santé</a>. Le cadre plus large est traité dans <a href=\"/ressources/ia-generative-sante-cadre\">ce que le cadre réglementaire impose vraiment à l'IA en santé</a>.</p><h2 id=\"par-ou-commencer-deploiement\">Par où commencer un déploiement ?</h2><p><strong>Un déploiement commence par une connexion en lecture seule, l'exploration des données et un calibrage, puis l'activation des premiers agents en mode supervisé, avec l'équipe métier qui valide chaque action.</strong> L'extension vient ensuite, palier par palier.</p><p>Voici l'enchaînement, vu du côté de la direction :</p><ol class=\"steps\"><li><strong>Connexion en lecture seule.</strong> L'agent reçoit des accès limités à la consultation, sur Doctolib et sur le logiciel métier.</li><li><strong>Exploration et calibrage.</strong> Il observe les flux réels, l'équipe corrige sa compréhension, la liste d'écarts devient fiable.</li><li><strong>Premiers agents supervisés.</strong> L'écriture s'ouvre sur un cas étroit, chaque action est validée par une personne.</li><li><strong>Extension par paliers.</strong> Nouveaux cas, périmètre élargi, passage en autonomie : chaque palier fait l'objet d'une décision de la direction.</li></ol><div data-figure=\"paliers-deploiement\"></div><p>Cette progression évite l'effet tunnel des projets informatiques classiques, où l'on découvre le résultat à la fin. À chaque palier, le centre voit ce que l'agent apporte et décide d'avancer ou non. C'est la logique des <a href=\"/agents\">agents de Granit</a> : ils commencent par observer, écrivent ensuite sous le contrôle de votre équipe, et chaque action reste tracée et réversible.</p><p>Pour un groupe de plusieurs centres, commencez par un site pilote, avec une équipe volontaire. Les règles calibrées sur ce site se transposent ensuite aux autres, en tenant compte des différences d'organisation. Le pilotage de plusieurs sites est traité dans <a href=\"/ressources/groupes-multi-sites-pilotage\">notre article sur les groupes multi-sites</a>.</p><h2 id=\"decider-palier-suivant\">Comment décider de passer au palier suivant ?</h2><p><strong>On passe au palier suivant quand le palier en cours est mesuré et jugé fiable par l'équipe qui le supervise.</strong> La décision appartient au métier. L'informatique dit si c'est possible, la direction dit si c'est souhaitable.</p><p>Quelques indicateurs simples suffisent, à suivre sur le centre pilote :</p><ul><li>le nombre d'écarts détectés chaque jour entre Doctolib et le logiciel métier, et son évolution ;</li><li>la part des propositions de l'agent acceptées sans correction par l'équipe ;</li><li>le temps que le secrétariat consacre encore aux recopies et aux vérifications d'agenda ;</li><li>les incidents : modifications annulées, patients mal informés, plages fermées à tort.</li></ul><p>Mesurez ces points avant le démarrage, même grossièrement, pour avoir une base de comparaison. Sans point de départ, il est impossible de dire si un palier a apporté quelque chose. D'autres indicateurs de back-office utiles à une direction sont présentés dans <a href=\"/ressources/kpi-back-office-sante\">les KPI back-office santé à suivre</a>.</p><p>Un palier peut aussi ne pas être franchi. Si un cas reste trop variable, par exemple des absences saisies de façon irrégulière au planning interne, mieux vaut d'abord corriger la donnée source que d'élargir le périmètre de l'agent. L'agent révèle souvent un problème d'organisation que personne ne voyait. Le traiter fait partie du bénéfice.</p>",
+  "tocItems": [
+    {
+      "id": "projet-informatique-lourd",
+      "label": "Un projet informatique lourd ?"
+    },
+    {
+      "id": "agenda-doctolib-centre-de-sante",
+      "label": "Ce qu'un agent fait sur l'agenda Doctolib"
+    },
+    {
+      "id": "eviter-doubles-saisies",
+      "label": "Éviter les doubles saisies"
+    },
+    {
+      "id": "commencer-lecture-seule",
+      "label": "Commencer en lecture seule"
+    },
+    {
+      "id": "ouvrir-ecriture-perimetre",
+      "label": "Ouvrir l'écriture sans perdre le contrôle"
+    },
+    {
+      "id": "qui-garde-la-main",
+      "label": "Qui garde la main sur les écritures"
+    },
+    {
+      "id": "par-ou-commencer-deploiement",
+      "label": "Par où commencer un déploiement"
+    },
+    {
+      "id": "decider-palier-suivant",
+      "label": "Décider du palier suivant"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "Peut-on automatiser la gestion d'agenda Doctolib ?",
+      "answer": "Oui, une partie de la gestion d'agenda peut être confiée à des agents qui travaillent dans Doctolib et dans le logiciel métier du centre. Ils répercutent par exemple les absences des praticiens, signalent les rendez-vous à reprogrammer ou les dossiers incomplets. Ce qui est possible dépend des accès autorisés par vos éditeurs, à vérifier dans vos contrats avant de commencer."
+    },
+    {
+      "question": "Comment éviter les doubles saisies entre Doctolib et le logiciel métier ?",
+      "answer": "Il faut désigner, pour chaque donnée, un seul outil qui fait foi : par exemple Doctolib pour les rendez-vous et le logiciel métier pour l'identité patient et la facturation. Les recopies vers les autres outils sont ensuite confiées à l'agent, au lieu d'être ressaisies par le secrétariat. Cette décision se prend avant tout branchement."
+    },
+    {
+      "question": "Qui garde la main sur les écritures ?",
+      "answer": "La direction et l'équipe métier du centre gardent la main. Chaque action de l'agent est journalisée, attribuée à un superviseur humain et réversible. Le centre reste responsable du traitement au sens du RGPD et le prestataire agit comme sous-traitant, sur instruction documentée."
+    },
+    {
+      "question": "Par où commencer un déploiement ?",
+      "answer": "Un déploiement commence par une connexion en lecture seule : l'agent observe Doctolib et le logiciel métier et signale les écarts sans rien modifier. Viennent ensuite le calibrage, puis l'ouverture de l'écriture sur un cas étroit avec validation humaine de chaque action. L'extension se fait par paliers, chacun décidé par la direction."
+    }
+  ],
+  "sources": [
+    {
+      "label": "cnil.fr · RGPD, chapitre IV : responsable du traitement et sous-traitant",
+      "url": "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4"
+    },
+    {
+      "label": "cnil.fr · Le registre des activités de traitement",
+      "url": "https://www.cnil.fr/fr/le-registre-des-activites-de-traitement"
+    }
+  ],
+  "figures": [
+    {
+      "id": "paliers-deploiement",
+      "type": "etapes",
+      "titre": "Un déploiement en quatre paliers",
+      "legende": "L'agent n'écrit qu'au troisième palier, et toujours sous validation humaine au départ.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "Lecture seule",
+          "detail": "Accès en consultation, aucune écriture",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Exploration et calibrage",
+          "detail": "La liste d'écarts devient fiable",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Écriture supervisée",
+          "detail": "Un cas étroit, chaque action validée",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Extension par paliers",
+          "detail": "Chaque palier décidé par la direction",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [],
+  "liensEntrants": [],
+  "remplace": [],
+  "verticales": [
+    "centres"
+  ],
+  "refonte": true,
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-30T10:16:56.836Z",
+    "avertissements": [
+      "aucune citation (facultative)"
+    ]
+  }
+}
