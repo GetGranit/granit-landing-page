@@ -30,7 +30,7 @@ const content = {
     title: "Vos données de santé méritent le plus haut niveau d'exigence.",
     intro:
       "Granit est conçu dès l'origine pour les contraintes réglementaires des établissements de santé : HDS, RGPD, secret médical, référentiels ANS. Aucune donnée patient ne sort jamais du périmètre de confiance.",
-    summaryLabel: "En bref",
+    summaryLabel: "En bref :",
     summary:
       "Granit est certifié HDS. Les données patients sont hébergées en France, chiffrées en transit et au repos, et ne servent jamais à entraîner des modèles tiers. Chaque action d'agent est journalisée, et vous pouvez récupérer ou faire supprimer vos données à tout moment.",
     faqTitle: "Questions fréquentes",
@@ -123,7 +123,7 @@ const content = {
     title: "Your health data deserves the highest level of rigor.",
     intro:
       "Granit is built from day one for healthcare regulatory constraints: HDS, GDPR, medical confidentiality and ANS frameworks. Patient data never leaves the trust perimeter.",
-    summaryLabel: "In short",
+    summaryLabel: "In short:",
     summary:
       "Granit is HDS certified. Patient data is hosted in France, encrypted in transit and at rest, and never used to train third-party models. Every agent action is logged, and you can retrieve or delete your data at any time.",
     faqTitle: "Frequently asked questions",
@@ -234,7 +234,7 @@ function SecuritePage() {
                 className="mt-6 max-w-2xl text-[14px] leading-[1.7]"
                 style={{ color: "var(--text-soft)" }}
               >
-                <strong style={{ color: "var(--text)", fontWeight: 600 }}>{t.summaryLabel} :</strong>{" "}
+                <strong style={{ color: "var(--text)", fontWeight: 600 }}>{t.summaryLabel}</strong>{" "}
                 {t.summary}
               </p>
             </Reveal>

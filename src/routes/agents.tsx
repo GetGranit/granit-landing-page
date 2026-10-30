@@ -23,7 +23,7 @@ const content = {
     eyebrow: "Agents",
     title: "Un catalogue d'agents pour chaque verticale santé.",
     intro: "Granit déploie des agents spécialisés par métier et par cas d'usage. Ils opèrent sur vos outils existants, sans migration ni intégration API.",
-    summaryLabel: "En bref",
+    summaryLabel: "En bref :",
     summary:
       "Granit déploie des agents IA qui automatisent le back-office administratif des professionnels de santé : tiers payant, devis, facturation, traitement des rejets, rapprochement bancaire et recouvrement. Chaque agent est spécialisé par métier (optique, audio, dentaire, pharmacie, EHPAD, cliniques, laboratoires) et travaille sur vos outils existants, sans migration ni intégration API.",
     filtersTitle: "Les agents par métier et par cas d'usage",
@@ -91,7 +91,7 @@ const content = {
     eyebrow: "Agents",
     title: "A catalog of agents for every healthcare vertical.",
     intro: "Granit deploys specialized agents by business vertical and use case. They operate on your existing tools, with no migration or API integration.",
-    summaryLabel: "In short",
+    summaryLabel: "In short:",
     summary:
       "Granit deploys AI agents that automate the administrative back office of healthcare professionals: third-party payment, quotes, invoicing, rejection handling, bank reconciliation and collections. Each agent is specialized by trade (optical, hearing care, dental, pharmacy, care homes, clinics, labs) and works on your existing tools, with no migration or API integration.",
     filtersTitle: "Agents by trade and use case",
@@ -202,7 +202,7 @@ function AgentsPage() {
             className="mt-6 max-w-2xl text-[14px] leading-[1.7]"
             style={{ color: "var(--text-soft)" }}
           >
-            <strong style={{ color: "var(--text)", fontWeight: 600 }}>{t.summaryLabel} :</strong>{" "}
+            <strong style={{ color: "var(--text)", fontWeight: 600 }}>{t.summaryLabel}</strong>{" "}
             {t.summary}
           </p>
         </Reveal>

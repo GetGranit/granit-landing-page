@@ -31,7 +31,7 @@ const content = {
     eyebrow: "Tarifs",
     title: "Simple, lisible, à l'usage.",
     intro: "Un forfait plateforme mensuel par centre, puis un coût à l'usage par agent selon les workflows activés et le volume traité.",
-    summaryLabel: "En bref",
+    summaryLabel: "En bref :",
     summary:
       "Granit se paie par centre et par mois : à partir de 199 € HT pour un centre, à partir de 149 € HT par centre de 5 à 10 centres, sur devis au-delà de 10 centres. S'ajoute un coût à l'usage par agent, selon les workflows activés et le volume traité. L'hébergement HDS, les connecteurs et le support sont inclus, et le contrat se résilie à tout moment avec 30 jours de préavis.",
     tiersTitle: "Prix par centre",
@@ -90,7 +90,7 @@ const content = {
     eyebrow: "Pricing",
     title: "Simple, clear, usage-based.",
     intro: "A monthly platform fee per center, then a usage fee per agent based on enabled workflows and processed volume.",
-    summaryLabel: "In short",
+    summaryLabel: "In short:",
     summary:
       "Granit is billed per center and per month: from €199 excl. VAT for one center, from €149 per center for 5 to 10 centers, custom pricing above 10 centers. A usage fee per agent is added, based on enabled workflows and processed volume. HDS hosting, connectors and support are included, and the contract can be cancelled at any time with 30 days' notice.",
     tiersTitle: "Price per center",
@@ -216,7 +216,7 @@ function TarifsPage() {
             className="mx-auto mt-6 max-w-2xl text-[14px] leading-[1.7]"
             style={{ color: "var(--text-soft)" }}
           >
-            <strong style={{ color: "var(--text)", fontWeight: 600 }}>{t.summaryLabel} :</strong>{" "}
+            <strong style={{ color: "var(--text)", fontWeight: 600 }}>{t.summaryLabel}</strong>{" "}
             {t.summary}
           </p>
         </Reveal>
