@@ -34,6 +34,8 @@ export function AccesEspacePro({ p, slug }: { p: Plateforme; slug: string }) {
   const acces = p.acces;
   if (!acces) return null;
   const [principal, ...autres] = acces.liens;
+  // Le lien peut être chez l'opérateur du TP (Sévéane → korelio.com) : on nomme le domaine, pas la marque.
+  const domaines = [...new Set(acces.liens.map((l) => domaine(l.url)))];
   const clic = (url: string, rang: number) =>
     posthog?.capture("portail_acces_clicked", {
       plateforme: p.nom,
@@ -102,7 +104,9 @@ export function AccesEspacePro({ p, slug }: { p: Plateforme; slug: string }) {
       )}
       <p className="mt-3 text-[13px] leading-snug text-[var(--text-muted)]">
         {principal
-          ? `Site officiel de ${p.nom}, lien vérifié le ${dateFr(acces.verifieLe, true)}. Vos identifiants se saisissent sur ce site, jamais sur getgranit.ai.`
+          ? domaines.length > 1
+            ? `Sites officiels (${domaines.join(", ")}), liens vérifiés le ${dateFr(acces.verifieLe, true)}. Vos identifiants se saisissent sur ces sites, jamais sur getgranit.ai.`
+            : `Site officiel (${domaines[0]}), lien vérifié le ${dateFr(acces.verifieLe, true)}. Vos identifiants se saisissent sur ce site, jamais sur getgranit.ai.`
           : `Vérifié le ${dateFr(acces.verifieLe, true)}.`}
       </p>
     </section>
