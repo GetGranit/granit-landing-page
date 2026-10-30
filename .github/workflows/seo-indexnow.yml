@@ -1,0 +1,54 @@
+# IndexNow : après chaque déploiement en production réussi (Vercel), prévient Bing des articles
+# publiés, refondus ou redirigés depuis le dernier envoi. Le tag `indexnow-envoye` marque le dernier
+# commit envoyé. Déclenché par le déploiement (et pas par le push) pour couvrir aussi les commits du bot.
+name: SEO · IndexNow
+
+on:
+  deployment_status:
+  workflow_dispatch:
+    inputs:
+      tout:
+        description: "Envoyer toutes les URL du sitemap"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: seo-indexnow
+  cancel-in-progress: false
+
+jobs:
+  envoyer:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.deployment_status.state == 'success' &&
+       startsWith(github.event.deployment.environment, 'Production'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.deployment.sha || github.sha }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Envoyer à IndexNow
+        env:
+          TOUT: ${{ inputs.tout }}
+        run: |
+          set -euo pipefail
+          if [ "${TOUT:-false}" = "true" ]; then
+            node scripts/seo-engine/indexnow.mjs --sitemap
+          elif ! git rev-parse -q --verify refs/tags/indexnow-envoye >/dev/null; then
+            echo "Pas encore de tag indexnow-envoye : premier passage, on marque sans envoyer."
+          elif ! git merge-base --is-ancestor indexnow-envoye HEAD; then
+            echo "Déploiement plus ancien que le dernier envoi : rien à faire."
+            exit 0
+          else
+            node scripts/seo-engine/indexnow.mjs --depuis indexnow-envoye
+          fi
+          git tag -f indexnow-envoye HEAD
+          git push -f origin refs/tags/indexnow-envoye
