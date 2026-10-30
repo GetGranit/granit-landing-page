@@ -6,16 +6,16 @@ import { Reveal } from "@/components/Reveal";
 import { useLanguage } from "@/lib/i18n";
 import { SITE_URL, organizationLd } from "@/lib/seo";
 import { calcomDemoUrl } from "@/lib/calcom";
-import { chiffres, content, equipe, histoire, type Lang, type Membre } from "@/lib/aProposCopy";
+import { chiffres, content, equipe, type Lang, type Membre } from "@/lib/aProposCopy";
 
 // Structure inspirée de vocca.com/fr/a-propos : hero, chiffres, problème → réponse, convictions,
-// histoire, équipe, cap, FAQ, CTA. Textes et données dans src/lib/aProposCopy.ts.
+// équipe, FAQ, CTA (histoire et cap retirés : boîte jeune). Textes et données dans src/lib/aProposCopy.ts.
 // TODO Paul : date de création légale de Granit introuvable dans le repo ; l'ajouter dans le hero
 // (heroDateTodo) et en `foundingDate` ci-dessous une fois confirmée.
 
 const TITRE = "À propos de Granit : l'équipe et la mission - Granit";
 const DESCRIPTION =
-  "Granit conçoit des agents IA pour le tiers payant et l'administratif des magasins et cabinets de santé. Fondé par Jenny Mansour (CEO) et Corneille Marechal (CTO).";
+  "Granit conçoit des agents IA pour le back-office des professionnels de santé, dans leurs outils. Fondé par Jenny Mansour (CEO) et Corneille Marechal (CTO).";
 
 export const Route = createFileRoute("/a-propos")({
   head: () => ({
@@ -152,38 +152,7 @@ function AProposPage() {
         </div>
       </Section>
 
-      {/* 5. Notre histoire : seule l'étape 2026 est sourcée */}
-      <Section titre={t.histoireTitre}>
-        <ol className="max-w-3xl border-l-2 pl-8" style={{ borderColor: "var(--border)" }}>
-          {histoire.map((h) => (
-            <li key={h.titre.fr} className="relative pb-10 last:pb-0">
-              <span
-                aria-hidden
-                className="absolute -left-[41px] top-1 h-4 w-4 rounded-full"
-                style={{
-                  background: h.todo ? "var(--bg2)" : "var(--terra)",
-                  border: "2px solid var(--terra)",
-                }}
-              />
-              <div
-                className="text-[13px]"
-                style={{ fontFamily: "var(--font-mono)", color: "var(--terra)" }}
-              >
-                {h.annee ?? <Todo>{lang === "fr" ? "année" : "year"}</Todo>}
-              </div>
-              <h3 className="mt-1 text-[17px]" style={{ fontWeight: 500 }}>
-                {h.titre[lang]}{" "}
-                {h.todo && <Todo>{lang === "fr" ? "à confirmer" : "to confirm"}</Todo>}
-              </h3>
-              <p className="mt-1 text-[15px] leading-[1.7]" style={{ color: "var(--text-soft)" }}>
-                {h.texte[lang]}
-              </p>
-            </li>
-          ))}
-        </ol>
-      </Section>
-
-      {/* 6. L'équipe : ajouter un membre = une ligne dans `equipe` (aProposCopy.ts) */}
+      {/* 5. L'équipe : ajouter un membre = une ligne dans `equipe` (aProposCopy.ts) */}
       <Section titre={t.equipeTitre} intro={t.equipeIntro}>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {equipe.map((m, i) => (
@@ -194,31 +163,24 @@ function AProposPage() {
         </div>
       </Section>
 
-      {/* 7. Notre cap */}
-      <Section titre={t.capTitre}>
-        <div className="grid gap-4 md:grid-cols-3">
-          {t.cap.map((c, i) => (
-            <Reveal key={c.t} delay={i * 0.04}>
-              <Bloc
-                numero={i + 1}
-                titre={c.t}
-                texte={c.d}
-                todo={c.todo ? (lang === "fr" ? "à préciser" : "to specify") : undefined}
-              />
-            </Reveal>
-          ))}
-        </div>
-      </Section>
-
-      {/* 8. FAQ : réponses toujours visibles (pas d'accordéon), lisibles dès le HTML serveur */}
+      {/* FAQ en accordéon natif (<details>) : les réponses restent dans le HTML serveur, lisibles par les moteurs */}
       <Section titre={t.faqTitle}>
-        <div className="max-w-3xl">
+        <div className="max-w-3xl border-b" style={{ borderColor: "var(--border)" }}>
           {t.faq.map((f) => (
-            <div key={f.q} className="border-t py-6" style={{ borderColor: "var(--border)" }}>
-              <h3 className="text-[17px]" style={{ fontWeight: 500 }}>
-                {f.q}
-              </h3>
-              <p className="mt-2 text-[15px] leading-[1.7]" style={{ color: "var(--text-soft)" }}>
+            <details key={f.q} className="group border-t" style={{ borderColor: "var(--border)" }}>
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-6 [&::-webkit-details-marker]:hidden">
+                <h3 className="text-[17px]" style={{ fontWeight: 500 }}>
+                  {f.q}
+                </h3>
+                <span
+                  aria-hidden
+                  className="text-[22px] leading-none transition-transform group-open:rotate-45"
+                  style={{ color: "var(--terra)" }}
+                >
+                  +
+                </span>
+              </summary>
+              <p className="pb-6 text-[15px] leading-[1.7]" style={{ color: "var(--text-soft)" }}>
                 {f.a}
                 {"lien" in f && f.lien && (
                   <>
@@ -229,12 +191,12 @@ function AProposPage() {
                   </>
                 )}
               </p>
-            </div>
+            </details>
           ))}
         </div>
       </Section>
 
-      {/* 9. CTA final : même bouton démo Cal.com que la page d'accueil */}
+      {/* 7. CTA final : même bouton démo Cal.com que la page d'accueil */}
       <section className="mx-auto max-w-[1280px] px-6 pb-28">
         <Reveal>
           <div
@@ -310,18 +272,7 @@ function Todo({ children }: { children: ReactNode }) {
   );
 }
 
-function Bloc({
-  numero,
-  titre,
-  texte,
-  todo,
-}: {
-  numero: number;
-  titre: string;
-  texte: string;
-  /** Libellé du repère TODO, si le bloc est à compléter. */
-  todo?: string;
-}) {
+function Bloc({ numero, titre, texte }: { numero: number; titre: string; texte: string }) {
   return (
     <div
       className="h-full rounded-[8px] border bg-white/40 p-6"
@@ -339,7 +290,6 @@ function Bloc({
       <p className="mt-2 text-[14px] leading-[1.65]" style={{ color: "var(--text-soft)" }}>
         {texte}
       </p>
-      {todo && <Todo>{todo}</Todo>}
     </div>
   );
 }

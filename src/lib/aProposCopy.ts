@@ -78,99 +78,61 @@ export const equipe: Membre[] = [
    ============================================================ */
 // TODO Paul : remplir les 4 chiffres (et leur source) ou retirer la ligne.
 export const chiffres: { valeur: string | null; libelle: Txt }[] = [
-  { valeur: null, libelle: { fr: "PEC déposées", en: "Coverage requests filed" } },
-  { valeur: null, libelle: { fr: "magasins équipés", en: "stores equipped" } },
-  { valeur: null, libelle: { fr: "portails mutuelles couverts", en: "insurer portals covered" } },
+  {
+    valeur: null,
+    libelle: { fr: "tâches traitées par les agents", en: "tasks handled by the agents" },
+  },
+  { valeur: null, libelle: { fr: "établissements équipés", en: "sites equipped" } },
+  {
+    valeur: null,
+    libelle: { fr: "outils et portails connectés", en: "tools and portals connected" },
+  },
   { valeur: null, libelle: { fr: "métiers de santé", en: "healthcare professions" } },
-];
-
-/* ============================================================
-   HISTOIRE : seule l'étape 2026 est sourcée (début des postes chez Granit : mars 2026).
-   `annee: null` ou `todo: true` = étape à compléter, affichée comme TODO.
-   ============================================================ */
-// TODO Paul : date exacte de création (immatriculation), premiers magasins, étapes suivantes.
-export const histoire: { annee: string | null; titre: Txt; texte: Txt; todo?: boolean }[] = [
-  {
-    annee: "2026",
-    titre: { fr: "Les débuts de Granit", en: "Granit begins" },
-    texte: {
-      fr: "Jenny Mansour et Corneille Marechal se consacrent à Granit depuis mars 2026.",
-      en: "Jenny Mansour and Corneille Marechal have been working on Granit since March 2026.",
-    },
-  },
-  {
-    annee: null,
-    todo: true,
-    titre: { fr: "Premiers magasins d'optique équipés", en: "First optical stores equipped" },
-    texte: { fr: "Date et détail à compléter.", en: "Date and details to complete." },
-  },
-  {
-    annee: null,
-    todo: true,
-    titre: { fr: "Étape suivante", en: "Next milestone" },
-    texte: { fr: "À compléter.", en: "To complete." },
-  },
 ];
 
 export const content = {
   fr: {
     eyebrow: "À propos de Granit",
-    title: "Les agents IA qui gèrent le tiers payant des magasins et cabinets de santé.",
+    title: "Les agents IA qui prennent en charge l'administratif des professionnels de santé.",
     // Phrase « façon Vocca » : la date de création est un TODO (affichée à part).
     heroAvant: "Fondée en",
     heroApres:
-      "par Jenny Mansour et Corneille Marechal, Granit conçoit des agents IA qui gèrent le tiers payant, les prises en charge, les rejets et les relances, directement dans les outils des équipes.",
+      "par Jenny Mansour et Corneille Marechal, Granit conçoit des agents IA qui gèrent le back-office des professionnels de santé, directement dans leurs outils du quotidien.",
     heroDateTodo: "date",
     photoAlt: "L'équipe Granit dans ses bureaux à Paris",
     // Réponse citable à « Qu'est-ce que Granit ? » (40-60 mots) : sert aux données structurées.
-    lead: "Granit est une entreprise basée à Paris qui conçoit des agents IA pour l'administratif des magasins et cabinets de santé. Les agents gèrent le tiers payant, les prises en charge, les rejets et les relances, dans les outils que les équipes utilisent déjà. Granit commence par l'optique, puis s'étend au dentaire, à l'audioprothèse et aux autres métiers de santé.",
+    lead: "Granit est une entreprise basée à Paris qui conçoit des agents IA pour le back-office des professionnels de santé. Les agents prennent en charge les tâches administratives du quotidien : tiers payant, facturation, commandes fournisseurs, relances, rapprochement des paiements. Ils travaillent dans les outils déjà en place. Granit a commencé par l'optique et s'étend aux autres métiers de santé.",
     chiffresTitre: "Granit en chiffres",
     problemeTitre: "Pourquoi Granit",
     probleme: [
-      "Les équipes des magasins et cabinets de santé passent des heures chaque jour sur des tâches répétitives : vérification des droits, demandes de prise en charge, télétransmission, traitement des rejets, relances des impayés. Pendant ce temps, les patients attendent. Les remboursements aussi.",
-      "Granit déploie des agents IA qui prennent ces tâches en charge. Ils travaillent dans le navigateur, sur les portails et logiciels déjà en place : pas de projet informatique, pas de changement d'outil pour l'équipe.",
+      "Les professionnels de santé passent des heures chaque jour sur l'administratif : prises en charge, facturation, commandes aux fournisseurs, rejets, relances, rapprochement des paiements. Ce temps, ils ne le passent pas avec leurs patients.",
+      "Granit déploie des agents IA qui prennent ces tâches en charge, depuis les outils que les équipes utilisent déjà : logiciel métier, portails, navigateur. Pas de projet informatique, pas de nouvel outil à apprendre.",
     ],
     convictionsTitre: "Nos convictions",
     convictions: [
       {
         t: "Dans vos outils, pas à côté",
-        d: "Les agents travaillent dans le navigateur, sur les portails mutuelles et les logiciels déjà en place. Pas de projet d'intégration, pas de nouvel outil à apprendre.",
+        d: "Les agents travaillent là où l'équipe travaille déjà : logiciel métier, portails, navigateur. Pas de projet d'intégration, pas de nouvel outil à apprendre.",
       },
       {
         t: "Spécialisés métier",
-        d: "Chaque mutuelle et chaque portail a ses règles, ses pièces et ses motifs de rejet. Les agents sont construits pour ces règles, métier par métier, en commençant par l'optique.",
+        d: "Chaque métier a ses règles, ses interlocuteurs et ses outils. Les agents sont construits pour ces règles, métier par métier, en commençant par l'optique.",
       },
       {
         t: "L'agent prépare, l'humain valide",
         d: "Les agents font le travail répétitif et préparent les dossiers. L'équipe garde la main et valide ce qui part.",
       },
     ],
-    histoireTitre: "Notre histoire",
     equipeTitre: "L'équipe",
     equipeIntro:
       "Granit a été cofondé par Jenny Mansour et Corneille Marechal, tous deux diplômés de l'École polytechnique et du MSc X-HEC Entrepreneurs.",
     linkedin: "LinkedIn",
-    capTitre: "Notre cap",
-    cap: [
-      {
-        t: "Plus de métiers",
-        d: "Après l'optique : le dentaire, l'audioprothèse et les autres professionnels de santé qui gèrent du tiers payant.",
-        todo: false,
-      },
-      {
-        t: "Plus de portails et de logiciels",
-        d: "Chaque portail mutuelle ou logiciel métier couvert élargit ce que les agents peuvent faire.",
-        // TODO Paul : priorités / prochains portails si on veut les afficher.
-        todo: true,
-      },
-      {
-        t: "Tout ce qui ne soigne pas",
-        d: "Au-delà du tiers payant : recouvrement, relances et le reste de l'administratif.",
-        todo: false,
-      },
-    ],
     faqTitle: "Questions fréquentes",
     faq: [
+      {
+        q: "Que font les agents Granit ?",
+        a: "Ils prennent en charge les tâches administratives répétitives des professionnels de santé : tiers payant et prises en charge, facturation, commandes fournisseurs, traitement des rejets, relances et rapprochement des paiements. L'équipe garde la main et valide ce qui part.",
+      },
       {
         q: "Qui est derrière Granit ?",
         a: "Granit a été cofondé par Jenny Mansour, CEO, et Corneille Marechal, CTO. Jenny Mansour a travaillé au Boston Consulting Group, au ministère des Solidarités et de la Santé et chez Galileo Global Education. Corneille Marechal a été le premier salarié et founding engineer d'apiday.",
@@ -182,72 +144,57 @@ export const content = {
       },
       {
         q: "Pour quels métiers de santé ?",
-        a: "Granit commence par les magasins d'optique. Les agents s'étendent au dentaire, à l'audioprothèse et aux autres professionnels de santé qui gèrent du tiers payant.",
+        a: "Granit a commencé par les magasins d'optique. Les agents s'étendent aux autres professionnels de santé qui veulent alléger leur back-office.",
       },
       {
         q: "Depuis quand Granit existe-t-il ?",
         a: "Jenny Mansour et Corneille Marechal se consacrent à Granit depuis mars 2026.",
       },
     ],
-    ctaTitre: "Parlons de votre tiers payant",
+    ctaTitre: "Parlons de votre back-office",
     ctaTexte: "15 minutes en visio : on vous montre les agents Granit au travail, sur vos cas.",
     ctaBouton: "Voir une démo du produit",
   },
   en: {
     eyebrow: "About Granit",
-    title: "AI agents that handle third-party payment for healthcare stores and practices.",
+    title: "AI agents that take over the admin work of healthcare professionals.",
     heroAvant: "Founded in",
     heroApres:
-      "by Jenny Mansour and Corneille Marechal, Granit builds AI agents that handle third-party payment, coverage requests, rejections and follow-ups, directly inside the teams' tools.",
+      "by Jenny Mansour and Corneille Marechal, Granit builds AI agents that run the back office of healthcare professionals, directly inside their everyday tools.",
     heroDateTodo: "date",
     photoAlt: "The Granit team in its Paris office",
-    lead: "Granit is a Paris-based company building AI agents for the administrative work of healthcare stores and practices. The agents handle third-party payment, coverage requests, rejections and follow-ups, directly inside the tools teams already use. Granit starts with optical stores, then expands to dental, hearing care and other healthcare professions.",
+    lead: "Granit is a Paris-based company building AI agents for the back office of healthcare professionals. The agents take over everyday admin work: third-party payment, billing, supplier orders, follow-ups, payment reconciliation. They work inside the tools already in place. Granit started with optical stores and is expanding to other healthcare professions.",
     chiffresTitre: "Granit in numbers",
     problemeTitre: "Why Granit",
     probleme: [
-      "Teams in healthcare stores and practices spend hours every day on repetitive work: eligibility checks, coverage requests, claim transmission, rejections, unpaid follow-ups. Meanwhile, patients wait. Reimbursements wait too.",
-      "Granit deploys AI agents that take over these tasks. They work in the browser, on the portals and software already in place: no IT project, no new tool for the team.",
+      "Healthcare professionals spend hours every day on admin: coverage requests, billing, supplier orders, rejections, follow-ups, payment reconciliation. That is time they don't spend with patients.",
+      "Granit deploys AI agents that take over these tasks, from the tools teams already use: business software, portals, browser. No IT project, no new tool to learn.",
     ],
     convictionsTitre: "What we believe",
     convictions: [
       {
         t: "Inside your tools, not next to them",
-        d: "The agents work in the browser, on the insurer portals and software already in place. No integration project, no new tool to learn.",
+        d: "The agents work where the team already works: business software, portals, browser. No integration project, no new tool to learn.",
       },
       {
         t: "Built for each profession",
-        d: "Every insurer and every portal has its own rules, documents and rejection reasons. The agents are built for those rules, profession by profession, starting with optical.",
+        d: "Every profession has its own rules, counterparts and tools. The agents are built for those rules, profession by profession, starting with optical.",
       },
       {
         t: "The agent prepares, people approve",
         d: "The agents do the repetitive work and prepare the files. The team stays in control and approves what goes out.",
       },
     ],
-    histoireTitre: "Our story",
     equipeTitre: "The team",
     equipeIntro:
       "Granit was co-founded by Jenny Mansour and Corneille Marechal, both graduates of École polytechnique and the MSc X-HEC Entrepreneurs.",
     linkedin: "LinkedIn",
-    capTitre: "Where we're heading",
-    cap: [
-      {
-        t: "More professions",
-        d: "After optical: dental, hearing care and other healthcare professionals who handle third-party payment.",
-        todo: false,
-      },
-      {
-        t: "More portals and software",
-        d: "Every insurer portal or business software covered expands what the agents can do.",
-        todo: true,
-      },
-      {
-        t: "Everything that isn't care",
-        d: "Beyond third-party payment: collections, follow-ups and the rest of the admin work.",
-        todo: false,
-      },
-    ],
     faqTitle: "Frequently asked questions",
     faq: [
+      {
+        q: "What do Granit agents do?",
+        a: "They take over the repetitive admin work of healthcare professionals: third-party payment and coverage requests, billing, supplier orders, rejections, follow-ups and payment reconciliation. The team stays in control and approves what goes out.",
+      },
       {
         q: "Who is behind Granit?",
         a: "Granit was co-founded by Jenny Mansour, CEO, and Corneille Marechal, CTO. Jenny Mansour worked at Boston Consulting Group, the French Ministry of Health and Galileo Global Education. Corneille Marechal was the first employee and founding engineer at apiday.",
@@ -259,14 +206,14 @@ export const content = {
       },
       {
         q: "Which healthcare professions?",
-        a: "Granit starts with optical stores. The agents expand to dental, hearing care and other healthcare professionals who handle third-party payment.",
+        a: "Granit started with optical stores. The agents are expanding to other healthcare professionals who want a lighter back office.",
       },
       {
         q: "How long has Granit been around?",
         a: "Jenny Mansour and Corneille Marechal have been working on Granit since March 2026.",
       },
     ],
-    ctaTitre: "Let's talk about your third-party payment",
+    ctaTitre: "Let's talk about your back office",
     ctaTexte: "15-minute video call: we show you Granit agents at work, on your cases.",
     ctaBouton: "See a product demo",
   },
