@@ -37,7 +37,18 @@ async function verifier(slug) {
     pagesProduit: config.pagesProduit,
   });
   const s = await verifierSources(out.sources ?? [], citations(out.contentHtml ?? ""));
-  return { slug, erreurs: [...c.erreurs, ...s.erreurs], avert: [...c.avertissements, ...s.avertissements], nbMots: c.nbMots };
+  // Liens de connexion à l'espace pro (en tête des pages plateforme) : une adresse morte est une erreur.
+  // Certains portails refusent les robots (403) : seulement un avertissement.
+  const liensAcces = typeDePage(article) === "plateforme" ? (faitsPour(article)?.faits?.acces?.liens ?? []) : [];
+  const a = await verifierSources(liensAcces);
+  const acces = (m) => `accès espace pro, ${m.replace(/^source /, "lien ")}`;
+  return {
+    slug,
+    erreurs: [...c.erreurs, ...s.erreurs, ...a.erreurs.map(acces)],
+    // une page de connexion est presque toujours rendue en JavaScript : pas de citation à y vérifier
+    avert: [...c.avertissements, ...s.avertissements, ...a.avertissements.filter((m) => !m.includes("rendue en JavaScript")).map(acces)],
+    nbMots: c.nbMots,
+  };
 }
 
 const resultats = [];

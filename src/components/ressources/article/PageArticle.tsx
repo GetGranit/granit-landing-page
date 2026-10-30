@@ -12,6 +12,7 @@ import { logoPlateforme, statutsCarte } from "@/lib/ressources/logos";
 import { FIGURE_CSS } from "@/lib/ressources/figures";
 import { Fil, itemMetier } from "../Fil";
 import { SousNav } from "../Onglets";
+import { AccesEspacePro } from "./AccesEspacePro";
 import { FicheIdentite } from "./BlocsPlateforme";
 import { Corps } from "./Corps";
 import { Ancres } from "./Ancres";
@@ -200,6 +201,8 @@ export function PageArticle({
                 </h1>
               </div>
               <Signature a={a} nbSources={nbSources} />
+              {/* Lien officiel de connexion au portail : beaucoup de lecteurs viennent pour ça. */}
+              {p?.acces && <AccesEspacePro p={p} slug={a.slug} />}
             </div>
             {/* Photo du thème à droite, sur grand écran seulement : la réponse reste visible sans défiler. */}
             {fiche && (

@@ -48,6 +48,7 @@ Les piliers (`level` commence par « Pilier ») utilisent le type de leur catég
 | 4 | Fil d'Ariane | Moteur | Accueil › Ressources › {Catégorie} › {Titre}. Tous cliquables sauf le dernier. Balisé `BreadcrumbList` |
 | 5 | H1 | File (`title`) | Le titre de la file, tel quel. Plateforme : logo à gauche du H1 (64 px, fond blanc, bord fin) si `logo` est renseigné, sinon monogramme (initiale sur la couleur de la catégorie) |
 | 6 | Signature | Moteur | Photo + nom + fonction de l'auteur · « Relu par {reviewer} » si renseigné · « Mis à jour le {dateModified} » · temps de lecture. Plateforme : « Informations relevées le {checkedOn} » remplace « Mis à jour le » |
+| 6 bis | Accès à l'espace pro (plateforme, et toute page qui a un `plateforme`) | Gabarit, depuis `acces` du fichier de faits | « Accéder à l'espace pro {nom} » : bouton vers le lien officiel de connexion, détail de connexion, mention « Site officiel de {nom}, lien vérifié le {verifieLe} ». Sous la signature, visible sans défiler : beaucoup de lecteurs arrivent en cherchant à se connecter au portail |
 | 7 | Ouverture | Claude (`contentHtml`) | La réponse directe, phrase clé en gras. Pas de couverture au-dessus : la réponse doit être visible sans défiler |
 | 8 | « L'essentiel » | Claude (`contentHtml`) | 3 à 5 puces, juste après l'ouverture |
 | 9 | Fiche d'identité (plateforme) | Gabarit, depuis `identite` | 4 cases : Type, Optique, Portail, Connexion. Insérée juste après « L'essentiel » |
@@ -136,6 +137,21 @@ Section envoyée à Claude pour les pages plateformes.
 ### Ce que Claude reçoit en plus
 
 Le contenu de `plateformes/{nom}.json` : `identite`, `chiffres`, `faits`, `conventionnement`, `statuts`, `contacts`, `organismes` (la liste complète) et `sources`. Chaque fait porte la clé de sa source.
+
+Le fichier porte aussi `acces`, que Claude ne réécrit pas (le gabarit l'affiche en tête de page, bloc 6 bis) :
+
+```json
+"acces": {
+  "verifieLe": "2026-10-30",
+  "liens": [
+    { "label": "Se connecter sur viamedis.net", "url": "https://www.viamedis.net/ViamedisNet/page/accueil/index", "detail": "E-mail, mot de passe, puis code d'une application d'authentification." }
+  ]
+}
+```
+
+- `liens` : la page de connexion **officielle** de l'opérateur, vérifiée en ligne (réponse 200 ou redirection vers un écran de connexion, sur le domaine de l'opérateur). Le premier lien est le bouton principal, les suivants s'affichent à côté (ex. Korelio et Sévéane). `detail` reprend le mode de connexion du fichier de faits.
+- Pas de lien sûr : `"liens": []` et une `note` qui dit pourquoi. Ne jamais mettre un lien deviné.
+- `verifieLe` : date de la vérification. Le moteur signale un lien vérifié il y a plus de 180 jours.
 
 ### Ce que Claude doit faire
 
@@ -253,6 +269,7 @@ Le moteur refuse l'article (et réessaie une fois) si :
 - un `id` de H2 n'a pas son entrée dans `tocItems`, ou l'inverse ;
 - un lien externe du corps n'est pas dans `sources`, ou `sources` contient moins de 2 entrées ;
 - page plateforme : un des 4 marqueurs manque ou apparaît deux fois, ou un nombre du texte n'apparaît pas dans le fichier de faits ;
+- page plateforme : `title` de plus de 60 caractères, ou fichier de faits sans `acces` (ou `acces` sans lien ni note, date mal formée, lien non https). Avertissements : lien d'accès sur un domaine absent des sources et contacts, lien vérifié il y a plus de 180 jours, lien d'accès repris tel quel dans le texte. `verifier-article.mjs` ouvre aussi chaque lien d'accès : une adresse morte (404, 410, domaine introuvable) est une erreur ;
 - page résolution : pas de `ol.steps`.
 
 ---

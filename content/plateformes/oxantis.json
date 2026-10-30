@@ -3,6 +3,16 @@
   "nom": "Oxantis",
   "logo": "/logos/oxantis.png",
   "checkedOn": "2026-10-07",
+  "acces": {
+    "verifieLe": "2026-10-30",
+    "liens": [
+      {
+        "label": "Se connecter sur oxantis.net",
+        "url": "https://www.oxantis.net/HmNet/page/accueil/index",
+        "detail": "Double authentification, code par appel ou SMS."
+      }
+    ]
+  },
   "identite": [
     {
       "label": "Type",

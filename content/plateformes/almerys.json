@@ -3,6 +3,16 @@
   "nom": "Almerys",
   "logo": "/logos/almerys.webp",
   "checkedOn": "2026-10-07",
+  "acces": {
+    "verifieLe": "2026-10-30",
+    "liens": [
+      {
+        "label": "Se connecter au site des PEC Almerys",
+        "url": "https://www.almerys.com/site/Login.do",
+        "detail": "Code à usage unique reçu par e-mail."
+      }
+    ]
+  },
   "identite": [
     {
       "label": "Type",

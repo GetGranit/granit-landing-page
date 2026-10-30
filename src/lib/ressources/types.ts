@@ -70,12 +70,20 @@ export type RessourceJson = {
   preview?: boolean;
 };
 
+export type LienAcces = { label: string; url: string; detail?: string };
+
 /** Fichier de faits content/plateformes/{nom}.json. */
 export type Plateforme = {
   slug: string;
   nom: string;
   logo?: string;
   checkedOn: string;
+  /**
+   * Connexion à l'espace pro, affichée en tête de page (« Accéder à l'espace pro … »).
+   * Liens officiels de l'opérateur, vérifiés en ligne le `verifieLe`. Le premier est le lien principal.
+   * Aucun lien sûr : `liens` vide et `note` dit pourquoi.
+   */
+  acces?: { verifieLe: string; liens: LienAcces[]; note?: string };
   identite: { label: string; valeur: string; source: string }[];
   chiffres: { valeur: string; label: string; source: string }[];
   statuts: { libelle: string; sens: string; action: string }[];

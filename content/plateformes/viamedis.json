@@ -3,6 +3,16 @@
  "nom": "Viamedis",
  "logo": "/logos/viamedis.png",
  "checkedOn": "2026-10-06",
+ "acces": {
+  "verifieLe": "2026-10-30",
+  "liens": [
+   {
+    "label": "Se connecter sur viamedis.net",
+    "url": "https://www.viamedis.net/ViamedisNet/page/accueil/index",
+    "detail": "E-mail, mot de passe, puis code d'une application d'authentification."
+   }
+  ]
+ },
  "identite": [
   {
    "label": "Type",

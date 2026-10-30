@@ -3,6 +3,16 @@
   "nom": "Itelis",
   "logo": "/logos/itelis.png",
   "checkedOn": "2026-10-09",
+  "acces": {
+    "verifieLe": "2026-10-30",
+    "liens": [
+      {
+        "label": "Se connecter sur itelis.fr",
+        "url": "https://www.itelis.fr/",
+        "detail": "Menu « Accès professionnels », puis « Professionnels de santé ». Un code est envoyé par e-mail."
+      }
+    ]
+  },
   "identite": [
     {
       "label": "Type",

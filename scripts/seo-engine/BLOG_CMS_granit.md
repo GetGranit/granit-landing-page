@@ -61,8 +61,8 @@ Les champs en **gras** viennent de `articles-queue.json`. Les autres sont produi
 |---|---|---|
 | **`slug`** | file | Minuscules, tirets, sans accent. Jamais modifié après publication. |
 | **`category`** | file | Un des slugs ci-dessus. |
-| **`title`** | file | Mot-clé principal dans les premiers mots. **60 caractères max dans la balise `<title>`** (le titre affiché peut être plus long). Factuel, précis, pas de racolage. |
-| `metaDescription` | Claude | 140 à 160 caractères. Contient le mot-clé principal. Un bénéfice concret. Finit sur une raison de cliquer. |
+| **`title`** | file | Mot-clé principal dans les premiers mots. **60 caractères maximum** : c'est aussi la balise `<title>`, que Google coupe au-delà (refusé par le moteur sur une page plateforme, signalé ailleurs). Page plateforme : orienté connexion, ex. « iSanté TP : connexion espace pro opticien et prise en charge ». Factuel, précis, pas de racolage. |
+| `metaDescription` | Claude | 140 à 155 caractères (Google coupe au-delà). Contient le mot-clé principal. Un bénéfice concret. Finit sur une raison de cliquer. |
 | **`primaryKeyword`** | file | La requête exacte visée (ex. `almerys pec`). |
 | **`keywordCluster`** | file | 5 à 10 termes associés, à répartir naturellement. |
 | **`faqQuestions`** | file | Questions de départ de la FAQ (réelles : Semrush, forums, calls). Claude peut reformuler légèrement, jamais inventer un sujet. |

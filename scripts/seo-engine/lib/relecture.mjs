@@ -32,7 +32,7 @@ export const REGLES = `## Règles de relecture (en plus du guide)
 ### SEO
 - L'adresse du portail dans la 1re phrase (en gras), liée à la page de connexion si elle est dans les faits, et reprise dans une puce de « L'essentiel ».
 - La réponse de FAQ sur l'accès cite l'adresse.
-- metaDescription de 140 à 160 caractères, avec le mot-clé principal.
+- metaDescription de 140 à 155 caractères, avec le mot-clé principal.
 - Les requêtes de navigation du groupe de mots-clés trouvent une réponse (H3 ou question de FAQ), sans citer le mot-clé.
 
 ### Copy (lecteur : un opticien ou une assistante au comptoir, sur téléphone, qui bloque sur une mutuelle)
