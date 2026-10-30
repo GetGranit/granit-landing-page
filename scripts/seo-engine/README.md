@@ -91,3 +91,9 @@ Décidées à l'atelier du 07/10/2026 (gabarit, section 6 bis). Une entrée de l
 - Un fichier avec `aRelire: true` bloque la publication. Après relecture humaine, passer `aRelire` à `false`.
 - Les entrées comparatives sont en statut `waiting` : le moteur ne les prend pas. Pour lancer une page : relire ses fichiers, puis `node scripts/seo-engine/set-status.mjs <slug> pending`.
 - Toujours une PR de relecture. Contrôles en plus : aucun prix, aucun mot de dénigrement près du nom d'un concurrent, nombres et citations tirés des fichiers.
+
+## IndexNow (Bing)
+
+Après chaque déploiement en production, `.github/workflows/seo-indexnow.yml` envoie à IndexNow les articles
+modifiés depuis le tag `indexnow-envoye` (et les anciens qu'ils remplacent en 301). Clé publique :
+`lib/indexnow.mjs` + `public/{clé}.txt`. Envoi de tout le sitemap : lancer le workflow avec « tout ».
