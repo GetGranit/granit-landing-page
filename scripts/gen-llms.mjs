@@ -92,9 +92,9 @@ const section = (titre, lignes) => (lignes.length ? `## ${titre}\n\n${lignes.joi
 
 const txt = `# Granit
 
-> Granit déploie des agents IA qui gèrent le tiers payant et l'administratif des magasins et cabinets de santé en France : demandes de prise en charge sur les portails des mutuelles, contrôle avant envoi, traitement des rejets, rapprochement des paiements et relances. Les agents travaillent dans les outils déjà en place (logiciel métier, portails, SESAM-Vitale, NOEMIE), sans intégration technique. Optique d'abord, puis dentaire, audition, pharmacie, centres de santé, cliniques et EHPAD.
+> Granit conçoit des agents IA qui prennent en charge le back-office des professionnels de santé en France, directement dans leurs outils du quotidien : tiers payant et prises en charge, facturation, commandes fournisseurs, traitement des rejets, relances et rapprochement des paiements. Pas de projet d'intégration : les agents travaillent dans le logiciel métier, les portails et le navigateur. Granit a commencé par l'optique et s'étend aux autres métiers de santé.
 
-Le site est en français. La rubrique Ressources (${SITE}/ressources) est un guide pratique du tiers payant : plateformes et portails des complémentaires, codes de rejet, paiements et rapprochement, conformité.
+Le site est en français. La rubrique Ressources (${SITE}/ressources) est un guide pratique de l'administratif santé, centré aujourd'hui sur le tiers payant : plateformes et portails des complémentaires, codes de rejet, paiements et rapprochement, conformité.
 
 ${section(
   "Pages principales",
