@@ -83,7 +83,7 @@ export function StepPatient({
       className="rounded-full px-2 py-0.5 text-[11px]"
       style={{
         background: "var(--sage-light)",
-        color: "#2f6b3d",
+        color: "#2f7a64",
         fontFamily: "var(--font-mono)",
         fontWeight: 400,
       }}

@@ -22,7 +22,7 @@ import { Sommaire, SommaireMobile, type Entree } from "./Sommaire";
 /** Bandeau des pages d'aperçu (content/apercu), jamais en production. */
 function BandeauPreview() {
   return (
-    <div className="bg-[#1c1108] px-4 py-2 text-center font-mono text-[12px] uppercase tracking-[0.12em] text-[#f2a48f]">
+    <div className="bg-[#1f3530] px-4 py-2 text-center font-mono text-[12px] uppercase tracking-[0.12em] text-[#a8dccb]">
       Aperçu, non publié
     </div>
   );
@@ -66,7 +66,7 @@ function Signature({ a, nbSources }: { a: RessourceJson; nbSources: number }) {
         </span>
       </span>
       {a.reviewer && (
-        <span className="inline-flex items-center gap-1.5 font-semibold text-[#2e6b3c]">
+        <span className="inline-flex items-center gap-1.5 font-semibold text-[#2f7a64]">
           <svg
             width="16"
             height="16"

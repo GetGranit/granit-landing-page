@@ -114,9 +114,9 @@ export function Hub() {
 
         {glossaire && (
           <section className={`${conteneur} pt-14`}>
-            <div className="grid gap-6 rounded-[18px] border border-[var(--border)] bg-[#f1ede5] p-7 md:grid-cols-[1fr_auto] md:items-end md:p-10">
+            <div className="grid gap-6 rounded-[18px] border border-[var(--border)] bg-[#f4eef0] p-7 md:grid-cols-[1fr_auto] md:items-end md:p-10">
               <div>
-                <span className="eyebrow" style={{ color: "#5e574b" }}>
+                <span className="eyebrow" style={{ color: "rgba(31,53,48,.72)" }}>
                   Glossaire
                 </span>
                 <h2 className={`mt-2 ${titreSection}`}>AMC, DRE, NOEMIE… en une phrase</h2>
@@ -138,7 +138,7 @@ export function Hub() {
                 to="/ressources/$slug"
                 params={{ slug: GLOSSAIRE_SLUG }}
                 className={lienFleche}
-                style={{ color: "#5e574b" }}
+                style={{ color: "rgba(31,53,48,.72)" }}
               >
                 Tout le glossaire <Fleche />
               </Link>
@@ -263,7 +263,7 @@ function PourTous({ vus, rangees, aussi }: { vus: Set<string>; rangees: Fiche[];
   return (
     <section className={`${conteneur} pt-14`}>
       <div className="border-t border-[var(--border)] pt-5">
-        <span className="eyebrow" style={{ color: "#6b6458" }}>
+        <span className="eyebrow" style={{ color: "rgba(31,53,48,.7)" }}>
           Pour tous les métiers
         </span>
         <h2 className="mt-2 font-serif text-[22px] font-normal leading-tight">

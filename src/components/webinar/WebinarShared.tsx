@@ -316,7 +316,7 @@ export function WebinarForm({
       </button>
 
       {status === "error" && (
-        <p className="mt-3 text-center text-[12px]" style={{ color: "#c0392b" }}>
+        <p className="mt-3 text-center text-[12px]" style={{ color: "#c8504a" }}>
           {t.error}
         </p>
       )}

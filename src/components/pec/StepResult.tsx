@@ -58,7 +58,7 @@ function PortalBox({ card, p, waiting }: { card: CardRead | null; p: Platform; w
             </dt>
             <dd
               className="rounded border bg-white px-2 py-1"
-              style={{ borderColor: "#cfd6de", fontFamily: "var(--font-mono)", color: "#111" }}
+              style={{ borderColor: "#cfd6de", fontFamily: "var(--font-mono)", color: "#1f3530" }}
             >
               {v} <span style={{ color: "var(--sage)" }}>✓</span>
             </dd>
@@ -115,7 +115,7 @@ export function ResultSimulable({
         className="rounded-full px-3 py-1 text-[12px]"
         style={{
           background: "var(--sage-light)",
-          color: "#2f6b3d",
+          color: "#2f7a64",
           fontFamily: "var(--font-mono)",
         }}
       >
@@ -274,12 +274,12 @@ function Estimation({ estim }: { estim: EstimationLunettes }) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
     >
-      <span className="text-[13px]" style={{ fontFamily: "var(--font-mono)", color: "#2f6b3d" }}>
+      <span className="text-[13px]" style={{ fontFamily: "var(--font-mono)", color: "#2f7a64" }}>
         ESTIMATION DU REMBOURSEMENT · LUNETTES
       </span>
       <motion.p
         className="font-serif font-semibold leading-none"
-        style={{ color: "#2f6b3d" }}
+        style={{ color: "#2f7a64" }}
         initial={run ? { scale: 0.85, opacity: 0 } : false}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
@@ -288,7 +288,7 @@ function Estimation({ estim }: { estim: EstimationLunettes }) {
       </motion.p>
       <motion.p
         className="text-[14px]"
-        style={{ color: "#4a5a4f" }}
+        style={{ color: "rgba(31,53,48,.82)" }}
         initial={run ? { opacity: 0 } : false}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 0.5 }}
@@ -297,7 +297,7 @@ function Estimation({ estim }: { estim: EstimationLunettes }) {
       </motion.p>
       <motion.p
         className="text-[12px]"
-        style={{ color: "#6b7d70" }}
+        style={{ color: "rgba(31,53,48,.7)" }}
         initial={run ? { opacity: 0 } : false}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.3, duration: 0.5 }}
@@ -396,7 +396,7 @@ function GranitFaitPourVous({ target }: { target: string }) {
     <div className="grid w-full gap-4 border-t pt-5" style={{ borderColor: "var(--border)" }}>
       <p className="font-serif text-[22px] leading-tight" style={{ color: "var(--text)" }}>
         Et si Granit la faisait{" "}
-        <span className="italic" style={{ color: "var(--terra)" }}>
+        <span style={{ color: "var(--terra)" }}>
           pour vous
         </span>{" "}
         ?
@@ -411,11 +411,11 @@ function GranitFaitPourVous({ target }: { target: string }) {
           <div className="flex items-baseline justify-between">
             <span
               className="text-[11px]"
-              style={{ fontFamily: "var(--font-mono)", letterSpacing: ".08em", color: "#8a8178" }}
+              style={{ fontFamily: "var(--font-mono)", letterSpacing: ".08em", color: "rgba(31,53,48,.6)" }}
             >
               À LA MAIN
             </span>
-            <span className="text-[12px]" style={{ color: "#8a8178" }}>
+            <span className="text-[12px]" style={{ color: "rgba(31,53,48,.6)" }}>
               ~10 min
             </span>
           </div>
@@ -428,7 +428,7 @@ function GranitFaitPourVous({ target }: { target: string }) {
               >
                 <span
                   className="grid h-4 w-4 shrink-0 place-items-center rounded-full border"
-                  style={{ borderColor: "#cfc8bd", color: "#b2a99c", fontSize: 10 }}
+                  style={{ borderColor: "rgba(31,53,48,.2)", color: "rgba(31,53,48,.5)", fontSize: 10 }}
                 >
                   {i + 1}
                 </span>
@@ -436,7 +436,7 @@ function GranitFaitPourVous({ target }: { target: string }) {
               </li>
             ))}
           </ul>
-          <span className="text-[12px] italic" style={{ color: "#8a8178" }}>
+          <span className="text-[12px] italic" style={{ color: "rgba(31,53,48,.6)" }}>
             …et on recommence à chaque client.
           </span>
         </div>
@@ -478,7 +478,7 @@ function GranitFaitPourVous({ target }: { target: string }) {
                     }}
                     transition={{ duration: 0.25 }}
                     style={{
-                      color: "#fff",
+                      color: "#fffdfd",
                       fontSize: 11,
                       border: done ? "none" : "1px solid #cfd6de",
                     }}
@@ -496,7 +496,7 @@ function GranitFaitPourVous({ target }: { target: string }) {
             className="text-[12px] font-semibold"
             animate={{ opacity: faites >= total ? 1 : 0.35 }}
             transition={{ duration: 0.25 }}
-            style={{ color: "#2f6b3d" }}
+            style={{ color: "#2f7a64" }}
           >
             ✓ PEC prête.
           </motion.span>
@@ -508,7 +508,7 @@ function GranitFaitPourVous({ target }: { target: string }) {
           <li
             key={a.txt}
             className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[12px]"
-            style={{ background: "var(--sage-light)", color: "#2f6b3d" }}
+            style={{ background: "var(--sage-light)", color: "#2f7a64" }}
           >
             <span aria-hidden>{a.ico}</span>
             {a.txt}
@@ -546,7 +546,7 @@ function Prevenir({
     >
       <p className="font-serif text-[22px] leading-tight" style={{ color: "var(--text)" }}>
         Où faire vos PEC {portail}{" "}
-        <span className="italic" style={{ color: "var(--terra)" }}>
+        <span style={{ color: "var(--terra)" }}>
           ensuite
         </span>{" "}
         ?
@@ -582,7 +582,7 @@ function Prevenir({
         <p
           role="alert"
           className="rounded-xl px-3 py-2 text-[15px]"
-          style={{ background: "#fbf0dc", color: "#7a4f12" }}
+          style={{ background: "#faeaef", color: "#a9433d" }}
         >
           {error}
         </p>
@@ -634,7 +634,7 @@ function Warn({ children }: { children: React.ReactNode }) {
   return (
     <p
       className="w-full rounded-xl px-3 py-2 text-[15px]"
-      style={{ background: "#fbf0dc", color: "#7a4f12" }}
+      style={{ background: "#faeaef", color: "#a9433d" }}
     >
       {children}
     </p>

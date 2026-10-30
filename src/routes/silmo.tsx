@@ -187,9 +187,6 @@ function SilmoPage() {
         <div className="mx-auto flex h-[62px] max-w-[600px] items-center justify-between px-5">
           <div className="flex items-center gap-2.5">
             <img src={logoMonogram} alt="Granit" className="h-[26px] w-auto" />
-            <span className="font-serif text-[19px] tracking-tight" style={{ fontWeight: 700 }}>
-              Granit
-            </span>
           </div>
           <img
             src={silmoLogo}
@@ -523,7 +520,7 @@ function SilmoForm({ t, contact }: { t: (typeof copy)["fr"]; contact?: string })
       </button>
 
       {status === "error" && (
-        <p className="mt-3 text-center text-[12px]" style={{ color: "#c0392b" }}>
+        <p className="mt-3 text-center text-[12px]" style={{ color: "#c8504a" }}>
           {t.error}
         </p>
       )}

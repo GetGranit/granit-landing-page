@@ -108,7 +108,7 @@ export function Onglets({ actif, centre = false }: { actif: string; centre?: boo
           to="/ressources/$slug"
           params={{ slug: GLOSSAIRE_SLUG }}
           actif={actif === "glossaire"}
-          couleur="#5e574b"
+          couleur="rgba(31,53,48,.72)"
         >
           Glossaire
         </Onglet>

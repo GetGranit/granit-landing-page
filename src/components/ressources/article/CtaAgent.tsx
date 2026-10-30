@@ -425,8 +425,8 @@ function FenetreAgent({ c }: { c: Contenu }) {
           <svg viewBox="0 0 16 16">
             <path
               d="M2 1l11 7-5 1-2 5z"
-              fill="#fff"
-              stroke="#1c1108"
+              fill="#fffdfd"
+              stroke="#1f3530"
               strokeWidth="1.2"
               strokeLinejoin="round"
             />
@@ -488,7 +488,7 @@ export function EncartAgent({
           <h2 className="mt-2.5 font-serif text-[clamp(26px,3.2vw,36px)] font-normal leading-[1.15]">
             {c.fin}
           </h2>
-          <p className="mt-3 max-w-[46ch] text-[16px] leading-relaxed text-[#c9bfb0]">
+          <p className="mt-3 max-w-[46ch] text-[16px] leading-relaxed text-[rgba(250,240,242,.72)]">
             {c.texteFin}
           </p>
           <ol className="ress-cta-etapes">

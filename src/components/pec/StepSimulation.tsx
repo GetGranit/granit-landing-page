@@ -85,8 +85,8 @@ function Etape({ label, ok, working }: { label: string; ok: boolean; working: bo
         style={{
           borderColor: ok ? "var(--sage)" : "var(--terra)",
           borderTopColor: working ? "transparent" : undefined,
-          background: ok ? "var(--sage)" : "#fff",
-          color: "#fff",
+          background: ok ? "var(--sage)" : "#fffdfd",
+          color: "#fffdfd",
         }}
       >
         {ok ? "✓" : ""}
@@ -139,7 +139,7 @@ function Formulaire({
             </dt>
             <dd
               className="min-h-[28px] rounded border bg-white px-2 py-1"
-              style={{ borderColor: "#cfd6de", fontFamily: "var(--font-mono)", color: "#111" }}
+              style={{ borderColor: "#cfd6de", fontFamily: "var(--font-mono)", color: "#1f3530" }}
             >
               {on ? <Tape text={v} /> : <span style={{ color: "#9aa3ad" }}>…</span>}
             </dd>

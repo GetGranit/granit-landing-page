@@ -55,13 +55,7 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-4">
             <Link to="/" className="inline-flex items-center gap-2.5">
-              <img src={logoMonogram} alt="Granit" className="h-7 w-auto" />
-              <span
-                className="font-serif text-[20px] tracking-tight"
-                style={{ color: "var(--text)", fontWeight: 700 }}
-              >
-                Granit
-              </span>
+              <img src={logoMonogram} alt="Granit" className="h-[28px] w-auto" />
             </Link>
             <p
               className="mt-4 max-w-xs text-[13.5px] leading-[1.6]"
@@ -138,10 +132,7 @@ function Badge({ children }: { children: React.ReactNode }) {
         letterSpacing: "0.04em",
       }}
     >
-      <span
-        className="h-1.5 w-1.5 rounded-full"
-        style={{ background: "var(--sage)" }}
-      />
+      <span className="h-1.5 w-1.5 rounded-full" style={{ background: "var(--sage)" }} />
       {children}
     </span>
   );

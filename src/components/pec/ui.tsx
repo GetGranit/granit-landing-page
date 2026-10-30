@@ -18,10 +18,7 @@ export function PecShell({
     <div className="min-h-screen" style={{ background: "var(--bg2)", color: "var(--text-soft)" }}>
       <header className="mx-auto flex max-w-[620px] items-center justify-between gap-4 px-4 py-4">
         <Link to="/" className="flex items-center gap-2" style={{ color: "var(--text)" }}>
-          <img src={logoMonogram} alt="" width={28} height={28} />
-          <span className="font-serif text-[19px]" style={{ fontWeight: 700 }}>
-            Granit
-          </span>
+          <img src={logoMonogram} alt="Granit" className="h-[24px] w-auto" />
         </Link>
         <Progress value={step / total} />
       </header>
@@ -62,7 +59,7 @@ export function Screen({ id, children }: { id: string; children: ReactNode }) {
       style={{
         background: "var(--surface)",
         borderColor: "var(--border)",
-        boxShadow: "0 1px 2px rgba(28,17,8,.04),0 8px 30px -10px rgba(28,17,8,.10)",
+        boxShadow: "0 1px 2px rgba(31,53,48,.04),0 8px 30px -10px rgba(31,53,48,.10)",
       }}
     >
       {children}
@@ -98,7 +95,7 @@ export function Title({
     >
       {children}
       {em && (
-        <span className="italic" style={{ color: "var(--terra)" }}>
+        <span style={{ color: "var(--terra)" }}>
           {em}
         </span>
       )}
@@ -157,7 +154,7 @@ export function ApercuBanner() {
   return (
     <p
       className="mb-3 rounded-full px-3 py-1.5 text-center text-[12px]"
-      style={{ background: "#fbf0dc", color: "#7a4f12", fontFamily: "var(--font-mono)" }}
+      style={{ background: "#faeaef", color: "#a9433d", fontFamily: "var(--font-mono)" }}
     >
       Aperçu — résultat d'exemple, rien n'est connecté
     </p>

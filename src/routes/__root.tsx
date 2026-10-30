@@ -73,22 +73,22 @@ export const Route = createRootRoute({
       },
       {
         property: "og:image",
-        content:
-          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/1e3c52a3-36dc-4e80-8146-ca8444e17920/id-preview-352504c5--a0c4e6b0-14ec-4357-83be-c6489dcc9ce0.lovable.app-1777045010811.png",
+        content: "https://www.getgranit.ai/marque/granit-partage-1200x630.png",
       },
       {
         name: "twitter:image",
-        content:
-          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/1e3c52a3-36dc-4e80-8146-ca8444e17920/id-preview-352504c5--a0c4e6b0-14ec-4357-83be-c6489dcc9ce0.lovable.app-1777045010811.png",
+        content: "https://www.getgranit.ai/marque/granit-partage-1200x630.png",
       },
     ],
     links: [
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+      { rel: "icon", href: "/favicon.ico", sizes: "any" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Just+Me+Again+Down+Here&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Roboto+Serif:opsz,wdth,wght@20,94,300..400&display=swap",
       },
       { rel: "stylesheet", href: appCss },
     ],

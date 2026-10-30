@@ -40,8 +40,8 @@ export const Route = createFileRoute("/webinar/ia-magasin")({
   component: WebinarPage,
 });
 
-const DEGRADE = "linear-gradient(135deg, #e0654f 0%, #ec8a64 45%, #f6b58c 100%)";
-const BOUTON = "linear-gradient(90deg, #d9583f 0%, #f0956a 100%)";
+const DEGRADE = "linear-gradient(135deg, #faeaef 0%, #a8dccb 45%, #cfe3f6 100%)";
+const BOUTON = "linear-gradient(90deg, #1f3530 0%, #1f3530 100%)";
 
 const mono = {
   fontFamily: "var(--font-mono)",
@@ -123,8 +123,8 @@ function FicheProgramme() {
     <div
       className="relative overflow-hidden rounded-[24px] px-6 pb-14 pt-8 md:py-12 md:pl-14 md:pr-28"
       style={{
-        background: "linear-gradient(160deg, #fff6ef 0%, #fde9e1 100%)",
-        boxShadow: "0 30px 80px -30px rgba(80,30,10,0.55)",
+        background: "linear-gradient(160deg, #faf0f2 0%, #faeaef 100%)",
+        boxShadow: "0 30px 80px -30px rgba(31,53,48,0.45)",
       }}
     >
       <p className="text-[11px]" style={{ ...mono, color: "var(--terra)" }}>
@@ -173,7 +173,7 @@ function FicheProgramme() {
           width={104}
           height={104}
           className="h-[104px] w-[104px] shrink-0 rounded-full object-cover"
-          style={{ boxShadow: "0 0 0 6px #fff, 0 12px 30px -10px rgba(80,30,10,0.45)" }}
+          style={{ boxShadow: "0 0 0 6px #fffdfd, 0 12px 30px -10px rgba(80,30,10,0.45)" }}
           initial={{ scale: 0.85, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ type: "spring", stiffness: 180, damping: 16, delay: 0.3 }}
@@ -246,10 +246,7 @@ function CarteInscription() {
       style={{ boxShadow: "0 40px 90px -30px rgba(80,30,10,0.6)" }}
     >
       <div className="flex items-center justify-center gap-2.5">
-        <img src={logoMonogram} alt="Granit" className="h-[24px] w-auto" />
-        <span className="font-serif text-[19px] tracking-tight" style={{ fontWeight: 700 }}>
-          Granit
-        </span>
+        <img src={logoMonogram} alt="Granit" className="h-[26px] w-auto" />
       </div>
 
       <div className="mt-8 text-center">
@@ -263,7 +260,7 @@ function CarteInscription() {
         <WebinarForm
           bare
           stacked
-          inputBackground="#fff"
+          inputBackground="#fffdfd"
           buttonBackground={BOUTON}
           heading={
             <p className="mb-5 text-[15px]" style={{ fontWeight: 600 }}>
@@ -299,7 +296,7 @@ function CompteARebours() {
           <div key={u.k} className="flex items-center gap-1.5">
             <div
               className="flex h-[52px] w-[46px] flex-col items-center justify-center overflow-hidden rounded-[10px]"
-              style={{ background: "#f6f1ec" }}
+              style={{ background: "#faf0f2" }}
             >
               {/* Le chiffre est remonté à chaque changement et glisse en place :
                   pas d'animation de sortie, la case n'est donc jamais vide. */}

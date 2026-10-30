@@ -33,7 +33,7 @@ const TOUS_METIERS = 6;
 
 const mono = "font-mono text-[10.5px] uppercase tracking-[0.1em]";
 const focus =
-  "focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-[#b94a2f]";
+  "focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-[#2f7a64]";
 const cadre = "relative flex h-[116px] flex-col items-center justify-center px-4 md:h-[136px]";
 
 export function MurPlateformes({ fiches }: { fiches: Fiche[] }) {
@@ -119,7 +119,7 @@ export function MurPlateformes({ fiches }: { fiches: Fiche[] }) {
                   type="button"
                   aria-pressed={actif}
                   onClick={() => setMetier(v)}
-                  className={`${focus} shrink-0 whitespace-nowrap rounded-full border px-3 py-1 text-[13px] transition-colors ${actif ? "border-[#b94a2f] bg-[#b94a2f]/10 text-[#b94a2f]" : "border-[var(--border)] text-[var(--text-soft)] hover:border-[var(--text-muted)] hover:text-[var(--text)]"}`}
+                  className={`${focus} shrink-0 whitespace-nowrap rounded-full border px-3 py-1 text-[13px] transition-colors ${actif ? "border-[#2f7a64] bg-[#2f7a64]/10 text-[#2f7a64]" : "border-[var(--border)] text-[var(--text-soft)] hover:border-[var(--text-muted)] hover:text-[var(--text)]"}`}
                 >
                   {v === "tous" ? "Tous métiers" : METIER_COURT[v]}
                 </button>
@@ -220,7 +220,7 @@ function Etiquettes({
         : metiers.map((m, i) => (
             <Fragment key={m}>
               {i > 0 && " · "}
-              <span className={m === actif ? "text-[#b94a2f]" : undefined}>{METIER_COURT[m]}</span>
+              <span className={m === actif ? "text-[#2f7a64]" : undefined}>{METIER_COURT[m]}</span>
             </Fragment>
           ))}
     </span>
@@ -245,7 +245,7 @@ function Case({
       {e.fiche ? (
         <span
           aria-hidden
-          className="transition-transform group-hover:translate-x-0.5 group-hover:text-[#b94a2f]"
+          className="transition-transform group-hover:translate-x-0.5 group-hover:text-[#2f7a64]"
         >
           →
         </span>
@@ -306,7 +306,7 @@ function CaseLien({
       <Link
         to="/ressources/categorie/$category"
         params={{ category: "plateformes" }}
-        className={`group ${cadre} ${focus} items-start justify-between py-4 text-[#b94a2f] transition-colors hover:bg-[#b94a2f]/[0.06]`}
+        className={`group ${cadre} ${focus} items-start justify-between py-4 text-[#2f7a64] transition-colors hover:bg-[#2f7a64]/[0.06]`}
       >
         <span className={mono}>
           <span className="md:hidden">{autres(resteMobile, "Annuaire")}</span>
@@ -363,7 +363,7 @@ function Vedette({ e }: { e: Entree }) {
           ) : (
             <Monogramme nom={e.nom} />
           )}
-          <span className={`${mono} rounded-full bg-[#b94a2f]/10 px-2 py-0.5 text-[#b94a2f]`}>
+          <span className={`${mono} rounded-full bg-[#2f7a64]/10 px-2 py-0.5 text-[#2f7a64]`}>
             Fiche en ligne
           </span>
         </div>
@@ -391,7 +391,7 @@ function Vedette({ e }: { e: Entree }) {
               </div>
             )}
           </dl>
-          <span className="mt-5 inline-flex items-center gap-1 text-[14px] font-semibold text-[#b94a2f] group-hover:underline group-hover:underline-offset-4">
+          <span className="mt-5 inline-flex items-center gap-1 text-[14px] font-semibold text-[#2f7a64] group-hover:underline group-hover:underline-offset-4">
             Lire la fiche <span aria-hidden>→</span>
           </span>
         </div>

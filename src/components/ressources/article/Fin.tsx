@@ -167,11 +167,11 @@ export function Utile({ slug }: { slug: string }) {
 /** Encart final : texte fixe validé le 07/10/2026, seul endroit où figure la promesse « 48 h ». */
 export function EncartFinal() {
   return (
-    <aside className="mt-14 rounded-[18px] bg-[#1c1108] p-7 text-[#f6efe4] md:p-8">
+    <aside className="mt-14 rounded-[18px] bg-[#1f3530] p-7 text-[#faf0f2] md:p-8">
       <h3 className="font-serif text-[26px] font-normal leading-tight">
         Vos prises en charge prennent trop de temps ?
       </h3>
-      <p className="mt-3 max-w-[56ch] text-[16px] leading-relaxed text-[#c9bfb0]">
+      <p className="mt-3 max-w-[56ch] text-[16px] leading-relaxed text-[rgba(250,240,242,.72)]">
         Granit saisit les demandes sur les portails des plateformes et suit les réponses à votre
         place. Branché sur vos portails en 48 h, sans API à demander.
       </p>

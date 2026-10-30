@@ -77,7 +77,7 @@ export function Invitation({
           style={{ color: "var(--text)", letterSpacing: "-.015em", textWrap: "balance" }}
         >
           En faire d'autres ?{" "}
-          <span className="italic" style={{ color: "var(--terra)" }}>
+          <span style={{ color: "var(--terra)" }}>
             C'est quand même plus simple.
           </span>
         </h2>
@@ -93,7 +93,7 @@ export function Invitation({
               key={p.id}
               {...entree(i)}
               className="rounded-full px-3 py-1.5 text-[13px]"
-              style={{ background: "var(--sage)", color: "#fff", fontWeight: 600 }}
+              style={{ background: "var(--sage)", color: "#fffdfd", fontWeight: 600 }}
             >
               ✓ {portail}
             </motion.li>
@@ -105,7 +105,7 @@ export function Invitation({
               style={{
                 borderColor: "var(--border2)",
                 color: "var(--text-soft)",
-                background: "#fff",
+                background: "#fffdfd",
               }}
             >
               + {p.label}

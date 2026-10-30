@@ -75,7 +75,7 @@ export function Ancres({ racine }: { racine: RefObject<HTMLElement | null> }) {
     <div
       role="status"
       aria-live="polite"
-      className={`toast pointer-events-none fixed bottom-[calc(env(safe-area-inset-bottom)+72px)] left-1/2 z-[70] -translate-x-1/2 rounded-full bg-[#1c1108] px-4 py-2 text-[14px] text-[#f6efe4] ${visible ? "opacity-100" : "opacity-0"}`}
+      className={`toast pointer-events-none fixed bottom-[calc(env(safe-area-inset-bottom)+72px)] left-1/2 z-[70] -translate-x-1/2 rounded-full bg-[#1f3530] px-4 py-2 text-[14px] text-[#faf0f2] ${visible ? "opacity-100" : "opacity-0"}`}
     >
       {visible ? "Lien copié" : ""}
     </div>

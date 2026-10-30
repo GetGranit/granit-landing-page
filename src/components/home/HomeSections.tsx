@@ -10,7 +10,6 @@ import { articles as articlesData } from "@/lib/articles";
 import { logDemoRequestDelivered, logDemoRequestDeliveryFailed } from "@/lib/posthogLogs";
 import { submitDemo } from "@/lib/submitDemo";
 import { getAttribution } from "@/lib/attribution";
-import heroPhoto from "@/assets/hero-photo.jpg";
 
 /* Prise de RDV démo : Cal.com de Paul, UTM par emplacement pour savoir quel bouton convertit */
 const CALCOM_DEMO_URL = "https://cal.com/paul-pietra-granit/decouvrir-granit/";
@@ -378,7 +377,7 @@ function HeroDashboard({ t, lang }: { t: typeof copy["fr"]; lang: "fr" | "en" })
       style={{
         background: "var(--surface)",
         border: "1px solid color-mix(in oklab, var(--border) 80%, transparent)",
-        boxShadow: "0 30px 60px -28px rgba(28,17,8,0.18), 0 8px 24px -12px rgba(28,17,8,0.10)",
+        boxShadow: "0 30px 60px -28px rgba(31,53,48,0.18), 0 8px 24px -12px rgba(31,53,48,0.10)",
       }}
     >
       {/* Top bar */}
@@ -493,9 +492,9 @@ function PlatformPreview({ t, lang }: { t: typeof copy["fr"]; lang: "fr" | "en" 
       {/* Browser chrome */}
       <div className="flex items-center gap-2 border-b px-4 py-3" style={{ borderColor: "var(--border)", background: "var(--bg2)" }}>
         <span className="flex gap-1.5" aria-hidden>
-          <span className="h-2.5 w-2.5 rounded-full" style={{ background: "#ff5f57" }} />
-          <span className="h-2.5 w-2.5 rounded-full" style={{ background: "#febc2e" }} />
-          <span className="h-2.5 w-2.5 rounded-full" style={{ background: "#28c840" }} />
+          <span className="h-2.5 w-2.5 rounded-full" style={{ background: "rgba(31,53,48,.18)" }} />
+          <span className="h-2.5 w-2.5 rounded-full" style={{ background: "rgba(31,53,48,.18)" }} />
+          <span className="h-2.5 w-2.5 rounded-full" style={{ background: "rgba(31,53,48,.18)" }} />
         </span>
         <span className="ml-2 text-[11px]" style={{ fontFamily: "var(--font-mono)", color: "var(--text-muted)" }}>
           app.getgranit.ai
@@ -611,7 +610,7 @@ export function HomeSections() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
                 className="block"
-                style={{ color: "var(--terra)", fontStyle: "italic" }}
+                style={{ color: "var(--terra)", fontStyle: "normal" }}
               >
                 {t.h1Line2}
               </motion.span>
@@ -660,7 +659,7 @@ export function HomeSections() {
             transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="relative"
           >
-            {/* Photo backdrop */}
+            {/* Fond dégradé de la marque */}
             <div
               aria-hidden
               className="pointer-events-none absolute -right-6 -top-10 hidden overflow-hidden rounded-[20px] sm:block lg:-right-16 lg:-top-16"
@@ -669,21 +668,8 @@ export function HomeSections() {
                 height: "min(520px, 70vh)",
               }}
             >
-              <img
-                src={heroPhoto}
-                alt=""
-                width={1024}
-                height={1024}
-                className="h-full w-full object-cover"
-                style={{ filter: "saturate(0.95) contrast(0.96)" }}
-              />
-              <div
-                className="absolute inset-0"
-                style={{
-                  background:
-                    "linear-gradient(180deg, color-mix(in oklab, var(--bg) 30%, transparent) 0%, color-mix(in oklab, var(--bg) 70%, transparent) 100%)",
-                }}
-              />
+              {/* Seul effet de la marque : son dégradé, réservé aux grands fonds (DESIGN.md) */}
+              <div className="h-full w-full" style={{ background: "var(--gradient-marque)" }} />
             </div>
 
             <div className="relative">
@@ -698,7 +684,7 @@ export function HomeSections() {
                 style={{
                   background: "var(--surface)",
                   border: "1px solid color-mix(in oklab, var(--border) 80%, transparent)",
-                  boxShadow: "0 20px 40px -18px rgba(28,17,8,0.22), 0 6px 18px -10px rgba(28,17,8,0.10)",
+                  boxShadow: "0 20px 40px -18px rgba(31,53,48,0.22), 0 6px 18px -10px rgba(31,53,48,0.10)",
                 }}
               >
                 <div className="text-[10.5px]" style={{ color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}>
@@ -730,7 +716,7 @@ export function HomeSections() {
             <p className="eyebrow">{t.howEyebrow}</p>
             <h2 className="h2-section mt-4 max-w-2xl">
               {t.howTitle}{" "}
-              <em style={{ color: "var(--terra)", fontStyle: "italic" }}>{t.howTitleAccent}</em>
+              <em style={{ color: "var(--terra)", fontStyle: "normal" }}>{t.howTitleAccent}</em>
             </h2>
           </Reveal>
           <div className="mt-12 grid gap-x-10 gap-y-10 md:grid-cols-3">
@@ -762,7 +748,7 @@ export function HomeSections() {
             <div className="grid items-start gap-10 md:grid-cols-[minmax(0,360px)_1fr] md:gap-14">
               <h2 className="font-serif" style={{ fontSize: "clamp(24px,2.4vw,32px)", lineHeight: 1.2, letterSpacing: "-0.015em", fontWeight: 400 }}>
                 {painPoints[lang].title}{" "}
-                <em style={{ color: "var(--terra)", fontStyle: "italic" }}>{painPoints[lang].titleAccent}</em>
+                <em style={{ color: "var(--terra)", fontStyle: "normal" }}>{painPoints[lang].titleAccent}</em>
               </h2>
               <ul className="grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-3 lg:grid-cols-6">
                 {painPoints[lang].items.map((it) => (
@@ -816,7 +802,7 @@ export function HomeSections() {
                     style={{
                       borderColor: active ? "var(--terra)" : "var(--border)",
                       background: active ? "var(--terra)" : "transparent",
-                      color: active ? "#fff" : "var(--text-soft)",
+                      color: active ? "#fffdfd" : "var(--text-soft)",
                       fontWeight: active ? 500 : 400,
                     }}
                   >
@@ -891,7 +877,7 @@ export function HomeSections() {
               </div>
               <h2 className="mt-5 font-serif" style={{ fontSize: "clamp(32px,3.8vw,52px)", lineHeight: 1.1, letterSpacing: "-0.02em", fontWeight: 400 }}>
                 {lang === "fr" ? "Essayez " : "Try "}
-                <em style={{ color: "var(--terra)", fontStyle: "italic" }}>
+                <em style={{ color: "var(--terra)", fontStyle: "normal" }}>
                   {lang === "fr" ? "la plateforme" : "the platform"}
                 </em>
                 <br />
@@ -911,15 +897,15 @@ export function HomeSections() {
               style={{
                 background: "var(--surface)",
                 border: "1px solid color-mix(in oklab, var(--border) 80%, transparent)",
-                boxShadow: "0 40px 80px -32px rgba(28,17,8,0.22), 0 12px 32px -16px rgba(28,17,8,0.12)",
+                boxShadow: "0 40px 80px -32px rgba(31,53,48,0.22), 0 12px 32px -16px rgba(31,53,48,0.12)",
               }}
             >
               {/* Browser chrome */}
               <div className="flex items-center gap-3 border-b px-4 py-3" style={{ borderColor: "var(--border)", background: "color-mix(in oklab, var(--bg2) 60%, transparent)" }}>
                 <div className="flex gap-1.5">
-                  <span className="h-2.5 w-2.5 rounded-full" style={{ background: "#ff5f57" }} />
-                  <span className="h-2.5 w-2.5 rounded-full" style={{ background: "#febc2e" }} />
-                  <span className="h-2.5 w-2.5 rounded-full" style={{ background: "#28c840" }} />
+                  <span className="h-2.5 w-2.5 rounded-full" style={{ background: "rgba(31,53,48,.18)" }} />
+                  <span className="h-2.5 w-2.5 rounded-full" style={{ background: "rgba(31,53,48,.18)" }} />
+                  <span className="h-2.5 w-2.5 rounded-full" style={{ background: "rgba(31,53,48,.18)" }} />
                 </div>
                 <div className="mx-auto flex items-center gap-1.5 rounded-full border px-3 py-1 text-[11px]" style={{ borderColor: "var(--border)", color: "var(--text-muted)", fontFamily: "var(--font-mono)", background: "var(--surface)" }}>
                   <span className="status-dot" />
@@ -1209,7 +1195,7 @@ export function HomeSections() {
           <Reveal>
             <div
               className="flex flex-col items-start justify-between gap-6 rounded-[18px] p-7 md:flex-row md:items-center md:p-8"
-              style={{ background: "var(--gradient-terra)", color: "#fff", boxShadow: "var(--shadow-terra)" }}
+              style={{ background: "var(--gradient-terra)", color: "#fffdfd", boxShadow: "var(--shadow-terra)" }}
             >
               <div className="flex items-start gap-4">
                 <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[12px]" style={{ background: "rgba(255,255,255,0.18)" }}>
@@ -1381,7 +1367,7 @@ function DemoForm({ t }: { t: typeof copy["fr"] }) {
         {status === "submitting" ? t.demo.sending : t.demo.cta} <span className="arrow">↗</span>
       </button>
       {status === "error" && (
-        <p className="mt-3 text-center text-[12px]" style={{ color: "#c0392b" }}>{t.demo.error}</p>
+        <p className="mt-3 text-center text-[12px]" style={{ color: "#c8504a" }}>{t.demo.error}</p>
       )}
       <p className="mt-4 text-center text-[11px]" style={{ color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}>{t.demo.note}</p>
     </form>

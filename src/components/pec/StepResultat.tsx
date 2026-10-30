@@ -105,7 +105,7 @@ export function StepSimDone({
       style={{
         background: "var(--surface)",
         borderColor: "var(--border)",
-        boxShadow: "0 1px 2px rgba(28,17,8,.04),0 8px 30px -10px rgba(28,17,8,.10)",
+        boxShadow: "0 1px 2px rgba(31,53,48,.04),0 8px 30px -10px rgba(31,53,48,.10)",
       }}
       data-screen="sim-done"
     >
@@ -116,7 +116,7 @@ export function StepSimDone({
         className="rounded-full px-3 py-1 text-[12px]"
         style={{
           background: "var(--sage-light)",
-          color: "#2f6b3d",
+          color: "#2f7a64",
           fontFamily: "var(--font-mono)",
         }}
       >

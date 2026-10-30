@@ -67,7 +67,7 @@ export function PaulSheet({
             className="rounded-[22px] border bg-white p-5"
             style={{
               borderColor: "var(--border)",
-              boxShadow: "0 -10px 40px -12px rgba(28,17,8,0.25)",
+              boxShadow: "0 -10px 40px -12px rgba(31,53,48,0.25)",
             }}
           >
             {/* key : remet le formulaire à zéro à chaque ouverture */}

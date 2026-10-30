@@ -51,7 +51,7 @@ export function StepLogin({
         <p
           role="alert"
           className="w-full rounded-xl px-3 py-2 text-[15px]"
-          style={{ background: "#fbf0dc", color: "#7a4f12" }}
+          style={{ background: "#faeaef", color: "#a9433d" }}
         >
           {portail} n'a pas accepté ces identifiants. Vérifiez les majuscules, ou un mot de passe
           changé récemment.

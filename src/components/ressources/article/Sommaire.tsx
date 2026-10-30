@@ -163,7 +163,7 @@ export function SommaireMobile({ entrees }: { entrees: Entree[] }) {
           aria-label="Sommaire"
           aria-hidden={!ouvert}
           data-ferme={ouvert ? undefined : ""}
-          className={`feuille fixed inset-x-0 bottom-0 z-[66] max-h-[70dvh] overflow-y-auto rounded-t-[18px] bg-white px-5 pb-[calc(env(safe-area-inset-bottom)+20px)] pt-4 shadow-[0_-10px_30px_-12px_rgba(28,17,8,0.2)] ${ouvert ? "" : "invisible"}`}
+          className={`feuille fixed inset-x-0 bottom-0 z-[66] max-h-[70dvh] overflow-y-auto rounded-t-[18px] bg-white px-5 pb-[calc(env(safe-area-inset-bottom)+20px)] pt-4 shadow-[0_-10px_30px_-12px_rgba(31,53,48,0.2)] ${ouvert ? "" : "invisible"}`}
         >
           <div className="mx-auto mb-3 h-1 w-10 rounded-full bg-[var(--border2)]" aria-hidden />
           <button

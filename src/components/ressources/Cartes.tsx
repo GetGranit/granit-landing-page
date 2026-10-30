@@ -27,7 +27,7 @@ export function TitreItalique({ titre, ink }: { titre: string; ink: string }) {
     <>
       {tete}
       {tete.endsWith("?") ? " " : " : "}
-      <em className="italic" style={{ color: ink }}>
+      <em className="not-italic" style={{ color: ink }}>
         {suite}
       </em>
     </>
@@ -59,7 +59,7 @@ export function MarquePlateforme({
   return (
     <span
       aria-hidden
-      className={`${box} grid shrink-0 place-items-center bg-[#b94a2f] font-serif text-white ${taille === "xl" ? "text-[30px]" : "text-[19px]"}`}
+      className={`${box} grid shrink-0 place-items-center bg-[#2f7a64] font-serif text-white ${taille === "xl" ? "text-[30px]" : "text-[19px]"}`}
     >
       {nom.slice(0, 1).toUpperCase()}
     </span>
