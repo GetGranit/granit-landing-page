@@ -93,13 +93,13 @@ function AProposPage() {
           </p>
         </Reveal>
         <Reveal delay={0.1}>
-          {/* TODO Paul : photo d'équipe (aucune dans le repo). */}
-          <div
-            className="mt-12 flex aspect-[21/9] w-full items-center justify-center rounded-[16px] border-2 border-dashed"
-            style={{ borderColor: "var(--terra)", background: "var(--bg2)" }}
-          >
-            <Todo>{t.photoTodo}</Todo>
-          </div>
+          <img
+            src="/equipe/equipe-granit.jpg"
+            alt={t.photoAlt}
+            width={1280}
+            height={854}
+            className="mt-12 aspect-[3/2] w-full rounded-[16px] object-cover"
+          />
         </Reveal>
       </section>
 

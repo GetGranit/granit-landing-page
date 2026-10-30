@@ -30,7 +30,6 @@ export type Membre = {
 };
 
 // TODO Paul : vérifier les deux URL LinkedIn (coupées en fin de ligne dans les PDF).
-// TODO Paul : photos des fondateurs (aucune dans le repo, initiales en attendant).
 export const equipe: Membre[] = [
   {
     nom: "Jenny Mansour",
@@ -38,6 +37,7 @@ export const equipe: Membre[] = [
     role: { fr: "CEO et cofondatrice", en: "CEO and co-founder" },
     poste: "CEO",
     fondateur: true,
+    photo: "/equipe/jenny-mansour.jpg",
     linkedin: "https://www.linkedin.com/in/jenny-mansour-060016121",
     ecoles: ["École polytechnique", "HEC Paris"],
     parcours: {
@@ -57,6 +57,7 @@ export const equipe: Membre[] = [
     role: { fr: "CTO et cofondateur", en: "CTO and co-founder" },
     poste: "CTO",
     fondateur: true,
+    photo: "/equipe/corneille-marechal.jpg",
     linkedin: "https://www.linkedin.com/in/corneille-marechal-43a210199",
     ecoles: ["École polytechnique", "HEC Paris"],
     parcours: {
@@ -120,7 +121,7 @@ export const content = {
     heroApres:
       "par Jenny Mansour et Corneille Marechal, Granit conçoit des agents IA qui gèrent le tiers payant, les prises en charge, les rejets et les relances, directement dans les outils des équipes.",
     heroDateTodo: "date",
-    photoTodo: "Photo de l'équipe",
+    photoAlt: "L'équipe Granit dans ses bureaux à Paris",
     // Réponse citable à « Qu'est-ce que Granit ? » (40-60 mots) : sert aux données structurées.
     lead: "Granit est une entreprise basée à Paris qui conçoit des agents IA pour l'administratif des magasins et cabinets de santé. Les agents gèrent le tiers payant, les prises en charge, les rejets et les relances, dans les outils que les équipes utilisent déjà. Granit commence par l'optique, puis s'étend au dentaire, à l'audioprothèse et aux autres métiers de santé.",
     chiffresTitre: "Granit en chiffres",
@@ -199,7 +200,7 @@ export const content = {
     heroApres:
       "by Jenny Mansour and Corneille Marechal, Granit builds AI agents that handle third-party payment, coverage requests, rejections and follow-ups, directly inside the teams' tools.",
     heroDateTodo: "date",
-    photoTodo: "Team photo",
+    photoAlt: "The Granit team in its Paris office",
     lead: "Granit is a Paris-based company building AI agents for the administrative work of healthcare stores and practices. The agents handle third-party payment, coverage requests, rejections and follow-ups, directly inside the tools teams already use. Granit starts with optical stores, then expands to dental, hearing care and other healthcare professions.",
     chiffresTitre: "Granit in numbers",
     problemeTitre: "Why Granit",
