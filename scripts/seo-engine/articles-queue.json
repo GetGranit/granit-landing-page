@@ -1804,7 +1804,7 @@
       "recouvrement centre de santé"
     ],
     "searchVolume": null,
-    "status": "pending",
+    "status": "review",
     "wave": 1.5,
     "level": "Refonte",
     "parentSlug": null,
@@ -1826,7 +1826,8 @@
       "centres"
     ],
     "auteur": "laura",
-    "relecteur": "nathalie"
+    "relecteur": "nathalie",
+    "publishedAt": "2026-10-30"
   },
   {
     "id": "R10",
