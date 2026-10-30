@@ -1,0 +1,158 @@
+{
+  "slug": "recouvrement-patient-empathie",
+  "id": "R9",
+  "category": "paiements",
+  "categoryName": "Paiements et rapprochement",
+  "type": "resolution",
+  "plateforme": null,
+  "title": "Recouvrement patient : relancer sans abîmer la relation",
+  "primaryKeyword": "recouvrement patient",
+  "keywordCluster": [
+    "impayé patient",
+    "relance patient facture",
+    "reste à charge impayé",
+    "recouvrement centre de santé"
+  ],
+  "parentSlug": null,
+  "level": "Refonte",
+  "author": {
+    "name": "Laura",
+    "jobTitle": "Rédactrice, experte santé",
+    "photo": "/auteurs/laura.jpg",
+    "url": null
+  },
+  "reviewer": {
+    "name": "Nathalie",
+    "jobTitle": "Rédactrice, experte métier optique",
+    "photo": "/auteurs/nathalie.jpg",
+    "url": null
+  },
+  "datePublished": "2026-10-30",
+  "dateModified": "2026-10-30",
+  "checkedOn": null,
+  "wordCount": 2292,
+  "readTime": 10,
+  "metaDescription": "Recouvrement patient en centre de santé : vérifier la dette, relancer par paliers, ménager les patients fragiles. La méthode pas à pas, sans conflit.",
+  "contentHtml": "<p><strong>Un recouvrement patient réussi commence par une vérification, pas par une relance : confirmez d'abord que la somme revient vraiment au patient, puis relancez par paliers, du rappel courtois à l'appel humain.</strong> Dans un centre de santé, une partie des impayés vient d'une part mutuelle rejetée ou d'un tiers payant mal appliqué, pas d'un refus de payer. Le reste se règle le plus souvent par un rappel clair, personnalisé et envoyé au bon moment. Cette page donne la méthode complète pour l'accueil et la facturation : diagnostic, séquence de relance, patients à sortir du circuit standard, preuves à garder, délais et escalade.</p><div class=\"key-takeaways\"><strong>L'essentiel</strong><ul><li>Avant toute relance, vérifiez que le reste à charge n'est pas en réalité une part complémentaire rejetée : celle-là se corrige auprès de l'organisme, pas du patient.</li><li>Relancez par paliers (rappel courtois, relance écrite, appel, mise en demeure) et arrêtez la séquence dès que le patient répond.</li><li>Sortez de la relance standard les situations sensibles : deuil signalé, accompagnement social, réclamation en cours, patient sous protection juridique.</li><li>Un message de relance ne mentionne jamais la nature des soins : nom du centre, date, montant et référence suffisent.</li><li>Suivez trois indicateurs : le montant recouvré à échéance fixe, les plaintes liées aux relances et le temps passé par l'équipe.</li></ul></div><h2 id=\"impaye-patient-cas\">Qu'appelle-t-on un impayé patient dans un centre de santé ?</h2><p>Un impayé patient est la somme facturée au patient, après la part de l'AMO (Assurance maladie obligatoire) et celle de l'AMC (assurance maladie complémentaire, la mutuelle), qui reste non réglée à la date prévue. C'est le reste à charge impayé. Il se distingue d'une créance sur un organisme, qui se traite par les relances au payeur.</p><p>Les situations concrètes se ressemblent d'un centre à l'autre. Un patient repart sans régler son ticket modérateur parce que la file d'attente était longue. Un dépassement ou un acte non remboursé n'a pas été encaissé le jour même. Une prothèse dentaire réglée en plusieurs fois voit son échéancier s'interrompre. Un chèque revient impayé. Ou bien la mutuelle rejette sa part et le logiciel la bascule sur le compte du patient.</p><p>Le sujet est délicat parce que la créance porte sur une personne que le centre va revoir. Un patient suivi en médecine générale, en dentaire ou en kinésithérapie revient plusieurs fois par an. Un message maladroit peut coûter davantage que le montant réclamé : le patient change de centre, et il en parle autour de lui. L'objectif est donc le paiement, jamais la sanction.</p><h2 id=\"reste-a-charge-impaye-reperer\">À quoi reconnaître un reste à charge impayé dans vos outils ?</h2><p>Un reste à charge impayé apparaît comme un solde débiteur sur la fiche du patient dans votre logiciel de gestion ou de facturation. Il peut aussi arriver par la banque (chèque rejeté, paiement carte contesté) ou par un retour d'organisme qui transfère une part à la charge du patient.</p><p>Ces trois origines n'appellent pas la même action. Un solde débiteur après une consultation est généralement une vraie dette patient. Un rejet bancaire demande un contact rapide, souvent par téléphone, car le patient ne sait pas toujours que son paiement a échoué. Un retour d'organisme, lui, doit d'abord être analysé : le libellé du rejet dit si l'erreur vient des droits, de la saisie ou du dossier. La page sur les <a href=\"/ressources/codes-rejets-noemie\">codes rejets NOEMIE</a> aide à lire ces retours.</p><p>Repérez aussi l'ancienneté de chaque solde. Une liste triée par date de soin, avec le montant et le dernier contact, suffit pour démarrer. Sans elle, les relances se font au hasard des passages à l'accueil.</p><div class=\"callout callout--warn\"><p><strong>Le piège :</strong> traiter comme une dette patient un écart sur un virement de mutuelle. Si la complémentaire a payé moins que prévu, l'écart se justifie et se réclame d'abord à l'organisme, comme l'explique la page <a href=\"/ressources/virement-mutuelle-inferieur\">virement de mutuelle inférieur à la facture</a>.</p></div><h2 id=\"impaye-patient-causes\">Pourquoi un patient ne paie-t-il pas sa facture ?</h2><p>Il y a six causes possibles, de la plus simple à vérifier à la plus délicate. Commencez toujours par celles qui relèvent du centre ou des organismes : elles se corrigent sans solliciter le patient.</p><div class=\"tbl\"><table><tr><th>Cause</th><th>Où vérifier</th><th>Que faire</th></tr><tr><td>Erreur de tiers payant (droits complémentaires non vérifiés, part AMC rejetée)</td><td>Retour de l'organisme, carte de tiers payant, attestation de droits</td><td>Corriger et renvoyer à l'organisme, sans relancer le patient</td></tr><tr><td>Droits particuliers non pris en compte (CSS)</td><td>Attestation de droits, carte Vitale à jour</td><td>Refacturer en tiers payant intégral si les droits étaient ouverts</td></tr><tr><td>Oubli ou départ pressé</td><td>Historique de paiement du patient</td><td>Rappel courtois et simple</td></tr><tr><td>Incompréhension de la facture (dépassement, acte non remboursé)</td><td>Devis signé, détail de la facture</td><td>Expliquer, envoyer le détail ligne par ligne</td></tr><tr><td>Difficulté financière</td><td>Réponse du patient, échanges avec l'accueil</td><td>Proposer un échéancier, orienter vers un travailleur social</td></tr><tr><td>Contestation (montant, soin)</td><td>Courriers, réclamations enregistrées</td><td>Sortir de la séquence, confier au responsable</td></tr></table></div><p>Le cas de la complémentaire santé solidaire mérite une vérification systématique. La CSS (complémentaire santé solidaire) est l'aide publique qui prend en charge la part complémentaire des patients aux revenus modestes. Selon <a href=\"https://www.service-public.fr/particuliers/vosdroits/F10027\">service-public.fr</a>, ses bénéficiaires n'ont pas à avancer leurs frais pour les soins couverts. Un impayé chez un patient CSS signale donc le plus souvent un droit non vu à l'accueil ou une facturation à reprendre, rarement une dette à réclamer.</p><p>La mauvaise foi existe, mais c'est le dernier cas à envisager. Partir de ce soupçon fausse le ton de toutes les relances, y compris celles adressées à des patients qui ont simplement oublié.</p><h2 id=\"relance-patient-facture\">Comment relancer un patient qui n'a pas payé ?</h2><p>La méthode la plus sûre est une séquence à paliers : chaque relance monte d'un cran en formalité, et toute réponse du patient arrête la séquence automatique. Le calendrier entre deux paliers est une règle interne que vous fixez vous-même, puis que vous appliquez à tous les dossiers comparables.</p><ol class=\"steps\"><li><strong>Vérifier que la somme est due par le patient.</strong> Contrôlez les droits AMO et AMC, les retours d'organismes et le statut CSS avant d'écrire quoi que ce soit.</li><li><strong>Classer le dossier.</strong> Notez le montant, l'ancienneté et toute situation signalée qui impose un traitement manuel (voir la section suivante).</li><li><strong>Envoyer un rappel courtois par un canal léger.</strong> Un SMS ou un e-mail suffit : nom du centre, date du soin, montant, référence de la facture, moyens de paiement et numéro de l'accueil.</li><li><strong>Faire une relance écrite plus formelle.</strong> Un courrier ou un e-mail détaillé, au ton neutre, qui joint la facture et propose un échéancier si le montant est important.</li><li><strong>Appeler le patient.</strong> L'appel humain s'impose pour les montants élevés, les situations sensibles ou l'absence de réponse aux écrits. Il permet d'entendre une difficulté qu'un patient n'écrira jamais.</li><li><strong>Suspendre la séquence dès la moindre réponse.</strong> Un patient qui conteste, propose un échéancier ou signale une difficulté sort immédiatement du circuit automatique et passe à une personne de l'équipe.</li><li><strong>Envoyer une mise en demeure en dernier palier amiable.</strong> Lettre recommandée avec avis de réception, qui rappelle la créance, les relances précédentes et la suite envisagée.</li></ol><div data-figure=\"paliers-relance-patient\"></div><h3>Personnaliser sans trahir le secret médical</h3><p>Un message générique, visiblement automatique, est perçu comme froid. Un message qui cite le centre, la date du rendez-vous et la référence de la facture se lit comme un échange normal avec un établissement que le patient connaît. Concrètement, signez du nom du centre et indiquez un interlocuteur joignable.</p><p>La personnalisation a toutefois une limite stricte. Un SMS ou un courrier peut être lu par un proche : il ne doit jamais mentionner la nature des soins, ni même la spécialité quand elle révèle une pathologie. Le nom du centre, la date, le montant et la référence suffisent pour que le patient s'y retrouve.</p><h3>Le bon ton à chaque palier</h3><p>Le ton reste respectueux à toutes les étapes, y compris dans la mise en demeure. Le premier rappel part du principe d'un oubli. La relance écrite rappelle les faits sans reproche. La mise en demeure est ferme sur la créance, jamais sur la personne. Un patient qui paie sous la contrainte d'un message humiliant règle sa dette, puis ne revient pas.</p><h2 id=\"patients-exclus-relance\">Quels patients ne pas relancer comme les autres ?</h2><p>Certaines situations doivent sortir de la séquence standard et être traitées au cas par cas par une personne de l'équipe. Une relance automatique dans ces dossiers produit plus de dégâts que de paiements.</p><ul><li><strong>Un deuil signalé</strong> : le patient est décédé ou un proche l'a signalé. La créance se traite avec les ayants droit, plus tard et par écrit personnalisé.</li><li><strong>Un patient accompagné par un service social</strong> : passez par le travailleur social référent quand il est connu.</li><li><strong>Un patient sous tutelle ou curatelle</strong> : la relance s'adresse au tuteur ou au curateur, pas au patient seul.</li><li><strong>Une réclamation ou un contentieux en cours</strong> : tant que la contestation n'est pas réglée, aucune relance ne part.</li><li><strong>Un patient bénéficiaire de la CSS</strong> : vérifiez d'abord la facturation, puisque ses soins couverts relèvent du tiers payant.</li><li><strong>Un patient en traitement lourd ou de longue durée</strong> : un appel du responsable vaut mieux qu'un rappel standard.</li></ul><p>Pour repérer ces dossiers, n'utilisez pas les diagnostics. Le recouvrement n'a pas besoin de savoir de quoi souffre le patient, et mélanger données médicales et données de relance multiplie les risques au regard du secret et du RGPD (règlement général sur la protection des données).</p><div class=\"callout callout--tip\"><p><strong>Le bon réflexe :</strong> créez dans le logiciel un simple indicateur « relance manuelle », posé par le praticien ou l'accueil, sans motif médical. Le dossier sort de la séquence automatique et seule une personne habilitée décide de la suite.</p></div><h2 id=\"preuves-relance\">Quelles preuves garder pour chaque relance ?</h2><p>Gardez tout ce qui prouve la créance et chaque tentative de règlement amiable. Ces pièces servent si le patient conteste, et elles sont indispensables si le dossier part en recouvrement ou devant un juge.</p><ul><li>la facture et, pour les actes concernés, le devis signé par le patient ;</li><li>les retours des organismes qui montrent que la part restante revient bien au patient ;</li><li>la date, le canal et le contenu de chaque relance envoyée ;</li><li>les réponses du patient, y compris orales, notées avec la date et le nom de la personne qui a répondu ;</li><li>l'échéancier accepté, idéalement confirmé par écrit ;</li><li>l'avis de réception de la mise en demeure.</li></ul><p>Rangez ces éléments dans le dossier de facturation, séparés du dossier médical. L'équipe qui relance n'a pas à consulter les notes cliniques pour faire son travail.</p><h2 id=\"relance-ou-recouvrement\">Quand passer de la relance au recouvrement ?</h2><p>Passez de la relance au recouvrement quand tous les paliers amiables sont épuisés sans réponse, ou quand un échéancier accepté n'est plus honoré malgré un rappel. Il n'existe pas de délai universel : fixez une règle interne, la même pour tous les dossiers comparables, et tenez-la.</p><p>Deux critères guident la décision. Le premier est le montant : engager une procédure pour une petite somme coûte souvent plus que ce qu'elle rapporte, en argent et en image. Le second est la relation : un patient suivi depuis longtemps mérite un dernier appel du responsable avant toute suite.</p><p>Deux voies s'ouvrent ensuite. La première est le recouvrement amiable confié à une société spécialisée, qui poursuit les relances au nom du centre ; vérifiez qu'elle applique votre charte de ton. La seconde est judiciaire. Selon <a href=\"https://www.service-public.fr/particuliers/vosdroits/F1746\">service-public.fr</a>, l'injonction de payer est une procédure qui permet d'obtenir du juge une décision ordonnant au débiteur de payer, sans audience préalable. Elle suppose un dossier de preuves complet, d'où l'importance de la section précédente.</p><h2 id=\"escalade-impaye\">Quand et vers qui escalader un impayé ?</h2><p>Escaladez dès qu'un dossier sort du cadre courant : contestation, situation sensible, montant élevé ou échec de tous les paliers. L'interlocuteur dépend de la nature du blocage.</p><ul><li><strong>Le responsable de la facturation</strong> pour toute contestation du montant ou de la facture.</li><li><strong>Le praticien</strong> quand la relation de soin est en jeu ou que le patient met en cause le soin lui-même.</li><li><strong>La direction du centre</strong> pour décider d'un abandon de créance ou d'un passage en recouvrement.</li><li><strong>Le travailleur social</strong> quand le patient fait état d'une difficulté financière durable.</li><li><strong>L'organisme payeur</strong> quand l'impayé vient en réalité d'une part rejetée : le calendrier de <a href=\"/ressources/quand-relancer-mutuelle\">relance d'une mutuelle</a> s'applique alors, pas celui du patient.</li></ul><p>Ce dernier cas pèse lourd dans les centres qui pratiquent beaucoup de tiers payant. Chaque rejet de complémentaire non traité risque de finir en relance patient, avec un patient qui pensait n'avoir rien à payer. Moins de rejets laissés en souffrance, c'est donc moins de factures envoyées à tort aux patients. C'est le rôle des <a href=\"/agents\">agents Granit</a> : ils saisissent les demandes sur les portails des plateformes et suivent les réponses des organismes, pour que l'équipe d'accueil n'ait plus à rattraper ces écarts auprès des patients.</p><h2 id=\"indicateurs-recouvrement-patient\">Quels indicateurs suivre en recouvrement patient ?</h2><p>Trois indicateurs suffisent pour piloter le recouvrement patient : le montant recouvré à une échéance fixe, le nombre de plaintes liées aux relances et le temps que l'équipe y consacre. Ensemble, ils disent si vous êtes payés sans abîmer la relation ni épuiser l'accueil.</p><h3>Le montant recouvré à échéance fixe</h3><p>Mesurez la part des restes à charge facturés sur une période qui est encaissée après un délai que vous choisissez, 60 jours par exemple. Gardez toujours le même délai pour comparer les mois entre eux. Suivez en parallèle l'ancienneté du stock d'impayés : un stock qui vieillit se recouvre de plus en plus difficilement.</p><h3>Les plaintes liées aux relances</h3><p>Comptez les réclamations, appels mécontents et avis négatifs qui citent une relance. Une hausse signale un problème de ton, de canal ou d'exclusion mal appliquée. C'est le garde-fou de toute la démarche : un recouvrement qui progresse en multipliant les plaintes ne tient pas.</p><h3>Le temps de l'équipe</h3><p>Estimez les heures passées chaque semaine sur les relances, appels compris. Ajoutez un indicateur souvent oublié : la part des impayés qui étaient en réalité des rejets d'organismes. Si elle est élevée, le travail est à faire en amont, sur le tiers payant, plutôt qu'à l'accueil. Pour élargir le tableau de bord, la page sur les <a href=\"/ressources/kpi-back-office-sante\">KPI back-office santé</a> propose d'autres mesures, et celle sur le <a href=\"/ressources/groupes-multi-sites-pilotage\">pilotage multi-sites</a> aide à comparer plusieurs centres entre eux.</p>",
+  "tocItems": [
+    {
+      "id": "impaye-patient-cas",
+      "label": "Qu'est-ce qu'un impayé patient ?"
+    },
+    {
+      "id": "reste-a-charge-impaye-reperer",
+      "label": "Repérer un reste à charge impayé"
+    },
+    {
+      "id": "impaye-patient-causes",
+      "label": "Pourquoi un patient ne paie pas"
+    },
+    {
+      "id": "relance-patient-facture",
+      "label": "Relancer un patient, étape par étape"
+    },
+    {
+      "id": "patients-exclus-relance",
+      "label": "Les patients à ne pas relancer comme les autres"
+    },
+    {
+      "id": "preuves-relance",
+      "label": "Les preuves à garder"
+    },
+    {
+      "id": "relance-ou-recouvrement",
+      "label": "Passer de la relance au recouvrement"
+    },
+    {
+      "id": "escalade-impaye",
+      "label": "Quand et vers qui escalader"
+    },
+    {
+      "id": "indicateurs-recouvrement-patient",
+      "label": "Les indicateurs du recouvrement patient"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "Comment relancer un patient qui n'a pas payé ?",
+      "answer": "Vérifiez d'abord que la somme lui revient vraiment, et non à sa mutuelle. Relancez ensuite par paliers : un rappel courtois par SMS ou e-mail, une relance écrite avec la facture, un appel, puis une mise en demeure en dernier recours amiable. Chaque message cite le centre, la date, le montant et la référence, jamais la nature des soins."
+    },
+    {
+      "question": "Quand passer de la relance au recouvrement ?",
+      "answer": "Quand tous les paliers amiables sont épuisés sans réponse, ou quand un échéancier accepté n'est plus honoré malgré un rappel. Il n'existe pas de délai universel : le centre fixe sa propre règle et l'applique à tous les dossiers comparables. Le montant en jeu et l'historique de la relation avec le patient guident aussi la décision."
+    },
+    {
+      "question": "Quels patients ne pas relancer comme les autres ?",
+      "answer": "Les patients dont un deuil a été signalé, ceux accompagnés par un service social, ceux sous tutelle ou curatelle, ceux qui ont une réclamation en cours et ceux en traitement lourd. Les bénéficiaires de la complémentaire santé solidaire demandent d'abord une vérification de la facturation. Ces dossiers sortent de la séquence automatique et sont traités au cas par cas par une personne de l'équipe."
+    },
+    {
+      "question": "Quels indicateurs suivre en recouvrement ?",
+      "answer": "Trois indicateurs suffisent : le montant recouvré à une échéance fixe, le nombre de plaintes liées aux relances et le temps passé par l'équipe sur les relances. Il est utile d'y ajouter la part des impayés qui étaient en réalité des rejets de mutuelle. Si cette part est élevée, c'est le traitement du tiers payant qu'il faut renforcer."
+    }
+  ],
+  "sources": [
+    {
+      "label": "service-public.fr · Complémentaire santé solidaire (CSS)",
+      "url": "https://www.service-public.fr/particuliers/vosdroits/F10027"
+    },
+    {
+      "label": "service-public.fr · Injonction de payer",
+      "url": "https://www.service-public.fr/particuliers/vosdroits/F1746"
+    }
+  ],
+  "figures": [
+    {
+      "id": "paliers-relance-patient",
+      "type": "etapes",
+      "titre": "Les paliers d'une relance patient",
+      "legende": "Tout commence par la vérification de la dette ; une réponse du patient arrête la séquence.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "Vérifier la dette",
+          "detail": "Droits AMO, AMC, CSS et retours d'organismes",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Rappel courtois",
+          "detail": "SMS ou e-mail : centre, date, montant, référence",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Relance écrite",
+          "detail": "Facture jointe, échéancier proposé",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Appel humain",
+          "detail": "Montants élevés, situations sensibles, silence",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Mise en demeure",
+          "detail": "Recommandé avec avis de réception",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [],
+  "liensEntrants": [],
+  "remplace": [],
+  "verticales": [
+    "centres"
+  ],
+  "refonte": true,
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-30T10:12:03.501Z",
+    "avertissements": [
+      "aucune citation (facultative)"
+    ]
+  }
+}
