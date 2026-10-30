@@ -176,6 +176,21 @@ const urls = [
     })),
 ];
 
+// Vercel clones with --depth=10: a page untouched in the last 10 commits has no git date there
+// (11 URLs without <lastmod> online on 30/10/2026). Fallback: the date already written in the
+// committed sitemap, generated with the full history. VERCEL_DEEP_CLONE=true on the Vercel
+// project gives the full history and makes this fallback unnecessary.
+const previousLastmod = new Map(
+  existsSync("public/sitemap.xml")
+    ? [
+        ...readFileSync("public/sitemap.xml", "utf8").matchAll(
+          /<loc>([^<]+)<\/loc>\s*<lastmod>([^<]+)<\/lastmod>/g,
+        ),
+      ].map((m) => [m[1], m[2]])
+    : [],
+);
+for (const u of urls) u.lastmod ??= previousLastmod.get(u.loc);
+
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls
@@ -192,6 +207,9 @@ ${urls
 
 writeFileSync("public/sitemap.xml", xml);
 const dated = urls.filter((u) => u.lastmod).length;
+const undated = urls.filter((u) => !u.lastmod).map((u) => u.loc);
+if (undated.length)
+  console.warn(`sitemap.xml: ${undated.length} URL sans lastmod : ${undated.join(", ")}`);
 console.log(
   `sitemap.xml written: ${urls.length} URLs (${slugs.length} articles + ${ressources.length} ressources + ${categoryPages.length} catégories + ${metierPages.length} métiers + ${staticPages.length} pages, ${dated} with lastmod)`,
 );
