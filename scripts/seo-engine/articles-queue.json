@@ -1842,7 +1842,7 @@
       "intégration doctolib"
     ],
     "searchVolume": null,
-    "status": "pending",
+    "status": "review",
     "wave": 1.5,
     "level": "Refonte",
     "parentSlug": null,
@@ -1864,7 +1864,8 @@
       "centres"
     ],
     "auteur": "laura",
-    "relecteur": "olivier"
+    "relecteur": "olivier",
+    "publishedAt": "2026-10-30"
   },
   {
     "id": "R11",
