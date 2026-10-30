@@ -1,14 +1,82 @@
-# Granit AI
+# Granit
 
-> Granit AI déploie des agents IA autonomes qui automatisent les workflows administratifs des établissements de santé — tiers-payant, facturation, commandes fournisseurs, relances — sans intégration technique. Opérationnel en 48 h, branché sur vos outils existants.
+> Granit déploie des agents IA qui gèrent le tiers payant et l'administratif des magasins et cabinets de santé en France : demandes de prise en charge sur les portails des mutuelles, contrôle avant envoi, traitement des rejets, rapprochement des paiements et relances. Les agents travaillent dans les outils déjà en place (logiciel métier, portails, SESAM-Vitale, NOEMIE), sans intégration technique. Optique d'abord, puis dentaire, audition, pharmacie, centres de santé, cliniques et EHPAD.
 
-## Pages
+Le site est en français. La rubrique Ressources (https://www.getgranit.ai/ressources) est un guide pratique du tiers payant : plateformes et portails des complémentaires, codes de rejet, paiements et rapprochement, conformité.
 
-- [Accueil](/): Présentation de Granit AI et de ses agents IA pour la santé.
-- [Agents](/agents): Catalogue des agents IA spécialisés par vertical (dentaire, optique, audio, clinique, EHPAD, pharmacie, laboratoire).
-- [Tarifs](/tarifs): Grille tarifaire et formules d'abonnement.
-- [Démo](/demo): Essayer la plateforme directement depuis le navigateur.
-- [Ressources](/ressources): Articles, guides et contenus éducatifs sur l'IA en santé.
-- [À propos](/a-propos): Mission, équipe et vision de Granit AI.
-- [Sécurité](/securite): Engagements de sécurité, conformité et protection des données de santé.
-- [CGV](/cgv): Conditions générales de vente.
+## Pages principales
+
+- [Accueil](https://www.getgranit.ai/): Présentation de Granit et de ses agents IA pour l'administratif santé.
+- [Agents](https://www.getgranit.ai/agents): Les agents par métier et par tâche : prises en charge, rejets, paiements, relances, facturation.
+- [Tarifs](https://www.getgranit.ai/tarifs): Tarification à l'usage : forfait plateforme par centre et fee par agent selon les volumes traités.
+- [Sécurité](https://www.getgranit.ai/securite): Hébergement, protection des données de santé et conformité.
+- [À propos](https://www.getgranit.ai/a-propos): L'équipe, la mission et l'histoire de Granit.
+- [Programme partenaires](https://www.getgranit.ai/affiliation): Programme d'affiliation pour les professionnels de santé et prescripteurs.
+
+## Ressources par métier
+
+- [Optique](https://www.getgranit.ai/ressources/metier/optique): Prises en charge, portails des plateformes, rejets et paiements : le tiers payant au comptoir d'un magasin d'optique.
+- [Dentaire](https://www.getgranit.ai/ressources/metier/dentaire): Paniers 100 % Santé, devis et traitements d'orthodontie : le tiers payant au cabinet dentaire.
+- [Centres de santé](https://www.getgranit.ai/ressources/metier/centres): Facturation, recouvrement et outils d'un centre de santé ou d'un groupe multi-sites.
+- [Audition](https://www.getgranit.ai/ressources/metier/audio): Renouvellements, classes d'appareils et période d'essai : facturer les appareils auditifs en tiers payant.
+- [Pharmacie](https://www.getgranit.ai/ressources/metier/pharmacie): Créances de tiers payant, rejets et réassort : le back-office d'une officine.
+
+## Guide du tiers payant
+
+- [Tous les articles : Guide du tiers payant](https://www.getgranit.ai/ressources/categorie/guide-tiers-payant)
+- [Tiers payant opticien : de la prise en charge à l'encaissement](https://www.getgranit.ai/ressources/tiers-payant-opticien): Tiers payant opticien : AMO, mutuelle, prise en charge, devis 100 % Santé, paiement, rejets. Le circuit complet pour encaisser chaque dossier sans retard.
+- [Audioprothèse : maîtriser le tiers-payant sur le renouvellement d'appareillage](https://www.getgranit.ai/ressources/audioprothese-renouvellement-tiers-payant): Renouvellement appareil auditif : règle des 4 ans par oreille, classe I ou II, période d'essai. Les points qui évitent un refus de tiers payant audio.
+
+## Plateformes et portails
+
+- [Tous les articles : Plateformes et portails](https://www.getgranit.ai/ressources/categorie/plateformes)
+- [Portails de tiers payant pour les opticiens : connexion, prise en charge, rejet et paiement](https://www.getgranit.ai/ressources/portails-tiers-payant): Portail tiers payant opticien : trouver le bon portail, ouvrir un compte, faire une prise en charge, traiter un rejet, suivre le paiement. Le guide du comptoir.
+- [Actil TP pour les opticiens : espace pro, prise en charge, statuts et paiement](https://www.getgranit.ai/ressources/portail-actil): Actil TP pour opticiens : se connecter à l'espace pro actil.com, faire la cotation puis la prise en charge, lire les statuts et suivre le paiement.
+- [Almerys : faire une prise en charge (PEC) optique](https://www.getgranit.ai/ressources/almerys-prise-en-charge): Almerys PEC optique : connexion, saisie par code LPP, bouton Valoriser, lecture des 8 statuts, refus. Le parcours relevé sur le portail, étape par étape.
+- [Almerys TP pour les opticiens : espace pro, prise en charge, statuts et paiement](https://www.getgranit.ai/ressources/portail-almerys): Almerys TP pour opticiens : accès à l'espace pro, prise en charge optique, 8 statuts expliqués, paiement et contacts. Connexion sur almerys.com expliquée.
+- [iSanté TP pour les opticiens : espace pro, prise en charge, statuts et paiement](https://www.getgranit.ai/ressources/portail-isante): iSanté TP pour opticiens : conventionnement, connexion à tp-isante.fr, prise en charge sur IsantePEC, statuts, paiement en 3 jours ouvrés en télétransmission.
+- [Itelis TP pour les opticiens : espace pro, prise en charge, statuts et paiement](https://www.getgranit.ai/ressources/portail-itelis): Itelis TP pour opticiens : connexion à l'extranet, code OTP, conventionnement, prise en charge et contacts. Le guide pratique pour débloquer vos dossiers.
+- [Ma mutuelle passe par quel portail ? (outil gratuit + numéro AMC)](https://www.getgranit.ai/ressources/mutuelle-quel-portail): Numéro AMC c'est quoi ? Où le lire sur la carte de tiers payant et comment trouver le bon portail de la mutuelle, avec notre relevé gratuit de 281 mutuelles.
+- [Oxantis TP pour les opticiens : espace pro, prise en charge, statuts et paiement](https://www.getgranit.ai/ressources/portail-oxantis): Oxantis TP : accès à l'espace pro oxantis.net, prise en charge optique, statuts, paiement et contacts. Les gestes utiles au comptoir, sources à l'appui.
+- [Santéclair TP pour les opticiens : espace pro, prise en charge, statuts et paiement](https://www.getgranit.ai/ressources/portail-santeclair): TP Santéclair pour opticiens : accès à l'espace pro, prise en charge sur le portail FFL TP+ Optique, statuts et paiement. Le guide pour débloquer vos dossiers.
+- [Sévéane TP (Korelio) pour les opticiens : espace pro, prise en charge, statuts et paiement](https://www.getgranit.ai/ressources/portail-seveane): Sévéane TP (Korelio) pour opticiens : accès à l'espace pro, prise en charge optique, statuts et paiement. Les gestes pour débloquer un dossier au comptoir.
+- [SP Santé TP pour les opticiens : espace pro, prise en charge, statuts et paiement](https://www.getgranit.ai/ressources/portail-sp-sante): SP Santé TP pour opticiens : conventionnement, connexion à l'espace pro, demande de prise en charge optique, statuts et paiement. Le guide pas à pas.
+- [Viamédis : créer son compte et accéder à l'espace pro](https://www.getgranit.ai/ressources/viamedis-espace-pro): Viamedis espace pro : créez votre compte sur viamedispro.com, activez viamedis.net et réglez les blocages de connexion. Étapes et contacts vérifiés.
+- [Viamédis TP pour les opticiens : espace pro, prise en charge, statuts et paiement](https://www.getgranit.ai/ressources/portail-viamedis): Viamedis TP pour opticiens : conventionnement, espace pro viamedis.net, prise en charge optique, statuts et paiement. Les faits vérifiés, sources à l'appui.
+
+## Rejets et corrections
+
+- [Tous les articles : Rejets et corrections](https://www.getgranit.ai/ressources/categorie/rejets)
+- [Checklist avant d'envoyer une prise en charge : les points qui évitent le rejet](https://www.getgranit.ai/ressources/checklist-prise-en-charge): Checklist prise en charge optique : droits, portail, ordonnance, devis et pièces à vérifier avant l'envoi. Les 8 contrôles à faire pour éviter le rejet.
+- [Rejet mutuelle « bénéficiaire inconnu » : corriger sans doubler l'AMO](https://www.getgranit.ai/ressources/rejet-beneficiaire-inconnu): Rejet bénéficiaire inconnu mutuelle : causes, correction pas à pas sans refacturer la part AMO, preuves à garder et quand relancer. La méthode du comptoir.
+
+## Paiements et rapprochement
+
+- [Tous les articles : Paiements et rapprochement](https://www.getgranit.ai/ressources/categorie/paiements)
+- [Codes rejets NOEMIE : liste, signification et action](https://www.getgranit.ai/ressources/codes-rejets-noemie): Liste codes rejets NOEMIE : où trouver le libellé fiable, comment classer la cause, corriger et relancer une facture rejetée. La méthode pas à pas.
+- [Officine : solder le stock de créances tiers-payant avant qu'il ne devienne une perte](https://www.getgranit.ai/ressources/officine-balance-agee-tiers-payant): Créances tiers payant pharmacie : trier la balance âgée par cause, traiter ARL négatifs, rejets et virements non lettrés avant l'échéance. Méthode pas à pas.
+- [Quand relancer une mutuelle ? Calendrier par étape (PEC, facture, ARL, NOEMIE)](https://www.getgranit.ai/ressources/quand-relancer-mutuelle): Relancer une mutuelle au bon moment : signaux à surveiller par étape (PEC, facture, ARL, NOEMIE), preuves à garder et quand escalader un impayé.
+- [Virement de mutuelle inférieur à la facture : comprendre l'écart et relancer](https://www.getgranit.ai/ressources/virement-mutuelle-inferieur): Virement mutuelle inférieur facture : trouvez la cause de l'écart en 4 vérifications, gardez les preuves et sachez qui relancer pour récupérer le solde.
+
+## Gérer son tiers payant
+
+- [Tous les articles : Gérer son tiers payant](https://www.getgranit.ai/ressources/categorie/gerer-son-tiers-payant)
+- [Granit ou Iremia Santé : lequel choisir pour le tiers payant de votre magasin ?](https://www.getgranit.ai/ressources/granit-vs-iremia): Iremia Santé ou Granit : prestataire avec avance à J+1 ou agents qui saisissent vos PEC. Comparez modèles et usages pour choisir en connaissance de cause.
+- [Ordonnances, rejets et réassort : les trois boucles à automatiser en officine](https://www.getgranit.ai/ressources/trois-boucles-pharmacie): Automatisation pharmacie : ordonnances, rejets de tiers payant et réassort. Ce qu'un agent peut préparer, ce que le titulaire valide, et par où commencer.
+
+## Optional
+
+- [Orthodontie : fiabiliser la facturation des traitements longs, semestre après semestre](https://www.getgranit.ai/ressources/orthodontie-facturation-traitements-longs): DEP, codes semestriels, bascule à 16 ans, mensualités patient : les points de rupture du tiers-payant orthodontique et comment sécuriser un dossier sur plusieurs années.
+- [Dentaire : sécuriser le tiers-payant sur les paniers 100% Santé](https://www.getgranit.ai/ressources/dentaire-paniers-100-sante-tiers-payant): RAC0, panier maîtrisé, devis normalisé : pourquoi le tiers-payant des prothèses dentaires est devenu un risque de trésorerie, et comment le fiabiliser dossier par dossier.
+- [Réduire les rejets CPAM sans changer de logiciel métier](https://www.getgranit.ai/ressources/reduire-rejets-cpam): Les contrôles à automatiser avant télétransmission pour sécuriser vos flux dès le premier passage.
+- [Automatiser la facturation résident sans perdre le contrôle humain](https://www.getgranit.ai/ressources/facturation-ehpad-controle-humain): Règles, validations, exceptions : structurer un workflow robuste pour les équipes administratives.
+- [Rapprocher flux NOEMIE et virements bancaires chaque matin](https://www.getgranit.ai/ressources/rapprochement-noemie): Une méthode simple pour réduire les écarts de caisse et prioriser les dossiers bloquants.
+- [Ce qu'un agent IA doit journaliser en environnement de santé](https://www.getgranit.ai/ressources/logs-agent-sante): Traçabilité, rôles, conservation et audit : les exigences minimales avant mise en production.
+- [IA générative en santé : ce que le cadre réglementaire impose vraiment](https://www.getgranit.ai/ressources/ia-generative-sante-cadre): RGPD, AI Act, HDS, MDR : démêler ce qui s'applique aux agents IA non-cliniques en établissement.
+- [Les 7 KPI back-office santé qu'aucune direction ne suit (et devrait)](https://www.getgranit.ai/ressources/kpi-back-office-sante): Délai de facturation, taux de rejet primaire, coût administratif par acte : les indicateurs qui changent les arbitrages.
+- [Recouvrement patient : automatiser sans déshumaniser la relation](https://www.getgranit.ai/ressources/recouvrement-patient-empathie): Séquences personnalisées, canaux adaptés, exclusions sensibles : un cadre opérationnel qui respecte les patients.
+- [Brancher des agents sur Doctolib et votre logiciel métier](https://www.getgranit.ai/ressources/integration-doctolib-lgo): Connecteurs natifs, flux temps réel, gouvernance des écritures : ce qui rend l'intégration rapide.
+- [Hôpital privé : ordonnancer les flux administratifs autour du parcours patient](https://www.getgranit.ai/ressources/hopital-prive-ordonnancement): Pré-admission, séjour, sortie, facturation : aligner les agents IA sur la temporalité réelle du soin.
+- [SESAM-Vitale : les évolutions 2025 à anticiper dès maintenant](https://www.getgranit.ai/ressources/sesam-vitale-evolutions-2025): ApCV, dématérialisation des pièces justificatives, e-prescription : ce qui change pour les établissements.
+- [IA agentique vs RPA : pourquoi la robotisation classique a échoué en santé](https://www.getgranit.ai/ressources/ia-vs-rpa-sante): Fragilité aux changements d'interface, absence de raisonnement, coût de maintenance : les limites du RPA.
+- [Groupes multi-sites : piloter tous ses centres avec une seule console](https://www.getgranit.ai/ressources/groupes-multi-sites-pilotage): Centralisation, comparaisons inter-sites, alertes consolidées : ce qu'apporte une plateforme unifiée.
