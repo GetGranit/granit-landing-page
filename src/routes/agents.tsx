@@ -2,13 +2,16 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { Reveal } from "@/components/Reveal";
 import { useLanguage } from "@/lib/i18n";
+import { JsonLd } from "@/components/JsonLd";
+import { Faq } from "@/components/ressources/article/Fin";
+import { SITE_URL, faqPageLd, organizationRef } from "@/lib/seo";
 
 export const Route = createFileRoute("/agents")({
   head: () => ({
     meta: [
-      { title: "Agents IA santé - Granit" },
+      { title: "Agents IA tiers payant et back-office santé - Granit" },
       { name: "description", content: "Les agents IA Granit par verticale santé et par cas d'usage : tiers-payant, recouvrement, admissions, facturation, conformité." },
-      { property: "og:title", content: "Agents IA santé - Granit" },
+      { property: "og:title", content: "Agents IA tiers payant et back-office santé - Granit" },
       { property: "og:description", content: "Des agents opérationnels pour chaque verticale santé et chaque workflow administratif." },
     ],
   }),
@@ -20,6 +23,44 @@ const content = {
     eyebrow: "Agents",
     title: "Un catalogue d'agents pour chaque verticale santé.",
     intro: "Granit déploie des agents spécialisés par métier et par cas d'usage. Ils opèrent sur vos outils existants, sans migration ni intégration API.",
+    summaryLabel: "En bref :",
+    summary:
+      "Granit déploie des agents IA qui automatisent le back-office administratif des professionnels de santé : tiers payant, devis, facturation, traitement des rejets, rapprochement bancaire et recouvrement. Chaque agent est spécialisé par métier (optique, audio, dentaire, pharmacie, EHPAD, cliniques, laboratoires) et travaille sur vos outils existants, sans migration ni intégration API.",
+    filtersTitle: "Les agents par métier et par cas d'usage",
+    catalogTitle: "Le catalogue",
+    faqTitle: "Questions fréquentes",
+    faq: [
+      {
+        question: "Qu'est-ce qu'un agent IA Granit ?",
+        answer:
+          "Un agent spécialisé par métier et par cas d'usage, qui exécute une tâche administrative à votre place : demande de prise en charge, devis tiers payant, télétransmission, traitement des rejets, rapprochement bancaire ou relance des impayés.",
+      },
+      {
+        question: "Faut-il changer de logiciel ou demander une API ?",
+        answer:
+          "Non. Les agents opèrent sur vos outils existants, sans migration ni intégration API : ils se branchent sur votre logiciel métier et sur les portails que vous utilisez déjà.",
+      },
+      {
+        question: "Quelles plateformes de tiers payant sont couvertes ?",
+        answer:
+          "Granit travaille avec toutes les plateformes de tiers payant, par exemple Viamedis, Almerys, Santéclair, SP Santé, Itelis ou iSanté.",
+      },
+      {
+        question: "Pour quels métiers de santé ?",
+        answer:
+          "Optique, audioprothèse, dentaire, orthodontie, pharmacie, EHPAD, cliniques, laboratoires de biologie et laboratoires pharmaceutiques.",
+      },
+      {
+        question: "Peut-on contrôler ce que font les agents ?",
+        answer:
+          "Oui. Chaque action d'agent est journalisée, horodatée et exportable, et chaque décision reste révisable par un humain. Granit est certifié HDS.",
+      },
+      {
+        question: "Combien coûte un agent ?",
+        answer:
+          "Granit se paie par centre : à partir de 199 € HT par mois pour un centre, plus un coût à l'usage par agent selon les workflows activés et le volume traité. Le détail est sur la page Tarifs.",
+      },
+    ],
     verticalLabel: "Verticales couvertes",
     useCaseLabel: "Cas d'usage",
     cta: "Demander une démo gratuite",
@@ -50,6 +91,44 @@ const content = {
     eyebrow: "Agents",
     title: "A catalog of agents for every healthcare vertical.",
     intro: "Granit deploys specialized agents by business vertical and use case. They operate on your existing tools, with no migration or API integration.",
+    summaryLabel: "In short:",
+    summary:
+      "Granit deploys AI agents that automate the administrative back office of healthcare professionals: third-party payment, quotes, invoicing, rejection handling, bank reconciliation and collections. Each agent is specialized by trade (optical, hearing care, dental, pharmacy, care homes, clinics, labs) and works on your existing tools, with no migration or API integration.",
+    filtersTitle: "Agents by trade and use case",
+    catalogTitle: "The catalog",
+    faqTitle: "Frequently asked questions",
+    faq: [
+      {
+        question: "What is a Granit AI agent?",
+        answer:
+          "An agent specialized by trade and use case that runs an administrative task for you: coverage requests, third-party quotes, claims transmission, rejection handling, bank reconciliation or unpaid follow-ups.",
+      },
+      {
+        question: "Do we need to change software or request an API?",
+        answer:
+          "No. Agents operate on your existing tools, with no migration or API integration: they plug into your practice software and the portals you already use.",
+      },
+      {
+        question: "Which third-party payment platforms are covered?",
+        answer:
+          "Granit works with every third-party payment platform, for example Viamedis, Almerys, Santéclair, SP Santé, Itelis or iSanté.",
+      },
+      {
+        question: "Which healthcare trades?",
+        answer:
+          "Optical, hearing care, dental, orthodontics, pharmacy, care homes, clinics, biology labs and pharma labs.",
+      },
+      {
+        question: "Can we control what the agents do?",
+        answer:
+          "Yes. Every agent action is logged, timestamped and exportable, and every decision can be reviewed by a human. Granit is HDS certified.",
+      },
+      {
+        question: "How much does an agent cost?",
+        answer:
+          "Granit is billed per center: from €199 excl. VAT per month for one center, plus a usage fee per agent based on enabled workflows and processed volume. See the Pricing page for details.",
+      },
+    ],
     verticalLabel: "Covered verticals",
     useCaseLabel: "Use cases",
     cta: "Book a free demo",
@@ -78,22 +157,60 @@ const content = {
   },
 };
 
+/** Service + catalogue des agents de la page, + FAQPage. */
+const agentsLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Agents IA Granit pour le back-office santé",
+    url: `${SITE_URL}/agents`,
+    serviceType: "Automatisation du back-office administratif de santé par agents IA",
+    description: content.fr.summary,
+    provider: organizationRef,
+    areaServed: { "@type": "Country", name: "France" },
+    audience: { "@type": "Audience", audienceType: content.fr.verticals.join(", ") },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Catalogue des agents Granit",
+      itemListElement: content.fr.agents.map((a) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: a.name,
+          description: a.desc,
+          category: `${a.vertical} · ${a.useCase}`,
+        },
+      })),
+    },
+  },
+  faqPageLd(content.fr.faq),
+];
+
 function AgentsPage() {
   const { lang } = useLanguage();
   const t = content[lang];
 
   return (
     <SiteLayout>
+      <JsonLd data={agentsLd} />
       <section className="mx-auto max-w-[1280px] px-6 pt-24 pb-12">
         <Reveal>
           <div className="eyebrow mb-5">{t.eyebrow}</div>
           <h1 className="h1-hero max-w-4xl" style={{ fontSize: "clamp(38px,4.6vw,68px)" }}>{t.title}</h1>
           <p className="body-lg mt-8 max-w-2xl">{t.intro}</p>
+          <p
+            className="mt-6 max-w-2xl text-[14px] leading-[1.7]"
+            style={{ color: "var(--text-soft)" }}
+          >
+            <strong style={{ color: "var(--text)", fontWeight: 600 }}>{t.summaryLabel}</strong>{" "}
+            {t.summary}
+          </p>
         </Reveal>
       </section>
 
       <section className="mx-auto max-w-[1280px] px-6 pb-8">
         <Reveal>
+          <h2 className="eyebrow mb-4">{t.filtersTitle}</h2>
           <div className="grid gap-6 rounded-[12px] border bg-white/40 p-6 lg:grid-cols-2" style={{ borderColor: "var(--border)" }}>
             <FilterGroup label={t.verticalLabel} items={t.verticals} />
             <FilterGroup label={t.useCaseLabel} items={t.useCases} />
@@ -102,6 +219,7 @@ function AgentsPage() {
       </section>
 
       <section className="mx-auto max-w-[1280px] px-6 pb-28">
+        <h2 className="eyebrow mb-6 mt-4">{t.catalogTitle}</h2>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {t.agents.map((agent, i) => (
             <Reveal key={`${agent.vertical}-${agent.name}`} delay={i * 0.02}>
@@ -110,12 +228,17 @@ function AgentsPage() {
                   <span className="rounded-full px-2 py-1 text-[10px]" style={{ background: "var(--terra-light)", color: "var(--terra)", fontFamily: "var(--font-mono)" }}>{agent.vertical}</span>
                   <span className="rounded-full px-2 py-1 text-[10px]" style={{ background: "var(--bg3)", color: "var(--text-soft)", fontFamily: "var(--font-mono)" }}>{agent.useCase}</span>
                 </div>
-                <h2 className="mt-5 text-[20px] leading-[1.25]" style={{ fontWeight: 500 }}>{agent.name}</h2>
+                <h3 className="mt-5 text-[20px] leading-[1.25]" style={{ fontWeight: 500 }}>
+                  {agent.name}
+                </h3>
                 <p className="mt-3 flex-1 text-[14px] leading-[1.65]" style={{ color: "var(--text-soft)" }}>{agent.desc}</p>
                 <div className="mt-6 text-[13px]" style={{ color: "var(--terra)", fontFamily: "var(--font-mono)" }}>{agent.stat}</div>
               </article>
             </Reveal>
           ))}
+        </div>
+        <div className="mx-auto mt-8 max-w-2xl">
+          <Faq items={t.faq} titre={t.faqTitle} />
         </div>
         <div className="mt-16 text-center"><Link to="/" hash="demo" className="btn-primary">{t.cta} <span className="arrow">↗</span></Link></div>
       </section>

@@ -4,12 +4,19 @@ import { Reveal } from "@/components/Reveal";
 import { useLanguage } from "@/lib/i18n";
 import securiteHero from "@/assets/securite-hero.jpg";
 import securiteTrust from "@/assets/securite-trust.jpg";
+import { JsonLd } from "@/components/JsonLd";
+import { Faq } from "@/components/ressources/article/Fin";
+import { faqPageLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/securite")({
   head: () => ({
     meta: [
       { title: "Sécurité & conformité santé - Granit" },
-      { name: "description", content: "HDS, RGPD, secret médical, chiffrement, MFA, journalisation et réversibilité. Conçu pour les données de santé." },
+      {
+        name: "description",
+        content:
+          "Granit est certifié HDS : données de santé hébergées en France, chiffrées, jamais utilisées pour entraîner des modèles tiers. RGPD, journalisation et réversibilité.",
+      },
       { property: "og:title", content: "Sécurité & conformité santé - Granit" },
       { property: "og:description", content: "Le standard le plus strict du secteur santé français et européen." },
     ],
@@ -23,6 +30,42 @@ const content = {
     title: "Vos données de santé méritent le plus haut niveau d'exigence.",
     intro:
       "Granit est conçu dès l'origine pour les contraintes réglementaires des établissements de santé : HDS, RGPD, secret médical, référentiels ANS. Aucune donnée patient ne sort jamais du périmètre de confiance.",
+    summaryLabel: "En bref :",
+    summary:
+      "Granit est certifié HDS. Les données patients sont hébergées en France, chiffrées en transit et au repos, et ne servent jamais à entraîner des modèles tiers. Chaque action d'agent est journalisée, et vous pouvez récupérer ou faire supprimer vos données à tout moment.",
+    faqTitle: "Questions fréquentes",
+    faq: [
+      {
+        question: "Granit est-il certifié HDS ?",
+        answer:
+          "Oui, Granit est certifié HDS. Les données patients sont hébergées en France, sauvegardes comprises, sans transfert hors de l'Union européenne.",
+      },
+      {
+        question: "Les données patients servent-elles à entraîner l'IA ?",
+        answer:
+          "Non. Aucune donnée patient n'est utilisée pour entraîner des modèles tiers. Les modèles sont déployés dans des environnements isolés, hébergés en Europe.",
+      },
+      {
+        question: "Comment les données sont-elles protégées ?",
+        answer:
+          "Chiffrement en transit (TLS 1.3) et au repos (AES-256), MFA obligatoire, rôles fins par établissement et principe du moindre privilège, appliqué aux humains comme aux agents.",
+      },
+      {
+        question: "Peut-on contrôler ce que font les agents ?",
+        answer:
+          "Oui. Chaque action d'agent est journalisée, horodatée, attribuable et exportable, et chaque décision reste révisable par un humain.",
+      },
+      {
+        question: "Que deviennent nos données si nous arrêtons Granit ?",
+        answer:
+          "Vous pouvez demander à tout moment un export complet et une suppression certifiée de vos données. Le contrat se résilie avec un préavis de 30 jours, sans pénalité ni frais.",
+      },
+      {
+        question: "Que se passe-t-il en cas d'incident de sécurité ?",
+        answer:
+          "La procédure suit le RGPD : notification à la CNIL sous 72 h et information des établissements concernés.",
+      },
+    ],
     badges: [
       { k: "HDS", v: "Hébergeur certifié" },
       { k: "RGPD", v: "Conforme art. 9" },
@@ -80,6 +123,42 @@ const content = {
     title: "Your health data deserves the highest level of rigor.",
     intro:
       "Granit is built from day one for healthcare regulatory constraints: HDS, GDPR, medical confidentiality and ANS frameworks. Patient data never leaves the trust perimeter.",
+    summaryLabel: "In short:",
+    summary:
+      "Granit is HDS certified. Patient data is hosted in France, encrypted in transit and at rest, and never used to train third-party models. Every agent action is logged, and you can retrieve or delete your data at any time.",
+    faqTitle: "Frequently asked questions",
+    faq: [
+      {
+        question: "Is Granit HDS certified?",
+        answer:
+          "Yes, Granit is HDS certified. Patient data is hosted in France, backups included, with no transfer outside the European Union.",
+      },
+      {
+        question: "Is patient data used to train AI?",
+        answer:
+          "No. No patient data is used to train third-party models. Models run in isolated environments hosted in Europe.",
+      },
+      {
+        question: "How is data protected?",
+        answer:
+          "Encryption in transit (TLS 1.3) and at rest (AES-256), mandatory MFA, fine-grained roles per organization and least privilege, applied to humans and agents alike.",
+      },
+      {
+        question: "Can we control what the agents do?",
+        answer:
+          "Yes. Every agent action is logged, timestamped, attributable and exportable, and every decision can be reviewed by a human.",
+      },
+      {
+        question: "What happens to our data if we stop using Granit?",
+        answer:
+          "You can request a full export and certified deletion of your data at any time. The contract can be cancelled with 30 days' notice, with no penalty or fee.",
+      },
+      {
+        question: "What happens in case of a security incident?",
+        answer:
+          "The procedure follows GDPR: notification to the CNIL within 72 hours and notification of the organizations concerned.",
+      },
+    ],
     badges: [
       { k: "HDS", v: "Certified hosting" },
       { k: "GDPR", v: "Article 9 compliant" },
@@ -134,11 +213,14 @@ const content = {
   },
 };
 
+const securiteLd = [faqPageLd(content.fr.faq)];
+
 function SecuritePage() {
   const { lang } = useLanguage();
   const t = content[lang];
   return (
     <SiteLayout>
+      <JsonLd data={securiteLd} />
       <section className="mx-auto max-w-[1280px] px-6 pt-24 pb-10">
         <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_1fr]">
           <div>
@@ -148,6 +230,13 @@ function SecuritePage() {
                 {t.title}
               </h1>
               <p className="body-lg mt-8 max-w-2xl">{t.intro}</p>
+              <p
+                className="mt-6 max-w-2xl text-[14px] leading-[1.7]"
+                style={{ color: "var(--text-soft)" }}
+              >
+                <strong style={{ color: "var(--text)", fontWeight: 600 }}>{t.summaryLabel}</strong>{" "}
+                {t.summary}
+              </p>
             </Reveal>
 
             <Reveal delay={0.1}>
@@ -208,7 +297,7 @@ function SecuritePage() {
 
       <section className="mx-auto max-w-[1280px] px-6 pb-20">
         <Reveal>
-          <div className="eyebrow mb-6">{t.pillarsTitle}</div>
+          <h2 className="eyebrow mb-6">{t.pillarsTitle}</h2>
         </Reveal>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {t.items.map((it, i) => (
@@ -220,9 +309,9 @@ function SecuritePage() {
                 >
                   0{i + 1}
                 </div>
-                <div className="mt-3 text-[17px]" style={{ fontWeight: 500 }}>
+                <h3 className="mt-3 text-[17px]" style={{ fontWeight: 500 }}>
                   {it.t}
-                </div>
+                </h3>
                 <p className="mt-2 text-[14px] leading-[1.65]" style={{ color: "var(--text-soft)" }}>
                   {it.d}
                 </p>
@@ -236,13 +325,13 @@ function SecuritePage() {
         <div className="grid gap-10 lg:grid-cols-2">
           <Reveal>
             <div>
-              <div className="eyebrow mb-6">{t.governanceTitle}</div>
+              <h2 className="eyebrow mb-6">{t.governanceTitle}</h2>
               <div className="space-y-4">
                 {t.governance.map((g) => (
                   <div key={g.t} className="border-t pt-4" style={{ borderColor: "var(--border)" }}>
-                    <div className="text-[15px]" style={{ fontWeight: 500 }}>
+                    <h3 className="text-[15px]" style={{ fontWeight: 500 }}>
                       {g.t}
-                    </div>
+                    </h3>
                     <p className="mt-1 text-[14px] leading-[1.65]" style={{ color: "var(--text-soft)" }}>
                       {g.d}
                     </p>
@@ -273,7 +362,7 @@ function SecuritePage() {
                 />
               </div>
               <div className="p-8 pt-6">
-                <div className="eyebrow mb-5">{t.aiTitle}</div>
+                <h2 className="eyebrow mb-5">{t.aiTitle}</h2>
                 <ul className="space-y-4">
                   {t.aiPoints.map((p) => (
                     <li key={p} className="flex gap-3 text-[14px] leading-[1.65]" style={{ color: "var(--text-soft)" }}>
@@ -285,6 +374,12 @@ function SecuritePage() {
               </div>
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-[1280px] px-6 pb-20">
+        <div className="mx-auto max-w-2xl">
+          <Faq items={t.faq} titre={t.faqTitle} />
         </div>
       </section>
 
