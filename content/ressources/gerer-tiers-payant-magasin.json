@@ -1,0 +1,213 @@
+{
+  "slug": "gerer-tiers-payant-magasin",
+  "id": "E0",
+  "category": "gerer-son-tiers-payant",
+  "categoryName": "Gérer son tiers payant",
+  "type": "standard",
+  "plateforme": null,
+  "title": "Gérer le tiers payant d'un magasin : en interne, externalisé ou automatisé ?",
+  "primaryKeyword": "gestion tiers payant",
+  "keywordCluster": [
+    "gestion tiers payant pharmacie",
+    "gestion du tiers payant",
+    "gestion tiers payant pyrénées atlantiques",
+    "gestion rejets tiers payant",
+    "gestion des tiers payants opticien",
+    "gestion des rejets tiers payant",
+    "gestion tiers payant opticien",
+    "gestion des tiers payant opticien"
+  ],
+  "parentSlug": "tiers-payant-opticien",
+  "level": "Pilier",
+  "author": {
+    "name": "Laura",
+    "jobTitle": "Rédactrice, experte santé",
+    "photo": "/auteurs/laura.jpg",
+    "url": null
+  },
+  "reviewer": null,
+  "datePublished": "2026-10-30",
+  "dateModified": "2026-10-30",
+  "checkedOn": null,
+  "wordCount": 2301,
+  "readTime": 10,
+  "metaDescription": "Gestion tiers payant en optique : interne, externalisée ou automatisée. Coûts réels, contrôle des rejets, indicateurs. Le comparatif pour choisir sur pièces.",
+  "contentHtml": "<p><strong>Pour la gestion tiers payant d'un magasin d'optique, il existe trois modèles : l'équipe gère tout en interne, un prestataire prend le relais, ou des outils et des agents saisissent et suivent les dossiers sur les portails.</strong> Le bon choix dépend moins de la taille du magasin que de trois questions. Qui a le temps de suivre chaque dossier jusqu'au paiement ? Qui garde la main sur les rejets ? Combien vous coûte un dossier qui traîne ? Cette page compare les trois options étape par étape, sans parti pris, pour que vous décidiez sur pièces.</p><div class=\"key-takeaways\"><strong>L'essentiel</strong><ul><li>La gestion du tiers payant ne s'arrête pas à l'accord de prise en charge : la facturation, le rapprochement des paiements et la gestion des rejets pèsent souvent plus lourd que la saisie.</li><li>En interne, vous gardez le contrôle, mais tout repose sur la disponibilité d'une ou deux personnes.</li><li>Externaliser libère du temps, à condition de garder une vue sur les rejets, les créances et l'accès à vos données.</li><li>Automatiser revient à confier la saisie et le suivi sur les portails à des agents, l'équipe gardant la décision sur les cas litigieux.</li><li>Avant de choisir, mesurez votre coût actuel : temps passé, créances anciennes et dossiers jamais encaissés.</li></ul></div><h2 id=\"gestion-tiers-payant-perimetre\">Que recouvre la gestion tiers payant d'un magasin d'optique ?</h2><p>La gestion du tiers payant couvre tout le parcours d'un dossier, de la vérification des droits du client jusqu'à l'encaissement de la dernière part mutuelle. C'est un travail en cinq temps, et chaque temps a ses propres pièges.</p><p>Le tiers payant est le mécanisme par lequel le client ne fait pas l'avance des frais : l'opticien se fait payer directement par l'AMO (assurance maladie obligatoire, la Sécurité sociale) et par l'AMC (assurance maladie complémentaire, la mutuelle ou l'assureur). La loi <a href=\"https://www.legifrance.gouv.fr/loda/id/JORFTEXT000031912641\">n° 2016-41 du 26 janvier 2016 de modernisation de notre système de santé</a> a posé le cadre de son extension. En optique, la part AMC passe le plus souvent par une plateforme de tiers payant (Viamedis, Almerys, Santéclair, Itelis…), qui gère les accords et les paiements pour le compte de plusieurs complémentaires. Pour le fonctionnement d'ensemble, voir notre guide du <a href=\"/ressources/tiers-payant-opticien\">tiers payant opticien</a>.</p><ol class=\"steps\"><li><strong>Vérifier les droits.</strong> Lire la carte de tiers payant, identifier la complémentaire et le portail par lequel elle passe.</li><li><strong>Demander la prise en charge.</strong> La PEC (prise en charge) se saisit sur le portail de la plateforme, avec le devis et les informations de l'ordonnance.</li><li><strong>Facturer l'AMO et l'AMC.</strong> La part obligatoire part par télétransmission depuis le logiciel métier, la part complémentaire selon les règles de la plateforme.</li><li><strong>Rapprocher les paiements.</strong> Relier chaque virement reçu à la facture qu'il solde, payeur par payeur.</li><li><strong>Traiter les rejets et relancer.</strong> Corriger, renvoyer, relancer jusqu'au paiement complet.</li></ol><div data-figure=\"cycle-dossier-tp\"></div><p>Dans les dossiers que traitent nos agents, le constat est constant : les deux premières étapes se voient, parce qu'elles se passent au comptoir devant le client. Les trois dernières se font en différé, et c'est là que les dossiers se perdent. Un rapprochement repoussé d'une semaine, puis d'un mois, et les rejets s'accumulent sans que personne ne les voie. Le premier réflexe, avant toute décision d'organisation, consiste donc à savoir où en sont vos dossiers après l'accord.</p><p>Le nombre de portails ajoute une difficulté. Chaque plateforme a son espace professionnel, ses identifiants, ses champs et ses statuts. Notre page sur les <a href=\"/ressources/portails-tiers-payant\">portails de tiers payant</a> les présente un par un, et l'outil <a href=\"/ressources/mutuelle-quel-portail\">Ma mutuelle passe par quel portail ?</a> aide à retrouver le bon espace à partir de la carte du client.</p><h2 id=\"trois-modeles\">Quelles sont les trois façons d'organiser le tiers payant ?</h2><p>Un magasin peut tout faire en interne, confier tout ou partie du travail à un prestataire, ou automatiser la saisie et le suivi. Les trois modèles se distinguent par une question simple : qui fait le travail sur les portails, et qui décide quand un dossier bloque.</p><p>En interne, l'équipe du magasin fait tout, du comptoir au rapprochement. Externalisé, un prestataire spécialisé reprend tout ou partie des tâches de back-office : facturation, suivi, relances, parfois rapprochement. Automatisé, des outils ou des agents logiciels saisissent les demandes sur les portails et suivent les réponses, et l'équipe reçoit les statuts.</p><div data-figure=\"trois-modeles-tp\"></div><p>Ces modèles se combinent. Beaucoup de magasins gardent la prise en charge au comptoir et délèguent le suivi des paiements. D'autres automatisent la saisie et gardent la gestion des rejets en interne. Le sujet n'est pas de choisir un camp, mais de décider étape par étape qui fait quoi.</p><h2 id=\"gestion-interne\">Gérer le tiers payant en interne : quand est-ce le bon choix ?</h2><p>La gestion interne reste le bon choix tant qu'une personne identifiée a le temps de suivre chaque dossier jusqu'au paiement, chaque semaine. Dès que ce suivi glisse, le modèle coûte plus qu'il ne rapporte.</p><p>Ses atouts sont réels. L'équipe connaît les clients, voit le dossier au moment où il se crée et peut corriger une erreur de saisie tout de suite, carte en main. Elle n'a pas à transmettre d'informations à un tiers, donc pas de délai de transmission ni de question de partage de données de santé. Et elle apprend, dossier après dossier, les particularités de chaque portail.</p><p>Sa limite principale est la dépendance à une personne. Quand la gestionnaire tiers payant part en congés ou quitte le magasin, le savoir part avec elle : identifiants, habitudes de chaque plateforme, dossiers en cours. Le second point faible est le temps de comptoir. Une prise en charge saisie pendant que le client attend, c'est du temps de vente en moins.</p><h3>Les signes que la gestion interne ne tient plus</h3><ul><li>Le rapprochement des virements est fait en retard, ou plus du tout.</li><li>Des rejets restent sans réponse parce que personne n'a le temps de les ouvrir.</li><li>Les relances aux mutuelles se font quand on y pense, pas selon un calendrier.</li><li>Une seule personne sait se connecter à certains portails.</li><li>Le volume de dossiers augmente plus vite que l'équipe.</li></ul><p>Si vous gardez la gestion en interne, deux outils simples réduisent les erreurs : une <a href=\"/ressources/checklist-prise-en-charge\">checklist avant d'envoyer une prise en charge</a> et un <a href=\"/ressources/quand-relancer-mutuelle\">calendrier de relance par étape</a>. Ils ne créent pas de temps, mais ils évitent d'en perdre sur des dossiers à refaire.</p><h2 id=\"externaliser\">Externaliser le tiers payant : que délègue-t-on vraiment ?</h2><p>Externaliser, c'est confier à un prestataire le back-office du tiers payant : facturation, suivi des paiements, relances et souvent gestion des rejets. La prise en charge au comptoir reste en général au magasin, parce qu'elle se fait en direct avec le client.</p><p>Le périmètre varie beaucoup d'une offre à l'autre. Dans les offres et devis que nous voyons passer, on retrouve plusieurs formules : reprise complète du back-office, traitement des seuls rejets, rattrapage d'un stock de créances anciennes, et parfois une avance de trésorerie, où le prestataire paie le magasin avant d'être lui-même payé par les complémentaires. Cette avance répond à un besoin de trésorerie ; elle ne règle pas, à elle seule, la qualité des dossiers.</p><p>Le gain principal est le temps libéré pour l'équipe. Le risque principal est de perdre la vue sur ce qui se passe. Un prestataire qui traite les rejets sans vous en rendre compte peut corriger le symptôme sans jamais remonter à la cause, souvent une erreur de saisie répétée au comptoir.</p><div class=\"callout callout--warn\"><p><strong>Le piège :</strong> signer sans prévoir de compte rendu régulier des rejets par motif. Sans ce retour, les mêmes erreurs se répètent au comptoir et vous payez pour les corriger à chaque fois.</p></div><h3>Les points à vérifier dans le contrat</h3><ul><li><strong>Le périmètre exact</strong> : qui saisit les prises en charge, qui facture, qui rapproche, qui relance, qui conteste.</li><li><strong>Le compte rendu</strong> : rejets par motif, créances par ancienneté et par payeur, dossiers clos sans paiement.</li><li><strong>L'accès aux données</strong> : pouvez-vous consulter l'état de chaque dossier à tout moment ?</li><li><strong>La réversibilité</strong> : préavis, récupération des dossiers en cours, reprise des identifiants de portail.</li><li><strong>L'hébergement des données</strong> : le prestataire manipule des données de santé. Leur hébergement pour le compte d'un tiers relève de la <a href=\"https://esante.gouv.fr/produits-services/hds\">certification HDS (hébergeur de données de santé)</a>, à vérifier avant de signer.</li></ul><h2 id=\"automatiser\">Peut-on automatiser le tiers payant d'un opticien ?</h2><p>Oui, une grande partie du travail répétitif s'automatise : saisie des prises en charge sur les portails, suivi des statuts, rapprochement des paiements, tri des rejets. La décision sur les cas litigieux, elle, reste humaine.</p><p>Il faut distinguer trois niveaux. Le logiciel métier automatise déjà la télétransmission de la part AMO et, selon les cas, la DRE (demande de remboursement électronique, le flux qui transmet la part complémentaire). Les scripts de type robot, qui rejouent des clics enregistrés, cassent dès qu'un portail change un écran. Les agents, eux, travaillent sur les portails comme le ferait une gestionnaire : ils lisent l'écran, remplissent les champs demandés et rapportent le statut obtenu.</p><p>Quand les demandes se comptent par dizaines chaque jour, la saisie sur chaque portail devient le goulot du magasin. C'est ce que fait <a href=\"/agents\">Granit</a> : des agents saisissent les prises en charge directement sur les portails des plateformes, suivent les réponses et renvoient le statut à l'équipe, qui garde la main sur les refus et les contestations. Granit est certifié HDS (hébergeur de données de santé).</p><p>L'automatisation ne remplace pas tout. Un dossier où il manque une pièce, une ordonnance illisible ou une contestation de montant demande un jugement. Le bon partage consiste à confier aux agents ce qui se répète et à l'équipe ce qui se discute.</p><div class=\"callout callout--tip\"><p><strong>Le bon réflexe :</strong> avant d'automatiser, listez les étapes où votre équipe recopie une information d'un écran à un autre. Ce sont les premières à confier à un outil.</p></div><h2 id=\"cout\">Combien coûte la gestion du tiers payant ?</h2><p>Le coût de la gestion du tiers payant ne se résume jamais à une facture : il additionne le temps de l'équipe, les créances jamais encaissées et l'argent immobilisé en attente de paiement. C'est ce total qu'il faut comparer au prix d'un prestataire ou d'un outil.</p><p>En interne, le coût est caché dans les salaires : heures de saisie, de relance, de rapprochement, et heures de vente perdues au comptoir. Il est aussi caché dans le compte client : des parts mutuelle jamais payées, faute de relance, finissent en perte sans que personne ne l'ait décidé.</p><p>Côté prestataires et outils, les devis du marché suivent plusieurs modèles de facturation : forfait mensuel, prix par dossier, ou pourcentage des sommes gérées. Chaque modèle a sa logique. Le forfait est prévisible, le prix par dossier suit votre activité, le pourcentage aligne le prestataire sur l'encaissement mais pèse davantage sur les gros paniers. Comparez toujours sur la même base : votre volume réel de dossiers sur un mois.</p><h3>Mesurer votre coût actuel en une semaine</h3><ol class=\"steps\"><li><strong>Compter les dossiers.</strong> Nombre de prises en charge et de factures tiers payant sur un mois type.</li><li><strong>Chronométrer.</strong> Pendant une semaine, noter le temps passé en saisie, relances, rapprochement et rejets.</li><li><strong>Lister les créances anciennes.</strong> Extraire du logiciel les parts AMC non soldées, par payeur et par ancienneté.</li><li><strong>Repérer les pertes.</strong> Identifier les dossiers clos ou abandonnés sans paiement complet.</li><li><strong>Comparer.</strong> Mettre ce total en face des devis reçus, sur le même volume.</li></ol><p>Ce calcul a un autre intérêt : il vous donne une base pour juger, six mois plus tard, si le modèle choisi a tenu ses promesses.</p><h2 id=\"choisir\">Comment choisir le modèle adapté à votre magasin ?</h2><p>Choisissez selon votre besoin principal : du temps pour l'équipe, de la trésorerie, ou du contrôle sur les dossiers. Chaque modèle répond mieux à l'un de ces trois besoins.</p><div class=\"tbl\"><table><tr><th>Votre situation</th><th>Modèle le plus adapté</th><th>Point de vigilance</th></tr><tr><td>Volume faible, gestionnaire disponible et formée</td><td>Interne</td><td>Documenter les accès et les habitudes de chaque portail</td></tr><tr><td>Trésorerie tendue, besoin d'être payé plus vite</td><td>Prestataire avec avance de trésorerie</td><td>Garder un compte rendu des rejets par motif</td></tr><tr><td>Stock de créances anciennes à solder</td><td>Prestataire en rattrapage ponctuel</td><td>Traiter aussi la cause, pas seulement le stock</td></tr><tr><td>Volume élevé, équipe saturée par la saisie</td><td>Automatisation de la saisie et du suivi</td><td>Définir qui traite les cas litigieux</td></tr><tr><td>Plusieurs magasins, pratiques différentes</td><td>Automatisation ou externalisation commune</td><td>Mêmes indicateurs pour tous les magasins</td></tr></table></div><p>Pour un gérant de plusieurs magasins, l'enjeu est souvent l'homogénéité : un magasin qui gère bien, un autre qui accumule les rejets, et aucune vue d'ensemble. Le modèle retenu doit permettre de comparer les magasins sur les mêmes indicateurs.</p><p>Si vous hésitez entre deux offres précises, lisez leurs conditions sur pièces et comparez leur modèle, pas leur discours. Notre comparatif <a href=\"/ressources/granit-vs-iremia\">Granit ou Iremia Santé</a> montre comment poser cette comparaison, y compris là où l'autre offre est plus adaptée.</p><h2 id=\"indicateurs\">Quels indicateurs suivre, quel que soit le modèle ?</h2><p>Cinq indicateurs suffisent pour piloter le tiers payant d'un magasin, que le travail soit fait en interne, par un prestataire ou par des agents. Ils se suivent chaque mois, magasin par magasin.</p><ul><li><strong>Les prises en charge en attente</strong> : nombre de demandes sans réponse, et depuis quand.</li><li><strong>Les rejets par motif</strong> : un même motif qui revient signale une erreur de saisie à corriger à la source. Notre liste des <a href=\"/ressources/codes-rejets-noemie\">codes rejets NOEMIE</a> aide à lire les retours de l'Assurance maladie (NOEMIE est le flux de retour qui informe le professionnel des paiements et des rejets).</li><li><strong>Les créances par ancienneté et par payeur</strong> : elles montrent quel portail ou quelle complémentaire ralentit vos encaissements.</li><li><strong>Les écarts entre facturé et payé</strong> : un virement inférieur à la facture non traité est une perte silencieuse.</li><li><strong>Le temps passé</strong> : en interne, il se mesure ; avec un prestataire ou un outil, il doit baisser de façon visible.</li></ul><p>La gestion des rejets tiers payant est l'indicateur qui révèle le mieux la qualité d'ensemble. Des rejets nombreux mais traités vite indiquent un suivi solide et une saisie à reprendre. Des rejets peu nombreux mais anciens indiquent un suivi qui décroche. Dans les deux cas, le chiffre ne sert que s'il conduit à une action précise : former, corriger un paramétrage, relancer un payeur.</p><p>Quel que soit votre choix, gardez une règle : le gérant doit pouvoir voir, à tout moment, l'état des dossiers et des créances de chaque magasin. C'est la condition pour changer de modèle sereinement si celui-ci ne tient plus.</p>",
+  "tocItems": [
+    {
+      "id": "gestion-tiers-payant-perimetre",
+      "label": "Ce que recouvre la gestion du tiers payant"
+    },
+    {
+      "id": "trois-modeles",
+      "label": "Les trois façons d'organiser le tiers payant"
+    },
+    {
+      "id": "gestion-interne",
+      "label": "Gérer en interne : quand c'est le bon choix"
+    },
+    {
+      "id": "externaliser",
+      "label": "Externaliser : ce que l'on délègue vraiment"
+    },
+    {
+      "id": "automatiser",
+      "label": "Automatiser le tiers payant d'un opticien"
+    },
+    {
+      "id": "cout",
+      "label": "Combien coûte la gestion du tiers payant"
+    },
+    {
+      "id": "choisir",
+      "label": "Choisir le modèle adapté à votre magasin"
+    },
+    {
+      "id": "indicateurs",
+      "label": "Les indicateurs à suivre chaque mois"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "Faut-il gérer le tiers payant en interne ou l'externaliser ?",
+      "answer": "Gardez le tiers payant en interne tant qu'une personne formée a le temps de suivre chaque dossier jusqu'au paiement, chaque semaine. Externalisez quand le rapprochement prend du retard, que les rejets s'accumulent ou que la trésorerie devient le besoin principal. Beaucoup de magasins combinent les deux : la prise en charge reste au comptoir, le suivi des paiements est délégué."
+    },
+    {
+      "question": "Combien coûte la gestion du tiers payant ?",
+      "answer": "Le coût réel additionne le temps de l'équipe, les parts mutuelle jamais encaissées et l'argent immobilisé en attente de paiement. Les prestataires et outils facturent selon plusieurs modèles : forfait mensuel, prix par dossier ou pourcentage des sommes gérées. Pour comparer, mesurez d'abord votre coût actuel sur un mois de dossiers, puis mettez les devis en face sur le même volume."
+    },
+    {
+      "question": "Peut-on automatiser le tiers payant ?",
+      "answer": "Oui, une grande partie du travail répétitif s'automatise : saisie des prises en charge sur les portails, suivi des statuts, rapprochement des paiements et tri des rejets. Des agents peuvent travailler directement sur les portails des plateformes et renvoyer le statut à l'équipe. Les cas litigieux, comme une pièce manquante ou une contestation de montant, restent à traiter par une personne."
+    },
+    {
+      "question": "Qui garde la main sur les rejets quand on externalise le tiers payant ?",
+      "answer": "Cela dépend du contrat : certains prestataires traitent les rejets eux-mêmes, d'autres les renvoient au magasin. Dans tous les cas, exigez un compte rendu régulier des rejets par motif. Sans ce retour, les mêmes erreurs de saisie se répètent au comptoir et vous payez pour les corriger à chaque fois."
+    }
+  ],
+  "sources": [
+    {
+      "label": "legifrance.gouv.fr · Loi n° 2016-41 du 26 janvier 2016 de modernisation de notre système de santé",
+      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000031912641"
+    },
+    {
+      "label": "esante.gouv.fr · Hébergement de données de santé (HDS)",
+      "url": "https://esante.gouv.fr/produits-services/hds"
+    }
+  ],
+  "figures": [
+    {
+      "id": "cycle-dossier-tp",
+      "type": "etapes",
+      "titre": "Les cinq temps d'un dossier de tiers payant",
+      "legende": "Les deux premiers temps se font au comptoir ; c'est après la facture que les dossiers se perdent.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "Vérifier les droits",
+          "detail": "Carte de tiers payant, complémentaire, portail",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Demander la PEC",
+          "detail": "Saisie sur le portail avec devis et ordonnance",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Facturer AMO et AMC",
+          "detail": "Télétransmission et part complémentaire",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Rapprocher les paiements",
+          "detail": "Relier chaque virement à sa facture",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Traiter rejets et relances",
+          "detail": "Corriger, renvoyer, relancer jusqu'au paiement",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    },
+    {
+      "id": "trois-modeles-tp",
+      "type": "comparaison",
+      "titre": "Trois façons de gérer le tiers payant",
+      "legende": "Regardez qui saisit sur les portails et qui décide quand un dossier bloque.",
+      "colonnes": [
+        "En interne",
+        "Externalisé",
+        "Automatisé"
+      ],
+      "elements": [
+        {
+          "label": "Qui saisit",
+          "detail": "",
+          "valeurs": [
+            "Votre équipe",
+            "Le prestataire",
+            "Des agents"
+          ],
+          "focus": false
+        },
+        {
+          "label": "Qui décide",
+          "detail": "",
+          "valeurs": [
+            "Vous",
+            "Le prestataire",
+            "Vous"
+          ],
+          "focus": true
+        },
+        {
+          "label": "Coût principal",
+          "detail": "",
+          "valeurs": [
+            "Temps de l'équipe",
+            "Facture du prestataire",
+            "Abonnement"
+          ],
+          "focus": false
+        },
+        {
+          "label": "Avance de trésorerie",
+          "detail": "",
+          "valeurs": [
+            "Non",
+            "Parfois proposée",
+            "Non"
+          ],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [
+    {
+      "id": "G0",
+      "slug": "tiers-payant-opticien",
+      "anchor": "tiers payant opticien",
+      "type": "parent"
+    }
+  ],
+  "liensEntrants": [],
+  "remplace": [
+    "kpi-back-office-sante"
+  ],
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-30T12:54:19.595Z",
+    "avertissements": [
+      "Granit cité 3 fois dans le corps (une mention visée)",
+      "aucune citation (facultative)",
+      "source non vérifiable (403) : https://www.legifrance.gouv.fr/loda/id/JORFTEXT000031912641"
+    ]
+  }
+}

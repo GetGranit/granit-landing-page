@@ -211,6 +211,11 @@
       "slug": "portails-tiers-payant",
       "anchor": "portails de tiers payant",
       "type": "enfant"
+    },
+    {
+      "slug": "gerer-tiers-payant-magasin",
+      "anchor": "gestion tiers payant",
+      "type": "enfant"
     }
   ],
   "remplace": [

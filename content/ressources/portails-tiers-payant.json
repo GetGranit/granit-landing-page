@@ -202,6 +202,11 @@
       "slug": "mutuelle-quel-portail",
       "anchor": "savoir par quel portail passe une mutuelle",
       "type": "enfant"
+    },
+    {
+      "slug": "gerer-tiers-payant-magasin",
+      "anchor": "Gérer le tiers payant d'un magasin : en interne, externalisé ou automatisé ?",
+      "type": "soeur"
     }
   ],
   "remplace": [

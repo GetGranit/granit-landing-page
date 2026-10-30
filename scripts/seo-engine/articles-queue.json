@@ -1854,7 +1854,7 @@
     ],
     "searchVolume": 370,
     "unsplashQuery": "optical store manager",
-    "status": "pending",
+    "status": "published",
     "wave": 2,
     "level": "Pilier",
     "parentSlug": "tiers-payant-opticien",
@@ -1939,7 +1939,8 @@
     ],
     "remplace": [
       "kpi-back-office-sante"
-    ]
+    ],
+    "publishedAt": "2026-10-30"
   },
   {
     "id": "B0",
