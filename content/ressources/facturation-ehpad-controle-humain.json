@@ -172,7 +172,12 @@
   ],
   "internalLinks": [],
   "liensEntrants": [],
-  "remplace": [],
+  "remplace": [
+    "hopital-prive-ordonnancement",
+    "logs-agent-sante",
+    "ia-generative-sante-cadre",
+    "ia-vs-rpa-sante"
+  ],
   "verticales": [
     "pharmacie"
   ],
