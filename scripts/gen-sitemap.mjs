@@ -208,7 +208,8 @@ ${urls
 writeFileSync("public/sitemap.xml", xml);
 const dated = urls.filter((u) => u.lastmod).length;
 const undated = urls.filter((u) => !u.lastmod).map((u) => u.loc);
-if (undated.length) console.warn(`sitemap.xml: ${undated.length} URL sans lastmod : ${undated.join(", ")}`);
+if (undated.length)
+  console.warn(`sitemap.xml: ${undated.length} URL sans lastmod : ${undated.join(", ")}`);
 console.log(
   `sitemap.xml written: ${urls.length} URLs (${slugs.length} articles + ${ressources.length} ressources + ${categoryPages.length} catégories + ${metierPages.length} métiers + ${staticPages.length} pages, ${dated} with lastmod)`,
 );
