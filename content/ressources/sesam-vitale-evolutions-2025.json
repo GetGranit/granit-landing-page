@@ -1,0 +1,198 @@
+{
+  "slug": "sesam-vitale-evolutions-2025",
+  "id": "R14",
+  "category": "guide-tiers-payant",
+  "categoryName": "Guide du tiers payant",
+  "type": "standard",
+  "plateforme": null,
+  "title": "SESAM-Vitale : les évolutions à anticiper",
+  "primaryKeyword": "SESAM-Vitale 1.40",
+  "keywordCluster": [
+    "appli carte vitale",
+    "téléservices ameli pro",
+    "ADRi",
+    "facturation SESAM-Vitale"
+  ],
+  "parentSlug": null,
+  "level": "Refonte",
+  "author": {
+    "name": "Laura",
+    "jobTitle": "Rédactrice, experte santé",
+    "photo": "/auteurs/laura.jpg",
+    "url": null
+  },
+  "reviewer": {
+    "name": "Olivier",
+    "jobTitle": "Rédacteur, expert tiers payant",
+    "photo": "/auteurs/olivier.jpg",
+    "url": null
+  },
+  "datePublished": "2026-10-30",
+  "dateModified": "2026-10-30",
+  "checkedOn": null,
+  "wordCount": 2281,
+  "readTime": 10,
+  "metaDescription": "SESAM-Vitale 1.40 : appli carte Vitale, ADRi, pièces numérisées, ordonnance numérique. Ce qui change pour votre facturation et comment l'anticiper.",
+  "contentHtml": "<p><strong>SESAM-Vitale 1.40 est la version du cahier des charges que suit votre logiciel pour produire les feuilles de soins électroniques. Les nouvelles fonctions (appli carte Vitale, téléservices intégrés comme ADRi, pièces justificatives numérisées, ordonnance numérique) arrivent par des mises à jour de cette version, pas par un changement de numéro.</strong> Anticiper ne demande donc pas de gros projet. Il faut savoir ce que votre éditeur a déjà livré, ce qu'il prépare, et ce que l'équipe doit changer au comptoir ou à l'accueil. Ce guide s'adresse à tous les professionnels qui facturent en tiers payant : magasin d'optique, centre d'audioprothèse, officine, cabinet dentaire, centre de santé.</p><div class=\"key-takeaways\"><strong>L'essentiel</strong><ul><li>SESAM-Vitale 1.40 évolue par ajouts successifs : deux postes « en 1.40 » n'ont pas forcément les mêmes fonctions activées.</li><li>L'appli carte Vitale change l'identification du patient, pas la feuille de soins : le logiciel doit savoir la lire, et l'équipe doit savoir quoi faire si la lecture échoue.</li><li>ADRi interroge les droits du patient en temps réel depuis le logiciel : c'est le réflexe qui évite une bonne part des rejets liés aux droits.</li><li>SESAM-Vitale ne couvre que la part obligatoire : la part complémentaire suit ses propres circuits, qui n'évoluent pas au même rythme.</li><li>Action du jour : demander à votre éditeur quelle version exacte est installée et quelles fonctions sont disponibles mais pas encore activées.</li></ul></div><h2 id=\"sesam-vitale-1-40-definition\">Qu'est-ce que SESAM-Vitale 1.40 et pourquoi la version compte-t-elle ?</h2><p>SESAM-Vitale 1.40 désigne le cahier des charges que doivent respecter les logiciels de facturation pour transmettre des feuilles de soins électroniques. La feuille de soins électronique (FSE) est le fichier signé que votre logiciel envoie à l'Assurance maladie obligatoire (AMO) à la place de la feuille de soins papier.</p><p>Le numéro de version reste le même depuis des années, mais son contenu change. Chaque évolution du système de facturation est ajoutée au cahier des charges, puis intégrée par les éditeurs dans leurs logiciels, qui sont agréés avant diffusion. Concrètement, dire « mon logiciel est en 1.40 » ne suffit pas : la vraie question est de savoir quelles fonctions de la 1.40 il intègre déjà.</p><p>Cette nuance a des effets très concrets. Deux magasins d'optique équipés du même logiciel peuvent avoir des mises à jour différentes, selon la date de leur dernière installation. L'un pourra lire l'appli carte Vitale, l'autre non. L'un interrogera les droits du patient en ligne, l'autre se fiera à la carte, avec ses informations parfois anciennes.</p><p>Le parcours d'une facture en tiers payant reste, lui, stable. Le logiciel identifie le patient (carte ou appli), vérifie ses droits, produit la FSE et la transmet à l'Assurance maladie. Le paiement et ses éventuels rejets reviennent ensuite par un retour NOEMIE (norme d'échange qui transmet au professionnel le détail des paiements et des rejets), qu'il faut rapprocher de vos virements. Ce rapprochement est détaillé dans notre article sur le <a href=\"/ressources/rapprochement-noemie\">rapprochement des flux NOEMIE et des virements bancaires</a>.</p><div data-figure=\"parcours-fse\"></div><p>Les évolutions décrites plus bas touchent chacune un maillon précis de ce parcours. L'appli carte Vitale touche l'identification. ADRi touche la vérification des droits. La numérisation des pièces touche la transmission. L'ordonnance numérique touche ce qui arrive avant même la facture. Les lire maillon par maillon aide à savoir qui, dans l'équipe, est concerné.</p><h2 id=\"appli-carte-vitale-facturation\">Que change l'appli carte Vitale pour la facturation ?</h2><p>L'appli carte Vitale change la façon d'identifier le patient, pas la feuille de soins. Selon <a href=\"https://www.ameli.fr/assure/remboursements/etre-bien-rembourse/carte-vitale\">ameli.fr</a>, la carte Vitale peut désormais exister sous une forme numérique, sur le smartphone de l'assuré, à côté de la carte physique. Pour votre facturation, le patient qui présente son téléphone doit aboutir à la même FSE que celui qui tend sa carte.</p><p>La condition, c'est que votre poste sache lire cette version numérique. Selon les équipements, la lecture passe par un code affiché sur le téléphone ou par le sans contact. Si votre logiciel n'intègre pas encore cette fonction, ou si le matériel n'est pas adapté, le patient équipé de l'appli se retrouve face à un comptoir qui ne peut pas l'utiliser.</p><p>Le deuxième changement est humain. Le patient a besoin d'avoir installé et activé l'appli avant de venir. Au comptoir, vous verrez donc des situations nouvelles : un patient qui n'a que son téléphone, une appli qui ne s'ouvre pas, un téléphone déchargé. L'équipe doit connaître la solution de repli prévue par votre logiciel, carte physique ou facturation en mode dégradé avec les pièces correspondantes.</p><div class=\"callout callout--tip\"><p><strong>Le bon réflexe :</strong> ajoutez une question à l'accueil, « vous avez votre carte ou l'appli ? », et vérifiez une fois avec votre éditeur que la lecture de l'appli fonctionne sur chaque poste qui facture, pas seulement sur le poste principal.</p></div><p>Pour un centre de santé ou un groupe de magasins, ce point se traite poste par poste. Un seul poste non compatible suffit à créer des files d'attente et des factures saisies à la main, donc des erreurs. La <a href=\"https://www.service-public.fr/particuliers/vosdroits/F167\">fiche service-public.fr sur la carte Vitale</a> rappelle de son côté le rôle de la carte dans la prise en charge, que la version numérique reprend.</p><h2 id=\"adri-teleservices-ameli-pro\">Qu'est-ce qu'ADRi et quand utiliser les téléservices ameli pro ?</h2><p>ADRi (acquisition des droits intégrée) est le téléservice de l'Assurance maladie qui permet à votre logiciel de consulter les droits du patient en temps réel, directement dans les bases de l'AMO. Il remplace la lecture seule de la carte, dont les informations peuvent dater de la dernière mise à jour faite par l'assuré.</p><p>L'intérêt est simple : une facture émise sur des droits périmés revient en rejet. Interroger ADRi au moment de la facturation permet de voir tout de suite un changement de caisse, une fin de droits ou une exonération qui n'apparaît pas sur la carte. Dans une officine qui facture des dizaines de dossiers par jour, comme dans un cabinet dentaire qui facture un traitement en plusieurs fois, ce contrôle évite de découvrir le problème plusieurs jours après, au retour NOEMIE.</p><p>ADRi fait partie des téléservices ameli pro. Ces téléservices existent sous deux formes. Certains sont accessibles depuis l'espace professionnel en ligne de l'Assurance maladie. D'autres sont intégrés au logiciel, comme ADRi : ils s'utilisent sans quitter l'écran de facturation. La liste des téléservices intégrés varie selon la profession et selon la version de votre logiciel.</p><h3>Quand interroger ADRi ?</h3><div class=\"tbl\"><table><tr><th>Situation au comptoir</th><th>Réflexe</th><th>Ce que ça évite</th></tr><tr><td>Patient sans carte ni appli</td><td>Interroger ADRi avant de facturer</td><td>Une FSE sur des droits non vérifiés</td></tr><tr><td>Carte ancienne ou non mise à jour</td><td>Comparer la carte et la réponse ADRi</td><td>Un rejet pour droits fermés ou caisse erronée</td></tr><tr><td>Nouveau patient</td><td>Interroger ADRi à la première facture</td><td>Une erreur de rattachement qui se répète ensuite</td></tr><tr><td>Rejet déjà reçu pour un motif de droits</td><td>Réinterroger ADRi avant de refacturer</td><td>Un second rejet sur le même dossier</td></tr></table></div><p>Un rejet lié aux droits se lit dans le retour NOEMIE. Pour retrouver le sens d'un code, notre <a href=\"/ressources/codes-rejets-noemie\">liste des codes rejets NOEMIE</a> donne la signification et l'action à mener. Côté complémentaire, le même type de problème prend souvent la forme d'un rejet « bénéficiaire inconnu », traité dans un article dédié : <a href=\"/ressources/rejet-beneficiaire-inconnu\">corriger un rejet « bénéficiaire inconnu »</a>.</p><h2 id=\"pieces-justificatives-numerisees\">Comment évolue la transmission des pièces justificatives ?</h2><p>La transmission des pièces justificatives passe du papier au fichier numérisé, envoyé avec la facturation. SCOR (pour « scannérisation des ordonnances ») est le dispositif qui permet de transmettre à l'Assurance maladie une copie numérique de l'ordonnance et des pièces utiles, à la place de l'envoi papier.</p><p>Officines, audioprothésistes, opticiens et centres de santé sont concernés dès qu'une facture s'appuie sur une prescription. Le gain est réel : plus de lots papier à préparer, plus de risque de perte à l'envoi. En échange, la qualité du fichier devient votre responsabilité au moment où vous facturez.</p><p>Une pièce floue, incomplète ou rattachée à la mauvaise facture produit le même effet qu'une pièce absente. La facture peut être contestée ou rejetée, et la correction prend plus de temps qu'un scan refait sur le moment. La rigueur se déplace donc de l'envoi du courrier vers le geste de numérisation, au comptoir.</p><div class=\"callout callout--warn\"><p><strong>Le piège :</strong> numériser l'ordonnance en fin de journée, par lot. Le rattachement à la bonne facture se fait alors de mémoire, et les erreurs de patient ou de date apparaissent plusieurs jours plus tard, au moment du paiement.</p></div><p>La règle la plus sûre est de numériser la pièce au moment de la facture, de vérifier qu'elle est lisible en entier (dates, signature, identification du prescripteur), puis de contrôler qu'elle est bien attachée à la FSE correspondante avant l'envoi du lot.</p><h2 id=\"ordonnance-numerique\">Que change l'ordonnance numérique pour votre comptoir ?</h2><p>L'ordonnance numérique change le point de départ du dossier : la prescription n'arrive plus seulement sur papier, elle est enregistrée par le prescripteur et retrouvée par le professionnel qui la délivre. Le patient présente une ordonnance qui porte un code, et votre logiciel récupère les données de la prescription.</p><p>Pour une officine, c'est le flux d'entrée principal qui se transforme : moins de ressaisie, plus de prescriptions structurées. Pour un opticien, un audioprothésiste ou un centre de santé, l'effet dépend de l'avancement du déploiement dans votre profession et de ce que votre logiciel sait déjà récupérer. Le déploiement se fait par étapes et par profession.</p><p>Deux points méritent l'attention de l'équipe. D'abord, l'ordonnance numérique ne supprime pas la vérification : la prescription doit toujours correspondre à ce que vous délivrez et facturez. Ensuite, pendant la transition, les deux formats cohabitent. Votre organisation doit fonctionner avec les deux sans créer deux circuits de contrôle différents.</p><h2 id=\"logiciel-mises-a-jour-sesam-vitale-1-40\">Le logiciel suit-il seul les mises à jour SESAM-Vitale 1.40 ?</h2><p>En partie seulement. Votre éditeur intègre les évolutions de SESAM-Vitale 1.40 et les tables réglementaires dans ses mises à jour, mais trois choses restent de votre côté : installer ces mises à jour, activer les nouvelles fonctions et former l'équipe à les utiliser.</p><p>Une mise à jour livrée n'est pas forcément installée. Sur un réseau de plusieurs postes ou de plusieurs sites, il arrive qu'un poste reste en retard, sans que personne ne le remarque avant le premier rejet. Une fonction installée n'est pas forcément activée non plus : certaines demandent un paramétrage, un équipement ou une inscription préalable.</p><p>Le cadre conventionnel ajoute une couche. Les conventions signées entre l'Assurance maladie et chaque profession modifient régulièrement les tarifs, les actes ou les règles de prise en charge. L'éditeur met à jour les tables, mais vos propres réglages (tarifs pratiqués, codes utilisés au quotidien, modèles de devis) peuvent devoir être repris. Un décalage entre la règle en vigueur et le paramétrage du logiciel se traduit vite par des rejets en série.</p><p>Pour réduire ces rejets sans tout reprendre, l'article <a href=\"/ressources/reduire-rejets-cpam\">réduire les rejets CPAM sans changer de logiciel métier</a> détaille les contrôles à placer avant l'envoi.</p><h3>Les questions à poser à votre éditeur</h3><ul><li>Quelle version exacte de SESAM-Vitale 1.40 est installée sur chacun de nos postes ?</li><li>La lecture de l'appli carte Vitale est-elle disponible, et avec quel matériel ?</li><li>ADRi et les autres téléservices intégrés sont-ils activés pour notre profession ?</li><li>La numérisation des pièces est-elle reliée automatiquement à la bonne facture ?</li><li>Quelles évolutions sont prévues dans les prochaines mises à jour, et à quelle échéance pour nous ?</li></ul><h2 id=\"part-complementaire\">Ces évolutions changent-elles la part complémentaire ?</h2><p>Non, pas directement. SESAM-Vitale encadre la facturation de la part obligatoire. La part complémentaire (AMC, assurance maladie complémentaire : mutuelle, assureur ou institution de prévoyance) suit ses propres circuits, qui n'évoluent pas au même rythme.</p><p>Selon les métiers, la part complémentaire passe par une demande de remboursement électronique jointe à la facture, ou par les portails des plateformes de tiers payant. En optique et en audioprothèse notamment, une demande de prise en charge est souvent saisie sur le portail de la plateforme avant la facture. Une appli carte Vitale bien lue ou un ADRi bien utilisé ne changent rien à ces étapes : le dossier peut être parfait côté AMO et bloqué côté AMC.</p><p>Notre guide des <a href=\"/ressources/portails-tiers-payant\">portails de tiers payant</a> décrit ces circuits portail par portail, et le parcours complet, de la prise en charge à l'encaissement, est expliqué dans <a href=\"/ressources/tiers-payant-opticien\">tiers payant opticien : de la prise en charge à l'encaissement</a>.</p><p>C'est souvent sur ce versant que le temps se perd : un portail par plateforme, des identifiants différents, des statuts à surveiller. Quand ces demandes se comptent par dizaines chaque semaine, elles peuvent être saisies sans vous sur les portails, avec un retour du statut à l'équipe : c'est ce que font les <a href=\"/agents\">agents de Granit</a>, pendant que votre logiciel continue de gérer la part obligatoire.</p><h2 id=\"anticiper-evolutions\">Comment anticiper les prochaines évolutions sans désorganiser l'équipe ?</h2><p>La méthode la plus sûre tient en un principe : traiter chaque évolution comme une petite mise en service, testée sur un cas réel avant d'être généralisée. Attendre la date limite, c'est découvrir les problèmes en pleine affluence.</p><ol class=\"steps\"><li><strong>Faire l'état des lieux.</strong> Obtenez de votre éditeur la version installée poste par poste et la liste des fonctions disponibles mais non activées.</li><li><strong>Choisir une évolution à la fois.</strong> Appli carte Vitale, ADRi, numérisation des pièces : activer tout en même temps rend les erreurs difficiles à attribuer.</li><li><strong>Tester sur un cas réel en heure creuse.</strong> Un patient volontaire, une facture complète, puis le contrôle du retour NOEMIE correspondant.</li><li><strong>Former l'équipe en dix minutes.</strong> Le geste nouveau, la solution de repli en cas d'échec, et la personne à prévenir si ça bloque.</li><li><strong>Surveiller les retours la semaine suivante.</strong> Une hausse de rejets juste après une mise à jour signale un paramétrage à reprendre, pas une erreur de saisie isolée.</li></ol><div data-figure=\"anticiper-etapes\"></div><p>Gardez une trace de chaque mise à jour : date, poste, fonction activée. En cas de rejets en série, ce journal permet de retrouver en quelques minutes ce qui a changé, et de donner à votre éditeur une information précise plutôt qu'un « ça ne marche plus ».</p><p>Enfin, suivez les annonces officielles plutôt que les rumeurs. Les pages de l'Assurance maladie, du GIE SESAM-Vitale et de votre syndicat professionnel annoncent les évolutions et leurs échéances. Une veille d'un quart d'heure par mois suffit pour ne pas être surpris.</p>",
+  "tocItems": [
+    {
+      "id": "sesam-vitale-1-40-definition",
+      "label": "SESAM-Vitale 1.40 : ce que recouvre la version"
+    },
+    {
+      "id": "appli-carte-vitale-facturation",
+      "label": "L'appli carte Vitale et la facturation"
+    },
+    {
+      "id": "adri-teleservices-ameli-pro",
+      "label": "ADRi et les téléservices ameli pro"
+    },
+    {
+      "id": "pieces-justificatives-numerisees",
+      "label": "Les pièces justificatives numérisées"
+    },
+    {
+      "id": "ordonnance-numerique",
+      "label": "L'ordonnance numérique au comptoir"
+    },
+    {
+      "id": "logiciel-mises-a-jour-sesam-vitale-1-40",
+      "label": "Le logiciel suit-il seul les mises à jour ?"
+    },
+    {
+      "id": "part-complementaire",
+      "label": "Et la part complémentaire ?"
+    },
+    {
+      "id": "anticiper-evolutions",
+      "label": "Anticiper en cinq étapes"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "Que change l'appli carte Vitale pour la facturation ?",
+      "answer": "L'appli carte Vitale change l'identification du patient, pas la feuille de soins électronique. Le patient présente son smartphone au lieu de sa carte, et votre logiciel doit savoir lire cette version numérique sur chaque poste qui facture. L'équipe doit aussi connaître la solution de repli si l'appli ne peut pas être lue."
+    },
+    {
+      "question": "Qu'est-ce qu'ADRi et quand l'utiliser ?",
+      "answer": "ADRi (acquisition des droits intégrée) est un téléservice de l'Assurance maladie qui permet au logiciel de consulter les droits du patient en temps réel. Il est utile quand le patient n'a ni carte ni appli, quand sa carte n'est pas à jour, pour un nouveau patient, ou avant de refacturer après un rejet lié aux droits. Il évite de facturer sur des droits périmés."
+    },
+    {
+      "question": "Quelles évolutions SESAM-Vitale arrivent ?",
+      "answer": "Les évolutions en cours portent sur l'appli carte Vitale, les téléservices intégrés au logiciel comme ADRi, la numérisation des pièces justificatives et l'ordonnance numérique. Elles arrivent par des mises à jour de SESAM-Vitale 1.40, intégrées par les éditeurs de logiciels. Leur calendrier dépend de la profession et de votre éditeur."
+    },
+    {
+      "question": "Le logiciel suit-il seul les mises à jour ?",
+      "answer": "En partie seulement. L'éditeur intègre les évolutions de SESAM-Vitale 1.40 et les tables réglementaires, mais il vous reste à installer les mises à jour sur chaque poste, à activer les nouvelles fonctions et à former l'équipe. Vos propres réglages, comme les tarifs pratiqués ou les modèles de devis, peuvent aussi devoir être repris."
+    }
+  ],
+  "sources": [
+    {
+      "label": "ameli.fr · Carte Vitale",
+      "url": "https://www.ameli.fr/assure/remboursements/etre-bien-rembourse/carte-vitale"
+    },
+    {
+      "label": "service-public.fr · Carte Vitale",
+      "url": "https://www.service-public.fr/particuliers/vosdroits/F167"
+    }
+  ],
+  "figures": [
+    {
+      "id": "parcours-fse",
+      "type": "flux",
+      "titre": "Le parcours d'une facture côté Assurance maladie",
+      "legende": "Chaque évolution touche un maillon : identification, droits, transmission ou retour de paiement.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "Identification du patient",
+          "detail": "Carte ou appli carte Vitale lue par le logiciel",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Vérification des droits",
+          "detail": "Droits consultés en temps réel via ADRi",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Feuille de soins électronique",
+          "detail": "FSE transmise avec les pièces numérisées",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Assurance maladie",
+          "detail": "Retour NOEMIE : paiements et rejets",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Rapprochement",
+          "detail": "Retour NOEMIE comparé aux virements",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    },
+    {
+      "id": "anticiper-etapes",
+      "type": "etapes",
+      "titre": "Anticiper une évolution sans rupture",
+      "legende": "Une évolution à la fois, testée sur un cas réel avant d'être généralisée.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "État des lieux",
+          "detail": "Version installée poste par poste",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Une évolution à la fois",
+          "detail": "Pour savoir d'où vient une erreur",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Test en heure creuse",
+          "detail": "Une facture complète, puis son retour NOEMIE",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Former l'équipe",
+          "detail": "Le geste, le repli, qui prévenir",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Surveiller les retours",
+          "detail": "Hausse de rejets = paramétrage à reprendre",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [],
+  "liensEntrants": [],
+  "remplace": [],
+  "verticales": [
+    "optique",
+    "audio",
+    "pharmacie",
+    "dentaire",
+    "centres"
+  ],
+  "refonte": true,
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-30T10:14:37.032Z",
+    "avertissements": [
+      "aucune citation (facultative)",
+      "source non vérifiable (403) : https://www.ameli.fr/assure/remboursements/etre-bien-rembourse/carte-vitale"
+    ]
+  }
+}
