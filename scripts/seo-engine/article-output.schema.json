@@ -12,7 +12,7 @@
   "properties": {
     "metaDescription": {
       "type": "string",
-      "description": "140 à 160 caractères. Contient le mot-clé principal, un bénéfice concret, finit sur une raison de cliquer."
+      "description": "140 à 155 caractères. Contient le mot-clé principal, un bénéfice concret, finit sur une raison de cliquer."
     },
     "contentHtml": {
       "type": "string",

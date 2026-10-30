@@ -31,6 +31,8 @@ const DENIGREMENT = [
 ];
 /** Mots minimum par type (cible : fiche VS 1 000 à 1 500, grille 2 000 à 2 800, autres 1 800 à 2 500). */
 export const MOTS_MIN = { vs: 900, grille: 1800 };
+/** Longueur maximale du champ `title` (balise <title> et H1). */
+export const TITRE_MAX = 60;
 
 export function typeDePage(article) {
   if (article.concurrents?.length) return /^granit-(vs|ou)-/.test(article.slug) ? "vs" : "grille";
@@ -82,10 +84,16 @@ export function controler(out, ctx) {
   const min = MOTS_MIN[type] ?? 1400;
   if (nbMots < min) erreurs.push(`contentHtml fait ${nbMots} mots (minimum ${min})`);
 
-  // Meta description
+  // Titre (file) : au-delà de 60 caractères, Google le coupe. Refusé sur une page plateforme.
+  const titre = article.title ?? "";
+  if (titre.length > TITRE_MAX) {
+    (type === "plateforme" ? erreurs : avert).push(`title fait ${titre.length} caractères (${TITRE_MAX} maximum, à raccourcir dans la file)`);
+  }
+
+  // Meta description (Google coupe vers 155 caractères)
   const md = out.metaDescription ?? "";
-  if (md.length < 120 || md.length > 170) erreurs.push(`metaDescription fait ${md.length} caractères (140 à 160)`);
-  else if (md.length < 140 || md.length > 160) avert.push(`metaDescription fait ${md.length} caractères (140 à 160)`);
+  if (md.length < 120 || md.length > 170) erreurs.push(`metaDescription fait ${md.length} caractères (140 à 155)`);
+  else if (md.length < 140 || md.length > 155) avert.push(`metaDescription fait ${md.length} caractères (140 à 155)`);
   if (!normalise(md).includes(normalise(article.primaryKeyword))) avert.push("mot-clé principal absent de la metaDescription");
 
   // Ouverture et « L'essentiel »
@@ -198,16 +206,76 @@ export function controler(out, ctx) {
     const connus = new Set([
       "100",
       ...tailles,
-      ...nombres(JSON.stringify(ctx.faits ?? {})),
+      // `acces` (URL et date de vérification) n'est pas une source de faits pour le texte
+      ...nombres(JSON.stringify({ ...(ctx.faits ?? {}), acces: undefined })),
       ...nombres([article.title, ...(article.faqQuestions ?? []), article.primaryKeyword].join(" ")),
     ]);
     const inconnus = [...new Set(nombres([corps, texteFigures, ...faq.map((f) => f.answer)].join(" ")))].filter(
       (n) => n.replace(/\D/g, "").length >= 2 && !connus.has(n),
     );
     if (inconnus.length) erreurs.push(`nombres absents du fichier de faits : ${inconnus.join(", ")}`);
+    const acces = controlerAcces(ctx.faits, { aujourdhui: ctx.aujourdhui });
+    erreurs.push(...acces.erreurs);
+    avert.push(...acces.avertissements);
+    // Le lien de connexion est affiché par le gabarit en tête de page : pas de doublon dans le texte.
+    // comparaison avec l'ancre : sur un portail en JavaScript, login#/faq/ n'est pas la page de connexion
+    const exacte = (u) => u.trim().replace(/\/+$/, "");
+    const hrefs = new Set(liens(html).map((l) => exacte(l.href)));
+    for (const l of ctx.faits?.acces?.liens ?? []) {
+      if (hrefs.has(exacte(l.url))) avert.push(`lien d'accès à l'espace pro repris dans le texte (déjà en tête de page) : ${l.url}`);
+    }
   }
 
   return { erreurs, avertissements: avert, nbMots };
+}
+
+/** Domaine enregistré (deux derniers libellés) : services.santeclair.fr → santeclair.fr. */
+const domaineDe = (url) => {
+  try {
+    return new URL(url).hostname.split(".").slice(-2).join(".");
+  } catch {
+    return null;
+  }
+};
+
+/** Délai au-delà duquel un lien d'accès doit être revérifié (les portails changent d'adresse). */
+export const ACCES_JOURS_MAX = 180;
+
+/**
+ * Bloc « Accéder à l'espace pro » d'une plateforme (gabarit §6, champ `acces` du fichier de faits) :
+ * lien officiel de connexion, vérifié en ligne et daté. Sans lien sûr : `liens` vide et une `note`.
+ */
+export function controlerAcces(faits, { aujourdhui = new Date() } = {}) {
+  const erreurs = [];
+  const avert = [];
+  const acces = faits?.acces;
+  if (!acces) {
+    erreurs.push("fichier de faits sans `acces` (lien officiel de connexion à l'espace pro, gabarit §6)");
+    return { erreurs, avertissements: avert };
+  }
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(acces.verifieLe ?? "")) erreurs.push("acces.verifieLe absent ou mal formé (AAAA-MM-JJ)");
+  else {
+    const jours = (aujourdhui - new Date(acces.verifieLe)) / 86400000;
+    if (jours > ACCES_JOURS_MAX) avert.push(`lien d'accès vérifié il y a ${Math.floor(jours)} jours : à revérifier`);
+  }
+  const liens = acces.liens ?? [];
+  if (!liens.length) {
+    if (!acces.note?.trim()) erreurs.push("acces sans lien ni note : dire pourquoi aucun lien n'est donné");
+    else avert.push("aucun lien d'accès à l'espace pro (note affichée à la place)");
+  }
+  // Domaines connus de l'opérateur : ceux des sources et des contacts du fichier de faits
+  const connus = new Set(
+    [...Object.values(faits.sources ?? {}), ...(faits.contacts ?? [])].map((s) => s.url && domaineDe(s.url)).filter(Boolean),
+  );
+  for (const l of liens) {
+    if (!l.label?.trim()) erreurs.push(`lien d'accès sans libellé : ${l.url}`);
+    if (!/^https:\/\//.test(l.url ?? "")) {
+      erreurs.push(`lien d'accès non https : ${l.url}`);
+      continue;
+    }
+    if (!connus.has(domaineDe(l.url))) avert.push(`lien d'accès sur un domaine absent des sources et contacts : ${l.url}`);
+  }
+  return { erreurs, avertissements: avert };
 }
 
 /**

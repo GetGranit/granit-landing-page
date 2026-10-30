@@ -62,7 +62,7 @@ Il faut aussi cocher, dans les réglages du repo, *Actions → General → Allow
 | `slug`, `id`, `category`, `categoryName`, `title`, `primaryKeyword`, `keywordCluster`, `parentSlug`, `level` | Repris de la file |
 | `type` | `standard`, `resolution`, `plateforme`, `vs` ou `grille` (gabarit, section 2) |
 | `concurrents` | Pages comparatives seulement : slugs des fichiers `content/concurrents/{slug}.json`, dans l'ordre d'affichage (Granit en dernier) |
-| `plateforme` | Nom du fichier de faits `content/plateformes/{nom}.json` (sinon `null`) : source des blocs `data-bloc` et du logo |
+| `plateforme` | Nom du fichier de faits `content/plateformes/{nom}.json` (sinon `null`) : source des blocs `data-bloc`, du logo et du bloc « Accéder à l'espace pro » en tête de page (champ `acces` du fichier de faits, gabarit §6) |
 | `author` `{name, jobTitle, photo, url}`, `reviewer` (même forme, ou `null`) | Signature selon la catégorie (`config.json`, `signatures`). Photos dans `public/auteurs/`. `reviewer` n'est renseigné que pour un article passé en relecture (PR) : « Relu par » ne s'affiche que s'il est non nul |
 | `datePublished`, `dateModified`, `checkedOn` | `YYYY-MM-DD` ; `checkedOn` pour une plateforme, ou date du plus ancien relevé pour une page comparative |
 | `wordCount`, `readTime` | `readTime` en minutes (230 mots par minute) |
