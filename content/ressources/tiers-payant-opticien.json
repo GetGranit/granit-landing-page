@@ -214,7 +214,8 @@
     }
   ],
   "remplace": [
-    "optique-tiers-payant-amc"
+    "optique-tiers-payant-amc",
+    "groupes-multi-sites-pilotage"
   ],
   "moteur": {
     "model": "claude-opus-5-5",
