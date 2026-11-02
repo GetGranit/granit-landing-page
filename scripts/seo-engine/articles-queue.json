@@ -1951,7 +1951,7 @@
     "keywordCluster": [],
     "searchVolume": 50,
     "unsplashQuery": "office paperwork error",
-    "status": "pending",
+    "status": "review",
     "wave": 2,
     "level": "Pilier",
     "parentSlug": "tiers-payant-opticien",
@@ -2061,7 +2061,8 @@
     ],
     "remplace": [
       "reduire-rejets-cpam"
-    ]
+    ],
+    "publishedAt": "2026-11-02"
   },
   {
     "id": "C0",
