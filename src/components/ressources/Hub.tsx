@@ -52,7 +52,7 @@ export function Hub() {
           <h1 className="mx-auto mt-4 font-serif text-[clamp(40px,5.2vw,64px)] font-normal leading-[1.14] tracking-[-0.02em] [text-wrap:balance]">
             L'administratif de santé,
             <br className="hidden md:block" />{" "}
-            <em className="accent-italic pouls-souligne whitespace-nowrap">sans le casse-tête</em>.
+            <em className="accent-italic whitespace-nowrap">sans le casse-tête</em>.
           </h1>
           <p className="body-lg mx-auto mt-10 max-w-[60ch]">
             Opticiens, dentistes, cliniques, EHPAD, centres de santé, laboratoires,
@@ -114,9 +114,9 @@ export function Hub() {
 
         {glossaire && (
           <section className={`${conteneur} pt-14`}>
-            <div className="grid gap-6 rounded-[18px] border border-[var(--border)] bg-[#f1ede5] p-7 md:grid-cols-[1fr_auto] md:items-end md:p-10">
+            <div className="grid gap-6 rounded-[18px] border border-[var(--border)] bg-lavis p-7 md:grid-cols-[1fr_auto] md:items-end md:p-10">
               <div>
-                <span className="eyebrow" style={{ color: "#5e574b" }}>
+                <span className="eyebrow">
                   Glossaire
                 </span>
                 <h2 className={`mt-2 ${titreSection}`}>AMC, DRE, NOEMIE… en une phrase</h2>
@@ -126,7 +126,7 @@ export function Hub() {
                       <Link
                         to="/ressources/$slug"
                         params={{ slug: GLOSSAIRE_SLUG }}
-                        className="block rounded-[10px] border border-[var(--border)] bg-white px-3 py-2 font-mono text-[15px] font-medium hover:border-[var(--terra)]"
+                        className="block rounded-[10px] border border-[var(--border)] bg-papier px-3 py-2 font-mono text-[15px] font-medium hover:border-[var(--profond)]"
                       >
                         {s}
                       </Link>
@@ -138,7 +138,7 @@ export function Hub() {
                 to="/ressources/$slug"
                 params={{ slug: GLOSSAIRE_SLUG }}
                 className={lienFleche}
-                style={{ color: "#5e574b" }}
+                style={{ color: "var(--profond)" }}
               >
                 Tout le glossaire <Fleche />
               </Link>
@@ -243,7 +243,7 @@ function ParProbleme() {
             <Link
               to={t.to}
               params={t.params as never}
-              className="group/l flex h-full items-center justify-between gap-2 rounded-[12px] border border-[var(--border)] bg-white px-3.5 py-3 text-[14.5px] font-medium leading-snug transition hover:border-[var(--border2)] hover:shadow-[var(--shadow-soft)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--terra)]"
+              className="group/l flex h-full items-center justify-between gap-2 rounded-[12px] border border-[var(--border)] bg-papier px-3.5 py-3 text-[14.5px] font-medium leading-snug transition hover:border-[var(--border2)] hover:shadow-[var(--ombre-douce)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--profond)]"
             >
               {t.texte}
               <Fleche />
@@ -263,7 +263,7 @@ function PourTous({ vus, rangees, aussi }: { vus: Set<string>; rangees: Fiche[];
   return (
     <section className={`${conteneur} pt-14`}>
       <div className="border-t border-[var(--border)] pt-5">
-        <span className="eyebrow" style={{ color: "#6b6458" }}>
+        <span className="eyebrow">
           Pour tous les métiers
         </span>
         <h2 className="mt-2 font-serif text-[22px] font-normal leading-tight">
@@ -276,7 +276,7 @@ function PourTous({ vus, rangees, aussi }: { vus: Set<string>; rangees: Fiche[];
             <Link
               to="/ressources/$slug"
               params={{ slug: f.slug }}
-              className="group block py-3.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--terra)]"
+              className="group block py-3.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--profond)]"
             >
               <span className="font-mono text-[10.5px] uppercase tracking-[0.12em] text-[var(--text-muted)]">
                 {f.etiquette}

@@ -10,7 +10,7 @@ import { VERTICALES } from "@/lib/ressources/verticales";
 import type { VerticaleSlug } from "@/lib/ressources/types";
 
 const onglet =
-  "relative -mb-px snap-start whitespace-nowrap rounded-[4px] py-3 text-[14px] text-[var(--text-soft)] transition-colors duration-150 hover:text-[var(--text)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--terra)]";
+  "relative -mb-px snap-start whitespace-nowrap rounded-[4px] py-3 text-[14px] text-[var(--text-soft)] transition-colors duration-150 hover:text-[var(--text)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--profond)]";
 
 /** Soulignement de l'onglet actif : un seul élément nommé, qui glisse d'une page à l'autre. */
 function Souligne({ couleur }: { couleur: string }) {
@@ -108,7 +108,7 @@ export function Onglets({ actif, centre = false }: { actif: string; centre?: boo
           to="/ressources/$slug"
           params={{ slug: GLOSSAIRE_SLUG }}
           actif={actif === "glossaire"}
-          couleur="#5e574b"
+          couleur="var(--profond)"
         >
           Glossaire
         </Onglet>

@@ -127,13 +127,10 @@ export function PageAncien({ slug }: { slug: string }) {
                 key={a.slug}
                 to="/ressources/$slug"
                 params={{ slug: a.slug }}
-                className="card-hover flex h-full flex-col rounded-[8px] border bg-white/40 p-6"
+                className="card-hover flex h-full flex-col rounded-[8px] border bg-papier p-6"
                 style={{ borderColor: "var(--border)" }}
               >
-                <div
-                  className="text-[10px] uppercase tracking-[0.04em]"
-                  style={{ fontFamily: "var(--font-mono)", color: "var(--terra)" }}
-                >
+                <div className="eyebrow">
                   {a.label} · {a.time}
                 </div>
                 <div className="mt-4 text-[18px] font-serif leading-[1.25]">{a.title}</div>
