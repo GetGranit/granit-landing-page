@@ -7,7 +7,7 @@ export function Kicker({ children }: { children: ReactNode }) {
   return <div className="eyebrow mb-3">{children}</div>;
 }
 
-/** H2 serif ; `accent` s'affiche en italique terracotta. */
+/** H2 serif ; `accent` prend la couleur d'accent (vert profond, droit). */
 export function Title({ lead, accent, tail }: { lead: string; accent: string; tail?: string }) {
   return (
     <h1
@@ -23,8 +23,8 @@ export function Title({ lead, accent, tail }: { lead: string; accent: string; ta
 export function Card({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
     <div
-      className={`rounded-[22px] border bg-white p-5 sm:p-6 ${className}`}
-      style={{ borderColor: "var(--border)", boxShadow: "var(--shadow-soft)" }}
+      className={`rounded-[22px] border bg-papier p-5 sm:p-6 ${className}`}
+      style={{ borderColor: "var(--border)", boxShadow: "var(--ombre-douce)" }}
     >
       {children}
     </div>
@@ -49,8 +49,8 @@ export function PopCheck({ done, size = 22 }: { done: boolean; size?: number }) 
       initial={reduce ? false : { scale: 0.3, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ type: "spring", stiffness: 520, damping: 16 }}
-      className="inline-flex shrink-0 items-center justify-center rounded-full text-white"
-      style={{ width: size, height: size, background: "var(--sage)" }}
+      className="inline-flex shrink-0 items-center justify-center rounded-full text-rose"
+      style={{ width: size, height: size, background: "var(--succes)" }}
     >
       <svg
         width={size * 0.55}
@@ -72,7 +72,7 @@ export function PopCheck({ done, size = 22 }: { done: boolean; size?: number }) 
 export function Reassure({ children }: { children: ReactNode }) {
   return (
     <li className="flex items-start gap-2 text-[13px]" style={{ color: "var(--text-soft)" }}>
-      <span aria-hidden style={{ color: "var(--sage)", fontWeight: 700 }}>
+      <span aria-hidden style={{ color: "var(--succes)", fontWeight: 700 }}>
         ✓
       </span>
       {children}
@@ -81,7 +81,7 @@ export function Reassure({ children }: { children: ReactNode }) {
 }
 
 export const inputClass =
-  "w-full rounded-[12px] border bg-white px-4 py-3 text-[16px] outline-none transition-colors focus:border-[color:var(--terra)]";
+  "w-full rounded-[12px] border border-filet-champ bg-papier px-4 py-3 text-[16px] outline-none transition-colors focus:border-[color:var(--profond)]";
 
 export function Field({ label, children }: { label: string; children: ReactNode }) {
   return (
@@ -104,7 +104,7 @@ export function TextButton({ onClick, children }: { onClick: () => void; childre
       type="button"
       onClick={onClick}
       className="text-[14px] underline-offset-4 hover:underline"
-      style={{ color: "var(--terra)" }}
+      style={{ color: "var(--profond)" }}
     >
       {children}
     </button>
@@ -117,7 +117,7 @@ export function ApercuBadge({ children = "Aperçu" }: { children?: ReactNode }) 
     <span
       className="inline-block shrink-0 rounded-full px-2.5 py-0.5 text-[10px] uppercase"
       style={{
-        background: "var(--tag-bg)",
+        background: "var(--lavis)",
         color: "var(--text-soft)",
         fontFamily: "var(--font-mono)",
         letterSpacing: "0.08em",

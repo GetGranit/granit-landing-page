@@ -14,7 +14,7 @@ export function Shell({
   children?: React.ReactNode;
 }) {
   const chip = {
-    background: "var(--tag-bg)",
+    background: "var(--lavis)",
     color: "var(--text-soft)",
     fontFamily: "var(--font-mono)",
   };

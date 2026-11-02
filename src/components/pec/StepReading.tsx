@@ -65,7 +65,7 @@ export function StepReading({
             className="absolute inset-x-0 h-10"
             style={{
               background:
-                "linear-gradient(180deg,transparent,color-mix(in oklab,var(--terra) 35%,transparent),transparent)",
+                "linear-gradient(180deg,transparent,color-mix(in oklab,var(--menthe) 70%,transparent),transparent)",
             }}
             initial={{ top: "-20%" }}
             animate={{ top: "110%" }}
@@ -76,7 +76,7 @@ export function StepReading({
           <span
             className="absolute bottom-2 left-1/2 -translate-x-1/2 rounded-full px-3 py-1 text-[11px]"
             style={{
-              background: "rgba(255,255,255,.85)",
+              background: "rgba(255,253,253,.85)",
               fontFamily: "var(--font-mono)",
               color: "var(--text-muted)",
             }}
@@ -99,10 +99,10 @@ export function StepReading({
               <span
                 className={`grid h-7 w-7 place-items-center rounded-full border-[1.5px] text-[14px] ${working && !reduce ? "animate-spin" : ""}`}
                 style={{
-                  borderColor: ok ? "var(--sage)" : "var(--terra)",
+                  borderColor: ok ? "var(--succes)" : "var(--profond)",
                   borderTopColor: working ? "transparent" : undefined,
-                  background: ok ? "var(--sage)" : "#fff",
-                  color: "#fff",
+                  background: ok ? "var(--succes)" : "var(--papier)",
+                  color: "var(--rose)",
                 }}
               >
                 {ok ? "✓" : ""}
@@ -128,7 +128,7 @@ function ExampleCard() {
       <div className="flex items-center justify-between">
         <b className="text-[13px]">Mutuelle Exemple</b>
         <span
-          className="rounded px-1.5 py-0.5 text-[10px] text-white"
+          className="rounded px-1.5 py-0.5 text-[10px] text-papier"
           style={{ background: "#34495e" }}
         >
           TIERS PAYANT
@@ -144,7 +144,7 @@ function ExampleCard() {
         {["PHAR", "HOSP", "DENT", "OPTI"].map((c) => (
           <span
             key={c}
-            className="rounded border bg-white/70 py-0.5"
+            className="rounded border bg-papier/70 py-0.5"
             style={{ borderColor: "#b8c6d4" }}
           >
             {c}

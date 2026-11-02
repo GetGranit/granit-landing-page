@@ -51,7 +51,7 @@ export function Logiciel({ logiciel, onLogiciel, onIdle }: Props) {
                 onLogiciel(l);
                 setPick(false);
               }}
-              className="rounded-full border bg-white px-4 py-2 text-[14px] transition-colors hover:border-[color:var(--terra)]"
+              className="rounded-full border bg-papier px-4 py-2 text-[14px] transition-colors hover:border-[color:var(--profond)]"
               style={{ borderColor: "var(--border2)" }}
             >
               {l}

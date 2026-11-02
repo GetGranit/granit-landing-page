@@ -105,7 +105,7 @@ export function StepSimDone({
       style={{
         background: "var(--surface)",
         borderColor: "var(--border)",
-        boxShadow: "0 1px 2px rgba(28,17,8,.04),0 8px 30px -10px rgba(28,17,8,.10)",
+        boxShadow: "var(--ombre-douce)",
       }}
       data-screen="sim-done"
     >
@@ -115,8 +115,8 @@ export function StepSimDone({
         transition={{ type: "spring", stiffness: 380, damping: 22, delay: 0.15 }}
         className="rounded-full px-3 py-1 text-[12px]"
         style={{
-          background: "var(--sage-light)",
-          color: "#2f6b3d",
+          background: "var(--succes-fond)",
+          color: "var(--succes-texte)",
           fontFamily: "var(--font-mono)",
         }}
       >
@@ -138,7 +138,7 @@ export function StepSimDone({
               style={{
                 fontFamily: "var(--font-mono)",
                 fontVariantNumeric: "tabular-nums",
-                color: fort ? "var(--terra)" : "var(--text)",
+                color: fort ? "var(--profond)" : "var(--text)",
                 fontWeight: fort ? 600 : 400,
               }}
             >
@@ -164,12 +164,12 @@ export function StepSimDone({
             <span style={{ color: "var(--text-muted)" }}>~{MINUTES_A_LA_MAIN} min (hypothèse)</span>{" "}
             à la main
           </p>
-          <Barre label="Granit" texte={duree(r.dureeSec)} ratio={ratio} couleur="var(--sage)" />
+          <Barre label="Granit" texte={duree(r.dureeSec)} ratio={ratio} couleur="var(--succes)" />
           <Barre
             label="À la main"
             texte={`~${MINUTES_A_LA_MAIN} min`}
             ratio={1}
-            couleur="var(--bg3)"
+            couleur="var(--filet)"
             lent
           />
         </div>

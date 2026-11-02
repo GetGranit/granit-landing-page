@@ -117,7 +117,7 @@ export function StepCompte({
               name="cgu"
               aria-invalid={err.cgu ? true : undefined}
               aria-describedby={err.cgu ? "compte-cgu-erreur" : undefined}
-              className="mt-0.5 h-[18px] w-[18px] shrink-0 accent-[var(--terra)]"
+              className="mt-0.5 h-[18px] w-[18px] shrink-0 accent-[var(--encre)]"
               checked={cgu}
               onChange={(e) => setCgu(e.target.checked)}
             />
@@ -140,7 +140,7 @@ export function StepCompte({
               id="compte-cgu-erreur"
               role="alert"
               className="text-[14px]"
-              style={{ color: "var(--terra-hover)" }}
+              style={{ color: "var(--alerte-texte)" }}
             >
               {err.cgu}
             </span>
@@ -150,7 +150,7 @@ export function StepCompte({
           <p
             role="alert"
             className="w-full rounded-xl px-3 py-2 text-left text-[15px]"
-            style={{ background: "#fbf0dc", color: "#7a4f12" }}
+            style={{ background: "var(--lavis)", color: "var(--encre)" }}
           >
             {error}
           </p>
@@ -177,7 +177,7 @@ function Preparation() {
         >
           <motion.div
             className="h-full rounded-full"
-            style={{ background: "var(--gradient-terra)" }}
+            style={{ background: "var(--encre)" }}
             initial={reduce ? { width: "100%" } : { width: "8%" }}
             animate={{ width: "100%" }}
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}

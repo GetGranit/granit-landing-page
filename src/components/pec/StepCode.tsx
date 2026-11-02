@@ -47,7 +47,7 @@ export function StepCode({
         <p
           role="alert"
           className="w-full rounded-xl px-3 py-2 text-[15px]"
-          style={{ background: "#fbf0dc", color: "#7a4f12" }}
+          style={{ background: "var(--lavis)", color: "var(--encre)" }}
         >
           Ce code n'a pas été accepté (essai {essai} sur 3).{" "}
           {canal === "totp"
@@ -77,9 +77,9 @@ export function StepCode({
         <input
           ref={ref}
           aria-label="Code à 6 chiffres"
-          className={`w-full max-w-[300px] rounded-2xl border-[1.5px] bg-white px-4 py-4 text-center text-[34px] ${focusRing}`}
+          className={`w-full max-w-[300px] rounded-2xl border-[1.5px] bg-papier px-4 py-4 text-center text-[34px] ${focusRing}`}
           style={{
-            borderColor: "var(--border2)",
+            borderColor: "var(--filet-champ)",
             color: "var(--text)",
             fontFamily: "var(--font-mono)",
             letterSpacing: ".35em",

@@ -47,8 +47,8 @@ export function StepSearch({
         value={q}
         onChange={(e) => setQ(e.target.value)}
         placeholder="Ex. Harmonie Mutuelle"
-        className={`w-full rounded-xl border-[1.5px] bg-white px-4 py-3.5 text-[17px] ${focusRing}`}
-        style={{ borderColor: "var(--border2)", color: "var(--text)" }}
+        className={`w-full rounded-xl border-[1.5px] bg-papier px-4 py-3.5 text-[17px] ${focusRing}`}
+        style={{ borderColor: "var(--filet-champ)", color: "var(--text)" }}
         aria-label="Nom de la mutuelle"
       />
       {results.length > 0 && (
@@ -58,7 +58,7 @@ export function StepSearch({
               <button
                 type="button"
                 onClick={() => onPick(r.nom, r.platforms)}
-                className="w-full rounded-xl border bg-white px-4 py-3 text-left text-[16px] hover:border-[var(--text)]"
+                className="w-full rounded-xl border bg-papier px-4 py-3 text-left text-[16px] hover:border-[var(--text)]"
                 style={{ borderColor: "var(--border2)", color: "var(--text)" }}
               >
                 {r.nom}

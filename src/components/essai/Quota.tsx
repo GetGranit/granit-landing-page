@@ -33,7 +33,7 @@ export function Compteur({ n }: { n: number }) {
             key={i}
             className="h-2 rounded-full"
             initial={false}
-            animate={{ background: i < n ? "var(--sage)" : "var(--bg3)" }}
+            animate={{ background: i < n ? "var(--succes)" : "var(--filet)" }}
             transition={reduce ? { duration: 0 } : { duration: 0.3 }}
           />
         ))}
