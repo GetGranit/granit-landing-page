@@ -202,14 +202,17 @@ function ReferralFlow({ steps }: { steps: Copy["flow"] }) {
         className="absolute bottom-12 left-[43px] top-12 w-px md:left-[51px]"
         style={{ background: "var(--border2)" }}
       >
-        {!reduce && (
-          <motion.span
-            className="absolute -left-[3px] h-[7px] w-[7px] rounded-full"
-            style={{ background: "var(--profond)", boxShadow: "0 0 12px var(--menthe)" }}
-            animate={{ top: ["0%", "100%"], opacity: [0, 1, 1, 0] }}
-            transition={{ duration: 3.2, ease: "easeInOut", repeat: Infinity, repeatDelay: 0.6 }}
-          />
-        )}
+        {/* Toujours rendu, même animations réduites : le serveur ne connaît pas la
+            préférence (useReducedMotion y vaut null) et rendait le point ; le retirer
+            côté client cassait l'hydratation (React #418). Animations réduites :
+            le point reste à son état initial, invisible. */}
+        <motion.span
+          className="absolute -left-[3px] h-[7px] w-[7px] rounded-full"
+          style={{ background: "var(--profond)", boxShadow: "0 0 12px var(--menthe)" }}
+          initial={{ top: "0%", opacity: 0 }}
+          animate={reduce ? undefined : { top: ["0%", "100%"], opacity: [0, 1, 1, 0] }}
+          transition={{ duration: 3.2, ease: "easeInOut", repeat: Infinity, repeatDelay: 0.6 }}
+        />
       </div>
       <ul className="relative space-y-9">
         {steps.map((s, i) => {
