@@ -425,8 +425,8 @@ function FenetreAgent({ c }: { c: Contenu }) {
           <svg viewBox="0 0 16 16">
             <path
               d="M2 1l11 7-5 1-2 5z"
-              fill="#fff"
-              stroke="#1c1108"
+              fill="var(--papier)"
+              stroke="var(--encre)"
               strokeWidth="1.2"
               strokeLinejoin="round"
             />
@@ -458,7 +458,7 @@ export function CarteAgent({
   return (
     <div className="ress-cta-carte">
       <p className="ress-cta-etiquette">{c.etiquette}</p>
-      <p className="mt-2 font-serif text-[21px] leading-[1.22] text-white">{c.titre}</p>
+      <p className="mt-2 font-serif text-[21px] leading-[1.22] text-rose">{c.titre}</p>
       <div className="mt-4">
         <FenetreAgent c={c} />
       </div>
@@ -488,7 +488,7 @@ export function EncartAgent({
           <h2 className="mt-2.5 font-serif text-[clamp(26px,3.2vw,36px)] font-normal leading-[1.15]">
             {c.fin}
           </h2>
-          <p className="mt-3 max-w-[46ch] text-[16px] leading-relaxed text-[#c9bfb0]">
+          <p className="mt-3 max-w-[46ch] text-[16px] leading-relaxed text-sur-encre-secondaire">
             {c.texteFin}
           </p>
           <ol className="ress-cta-etapes">
@@ -500,7 +500,7 @@ export function EncartAgent({
             ))}
           </ol>
           <div className="mt-6 flex flex-col gap-2.5 sm:flex-row sm:items-center">
-            <BoutonPrincipal c={c} position="encart" classe="btn-primary justify-center" />
+            <BoutonPrincipal c={c} position="encart" classe="btn-clair justify-center" />
             <BoutonSecondaire c={c} position="encart" classe="ress-cta-fantome" />
           </div>
           <p className="ress-cta-rassure gauche">{c.rassure}</p>

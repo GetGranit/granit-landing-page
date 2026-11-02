@@ -21,7 +21,7 @@ export function Fil({ items }: { items: Item[] }) {
         <Link
           to={retour.to}
           params={retour.params as never}
-          className="rounded-[4px] text-[14px] text-[var(--text-muted)] hover:text-[var(--text)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--terra)] md:hidden"
+          className="rounded-[4px] text-[14px] text-[var(--text-muted)] hover:text-[var(--text)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--profond)] md:hidden"
         >
           ‹ {retour.nom}
         </Link>
@@ -34,7 +34,7 @@ export function Fil({ items }: { items: Item[] }) {
               <Link
                 to={it.to}
                 params={it.params as never}
-                className="rounded-[4px] hover:text-[var(--text)] hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--terra)]"
+                className="rounded-[4px] hover:text-[var(--text)] hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--profond)]"
               >
                 {it.nom}
               </Link>

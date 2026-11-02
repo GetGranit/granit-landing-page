@@ -41,7 +41,7 @@ export function HubEn() {
           aria-hidden
           className="pointer-events-none absolute -right-24 top-10 h-[420px] w-[420px] opacity-25"
           style={{
-            backgroundImage: "radial-gradient(circle, var(--terra) 1px, transparent 1.4px)",
+            backgroundImage: "radial-gradient(circle, var(--menthe) 1px, transparent 1.4px)",
             backgroundSize: "16px 16px",
             maskImage: "radial-gradient(circle at 70% 50%, black, transparent 70%)",
             WebkitMaskImage: "radial-gradient(circle at 70% 50%, black, transparent 70%)",
@@ -65,10 +65,10 @@ export function HubEn() {
             <Link
               to="/ressources/$slug"
               params={{ slug: featured.slug }}
-              className="card-hover group grid overflow-hidden rounded-[18px] border bg-white/60 md:grid-cols-2"
+              className="card-hover group grid overflow-hidden rounded-[18px] border bg-papier/60 md:grid-cols-2"
               style={{
                 borderColor: "color-mix(in oklab, var(--border) 70%, transparent)",
-                boxShadow: "0 30px 70px -40px color-mix(in oklab, var(--terra) 35%, transparent)",
+                boxShadow: "var(--ombre-carte)",
               }}
             >
               <div className="relative aspect-[16/10] overflow-hidden md:aspect-auto">
@@ -82,8 +82,8 @@ export function HubEn() {
                 <span
                   className="absolute left-5 top-5 rounded-full px-3 py-1 text-[10.5px]"
                   style={{
-                    background: "rgba(255,255,255,0.95)",
-                    color: "var(--terra)",
+                    background: "rgba(255,253,253,0.95)",
+                    color: "var(--profond)",
                     fontFamily: "var(--font-mono)",
                     letterSpacing: "0.06em",
                     fontWeight: 600,
@@ -94,10 +94,7 @@ export function HubEn() {
                 </span>
               </div>
               <div className="flex flex-col p-8 md:p-10">
-                <div
-                  className="text-[10.5px] uppercase tracking-[0.06em]"
-                  style={{ fontFamily: "var(--font-mono)", color: "var(--terra)" }}
-                >
+                <div className="eyebrow">
                   {featured.category} · {featured.time}
                 </div>
                 <h2
@@ -105,7 +102,7 @@ export function HubEn() {
                   style={{
                     fontSize: "clamp(24px,2.6vw,34px)",
                     lineHeight: 1.2,
-                    fontWeight: 600,
+                    fontWeight: 400,
                     letterSpacing: "-0.015em",
                   }}
                 >
@@ -119,7 +116,7 @@ export function HubEn() {
                 </p>
                 <div
                   className="mt-auto pt-8 text-[13px]"
-                  style={{ color: "var(--terra)", fontWeight: 600 }}
+                  style={{ color: "var(--profond)", fontWeight: 600 }}
                 >
                   {t.read}{" "}
                   <span className="inline-block transition-transform group-hover:translate-x-0.5">
@@ -157,7 +154,7 @@ export function HubEn() {
                 <Link
                   to="/ressources/$slug"
                   params={{ slug: article.slug }}
-                  className="card-hover group flex h-full flex-col overflow-hidden rounded-[14px] border bg-white"
+                  className="card-hover group flex h-full flex-col overflow-hidden rounded-[14px] border bg-papier"
                   style={{ borderColor: "color-mix(in oklab, var(--border) 70%, transparent)" }}
                 >
                   <div className="relative aspect-[16/10] overflow-hidden">
@@ -171,10 +168,7 @@ export function HubEn() {
                     />
                   </div>
                   <div className="flex flex-1 flex-col p-6">
-                    <div
-                      className="text-[10.5px] uppercase tracking-[0.06em]"
-                      style={{ fontFamily: "var(--font-mono)", color: "var(--terra)" }}
-                    >
+                    <div className="eyebrow">
                       {article.category} · {article.time}
                     </div>
                     <h2
@@ -182,7 +176,7 @@ export function HubEn() {
                       style={{
                         fontSize: "20px",
                         lineHeight: 1.25,
-                        fontWeight: 600,
+                        fontWeight: 400,
                         letterSpacing: "-0.01em",
                       }}
                     >
@@ -196,7 +190,7 @@ export function HubEn() {
                     </p>
                     <div
                       className="mt-6 inline-flex items-center gap-1 text-[12.5px]"
-                      style={{ color: "var(--terra)", fontFamily: "var(--font-mono)" }}
+                      style={{ color: "var(--profond)", fontFamily: "var(--font-mono)" }}
                     >
                       {t.read}{" "}
                       <span className="transition-transform group-hover:translate-x-0.5">↗</span>

@@ -64,7 +64,7 @@ function Liste({
                 surChoix?.();
                 aller(e.id);
               }}
-              className={`block rounded-[4px] py-1.5 pl-3 hover:text-[var(--text)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--terra)] ${
+              className={`block rounded-[4px] py-1.5 pl-3 hover:text-[var(--text)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--profond)] ${
                 actif === e.id ? "font-semibold text-[var(--text)]" : "text-[var(--text-muted)]"
               }`}
             >
@@ -84,7 +84,7 @@ export function Sommaire({ entrees }: { entrees: Entree[] }) {
   return (
     <nav
       aria-label="Sommaire"
-      className="max-h-[calc(100dvh-112px)] overflow-y-auto overscroll-contain rounded-[14px] border border-[var(--border)] bg-white px-[18px] py-4"
+      className="max-h-[calc(100dvh-112px)] overflow-y-auto overscroll-contain rounded-[14px] border border-[var(--border)] bg-papier px-[18px] py-4"
     >
       <div className="text-[15px] font-semibold">Dans cet article</div>
       <Liste entrees={entrees} actif={actif} />
@@ -131,9 +131,9 @@ export function SommaireMobile({ entrees }: { entrees: Entree[] }) {
     <>
       <details
         ref={bloc}
-        className="mb-8 rounded-[14px] border border-[var(--border)] bg-white px-[18px] py-3.5 min-[980px]:hidden"
+        className="mb-8 rounded-[14px] border border-[var(--border)] bg-papier px-[18px] py-3.5 min-[980px]:hidden"
       >
-        <summary className="cursor-pointer rounded-[4px] text-[15px] font-semibold focus-visible:outline-2 focus-visible:outline-[var(--terra)]">
+        <summary className="cursor-pointer rounded-[4px] text-[15px] font-semibold focus-visible:outline-2 focus-visible:outline-[var(--profond)]">
           Dans cet article
         </summary>
         <Liste entrees={entrees} />
@@ -145,7 +145,7 @@ export function SommaireMobile({ entrees }: { entrees: Entree[] }) {
           onClick={() => setOuvert(true)}
           aria-expanded={ouvert}
           tabIndex={pastille ? 0 : -1}
-          className={`fixed bottom-[calc(env(safe-area-inset-bottom)+16px)] right-4 z-[55] rounded-full border border-[var(--border2)] bg-white px-4 py-2.5 text-[14px] font-semibold shadow-[var(--shadow-soft)] transition-opacity duration-150 focus-visible:outline-2 focus-visible:outline-[var(--terra)] ${
+          className={`fixed bottom-[calc(env(safe-area-inset-bottom)+16px)] right-4 z-[55] rounded-full border border-[var(--border2)] bg-papier px-4 py-2.5 text-[14px] font-semibold shadow-[var(--ombre-douce)] transition-opacity duration-150 focus-visible:outline-2 focus-visible:outline-[var(--profond)] ${
             pastille && !ouvert ? "opacity-100" : "pointer-events-none opacity-0"
           }`}
         >
@@ -153,7 +153,7 @@ export function SommaireMobile({ entrees }: { entrees: Entree[] }) {
         </button>
         {ouvert && (
           <div
-            className="fixed inset-0 z-[65] bg-black/25"
+            className="fixed inset-0 z-[65] bg-encre/25"
             onClick={() => setOuvert(false)}
             aria-hidden
           />
@@ -163,7 +163,7 @@ export function SommaireMobile({ entrees }: { entrees: Entree[] }) {
           aria-label="Sommaire"
           aria-hidden={!ouvert}
           data-ferme={ouvert ? undefined : ""}
-          className={`feuille fixed inset-x-0 bottom-0 z-[66] max-h-[70dvh] overflow-y-auto rounded-t-[18px] bg-white px-5 pb-[calc(env(safe-area-inset-bottom)+20px)] pt-4 shadow-[0_-10px_30px_-12px_rgba(28,17,8,0.2)] ${ouvert ? "" : "invisible"}`}
+          className={`feuille fixed inset-x-0 bottom-0 z-[66] max-h-[70dvh] overflow-y-auto rounded-t-[18px] bg-papier px-5 pb-[calc(env(safe-area-inset-bottom)+20px)] pt-4 shadow-[0_-10px_30px_-12px_rgba(31,53,48,0.2)] ${ouvert ? "" : "invisible"}`}
         >
           <div className="mx-auto mb-3 h-1 w-10 rounded-full bg-[var(--border2)]" aria-hidden />
           <button
@@ -172,7 +172,7 @@ export function SommaireMobile({ entrees }: { entrees: Entree[] }) {
               setOuvert(false);
               window.scrollTo({ top: 0, behavior: mouvementReduit() ? "auto" : "smooth" });
             }}
-            className="block w-full rounded-[4px] py-2 text-left text-[15px] font-semibold focus-visible:outline-2 focus-visible:outline-[var(--terra)]"
+            className="block w-full rounded-[4px] py-2 text-left text-[15px] font-semibold focus-visible:outline-2 focus-visible:outline-[var(--profond)]"
           >
             Haut de page ↑
           </button>

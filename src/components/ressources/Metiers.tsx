@@ -40,7 +40,7 @@ function CarteMetier({ v, n }: { v: Verticale; n: number }) {
     <Link
       to="/ressources/metier/$verticale"
       params={{ verticale: v.slug }}
-      className="group block rounded-[14px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--terra)]"
+      className="group block rounded-[14px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--profond)]"
     >
       <PhotoMetier
         v={v}

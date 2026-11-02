@@ -43,7 +43,7 @@ export function Faq({
           open={i === 0}
           className="border-t border-[var(--border)] py-1 last:border-b"
         >
-          <summary className="flex cursor-pointer list-none justify-between gap-4 rounded-[4px] py-3.5 font-semibold text-[var(--text)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--terra)] [&::-webkit-details-marker]:hidden">
+          <summary className="flex cursor-pointer list-none justify-between gap-4 rounded-[4px] py-3.5 font-semibold text-[var(--text)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--profond)] [&::-webkit-details-marker]:hidden">
             {f.question}
             <span
               aria-hidden
@@ -92,7 +92,7 @@ export function Sources({
             <a
               href={s.url}
               rel="noopener"
-              className="text-[var(--terra-hover)] underline underline-offset-[3px]"
+              className="text-profond underline underline-offset-[3px]"
             >
               {s.label}
             </a>
@@ -108,7 +108,7 @@ export function Sources({
             <a
               href={s.url}
               rel="noopener"
-              className="text-[var(--terra-hover)] underline underline-offset-[3px]"
+              className="text-profond underline underline-offset-[3px]"
             >
               {s.label}
             </a>{" "}
@@ -148,7 +148,7 @@ export function Utile({ slug }: { slug: string }) {
     setRepondu(true);
   };
   const bouton =
-    "rounded-full border border-[var(--border2)] bg-white px-4 py-1.5 text-[14.5px] font-medium hover:border-[var(--text-muted)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--terra)]";
+    "rounded-full border border-[var(--border2)] bg-papier px-4 py-1.5 text-[14.5px] font-medium hover:border-[var(--text-muted)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--profond)]";
   return (
     <div
       className="mt-10 flex flex-wrap items-center gap-3 border-t border-[var(--border)] pt-6 text-[15px]"
@@ -174,11 +174,11 @@ export function Utile({ slug }: { slug: string }) {
 /** Encart final : texte fixe validé le 07/10/2026, seul endroit où figure la promesse « 48 h ». */
 export function EncartFinal() {
   return (
-    <aside className="mt-14 rounded-[18px] bg-[#1c1108] p-7 text-[#f6efe4] md:p-8">
+    <aside className="mt-14 rounded-[18px] section-sombre p-7 md:p-8">
       <h3 className="font-serif text-[26px] font-normal leading-tight">
         Vos prises en charge prennent trop de temps ?
       </h3>
-      <p className="mt-3 max-w-[56ch] text-[16px] leading-relaxed text-[#c9bfb0]">
+      <p className="mt-3 max-w-[56ch] text-[16px] leading-relaxed text-sur-encre-secondaire">
         Granit saisit les demandes sur les portails des plateformes et suit les réponses à votre
         place. Branché sur vos portails en 48 h, sans API à demander.
       </p>
@@ -186,7 +186,7 @@ export function EncartFinal() {
         href={calcomDemoUrl("encart-final")}
         target="_blank"
         rel="noopener"
-        className="btn-primary mt-5 inline-flex"
+        className="btn-clair mt-5 inline-flex"
       >
         Demander une démo
       </a>
@@ -241,7 +241,7 @@ export function EtapeSuivante({ article }: { article: RessourceJson }) {
     <Link
       to="/ressources/$slug"
       params={{ slug: l.fiche.slug }}
-      className="group mt-10 block rounded-[14px] border border-[var(--border)] bg-[var(--bg2)] px-5 py-4 transition hover:border-[var(--border2)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--terra)]"
+      className="group mt-10 block rounded-[14px] border border-[var(--border)] bg-[var(--bg2)] px-5 py-4 transition hover:border-[var(--border2)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--profond)]"
     >
       <span
         className="font-mono text-[11px] font-medium uppercase tracking-[0.12em]"
