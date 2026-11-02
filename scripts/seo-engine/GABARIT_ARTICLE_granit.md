@@ -46,7 +46,7 @@ Les piliers (`level` commence par « Pilier ») utilisent le type de leur catég
 | 2 | Sous-navigation du guide | Moteur (liste des catégories) | « Tout le guide » + une pastille par catégorie + Glossaire. Défile horizontalement sur mobile |
 | 3 | En-tête teinté | Moteur | Fond = teinte de la catégorie (section 9). Contient les blocs 4 à 6 |
 | 4 | Fil d'Ariane | Moteur | Accueil › Ressources › {Catégorie} › {Titre}. Tous cliquables sauf le dernier. Balisé `BreadcrumbList` |
-| 5 | H1 | File (`title`) | Le titre de la file, tel quel. Plateforme : logo à gauche du H1 (64 px, fond blanc, bord fin) si `logo` est renseigné, sinon monogramme (initiale sur la couleur de la catégorie) |
+| 5 | H1 | File (`title`) | Le titre de la file, tel quel. Plateforme : logo à gauche du H1 (64 px, fond papier, bord fin) si `logo` est renseigné, sinon monogramme (initiale sur la couleur de la catégorie) |
 | 6 | Signature | Moteur | Photo + nom + fonction de l'auteur · « Relu par {reviewer} » si renseigné · « Mis à jour le {dateModified} » · temps de lecture. Plateforme : « Informations relevées le {checkedOn} » remplace « Mis à jour le » |
 | 7 | Ouverture | Claude (`contentHtml`) | La réponse directe, phrase clé en gras. Pas de couverture au-dessus : la réponse doit être visible sans défiler |
 | 8 | « L'essentiel » | Claude (`contentHtml`) | 3 à 5 puces, juste après l'ouverture |
@@ -259,17 +259,19 @@ Le moteur refuse l'article (et réessaie une fois) si :
 
 ## 9. Repères visuels
 
-Charte du site existant : titres en Libre Caslon Text, texte en Inter Tight, étiquettes en JetBrains Mono, accent terracotta `#d4583a`, fonds `#ffffff` et `#faf6ee`. Colonne de texte limitée à 68 caractères environ.
+Charte Granit (`DESIGN.md` à la racine du dépôt, copie de `internal/marque`) : titres en Source Serif 4 (réglage `"opsz" 20`, graisse 300 pour les grands titres, 400 pour les sous-titres, jamais de gras ni d'italique), texte et étiquettes en Geist (chiffres tabulaires, plus de police mono). Fond de page rosé `#FAF0F2`, cartes papier `#FFFDFD` (jamais de blanc pur), sections alternées lavis `#F4EEF0`, texte encre `#1F3530`, liens et accent de titre en vert profond `#2F7A64` (l'accent passe par la couleur, pas par l'italique). Aucune autre couleur. Colonne de texte limitée à 68 caractères environ.
+
+Les catégories ne se distinguent plus par la couleur mais par leur nom : toutes prennent la même paire, profond pour le texte, les filets et les numéros, lavis pour le fond d'en-tête (valeurs dans `src/lib/ressources/categories.json`).
 
 | Catégorie | Couleur (texte) | Teinte (fond d'en-tête) | Titre de la carte agent |
 |---|---|---|---|
-| `guide-tiers-payant` | `#3f7a4d` | `#e9f2eb` | L'agent dépose vos prises en charge |
-| `plateformes` | `#b94a2f` | `#fbeae3` | L'agent dépose vos PEC {nom de la plateforme} |
-| `rejets` | `#8a6416` | `#f6eedb` | L'agent vérifie la plateforme avant l'envoi |
-| `paiements` | `#3e5f84` | `#e6ecf4` | L'agent rapproche vos virements chaque matin |
-| `gerer-son-tiers-payant` | `#7a4a74` | `#f3e9f1` | L'agent dépose vos prises en charge |
-| `conformite` | `#2f6f75` | `#e2f0f1` | L'agent dépose vos prises en charge |
-| `glossaire` | `#5e574b` | `#f1ede5` | L'agent dépose vos prises en charge |
+| `guide-tiers-payant` | `#2F7A64` | `#F4EEF0` | L'agent dépose vos prises en charge |
+| `plateformes` | `#2F7A64` | `#F4EEF0` | L'agent dépose vos PEC {nom de la plateforme} |
+| `rejets` | `#2F7A64` | `#F4EEF0` | L'agent vérifie la plateforme avant l'envoi |
+| `paiements` | `#2F7A64` | `#F4EEF0` | L'agent rapproche vos virements chaque matin |
+| `gerer-son-tiers-payant` | `#2F7A64` | `#F4EEF0` | L'agent dépose vos prises en charge |
+| `conformite` | `#2F7A64` | `#F4EEF0` | L'agent dépose vos prises en charge |
+| `glossaire` | `#2F7A64` | `#F4EEF0` | L'agent dépose vos prises en charge |
 
 Le titre de la carte agent « plateformes » n'est utilisé que si la plateforme fait partie de celles que Granit traite (`granitData`). Sinon : « L'agent dépose vos prises en charge ».
 

@@ -21,6 +21,12 @@
       "regle": "couleur-hors-palette",
       "motif": "/\\[(stroke|fill)='#/",
       "raison": "Sélecteurs shadcn qui ciblent les couleurs par défaut posées par Recharts ([stroke='#ccc']) pour les remplacer par des jetons ; on ne peint rien avec."
+    },
+    {
+      "fichier": "src/lib/webinarMail.ts",
+      "regle": "couleur-hors-palette",
+      "motif": "/#62716E|#E4E5E4/",
+      "raison": "Mail : pas de transparence fiable, donc hex pleins. Ce sont deux jetons aplatis sur le papier (#FFFDFD) : texte-secondaire (encre à 70 %) = #62716E, filet (encre à 12 %) = #E4E5E4 (table de correspondance, section 5)."
     }
   ]
 }
