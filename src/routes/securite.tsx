@@ -1,10 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
-  AppWindow,
   Ban,
   Check,
   Clock3,
-  Crosshair,
   Globe,
   Hourglass,
   KeyRound,
@@ -51,7 +49,6 @@ type Source = "cgv" | "privacy";
 type Content = {
   eyebrow: string;
   title: string;
-  intro: string;
   summaryLabel: string;
   summary: string;
   heroCta: string;
@@ -62,14 +59,6 @@ type Content = {
   engagementsEyebrow: string;
   engagementsTitle: string;
   engagements: Item[];
-  accessEyebrow: string;
-  accessTitle: string;
-  accessIntro: string;
-  accessLink: string;
-  access: Item[];
-  traceTitle: string;
-  traceText: string;
-  traceCta: string;
   complianceEyebrow: string;
   complianceTitle: string;
   complianceIntro: string;
@@ -90,19 +79,17 @@ type Content = {
 const content: Record<"fr" | "en", Content> = {
   fr: {
     eyebrow: "Sécurité et conformité",
-    title: "Les données de vos patients restent protégées, du dossier au paiement.",
-    intro:
-      "Les agents Granit font l’administratif de vos équipes, dans les logiciels qu’elles utilisent déjà. Voici comment les données qu’ils traitent sont hébergées, protégées et tracées.",
-    summaryLabel: "En bref :",
+    title: "Les données de vos patients restent protégées.",
+    summaryLabel: "En bref :",
     summary:
-      "Granit est certifié HDS (hébergeur de données de santé). Les données sont hébergées dans l’Union européenne, chiffrées en transit et au repos, et ne servent jamais à entraîner des modèles tiers. Chaque action d’agent est journalisée. Vous récupérez vos données à tout moment, et elles sont supprimées dans les 30 jours qui suivent la fin du contrat.",
+      "Granit est certifié HDS (hébergeur de données de santé). Les données restent dans l’Union européenne, chiffrées, et ne servent jamais à entraîner des modèles. Chaque dossier est tracé, et vos données vous sont rendues à tout moment.",
     heroCta: "Demander une démo",
     heroSecondary: "Politique de confidentialité",
     badgesLabel: "Garanties",
     badges: [
       { k: "HDS", v: "Granit certifié" },
       { k: "UE", v: "Hébergement dans l’Union européenne" },
-      { k: "RGPD", v: "Données de santé, article 9" },
+      { k: "RGPD", v: "Données de santé, article 9" },
     ],
     visual: {
       title: "Dossier tracé",
@@ -115,174 +102,101 @@ const content: Record<"fr" | "en", Content> = {
     engagements: [
       {
         t: "Certifié HDS",
-        d: "Granit est certifié HDS (hébergeur de données de santé) : les données de vos patients, sauvegardes comprises, sont hébergées chez un hébergeur certifié.",
+        d: "Les données de vos patients, sauvegardes comprises, sont hébergées chez un hébergeur certifié HDS.",
       },
       {
-        t: "Hébergées dans l’Union européenne",
-        d: "Sans transfert hors de l’UE. Si Granit change de prestataire technique, pour l’hébergement comme pour les modèles d’intelligence artificielle, nos conditions générales l’obligent à garder les données dans l’Union européenne.",
+        t: "Dans l’Union européenne",
+        d: "Aucun transfert hors de l’UE, même si Granit change de prestataire technique.",
       },
       {
-        t: "Chiffrées en transit et au repos",
-        d: "Les données sont chiffrées en transit (TLS 1.3) et au repos (AES-256), tout comme les accès que les agents utilisent dans vos outils.",
+        t: "Chiffrées",
+        d: "En transit (TLS 1.3) et au repos (AES-256), accès des agents compris.",
       },
       {
         t: "Des accès au strict nécessaire",
-        d: "Double authentification (MFA) obligatoire et rôles définis par établissement. Chacun, personne ou agent, n’accède qu’à ce dont il a besoin : c’est le principe du moindre privilège.",
+        d: "Les agents n’ouvrent que les outils que vous autorisez, avec double authentification. Vous révoquez un accès à tout moment.",
       },
       {
-        t: "Votre équipe garde la main",
-        d: "Chaque action d’agent est journalisée, horodatée et attribuable, et chaque décision reste révisable par une personne de votre équipe.",
+        t: "Chaque dossier tracé",
+        d: "Ce qui a été fait, quand, et pourquoi un dossier attend. Chaque décision reste révisable par votre équipe.",
       },
       {
-        t: "Ni revendues, ni utilisées pour entraîner des modèles",
-        d: "Aucune donnée patient ne sert à entraîner des modèles tiers. Granit ne cède, ne revend ni n’exploite vos données à des fins propres, et les modèles utilisés sont hébergés en Europe.",
+        t: "Jamais pour entraîner des modèles",
+        d: "Vos données ne sont ni revendues, ni utilisées pour entraîner des modèles tiers.",
       },
     ],
-    accessEyebrow: "Accès à vos outils",
-    accessTitle: "Les agents travaillent dans vos logiciels, avec les accès que vous leur donnez.",
-    accessIntro:
-      "Sans API à demander ni nouveau logiciel : les agents se connectent pour votre compte aux outils que vous avez autorisés, comme le ferait une personne de votre équipe.",
-    accessLink: "Le détail dans notre politique de confidentialité",
-    access: [
-      {
-        t: "Seulement les outils que vous autorisez",
-        d: "Logiciel métier, plateformes de tiers payant, banque, messagerie (Gmail, Outlook, IMAP) : les agents ne se connectent qu’aux outils que vous avez autorisés.",
-      },
-      {
-        t: "Seulement ce que demande la tâche",
-        d: "Ils ne lisent que les informations nécessaires à la tâche configurée, et n’y font que les actions que vous avez configurées ou validées.",
-      },
-      {
-        t: "Des accès chiffrés et révocables",
-        d: "Identifiants et autorisations OAuth sont conservés chiffrés. Vous les révoquez à tout moment depuis la page Accès de l’application Granit, ou chez l’éditeur de l’outil.",
-      },
-      {
-        t: "La messagerie, au strict nécessaire",
-        d: "Les agents lisent les e-mails utiles à la tâche, comme les codes de double authentification des plateformes ou les factures reçues. Un e-mail n’est conservé que s’il fait partie du résultat demandé.",
-      },
-    ],
-    traceTitle:
-      "Chaque dossier est tracé : ce qui a été fait, quand, et pourquoi un dossier attend.",
-    traceText:
-      "Le journal est exportable : aucune action d’agent dans vos outils ne passe sans laisser de trace.",
-    traceCta: "Voir le cadre RGPD et contractuel",
     complianceEyebrow: "RGPD et contrat",
-    complianceTitle: "Le cadre RGPD et contractuel, point par point.",
-    complianceIntro:
-      "Chaque ligne renvoie au texte qui nous engage : nos conditions générales de vente ou notre politique de confidentialité.",
+    complianceTitle: "Le cadre RGPD, point par point.",
+    complianceIntro: "Chaque point renvoie à nos CGV ou à notre politique de confidentialité.",
     sources: { cgv: "Conditions générales de vente", privacy: "Politique de confidentialité" },
     compliance: [
       {
         k: "Rôles",
-        v: "Pour les données que vous confiez à Granit, vous êtes responsable de traitement et Granit est sous-traitant (article 28 du RGPD).",
+        v: "Vous êtes responsable de traitement, Granit est sous-traitant (article 28 du RGPD).",
         src: "cgv",
-        ref: "CGV, article 9",
-      },
-      {
-        k: "Accord de traitement",
-        v: "Intégré au contrat de service, comme l’exige l’article 28 du RGPD.",
-        src: "cgv",
-        ref: "CGV, article 9",
-      },
-      {
-        k: "Données de santé",
-        v: "Traitées pour votre compte dans le cadre de l’article 9 du RGPD et du Code de la santé publique.",
-        src: "privacy",
-        ref: "Confidentialité, section 4",
-      },
-      {
-        k: "Prestataires techniques",
-        v: "Pour l’hébergement comme pour les modèles d’intelligence artificielle, l’hébergement reste dans l’Union européenne et le niveau de sécurité est maintenu. Granit reste seul responsable envers vous.",
-        src: "cgv",
-        ref: "CGV, article 5",
+        ref: "CGV, article 9",
       },
       {
         k: "Incident",
-        v: "Notification à la CNIL sous 72 h et information des établissements concernés.",
+        v: "Notification à la CNIL sous 72 h et information des établissements concernés.",
         src: "privacy",
-        ref: "Confidentialité, section 8",
+        ref: "Confidentialité, section 8",
       },
       {
         k: "Restitution",
-        v: "Vos données dans un format standard (CSV ou JSON), à tout moment sur demande et au plus tard 30 jours après la fin du contrat, puis supprimées définitivement.",
+        v: "Vos données en CSV ou JSON, sur demande et au plus tard 30 jours après la fin du contrat, puis supprimées.",
         src: "cgv",
-        ref: "CGV, article 10",
+        ref: "CGV, article 10",
       },
       {
-        k: "Résiliation",
-        v: "À tout moment, par e-mail, avec un préavis de 30 jours, sans pénalité ni frais.",
-        src: "cgv",
-        ref: "CGV, article 14",
-      },
-      {
-        k: "Droits des personnes",
-        v: "Accès, rectification, effacement, limitation, opposition et portabilité, à exercer auprès de contact@getgranit.ai. Réclamation possible auprès de la CNIL.",
+        k: "Vos droits",
+        v: "Accès, rectification, effacement et portabilité, auprès de contact@getgranit.ai.",
         src: "privacy",
-        ref: "Confidentialité, section 8",
+        ref: "Confidentialité, section 8",
       },
     ],
     faqTitle: "Questions fréquentes",
     faq: [
       {
-        question: "Granit est-il certifié HDS ?",
-        answer:
-          "Oui. Granit est certifié HDS (hébergeur de données de santé). Les données sont hébergées dans l’Union européenne, sauvegardes comprises, sans transfert hors de l’Union européenne.",
+        question: "Granit est-il certifié HDS ?",
+        answer: "Oui. Les données sont hébergées dans l’Union européenne, sauvegardes comprises.",
       },
       {
-        question: "Les données des patients servent-elles à entraîner des modèles d’IA ?",
+        question: "Les données des patients servent-elles à entraîner des modèles d’IA ?",
         answer:
-          "Non. Aucune donnée patient n’est utilisée pour entraîner des modèles tiers, et Granit ne cède, ne revend ni n’exploite vos données à des fins propres. Les modèles utilisés sont déployés dans des environnements isolés, hébergés en Europe.",
+          "Non. Aucune donnée patient n’entraîne de modèles tiers, et Granit ne revend pas vos données.",
       },
       {
-        question: "Comment les données sont-elles protégées ?",
+        question: "Comment les données sont-elles protégées ?",
         answer:
-          "Elles sont chiffrées en transit (TLS 1.3) et au repos (AES-256). La double authentification (MFA) est obligatoire, les rôles sont définis par établissement, et chacun, personne ou agent, n’accède qu’à ce dont il a besoin (principe du moindre privilège).",
+          "Chiffrement en transit (TLS 1.3) et au repos (AES-256), double authentification obligatoire, et des accès limités au strict nécessaire.",
       },
       {
-        question: "À quels outils les agents accèdent-ils ?",
+        question: "Peut-on contrôler ce que font les agents ?",
         answer:
-          "Seulement à ceux que vous avez autorisés (logiciel métier, plateformes de tiers payant, banque, messagerie), et seulement aux informations nécessaires à la tâche. Les accès sont conservés chiffrés, et vous pouvez les révoquer à tout moment depuis la page Accès de l’application.",
+          "Oui. Ils ne font que les actions que vous avez configurées ou validées, et chaque action est tracée et exportable.",
       },
       {
-        question: "Peut-on contrôler ce que font les agents ?",
+        question: "Que deviennent nos données si nous arrêtons Granit ?",
         answer:
-          "Oui. Les agents ne font que les actions que vous avez configurées ou validées. Chaque action est journalisée, horodatée, attribuable et exportable : ce qui a été fait, quand, et pourquoi un dossier attend. Chaque décision reste révisable par une personne de votre équipe.",
-      },
-      {
-        question: "Qui est responsable de traitement au sens du RGPD ?",
-        answer:
-          "Pour les données que vous confiez à Granit, vous êtes responsable de traitement et Granit agit comme sous-traitant (article 28 du RGPD). L’accord de traitement des données est intégré au contrat de service.",
-      },
-      {
-        question: "Que deviennent nos données si nous arrêtons Granit ?",
-        answer:
-          "Le contrat se résilie à tout moment par e-mail, avec un préavis de 30 jours, sans pénalité ni frais. Vos données vous sont remises dans un format standard (CSV ou JSON) au plus tard 30 jours après la fin du contrat, puis supprimées définitivement. Vous pouvez aussi en demander l’export à tout moment.",
-      },
-      {
-        question: "Que se passe-t-il en cas d’incident de sécurité ?",
-        answer:
-          "Granit suit la procédure prévue par le RGPD : notification à la CNIL sous 72 h et information des établissements concernés.",
+          "Elles vous sont remises en CSV ou JSON au plus tard 30 jours après la fin du contrat, puis supprimées.",
       },
     ],
-    asideTitle: "Un questionnaire sécurité à remplir ?",
-    asideText:
-      "Envoyez-le-nous : l’équipe Granit répond aux questionnaires HDS et à ceux de votre responsable de la sécurité.",
+    asideTitle: "Un questionnaire sécurité à remplir ?",
+    asideText: "Envoyez-le-nous, l’équipe Granit y répond.",
     asideCta: "Écrire à l’équipe",
     ctaTitle: "Voyez les agents travailler dans vos logiciels.",
-    ctaText:
-      "En démo, nous vous montrons ce que font les agents dans vos outils et comment chaque dossier est tracé.",
+    ctaText: "En démo, nous vous montrons comment chaque dossier est tracé.",
     ctaBtn: "Demander une démo",
     ctaSecondary: "Découvrir les agents",
     guarantees: "Certifié HDS · Données dans l’UE · RGPD",
   },
   en: {
     eyebrow: "Security and compliance",
-    title: "Your patients' data stays protected, from record to payment.",
-    intro:
-      "Granit's agents handle your teams' admin work, inside the software they already use. Here is how the data they process is hosted, protected and traced.",
+    title: "Your patients' data stays protected.",
     summaryLabel: "In short:",
     summary:
-      "Granit is HDS certified (French certification for health data hosting). Data is hosted in the European Union, encrypted in transit and at rest, and never used to train third-party models. Every agent action is logged. You can retrieve your data at any time, and it is deleted within 30 days after the contract ends.",
+      "Granit is HDS certified (French certification for health data hosting). Data stays in the European Union, encrypted, and is never used to train models. Every case is traced, and your data is returned to you at any time.",
     heroCta: "Book a demo",
     heroSecondary: "Privacy policy",
     badgesLabel: "Guarantees",
@@ -302,160 +216,91 @@ const content: Record<"fr" | "en", Content> = {
     engagements: [
       {
         t: "HDS certified",
-        d: "Granit is HDS certified (health data hosting): your patients' data, backups included, is hosted with a certified provider.",
+        d: "Your patients' data, backups included, is hosted with an HDS-certified provider.",
       },
       {
-        t: "Hosted in the European Union",
-        d: "No transfer outside the EU. If Granit changes technical provider, for hosting or for artificial intelligence models, our terms require it to keep the data in the European Union.",
+        t: "In the European Union",
+        d: "No transfer outside the EU, even if Granit changes technical provider.",
       },
       {
-        t: "Encrypted in transit and at rest",
-        d: "Data is encrypted in transit (TLS 1.3) and at rest (AES-256), as are the credentials agents use in your tools.",
+        t: "Encrypted",
+        d: "In transit (TLS 1.3) and at rest (AES-256), agent credentials included.",
       },
       {
         t: "Access limited to what is needed",
-        d: "Mandatory two-factor authentication (MFA) and roles defined per organization. Everyone, person or agent, only accesses what they need: the least-privilege principle.",
+        d: "Agents only open the tools you authorize, with two-factor authentication. You revoke access at any time.",
       },
       {
-        t: "Your team stays in control",
-        d: "Every agent action is logged, timestamped and attributable, and every decision can be reviewed by a person on your team.",
+        t: "Every case traced",
+        d: "What was done, when, and why a case is waiting. Every decision stays reviewable by your team.",
       },
       {
-        t: "Never sold, never used to train models",
-        d: "No patient data is used to train third-party models. Granit does not transfer, resell or exploit your data for its own purposes, and the models used are hosted in Europe.",
+        t: "Never used to train models",
+        d: "Your data is neither resold nor used to train third-party models.",
       },
     ],
-    accessEyebrow: "Access to your tools",
-    accessTitle: "Agents work inside your software, with the access you give them.",
-    accessIntro:
-      "No API to request, no new software: agents connect on your behalf to the tools you have authorized, just as a person on your team would.",
-    accessLink: "Full details in our privacy policy",
-    access: [
-      {
-        t: "Only the tools you authorize",
-        d: "Practice software, third-party payer platforms, bank, mailbox (Gmail, Outlook, IMAP): agents only connect to the tools you have authorized.",
-      },
-      {
-        t: "Only what the task requires",
-        d: "They only read the information needed for the configured task, and only perform the actions you have configured or approved.",
-      },
-      {
-        t: "Encrypted, revocable access",
-        d: "Credentials and OAuth authorizations are stored encrypted. You can revoke them at any time from the Access page of the Granit application, or with the tool's provider.",
-      },
-      {
-        t: "Mailbox access kept to the minimum",
-        d: "Agents read the emails relevant to the task, such as two-factor authentication codes from platforms or received invoices. An email is kept only if it is part of the requested output.",
-      },
-    ],
-    traceTitle: "Every case is traced: what was done, when, and why a case is waiting.",
-    traceText: "The log can be exported: no agent action in your tools goes untraced.",
-    traceCta: "See the GDPR and contractual framework",
     complianceEyebrow: "GDPR and contract",
-    complianceTitle: "The GDPR and contractual framework, point by point.",
-    complianceIntro:
-      "Each line points to the document that binds us: our general terms and conditions or our privacy policy.",
-    sources: { cgv: "General terms and conditions", privacy: "Privacy policy" },
+    complianceTitle: "The GDPR framework, point by point.",
+    complianceIntro: "Each point links to our terms of sale or our privacy policy.",
+    sources: { cgv: "Terms of sale", privacy: "Privacy policy" },
     compliance: [
       {
         k: "Roles",
-        v: "For the data you entrust to Granit, you are the controller and Granit is the processor (article 28 GDPR).",
+        v: "You are the data controller, Granit is the processor (GDPR article 28).",
         src: "cgv",
         ref: "Terms, article 9",
-      },
-      {
-        k: "Data processing agreement",
-        v: "Included in the service contract, as required by article 28 GDPR.",
-        src: "cgv",
-        ref: "Terms, article 9",
-      },
-      {
-        k: "Health data",
-        v: "Processed on your behalf under article 9 GDPR and the French Public Health Code.",
-        src: "privacy",
-        ref: "Privacy policy, section 4",
-      },
-      {
-        k: "Technical providers",
-        v: "For hosting as for artificial intelligence models, hosting stays in the European Union and the security level is maintained. Granit remains solely responsible to you.",
-        src: "cgv",
-        ref: "Terms, article 5",
       },
       {
         k: "Incident",
-        v: "Notification to the CNIL within 72 hours and notification of the organizations concerned.",
+        v: "Notification to the CNIL within 72 hours and to the organizations concerned.",
         src: "privacy",
-        ref: "Privacy policy, section 8",
+        ref: "Privacy, section 8",
       },
       {
-        k: "Data return",
-        v: "Your data in a standard format (CSV or JSON), at any time on request and no later than 30 days after the contract ends, then permanently deleted.",
+        k: "Return",
+        v: "Your data in CSV or JSON, on request and no later than 30 days after the contract ends, then deleted.",
         src: "cgv",
         ref: "Terms, article 10",
       },
       {
-        k: "Termination",
-        v: "At any time, by email, with 30 days' notice, with no penalty or fee.",
-        src: "cgv",
-        ref: "Terms, article 14",
-      },
-      {
-        k: "Data subject rights",
-        v: "Access, rectification, erasure, restriction, objection and portability, by writing to contact@getgranit.ai. A complaint may be lodged with the CNIL.",
+        k: "Your rights",
+        v: "Access, rectification, erasure and portability, via contact@getgranit.ai.",
         src: "privacy",
-        ref: "Privacy policy, section 8",
+        ref: "Privacy, section 8",
       },
     ],
     faqTitle: "Frequently asked questions",
     faq: [
       {
         question: "Is Granit HDS certified?",
-        answer:
-          "Yes. Granit is HDS certified (health data hosting). Data is hosted in the European Union, backups included, with no transfer outside the European Union.",
+        answer: "Yes. Data is hosted in the European Union, backups included.",
       },
       {
         question: "Is patient data used to train AI models?",
         answer:
-          "No. No patient data is used to train third-party models, and Granit does not transfer, resell or exploit your data for its own purposes. The models used run in isolated environments hosted in Europe.",
+          "No. No patient data trains third-party models, and Granit does not resell your data.",
       },
       {
-        question: "How is data protected?",
+        question: "How is the data protected?",
         answer:
-          "It is encrypted in transit (TLS 1.3) and at rest (AES-256). Two-factor authentication (MFA) is mandatory, roles are defined per organization, and everyone, person or agent, only accesses what they need (least privilege).",
-      },
-      {
-        question: "Which tools do the agents access?",
-        answer:
-          "Only those you have authorized (practice software, third-party payer platforms, bank, mailbox), and only the information the task needs. Access is stored encrypted, and you can revoke it at any time from the Access page of the application.",
+          "Encryption in transit (TLS 1.3) and at rest (AES-256), mandatory two-factor authentication, and access limited to what is needed.",
       },
       {
         question: "Can we control what the agents do?",
         answer:
-          "Yes. Agents only perform the actions you have configured or approved. Every action is logged, timestamped, attributable and exportable: what was done, when, and why a case is waiting. Every decision can be reviewed by a person on your team.",
-      },
-      {
-        question: "Who is the data controller under GDPR?",
-        answer:
-          "For the data you entrust to Granit, you are the controller and Granit acts as processor (article 28 GDPR). The data processing agreement is included in the service contract.",
+          "Yes. They only perform the actions you have configured or approved, and every action is traced and exportable.",
       },
       {
         question: "What happens to our data if we stop using Granit?",
         answer:
-          "The contract can be cancelled at any time by email, with 30 days' notice, with no penalty or fee. Your data is returned in a standard format (CSV or JSON) no later than 30 days after the contract ends, then permanently deleted. You can also request an export at any time.",
-      },
-      {
-        question: "What happens in case of a security incident?",
-        answer:
-          "Granit follows the GDPR procedure: notification to the CNIL within 72 hours and notification of the organizations concerned.",
+          "It is returned to you in CSV or JSON no later than 30 days after the contract ends, then deleted.",
       },
     ],
     asideTitle: "A security questionnaire to fill in?",
-    asideText:
-      "Send it to us: the Granit team answers HDS questionnaires and those from your security officer.",
+    asideText: "Send it to us, the Granit team answers it.",
     asideCta: "Email the team",
     ctaTitle: "See the agents work inside your software.",
-    ctaText:
-      "In a demo, we show you what the agents do in your tools and how every case is traced.",
+    ctaText: "In a demo, we show you how every case is traced.",
     ctaBtn: "Book a demo",
     ctaSecondary: "Discover the agents",
     guarantees: "HDS certified · Data in the EU · GDPR",
@@ -463,7 +308,6 @@ const content: Record<"fr" | "en", Content> = {
 };
 
 const ENGAGEMENT_ICONS: LucideIcon[] = [ShieldCheck, Globe, Lock, KeyRound, UserCheck, Ban];
-const ACCESS_ICONS: LucideIcon[] = [AppWindow, Crosshair, KeyRound, Mail];
 const VISUAL_ICONS: LucideIcon[] = [Check, Clock3, Hourglass];
 const VISUAL_BARS = ["42%", "24%", "34%"];
 const SOURCE_PATHS = { cgv: "/cgv", privacy: "/privacy" } as const;
@@ -604,11 +448,7 @@ function SecuritePage() {
             <h1 className="h1-hero" style={{ fontSize: "clamp(36px,4.4vw,64px)" }}>
               {t.title}
             </h1>
-            <p className="body-lg mt-8 max-w-2xl">{t.intro}</p>
-            <p
-              className="mt-6 max-w-2xl text-[14px] leading-[1.7]"
-              style={{ color: "var(--text-soft)" }}
-            >
+            <p className="body-lg mt-8 max-w-2xl">
               <strong style={{ color: "var(--text)", fontWeight: 600 }}>{t.summaryLabel}</strong>{" "}
               {t.summary}
             </p>
@@ -692,75 +532,6 @@ function SecuritePage() {
                 </p>
               </div>
             ))}
-          </div>
-        </Reveal>
-      </section>
-
-      {/* Accès : dans les logiciels que vos équipes utilisent déjà */}
-      <section
-        className="border-y py-20 sm:py-24"
-        style={{ borderColor: "var(--border)", background: "var(--bg2)" }}
-      >
-        <div className="mx-auto grid max-w-[1280px] gap-10 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-          <Reveal className="lg:sticky lg:top-28 lg:self-start">
-            <p className="eyebrow">{t.accessEyebrow}</p>
-            <h2 className="h2-section mt-4" style={sectionTitle}>
-              {t.accessTitle}
-            </h2>
-            <p className="body-lg mt-6">{t.accessIntro}</p>
-            <Link
-              to="/privacy"
-              className="mt-6 inline-flex items-center gap-1.5 text-[14px] underline underline-offset-[3px]"
-              style={{ color: "var(--terra-hover)", fontWeight: 500 }}
-            >
-              {t.accessLink} <span aria-hidden>→</span>
-            </Link>
-          </Reveal>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {t.access.map((a, i) => (
-              <Reveal key={a.t} delay={i * 0.05}>
-                <div
-                  className="card-hover h-full rounded-[14px] border p-6"
-                  style={{ borderColor: "var(--border)", background: "var(--surface)" }}
-                >
-                  <IconTile icon={ACCESS_ICONS[i]} />
-                  <h3 className="mt-5 text-[16.5px] leading-snug" style={{ fontWeight: 600 }}>
-                    {a.t}
-                  </h3>
-                  <p
-                    className="mt-2 text-[14.5px] leading-[1.65]"
-                    style={{ color: "var(--text-soft)" }}
-                  >
-                    {a.d}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Traçabilité : la phrase de TON.md, en bandeau */}
-      <section className="mx-auto max-w-[1280px] px-6 py-16 sm:py-24">
-        <Reveal>
-          <div
-            className="rounded-[18px] border px-6 py-16 text-center sm:px-12 sm:py-20"
-            style={{
-              borderColor: "var(--border)",
-              backgroundColor: "var(--bg2)",
-              backgroundImage: "var(--gradient-mesh)",
-            }}
-          >
-            <h2
-              className="h2-section mx-auto max-w-4xl"
-              style={{ fontSize: "clamp(26px,3vw,42px)" }}
-            >
-              {t.traceTitle}
-            </h2>
-            <p className="body-lg mx-auto mt-5 max-w-xl">{t.traceText}</p>
-            <a href="#conformite" className="btn-ghost mt-8">
-              {t.traceCta} <span aria-hidden>↓</span>
-            </a>
           </div>
         </Reveal>
       </section>
