@@ -216,6 +216,11 @@
       "slug": "gerer-tiers-payant-magasin",
       "anchor": "gestion tiers payant",
       "type": "enfant"
+    },
+    {
+      "slug": "rejet-tiers-payant",
+      "anchor": "motif rejet tiers payant",
+      "type": "enfant"
     }
   ],
   "remplace": [
