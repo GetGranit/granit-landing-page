@@ -378,13 +378,13 @@ function HeroDashboard({ t, lang }: { t: typeof copy["fr"]; lang: "fr" | "en" })
       style={{
         background: "var(--surface)",
         border: "1px solid color-mix(in oklab, var(--border) 80%, transparent)",
-        boxShadow: "0 30px 60px -28px rgba(28,17,8,0.18), 0 8px 24px -12px rgba(28,17,8,0.10)",
+        boxShadow: "0 30px 60px -28px rgba(31,53,48,0.18), 0 8px 24px -12px rgba(31,53,48,0.10)",
       }}
     >
       {/* Top bar */}
       <div className="flex items-center gap-3 border-b px-5 py-3.5" style={{ borderColor: "var(--border)" }}>
         <div className="flex items-center gap-2">
-          <div className="flex h-7 w-7 items-center justify-center rounded-[7px]" style={{ background: "var(--terra-light)", color: "var(--terra)" }}>
+          <div className="flex h-7 w-7 items-center justify-center rounded-[7px]" style={{ background: "var(--succes-fond)", color: "var(--succes-texte)" }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 12h3l2-7 4 14 2-7h7"/></svg>
           </div>
           <div>
@@ -392,7 +392,7 @@ function HeroDashboard({ t, lang }: { t: typeof copy["fr"]; lang: "fr" | "en" })
             <div className="text-[11px]" style={{ color: "var(--text-muted)" }}>{t.dashSub}</div>
           </div>
         </div>
-        <Link to="/demo" className="ml-auto inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[10.5px] transition-colors hover:border-[color:var(--terra)]" style={{ borderColor: "var(--border)", color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}>
+        <Link to="/demo" className="ml-auto inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[10.5px] transition-colors hover:border-[color:var(--profond)]" style={{ borderColor: "var(--border)", color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}>
           <span className="status-dot" /> {t.dashLive} ↗
         </Link>
       </div>
@@ -411,8 +411,8 @@ function HeroDashboard({ t, lang }: { t: typeof copy["fr"]; lang: "fr" | "en" })
               type="button"
               className="flex h-8 w-8 items-center justify-center rounded-[8px]"
               style={{
-                background: i === 0 ? "var(--terra-light)" : "transparent",
-                color: i === 0 ? "var(--terra)" : "var(--text-muted)",
+                background: i === 0 ? "var(--succes-fond)" : "transparent",
+                color: i === 0 ? "var(--succes-texte)" : "var(--text-muted)",
               }}
             >
               {icon}
@@ -431,7 +431,7 @@ function HeroDashboard({ t, lang }: { t: typeof copy["fr"]; lang: "fr" | "en" })
                   <span className="text-[20px]" style={{ fontWeight: 600, letterSpacing: "-0.01em" }}>{k.value}</span>
                   <span className="text-[10.5px]" style={{ color: "var(--text-muted)" }}>{k.unit}</span>
                 </div>
-                <div className="mt-1 inline-flex items-center gap-1 text-[10px]" style={{ color: "var(--sage)", fontFamily: "var(--font-mono)" }}>
+                <div className="mt-1 inline-flex items-center gap-1 text-[10px]" style={{ color: "var(--succes-texte)", fontFamily: "var(--font-mono)" }}>
                   <span>{k.delta}</span>
                   <span style={{ color: "var(--text-muted)" }}>{lang === "fr" ? "vs la semaine dernière" : "vs last week"}</span>
                 </div>
@@ -454,7 +454,7 @@ function HeroDashboard({ t, lang }: { t: typeof copy["fr"]; lang: "fr" | "en" })
                   <div className="text-[12px]" style={{ fontWeight: 500 }}>{row.tag}</div>
                   <div className="text-[10.5px]" style={{ color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}>{row.agent}</div>
                 </div>
-                <span className="rounded-full px-2 py-0.5 text-[10px]" style={{ background: "var(--sage-light)", color: "var(--sage)", fontFamily: "var(--font-mono)" }}>
+                <span className="rounded-full px-2 py-0.5 text-[10px]" style={{ background: "var(--succes-fond)", color: "var(--succes-texte)", fontFamily: "var(--font-mono)" }}>
                   {row.status}
                 </span>
                 <span className="text-[10.5px]" style={{ color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}>{row.when}</span>
@@ -463,7 +463,7 @@ function HeroDashboard({ t, lang }: { t: typeof copy["fr"]; lang: "fr" | "en" })
             <Link
               to="/"
               hash="demo-live"
-              className="block border-t py-2.5 text-center text-[11.5px] transition-colors hover:text-[color:var(--terra)]"
+              className="block border-t py-2.5 text-center text-[11.5px] transition-colors hover:text-[color:var(--profond)]"
               style={{ borderColor: "var(--border)", color: "var(--text-soft)" }}
             >
               {t.dashSeeAll}
@@ -487,7 +487,7 @@ function PlatformPreview({ t, lang }: { t: typeof copy["fr"]; lang: "fr" | "en" 
       style={{
         background: "var(--surface)",
         border: "1px solid color-mix(in oklab, var(--border) 80%, transparent)",
-        boxShadow: "0 30px 60px -28px rgba(0,0,0,0.6), 0 8px 24px -12px rgba(0,0,0,0.4)",
+        boxShadow: "0 30px 60px -28px rgba(31,53,48,0.6), 0 8px 24px -12px rgba(31,53,48,0.4)",
       }}
     >
       {/* Browser chrome */}
@@ -502,7 +502,7 @@ function PlatformPreview({ t, lang }: { t: typeof copy["fr"]; lang: "fr" | "en" 
         </span>
         <Link
           to="/demo"
-          className="ml-auto inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[10.5px] transition-colors hover:border-[color:var(--terra)]"
+          className="ml-auto inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[10.5px] transition-colors hover:border-[color:var(--profond)]"
           style={{ borderColor: "var(--border)", color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}
         >
           <span className="status-dot" /> {t.dashLive} ↗
@@ -574,7 +574,7 @@ export function HomeSections() {
           aria-hidden
           className="pointer-events-none absolute -right-20 top-32 h-[420px] w-[420px] opacity-25"
           style={{
-            backgroundImage: "radial-gradient(circle, var(--terra) 1px, transparent 1.4px)",
+            backgroundImage: "radial-gradient(circle, var(--menthe) 1px, transparent 1.4px)",
             backgroundSize: "16px 16px",
             maskImage: "radial-gradient(circle at 70% 60%, black, transparent 70%)",
             WebkitMaskImage: "radial-gradient(circle at 70% 60%, black, transparent 70%)",
@@ -588,15 +588,14 @@ export function HomeSections() {
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-[11px]"
-              style={{ color: "var(--terra)", fontFamily: "var(--font-mono)", letterSpacing: "0.1em", textTransform: "uppercase", fontWeight: 500 }}
+              className="eyebrow"
             >
               {t.eyebrow}
             </motion.div>
 
             <h1
               className="mt-7 font-serif"
-              style={{ fontSize: "clamp(34px,4.4vw,60px)", lineHeight: 1.05, letterSpacing: "-0.025em", color: "var(--text)", fontWeight: 400, whiteSpace: "nowrap" }}
+              style={{ fontSize: "clamp(34px,4.4vw,60px)", lineHeight: 1.05, letterSpacing: "-0.025em", color: "var(--text)", fontWeight: 300, whiteSpace: "nowrap" }}
             >
               <motion.span
                 initial={{ opacity: 0, y: 20 }}
@@ -610,8 +609,7 @@ export function HomeSections() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                className="block"
-                style={{ color: "var(--terra)", fontStyle: "italic" }}
+                className="accent-italic block"
               >
                 {t.h1Line2}
               </motion.span>
@@ -644,7 +642,7 @@ export function HomeSections() {
               </a>
               <Link
                 to="/agents"
-                className="inline-flex items-center gap-2 rounded-full border bg-white px-5 py-[11px] text-[14px] transition-colors hover:border-[color:var(--text)]"
+                className="inline-flex items-center gap-2 rounded-full border bg-papier px-5 py-[11px] text-[14px] transition-colors hover:border-[color:var(--text)]"
                 style={{ borderColor: "var(--border2)", color: "var(--text)", fontWeight: 500 }}
               >
                 {t.ctaSecondary}
@@ -698,20 +696,20 @@ export function HomeSections() {
                 style={{
                   background: "var(--surface)",
                   border: "1px solid color-mix(in oklab, var(--border) 80%, transparent)",
-                  boxShadow: "0 20px 40px -18px rgba(28,17,8,0.22), 0 6px 18px -10px rgba(28,17,8,0.10)",
+                  boxShadow: "0 20px 40px -18px rgba(31,53,48,0.22), 0 6px 18px -10px rgba(31,53,48,0.10)",
                 }}
               >
                 <div className="text-[10.5px]" style={{ color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}>
                   {lang === "fr" ? "Jusqu'à" : "Up to"}
                 </div>
                 <div className="mt-0.5 flex items-end gap-2">
-                  <div className="font-serif leading-none" style={{ fontSize: "40px", letterSpacing: "-0.02em", color: "var(--sage)" }}>
+                  <div className="font-serif leading-none" style={{ fontSize: "40px", letterSpacing: "-0.02em", color: "var(--profond)" }}>
                     80%
                   </div>
                   {/* mini sparkline */}
                   <svg width="44" height="28" viewBox="0 0 44 28" fill="none" className="mb-1">
-                    <path d="M2 22 L10 18 L18 20 L26 10 L34 12 L42 4" stroke="var(--sage)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M38 4 L42 4 L42 8" stroke="var(--sage)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M2 22 L10 18 L18 20 L26 10 L34 12 L42 4" stroke="var(--succes)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M38 4 L42 4 L42 8" stroke="var(--succes)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
                 <div className="mt-2 text-[11.5px] leading-[1.35]" style={{ color: "var(--text-soft)" }}>
@@ -730,7 +728,7 @@ export function HomeSections() {
             <p className="eyebrow">{t.howEyebrow}</p>
             <h2 className="h2-section mt-4 max-w-2xl">
               {t.howTitle}{" "}
-              <em style={{ color: "var(--terra)", fontStyle: "italic" }}>{t.howTitleAccent}</em>
+              <em className="accent-italic">{t.howTitleAccent}</em>
             </h2>
           </Reveal>
           <div className="mt-12 grid gap-x-10 gap-y-10 md:grid-cols-3">
@@ -738,10 +736,10 @@ export function HomeSections() {
               <Reveal key={s.n} delay={i * 0.08}>
                 <div className="rule h-full pt-6">
                   <div className="flex items-baseline gap-3">
-                    <span className="font-mono text-[13px]" style={{ color: "var(--terra)", letterSpacing: "0.1em" }}>
+                    <span className="font-mono text-[13px]" style={{ color: "var(--profond)", letterSpacing: "0.1em" }}>
                       {s.n}
                     </span>
-                    <h3 className="font-serif text-[22px] leading-none whitespace-nowrap" style={{ letterSpacing: "-0.01em" }}>
+                    <h3 className="font-serif text-[22px] leading-none lg:whitespace-nowrap" style={{ letterSpacing: "-0.01em" }}>
                       {s.title}
                     </h3>
                   </div>
@@ -762,12 +760,12 @@ export function HomeSections() {
             <div className="grid items-start gap-10 md:grid-cols-[minmax(0,360px)_1fr] md:gap-14">
               <h2 className="font-serif" style={{ fontSize: "clamp(24px,2.4vw,32px)", lineHeight: 1.2, letterSpacing: "-0.015em", fontWeight: 400 }}>
                 {painPoints[lang].title}{" "}
-                <em style={{ color: "var(--terra)", fontStyle: "italic" }}>{painPoints[lang].titleAccent}</em>
+                <em className="accent-italic">{painPoints[lang].titleAccent}</em>
               </h2>
               <ul className="grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-3 lg:grid-cols-6">
                 {painPoints[lang].items.map((it) => (
                   <li key={it.label} className="flex flex-col items-start gap-2.5">
-                    <span className="flex h-9 w-9 items-center justify-center rounded-[9px]" style={{ background: "var(--terra-light)", color: "var(--terra)" }}>
+                    <span className="flex h-9 w-9 items-center justify-center rounded-[9px]" style={{ background: "var(--succes-fond)", color: "var(--succes-texte)" }}>
                       <AgentIcon name={it.icon} />
                     </span>
                     <span className="whitespace-pre-line text-[12.5px] leading-[1.35]" style={{ color: "var(--text-soft)" }}>
@@ -787,10 +785,10 @@ export function HomeSections() {
         <div className="mx-auto max-w-[1240px] px-6">
           <Reveal>
             <div className="mx-auto max-w-3xl text-center">
-              <div className="text-[11px]" style={{ color: "var(--terra)", fontFamily: "var(--font-mono)", letterSpacing: "0.1em", textTransform: "uppercase", fontWeight: 500 }}>
+              <div className="eyebrow">
                 {t.agentsEyebrow}
               </div>
-              <h2 className="mt-5 font-serif" style={{ fontSize: "clamp(32px,3.8vw,52px)", lineHeight: 1.1, letterSpacing: "-0.02em", fontWeight: 400 }}>
+              <h2 className="mt-5 font-serif" style={{ fontSize: "clamp(32px,3.8vw,52px)", lineHeight: 1.1, letterSpacing: "-0.02em", fontWeight: 300 }}>
                 {t.agentsTitle} {t.agentsTitle2}
               </h2>
               <p className="mx-auto mt-6 max-w-xl text-[15px]" style={{ color: "var(--text-soft)" }}>
@@ -814,9 +812,9 @@ export function HomeSections() {
                     }}
                     className="rounded-full border px-3.5 py-1.5 text-[12.5px] transition-all"
                     style={{
-                      borderColor: active ? "var(--terra)" : "var(--border)",
-                      background: active ? "var(--terra)" : "transparent",
-                      color: active ? "#fff" : "var(--text-soft)",
+                      borderColor: active ? "var(--encre)" : "var(--border)",
+                      background: active ? "var(--encre)" : "transparent",
+                      color: active ? "var(--menthe)" : "var(--text-soft)",
                       fontWeight: active ? 500 : 400,
                     }}
                   >
@@ -842,7 +840,7 @@ export function HomeSections() {
                     }}
                   >
                     <div className="flex items-start gap-4">
-                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[10px]" style={{ background: "var(--terra-light)", color: "var(--terra)" }}>
+                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[10px]" style={{ background: "var(--succes-fond)", color: "var(--succes-texte)" }}>
                         <AgentIcon name={a.icon} />
                       </span>
                       <div>
@@ -855,7 +853,7 @@ export function HomeSections() {
                     {metric && (
                       <div
                         className="mt-5 text-[12px]"
-                        style={{ color: "var(--terra)", fontFamily: "var(--font-mono)", fontWeight: 500 }}
+                        style={{ color: "var(--profond)", fontFamily: "var(--font-mono)", fontWeight: 500 }}
                       >
                         {metric}
                       </div>
@@ -872,7 +870,7 @@ export function HomeSections() {
           <div className="mt-12 text-center">
             <Link
               to="/agents"
-              className="inline-flex items-center gap-2 rounded-full border bg-white px-5 py-[11px] text-[14px] transition-colors hover:border-[color:var(--text)]"
+              className="inline-flex items-center gap-2 rounded-full border bg-papier px-5 py-[11px] text-[14px] transition-colors hover:border-[color:var(--text)]"
               style={{ borderColor: "var(--border2)", color: "var(--text)", fontWeight: 500 }}
             >
               {t.seeAllAgents}
@@ -886,12 +884,12 @@ export function HomeSections() {
         <div className="mx-auto max-w-[1320px] px-6">
           <Reveal>
             <div className="mx-auto max-w-3xl text-center">
-              <div className="text-[11px]" style={{ color: "var(--terra)", fontFamily: "var(--font-mono)", letterSpacing: "0.1em", textTransform: "uppercase", fontWeight: 500 }}>
+              <div className="eyebrow">
                 {lang === "fr" ? "Démo interactive" : "Interactive demo"}
               </div>
-              <h2 className="mt-5 font-serif" style={{ fontSize: "clamp(32px,3.8vw,52px)", lineHeight: 1.1, letterSpacing: "-0.02em", fontWeight: 400 }}>
+              <h2 className="mt-5 font-serif" style={{ fontSize: "clamp(32px,3.8vw,52px)", lineHeight: 1.1, letterSpacing: "-0.02em", fontWeight: 300 }}>
                 {lang === "fr" ? "Essayez " : "Try "}
-                <em style={{ color: "var(--terra)", fontStyle: "italic" }}>
+                <em className="accent-italic">
                   {lang === "fr" ? "la plateforme" : "the platform"}
                 </em>
                 <br />
@@ -911,7 +909,7 @@ export function HomeSections() {
               style={{
                 background: "var(--surface)",
                 border: "1px solid color-mix(in oklab, var(--border) 80%, transparent)",
-                boxShadow: "0 40px 80px -32px rgba(28,17,8,0.22), 0 12px 32px -16px rgba(28,17,8,0.12)",
+                boxShadow: "0 40px 80px -32px rgba(31,53,48,0.22), 0 12px 32px -16px rgba(31,53,48,0.12)",
               }}
             >
               {/* Browser chrome */}
@@ -927,7 +925,7 @@ export function HomeSections() {
                 </div>
                 <Link
                   to="/demo"
-                  className="inline-flex items-center gap-1 rounded-full border px-2.5 py-1 text-[11px] transition-colors hover:border-[color:var(--terra)]"
+                  className="inline-flex items-center gap-1 rounded-full border px-2.5 py-1 text-[11px] transition-colors hover:border-[color:var(--profond)]"
                   style={{ borderColor: "var(--border)", color: "var(--text-soft)", fontFamily: "var(--font-mono)" }}
                 >
                   {lang === "fr" ? "Plein écran" : "Fullscreen"} ↗
@@ -936,7 +934,7 @@ export function HomeSections() {
 
               {/* Greeting banner */}
               <div className="flex items-center gap-3 border-b px-5 py-3.5" style={{ borderColor: "var(--border)", background: "var(--surface)" }}>
-                <div className="flex h-9 w-9 items-center justify-center rounded-[8px]" style={{ background: "var(--terra-light)", color: "var(--terra)" }}>
+                <div className="flex h-9 w-9 items-center justify-center rounded-[8px]" style={{ background: "var(--succes-fond)", color: "var(--succes-texte)" }}>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 12h3l2-7 4 14 2-7h7"/></svg>
                 </div>
                 <div className="min-w-0">
@@ -971,7 +969,7 @@ export function HomeSections() {
           <Reveal delay={0.1}>
             <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_1.6fr]">
               {t.kpiCards.map((k) => (
-                <div key={k.label} className="rounded-[14px] border bg-white p-7" style={{ borderColor: "var(--border)" }}>
+                <div key={k.label} className="rounded-[14px] border bg-papier p-7" style={{ borderColor: "var(--border)" }}>
                   {k.pre && (
                     <div className="text-[11px]" style={{ color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}>{k.pre}</div>
                   )}
@@ -982,8 +980,8 @@ export function HomeSections() {
                   {k.sub && <div className="mt-1 text-[12px]" style={{ color: "var(--text-muted)" }}>{k.sub}</div>}
                 </div>
               ))}
-              <div className="rounded-[14px] border bg-white p-7" style={{ borderColor: "var(--border)" }}>
-                <div className="inline-flex items-center gap-1.5 text-[11px]" style={{ color: "var(--terra)", fontFamily: "var(--font-mono)" }}>
+              <div className="rounded-[14px] border bg-papier p-7" style={{ borderColor: "var(--border)" }}>
+                <div className="inline-flex items-center gap-1.5 text-[11px]" style={{ color: "var(--profond)", fontFamily: "var(--font-mono)" }}>
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M5 12l4-4M5 12l4 4"/></svg>
                   {t.integrationsTitle}
                 </div>
@@ -1018,7 +1016,7 @@ export function HomeSections() {
           <Reveal>
             <div className="flex flex-wrap items-end justify-between gap-4">
               <div>
-                <div className="text-[11px]" style={{ color: "var(--terra)", fontFamily: "var(--font-mono)", letterSpacing: "0.1em", textTransform: "uppercase", fontWeight: 500 }}>
+                <div className="eyebrow">
                   {t.resourcesEyebrow}
                 </div>
                 <h2 className="mt-3 font-serif" style={{ fontSize: "clamp(28px,3vw,40px)", letterSpacing: "-0.02em", fontWeight: 400 }}>
@@ -1027,7 +1025,7 @@ export function HomeSections() {
               </div>
               <Link
                 to="/ressources"
-                className="inline-flex items-center gap-2 rounded-full border bg-white px-4 py-2 text-[13px] transition-colors hover:border-[color:var(--text)]"
+                className="inline-flex items-center gap-2 rounded-full border bg-papier px-4 py-2 text-[13px] transition-colors hover:border-[color:var(--text)]"
                 style={{ borderColor: "var(--border2)", color: "var(--text)", fontWeight: 500 }}
               >
                 {t.seeAllResources}
@@ -1041,10 +1039,10 @@ export function HomeSections() {
                 <Link
                   to="/ressources/$slug"
                   params={{ slug: a.slug }}
-                  className="card-hover group flex h-full flex-col rounded-[14px] bg-white p-7"
+                  className="card-hover group flex h-full flex-col rounded-[14px] bg-papier p-7"
                   style={{ border: "1px solid color-mix(in oklab, var(--border) 80%, transparent)" }}
                 >
-                  <div className="text-[10.5px]" style={{ color: "var(--terra)", fontFamily: "var(--font-mono)", letterSpacing: "0.08em", textTransform: "uppercase", fontWeight: 500 }}>
+                  <div className="eyebrow">
                     {a.category} · {a.time}
                   </div>
                   <h3 className="mt-4 font-serif text-[20px] leading-[1.25]" style={{ letterSpacing: "-0.01em" }}>
@@ -1053,7 +1051,7 @@ export function HomeSections() {
                   <p className="mt-4 flex-1 text-[13.5px] leading-[1.6]" style={{ color: "var(--text-soft)" }}>
                     {a.desc}
                   </p>
-                  <div className="mt-6 inline-flex items-center gap-1 text-[12.5px]" style={{ color: "var(--terra)", fontFamily: "var(--font-mono)" }}>
+                  <div className="mt-6 inline-flex items-center gap-1 text-[12.5px]" style={{ color: "var(--profond)", fontFamily: "var(--font-mono)" }}>
                     {t.readArticle} <span className="transition-transform group-hover:translate-x-0.5">↗</span>
                   </div>
                 </Link>
@@ -1068,7 +1066,7 @@ export function HomeSections() {
         <div className="mx-auto max-w-[1240px] px-6">
           <Reveal>
             <div className="max-w-2xl">
-              <div className="text-[11px]" style={{ color: "var(--terra)", fontFamily: "var(--font-mono)", letterSpacing: "0.1em", textTransform: "uppercase", fontWeight: 500 }}>
+              <div className="eyebrow">
                 {lang === "fr" ? "Témoignages" : "Testimonials"}
               </div>
               <h2 className="mt-3 font-serif" style={{ fontSize: "clamp(28px,3vw,40px)", letterSpacing: "-0.02em", fontWeight: 400 }}>
@@ -1171,21 +1169,21 @@ export function HomeSections() {
                   {loop.map((tm, i) => (
                     <figure
                       key={`${tm.name}-${i}`}
-                      className="testimonial-card flex flex-col rounded-[14px] bg-white p-7"
+                      className="testimonial-card flex flex-col rounded-[14px] bg-papier p-7"
                       style={{ border: "1px solid color-mix(in oklab, var(--border) 80%, transparent)" }}
                     >
-                      <div aria-hidden className="font-serif text-[42px] leading-none" style={{ color: "var(--terra)" }}>“</div>
+                      <div aria-hidden className="font-serif text-[42px] leading-none" style={{ color: "var(--profond)" }}>“</div>
                       <blockquote className="mt-2 text-[15px] leading-[1.6]" style={{ color: "var(--text)" }}>
                         {tm.quote}
                       </blockquote>
                       <div className="mt-5 inline-flex w-fit items-center gap-2 rounded-full px-3 py-1 text-[11.5px]"
-                           style={{ background: "color-mix(in oklab, var(--sage) 14%, transparent)", color: "var(--sage)", fontFamily: "var(--font-mono)", fontWeight: 600 }}>
+                           style={{ background: "var(--succes-fond)", color: "var(--succes-texte)", fontFamily: "var(--font-mono)", fontWeight: 600 }}>
                         {tm.metric}
                       </div>
                       <figcaption className="mt-6 flex items-center gap-3 border-t pt-5" style={{ borderColor: "var(--border2)" }}>
                         <div
                           className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full font-serif text-[15px]"
-                          style={{ background: "var(--bg2)", color: "var(--terra)" }}
+                          style={{ background: "var(--encre)", color: "var(--rose)" }}
                         >
                           {tm.name.split(" ").map((n) => n[0]).join("").slice(0, 2)}
                         </div>
@@ -1203,29 +1201,27 @@ export function HomeSections() {
         </div>
       </section>
 
-      {/* ============== ORANGE CTA BAND ============== */}
+      {/* ============== BANDEAU CTA (section sombre, encre) ============== */}
       <section className="relative py-12" style={{ background: "var(--bg)" }}>
         <div className="mx-auto max-w-[1240px] px-6">
           <Reveal>
             <div
-              className="flex flex-col items-start justify-between gap-6 rounded-[18px] p-7 md:flex-row md:items-center md:p-8"
-              style={{ background: "var(--gradient-terra)", color: "#fff", boxShadow: "var(--shadow-terra)" }}
+              className="section-sombre flex flex-col items-start justify-between gap-6 rounded-[18px] p-7 md:flex-row md:items-center md:p-8"
             >
               <div className="flex items-start gap-4">
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[12px]" style={{ background: "rgba(255,255,255,0.18)" }}>
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[12px]" style={{ background: "var(--encre-2)", color: "var(--menthe)" }}>
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 12h3l2-7 4 14 2-7h7"/></svg>
                 </span>
                 <div>
                   <div className="text-[18px]" style={{ fontWeight: 600 }}>{t.ctaTitle}</div>
-                  <div className="mt-1 text-[14px]" style={{ color: "rgba(255,255,255,0.85)" }}>{t.ctaText}</div>
+                  <div className="mt-1 text-[14px]" style={{ color: "var(--sur-encre-secondaire)" }}>{t.ctaText}</div>
                 </div>
               </div>
               <a
                 href={calcomDemoUrl("bandeau_bas")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex shrink-0 items-center gap-2 rounded-full bg-white px-5 py-3 text-[14px] transition-transform hover:-translate-y-0.5"
-                style={{ color: "var(--terra)", fontWeight: 600 }}
+                className="btn-clair shrink-0"
                 onClick={() => posthog.capture("demo_booking_clicked", { placement: "bandeau_bas" })}
               >
                 {t.ctaButton} <span>↗</span>
@@ -1242,14 +1238,14 @@ export function HomeSections() {
             <Reveal>
               <div>
                 <div className="eyebrow mb-5">{t.demo.eyebrow}</div>
-                <h2 className="font-serif" style={{ fontSize: "clamp(34px,4vw,56px)", lineHeight: 1.05, letterSpacing: "-0.02em", fontWeight: 400 }}>
+                <h2 className="font-serif" style={{ fontSize: "clamp(34px,4vw,56px)", lineHeight: 1.05, letterSpacing: "-0.02em", fontWeight: 300 }}>
                   {t.demo.title}
                 </h2>
                 <p className="body-lg mt-7 max-w-md">{t.demo.intro}</p>
                 <ul className="mt-8 space-y-2.5 text-[14px]" style={{ color: "var(--text-soft)" }}>
                   {t.demo.bullets.map((b) => (
                     <li key={b} className="flex items-center gap-2.5">
-                      <span className="flex h-5 w-5 items-center justify-center rounded-full" style={{ background: "var(--terra-light)", color: "var(--terra)" }}>
+                      <span className="flex h-5 w-5 items-center justify-center rounded-full" style={{ background: "var(--succes-fond)", color: "var(--succes-texte)" }}>
                         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12l5 5L20 7"/></svg>
                       </span>
                       {b}
@@ -1290,7 +1286,7 @@ function DemoField({ label, type = "text", placeholder, name, required }: { labe
   return (
     <label className="mb-4 block">
       <div className="mb-1.5 text-[12px]" style={{ color: "var(--text-soft)", fontWeight: 500 }}>{label}</div>
-      <input name={name} type={type} placeholder={placeholder} required={required} className="w-full rounded-[8px] border bg-transparent px-3.5 py-2.5 text-[14px] outline-none transition-colors focus:border-[color:var(--terra)]" style={{ borderColor: "var(--border)" }} />
+      <input name={name} type={type} placeholder={placeholder} required={required} className="w-full rounded-[8px] border bg-transparent px-3.5 py-2.5 text-[14px] outline-none transition-colors focus:border-[color:var(--profond)]" style={{ borderColor: "var(--filet-champ)" }} />
     </label>
   );
 }
@@ -1298,7 +1294,7 @@ function DemoSelect({ label, options, choose, name }: { label: string; options: 
   return (
     <label className="mb-4 block">
       <div className="mb-1.5 text-[12px]" style={{ color: "var(--text-soft)", fontWeight: 500 }}>{label}</div>
-      <select name={name} className="w-full rounded-[8px] border bg-white px-3.5 py-2.5 text-[14px] outline-none transition-colors focus:border-[color:var(--terra)]" style={{ borderColor: "var(--border)" }} defaultValue="">
+      <select name={name} className="w-full rounded-[8px] border bg-papier px-3.5 py-2.5 text-[14px] outline-none transition-colors focus:border-[color:var(--profond)]" style={{ borderColor: "var(--filet-champ)" }} defaultValue="">
         <option value="" disabled>{choose}</option>
         {options.map((o) => <option key={o}>{o}</option>)}
       </select>
@@ -1309,7 +1305,7 @@ function DemoArea({ label, placeholder, name }: { label: string; placeholder?: s
   return (
     <label className="mb-5 block">
       <div className="mb-1.5 text-[12px]" style={{ color: "var(--text-soft)", fontWeight: 500 }}>{label}</div>
-      <textarea name={name} rows={4} placeholder={placeholder} className="w-full rounded-[8px] border bg-transparent px-3.5 py-2.5 text-[14px] outline-none transition-colors focus:border-[color:var(--terra)]" style={{ borderColor: "var(--border)" }} />
+      <textarea name={name} rows={4} placeholder={placeholder} className="w-full rounded-[8px] border bg-transparent px-3.5 py-2.5 text-[14px] outline-none transition-colors focus:border-[color:var(--profond)]" style={{ borderColor: "var(--filet-champ)" }} />
     </label>
   );
 }
@@ -1322,10 +1318,10 @@ function DemoForm({ t }: { t: typeof copy["fr"] }) {
   if (status === "success") {
     return (
       <div
-        className="flex h-full flex-col items-center justify-center rounded-[14px] border bg-white p-10 text-center"
-        style={{ borderColor: "var(--border)", boxShadow: "var(--shadow-soft)" }}
+        className="flex h-full flex-col items-center justify-center rounded-[14px] border bg-papier p-10 text-center"
+        style={{ borderColor: "var(--border)", boxShadow: "var(--ombre-douce)" }}
       >
-        <span className="flex h-12 w-12 items-center justify-center rounded-full" style={{ background: "var(--terra-light)", color: "var(--terra)" }}>
+        <span className="flex h-12 w-12 items-center justify-center rounded-full" style={{ background: "var(--succes-fond)", color: "var(--succes-texte)" }}>
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12l5 5L20 7" /></svg>
         </span>
         <p className="mt-5 max-w-xs font-serif text-[22px]" style={{ letterSpacing: "-0.01em", lineHeight: 1.25 }}>{t.demo.success}</p>
@@ -1335,8 +1331,8 @@ function DemoForm({ t }: { t: typeof copy["fr"] }) {
 
   return (
     <form
-      className="rounded-[14px] border bg-white p-7 md:p-8"
-      style={{ borderColor: "var(--border)", boxShadow: "var(--shadow-soft)" }}
+      className="rounded-[14px] border bg-papier p-7 md:p-8"
+      style={{ borderColor: "var(--border)", boxShadow: "var(--ombre-douce)" }}
       onSubmit={async (e) => {
         e.preventDefault();
         const fd = new FormData(e.currentTarget);
@@ -1381,7 +1377,7 @@ function DemoForm({ t }: { t: typeof copy["fr"] }) {
         {status === "submitting" ? t.demo.sending : t.demo.cta} <span className="arrow">↗</span>
       </button>
       {status === "error" && (
-        <p className="mt-3 text-center text-[12px]" style={{ color: "#c0392b" }}>{t.demo.error}</p>
+        <p className="mt-3 text-center text-[12px]" style={{ color: "var(--alerte-texte)" }}>{t.demo.error}</p>
       )}
       <p className="mt-4 text-center text-[11px]" style={{ color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}>{t.demo.note}</p>
     </form>

@@ -33,7 +33,7 @@ export function Faq() {
             <motion.span
               aria-hidden
               animate={{ rotate: open === i ? 45 : 0 }}
-              style={{ color: "var(--terra)", fontSize: 20, lineHeight: 1 }}
+              style={{ color: "var(--profond)", fontSize: 20, lineHeight: 1 }}
             >
               +
             </motion.span>
@@ -65,7 +65,7 @@ const labelStyle = {
   color: "var(--text-soft)",
 };
 const inputClass =
-  "w-full rounded-[10px] px-3.5 py-3 text-[16px] outline-none transition-colors focus:border-[color:var(--terra)]";
+  "w-full rounded-[10px] px-3.5 py-3 text-[16px] outline-none transition-colors focus:border-[color:var(--profond)]";
 
 function Label({ text, children }: { text: string; children: ReactNode }) {
   return (
@@ -96,7 +96,7 @@ export function WebinarForm({
   bare = false,
   stacked = false,
   inputBackground = "var(--bg2)",
-  buttonBackground = "var(--terra)",
+  buttonBackground = "var(--encre)",
 }: FormProps) {
   const submit = useServerFn(submitDemo);
   const confirmer = useServerFn(envoyerConfirmationWebinar);
@@ -107,7 +107,7 @@ export function WebinarForm({
     : {
         background: "var(--surface)",
         border: "1px solid var(--border)",
-        boxShadow: "var(--shadow-soft)",
+        boxShadow: "var(--ombre-douce)",
       };
   const inputStyle = {
     background: inputBackground,
@@ -126,7 +126,7 @@ export function WebinarForm({
       >
         <span
           className="flex h-12 w-12 items-center justify-center rounded-full"
-          style={{ background: "var(--terra-light)", color: "var(--terra)" }}
+          style={{ background: "var(--succes-fond)", color: "var(--succes-texte)" }}
         >
           <svg
             width="22"
@@ -158,7 +158,7 @@ export function WebinarForm({
           {t.successContact}{" "}
           <a
             href="mailto:contact@getgranit.ai"
-            className="underline transition-colors hover:text-[color:var(--terra)]"
+            className="underline transition-colors hover:text-[color:var(--profond)]"
           >
             contact@getgranit.ai
           </a>
@@ -304,7 +304,7 @@ export function WebinarForm({
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="mt-1 w-full rounded-full px-5 py-4 text-[14px] text-white transition-transform hover:scale-[1.01]"
+        className="mt-1 w-full rounded-full px-5 py-4 text-[14px] text-menthe transition-transform hover:scale-[1.01]"
         style={{
           background: buttonBackground,
           fontWeight: 600,
@@ -316,7 +316,7 @@ export function WebinarForm({
       </button>
 
       {status === "error" && (
-        <p className="mt-3 text-center text-[12px]" style={{ color: "#c0392b" }}>
+        <p className="mt-3 text-center text-[12px]" style={{ color: "var(--alerte-texte)" }}>
           {t.error}
         </p>
       )}

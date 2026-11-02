@@ -36,11 +36,11 @@ export function Nav() {
         style={
           scrolled
             ? {
-                background: "rgba(255,253,249,0.96)",
+                background: "rgba(250,240,242,0.96)",
                 backdropFilter: "blur(16px) saturate(1.2)",
                 WebkitBackdropFilter: "blur(16px) saturate(1.2)",
                 border: "1px solid var(--border)",
-                boxShadow: "0 10px 30px -12px rgba(28,17,8,0.12)",
+                boxShadow: "0 10px 30px -12px rgba(31,53,48,0.12)",
               }
             : { background: "transparent", border: "1px solid transparent" }
         }
@@ -54,10 +54,7 @@ export function Nav() {
             }
           }}
         >
-          <img src={logoMonogram} alt="Granit" className="h-7 w-auto sm:h-9" />
-          <span className="font-serif text-[20px] tracking-tight" style={{ color: "var(--text)", fontWeight: 700 }}>
-            Granit
-          </span>
+          <img src={logoMonogram} alt="Granit" className="h-7 w-auto sm:h-8" />
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex">

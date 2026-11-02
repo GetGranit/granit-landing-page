@@ -56,12 +56,6 @@ export function Footer() {
           <div className="md:col-span-4">
             <Link to="/" className="inline-flex items-center gap-2.5">
               <img src={logoMonogram} alt="Granit" className="h-7 w-auto" />
-              <span
-                className="font-serif text-[20px] tracking-tight"
-                style={{ color: "var(--text)", fontWeight: 700 }}
-              >
-                Granit
-              </span>
             </Link>
             <p
               className="mt-4 max-w-xs text-[13.5px] leading-[1.6]"
@@ -140,7 +134,7 @@ function Badge({ children }: { children: React.ReactNode }) {
     >
       <span
         className="h-1.5 w-1.5 rounded-full"
-        style={{ background: "var(--sage)" }}
+        style={{ background: "var(--succes)" }}
       />
       {children}
     </span>
@@ -158,18 +152,7 @@ function FooterCol({
 }) {
   return (
     <div className={className}>
-      <div
-        className="mb-3 text-[11px]"
-        style={{
-          color: "var(--terra)",
-          fontFamily: "var(--font-mono)",
-          letterSpacing: "0.08em",
-          textTransform: "uppercase",
-          fontWeight: 500,
-        }}
-      >
-        {title}
-      </div>
+      <div className="eyebrow mb-3">{title}</div>
       <ul className="space-y-2">
         {links.map((l, i) => (
           <li key={`${l.to}-${i}`}>

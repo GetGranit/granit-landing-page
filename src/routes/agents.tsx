@@ -211,7 +211,7 @@ function AgentsPage() {
       <section className="mx-auto max-w-[1280px] px-6 pb-8">
         <Reveal>
           <h2 className="eyebrow mb-4">{t.filtersTitle}</h2>
-          <div className="grid gap-6 rounded-[12px] border bg-white/40 p-6 lg:grid-cols-2" style={{ borderColor: "var(--border)" }}>
+          <div className="grid gap-6 rounded-[12px] border bg-papier/40 p-6 lg:grid-cols-2" style={{ borderColor: "var(--border)" }}>
             <FilterGroup label={t.verticalLabel} items={t.verticals} />
             <FilterGroup label={t.useCaseLabel} items={t.useCases} />
           </div>
@@ -223,16 +223,16 @@ function AgentsPage() {
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {t.agents.map((agent, i) => (
             <Reveal key={`${agent.vertical}-${agent.name}`} delay={i * 0.02}>
-              <article className="card-hover flex h-full flex-col rounded-[8px] border bg-white/40 p-6" style={{ borderColor: "var(--border)" }}>
+              <article className="card-hover flex h-full flex-col rounded-[8px] border bg-papier/40 p-6" style={{ borderColor: "var(--border)" }}>
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="rounded-full px-2 py-1 text-[10px]" style={{ background: "var(--terra-light)", color: "var(--terra)", fontFamily: "var(--font-mono)" }}>{agent.vertical}</span>
+                  <span className="rounded-full px-2 py-1 text-[10px]" style={{ background: "var(--succes-fond)", color: "var(--succes-texte)", fontFamily: "var(--font-mono)" }}>{agent.vertical}</span>
                   <span className="rounded-full px-2 py-1 text-[10px]" style={{ background: "var(--bg3)", color: "var(--text-soft)", fontFamily: "var(--font-mono)" }}>{agent.useCase}</span>
                 </div>
                 <h3 className="mt-5 text-[20px] leading-[1.25]" style={{ fontWeight: 500 }}>
                   {agent.name}
                 </h3>
                 <p className="mt-3 flex-1 text-[14px] leading-[1.65]" style={{ color: "var(--text-soft)" }}>{agent.desc}</p>
-                <div className="mt-6 text-[13px]" style={{ color: "var(--terra)", fontFamily: "var(--font-mono)" }}>{agent.stat}</div>
+                <div className="mt-6 text-[13px]" style={{ color: "var(--profond)", fontFamily: "var(--font-mono)" }}>{agent.stat}</div>
               </article>
             </Reveal>
           ))}
@@ -249,7 +249,7 @@ function AgentsPage() {
 function FilterGroup({ label, items }: { label: string; items: string[] }) {
   return (
     <div>
-      <div className="eyebrow mb-4" style={{ color: "var(--text-muted)" }}>{label}</div>
+      <div className="eyebrow mb-4">{label}</div>
       <div className="flex flex-wrap gap-2">
         {items.map((item) => <span key={item} className="rounded-full border px-3 py-1.5 text-[12px]" style={{ borderColor: "var(--border)", color: "var(--text-soft)", fontFamily: "var(--font-mono)" }}>{item}</span>)}
       </div>
