@@ -56,7 +56,7 @@ function AffiliationPage() {
           className="pointer-events-none absolute inset-x-0 top-0 -z-10 mx-auto h-[460px] max-w-[1000px] opacity-60"
           style={{
             background:
-              "radial-gradient(ellipse at center, color-mix(in oklab, var(--terra) 14%, transparent), transparent 70%)",
+              "radial-gradient(ellipse at center, color-mix(in oklab, var(--menthe) 14%, transparent), transparent 70%)",
           }}
         />
         <Reveal>
@@ -92,7 +92,7 @@ function AffiliationPage() {
               >
                 <div
                   className="text-[12px]"
-                  style={{ fontFamily: "var(--font-mono)", color: "var(--terra)" }}
+                  style={{ fontFamily: "var(--font-mono)", color: "var(--profond)" }}
                 >
                   0{i + 1}
                 </div>
@@ -111,7 +111,7 @@ function AffiliationPage() {
               <span
                 key={s}
                 className="rounded-full px-3.5 py-1.5 text-[13px]"
-                style={{ background: "var(--terra-light)", color: "var(--terra-hover)" }}
+                style={{ background: "var(--succes-fond)", color: "var(--succes-texte)" }}
               >
                 {s}
               </span>
@@ -119,7 +119,7 @@ function AffiliationPage() {
             <Link
               to="/agents"
               className="ml-1 text-[13px] underline-offset-4 hover:underline"
-              style={{ color: "var(--terra)", fontFamily: "var(--font-mono)" }}
+              style={{ color: "var(--profond)", fontFamily: "var(--font-mono)" }}
             >
               {t.sectorsLink} →
             </Link>
@@ -152,7 +152,7 @@ function AffiliationPage() {
               <li className="border-t pt-6" style={{ borderColor: "var(--text)" }}>
                 <div
                   className="font-serif text-[44px] leading-none"
-                  style={{ color: "var(--terra)" }}
+                  style={{ color: "var(--profond)" }}
                 >
                   {s.n}
                 </div>
@@ -194,8 +194,8 @@ function ReferralFlow({ steps }: { steps: Copy["flow"] }) {
   const reduce = useReducedMotion();
   return (
     <div
-      className="relative rounded-[18px] border bg-white p-7 md:p-9"
-      style={{ borderColor: "var(--border)", boxShadow: "var(--shadow-soft)" }}
+      className="relative rounded-[18px] border bg-papier p-7 md:p-9"
+      style={{ borderColor: "var(--border)", boxShadow: "var(--ombre-douce)" }}
     >
       <div
         aria-hidden
@@ -205,7 +205,7 @@ function ReferralFlow({ steps }: { steps: Copy["flow"] }) {
         {!reduce && (
           <motion.span
             className="absolute -left-[3px] h-[7px] w-[7px] rounded-full"
-            style={{ background: "var(--terra)", boxShadow: "0 0 12px var(--terra-glow)" }}
+            style={{ background: "var(--profond)", boxShadow: "0 0 12px var(--menthe)" }}
             animate={{ top: ["0%", "100%"], opacity: [0, 1, 1, 0] }}
             transition={{ duration: 3.2, ease: "easeInOut", repeat: Infinity, repeatDelay: 0.6 }}
           />
@@ -227,9 +227,9 @@ function ReferralFlow({ steps }: { steps: Copy["flow"] }) {
                 className="relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full border text-[11px]"
                 style={{
                   fontFamily: "var(--font-mono)",
-                  borderColor: last ? "var(--terra)" : "var(--border2)",
-                  background: last ? "var(--terra)" : "white",
-                  color: last ? "white" : "var(--text-muted)",
+                  borderColor: last ? "var(--encre)" : "var(--border2)",
+                  background: last ? "var(--encre)" : "var(--papier)",
+                  color: last ? "var(--menthe)" : "var(--text-muted)",
                 }}
               >
                 {last ? "€" : i + 1}
@@ -263,7 +263,7 @@ function Faq({ items }: { items: Copy["faq"] }) {
             <motion.span
               aria-hidden
               animate={{ rotate: open === i ? 45 : 0 }}
-              style={{ color: "var(--terra)", fontSize: 20, lineHeight: 1 }}
+              style={{ color: "var(--profond)", fontSize: 20, lineHeight: 1 }}
             >
               +
             </motion.span>
@@ -289,7 +289,7 @@ function Faq({ items }: { items: Copy["faq"] }) {
 }
 
 const inputClass =
-  "w-full rounded-[8px] border bg-transparent px-3.5 py-2.5 text-[14px] outline-none transition-colors focus:border-[color:var(--terra)]";
+  "w-full rounded-[8px] border bg-transparent px-3.5 py-2.5 text-[14px] outline-none transition-colors focus:border-[color:var(--profond)]";
 
 function Label({ text, children }: { text: string; children: React.ReactNode }) {
   return (
@@ -307,18 +307,20 @@ function AffiliationForm({ t }: { t: Copy }) {
   const posthog = usePostHog();
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const border = { borderColor: "var(--border)" };
+  /* Bordure des champs : encre à 20 % (cas 7), plus appuyée que le filet des cartes. */
+  const champ = { borderColor: "var(--filet-champ)" };
 
   if (status === "success") {
     return (
       <motion.div
         initial={{ opacity: 0, scale: 0.97 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="flex h-full flex-col items-center justify-center rounded-[14px] border bg-white p-10 text-center"
-        style={{ ...border, boxShadow: "var(--shadow-soft)" }}
+        className="flex h-full flex-col items-center justify-center rounded-[14px] border bg-papier p-10 text-center"
+        style={{ ...border, boxShadow: "var(--ombre-douce)" }}
       >
         <span
           className="flex h-12 w-12 items-center justify-center rounded-full"
-          style={{ background: "var(--terra-light)", color: "var(--terra)" }}
+          style={{ background: "var(--succes-fond)", color: "var(--succes-texte)" }}
         >
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M5 12l5 5L20 7" />
@@ -336,8 +338,8 @@ function AffiliationForm({ t }: { t: Copy }) {
 
   return (
     <form
-      className="rounded-[14px] border bg-white p-7 md:p-8"
-      style={{ ...border, boxShadow: "var(--shadow-soft)" }}
+      className="rounded-[14px] border bg-papier p-7 md:p-8"
+      style={{ ...border, boxShadow: "var(--ombre-douce)" }}
       onSubmit={async (e) => {
         e.preventDefault();
         const fd = new FormData(e.currentTarget);
@@ -366,22 +368,22 @@ function AffiliationForm({ t }: { t: Copy }) {
       }}
     >
       <Label text={t.fields.name}>
-        <input name="name" required autoComplete="name" placeholder={t.placeholders.name} className={inputClass} style={border} />
+        <input name="name" required autoComplete="name" placeholder={t.placeholders.name} className={inputClass} style={champ} />
       </Label>
       <div className="grid gap-x-4 sm:grid-cols-2">
         <Label text={t.fields.email}>
-          <input name="email" type="email" required autoComplete="email" placeholder={t.placeholders.email} className={inputClass} style={border} />
+          <input name="email" type="email" required autoComplete="email" placeholder={t.placeholders.email} className={inputClass} style={champ} />
         </Label>
         <Label text={t.fields.phone}>
-          <input name="phone" type="tel" autoComplete="tel" placeholder={t.placeholders.phone} className={inputClass} style={border} />
+          <input name="phone" type="tel" autoComplete="tel" placeholder={t.placeholders.phone} className={inputClass} style={champ} />
         </Label>
       </div>
       <div className="grid gap-x-4 sm:grid-cols-2">
         <Label text={t.fields.company}>
-          <input name="company" autoComplete="organization" placeholder={t.placeholders.company} className={inputClass} style={border} />
+          <input name="company" autoComplete="organization" placeholder={t.placeholders.company} className={inputClass} style={champ} />
         </Label>
         <Label text={t.fields.profile}>
-          <select name="orgType" required defaultValue="" className={`${inputClass} bg-white`} style={border}>
+          <select name="orgType" required defaultValue="" className={`${inputClass} bg-papier`} style={champ}>
             <option value="" disabled>
               {t.choose}
             </option>
@@ -392,7 +394,7 @@ function AffiliationForm({ t }: { t: Copy }) {
         </Label>
       </div>
       <Label text={t.fields.message}>
-        <textarea name="challenge" rows={3} placeholder={t.placeholders.message} className={inputClass} style={border} />
+        <textarea name="challenge" rows={3} placeholder={t.placeholders.message} className={inputClass} style={champ} />
       </Label>
       <button
         type="submit"
@@ -403,7 +405,7 @@ function AffiliationForm({ t }: { t: Copy }) {
         {status === "submitting" ? t.sending : t.submit} <span className="arrow">↗</span>
       </button>
       {status === "error" && (
-        <p className="mt-3 text-center text-[12px]" style={{ color: "#c0392b" }}>
+        <p className="mt-3 text-center text-[12px]" style={{ color: "var(--alerte-texte)" }}>
           {t.error}
         </p>
       )}

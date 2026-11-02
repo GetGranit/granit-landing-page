@@ -21,6 +21,12 @@
       "regle": "couleur-hors-palette",
       "motif": "/\\[(stroke|fill)='#/",
       "raison": "Sélecteurs shadcn qui ciblent les couleurs par défaut posées par Recharts ([stroke='#ccc']) pour les remplacer par des jetons ; on ne peint rien avec."
+    },
+    {
+      "fichier": "src/components/home/HomeSections.tsx",
+      "regle": "couleur-hors-palette",
+      "motif": "/background: \"#(ff5f57|febc2e|28c840)\"/",
+      "raison": "Boutons de fenêtre macOS (rouge, jaune, vert) des maquettes de navigateur : ils dessinent le logiciel d'un tiers, pas la marque Granit (cas 11 de la table de correspondance, validé par Paul le 2/11)."
     }
   ]
 }

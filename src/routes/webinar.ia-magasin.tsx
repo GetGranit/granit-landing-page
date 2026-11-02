@@ -16,7 +16,7 @@ import photoPaul from "@/assets/paul-pietra.jpg";
  *
  * Page de campagne comme /silmo : hors navigation, hors sitemap et en noindex.
  * Une seule « fiche événement » sur fond dégradé : à gauche le programme et
- * l'animateur, à droite une carte blanche qui chevauche et porte le compte à
+ * l'animateur, à droite une carte papier qui chevauche et porte le compte à
  * rebours et le formulaire. Une variante « affiche photo » a été essayée puis
  * écartée par Paul le 26/10 (voir l'historique de ce fichier).
  */
@@ -40,14 +40,8 @@ export const Route = createFileRoute("/webinar/ia-magasin")({
   component: WebinarPage,
 });
 
-const DEGRADE = "linear-gradient(135deg, #e0654f 0%, #ec8a64 45%, #f6b58c 100%)";
-const BOUTON = "linear-gradient(90deg, #d9583f 0%, #f0956a 100%)";
-
-const mono = {
-  fontFamily: "var(--font-mono)",
-  letterSpacing: "0.12em",
-  textTransform: "uppercase" as const,
-};
+/** Grand fond : le dégradé de marque (DESIGN.md le permet pour les grands fonds). */
+const DEGRADE = "var(--degrade-marque)";
 
 function WebinarPage() {
   return (
@@ -74,8 +68,8 @@ function WebinarPage() {
           <section
             className="mx-auto mt-10 max-w-[760px] rounded-[24px] p-6 md:mt-14 md:p-8"
             style={{
-              background: "rgba(255,255,255,0.92)",
-              boxShadow: "0 20px 60px -30px rgba(80,30,10,0.5)",
+              background: "rgba(255,253,253,0.92)",
+              boxShadow: "0 20px 60px -30px rgba(31,53,48,0.5)",
             }}
           >
             <h2 className="font-serif text-[22px]" style={{ fontWeight: 400 }}>
@@ -108,7 +102,7 @@ function Cercles() {
             height: c.size,
             top: c.top,
             left: c.left,
-            border: "1px solid rgba(255,255,255,0.35)",
+            border: "1px solid rgba(255,253,253,0.35)",
           }}
           animate={reduce ? undefined : { x: [0, 24, 0], y: [0, -18, 0] }}
           transition={{ duration: c.d, repeat: Infinity, ease: "easeInOut" }}
@@ -123,11 +117,11 @@ function FicheProgramme() {
     <div
       className="relative overflow-hidden rounded-[24px] px-6 pb-14 pt-8 md:py-12 md:pl-14 md:pr-28"
       style={{
-        background: "linear-gradient(160deg, #fff6ef 0%, #fde9e1 100%)",
-        boxShadow: "0 30px 80px -30px rgba(80,30,10,0.55)",
+        background: "var(--papier)",
+        boxShadow: "0 30px 80px -30px rgba(31,53,48,0.55)",
       }}
     >
-      <p className="text-[11px]" style={{ ...mono, color: "var(--terra)" }}>
+      <p className="eyebrow">
         🎙️ {t.badge}
       </p>
       <h1
@@ -173,7 +167,7 @@ function FicheProgramme() {
           width={104}
           height={104}
           className="h-[104px] w-[104px] shrink-0 rounded-full object-cover"
-          style={{ boxShadow: "0 0 0 6px #fff, 0 12px 30px -10px rgba(80,30,10,0.45)" }}
+          style={{ boxShadow: "0 0 0 6px var(--papier), 0 12px 30px -10px rgba(31,53,48,0.45)" }}
           initial={{ scale: 0.85, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ type: "spring", stiffness: 180, damping: 16, delay: 0.3 }}
@@ -182,7 +176,7 @@ function FicheProgramme() {
           <p className="text-[16px]" style={{ fontWeight: 600 }}>
             Paul Pietra
           </p>
-          <p className="text-[12px]" style={{ ...mono, color: "var(--terra)" }}>
+          <p className="eyebrow">
             {t.hostRole}
           </p>
           <p
@@ -208,8 +202,8 @@ function FicheProgramme() {
             transition={{ duration: 0.4, delay: 0.5 + i * 0.12 }}
           >
             <span
-              className="mt-[2px] flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-white"
-              style={{ background: "var(--terra)" }}
+              className="mt-[2px] flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-rose"
+              style={{ background: "var(--encre)" }}
             >
               <Check size={13} strokeWidth={3} />
             </span>
@@ -228,7 +222,7 @@ function FicheProgramme() {
         >
           <span
             className="mt-[2px] flex h-5 w-5 shrink-0 items-center justify-center rounded-full"
-            style={{ border: "1.5px dashed var(--terra)", color: "var(--terra)" }}
+            style={{ border: "1.5px dashed var(--profond)", color: "var(--profond)" }}
           >
             <Lock size={11} strokeWidth={2.5} />
           </span>
@@ -242,14 +236,11 @@ function FicheProgramme() {
 function CarteInscription() {
   return (
     <div
-      className="rounded-[24px] bg-white px-6 py-8 md:px-9 md:py-10"
-      style={{ boxShadow: "0 40px 90px -30px rgba(80,30,10,0.6)" }}
+      className="rounded-[24px] bg-papier px-6 py-8 md:px-9 md:py-10"
+      style={{ boxShadow: "0 40px 90px -30px rgba(31,53,48,0.6)" }}
     >
       <div className="flex items-center justify-center gap-2.5">
         <img src={logoMonogram} alt="Granit" className="h-[24px] w-auto" />
-        <span className="font-serif text-[19px] tracking-tight" style={{ fontWeight: 700 }}>
-          Granit
-        </span>
       </div>
 
       <div className="mt-8 text-center">
@@ -263,8 +254,7 @@ function CarteInscription() {
         <WebinarForm
           bare
           stacked
-          inputBackground="#fff"
-          buttonBackground={BOUTON}
+          inputBackground="var(--papier)"
           heading={
             <p className="mb-5 text-[15px]" style={{ fontWeight: 600 }}>
               On a hâte de vous voir ! 👋
@@ -299,14 +289,14 @@ function CompteARebours() {
           <div key={u.k} className="flex items-center gap-1.5">
             <div
               className="flex h-[52px] w-[46px] flex-col items-center justify-center overflow-hidden rounded-[10px]"
-              style={{ background: "#f6f1ec" }}
+              style={{ background: "var(--lavis)" }}
             >
               {/* Le chiffre est remonté à chaque changement et glisse en place :
                   pas d'animation de sortie, la case n'est donc jamais vide. */}
               <motion.span
                 key={v}
                 className="num-tabular block h-[20px] text-center text-[17px]"
-                style={{ fontWeight: 700, lineHeight: "20px" }}
+                style={{ fontWeight: 600, lineHeight: "20px" }}
                 initial={reduce ? false : { y: -8, opacity: 0.2 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.25 }}

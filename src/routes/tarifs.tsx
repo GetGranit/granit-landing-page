@@ -228,7 +228,7 @@ function TarifsPage() {
           className="pointer-events-none absolute inset-x-0 top-0 -z-10 mx-auto h-[420px] max-w-[900px] opacity-60"
           style={{
             background:
-              "radial-gradient(ellipse at center, color-mix(in oklab, var(--terra) 14%, transparent), transparent 70%)",
+              "radial-gradient(ellipse at center, color-mix(in oklab, var(--menthe) 14%, transparent), transparent 70%)",
           }}
         />
         <Reveal>
@@ -243,29 +243,26 @@ function TarifsPage() {
                   className="card-hover relative flex flex-col rounded-[18px] p-8"
                   style={{
                     background: featured
-                      ? "linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.75))"
-                      : "rgba(255,255,255,0.55)",
+                      ? "linear-gradient(180deg, rgba(255,253,253,0.95), rgba(255,253,253,0.75))"
+                      : "rgba(255,253,253,0.55)",
                     backdropFilter: "blur(14px)",
                     WebkitBackdropFilter: "blur(14px)",
                     border: featured
-                      ? "1px solid color-mix(in oklab, var(--terra) 45%, transparent)"
+                      ? "1px solid var(--profond)"
                       : "1px solid color-mix(in oklab, var(--border) 70%, transparent)",
-                    boxShadow: featured ? "0 30px 70px -30px color-mix(in oklab, var(--terra) 35%, transparent)" : undefined,
+                    boxShadow: featured ? "var(--ombre-carte)" : undefined,
                   }}
                 >
                   <div className="flex items-center justify-between">
-                    <div
-                      className="text-[11px] uppercase tracking-[0.06em]"
-                      style={{ fontFamily: "var(--font-mono)", color: "var(--text-muted)" }}
-                    >
+                    <div className="eyebrow">
                       {tier.label}
                     </div>
                     {save && (
                       <span
                         className="rounded-full px-2 py-0.5 text-[10.5px]"
                         style={{
-                          background: "color-mix(in oklab, var(--terra) 12%, transparent)",
-                          color: "var(--terra)",
+                          background: "var(--succes-fond)",
+                          color: "var(--succes-texte)",
                           fontFamily: "var(--font-mono)",
                           fontWeight: 600,
                         }}
@@ -274,7 +271,7 @@ function TarifsPage() {
                       </span>
                     )}
                   </div>
-                  <div className="mt-7 font-serif leading-none" style={{ fontSize: "clamp(34px,3.4vw,44px)", letterSpacing: "-0.025em", color: featured ? "var(--terra)" : "var(--text)" }}>
+                  <div className="mt-7 font-serif leading-none" style={{ fontSize: "clamp(34px,3.4vw,44px)", letterSpacing: "-0.025em", color: featured ? "var(--profond)" : "var(--text)" }}>
                     {tier.price}
                   </div>
                   <div className="mt-3 text-[12.5px]" style={{ color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}>
@@ -289,7 +286,7 @@ function TarifsPage() {
           </div>
           <p
             className="mt-8 text-center text-[13px]"
-            style={{ color: "var(--terra)", fontFamily: "var(--font-mono)" }}
+            style={{ color: "var(--profond)", fontFamily: "var(--font-mono)" }}
           >
             {t.usage}
           </p>
@@ -303,7 +300,7 @@ function TarifsPage() {
             <ul className="space-y-2.5">
               {t.includes.map((f) => (
                 <li key={f} className="flex items-start gap-2 text-[14px]" style={{ color: "var(--text-soft)" }}>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="mt-1 shrink-0" style={{ color: "var(--terra)" }}>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="mt-1 shrink-0" style={{ color: "var(--profond)" }}>
                     <path d="M5 12l5 5L20 7" />
                   </svg>
                   {f}

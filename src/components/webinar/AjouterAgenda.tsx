@@ -26,8 +26,8 @@ export function AjouterAgenda() {
   };
 
   const bouton =
-    "flex flex-1 items-center justify-center gap-2 rounded-full border px-4 py-3 text-[13.5px] transition-colors hover:border-[color:var(--terra)] hover:text-[color:var(--terra)]";
-  const style = { borderColor: "var(--border2)", fontWeight: 600, background: "#fff" };
+    "flex flex-1 items-center justify-center gap-2 rounded-full border px-4 py-3 text-[13.5px] transition-colors hover:border-[color:var(--profond)] hover:text-[color:var(--profond)]";
+  const style = { borderColor: "var(--border2)", fontWeight: 600, background: "var(--papier)" };
 
   return (
     <div className="mt-5 flex w-full max-w-sm flex-col gap-2.5">
