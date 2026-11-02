@@ -24,7 +24,8 @@ La référence est `DESIGN.md` (jetons YAML en tête, puis les règles) et `TON.
 copies de `internal/marque/` : on ne les modifie pas ici, on les recopie quand la source change.
 
 - **Seulement les jetons de DESIGN.md.** Aucune couleur en dur hors palette (hex, rgb, hsl, oklch),
-  aucune police en dur. On passe par les variables CSS du thème.
+  ni couleur par défaut de Tailwind (`bg-white`, `text-black`, `bg-rose-500`…), aucune police en dur.
+  On passe par les variables CSS du thème.
 - **Deux familles** : Source Serif 4 pour les titres, toujours réglée `font-variation-settings: "opsz" 20`,
   et Geist pour le texte. Dans un mail : Georgia et Helvetica/Arial. Rien d'autre.
 - **Ancienne marque à éliminer** : `--terra*`, `--sage*`, `--font-hand`, ombres brunes `rgba(28,17,8,…)`,
@@ -36,7 +37,7 @@ copies de `internal/marque/` : on ne les modifie pas ici, on les recopie quand l
 
 ## Le filet : check-marque et planche
 
-- `scripts/check-marque.mjs` scanne `src/`, `public/*.html` et `scripts/` et compte quatre règles :
+- `scripts/check-marque.mjs` scanne `src/`, `public/*.html`, `public/*.svg` (favicon) et `scripts/` et compte quatre règles :
   `ancienne-variable`, `couleur-hors-palette`, `police-hors-marque`, `ombre-brune`.
 - **Cliquet** : `scripts/check-marque.baseline.json` garde le compte par fichier et par règle. Une PR peut
   le faire baisser, jamais monter. En CI, on compare à la baseline de la branche cible : la réécrire

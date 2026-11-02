@@ -2,7 +2,7 @@
   "_lisez_moi": "Généré par `node scripts/check-marque.mjs --update-baseline`. Ne pas éditer à la main. Une PR ne doit faire que baisser ces nombres.",
   "totaux": {
     "ancienne-variable": 282,
-    "couleur-hors-palette": 343,
+    "couleur-hors-palette": 427,
     "police-hors-marque": 28,
     "ombre-brune": 19
   },
@@ -10,6 +10,9 @@
     "public/demo.html": {
       "couleur-hors-palette": 22,
       "police-hors-marque": 6
+    },
+    "public/favicon.svg": {
+      "couleur-hors-palette": 2
     },
     "scripts/ressources/og-plateformes.mjs": {
       "ancienne-variable": 4,
@@ -31,7 +34,8 @@
       "couleur-hors-palette": 2
     },
     "src/components/DashboardMockup.tsx": {
-      "ancienne-variable": 11
+      "ancienne-variable": 11,
+      "couleur-hors-palette": 1
     },
     "src/components/Footer.tsx": {
       "ancienne-variable": 2
@@ -41,7 +45,8 @@
       "ombre-brune": 1
     },
     "src/components/essai/Acces.tsx": {
-      "ancienne-variable": 7
+      "ancienne-variable": 7,
+      "couleur-hors-palette": 2
     },
     "src/components/essai/Bascule.tsx": {
       "ancienne-variable": 2
@@ -53,24 +58,28 @@
       "ancienne-variable": 2
     },
     "src/components/essai/Espace.tsx": {
-      "ancienne-variable": 3
+      "ancienne-variable": 3,
+      "couleur-hors-palette": 3
     },
     "src/components/essai/Logiciel.tsx": {
-      "ancienne-variable": 1
+      "ancienne-variable": 1,
+      "couleur-hors-palette": 1
     },
     "src/components/essai/PaulSheet.tsx": {
       "ancienne-variable": 6,
+      "couleur-hors-palette": 2,
       "ombre-brune": 1
     },
     "src/components/essai/Quota.tsx": {
       "ancienne-variable": 1
     },
     "src/components/essai/ui.tsx": {
-      "ancienne-variable": 4
+      "ancienne-variable": 4,
+      "couleur-hors-palette": 3
     },
     "src/components/home/HomeSections.tsx": {
       "ancienne-variable": 51,
-      "couleur-hors-palette": 13,
+      "couleur-hors-palette": 24,
       "ombre-brune": 6
     },
     "src/components/pec/Invitation.tsx": {
@@ -82,7 +91,7 @@
       "couleur-hors-palette": 2
     },
     "src/components/pec/StepCode.tsx": {
-      "couleur-hors-palette": 2
+      "couleur-hors-palette": 3
     },
     "src/components/pec/StepCompte.tsx": {
       "ancienne-variable": 3,
@@ -90,7 +99,7 @@
     },
     "src/components/pec/StepContact.tsx": {
       "ancienne-variable": 3,
-      "couleur-hors-palette": 2
+      "couleur-hors-palette": 4
     },
     "src/components/pec/StepLogin.tsx": {
       "couleur-hors-palette": 2
@@ -101,82 +110,102 @@
     },
     "src/components/pec/StepReading.tsx": {
       "ancienne-variable": 4,
-      "couleur-hors-palette": 8
+      "couleur-hors-palette": 10
     },
     "src/components/pec/StepResult.tsx": {
       "ancienne-variable": 14,
-      "couleur-hors-palette": 26
+      "couleur-hors-palette": 31
     },
     "src/components/pec/StepResultat.tsx": {
       "ancienne-variable": 3,
       "couleur-hors-palette": 1,
       "ombre-brune": 2
     },
+    "src/components/pec/StepSearch.tsx": {
+      "couleur-hors-palette": 2
+    },
     "src/components/pec/StepSimulation.tsx": {
       "ancienne-variable": 4,
-      "couleur-hors-palette": 11
+      "couleur-hors-palette": 14
     },
     "src/components/pec/ui.tsx": {
       "ancienne-variable": 9,
-      "couleur-hors-palette": 2,
+      "couleur-hors-palette": 3,
       "ombre-brune": 2
     },
     "src/components/ressources/Annuaire.tsx": {
-      "ancienne-variable": 1
+      "ancienne-variable": 1,
+      "couleur-hors-palette": 1
     },
     "src/components/ressources/BandeDemo.tsx": {
       "couleur-hors-palette": 4
     },
     "src/components/ressources/Cartes.tsx": {
       "ancienne-variable": 2,
-      "couleur-hors-palette": 1
+      "couleur-hors-palette": 5
     },
     "src/components/ressources/Fil.tsx": {
       "ancienne-variable": 2
     },
     "src/components/ressources/Hub.tsx": {
       "ancienne-variable": 3,
-      "couleur-hors-palette": 4
+      "couleur-hors-palette": 6
     },
     "src/components/ressources/HubEn.tsx": {
       "ancienne-variable": 7,
-      "couleur-hors-palette": 1
+      "couleur-hors-palette": 3
     },
     "src/components/ressources/Metiers.tsx": {
       "ancienne-variable": 1
     },
     "src/components/ressources/MurPlateformes.tsx": {
-      "couleur-hors-palette": 11
+      "couleur-hors-palette": 16
     },
     "src/components/ressources/Onglets.tsx": {
       "ancienne-variable": 1,
       "couleur-hors-palette": 1
     },
     "src/components/ressources/PageAncien.tsx": {
-      "ancienne-variable": 1
+      "ancienne-variable": 1,
+      "couleur-hors-palette": 1
     },
     "src/components/ressources/article/Ancres.tsx": {
       "ancienne-variable": 1,
       "couleur-hors-palette": 2
     },
     "src/components/ressources/article/BlocsComparatif.tsx": {
-      "ancienne-variable": 2
+      "ancienne-variable": 2,
+      "couleur-hors-palette": 4
     },
     "src/components/ressources/article/BlocsPlateforme.tsx": {
-      "ancienne-variable": 2
+      "ancienne-variable": 2,
+      "couleur-hors-palette": 2
     },
     "src/components/ressources/article/CtaAgent.tsx": {
-      "couleur-hors-palette": 3
+      "couleur-hors-palette": 4
     },
     "src/components/ressources/article/Fin.tsx": {
       "ancienne-variable": 5,
-      "couleur-hors-palette": 3
+      "couleur-hors-palette": 4
     },
     "src/components/ressources/article/PageArticle.tsx": {
-      "couleur-hors-palette": 3
+      "couleur-hors-palette": 4
     },
     "src/components/ressources/article/Sommaire.tsx": {
-      "ancienne-variable": 4
+      "ancienne-variable": 4,
+      "couleur-hors-palette": 5
+    },
+    "src/components/ui/alert-dialog.tsx": {
+      "couleur-hors-palette": 1
+    },
+    "src/components/ui/dialog.tsx": {
+      "couleur-hors-palette": 1
+    },
+    "src/components/ui/drawer.tsx": {
+      "couleur-hors-palette": 1
+    },
+    "src/components/ui/sheet.tsx": {
+      "couleur-hors-palette": 1
     },
     "src/components/webinar/AjouterAgenda.tsx": {
       "ancienne-variable": 2,
@@ -184,7 +213,7 @@
     },
     "src/components/webinar/WebinarShared.tsx": {
       "ancienne-variable": 6,
-      "couleur-hors-palette": 1
+      "couleur-hors-palette": 2
     },
     "src/lib/webinarMail.ts": {
       "couleur-hors-palette": 12
@@ -198,17 +227,18 @@
     },
     "src/routes/affiliation.tsx": {
       "ancienne-variable": 14,
-      "couleur-hors-palette": 1
+      "couleur-hors-palette": 5
     },
     "src/routes/agents.tsx": {
-      "ancienne-variable": 3
+      "ancienne-variable": 3,
+      "couleur-hors-palette": 2
     },
     "src/routes/demo.tsx": {
       "ancienne-variable": 1
     },
     "src/routes/securite.tsx": {
       "ancienne-variable": 5,
-      "couleur-hors-palette": 2
+      "couleur-hors-palette": 3
     },
     "src/routes/silmo.tsx": {
       "ancienne-variable": 5,
@@ -220,7 +250,7 @@
     },
     "src/routes/webinar.ia-magasin.tsx": {
       "ancienne-variable": 5,
-      "couleur-hors-palette": 16
+      "couleur-hors-palette": 18
     },
     "src/styles.css": {
       "ancienne-variable": 45,

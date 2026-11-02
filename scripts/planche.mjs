@@ -13,7 +13,15 @@
 // Pages : public/sitemap.xml (régénéré par le build) + les routes statiques de src/routes qui n'y sont
 // pas (cgv, privacy, en, essai…) + les pages HTML de public/.
 import { spawn } from "node:child_process";
-import { cpSync, existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import {
+  cpSync,
+  existsSync,
+  mkdirSync,
+  readdirSync,
+  readFileSync,
+  rmSync,
+  writeFileSync,
+} from "node:fs";
 import { basename, join, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -31,29 +39,40 @@ const BASE = (positionnels[0] || DEFAUT).replace(/\/$/, "");
 const SORTIE = resolve(valeur("--out", join(RACINE, "planche")));
 const COMPARE = valeur("--compare") ? resolve(valeur("--compare")) : null;
 const CONCURRENCE = Number(valeur("--concurrence", 4));
-const FILTRE = valeur("--pages")?.split(",").map((p) => p.trim());
+const FILTRE = valeur("--pages")
+  ?.split(",")
+  .map((p) => p.trim());
 
 // ── Liste des pages ──────────────────────────────────────────────────────────
 function listerPages() {
   const pages = new Set();
   const sitemap = join(RACINE, "public/sitemap.xml");
   if (existsSync(sitemap)) {
-    for (const [, loc] of readFileSync(sitemap, "utf8").matchAll(/<loc>([^<]+)<\/loc>/g)) pages.add(normaliser(new URL(loc).pathname));
-  } else console.log("! public/sitemap.xml absent : lancez npm run build (ou node scripts/gen-sitemap.mjs).");
+    for (const [, loc] of readFileSync(sitemap, "utf8").matchAll(/<loc>([^<]+)<\/loc>/g))
+      pages.add(normaliser(new URL(loc).pathname));
+  } else
+    console.log(
+      "! public/sitemap.xml absent : lancez npm run build (ou node scripts/gen-sitemap.mjs).",
+    );
   const nbSitemap = pages.size;
   for (const f of readdirSync(join(RACINE, "src/routes"))) {
-    const m = readFileSync(join(RACINE, "src/routes", f), "utf8").match(/createFileRoute\(\s*["'`]([^"'`]+)["'`]/);
+    const m = readFileSync(join(RACINE, "src/routes", f), "utf8").match(
+      /createFileRoute\(\s*["'`]([^"'`]+)["'`]/,
+    );
     if (m && !m[1].includes("$")) pages.add(normaliser(m[1]));
   }
   for (const f of readdirSync(join(RACINE, "public"))) if (f.endsWith(".html")) pages.add("/" + f);
-  console.log(`${pages.size} pages : ${nbSitemap} du sitemap, ${pages.size - nbSitemap} des routes et de public/.`);
+  console.log(
+    `${pages.size} pages : ${nbSitemap} du sitemap, ${pages.size - nbSitemap} des routes et de public/.`,
+  );
   const liste = [...pages].sort((a, b) => (a === "/" ? -1 : b === "/" ? 1 : a.localeCompare(b)));
   return FILTRE ? liste.filter((p) => FILTRE.includes(p)) : liste;
 }
 function normaliser(chemin) {
   return chemin === "/" ? "/" : chemin.replace(/\/+$/, "");
 }
-const slug = (chemin) => (chemin === "/" ? "accueil" : chemin.slice(1).replace(/[^a-z0-9.-]+/gi, "_"));
+const slug = (chemin) =>
+  chemin === "/" ? "accueil" : chemin.slice(1).replace(/[^a-z0-9.-]+/gi, "_");
 
 // ── Serveur local ────────────────────────────────────────────────────────────
 async function joignable(url) {
@@ -67,10 +86,15 @@ async function joignable(url) {
 async function assurerServeur() {
   if (await joignable(BASE)) return null;
   if (BASE !== DEFAUT) throw new Error(`${BASE} ne répond pas.`);
-  if (!existsSync(join(RACINE, ".output/server"))) throw new Error("Pas de build : lancez npm run build d'abord.");
+  if (!existsSync(join(RACINE, ".output/server")))
+    throw new Error("Pas de build : lancez npm run build d'abord.");
   // `vite preview` ne sait pas servir le build Cloudflare (nitro) : on sert .output avec wrangler.
   console.log("Serveur local absent : lancement de wrangler dev sur le port 4173…");
-  const proc = spawn("npx", ["wrangler", "dev", "--port", "4173", "--ip", "127.0.0.1"], { cwd: RACINE, stdio: "ignore", detached: false });
+  const proc = spawn("npx", ["wrangler", "dev", "--port", "4173", "--ip", "127.0.0.1"], {
+    cwd: RACINE,
+    stdio: "ignore",
+    detached: false,
+  });
   for (let i = 0; i < 90; i++) {
     if (await joignable(BASE)) return proc;
     await new Promise((r) => setTimeout(r, 1000));
@@ -81,20 +105,40 @@ async function assurerServeur() {
 
 // ── Une page, une largeur ────────────────────────────────────────────────────
 async function photographier(navigateur, chemin, largeur) {
-  const contexte = await navigateur.newContext({ viewport: { width: largeur, height: largeur < 600 ? 812 : 800 }, deviceScaleFactor: 1, reducedMotion: "reduce" });
+  const contexte = await navigateur.newContext({
+    viewport: { width: largeur, height: largeur < 600 ? 812 : 800 },
+    deviceScaleFactor: 1,
+    reducedMotion: "reduce",
+  });
   const page = await contexte.newPage();
   const erreurs = [];
   const origine = new URL(BASE).origin;
   page.on("console", (m) => m.type() === "error" && erreurs.push(m.text().slice(0, 300)));
   page.on("pageerror", (e) => erreurs.push("Exception : " + String(e.message || e).slice(0, 300)));
   page.on("response", (r) => {
-    if (r.status() >= 400 && r.url().startsWith(origine) && r.request().resourceType() !== "document") erreurs.push(`${r.status()} ${r.url().slice(origine.length)}`);
+    if (
+      r.status() >= 400 &&
+      r.url().startsWith(origine) &&
+      r.request().resourceType() !== "document"
+    )
+      erreurs.push(`${r.status()} ${r.url().slice(origine.length)}`);
   });
   page.on("requestfailed", (r) => {
     const raison = r.failure()?.errorText || "";
-    if (!/ERR_ABORTED|NS_BINDING_ABORTED/.test(raison)) erreurs.push(`Requête échouée (${raison}) : ${r.url().slice(0, 200)}`);
+    if (!/ERR_ABORTED|NS_BINDING_ABORTED/.test(raison))
+      erreurs.push(`Requête échouée (${raison}) : ${r.url().slice(0, 200)}`);
   });
-  const resultat = { chemin, largeur, statut: 0, final: chemin, redirections: [], erreurs, liens: [], capture: null, duree: 0 };
+  const resultat = {
+    chemin,
+    largeur,
+    statut: 0,
+    final: chemin,
+    redirections: [],
+    erreurs,
+    liens: [],
+    capture: null,
+    duree: 0,
+  };
   const debut = Date.now();
   try {
     let reponse;
@@ -120,9 +164,16 @@ async function photographier(navigateur, chemin, largeur) {
     });
     await page.waitForTimeout(600);
     resultat.liens = await page.$$eval("a[href]", (as) => as.map((a) => a.href));
-    resultat.liens = [...new Set(resultat.liens.filter((h) => h.startsWith(origine)).map((h) => h.split("#")[0]))];
+    resultat.liens = [
+      ...new Set(resultat.liens.filter((h) => h.startsWith(origine)).map((h) => h.split("#")[0])),
+    ];
     const fichier = `captures/${slug(chemin)}-${largeur}.jpg`;
-    await page.screenshot({ path: join(SORTIE, fichier), fullPage: true, type: "jpeg", quality: 75 });
+    await page.screenshot({
+      path: join(SORTIE, fichier),
+      fullPage: true,
+      type: "jpeg",
+      quality: 75,
+    });
     resultat.capture = fichier;
   } catch (e) {
     erreurs.push("Planche : " + String(e.message || e).split("\n")[0]);
@@ -134,41 +185,59 @@ async function photographier(navigateur, chemin, largeur) {
 
 // ── Liens internes ───────────────────────────────────────────────────────────
 async function verifierLiens(resultats) {
-  const vus = new Map(resultats.filter((r) => r.largeur === LARGEURS[1]).map((r) => [new URL(BASE + r.chemin).href, r.statut]));
+  const vus = new Map(
+    resultats
+      .filter((r) => r.largeur === LARGEURS[1])
+      .map((r) => [new URL(BASE + r.chemin).href, r.statut]),
+  );
   const references = new Map();
-  for (const r of resultats) for (const l of r.liens) {
-    if (!references.has(l)) references.set(l, new Set());
-    references.get(l).add(r.chemin);
-  }
+  for (const r of resultats)
+    for (const l of r.liens) {
+      if (!references.has(l)) references.set(l, new Set());
+      references.get(l).add(r.chemin);
+    }
   const casses = [];
   const aVerifier = [...references.keys()];
   await pool(aVerifier, 8, async (lien) => {
     let statut = vus.get(lien);
     if (statut === undefined) {
       try {
-        statut = (await fetch(lien, { redirect: "follow", signal: AbortSignal.timeout(15000) })).status;
+        statut = (await fetch(lien, { redirect: "follow", signal: AbortSignal.timeout(15000) }))
+          .status;
       } catch {
         statut = 0;
       }
     }
-    if (statut === 0 || statut >= 400) casses.push({ lien: lien.replace(new URL(BASE).origin, ""), statut, depuis: [...references.get(lien)].sort() });
+    if (statut === 0 || statut >= 400)
+      casses.push({
+        lien: lien.replace(new URL(BASE).origin, ""),
+        statut,
+        depuis: [...references.get(lien)].sort(),
+      });
   });
   return { total: aVerifier.length, casses: casses.sort((a, b) => a.lien.localeCompare(b.lien)) };
 }
 
 async function pool(items, n, fn) {
   const file = [...items];
-  await Promise.all(Array.from({ length: Math.min(n, file.length) }, async () => {
-    while (file.length) await fn(file.shift());
-  }));
+  await Promise.all(
+    Array.from({ length: Math.min(n, file.length) }, async () => {
+      while (file.length) await fn(file.shift());
+    }),
+  );
 }
 
 // ── Sorties ──────────────────────────────────────────────────────────────────
-const echap = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+const echap = (s) =>
+  String(s).replace(
+    /[&<>"]/g,
+    (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c],
+  );
 
 function ecrireHtml(pages, parPage, liens, avant) {
   const casseParPage = new Map();
-  for (const c of liens.casses) for (const p of c.depuis) casseParPage.set(p, (casseParPage.get(p) || 0) + 1);
+  for (const c of liens.casses)
+    for (const p of c.depuis) casseParPage.set(p, (casseParPage.get(p) || 0) + 1);
   const blocs = pages.map((chemin) => {
     const rs = LARGEURS.map((l) => parPage.get(chemin + "|" + l));
     const statut = rs[1]?.statut || rs[0]?.statut;
@@ -177,13 +246,20 @@ function ecrireHtml(pages, parPage, liens, avant) {
     const ko = !statut || statut >= 400;
     const vignettes = LARGEURS.map((l, i) => {
       const r = rs[i];
-      const apres = r?.capture ? `<a href="${r.capture}"><img loading="lazy" src="${r.capture}" alt="${echap(chemin)} en ${l} px"></a>` : `<div class="vide">pas de capture</div>`;
+      const apres = r?.capture
+        ? `<a href="${r.capture}"><img loading="lazy" src="${r.capture}" alt="${echap(chemin)} en ${l} px"></a>`
+        : `<div class="vide">pas de capture</div>`;
       const av = avant?.get(chemin + "|" + l);
       if (!avant) return `<figure class="l${l}"><figcaption>${l} px</figcaption>${apres}</figure>`;
-      const imgAvant = av ? `<a href="avant/${av}"><img loading="lazy" src="avant/${av}" alt="avant"></a>` : `<div class="vide">absente avant</div>`;
+      const imgAvant = av
+        ? `<a href="avant/${av}"><img loading="lazy" src="avant/${av}" alt="avant"></a>`
+        : `<div class="vide">absente avant</div>`;
       return `<figure class="l${l} duo"><figcaption>${l} px · avant / après</figcaption><div class="cote">${imgAvant}${apres}</div></figure>`;
     }).join("");
-    const details = rs.flatMap((r) => (r?.erreurs || []).map((e) => `<li>${r.largeur} px · ${echap(e)}</li>`)).slice(0, 12).join("");
+    const details = rs
+      .flatMap((r) => (r?.erreurs || []).map((e) => `<li>${r.largeur} px · ${echap(e)}</li>`))
+      .slice(0, 12)
+      .join("");
     return `<section id="${slug(chemin)}" class="${ko ? "ko" : ""}">
   <header><h2><a href="${echap(BASE + chemin)}">${echap(chemin)}</a></h2>
   <span class="badge ${ko ? "rouge" : ""}">${statut || "injoignable"}</span>
@@ -194,7 +270,10 @@ function ecrireHtml(pages, parPage, liens, avant) {
   <div class="grille">${vignettes}</div>
 </section>`;
   });
-  const nbKo = pages.filter((p) => { const r = parPage.get(p + "|1280"); return !r?.statut || r.statut >= 400; }).length;
+  const nbKo = pages.filter((p) => {
+    const r = parPage.get(p + "|1280");
+    return !r?.statut || r.statut >= 400;
+  }).length;
   const html = `<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Planche du site</title><style>
 body{margin:0;padding:24px 16px;background:#FAF0F2;color:#1F3530;font:14px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
@@ -219,25 +298,54 @@ ${blocs.join("\n")}
 }
 
 function ecrireRapport(pages, parPage, liens) {
-  const l = ["# Planche du site", "", `- Base : ${BASE}`, `- Date : ${new Date().toISOString()}`, `- Pages : ${pages.length} × ${LARGEURS.join(" et ")} px`, ""];
-  const ko = pages.filter((p) => { const r = parPage.get(p + "|1280"); return !r?.statut || r.statut >= 400; });
-  const avecErreurs = pages.filter((p) => LARGEURS.some((w) => parPage.get(p + "|" + w)?.erreurs.length));
-  l.push(`- Pages en erreur HTTP : ${ko.length}`, `- Pages avec erreurs console : ${avecErreurs.length}`, `- Liens internes cassés : ${liens.casses.length} sur ${liens.total}`, "");
+  const l = [
+    "# Planche du site",
+    "",
+    `- Base : ${BASE}`,
+    `- Date : ${new Date().toISOString()}`,
+    `- Pages : ${pages.length} × ${LARGEURS.join(" et ")} px`,
+    "",
+  ];
+  const ko = pages.filter((p) => {
+    const r = parPage.get(p + "|1280");
+    return !r?.statut || r.statut >= 400;
+  });
+  const avecErreurs = pages.filter((p) =>
+    LARGEURS.some((w) => parPage.get(p + "|" + w)?.erreurs.length),
+  );
+  l.push(
+    `- Pages en erreur HTTP : ${ko.length}`,
+    `- Pages avec erreurs console : ${avecErreurs.length}`,
+    `- Liens internes cassés : ${liens.casses.length} sur ${liens.total}`,
+    "",
+  );
   l.push("| Page | Statut | Redirection | Erreurs console (375 / 1280) |", "|---|---|---|---|");
   for (const p of pages) {
     const [a, b] = LARGEURS.map((w) => parPage.get(p + "|" + w));
-    l.push(`| \`${p}\` | ${b?.statut || a?.statut || "injoignable"} | ${b?.redirections.length ? `${b.redirections.join(" → ")} → ${b.final}` : ""} | ${a?.erreurs.length ?? "–"} / ${b?.erreurs.length ?? "–"} |`);
+    l.push(
+      `| \`${p}\` | ${b?.statut || a?.statut || "injoignable"} | ${b?.redirections.length ? `${b.redirections.join(" → ")} → ${b.final}` : ""} | ${a?.erreurs.length ?? "–"} / ${b?.erreurs.length ?? "–"} |`,
+    );
   }
   if (liens.casses.length) {
     l.push("", "## Liens internes cassés", "");
-    for (const c of liens.casses) l.push(`- \`${c.lien}\` (${c.statut || "injoignable"}) depuis ${c.depuis.map((d) => `\`${d}\``).join(", ")}`);
+    for (const c of liens.casses)
+      l.push(
+        `- \`${c.lien}\` (${c.statut || "injoignable"}) depuis ${c.depuis.map((d) => `\`${d}\``).join(", ")}`,
+      );
   }
   if (avecErreurs.length) {
     l.push("", "## Erreurs console", "");
     for (const p of avecErreurs) {
       const toutes = new Map();
-      for (const w of LARGEURS) for (const e of parPage.get(p + "|" + w)?.erreurs || []) toutes.set(e, [...(toutes.get(e) || []), w]);
-      l.push(`### \`${p}\``, "", ...[...toutes].map(([e, ws]) => `- (${ws.join(", ")} px) ${e.replace(/\s+/g, " ")}`), "");
+      for (const w of LARGEURS)
+        for (const e of parPage.get(p + "|" + w)?.erreurs || [])
+          toutes.set(e, [...(toutes.get(e) || []), w]);
+      l.push(
+        `### \`${p}\``,
+        "",
+        ...[...toutes].map(([e, ws]) => `- (${ws.join(", ")} px) ${e.replace(/\s+/g, " ")}`),
+        "",
+      );
     }
   }
   writeFileSync(join(SORTIE, "rapport.md"), l.join("\n") + "\n");
@@ -246,10 +354,12 @@ function ecrireRapport(pages, parPage, liens) {
 function chargerAvant() {
   if (!COMPARE) return null;
   const manifeste = join(COMPARE, "manifest.json");
-  if (!existsSync(manifeste)) throw new Error(`--compare : ${manifeste} introuvable (dossier produit par planche ?)`);
+  if (!existsSync(manifeste))
+    throw new Error(`--compare : ${manifeste} introuvable (dossier produit par planche ?)`);
   cpSync(join(COMPARE, "captures"), join(SORTIE, "avant"), { recursive: true });
   const avant = new Map();
-  for (const r of JSON.parse(readFileSync(manifeste, "utf8")).resultats) if (r.capture) avant.set(r.chemin + "|" + r.largeur, relative("captures", r.capture));
+  for (const r of JSON.parse(readFileSync(manifeste, "utf8")).resultats)
+    if (r.capture) avant.set(r.chemin + "|" + r.largeur, relative("captures", r.capture));
   return avant;
 }
 
@@ -258,7 +368,8 @@ const { chromium } = await import("playwright").catch(() => {
   console.error("Playwright absent : npm ci, puis npx playwright install chromium.");
   process.exit(2);
 });
-if (COMPARE && resolve(COMPARE) === SORTIE) throw new Error("--compare doit viser un autre dossier que la sortie.");
+if (COMPARE && resolve(COMPARE) === SORTIE)
+  throw new Error("--compare doit viser un autre dossier que la sortie.");
 rmSync(SORTIE, { recursive: true, force: true });
 mkdirSync(join(SORTIE, "captures"), { recursive: true });
 const pages = listerPages();
@@ -280,10 +391,24 @@ try {
   const avant = chargerAvant();
   ecrireHtml(pages, parPage, liens, avant);
   ecrireRapport(pages, parPage, liens);
-  writeFileSync(join(SORTIE, "manifest.json"), JSON.stringify({ base: BASE, date: new Date().toISOString(), resultats: resultats.map(({ liens: _, ...r }) => r), liens }, null, 2));
+  writeFileSync(
+    join(SORTIE, "manifest.json"),
+    JSON.stringify(
+      {
+        base: BASE,
+        date: new Date().toISOString(),
+        resultats: resultats.map(({ liens: _, ...r }) => r),
+        liens,
+      },
+      null,
+      2,
+    ),
+  );
   const ko = resultats.filter((r) => !r.statut || r.statut >= 400).length;
   const err = resultats.filter((r) => r.erreurs.length).length;
-  console.log(`Planche : ${relative(process.cwd(), join(SORTIE, "index.html"))} · ${ko} capture(s) en erreur HTTP · ${err} avec erreurs console · ${liens.casses.length} lien(s) cassé(s).`);
+  console.log(
+    `Planche : ${relative(process.cwd(), join(SORTIE, "index.html"))} · ${ko} capture(s) en erreur HTTP · ${err} avec erreurs console · ${liens.casses.length} lien(s) cassé(s).`,
+  );
 } finally {
   await navigateur.close();
   serveur?.kill();
