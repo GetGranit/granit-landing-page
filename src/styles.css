@@ -5,12 +5,40 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@theme inline {
-  --font-sans: "Inter Tight", system-ui, sans-serif;
-  --font-serif: "Libre Caslon Text", "Times New Roman", serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
-  --font-hand: "Just Me Again Down Here", "Libre Caslon Text", cursive;
+/* Marque Granit : jetons de DESIGN.md (racine du dépôt, copie de internal/marque).
+   Les noms suivent le bloc YAML de DESIGN.md. Les composants passent par ces variables,
+   jamais par une couleur ou une police en dur. */
 
+@theme inline {
+  /* Deux familles, pas une de plus. La mono pointe sur Geist (cas 8 validé le 2/11). */
+  --font-sans: "Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-mono: "Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Utilitaires Tailwind de la marque : bg-encre, text-profond, bg-papier, border-filet… */
+  --color-encre: var(--encre);
+  --color-encre-2: var(--encre-2);
+  --color-encre-3: var(--encre-3);
+  --color-encre-halo: var(--encre-halo);
+  --color-profond: var(--profond);
+  --color-menthe: var(--menthe);
+  --color-ciel: var(--ciel);
+  --color-blush: var(--blush);
+  --color-rose: var(--rose);
+  --color-papier: var(--papier);
+  --color-lavis: var(--lavis);
+  --color-texte-secondaire: var(--texte-secondaire);
+  --color-texte-discret: var(--texte-discret);
+  --color-filet: var(--filet);
+  --color-filet-champ: var(--filet-champ);
+  --color-succes: var(--succes);
+  --color-succes-fond: var(--succes-fond);
+  --color-succes-texte: var(--succes-texte);
+  --color-alerte: var(--alerte);
+  --color-alerte-texte: var(--alerte-texte);
+  --color-sur-encre-secondaire: var(--sur-encre-secondaire);
+
+  /* Neutres historiques (bg-bg2, text-text-muted…) : ils suivent leur nouvelle définition plus bas. */
   --color-bg: var(--bg);
   --color-bg2: var(--bg2);
   --color-bg3: var(--bg3);
@@ -20,69 +48,113 @@
   --color-text: var(--text);
   --color-text-soft: var(--text-soft);
   --color-text-muted: var(--text-muted);
-  --color-terra: var(--terra);
-  --color-terra-light: var(--terra-light);
-  --color-terra-hover: var(--terra-hover);
-  --color-terra-glow: var(--terra-glow);
-  --color-sage: var(--sage);
-  --color-sage-light: var(--sage-light);
-  --color-tag-bg: var(--tag-bg);
 
-  --color-background: var(--bg);
-  --color-foreground: var(--text);
-  --color-card: var(--surface);
-  --color-card-foreground: var(--text);
-  --color-popover: var(--surface);
-  --color-popover-foreground: var(--text);
-  --color-primary: var(--terra);
-  --color-primary-foreground: #ffffff;
-  --color-secondary: var(--bg2);
-  --color-secondary-foreground: var(--text);
-  --color-muted: var(--bg2);
-  --color-muted-foreground: var(--text-muted);
-  --color-accent: var(--bg2);
-  --color-accent-foreground: var(--text);
-  --color-destructive: oklch(0.577 0.245 27.325);
-  --color-destructive-foreground: #ffffff;
-  --color-input: var(--border);
-  --color-ring: var(--terra);
-  --color-ring-offset-background: var(--bg);
+  /* Composants shadcn (src/components/ui/) */
+  --color-background: var(--rose);
+  --color-foreground: var(--encre);
+  --color-card: var(--papier);
+  --color-card-foreground: var(--encre);
+  --color-popover: var(--papier);
+  --color-popover-foreground: var(--encre);
+  --color-primary: var(--encre);
+  --color-primary-foreground: var(--menthe);
+  --color-secondary: var(--lavis);
+  --color-secondary-foreground: var(--encre);
+  --color-muted: var(--lavis);
+  --color-muted-foreground: var(--texte-secondaire);
+  --color-accent: var(--lavis);
+  --color-accent-foreground: var(--encre);
+  --color-destructive: var(--alerte);
+  --color-destructive-foreground: var(--rose);
+  --color-input: var(--filet-champ);
+  --color-ring: var(--profond);
+  --color-ring-offset-background: var(--rose);
 
+  /* Ombres Tailwind (shadow-sm…2xl) : même géométrie que Tailwind, teinte encre au lieu du noir. */
+  --shadow-2xs: 0 1px rgb(31 53 48 / 0.05);
+  --shadow-xs: 0 1px 2px 0 rgb(31 53 48 / 0.05);
+  --shadow-sm: 0 1px 3px 0 rgb(31 53 48 / 0.1), 0 1px 2px -1px rgb(31 53 48 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(31 53 48 / 0.1), 0 2px 4px -2px rgb(31 53 48 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(31 53 48 / 0.1), 0 4px 6px -4px rgb(31 53 48 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(31 53 48 / 0.1), 0 8px 10px -6px rgb(31 53 48 / 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgb(31 53 48 / 0.25);
+  --shadow-carte: var(--ombre-carte);
+
+  /* Rayons : ceux du site (mise en page gardée) et ceux de DESIGN.md (rounded-carte…). */
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 18px;
   --radius-xl: 28px;
+  --radius-pastille: var(--rayon-pastille);
+  --radius-carte: var(--rayon-carte);
+  --radius-fenetre: var(--rayon-fenetre);
+  --radius-bouton: var(--rayon-bouton);
 }
 
 :root {
-  /* ── Light editorial canvas (warm cream + terracotta) ── */
-  --bg: #ffffff;
-  --bg2: #faf6ee;
-  --bg3: #f1ebdd;
-  --surface: #ffffff;
-  --border: #e8e2d3;
-  --border2: #d4cdb9;
-  --text: #0f0c08;
-  --text-soft: #3a342d;
-  --text-muted: #7a7368;
-  --terra: #d4583a;
-  --terra-light: #fbe8e0;
-  --terra-hover: #b94a2f;
-  --terra-soft: #e8a190;
-  --terra-glow: #ff8a6a;
-  --dark: #1c1108;
-  --sage: #5c9e6b;
-  --sage-light: #e4efe6;
-  --tag-bg: #f5efe2;
+  /* ── Couleurs DESIGN.md ── */
+  --encre: #1F3530;         /* fonds sombres, texte, logo sur clair */
+  --encre-2: #182A26;       /* carte posée sur l'encre */
+  --encre-3: #10211D;       /* le plus sombre */
+  --encre-halo: #24413A;    /* survol du bouton principal, filigrane sur encre */
+  --profond: #2F7A64;       /* liens, accents, focus, succès lisibles sur clair */
+  --menthe: #A8DCCB;        /* accent sur encre ; sur clair, formes seulement */
+  --ciel: #CFE3F6;          /* formes seulement */
+  --blush: #FAEAEF;         /* formes seulement */
+  --rose: #FAF0F2;          /* fond de page, texte et logo sur encre */
+  --papier: #FFFDFD;        /* cartes, champs, fenêtres (jamais de blanc pur) */
+  --lavis: #F4EEF0;         /* sections alternées, fonds teintés, états « en attente » */
+  --texte-secondaire: rgba(31, 53, 48, 0.7);
+  --texte-discret: rgba(31, 53, 48, 0.5);  /* sur-titres seulement, jamais une phrase */
+  --filet: rgba(31, 53, 48, 0.12);
+  --filet-champ: rgba(31, 53, 48, 0.2);    /* bordure des champs de formulaire */
+  --succes: #2F7A64;
+  --succes-fond: rgba(168, 220, 203, 0.6);
+  --succes-texte: #1D5646;
+  --alerte: #C8504A;
+  --alerte-texte: #A9433D;
+  /* Texte secondaire sur fond encre : rosé à 70 % (kit de marque, --sur-encre-muted). */
+  --sur-encre-secondaire: rgba(250, 240, 242, 0.7);
 
-  --gradient-mesh: radial-gradient(at 20% 10%, color-mix(in oklab, var(--terra) 38%, transparent) 0px, transparent 55%),
-                   radial-gradient(at 85% 0%, color-mix(in oklab, var(--terra-glow) 30%, transparent) 0px, transparent 50%),
-                   radial-gradient(at 50% 90%, color-mix(in oklab, var(--terra) 22%, transparent) 0px, transparent 60%);
+  --degrade-marque: linear-gradient(90deg, #FAEAEF 0%, #A8DCCB 52%, #CFE3F6 100%);
 
-  --gradient-terra: linear-gradient(135deg, var(--terra-glow) 0%, var(--terra) 100%);
-  --shadow-glass: 0 1px 0 0 rgba(255,255,255,0.6) inset, 0 -1px 0 0 rgba(0,0,0,0.04) inset, 0 30px 60px -30px rgba(28,17,8,0.18), 0 8px 24px -12px rgba(28,17,8,0.10);
-  --shadow-soft: 0 1px 2px rgba(28,17,8,0.04), 0 8px 30px -10px rgba(28,17,8,0.08);
-  --shadow-terra: 0 20px 50px -20px color-mix(in oklab, var(--terra) 55%, transparent);
+  /* ── Ombres, toujours teintées d'encre ── */
+  --ombre-carte: 0 0 0 1px rgba(31, 53, 48, 0.12), 0 30px 60px -36px rgba(31, 53, 48, 0.45);
+  --ombre-douce: 0 1px 2px rgba(31, 53, 48, 0.04), 0 8px 30px -10px rgba(31, 53, 48, 0.08);
+  --ombre-bouton: 0 10px 24px -10px rgba(31, 53, 48, 0.35);
+  --ombre-bouton-survol: 0 18px 40px -12px rgba(31, 53, 48, 0.4);
+
+  /* ── Rayons DESIGN.md ── */
+  --rayon-pastille: 8px;
+  --rayon-carte: 14px;
+  --rayon-fenetre: 12px;
+  --rayon-bouton: 999px;
+
+  /* ── Neutres historiques, corrigés à leur définition (table §2.4, cas 5, 6 et 7) ── */
+  --bg: var(--rose);
+  --bg2: var(--lavis);
+  --bg3: var(--lavis);
+  --surface: var(--papier);
+  --border: var(--filet);
+  --border2: var(--filet-champ);
+  --text: var(--encre);
+  --text-soft: var(--texte-secondaire);
+  --text-muted: var(--texte-secondaire);
+
+  /* ── Alias de transition, supprimés en fin de bascule ──
+     Chaque ancienne variable pointe vers le jeton de son rôle principal (table de correspondance).
+     Les balayeurs remplacent chaque usage selon son rôle réel, puis on supprime ces lignes. */
+  --terra: var(--profond);              /* liens, accents, focus, bordures de mise en avant */
+  --terra-hover: var(--profond);        /* liens dans un texte */
+  --terra-light: var(--succes-fond);    /* pastilles d'icône, sélection légère */
+  --terra-soft: var(--menthe);          /* accent sur fond sombre */
+  --terra-glow: var(--menthe);          /* halos, décor */
+  --sage: var(--succes);                /* succès : forme */
+  --sage-light: var(--succes-fond);     /* succès : fond de pastille */
+  --tag-bg: var(--lavis);               /* fond teinté */
+  --gradient-terra: linear-gradient(var(--encre), var(--encre)); /* bouton, avatar : aplat encre */
+  --shadow-terra: var(--ombre-carte);
+  --shadow-soft: var(--ombre-douce);
 
   --radius: 12px;
   --border-color: var(--border);
@@ -90,22 +162,28 @@
 }
 
 @layer base {
-  * { border-color: var(--border); }
+  * { border-color: var(--filet); }
   html { scroll-behavior: smooth; }
   html, body {
-    background-color: var(--bg);
-    color: var(--text);
+    background-color: var(--rose);
+    color: var(--encre);
     font-family: var(--font-sans);
     font-weight: 400;
+    /* Source Serif 4 toujours à l'œil 20 ; Geist n'a pas cet axe et l'ignore. */
+    font-variation-settings: "opsz" 20;
+    /* Ni faux gras ni faux italique (DESIGN.md) : un 700 prend la graisse chargée la plus proche. */
+    font-synthesis: none;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
-  ::selection { background: var(--terra-light); color: var(--text); }
+  h1, h2, h3, h4, h5, h6, .font-serif { font-variation-settings: "opsz" 20; }
+  /* Chiffres en colonne là où l'ancienne mono servait aux chiffres (cas 8). */
+  .font-mono, [style*="var(--font-mono)"] { font-variant-numeric: tabular-nums; }
+  ::selection { background: var(--succes-fond); color: var(--encre); }
 }
 
-/* ── Custom cursor: terracotta dot (fine-pointer devices only) ── */
+/* ── Curseur personnalisé : petit losange vert profond (pointeurs fins seulement) ── */
 .cursor-hidden, .cursor-hidden * { cursor: none !important; }
-/* small terracotta diamond cursor — constant size */
 .cursor-dot {
   position: fixed;
   top: 0; left: 0;
@@ -120,158 +198,117 @@
   content: "";
   display: block;
   width: 100%; height: 100%;
-  border: 1.5px solid var(--terra);
+  border: 1.5px solid var(--profond);
   transform: rotate(45deg);
 }
 
 @layer components {
+  /* Sur-titre : Geist 500, 12 px, capitales, texte discret (cas 1). Sur encre : menthe. */
   .eyebrow {
-    font-family: var(--font-mono);
-    font-size: 11px;
+    font-family: var(--font-sans);
+    font-size: 12px;
     font-weight: 500;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--terra);
+    color: var(--texte-discret);
   }
 
   .h1-hero {
     font-family: var(--font-serif);
-    font-weight: 400;
+    font-variation-settings: "opsz" 20;
+    font-weight: 300;
     font-size: clamp(52px, 7.5vw, 124px);
     letter-spacing: -0.025em;
     line-height: 1.0;
-    color: var(--text);
+    color: var(--encre);
   }
 
   .h2-section {
     font-family: var(--font-serif);
-    font-weight: 400;
+    font-variation-settings: "opsz" 20;
+    font-weight: 300;
     font-size: clamp(34px, 4vw, 60px);
     letter-spacing: -0.02em;
     line-height: 1.05;
-    color: var(--text);
+    color: var(--encre);
   }
 
   .body-lg {
     font-size: 18px;
     line-height: 1.55;
-    color: var(--text-soft);
+    color: var(--texte-secondaire);
     font-weight: 400;
   }
 
-  .accent-italic, .mark-terra {
-    font-style: italic;
-    font-weight: 400;
-    color: var(--terra);
+  /* Accent de titre : la couleur, pas l'italique. Vert profond sur clair, menthe sur encre. */
+  .accent-italic {
+    font-style: normal;
+    font-weight: inherit;
+    color: var(--profond);
   }
 
-  /* handwriting accent (Parenthesis "sending dreams" texture) */
-  .hand {
-    font-family: var(--font-hand);
-    line-height: 0.92;
-    color: var(--terra);
+  /* Section forte (DESIGN « section-sombre ») : encre, texte rosé, accent menthe. */
+  .section-sombre {
+    background: var(--encre);
+    color: var(--rose);
   }
+  .section-sombre .accent-italic,
+  .section-sombre .eyebrow { color: var(--menthe); }
 
-  /* hand-drawn terracotta underline */
-  .underline-terra {
-    position: relative;
-    display: inline-block;
-  }
-  .underline-terra::after {
-    content: "";
-    position: absolute;
-    left: -1%; right: -1%;
-    bottom: -0.14em;
-    height: 0.5em;
-    background: no-repeat center/100% 100%
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 24' fill='none'%3E%3Cpath d='M3 15 C 60 6, 120 6, 180 12 S 260 20, 297 8' stroke='%23d4583a' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
-  }
-
-  /* editorial hairline rule */
-  .rule { border-top: 1px solid var(--border); }
+  /* filet éditorial */
+  .rule { border-top: 1px solid var(--filet); }
 
   .num-tabular { font-feature-settings: "tnum" 1; font-variant-numeric: tabular-nums; }
 
-  /* === Liquid Glass (light) === */
-  .glass {
-    background: linear-gradient(180deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.30) 100%);
-    backdrop-filter: blur(18px) saturate(1.4);
-    -webkit-backdrop-filter: blur(18px) saturate(1.4);
-    border: 1px solid rgba(255,255,255,0.55);
-    box-shadow: var(--shadow-glass);
-  }
-  .glass-dark {
-    background: linear-gradient(180deg, rgba(28,17,8,0.6) 0%, rgba(28,17,8,0.4) 100%);
-    backdrop-filter: blur(20px) saturate(1.4);
-    -webkit-backdrop-filter: blur(20px) saturate(1.4);
-    border: 1px solid rgba(255,255,255,0.10);
-    box-shadow: 0 1px 0 0 rgba(255,255,255,0.08) inset, 0 30px 60px -30px rgba(0,0,0,0.5);
-  }
-  .glass-subtle {
-    background: linear-gradient(180deg, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.18) 100%);
-    backdrop-filter: blur(14px) saturate(1.2);
-    -webkit-backdrop-filter: blur(14px) saturate(1.2);
-    border: 1px solid color-mix(in oklab, var(--border) 60%, transparent);
-  }
-  .glass-pill {
-    background: rgba(255,255,255,0.6);
-    backdrop-filter: blur(20px) saturate(1.6);
-    -webkit-backdrop-filter: blur(20px) saturate(1.6);
-    border: 1px solid rgba(255,255,255,0.6);
-    box-shadow: 0 1px 0 0 rgba(255,255,255,0.8) inset, 0 10px 30px -10px rgba(28,17,8,0.18);
-  }
-
-  /* === Buttons === */
+  /* === Boutons === */
+  /* Principal : fond encre, texte menthe, survol encre-halo. */
   .btn-primary {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: var(--gradient-terra);
-    color: #fff;
+    background: var(--encre);
+    color: var(--menthe);
     font-weight: 500;
     font-size: 14px;
     padding: 11px 20px;
-    border-radius: 999px;
+    border-radius: var(--rayon-bouton);
     border: none;
-    box-shadow: 0 1px 0 rgba(255,255,255,0.25) inset, 0 10px 24px -10px color-mix(in oklab, var(--terra) 70%, transparent);
-    transition: transform 240ms var(--ease-out-quint), box-shadow 240ms var(--ease-out-quint), filter 240ms var(--ease-out-quint);
+    box-shadow: var(--ombre-bouton);
+    transition: transform 240ms var(--ease-out-quint), box-shadow 240ms var(--ease-out-quint), background-color 240ms var(--ease-out-quint);
   }
   .btn-primary:hover {
     transform: translateY(-1px);
-    filter: brightness(1.05);
-    box-shadow: 0 1px 0 rgba(255,255,255,0.3) inset, 0 18px 40px -12px color-mix(in oklab, var(--terra) 75%, transparent);
+    background: var(--encre-halo);
+    box-shadow: var(--ombre-bouton-survol);
   }
+  .btn-primary:focus-visible { outline: 2px solid var(--profond); outline-offset: 2px; }
   .btn-primary .arrow { transition: transform 240ms var(--ease-out-quint); }
   .btn-primary:hover .arrow { transform: translateX(4px); }
 
-  .btn-ghost {
+  /* Sur fond encre : fond rosé, texte encre (DESIGN « bouton-clair »). */
+  .btn-clair {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(255,255,255,0.5);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    color: var(--text);
+    background: var(--rose);
+    color: var(--encre);
     font-weight: 500;
     font-size: 14px;
     padding: 11px 20px;
-    border-radius: 999px;
-    border: 1px solid color-mix(in oklab, var(--border2) 70%, transparent);
-    transition: all 240ms var(--ease-out-quint);
+    border-radius: var(--rayon-bouton);
+    border: none;
+    transition: transform 240ms var(--ease-out-quint), background-color 240ms var(--ease-out-quint);
   }
-  .btn-ghost:hover {
-    border-color: var(--text);
-    background: rgba(255,255,255,0.75);
-    transform: translateY(-1px);
-  }
+  .btn-clair:hover { transform: translateY(-1px); background: var(--papier); }
+  .btn-clair:focus-visible { outline: 2px solid var(--menthe); outline-offset: 2px; }
 
   .status-dot {
     width: 6px; height: 6px; border-radius: 9999px;
-    background: var(--sage); display: inline-block; position: relative;
+    background: var(--succes); display: inline-block; position: relative;
   }
   .status-dot::after {
     content: ""; position: absolute; inset: -4px;
-    border-radius: 9999px; background: var(--sage);
+    border-radius: 9999px; background: var(--succes);
     opacity: 0.35; animation: pulse-dot 2s ease-out infinite;
   }
   @keyframes pulse-dot {
@@ -283,68 +320,21 @@
     transition: border-color 280ms var(--ease-out-quint), transform 280ms var(--ease-out-quint), box-shadow 280ms var(--ease-out-quint);
   }
   .card-hover:hover {
-    border-color: var(--border2);
+    border-color: var(--filet-champ);
     transform: translateY(-3px);
-    box-shadow: var(--shadow-soft);
-  }
-
-  /* === Marquee === */
-  .marquee {
-    display: flex;
-    overflow: hidden;
-    mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
-  }
-  .marquee-track {
-    display: flex;
-    gap: 56px;
-    animation: marquee 38s linear infinite;
-    flex-shrink: 0;
-    padding-right: 56px;
-    align-items: center;
-  }
-  @keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-100%); }
-  }
-
-  /* === Shimmer text === */
-  .shimmer {
-    background: linear-gradient(90deg, var(--text) 0%, var(--text) 35%, color-mix(in oklab, var(--terra) 80%, white) 50%, var(--text) 65%, var(--text) 100%);
-    background-size: 200% 100%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: shimmer 6s linear infinite;
-  }
-  @keyframes shimmer {
-    from { background-position: 200% 0; }
-    to { background-position: -200% 0; }
-  }
-
-  /* === Floats === */
-  @keyframes float-slow {
-    0%, 100% { transform: translateY(0) translateX(0); }
-    50% { transform: translateY(-20px) translateX(10px); }
-  }
-  .float-slow { animation: float-slow 14s ease-in-out infinite; }
-
-  /* === Mesh background === */
-  .mesh-bg {
-    background-image: var(--gradient-mesh);
-    background-color: var(--bg);
-  }
-
-  /* === Grain === */
-  .grain::after {
-    content: "";
-    position: absolute; inset: 0;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.5'/></svg>");
-    opacity: 0.06;
-    pointer-events: none;
-    mix-blend-mode: overlay;
+    box-shadow: var(--ombre-douce);
   }
 }
+
+/* ── Transition du logo, supprimée en fin de bascule ──
+   src/assets/logo.svg est désormais le logo horizontal (symbole + nom vectorisé). Nav, Footer, pec/ui,
+   silmo et webinar tapent encore « Granit » juste après l'image : on masque ce nom tapé pour ne pas
+   l'afficher deux fois, et on rend ses proportions au logo quand le composant force un carré de 28 px (pec/ui).
+   Le logo est inliné par Vite (data:…, viewBox 445.733) ; les balayeurs retirent le <span>, puis ce bloc. */
+img[src*="445.733"] + span,
+img[src*="/logo-"][src$=".svg"] + span { display: none; }
+img[src*="445.733"][width],
+img[src*="/logo-"][src$=".svg"][width] { width: auto; height: 28px; }
 
 /* Testimonials marquee — right to left */
 .testimonials-marquee {
