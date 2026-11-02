@@ -41,7 +41,7 @@ export function AjoutPortail({ platform, onAdded, onCancel }: Props) {
           value={login}
           onChange={(e) => setLogin(e.target.value)}
           className={inputClass}
-          style={{ borderColor: "var(--border)" }}
+          style={{ borderColor: "var(--filet-champ)" }}
         />
       </Field>
       <Field label="Mot de passe">
@@ -52,7 +52,7 @@ export function AjoutPortail({ platform, onAdded, onCancel }: Props) {
           onChange={(e) => setPassword(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && add()}
           className={inputClass}
-          style={{ borderColor: "var(--border)" }}
+          style={{ borderColor: "var(--filet-champ)" }}
         />
       </Field>
       {platform.tfa !== "aucune" && (

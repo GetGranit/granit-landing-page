@@ -37,9 +37,9 @@ export function StepContact({
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState(initialEmail ?? "");
   const [err, setErr] = useState<{ champ: Champ; texte: string } | null>(null);
-  const field = `w-full rounded-xl border-[1.5px] bg-white px-4 py-3 text-[17px] ${focusRing}`;
+  const field = `w-full rounded-xl border-[1.5px] bg-papier px-4 py-3 text-[17px] ${focusRing}`;
   const fieldStyle = (c: Champ) => ({
-    borderColor: err?.champ === c ? "var(--terra)" : "var(--border2)",
+    borderColor: err?.champ === c ? "var(--alerte)" : "var(--filet-champ)",
     color: "var(--text)",
   });
   const a11y = (c: Champ) =>
@@ -48,8 +48,8 @@ export function StepContact({
   return (
     <Screen id="contact">
       <div
-        className="grid h-16 w-16 place-items-center rounded-full font-serif text-[26px] text-white"
-        style={{ background: "var(--gradient-terra)" }}
+        className="grid h-16 w-16 place-items-center rounded-full font-serif text-[26px] text-rose"
+        style={{ background: "var(--encre)" }}
         aria-hidden
       >
         P
@@ -75,7 +75,7 @@ export function StepContact({
       >
         <input
           className={field}
-          style={{ borderColor: "var(--border2)", color: "var(--text)" }}
+          style={{ borderColor: "var(--filet-champ)", color: "var(--text)" }}
           placeholder="Prénom"
           autoComplete="given-name"
           value={prenom}
@@ -111,7 +111,7 @@ export function StepContact({
             id="contact-erreur"
             role="alert"
             className="text-[14px]"
-            style={{ color: "var(--terra-hover)" }}
+            style={{ color: "var(--alerte-texte)" }}
           >
             {err.texte}
           </p>
@@ -120,7 +120,7 @@ export function StepContact({
           <p
             role="alert"
             className="rounded-xl px-3 py-2 text-[15px]"
-            style={{ background: "#fbf0dc", color: "#7a4f12" }}
+            style={{ background: "var(--lavis)", color: "var(--encre)" }}
           >
             {error}
           </p>

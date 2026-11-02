@@ -83,10 +83,10 @@ function Etape({ label, ok, working }: { label: string; ok: boolean; working: bo
       <span
         className={`grid h-7 w-7 place-items-center rounded-full border-[1.5px] text-[14px] ${working && !reduce ? "animate-spin" : ""}`}
         style={{
-          borderColor: ok ? "var(--sage)" : "var(--terra)",
+          borderColor: ok ? "var(--succes)" : "var(--profond)",
           borderTopColor: working ? "transparent" : undefined,
-          background: ok ? "var(--sage)" : "#fff",
-          color: "#fff",
+          background: ok ? "var(--succes)" : "var(--papier)",
+          color: "var(--rose)",
         }}
       >
         {ok ? "✓" : ""}
@@ -126,7 +126,7 @@ function Formulaire({
       style={{ borderColor: "var(--border2)" }}
     >
       <div
-        className="px-3 py-1.5 text-[11px] text-white"
+        className="px-3 py-1.5 text-[11px] text-papier"
         style={{ background: "#34495e", fontFamily: "var(--font-mono)", letterSpacing: ".04em" }}
       >
         PORTAIL {portail.toUpperCase()} · SIMULATION DE PRISE EN CHARGE
@@ -138,7 +138,7 @@ function Formulaire({
               {k}
             </dt>
             <dd
-              className="min-h-[28px] rounded border bg-white px-2 py-1"
+              className="min-h-[28px] rounded border bg-papier px-2 py-1"
               style={{ borderColor: "#cfd6de", fontFamily: "var(--font-mono)", color: "#111" }}
             >
               {on ? <Tape text={v} /> : <span style={{ color: "#9aa3ad" }}>…</span>}
@@ -150,7 +150,7 @@ function Formulaire({
             Prise en charge
           </dt>
           <dd
-            className="rounded border border-dashed bg-white px-2 py-1"
+            className="rounded border border-dashed bg-papier px-2 py-1"
             style={{ borderColor: "#cfd6de", color: "#56606b" }}
           >
             {chiffre ? "⌛ calcul de la part mutuelle…" : "en attente"}
@@ -172,7 +172,7 @@ function Tape({ text }: { text: string }) {
   return (
     <>
       {text.slice(0, n)}
-      {n >= text.length && <span style={{ color: "var(--sage)" }}> ✓</span>}
+      {n >= text.length && <span style={{ color: "var(--succes)" }}> ✓</span>}
     </>
   );
 }

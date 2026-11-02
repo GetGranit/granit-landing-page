@@ -62,7 +62,7 @@ export function StepCapture({
         <p
           role="alert"
           className="rounded-xl px-3 py-2 text-[15px]"
-          style={{ background: "var(--amber-light, #fbf0dc)", color: "#7a4f12" }}
+          style={{ background: "var(--lavis)", color: "var(--encre)" }}
         >
           {error}
         </p>
@@ -91,7 +91,7 @@ export function StepCapture({
  */
 function CardFrame({ onPick, onFile }: { onPick: () => void; onFile: (f: File) => void }) {
   const c = "absolute h-6 w-6 border-[3px]";
-  const col = { borderColor: "var(--terra)" };
+  const col = { borderColor: "var(--profond)" };
   const [survol, setSurvol] = useState(false);
   return (
     <button
@@ -110,9 +110,9 @@ function CardFrame({ onPick, onFile }: { onPick: () => void; onFile: (f: File) =
       }}
       aria-label="Importer une photo ou un PDF de la carte"
       className={`relative grid aspect-[1.586] w-full max-w-[340px] cursor-pointer place-items-center rounded-2xl border transition-colors ${
-        survol ? "border-[var(--terra)]" : "border-transparent hover:border-[var(--terra)]"
+        survol ? "border-[var(--profond)]" : "border-transparent hover:border-[var(--profond)]"
       } ${focusRing}`}
-      style={{ background: survol ? "color-mix(in oklab, var(--terra) 8%, var(--bg2))" : "var(--bg2)" }}
+      style={{ background: survol ? "color-mix(in oklab, var(--profond) 8%, var(--bg2))" : "var(--bg2)" }}
     >
       <span
         className={`${c} left-2 top-2 rounded-tl-lg border-b-0 border-r-0`}
