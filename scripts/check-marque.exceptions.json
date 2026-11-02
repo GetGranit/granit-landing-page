@@ -1,0 +1,26 @@
+{
+  "_lisez_moi": [
+    "Exceptions de check-marque : les cas où une couleur, une police ou un nom ressemble à une violation sans en être une.",
+    "Chaque exception dit pourquoi (champ raison) ; la relecture de la PR la juge comme du code.",
+    "Champs : fichier (chemin ou glob, * et ** permis), regle (ancienne-variable, couleur-hors-palette,",
+    "police-hors-marque, ombre-brune, ou * pour toutes), motif (facultatif : texte cherché dans la ligne,",
+    "ou /regex/drapeaux), raison (obligatoire).",
+    "Pour une seule ligne, on peut aussi écrire le commentaire « check-marque: ignorer » sur la ligne même.",
+    "Une exception que plus rien ne déclenche est signalée par le script : retirez-la.",
+    "Ce n'est PAS l'endroit pour garder l'ancienne marque : une vraie couleur hors palette se remplace par un jeton."
+  ],
+  "exceptions": [
+    {
+      "fichier": "src/components/DashboardMockup.tsx",
+      "regle": "couleur-hors-palette",
+      "motif": "/id: \"#\\d{4}\"/",
+      "raison": "Numéros de dossier fictifs de la maquette (#4816…#4821), pas des couleurs."
+    },
+    {
+      "fichier": "src/components/ui/chart.tsx",
+      "regle": "couleur-hors-palette",
+      "motif": "/\\[(stroke|fill)='#/",
+      "raison": "Sélecteurs shadcn qui ciblent les couleurs par défaut posées par Recharts ([stroke='#ccc']) pour les remplacer par des jetons ; on ne peint rien avec."
+    }
+  ]
+}
