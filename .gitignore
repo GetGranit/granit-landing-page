@@ -37,3 +37,7 @@ dist-ssr
 *.sln
 *.sw?
 
+
+# Filet de la marque (planche de captures, récap check-marque)
+planche/
+check-marque-rapport.md
