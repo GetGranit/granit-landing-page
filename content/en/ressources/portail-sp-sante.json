@@ -1,0 +1,171 @@
+{
+  "slug": "portail-sp-sante",
+  "id": "A3",
+  "category": "plateformes",
+  "categoryName": "Platforms and portals",
+  "type": "plateforme",
+  "plateforme": "sp-sante",
+  "title": "SP Santé TP for opticians: professional portal, coverage approval, statuses, and payment",
+  "primaryKeyword": "sp sante tp",
+  "keywordCluster": [
+    "tp sp sante",
+    "sp santé professionnel de santé",
+    "sp sante professionnel de sante",
+    "sp santé tp",
+    "sp sante tp optique",
+    "sp sante professionnels de sante",
+    "sp sante pec",
+    "tp sp santé",
+    "sp santé professionnel",
+    "sp santé opticien partenaire"
+  ],
+  "parentSlug": "portails-tiers-payant",
+  "level": "Fille",
+  "author": {
+    "name": "Olivier",
+    "jobTitle": "Writer, third-party payment expert",
+    "photo": "/auteurs/olivier.jpg",
+    "url": null
+  },
+  "reviewer": {
+    "name": "Nathalie",
+    "jobTitle": "Writer, optical industry expert",
+    "photo": "/auteurs/nathalie.jpg",
+    "url": null
+  },
+  "datePublished": "2026-10-09",
+  "dateModified": "2026-10-09",
+  "checkedOn": "2026-10-07",
+  "wordCount": 2135,
+  "readTime": 9,
+  "metaDescription": "SP Santé TP for opticians: network agreement, logging in to the professional portal, optical coverage requests, statuses, and payment. The step-by-step guide.",
+  "contentHtml": "<p><strong>SP Santé is not a supplementary health insurer (mutuelle): it is a third-party payment brand operated by Cetip (Cegedim group), whose professional portal is on spsante.fr.</strong> The service pays the optician on behalf of supplementary health insurers, after a coverage request entered online. To offer SP Santé third-party payment (tiers payant: the patient pays nothing upfront, insurers pay the provider directly), known as SP Santé TP, the store must first sign an agreement directly with SP Santé. It then enters each optical request in a dedicated service and reads the insurer’s decision on the portal. Then it e-transmits the invoice under the AMC code on the customer’s certificate. This page goes through each step, from network agreement to bank transfer, with the traps our agents see on this portal.</p><div class=\"key-takeaways\"><strong>Key takeaways</strong><ul><li>An optician signs a network agreement directly with SP Santé, through a form on spsante.fr. No contract, no SP Santé third-party payment.</li><li>Optical coverage approval is handled in a separate service, opened with the “Accéder au service” (Access the service) button, and the file must be printed before it can be sent.</li><li>Only expenses marked “SP” on the certificate fall under SP Santé, and the invoice goes out under the AMC code printed on that certificate.</li><li>The INSEE number on the certificate may differ from the one on the Carte Vitale (French health insurance card): use the one on the certificate.</li><li>The software must be set to separate processing (DRE or clearinghouse), otherwise the invoices do not arrive.</li></ul></div><h2 id=\"sp-sante-mutuelles\">What is SP Santé, and which insurers go through it?</h2><p>SP Santé is a third-party payment brand of the Santé Pharma association, run by Cegedim through its Cetip entity. It links supplementary health insurers with healthcare professionals, including opticians.</p><div data-bloc=\"chiffres\"></div><p>In practice, SP Santé does not reimburse anything from its own insurer funds. The service receives the store’s request, forwards it to the supplementary insurer (the AMC, supplementary health insurance), then pays the optician once the invoice is accepted. According to SP Santé’s public pages, the service reports more than €2 billion in financial flows and more than 80 supplementary health insurers connected directly.</p><p>SP Santé belongs to the same family as iSanté: Cegedim presents the two brands together in its <a href=\"https://www.cegedim-assurances.com/fr-fr/ext-services-metiers/Pages/gestion-externalise-tiers-payant.aspx\">third-party payment management offering</a>, with pricing filters for optical care. At the counter, this explains why some screens and some letters say Cetip or Cegedim rather than SP Santé. To place SP Santé among the other operators, see our overview of <a href=\"/ressources/portails-tiers-payant\">third-party payment portals</a>.</p><p>On the optical side, the public list of active insurers by line of care, published on spsante.fr, counts 24 open supplementary insurer codes. When you submit a request, the optical portal also has you choose the organization from a selector. The list below shows what this selector offers, as observed by our agents on the portal in October 2026: it includes, for example, Gerep and Interiale Sigmage. It does not mean an insurer goes only through SP Santé: the same organization may have contracts managed elsewhere.</p><div data-bloc=\"organismes\"></div><div class=\"callout callout--tip\"><p><strong>The right reflex:</strong> before searching for the insurer’s name in the selector, look at the customer’s certificate. Only expenses marked “SP” are covered by SP Santé. One area shows, by line of care, a rate or whether a coverage approval is required.</p></div><p>A recent change concerns the civil service. SP Santé announces that, as of January 1, 2026, Interiale is open for civil service policyholders, in dental and optical care, under code 29993227. The private-sector Sigmage card keeps code 00403220. Two customers covered under similar names may therefore fall under two different AMC codes.</p><h2 id=\"sp-sante-espace-pro\">How do you access the SP Santé professional portal?</h2><p>An optician gets access to the SP Santé professional portal, on spsante.fr, by signing a network agreement directly, through the online <a href=\"https://www.spsante.fr/components/identity/unauthenticated/request-conv.html\">network agreement request form</a>. According to SP Santé’s Q&amp;A, going through Inter-AMC is reserved for other professions. Without a contract with SP Santé, a store cannot offer SP Santé third-party payment.</p><h3>The optician network agreement steps</h3><ol class=\"steps\"><li><strong>Open the form and choose the Opticien (Optician) category.</strong> The network agreement request form is available without an account.</li><li><strong>Enter the store’s identity.</strong> FINESS or Adeli identifier, RPPS number, company name, SIRET number, trade name, and store contact.</li><li><strong>Specify the e-transmission method.</strong> Flow, clearinghouse (OCT, technical clearing organization), software, and vendor.</li><li><strong>Attach the supporting documents and bank details.</strong> IBAN and BIC of the account that will receive the bank transfers.</li><li><strong>Read and accept the agreement.</strong> Then validate the request.</li><li><strong>Receive the confirmation email.</strong> It explains how to create the online account.</li></ol><p>The e-transmission method declared in step three is not an administrative detail. It determines how your invoices will reach SP Santé.</p><h3>Logging in to the portal</h3><p>Each store logs in with its username and password, then enters a 6-digit code sent by email by Cetip. This is what our agents observe on the portal. The email address linked to the account therefore has to be checked at login time: a shared store mailbox keeps the team from getting stuck when the account holder is away.</p><p>Once logged in, the account lets you enter and track optical coverage requests. It also lets you track your payments and check patients’ eligibility in real time. The pages we consulted give no optician-specific procedure for a forgotten password or a locked account. In that case, call the SP Santé call center (0820 20 61 88).</p><h2 id=\"sp-sante-prise-en-charge\">How do you submit an optical coverage request on SP Santé?</h2><p>An SP Santé optical coverage request is made in a separate service, opened from the portal with the “Accéder au service” button. The file must be printed before it can be sent.</p><p>This mandatory printing often catches people off guard the first time: until it is done, the transmission does not go out, as our agents have observed on the portal. Keep the printed copy with the quote: it serves as a record if the decision is slow or if the amount paid does not match.</p><h3>Before entering: read the certificate</h3><p>Everything starts from the customer’s SP Santé third-party payment certificate, not their Carte Vitale. Three pieces of information on it are decisive:</p><ul><li><strong>The “SP” mention on the optical line.</strong> Without it, the expense is not covered by SP Santé.</li><li><strong>The area by line of care.</strong> It shows a rate or whether a coverage approval is required for optical care.</li><li><strong>The AMC code.</strong> Each supplementary insurer has its own code, and the invoice will be e-transmitted under this code.</li><li><strong>The INSEE number and date of birth.</strong> The invoice must use them exactly as they appear on the certificate. This number may differ from the one on the Carte Vitale.</li></ul><h3>Entering the request</h3><ol class=\"steps\"><li><strong>Log in to the SP Santé account.</strong> Username, password, then the code received by email.</li><li><strong>Open the optical coverage service.</strong> “Accéder au service” button.</li><li><strong>Choose the organization in the selector.</strong> Consistent with the customer’s certificate.</li><li><strong>Enter the beneficiary and the equipment.</strong> INSEE number and date of birth from the certificate, items from the quote.</li><li><strong>Print the file.</strong> A mandatory step before transmission.</li><li><strong>Send, then track the decision.</strong> The insurer’s answer is shown on the portal.</li></ol><p>A classic trap: copying the Carte Vitale number instead of the certificate number. The file goes out, but the coverage is not recognized. For the big picture of the process, from request to collection, see our guide to <a href=\"/ressources/tiers-payant-opticien\">third-party payment for opticians</a>.</p><h2 id=\"sp-sante-statuts\">What do the statuses of an SP Santé coverage request mean?</h2><p>An SP Santé request comes back with a status that tells you what the insurer decided: approved, under review, or rejected, with two special cases worth knowing. The table below gives the reading of the statuses observed by our agents on the portal.</p><div data-bloc=\"statuts\"></div><p>The “Accordé” (Approved) status is not enough on its own. You have to read the whole line, especially the messages that come with it. An approval displayed with the mention “N° Sécurité sociale inconnu” (Social security number unknown) means the file has been sent, but the coverage is not recognized. The amounts covered may come back as zero.</p><div class=\"callout callout--warn\"><p><strong>The trap:</strong> an “Accordé” with “N° Sécurité sociale inconnu” looks like a success. Before dispensing, check the INSEE number on the certificate and the Carte Vitale, then correct the request if needed.</p></div><p>The “Service momentanément indisponible” (Service temporarily unavailable) status is not a decision by the insurer. It means the transmission did not go through. Simply try again later, without changing the file.</p><h2 id=\"sp-sante-vous-bloquez\">Stuck on SP Santé TP?</h2><p>Most SP Santé blockers are resolved by rereading the customer’s certificate and the reason displayed by the portal. Here are the four situations you run into at the counter, in the order they come up.</p><h3>I cannot find the insurer in the list</h3><p>First check that the optical line on the certificate does carry the “SP” mention. If not, the expense does not fall under SP Santé and the contract is managed elsewhere. Then compare the insurer’s name on the certificate with the names offered by the selector. Watch out for similar names: Interiale and Sigmage, for example, do not have the same AMC code. If the certificate is indeed an SP Santé one and the organization still cannot be found, call the SP Santé call center (0820 20 61 88).</p><h3>The coverage request is rejected</h3><p>Read the reason displayed on the portal. It may, for example, say that the request must be sent to the platform named on the certificate. In that case, the customer’s contract does not go through SP Santé for that line of care. Correct the point flagged (organization, INSEE number, date of birth), then submit the request again. If the reason is still unclear, call the SP Santé call center (0820 20 61 88).</p><h3>It stays pending, with no answer</h3><p>An “En cours d’analyse” (Under review) status means the insurer has not decided yet. Come back to read the decision on the portal. The status shown by the portal itself gives the announced processing time. If the wait drags on, call the SP Santé call center (0820 20 61 88) with the reference of the printed file.</p><h3>The approval came through, but the payment does not arrive</h3><p>First check that the invoice actually went out: the software must e-transmit with separate processing, through DRE or a clearinghouse, under the AMC code on the certificate. Then check the payment tracking in the online account, which shows whether the insurer accepted or rejected the invoice, with the reason. If nothing appears there, call the SP Santé call center (0820 20 61 88), then, if nothing moves, send a complaint by mail.</p><p>Keep the exact reason displayed by the portal: it is what tells you what to correct.</p><h2 id=\"sp-sante-paiement\">When and how does SP Santé pay the optician?</h2><p>SP Santé pays the store after the supplementary insurer has checked the invoice and accepted or rejected it; the return file shows any rejection reasons and the bank transfer reference. The pages we consulted give no payment timeline specific to optical care.</p><p>Payment depends first on a technical setting. According to the Q&amp;A published on spsante.fr, invoices are e-transmitted with separate processing, through DRE (electronic reimbursement request, SESAM-Vitale 1.40 standard) or through a clearinghouse (OCT). Without this software setting, the requests do not arrive. Separate processing means the supplementary share goes out in a flow separate from the share paid by mandatory insurance (AMO).</p><div data-figure=\"circuit-paiement-sp-sante\"></div><p>The process reads in order. The store e-transmits its invoice under the AMC code on the certificate, and SP Santé forwards it to the supplementary insurer. The insurer accepts or rejects it, then SP Santé transfers the amount to the store. The return file carries the bank transfer reference: that is what lets you reconcile each invoice with the bank line. To organize this reconciliation day to day, see our method for <a href=\"/ressources/rapprochement-noemie\">reconciling NOEMIE remittance files and bank transfers</a>.</p><p>When a rejection comes back, the reason is given in the return file. Correct the invoice (AMC code, INSEE number, date of birth) and send it again, rather than letting the receivable age. When these requests run into the dozens every day, data entry becomes the store’s bottleneck. <a href=\"/agents\">Granit’s agents</a> submit coverage requests on the portals and send the status back to the team.</p><h2 id=\"sp-sante-contact\">How do you contact SP Santé?</h2><p>An optician contacts SP Santé through the SP Santé call center (0820 20 61 88), a premium-rate number, then by complaint letter if the problem is not resolved.</p><div data-bloc=\"contacts\"></div><p>Complaints are made by mail only, after a first call to the SP Santé call center, to CETIP Service Réclamations, BP 50413, 45204 Montargis Cedex. An acknowledgment of receipt is promised within 10 business days. Include in the letter the file reference, the reason displayed by the portal and, for a payment, the reference of the expected bank transfer.</p><p>Before calling, gather the customer’s certificate (AMC code, INSEE number), the printed file, and the exact status displayed. These items shorten the call and save you a second one. To compare with another operator, our page on the <a href=\"/ressources/portail-viamedis\">Viamedis portal</a> follows the same structure.</p>",
+  "tocItems": [
+    {
+      "id": "sp-sante-mutuelles",
+      "label": "SP Santé and its supplementary insurers"
+    },
+    {
+      "id": "sp-sante-espace-pro",
+      "label": "Accessing the SP Santé professional portal"
+    },
+    {
+      "id": "sp-sante-prise-en-charge",
+      "label": "Submitting an optical coverage request"
+    },
+    {
+      "id": "sp-sante-statuts",
+      "label": "Reading the statuses of a request"
+    },
+    {
+      "id": "sp-sante-vous-bloquez",
+      "label": "Stuck on SP Santé TP?"
+    },
+    {
+      "id": "sp-sante-paiement",
+      "label": "When and how SP Santé pays"
+    },
+    {
+      "id": "sp-sante-contact",
+      "label": "Contacting SP Santé"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "Which website do you use to log in to SP Santé?",
+      "answer": "The SP Santé professional portal is on spsante.fr. Each store logs in with its username and password, then a 6-digit code sent by email by Cetip. Optical coverage approval then opens with the “Accéder au service” (Access the service) button."
+    },
+    {
+      "question": "How does an optician access the SP Santé professional portal?",
+      "answer": "An optician signs a network agreement directly with SP Santé, through a network agreement request form on spsante.fr, choosing the Opticien (Optician) category. The store enters its identity, its e-transmission method, and its bank details, then accepts the agreement. A confirmation email then explains how to create the account, which you log in to with a username, a password, and a code received by email."
+    },
+    {
+      "question": "Which supplementary health insurers (mutuelles) go through SP Santé for optical third-party payment?",
+      "answer": "SP Santé’s public list counts 24 supplementary insurer codes open for optical care. The optical portal’s selector offers, for example, Gerep and Interiale Sigmage. The most reliable check is still the customer’s certificate: only expenses marked “SP” are covered by SP Santé."
+    },
+    {
+      "question": "How do you submit an optical coverage request on SP Santé?",
+      "answer": "The request is made in a separate service, opened from the SP Santé account with the “Accéder au service” button. You choose the organization, copy the INSEE number and date of birth from the certificate, then enter the equipment. The file must be printed before it can be sent."
+    },
+    {
+      "question": "What do the statuses of an SP Santé coverage request mean (approved, pending, rejected)?",
+      "answer": "“Accordé” (Approved) means the supplementary insurer accepts the coverage request, unless it comes with the mention “N° Sécurité sociale inconnu” (Social security number unknown): the coverage is then not recognized. “En cours d’analyse” (Under review) means the insurer has not decided yet. “Refusé” (Rejected) means no coverage approval as things stand: read the reason, correct it, and submit the request again."
+    },
+    {
+      "question": "How long does SP Santé take to pay the optician?",
+      "answer": "The pages we consulted give no payment timeline specific to optical care. The store is paid after the supplementary insurer checks the invoice and accepts or rejects it. The return file shows any rejection reasons and the bank transfer reference."
+    },
+    {
+      "question": "How does a healthcare professional contact SP Santé?",
+      "answer": "Opticians call the SP Santé call center at 0820 20 61 88, a premium-rate number. These contact details are published on spsante.fr. If the problem persists after a first call, complaints are made by mail only to CETIP Service Réclamations, BP 50413, 45204 Montargis Cedex. An acknowledgment of receipt is promised within 10 business days."
+    }
+  ],
+  "sources": [
+    {
+      "label": "cegedim-assurances.com · Outsourced third-party payment management",
+      "url": "https://www.cegedim-assurances.com/fr-fr/ext-services-metiers/Pages/gestion-externalise-tiers-payant.aspx"
+    },
+    {
+      "label": "spsante.fr · Network agreement request form",
+      "url": "https://www.spsante.fr/components/identity/unauthenticated/request-conv.html"
+    }
+  ],
+  "figures": [
+    {
+      "id": "circuit-paiement-sp-sante",
+      "type": "flux",
+      "titre": "From the store to the SP Santé bank transfer",
+      "legende": "Payment only arrives after the supplementary insurer’s check, which accepts or rejects the invoice.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "Optical store",
+          "detail": "Invoice through DRE or OCT, under the AMC code",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "SP Santé (Cetip)",
+          "detail": "Forwards the invoice to the supplementary insurer",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Supplementary health insurer",
+          "detail": "Accepts or rejects, with a reason",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Bank transfer to the store",
+          "detail": "With the bank transfer reference",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [
+    {
+      "id": "A0",
+      "slug": "portails-tiers-payant",
+      "anchor": "third-party payment portals",
+      "type": "parent"
+    }
+  ],
+  "liensEntrants": [
+    {
+      "slug": "mutuelle-quel-portail",
+      "anchor": "find out which portal an insurer uses",
+      "type": "soeur"
+    }
+  ],
+  "remplace": [],
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-09T07:37:04.266Z",
+    "avertissements": [
+      "aucune citation (facultative)"
+    ]
+  }
+}

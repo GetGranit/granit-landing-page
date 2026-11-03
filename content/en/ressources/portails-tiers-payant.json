@@ -1,0 +1,223 @@
+{
+  "slug": "portails-tiers-payant",
+  "id": "A0",
+  "category": "plateformes",
+  "categoryName": "Platforms and portals",
+  "type": "standard",
+  "plateforme": null,
+  "title": "Third-party payment portals for opticians: login, coverage approval, rejection, and payment",
+  "primaryKeyword": "portail tiers payant opticien",
+  "keywordCluster": [
+    "v2 medisysnet fr",
+    "v2 medisysnet",
+    "v2.medisysnet"
+  ],
+  "parentSlug": "tiers-payant-opticien",
+  "level": "Pilier",
+  "author": {
+    "name": "Olivier",
+    "jobTitle": "Writer, third-party payment expert",
+    "photo": "/auteurs/olivier.jpg",
+    "url": null
+  },
+  "reviewer": {
+    "name": "Nathalie",
+    "jobTitle": "Writer, optical industry expert",
+    "photo": "/auteurs/nathalie.jpg",
+    "url": null
+  },
+  "datePublished": "2026-10-08",
+  "dateModified": "2026-10-08",
+  "checkedOn": null,
+  "wordCount": 2431,
+  "readTime": 11,
+  "metaDescription": "Third-party payment portals for opticians: find the right portal, open an account, submit a coverage request, handle a rejection, track the payment. The counter guide.",
+  "contentHtml": "<p><strong>A third-party payment portal for opticians is the online area of a third-party payment platform where the store requests coverage approval for a piece of equipment, reads the supplementary insurer’s answer, then tracks payment of the insurer’s share.</strong> There is no single portal: each platform has its own, with its own credentials, entry fields, and statuses. The right portal is determined by the customer’s third-party payment card, not by the name of their supplementary health insurer (mutuelle).</p><p>This page is the entry point to our directory of platforms. It describes what all portals have in common (login, coverage approval, rejection, payment, maintenance) so you know what to do, whatever screen is open in front of you.</p><div class=\"key-takeaways\"><strong>Key takeaways</strong><ul><li>The portal to use is shown on the customer’s third-party payment card (the platform’s name or logo), not by the name of the insurer.</li><li>Each portal requires its own account, opened after the store has signed a network agreement with the platform.</li><li>A coverage approval always follows the same path: request with the quote, the insurer’s answer, invoice after dispensing, then payment.</li><li>It is the status displayed by the portal, not the quote, that commits the insurer.</li><li>Portal under maintenance: write down the request, do not enter it twice, and come back to check the status when the portal reopens.</li></ul></div><h2 id=\"portail-tiers-payant-definition\">What is a third-party payment portal for an optician?</h2><p>A third-party payment portal is the professional website of a platform that handles, on behalf of supplementary health insurers, coverage requests and payment of their share. The optician logs in to get the insurer’s approval before dispensing the equipment, then to track what they are paid.</p><p>Third-party payment (tiers payant: the patient pays nothing upfront, insurers pay the provider directly) is itself a simple mechanism. According to <a href=\"https://www.service-public.fr/particuliers/vosdroits/F167\">service-public.fr</a>, it spares the patient from paying the costs upfront: the healthcare professional is paid directly by French national health insurance (Assurance Maladie) and, where applicable, by the supplementary insurer. <a href=\"https://www.ameli.fr/assure/remboursements/etre-bien-rembourse/tiers-payant\">ameli.fr</a>, for its part, distinguishes third-party payment on the mandatory share from third-party payment on the supplementary share.</p><p>Two acronyms come up all the time. AMO (mandatory insurance) is the share covered by the Assurance Maladie, sent through the electronic claim form (FSE) via SESAM-Vitale. AMC (supplementary insurance) is the share paid by the customer’s mutuelle, insurance company, or provident institution. The third-party payment portal deals with the AMC share: that is where most of the amount of an optical equipment is at stake.</p><p>In practice, a portal does three things: check that the customer is indeed covered, get approval on a quote, then track the payment. For an overview of the system, from 100% Santé (zero out-of-pocket scheme) to special cases, see our guide to <a href=\"/ressources/tiers-payant-opticien\">third-party payment for opticians</a>.</p><h2 id=\"pourquoi-autant-de-portails\">Why does an optician have to use several portals?</h2><p>An optician uses several portals because each supplementary insurer entrusts the management of its third-party payment to a platform of its choice. As long as your customers are covered by different insurers, you go through different portals.</p><p>There are many supplementary health insurers. Few of them handle requests from thousands of stores themselves: they delegate this work to third-party payment operators, or go through a care network that has its own portal. Among the names you come across at the counter: Viamedis, Almerys, Santéclair, Itelis, Kalixia, SP Santé, Actil, iSanté, Sévéane, Carte Blanche.</p><p>Two families need to be told apart, because they do not ask the same things of the optician.</p><div class=\"tbl\"><table><tr><th>Criterion</th><th>Third-party payment operator</th><th>Care network</th></tr><tr><td>Role</td><td>Handles the request and payment on behalf of the supplementary insurer</td><td>Brings partner opticians together around negotiated commitments</td></tr><tr><td>Access for the optician</td><td>Network agreement with the platform</td><td>Membership in the network, on top of portal access</td></tr><tr><td>What is checked</td><td>Customer’s coverage rights, plan benefits, consistency of the quote</td><td>The same points, plus compliance with the network’s conditions</td></tr></table></div><p>How many portals do you need in total? There is no universal number: it all depends on your customers’ insurers and the networks the store belongs to. A store that turns down a network can still serve its members, but without third-party payment on the supplementary share, or with a different reimbursement for the customer.</p><h2 id=\"trouver-le-bon-portail\">How do you know which portal matches the customer’s insurer?</h2><p>The most reliable method is to read the customer’s third-party payment card: it shows the platform that manages their third-party payment, by name, logo, or code. The insurer’s name alone is not enough, because the same insurer may change platforms, or use several depending on the contract.</p><ol class=\"steps\"><li><strong>Ask for the current year’s card.</strong> An old card may point to a platform the insurer has left.</li><li><strong>Find the platform on the card.</strong> The name or logo usually appears on the front or back, often near the contact details reserved for healthcare professionals.</li><li><strong>Check the printed validity period.</strong> An expired card is a classic cause of rejection.</li><li><strong>Open the matching portal and look for the organization in its selector.</strong> If the insurer does not appear in the list, stop: it is probably the wrong portal.</li><li><strong>When in doubt, call the professional number shown on the card.</strong> It is the most reliable answer, before entering anything.</li></ol><p>Portal addresses also get passed around between colleagues, in browser bookmarks, or in search results, like v2.medisysnet. Before logging in, check that the link really comes from the platform named on the card or from its official website. An address found through a search does not, on its own, tell you which insurers it handles.</p><div class=\"callout callout--tip\"><p><strong>The right reflex:</strong> photograph or scan the third-party payment card with every new request, and file it with the case. If there is a rejection, it is the first document you will be asked for.</p></div><h2 id=\"compte-sur-chaque-portail\">Do you need an account on every portal?</h2><p>Yes: each portal requires its own account, and this account is only opened once the store is under agreement with the platform. There is no single login that works on all portals.</p><p>The network agreement is the agreement between the store and the platform (or the network). It sets the conditions for coverage approval and payment. The platform usually asks for the store’s professional identifiers, its contact details, and bank account details, then sends the login credentials. The exact documents vary from one platform to another: we detail them in each page of the directory.</p><p>Three points often cause trouble day to day:</p><ul><li><strong>Accounts per store.</strong> A group of several stores often has one account per location. Entering a request from another store’s account creates discrepancies at payment time.</li><li><strong>Passwords.</strong> Each portal has its own expiration and lockout rules. An account locked on a Saturday morning freezes all requests for that platform.</li><li><strong>Two-factor authentication.</strong> Some portals send a code by text message or email. If that code goes to one person’s phone only, the team depends on that person being there.</li><li><strong>An employee leaving.</strong> Personal access must be removed or transferred, otherwise the store loses control of its own files.</li></ul><p>Keep a simple log: platform, network agreement date, account holder, phone that receives the codes, last password change. It takes ten minutes to fill in and prevents days of being blocked.</p><h2 id=\"prise-en-charge-sur-portail\">How does an optical coverage request work on a portal?</h2><p>An optical coverage request follows the same path on every portal: the optician sends the request with the quote, the insurer answers, then the optician bills after dispensing. The screens change, the logic stays the same.</p><p>The coverage request (PEC, sometimes called DPEC) takes the elements of the standardized quote, the mandatory document that details the equipment offered, its codes, and its prices. It includes the LPP codes (the list of products and services reimbursable by the Assurance Maladie) for each lens and the frame, as well as the equipment class: class A for the 100% Santé basket, class B for freely priced equipment.</p><ol class=\"steps\"><li><strong>Choose the supplementary insurer.</strong> In the portal’s selector, based on the customer’s card.</li><li><strong>Identify the beneficiary.</strong> Member number, name, date of birth. If the person wearing the glasses is a dependent (spouse, child), they are the beneficiary, not the member.</li><li><strong>Enter the prescription.</strong> Prescription date, prescriber, corrections.</li><li><strong>Describe the equipment.</strong> Lenses, frame, LPP codes, class A or B, quote amounts.</li><li><strong>Send and write down the reference.</strong> The request number assigned by the portal is used for all later tracking.</li><li><strong>Read the answer.</strong> Approval, partial approval, request for documents, or refusal: the approved amount is what counts.</li></ol><p>Once the approval is obtained and the equipment dispensed, the optician bills. The AMO share goes out through the electronic claim form; the AMC share is billed according to the platform’s rules, quoting the approval reference. If the invoice differs from what was approved (a different lens, a different amount), the payment may be blocked or reduced.</p><div data-figure=\"chemin-prise-en-charge\"></div><h2 id=\"rejet-ou-refus\">What should you do when a coverage request is rejected or refused?</h2><p>A rejection and a refusal are not handled the same way: a rejection flags a badly formed request or invoice, which you can correct and send again; a refusal is a decision by the insurer on the merits, which you must first understand before contesting it.</p><p>In the files our agents handle, the most frequent cause of a rejection is not technical: it is a mismatch between what was entered and what the insurer knows about the customer. Wrong beneficiary, wrong organization, expired card. The table below follows the order in which to check.</p><div class=\"tbl\"><table><tr><th>Cause</th><th>Where to check</th><th>Fix</th></tr><tr><td>Beneficiary unknown or coverage rights closed</td><td>Third-party payment card, dependent concerned</td><td>Correct the beneficiary or ask for the current card</td></tr><tr><td>Wrong organization chosen</td><td>Portal selector, mention on the card</td><td>Submit the request again to the right organization or on the right portal</td></tr><tr><td>Inconsistent LPP code or class</td><td>Standardized quote, lens data sheet</td><td>Align the request’s codes with the quote</td></tr><tr><td>Missing or illegible document</td><td>Portal message, request status</td><td>Attach the requested document, clear and complete</td></tr><tr><td>Amount above the plan’s coverage</td><td>The insurer’s detailed answer</td><td>Go over the quote with the customer regarding the out-of-pocket amount</td></tr></table></div><div class=\"callout callout--warn\"><p><strong>The trap:</strong> sending the same request several times hoping for a different answer. Duplicates muddle tracking, can block the file, and complicate payment reconciliation. Fix the cause, then send a single new request.</p></div><p>For the mandatory share, rejections come from a different circuit, that of the Assurance Maladie. We cover them in our article on how to <a href=\"/ressources/reduire-rejets-cpam\">reduce CPAM rejections</a> without changing software.</p><h2 id=\"paiement-opticien\">How and when does the portal pay the optician?</h2><p>The platform pays the supplementary share by bank transfer, once the invoice is accepted; the portal shows the details of what was paid, file by file. No timeline is common to all platforms: we give the one each announces, with its source, in its page of the directory.</p><p>The bank transfer is often grouped: a single amount on the bank statement covers several invoices. The transfer label shows the payer, but not always the original insurer. To know which invoices are settled, you have to open the portal’s payment statement and reconcile it against your invoices.</p><p>The AMO share follows a different path. Returns from the Assurance Maladie arrive through NOEMIE (the exchange standard that sends the professional the payments and rejections for the mandatory share), followed by the matching bank transfer. Reconciling the two every day avoids piling up invoices that nobody follows up on: the method is detailed in our article on <a href=\"/ressources/rapprochement-noemie\">reconciling NOEMIE remittance files and bank transfers</a>.</p><ul><li>Reconcile payments at least once a week, platform by platform.</li><li>Compare the amount paid with the amount approved in the coverage approval, not with the quote amount.</li><li>Set aside invoices with neither a payment nor a rejection: those are the ones that get lost.</li><li>Keep the request reference, the invoice, and the portal statement in the same file.</li></ul><h2 id=\"portail-en-maintenance\">What should you do when a portal is under maintenance?</h2><p>When a portal is under maintenance, the right approach is to write down the request, tell the customer it will be sent when the portal reopens, then check the status before entering anything again. Do not keep retrying.</p><p>Portals have maintenance windows, scheduled or not. Our agents run into them regularly, often in the evening or on weekends, and the login page usually announces them. Unplanned maintenance can also cut the portal off in the middle of an entry: the request may or may not have been saved.</p><ol class=\"steps\"><li><strong>Check that the problem comes from the portal.</strong> Try another portal: if it responds, your connection works.</li><li><strong>Write down the pending request.</strong> Customer, organization, quote, time of the attempt.</li><li><strong>Let the customer know.</strong> Explain that the approval has not been obtained yet and that the equipment will not be ordered without it, if that is your rule.</li><li><strong>When the portal reopens, look for the request before entering it again.</strong> An interrupted entry may have gone through.</li><li><strong>If the outage lasts, call the platform’s professional support.</strong> Write down the name of the person you spoke to and the time.</li></ol><p>Maintenance on a Saturday afternoon, a busy day, can push back several sales. A list of pending requests, kept on paper or in a shared spreadsheet, is enough to forget nothing on Monday.</p><h2 id=\"organiser-plusieurs-portails\">How do you organize work across several portals in the store?</h2><p>The most effective method is to handle portals in batches rather than file by file, with a daily status check and a designated person for each task. Most lost time comes from repeated logins and forgotten files.</p><p>Three habits change a team’s day-to-day:</p><ul><li><strong>A single tracking list.</strong> All requests sent, with platform, reference, status, and date. It is what tells you what still needs a follow-up.</li><li><strong>A fixed time slot for statuses.</strong> In the morning, before opening, you go around the portals to read answers and requests for documents.</li><li><strong>Simple indicators.</strong> Number of pending requests, rejections this week, invoices paid with no discrepancy. Our article on <a href=\"/ressources/kpi-back-office-sante\">healthcare back-office KPIs</a> offers a starting point.</li></ul><p>When requests run into the dozens every day, data entry on each portal becomes the store’s bottleneck: the optician spends more time in front of platform screens than with their customers. This is the work <a href=\"/agents\">Granit’s agents</a> do: they submit coverage requests directly on the portals, track the statuses, and send the answer back to the team. Granit works with all third-party payment platforms.</p><p>Whether or not you keep data entry in-house, the logic remains the one described above: the right card, the right portal, a clean request, a status read, a payment reconciled. Find the other guides in the <a href=\"/ressources\">resources hub</a>.</p>",
+  "tocItems": [
+    {
+      "id": "portail-tiers-payant-definition",
+      "label": "What is a third-party payment portal?"
+    },
+    {
+      "id": "pourquoi-autant-de-portails",
+      "label": "Why several portals?"
+    },
+    {
+      "id": "trouver-le-bon-portail",
+      "label": "Finding an insurer’s portal"
+    },
+    {
+      "id": "compte-sur-chaque-portail",
+      "label": "An account on every portal?"
+    },
+    {
+      "id": "prise-en-charge-sur-portail",
+      "label": "Submitting an optical coverage request"
+    },
+    {
+      "id": "rejet-ou-refus",
+      "label": "Rejection or refusal: what to do?"
+    },
+    {
+      "id": "paiement-opticien",
+      "label": "How the optician gets paid"
+    },
+    {
+      "id": "portail-en-maintenance",
+      "label": "Portal under maintenance"
+    },
+    {
+      "id": "organiser-plusieurs-portails",
+      "label": "Organizing work across several portals"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "What is a third-party payment portal?",
+      "answer": "A third-party payment portal is the professional website of a platform that manages third-party payment on behalf of supplementary health insurers. The optician logs in to request coverage approval for a piece of equipment, read the insurer’s answer, and track payment of the insurer’s share. Each platform has its own portal."
+    },
+    {
+      "question": "How many portals does an optician have to use?",
+      "answer": "There is no fixed number: it all depends on your customers’ supplementary insurers and the care networks your store belongs to. Each insurer entrusts its third-party payment to a platform of its choice, so a varied customer base means several portals. The simplest approach is to start from the third-party payment cards you see most often at the counter."
+    },
+    {
+      "question": "How do you know which portal matches the customer’s supplementary health insurer (mutuelle)?",
+      "answer": "Read the current year’s third-party payment card: it shows the platform by name, logo, or code. Then open the matching portal and check that the insurer appears in its organization selector. When in doubt, call the professional number printed on the card before entering anything."
+    },
+    {
+      "question": "Do you need an account on every portal?",
+      "answer": "Yes, each portal requires its own account, opened after the store has signed a network agreement with the platform. There is no login common to all portals. Keep a log of the accounts, their holders, and the phone that receives the authentication codes to avoid getting blocked."
+    },
+    {
+      "question": "What should you do when a portal is under maintenance?",
+      "answer": "Write down the pending request with the customer, the organization, and the time of the attempt, then tell the customer the approval has not been obtained yet. When the portal reopens, first look for the request in the portal, because an interrupted entry may have been saved. Enter it again only once, and call professional support if the outage lasts."
+    }
+  ],
+  "sources": [
+    {
+      "label": "service-public.fr · Third-party payment: no upfront payment of costs",
+      "url": "https://www.service-public.fr/particuliers/vosdroits/F167"
+    },
+    {
+      "label": "ameli.fr · Third-party payment",
+      "url": "https://www.ameli.fr/assure/remboursements/etre-bien-rembourse/tiers-payant"
+    }
+  ],
+  "figures": [
+    {
+      "id": "chemin-prise-en-charge",
+      "type": "flux",
+      "titre": "The path of an optical coverage request",
+      "legende": "Payment only follows if the invoice matches the approval given by the supplementary insurer.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "Optician",
+          "detail": "Coverage request with the quote",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Platform portal",
+          "detail": "Request forwarded for a decision",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Supplementary health insurer",
+          "detail": "Approval, refusal, or request for documents",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Invoice after dispensing",
+          "detail": "Invoice matching the approval",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Payment by bank transfer",
+          "detail": "Supplementary share paid to the optician",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [
+    {
+      "id": "G0",
+      "slug": "tiers-payant-opticien",
+      "anchor": "third-party payment for opticians",
+      "type": "parent"
+    }
+  ],
+  "liensEntrants": [
+    {
+      "slug": "portail-viamedis",
+      "anchor": "viamedis tp",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-itelis",
+      "anchor": "itelis tp",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-almerys",
+      "anchor": "almerys tp",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-isante",
+      "anchor": "isante tp",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-sp-sante",
+      "anchor": "sp sante tp",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-oxantis",
+      "anchor": "oxantis tp",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-santeclair",
+      "anchor": "tp santeclair",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-seveane",
+      "anchor": "seveane tp",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-actil",
+      "anchor": "actil tp",
+      "type": "enfant"
+    },
+    {
+      "slug": "mutuelle-quel-portail",
+      "anchor": "find out which portal an insurer uses",
+      "type": "enfant"
+    },
+    {
+      "slug": "gerer-tiers-payant-magasin",
+      "anchor": "Managing third-party payment in a store: in-house, outsourced, or automated?",
+      "type": "soeur"
+    }
+  ],
+  "remplace": [
+    "portails-mutuelles-goulot"
+  ],
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-08T16:32:06.030Z",
+    "avertissements": [
+      "aucune citation (facultative)",
+      "source non vérifiable (403) : https://www.ameli.fr/assure/remboursements/reste-charge/tiers-payant"
+    ]
+  }
+}
