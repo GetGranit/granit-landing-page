@@ -1,10 +1,10 @@
 {
   "_lisez_moi": "Généré par `node scripts/check-marque.mjs --update-baseline`. Ne pas éditer à la main. Une PR ne doit faire que baisser ces nombres.",
   "totaux": {
-    "ancienne-variable": 282,
-    "couleur-hors-palette": 427,
+    "ancienne-variable": 224,
+    "couleur-hors-palette": 400,
     "police-hors-marque": 28,
-    "ombre-brune": 19
+    "ombre-brune": 13
   },
   "fichiers": {
     "public/demo.html": {
@@ -77,11 +77,6 @@
       "ancienne-variable": 4,
       "couleur-hors-palette": 3
     },
-    "src/components/home/HomeSections.tsx": {
-      "ancienne-variable": 51,
-      "couleur-hors-palette": 24,
-      "ombre-brune": 6
-    },
     "src/components/pec/Invitation.tsx": {
       "ancienne-variable": 3,
       "couleur-hors-palette": 2
@@ -150,10 +145,6 @@
     "src/components/ressources/Hub.tsx": {
       "ancienne-variable": 3,
       "couleur-hors-palette": 6
-    },
-    "src/components/ressources/HubEn.tsx": {
-      "ancienne-variable": 7,
-      "couleur-hors-palette": 3
     },
     "src/components/ressources/Metiers.tsx": {
       "ancienne-variable": 1
