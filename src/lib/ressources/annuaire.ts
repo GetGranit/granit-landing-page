@@ -308,12 +308,33 @@ export const GENRES: Record<Genre, { court: string; nom: string; filtre: string 
   mutuelle: { court: "Mutuelle", nom: "complémentaire santé", filtre: "Mutuelles" },
 };
 
+export const GENRES_EN: typeof GENRES = {
+  plateforme: { court: "Platform", nom: "third-party payment platform", filtre: "Platforms" },
+  reseau: { court: "Network", nom: "care network", filtre: "Networks" },
+  mutuelle: { court: "Insurer", nom: "supplementary health insurer", filtre: "Insurers" },
+};
+
 // Faits relevés, pour la vedette : nombre de complémentaires gérées et un chiffre parlant.
 const faits = import.meta.glob<Plateforme>("/content/plateformes/*.json", {
   eager: true,
   import: "default",
 });
 const faitsParSlug = new Map(Object.values(faits).map((p) => [p.slug, p]));
+// Les mêmes faits traduits (content/en/plateformes), pour le chiffre de la vedette en anglais.
+const faitsEn = import.meta.glob<Partial<Plateforme>>("/content/en/plateformes/*.json", {
+  eager: true,
+  import: "default",
+});
+const faitsEnParSlug = new Map(Object.values(faitsEn).map((p) => [p?.slug, p]));
+
+/** Le chiffre traduit, seulement si la liste anglaise correspond à la française. */
+function chiffreEn(slug: string, i: number, n: number) {
+  const c = faitsEnParSlug.get(slug)?.chiffres;
+  const x = Array.isArray(c) && c.length === n ? c[i] : undefined;
+  return typeof x?.valeur === "string" && typeof x?.label === "string"
+    ? { valeur: x.valeur, label: x.label }
+    : undefined;
+}
 
 /** Le chiffre le plus parlant : une taille de réseau plutôt qu'une date de création. */
 const PARLANT = /complémentaire|professionnel|opticien|assuré|bénéficiaire|adhérent/i;
@@ -325,6 +346,8 @@ export type Entree = Omit<Acteur, "metiers"> & {
   checkedOn?: string;
   organismes: number;
   chiffre?: { valeur: string; label: string };
+  /** Le même chiffre en anglais, s'il est traduit. */
+  chiffreEn?: { valeur: string; label: string };
 };
 
 const ORDRE_GENRES: Genre[] = ["plateforme", "reseau", "mutuelle"];
@@ -350,6 +373,7 @@ export function annuaire(fiches: Fiche[]): Entree[] {
         checkedOn: fiche?.plateforme?.checkedOn,
         organismes: f?.organismes?.liste.length ?? 0,
         chiffre: chiffre && { valeur: chiffre.valeur, label: chiffre.label },
+        chiffreEn: chiffre && chiffreEn(a.slug, f!.chiffres.indexOf(chiffre), f!.chiffres.length),
       };
     })
     .sort(

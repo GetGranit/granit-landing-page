@@ -1,8 +1,18 @@
 // Le contenu de la rubrique Ressources, vu par le site :
 // articles JSON en ligne (fournis par le plugin, aperçu compris hors production)
 // et anciens articles de articles.ts, rattachés ou non à une catégorie du cocon.
-import { charger, fiches as fichesJson, redirections } from "virtual:ressources";
+// Anglais : les textes viennent de content/en/ (plugin) et des champs `en` de categories.json
+// et verticales.json ; sans traduction, le français reste affiché.
+import {
+  anciensEn,
+  charger,
+  chargerAncienEn,
+  chargerEn,
+  fiches as fichesJson,
+  redirections,
+} from "virtual:ressources";
 import { articles, type Article } from "@/lib/articles";
+import type { Lang } from "@/lib/i18n";
 import categoriesData from "./categories.json";
 import anciensData from "./anciens.json";
 import type { CategorySlug, Fiche, VerticaleSlug } from "./types";
@@ -29,25 +39,36 @@ export type Categorie = {
   animation: "pec" | "controle" | "virements";
 };
 
-const CATS = categoriesData.categories as Record<CategorySlug, Omit<Categorie, "slug">>;
+type TextesCategorie = Pick<Categorie, "nom" | "court" | "description" | "agent" | "fin">;
+const CATS = categoriesData.categories as Record<
+  CategorySlug,
+  Omit<Categorie, "slug"> & { en?: TextesCategorie }
+>;
 export const ORDRE = categoriesData.ordre as CategorySlug[];
 /** Catégories qui ont une rangée sur le hub (le glossaire a son propre bloc). */
 export const ORDRE_HUB = ORDRE.filter((c) => c !== "glossaire");
 export const GLOSSAIRE_SLUG = "glossaire-tiers-payant";
 
-export function categorie(slug: string): Categorie | undefined {
+/** Une catégorie, avec ses textes en anglais si `lang` vaut "en". */
+export function categorie(slug: string, lang: Lang = "fr"): Categorie | undefined {
   const c = CATS[slug as CategorySlug];
-  return c ? { slug: slug as CategorySlug, ...c } : undefined;
+  if (!c) return undefined;
+  const { en, ...fr } = c;
+  return { slug: slug as CategorySlug, ...fr, ...(lang === "en" ? en : undefined) };
 }
 
-export function descriptionCategorie(c: Categorie): string {
-  return c.description + categoriesData.suffixeDescription;
+export function descriptionCategorie(c: Categorie, lang: Lang = "fr"): string {
+  return (
+    c.description +
+    (lang === "en" ? categoriesData.suffixeDescriptionEn : categoriesData.suffixeDescription)
+  );
 }
 
 const rattaches = anciensData.rattaches as Record<string, CategorySlug>;
 
 function ficheAncien(a: Article): Fiche {
   const rattache = rattaches[a.slug];
+  const en = anciensEn[a.slug];
   return {
     slug: a.slug,
     category: rattache ?? teinteAncien(a.slug),
@@ -62,6 +83,31 @@ function ficheAncien(a: Article): Fiche {
     // Hors cocon, la carte porte le métier de l'ancien article (« Pharmacie »), pas une catégorie.
     etiquette: rattache ? undefined : a.category,
     rattache: Boolean(rattache),
+    en: en && {
+      title: en.title,
+      metaDescription: en.desc,
+      etiquette: rattache ? undefined : en.category,
+      readTime: en.time,
+    },
+  };
+}
+
+/** Textes d'un ancien article dans la langue de l'écran (content/en/anciens), sinon le français. */
+export function textesAncien(a: Article, lang: Lang): Pick<Article, "category" | "title" | "desc" | "time"> {
+  const en = lang === "en" ? anciensEn[a.slug] : undefined;
+  return en ?? a;
+}
+
+/** La fiche dans la langue de l'écran : ses textes anglais s'ils existent, sinon le français. */
+export function ficheLang(f: Fiche, lang: Lang): Fiche {
+  if (lang !== "en" || !f.en) return f;
+  const { en } = f;
+  return {
+    ...f,
+    title: en.title,
+    metaDescription: en.metaDescription ?? f.metaDescription,
+    etiquette: en.etiquette ?? f.etiquette,
+    readTime: en.readTime ?? f.readTime,
   };
 }
 
@@ -91,8 +137,12 @@ export async function chargerArticle(slug: string) {
   return f ? (await f()).default : undefined;
 }
 
-export function categorieDeAncien(slug: string): Categorie | undefined {
-  return rattaches[slug] ? categorie(rattaches[slug]) : undefined;
+/** Chargeurs des versions anglaises (absents quand il n'y a pas de traduction valide). */
+export const chargeurEn = (slug: string) => chargerEn[slug];
+export const chargeurAncienEn = (slug: string) => chargerAncienEn[slug];
+
+export function categorieDeAncien(slug: string, lang: Lang = "fr"): Categorie | undefined {
+  return rattaches[slug] ? categorie(rattaches[slug], lang) : undefined;
 }
 
 const parTitre = (a: Fiche, b: Fiche) => a.title.localeCompare(b.title, "fr");
@@ -114,8 +164,8 @@ export function toutCategorie(c: CategorySlug): Fiche[] {
 }
 
 /** Catégories qui ont au moins un article en ligne (onglets, pages catégorie, sitemap). */
-export function categoriesActives(): Categorie[] {
-  return ORDRE_HUB.filter((c) => toutCategorie(c).length > 0).map((c) => categorie(c)!);
+export function categoriesActives(lang: Lang = "fr"): Categorie[] {
+  return ORDRE_HUB.filter((c) => toutCategorie(c).length > 0).map((c) => categorie(c, lang)!);
 }
 
 export function glossaireEnLigne(): Fiche | undefined {
@@ -161,14 +211,14 @@ export function ficheEnLigne(slug: string): Fiche | undefined {
   return ficheJson(slug) ?? anciensRattaches.find((f) => f.slug === slug);
 }
 
-/** Titre court : la partie avant « : ». */
+/** Titre court : la partie avant « : » (« : » en anglais). */
 export function titreCourt(t: string): string {
-  return t.split(" : ")[0];
+  return t.split(/ ?: /)[0];
 }
 
 /** Coupe un titre au « : » (ou après un « ? » suivi d'une suite) pour l'italique coloré. */
 export function couperTitre(t: string): [string, string | undefined] {
-  const m = t.match(/^(.+?)(?: : |(?<=\?) )(.+)$/);
+  const m = t.match(/^(.+?)(?: ?: |(?<=\?) )(.+)$/);
   return m ? [m[1], m[2]] : [t, undefined];
 }
 
@@ -201,12 +251,44 @@ const MOIS_LONGS = [
   "décembre",
 ];
 
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const MONTHS_LONG = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
 /** « 2026-10-07 » → « 7 oct. 2026 » (ou « 7 octobre 2026 » en version longue). */
 export function dateFr(iso: string | undefined, longue = false): string {
   const m = iso?.match(/^(\d{4})-(\d{2})-(\d{2})/);
   if (!m) return "";
   const mois = (longue ? MOIS_LONGS : MOIS)[Number(m[2]) - 1];
   return `${Number(m[3])} ${mois} ${m[1]}`;
+}
+
+/** Comme dateFr, en anglais américain : « Oct 7, 2026 » (« October 7, 2026 » en version longue). */
+export function dateLang(iso: string | undefined, lang: Lang, longue = false): string {
+  if (lang === "fr") return dateFr(iso, longue);
+  const m = iso?.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (!m) return "";
+  const mois = (longue ? MONTHS_LONG : MONTHS)[Number(m[2]) - 1];
+  return `${mois} ${Number(m[3])}, ${m[1]}`;
+}
+
+/** Jour et mois seulement : « 7 oct. » / « Oct 7 ». */
+export function jourMois(iso: string | undefined, lang: Lang): string {
+  return lang === "en"
+    ? dateLang(iso, lang).replace(/, \d{4}$/, "")
+    : dateFr(iso).replace(/ \d{4}$/, "");
 }
 
 export function tempsLecture(t: number | string): string {
@@ -227,17 +309,17 @@ export function fichesVerticale(v: VerticaleSlug): Fiche[] {
 export const fichesTransversales: Fiche[] = anciensFr.filter((f) => f.transversal);
 
 /** Tous les métiers, dans l'ordre, avec leur nombre d'articles propres. */
-export function verticalesActives() {
-  return ORDRE_VERTICALES.map((v) => ({ v: verticale(v)!, n: fichesVerticale(v).length }));
+export function verticalesActives(lang: Lang = "fr") {
+  return ORDRE_VERTICALES.map((v) => ({ v: verticale(v, lang)!, n: fichesVerticale(v).length }));
 }
 
 /**
  * Métier d'un article pour le fil d'Ariane et l'onglet actif : son premier métier
  * (l'optique par défaut). Aucun pour un ancien article valable pour tous les métiers.
  */
-export function metierDe(slug: string): Verticale | undefined {
+export function metierDe(slug: string, lang: Lang = "fr"): Verticale | undefined {
   const f = ficheJson(slug);
-  if (f) return verticale(f.verticales[0] ?? VERTICALE_PRINCIPALE);
+  if (f) return verticale(f.verticales[0] ?? VERTICALE_PRINCIPALE, lang);
   const a = verticalesAncien(slug);
-  return a.transversal || !a.verticales[0] ? undefined : verticale(a.verticales[0]);
+  return a.transversal || !a.verticales[0] ? undefined : verticale(a.verticales[0], lang);
 }

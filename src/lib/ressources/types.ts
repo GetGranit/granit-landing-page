@@ -144,4 +144,6 @@ export type Fiche = {
   etiquette?: string;
   /** Ancien article rattaché à une catégorie du cocon (les autres n'ont qu'une teinte). */
   rattache?: boolean;
+  /** Textes anglais de la carte, s'il existe une traduction valide (content/en/). */
+  en?: { title: string; metaDescription?: string; etiquette?: string; readTime?: string };
 };

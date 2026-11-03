@@ -1,8 +1,34 @@
 // Blocs d'une page plateforme, rendus depuis le fichier de faits (gabarit §6) :
 // fiche d'identité, chiffres, organismes, statuts, contacts. Jamais réécrits par Claude.
 import { useState, type ReactElement } from "react";
-import { dateFr } from "@/lib/ressources/contenu";
+import { useLanguage } from "@/lib/i18n";
+import { dateLang } from "@/lib/ressources/contenu";
 import type { Plateforme } from "@/lib/ressources/types";
+
+const copy = {
+  fr: {
+    source: "Source :",
+    releve: (d: string) => `Relevé par les agents Granit sur le portail le ${d}`,
+    chercher: "Chercher une complémentaire",
+    exemple: "ex. MGEN, Malakoff, Neoliane…",
+    resultats: (n: number, total: number) => `${n} résultat${n > 1 ? "s" : ""} sur ${total}`,
+    complementaires: (n: number) => `${n} complémentaire${n > 1 ? "s" : ""}`,
+    statut: "Statut affiché",
+    sens: "Ce que ça veut dire",
+    action: "Que faire",
+  },
+  en: {
+    source: "Source:",
+    releve: (d: string) => `Checked on the portal by Granit agents on ${d}`,
+    chercher: "Search for an insurer",
+    exemple: "e.g. MGEN, Malakoff, Neoliane…",
+    resultats: (n: number, total: number) => `${n} result${n > 1 ? "s" : ""} of ${total}`,
+    complementaires: (n: number) => `${n} insurer${n > 1 ? "s" : ""}`,
+    statut: "Status shown",
+    sens: "What it means",
+    action: "What to do",
+  },
+};
 
 const norm = (s: string) =>
   s
@@ -12,19 +38,21 @@ const norm = (s: string) =>
 
 /** « Source : … » d'un bloc ; les données du connecteur (sans URL) sont datées du relevé. */
 function Source({ p, cle }: { p: Plateforme; cle?: string }) {
+  const { lang } = useLanguage();
+  const t = copy[lang];
   const s = cle ? p.sources[cle] : undefined;
   if (!s) return null;
   return (
     <p className="mt-2 text-[13px] text-[var(--text-muted)]">
       {s.url ? (
         <>
-          Source :{" "}
+          {t.source}{" "}
           <a href={s.url} rel="noopener" className="underline underline-offset-2">
             {s.label}
           </a>
         </>
       ) : (
-        <>Relevé par les agents Granit sur le portail le {dateFr(p.checkedOn, true)}</>
+        <>{t.releve(dateLang(p.checkedOn, lang, true))}</>
       )}
     </p>
   );
@@ -71,6 +99,7 @@ export function Chiffres({ p }: { p: Plateforme }) {
 }
 
 export function Organismes({ p }: { p: Plateforme }) {
+  const t = copy[useLanguage().lang];
   const [q, setQ] = useState("");
   const liste = p.organismes?.liste ?? [];
   if (!liste.length) return null;
@@ -79,12 +108,12 @@ export function Organismes({ p }: { p: Plateforme }) {
   return (
     <div className="my-4">
       <label className="block">
-        <span className="sr-only">Chercher une complémentaire</span>
+        <span className="sr-only">{t.chercher}</span>
         <input
           type="search"
           value={q}
           onChange={(e) => setQ(e.target.value)}
-          placeholder="ex. MGEN, Malakoff, Neoliane…"
+          placeholder={t.exemple}
           className="w-full rounded-[14px] border border-[var(--border2)] bg-white px-4 py-3 text-[16px] shadow-[var(--shadow-soft)] focus-visible:outline-2 focus-visible:outline-[var(--terra)]"
         />
       </label>
@@ -92,9 +121,7 @@ export function Organismes({ p }: { p: Plateforme }) {
         className="mt-2 font-mono text-[12px] tracking-[0.04em] text-[var(--text-muted)]"
         aria-live="polite"
       >
-        {n
-          ? `${visibles.length} résultat${visibles.length > 1 ? "s" : ""} sur ${liste.length}`
-          : `${liste.length} complémentaire${liste.length > 1 ? "s" : ""}`}
+        {n ? t.resultats(visibles.length, liste.length) : t.complementaires(liste.length)}
       </p>
       <ul className="mt-3 flex max-h-[260px] flex-wrap gap-2 overflow-auto p-0.5">
         {liste.map((m) => (
@@ -114,6 +141,7 @@ export function Organismes({ p }: { p: Plateforme }) {
 }
 
 export function Statuts({ p }: { p: Plateforme }) {
+  const t = copy[useLanguage().lang];
   if (!p.statuts?.length) return null;
   return (
     <div>
@@ -121,9 +149,9 @@ export function Statuts({ p }: { p: Plateforme }) {
         <table>
           <thead>
             <tr>
-              <th>Statut affiché</th>
-              <th>Ce que ça veut dire</th>
-              <th>Que faire</th>
+              <th>{t.statut}</th>
+              <th>{t.sens}</th>
+              <th>{t.action}</th>
             </tr>
           </thead>
           <tbody>
