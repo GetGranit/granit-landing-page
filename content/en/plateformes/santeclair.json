@@ -1,0 +1,297 @@
+{
+  "slug": "portail-santeclair",
+  "nom": "Santéclair",
+  "logo": "/logos/santeclair.svg",
+  "checkedOn": "2026-10-07",
+  "identite": [
+    {
+      "label": "Type",
+      "valeur": "Care network and third-party payment service (TP+)",
+      "source": "sc-ps"
+    },
+    {
+      "label": "Optical",
+      "valeur": "Yes, as a network partner or under the TP+ agreement",
+      "source": "sc-ps"
+    },
+    {
+      "label": "Portal",
+      "valeur": "services.santeclair.fr",
+      "source": "sc-qsn"
+    },
+    {
+      "label": "Login",
+      "valeur": "Username, password and code by email",
+      "source": "granit-connecteur"
+    }
+  ],
+  "chiffres": [
+    {
+      "valeur": "≈ 3,700",
+      "label": "optical stores in the 2025-2029 network",
+      "source": "acuite-2025"
+    },
+    {
+      "valeur": "60+",
+      "label": "supplementary health insurers connected",
+      "source": "sc-ps"
+    },
+    {
+      "valeur": "10M",
+      "label": "beneficiaries of Santéclair services",
+      "source": "sc-qsn"
+    },
+    {
+      "valeur": "7 days",
+      "label": "advertised payment time for third-party payment",
+      "source": "sc-ps"
+    }
+  ],
+  "faits": [
+    {
+      "fait": "Santéclair is first and foremost a care network. It also manages third-party payment (tiers payant: the patient pays nothing upfront, insurers pay the provider directly) on behalf of supplementary health insurers.",
+      "source": "sc-ps"
+    },
+    {
+      "fait": "Santéclair offers health professionals three agreements: Partenariat & tiers-payant (Partnership and third-party payment), Tiers-payant TP+ (TP+ third-party payment) and Partenariat simple (Simple partnership).",
+      "source": "sc-ps"
+    },
+    {
+      "fait": "TP+ is Santéclair’s third-party payment service for professionals outside the network. Launched in 2018, it had recorded nearly 20 million coverage requests by April 2023, across all areas of care.",
+      "source": "sc-20ans"
+    },
+    {
+      "fait": "For third-party payment, Santéclair acts as a processor for the supplementary health insurers, which remain responsible for the data.",
+      "source": "sc-vieprivee"
+    },
+    {
+      "fait": "The optical network is formed through a call for tenders. The current network covers 2025 to 2029.",
+      "source": "sc-ao2024"
+    },
+    {
+      "fait": "As of October 7, 2026, the optical network page states that no call for tenders is open.",
+      "source": "sc-optique"
+    },
+    {
+      "fait": "During the 2024 call for tenders, creating the “Management d'activités” (Activity management) area required the SIREN number and an ID (national ID card or passport).",
+      "source": "sc-ao2024"
+    },
+    {
+      "fait": "The dashboard in the “Gestion TP” (Third-party payment management) area tracks coverage requests, approvals, refusals, reimbursement requests and, in optical, exception requests. It is also used to upload additional documents.",
+      "source": "sc-tableau"
+    },
+    {
+      "fait": "The TP+ agreement includes the flow front end (FFL), which handles reimbursement requests from the store’s software.",
+      "source": "sc-tpdemat"
+    },
+    {
+      "fait": "EDI in the OptoAMC format is reserved for the Partenariat & tiers-payant agreement, not for TP+.",
+      "source": "sc-edi"
+    },
+    {
+      "fait": "Santéclair reports a full automation rate of 95.2% for optical coverage requests in 2022.",
+      "source": "sc-tpcompl"
+    },
+    {
+      "fait": "In optical, coverage requests are submitted in a separate portal, “Mon portail FFL TP+ Optique” (My FFL TP+ Optical portal), opened from the services.santeclair.fr area. This portal is operated by FFL-Promoteur. Hearing care professionals use a different portal.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "Each store logs in with its username and password, then enters a 6-digit code received by email. A checkbox lets you remember the browser for future logins.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "To create a file, the optician chooses the insurer from a list, then enters the policy number, last name, first name and date of birth of the beneficiary.",
+      "source": "granit-connecteur"
+    }
+  ],
+  "conventionnement": [
+    "On santeclair.fr, open the page for the chosen agreement (Tiers-payant TP+ or Partenariat & tiers-payant) and select the Optique (Optical) area.",
+    "Create your “Management d'activités” area on services.santeclair.fr.",
+    "When creating the area, select your field and your agreement.",
+    "To join the partner network, apply from this area during a call for tenders. None is open as of October 7, 2026.",
+    "Once contracted, log in to the partner area on services.santeclair.fr to manage third-party payment."
+  ],
+  "statuts": [
+    {
+      "libelle": "Accordé (Approved)",
+      "sens": "The supplementary insurer approves coverage",
+      "action": "Deliver the equipment, then bill"
+    },
+    {
+      "libelle": "En attente de traitement / En instance / En cours (Awaiting processing / Pending / In progress)",
+      "sens": "The file is still under review. The portal may announce processing within a few hours",
+      "action": "Wait, then come back to check the file"
+    },
+    {
+      "libelle": "Refusé (Refused)",
+      "sens": "No coverage as submitted. The portal gives the reason and offers to print the refusal letter",
+      "action": "Read the reason, correct, submit the request again"
+    },
+    {
+      "libelle": "N° Sécurité sociale inconnu (Unknown social security number)",
+      "sens": "The file is sent, but no coverage is found behind it",
+      "action": "Check the social security number and the third-party payment card before delivering"
+    },
+    {
+      "libelle": "Service momentanément indisponible (Service temporarily unavailable)",
+      "sens": "The TP+ portal is not responding, the request has not gone out",
+      "action": "Try again later"
+    },
+    {
+      "libelle": "Facturé (Billed)",
+      "sens": "The invoice has gone out. The file search shows the bank transfer order",
+      "action": "Track the bank transfer"
+    }
+  ],
+  "statutsSource": "granit-connecteur",
+  "contacts": [
+    {
+      "label": "TP+ agreement phone line",
+      "valeur": "0 892 970 400",
+      "detail": "Monday to Friday, 9am to 6pm · premium-rate number",
+      "source": "sc-ps"
+    },
+    {
+      "label": "Partner network phone line",
+      "valeur": "0 821 233 050",
+      "detail": "Monday to Friday, 9am to 6pm · premium-rate number · option 2 to apply",
+      "source": "sc-optique"
+    },
+    {
+      "label": "Partner area",
+      "valeur": "services.santeclair.fr",
+      "url": "https://services.santeclair.fr/professionnel-sante/connexion",
+      "source": "sc-qsn"
+    },
+    {
+      "label": "Not contracted yet",
+      "valeur": "Create your “Management d'activités” area",
+      "url": "https://services.santeclair.fr/professionnel-sante/compte/creation",
+      "source": "sc-tpplus"
+    },
+    {
+      "label": "Address",
+      "valeur": "7 mail Pablo Picasso, 44046 Nantes Cedex 1",
+      "source": "sc-mentions"
+    }
+  ],
+  "organismes": {
+    "source": "granit-connecteur",
+    "note": "List from the payer selector of the optical portal, recorded by Granit agents. Phrase it as “what the portal selector offers”, never “this insurer only goes through Santéclair”.",
+    "liste": [
+      "Allianz (00410001)",
+      "Allianz Igestion (00410993)",
+      "Apgis",
+      "Areas Assurances",
+      "Baloo",
+      "Bcac",
+      "Bpce Mutuelle",
+      "Collecteam (00402958)",
+      "Collecteam (98532001)",
+      "Complevie",
+      "Cpms",
+      "Diot By Helium",
+      "Gestineo",
+      "Gmf",
+      "Génération",
+      "Helium",
+      "Igsante",
+      "Maaf",
+      "Mapa",
+      "Meilleurtaux Sante (00401323)",
+      "Mgas",
+      "Mgc",
+      "Mma",
+      "Mnpaf (00401737)",
+      "Mspp",
+      "Mut. Des Pays De Vilaine (Mpv)",
+      "Mutuelle De La Boulangerie",
+      "Mutuelle Du Groupe Bnp Paribas",
+      "Roederer",
+      "Safiag",
+      "Sgsanté",
+      "Simax",
+      "Smabtp",
+      "Smi",
+      "Smi-Mma Entreprise",
+      "Spvie Assurances",
+      "Uniced",
+      "Unim",
+      "Verspieren",
+      "Yonivers"
+    ]
+  },
+  "sources": {
+    "sc-ps": {
+      "label": "santeclair.fr · Health professional",
+      "url": "https://www.santeclair.fr/fr/professionnel-sante",
+      "consulte": "2026-10-07"
+    },
+    "sc-optique": {
+      "label": "santeclair.fr · Optical partner network",
+      "url": "https://www.santeclair.fr/fr/professionnel-sante/reseau-partenaire-optique",
+      "consulte": "2026-10-07"
+    },
+    "sc-tpplus": {
+      "label": "santeclair.fr · TP+ third-party payment agreement",
+      "url": "https://www.santeclair.fr/fr/professionnel-sante/convention-tiers-payant-tpplus",
+      "consulte": "2026-10-07"
+    },
+    "sc-tpdemat": {
+      "label": "santeclair.fr · TP+ · Paperless third-party payment",
+      "url": "https://www.santeclair.fr/fr/professionnel-sante/convention-tiers-payant/offre-de-services-tiers-payant-dematerialise",
+      "consulte": "2026-10-07"
+    },
+    "sc-tableau": {
+      "label": "santeclair.fr · Dashboard",
+      "url": "https://www.santeclair.fr/fr/professionnel-sante/offre-de-services-tiers-payant-dematerialise/tableau-de-bord",
+      "consulte": "2026-10-07"
+    },
+    "sc-edi": {
+      "label": "santeclair.fr · EDI",
+      "url": "https://www.santeclair.fr/fr/professionnel-sante/offre-de-services-tiers-payant-dematerialise/edi",
+      "consulte": "2026-10-07"
+    },
+    "sc-qsn": {
+      "label": "santeclair.fr · About us",
+      "url": "https://www.santeclair.fr/fr/qui-sommes-nous",
+      "consulte": "2026-10-07"
+    },
+    "sc-mentions": {
+      "label": "santeclair.fr · Legal notice",
+      "url": "https://www.santeclair.fr/fr/mentions-legales",
+      "consulte": "2026-10-07"
+    },
+    "sc-vieprivee": {
+      "label": "santeclair.fr · Privacy",
+      "url": "https://www.santeclair.fr/fr/vie-privee",
+      "consulte": "2026-10-07"
+    },
+    "sc-20ans": {
+      "label": "santeclair.fr · Santéclair’s 20 years (April 2023)",
+      "url": "https://www.santeclair.fr/fr/actualites-institutionnel/soiree-des-20-ans-santeclair",
+      "consulte": "2026-10-07"
+    },
+    "sc-ao2024": {
+      "label": "santeclair.fr · Optical network 2025-2029: 2024 call for tenders",
+      "url": "https://www.santeclair.fr/fr/ouverture-reseau-optique-2025-2029",
+      "consulte": "2026-10-07"
+    },
+    "sc-tpcompl": {
+      "label": "santeclair.fr · Third-party payment for supplementary insurers",
+      "url": "https://www.santeclair.fr/fr/professionnel-assurance/tiers-payant-complementaire",
+      "consulte": "2026-10-07"
+    },
+    "acuite-2025": {
+      "label": "Acuité · Santéclair, key figures 2024 (April 2025)",
+      "url": "https://www.acuite.fr/actualite/ocam/306513/santeclair-renforce-son-role-dans-lecosysteme-de-sante-chiffres-cles-2024-et",
+      "consulte": "2026-10-09"
+    },
+    "granit-connecteur": {
+      "label": "Granit’s Santéclair connector (checked Oct 7, 2026)",
+      "url": "",
+      "consulte": "2026-10-07"
+    }
+  }
+}

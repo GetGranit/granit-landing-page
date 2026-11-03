@@ -1,0 +1,221 @@
+{
+  "slug": "portail-oxantis",
+  "nom": "Oxantis",
+  "logo": "/logos/oxantis.png",
+  "checkedOn": "2026-10-07",
+  "identite": [
+    {
+      "label": "Type",
+      "valeur": "Third-party payment operator of Groupe VYV",
+      "source": "vyv-cp"
+    },
+    {
+      "label": "Optical",
+      "valeur": "Yes, third-party payment with prior approval",
+      "source": "vyv-cp"
+    },
+    {
+      "label": "Portal",
+      "valeur": "oxantis.net",
+      "source": "vyv-cp"
+    },
+    {
+      "label": "Login",
+      "valeur": "Two-factor authentication (code by phone call or text message)",
+      "source": "granit-connecteur"
+    }
+  ],
+  "chiffres": [
+    {
+      "valeur": "31",
+      "label": "supplementary insurers using it in 2023",
+      "source": "vyv-cp"
+    },
+    {
+      "valeur": "10M+",
+      "label": "members covered by these insurers in 2023",
+      "source": "vyv-cp"
+    },
+    {
+      "valeur": "24,000",
+      "label": "health professionals on the portal in 2023",
+      "source": "vyv-cp"
+    },
+    {
+      "valeur": "2.2M",
+      "label": "optical invoices processed in 2022",
+      "source": "vyv-cp"
+    }
+  ],
+  "faits": [
+    {
+      "fait": "Since January 2023, Oxantis SA has brought together Groupe VYV’s optical, hearing and dental third-party payment (tiers payant: the patient pays nothing upfront, insurers pay the provider directly) management. Before that, two centers within the group shared it: Equasanté and UHMs.",
+      "source": "vyv-cp"
+    },
+    {
+      "fait": "Oxantis manages this third-party payment for Groupe VYV’s supplementary health insurers (mutuelles) (Harmonie Mutuelle, MGEN, MNT), for those of VYV Partenariat and for insurers outside the group.",
+      "source": "vyv-cp"
+    },
+    {
+      "fait": "The third-party payment managed by Oxantis is called “complex”: the insurer must give prior approval for the reimbursement provided by the policy.",
+      "source": "vyv-cp"
+    },
+    {
+      "fait": "The oxantis.net portal is a white-label interface supplied by Viamédis, a partner of Groupe VYV.",
+      "source": "vyv-cp"
+    },
+    {
+      "fait": "According to Groupe VYV, Oxantis solutions are available to all optical centers.",
+      "source": "vyv-cp"
+    },
+    {
+      "fait": "In 2022, Oxantis processed 2,245,392 optical invoices and paid more than €1.2 billion directly to health professionals, across all sectors.",
+      "source": "vyv-cp"
+    },
+    {
+      "fait": "Since February 1, 2022, MGEN, MGEN Efficience Santé and MAEE members can get third-party payment at any optician. Before that, only opticians in the Kalixia network could offer it through Oxantis.",
+      "source": "acuite-2022-mgen"
+    },
+    {
+      "fait": "Since July 1, 2025, for members who moved to MGEN Accolade, you must choose “MGEN Accolade” and not “MGEN” on the portal. Pending quotes for these members were deleted on June 30, 2025 and had to be entered again.",
+      "source": "acuite-2025-accolade"
+    },
+    {
+      "fait": "For an MGEN customer, ask for the third-party payment card: it shows which payer to choose on the Oxantis portal.",
+      "source": "acuite-2025-accolade"
+    },
+    {
+      "fait": "Each store logs in to oxantis.net with its email address and password. A code is then sent at every login, by phone call or text message.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "The Oxantis portal works like the Viamedis one: the same coverage request, tracking and billing screens, on a different domain.",
+      "source": "granit-connecteur"
+    }
+  ],
+  "conventionnement": [
+    "Contact the Oxantis contracting department: 0 821 21 00 07 (premium-rate number) or tp-oxantis-convention@oxantis.fr.",
+    "Once the account is open, log in on oxantis.net with your email address and password, then the code received by phone call or text message."
+  ],
+  "statuts": [
+    {
+      "libelle": "Accordée / acceptée / validée (Approved / accepted / validated)",
+      "sens": "The supplementary insurer commits to the amount",
+      "action": "Deliver the equipment, then bill on the portal"
+    },
+    {
+      "libelle": "Accordée sous réserve de pièces justificatives (PECAPJ) (Approved pending supporting documents)",
+      "sens": "Approved, but the supplementary insurer is waiting for documents",
+      "action": "Send the supporting documents through the channel indicated by the portal or by Oxantis, quoting the coverage approval (PEC) number"
+    },
+    {
+      "libelle": "En attente / en instance / en cours (Waiting / pending / in progress)",
+      "sens": "The file is still under review",
+      "action": "Wait, then follow up at the right time"
+    },
+    {
+      "libelle": "Refusée / rejetée (Refused / rejected)",
+      "sens": "No coverage as submitted",
+      "action": "Read the reason on the file page, correct, submit the request again"
+    },
+    {
+      "libelle": "Expirée / périmée (Expired)",
+      "sens": "The approval has passed its validity period",
+      "action": "Submit a new request"
+    },
+    {
+      "libelle": "Annulée / close / supprimée (Canceled / closed / deleted)",
+      "sens": "The file is no longer active",
+      "action": "Submit a new request if needed"
+    },
+    {
+      "libelle": "Facturée (Billed)",
+      "sens": "The invoice has gone out",
+      "action": "Track the bank transfer"
+    }
+  ],
+  "statutsSource": "granit-connecteur",
+  "contacts": [
+    {
+      "label": "Contracting (opticians)",
+      "valeur": "0 821 21 00 07",
+      "detail": "Premium-rate number · or tp-oxantis-convention@oxantis.fr",
+      "source": "harmonie-contacts"
+    },
+    {
+      "label": "Invoices and coverage approvals (optical)",
+      "valeur": "0 821 01 01 02",
+      "detail": "Premium-rate number · or tp-oxantis-optique@oxantis.fr",
+      "source": "harmonie-contacts"
+    },
+    {
+      "label": "Portal",
+      "valeur": "oxantis.net",
+      "url": "https://www.oxantis.net/HmNet/page/accueil/index",
+      "source": "vyv-cp"
+    }
+  ],
+  "organismes": {
+    "source": "granit-connecteur",
+    "note": "List from the payer selector of the optical portal, recorded by Granit agents. Phrase it as “what the portal selector offers”, never “this insurer only goes through Oxantis”.",
+    "liste": [
+      "Argedis",
+      "Harmonie Fonction Publique",
+      "HARMONIE MUTUELLE",
+      "Keolis",
+      "Ma mutuelle MGEN",
+      "MAEE",
+      "MAEE ACCOLADE",
+      "MEMF",
+      "MESE",
+      "Meusrec",
+      "MFTGS",
+      "MFTSV",
+      "MGEN",
+      "MGEN ACCOLADE",
+      "MGEN SOLUTIONS",
+      "MGPMH",
+      "MIASC",
+      "MNT",
+      "MOS Dijon",
+      "MPOSS",
+      "MUTAERO",
+      "MUTEST",
+      "Mutuelle asturienne",
+      "Mutuelle des SCOP",
+      "Mutuelle Ouest France",
+      "Safran-Harmonie",
+      "Safran-Ociane",
+      "SMACEM",
+      "SMPS",
+      "TOTAL"
+    ]
+  },
+  "sources": {
+    "vyv-cp": {
+      "label": "groupe-vyv.fr · Press release “Le Groupe VYV crée Oxantis SA” (Groupe VYV creates Oxantis SA) (Mar 28, 2023)",
+      "url": "https://www.groupe-vyv.fr/wp-content/uploads/2023/04/20230328_CP_Oxantis.pdf",
+      "consulte": "2026-10-07"
+    },
+    "harmonie-contacts": {
+      "label": "harmonie-mutuelle.fr · Health professionals, useful contacts (updated Jun 29, 2026)",
+      "url": "https://www.harmonie-mutuelle.fr/professionnels-de-sante/professionnels-sante-contacts-utiles",
+      "consulte": "2026-10-07"
+    },
+    "acuite-2022-mgen": {
+      "label": "Acuité · “La MGEN modifie son contrat de tiers payant” (MGEN changes its third-party payment contract) (Feb 4, 2022)",
+      "url": "https://www.acuite.fr/actualite/ocam/224229/la-mgen-modifie-son-contrat-de-tiers-payant",
+      "consulte": "2026-10-07"
+    },
+    "acuite-2025-accolade": {
+      "label": "Acuité · “Tiers payant : la MGEN apporte des changements” (Third-party payment: MGEN makes changes) (Jun 30, 2025)",
+      "url": "https://www.acuite.fr/actualites/profession/regime-obligatoire/tiers-payant-la-mgen-apporte-des-changements-313606",
+      "consulte": "2026-10-07"
+    },
+    "granit-connecteur": {
+      "label": "Granit’s Oxantis connector (checked Oct 7, 2026)",
+      "url": "",
+      "consulte": "2026-10-07"
+    }
+  }
+}

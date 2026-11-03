@@ -1,0 +1,225 @@
+{
+  "slug": "portail-sp-sante",
+  "nom": "SP Santé",
+  "logo": "/logos/sp-sante.png",
+  "checkedOn": "2026-10-07",
+  "identite": [
+    {
+      "label": "Type",
+      "valeur": "Third-party payment brand, operated by Cetip (Cegedim group)",
+      "source": "sp-pages"
+    },
+    {
+      "label": "Optical",
+      "valeur": "Yes, with online entry and tracking of coverage requests",
+      "source": "sp-pages"
+    },
+    {
+      "label": "Portal",
+      "valeur": "spsante.fr",
+      "source": "sp-accueil"
+    },
+    {
+      "label": "Login",
+      "valeur": "Username, password and code sent by email",
+      "source": "granit-connecteur"
+    }
+  ],
+  "chiffres": [
+    {
+      "valeur": "19M+",
+      "label": "insured people covered by SP Santé third-party payment",
+      "source": "sp-pages"
+    },
+    {
+      "valeur": "150M+",
+      "label": "invoices processed in 2025",
+      "source": "sp-pages"
+    },
+    {
+      "valeur": "200,000+",
+      "label": "partner health professionals and facilities",
+      "source": "sp-pages"
+    },
+    {
+      "valeur": "24",
+      "label": "supplementary insurer codes open in optical on the public list",
+      "source": "sp-amc"
+    }
+  ],
+  "faits": [
+    {
+      "fait": "SP Santé is a third-party payment (tiers payant: the patient pays nothing upfront, insurers pay the provider directly) brand of the Santé Pharma association. It is run by Cegedim, through its Cetip entity.",
+      "source": "sp-pages"
+    },
+    {
+      "fait": "SP Santé is not a supplementary health insurer (mutuelle). The service connects supplementary health insurers and health professionals.",
+      "source": "sp-pages"
+    },
+    {
+      "fait": "SP Santé reports more than €2 billion in financial flows and more than 80 supplementary health insurers on direct flow.",
+      "source": "sp-pages"
+    },
+    {
+      "fait": "Cegedim presents SP Santé and iSanté together in its third-party payment management offering, with price filters for optical.",
+      "source": "cegedim-solutions"
+    },
+    {
+      "fait": "An optician contracts directly with SP Santé, through a form on spsante.fr. Going through Inter-AMC is reserved for other professions.",
+      "source": "sp-faq"
+    },
+    {
+      "fait": "Without a contract with SP Santé, a store cannot use SP Santé third-party payment.",
+      "source": "sp-faq"
+    },
+    {
+      "fait": "The online account lets you enter and track optical coverage requests, track your payments and check patients’ coverage rights in real time.",
+      "source": "sp-pages"
+    },
+    {
+      "fait": "On the certificate, only expenses marked “SP” are covered by SP Santé. A section shows, for each area of care, a rate or the need for a coverage approval.",
+      "source": "sp-pages"
+    },
+    {
+      "fait": "Each supplementary insurer has its own AMC code. The invoice is e-transmitted under the AMC code shown on the patient’s certificate.",
+      "source": "sp-pages"
+    },
+    {
+      "fait": "The invoice must use the INSEE number and the date of birth from the SP Santé certificate. This number may differ from the one on the Carte Vitale (French health insurance card).",
+      "source": "sp-pages"
+    },
+    {
+      "fait": "SP Santé pays the store after review by the supplementary insurer, which accepts or rejects the invoice. The response shows the rejection reasons and the bank transfer reference.",
+      "source": "sp-faq"
+    },
+    {
+      "fait": "Invoices are e-transmitted with separate handling, as a single combined claim (DRE, SESAM-Vitale 1.40) or through a concentrator (OCT). Without this software setting, requests do not arrive.",
+      "source": "sp-faq"
+    },
+    {
+      "fait": "SP Santé announces that, as of January 1, 2026, Interiale is open for public sector insured people, in dental and optical, under code 29993227. The private sector Sigmage card keeps code 00403220.",
+      "source": "sp-pages"
+    },
+    {
+      "fait": "The optical coverage request is made in a separate service, opened from spsante.fr with the “Accéder au service” (Access the service) button.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "In this service, you must print the file before you can send it.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "Each store logs in with its username and password, then a 6-digit code sent by email by Cetip.",
+      "source": "granit-connecteur"
+    }
+  ],
+  "conventionnement": [
+    "Open the contracting request form on spsante.fr and choose the Opticien (Optician) category.",
+    "Enter the FINESS or Adeli identifier, the RPPS number, the company name, the SIRET number, the brand and the store contact.",
+    "Specify the e-transmission method: flow, concentrator (OCT), software and vendor.",
+    "Attach the supporting documents and the bank details (IBAN and BIC).",
+    "Read and accept the agreement, then submit the request.",
+    "Receive the confirmation email, with the instructions to create the account."
+  ],
+  "statuts": [
+    {
+      "libelle": "Accordé (Approved)",
+      "sens": "The supplementary insurer approves coverage",
+      "action": "Deliver the equipment, then e-transmit the invoice under the AMC code on the certificate"
+    },
+    {
+      "libelle": "Accordé, avec “N° Sécurité sociale inconnu” (Approved, with “Unknown social security number”)",
+      "sens": "The file is sent, but the coverage is not recognized: the amounts may come back as zero",
+      "action": "Check the INSEE number on the certificate and the Carte Vitale before delivering"
+    },
+    {
+      "libelle": "En cours d’analyse / traitée sous 48 heures (Under review / processed within 48 hours)",
+      "sens": "The supplementary insurer has not decided yet",
+      "action": "Wait, then come back to read the decision on the portal"
+    },
+    {
+      "libelle": "Refusé (Refused)",
+      "sens": "No coverage as submitted",
+      "action": "Read the reason shown (for example: request to be sent to the platform shown on the certificate), correct, submit the request again"
+    },
+    {
+      "libelle": "Service momentanément indisponible (Service temporarily unavailable)",
+      "sens": "The transmission did not go through",
+      "action": "Try again later"
+    }
+  ],
+  "statutsSource": "granit-connecteur",
+  "contacts": [
+    {
+      "label": "Optician phone line",
+      "valeur": "0820 20 61 88",
+      "detail": "Single call center · premium-rate number",
+      "source": "sp-pages"
+    },
+    {
+      "label": "Complaint",
+      "valeur": "CETIP Service Réclamations, BP 50413, 45204 Montargis Cedex",
+      "detail": "By mail only, after a first call to support · acknowledged within 10 working days",
+      "source": "sp-pages"
+    }
+  ],
+  "organismes": {
+    "source": "granit-connecteur",
+    "note": "List from the payer selector of the optical portal, recorded by Granit agents. Phrase it as “what the portal selector offers”, never “this insurer only goes through SP Santé”.",
+    "liste": [
+      "ABEILLE IARD & SANTÉ",
+      "AIAC COURTAGE",
+      "AON",
+      "AXA DSC",
+      "AXA SOGAREP",
+      "COLLECTEAM",
+      "GEREP",
+      "GIEPS",
+      "HELIUM",
+      "INTERIALE SIGMAGE",
+      "MUTUELLE DE POITIERS ASSURANCE",
+      "PLANSANTÉ",
+      "SFP",
+      "SIGMAGE",
+      "TG-ASSUR",
+      "USP (UNI SANTE PREVOYANCE)"
+    ]
+  },
+  "sources": {
+    "sp-accueil": {
+      "label": "spsante.fr · Portal home page",
+      "url": "https://www.spsante.fr/",
+      "consulte": "2026-10-07"
+    },
+    "sp-pages": {
+      "label": "spsante.fr · Public pages (About, Health professional, Insured person, Certificate, Contact us, Complaint, AMC news)",
+      "url": "https://www.spsante.fr/api/cms/blocklists/Pages",
+      "consulte": "2026-10-07"
+    },
+    "sp-faq": {
+      "label": "spsante.fr · Q&A",
+      "url": "https://www.spsante.fr/api/faq",
+      "consulte": "2026-10-07"
+    },
+    "sp-amc": {
+      "label": "spsante.fr · Public list of active supplementary insurers by area of care",
+      "url": "https://www.spsante.fr/api/referentiel/list-amc",
+      "consulte": "2026-10-07"
+    },
+    "cegedim-solutions": {
+      "label": "cegedim-assurances.com · Outsourced third-party payment management",
+      "url": "https://www.cegedim-assurances.com/fr-fr/ext-services-metiers/Pages/gestion-externalise-tiers-payant.aspx",
+      "consulte": "2026-10-09"
+    },
+    "granit-connecteur": {
+      "label": "Granit’s SP Santé connector (checked Oct 7, 2026)",
+      "url": "",
+      "consulte": "2026-10-07"
+    },
+    "sp-conv": {
+      "label": "spsante.fr · Contracting request form",
+      "url": "https://www.spsante.fr/components/identity/unauthenticated/request-conv.html",
+      "consulte": "2026-10-07"
+    }
+  }
+}

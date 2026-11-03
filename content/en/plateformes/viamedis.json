@@ -1,0 +1,299 @@
+{
+  "slug": "portail-viamedis",
+  "nom": "Viamedis",
+  "logo": "/logos/viamedis.png",
+  "checkedOn": "2026-10-06",
+  "identite": [
+    {
+      "label": "Type",
+      "valeur": "Third-party payment operator",
+      "source": "viamedis-ia"
+    },
+    {
+      "label": "Optical",
+      "valeur": "Yes, by coverage approval",
+      "source": "viamedis-ia"
+    },
+    {
+      "label": "Portal",
+      "valeur": "viamedis.net",
+      "source": "viamedis-ps"
+    },
+    {
+      "label": "Login",
+      "valeur": "Two-factor authentication",
+      "source": "granit-connecteur"
+    }
+  ],
+  "chiffres": [
+    {
+      "valeur": "2000",
+      "label": "year founded",
+      "source": "viamedis-ia"
+    },
+    {
+      "valeur": "75+",
+      "label": "supplementary insurer clients",
+      "source": "viamedis-ia"
+    },
+    {
+      "valeur": "280,000+",
+      "label": "partner health professionals",
+      "source": "viamedis-ia"
+    },
+    {
+      "valeur": "4.9M",
+      "label": "optical, hearing and dental invoices in 2025",
+      "source": "viamedis-ia"
+    }
+  ],
+  "faits": [
+    {
+      "fait": "In 2025, Viamedis processed more than 94 million invoices and paid €3.2 billion in benefits.",
+      "source": "viamedis-ia"
+    },
+    {
+      "fait": "Optical, hearing and dental care make up its “complex third-party payment” (tiers payant: the patient pays nothing upfront, insurers pay the provider directly), based on a coverage request or quote: 4.9 million invoices and €1.9 billion paid in 2025.",
+      "source": "viamedis-ia"
+    },
+    {
+      "fait": "Contracting is free for the health professional.",
+      "source": "viamedis-ps"
+    },
+    {
+      "fait": "Depending on the specialty, listing is also possible through Inter-AMC.",
+      "source": "viamedis-ps"
+    },
+    {
+      "fait": "Viamedis guarantees payment for insured people with a valid third-party payment card showing the name of the supplementary insurer, the coverage level and the Viamedis logo.",
+      "source": "viamedis-ps"
+    },
+    {
+      "fait": "Viamedis.net lets you check patients’ coverage rights in real time and the payment history, enter and track quotes, coverage requests, invoices and reimbursements, and update your contact details.",
+      "source": "viamedis-ps"
+    },
+    {
+      "fait": "Each store logs in to viamedis.net with an email address and a password, then a code from an authenticator app (for example Google Authenticator).",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "Viamedis does not publish a payment time specific to optical. The advertised average of 11 days applies to hospital third-party payment.",
+      "source": "viamedis-ia"
+    }
+  ],
+  "conventionnement": [
+    "Create an account on viamedispro.com.",
+    "Upload the supporting documents from your area: administrative and bank information.",
+    "Receive the email confirming the listing, once the file has been checked.",
+    "After the bank details (RIB) are validated, receive a second email with the viamedis.net activation link.",
+    "At the first login to viamedis.net, accept the terms of the contractual commitment."
+  ],
+  "statuts": [
+    {
+      "libelle": "Accordée / validée (Approved / validated)",
+      "sens": "The supplementary insurer commits to the amount",
+      "action": "Deliver the equipment, then bill"
+    },
+    {
+      "libelle": "Accordée sous réserve de pièces justificatives (Approved pending supporting documents)",
+      "sens": "Approved, but documents are required",
+      "action": "Upload the quote, delivery note, prescription and invoice to the portal"
+    },
+    {
+      "libelle": "En attente / en instance / en cours (Waiting / pending / in progress)",
+      "sens": "The file is still under review",
+      "action": "Wait, then follow up at the right time"
+    },
+    {
+      "libelle": "Refusée (Refused)",
+      "sens": "No coverage as submitted",
+      "action": "Read the reason, correct, submit the request again"
+    },
+    {
+      "libelle": "Expirée (Expired)",
+      "sens": "The approval has passed its validity period",
+      "action": "Submit a new request"
+    },
+    {
+      "libelle": "Annulée / close / supprimée (Canceled / closed / deleted)",
+      "sens": "The file is no longer active",
+      "action": "Submit a new request if needed"
+    },
+    {
+      "libelle": "Facturée (Billed)",
+      "sens": "The invoice has gone out",
+      "action": "Track the bank transfer"
+    }
+  ],
+  "statutsSource": "granit-connecteur",
+  "contacts": [
+    {
+      "label": "Phone",
+      "valeur": "0 825 076 076",
+      "detail": "Monday to Friday, 9am to 6pm · premium-rate number",
+      "source": "viamedis-ps"
+    },
+    {
+      "label": "Already listed",
+      "valeur": "viamedis.net contact form",
+      "url": "https://www.viamedis.net/ViamedisNet/page/commun/p_index_contact_us",
+      "source": "viamedis-ps"
+    },
+    {
+      "label": "Not listed yet",
+      "valeur": "viamedispro.com form",
+      "url": "https://www.viamedispro.com/nous-contacter/",
+      "source": "viamedis-ps"
+    },
+    {
+      "label": "Address",
+      "valeur": "1-11 rue Brillat-Savarin, 75013 Paris",
+      "source": "viamedis-ps"
+    }
+  ],
+  "organismes": {
+    "source": "granit-connecteur",
+    "note": "List from the payer selector of the viamedis.net optical portal, recorded by Granit agents. Phrase it as “what the portal selector offers”, never “this insurer only goes through Viamedis”.",
+    "liste": [
+      "ACTUDATA",
+      "AEM GESTION",
+      "AGLAE",
+      "AGPM ( Ex TEGO)",
+      "AGRICA PREVOYANCE",
+      "ALMUTRA",
+      "AMELLIS",
+      "AMH GESTION",
+      "AON",
+      "APRIL SANTE PREVOYANCE",
+      "ASP COLLECTIVES",
+      "ASP COLLECTIVES - Tessi",
+      "ASSU 2000",
+      "ASSUREO",
+      "AVENIR MUTUELLE",
+      "AVENIR SANTE",
+      "AVENIR SANTÉ MUTUELLE",
+      "BALOO",
+      "BENEFIZ",
+      "CCMO MUTUELLE",
+      "CCSP - SUISSCOURTAGE",
+      "CENTRE DE GESTION SANTE",
+      "CETIM",
+      "CGRM- SPVIE-ACHEEL",
+      "COGEVIE",
+      "COLLECTEAM",
+      "CPMS - ABELA - MGD",
+      "CRC",
+      "CYBELE",
+      "ENERGIE MUTUELLE",
+      "ENERGIE OPTIMA",
+      "EURO-ASSURANCE ONE UP (ASSU 2000)",
+      "FFA - LUXIOR ASSURANCES",
+      "GESTASSUR (INTERPREVOYANCE)",
+      "GFP PLANSANTE",
+      "GROUPE PASTEUR MUTUALITÉ - A.G.M.F",
+      "Gestion MH SANTE",
+      "Groupe Mutualiste RATP",
+      "GÉNÉRATION",
+      "HCR BIEN ETRE",
+      "HELIUM",
+      "HEMOS SANTE",
+      "HENNER ET MALAKOFF HUMANIS",
+      "IASSURE",
+      "IDENTITES MUTUELLE",
+      "IGESTION SANTE",
+      "INPR",
+      "IPECA",
+      "IPSEC",
+      "ISTYA",
+      "KLESIA LA MUTUELLE FAMILIALE",
+      "L'EQUITE ASSURANCES",
+      "LA MUTUELLE CATALANE",
+      "LA MUTUELLE FAMILIALE",
+      "LA MUTUELLE NATIONALE du personnel des établissements MICHELIN",
+      "MAEE",
+      "MALAKOFF HUMANIS MUTUELLE",
+      "MALAKOFF HUMANIS PREVOYANCE",
+      "MANSUY ASSURANCES",
+      "MAXANCE (ASSU2000)",
+      "MBPS",
+      "MCA",
+      "MCRN",
+      "MERCER",
+      "MGEN",
+      "MGEN SOLUTION",
+      "MIE",
+      "MIEL",
+      "MOBILITE MUTUELLE",
+      "MUROS",
+      "MUTELIOS",
+      "MUTELIOS (ex MFIF)",
+      "MUTUA GESTION",
+      "MUTUALIA",
+      "MUTUANCE",
+      "MUTUELLE BLEUE",
+      "MUTUELLE DU CHAMPAGNE",
+      "MUTUELLE GÉNÉRALE DE PRÉVOYANCE SOCIALE",
+      "MUTUELLE GÉNÉRALE DES CHEMINOTS",
+      "MUTUELLE MALAKOFF HUMANIS",
+      "MUTUELLE MARE GAILLARD",
+      "MUTUELLE MUTAERO",
+      "Mutuelle ROC",
+      "Mutuelle Sante Eiffage Energie",
+      "Mutuelle complémentaire des agents publics",
+      "Mutuelle du Monde Combattant",
+      "NEOLIANE ENERGIE",
+      "NEOLIANE EPSIL",
+      "NEOLIANE EQUILIBRE",
+      "NEOLIANE GESTION",
+      "NEOLIANE KLESIA",
+      "NEOLIANE PREPAR",
+      "NEOLIANE SANTE (MUTUA)",
+      "NEOSANTE",
+      "NUVEO",
+      "OCSO",
+      "ORYS SANTE",
+      "ORYS TRANQUILLITE",
+      "OWELLO",
+      "PACIFICA",
+      "PMIF",
+      "PREVIFRANCE",
+      "PREVOIR",
+      "QUATREM",
+      "RADIANCE MUTUELLE",
+      "ROEDERER - SIMAX",
+      "SANTEO",
+      "SANTIANE SWL",
+      "SFP - SOCIETE FRANCAISE DE PREVENTION",
+      "SGSANTE",
+      "SO LYON",
+      "THELEM",
+      "UCR",
+      "UMS",
+      "UNIASSUR",
+      "UNISANTE - MA SOLUTION SANTE",
+      "UNITE FRATERNELLE DES RÉGIONS",
+      "VERSPIEREN",
+      "VIVINTER",
+      "WELCARE AXA",
+      "WTW FRANCE",
+      "YVELIN"
+    ]
+  },
+  "sources": {
+    "viamedis-ps": {
+      "label": "viamedis.fr · Health professionals",
+      "url": "https://www.viamedis.fr/professionnels-de-sante/",
+      "consulte": "2026-10-06"
+    },
+    "viamedis-ia": {
+      "label": "viamedis.fr · Viamedis reference page (updated July 2026)",
+      "url": "https://www.viamedis.fr/viamedis-page-ia/",
+      "consulte": "2026-10-06"
+    },
+    "granit-connecteur": {
+      "label": "Granit’s Viamedis connector (recorded on the portal)",
+      "url": null,
+      "consulte": "2026-10-06"
+    }
+  }
+}
