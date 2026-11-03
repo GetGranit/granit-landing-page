@@ -33,9 +33,7 @@ export function MesDemandes({
   return (
     <div className="mt-6">
       <div className="mb-2 flex items-center justify-between">
-        <p className="eyebrow" style={{ color: "var(--text-muted)" }}>
-          {t.vos}
-        </p>
+        <p className="eyebrow">{t.vos}</p>
         <ApercuBadge />
       </div>
       <ul className="space-y-2">
@@ -44,14 +42,14 @@ export function MesDemandes({
             <button
               type="button"
               onClick={() => onOpen(i)}
-              className="flex w-full items-center justify-between gap-3 rounded-[14px] border bg-white px-4 py-3 text-left"
+              className="flex w-full items-center justify-between gap-3 rounded-[14px] border bg-papier px-4 py-3 text-left"
               style={{ borderColor: "var(--border)" }}
             >
               <span className="text-[15px]">{d.dossier.nom[lang]}</span>
               <span
                 className="text-[13px]"
                 style={{
-                  color: d.statut === "accordee" ? "var(--sage)" : "var(--text-muted)",
+                  color: d.statut === "accordee" ? "var(--succes-texte)" : "var(--text-muted)",
                   fontWeight: 600,
                 }}
               >
@@ -72,17 +70,17 @@ export function PaulButton({ onClick }: { onClick: () => void }) {
     <button
       type="button"
       onClick={onClick}
-      className="fixed bottom-4 right-4 z-40 flex items-center gap-2 rounded-full border bg-white py-2 pl-2 pr-4 text-[14px]"
-      style={{ borderColor: "var(--border)", boxShadow: "var(--shadow-soft)" }}
+      className="fixed bottom-4 right-4 z-40 flex items-center gap-2 rounded-full border bg-papier py-2 pl-2 pr-4 text-[14px]"
+      style={{ borderColor: "var(--border)", boxShadow: "var(--ombre-douce)" }}
     >
       <span
         aria-hidden
-        className="flex h-8 w-8 items-center justify-center rounded-full font-serif text-[15px] text-white"
-        style={{ background: "var(--gradient-terra)" }}
+        className="flex h-8 w-8 items-center justify-center rounded-full font-serif text-[15px] text-rose"
+        style={{ background: "var(--encre)" }}
       >
         P
       </span>
-      {t.question} <span style={{ color: "var(--terra)" }}>{t.repond}</span>
+      {t.question} <span style={{ color: "var(--profond)" }}>{t.repond}</span>
     </button>
   );
 }

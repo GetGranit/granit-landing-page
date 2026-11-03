@@ -71,7 +71,7 @@ const copy = {
       { ico: "✓", txt: "Dérogations gérées" },
       { ico: "✓", txt: "Contrôle tarifaire" },
       { ico: "✓", txt: "Zéro faute de saisie, zéro rejet à refaire" },
-      { ico: "🔒", txt: "Hébergeur certifié HDS, dans l'UE" },
+      { ico: "✓", txt: "Hébergeur certifié HDS, dans l'UE" },
     ],
     etSi: "Et si Granit la faisait ",
     pourVous: "pour vous",
@@ -137,7 +137,7 @@ const copy = {
       { ico: "✓", txt: "Exceptions handled" },
       { ico: "✓", txt: "Price checks" },
       { ico: "✓", txt: "Zero typos, zero rejections to redo" },
-      { ico: "🔒", txt: "HDS-certified host, in the EU" },
+      { ico: "✓", txt: "HDS-certified host, in the EU" },
     ],
     etSi: "What if Granit did it ",
     pourVous: "for you",
@@ -190,7 +190,7 @@ function PortalBox({ card, p, waiting }: { card: CardRead | null; p: Platform; w
       style={{ borderColor: "var(--border2)" }}
     >
       <div
-        className="px-3 py-1.5 text-[11px] text-white"
+        className="px-3 py-1.5 text-[11px] text-papier"
         style={{ background: "#34495e", fontFamily: "var(--font-mono)", letterSpacing: ".04em" }}
       >
         {t.portailEntete((p.reseau_via ? labelOf(p.reseau_via) : p.label).toUpperCase())}
@@ -202,10 +202,10 @@ function PortalBox({ card, p, waiting }: { card: CardRead | null; p: Platform; w
               {k}
             </dt>
             <dd
-              className="rounded border bg-white px-2 py-1"
+              className="rounded border bg-papier px-2 py-1"
               style={{ borderColor: "#cfd6de", fontFamily: "var(--font-mono)", color: "#111" }}
             >
-              {v} <span style={{ color: "var(--sage)" }}>✓</span>
+              {v} <span style={{ color: "var(--succes)" }}>✓</span>
             </dd>
           </div>
         ))}
@@ -215,7 +215,7 @@ function PortalBox({ card, p, waiting }: { card: CardRead | null; p: Platform; w
               {t.equipement}
             </dt>
             <dd
-              className="rounded border border-dashed bg-white px-2 py-1"
+              className="rounded border border-dashed bg-papier px-2 py-1"
               style={{ borderColor: "#cfd6de", color: "#56606b" }}
             >
               {t.equipementExemple}
@@ -261,8 +261,8 @@ export function ResultSimulable({
       <span
         className="rounded-full px-3 py-1 text-[12px]"
         style={{
-          background: "var(--sage-light)",
-          color: "#2f6b3d",
+          background: "var(--succes-fond)",
+          color: "var(--succes-texte)",
           fontFamily: "var(--font-mono)",
         }}
       >
@@ -368,10 +368,10 @@ export function ResultEstimation({
 const euros = (n: number, lang: Lang) =>
   lang === "en" ? `€${n.toLocaleString("en-US")}` : `${n} €`;
 
-const sageBox = "grid w-full gap-1.5 rounded-xl border p-4 text-left";
-const sageStyle = {
-  borderColor: "color-mix(in oklab, var(--sage) 45%, transparent)",
-  background: "var(--sage-light)",
+const succesBox = "grid w-full gap-1.5 rounded-xl border p-4 text-left";
+const succesStyle = {
+  borderColor: "color-mix(in oklab, var(--succes) 45%, transparent)",
+  background: "var(--succes-fond)",
 } as const;
 
 /** Compteur qui monte de 0 à `target` (easeOutCubic). `run=false` → valeur finale directe. */
@@ -409,18 +409,18 @@ function Estimation({ estim }: { estim: EstimationLunettes }) {
   const moyenne = useCountUp(estim.f.median, run);
   return (
     <motion.div
-      className={sageBox}
-      style={sageStyle}
+      className={succesBox}
+      style={succesStyle}
       initial={run ? { opacity: 0, y: 10 } : false}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
     >
-      <span className="text-[13px]" style={{ fontFamily: "var(--font-mono)", color: "#2f6b3d" }}>
+      <span className="text-[13px]" style={{ fontFamily: "var(--font-mono)", color: "var(--succes-texte)" }}>
         {t.estimationTitre}
       </span>
       <motion.p
-        className="font-serif font-semibold leading-none"
-        style={{ color: "#2f6b3d" }}
+        className="font-serif leading-none"
+        style={{ color: "var(--succes-texte)" }}
         initial={run ? { scale: 0.85, opacity: 0 } : false}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
@@ -429,7 +429,7 @@ function Estimation({ estim }: { estim: EstimationLunettes }) {
       </motion.p>
       <motion.p
         className="text-[14px]"
-        style={{ color: "#4a5a4f" }}
+        style={{ color: "var(--texte-secondaire)" }}
         initial={run ? { opacity: 0 } : false}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 0.5 }}
@@ -438,7 +438,7 @@ function Estimation({ estim }: { estim: EstimationLunettes }) {
       </motion.p>
       <motion.p
         className="text-[12px]"
-        style={{ color: "#6b7d70" }}
+        style={{ color: "var(--texte-secondaire)" }}
         initial={run ? { opacity: 0 } : false}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.3, duration: 0.5 }}
@@ -531,9 +531,7 @@ function GranitFaitPourVous({ target }: { target: string }) {
     <div className="grid w-full gap-4 border-t pt-5" style={{ borderColor: "var(--border)" }}>
       <p className="font-serif text-[22px] leading-tight" style={{ color: "var(--text)" }}>
         {t.etSi}
-        <span className="italic" style={{ color: "var(--terra)" }}>
-          {t.pourVous}
-        </span>
+        <span className="accent-italic">{t.pourVous}</span>
         {t.etSiFin}
       </p>
 
@@ -546,11 +544,11 @@ function GranitFaitPourVous({ target }: { target: string }) {
           <div className="flex items-baseline justify-between">
             <span
               className="text-[11px]"
-              style={{ fontFamily: "var(--font-mono)", letterSpacing: ".08em", color: "#8a8178" }}
+              style={{ fontFamily: "var(--font-mono)", letterSpacing: ".08em", color: "var(--texte-discret)" }}
             >
               {t.aLaMain}
             </span>
-            <span className="text-[12px]" style={{ color: "#8a8178" }}>
+            <span className="text-[12px]" style={{ color: "var(--texte-secondaire)" }}>
               ~10 min
             </span>
           </div>
@@ -563,7 +561,7 @@ function GranitFaitPourVous({ target }: { target: string }) {
               >
                 <span
                   className="grid h-4 w-4 shrink-0 place-items-center rounded-full border"
-                  style={{ borderColor: "#cfc8bd", color: "#b2a99c", fontSize: 10 }}
+                  style={{ borderColor: "var(--filet-champ)", color: "var(--texte-secondaire)", fontSize: 10 }}
                 >
                   {i + 1}
                 </span>
@@ -571,7 +569,7 @@ function GranitFaitPourVous({ target }: { target: string }) {
               </li>
             ))}
           </ul>
-          <span className="text-[12px] italic" style={{ color: "#8a8178" }}>
+          <span className="text-[12px]" style={{ color: "var(--texte-secondaire)" }}>
             {t.recommence}
           </span>
         </div>
@@ -580,8 +578,8 @@ function GranitFaitPourVous({ target }: { target: string }) {
         <div
           className="grid content-start gap-2 rounded-xl border p-3 text-left"
           style={{
-            borderColor: "color-mix(in oklab, var(--terra) 40%, transparent)",
-            background: "color-mix(in oklab, var(--terra) 7%, var(--bg3))",
+            borderColor: "var(--profond)",
+            background: "var(--papier)",
           }}
         >
           <div className="flex items-baseline justify-between">
@@ -590,12 +588,12 @@ function GranitFaitPourVous({ target }: { target: string }) {
               style={{
                 fontFamily: "var(--font-mono)",
                 letterSpacing: ".08em",
-                color: "var(--terra)",
+                color: "var(--profond)",
               }}
             >
               {t.avecGranit}
             </span>
-            <span className="text-[12px] font-semibold" style={{ color: "var(--terra)" }}>
+            <span className="text-[12px] font-semibold" style={{ color: "var(--profond)" }}>
               {t.pourVous}
             </span>
           </div>
@@ -609,13 +607,13 @@ function GranitFaitPourVous({ target }: { target: string }) {
                     initial={false}
                     animate={{
                       scale: done ? 1 : 0.8,
-                      background: done ? "var(--sage)" : "transparent",
+                      background: done ? "var(--succes)" : "transparent",
                     }}
                     transition={{ duration: 0.25 }}
                     style={{
-                      color: "#fff",
+                      color: "var(--rose)",
                       fontSize: 11,
-                      border: done ? "none" : "1px solid #cfd6de",
+                      border: done ? "none" : "1px solid var(--filet-champ)",
                     }}
                   >
                     {done ? "✓" : ""}
@@ -631,7 +629,7 @@ function GranitFaitPourVous({ target }: { target: string }) {
             className="text-[12px] font-semibold"
             animate={{ opacity: faites >= total ? 1 : 0.35 }}
             transition={{ duration: 0.25 }}
-            style={{ color: "#2f6b3d" }}
+            style={{ color: "var(--succes-texte)" }}
           >
             {t.prete}
           </motion.span>
@@ -643,7 +641,7 @@ function GranitFaitPourVous({ target }: { target: string }) {
           <li
             key={a.txt}
             className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[12px]"
-            style={{ background: "var(--sage-light)", color: "#2f6b3d" }}
+            style={{ background: "var(--succes-fond)", color: "var(--succes-texte)" }}
           >
             <span aria-hidden>{a.ico}</span>
             {a.txt}
@@ -682,9 +680,7 @@ function Prevenir({
     >
       <p className="font-serif text-[22px] leading-tight" style={{ color: "var(--text)" }}>
         {t.ouFaire(portail)}
-        <span className="italic" style={{ color: "var(--terra)" }}>
-          {t.ensuite}
-        </span>
+        <span className="accent-italic">{t.ensuite}</span>
         {t.etSiFin}
       </p>
       <Muted>{t.laissez}</Muted>
@@ -701,15 +697,15 @@ function Prevenir({
           setEmail(e.target.value);
           setInvalide(false);
         }}
-        className={`w-full rounded-xl border-[1.5px] bg-white px-4 py-3 text-[17px] ${focusRing}`}
-        style={{ borderColor: invalide ? "var(--terra)" : "var(--border2)", color: "var(--text)" }}
+        className={`w-full rounded-xl border-[1.5px] bg-papier px-4 py-3 text-[17px] ${focusRing}`}
+        style={{ borderColor: invalide ? "var(--alerte)" : "var(--filet-champ)", color: "var(--text)" }}
       />
       {invalide && (
         <p
           id="prevenir-erreur"
           role="alert"
           className="text-[14px]"
-          style={{ color: "var(--terra-hover)" }}
+          style={{ color: "var(--alerte-texte)" }}
         >
           {t.emailInvalide}
         </p>
@@ -718,7 +714,7 @@ function Prevenir({
         <p
           role="alert"
           className="rounded-xl px-3 py-2 text-[15px]"
-          style={{ background: "#fbf0dc", color: "#7a4f12" }}
+          style={{ background: "var(--lavis)", color: "var(--encre)" }}
         >
           {error}
         </p>
@@ -754,7 +750,7 @@ export function ResultChoice({
             key={p.id}
             type="button"
             onClick={() => onPick(p)}
-            className="w-full rounded-[14px] border-[1.5px] bg-white px-5 py-4 text-[17px] transition-colors hover:border-[var(--text)]"
+            className="w-full rounded-[14px] border-[1.5px] bg-papier px-5 py-4 text-[17px] transition-colors hover:border-[var(--text)]"
             style={{ borderColor: "var(--border2)", color: "var(--text)", fontWeight: 500 }}
           >
             {p.label}
@@ -771,7 +767,7 @@ function Warn({ children }: { children: React.ReactNode }) {
   return (
     <p
       className="w-full rounded-xl px-3 py-2 text-[15px]"
-      style={{ background: "#fbf0dc", color: "#7a4f12" }}
+      style={{ background: "var(--lavis)", color: "var(--encre)" }}
     >
       {children}
     </p>

@@ -4,7 +4,8 @@ import logoMonogram from "@/assets/logo.svg";
 
 const copy = {
   fr: {
-    baseline: "Plateforme d'agents IA pour la santé.",
+    baseline: "Le back-office qui travaille pendant que vous soignez.",
+    hds: "Hébergeur certifié HDS",
     product: "Produit",
     agents: "Agents",
     pricing: "Tarifs",
@@ -23,7 +24,8 @@ const copy = {
     gdpr: "RGPD",
   },
   en: {
-    baseline: "AI agent platform for healthcare.",
+    baseline: "The back office that works while you care.",
+    hds: "HDS-certified host",
     product: "Product",
     agents: "Agents",
     pricing: "Pricing",
@@ -58,12 +60,6 @@ export function Footer() {
           <div className="md:col-span-4">
             <Link to="/" className="inline-flex items-center gap-2.5">
               <img src={logoMonogram} alt="Granit" className="h-7 w-auto" />
-              <span
-                className="font-serif text-[20px] tracking-tight"
-                style={{ color: "var(--text)", fontWeight: 700 }}
-              >
-                Granit
-              </span>
             </Link>
             <p
               className="mt-4 max-w-xs text-[13.5px] leading-[1.6]"
@@ -72,7 +68,7 @@ export function Footer() {
               {t.baseline}
             </p>
             <div className="mt-5 flex flex-wrap items-center gap-1.5">
-              <Badge>HDS</Badge>
+              <Badge>{t.hds}</Badge>
               <Badge>{t.gdpr}</Badge>
             </div>
           </div>
@@ -109,18 +105,17 @@ export function Footer() {
         </div>
 
         <div
-          className="mt-12 flex flex-col items-start justify-between gap-3 border-t pt-5 text-[12px] md:flex-row md:items-center"
+          className="mt-12 flex flex-col items-start justify-between gap-3 pt-5 text-[12px] md:flex-row md:items-center"
           style={{
             color: "var(--text-muted)",
             fontFamily: "var(--font-mono)",
-            borderColor: "var(--border)",
           }}
         >
           <div>
             © {new Date().getFullYear()} Granit AI · {t.rights}
           </div>
           <div className="inline-flex items-center gap-1.5">
-            {t.made} <span aria-hidden>🇫🇷</span>
+            {t.made}
           </div>
         </div>
       </div>
@@ -142,7 +137,7 @@ function Badge({ children }: { children: React.ReactNode }) {
     >
       <span
         className="h-1.5 w-1.5 rounded-full"
-        style={{ background: "var(--sage)" }}
+        style={{ background: "var(--succes)" }}
       />
       {children}
     </span>
@@ -160,18 +155,7 @@ function FooterCol({
 }) {
   return (
     <div className={className}>
-      <div
-        className="mb-3 text-[11px]"
-        style={{
-          color: "var(--terra)",
-          fontFamily: "var(--font-mono)",
-          letterSpacing: "0.08em",
-          textTransform: "uppercase",
-          fontWeight: 500,
-        }}
-      >
-        {title}
-      </div>
+      <div className="eyebrow mb-3">{title}</div>
       <ul className="space-y-2">
         {links.map((l, i) => (
           <li key={`${l.to}-${i}`}>

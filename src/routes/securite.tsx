@@ -247,7 +247,7 @@ function SecuritePage() {
                     className="flex items-center gap-2 rounded-full border px-4 py-2"
                     style={{ borderColor: "var(--border)", background: "var(--bg2)" }}
                   >
-                    <span className="text-[12px]" style={{ fontFamily: "var(--font-mono)", color: "var(--terra)", fontWeight: 600 }}>
+                    <span className="text-[12px]" style={{ fontFamily: "var(--font-mono)", color: "var(--profond)", fontWeight: 600 }}>
                       {b.k}
                     </span>
                     <span className="text-[12px]" style={{ color: "var(--text-muted)" }}>
@@ -262,7 +262,7 @@ function SecuritePage() {
           <Reveal delay={0.15}>
             <div
               className="relative overflow-hidden rounded-[16px] border"
-              style={{ borderColor: "var(--border)", boxShadow: "0 30px 60px -30px color-mix(in oklab, var(--terra) 35%, transparent)" }}
+              style={{ borderColor: "var(--border)", boxShadow: "var(--ombre-carte)" }}
             >
               <img
                 src={securiteHero}
@@ -279,13 +279,13 @@ function SecuritePage() {
               <div className="absolute bottom-5 left-5 right-5 flex flex-wrap items-center gap-2">
                 <span
                   className="rounded-full px-3 py-1 text-[11px]"
-                  style={{ background: "rgba(255,255,255,0.92)", fontFamily: "var(--font-mono)", color: "var(--terra)", fontWeight: 600 }}
+                  style={{ background: "rgba(255,253,253,0.92)", fontFamily: "var(--font-mono)", color: "var(--profond)", fontWeight: 600 }}
                 >
                   HDS
                 </span>
                 <span
                   className="rounded-full px-3 py-1 text-[11px]"
-                  style={{ background: "rgba(255,255,255,0.92)", color: "var(--text)", fontWeight: 500 }}
+                  style={{ background: "rgba(255,253,253,0.92)", color: "var(--text)", fontWeight: 500 }}
                 >
                   {lang === "fr" ? "Données hébergées en Europe" : "Data hosted in Europe"}
                 </span>
@@ -302,10 +302,10 @@ function SecuritePage() {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {t.items.map((it, i) => (
             <Reveal key={it.t} delay={i * 0.04}>
-              <div className="card-hover h-full rounded-[8px] border bg-white/40 p-6" style={{ borderColor: "var(--border)" }}>
+              <div className="card-hover h-full rounded-[8px] border bg-papier/40 p-6" style={{ borderColor: "var(--border)" }}>
                 <div
                   className="text-[11px] uppercase tracking-[0.04em]"
-                  style={{ fontFamily: "var(--font-mono)", color: "var(--terra)" }}
+                  style={{ fontFamily: "var(--font-mono)", color: "var(--profond)" }}
                 >
                   0{i + 1}
                 </div>
@@ -366,7 +366,7 @@ function SecuritePage() {
                 <ul className="space-y-4">
                   {t.aiPoints.map((p) => (
                     <li key={p} className="flex gap-3 text-[14px] leading-[1.65]" style={{ color: "var(--text-soft)" }}>
-                      <span style={{ color: "var(--terra)", fontFamily: "var(--font-mono)" }}>→</span>
+                      <span style={{ color: "var(--profond)", fontFamily: "var(--font-mono)" }}>→</span>
                       <span>{p}</span>
                     </li>
                   ))}
@@ -389,7 +389,7 @@ function SecuritePage() {
             className="rounded-[12px] border p-10 text-center"
             style={{ borderColor: "var(--border)", background: "var(--bg2)" }}
           >
-            <h2 className="font-serif" style={{ fontSize: "clamp(28px,3vw,40px)", lineHeight: 1.15, fontWeight: 700 }}>
+            <h2 className="font-serif" style={{ fontSize: "clamp(28px,3vw,40px)", lineHeight: 1.15, fontWeight: 400 }}>
               {t.ctaTitle}
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-[1.7]" style={{ color: "var(--text-soft)" }}>

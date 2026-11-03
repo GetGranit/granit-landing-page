@@ -109,10 +109,10 @@ export function PaulSheet({
           className="fixed inset-x-0 bottom-0 z-50 mx-auto w-full max-w-[520px] px-3 pb-3"
         >
           <div
-            className="rounded-[22px] border bg-white p-5"
+            className="rounded-[22px] border bg-papier p-5"
             style={{
               borderColor: "var(--border)",
-              boxShadow: "0 -10px 40px -12px rgba(28,17,8,0.25)",
+              boxShadow: "0 -10px 40px -12px rgba(31,53,48,0.25)",
             }}
           >
             {/* key : remet le formulaire à zéro à chaque ouverture */}
@@ -182,8 +182,8 @@ function SheetBody({
       <div className="flex items-start gap-3">
         <span
           aria-hidden
-          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full font-serif text-[20px] text-white"
-          style={{ background: "var(--gradient-terra)" }}
+          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full font-serif text-[20px] text-rose"
+          style={{ background: "var(--encre)" }}
         >
           P
         </span>
@@ -226,14 +226,14 @@ function SheetBody({
               setEmailInvalide(false);
             }}
             className={inputClass}
-            style={{ borderColor: emailInvalide ? "var(--terra)" : "var(--border)" }}
+            style={{ borderColor: emailInvalide ? "var(--alerte)" : "var(--filet-champ)" }}
           />
           {emailInvalide && (
             <p
               id="paul-email-erreur"
               role="alert"
               className="mt-1.5 text-[12px]"
-              style={{ color: "var(--terra-hover)" }}
+              style={{ color: "var(--alerte-texte)" }}
             >
               {t.emailInvalide}
             </p>
@@ -258,7 +258,7 @@ function SheetBody({
                 setInvalid(false);
               }}
               className={inputClass}
-              style={{ borderColor: invalid ? "var(--terra)" : "var(--border)" }}
+              style={{ borderColor: invalid ? "var(--alerte)" : "var(--filet-champ)" }}
             />
           ) : (
             <p className="text-[13px]" style={{ color: "var(--text-muted)" }}>
@@ -273,7 +273,7 @@ function SheetBody({
               id="paul-tel-erreur"
               role="alert"
               className="mt-1.5 text-[12px]"
-              style={{ color: "var(--terra-hover)" }}
+              style={{ color: "var(--alerte-texte)" }}
             >
               {t.incomplet}
             </p>
@@ -310,7 +310,7 @@ function SheetBody({
         <p
           role="alert"
           className="mt-2 text-center text-[12px]"
-          style={{ color: "var(--terra-hover)" }}
+          style={{ color: "var(--alerte-texte)" }}
         >
           {t.echec}
         </p>

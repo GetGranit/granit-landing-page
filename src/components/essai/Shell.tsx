@@ -33,7 +33,7 @@ export function Shell({
 }) {
   const t = copy[useLanguage().lang];
   const chip = {
-    background: "var(--tag-bg)",
+    background: "var(--lavis)",
     color: "var(--text-soft)",
     fontFamily: "var(--font-mono)",
   };

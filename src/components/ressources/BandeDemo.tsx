@@ -40,8 +40,8 @@ export function BandeDemo() {
 
   return (
     <section className="mx-auto mb-20 mt-14 max-w-[1280px] px-4 md:px-6">
-      <div className="bande-demo relative overflow-hidden rounded-[22px] bg-[#1c1108] px-6 py-12 text-center text-[#f6efe4] md:py-16">
-        <p className="font-mono text-[12px] uppercase tracking-[0.14em] text-[#f2a48f]">
+      <div className="bande-demo section-sombre relative overflow-hidden rounded-[22px] px-6 py-12 text-center md:py-16">
+        <p className="eyebrow">
           {t.avant}
         </p>
         <h2 className="mt-4 font-serif text-[clamp(30px,4.4vw,54px)] font-normal leading-[1.1]">
@@ -63,11 +63,11 @@ export function BandeDemo() {
             href={calcomDemoUrl("bande-demo")}
             target="_blank"
             rel="noopener"
-            className="btn-primary btn-demo text-[16px]"
+            className="btn-clair btn-demo text-[16px]"
           >
             {t.bouton} <span className="arrow">→</span>
           </a>
-          <span className="text-[13px] text-[#a99d8c]">{t.rassure}</span>
+          <span className="text-[13px] text-sur-encre-secondaire">{t.rassure}</span>
         </div>
       </div>
     </section>

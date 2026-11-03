@@ -51,7 +51,7 @@ const copy = {
 function BandeauPreview() {
   const t = copy[useLanguage().lang];
   return (
-    <div className="bg-[#1c1108] px-4 py-2 text-center font-mono text-[12px] uppercase tracking-[0.12em] text-[#f2a48f]">
+    <div className="section-sombre px-4 py-2 text-center text-[12px] font-medium uppercase tracking-[0.08em] text-menthe">
       {t.apercu}
     </div>
   );
@@ -97,7 +97,7 @@ function Signature({ a, nbSources }: { a: RessourceJson; nbSources: number }) {
         </span>
       </span>
       {a.reviewer && (
-        <span className="inline-flex items-center gap-1.5 font-semibold text-[#2e6b3c]">
+        <span className="inline-flex items-center gap-1.5 font-semibold text-succes-texte">
           <svg
             width="16"
             height="16"
@@ -259,7 +259,7 @@ export function PageArticle({
           </div>
         </header>
 
-        <div className="bg-white">
+        <div className="bg-papier">
           <div
             className="mx-auto grid max-w-[1160px] gap-6 px-4 py-10 md:px-6 min-[980px]:grid-cols-[minmax(0,68ch)_300px] min-[980px]:justify-between min-[980px]:gap-10"
             style={teinte}

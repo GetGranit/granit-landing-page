@@ -8,7 +8,7 @@ export const organizationLd = {
   name: "Granit",
   alternateName: "getgranit",
   url: SITE_URL,
-  logo: `${SITE_URL}/favicon.svg`,
+  logo: `${SITE_URL}/granit-logo-1200.png`,
   description:
     "Granit déploie des agents IA qui automatisent le back-office administratif des établissements de santé — tiers-payant, facturation, traitement des rejets, recouvrement.",
   email: "contact@getgranit.ai",
@@ -53,7 +53,7 @@ export function articleLd(opts: { title: string; description: string; slug: stri
     publisher: {
       "@type": "Organization",
       name: "Granit",
-      logo: { "@type": "ImageObject", url: `${SITE_URL}/favicon.svg` },
+      logo: { "@type": "ImageObject", url: `${SITE_URL}/granit-logo-1200.png` },
     },
   };
   const breadcrumb = {

@@ -47,7 +47,7 @@ export function Annuaire() {
             value={q}
             onChange={(e) => setQ(e.target.value)}
             placeholder={t.filtrer}
-            className="w-full rounded-[12px] border border-[var(--border2)] bg-white px-4 py-3 text-[15px] focus-visible:outline-2 focus-visible:outline-[var(--terra)]"
+            className="w-full rounded-[12px] border border-[var(--border2)] bg-papier px-4 py-3 text-[15px] focus-visible:outline-2 focus-visible:outline-[var(--profond)]"
           />
         </label>
       )}

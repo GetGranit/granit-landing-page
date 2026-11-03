@@ -175,7 +175,7 @@ function CgvPage() {
           {t.sections.map((s, i) => (
             <Reveal key={s.title} delay={Math.min(i * 0.02, 0.1)}>
               <div>
-                <h2 className="font-serif text-[22px]" style={{ fontWeight: 700, letterSpacing: "-0.01em" }}>
+                <h2 className="font-serif text-[22px]" style={{ fontWeight: 400, letterSpacing: "-0.01em" }}>
                   {s.title}
                 </h2>
                 <div className="mt-4 space-y-3">

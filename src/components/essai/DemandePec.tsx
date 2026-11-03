@@ -133,8 +133,8 @@ export function DemandePec({
                 onClick={() => setChoix(d.id)}
                 className="flex w-full items-center justify-between gap-3 rounded-[14px] border px-4 py-3 text-left transition-colors"
                 style={{
-                  borderColor: on ? "var(--terra)" : "var(--border)",
-                  background: on ? "var(--terra-light)" : "white",
+                  borderColor: on ? "var(--encre)" : "var(--border)",
+                  background: on ? "var(--succes-fond)" : "var(--papier)",
                 }}
               >
                 <span>

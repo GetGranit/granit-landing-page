@@ -48,7 +48,7 @@ export function blogPostingLd(a: RessourceJson, p: Plateforme | null) {
     publisher: {
       "@type": "Organization",
       name: "Granit",
-      logo: { "@type": "ImageObject", url: `${SITE_URL}/favicon.svg` },
+      logo: { "@type": "ImageObject", url: `${SITE_URL}/granit-logo-1200.png` },
     },
     citation: a.sources?.length ? a.sources.map((s) => s.url) : undefined,
     about: p

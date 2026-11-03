@@ -9,7 +9,7 @@ const ICONE =
   '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>';
 
 const classeBouton =
-  "ancre-lien ml-2 inline-grid size-7 translate-y-[-2px] place-items-center rounded-[6px] align-middle text-[var(--text-muted)] opacity-50 hover:text-[var(--text)] focus-visible:opacity-100 focus-visible:outline-2 focus-visible:outline-[var(--terra)] md:opacity-0 md:group-hover/titre:opacity-100";
+  "ancre-lien ml-2 inline-grid size-7 translate-y-[-2px] place-items-center rounded-[6px] align-middle text-[var(--text-muted)] opacity-50 hover:text-[var(--text)] focus-visible:opacity-100 focus-visible:outline-2 focus-visible:outline-[var(--profond)] md:opacity-0 md:group-hover/titre:opacity-100";
 
 const copy = {
   fr: { copier: (titre: string) => `Copier le lien vers « ${titre} »`, copie: "Lien copié" },
@@ -90,7 +90,7 @@ export function Ancres({
     <div
       role="status"
       aria-live="polite"
-      className={`toast pointer-events-none fixed bottom-[calc(env(safe-area-inset-bottom)+72px)] left-1/2 z-[70] -translate-x-1/2 rounded-full bg-[#1c1108] px-4 py-2 text-[14px] text-[#f6efe4] ${visible ? "opacity-100" : "opacity-0"}`}
+      className={`toast pointer-events-none fixed bottom-[calc(env(safe-area-inset-bottom)+72px)] left-1/2 z-[70] -translate-x-1/2 rounded-full bg-encre px-4 py-2 text-[14px] text-rose ${visible ? "opacity-100" : "opacity-0"}`}
     >
       {visible ? t.copie : ""}
     </div>

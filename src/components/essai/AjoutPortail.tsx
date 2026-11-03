@@ -30,7 +30,7 @@ type Props = {
 /**
  * Mini-formulaire « Connecter [portail] ».
  *
- * ⚠️ SÉCURITÉ : l'identifiant et le mot de passe vivent UNIQUEMENT dans l'état
+ * SÉCURITÉ : l'identifiant et le mot de passe vivent UNIQUEMENT dans l'état
  * React local de ce composant. Ils ne sont ni envoyés, ni écrits dans
  * sessionStorage/localStorage, ni remontés au parent, et sont effacés à la
  * validation. Pas de <form> : le navigateur ne propose pas de les enregistrer.
@@ -60,7 +60,7 @@ export function AjoutPortail({ platform, onAdded, onCancel }: Props) {
           value={login}
           onChange={(e) => setLogin(e.target.value)}
           className={inputClass}
-          style={{ borderColor: "var(--border)" }}
+          style={{ borderColor: "var(--filet-champ)" }}
         />
       </Field>
       <Field label={t.mdp}>
@@ -71,7 +71,7 @@ export function AjoutPortail({ platform, onAdded, onCancel }: Props) {
           onChange={(e) => setPassword(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && add()}
           className={inputClass}
-          style={{ borderColor: "var(--border)" }}
+          style={{ borderColor: "var(--filet-champ)" }}
         />
       </Field>
       {platform.tfa !== "aucune" && (

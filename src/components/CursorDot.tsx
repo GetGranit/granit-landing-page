@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { useRouterState } from "@tanstack/react-router";
 
 /**
- * Parenthesis-style custom cursor: a small terracotta dot that trails the
+ * Parenthesis-style custom cursor: a small deep-green diamond that trails the
  * pointer and swells over interactive elements. Only enabled on fine-pointer
  * devices (desktop w/ mouse); touch devices keep the native cursor.
  */

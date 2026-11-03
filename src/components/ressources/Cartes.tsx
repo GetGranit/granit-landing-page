@@ -45,7 +45,7 @@ const copy = {
   },
 };
 
-/** Titre façon Function : ce qui suit « : » ou « ? » passe en italique, couleur de la catégorie. */
+/** Titre façon Function : ce qui suit « : » ou « ? » prend la couleur de la catégorie (droit, sans italique). */
 export function TitreItalique({ titre, ink }: { titre: string; ink: string }) {
   const [tete, suite] = couperTitre(titre);
   if (!suite) return <>{titre}</>;
@@ -54,7 +54,7 @@ export function TitreItalique({ titre, ink }: { titre: string; ink: string }) {
     <>
       {tete}
       {tete.endsWith("?") ? " " : titre.includes(" : ") ? " : " : ": "}
-      <em className="italic" style={{ color: ink }}>
+      <em className="not-italic" style={{ color: ink }}>
         {suite}
       </em>
     </>
@@ -80,14 +80,14 @@ export function MarquePlateforme({
         alt={taille === "xl" ? t.logo(nom) : ""}
         width={taille === "xl" ? 64 : 40}
         height={taille === "xl" ? 64 : 40}
-        className={`${box} shrink-0 border border-[var(--border)] bg-white object-contain ${taille === "xl" ? "p-2" : "p-1.5"}`}
+        className={`${box} shrink-0 border border-[var(--border)] bg-papier object-contain ${taille === "xl" ? "p-2" : "p-1.5"}`}
       />
     );
   }
   return (
     <span
       aria-hidden
-      className={`${box} grid shrink-0 place-items-center bg-[#b94a2f] font-serif text-white ${taille === "xl" ? "text-[30px]" : "text-[19px]"}`}
+      className={`${box} grid shrink-0 place-items-center bg-encre font-serif text-rose ${taille === "xl" ? "text-[30px]" : "text-[19px]"}`}
     >
       {nom.slice(0, 1).toUpperCase()}
     </span>
@@ -251,7 +251,7 @@ function Couverture({
         <PhotoCarte photo={photoFiche(fiche, rang)} tailles={tailles} chargement={chargement} />
       )}
       <span
-        className="absolute left-3 top-3 rounded-[6px] bg-white/90 px-2 py-1 font-mono text-[10.5px] font-medium uppercase tracking-[0.12em]"
+        className="absolute left-3 top-3 rounded-[6px] bg-papier/90 px-2 py-1 font-mono text-[10.5px] font-medium uppercase tracking-[0.12em]"
         style={{ color: c.ink }}
       >
         {etiquette}
@@ -270,7 +270,7 @@ function Meta({ fiche }: { fiche: Fiche }) {
 }
 
 const lienCarte =
-  "group block rounded-[14px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--terra)]";
+  "group block rounded-[14px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--profond)]";
 const survolTitre =
   "transition-colors group-hover:text-[var(--ink)] group-hover:underline decoration-1 underline-offset-[5px]";
 const meta = "text-[13.5px] text-[var(--text-muted)]";
@@ -358,7 +358,7 @@ export function CartePilier({ fiche }: { fiche: Fiche }) {
         <Couverture fiche={fiche} etiquette={c.court} format="pilier" prioritaire="haute" />
       </div>
       <div className="md:col-span-5">
-        <span className="eyebrow" style={{ color: c.ink }}>
+        <span className="eyebrow">
           {copy[lang].commencer}
         </span>
         <h2 className="mt-3 font-serif text-[clamp(26px,2.6vw,36px)] font-normal leading-[1.15] tracking-[-0.015em]">
@@ -418,7 +418,7 @@ export function TuilePlateforme({ fiche }: { fiche: Fiche }) {
     <Link
       to="/ressources/$slug"
       params={{ slug: fiche.slug }}
-      className="flex items-center gap-3 rounded-[12px] border border-[var(--border)] bg-white p-3.5 transition hover:border-[var(--border2)] hover:shadow-[var(--shadow-soft)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--terra)]"
+      className="flex items-center gap-3 rounded-[12px] border border-[var(--border)] bg-papier p-3.5 transition hover:border-[var(--border2)] hover:shadow-[var(--ombre-douce)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--profond)]"
     >
       <MarquePlateforme nom={nom} logo={logoPlateforme(fiche.plateforme?.logo, "carre")} />
       <span className="min-w-0">

@@ -142,8 +142,8 @@ export function StepPatient({
     <span
       className="rounded-full px-2 py-0.5 text-[11px]"
       style={{
-        background: "var(--sage-light)",
-        color: "#2f6b3d",
+        background: "var(--succes-fond)",
+        color: "var(--succes-texte)",
         fontFamily: "var(--font-mono)",
         fontWeight: 400,
       }}
@@ -269,7 +269,7 @@ function Equipement() {
         style={{
           fontFamily: "var(--font-mono)",
           letterSpacing: ".12em",
-          color: "var(--text-muted)",
+          color: "var(--texte-discret)",
         }}
       >
         {copy[lang].equipement}

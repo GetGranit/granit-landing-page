@@ -1,0 +1,77 @@
+/* =========================================================
+   NOUVELLE HOME · 4. LEVÉE : le logo posé sur du granit pâle
+   (portage du bloc « 4. LEVÉE » de lm.css ; tout sous .nh)
+   ========================================================= */
+.nh .lm-lv {
+  padding-block: clamp(80px, 9vw, 130px);
+}
+.nh .lm-lv-g {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: 40px clamp(40px, 6vw, 96px);
+  align-items: center;
+}
+.nh .lm-lv-txt {
+  display: grid;
+  gap: 22px;
+  justify-items: start;
+}
+.nh .lm-lv-new {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--rose);
+  font: 500 12.5px/1 var(--sans);
+}
+.nh .lm-lv-txt .lm-h2 {
+  color: var(--ink);
+  max-width: 11em;
+  font-size: clamp(38px, 4.4vw, 62px);
+}
+.nh .lm-lv-txt .lm-lead {
+  max-width: 42ch;
+}
+.nh .lm-lv-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font: 500 15px/1 var(--sans);
+  color: var(--ink);
+  text-decoration: none;
+}
+.nh .lm-lv-more svg {
+  width: 13px;
+  height: 13px;
+  transition: translate 0.25s;
+}
+.nh .lm-lv-more:hover svg {
+  translate: 4px 0;
+}
+/* --gr : le granit peint au montage (Levee.tsx) ; avant lui, le lavis */
+.nh .lm-lv-tile {
+  position: relative;
+  aspect-ratio: 5 / 4;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--wash) var(--gr, none) center / cover no-repeat;
+  display: grid;
+  place-items: center;
+}
+.nh .lm-lv-tile svg {
+  width: 42%;
+  height: auto;
+  color: var(--ink);
+  overflow: visible;
+}
+.nh .lm-lv-tile svg path {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.nh .lm-lv-tile .lm-lv-cle {
+  color: var(--deep);
+}
+@media (max-width: 900px) {
+  .nh .lm-lv-g {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

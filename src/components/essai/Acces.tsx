@@ -106,7 +106,7 @@ function Choix({ carte, selection, onToggle, onValider }: Props) {
           <li>
             <div
               className="flex h-full items-center gap-2.5 rounded-[14px] border px-3 py-3"
-              style={{ borderColor: "var(--sage)", background: "var(--sage-light)" }}
+              style={{ borderColor: "var(--succes)", background: "var(--succes-fond)" }}
             >
               <PopCheck done size={20} />
               <span className="min-w-0">
@@ -128,10 +128,10 @@ function Choix({ carte, selection, onToggle, onValider }: Props) {
                 type="button"
                 aria-pressed={on}
                 onClick={() => onToggle(p.id)}
-                className="flex h-full w-full items-center gap-2.5 rounded-[14px] border bg-white px-3 py-3 text-left transition-colors"
+                className="flex h-full w-full items-center gap-2.5 rounded-[14px] border bg-papier px-3 py-3 text-left transition-colors"
                 style={{
-                  borderColor: on ? "var(--terra)" : "var(--border)",
-                  background: on ? "var(--terra-light)" : "white",
+                  borderColor: on ? "var(--encre)" : "var(--border)",
+                  background: on ? "var(--succes-fond)" : "var(--papier)",
                 }}
               >
                 <Case on={on} />
@@ -158,10 +158,10 @@ function Case({ on }: { on: boolean }) {
   return (
     <span
       aria-hidden
-      className="flex h-5 w-5 shrink-0 items-center justify-center rounded-[6px] border-2 text-[12px] text-white"
+      className="flex h-5 w-5 shrink-0 items-center justify-center rounded-[6px] border-2 text-[12px] text-menthe"
       style={{
-        borderColor: on ? "var(--terra)" : "var(--border2)",
-        background: on ? "var(--terra)" : "white",
+        borderColor: on ? "var(--encre)" : "var(--border2)",
+        background: on ? "var(--encre)" : "var(--papier)",
       }}
     >
       {on ? "✓" : ""}
@@ -271,7 +271,7 @@ function Ligne({
           </div>
         </div>
         {connected ? (
-          <span className="text-[13px]" style={{ color: "var(--sage)", fontWeight: 600 }}>
+          <span className="text-[13px]" style={{ color: "var(--succes-texte)", fontWeight: 600 }}>
             {t.connecte}
           </span>
         ) : (

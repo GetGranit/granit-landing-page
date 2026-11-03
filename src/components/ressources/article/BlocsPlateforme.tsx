@@ -58,7 +58,7 @@ function Source({ p, cle }: { p: Plateforme; cle?: string }) {
   );
 }
 
-const caseCls = "rounded-[12px] border border-[var(--border)] bg-white px-3.5 py-3";
+const caseCls = "rounded-[12px] border border-[var(--border)] bg-papier min-w-0 px-3.5 py-3";
 
 export function FicheIdentite({ p }: { p: Plateforme }) {
   if (!p.identite?.length) return null;
@@ -114,7 +114,7 @@ export function Organismes({ p }: { p: Plateforme }) {
           value={q}
           onChange={(e) => setQ(e.target.value)}
           placeholder={t.exemple}
-          className="w-full rounded-[14px] border border-[var(--border2)] bg-white px-4 py-3 text-[16px] shadow-[var(--shadow-soft)] focus-visible:outline-2 focus-visible:outline-[var(--terra)]"
+          className="w-full rounded-[14px] border border-[var(--border2)] bg-papier px-4 py-3 text-[16px] shadow-[var(--ombre-douce)] focus-visible:outline-2 focus-visible:outline-[var(--profond)]"
         />
       </label>
       <p
@@ -183,12 +183,12 @@ export function Contacts({ p }: { p: Plateforme }) {
         {p.contacts.map((c) => (
           <div key={c.label} className={caseCls}>
             <dt className="text-[13px] text-[var(--text-muted)]">{c.label}</dt>
-            <dd className="mt-0.5 text-[16px] font-semibold leading-snug text-[var(--text)]">
+            <dd className="mt-0.5 text-[16px] font-semibold leading-snug text-[var(--text)] [overflow-wrap:anywhere]">
               {c.url ? (
                 <a
                   href={c.url}
                   rel="noopener"
-                  className="underline underline-offset-2 hover:text-[var(--terra-hover)]"
+                  className="underline underline-offset-2 hover:text-profond"
                 >
                   {c.valeur}
                 </a>

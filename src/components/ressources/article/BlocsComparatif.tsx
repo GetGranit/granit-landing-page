@@ -290,10 +290,10 @@ export function Frise({ acteurs }: Comparaison) {
             out.push(
               <div
                 key={`${c.slug}-dossier`}
-                className="rounded-[10px] border-l-4 bg-white px-3 py-2 text-[14px] font-medium text-[var(--text)]"
+                className="rounded-[10px] border-l-4 bg-papier px-3 py-2 text-[14px] font-medium text-[var(--text)]"
                 style={{
                   gridColumn: `${b[0]} / ${b[1]}`,
-                  borderColor: granit ? "var(--terra)" : "var(--ink)",
+                  borderColor: granit ? "var(--profond)" : "var(--ink)",
                   boxShadow: "inset 0 0 0 1px var(--border)",
                 }}
               >
@@ -304,7 +304,7 @@ export function Frise({ acteurs }: Comparaison) {
             out.push(
               <div
                 key={`${c.slug}-avance`}
-                className="rounded-[10px] border border-dashed bg-white px-3 py-2 text-[14px] font-medium text-[var(--text)]"
+                className="rounded-[10px] border border-dashed bg-papier px-3 py-2 text-[14px] font-medium text-[var(--text)]"
                 style={{ gridColumn: "4 / 6", borderColor: "var(--ink)" }}
               >
                 {c.nom} · {t.avance}
@@ -328,8 +328,8 @@ export function Choisir({ acteurs }: Comparaison) {
       {acteurs.map((c) => (
         <div
           key={c.slug}
-          className="rounded-[14px] border border-[var(--border)] bg-white px-5 py-4"
-          style={{ borderTop: `3px solid ${c.slug === "granit" ? "var(--terra)" : "var(--ink)"}` }}
+          className="rounded-[14px] border border-[var(--border)] bg-papier px-5 py-4"
+          style={{ borderTop: `3px solid ${c.slug === "granit" ? "var(--profond)" : "var(--ink)"}` }}
         >
           <p className="font-serif text-[20px] leading-snug text-[var(--text)]">
             {t.choisir(c.nom)}
@@ -354,7 +354,7 @@ export function Modeles() {
       {t.modeles.map((m) => (
         <div
           key={m.cle}
-          className="rounded-[12px] border border-[var(--border)] bg-white px-3.5 py-3"
+          className="rounded-[12px] border border-[var(--border)] bg-papier px-3.5 py-3"
         >
           <span className="block text-[16px] font-semibold text-[var(--text)]">{m.nom}</span>
           <span className="mt-0.5 block text-[14px] leading-snug text-[var(--text-muted)]">

@@ -100,7 +100,11 @@ export function Invitation({
       <div className="grid gap-1.5">
         <p
           className="text-[12px]"
-          style={{ fontFamily: "var(--font-mono)", color: "var(--sage)", letterSpacing: ".04em" }}
+          style={{
+            fontFamily: "var(--font-mono)",
+            color: "var(--succes-texte)",
+            letterSpacing: ".04em",
+          }}
         >
           {t.faite}
         </p>
@@ -108,10 +112,7 @@ export function Invitation({
           className="font-serif text-[clamp(24px,5.4vw,30px)] leading-tight"
           style={{ color: "var(--text)", letterSpacing: "-.015em", textWrap: "balance" }}
         >
-          {t.autres}
-          <span className="italic" style={{ color: "var(--terra)" }}>
-            {t.simple}
-          </span>
+          {t.autres}<span className="accent-italic">{t.simple}</span>
         </h2>
         <p className="text-[15px]" style={{ color: "var(--text-muted)" }}>
           {t.intro}
@@ -125,7 +126,11 @@ export function Invitation({
               key={p.id}
               {...entree(i)}
               className="rounded-full px-3 py-1.5 text-[13px]"
-              style={{ background: "var(--sage)", color: "#fff", fontWeight: 600 }}
+              style={{
+                background: "var(--succes-fond)",
+                color: "var(--succes-texte)",
+                fontWeight: 600,
+              }}
             >
               ✓ {portail}
             </motion.li>
@@ -137,7 +142,7 @@ export function Invitation({
               style={{
                 borderColor: "var(--border2)",
                 color: "var(--text-soft)",
-                background: "#fff",
+                background: "var(--papier)",
               }}
             >
               + {p.label}

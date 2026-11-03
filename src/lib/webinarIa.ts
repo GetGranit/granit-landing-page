@@ -40,25 +40,22 @@ export const copy = {
       "Je passe mes journées avec des opticiens. Je vous montre ce qui marche vraiment en magasin.",
     cas: [
       {
-        emoji: "⭐",
         titre: "Vos avis Google",
         texte:
           "Les analyser pour savoir ce que vos clients disent vraiment de l'accueil, des délais, des prix.",
       },
       {
-        emoji: "✉️",
         titre: "Vos modèles de mails",
         texte:
           "Relance mutuelle, lunettes prêtes, devis non signé : écrits une fois, réutilisés tous les jours.",
       },
       {
-        emoji: "📊",
         titre: "Vos impayés mutuelles",
         texte: "Un tableau de suivi construit à partir d'un simple export Excel de votre logiciel.",
       },
     ],
     surprise:
-      "Ce que l'IA peut faire à votre place, sans même ouvrir Excel. On les garde pour la fin 😉",
+      "Ce que l'IA peut faire à votre place, sans même ouvrir Excel. On les garde pour la fin",
 
     formTitle: "Réservez votre place",
     formIntro: "L'invitation avec le lien de connexion arrive par mail.",
@@ -127,19 +124,16 @@ export const copy = {
       "I spend my days with opticians. I'll show you what really works in the store.",
     cas: [
       {
-        emoji: "⭐",
         titre: "Your Google reviews",
         texte:
           "Analyze them to find out what your customers really say about your welcome, wait times and prices.",
       },
       {
-        emoji: "✉️",
         titre: "Your email templates",
         texte:
           "Insurer follow-up, glasses ready, unsigned quote: written once, reused every day.",
       },
       {
-        emoji: "📊",
         titre: "Your unpaid insurer claims",
         texte: "A tracking table built from a simple Excel export from your software.",
       },

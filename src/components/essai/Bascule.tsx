@@ -41,7 +41,7 @@ export function Progression({ faits, total }: { faits: number; total: number }) 
       </p>
       <div
         className="h-2 overflow-hidden rounded-full"
-        style={{ background: "var(--bg3)" }}
+        style={{ background: "var(--filet)" }}
         role="progressbar"
         aria-valuenow={faits}
         aria-valuemin={0}
@@ -50,7 +50,7 @@ export function Progression({ faits, total }: { faits: number; total: number }) 
       >
         <motion.div
           className="h-full rounded-full"
-          style={{ background: "var(--sage)" }}
+          style={{ background: "var(--succes)" }}
           initial={false}
           animate={{ width: `${percent}%` }}
           transition={reduce ? { duration: 0 } : { type: "spring", stiffness: 120, damping: 20 }}
@@ -104,7 +104,7 @@ export function Bascule({
             <li
               key={p.id}
               className="rounded-full px-3 py-1 text-[12px]"
-              style={{ background: "var(--sage-light)", color: "var(--text-soft)" }}
+              style={{ background: "var(--succes-fond)", color: "var(--succes-texte)" }}
             >
               ✓ {p.label}
             </li>

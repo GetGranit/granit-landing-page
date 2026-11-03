@@ -106,7 +106,7 @@ const TOUS_METIERS = 6;
 
 const mono = "font-mono text-[10.5px] uppercase tracking-[0.1em]";
 const focus =
-  "focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-[#b94a2f]";
+  "focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-[var(--profond)]";
 const cadre = "relative flex h-[116px] flex-col items-center justify-center px-4 md:h-[136px]";
 
 export function MurPlateformes({ fiches }: { fiches: Fiche[] }) {
@@ -154,7 +154,7 @@ export function MurPlateformes({ fiches }: { fiches: Fiche[] }) {
         <div
           role="group"
           aria-label={t.parType}
-          className="inline-flex max-w-full self-start overflow-x-auto rounded-full border border-[var(--border)] bg-white p-1"
+          className="inline-flex max-w-full self-start overflow-x-auto rounded-full border border-[var(--border)] bg-papier p-1"
         >
           {FILTRES.map((id) => {
             const n = entrees.filter((e) => passe(e, id)).length;
@@ -165,11 +165,11 @@ export function MurPlateformes({ fiches }: { fiches: Fiche[] }) {
                 type="button"
                 aria-pressed={actif}
                 onClick={() => setGenre(id)}
-                className={`${focus} shrink-0 whitespace-nowrap rounded-full px-3.5 py-1.5 text-[13.5px] transition-colors ${actif ? "bg-[var(--text)] font-semibold text-white" : "text-[var(--text-soft)] hover:text-[var(--text)]"}`}
+                className={`${focus} shrink-0 whitespace-nowrap rounded-full px-3.5 py-1.5 text-[13.5px] transition-colors ${actif ? "bg-encre font-semibold text-menthe" : "text-[var(--text-soft)] hover:text-[var(--text)]"}`}
               >
                 {id === "tous" ? t.tout : t.genres[id].filtre}
                 <span
-                  className={`${mono} ml-1.5 ${actif ? "text-white/70" : "text-[var(--text-muted)]"}`}
+                  className={`${mono} ml-1.5 ${actif ? "text-menthe/70" : "text-[var(--text-muted)]"}`}
                 >
                   {n}
                 </span>
@@ -191,7 +191,7 @@ export function MurPlateformes({ fiches }: { fiches: Fiche[] }) {
                   type="button"
                   aria-pressed={actif}
                   onClick={() => setMetier(v)}
-                  className={`${focus} shrink-0 whitespace-nowrap rounded-full border px-3 py-1 text-[13px] transition-colors ${actif ? "border-[#b94a2f] bg-[#b94a2f]/10 text-[#b94a2f]" : "border-[var(--border)] text-[var(--text-soft)] hover:border-[var(--text-muted)] hover:text-[var(--text)]"}`}
+                  className={`${focus} shrink-0 whitespace-nowrap rounded-full border px-3 py-1 text-[13px] transition-colors ${actif ? "border-transparent bg-succes-fond text-succes-texte" : "border-[var(--border)] text-[var(--text-soft)] hover:border-[var(--text-muted)] hover:text-[var(--text)]"}`}
                 >
                   {v === "tous" ? t.tousMetiers : t.metiers[v]}
                 </button>
@@ -294,7 +294,7 @@ function Etiquettes({
         : metiers.map((m, i) => (
             <Fragment key={m}>
               {i > 0 && " · "}
-              <span className={m === actif ? "text-[#b94a2f]" : undefined}>{t.metiers[m]}</span>
+              <span className={m === actif ? "text-profond" : undefined}>{t.metiers[m]}</span>
             </Fragment>
           ))}
     </span>
@@ -321,7 +321,7 @@ function Case({
       {e.fiche ? (
         <span
           aria-hidden
-          className="transition-transform group-hover:translate-x-0.5 group-hover:text-[#b94a2f]"
+          className="transition-transform group-hover:translate-x-0.5 group-hover:text-profond"
         >
           →
         </span>
@@ -356,7 +356,7 @@ function Case({
         to="/ressources/$slug"
         params={{ slug: e.slug }}
         aria-label={t.laFiche(e.nom)}
-        className={`group ${cadre} ${focus} transition-colors duration-300 hover:bg-white`}
+        className={`group ${cadre} ${focus} transition-colors duration-300 hover:bg-papier`}
       >
         <Etiquettes metiers={e.metiers} actif={metier} t={t} />
         <Marque e={e} />
@@ -384,7 +384,7 @@ function CaseLien({
       <Link
         to="/ressources/categorie/$category"
         params={{ category: "plateformes" }}
-        className={`group ${cadre} ${focus} items-start justify-between py-4 text-[#b94a2f] transition-colors hover:bg-[#b94a2f]/[0.06]`}
+        className={`group ${cadre} ${focus} items-start justify-between py-4 text-profond transition-colors hover:bg-profond/[0.06]`}
       >
         <span className={mono}>
           <span className="md:hidden">{autres(t, resteMobile, t.annuaire)}</span>
@@ -438,7 +438,7 @@ function Vedette({ e, t, lang }: { e: Entree; t: Copy; lang: Lang }) {
   const logo = logoPlateforme(e.fiche?.plateforme?.logo, "carre");
   const chiffre = lang === "en" ? (e.chiffreEn ?? e.chiffre) : e.chiffre;
   return (
-    <li className="col-span-2 bg-white md:row-span-2">
+    <li className="col-span-2 bg-papier md:row-span-2">
       <Link
         to="/ressources/$slug"
         params={{ slug: e.slug }}
@@ -450,7 +450,7 @@ function Vedette({ e, t, lang }: { e: Entree; t: Copy; lang: Lang }) {
           ) : (
             <Monogramme nom={e.nom} />
           )}
-          <span className={`${mono} rounded-full bg-[#b94a2f]/10 px-2 py-0.5 text-[#b94a2f]`}>
+          <span className={`${mono} rounded-full bg-succes-fond px-2 py-0.5 text-succes-texte`}>
             {t.enLigne}
           </span>
         </div>
@@ -478,7 +478,7 @@ function Vedette({ e, t, lang }: { e: Entree; t: Copy; lang: Lang }) {
               </div>
             )}
           </dl>
-          <span className="mt-5 inline-flex items-center gap-1 text-[14px] font-semibold text-[#b94a2f] group-hover:underline group-hover:underline-offset-4">
+          <span className="mt-5 inline-flex items-center gap-1 text-[14px] font-semibold text-profond group-hover:underline group-hover:underline-offset-4">
             {t.lire} <span aria-hidden>→</span>
           </span>
         </div>
