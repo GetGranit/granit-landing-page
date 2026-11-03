@@ -129,7 +129,6 @@
   display: grid;
   justify-items: start;
   gap: 18px;
-  width: 100%; /* élément de grille à marges auto : sans largeur, il se centrait au lieu de s'aligner à gauche, sous le voile */
 }
 .nh .ct3 .ct-h2 {
   font-size: clamp(36px, 4.2vw, 58px);
