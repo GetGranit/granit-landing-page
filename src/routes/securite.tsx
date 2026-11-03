@@ -20,12 +20,13 @@ import { Faq } from "@/components/ressources/article/Fin";
 import { SITE_URL, faqPageLd, organizationRef } from "@/lib/seo";
 
 // Chaque fait de sécurité de cette page vient des CGV (/cgv), de la politique de confidentialité
-// (/privacy), de la FAQ de la PR #94 ou de marque/TON.md (dépôt GetGranit/internal).
+// (/privacy), de la FAQ de la PR #94, de marque/TON.md (dépôt GetGranit/internal) ou des textes validés
+// en revue de la PR #96 (hébergeur certifié HDS, coffre-fort des identifiants).
 // On n'en ajoute aucun qui n'y figure pas.
 
 const TITLE = "Sécurité des données de santé (HDS, RGPD) - Granit";
 const DESCRIPTION =
-  "Granit est certifié HDS : données de santé hébergées dans l’UE, chiffrées, jamais utilisées pour entraîner des modèles tiers. RGPD, traçabilité, réversibilité.";
+  "Données de santé stockées chez un hébergeur certifié HDS, en Europe, chiffrées, jamais utilisées pour entraîner des modèles tiers. RGPD, traçabilité, réversibilité.";
 const CONTACT_EMAIL = "contact@getgranit.ai";
 
 export const Route = createFileRoute("/securite")({
@@ -37,7 +38,7 @@ export const Route = createFileRoute("/securite")({
       {
         property: "og:description",
         content:
-          "Certifié HDS, données dans l’Union européenne, RGPD : comment Granit héberge, protège et trace les données de santé de vos patients.",
+          "Hébergeur certifié HDS, datacenters en Europe, RGPD : comment Granit héberge, protège et trace les données de santé de vos patients.",
       },
     ],
   }),
@@ -82,12 +83,12 @@ const content: Record<"fr" | "en", Content> = {
     title: "Les données de vos patients restent protégées.",
     summaryLabel: "En bref :",
     summary:
-      "Granit est certifié HDS (hébergeur de données de santé). Les données restent dans l’Union européenne, chiffrées, et ne servent jamais à entraîner des modèles. Chaque dossier est tracé, et vos données vous sont rendues à tout moment.",
+      "Vos données de santé sont stockées chez un hébergeur certifié HDS, dans des datacenters situés en Europe. Elles sont chiffrées et ne servent jamais à entraîner des modèles. Chaque action des agents est enregistrée, et vos données vous sont rendues à tout moment.",
     heroCta: "Demander une démo",
     heroSecondary: "Politique de confidentialité",
     badgesLabel: "Garanties",
     badges: [
-      { k: "HDS", v: "Granit certifié" },
+      { k: "HDS", v: "Hébergeur certifié" },
       { k: "UE", v: "Hébergement dans l’Union européenne" },
       { k: "RGPD", v: "Données de santé, article 9" },
     ],
@@ -101,12 +102,12 @@ const content: Record<"fr" | "en", Content> = {
     engagementsTitle: "Six garanties pour les données de vos patients.",
     engagements: [
       {
-        t: "Certifié HDS",
-        d: "Les données de vos patients, sauvegardes comprises, sont hébergées chez un hébergeur certifié HDS.",
+        t: "Hébergement certifié HDS",
+        d: "Vos données de santé sont stockées chez un hébergeur certifié HDS, dans des datacenters situés en Europe.",
       },
       {
-        t: "Dans l’Union européenne",
-        d: "Aucun transfert hors de l’UE, même si Granit change de prestataire technique.",
+        t: "Respect du RGPD",
+        d: "Une approche de la confidentialité conçue autour des exigences européennes et du RGPD.",
       },
       {
         t: "Chiffrées",
@@ -117,8 +118,8 @@ const content: Record<"fr" | "en", Content> = {
         d: "Les agents n’ouvrent que les outils que vous autorisez, avec double authentification. Vous révoquez un accès à tout moment.",
       },
       {
-        t: "Chaque dossier tracé",
-        d: "Ce qui a été fait, quand, et pourquoi un dossier attend. Chaque décision reste révisable par votre équipe.",
+        t: "Agents sous contrôle",
+        d: "Vos identifiants de portails sont conservés dans un coffre-fort chiffré, et chaque action de nos agents est enregistrée et vérifiable.",
       },
       {
         t: "Jamais pour entraîner des modèles",
@@ -158,8 +159,8 @@ const content: Record<"fr" | "en", Content> = {
     faqTitle: "Questions fréquentes",
     faq: [
       {
-        question: "Granit est-il certifié HDS ?",
-        answer: "Oui. Les données sont hébergées dans l’Union européenne, sauvegardes comprises.",
+        question: "Où sont hébergées les données de santé ?",
+        answer: "Chez un hébergeur certifié HDS, dans des datacenters situés en Europe.",
       },
       {
         question: "Les données des patients servent-elles à entraîner des modèles d’IA ?",
@@ -189,19 +190,19 @@ const content: Record<"fr" | "en", Content> = {
     ctaText: "En démo, nous vous montrons comment chaque dossier est tracé.",
     ctaBtn: "Demander une démo",
     ctaSecondary: "Découvrir les agents",
-    guarantees: "Certifié HDS · Données dans l’UE · RGPD",
+    guarantees: "Hébergeur certifié HDS · Données en Europe · RGPD",
   },
   en: {
     eyebrow: "Security and compliance",
     title: "Your patients' data stays protected.",
     summaryLabel: "In short:",
     summary:
-      "Granit is HDS certified (French certification for health data hosting). Data stays in the European Union, encrypted, and is never used to train models. Every case is traced, and your data is returned to you at any time.",
+      "Your health data is stored with an HDS-certified host (French certification for health data hosting), in data centers located in Europe. It is encrypted and never used to train models. Every agent action is recorded, and your data is returned to you at any time.",
     heroCta: "Book a demo",
     heroSecondary: "Privacy policy",
     badgesLabel: "Guarantees",
     badges: [
-      { k: "HDS", v: "Granit certified" },
+      { k: "HDS", v: "Certified host" },
       { k: "EU", v: "Hosted in the European Union" },
       { k: "GDPR", v: "Health data, article 9" },
     ],
@@ -215,12 +216,12 @@ const content: Record<"fr" | "en", Content> = {
     engagementsTitle: "Six guarantees for your patients' data.",
     engagements: [
       {
-        t: "HDS certified",
-        d: "Your patients' data, backups included, is hosted with an HDS-certified provider.",
+        t: "HDS-certified hosting",
+        d: "Your health data is stored with an HDS-certified host, in data centers located in Europe.",
       },
       {
-        t: "In the European Union",
-        d: "No transfer outside the EU, even if Granit changes technical provider.",
+        t: "GDPR compliance",
+        d: "A privacy approach designed around European requirements and the GDPR.",
       },
       {
         t: "Encrypted",
@@ -231,8 +232,8 @@ const content: Record<"fr" | "en", Content> = {
         d: "Agents only open the tools you authorize, with two-factor authentication. You revoke access at any time.",
       },
       {
-        t: "Every case traced",
-        d: "What was done, when, and why a case is waiting. Every decision stays reviewable by your team.",
+        t: "Agents under control",
+        d: "Your portal credentials are kept in an encrypted vault, and every action of our agents is recorded and verifiable.",
       },
       {
         t: "Never used to train models",
@@ -272,8 +273,8 @@ const content: Record<"fr" | "en", Content> = {
     faqTitle: "Frequently asked questions",
     faq: [
       {
-        question: "Is Granit HDS certified?",
-        answer: "Yes. Data is hosted in the European Union, backups included.",
+        question: "Where is the health data hosted?",
+        answer: "With an HDS-certified host, in data centers located in Europe.",
       },
       {
         question: "Is patient data used to train AI models?",
@@ -303,7 +304,7 @@ const content: Record<"fr" | "en", Content> = {
     ctaText: "In a demo, we show you how every case is traced.",
     ctaBtn: "Book a demo",
     ctaSecondary: "Discover the agents",
-    guarantees: "HDS certified · Data in the EU · GDPR",
+    guarantees: "HDS-certified host · Data in Europe · GDPR",
   },
 };
 
