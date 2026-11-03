@@ -4,7 +4,7 @@
   "modele": "prestataire",
   "logo": null,
   "checkedOn": "2026-11-03",
-  "aRelire": false,
+  "aRelire": true,
   "identite": {
     "raisonSociale": "STPPS (SAS)",
     "siege": "Aubigny-Les Clouzeaux (85)",
@@ -24,7 +24,7 @@
   "axes": {
     "quiFait": {
       "valeur": "Un binôme dédié de gestionnaires STPPS, basés en Vendée",
-      "detail": "Tiers payant traité en totalité ou en partie, au choix ; services personnalisables selon l'établissement",
+      "detail": "Une personne qui connaît le dossier ; équipes multi-logiciels qui s'adaptent aux outils du client",
       "source": "stpps-apropos"
     },
     "pec": {
@@ -33,7 +33,7 @@
     },
     "rejets": {
       "valeur": "oui",
-      "detail": "Recherche du motif de chaque rejet, correction des factures et renvoi aux caisses (RO et RC) ; reprise des anciennes factures jusqu'à 2 ans et 3 mois après émission",
+      "detail": "Recherche du motif de chaque rejet, correction des factures et renvoi aux caisses ; reprise des anciennes factures jusqu'à 2 ans et 3 mois après émission",
       "source": "stpps-services"
     },
     "rapprochement": {
@@ -93,8 +93,9 @@
   "exclus": {
     "_pourquoi": "aucun prix sur les pages comparatives ; chiffres de performance déclarés non comparables",
     "prix": "non publié pour l'optique (offre « Standard » sur devis ; offres Starter réservées aux centres de santé en création, dentistes et pharmacies)",
-    "chiffresDeclares": "« Plus de 150 clients partout en France », « Net Promoter Score de 79 », « Plus de 200 années d’expérience cumulée », « presque 50 experts » / « plus de 48 spécialistes », « 30% des patients dans les grandes agglomérations n’ont jamais avec eux leur carte vitale » (stpps-accueil, stpps-apropos, stpps-services)",
-    "incoherences": "Création « en 2016 » et « depuis 2016 » sur l'accueil, « 2018 » sur la page STPPS et dans l'annuaire (création 01/04/2018) ; forme juridique « SARL » dans les mentions légales, SAS (code 5710) dans l'annuaire ; l'accueil écrit « L’internalisation réduit les coûts » dans un argumentaire pour l'externalisation"
+    "chiffresDeclares": "« Plus de 150 clients partout en France », « Net Promoter Score de 79 », « Plus de 200 années d’expérience cumulée », « presque 50 experts » / « plus de 48 spécialistes », « 30% des patients dans les grandes agglomérations n’ont jamais avec eux leur carte vitale » (stpps-accueil, stpps-apropos, stpps-services) ; « STPPS emploie 50 salariés » et « leader français de la gestion externalisée du tiers payant et des impayés » (aubigny-actu, article de la commune)",
+    "incoherences": "Création « en 2016 » et « depuis 2016 » sur l'accueil, « 2018 » sur la page STPPS et dans l'annuaire (création 01/04/2018) ; forme juridique « SARL » dans les mentions légales, SAS (code 5710) dans l'annuaire ; l'accueil écrit « L’internalisation réduit les coûts » dans un argumentaire pour l'externalisation ; explication probable de l'écart de dates : le site de la commune décrit une « Micro-entreprise fondée en 2016 par Romuald Bossard », la société actuelle datant de 2018 (aubigny-actu)",
+    "taille": "SIREN 838 408 763, créée le 01/04/2018, tranche d'effectif 20 à 49 salariés (2024), catégorie PME, SAS (nature juridique 5710), NAF 82.11Z ; société du GroupeFBO depuis 2023 (annuaire-stpps, stpps-accueil)"
   },
   "sources": {
     "stpps-accueil": {
@@ -131,7 +132,12 @@
       "label": "annuaire-entreprises.data.gouv.fr · STPPS (SIREN 838 408 763)",
       "url": "https://annuaire-entreprises.data.gouv.fr/entreprise/838408763",
       "consulte": "2026-11-03"
+    },
+    "aubigny-actu": {
+      "label": "aubigny-les-clouzeaux.fr · De nouveaux locaux pour la société STPPS (26/11/2025)",
+      "url": "https://www.aubigny-les-clouzeaux.fr/actualites/de-nouveaux-locaux-pour-la-societe-stpps/",
+      "consulte": "2026-11-03"
     }
   },
-  "_relu": "PAS ENCORE RELU EN DÉTAIL : Paul relit cette fiche avec la PR de la page (choix du 03/11/2026 pour rédiger la nuit)."
+  "_relu": "PAS ENCORE RELU : fiche créée/complétée par l'équipe de nuit du 03/11/2026, à relire par Paul."
 }

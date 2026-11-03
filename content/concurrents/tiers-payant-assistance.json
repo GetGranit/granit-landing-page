@@ -4,7 +4,7 @@
   "modele": "prestataire",
   "logo": null,
   "checkedOn": "2026-11-03",
-  "aRelire": false,
+  "aRelire": true,
   "identite": {
     "raisonSociale": "TIERS PAYANT ASSISTANCE (SAS)",
     "siege": "Limas (69)",
@@ -89,7 +89,8 @@
     "_pourquoi": "aucun prix sur les pages comparatives ; chiffres de performance déclarés non comparables",
     "prix": "non publié sur le site (diagnostic et rendez-vous proposés)",
     "chiffresDeclares": "« + 100 Gestionnaires en France », « +1200 Clients actifs début 2026 », « +1.7M D'anomalies traitées par an » (tpa-accueil) ; « ancienneté moyenne de 10 ans » des gestionnaires (tpa-logiciels) ; « investissement informatique de 150 000 € en 2025 » (tpa-securite)",
-    "incoherences": "Le site dit « Fondée en 1998 » (tpa-apropos) alors que la SAS immatriculée (SIREN 444 465 496) est créée le 04/12/2002 (annuaire) ; « + 100 Gestionnaires en France » (tpa-accueil) contre une tranche d'effectif de 10 à 19 salariés en 2024 pour cette SAS (annuaire), l'effectif est peut-être réparti dans d'autres sociétés du groupe ; les URL /opticiens et /cas-opticiens affichent la page générique de gestion externalisée, sans contenu propre à l'optique"
+    "incoherences": "Le site dit « Fondée en 1998 » (tpa-apropos) alors que la SAS immatriculée (SIREN 444 465 496) est créée le 04/12/2002 (annuaire-tiers-payant-assistance) ; « + 100 Gestionnaires en France » (tpa-accueil) contre une tranche d'effectif de 10 à 19 salariés en 2024 pour cette SAS (annuaire-tiers-payant-assistance), l'effectif est peut-être réparti dans d'autres sociétés du groupe ; les URL /opticiens et /cas-opticiens affichent la page générique de gestion externalisée, sans contenu propre à l'optique",
+    "taille": "SIREN 444 465 496, créée le 04/12/2002, tranche d'effectif 10 à 19 salariés (2024), catégorie PME, SAS (nature juridique 5710), NAF 70.22Z, un seul établissement ouvert à Limas (annuaire-tiers-payant-assistance)"
   },
   "sources": {
     "tpa-accueil": {
@@ -137,11 +138,11 @@
       "url": "https://www.tierspayantassistance.com/mentions-legales-tiers-payant-assistance",
       "consulte": "2026-11-03"
     },
-    "annuaire": {
-      "label": "annuaire-entreprises.data.gouv.fr · Tiers Payant Assistance",
+    "annuaire-tiers-payant-assistance": {
+      "label": "annuaire-entreprises.data.gouv.fr · Tiers Payant Assistance (SIREN 444 465 496)",
       "url": "https://annuaire-entreprises.data.gouv.fr/entreprise/444465496",
       "consulte": "2026-11-03"
     }
   },
-  "_relu": "PAS ENCORE RELU EN DÉTAIL : Paul relit cette fiche avec la PR de la page (choix du 03/11/2026 pour rédiger la nuit)."
+  "_relu": "PAS ENCORE RELU : fiche créée/complétée par l'équipe de nuit du 03/11/2026, à relire par Paul."
 }

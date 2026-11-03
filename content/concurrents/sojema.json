@@ -1,0 +1,124 @@
+{
+  "slug": "sojema",
+  "nom": "Sojema Santé",
+  "modele": "prestataire",
+  "logo": null,
+  "checkedOn": "2026-11-03",
+  "aRelire": true,
+  "identite": {
+    "raisonSociale": "SOJEMA SANTE (SAS)",
+    "siege": "Roanne (42)",
+    "site": "https://sojema.fr/",
+    "metiers": [
+      "optique"
+    ]
+  },
+  "axes": {
+    "quiFait": {
+      "valeur": "Une équipe de gestionnaires spécialisés, avec un interlocuteur unique",
+      "detail": "Gestionnaires humains appuyés sur des outils digitaux développés en interne",
+      "source": "sojema-externalisation"
+    },
+    "pec": {
+      "valeur": "non publié",
+      "detail": "Le site parle seulement d'une vérification des droits qui « sécurise la prise en charge avant facturation », sans dire qui fait la demande de prise en charge",
+      "source": "sojema-opticiens"
+    },
+    "rejets": {
+      "valeur": "oui",
+      "detail": "Analyse et traitement des rejets, renvoi des lots manquants, contrôle et relance des dossiers à 15 jours",
+      "source": "sojema-services"
+    },
+    "rapprochement": {
+      "valeur": "oui",
+      "detail": "Saisie des règlements dans le logiciel métier du magasin et rapprochement des règlements aux dossiers clients ; rapport et inventaire financier mensuels",
+      "source": "sojema-services"
+    },
+    "avance": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "engagement": {
+      "valeur": "contrat de 1 an avec tacite reconduction",
+      "source": "sojema-services"
+    },
+    "hds": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "plateformes": {
+      "valeur": "non publié",
+      "detail": "Mise en paiement « sur le portail de la complémentaire », sans liste des portails",
+      "source": "sojema-services"
+    }
+  },
+  "citations": [
+    {
+      "texte": "Envoi du dossier Régime Obligatoire + Régime Complémentaire soit par mail soit par courrier ou mise en paiement sur le portail de la complémentaire.",
+      "source": "sojema-services"
+    },
+    {
+      "texte": "Chez Sojema, vous bénéficiez d’un interlocuteur unique, expert de votre activité, pour piloter l’ensemble des questions liées à la gestion du tiers payant.",
+      "source": "sojema-services"
+    },
+    {
+      "texte": "Sojema prend en charge le recyclage des Feuilles de Soins Électroniques (FSE) rejetées afin de corriger les anomalies et sécuriser rapidement vos remboursements.",
+      "source": "sojema-opticiens"
+    },
+    {
+      "texte": "Sojema analyse les garanties patients, vérifie les droits auprès des organismes et sécurise la prise en charge avant facturation.",
+      "source": "sojema-opticiens"
+    }
+  ],
+  "meilleurSi": [
+    "on veut confier tout l'aval du dossier, de l'envoi aux caisses et mutuelles jusqu'aux relances, à une équipe avec un interlocuteur unique",
+    "on veut que le prestataire saisisse lui-même les règlements dans son logiciel métier et les rapproche des dossiers",
+    "on veut un rapport et un inventaire financier chaque mois",
+    "on cherche une équipe spécialisée en optique, basée en France"
+  ],
+  "exclus": {
+    "_pourquoi": "aucun prix sur les pages comparatives ; chiffres de performance déclarés non comparables",
+    "prix": "5 € par dossier traité (régime obligatoire et mutuelle inclus), 0 € de frais de mise en route (sojema-accueil, sojema-opticiens, sojema-externalisation)",
+    "chiffresDeclares": "« 100% des dossiers reçus sont traités dans les 24 heures », « 100% de taux de recouvrement », délai de paiement moyen des OCAM « 17 jours » (accueil) ou « 25 jours » (à propos), « 100% des dossiers sont payés dans les 3 mois », « 16 ans d’expérience », « des dizaines de clients sur toute la France », mise en route « sous 8 jours » (sojema-accueil, sojema-apropos, sojema-services)",
+    "incoherences": "Délai moyen de paiement des OCAM : « 17 jours » sur l'accueil, « 25 jours » sur la page À propos ; « Contrat de 1 an avec tacite reconduction » (services) face à « Aucun engagement inutile » (externalisation) ; forme « SARL » dans les informations légales, SAS (5710) dans l'annuaire ; « 16 ans d’expérience » pour une société créée en 2016 (le site la rattache à un service interne monté en 2010 dans des magasins) ; deux numéros de téléphone (04 77 72 68 49 et 04 77 60 95 40) ; « Entreprise Française 100% basée en région AURA » mais site hébergé à Chypre (Hostinger)",
+    "taille": "SIREN 820 627 719, création le 27/05/2016, SAS (5710), NAF 82.99Z, siège à Roanne (42) ; tranche 6 à 9 salariés (2024), catégorie PME ; présidente : SOJEMA FINANCE (annuaire-sojema)"
+  },
+  "sources": {
+    "sojema-accueil": {
+      "label": "sojema.fr · Accueil",
+      "url": "https://sojema.fr/",
+      "consulte": "2026-11-03"
+    },
+    "sojema-services": {
+      "label": "sojema.fr · Nos services",
+      "url": "https://sojema.fr/services/",
+      "consulte": "2026-11-03"
+    },
+    "sojema-opticiens": {
+      "label": "sojema.fr · Pour les opticiens",
+      "url": "https://sojema.fr/pour-les-opticiens/",
+      "consulte": "2026-11-03"
+    },
+    "sojema-externalisation": {
+      "label": "sojema.fr · Externalisation du tiers payant",
+      "url": "https://sojema.fr/externalisation-du-tiers-payant/",
+      "consulte": "2026-11-03"
+    },
+    "sojema-apropos": {
+      "label": "sojema.fr · À propos de Sojema",
+      "url": "https://sojema.fr/a-propos-de-sojema/",
+      "consulte": "2026-11-03"
+    },
+    "sojema-legal": {
+      "label": "sojema.fr · Informations légales & RGPD",
+      "url": "https://sojema.fr/informations-legales-rgpd/",
+      "consulte": "2026-11-03"
+    },
+    "annuaire-sojema": {
+      "label": "annuaire-entreprises.data.gouv.fr · SOJEMA SANTE (SIREN 820 627 719)",
+      "url": "https://annuaire-entreprises.data.gouv.fr/entreprise/820627719",
+      "consulte": "2026-11-03"
+    }
+  },
+  "_relu": "PAS ENCORE RELU : fiche créée/complétée par l'équipe de nuit du 03/11/2026, à relire par Paul."
+}
