@@ -1,27 +1,29 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SiteLayout } from "@/components/SiteLayout";
-import { HomeSections } from "@/components/home/HomeSections";
+import { Accueil } from "@/components/accueil/Accueil";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Granit - Agents IA santé. Vos équipes soignent, Granit gère le reste." },
+      { title: "Granit - Vos équipes soignent. Nos agents encaissent." },
       {
         name: "description",
         content:
-          "Granit déploie des agents IA qui automatisent les tâches administratives de vos équipes de santé. Branché sur vos outils existants. Opérationnel en 48h.",
+          "Droits, prises en charge, facturation, encaissement : nos agents IA font tourner votre tiers payant de bout en bout, dans vos logiciels actuels.",
       },
-      { property: "og:title", content: "Granit - Agents IA santé" },
-      { property: "og:description", content: "Vos équipes soignent. Granit gère le reste." },
+      { property: "og:title", content: "Granit - Vos équipes soignent. Nos agents encaissent." },
+      {
+        property: "og:description",
+        content:
+          "Nos agents IA font tourner votre tiers payant de bout en bout, dans vos logiciels actuels.",
+      },
+    ],
+    links: [
+      /* les polices de la marque (DESIGN.md), pour l'accueil tant que __root charge encore les anciennes */
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&family=Geist:wght@400;500;600&display=swap",
+      },
     ],
   }),
-  component: HomePage,
+  component: Accueil,
 });
-
-function HomePage() {
-  return (
-    <SiteLayout>
-      <HomeSections />
-    </SiteLayout>
-  );
-}
