@@ -10,7 +10,12 @@ export { useLanguage };
 /* ---------- prise de rendez-vous : Cal.com de Paul, UTM par emplacement ---------- */
 const CALCOM_DEMO_URL = "https://cal.com/paul-pietra-granit/decouvrir-granit/";
 export function calcomDemoUrl(placement: string) {
-  const params = new URLSearchParams({ utm_source: "getgranit.ai", utm_medium: "site", utm_campaign: "homepage", utm_content: placement });
+  const params = new URLSearchParams({
+    utm_source: "getgranit.ai",
+    utm_medium: "site",
+    utm_campaign: "homepage",
+    utm_content: placement,
+  });
   return `${CALCOM_DEMO_URL}?${params.toString()}`;
 }
 
@@ -30,7 +35,11 @@ export function useLeveeAnnoncee() {
 /* ---------- vrai une fois hydraté (les animations ne partent qu'après) ---------- */
 const subscribe = () => () => {};
 export function useHydrated() {
-  return useSyncExternalStore(subscribe, () => true, () => false);
+  return useSyncExternalStore(
+    subscribe,
+    () => true,
+    () => false,
+  );
 }
 
 /* ---------- « mouvements réduits » du système ---------- */
@@ -57,7 +66,13 @@ export function useReveal(ref: RefObject<HTMLElement | null>) {
       return;
     }
     const io = new IntersectionObserver(
-      (es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } }),
+      (es) =>
+        es.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("is-in");
+            io.unobserve(e.target);
+          }
+        }),
       { threshold: 0.15, rootMargin: "0px 0px -8% 0px" },
     );
     els.forEach((el) => io.observe(el));
@@ -74,9 +89,21 @@ const GALETS = {
     { x: 67.7999, y: 14.8335, d: "M0 0 L62.423 15.9125 L30.8734 52.5949 L2.8634 51.9975 Z" },
     { x: 118.4916, y: 44.2009, d: "M34.5175 0 L0.101 39.9213 L0 70.2643 L38.2286 66.5335 Z" },
     { x: 71.125, y: 90.875, d: "M0 0 L23.75 0 L23.75 23.75 L0 23.75 Z" },
-    { x: 25.6218, y: 137.0117, d: "M67.5487 1.4661 L0.8551 0 L0 30.9357 L22.7217 35.8653 L63.9536 30.9357 Z" },
-    { x: 18.2973, y: 16.946, d: "M28.5979 95.7061 L7.6005 91.5595 L0 46.0841 L3.2973 8.2147 L26.0407 0 L29.5992 37.6614 Z" },
-    { x: 113.3655, y: 137.2606, d: "M0.3845 3.3926 L40.2526 0 L37.3038 21.1524 L1.6599 24.9536 L0 19.0657 Z" },
+    {
+      x: 25.6218,
+      y: 137.0117,
+      d: "M67.5487 1.4661 L0.8551 0 L0 30.9357 L22.7217 35.8653 L63.9536 30.9357 Z",
+    },
+    {
+      x: 18.2973,
+      y: 16.946,
+      d: "M28.5979 95.7061 L7.6005 91.5595 L0 46.0841 L3.2973 8.2147 L26.0407 0 L29.5992 37.6614 Z",
+    },
+    {
+      x: 113.3655,
+      y: 137.2606,
+      d: "M0.3845 3.3926 L40.2526 0 L37.3038 21.1524 L1.6599 24.9536 L0 19.0657 Z",
+    },
   ],
 };
 export const GALETS_PIECES = GALETS.pieces;
@@ -84,7 +111,12 @@ export const GALETS_VIEWBOX = GALETS.viewBox;
 export function GaletsSymbol({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox={GALETS.viewBox} aria-hidden="true">
-      <g fill="currentColor" stroke="currentColor" strokeWidth={GALETS.stroke} strokeLinejoin="round">
+      <g
+        fill="currentColor"
+        stroke="currentColor"
+        strokeWidth={GALETS.stroke}
+        strokeLinejoin="round"
+      >
         {GALETS.pieces.map((p, i) => (
           <path key={i} transform={`translate(${p.x} ${p.y})`} d={p.d} />
         ))}
