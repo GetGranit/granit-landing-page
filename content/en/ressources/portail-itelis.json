@@ -1,0 +1,211 @@
+{
+  "slug": "portail-itelis",
+  "id": "A5",
+  "category": "plateformes",
+  "categoryName": "Platforms and portals",
+  "type": "plateforme",
+  "plateforme": "itelis",
+  "title": "Itelis TP for opticians: professional portal, coverage approval, statuses, and payment",
+  "primaryKeyword": "itelis tp",
+  "keywordCluster": [
+    "itelis opticien",
+    "tp itelis",
+    "opticien itelis",
+    "itelis opticiens",
+    "réseau itelis opticien",
+    "reseau itelis opticien",
+    "reseau optique itelis",
+    "reseau itelis optique",
+    "opticien du reseau itelis",
+    "trouver un opticien itelis"
+  ],
+  "parentSlug": "portails-tiers-payant",
+  "level": "Fille",
+  "author": {
+    "name": "Olivier",
+    "jobTitle": "Writer, third-party payment expert",
+    "photo": "/auteurs/olivier.jpg",
+    "url": null
+  },
+  "reviewer": {
+    "name": "Nathalie",
+    "jobTitle": "Writer, optical industry expert",
+    "photo": "/auteurs/nathalie.jpg",
+    "url": null
+  },
+  "datePublished": "2026-10-09",
+  "dateModified": "2026-10-09",
+  "checkedOn": "2026-10-09",
+  "wordCount": 1928,
+  "readTime": 8,
+  "metaDescription": "Itelis TP for opticians: logging in to the extranet, OTP code, network agreement, coverage approval, and contacts. The practical guide to unblocking your files.",
+  "contentHtml": "<p><strong>Itelis TP is managed on the extranet.itelis.fr extranet, accessible from itelis.fr to contracted opticians only. Logging in requires a login ID, a password, and a code received by email.</strong> Itelis is not a supplementary health insurer (mutuelle). It is a care network. It negotiates rates with healthcare professionals on behalf of supplementary health insurers (AMC, supplementary health insurance). In practice, without a signed agreement, there is no access to the extranet and no Itelis third-party payment (tiers payant: the patient pays nothing upfront, insurers pay the provider directly) at the counter.</p><div class=\"key-takeaways\"><strong>Key points</strong><ul><li>Itelis is a care network, a brand of the company Isea since 2021. The partnership is signed store by store, even within a chain.</li><li>The extranet.itelis.fr extranet opens from itelis.fr, “Accès professionnels” (Professional access) menu then “Professionnels de santé” (Healthcare professionals). You need a login ID, a password, then an OTP code (one-time code) received by email, valid for 10 minutes.</li><li>A store whose network agreement file is not up to date is redirected to a form. The extranet stays closed until the form is completed.</li><li>Partners already under agreement write to Itelis through the extranet's secure messaging, not through the site's contact form.</li><li>A complaint is handled within 15 business days, up to two months if the case is complex.</li></ul></div><h2 id=\"itelis-mutuelles\">What is Itelis TP and which supplementary health insurers use it?</h2><p>Itelis is a care network, according to <a href=\"https://www.itelis.fr/a-propos-ditelis\">its About page</a>. It negotiates rates with healthcare professionals (optical, hearing, dental…) on behalf of supplementary health insurers.</p><div data-bloc=\"chiffres\"></div><p>Founded in 2001, Itelis became a brand of the company Isea in 2021. In optical care, the Itelis network has more than 3,700 partner opticians, according to <a href=\"https://www.itelis.fr/vos-services-sante/trouver-un-opticien\">the page about its optician network</a>. An important point for a chain store: the partnership is signed with each optician, one by one. A Krys, Optical Center, or Optic 2000 store is therefore not a partner just because of its chain. Independent opticians can join on the same terms.</p><p>On the policyholder side, Itelis advertises, at an optician in the Itelis network, a negotiated lens price, third-party payment, and included breakage coverage. Partner opticians sell lenses from 8 lens manufacturers: BBGR, Codir, Essilor, Hoya, Nikon, Novacel, Seiko, and Zeiss. Some contracts also include the OPTI option, flagged by a logo on the third-party payment card. It provides in particular high-end lenses reimbursed at 100% depending on the prescription and a second pair of prescription sunglasses for €1 including VAT.</p><p>Itelis publishes its own sales figures on <a href=\"https://www.itelis.fr/professionnels-de-sante/adhesion-au-reseau-dopticiens-itelis\">its page on joining the optician network</a>. In 2025, 58% of single-vision lenses and 69% of progressive lenses sold in the network were advanced or personalized lenses. The same page states that 13 million policyholders have access to the network. You will find the other networks and portals in our overview of <a href=\"/ressources/portails-tiers-payant\">third-party payment portals</a>, for example the <a href=\"/ressources/portail-santeclair\">Santéclair</a> page.</p><p>Which supplementary insurers are involved? On <a href=\"https://www.itelis.fr/acceder-vos-services\">its “Accéder à vos services” (Access your services) page</a>, Itelis lists 61 supplementary insurers, insurance companies, and brokers whose policyholders have access to its services. Examples: AG2R La Mondiale, AXA, Klesia, or Mutuelle Ociane Matmut. This list says who has access to the network. It does not say, for a given contract, which coverage applies: the customer's third-party payment card is what counts.</p><div data-bloc=\"organismes\"></div><div class=\"callout callout--tip\"><p><strong>The right habit:</strong> in the Cosium software, a supplementary insurer that goes through the Itelis network appears as “NOM_DE_LA_MUTUELLE(ITELIS)” (INSURER_NAME(ITELIS)). If you see this suffix on the customer record, the file goes through Itelis.</p></div><h2 id=\"itelis-espace-pro\">How do you access the Itelis professional portal?</h2><p>You must first be under agreement, then log in to extranet.itelis.fr from itelis.fr. Logging in requires a login ID, a password, and an OTP code sent by email. Without an up-to-date agreement, the extranet stays closed.</p><h3>Becoming an Itelis optician: the network agreement</h3><p>You apply online, on conventionnement.itelis.fr, optical network section. Itelis describes the following process:</p><ol class=\"steps\"><li><strong>Prepare the documents.</strong> AFNOR or Veritas certification, an invoice or certificate for the optician software, an IFAM certificate or an anonymized local health insurance office (CPAM) account statement. Add to these the Kbis company registration extract or the Sirene certificate, photos of the refraction area, the store floor plan, and the bank details (RIB).</li><li><strong>Fill in the membership application online.</strong> It is submitted on conventionnement.itelis.fr.</li><li><strong>Receive your login credentials.</strong> Log in to complete the file and upload the documents.</li><li><strong>Sign the agreement online.</strong> This step comes after Itelis checks the file.</li><li><strong>Log in to the extranet.</strong> The store can then enter its first coverage requests.</li></ol><p>The partnership has no minimum commitment period. The optician can leave the network at any time with one month's notice, by registered letter with acknowledgment of receipt.</p><h3>Logging in to the Itelis extranet</h3><p>You log in from the public site itelis.fr, in four steps:</p><ol class=\"steps\"><li><strong>Open itelis.fr.</strong> “Accès professionnels” menu, then “Professionnels de santé”. A login window opens over the site.</li><li><strong>Enter the “Identifiant” (Login ID) and the “Mot de passe” (Password).</strong> The login ID is the one Itelis gave the store: depending on the case, its IFAM number or its FINESS number.</li><li><strong>Enter the “Code OTP” (OTP code).</strong> It is sent by email to the account's address, from auth@itelis.fr, and expires after 10 minutes.</li><li><strong>Land on extranet.itelis.fr.</strong> The extranet may open in a new tab.</li></ol><div data-figure=\"connexion-itelis\"></div><p>Each store has its own login credentials. A group with several locations therefore logs in store by store. The code arrives at the email address of each store's account. Make sure this address is checked at the counter, otherwise login gets stuck as soon as a colleague is away.</p><div class=\"callout callout--warn\"><p><strong>The trap:</strong> the number of attempts is limited. In case of error, the site displays “L'identifiant et/ou le mot de passe saisi(s) est/sont incorrect(s). Nombre de tentatives restantes :” (The login ID and/or password entered is/are incorrect. Attempts remaining:). Do not keep trying at random: first check which login ID (IFAM or FINESS) Itelis assigned to you.</p></div><h3>Session expired, error page, network agreement form</h3><p>When the session has expired, the site sends you back to the itelis.fr home page: you have to log in again, email code included. An extranet address opened without a session (a bookmark, for example) displays “Une erreur vient de se produire” (An error has occurred), followed by a code. In that case, log in again from itelis.fr.</p><p>Another case: after the email code, Itelis may redirect you to a form on conventionnement.itelis.fr. This happens when the store's network agreement file is not up to date. The extranet stays inaccessible until this form is completed, which is why it pays to keep the supporting documents up to date.</p><h2 id=\"itelis-prise-en-charge\">How do you submit an optical coverage request on Itelis TP?</h2><p>The coverage request is entered on the extranet.itelis.fr extranet, once the store is under agreement and logged in. The public pages we reviewed do not list the fields of an optical request.</p><p>What you can check before opening the extranet comes down to the customer's third-party payment card. It shows the supplementary insurer and, if the contract includes it, carries the OPTI option logo. This logo changes what you offer the customer. The option provides high-end lenses reimbursed at 100% depending on the prescription and a second pair of prescription sunglasses for €1 including VAT. It is better to spot it before drawing up the quote than after.</p><p>Also check that the store is a partner in its own name. The partnership is signed optician by optician. A store recently taken over or opened within a chain must therefore have its own agreement and its own login credentials. For an overview of the process, from request to collection, see our guide to <a href=\"/ressources/tiers-payant-opticien\">third-party payment for opticians</a>. The other portals follow a similar logic, with their own screens: compare, for example, with <a href=\"/ressources/portail-actil\">the Actil portal</a> or <a href=\"/ressources/portail-oxantis\">the Oxantis portal</a>.</p><p>At Itelis, every session requires an email code, and an expired session means starting over. When requests follow one another across several networks during the day, this back-and-forth becomes the store's bottleneck. <a href=\"/agents\">Granit</a> works with all third-party payment platforms: these repeated logins can be done without you.</p><h2 id=\"itelis-statuts\">What do the statuses of an Itelis coverage approval mean?</h2><p>The status of a request is read on the Itelis extranet, file by file.</p><div data-bloc=\"statuts\"></div><p>The public pages we reviewed do not list the extranet's status labels.</p><p>Read the status displayed on the extranet for each request, before delivering the equipment. In case of rejection, the reason displayed tells you what to correct.</p><h2 id=\"itelis-vous-bloquez\">Stuck on Itelis?</h2><h3>I can't find the insurer in the list</h3><p>Start with the customer's third-party payment card: it shows the supplementary insurer and, where applicable, the OPTI option logo. Then check that the supplementary insurer is among the 61 organizations listed on the “Accéder à vos services” page of itelis.fr. In Cosium, the “(ITELIS)” suffix after the insurer's name confirms the link to the network. If the insurer is missing even though the card mentions Itelis, ask through the extranet's secure messaging. This channel is detailed in the contact section below.</p><h3>The coverage request is rejected</h3><p>The pages we reviewed do not list the rejection reasons. Read the reason displayed on the extranet. Then check the customer's card, in particular whether the OPTI logo is present, and the items on the quote. If the rejection still seems unjustified after checking, Itelis provides a complaint procedure, detailed in the contact section.</p><h3>It stays pending, with no response</h3><p>The pages we reviewed give no response time for an optical coverage request. If a file stays pending, ask Itelis through the extranet's secure messaging, quoting the request reference.</p><h3>The approval is granted, but the payment does not arrive</h3><p>The pages we reviewed give no payment time. First reconcile your bank statements with the approved files, then, if a payment is missing, write through the partner area's messaging. If the problem persists, a formal complaint receives an acknowledgment within 10 business days at most.</p><p>Keep the exact reason displayed by the portal: it is what tells you what to correct.</p><h2 id=\"itelis-paiement\">When and how does Itelis pay the optician?</h2><p>The public pages we reviewed give neither a payment time nor a payment method specific to the optician. Third-party payment is indeed among the services advertised at a partner optician, but the payment schedule is not specified.</p><p>Without an official time frame, the safest method is to track each approved file yourself until it is collected. Note the approval date, then reconcile each bank transfer received against the list of files. An approved file with no matching transfer then stands out quickly, instead of piling up in unpaid items.</p><p>The bank details (RIB) are among the documents requested for the network agreement. If the store changes banks, update the network agreement file. A file that is not up to date can also block access to the extranet. If a payment is missing, the formal route remains the complaint, with the time frames presented in the next section.</p><h2 id=\"itelis-contact\">How do you contact Itelis?</h2><p>The right channel depends on your situation. An optician already under agreement goes through the extranet's secure messaging. A store not under agreement goes through the itelis.fr contact form.</p><div data-bloc=\"contacts\"></div><p>The point that wastes time: <a href=\"https://www.itelis.fr/contact\">the site's contact form</a> is not meant for partners. If you are already under agreement, write from the extranet. If you are not yet, choose “Professionnel de santé non conventionné” (Healthcare professional not under agreement) in the form. You can also go directly through the online application to the optical network.</p><p>For a complaint, Itelis gives two routes on <a href=\"https://www.itelis.fr/mentions-legales-et-reclamations\">its legal notice and complaints page</a>. The first is the partner area's messaging. The second is a letter to ISEA, Service réclamations, 218 avenue Jean Jaurès, 75019 Paris. A complaint receives an acknowledgment within 10 business days at most. It is handled within 15 business days, up to two months if the case is complex. Keep a written record of every exchange: the file reference, the date sent, and the reason displayed by the portal.</p>",
+  "tocItems": [
+    {
+      "id": "itelis-mutuelles",
+      "label": "Itelis TP and its supplementary insurers"
+    },
+    {
+      "id": "itelis-espace-pro",
+      "label": "Accessing the Itelis professional portal"
+    },
+    {
+      "id": "itelis-prise-en-charge",
+      "label": "Submitting an optical coverage request"
+    },
+    {
+      "id": "itelis-statuts",
+      "label": "Reading the statuses of a coverage approval"
+    },
+    {
+      "id": "itelis-vous-bloquez",
+      "label": "Stuck on Itelis?"
+    },
+    {
+      "id": "itelis-paiement",
+      "label": "How the optician gets paid"
+    },
+    {
+      "id": "itelis-contact",
+      "label": "Contacting Itelis"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "How do opticians access the Itelis professional portal?",
+      "answer": "You must first be under agreement with Itelis, then log in to the extranet.itelis.fr extranet from itelis.fr, “Accès professionnels” (Professional access) menu then “Professionnels de santé” (Healthcare professionals). The window asks for the login ID provided by Itelis (IFAM or FINESS number depending on the case) and the password. It then asks for an OTP code sent by email from auth@itelis.fr, valid for 10 minutes. If the network agreement file is not up to date, Itelis redirects to a form and the extranet stays closed until it is completed."
+    },
+    {
+      "question": "Which supplementary health insurers use Itelis for optical third-party payment?",
+      "answer": "The itelis.fr site lists 61 supplementary insurers, insurance companies, and brokers whose policyholders have access to Itelis services. Examples: AG2R La Mondiale, AXA, Klesia, or Mutuelle Ociane Matmut. For a given customer, their third-party payment card is what counts. In Cosium, a supplementary insurer linked to the network appears as “NOM_DE_LA_MUTUELLE(ITELIS)” (INSURER_NAME(ITELIS))."
+    },
+    {
+      "question": "How do you submit an optical coverage request on Itelis?",
+      "answer": "The request is entered on the extranet.itelis.fr extranet, once the store is under agreement and logged in with its email code. Before entering it, check the customer's third-party payment card, in particular whether it carries the OPTI option logo. The public pages we reviewed do not list the fields of an optical request."
+    },
+    {
+      "question": "What do the statuses of an Itelis coverage approval mean?",
+      "answer": "The status is read on the Itelis extranet, file by file, and it is this response, not the quote, that commits the supplementary insurer. The public pages we reviewed do not give the exact list of the extranet's status labels."
+    },
+    {
+      "question": "How do healthcare professionals contact Itelis?",
+      "answer": "An optician already under agreement writes to Itelis through the extranet's secure messaging. The site's contact form is not meant for partners. A store not under agreement uses the itelis.fr form, choosing “Professionnel de santé non conventionné” (Healthcare professional not under agreement). Complaints go through the partner area's messaging or by letter to ISEA, Service réclamations, 218 avenue Jean Jaurès, 75019 Paris."
+    },
+    {
+      "question": "How long does Itelis take to pay the optician?",
+      "answer": "The Itelis public pages we reviewed give no payment time specific to the optician. The safest approach is to reconcile each bank transfer received against the list of approved files. If a payment is missing, a complaint receives an acknowledgment within 10 business days at most. It is handled within 15 business days, up to two months if the case is complex."
+    },
+    {
+      "question": "How do you know whether an optician is an Itelis partner?",
+      "answer": "The Itelis partnership is signed with each optician, one by one, including in Krys, Optical Center, or Optic 2000 chain stores. Belonging to a chain is therefore not enough: only a store that has signed its own agreement is part of the network. The itelis.fr site presents its network of more than 3,700 partner opticians."
+    }
+  ],
+  "sources": [
+    {
+      "label": "itelis.fr · About Itelis",
+      "url": "https://www.itelis.fr/a-propos-ditelis"
+    },
+    {
+      "label": "itelis.fr · Partner optician network",
+      "url": "https://www.itelis.fr/vos-services-sante/trouver-un-opticien"
+    },
+    {
+      "label": "itelis.fr · Joining the Itelis optician network",
+      "url": "https://www.itelis.fr/professionnels-de-sante/adhesion-au-reseau-dopticiens-itelis"
+    },
+    {
+      "label": "itelis.fr · Access your services",
+      "url": "https://www.itelis.fr/acceder-vos-services"
+    },
+    {
+      "label": "itelis.fr · Contact",
+      "url": "https://www.itelis.fr/contact"
+    },
+    {
+      "label": "itelis.fr · Legal notice and complaints",
+      "url": "https://www.itelis.fr/mentions-legales-et-reclamations"
+    }
+  ],
+  "figures": [
+    {
+      "id": "connexion-itelis",
+      "type": "etapes",
+      "titre": "Logging in to the Itelis extranet",
+      "legende": "The OTP code received by email expires after 10 minutes: keep the mailbox open before you start.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "Open itelis.fr",
+          "detail": "Accès professionnels, then Professionnels de santé",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Login ID and password",
+          "detail": "IFAM or FINESS number depending on the case",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "OTP code",
+          "detail": "Sent by auth@itelis.fr, valid for 10 minutes",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Itelis extranet",
+          "detail": "extranet.itelis.fr, sometimes in a new tab",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [
+    {
+      "id": "A0",
+      "slug": "portails-tiers-payant",
+      "anchor": "third-party payment portals",
+      "type": "parent"
+    },
+    {
+      "id": "A6",
+      "slug": "portail-actil",
+      "anchor": "actil tp",
+      "type": "sœur"
+    },
+    {
+      "id": "A7",
+      "slug": "portail-oxantis",
+      "anchor": "oxantis tp",
+      "type": "sœur"
+    }
+  ],
+  "liensEntrants": [
+    {
+      "slug": "mutuelle-quel-portail",
+      "anchor": "find out which portal an insurer uses",
+      "type": "soeur"
+    }
+  ],
+  "remplace": [],
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-09T09:50:01.939Z",
+    "avertissements": [
+      "aucune citation (facultative)",
+      "source non vérifiable (403) : https://www.itelis.fr/professionnels-de-sante/adhesion-au-reseau-dopticiens-itelis",
+      "source non vérifiable (403) : https://www.itelis.fr/a-propos-ditelis",
+      "source non vérifiable (403) : https://www.itelis.fr/mentions-legales-et-reclamations",
+      "source non vérifiable (403) : https://www.itelis.fr/contact",
+      "source non vérifiable (403) : https://www.itelis.fr/acceder-vos-services",
+      "source non vérifiable (403) : https://www.itelis.fr/vos-services-sante/trouver-un-opticien"
+    ],
+    "relecture": {
+      "verdict": "humain",
+      "tours": 2,
+      "model": "claude-opus-5-5",
+      "le": "2026-10-09T09:56:30.853Z"
+    }
+  }
+}

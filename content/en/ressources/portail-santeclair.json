@@ -1,0 +1,251 @@
+{
+  "slug": "portail-santeclair",
+  "id": "A9",
+  "category": "plateformes",
+  "categoryName": "Platforms and portals",
+  "type": "plateforme",
+  "plateforme": "santeclair",
+  "title": "Santéclair TP for opticians: professional portal, coverage approval, statuses, and payment",
+  "primaryKeyword": "tp santeclair",
+  "keywordCluster": [
+    "opticien santeclair",
+    "santeclair mon compte",
+    "partenaires opticiens santeclair",
+    "santeclair pro",
+    "opticiens du reseau santeclair",
+    "opticien reseau santeclair",
+    "santeclair partenaire opticien",
+    "reseau santeclair opticien",
+    "opticiens santeclair",
+    "santeclair devis"
+  ],
+  "parentSlug": "portails-tiers-payant",
+  "level": "Fille",
+  "author": {
+    "name": "Olivier",
+    "jobTitle": "Writer, third-party payment expert",
+    "photo": "/auteurs/olivier.jpg",
+    "url": null
+  },
+  "reviewer": {
+    "name": "Nathalie",
+    "jobTitle": "Writer, optical industry expert",
+    "photo": "/auteurs/nathalie.jpg",
+    "url": null
+  },
+  "datePublished": "2026-10-09",
+  "dateModified": "2026-10-09",
+  "checkedOn": "2026-10-07",
+  "wordCount": 2057,
+  "readTime": 9,
+  "metaDescription": "Santéclair TP for opticians: access to the professional portal, coverage approval on the FFL TP+ Optique portal, statuses, and payment. The guide to unblocking your files.",
+  "contentHtml": "<p><strong>Santéclair is a care network that also manages third-party payment; for optical care, the coverage request is submitted in a portal opened from services.santeclair.fr.</strong> Santéclair acts on behalf of supplementary health insurers. Santéclair third-party payment (tiers payant: the patient pays nothing upfront, insurers pay the provider directly), or Santéclair TP, works through two agreements: the partner network, which you join through a call for tenders, and the “Tiers-payant TP+” agreement, which allows third-party payment outside the network.</p><p>This page follows the path of a file: access to the professional portal, entering the coverage request, reading statuses, payment, and contacts. The facts come from the official <a href=\"https://www.santeclair.fr/fr/professionnel-sante\">Santéclair pages for healthcare professionals</a> and from what our agents recorded on the portal.</p><div class=\"key-takeaways\"><strong>Key points</strong><ul><li>Santéclair offers professionals three agreements: “Partenariat &amp; tiers-payant” (Partnership and third-party payment, the network), “Tiers-payant TP+” (TP+ third-party payment, outside the network), and “Partenariat simple” (Partnership only).</li><li>For optical care, the coverage request is entered in “Mon portail FFL TP+ Optique” (My FFL TP+ Optical portal), operated by FFL-Promoteur. You need the insurer, the contract number, and the beneficiary's last name, first name, and date of birth.</li><li>The professional portal is at <strong>services.santeclair.fr</strong>: logging in requires a login ID, a password, and a 6-digit code received by email.</li><li>Only the “Accordé” (Approved) status lets you deliver the equipment; “N° Sécurité sociale inconnu” (Social security number unknown) means no coverage was found.</li><li>Santéclair states a payment time of 7 days for third-party payment; the “Facturé” (Billed) status displays the transfer order.</li></ul></div><h2 id=\"santeclair-mutuelles\">What is Santéclair and which supplementary health insurers use it?</h2><p><strong>Santéclair is first and foremost a care network, which also manages third-party payment on behalf of supplementary health insurers (AMC, supplementary health insurance).</strong> Santéclair connects more than 60 supplementary health insurers with professionals and states a payment time of 7 days for third-party payment.</p><div data-bloc=\"chiffres\"></div><p>Its services cover 10 million beneficiaries, according to its <a href=\"https://www.santeclair.fr/fr/qui-sommes-nous\">About us</a> page.</p><p>Santéclair offers healthcare professionals three agreements: Partenariat &amp; tiers-payant, Tiers-payant TP+, and Partenariat simple. The difference between the network and TP+ lies in how you get in. The partner network brings together the opticians selected through a call for tenders. TP+ is Santéclair's third-party payment service for professionals outside the network. Launched in 2018, it had handled nearly 20 million requests by April 2023, across all areas of care, according to <a href=\"https://www.santeclair.fr/fr/actualites-institutionnel/soiree-des-20-ans-santeclair\">the page on Santéclair's 20th anniversary</a>.</p><p>The optical network is formed through a call for tenders. The current network covers 2025 to 2029, as stated on the <a href=\"https://www.santeclair.fr/fr/ouverture-reseau-optique-2025-2029\">2024 call for tenders page</a>. As of Oct 7, 2026, the <a href=\"https://www.santeclair.fr/fr/professionnel-sante/reseau-partenaire-optique\">optical partner network page</a> states that no call for tenders is open. In practice, a store that is not in the network today handles its Santéclair third-party payment through the TP+ agreement.</p><p>The choice of agreement also changes how you bill. EDI in the OptoAMC format is reserved for the Partenariat &amp; tiers-payant agreement; TP+ goes through the data flow gateway (FFL, frontal de flux), detailed in the payment section.</p><div data-figure=\"conventions-santeclair\"></div><p>A legal point that is useful at the counter: for third-party payment, Santéclair acts as a processor for the supplementary health insurers, which remain responsible for the data, according to its <a href=\"https://www.santeclair.fr/fr/vie-privee\">Privacy page</a>.</p><p>For an optical request, the portal has you choose the insurer from a list. Here is what the portal's selector offers, recorded by our agents on the portal: it includes, for example, Allianz and Mma. This list shows which insurers the portal offers, not that a supplementary health insurer (mutuelle) goes only through Santéclair.</p><div data-bloc=\"organismes\"></div><p>If your customer's mutuelle is not listed, our directory of <a href=\"/ressources/portails-tiers-payant\">third-party payment portals</a> helps you find the right contact.</p><h2 id=\"santeclair-espace-pro\">How do you access the Santéclair professional portal?</h2><p><strong>The Santéclair professional portal is at services.santeclair.fr: you first create your “Management d'activités” (Activity management) area there, then log in as a partner to manage third-party payment.</strong> The network agreement process runs in this order:</p><ol class=\"steps\"><li><strong>Choose your agreement on santeclair.fr.</strong> Open the page for the agreement you want, for example the <a href=\"https://www.santeclair.fr/fr/professionnel-sante/convention-tiers-payant-tpplus\">Tiers-payant TP+ agreement</a>, or the Partenariat &amp; tiers-payant one, and select the Optical area.</li><li><strong>Create your Management d'activités area.</strong> This is done on services.santeclair.fr.</li><li><strong>Declare your area of care and your agreement.</strong> You select them while creating the area.</li><li><strong>Apply to the network, if a call for tenders is open.</strong> The application to the partner network is submitted from this area; no call for tenders is open as of Oct 7, 2026.</li><li><strong>Log in to the partner area.</strong> Once under agreement, third-party payment is managed on services.santeclair.fr.</li></ol><p>Have the company's identification documents ready before you start. During the 2024 call for tenders, creating the Management d'activités area required the SIREN number and an ID document (national ID card or passport), according to the call for tenders page. Santéclair may change these documents: check the creation screen on the day you fill it in.</p><h3>Logging in day to day</h3><p>Each store logs in with its login ID and password, then enters a 6-digit code received by email. A checkbox lets you remember the browser for future logins. These details were recorded by our agents on the portal.</p><div class=\"callout callout--tip\"><p><strong>The right habit:</strong> check the remember-browser box on the computer used for third-party payment, if it is reserved for the store and locked when you are away. Also make sure the mailbox that receives the code can be checked by the team entering requests. Otherwise, every login depends on a single person.</p></div><h3>Forgotten password or locked account</h3><p>Santéclair does not publish, on its professional pages, a procedure specific to optical care for a locked account. The safest option is to call the line for your agreement: TP+ at 0 892 970 400, partner network at 0 821 233 050.</p><h2 id=\"santeclair-prise-en-charge\">How do you submit an optical coverage request on Santéclair?</h2><p><strong>For optical care, the coverage request is submitted in “Mon portail FFL TP+ Optique”, a separate portal opened from services.santeclair.fr and operated by FFL-Promoteur.</strong> Hearing care professionals use another portal. This point is surprising the first time: the Santéclair area is the entry point, but data entry happens elsewhere.</p><p>The file is created in a few fields, recorded by our agents on the portal:</p><ol class=\"steps\"><li><strong>Log in to services.santeclair.fr.</strong> Login ID, password, then the code received by email.</li><li><strong>Open “Mon portail FFL TP+ Optique”.</strong> The link is in the Santéclair area.</li><li><strong>Choose the insurer from the list.</strong> It is the insurer shown on the customer's third-party payment card.</li><li><strong>Enter the beneficiary.</strong> The beneficiary's contract number, last name, first name, and date of birth.</li><li><strong>Send the request and read the status.</strong> The status displayed tells you whether you can deliver.</li></ol><div data-figure=\"flux-pec-santeclair\"></div><p>Additional documents do not get lost in an email. The <a href=\"https://www.santeclair.fr/fr/professionnel-sante/offre-de-services-tiers-payant-dematerialise/tableau-de-bord\">dashboard of the “Gestion TP” (TP management) area</a> tracks coverage requests, approvals, rejections, reimbursement requests and, for optical care, exception requests. It is also where you upload the additional documents requested on a file.</p><p>In 2022, Santéclair reported a full automation rate of 95.2% for optical coverage requests, on its <a href=\"https://www.santeclair.fr/fr/professionnel-assurance/tiers-payant-complementaire\">third-party payment for supplementary insurers</a> page. In practice, entering the beneficiary correctly avoids a blocker.</p><p>When requests follow one another and each store has to go through the email code and then the FFL portal, data entry becomes the counter's bottleneck. That is what <a href=\"/agents\">Granit</a> does: agents enter the coverage requests directly on the portal, then send the status back to the team.</p><h2 id=\"santeclair-statuts\">What do the statuses of a Santéclair coverage approval mean?</h2><p><strong>Each file displays a status, and only “Accordé” lets you deliver the equipment and then bill.</strong> Here are the statuses recorded by our agents on the optical portal, with their meaning and the action to take.</p><div data-bloc=\"statuts\"></div><p>The statuses “En attente de traitement” (Awaiting processing), “En instance” (Under review), and “En cours” (In progress) say the same thing: the file is still being reviewed. The portal may announce processing within a few hours. The action is simple: wait, then come back to check the file, without creating a second one.</p><p>“Refusé” (Rejected) is not the end. The portal gives the reason for the rejection and offers to print the rejection letter. The reason tells you what to correct before submitting the request again.</p><div class=\"callout callout--warn\"><p><strong>The trap:</strong> “N° Sécurité sociale inconnu” does not mean the file was not sent. It was sent, but no coverage was found. Check the social security number and the third-party payment card before delivering.</p></div><p>“Service momentanément indisponible” (Service temporarily unavailable) has nothing to do with the customer: the TP+ portal is not responding and the request has not been sent. Try again later. Finally, “Facturé” means the invoice has gone out; the file search then displays the transfer order, to track until the money is collected.</p><h2 id=\"santeclair-vous-bloquez\">Stuck on Santéclair?</h2><p><strong>Most blockers can be read in the file's status or in the Gestion TP dashboard.</strong> Here are the cases sorted by symptom, with where to look and what to do.</p><h3>I can't find the insurer in the list</h3><p>First check the customer's third-party payment card: the insurer to choose is the one shown on it. The portal's selector may display it under another name or with a number in parentheses (Allianz, for example, appears on several lines). If the insurer really is not there, the supplementary insurer may go through another platform: the directory of <a href=\"/ressources/portails-tiers-payant\">third-party payment portals</a> helps you find it.</p><h3>The coverage request is rejected</h3><p>Read the reason displayed by the portal and print the rejection letter if needed. Correct what the reason points to (beneficiary, contract, missing document), then submit the request again. If an additional document is expected, upload it from the dashboard of the Gestion TP area. If you are unsure about the reason, call the line for your agreement: TP+ at 0 892 970 400, partner network at 0 821 233 050.</p><h3>It stays pending, with no response</h3><p>If the message is “Service momentanément indisponible”, the request never went out: try again later. A file that is “En attente de traitement”, “En instance”, or “En cours” is still being reviewed; the portal may announce processing within a few hours. Come back to check the file rather than entering a new one. Santéclair does not publish a maximum response time specific to optical care.</p><h3>The approval is granted, but the payment does not arrive</h3><p>Check that the file has moved to the “Facturé” status: until it has, the invoice has not gone out. Once billed, the file search displays the transfer order, and the dashboard tracks reimbursement requests. If the transfer order exists but nothing arrives, call with the file reference: TP+ at 0 892 970 400, partner network at 0 821 233 050.</p><p>Keep the exact reason displayed by the portal: it is what tells you what to correct.</p><h2 id=\"santeclair-paiement\">When and how does Santéclair pay the optician?</h2><p><strong>Santéclair states a payment time of 7 days for third-party payment, on its page for healthcare professionals.</strong> Santéclair does not specify when this period starts; a file that has not been billed does not get paid.</p><p>How the invoice is sent depends on the agreement. The TP+ agreement includes the data flow gateway (FFL), which handles reimbursement requests from the store's software, according to the <a href=\"https://www.santeclair.fr/fr/professionnel-sante/convention-tiers-payant/offre-de-services-tiers-payant-dematerialise\">TP+ page on paperless third-party payment</a>. <a href=\"https://www.santeclair.fr/fr/professionnel-sante/offre-de-services-tiers-payant-dematerialise/edi\">EDI in the OptoAMC format</a> is reserved for the Partenariat &amp; tiers-payant agreement, not for TP+.</p><p>Two screens are enough to track a payment. The dashboard of the Gestion TP area lists the reimbursement requests. The file search displays, for each file with the “Facturé” status, the corresponding transfer order.</p><p>You still need to reconcile these transfer orders with your bank statements. The method is the same as for other payers: it is detailed in our article on <a href=\"/ressources/rapprochement-noemie\">reconciling remittance files and bank transfers</a>. The full process is in <a href=\"/ressources/tiers-payant-opticien\">Third-party payment for opticians: from coverage approval to collection</a>.</p><h2 id=\"santeclair-contact\">How do you contact Santéclair?</h2><p><strong>Santéclair has one line per agreement: the TP+ line for third-party payment outside the network, the partner network line if you are in it or want to apply.</strong></p><div data-bloc=\"contacts\"></div><p>The TP+ agreement line (0 892 970 400) answers Monday to Friday, 9 a.m. to 6 p.m.; it is a premium-rate number. The partner network line (0 821 233 050) has the same hours; it is also a premium-rate number, and option 2 is for applications. For mail, the address is 7 mail Pablo Picasso, 44046 Nantes Cedex 1.</p><p>Before calling, have in front of you the exact status of the file, the reason displayed if there is one, and the request reference. The partner area on services.santeclair.fr remains the entry point for everything else: file tracking, additional documents, and reimbursement requests.</p><p>If your store also works with Viamedis, the <a href=\"/ressources/portail-viamedis\">Viamedis TP for opticians</a> page follows the same structure as this one.</p>",
+  "tocItems": [
+    {
+      "id": "santeclair-mutuelles",
+      "label": "Santéclair and its supplementary insurers"
+    },
+    {
+      "id": "santeclair-espace-pro",
+      "label": "Accessing the professional portal"
+    },
+    {
+      "id": "santeclair-prise-en-charge",
+      "label": "Submitting an optical coverage request"
+    },
+    {
+      "id": "santeclair-statuts",
+      "label": "Reading the statuses"
+    },
+    {
+      "id": "santeclair-vous-bloquez",
+      "label": "Stuck on Santéclair?"
+    },
+    {
+      "id": "santeclair-paiement",
+      "label": "How the optician gets paid"
+    },
+    {
+      "id": "santeclair-contact",
+      "label": "Contacting Santéclair"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "How do opticians access the Santéclair professional portal?",
+      "answer": "The professional portal is at services.santeclair.fr. You first create your Management d'activités (Activity management) area there by choosing your area of care and your agreement, then you log in as a partner. Each store logs in with its login ID, its password, and a 6-digit code received by email."
+    },
+    {
+      "question": "Which supplementary health insurers use Santéclair for optical third-party payment?",
+      "answer": "Santéclair connects more than 60 supplementary health insurers with professionals. On the optical portal, the insurer is chosen from a list that offers, for example, Allianz or Mma. This list shows what the portal's selector offers, not that an insurer goes only through Santéclair."
+    },
+    {
+      "question": "How do you submit an optical coverage request on Santéclair?",
+      "answer": "The request is submitted in “Mon portail FFL TP+ Optique” (My FFL TP+ Optical portal), a separate portal opened from services.santeclair.fr. The optician chooses the insurer from a list, then enters the beneficiary's contract number, last name, first name, and date of birth. Additional documents are uploaded from the dashboard of the Gestion TP (TP management) area."
+    },
+    {
+      "question": "What do the statuses of a Santéclair coverage approval mean (approved, pending, rejected)?",
+      "answer": "“Accordé” (Approved) means the coverage approval is granted: you can deliver the equipment, then bill. “En attente de traitement” (Awaiting processing), “En instance” (Under review), or “En cours” (In progress) means the file is still being reviewed. “Refusé” (Rejected) comes with a reason and a printable rejection letter: correct, then submit the request again."
+    },
+    {
+      "question": "How do healthcare professionals contact Santéclair?",
+      "answer": "For the TP+ agreement, the line is 0 892 970 400, Monday to Friday from 9 a.m. to 6 p.m. For the partner network, the line is 0 821 233 050, with the same hours, and option 2 for an application. Files are tracked in the partner area on services.santeclair.fr."
+    },
+    {
+      "question": "How long does Santéclair take to pay the optician?",
+      "answer": "Santéclair states a payment time of 7 days for third-party payment, without specifying when it starts. A file that has not been billed does not get paid. Once the invoice is sent, the file moves to the “Facturé” (Billed) status and the file search displays the transfer order. With TP+, reimbursement requests go through the FFL data flow gateway from the store's software."
+    }
+  ],
+  "sources": [
+    {
+      "label": "santeclair.fr · Healthcare professionals",
+      "url": "https://www.santeclair.fr/fr/professionnel-sante"
+    },
+    {
+      "label": "santeclair.fr · About us",
+      "url": "https://www.santeclair.fr/fr/qui-sommes-nous"
+    },
+    {
+      "label": "santeclair.fr · Santéclair's 20th anniversary (April 2023)",
+      "url": "https://www.santeclair.fr/fr/actualites-institutionnel/soiree-des-20-ans-santeclair"
+    },
+    {
+      "label": "santeclair.fr · Optical network 2025-2029: 2024 call for tenders",
+      "url": "https://www.santeclair.fr/fr/ouverture-reseau-optique-2025-2029"
+    },
+    {
+      "label": "santeclair.fr · Optical partner network",
+      "url": "https://www.santeclair.fr/fr/professionnel-sante/reseau-partenaire-optique"
+    },
+    {
+      "label": "santeclair.fr · Privacy",
+      "url": "https://www.santeclair.fr/fr/vie-privee"
+    },
+    {
+      "label": "santeclair.fr · Tiers-payant TP+ agreement",
+      "url": "https://www.santeclair.fr/fr/professionnel-sante/convention-tiers-payant-tpplus"
+    },
+    {
+      "label": "santeclair.fr · Dashboard",
+      "url": "https://www.santeclair.fr/fr/professionnel-sante/offre-de-services-tiers-payant-dematerialise/tableau-de-bord"
+    },
+    {
+      "label": "santeclair.fr · Third-party payment for supplementary insurers",
+      "url": "https://www.santeclair.fr/fr/professionnel-assurance/tiers-payant-complementaire"
+    },
+    {
+      "label": "santeclair.fr · TP+ · Paperless third-party payment",
+      "url": "https://www.santeclair.fr/fr/professionnel-sante/convention-tiers-payant/offre-de-services-tiers-payant-dematerialise"
+    },
+    {
+      "label": "santeclair.fr · EDI",
+      "url": "https://www.santeclair.fr/fr/professionnel-sante/offre-de-services-tiers-payant-dematerialise/edi"
+    }
+  ],
+  "figures": [
+    {
+      "id": "conventions-santeclair",
+      "type": "comparaison",
+      "titre": "Partner network or TP+: what changes",
+      "legende": "Look at the Billing row: OptoAMC EDI is reserved for the network, TP+ goes through the FFL data flow gateway.",
+      "colonnes": [
+        "Partnership & third-party payment",
+        "TP+ third-party payment"
+      ],
+      "elements": [
+        {
+          "label": "Who it is for",
+          "detail": "",
+          "valeurs": [
+            "Partner network",
+            "Outside the network"
+          ],
+          "focus": false
+        },
+        {
+          "label": "How you get in",
+          "detail": "",
+          "valeurs": [
+            "Call for tenders",
+            "TP+ agreement"
+          ],
+          "focus": false
+        },
+        {
+          "label": "Third-party payment",
+          "detail": "",
+          "valeurs": [
+            "Yes",
+            "Yes"
+          ],
+          "focus": false
+        },
+        {
+          "label": "Billing",
+          "detail": "",
+          "valeurs": [
+            "OptoAMC EDI",
+            "FFL data flow gateway"
+          ],
+          "focus": true
+        }
+      ]
+    },
+    {
+      "id": "flux-pec-santeclair",
+      "type": "flux",
+      "titre": "The path of an optical coverage request",
+      "legende": "The request is not entered on services.santeclair.fr but in the FFL portal that opens from it.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "Store",
+          "detail": "Login ID, password, code by email",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "services.santeclair.fr",
+          "detail": "Opens Mon portail FFL TP+ Optique",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Mon portail FFL",
+          "detail": "Insurer, contract, beneficiary identity",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Supplementary health insurer",
+          "detail": "Status: approved, pending, or rejected",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [
+    {
+      "id": "A0",
+      "slug": "portails-tiers-payant",
+      "anchor": "third-party payment portals",
+      "type": "parent"
+    }
+  ],
+  "liensEntrants": [
+    {
+      "slug": "mutuelle-quel-portail",
+      "anchor": "find out which portal an insurer uses",
+      "type": "soeur"
+    }
+  ],
+  "remplace": [],
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-09T07:43:37.101Z",
+    "avertissements": [
+      "aucune citation (facultative)"
+    ]
+  }
+}
