@@ -52,11 +52,11 @@ Recommandation :
 
 1. `surcharges["facturation-ehpad-controle-humain"] = []` dans `verticales.json` : il sort de toutes les pages métier, il reste accessible à son adresse et depuis le hub.
 2. Corriger `metierDe()` dans `src/lib/ressources/contenu.ts` : avec une liste vide, il retombe sur l'optique dans le fil d'Ariane ; il doit renvoyer `undefined`.
-3. Corriger `verticales: ["pharmacie"]` de l'entrée R2 dans la file (fait dans `articles-queue.v5.json` : `[]`).
-4. Transférer `hopital-prive-ordonnancement` vers le futur pilier clinique (`tiers-payant-clinique-privee`, champ `remplace` dans la file v5) et, **dans la même PR de relecture**, le retirer du `remplace` du JSON EHPAD. Sinon le build casse (« ancien article remplacé deux fois »).
+3. Corriger `verticales: ["pharmacie"]` de l'entrée R2 dans la file, dans la même PR de code (la proposition `articles-queue.v5.json` laisse les entrées publiées telles quelles).
+4. Le jour où le pilier clinique sort (il est en attente, voir RECAP), transférer `hopital-prive-ordonnancement` vers lui (`tiers-payant-clinique-privee`, champ `remplace` dans la file v5) et, **dans la même PR de relecture**, le retirer du `remplace` du JSON EHPAD. Sinon le build casse (« ancien article remplacé deux fois »).
 5. Dans 3 mois, regarder la Search Console. Sans trafic : 301 vers le pilier transverse `tiers-payant-professionnels-de-sante`.
 
-À signaler au passage : `content/ressources/tiers-payant-opticien.json` déclare `remplace: groupes-multi-sites-pilotage`, alors que la file ne le dit pas. Résultat : un ancien article sur les centres multi-sites redirige vers le pilier opticien. Proposition : le transférer au pilier `tiers-payant-centre-de-sante` quand il sortira (même méthode qu'au point 4 ; déjà noté dans la file v5).
+À signaler au passage : `content/ressources/tiers-payant-opticien.json` déclare `remplace: groupes-multi-sites-pilotage`, alors que la file ne le dit pas. Résultat : un ancien article sur les centres multi-sites redirige vers le pilier opticien. Proposition : le transférer au pilier `tiers-payant-centre-de-sante` quand il sortira (même méthode qu'au point 4 ; l'entrée S0 de `articles-queue.v5.json` porte déjà ce `remplace`).
 
 ## Articles publiés à retaguer (sans réécrire)
 
@@ -65,7 +65,7 @@ Via `surcharges` dans `verticales.json` (la surcharge passe avant le champ `vert
 | Article publié | Tag aujourd'hui | Tag proposé |
 |---|---|---|
 | `sesam-vitale-evolutions-2025` | 5 métiers (dont `audio`) | `optique, dentaire, centres, pharmacie` |
-| `recouvrement-patient-empathie` | `centres` | `centres, dentaire, cliniques` (attention : il cite un dépassement impayé comme cas type en centre de santé, ce que la loi y interdit ; à corriger à sa prochaine révision) |
+| `recouvrement-patient-empathie` | `centres` | `centres, dentaire` (attention : il cite un dépassement impayé comme cas type en centre de santé, ce que la loi y interdit ; à corriger à sa prochaine révision) |
 | `integration-doctolib-lgo` | `centres` | `centres, dentaire` |
 | `audioprothese-renouvellement-tiers-payant` | `audio` | `optique` |
 | `portail-viamedis` | `optique, audio, dentaire` | `optique, dentaire` |
