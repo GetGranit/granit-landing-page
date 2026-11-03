@@ -20,11 +20,11 @@ const copy = {
     cartes: [
       {
         t: "Hébergement certifié HDS",
-        p: "Vos données sont hébergées chez un hébergeur certifié pour les données de santé, comme l’exige la loi française.",
+        p: "Vos données de santé sont stockées chez un hébergeur certifié HDS, dans des datacenters situés en Europe.",
       },
       {
-        t: "Données dans l’UE, RGPD",
-        p: "Les données de vos patients sont hébergées dans l’Union européenne et traitées selon le RGPD.",
+        t: "Respect du RGPD",
+        p: "Une approche de la confidentialité conçue autour des exigences européennes et du RGPD.",
       },
       {
         t: "Agents sous contrôle",
@@ -43,11 +43,11 @@ const copy = {
     cartes: [
       {
         t: "HDS-certified hosting",
-        p: "Your data sits with a provider certified for health data, as French law requires.",
+        p: "Your health data is stored with an HDS-certified host, in data centers located in Europe.",
       },
       {
-        t: "EU data, GDPR compliant",
-        p: "Your patients' data is hosted in the EU and processed under GDPR.",
+        t: "GDPR compliance",
+        p: "A privacy approach designed around European requirements and the GDPR.",
       },
       {
         t: "Agents under control",

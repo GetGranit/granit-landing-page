@@ -103,11 +103,10 @@ export function Footer() {
         </div>
 
         <div
-          className="mt-12 flex flex-col items-start justify-between gap-3 border-t pt-5 text-[12px] md:flex-row md:items-center"
+          className="mt-12 flex flex-col items-start justify-between gap-3 pt-5 text-[12px] md:flex-row md:items-center"
           style={{
             color: "var(--text-muted)",
             fontFamily: "var(--font-mono)",
-            borderColor: "var(--border)",
           }}
         >
           <div>
