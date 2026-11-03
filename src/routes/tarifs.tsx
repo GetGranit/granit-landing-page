@@ -65,7 +65,7 @@ const content = {
       {
         question: "Nos données de santé sont-elles protégées ?",
         answer:
-          "Oui. Granit est certifié HDS et l'hébergement HDS est inclus dans tous les plans. Les données sont hébergées en France ; le détail des garanties est sur la page Sécurité.",
+          "Oui. Granit s'appuie sur un hébergeur certifié HDS, inclus dans tous les plans. Les données sont hébergées en France ; le détail des garanties est sur la page Sécurité.",
       },
     ],
     tiers: [
@@ -124,7 +124,7 @@ const content = {
       {
         question: "Is our health data protected?",
         answer:
-          "Yes. Granit is HDS certified and HDS hosting is included in every plan. Data is hosted in France; see the Security page for details.",
+          "Yes. Granit runs on an HDS-certified hosting provider, included in every plan. Data is hosted in France; see the Security page for details.",
       },
     ],
     tiers: [
