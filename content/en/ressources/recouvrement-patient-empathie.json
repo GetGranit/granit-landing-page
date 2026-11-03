@@ -1,0 +1,158 @@
+{
+  "slug": "recouvrement-patient-empathie",
+  "id": "R9",
+  "category": "paiements",
+  "categoryName": "Payments and reconciliation",
+  "type": "resolution",
+  "plateforme": null,
+  "title": "Patient collections: following up without damaging the relationship",
+  "primaryKeyword": "recouvrement patient",
+  "keywordCluster": [
+    "impayé patient",
+    "relance patient facture",
+    "reste à charge impayé",
+    "recouvrement centre de santé"
+  ],
+  "parentSlug": null,
+  "level": "Refonte",
+  "author": {
+    "name": "Laura",
+    "jobTitle": "Writer, healthcare expert",
+    "photo": "/auteurs/laura.jpg",
+    "url": null
+  },
+  "reviewer": {
+    "name": "Nathalie",
+    "jobTitle": "Writer, optical industry expert",
+    "photo": "/auteurs/nathalie.jpg",
+    "url": null
+  },
+  "datePublished": "2026-10-30",
+  "dateModified": "2026-10-30",
+  "checkedOn": null,
+  "wordCount": 2292,
+  "readTime": 10,
+  "metaDescription": "Patient collections in a health center: verify the debt, follow up in stages, handle vulnerable patients with care. The step-by-step method, without conflict.",
+  "contentHtml": "<p><strong>Successful patient collections start with a check, not a follow-up: first confirm that the amount is really owed by the patient, then follow up in stages, from a courteous reminder to a personal phone call.</strong> In a health center, some unpaid balances come from a rejected supplementary insurer share or from third-party payment (tiers payant: the patient pays nothing upfront, insurers pay the provider directly) that was applied incorrectly, not from a refusal to pay. The rest is usually settled by a clear, personalized reminder sent at the right time. This page gives the complete method for front desk and billing teams: diagnosis, follow-up sequence, patients to take out of the standard process, proof to keep, timeframes, and escalation.</p><div class=\"key-takeaways\"><strong>Key takeaways</strong><ul><li>Before any follow-up, check that the out-of-pocket amount is not actually a rejected supplementary share: that is corrected with the insurer, not with the patient.</li><li>Follow up in stages (courteous reminder, written follow-up, phone call, formal notice) and stop the sequence as soon as the patient responds.</li><li>Take sensitive situations out of the standard follow-up: reported bereavement, social support, pending complaint, patient under legal protection.</li><li>A follow-up message never mentions the nature of the care: the center’s name, the date, the amount, and the reference are enough.</li><li>Track three indicators: the amount collected at a fixed deadline, complaints related to follow-ups, and the time spent by the team.</li></ul></div><h2 id=\"impaye-patient-cas\">What counts as an unpaid patient balance in a health center?</h2><p>An unpaid patient balance is the amount billed to the patient, after the share paid by mandatory insurance (AMO) and the share paid by supplementary insurance (AMC, the supplementary health insurer, or mutuelle), that remains unpaid on the due date. It is the unpaid out-of-pocket amount. It is different from a receivable owed by an insurer, which is handled through follow-ups with the payer.</p><p>The concrete situations look alike from one center to the next. A patient leaves without paying their co-payment (ticket modérateur) because the line was long. An extra fee or a non-reimbursed procedure was not collected on the day. A dental prosthesis paid in installments sees its payment plan stop. A check bounces. Or the supplementary insurer rejects its share and the software shifts it onto the patient’s account.</p><p>The subject is delicate because the debt is owed by a person the center will see again. A patient followed in general medicine, dentistry, or physical therapy comes back several times a year. A clumsy message can cost more than the amount claimed: the patient switches centers, and talks about it to people around them. The goal is therefore payment, never punishment.</p><h2 id=\"reste-a-charge-impaye-reperer\">How do you spot an unpaid out-of-pocket amount in your tools?</h2><p>An unpaid out-of-pocket amount shows up as a debit balance on the patient’s record in your practice management or billing software. It can also come through the bank (rejected check, disputed card payment) or through an insurer return that shifts a share onto the patient.</p><p>These three origins do not call for the same action. A debit balance after a consultation is usually a real patient debt. A bank rejection calls for quick contact, often by phone, because the patient does not always know their payment failed. An insurer return, on the other hand, must be analyzed first: the rejection label tells you whether the error comes from coverage rights, data entry, or the file. The page on <a href=\"/ressources/codes-rejets-noemie\">NOEMIE rejection codes</a> helps you read these returns.</p><p>Also note the age of each balance. A list sorted by date of service, with the amount and the last contact, is enough to get started. Without it, follow-ups happen at random, whenever patients come by the front desk.</p><div class=\"callout callout--warn\"><p><strong>The trap:</strong> treating a gap in an insurer’s bank transfer as a patient debt. If the supplementary insurer paid less than expected, the gap is justified and claimed from the insurer first, as explained on the page <a href=\"/ressources/virement-mutuelle-inferieur\">insurer bank transfer lower than the invoice</a>.</p></div><h2 id=\"impaye-patient-causes\">Why does a patient not pay their bill?</h2><p>There are six possible causes, from the easiest to check to the most delicate. Always start with the ones that lie with the center or the insurers: they can be corrected without contacting the patient.</p><div class=\"tbl\"><table><tr><th>Cause</th><th>Where to check</th><th>What to do</th></tr><tr><td>Third-party payment error (supplementary coverage rights not checked, AMC share rejected)</td><td>Insurer return, third-party payment card, coverage certificate</td><td>Correct and resend to the insurer, without following up with the patient</td></tr><tr><td>Special coverage rights not taken into account (CSS)</td><td>Coverage certificate, up-to-date Carte Vitale (French health insurance card)</td><td>Rebill under full third-party payment if the rights were active</td></tr><tr><td>Forgetfulness or leaving in a hurry</td><td>Patient’s payment history</td><td>Courteous, simple reminder</td></tr><tr><td>Misunderstanding of the bill (extra fee, non-reimbursed procedure)</td><td>Signed quote, invoice details</td><td>Explain, send the line-by-line details</td></tr><tr><td>Financial difficulty</td><td>Patient’s response, exchanges with the front desk</td><td>Offer a payment plan, refer to a social worker</td></tr><tr><td>Dispute (amount, care)</td><td>Letters, recorded complaints</td><td>Take out of the sequence, hand over to the manager</td></tr></table></div><p>The case of the complémentaire santé solidaire deserves a systematic check. The CSS (complémentaire santé solidaire) is the public assistance that covers the supplementary share for low-income patients. According to <a href=\"https://www.service-public.fr/particuliers/vosdroits/F10027\">service-public.fr</a>, its beneficiaries do not have to pay upfront for covered care. An unpaid balance for a CSS patient therefore most often signals a right missed at the front desk or billing that needs to be redone, rarely a debt to claim.</p><p>Bad faith exists, but it is the last case to consider. Starting from that suspicion skews the tone of every follow-up, including those sent to patients who simply forgot.</p><h2 id=\"relance-patient-facture\">How do you follow up with a patient who has not paid?</h2><p>The most reliable method is a staged sequence: each follow-up goes one notch up in formality, and any response from the patient stops the automatic sequence. The timing between two stages is an internal rule you set yourself, then apply to all comparable files.</p><ol class=\"steps\"><li><strong>Check that the amount is owed by the patient.</strong> Check the AMO and AMC coverage rights, insurer returns, and CSS status before writing anything.</li><li><strong>Classify the file.</strong> Note the amount, the age, and any reported situation that requires manual handling (see the next section).</li><li><strong>Send a courteous reminder through a light channel.</strong> A text message or an email is enough: name of the center, date of care, amount, invoice reference, payment methods, and the front desk number.</li><li><strong>Send a more formal written follow-up.</strong> A detailed letter or email, in a neutral tone, attaching the invoice and offering a payment plan if the amount is large.</li><li><strong>Call the patient.</strong> A personal call is needed for large amounts, sensitive situations, or no response to written messages. It lets you hear about a difficulty a patient will never put in writing.</li><li><strong>Pause the sequence at the slightest response.</strong> A patient who disputes, offers a payment plan, or reports a difficulty immediately leaves the automatic process and is handed over to a person on the team.</li><li><strong>Send a formal notice as the last amicable stage.</strong> A registered letter with acknowledgment of receipt, restating the debt, the previous follow-ups, and the next steps being considered.</li></ol><div data-figure=\"paliers-relance-patient\"></div><h3>Personalizing without breaching medical confidentiality</h3><p>A generic, obviously automated message comes across as cold. A message that cites the center, the date of the appointment, and the invoice reference reads like a normal exchange with a place the patient knows. In practice, sign with the center’s name and give a contact person who can be reached.</p><p>Personalization does, however, have a strict limit. A text message or a letter may be read by a relative: it must never mention the nature of the care, or even the specialty when it reveals a condition. The center’s name, the date, the amount, and the reference are enough for the patient to know what it is about.</p><h3>The right tone at each stage</h3><p>The tone stays respectful at every stage, including in the formal notice. The first reminder assumes an oversight. The written follow-up restates the facts without reproach. The formal notice is firm about the debt, never about the person. A patient who pays under pressure from a humiliating message settles their debt, then does not come back.</p><h2 id=\"patients-exclus-relance\">Which patients should not be followed up like the others?</h2><p>Some situations must be taken out of the standard sequence and handled case by case by a person on the team. An automatic follow-up in these files does more damage than it brings in payments.</p><ul><li><strong>A reported bereavement</strong>: the patient has died or a relative has reported a death. The debt is handled with the heirs, later and through a personalized letter.</li><li><strong>A patient supported by a social service</strong>: go through the assigned social worker when known.</li><li><strong>A patient under guardianship or curatorship</strong>: the follow-up is addressed to the guardian or curator, not to the patient alone.</li><li><strong>A pending complaint or dispute</strong>: as long as the dispute is not resolved, no follow-up goes out.</li><li><strong>A patient covered by the CSS</strong>: check the billing first, since their covered care falls under third-party payment.</li><li><strong>A patient in heavy or long-term treatment</strong>: a call from the manager is better than a standard reminder.</li></ul><p>To identify these files, do not use diagnoses. Collections do not need to know what the patient suffers from, and mixing medical data with follow-up data multiplies the risks with regard to confidentiality and the GDPR (General Data Protection Regulation).</p><div class=\"callout callout--tip\"><p><strong>The right reflex:</strong> create a simple “relance manuelle” (manual follow-up) flag in the software, set by the practitioner or the front desk, with no medical reason. The file leaves the automatic sequence and only an authorized person decides what happens next.</p></div><h2 id=\"preuves-relance\">What proof should you keep for each follow-up?</h2><p>Keep everything that proves the debt and each attempt at amicable settlement. These documents are useful if the patient disputes, and they are essential if the file goes to collections or before a judge.</p><ul><li>the invoice and, for the procedures concerned, the quote signed by the patient;</li><li>the insurer returns showing that the remaining share is indeed owed by the patient;</li><li>the date, channel, and content of each follow-up sent;</li><li>the patient’s responses, including verbal ones, recorded with the date and the name of the person who answered;</li><li>the agreed payment plan, ideally confirmed in writing;</li><li>the acknowledgment of receipt for the formal notice.</li></ul><p>Store these items in the billing file, separate from the medical record. The team doing follow-ups has no need to consult clinical notes to do its job.</p><h2 id=\"relance-ou-recouvrement\">When should you move from follow-up to collections?</h2><p>Move from follow-up to collections when all amicable stages have been exhausted with no response, or when an agreed payment plan is no longer honored despite a reminder. There is no universal timeframe: set an internal rule, the same for all comparable files, and stick to it.</p><p>Two criteria guide the decision. The first is the amount: starting proceedings for a small sum often costs more than it brings in, in money and in reputation. The second is the relationship: a patient followed for a long time deserves a last call from the manager before any further action.</p><p>Two paths then open up. The first is amicable collection entrusted to a specialized agency, which continues the follow-ups on behalf of the center; check that it applies your tone guidelines. The second is through the courts. According to <a href=\"https://www.service-public.fr/particuliers/vosdroits/F1746\">service-public.fr</a>, the payment order (injonction de payer) is a procedure for obtaining a court decision ordering the debtor to pay, without a prior hearing. It requires a complete file of evidence, hence the importance of the previous section.</p><h2 id=\"escalade-impaye\">When and to whom should you escalate an unpaid balance?</h2><p>Escalate as soon as a file falls outside the usual framework: dispute, sensitive situation, large amount, or failure of all stages. The right contact depends on the nature of the blockage.</p><ul><li><strong>The billing manager</strong> for any dispute over the amount or the invoice.</li><li><strong>The practitioner</strong> when the care relationship is at stake or the patient questions the care itself.</li><li><strong>The center’s management</strong> to decide on writing off a debt or sending it to collections.</li><li><strong>The social worker</strong> when the patient reports a lasting financial difficulty.</li><li><strong>The payer</strong> when the unpaid balance actually comes from a rejected share: the timeline for <a href=\"/ressources/quand-relancer-mutuelle\">following up with an insurer</a> then applies, not the patient one.</li></ul><p>This last case weighs heavily in centers that use a lot of third-party payment. Every unhandled supplementary insurer rejection risks ending up as a patient follow-up, with a patient who thought they had nothing to pay. Fewer rejections left pending therefore means fewer bills sent to patients by mistake. That is the role of <a href=\"/agents\">Granit’s agents</a>: they enter requests on the platforms’ portals and track insurers’ responses, so the front desk team no longer has to make up for these gaps with patients.</p><h2 id=\"indicateurs-recouvrement-patient\">Which indicators should you track in patient collections?</h2><p>Three indicators are enough to manage patient collections: the amount collected at a fixed deadline, the number of complaints related to follow-ups, and the time the team spends on them. Together, they tell you whether you are getting paid without damaging the relationship or wearing out the front desk.</p><h3>The amount collected at a fixed deadline</h3><p>Measure the share of out-of-pocket amounts billed over a period that is collected after a timeframe you choose, 60 days for example. Always keep the same timeframe so you can compare months with each other. In parallel, track the age of the unpaid backlog: a backlog that ages gets harder and harder to collect.</p><h3>Complaints related to follow-ups</h3><p>Count the complaints, unhappy calls, and negative reviews that mention a follow-up. An increase signals a problem with tone, channel, or exclusions not applied properly. It is the safeguard for the whole approach: collections that improve while complaints multiply are not sustainable.</p><h3>The team’s time</h3><p>Estimate the hours spent each week on follow-ups, calls included. Add an often forgotten indicator: the share of unpaid balances that were actually insurer rejections. If it is high, the work needs to happen upstream, on third-party payment, rather than at the front desk. To expand the dashboard, the page on <a href=\"/ressources/kpi-back-office-sante\">healthcare back-office KPIs</a> suggests other measures, and the one on <a href=\"/ressources/groupes-multi-sites-pilotage\">multi-site management</a> helps compare several centers with each other.</p>",
+  "tocItems": [
+    {
+      "id": "impaye-patient-cas",
+      "label": "What is an unpaid patient balance?"
+    },
+    {
+      "id": "reste-a-charge-impaye-reperer",
+      "label": "Spotting an unpaid out-of-pocket amount"
+    },
+    {
+      "id": "impaye-patient-causes",
+      "label": "Why a patient does not pay"
+    },
+    {
+      "id": "relance-patient-facture",
+      "label": "Following up with a patient, step by step"
+    },
+    {
+      "id": "patients-exclus-relance",
+      "label": "Patients not to follow up like the others"
+    },
+    {
+      "id": "preuves-relance",
+      "label": "The proof to keep"
+    },
+    {
+      "id": "relance-ou-recouvrement",
+      "label": "Moving from follow-up to collections"
+    },
+    {
+      "id": "escalade-impaye",
+      "label": "When and to whom to escalate"
+    },
+    {
+      "id": "indicateurs-recouvrement-patient",
+      "label": "Patient collections indicators"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "How do you follow up with a patient who has not paid?",
+      "answer": "First check that the amount is really owed by the patient, and not by their supplementary health insurer (mutuelle). Then follow up in stages: a courteous reminder by text message or email, a written follow-up with the invoice, a phone call, then a formal notice as a last amicable resort. Each message cites the center, the date, the amount, and the reference, never the nature of the care."
+    },
+    {
+      "question": "When should you move from follow-up to collections?",
+      "answer": "When all amicable stages have been exhausted with no response, or when an agreed payment plan is no longer honored despite a reminder. There is no universal timeframe: the center sets its own rule and applies it to all comparable files. The amount at stake and the history of the relationship with the patient also guide the decision."
+    },
+    {
+      "question": "Which patients should not be followed up like the others?",
+      "answer": "Patients for whom a bereavement has been reported, those supported by a social service, those under guardianship or curatorship, those with a pending complaint, and those in heavy treatment. Beneficiaries of the complémentaire santé solidaire (CSS) first call for a check of the billing. These files leave the automatic sequence and are handled case by case by a person on the team."
+    },
+    {
+      "question": "Which indicators should you track in collections?",
+      "answer": "Three indicators are enough: the amount collected at a fixed deadline, the number of complaints related to follow-ups, and the time the team spends on follow-ups. It is useful to add the share of unpaid balances that were actually rejections by supplementary insurers. If this share is high, it is third-party payment processing that needs strengthening."
+    }
+  ],
+  "sources": [
+    {
+      "label": "service-public.fr · Complémentaire santé solidaire (CSS)",
+      "url": "https://www.service-public.fr/particuliers/vosdroits/F10027"
+    },
+    {
+      "label": "service-public.fr · Payment order (injonction de payer)",
+      "url": "https://www.service-public.fr/particuliers/vosdroits/F1746"
+    }
+  ],
+  "figures": [
+    {
+      "id": "paliers-relance-patient",
+      "type": "etapes",
+      "titre": "The stages of a patient follow-up",
+      "legende": "Everything starts with verifying the debt; a response from the patient stops the sequence.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "Verify the debt",
+          "detail": "AMO, AMC, and CSS coverage rights and insurer returns",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Courteous reminder",
+          "detail": "Text or email: center, date, amount, reference",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Written follow-up",
+          "detail": "Invoice attached, payment plan offered",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Personal call",
+          "detail": "Large amounts, sensitive situations, silence",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Formal notice",
+          "detail": "Registered letter with acknowledgment of receipt",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [],
+  "liensEntrants": [],
+  "remplace": [],
+  "verticales": [
+    "centres"
+  ],
+  "refonte": true,
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-30T10:12:03.501Z",
+    "avertissements": [
+      "aucune citation (facultative)"
+    ]
+  }
+}
