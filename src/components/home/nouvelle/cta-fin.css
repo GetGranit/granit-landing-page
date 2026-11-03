@@ -190,38 +190,48 @@
   }
 }
 
-/* ---------- la voie de secours : « On vous rappelle », dépliée sous le bouton principal (Rappel.tsx) ---------- */
+/* ---------- la carte « Comment préférez-vous échanger ? » (CarteContact.tsx) : texte à gauche, carte à droite ---------- */
 .nh .ct-ancre { position: absolute; top: 0; }
-.nh .ct3-body > .ct3-fade:has(.ct-rp) { max-width: 720px; }
-.nh .ct-rp { margin-top: 14px; }
-.nh .ct-rp-toggle {
-  appearance: none; display: inline-flex; align-items: center; gap: 6px; padding: 4px 0; border: 0; background: none;
-  color: var(--ink); font: 500 15px/1.3 var(--sans); cursor: pointer;
-  text-decoration: underline; text-decoration-color: rgba(var(--ink-rgb), .3); text-underline-offset: 4px;
+.nh .ct3-body.ct3-deux { width: 100%; grid-template-columns: minmax(0, 1fr) minmax(0, 460px); align-items: center; gap: 32px clamp(32px, 5vw, 80px); }
+.nh .ct3-deux > * { max-width: none; }
+.nh .ct3-txt { display: grid; justify-items: start; gap: 18px; max-width: 620px; }
+.nh .ct-cc { padding: 24px; border-radius: 18px; background: rgba(255, 253, 253, .9); box-shadow: var(--ombre-carte);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+.nh .ct-cc-choix { margin: 0; padding: 0; border: 0; min-width: 0; }
+.nh .ct-cc-q { padding: 0; margin-bottom: 14px; font: 400 22px/1.2 var(--serif); font-variation-settings: "opsz" 20; letter-spacing: -.01em; color: var(--ink); }
+.nh .ct-cc-tuiles { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.nh .ct-cc-tuile { position: relative; display: flex; align-items: flex-start; gap: 10px; padding: 14px; border-radius: 12px; cursor: pointer;
+  box-shadow: inset 0 0 0 1px var(--line); background: var(--paper); transition: box-shadow .2s, background .2s; }
+.nh .ct-cc-tuile:hover { box-shadow: inset 0 0 0 1px rgba(var(--ink-rgb), .3); }
+.nh .ct-cc-tuile.is-on { box-shadow: inset 0 0 0 1.5px var(--ink); background: rgba(var(--mint-rgb), .18); }
+.nh .ct-cc-tuile input { position: absolute; opacity: 0; pointer-events: none; }
+.nh .ct-cc-tuile:has(input:focus-visible) { outline: 2px solid var(--deep); outline-offset: 2px; }
+.nh .ct-cc-rond { flex: none; width: 18px; height: 18px; margin-top: 1px; border-radius: 50%; box-shadow: inset 0 0 0 1.5px rgba(var(--ink-rgb), .35); transition: box-shadow .2s; }
+.nh .ct-cc-tuile.is-on .ct-cc-rond { box-shadow: inset 0 0 0 5px var(--ink); }
+.nh .ct-cc-tt { display: grid; gap: 2px; min-width: 0; }
+.nh .ct-cc-tt b { font: 500 15px/1.25 var(--sans); color: var(--ink); }
+.nh .ct-cc-tt small { font: 400 13px/1.3 var(--sans); color: var(--t-muted); }
+.nh .ct-cc-action { display: grid; gap: 14px; margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--line); }
+.nh .ct-cc-texte { font-size: 14.5px; line-height: 1.45; color: var(--t-muted); }
+.nh .ct-cc-btn { justify-content: center; width: 100%; border: 0; cursor: pointer; }
+.nh .ct-cc-btn:disabled { opacity: .7; cursor: wait; }
+.nh .ct-cc-champs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.nh .ct-cc-champs label { display: grid; gap: 5px; min-width: 0; }
+.nh .ct-cc-champs .ct-cc-large { grid-column: 1 / -1; }
+.nh .ct-cc-champs label span { font: 500 12px/1.2 var(--sans); color: var(--t-muted); }
+.nh .ct-cc-champs input { width: 100%; min-height: 44px; padding: 0 12px; border: 1px solid var(--filet-champ); border-radius: 10px;
+  background: var(--paper); color: var(--ink); font: 400 15px/1 var(--sans); }
+.nh .ct-cc-champs input::placeholder { color: var(--t-faint); }
+.nh .ct-cc-champs input:focus { outline: 2px solid var(--deep); outline-offset: 0; border-color: transparent; }
+.nh .ct-cc-erreur { font-size: 13px; color: var(--alerte-texte); }
+.nh .ct-cc-merci { display: flex; align-items: center; gap: 10px; font: 500 15px/1.4 var(--sans); color: var(--ink); }
+.nh .ct-cc-coche { display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: var(--mint); color: var(--ink); flex: none; }
+.nh .ct-cc-coche svg { width: 12px; height: 12px; }
+@media (max-width: 960px) {
+  .nh .ct3-body.ct3-deux { grid-template-columns: minmax(0, 1fr); }
+  .nh .ct-cc { max-width: 520px; }
 }
-.nh .ct-rp-toggle:hover { text-decoration-color: var(--ink); }
-.nh .ct-rp-toggle svg { width: 13px; height: 13px; transition: rotate .3s var(--lm-ease); }
-.nh .ct-rp.is-open .ct-rp-toggle svg { rotate: 180deg; }
-.nh .ct-rp-form { margin-top: 12px; }
-.nh .ct-rp-form[hidden] { display: none; }
-.nh .ct-rp-champs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) auto; gap: 10px; align-items: end; }
-.nh .ct-rp-champs label { display: grid; gap: 5px; min-width: 0; }
-.nh .ct-rp-champs label span { font: 500 12px/1.2 var(--sans); color: var(--t-muted); }
-.nh .ct-rp-champs input {
-  width: 100%; min-height: 46px; padding: 0 14px; border: 1px solid var(--filet-champ); border-radius: 10px;
-  background: rgba(255, 253, 253, .85); color: var(--ink); font: 400 15px/1 var(--sans);
-}
-.nh .ct-rp-champs input::placeholder { color: var(--t-faint); }
-.nh .ct-rp-champs input:focus { outline: 2px solid var(--deep); outline-offset: 0; border-color: transparent; }
-.nh .ct-rp-envoyer { min-height: 46px; background: var(--paper); color: var(--ink); box-shadow: inset 0 0 0 1px rgba(var(--ink-rgb), .28); cursor: pointer; border: 0; }
-.nh .ct-rp-envoyer:hover { box-shadow: inset 0 0 0 1px var(--ink); }
-.nh .ct-rp-envoyer:disabled { opacity: .7; cursor: wait; }
-.nh .ct-rp-note { margin-top: 8px; font-size: 13px; color: var(--t-muted); }
-.nh .ct-rp-note[role="alert"] { color: var(--alerte-texte); }
-.nh .ct-rp-merci { display: flex; align-items: center; gap: 10px; margin-top: 16px; font: 500 15px/1.4 var(--sans); color: var(--ink); }
-.nh .ct-rp-coche { display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: var(--mint); color: var(--ink); flex: none; }
-.nh .ct-rp-coche svg { width: 12px; height: 12px; }
-@media (max-width: 760px) {
-  .nh .ct-rp-champs { grid-template-columns: minmax(0, 1fr); }
-  .nh .ct-rp-envoyer { justify-content: center; }
+@media (max-width: 420px) {
+  .nh .ct-cc { padding: 18px; }
+  .nh .ct-cc-champs { grid-template-columns: minmax(0, 1fr); }
 }

@@ -3,9 +3,8 @@
    Galets qui glissent avec le défilement ; le titre qui entre ligne à ligne. Rien ne boucle.
    « Mouvements réduits » : l'état final, immobile. */
 import { useEffect, useRef, type CSSProperties } from "react";
-import { usePostHog } from "posthog-js/react";
-import { calcomDemoUrl, GaletsSymbol, useLanguage } from "./socle";
-import { Rappel } from "./Rappel";
+import { GaletsSymbol, useLanguage } from "./socle";
+import { CarteContact } from "./CarteContact";
 import "./cta-fin.css";
 
 const copy = {
@@ -13,7 +12,6 @@ const copy = {
     l1: "Vos équipes soignent.",
     l2: "Nos agents encaissent.",
     lead: "Opérationnel en 48 h sur vos portails. Rien à installer pour vos équipes.",
-    bouton: "Choisir un créneau de démo",
     garanties: "Garanties",
     hds: "Hébergé sur un cloud certifié HDS",
     ue: "Données dans l’UE",
@@ -27,7 +25,6 @@ const copy = {
     l1: "Your teams care.",
     l2: "Our agents get you paid.",
     lead: "Live on your portals in 48 hours. Nothing for your teams to install.",
-    bouton: "Pick a demo slot",
     garanties: "Guarantees",
     hds: "Hosted on HDS-certified cloud",
     ue: "EU data",
@@ -48,7 +45,6 @@ const i = (n: number) => ({ "--i": n }) as CSSProperties;
 export function CtaFinNouvelle() {
   const { lang } = useLanguage();
   const t = copy[lang];
-  const posthog = usePostHog();
   const secRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -130,71 +126,54 @@ export function CtaFinNouvelle() {
       <div className="ct3-veil" aria-hidden="true" />
       <div className="ct3-light" aria-hidden="true" />
       <GaletsSymbol className="ct3-motif" />
-      <div className="lm-wrap ct3-body">
-        <h2 className="ct-h2" id="ct3-t">
-          <span>
-            <span className="ct-ln" style={i(0)}>
-              {t.l1}
+      <div className="lm-wrap ct3-body ct3-deux">
+        <div className="ct3-txt">
+          <h2 className="ct-h2" id="ct3-t">
+            <span>
+              <span className="ct-ln" style={i(0)}>
+                {t.l1}
+              </span>
+            </span>{" "}
+            <span className="ct-acc">
+              <span className="ct-ln" style={i(1)}>
+                {t.l2}
+              </span>
             </span>
-          </span>{" "}
-          <span className="ct-acc">
-            <span className="ct-ln" style={i(1)}>
-              {t.l2}
-            </span>
-          </span>
-        </h2>
-        <p className="ct-lead ct3-fade" style={i(2)}>
-          {t.lead}
-        </p>
-        <div className="ct3-fade" style={i(3)}>
-          <a
-            className="lm-btn ct-btn"
-            href={calcomDemoUrl("bandeau_bas")}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => posthog?.capture("demo_booking_clicked", { placement: "bandeau_bas" })}
-          >
-            {t.bouton}
-            <svg viewBox="0 0 16 16" aria-hidden="true">
-              <path
-                d="M5 11l6-6M6 4.6h5.4V10"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.6"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </a>
-          <Rappel />
+          </h2>
+          <p className="ct-lead ct3-fade" style={i(2)}>
+            {t.lead}
+          </p>
+          <div className="ct3-fade" style={i(3)}>
+            <ul className="ct-trust" aria-label={t.garanties}>
+              <li>
+                <svg
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M12 2.8l7.2 2.7v5.6c0 4.6-3 8.2-7.2 10.1-4.2-1.9-7.2-5.5-7.2-10.1V5.5z" />
+                  <path d="M8.8 12.2l2.2 2.2 4.2-4.4" />
+                </svg>
+                {t.hds}
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                  {ETOILES.map((e, k) => (
+                    <circle key={k} cx={e.cx} cy={e.cy} r="1.25" />
+                  ))}
+                </svg>
+                {t.ue}
+              </li>
+              <li>{t.rgpd}</li>
+            </ul>
+          </div>
         </div>
         <div className="ct3-fade" style={i(4)}>
-          <ul className="ct-trust" aria-label={t.garanties}>
-            <li>
-              <svg
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.4"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M12 2.8l7.2 2.7v5.6c0 4.6-3 8.2-7.2 10.1-4.2-1.9-7.2-5.5-7.2-10.1V5.5z" />
-                <path d="M8.8 12.2l2.2 2.2 4.2-4.4" />
-              </svg>
-              {t.hds}
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
-                {ETOILES.map((e, k) => (
-                  <circle key={k} cx={e.cx} cy={e.cy} r="1.25" />
-                ))}
-              </svg>
-              {t.ue}
-            </li>
-            <li>{t.rgpd}</li>
-          </ul>
+          <CarteContact />
         </div>
       </div>
     </section>
