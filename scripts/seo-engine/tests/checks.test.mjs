@@ -2,7 +2,7 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 import { controler, typeDePage } from "../lib/checks.mjs";
-import { horsListeBlanche } from "../lib/html.mjs";
+import { horsListeBlanche, typographier } from "../lib/html.mjs";
 
 const remplissage = (n) => Array.from({ length: n }, (_, i) => `mot${i}`).join(" ");
 
@@ -230,4 +230,46 @@ test("fiche VS : fichier de faits non relu refusé", () => {
 test("marqueur de comparatif refusé sur une page standard", () => {
   assert.ok(horsListeBlanche('<div data-bloc="coup-doeil"></div>')[0].includes("hors page"));
   assert.deepEqual(horsListeBlanche('<div data-bloc="grille"></div>', { marqueurs: ["grille"] }), []);
+});
+
+test("TON.md : un mot de « On ne dit pas » fait refuser l'article", () => {
+  for (const [mot, regle] of [
+    ["Granit automatise vos prises en charge.", "Granit automatise"],
+    ["Un robot saisit la PEC.", "robot"],
+    ["Le tiers-payant optique.", "tiers-payant"],
+    ["Une intégration avec votre logiciel.", "intégration"],
+    ["Optimiser vos remboursements.", "optimiser"],
+    ["L'IA lit la carte.", "l'IA"],
+    ["Bien joué 👍.", "emoji"],
+  ]) {
+    const a = articleValide();
+    a.contentHtml = a.contentHtml.replace("</p>", ` ${mot}</p>`);
+    const r = controler(a, ctx());
+    assert.ok(r.erreurs.some((e) => e.startsWith("TON.md") && e.includes(regle)), `${mot} → ${r.erreurs.join(" | ")}`);
+  }
+});
+
+test("TON.md : formes permises et citations recopiées non refusées", () => {
+  const a = articleValide();
+  a.contentHtml = a.contentHtml
+    .replace("</p>", " Nos agents IA travaillent sans intégration, et le 100 % Santé reste à part. Convention Tiers-payant TP+, robot de dispensation, Partenariat & tiers-payant.</p>")
+    .replace("</cite>", " · tiers-payant</cite>")
+    .replace("« Le tiers payant", "« Le tiers-payant");
+  const r = controler(a, ctx());
+  assert.deepEqual(r.erreurs.filter((e) => e.startsWith("TON.md")), []);
+});
+
+test("TON.md : la FAQ et la metaDescription sont contrôlées aussi", () => {
+  const a = articleValide();
+  a.faqItems[0].answer = "N'hésitez pas à appeler la plateforme.";
+  const r = controler(a, ctx());
+  assert.ok(r.erreurs.some((e) => e.includes("n'hésitez pas à")));
+});
+
+test("typographie : insécables posées hors balises et hors citations", () => {
+  const h = `<p>Pourquoi ? Voici : le «test» ; <a href="/x?a=1:2">lien</a></p><blockquote>« cité » ?</blockquote>`;
+  assert.equal(
+    typographier(h),
+    `<p>Pourquoi ? Voici : le « test » ; <a href="/x?a=1:2">lien</a></p><blockquote>« cité » ?</blockquote>`,
+  );
 });

@@ -10,6 +10,7 @@ import { dirname, join } from "node:path";
 import { parseArgs } from "node:util";
 import { citations, controler, typeDePage, verifierSources } from "./lib/checks.mjs";
 import { apiKey, coutDollars, rediger } from "./lib/claude.mjs";
+import { typographierSortie } from "./lib/html.mjs";
 import { CHAMPS_ARTICLE, boucle, contexte, cumulCout, verdictMarkdown } from "./lib/relecture.mjs";
 import { CONTENU, MOTEUR, ciblesDeLiens, concurrentsPour, ecrireJson, faitsPour, lireFile, lireJson, sortieGithub, systemeGuide } from "./lib/site.mjs";
 
@@ -88,6 +89,7 @@ const cout = cumulCout(usages, coutDollars, config.model);
 
 // Article corrigé : seulement s'il a changé ; la trace de la boucle va dans moteur.relecture
 if (r.fiche !== fiche) {
+  Object.assign(r.fiche, typographierSortie(r.fiche));
   r.fiche.moteur = {
     ...r.fiche.moteur,
     avertissements: r.avertissements,

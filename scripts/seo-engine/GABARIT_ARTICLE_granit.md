@@ -53,7 +53,7 @@ Les piliers (`level` commence par « Pilier ») utilisent le type de leur catég
 | 9 | Fiche d'identité (plateforme) | Gabarit, depuis `identite` | 4 cases : Type, Optique, Portail, Connexion. Insérée juste après « L'essentiel » |
 | 10 | Sections H2 | Claude (`contentHtml`) | H2 en questions, `id` = slug. Composants de la section 5 uniquement |
 | 11 | Questions fréquentes | Claude (`faqItems`) | Accordéon, première question ouverte. Balisé `FAQPage`, texte identique |
-| 12 | Sources | Claude (`sources`) + fichier de faits | Liste « Site · page », liens externes en `rel="noopener"`. Plateforme : ajouter la mention « Relevé par les agents Granit le {date} » pour les données du connecteur |
+| 12 | Sources | Claude (`sources`) + fichier de faits | Liste « Site · page », liens externes en `rel="noopener"`. Plateforme : ajouter la mention « Relevé par les agents Granit le {date} » pour les données relevées par les agents |
 | 13 | Encart final | Fixe (guide, « L'encart final ») | Texte validé, seul endroit où figure la promesse « 48 h » |
 | 14 | « À lire ensuite » | Moteur (`internalLinks` publiés) | 3 cartes : parent d'abord, puis sœurs, puis transverses. Étiquette par type : « Pour aller plus haut », « Même thème », « Outil », « À lire aussi ». Jamais les 3 derniers articles parus |
 | 15 | Pied de page | Site | |
@@ -140,7 +140,7 @@ Le contenu de `plateformes/{nom}.json` : `identite`, `chiffres`, `faits`, `conve
 ### Ce que Claude doit faire
 
 - Rédiger **uniquement à partir de `faits` et `conventionnement`**. Un fait absent du fichier n'existe pas. Si une question du plan n'a pas de réponse dans le fichier, le dire en une phrase (« Viamedis ne publie pas de délai propre à l'optique. ») et passer.
-- Citer chaque chiffre avec un lien vers sa source (`sources[clé].url`). Les données du connecteur Granit (`url` vide) se formulent « relevé par nos agents sur le portail », sans lien.
+- Citer chaque chiffre avec un lien vers sa source (`sources[clé].url`). Les données relevées par les agents Granit (`url` vide) se formulent « relevé par nos agents sur le portail », sans lien.
 - **Ne pas réécrire** les blocs que le gabarit affiche lui-même : poser à la place un marqueur, une seule fois chacun, à l'endroit indiqué.
 
 | Marqueur | Où le poser | Ce que le gabarit affiche |
@@ -259,7 +259,7 @@ Le moteur refuse l'article (et réessaie une fois) si :
 
 ## 9. Repères visuels
 
-Charte Granit (`DESIGN.md` à la racine du dépôt, copie de `internal/marque`) : titres en Source Serif 4 (réglage `"opsz" 20`, graisse 300 pour les grands titres, 400 pour les sous-titres, jamais de gras ni d'italique), texte et étiquettes en Geist (chiffres tabulaires, plus de police mono). Fond de page rosé `#FAF0F2`, cartes papier `#FFFDFD` (jamais de blanc pur), sections alternées lavis `#F4EEF0`, texte encre `#1F3530`, liens et accent de titre en vert profond `#2F7A64` (l'accent passe par la couleur, pas par l'italique). Aucune autre couleur. Colonne de texte limitée à 68 caractères environ.
+Charte Granit (`DESIGN.md` à la racine du dépôt, copie de `internal/marque`) : titres en Source Serif 4 (réglage `"opsz" 20`, graisse 400 pour tous les titres depuis le 3/11, jamais de gras ni d'italique), texte et étiquettes en Geist (chiffres tabulaires, plus de police mono). Fond de page rosé `#FAF0F2`, cartes papier `#FFFDFD` (jamais de blanc pur), sections alternées lavis `#F4EEF0`, texte encre `#1F3530`, liens et accent de titre en vert profond `#2F7A64` (l'accent passe par la couleur, pas par l'italique). Aucune autre couleur. Colonne de texte limitée à 68 caractères environ.
 
 Les catégories ne se distinguent plus par la couleur mais par leur nom : toutes prennent la même paire, profond pour le texte, les filets et les numéros, lavis pour le fond d'en-tête (valeurs dans `src/lib/ressources/categories.json`).
 
