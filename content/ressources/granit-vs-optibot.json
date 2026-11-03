@@ -1,0 +1,99 @@
+{
+  "slug": "granit-vs-optibot",
+  "id": "E2b",
+  "category": "gerer-son-tiers-payant",
+  "categoryName": "Gérer son tiers payant",
+  "type": "vs",
+  "plateforme": null,
+  "title": "Granit ou OptiBot : faire ses PEC plus vite, ou les faire faire ?",
+  "primaryKeyword": "optibot",
+  "keywordCluster": [
+    "optibot"
+  ],
+  "parentSlug": "solutions-tiers-payant-optique",
+  "level": "Fille",
+  "author": {
+    "name": "Laura",
+    "jobTitle": "Rédactrice, experte santé",
+    "photo": "/auteurs/laura.jpg",
+    "url": null
+  },
+  "reviewer": {
+    "name": "Olivier",
+    "jobTitle": "Rédacteur, expert tiers payant",
+    "photo": "/auteurs/olivier.jpg",
+    "url": null
+  },
+  "datePublished": "2026-11-03",
+  "dateModified": "2026-11-03",
+  "checkedOn": "2026-10-07",
+  "concurrents": [
+    "optibot",
+    "granit"
+  ],
+  "wordCount": 1173,
+  "readTime": 5,
+  "metaDescription": "OptiBot pré-remplit vos PEC sur les portails, Granit les fait à votre place. Ce que fait chaque outil, où OptiBot est plus adapté, et comment choisir.",
+  "contentHtml": "<p><strong>OptiBot et Granit ne font pas le même métier. OptiBot aide l'opticien à remplir plus vite ses demandes de prise en charge (PEC). Granit fait ces demandes à sa place, avec des agents logiciels.</strong> Avec le premier, c'est toujours l'équipe du magasin qui ouvre le portail, complète les champs restants et envoie le dossier. Avec le second, le dossier part chez un agent, de la PEC jusqu'au rapprochement des virements. La comparaison repose sur ce que chacun publie, relevé en octobre 2026.</p><div class=\"key-takeaways\"><strong>L'essentiel</strong><ul><li>OptiBot est une extension Chrome, avec un tableau de bord web. Elle lit la carte mutuelle et l'ordonnance, puis remplit une partie des champs du portail. L'opticien termine et envoie.</li><li>Granit confie la PEC, la correction des rejets et le rapprochement des virements à des agents logiciels. L'équipe Granit reprend les dossiers que l'agent ne peut pas finir.</li><li>OptiBot a en plus une connexion native aux logiciels de la famille Optimum. Il lit aussi les documents dans le navigateur du magasin, et ses formules Pro, Cabinet et Réseau sont annulables à tout moment.</li><li>Côté données de santé, Granit est certifié HDS (hébergeur de données de santé) et OptiBot s'appuie sur un hébergeur certifié HDS.</li><li>La vraie question à vous poser : voulez-vous saisir plus vite, ou ne plus saisir du tout ?</li></ul></div><h2 id=\"granit-vs-optibot-coup-doeil\">Que comparer entre Granit et OptiBot ?</h2><div data-bloc=\"coup-doeil\"></div><h2 id=\"granit-vs-optibot-besoin\">OptiBot et Granit répondent-ils au même besoin ?</h2><p>Non. Les deux agissent sur le même dossier de tiers payant, mais pas au même endroit. OptiBot accélère le geste de l'opticien sur le portail. Granit retire ce geste du comptoir. Le besoin de départ est proche (les PEC prennent trop de temps), la réponse est différente.</p><p>Pour un gérant, la différence se voit dans l'organisation. Avec un outil de saisie, la personne au comptoir reste responsable de chaque envoi, mais va plus vite. Avec des agents, elle ne fait plus la saisie et suit les statuts. Les deux modèles ont leur logique, détaillée dans notre guide <a href=\"/ressources/gerer-tiers-payant-magasin\">gérer le tiers payant d'un magasin</a>.</p><h3>OptiBot : un outil qui accélère la saisie de l'opticien</h3><p>Concrètement, selon OptiBot, l'opticien scanne la carte mutuelle et l'ordonnance, ouvre le portail de la plateforme, puis clique sur « Remplir ». L'extension pré-remplit l'identité, le NSS (numéro de sécurité sociale) et les informations de l'ordonnance. Sur la page qu'il consacre à <a href=\"https://optibot.fr/mutuelles/almerys\">Almerys</a>, l'éditeur détaille ce qui reste à faire au comptoir :</p><blockquote><p>« Non, la couverture est partielle. OptiBot remplit le NSS de l'ouvrant droit, le nom, le prénom, la date d'ordonnance, la date de demande et le RPPS. Les codes LPP et les montants verres / monture restent saisis à la main puisqu'ils dépendent de l'équipement vendu. »</p><cite>optibot.fr · Almerys</cite></blockquote><p>Les codes LPP sont les codes de la liste des produits et prestations remboursables, qui identifient chaque verre et chaque monture. Ce sont des champs à vérifier avant chaque envoi : voir la <a href=\"/ressources/checklist-prise-en-charge\">checklist avant d'envoyer une prise en charge</a>. La couverture varie selon le portail : pour Viamedis, OptiBot indique sur sa <a href=\"https://optibot.fr/mutuelles/viamedis\">page Viamedis</a> que « le mapping dédié Viamedis est en cours de développement ». Sur les portails sans connexion dédiée, l'éditeur annonce une fonction de remplissage générique, Smart Fill.</p><p>Sur les rejets, OptiBot annonce la détection des rejets AMO (assurance maladie obligatoire) et AMC (assurance maladie complémentaire) via l'extension. Ils sont centralisés dans le tableau de bord, avec alertes et relances automatiques selon des règles. Les pages consultées ne donnent pas d'information sur la correction et le renvoi d'un dossier rejeté, ni sur le rapprochement des virements ou l'avance de trésorerie.</p><p>Deux points jouent en sa faveur. D'abord, la lecture des documents (OCR, reconnaissance de texte) se fait dans le navigateur du magasin. Selon ses <a href=\"https://optibot.fr/legal/mentions-legales\">mentions légales</a>, les métadonnées de suivi sont enregistrées chez un hébergeur certifié HDS (Scaleway). Ensuite, OptiBot dit clairement que sa connexion native au logiciel de gestion du magasin n'existe que pour la famille Optimum (LivebyOptimum, AS3.2, Atol Pro). Si c'est votre logiciel, c'est un vrai avantage.</p><h3>Granit : des agents qui font le dossier à la place de l'équipe</h3><p>Granit ne remplit pas le portail à côté de l'opticien. Ses agents logiciels interrogent les plateformes, calculent le reste à charge et envoient la demande de prise en charge. Quand un dossier est rejeté, l'agent analyse la cause, corrige et renvoie. Quand les virements arrivent, il les rapproche des factures, côté Sécurité sociale comme côté mutuelles.</p><p>Un agent ne finit pas tous les dossiers. Dans ce cas, l'équipe Granit reprend la main sur le dossier. Pour l'équipe du magasin, le travail change de nature : elle ne saisit plus, elle suit les statuts des dossiers. C'est le principe des <a href=\"/agents\">agents Granit</a>.</p><p>Parmi les plateformes, Granit cite notamment Viamedis, Almerys, Santéclair, Carte Blanche et Actil. Granit ne fait pas d'avance de trésorerie. Granit est certifié HDS (hébergeur de données de santé) et annonce une réversibilité totale.</p><h3>À quel moment du dossier agit chaque offre</h3><div data-bloc=\"frise\"></div><p>Le schéma résume l'écart. OptiBot intervient surtout au moment de la PEC, en pré-remplissant les champs, puis à la détection des rejets. Granit couvre la PEC, l'accord ou le refus, le rejet et le paiement, jusqu'au rapprochement. Si vos rejets vous prennent autant de temps que vos PEC, voir la fiche <a href=\"/ressources/rejet-tiers-payant\">rejet de tiers payant en optique</a> pour leur diagnostic et leur correction.</p><h2 id=\"granit-vs-optibot-choisir\">Comment choisir entre Granit et OptiBot ?</h2><p>Le bon critère est le temps de saisie que vous acceptez de garder au comptoir, et la part du dossier que vous voulez confier.</p><div data-bloc=\"choisir\"></div><p>OptiBot convient bien à un magasin qui veut garder la main sur chaque envoi. Il convient aussi s'il travaille sur un logiciel Optimum ou veut tester seul, sans rendez-vous. Le modèle est simple à comprendre : l'opticien fait le même geste, en moins de clics. La limite est assumée par l'éditeur lui-même : les codes LPP et les montants restent à saisir, et la couverture varie d'un portail à l'autre.</p><p>Granit convient mieux quand la saisie sur les portails est le poste qui coûte le plus en temps. Ou quand le magasin travaille avec beaucoup de plateformes et veut aussi déléguer les rejets et le rapprochement. Avant de décider, regardez où part réellement le temps de votre équipe : saisie de PEC, relances, rejets, pointage des virements. La page <a href=\"/ressources/portails-tiers-payant\">portails de tiers payant</a> recense les plateformes que vos clients vous font utiliser.</p><p>Si vous comparez aussi des prestataires d'externalisation, notre fiche <a href=\"/ressources/granit-vs-iremia\">Granit ou Iremia Santé</a> suit la même méthode.</p><h3>Passer d'OptiBot à Granit</h3><p>Commencez par vérifier votre contrat. Selon OptiBot, les formules Pro, Cabinet et Réseau sont annulables à tout moment. La formule Franchise repose sur un contrat annuel : regardez sa date d'échéance avant de lancer quoi que ce soit.</p><p>Démarrez ensuite Granit sur les nouveaux dossiers uniquement. Les PEC déjà envoyées et les rejets en cours se terminent avec votre organisation actuelle. Cela évite qu'un dossier soit traité deux fois ou perdu entre deux outils.</p><p>Enfin, comparez sur un mois complet, avec vos propres mesures. Mesurez le temps passé sur les portails, les dossiers restés en attente, les rejets non traités et les virements non rapprochés. C'est ce relevé, pas une promesse commerciale, qui dira si le changement vaut la peine pour votre magasin.</p>",
+  "tocItems": [
+    {
+      "id": "granit-vs-optibot-coup-doeil",
+      "label": "Granit et OptiBot en un coup d'œil"
+    },
+    {
+      "id": "granit-vs-optibot-besoin",
+      "label": "Même besoin, deux modèles différents"
+    },
+    {
+      "id": "granit-vs-optibot-choisir",
+      "label": "Comment choisir entre Granit et OptiBot"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "OptiBot et Granit font-ils la même chose ?",
+      "answer": "Non. OptiBot est une extension Chrome qui aide l'opticien à remplir plus vite les champs des portails de tiers payant. Granit confie la demande de prise en charge à des agents logiciels. Granit traite aussi la correction des rejets et le rapprochement des virements avec les factures."
+    },
+    {
+      "question": "Avec OptiBot, qui fait la demande de prise en charge ?",
+      "answer": "C'est l'opticien qui fait la demande. OptiBot lit la carte mutuelle et l'ordonnance, puis pré-remplit l'identité, le NSS et les informations de l'ordonnance dans le portail. Les codes LPP et les montants verres et monture restent saisis à la main, et l'opticien envoie lui-même le dossier."
+    },
+    {
+      "question": "Granit remplace-t-il OptiBot ?",
+      "answer": "Granit répond au même besoin par un autre modèle : au lieu d'accélérer la saisie, ses agents font la demande de prise en charge à la place de l'équipe. OptiBot reste plus adapté si vous voulez garder la main sur chaque saisie. Il l'est aussi si vous travaillez sur un logiciel de la famille Optimum, seul branché nativement."
+    },
+    {
+      "question": "Comment passer d'OptiBot à Granit ?",
+      "answer": "Vérifiez d'abord votre contrat : selon OptiBot, les formules Pro, Cabinet et Réseau sont annulables à tout moment, la formule Franchise repose sur un contrat annuel. Démarrez ensuite Granit sur les nouveaux dossiers seulement et laissez les dossiers en cours se terminer. Comparez enfin le temps passé et les dossiers en attente sur un mois complet."
+    }
+  ],
+  "sources": [
+    {
+      "label": "optibot.fr · Almerys",
+      "url": "https://optibot.fr/mutuelles/almerys"
+    },
+    {
+      "label": "optibot.fr · Viamedis",
+      "url": "https://optibot.fr/mutuelles/viamedis"
+    },
+    {
+      "label": "optibot.fr · Mentions légales",
+      "url": "https://optibot.fr/legal/mentions-legales"
+    }
+  ],
+  "figures": [],
+  "internalLinks": [],
+  "liensEntrants": [],
+  "remplace": [],
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-11-03T18:25:35.749Z",
+    "avertissements": [],
+    "relecture": {
+      "verdict": "humain",
+      "tours": 2,
+      "model": "claude-opus-5-5",
+      "le": "2026-11-03T18:30:22.124Z"
+    }
+  }
+}

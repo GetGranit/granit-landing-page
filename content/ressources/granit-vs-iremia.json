@@ -91,7 +91,13 @@
   ],
   "figures": [],
   "internalLinks": [],
-  "liensEntrants": [],
+  "liensEntrants": [
+    {
+      "slug": "granit-vs-optibot",
+      "anchor": "Granit ou OptiBot : faire ses PEC plus vite, ou les faire faire ?",
+      "type": "soeur"
+    }
+  ],
   "remplace": [],
   "moteur": {
     "model": "claude-opus-5-5",
