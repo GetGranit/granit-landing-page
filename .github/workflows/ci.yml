@@ -1,5 +1,5 @@
 # CI du site : sur chaque PR et chaque push sur main.
-# Bloquant : installation, build, tests, check-marque (cliquet contre la baseline de la branche cible).
+# Bloquant : installation, build, tests, check-marque --strict (zéro violation de la marque).
 # Non bloquant : le lint (Prettier est déjà rouge sur main : ~1 200 erreurs de mise en forme dans
 # 46 fichiers). Il redeviendra bloquant quand un `npm run format` dédié aura été fusionné.
 name: CI
@@ -23,7 +23,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # check-marque lit la baseline et les lignes ajoutées depuis la branche cible
+          fetch-depth: 0 # garde l'historique pour un retour éventuel au cliquet (--base)
 
       - uses: actions/setup-node@v4
         with:
@@ -34,16 +34,9 @@ jobs:
       - name: Installer
         run: npm ci --no-audit --no-fund
 
-      - name: check-marque (cliquet)
-        env:
-          EVENEMENT: ${{ github.event_name }}
-          BRANCHE_CIBLE: ${{ github.base_ref }}
-        run: |
-          if [ "$EVENEMENT" = "pull_request" ]; then
-            node scripts/check-marque.mjs --base "origin/$BRANCHE_CIBLE" --report
-          else
-            node scripts/check-marque.mjs --report
-          fi
+      # Fin de bascule : zéro violation exigée, quelle que soit la branche cible.
+      - name: check-marque (strict)
+        run: node scripts/check-marque.mjs --strict --report
 
       - name: Tests
         run: npm test
