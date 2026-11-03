@@ -3872,7 +3872,7 @@
     ],
     "searchVolume": 60,
     "unsplashQuery": "optical store manager",
-    "status": "waiting",
+    "status": "pending",
     "wave": 3,
     "level": "Fille",
     "parentSlug": "gerer-tiers-payant-magasin",
@@ -4035,7 +4035,7 @@
       "stpps"
     ],
     "searchVolume": null,
-    "status": "waiting",
+    "status": "pending",
     "wave": 3,
     "level": "Fille",
     "parentSlug": "solutions-tiers-payant-optique",
@@ -4074,7 +4074,7 @@
       "tiers payant assistance"
     ],
     "searchVolume": null,
-    "status": "waiting",
+    "status": "pending",
     "wave": 3,
     "level": "Fille",
     "parentSlug": "solutions-tiers-payant-optique",

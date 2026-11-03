@@ -4,7 +4,7 @@
   "modele": "prestataire",
   "logo": null,
   "checkedOn": "2026-11-03",
-  "aRelire": true,
+  "aRelire": false,
   "identite": {
     "raisonSociale": "TIERS PAYANT ASSISTANCE (SAS)",
     "siege": "Limas (69)",
@@ -142,5 +142,6 @@
       "url": "https://annuaire-entreprises.data.gouv.fr/entreprise/444465496",
       "consulte": "2026-11-03"
     }
-  }
+  },
+  "_relu": "PAS ENCORE RELU EN DÉTAIL : Paul relit cette fiche avec la PR de la page (choix du 03/11/2026 pour rédiger la nuit)."
 }
