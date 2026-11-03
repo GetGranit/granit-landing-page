@@ -1,0 +1,185 @@
+{
+  "slug": "portail-oxantis",
+  "id": "A7",
+  "category": "plateformes",
+  "categoryName": "Platforms and portals",
+  "type": "plateforme",
+  "plateforme": "oxantis",
+  "title": "Oxantis TP for opticians: professional portal, coverage approval, statuses, and payment",
+  "primaryKeyword": "oxantis tp",
+  "keywordCluster": [
+    "tp oxantis",
+    "oxantis net",
+    "oxantis pro",
+    "tp oxantis net",
+    "oxantis pec",
+    "oxantis professionnel de santé",
+    "oxantis professionnel de sante",
+    "tp oxanti",
+    "portail oxantis",
+    "pec oxantis"
+  ],
+  "parentSlug": "portails-tiers-payant",
+  "level": "Fille",
+  "author": {
+    "name": "Olivier",
+    "jobTitle": "Writer, third-party payment expert",
+    "photo": "/auteurs/olivier.jpg",
+    "url": null
+  },
+  "reviewer": {
+    "name": "Nathalie",
+    "jobTitle": "Writer, optical industry expert",
+    "photo": "/auteurs/nathalie.jpg",
+    "url": null
+  },
+  "datePublished": "2026-10-09",
+  "dateModified": "2026-10-09",
+  "checkedOn": "2026-10-07",
+  "wordCount": 2146,
+  "readTime": 9,
+  "metaDescription": "Oxantis TP: access to the oxantis.net professional portal, optical coverage approval, statuses, payment, and contacts. Useful steps at the counter, with sources.",
+  "contentHtml": "<p><strong>Oxantis TP is the optical, hearing, and dental third-party payment (tiers payant: the patient pays nothing upfront, insurers pay the provider directly) of Groupe VYV: on the oxantis.net portal, the optician requests the supplementary health insurer's (mutuelle's) prior approval, then bills after delivery.</strong> Oxantis manages this third-party payment for the group's mutuelles (Harmonie Mutuelle, MGEN, MNT). It also manages it for those of VYV Partenariat and for mutuelles outside the group, according to the <a href=\"https://www.groupe-vyv.fr/wp-content/uploads/2023/04/20230328_CP_Oxantis.pdf\">Groupe VYV press release</a>. The portal is a white-label interface provided by Viamedis: if you know the Viamedis screens, you already know the Oxantis ones. This page follows the order of the counter: access to the professional portal, coverage request, reading statuses, blockers, payment, and contacts.</p><div class=\"key-takeaways\"><strong>Key points</strong><ul><li>Since January 2023, Oxantis SA has brought together Groupe VYV's optical third-party payment management; the opticians' portal is oxantis.net.</li><li>Oxantis third-party payment is called “complexe” (complex): the supplementary insurer gives prior approval on the reimbursement provided by the policy, before delivery.</li><li>For an MGEN customer, ask for the third-party payment card: it shows which insurer to choose. Since July 1, 2025, members who moved to MGEN Accolade are selected under “MGEN Accolade”.</li><li>Each login requires the email address, the password, then a code received by phone call or text message.</li><li>Network agreement: 0 821 21 00 07 or tp-oxantis-convention@oxantis.fr. Optical invoices and coverage approvals: 0 821 01 01 02 or tp-oxantis-optique@oxantis.fr.</li></ul></div><h2 id=\"oxantis-mutuelles\">What is Oxantis TP and which supplementary health insurers use it?</h2><p>Oxantis is Groupe VYV's third-party payment operator: it reviews coverage requests and pays the optician on behalf of the supplementary health insurers that use it.</p><div data-bloc=\"chiffres\"></div><p>Oxantis SA has existed in this form since January 2023. Before that, the group's optical, hearing, and dental third-party payment management was split between two centers, Equasanté and UHMs. Groupe VYV merged them into a single entity, which works for the group's mutuelles, for those of VYV Partenariat, and for mutuelles outside the group. According to Groupe VYV, Oxantis's solutions are available to all optical centers.</p><p>Oxantis operates a so-called “complexe” third-party payment: the mutuelle gives its approval before delivery. In practice, the mutuelle, or AMC (supplementary health insurance), must give prior approval on the reimbursement provided by the customer's policy. So you do not bill the mutuelle's share directly: you first request a coverage approval (PEC), and it is the response to this request that commits the supplementary insurer.</p><p>The MGEN case illustrates the scope well. Since February 1, 2022, MGEN, MGEN Efficience Santé, and MAEE members can use third-party payment at any optician, as reported by <a href=\"https://www.acuite.fr/actualite/ocam/224229/la-mgen-modifie-son-contrat-de-tiers-payant\">Acuité in February 2022</a>. Before that date, only opticians in the Kalixia network could do so via Oxantis. For a store outside the network, this change opened oxantis.net to customers who had been excluded until then.</p><p>For an optical request, the portal has you choose the insurer from a selector. The list below shows what this selector offers, recorded by our agents on Oct 7, 2026. It includes, for example, Harmonie Mutuelle, MNT, and several MGEN entries. A mutuelle appearing in this selector means you can choose it on Oxantis, not that it goes only through Oxantis.</p><div data-bloc=\"organismes\"></div><div class=\"callout callout--tip\"><p><strong>The right habit:</strong> for an MGEN customer, ask for their third-party payment card before opening the portal. The card shows which insurer to choose on Oxantis, and the selector offers several similar entries (MGEN, MGEN Accolade, MGEN Solutions, Ma mutuelle MGEN).</p></div><p>To place Oxantis among the other operators, our page on <a href=\"/ressources/portails-tiers-payant\">third-party payment portals</a> lists the platforms an optical store deals with every day.</p><h2 id=\"oxantis-espace-pro\">How do you access the Oxantis professional portal?</h2><p>Access to the Oxantis professional portal requires a network agreement with Oxantis, then a login on oxantis.net with two-factor authentication. The public sources describe no self-service account creation: the process starts with contacting the network agreement service.</p><ol class=\"steps\"><li><strong>Contact the Oxantis network agreement service.</strong> By phone at 0 821 21 00 07 (premium-rate number) or by email at tp-oxantis-convention@oxantis.fr, contact details published by <a href=\"https://www.harmonie-mutuelle.fr/professionnels-de-sante/professionnels-sante-contacts-utiles\">Harmonie Mutuelle in its useful contacts for healthcare professionals</a>.</li><li><strong>Wait for the account to be opened.</strong> The account is linked to the store: each store has its own login email address.</li><li><strong>Log in on oxantis.net.</strong> Enter the store's email address and password.</li><li><strong>Confirm the security code.</strong> A code is sent at every login, by phone call or text message; you must enter it to get into the professional portal.</li></ol><p>Two-factor authentication has a practical consequence at the counter: without the phone that receives the code, nobody can open the portal. If several team members handle third-party payment, agree on which device receives this code and where it is kept during opening hours.</p><p>For a group of several stores, keep in mind that login is done store by store, each with its own email address and password. A file opened from one store is therefore tracked from that store's account.</p><p>In the sources we reviewed, Oxantis does not publish a specific procedure for a forgotten password or a locked account. For an access question, the network agreement service is the closest contact.</p><h2 id=\"oxantis-prise-en-charge\">How do you submit an optical coverage request on Oxantis?</h2><p>An optical coverage request on Oxantis is made from the oxantis.net professional portal. You choose the insurer shown on the customer's card, enter the request, then wait for the approval before delivering. The invoice only goes out after this approval.</p><p>The Oxantis portal works like the Viamedis one: the same screens for coverage requests, tracking, and billing, on a different domain. This is what our agents record on the portal. Our page <a href=\"/ressources/portail-viamedis\">Viamedis TP for opticians</a> describes these screens in detail; everything there about data entry applies to oxantis.net.</p><h3>The path of an Oxantis PEC</h3><p>The circuit comes down to a few round trips. The optician sends the request on the portal, Oxantis forwards it to the supplementary insurer, which gives or withholds its prior approval. Then the optician delivers and bills on the same portal, and Oxantis pays the optician.</p><div data-figure=\"parcours-pec-oxantis\"></div><ol class=\"steps\"><li><strong>Get the customer's third-party payment card.</strong> It shows which insurer to select, a decisive point for MGEN customers.</li><li><strong>Log in on oxantis.net.</strong> The store's email address, password, then the code received by phone call or text message.</li><li><strong>Choose the insurer in the selector.</strong> Pick exactly the entry that matches the card, without relying on the mutuelle's common name.</li><li><strong>Enter the coverage request.</strong> The screens are the Viamedis ones; the request covers the equipment on the quote.</li><li><strong>Track the file's status.</strong> Only deliver after an approval status (see the section on statuses).</li><li><strong>Deliver, then bill on the portal.</strong> The invoice linked to the coverage approval triggers payment.</li></ol><div class=\"callout callout--warn\"><p><strong>The trap:</strong> since July 1, 2025, for members who moved to MGEN Accolade, you must choose “MGEN Accolade” and not “MGEN” on the portal. Pending quotes for these members were deleted on June 30, 2025 and had to be entered again, according to <a href=\"https://www.acuite.fr/actualites/profession/regime-obligatoire/tiers-payant-la-mgen-apporte-des-changements-313606\">Acuité (Jun 30, 2025)</a>.</p></div><p>This change can send a file under the wrong insurer. A customer who used to be “MGEN” may now belong to “MGEN Accolade”. The third-party payment card settles it: read it at every visit, not the customer's history in your software.</p><p>When these requests number in the dozens every week, across oxantis.net and the other portals, entry and follow-up become the store's bottleneck. That is what <a href=\"/agents\">Granit's agents</a> do: they enter the coverage requests directly on the platforms' portals, including Oxantis, then send the status back to the team. For an overview of the circuit, from request to collection, see our guide to <a href=\"/ressources/tiers-payant-opticien\">third-party payment for opticians</a>.</p><h2 id=\"oxantis-statuts\">What do the statuses of an Oxantis coverage approval mean?</h2><p>The status shown on the file page tells you whether the supplementary insurer commits, whether it is waiting for something from you, or whether the request has to be redone. The table below lists the statuses recorded by our agents on the portal, with what they mean and the action to take.</p><div data-bloc=\"statuts\"></div><p>Two statuses need particular attention at the counter. The first is approval subject to supporting documents, often abbreviated PECAPJ: the supplementary insurer has given its approval, but it is waiting for documents. Until these documents are sent, the file is not complete. Send the documents through the channel indicated by the portal or by Oxantis, quoting the PEC number.</p><p>The second is the expired status. An approval has a validity period: if it runs out before delivery, the approval no longer counts and you must submit a new request. This can happen if the customer comes back for their glasses long after the quote, or if the equipment is on a long back order.</p><p>Finally, a “Facturée” (Billed) status does not mean the money has arrived: it means the invoice has gone out. The next step is to track the bank transfer into your account.</p><h2 id=\"oxantis-vous-bloquez\">Stuck on Oxantis?</h2><p>These blockers are diagnosed from the file page and the customer's third-party payment card. Here are the four situations sorted by symptom, with where to check, what to do, and who to contact.</p><h3>I can't find the insurer in the list</h3><p>Go back to the customer's third-party payment card: it shows which insurer to choose on the Oxantis portal. The mutuelle's trade name does not always match the selector's label, and several entries look alike (MGEN, MGEN Accolade, MAEE, MAEE Accolade). If the insurer on the card does not appear in the selector, the file may not belong to Oxantis: the card then shows which operator to use. If in doubt, the Oxantis optical invoices and coverage approvals line is the right contact (see the contact section below).</p><h3>The coverage request is rejected</h3><p>Read the reason on the file page: it tells you what to correct. Correct, then submit the request again. MGEN customer: check the entry chosen (see the trap above). If the reason is still unclear, call the optical invoices and coverage approvals line, with the PEC number in front of you.</p><h3>It stays pending, with no response</h3><p>First, check that it is not an approval subject to documents (PECAPJ): send the documents and the file moves again. Otherwise, a pending, under review, or in progress status means the file is still being reviewed. Oxantis does not publish a response time specific to optical requests. Wait, then follow up with the optical invoices and coverage approvals line if the wait is holding up delivery.</p><h3>The approval is granted, but the payment does not arrive</h3><p>First check that the invoice did go out: the file should show “Facturée”. An approval alone triggers no payment. If the file was approved subject to documents, make sure the documents were sent. Oxantis does not publish a payment time specific to optical care: if the bank transfer is late even though the invoice went out, contact the optical invoices and coverage approvals line.</p><p>Keep the exact reason displayed by the portal: it is what tells you what to correct.</p><h2 id=\"oxantis-paiement\">When and how does Oxantis pay the optician?</h2><p>Oxantis pays the optician directly, on behalf of the supplementary insurer, once the invoice is issued on the portal from an approved coverage request. It does not publish a payment time specific to optical care.</p><p>The order of magnitude gives an idea of the volume that flows through this circuit. In 2022, the activity now brought together in Oxantis processed 2,245,392 optical invoices, according to the Groupe VYV press release. It paid more than €1.2 billion directly to healthcare professionals, across all sectors. Oxantis SA has only brought this activity together since January 2023.</p><p>On the store side, payment is tracked in two stages. On the portal, the “Facturée” status confirms that the invoice has gone out. On the bank account, you still need to reconcile each bank transfer with the files it pays. This reconciliation, daily if possible, avoids discovering weeks later a file that was never paid. The method is detailed in our article on <a href=\"/ressources/rapprochement-noemie\">reconciling remittance files and bank transfers</a>.</p><p>Two points prevent payment delays: only bill after an approval status, and do not leave an approval subject to documents without follow-up.</p><h2 id=\"oxantis-contact\">How do you contact Oxantis?</h2><p>Oxantis offers two separate lines for opticians: one for the network agreement, the other for optical invoices and coverage approvals. These contact details are published by Harmonie Mutuelle on its contacts page for healthcare professionals.</p><div data-bloc=\"contacts\"></div><p>Choose the line based on your question. Account opening or portal access: 0 821 21 00 07 or tp-oxantis-convention@oxantis.fr. A file in progress, a rejection, a missing payment: 0 821 01 01 02 or tp-oxantis-optique@oxantis.fr. Both numbers are premium-rate.</p><p>Before calling or writing, have at hand the PEC number, the insurer chosen in the selector, and the status displayed. Quote the PEC number: it lets them find the file without further back-and-forth.</p>",
+  "tocItems": [
+    {
+      "id": "oxantis-mutuelles",
+      "label": "Oxantis TP and its supplementary insurers"
+    },
+    {
+      "id": "oxantis-espace-pro",
+      "label": "Accessing the Oxantis professional portal"
+    },
+    {
+      "id": "oxantis-prise-en-charge",
+      "label": "Submitting an optical coverage request"
+    },
+    {
+      "id": "oxantis-statuts",
+      "label": "Reading the statuses of an Oxantis PEC"
+    },
+    {
+      "id": "oxantis-vous-bloquez",
+      "label": "Stuck on Oxantis?"
+    },
+    {
+      "id": "oxantis-paiement",
+      "label": "How the optician gets paid"
+    },
+    {
+      "id": "oxantis-contact",
+      "label": "Contacting Oxantis"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "How do opticians access the Oxantis professional portal?",
+      "answer": "You first need to contact the Oxantis network agreement service at 0 821 21 00 07 (premium-rate number) or at tp-oxantis-convention@oxantis.fr. Once the account is open, each store logs in on oxantis.net with its email address and password. A code is then sent at every login, by phone call or text message."
+    },
+    {
+      "question": "Which supplementary health insurers use Oxantis for optical third-party payment?",
+      "answer": "Oxantis manages optical third-party payment for Groupe VYV's mutuelles, such as Harmonie Mutuelle, MGEN, and MNT. It also manages it for the mutuelles of VYV Partenariat and for mutuelles outside the group. The insurer selector on the oxantis.net portal also offers other entries, such as MAEE or MGEN Accolade. The customer's third-party payment card shows which insurer to choose."
+    },
+    {
+      "question": "Which insurer should you choose for an MGEN customer on Oxantis?",
+      "answer": "Ask for the customer's third-party payment card: it shows which insurer to choose on the oxantis.net portal. Since July 1, 2025, a member who moved to MGEN Accolade is selected under “MGEN Accolade”, not “MGEN”."
+    },
+    {
+      "question": "How do you submit an optical coverage request on Oxantis?",
+      "answer": "Log in on oxantis.net, choose in the selector the insurer shown on the customer's third-party payment card, then enter the request. The screens are the same as on the Viamedis portal. Wait for the supplementary insurer's approval before delivering the equipment, then bill on the portal."
+    },
+    {
+      "question": "What do the statuses of an Oxantis coverage approval mean (approved, pending, rejected)?",
+      "answer": "Approved means the supplementary insurer commits to the amount: you can deliver, then bill. Pending means the file is still being reviewed. Rejected means there is no coverage approval as it stands: read the reason on the file page, correct, and submit the request again."
+    },
+    {
+      "question": "How do healthcare professionals contact Oxantis?",
+      "answer": "For the network agreement, call 0 821 21 00 07 (premium-rate number) or write to tp-oxantis-convention@oxantis.fr. For optical invoices and coverage approvals, call 0 821 01 01 02 (premium-rate number) or write to tp-oxantis-optique@oxantis.fr. Have the PEC number at hand."
+    },
+    {
+      "question": "How long does Oxantis take to pay the optician?",
+      "answer": "Oxantis does not publish a payment time specific to optical care. Payment follows the invoice issued on the portal from an approved coverage request, and the Facturée (Billed) status confirms that the invoice has gone out. If the bank transfer is late, contact the optical invoices and coverage approvals line at 0 821 01 01 02."
+    }
+  ],
+  "sources": [
+    {
+      "label": "groupe-vyv.fr · Press release “Groupe VYV creates Oxantis SA” (Mar 28, 2023)",
+      "url": "https://www.groupe-vyv.fr/wp-content/uploads/2023/04/20230328_CP_Oxantis.pdf"
+    },
+    {
+      "label": "Acuité · “MGEN changes its third-party payment contract” (Feb 4, 2022)",
+      "url": "https://www.acuite.fr/actualite/ocam/224229/la-mgen-modifie-son-contrat-de-tiers-payant"
+    },
+    {
+      "label": "harmonie-mutuelle.fr · Healthcare professionals, useful contacts (updated Jun 29, 2026)",
+      "url": "https://www.harmonie-mutuelle.fr/professionnels-de-sante/professionnels-sante-contacts-utiles"
+    },
+    {
+      "label": "Acuité · “Third-party payment: MGEN makes changes” (Jun 30, 2025)",
+      "url": "https://www.acuite.fr/actualites/profession/regime-obligatoire/tiers-payant-la-mgen-apporte-des-changements-313606"
+    }
+  ],
+  "figures": [
+    {
+      "id": "parcours-pec-oxantis",
+      "type": "flux",
+      "titre": "The path of an Oxantis coverage approval",
+      "legende": "Look at the mutuelle's approval: nothing is delivered or billed before it.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "Optician",
+          "detail": "Coverage request on oxantis.net",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Oxantis",
+          "detail": "Forwards the prior approval request",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Supplementary insurer",
+          "detail": "Approval, conditional approval, or rejection",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Optician",
+          "detail": "Delivers the equipment and bills on the portal",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Oxantis",
+          "detail": "Pays the optician directly",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [
+    {
+      "id": "A0",
+      "slug": "portails-tiers-payant",
+      "anchor": "third-party payment portals",
+      "type": "parent"
+    }
+  ],
+  "liensEntrants": [
+    {
+      "slug": "mutuelle-quel-portail",
+      "anchor": "find out which portal an insurer uses",
+      "type": "soeur"
+    }
+  ],
+  "remplace": [],
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-09T07:39:00.767Z",
+    "avertissements": [
+      "aucune citation (facultative)"
+    ]
+  }
+}
