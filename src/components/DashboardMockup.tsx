@@ -4,12 +4,12 @@
  */
 export function DashboardMockup({ compact = false }: { compact?: boolean }) {
   const rows = [
-    { id: "#4821", patient: "M. D.", mut: "Portail AMC", amount: "127,40", status: "validé", tone: "sage" },
-    { id: "#4820", patient: "L. B.", mut: "RO", amount: "238,90", status: "en cours", tone: "amber" },
-    { id: "#4819", patient: "S. R.", mut: "NOEMIE", amount: "312,00", status: "validé", tone: "sage" },
-    { id: "#4818", patient: "C. T.", mut: "SESAM-Vitale", amount: "94,50", status: "validé", tone: "sage" },
-    { id: "#4817", patient: "F. L.", mut: "CPAM", amount: "405,75", status: "rejet corrigé", tone: "terra" },
-    { id: "#4816", patient: "N. P.", mut: "Portail AMC", amount: "156,20", status: "validé", tone: "sage" },
+    { id: "#4821", patient: "M. D.", mut: "Portail AMC", amount: "127,40", status: "validé", tone: "succes" },
+    { id: "#4820", patient: "L. B.", mut: "RO", amount: "238,90", status: "en cours", tone: "attente" },
+    { id: "#4819", patient: "S. R.", mut: "NOEMIE", amount: "312,00", status: "validé", tone: "succes" },
+    { id: "#4818", patient: "C. T.", mut: "SESAM-Vitale", amount: "94,50", status: "validé", tone: "succes" },
+    { id: "#4817", patient: "F. L.", mut: "CPAM", amount: "405,75", status: "rejet corrigé", tone: "succes" },
+    { id: "#4816", patient: "N. P.", mut: "Portail AMC", amount: "156,20", status: "validé", tone: "succes" },
   ];
 
   return (
@@ -76,10 +76,9 @@ function SidebarItem({ l, a, n }: { l: string; a: boolean; n: string }) {
 function StatusPill({ tone, label }: { tone: string; label: string }) {
   const map: Record<string, { bg: string; fg: string }> = {
     // Succès (validé, rejet corrigé) : pastille succès ; en cours : lavis + encre (cas 2 et 3).
-    sage: { bg: "var(--succes-fond)", fg: "var(--succes-texte)" },
-    terra: { bg: "var(--succes-fond)", fg: "var(--succes-texte)" },
-    amber: { bg: "var(--lavis)", fg: "var(--encre)" },
+    succes: { bg: "var(--succes-fond)", fg: "var(--succes-texte)" },
+    attente: { bg: "var(--lavis)", fg: "var(--encre)" },
   };
-  const c = map[tone] ?? map.sage;
+  const c = map[tone] ?? map.succes;
   return <span className="inline-block rounded-full px-2 py-0.5 text-[10px]" style={{ background: c.bg, color: c.fg, fontFamily: "var(--font-mono)" }}>{label}</span>;
 }
