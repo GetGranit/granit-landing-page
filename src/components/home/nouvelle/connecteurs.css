@@ -1,0 +1,28 @@
+/* =========================================================
+   NOUVELLE HOME · CONNECTEURS : la roue de cartes, en boucle (lm.css « 1. CONNECTEURS »)
+   Les ombres brunes de la maquette (--shade-rgb) passent à l'encre ; le masque des bords
+   n'utilise que l'opacité, d'où l'encre pleine à la place du noir.
+   ========================================================= */
+.nh .lm-cn { overflow: hidden; padding-bottom: 0; }
+.nh .lm-cn-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 18px 48px; }
+.nh .lm-cn-head .lm-h2 { max-width: 13.5em; font-size: clamp(36px, 4.2vw, 60px); }
+.nh .lm-cn-head .lm-h2 .dot { color: var(--mint); }
+.nh .lm-cn-head .lm-lead { max-width: 36ch; padding-top: 10px; font-size: 15.5px; }
+.nh .lm-cn-stage { position: relative; height: var(--cn-h, 460px); margin-top: clamp(40px, 6vw, 90px);
+  -webkit-mask-image: linear-gradient(90deg, transparent, rgba(var(--ink-rgb), 1) 7%, rgba(var(--ink-rgb), 1) 93%, transparent);
+  mask-image: linear-gradient(90deg, transparent, rgba(var(--ink-rgb), 1) 7%, rgba(var(--ink-rgb), 1) 93%, transparent); }
+.nh .lm-cn-wheel { position: absolute; left: 50%; top: calc(var(--cn-top, 40px) + var(--cn-r, 1100px)); width: 0; height: 0; margin: 0; animation: nh-cn-spin var(--cn-dur, 220s) linear infinite; }
+.nh .lm-cn-wheel.is-off { animation-play-state: paused; }   /* hors écran ou onglet caché ; la roue continue au survol (revue du 30 oct.) */
+@keyframes nh-cn-spin { to { rotate: -360deg; } }
+.nh .lm-cn-card { position: absolute; left: 0; top: 0; width: var(--cn-w, 210px); transform-origin: 0 0;
+  transform: rotate(var(--a)) translate(-50%, calc(-1 * var(--cn-r, 1100px) - 50%)); display: grid; grid-template-rows: 1fr auto;
+  border-radius: 12px; overflow: hidden; background: var(--paper); color: var(--ink);
+  box-shadow: 0 22px 40px -20px rgba(var(--ink-rgb), .65), 0 2px 6px -2px rgba(var(--ink-rgb), .3); }
+.nh .lm-cn-logo { display: grid; place-items: center; height: calc(var(--cn-w, 210px) * .4); padding: 14px 22px; }
+.nh .lm-cn-logo img { max-width: 100%; max-height: calc(var(--cn-w, 210px) * .22); object-fit: contain; }
+.nh .lm-cn-logo img.sq { max-height: calc(var(--cn-w, 210px) * .28); }
+.nh .lm-cn-meta { display: grid; gap: 6px; padding: 12px 14px 14px; background: var(--rose); }
+.nh .lm-cn-meta b { font: 500 15px/1.15 var(--sans); }
+.nh .lm-cn-meta small { display: inline-flex; align-items: center; gap: 7px; font: 500 11px/1 var(--sans); letter-spacing: .02em; color: var(--t-muted); }
+.nh .lm-cn-meta small i { width: 7px; height: 7px; border-radius: 50%; background: var(--deep); box-shadow: 0 0 0 3px rgba(var(--deep-rgb), .16); }
+@media (prefers-reduced-motion: reduce) { .nh .lm-cn-wheel { animation: none; } }
