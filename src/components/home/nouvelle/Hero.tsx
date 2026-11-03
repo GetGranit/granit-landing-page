@@ -3,7 +3,9 @@
    praticien au temps de la vidéo, se cochent et s'effacent. Sous « mouvements réduits » : l'affiche seule
    et une pastille cochée, immobile. Le CSS est dans hero.css. */
 import { useEffect, useRef, type CSSProperties } from "react";
+import { usePostHog } from "posthog-js/react";
 import { calcomDemoUrl, useLanguage, useLeveeAnnoncee } from "./socle";
+import "./hero.css";
 
 /* ---------- le film : 16:9 sur ordinateur, 9:16 pour les écrans de 860 px et moins (choisi au montage) ---------- */
 const FILM = {
@@ -465,6 +467,7 @@ function startAgents(
 export function HeroNouvelle() {
   const { lang } = useLanguage();
   const c = copy[lang];
+  const posthog = usePostHog();
   const sectionRef = useRef<HTMLElement>(null);
   const stageRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -591,6 +594,7 @@ export function HeroNouvelle() {
               href={calcomDemoUrl("hero")}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => posthog.capture("demo_booking_clicked", { placement: "hero" })}
             >
               {c.cta}
             </a>
