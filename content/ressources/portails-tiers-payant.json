@@ -207,6 +207,11 @@
       "slug": "gerer-tiers-payant-magasin",
       "anchor": "Gérer le tiers payant d'un magasin : en interne, externalisé ou automatisé ?",
       "type": "soeur"
+    },
+    {
+      "slug": "rejet-tiers-payant",
+      "anchor": "motif rejet tiers payant",
+      "type": "soeur"
     }
   ],
   "remplace": [

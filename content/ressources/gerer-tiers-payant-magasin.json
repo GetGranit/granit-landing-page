@@ -197,7 +197,13 @@
       "type": "parent"
     }
   ],
-  "liensEntrants": [],
+  "liensEntrants": [
+    {
+      "slug": "rejet-tiers-payant",
+      "anchor": "Rejet de tiers payant en optique : diagnostic et correction",
+      "type": "soeur"
+    }
+  ],
   "remplace": [
     "kpi-back-office-sante"
   ],
