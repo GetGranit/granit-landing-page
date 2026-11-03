@@ -1,5 +1,23 @@
+import { useLanguage } from "@/lib/i18n";
 import type { Demande } from "./DemandePec";
 import { ApercuBadge } from "./ui";
+
+const copy = {
+  fr: {
+    vos: "Vos demandes",
+    accordee: "Accordée",
+    enCours: "En cours…",
+    question: "Une question ?",
+    repond: "Paul vous répond",
+  },
+  en: {
+    vos: "Your requests",
+    accordee: "Approved",
+    enCours: "In progress…",
+    question: "A question?",
+    repond: "Paul answers you",
+  },
+};
 
 /** Les demandes lancées depuis l'espace (maquette), sous la 1re PEC. */
 export function MesDemandes({
@@ -9,12 +27,14 @@ export function MesDemandes({
   demandes: Demande[];
   onOpen: (index: number) => void;
 }) {
+  const { lang } = useLanguage();
+  const t = copy[lang];
   if (demandes.length === 0) return null;
   return (
     <div className="mt-6">
       <div className="mb-2 flex items-center justify-between">
         <p className="eyebrow" style={{ color: "var(--text-muted)" }}>
-          Vos demandes
+          {t.vos}
         </p>
         <ApercuBadge />
       </div>
@@ -27,7 +47,7 @@ export function MesDemandes({
               className="flex w-full items-center justify-between gap-3 rounded-[14px] border bg-white px-4 py-3 text-left"
               style={{ borderColor: "var(--border)" }}
             >
-              <span className="text-[15px]">{d.dossier.nom}</span>
+              <span className="text-[15px]">{d.dossier.nom[lang]}</span>
               <span
                 className="text-[13px]"
                 style={{
@@ -35,7 +55,7 @@ export function MesDemandes({
                   fontWeight: 600,
                 }}
               >
-                {d.statut === "accordee" ? "Accordée" : "En cours…"}
+                {d.statut === "accordee" ? t.accordee : t.enCours}
               </span>
             </button>
           </li>
@@ -47,6 +67,7 @@ export function MesDemandes({
 
 /** Accès permanent à Paul, en bas à droite. */
 export function PaulButton({ onClick }: { onClick: () => void }) {
+  const t = copy[useLanguage().lang];
   return (
     <button
       type="button"
@@ -61,7 +82,7 @@ export function PaulButton({ onClick }: { onClick: () => void }) {
       >
         P
       </span>
-      Une question ? <span style={{ color: "var(--terra)" }}>Paul vous répond</span>
+      {t.question} <span style={{ color: "var(--terra)" }}>{t.repond}</span>
     </button>
   );
 }

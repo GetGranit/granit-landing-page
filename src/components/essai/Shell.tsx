@@ -1,5 +1,23 @@
 import logo from "@/assets/logo.svg";
+import { useLanguage } from "@/lib/i18n";
 import { QUOTA } from "./quotaStore";
+
+const copy = {
+  fr: {
+    apercu:
+      "Aperçu de l'espace Granit · rien n'est encore connecté à votre portail ni à votre logiciel",
+    accueil: "Granit, accueil",
+    exemple: "Cas d'exemple",
+    offertes: "simulations offertes",
+  },
+  en: {
+    apercu:
+      "Preview of the Granit workspace · nothing is connected to your portal or your software yet",
+    accueil: "Granit, home",
+    exemple: "Sample case",
+    offertes: "free simulations",
+  },
+};
 
 /** Cadre de l'espace : bandeau « Aperçu », logo, pastilles d'état. */
 export function Shell({
@@ -13,6 +31,7 @@ export function Shell({
   faites?: number;
   children?: React.ReactNode;
 }) {
+  const t = copy[useLanguage().lang];
   const chip = {
     background: "var(--tag-bg)",
     color: "var(--text-soft)",
@@ -28,21 +47,21 @@ export function Shell({
           fontFamily: "var(--font-mono)",
         }}
       >
-        Aperçu de l'espace Granit · rien n'est encore connecté à votre portail ni à votre logiciel
+        {t.apercu}
       </div>
       <header className="mx-auto flex max-w-[1080px] items-center justify-between gap-3 px-4 py-4 sm:px-6">
-        <a href="/" aria-label="Granit, accueil">
+        <a href="/" aria-label={t.accueil}>
           <img src={logo} alt="Granit" className="h-[24px] w-auto" />
         </a>
         <div className="flex flex-wrap justify-end gap-2">
           {exemple && (
             <span className="rounded-full px-3 py-1 text-[11px]" style={chip}>
-              Cas d'exemple · {mutuelle ?? "Mutuelle Exemple"}
+              {t.exemple} · {mutuelle ?? "Mutuelle Exemple"}
             </span>
           )}
           {faites !== undefined && (
             <a href="#pec" className="num-tabular rounded-full px-3 py-1 text-[11px]" style={chip}>
-              {faites} / {QUOTA} simulations offertes
+              {faites} / {QUOTA} {t.offertes}
             </a>
           )}
         </div>
