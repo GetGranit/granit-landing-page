@@ -1,6 +1,7 @@
 // « Copier le lien » sur chaque titre de section, pour s'envoyer « la partie sur les statuts ».
 // Le HTML du moteur n'est pas réécrit : les boutons sont ajoutés après rendu.
 import { useEffect, useState, type RefObject } from "react";
+import { useLanguage } from "@/lib/i18n";
 
 const EVENEMENT = "ress:lien-copie";
 
@@ -9,6 +10,11 @@ const ICONE =
 
 const classeBouton =
   "ancre-lien ml-2 inline-grid size-7 translate-y-[-2px] place-items-center rounded-[6px] align-middle text-[var(--text-muted)] opacity-50 hover:text-[var(--text)] focus-visible:opacity-100 focus-visible:outline-2 focus-visible:outline-[var(--terra)] md:opacity-0 md:group-hover/titre:opacity-100";
+
+const copy = {
+  fr: { copier: (titre: string) => `Copier le lien vers « ${titre} »`, copie: "Lien copié" },
+  en: { copier: (titre: string) => `Copy link to “${titre}”`, copie: "Link copied" },
+};
 
 /** Met l'ancre dans l'URL et copie le lien ; n'annonce « Lien copié » que si la copie a marché. */
 export async function copierLien(id: string) {
@@ -24,11 +30,12 @@ export async function copierLien(id: string) {
 
 /** Bouton d'ancre pour un titre rendu par React (FAQ, Sources). */
 export function BoutonAncre({ id, titre }: { id: string; titre: string }) {
+  const t = copy[useLanguage().lang];
   return (
     <button
       type="button"
       className={classeBouton}
-      aria-label={`Copier le lien vers « ${titre} »`}
+      aria-label={t.copier(titre)}
       onClick={() => copierLien(id)}
       dangerouslySetInnerHTML={{ __html: ICONE }}
     />
@@ -36,7 +43,15 @@ export function BoutonAncre({ id, titre }: { id: string; titre: string }) {
 }
 
 /** Ajoute un bouton d'ancre à chaque H2 du corps (HTML du moteur), et affiche le message. */
-export function Ancres({ racine }: { racine: RefObject<HTMLElement | null> }) {
+export function Ancres({
+  racine,
+  version,
+}: {
+  racine: RefObject<HTMLElement | null>;
+  /** Change quand le HTML du corps change (version anglaise chargée) : les boutons sont reposés. */
+  version?: string;
+}) {
+  const t = copy[useLanguage().lang];
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -47,7 +62,7 @@ export function Ancres({ racine }: { racine: RefObject<HTMLElement | null> }) {
       const b = document.createElement("button");
       b.type = "button";
       b.className = classeBouton;
-      b.setAttribute("aria-label", `Copier le lien vers « ${h2.textContent?.trim()} »`);
+      b.setAttribute("aria-label", t.copier(h2.textContent?.trim() ?? ""));
       b.innerHTML = ICONE;
       b.addEventListener("click", () => copierLien(h2.id));
       h2.classList.add("group/titre");
@@ -55,7 +70,7 @@ export function Ancres({ racine }: { racine: RefObject<HTMLElement | null> }) {
       ajoutes.push(b);
     });
     return () => ajoutes.forEach((b) => b.remove());
-  }, [racine]);
+  }, [racine, t, version]);
 
   useEffect(() => {
     let minuterie: ReturnType<typeof setTimeout>;
@@ -77,7 +92,7 @@ export function Ancres({ racine }: { racine: RefObject<HTMLElement | null> }) {
       aria-live="polite"
       className={`toast pointer-events-none fixed bottom-[calc(env(safe-area-inset-bottom)+72px)] left-1/2 z-[70] -translate-x-1/2 rounded-full bg-[#1c1108] px-4 py-2 text-[14px] text-[#f6efe4] ${visible ? "opacity-100" : "opacity-0"}`}
     >
-      {visible ? "Lien copié" : ""}
+      {visible ? t.copie : ""}
     </div>
   );
 }

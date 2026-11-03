@@ -1,26 +1,48 @@
 import { useState } from "react";
 import { calcomDemoUrl } from "@/lib/calcom";
+import { useLanguage } from "@/lib/i18n";
 
 // Une corvée par métier : chacun s'y reconnaît, puis la voit barrée (soulagement anticipé).
-const CORVEES = [
-  "saisir les prises en charge",
-  "relancer les mutuelles",
-  "pointer les virements",
-  "recopier les ordonnances",
-  "tenir l'agenda à jour",
-];
+const copy = {
+  fr: {
+    avant: "Avec les agents Granit, vous arrêtez de",
+    corvees: [
+      "saisir les prises en charge",
+      "relancer les mutuelles",
+      "pointer les virements",
+      "recopier les ordonnances",
+      "tenir l'agenda à jour",
+    ],
+    bouton: "Je veux voir ça",
+    rassure: "Démo personnalisée · sans engagement",
+  },
+  en: {
+    avant: "With Granit agents, you stop",
+    corvees: [
+      "entering coverage requests",
+      "following up with insurers",
+      "reconciling bank transfers",
+      "retyping prescriptions",
+      "keeping the schedule up to date",
+    ],
+    bouton: "Show me",
+    rassure: "Personalized demo · no commitment",
+  },
+};
 
 /** Encart démo final du hub, des pages catégorie et métier : une phrase, un bouton. */
 export function BandeDemo() {
   // La corvée suivante arrive à la fin de l'animation CSS : trait et texte restent synchrones,
   // et sans animation (prefers-reduced-motion) la première reste affichée, barrée.
   const [i, setI] = useState(0);
+  const t = copy[useLanguage().lang];
+  const CORVEES = t.corvees;
 
   return (
     <section className="mx-auto mb-20 mt-14 max-w-[1280px] px-4 md:px-6">
       <div className="bande-demo relative overflow-hidden rounded-[22px] bg-[#1c1108] px-6 py-12 text-center text-[#f6efe4] md:py-16">
         <p className="font-mono text-[12px] uppercase tracking-[0.14em] text-[#f2a48f]">
-          Avec les agents Granit, vous arrêtez de
+          {t.avant}
         </p>
         <h2 className="mt-4 font-serif text-[clamp(30px,4.4vw,54px)] font-normal leading-[1.1]">
           <span className="sr-only">{CORVEES.join(", ")}.</span>
@@ -43,9 +65,9 @@ export function BandeDemo() {
             rel="noopener"
             className="btn-primary btn-demo text-[16px]"
           >
-            Je veux voir ça <span className="arrow">→</span>
+            {t.bouton} <span className="arrow">→</span>
           </a>
-          <span className="text-[13px] text-[#a99d8c]">Démo personnalisée · sans engagement</span>
+          <span className="text-[13px] text-[#a99d8c]">{t.rassure}</span>
         </div>
       </div>
     </section>

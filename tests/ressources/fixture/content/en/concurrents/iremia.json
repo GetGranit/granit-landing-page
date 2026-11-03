@@ -1,0 +1,11 @@
+{
+  "slug": "iremia",
+  "nom": "Iremia",
+  "modele": "agents-ia",
+  "axes": {
+    "pec": { "valeur": "yes", "detail": "Coverage requests entered by their experts", "source": "a" },
+    "quiFait": { "valeur": "A dedicated third-party payment expert", "source": "a" }
+  },
+  "meilleurSi": ["cash flow is the main issue"],
+  "sources": { "a": { "label": "iremia-sante.fr · Home", "url": "https://piege.invalid" } }
+}

@@ -15,56 +15,104 @@
       "court": "Optique",
       "description": "Prises en charge, portails des plateformes, rejets et paiements : le tiers payant au comptoir d'un magasin d'optique.",
       "teinte": "plateformes",
-      "agent": "L'agent dépose vos prises en charge"
+      "agent": "L'agent dépose vos prises en charge",
+      "en": {
+        "nom": "Optical",
+        "court": "Optical",
+        "description": "Coverage approvals, platform portals, rejections and payments: third-party payment at the optical store counter.",
+        "agent": "The agent submits your coverage requests"
+      }
     },
     "dentaire": {
       "nom": "Dentaire",
       "court": "Dentaire",
       "description": "Paniers 100 % Santé, devis et traitements d'orthodontie : le tiers payant au cabinet dentaire.",
       "teinte": "conformite",
-      "agent": "Parlons de votre tiers payant"
+      "agent": "Parlons de votre tiers payant",
+      "en": {
+        "nom": "Dental",
+        "court": "Dental",
+        "description": "100% Santé baskets, quotes and orthodontic treatment: third-party payment at the dental practice.",
+        "agent": "Let's talk about your third-party payment"
+      }
     },
     "cliniques": {
       "nom": "Cliniques",
       "court": "Cliniques",
       "description": "Ordonnancement des flux administratifs autour du séjour : le back-office d'une clinique ou d'un hôpital privé.",
       "teinte": "gerer-son-tiers-payant",
-      "agent": "Parlons de votre tiers payant"
+      "agent": "Parlons de votre tiers payant",
+      "en": {
+        "nom": "Clinics",
+        "court": "Clinics",
+        "description": "Organizing the administrative flows around a hospital stay: the back office of a clinic or private hospital.",
+        "agent": "Let's talk about your third-party payment"
+      }
     },
     "ehpad": {
       "nom": "EHPAD",
       "court": "EHPAD",
       "description": "Facturation des résidents, dépendance et hébergement : le back-office d'un EHPAD.",
       "teinte": "conformite",
-      "agent": "Parlons de votre tiers payant"
+      "agent": "Parlons de votre tiers payant",
+      "en": {
+        "nom": "Nursing homes",
+        "court": "Nursing homes",
+        "description": "Resident billing, dependency and accommodation: the back office of a nursing home (EHPAD).",
+        "agent": "Let's talk about your third-party payment"
+      }
     },
     "centres": {
       "nom": "Centres de santé",
       "court": "Centres de santé",
       "description": "Facturation, recouvrement et outils d'un centre de santé ou d'un groupe multi-sites.",
       "teinte": "rejets",
-      "agent": "L'agent tient l'agenda et le check-out à jour"
+      "agent": "L'agent tient l'agenda et le check-out à jour",
+      "en": {
+        "nom": "Health centers",
+        "court": "Health centers",
+        "description": "Billing, collections and tools for a health center or a multi-site group.",
+        "agent": "The agent keeps the schedule and check-out up to date"
+      }
     },
     "laboratoires": {
       "nom": "Laboratoires",
       "court": "Laboratoires",
       "description": "Tiers payant, rejets et paiements : la facturation d'un laboratoire.",
       "teinte": "glossaire",
-      "agent": "Parlons de votre tiers payant"
+      "agent": "Parlons de votre tiers payant",
+      "en": {
+        "nom": "Clinical labs",
+        "court": "Clinical labs",
+        "description": "Third-party payment, rejections and payments: billing for a clinical lab.",
+        "agent": "Let's talk about your third-party payment"
+      }
     },
     "audio": {
       "nom": "Audition",
       "court": "Audition",
       "description": "Renouvellements, classes d'appareils et période d'essai : facturer les appareils auditifs en tiers payant.",
       "teinte": "paiements",
-      "agent": "L'agent dépose vos prises en charge audio"
+      "agent": "L'agent dépose vos prises en charge audio",
+      "en": {
+        "nom": "Hearing care",
+        "court": "Hearing care",
+        "description": "Renewals, device classes and trial period: billing hearing aids through third-party payment.",
+        "agent": "The agent submits your hearing care coverage requests"
+      }
     },
     "pharmacie": {
       "nom": "Pharmacie",
       "court": "Pharmacie",
       "description": "Créances de tiers payant, rejets et réassort : le back-office d'une officine.",
       "teinte": "guide-tiers-payant",
-      "agent": "L'agent lit les ordonnances"
+      "agent": "L'agent lit les ordonnances",
+      "en": {
+        "nom": "Pharmacy",
+        "court": "Pharmacy",
+        "description": "Third-party payment receivables, rejections and restocking: the back office of a pharmacy.",
+        "agent": "The agent reads prescriptions"
+      }
     }
   },
   "surcharges": {

@@ -1,6 +1,7 @@
 // Page d'un ancien article (src/lib/articles.ts) : le rendu d'avant le guide, avec deux ajouts :
 // le fil d'Ariane passe par le métier de l'article,
 // et « Continuer la lecture » montre d'abord des articles de la même catégorie.
+// En anglais : la traduction de content/en/anciens si elle existe, sinon le texte français.
 import { Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { useLanguage } from "@/lib/i18n";
@@ -8,32 +9,39 @@ import { articles, getArticle } from "@/lib/articles";
 import { articleLd } from "@/lib/seo";
 import {
   categorieDeAncien,
+  ficheLang,
   metierDe,
   tempsLecture,
+  textesAncien,
   titreCourt,
   toutCategorie,
 } from "@/lib/ressources/contenu";
+import { useAncienEn } from "@/lib/ressources/langue";
 import { breadcrumbLd } from "@/lib/ressources/seo";
-import { Fil, itemMetier } from "./Fil";
+import { Fil, itemMetier, useItemRessources } from "./Fil";
 import { NotFoundRessource } from "./Introuvable";
 
 const labels = {
-  fr: { back: "← Toutes les ressources", related: "Continuer la lecture" },
-  en: { back: "← All resources", related: "Continue reading" },
+  fr: { related: "Continuer la lecture" },
+  en: { related: "Continue reading" },
 };
 
 type Carte = { slug: string; label: string; time: string; title: string };
 
 export function PageAncien({ slug }: { slug: string }) {
   const { lang } = useLanguage();
-  const article = getArticle(lang, slug) ?? getArticle(lang === "fr" ? "en" : "fr", slug);
+  const fr = getArticle("fr", slug);
+  const en = useAncienEn(slug);
+  const ressources = useItemRessources();
   const t = labels[lang];
-  if (!article) return <NotFoundRessource />;
+  if (!fr) return <NotFoundRessource />;
+  const article = en ?? fr;
 
-  const cat = lang === "fr" ? categorieDeAncien(slug) : undefined;
+  const cat = categorieDeAncien(slug, lang);
   const memeTheme: Carte[] = cat
     ? toutCategorie(cat.slug)
         .filter((f) => f.slug !== slug)
+        .map((f) => ficheLang(f, lang))
         .map((f) => ({
           slug: f.slug,
           label: cat.court,
@@ -41,24 +49,24 @@ export function PageAncien({ slug }: { slug: string }) {
           title: f.title,
         }))
     : [];
-  const autres: Carte[] = articles[lang]
+  const autres: Carte[] = articles.fr
     .filter((a) => a.slug !== slug && !memeTheme.some((m) => m.slug === a.slug))
-    .map((a) => ({ slug: a.slug, label: a.category, time: a.time, title: a.title }));
+    .map((a) => {
+      const x = textesAncien(a, lang);
+      return { slug: a.slug, label: x.category, time: x.time, title: x.title };
+    });
   const related = [...memeTheme, ...autres].slice(0, 3);
 
-  const ld = articleLd({ title: article.title, description: article.desc, slug });
+  // Données structurées en français, comme le rendu serveur.
+  const ld = articleLd({ title: fr.title, description: fr.desc, slug });
   // Fil d'Ariane par métier ; un article valable pour tous les métiers s'arrête à Ressources.
-  const metier = lang === "fr" ? metierDe(slug) : undefined;
-  const breadcrumb =
-    lang === "fr"
-      ? breadcrumbLd([
-          ["Ressources", "/ressources"],
-          ...(metier
-            ? [[metier.nom, `/ressources/metier/${metier.slug}`] as [string, string]]
-            : []),
-          [article.title, `/ressources/${slug}`],
-        ])
-      : ld.breadcrumb;
+  const metierFr = metierDe(slug);
+  const metier = metierDe(slug, lang);
+  const breadcrumb = breadcrumbLd([
+    ["Ressources", "/ressources"],
+    ...(metierFr ? [[metierFr.nom, `/ressources/metier/${metierFr.slug}`] as [string, string]] : []),
+    [fr.title, `/ressources/${slug}`],
+  ]);
 
   return (
     <SiteLayout>
@@ -72,23 +80,13 @@ export function PageAncien({ slug }: { slug: string }) {
       />
       <article className="mx-auto max-w-[760px] px-6 pt-24 pb-16">
         <div>
-          {lang === "fr" ? (
-            <Fil
-              items={[
-                { nom: "Ressources", to: "/ressources" },
-                ...(metier ? [itemMetier(metier)] : []),
-                { nom: titreCourt(article.title) },
-              ]}
-            />
-          ) : (
-            <Link
-              to="/ressources"
-              className="text-[13px]"
-              style={{ color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}
-            >
-              {t.back}
-            </Link>
-          )}
+          <Fil
+            items={[
+              ressources,
+              ...(metier ? [itemMetier(metier)] : []),
+              { nom: titreCourt(article.title) },
+            ]}
+          />
           <div className="eyebrow mt-8">
             {article.category} · {article.time}
           </div>
