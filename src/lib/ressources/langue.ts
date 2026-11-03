@@ -3,7 +3,7 @@
 // traduit arrive par un import paresseux, préchargé par le loader de la route quand on navigue
 // déjà en anglais. Sans traduction (ou si le chargement échoue), le français reste affiché.
 import { useEffect, useState } from "react";
-import { useLanguage, type Lang } from "@/lib/i18n";
+import { lireLangue, useLanguage, type Lang } from "@/lib/i18n";
 import { chargeurAncienEn, chargeurEn } from "./contenu";
 
 type Chargeur<T> = () => Promise<{ default: T }>;
@@ -24,15 +24,9 @@ function charger<T>(cle: string, f: Chargeur<T>): Promise<void> {
   return p;
 }
 
-/** Langue choisie avec le bouton FR/EN, lisible hors React ; toujours "fr" côté serveur. */
+/** Langue choisie (bouton FR/EN ou `?lang=`), lisible hors React ; toujours "fr" côté serveur. */
 export function langueEnregistree(): Lang {
-  try {
-    return typeof window !== "undefined" && window.localStorage.getItem("granit-lang") === "en"
-      ? "en"
-      : "fr";
-  } catch {
-    return "fr";
-  }
+  return lireLangue() ?? "fr";
 }
 
 const cleArticle = (slug: string) => `article:${slug}`;

@@ -10,20 +10,47 @@ type LanguageContextValue = {
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
+const CLE = "granit-lang";
+const estLang = (v: unknown): v is Lang => v === "fr" || v === "en";
+
+/**
+ * Langue de l'écran, lisible hors React ; null côté serveur ou sans choix.
+ * `?lang=en` (ou `fr`) dans l'URL l'emporte et devient la langue gardée : c'est le lien à
+ * partager pour ouvrir le site directement en anglais (annonce, posts, mails).
+ */
+export function lireLangue(): Lang | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const demandee = new URLSearchParams(window.location.search).get("lang");
+    if (estLang(demandee)) {
+      window.localStorage.setItem(CLE, demandee);
+      return demandee;
+    }
+    const gardee = window.localStorage.getItem(CLE);
+    return estLang(gardee) ? gardee : null;
+  } catch {
+    return null;
+  }
+}
+
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [lang, setLangState] = useState<Lang>("fr");
 
   useEffect(() => {
-    const stored = window.localStorage.getItem("granit-lang");
-    if (stored === "fr" || stored === "en") {
-      setLangState(stored);
-      document.documentElement.lang = stored;
+    const choisie = lireLangue();
+    if (choisie) {
+      setLangState(choisie);
+      document.documentElement.lang = choisie;
     }
   }, []);
 
   const setLang = (nextLang: Lang) => {
     setLangState(nextLang);
-    window.localStorage.setItem("granit-lang", nextLang);
+    try {
+      window.localStorage.setItem(CLE, nextLang);
+    } catch {
+      // navigation privée ou stockage bloqué : la langue tient le temps de la page
+    }
     document.documentElement.lang = nextLang;
   };
 
