@@ -97,7 +97,7 @@ export function PageAncien({ slug }: { slug: string }) {
             style={{
               fontSize: "clamp(36px,4.6vw,64px)",
               lineHeight: 1.1,
-              fontWeight: 300,
+              fontWeight: 400,
               letterSpacing: "-0.02em",
             }}
           >

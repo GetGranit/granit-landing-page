@@ -68,7 +68,7 @@ export function MurPlateformes({ fiches }: { fiches: Fiche[] }) {
       <div className="border-t border-[var(--border)] pt-5">
         <div className="max-w-[56ch]">
           <p className={`${mono} text-[var(--text-muted)]`}>Annuaire du tiers payant</p>
-          <h2 className="mt-2 font-serif text-[26px] font-light leading-tight md:text-[34px]">
+          <h2 className="mt-2 font-serif text-[26px] font-normal leading-tight md:text-[34px]">
             Les plateformes de tiers payant
           </h2>
           <p className="mt-2 text-[15px] leading-relaxed text-[var(--text-soft)]">

@@ -91,7 +91,7 @@ function fenetre(p) {
 function page({ titre, suite, p }) {
   const logoGranit = pathToFileURL(join(racine, "src/assets/logo.svg")).href;
   return `<!doctype html><html lang="fr"><head><meta charset="utf-8">
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@500;600&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@500;600&family=Source+Serif+4:opsz,wght@8..60,400&display=swap" rel="stylesheet">
 <style>
   ${cssJetons()}
   * { box-sizing: border-box; margin: 0; }
@@ -107,7 +107,7 @@ function page({ titre, suite, p }) {
   .droite .ress-fenetre { --s: 1.5cqw; width: 84%; top: 15%; }
   .texte { position: absolute; left: 72px; top: 0; bottom: 0; width: 470px; display: flex; flex-direction: column; justify-content: center; }
   .eyebrow { font-family: var(--font-sans); font-size: 18px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--texte-discret); }
-  h1 { margin-top: 22px; font-family: var(--font-serif); font-variation-settings: "opsz" 20; font-weight: 300; font-size: ${titre.length > 14 ? 60 : 80}px; line-height: 1.05; letter-spacing: -0.02em; }
+  h1 { margin-top: 22px; font-family: var(--font-serif); font-variation-settings: "opsz" 20; font-weight: 400; font-size: ${titre.length > 14 ? 60 : 80}px; line-height: 1.05; letter-spacing: -0.02em; }
   h1 em { display: block; margin-top: 14px; font-size: 38px; font-style: normal; line-height: 1.2; letter-spacing: -0.01em; color: var(--profond); }
   .granit { position: absolute; left: 72px; bottom: 52px; }
   .granit img { display: block; height: 34px; width: auto; }

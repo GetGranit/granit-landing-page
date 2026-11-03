@@ -596,7 +596,7 @@ export function HomeSections() {
 
             <h1
               className="mt-7 font-serif"
-              style={{ fontSize: "clamp(34px,4.4vw,60px)", lineHeight: 1.05, letterSpacing: "-0.025em", color: "var(--text)", fontWeight: 300, whiteSpace: "nowrap" }}
+              style={{ fontSize: "clamp(34px,4.4vw,60px)", lineHeight: 1.05, letterSpacing: "-0.025em", color: "var(--text)", fontWeight: 400, whiteSpace: "nowrap" }}
             >
               <motion.span
                 initial={{ opacity: 0, y: 20 }}
@@ -789,7 +789,7 @@ export function HomeSections() {
               <div className="eyebrow">
                 {t.agentsEyebrow}
               </div>
-              <h2 className="mt-5 font-serif" style={{ fontSize: "clamp(32px,3.8vw,52px)", lineHeight: 1.1, letterSpacing: "-0.02em", fontWeight: 300 }}>
+              <h2 className="mt-5 font-serif" style={{ fontSize: "clamp(32px,3.8vw,52px)", lineHeight: 1.1, letterSpacing: "-0.02em", fontWeight: 400 }}>
                 {t.agentsTitle} {t.agentsTitle2}
               </h2>
               <p className="mx-auto mt-6 max-w-xl text-[15px]" style={{ color: "var(--text-soft)" }}>
@@ -888,7 +888,7 @@ export function HomeSections() {
               <div className="eyebrow">
                 {lang === "fr" ? "Démo interactive" : "Interactive demo"}
               </div>
-              <h2 className="mt-5 font-serif" style={{ fontSize: "clamp(32px,3.8vw,52px)", lineHeight: 1.1, letterSpacing: "-0.02em", fontWeight: 300 }}>
+              <h2 className="mt-5 font-serif" style={{ fontSize: "clamp(32px,3.8vw,52px)", lineHeight: 1.1, letterSpacing: "-0.02em", fontWeight: 400 }}>
                 {lang === "fr" ? "Essayez " : "Try "}
                 <em className="accent-italic">
                   {lang === "fr" ? "la plateforme" : "the platform"}
@@ -1239,7 +1239,7 @@ export function HomeSections() {
             <Reveal>
               <div>
                 <div className="eyebrow mb-5">{t.demo.eyebrow}</div>
-                <h2 className="font-serif" style={{ fontSize: "clamp(34px,4vw,56px)", lineHeight: 1.05, letterSpacing: "-0.02em", fontWeight: 300 }}>
+                <h2 className="font-serif" style={{ fontSize: "clamp(34px,4vw,56px)", lineHeight: 1.05, letterSpacing: "-0.02em", fontWeight: 400 }}>
                   {t.demo.title}
                 </h2>
                 <p className="body-lg mt-7 max-w-md">{t.demo.intro}</p>
