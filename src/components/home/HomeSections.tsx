@@ -12,6 +12,7 @@ import { SecuriteNouvelle } from "./nouvelle/Securite";
 import { LeveeNouvelle } from "./nouvelle/Levee";
 import { CtaFinNouvelle } from "./nouvelle/CtaFin";
 import { DemandeDemo } from "./DemandeDemo";
+import { useLeveeAnnoncee } from "./nouvelle/socle";
 
 export function HomeSections() {
   const root = useRef<HTMLDivElement>(null);
@@ -19,6 +20,14 @@ export function HomeSections() {
   useEffect(() => {
     root.current?.classList.add("nh-js");
   }, []);
+  /* la levée s'insère après le montage (à partir du 5/11) et décale tout ce qui suit : une ancre arrivée
+     de l'extérieur (getgranit.ai/#levee, #cta…) est remise en place une fois la section posée */
+  const annoncee = useLeveeAnnoncee();
+  useEffect(() => {
+    if (!annoncee || !window.location.hash) return;
+    const cible = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
+    if (cible) requestAnimationFrame(() => cible.scrollIntoView());
+  }, [annoncee]);
   return (
     <>
       <div className="nh" ref={root}>
