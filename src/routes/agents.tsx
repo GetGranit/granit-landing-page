@@ -1,186 +1,160 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { Reveal } from "@/components/Reveal";
-import { useLanguage } from "@/lib/i18n";
 import { JsonLd } from "@/components/JsonLd";
-import { Faq } from "@/components/ressources/article/Fin";
+import { SelecteurMetier } from "@/components/agents/SelecteurMetier";
+import { SequenceHero, type EtapePastille } from "@/components/agents/Pastilles";
+import { METIERS, SLUGS_METIERS, estSlugMetier, type SlugMetier } from "@/components/agents/metiers";
+import photoHero from "@/assets/metiers/infirmiere.jpg";
+import { useLanguage } from "@/lib/i18n";
 import { SITE_URL, faqPageLd, organizationRef } from "@/lib/seo";
 
+/**
+ * /agents : les agents Granit par métier. Le sélecteur ouvre un métier sans recharger la page, et
+ * chaque métier a son adresse (`/agents?metier=dentaire`) pour l'accueil et les campagnes.
+ * Sans paramètre, aucun métier n'est choisi.
+ */
 export const Route = createFileRoute("/agents")({
-  head: () => ({
-    meta: [
-      { title: "Agents IA tiers payant et back-office santé - Granit" },
-      { name: "description", content: "Les agents IA Granit par verticale santé et par cas d'usage : tiers-payant, recouvrement, admissions, facturation, conformité." },
-      { property: "og:title", content: "Agents IA tiers payant et back-office santé - Granit" },
-      { property: "og:description", content: "Des agents opérationnels pour chaque verticale santé et chaque workflow administratif." },
-    ],
-  }),
+  validateSearch: (search: Record<string, unknown>): { metier?: SlugMetier } =>
+    estSlugMetier(search.metier) ? { metier: search.metier } : {},
+  head: ({ match }) => {
+    const m = match.search.metier ? METIERS.fr[match.search.metier] : undefined;
+    const title = m ? `${m.nom} : les agents Granit` : "Les agents Granit, métier par métier";
+    const description = m
+      ? `${m.preuve} Ce que font les agents Granit pour les ${m.nom.toLowerCase()}, dans vos logiciels.`
+      : content.fr.chapo;
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
+      ],
+    };
+  },
   component: AgentsPage,
 });
 
 const content = {
   fr: {
     eyebrow: "Agents",
-    title: "Un catalogue d'agents pour chaque verticale santé.",
-    intro: "Granit déploie des agents spécialisés par métier et par cas d'usage. Ils opèrent sur vos outils existants, sans migration ni intégration API.",
-    summaryLabel: "En bref :",
-    summary:
-      "Granit déploie des agents IA qui automatisent le back-office administratif des professionnels de santé : tiers payant, devis, facturation, traitement des rejets, rapprochement bancaire et recouvrement. Chaque agent est spécialisé par métier (optique, audio, dentaire, pharmacie, EHPAD, cliniques, laboratoires) et travaille sur vos outils existants, sans migration ni intégration API.",
-    filtersTitle: "Les agents par métier et par cas d'usage",
-    catalogTitle: "Le catalogue",
-    faqTitle: "Questions fréquentes",
+    titre: ["Un agent pour chaque dossier.", "Dans la langue de votre métier."],
+    chapo:
+      "Droits, prises en charge, facturation, rejets, encaissement : les agents Granit font l'administratif de votre métier, dans les logiciels que vos équipes utilisent déjà.",
+    demo: "Demander une démo",
+    trouver: "Trouver mon métier",
+    garanties: ["Conforme RGPD · HDS", "Branché sur vos portails en 48 h", "Les dossiers avancent 7 jours sur 7"],
+    exemple: "Exemple",
+    etapes: [
+      { enCours: "Vérification des droits", fait: "Droits vérifiés", detail: "Sur la plateforme de la mutuelle", place: "9% 16%" },
+      { enCours: "Saisie de la prise en charge", fait: "Prise en charge accordée", detail: "Depuis le devis du logiciel", place: "30% 44%" },
+      { enCours: "Télétransmission", fait: "Facture télétransmise", detail: "Assurance Maladie et mutuelle", place: "12% 64%" },
+      { enCours: "Pointage du virement", fait: "Virement pointé", detail: "Rapproché de sa facture", place: "26% 80%" },
+    ] satisfies EtapePastille[],
+    communEyebrow: "Dans chaque métier",
+    communTitre: ["Les mêmes garanties,", "quel que soit le métier."],
+    commun: [
+      { titre: "Dans vos logiciels", texte: "Les agents travaillent dans les logiciels que vos équipes utilisent déjà, sur vos portails, sans API à demander." },
+      { titre: "En quelques jours", texte: "Granit est branché sur vos portails en 48 h. Ensuite, les dossiers avancent 7 jours sur 7." },
+      { titre: "Chaque dossier tracé", texte: "Ce qui a été fait, quand, et pourquoi un dossier attend : tout se voit, tout se vérifie." },
+      { titre: "Un gestionnaire Granit", texte: "Il suit les cas particuliers et prévient l'équipe. Vous gardez la main." },
+    ],
+    hds: "Les données de santé sont confiées à un hébergeur certifié HDS, dans l'Union européenne. Conforme RGPD.",
+    faqTitre: "Questions fréquentes",
     faq: [
       {
-        question: "Qu'est-ce qu'un agent IA Granit ?",
+        question: "Qu'est-ce qu'un agent Granit ?",
         answer:
-          "Un agent spécialisé par métier et par cas d'usage, qui exécute une tâche administrative à votre place : demande de prise en charge, devis tiers payant, télétransmission, traitement des rejets, rapprochement bancaire ou relance des impayés.",
+          "Un agent fait une tâche administrative précise à la place de votre équipe : vérifier les droits, saisir une prise en charge, facturer, traiter un rejet, pointer un virement, relancer un impayé. Un gestionnaire Granit suit les cas particuliers et prévient l'équipe.",
       },
       {
         question: "Faut-il changer de logiciel ou demander une API ?",
         answer:
-          "Non. Les agents opèrent sur vos outils existants, sans migration ni intégration API : ils se branchent sur votre logiciel métier et sur les portails que vous utilisez déjà.",
+          "Non. Les agents travaillent dans les logiciels que vos équipes utilisent déjà et sur les portails des mutuelles, comme le ferait une personne. Granit est branché sur vos portails en 48 h.",
       },
       {
         question: "Quelles plateformes de tiers payant sont couvertes ?",
         answer:
-          "Granit travaille avec toutes les plateformes de tiers payant, par exemple Viamedis, Almerys, Santéclair, SP Santé, Itelis ou iSanté.",
+          "Granit travaille avec toutes les plateformes de tiers payant, par exemple Almerys, Viamédis, Santéclair, Kalixia ou Carte Blanche.",
       },
       {
-        question: "Pour quels métiers de santé ?",
-        answer:
-          "Optique, audioprothèse, dentaire, orthodontie, pharmacie, EHPAD, cliniques, laboratoires de biologie et laboratoires pharmaceutiques.",
+        question: "Pour quels métiers ?",
+        answer: `${SLUGS_METIERS.map((s) => METIERS.fr[s].nom).join(", ")}.`,
       },
       {
         question: "Peut-on contrôler ce que font les agents ?",
         answer:
-          "Oui. Chaque action d'agent est journalisée, horodatée et exportable, et chaque décision reste révisable par un humain. Granit est certifié HDS.",
+          "Oui. Chaque dossier est tracé : ce qui a été fait, quand, et pourquoi un dossier attend. Les données de santé sont confiées à un hébergeur certifié HDS, dans l'Union européenne, conformément au RGPD.",
       },
       {
-        question: "Combien coûte un agent ?",
-        answer:
-          "Granit se paie par centre : à partir de 199 € HT par mois pour un centre, plus un coût à l'usage par agent selon les workflows activés et le volume traité. Le détail est sur la page Tarifs.",
+        question: "Combien coûte Granit ?",
+        answer: "Granit ne facture que les dossiers traités avec succès. Le tarif standard est détaillé sur la page Tarifs.",
+        tarifs: "Voir les tarifs",
       },
     ],
-    verticalLabel: "Verticales couvertes",
-    useCaseLabel: "Cas d'usage",
-    cta: "Demander une démo gratuite",
-    verticals: ["Dentaire", "Optique", "Audio", "Clinique", "EHPAD", "Pharmacie", "Labo pharma", "Labo bio", "Orthodontie"],
-    useCases: ["Tiers-payant", "Vérification", "Devis", "Recouvrement", "Admissions", "Facturation", "Conformité", "Suivi patient", "Stock & commandes", "Market access"],
-    agents: [
-      { vertical: "Dentaire", useCase: "Tiers-payant", name: "Gestion complète du tiers-payant dentaire", desc: "Vérification AMO/AMC avant chaque acte, télétransmission SESAM-Vitale, suivi NOEMIE, détection et correction des rejets.", stat: "99.1% first-pass" },
-      { vertical: "Dentaire", useCase: "Recouvrement", name: "Relance automatique des impayés dentaires", desc: "Détection des factures à J+30, J+60 et J+90, relances email/SMS personnalisées et escalade vers le gestionnaire.", stat: "÷3 délai recouv." },
-      { vertical: "Optique", useCase: "Devis", name: "Devis tiers-payant optique en 5 secondes", desc: "Lecture carte mutuelle, interrogation AMC, calcul du reste à charge 100% Santé, Classe A ou Classe B, puis envoi patient.", stat: "< 5s par devis" },
-      { vertical: "Optique", useCase: "Tiers-payant", name: "Rapprochement bancaire des virements optiques", desc: "Matching automatique des virements AMO/AMC avec les factures, détection des écarts et virements non affectés.", stat: "-85% temps" },
-      { vertical: "Optique", useCase: "Conformité", name: "Vérification panier 100% Santé", desc: "Contrôle monture, verres LPP et devis normalisé avant vente, avec alerte en cas de non-conformité.", stat: "100% conformité" },
-      { vertical: "Audio", useCase: "Admissions", name: "Montage automatique des dossiers audioprothèse", desc: "Récupération prescription ORL, audiogramme, devis normalisé LPP, assemblage et envoi CPAM + mutuelle.", stat: "-75% montage" },
-      { vertical: "Audio", useCase: "Suivi patient", name: "Suivi complet du parcours audioprothétique", desc: "Rappels période d'essai, réglages M+1/M+3/M+6, renouvellement à 4 ans et messages personnalisés.", stat: "+40% rétention" },
-      { vertical: "Clinique", useCase: "Admissions", name: "Pré-admission digitalisée avec droits vérifiés", desc: "Collecte des pièces, vérification AMO/AMC en temps réel et pré-remplissage du dossier administratif avant admission.", stat: "-60% accueil" },
-      { vertical: "Clinique", useCase: "Recouvrement", name: "Recouvrement des restes à charge hospitaliers", desc: "Identification des restes à charge, relances graduées, priorisation des créances et suivi par service.", stat: "-45% créances" },
-      { vertical: "EHPAD", useCase: "Admissions", name: "Constitution automatique des dossiers APA", desc: "Collecte des pièces, pré-remplissage CERFA, envoi au Conseil Départemental et relance si délai dépassé.", stat: "-80% constitution" },
-      { vertical: "EHPAD", useCase: "Facturation", name: "Facturation hébergement, dépendance et soins", desc: "Calcul des tarifs selon GIR et décisions APA, facturation différenciée aide sociale et reste à charge famille.", stat: "0 erreur facture" },
-      { vertical: "Pharmacie", useCase: "Tiers-payant", name: "Traitement automatique des rejets SESAM-Vitale", desc: "Analyse des causes de rejet, correction des anomalies et re-soumission sans intervention humaine dans la majorité des cas.", stat: "-90% rejets" },
-      { vertical: "Pharmacie", useCase: "Stock & commandes", name: "Alerte ruptures de stock et commandes dépannage", desc: "Surveillance des niveaux de stock, alerte sous seuil critique et commande dépannage chez le grossiste.", stat: "0 rupture" },
-      { vertical: "Labo pharma", useCase: "Conformité", name: "Traitement des signalements d'effets indésirables", desc: "Collecte multi-sources, tri par gravité, pré-qualification MedDRA et génération des formulaires CIOMS I.", stat: "-65% traitement" },
-      { vertical: "Labo pharma", useCase: "Market access", name: "Analyse comparative HAS/CEPS", desc: "Analyse des avis de transparence, comparaison ASMR concurrents et aide à la constitution du dossier médico-économique.", stat: "+25% efficacité" },
-      { vertical: "Labo bio", useCase: "Facturation", name: "Cotation NABM automatique", desc: "Application des codes NABM, gestion des règles de cumul, plafonds quotidiens et dérogations.", stat: "0 erreur cotation" },
-      { vertical: "Labo bio", useCase: "Conformité", name: "Non-conformités pré-analytiques", desc: "Détection tube incorrect, volume insuffisant ou délai dépassé, notification prescripteur et patient, traçabilité COFRAC.", stat: "-50% rappels" },
-      { vertical: "Orthodontie", useCase: "Devis", name: "Devis orthodontique multi-semestres", desc: "Génération CCAM avec reste à charge par semestre, plafonds de prise en charge et envoi patient + mutuelle.", stat: "-60% temps devis" },
-    ],
+    finTitre: ["Voyez les agents", "sur vos propres dossiers."],
+    finTexte: "En visio, sur vos cas et dans vos logiciels. Vous repartez avec ce que Granit prendrait en charge chez vous.",
   },
   en: {
     eyebrow: "Agents",
-    title: "A catalog of agents for every healthcare vertical.",
-    intro: "Granit deploys specialized agents by business vertical and use case. They operate on your existing tools, with no migration or API integration.",
-    summaryLabel: "In short:",
-    summary:
-      "Granit deploys AI agents that automate the administrative back office of healthcare professionals: third-party payment, quotes, invoicing, rejection handling, bank reconciliation and collections. Each agent is specialized by trade (optical, hearing care, dental, pharmacy, care homes, clinics, labs) and works on your existing tools, with no migration or API integration.",
-    filtersTitle: "Agents by trade and use case",
-    catalogTitle: "The catalog",
-    faqTitle: "Frequently asked questions",
+    titre: ["An agent for every file.", "In the language of your trade."],
+    chapo:
+      "Eligibility, coverage, billing, rejections, payments: Granit agents run the administrative work of your trade, in the software your teams already use.",
+    demo: "Book a demo",
+    trouver: "Find my trade",
+    garanties: ["GDPR · HDS compliant", "Connected to your portals in 48 h", "Files move forward 7 days a week"],
+    exemple: "Example",
+    etapes: [
+      { enCours: "Checking eligibility", fait: "Eligibility checked", detail: "On the insurer's platform", place: "9% 16%" },
+      { enCours: "Filing the coverage request", fait: "Coverage approved", detail: "From the quote in your software", place: "30% 44%" },
+      { enCours: "Transmitting", fait: "Invoice transmitted", detail: "Public scheme and insurer", place: "12% 64%" },
+      { enCours: "Matching the transfer", fait: "Transfer matched", detail: "Matched to its invoice", place: "26% 80%" },
+    ] satisfies EtapePastille[],
+    communEyebrow: "In every trade",
+    communTitre: ["The same guarantees,", "whatever your trade."],
+    commun: [
+      { titre: "In your software", texte: "Agents work in the software your teams already use, on your portals, with no API to request." },
+      { titre: "In a few days", texte: "Granit is connected to your portals in 48 h. Then files move forward 7 days a week." },
+      { titre: "Every file traced", texte: "What was done, when, and why a file is waiting: everything is visible and verifiable." },
+      { titre: "A Granit case manager", texte: "Follows special cases and alerts your team. You stay in control." },
+    ],
+    hds: "Health data is entrusted to an HDS-certified host, in the European Union. GDPR compliant.",
+    faqTitre: "Frequently asked questions",
     faq: [
-      {
-        question: "What is a Granit AI agent?",
-        answer:
-          "An agent specialized by trade and use case that runs an administrative task for you: coverage requests, third-party quotes, claims transmission, rejection handling, bank reconciliation or unpaid follow-ups.",
-      },
-      {
-        question: "Do we need to change software or request an API?",
-        answer:
-          "No. Agents operate on your existing tools, with no migration or API integration: they plug into your practice software and the portals you already use.",
-      },
-      {
-        question: "Which third-party payment platforms are covered?",
-        answer:
-          "Granit works with every third-party payment platform, for example Viamedis, Almerys, Santéclair, SP Santé, Itelis or iSanté.",
-      },
-      {
-        question: "Which healthcare trades?",
-        answer:
-          "Optical, hearing care, dental, orthodontics, pharmacy, care homes, clinics, biology labs and pharma labs.",
-      },
-      {
-        question: "Can we control what the agents do?",
-        answer:
-          "Yes. Every agent action is logged, timestamped and exportable, and every decision can be reviewed by a human. Granit is HDS certified.",
-      },
-      {
-        question: "How much does an agent cost?",
-        answer:
-          "Granit is billed per center: from €199 excl. VAT per month for one center, plus a usage fee per agent based on enabled workflows and processed volume. See the Pricing page for details.",
-      },
+      { question: "What is a Granit agent?", answer: "An agent runs one precise administrative task for your team: checking eligibility, filing coverage, billing, handling a rejection, matching a transfer, following up on an unpaid invoice. A Granit case manager follows special cases and alerts the team." },
+      { question: "Do we need to change software or request an API?", answer: "No. Agents work in the software your teams already use and on insurer portals, as a person would. Granit is connected to your portals in 48 h." },
+      { question: "Which third-party payment platforms are covered?", answer: "Granit works with every third-party payment platform, for example Almerys, Viamédis, Santéclair, Kalixia or Carte Blanche." },
+      { question: "Which trades?", answer: `${SLUGS_METIERS.map((s) => METIERS.en[s].nom).join(", ")}.` },
+      { question: "Can we control what the agents do?", answer: "Yes. Every file is traced: what was done, when, and why a file is waiting. Health data is entrusted to an HDS-certified host in the European Union, in line with GDPR." },
+      { question: "How much does Granit cost?", answer: "Granit only bills files processed successfully. The standard pricing is detailed on the Pricing page.", tarifs: "See pricing" },
     ],
-    verticalLabel: "Covered verticals",
-    useCaseLabel: "Use cases",
-    cta: "Book a free demo",
-    verticals: ["Dental", "Optical", "Hearing care", "Clinic", "Care homes", "Pharmacy", "Pharma lab", "Bio lab", "Orthodontics"],
-    useCases: ["Third-party billing", "Eligibility", "Quotes", "Collections", "Admissions", "Invoicing", "Compliance", "Patient follow-up", "Stock & orders", "Market access"],
-    agents: [
-      { vertical: "Dental", useCase: "Third-party billing", name: "Complete dental third-party billing", desc: "AMO/AMC eligibility checks, SESAM-Vitale transmission, NOEMIE monitoring, rejection detection and correction.", stat: "99.1% first-pass" },
-      { vertical: "Dental", useCase: "Collections", name: "Automatic dental unpaid follow-ups", desc: "Detects invoices at D+30, D+60 and D+90, sends email/SMS reminders and escalates unresolved cases.", stat: "÷3 collection time" },
-      { vertical: "Optical", useCase: "Quotes", name: "Optical third-party quote in 5 seconds", desc: "Reads insurance card, checks coverage, calculates remaining balance and sends the quote to the patient.", stat: "< 5s per quote" },
-      { vertical: "Optical", useCase: "Third-party billing", name: "Automated optical bank reconciliation", desc: "Matches public/private payer transfers with invoices, detects gaps and flags unassigned payments.", stat: "-85% time" },
-      { vertical: "Optical", useCase: "Compliance", name: "100% Santé basket checks", desc: "Checks frame, LPP lenses and normalized quote before sale, with alerts on non-compliance.", stat: "100% compliant" },
-      { vertical: "Hearing care", useCase: "Admissions", name: "Automatic hearing-aid file assembly", desc: "Collects ENT prescription, audiogram and normalized LPP quote, then sends the complete file to payers.", stat: "-75% assembly" },
-      { vertical: "Hearing care", useCase: "Patient follow-up", name: "Complete hearing-care pathway follow-up", desc: "Trial period reminders, fitting visits, four-year renewal and personalized patient messages.", stat: "+40% retention" },
-      { vertical: "Clinic", useCase: "Admissions", name: "Digital pre-admission with eligibility checks", desc: "Collects documents, verifies coverage in real time and pre-fills the administrative file before admission.", stat: "-60% intake" },
-      { vertical: "Clinic", useCase: "Collections", name: "Hospital remaining-balance collections", desc: "Identifies patient balances, runs graduated reminders, prioritizes receivables and tracks by department.", stat: "-45% receivables" },
-      { vertical: "Care homes", useCase: "Admissions", name: "Automatic APA and social-aid files", desc: "Collects documents, pre-fills forms, sends them to local authorities and follows up on delays.", stat: "-80% file prep" },
-      { vertical: "Care homes", useCase: "Invoicing", name: "Accommodation, dependency and care invoicing", desc: "Calculates fees by GIR and APA decision, then separates social aid from family remaining balance.", stat: "0 invoice error" },
-      { vertical: "Pharmacy", useCase: "Third-party billing", name: "Automatic SESAM-Vitale rejection handling", desc: "Analyzes rejection causes, corrects anomalies and resubmits most cases without human intervention.", stat: "-90% rejections" },
-      { vertical: "Pharmacy", useCase: "Stock & orders", name: "Stock shortage alerts and emergency orders", desc: "Monitors stock levels, alerts under critical thresholds and prepares emergency wholesaler orders.", stat: "0 shortage" },
-      { vertical: "Pharma lab", useCase: "Compliance", name: "Adverse event signal processing", desc: "Collects multi-source signals, triages by severity, pre-qualifies MedDRA and generates CIOMS I forms.", stat: "-65% processing" },
-      { vertical: "Pharma lab", useCase: "Market access", name: "HAS/CEPS comparative analysis", desc: "Analyzes transparency opinions, compares competitor ASMR results and supports medico-economic dossiers.", stat: "+25% efficiency" },
-      { vertical: "Bio lab", useCase: "Invoicing", name: "Automatic NABM coding", desc: "Applies NABM codes, manages accumulation rules, daily caps and derogations.", stat: "0 coding error" },
-      { vertical: "Bio lab", useCase: "Compliance", name: "Pre-analytical non-compliance detection", desc: "Flags wrong tubes, insufficient volume or late transport, then notifies prescriber and patient with audit traceability.", stat: "-50% recalls" },
-      { vertical: "Orthodontics", useCase: "Quotes", name: "Multi-semester orthodontic quotes", desc: "Generates CCAM-compliant quotes with remaining balance by semester, reimbursement caps and patient + payer sending.", stat: "-60% quote time" },
-    ],
+    finTitre: ["See the agents", "on your own files."],
+    finTexte: "On a video call, on your cases and in your software. You leave knowing what Granit would take over for you.",
   },
 };
 
-/** Service + catalogue des agents de la page, + FAQPage. */
+/** Service + agents par métier, + FAQPage. */
 const agentsLd = [
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Agents IA Granit pour le back-office santé",
+    name: "Agents Granit pour l'administratif des professionnels de santé",
     url: `${SITE_URL}/agents`,
-    serviceType: "Automatisation du back-office administratif de santé par agents IA",
-    description: content.fr.summary,
+    serviceType: "Back-office administratif de santé opéré par des agents IA",
+    description: content.fr.chapo,
     provider: organizationRef,
     areaServed: { "@type": "Country", name: "France" },
-    audience: { "@type": "Audience", audienceType: content.fr.verticals.join(", ") },
+    audience: { "@type": "Audience", audienceType: SLUGS_METIERS.map((s) => METIERS.fr[s].nom).join(", ") },
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "Catalogue des agents Granit",
-      itemListElement: content.fr.agents.map((a) => ({
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: a.name,
-          description: a.desc,
-          category: `${a.vertical} · ${a.useCase}`,
-        },
-      })),
+      name: "Les agents Granit par métier",
+      itemListElement: SLUGS_METIERS.flatMap((s) =>
+        METIERS.fr[s].agents.map((a) => ({
+          "@type": "Offer",
+          url: `${SITE_URL}/agents?metier=${s}`,
+          itemOffered: { "@type": "Service", name: a.titre, description: a.texte, category: `${METIERS.fr[s].nom} · ${a.tache}` },
+        })),
+      ),
     },
   },
   faqPageLd(content.fr.faq),
@@ -189,70 +163,142 @@ const agentsLd = [
 function AgentsPage() {
   const { lang } = useLanguage();
   const t = content[lang];
+  const { metier } = Route.useSearch();
 
   return (
     <SiteLayout>
       <JsonLd data={agentsLd} />
-      <section className="mx-auto max-w-[1280px] px-6 pt-24 pb-12">
-        <Reveal>
-          <div className="eyebrow mb-5">{t.eyebrow}</div>
-          <h1 className="h1-hero max-w-4xl" style={{ fontSize: "clamp(38px,4.6vw,68px)" }}>{t.title}</h1>
-          <p className="body-lg mt-8 max-w-2xl">{t.intro}</p>
-          <p
-            className="mt-6 max-w-2xl text-[14px] leading-[1.7]"
-            style={{ color: "var(--text-soft)" }}
-          >
-            <strong style={{ color: "var(--text)", fontWeight: 600 }}>{t.summaryLabel}</strong>{" "}
-            {t.summary}
-          </p>
-        </Reveal>
+
+      {/* Hero : la photo à droite (en haut sur mobile), un voile neutre côté texte, les pastilles d'agent. */}
+      <section className="px-3 pt-2 sm:px-6">
+        <div className="section-sombre relative isolate mx-auto max-w-[1360px] overflow-hidden rounded-[24px] md:min-h-[620px]">
+          <div className="relative h-[400px] md:absolute md:inset-y-0 md:right-0 md:h-auto md:w-[54%]">
+            <img src={photoHero} alt="" width={520} height={780} className="absolute inset-0 size-full object-cover" style={{ objectPosition: "50% 30%" }} />
+            <div
+              className="absolute inset-0 hidden md:block"
+              style={{ background: "linear-gradient(90deg, rgba(31, 53, 48, 1) 0%, rgba(31, 53, 48, 0.55) 22%, rgba(31, 53, 48, 0.08) 55%, rgba(31, 53, 48, 0) 75%)" }}
+            />
+            <div
+              className="absolute inset-0 md:hidden"
+              style={{ background: "linear-gradient(0deg, rgba(31, 53, 48, 1) 0%, rgba(31, 53, 48, 0.4) 30%, rgba(31, 53, 48, 0) 55%)" }}
+            />
+            <span
+              className="absolute top-4 right-4 rounded-full border px-2.5 py-1 text-[11px] font-medium tracking-[0.06em] uppercase backdrop-blur-md"
+              style={{ background: "rgba(31, 53, 48, 0.46)", borderColor: "rgba(250, 240, 242, 0.18)", color: "var(--rose)" }}
+            >
+              {t.exemple}
+            </span>
+            <SequenceHero etapes={t.etapes} />
+          </div>
+
+          <div className="relative grid content-center gap-5 px-6 pt-2 pb-10 md:min-h-[620px] md:max-w-[58%] md:px-14 md:py-16 lg:px-16">
+            <div className="eyebrow">{t.eyebrow}</div>
+            <h1 className="h1-hero" style={{ fontSize: "clamp(40px, 5.2vw, 74px)", color: "var(--rose)" }}>
+              {t.titre[0]} <span className="accent-italic">{t.titre[1]}</span>
+            </h1>
+            <p className="max-w-[44ch] text-[17px] leading-[1.55] md:text-[18px]" style={{ color: "var(--sur-encre-secondaire)" }}>
+              {t.chapo}
+            </p>
+            <div className="mt-1 flex flex-wrap gap-3">
+              <Link to="/" hash="demo" className="btn-clair">
+                {t.demo} <span aria-hidden>↗</span>
+              </Link>
+              <a
+                href="#metiers"
+                className="inline-flex items-center gap-2 rounded-full border px-5 py-[10px] text-[14px] font-medium transition-colors duration-200 hover:bg-[var(--encre-halo)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--menthe)]"
+                style={{ borderColor: "rgba(250, 240, 242, 0.32)", color: "var(--rose)" }}
+              >
+                {t.trouver} <span aria-hidden>↓</span>
+              </a>
+            </div>
+            <ul className="mt-1 flex flex-wrap gap-x-5 gap-y-2 text-[13px]" style={{ color: "var(--sur-encre-secondaire)" }}>
+              {t.garanties.map((g) => (
+                <li key={g} className="flex items-center gap-2">
+                  <svg viewBox="0 0 12 12" className="size-3" aria-hidden>
+                    <path d="M2.5 6.2l2.3 2.3 4.7-5" fill="none" stroke="var(--menthe)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  {g}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </section>
 
-      <section className="mx-auto max-w-[1280px] px-6 pb-8">
+      <SelecteurMetier lang={lang} metier={metier} />
+
+      <section className="mx-auto max-w-[1120px] px-4 py-12 sm:px-6 md:py-16">
         <Reveal>
-          <h2 className="eyebrow mb-4">{t.filtersTitle}</h2>
-          <div className="grid gap-6 rounded-[12px] border bg-papier/40 p-6 lg:grid-cols-2" style={{ borderColor: "var(--border)" }}>
-            <FilterGroup label={t.verticalLabel} items={t.verticals} />
-            <FilterGroup label={t.useCaseLabel} items={t.useCases} />
+          <div className="section-sombre rounded-[22px] px-6 py-10 md:px-12 md:py-14">
+            <div className="eyebrow">{t.communEyebrow}</div>
+            <h2 className="mt-4 font-serif text-[clamp(28px,3.2vw,44px)] leading-[1.08] tracking-[-0.02em]">
+              {t.communTitre[0]} <span className="accent-italic">{t.communTitre[1]}</span>
+            </h2>
+            <ul className="mt-9 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {t.commun.map((c) => (
+                <li key={c.titre} className="border-t pt-5" style={{ borderColor: "rgba(250, 240, 242, 0.16)" }}>
+                  <div className="text-[17px] font-medium">{c.titre}</div>
+                  <p className="mt-2 text-[15px] leading-[1.55]" style={{ color: "var(--sur-encre-secondaire)" }}>
+                    {c.texte}
+                  </p>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-9 text-[14px]" style={{ color: "var(--sur-encre-secondaire)" }}>
+              {t.hds}
+            </p>
           </div>
         </Reveal>
       </section>
 
-      <section className="mx-auto max-w-[1280px] px-6 pb-28">
-        <h2 className="eyebrow mb-6 mt-4">{t.catalogTitle}</h2>
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {t.agents.map((agent, i) => (
-            <Reveal key={`${agent.vertical}-${agent.name}`} delay={i * 0.02}>
-              <article className="card-hover flex h-full flex-col rounded-[8px] border bg-papier/40 p-6" style={{ borderColor: "var(--border)" }}>
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="rounded-full px-2 py-1 text-[10px]" style={{ background: "var(--succes-fond)", color: "var(--succes-texte)", fontFamily: "var(--font-mono)" }}>{agent.vertical}</span>
-                  <span className="rounded-full px-2 py-1 text-[10px]" style={{ background: "var(--bg3)", color: "var(--text-soft)", fontFamily: "var(--font-mono)" }}>{agent.useCase}</span>
-                </div>
-                <h3 className="mt-5 text-[20px] leading-[1.25]" style={{ fontWeight: 500 }}>
-                  {agent.name}
-                </h3>
-                <p className="mt-3 flex-1 text-[14px] leading-[1.65]" style={{ color: "var(--text-soft)" }}>{agent.desc}</p>
-                <div className="mt-6 text-[13px]" style={{ color: "var(--profond)", fontFamily: "var(--font-mono)" }}>{agent.stat}</div>
-              </article>
-            </Reveal>
-          ))}
-        </div>
-        <div className="mx-auto mt-8 max-w-2xl">
-          <Faq items={t.faq} titre={t.faqTitle} />
-        </div>
-        <div className="mt-16 text-center"><Link to="/" hash="demo" className="btn-primary">{t.cta} <span className="arrow">↗</span></Link></div>
+      <section className="mx-auto max-w-[760px] px-4 pb-8 sm:px-6">
+        <Reveal>
+          <div className="ress-faq">
+            <h2 className="font-serif text-[clamp(26px,2.6vw,34px)] leading-[1.1] tracking-[-0.015em]">{t.faqTitre}</h2>
+            <div className="mt-6">
+              {t.faq.map((f, i) => (
+                <details key={f.question} open={i === 0} className="border-t py-1 last:border-b" style={{ borderColor: "var(--filet)" }}>
+                  <summary className="flex cursor-pointer list-none justify-between gap-4 rounded-[4px] py-3.5 font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--profond)] [&::-webkit-details-marker]:hidden">
+                    {f.question}
+                    <span aria-hidden className="plus grid size-6 shrink-0 place-items-center text-[22px] leading-none font-normal" style={{ color: "var(--texte-secondaire)" }}>
+                      +
+                    </span>
+                  </summary>
+                  <p className="pb-3.5 text-[16px] leading-[1.6]" style={{ color: "var(--texte-secondaire)" }}>
+                    {f.answer}
+                    {"tarifs" in f && (
+                      <>
+                        {" "}
+                        <Link to="/tarifs" className="font-medium underline underline-offset-4" style={{ color: "var(--profond)" }}>
+                          {f.tarifs}
+                        </Link>
+                      </>
+                    )}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </Reveal>
+      </section>
+
+      <section className="mx-auto max-w-[1120px] px-4 pt-10 pb-24 sm:px-6">
+        <Reveal>
+          <div className="section-sombre flex flex-col items-start justify-between gap-6 rounded-[22px] px-6 py-10 md:flex-row md:items-center md:px-12 md:py-12">
+            <div>
+              <h2 className="font-serif text-[clamp(28px,3vw,40px)] leading-[1.08] tracking-[-0.02em]">
+                {t.finTitre[0]} <span className="accent-italic">{t.finTitre[1]}</span>
+              </h2>
+              <p className="mt-3 max-w-[52ch] text-[16px] leading-[1.55]" style={{ color: "var(--sur-encre-secondaire)" }}>
+                {t.finTexte}
+              </p>
+            </div>
+            <Link to="/" hash="demo" className="btn-clair flex-none">
+              {t.demo} <span aria-hidden>↗</span>
+            </Link>
+          </div>
+        </Reveal>
       </section>
     </SiteLayout>
-  );
-}
-
-function FilterGroup({ label, items }: { label: string; items: string[] }) {
-  return (
-    <div>
-      <div className="eyebrow mb-4">{label}</div>
-      <div className="flex flex-wrap gap-2">
-        {items.map((item) => <span key={item} className="rounded-full border px-3 py-1.5 text-[12px]" style={{ borderColor: "var(--border)", color: "var(--text-soft)", fontFamily: "var(--font-mono)" }}>{item}</span>)}
-      </div>
-    </div>
   );
 }
