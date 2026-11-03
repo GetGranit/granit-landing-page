@@ -9,7 +9,6 @@ import {
 import { useEffect, type ReactNode } from "react";
 import { PostHogProvider, usePostHog } from "posthog-js/react";
 import { LanguageProvider } from "@/lib/i18n";
-import { CursorDot } from "@/components/CursorDot";
 import { Seo } from "@/components/Seo";
 import { getAttributionParams, rememberAttribution } from "@/lib/attribution";
 
@@ -157,7 +156,6 @@ function RootComponent() {
     <LanguageProvider>
       <Seo />
       <Outlet />
-      <CursorDot />
     </LanguageProvider>
   );
 }
