@@ -1,6 +1,7 @@
 import { usePostHog } from "posthog-js/react";
 
 import { fichierIcs, lienGoogle, lienOutlook } from "@/lib/webinarAgenda";
+import { useLanguage } from "@/lib/i18n";
 
 /**
  * Boutons « ajouter à mon agenda » de l'écran de confirmation. Chaque clic
@@ -9,6 +10,7 @@ import { fichierIcs, lienGoogle, lienOutlook } from "@/lib/webinarAgenda";
  */
 export function AjouterAgenda() {
   const posthog = usePostHog();
+  const { lang } = useLanguage();
   const suivre = (agenda: string) => posthog?.capture("webinar_add_to_calendar", { agenda });
 
   const telechargerIcs = () => {
@@ -39,7 +41,7 @@ export function AjouterAgenda() {
         style={style}
         onClick={() => suivre("google")}
       >
-        <span aria-hidden>📅</span> Google Agenda
+        <span aria-hidden>📅</span> {lang === "fr" ? "Google Agenda" : "Google Calendar"}
       </a>
       <div className="flex gap-2.5">
         <button type="button" className={bouton} style={style} onClick={telechargerIcs}>

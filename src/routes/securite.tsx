@@ -15,7 +15,7 @@ export const Route = createFileRoute("/securite")({
       {
         name: "description",
         content:
-          "Granit est certifié HDS : données de santé hébergées en France, chiffrées, jamais utilisées pour entraîner des modèles tiers. RGPD, journalisation et réversibilité.",
+          "Hébergement HDS : données de santé hébergées en France, chiffrées, jamais utilisées pour entraîner des modèles tiers. RGPD, journalisation et réversibilité.",
       },
       { property: "og:title", content: "Sécurité & conformité santé - Granit" },
       { property: "og:description", content: "Le standard le plus strict du secteur santé français et européen." },
@@ -32,13 +32,13 @@ const content = {
       "Granit est conçu dès l'origine pour les contraintes réglementaires des établissements de santé : HDS, RGPD, secret médical, référentiels ANS. Aucune donnée patient ne sort jamais du périmètre de confiance.",
     summaryLabel: "En bref :",
     summary:
-      "Granit est certifié HDS. Les données patients sont hébergées en France, chiffrées en transit et au repos, et ne servent jamais à entraîner des modèles tiers. Chaque action d'agent est journalisée, et vous pouvez récupérer ou faire supprimer vos données à tout moment.",
+      "Granit s'appuie sur un hébergement HDS. Les données patients sont hébergées en France, chiffrées en transit et au repos, et ne servent jamais à entraîner des modèles tiers. Chaque action d'agent est journalisée, et vous pouvez récupérer ou faire supprimer vos données à tout moment.",
     faqTitle: "Questions fréquentes",
     faq: [
       {
-        question: "Granit est-il certifié HDS ?",
+        question: "Les données sont-elles hébergées en HDS ?",
         answer:
-          "Oui, Granit est certifié HDS. Les données patients sont hébergées en France, sauvegardes comprises, sans transfert hors de l'Union européenne.",
+          "Oui, les données patients sont hébergées sur une infrastructure HDS, en France, sauvegardes comprises, sans transfert hors de l'Union européenne.",
       },
       {
         question: "Les données patients servent-elles à entraîner l'IA ?",
@@ -67,7 +67,7 @@ const content = {
       },
     ],
     badges: [
-      { k: "HDS", v: "Hébergeur certifié" },
+      { k: "HDS", v: "Hébergement santé" },
       { k: "RGPD", v: "Conforme art. 9" },
       { k: "ANSSI", v: "Bonnes pratiques" },
       { k: "🇫🇷", v: "Données en France" },
@@ -77,7 +77,7 @@ const content = {
     items: [
       {
         t: "Hébergement HDS en France",
-        d: "Données patients hébergées exclusivement chez un hébergeur certifié HDS (Health Data Hosting), avec résidence et sauvegardes en France. Aucun transfert hors UE.",
+        d: "Données patients hébergées exclusivement sur une infrastructure HDS (Hébergement de Données de Santé), avec résidence et sauvegardes en France. Aucun transfert hors UE.",
       },
       {
         t: "RGPD & secret médical",
@@ -122,26 +122,26 @@ const content = {
     eyebrow: "Healthcare security & compliance",
     title: "Your health data deserves the highest level of rigor.",
     intro:
-      "Granit is built from day one for healthcare regulatory constraints: HDS, GDPR, medical confidentiality and ANS frameworks. Patient data never leaves the trust perimeter.",
+      "Granit is designed from the start for the regulatory constraints of healthcare organizations: HDS, GDPR, medical confidentiality, ANS frameworks (French digital health agency). No patient data ever leaves the trusted perimeter.",
     summaryLabel: "In short:",
     summary:
-      "Granit is HDS certified. Patient data is hosted in France, encrypted in transit and at rest, and never used to train third-party models. Every agent action is logged, and you can retrieve or delete your data at any time.",
+      "Granit runs on HDS hosting. Patient data is hosted in France, encrypted in transit and at rest, and never used to train third-party models. Every agent action is logged, and you can retrieve your data or have it deleted at any time.",
     faqTitle: "Frequently asked questions",
     faq: [
       {
-        question: "Is Granit HDS certified?",
+        question: "Is the data hosted on HDS infrastructure?",
         answer:
-          "Yes, Granit is HDS certified. Patient data is hosted in France, backups included, with no transfer outside the European Union.",
+          "Yes, patient data is hosted on HDS infrastructure (French health data hosting standard), in France, backups included, with no transfer outside the European Union.",
       },
       {
         question: "Is patient data used to train AI?",
         answer:
-          "No. No patient data is used to train third-party models. Models run in isolated environments hosted in Europe.",
+          "No. No patient data is used to train third-party models. The models are deployed in isolated environments hosted in Europe.",
       },
       {
         question: "How is data protected?",
         answer:
-          "Encryption in transit (TLS 1.3) and at rest (AES-256), mandatory MFA, fine-grained roles per organization and least privilege, applied to humans and agents alike.",
+          "Encryption in transit (TLS 1.3) and at rest (AES-256), mandatory MFA, fine-grained roles per organization and the principle of least privilege, applied to humans and agents alike.",
       },
       {
         question: "Can we control what the agents do?",
@@ -151,16 +151,16 @@ const content = {
       {
         question: "What happens to our data if we stop using Granit?",
         answer:
-          "You can request a full export and certified deletion of your data at any time. The contract can be cancelled with 30 days' notice, with no penalty or fee.",
+          "You can request a full export and certified deletion of your data at any time. The contract can be canceled with 30 days' notice, with no penalty or fee.",
       },
       {
         question: "What happens in case of a security incident?",
         answer:
-          "The procedure follows GDPR: notification to the CNIL within 72 hours and notification of the organizations concerned.",
+          "The procedure follows the GDPR: notification to the CNIL (French data protection authority) within 72 hours and notice to the organizations concerned.",
       },
     ],
     badges: [
-      { k: "HDS", v: "Certified hosting" },
+      { k: "HDS", v: "Health data hosting" },
       { k: "GDPR", v: "Article 9 compliant" },
       { k: "ANSSI", v: "Best practices" },
       { k: "🇫🇷", v: "Data in France" },
@@ -170,45 +170,45 @@ const content = {
     items: [
       {
         t: "HDS hosting in France",
-        d: "Patient data hosted exclusively with HDS-certified providers, with data residency and backups in France. No transfer outside the EU.",
+        d: "Patient data hosted exclusively on HDS infrastructure (French health data hosting standard), with residency and backups in France. No transfer outside the EU.",
       },
       {
         t: "GDPR & medical confidentiality",
-        d: "Processing compliant with GDPR Article 9 (sensitive data) and the French Public Health Code. Dedicated DPO, processing register, DPIAs, DPAs and medical confidentiality.",
+        d: "Processing compliant with GDPR Article 9 (sensitive data) and the French Public Health Code. Dedicated DPO, record of processing activities, DPIA, data processing agreements (DPA) with subcontractors and respect for professional secrecy.",
       },
       {
         t: "End-to-end encryption",
-        d: "Data encrypted in transit (TLS 1.3) and at rest (AES-256). Keys managed via dedicated KMS, automatic rotation, per-organization isolation.",
+        d: "Data encrypted in transit (TLS 1.3) and at rest (AES-256). Keys managed in a dedicated KMS, automatic rotation, isolation per organization.",
       },
       {
         t: "Strict access control",
-        d: "SSO (SAML, OIDC), mandatory MFA, fine-grained roles per organization, department and business scope. Least-privilege applied to humans and agents alike.",
+        d: "SSO (SAML, OIDC), mandatory MFA, fine-grained roles per organization, department and business scope. Principle of least privilege applied to humans and agents alike.",
       },
       {
         t: "Traceability & auditability",
-        d: "Every agent action is logged, timestamped, attributable and exportable. Immutable logs kept per healthcare retention requirements.",
+        d: "Every agent action is logged, timestamped, attributable and exportable. Immutable logs kept for the legal retention periods of the healthcare sector.",
       },
       {
         t: "Full reversibility",
-        d: "Full export, certified deletion and data return at any time. No proprietary lock-in. Contractual continuity and reversibility plan.",
+        d: "Full export, certified deletion and return of data at any time. No proprietary lock-in, no data capture. Contractual continuity and reversibility plan.",
       },
     ],
     governanceTitle: "Governance & operations",
     governance: [
-      { t: "Dedicated DPO & CISO", d: "A security team owning audits, regulatory watch and incident response." },
-      { t: "Penetration testing", d: "Regular pentests by independent firms specialized in healthcare." },
+      { t: "Dedicated DPO & CISO", d: "A security team responsible for audits, regulatory monitoring and incident response." },
+      { t: "Penetration testing", d: "Regular pentests run by independent firms specialized in healthcare." },
       { t: "Backups & DRP", d: "Encrypted multi-zone backups, tested recovery plan, contractual RTO and RPO." },
-      { t: "Incident notification", d: "GDPR-compliant: CNIL notification within 72h and notification of impacted organizations." },
+      { t: "Incident notification", d: "GDPR-compliant procedure: CNIL notification within 72 hours and notice to the organizations concerned." },
     ],
     aiTitle: "Responsible & sovereign AI",
     aiPoints: [
       "No patient data is used to train third-party models.",
       "Models deployed in isolated environments hosted in Europe.",
       "Every agent decision is explainable, traceable and reviewable by a human.",
-      "Medical and operational validation required before any production rollout.",
+      "Medical and operational validation required before any production deployment.",
     ],
-    ctaTitle: "Need the full security pack?",
-    ctaText: "DPA, security assurance plan, certifications, technical architecture: our team answers your HDS and CISO questionnaires.",
+    ctaTitle: "Need the full security file?",
+    ctaText: "DPA, security assurance plan, certifications, technical architecture: our teams answer your HDS and CISO questionnaires.",
     ctaBtn: "Contact our DPO",
   },
 };

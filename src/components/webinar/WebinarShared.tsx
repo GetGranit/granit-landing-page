@@ -7,7 +7,8 @@ import { logDemoRequestDelivered, logDemoRequestDeliveryFailed } from "@/lib/pos
 import { submitDemo } from "@/lib/submitDemo";
 import { envoyerConfirmationWebinar } from "@/lib/webinarConfirmation";
 import { getAttribution } from "@/lib/attribution";
-import { SOURCE, t } from "@/lib/webinarIa";
+import { SOURCE, copy } from "@/lib/webinarIa";
+import { useLanguage } from "@/lib/i18n";
 import { AjouterAgenda } from "@/components/webinar/AjouterAgenda";
 
 /**
@@ -18,6 +19,7 @@ import { AjouterAgenda } from "@/components/webinar/AjouterAgenda";
 const FILET = "var(--border2)";
 
 export function Faq() {
+  const t = copy[useLanguage().lang];
   const [open, setOpen] = useState<number | null>(null);
   return (
     <ul className="mt-2">
@@ -98,6 +100,7 @@ export function WebinarForm({
   inputBackground = "var(--bg2)",
   buttonBackground = "var(--terra)",
 }: FormProps) {
+  const t = copy[useLanguage().lang];
   const submit = useServerFn(submitDemo);
   const confirmer = useServerFn(envoyerConfirmationWebinar);
   const posthog = usePostHog();
@@ -294,8 +297,11 @@ export function WebinarForm({
             <option value="" disabled>
               {t.choose}
             </option>
-            {t.stores.map((s) => (
-              <option key={s}>{s}</option>
+            {/* La valeur part dans B11 et Attio : toujours le libellé français. */}
+            {t.stores.map((s, i) => (
+              <option key={s} value={copy.fr.stores[i]}>
+                {s}
+              </option>
             ))}
           </select>
         </Label>
