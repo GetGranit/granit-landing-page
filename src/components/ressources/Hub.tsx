@@ -103,7 +103,7 @@ export function Hub() {
           <h1 className="mx-auto mt-4 font-serif text-[clamp(40px,5.2vw,64px)] font-normal leading-[1.14] tracking-[-0.02em] [text-wrap:balance]">
             {t.titre}
             <br className="hidden md:block" />{" "}
-            <em className="accent-italic whitespace-nowrap">{t.titreSuite}</em>.
+            <em className={`accent-italic ${lang === "fr" ? "whitespace-nowrap" : ""}`}>{t.titreSuite}</em>.
           </h1>
           <p className="body-lg mx-auto mt-10 max-w-[60ch]">{t.chapo}</p>
           <ParProbleme />

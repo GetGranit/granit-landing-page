@@ -79,7 +79,7 @@ export function Nav() {
               posthog.capture("language_switched", { language_to: languageTo });
               toggleLang();
             }}
-            className="hidden h-8 items-center rounded-full border px-2.5 text-[11px] transition-colors hover:border-[color:var(--text)] sm:inline-flex"
+            className="inline-flex h-8 items-center rounded-full border px-2.5 text-[11px] transition-colors hover:border-[color:var(--text)]"
             style={{ borderColor: "var(--border)", color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}
             aria-label={lang === "fr" ? "Passer en anglais" : "Switch to French"}
           >
