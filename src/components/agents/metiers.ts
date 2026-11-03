@@ -13,7 +13,7 @@ import laboratoire from "@/assets/metiers/laboratoire.jpg";
 import ophtalmologie from "@/assets/metiers/ophtalmologie.jpg";
 import pharmacien from "@/assets/metiers/pharmacien.jpg";
 
-/** Slugs des adresses `/agents?metier=…`, dans l'ordre du sélecteur. */
+/** Slugs des pages `/agents/<slug>`, dans l'ordre de /agents. */
 export const SLUGS_METIERS = [
   "optique",
   "dentaire",
@@ -22,6 +22,9 @@ export const SLUGS_METIERS = [
   "cliniques-laboratoires",
 ] as const;
 export type SlugMetier = (typeof SLUGS_METIERS)[number];
+
+/** Les pages métier en ligne ; les autres affichent « bientôt » (noindex). */
+export const PUBLIES: readonly SlugMetier[] = ["optique"];
 
 export const estSlugMetier = (v: unknown): v is SlugMetier =>
   typeof v === "string" && (SLUGS_METIERS as readonly string[]).includes(v);
@@ -32,6 +35,8 @@ export type Agent = {
   /** Ce que fait l'agent, verbe d'action. */
   titre: string;
   texte: string;
+  /** Où il travaille (logiciel, portail), affiché sous la tâche. */
+  ou?: string;
   /** Pastille sur la photo : pendant le travail, puis une fois fait. */
   enCours: string;
   fait: string;
@@ -39,6 +44,8 @@ export type Agent = {
 
 export type Metier = {
   nom: string;
+  /** Une phrase pour la carte du métier sur /agents. */
+  accroche: string;
   /** La promesse déclinée au métier ; la seconde moitié prend l'accent. */
   promesse: [string, string];
   /** Ce qui compte pour ce métier (TON.md, colonne « la preuve qui compte »). */
@@ -69,6 +76,7 @@ export const CADRAGES: Record<SlugMetier, string> = {
 const fr: Record<SlugMetier, Metier> = {
   optique: {
     nom: "Opticiens et audioprothésistes",
+    accroche: "Prise en charge, facturation et pointage des virements, pour les lunettes comme pour les appareils auditifs.",
     promesse: ["Vos opticiens conseillent.", "Granit gère le reste."],
     preuve:
       "La prise en charge revient en moins de 2 minutes, pendant que le client est encore en boutique.",
@@ -77,6 +85,7 @@ const fr: Record<SlugMetier, Metier> = {
         tache: "Droits",
         titre: "Vérifie les droits",
         texte: "Il lit la carte de tiers payant et vérifie les droits du client sur la plateforme de sa mutuelle, avant le devis.",
+        ou: "Sur la plateforme de la mutuelle",
         enCours: "Vérification des droits",
         fait: "Droits vérifiés",
       },
@@ -84,6 +93,7 @@ const fr: Record<SlugMetier, Metier> = {
         tache: "Prise en charge",
         titre: "Saisit la prise en charge",
         texte: "Depuis le devis de votre logiciel, il saisit la demande de prise en charge (PEC) sur le portail, pour des lunettes comme pour des appareils auditifs.",
+        ou: "Depuis Cosium ou Optimum, sur le portail de la mutuelle",
         enCours: "Saisie de la prise en charge",
         fait: "Prise en charge accordée",
       },
@@ -91,6 +101,7 @@ const fr: Record<SlugMetier, Metier> = {
         tache: "Facturation",
         titre: "Facture et télétransmet",
         texte: "À la livraison, il envoie la facture à l'Assurance Maladie et à la mutuelle, puis suit chaque retour.",
+        ou: "Depuis votre logiciel, vers l'Assurance Maladie et la mutuelle",
         enCours: "Télétransmission",
         fait: "Facture télétransmise",
       },
@@ -98,6 +109,7 @@ const fr: Record<SlugMetier, Metier> = {
         tache: "Rejets et encaissement",
         titre: "Traite les rejets, pointe les virements",
         texte: "Il corrige et renvoie les dossiers rejetés, rapproche chaque virement de sa facture et relance les impayés.",
+        ou: "Sur vos relevés bancaires et dans votre logiciel",
         enCours: "Pointage des virements",
         fait: "Virements pointés",
       },
@@ -107,6 +119,7 @@ const fr: Record<SlugMetier, Metier> = {
   },
   dentaire: {
     nom: "Centres dentaires",
+    accroche: "Droits, accord préalable, télétransmission et restes à charge.",
     promesse: ["Vos équipes soignent.", "Granit gère le reste."],
     preuve: "Le devis prothétique et l'accord préalable avancent sans bloquer la trésorerie du mois.",
     agents: [
@@ -144,6 +157,7 @@ const fr: Record<SlugMetier, Metier> = {
   },
   "centres-sante": {
     nom: "Centres de santé et ophtalmologie",
+    accroche: "Droits du jour, prises en charge, feuilles de soins et paiements.",
     promesse: ["Vos équipes accueillent.", "Granit gère le reste."],
     preuve: "Les dossiers avancent 7 jours sur 7, et l'accueil se consacre aux patients.",
     agents: [
@@ -181,6 +195,7 @@ const fr: Record<SlugMetier, Metier> = {
   },
   pharmacie: {
     nom: "Pharmacies",
+    accroche: "Retours Noémie, rejets et paiements des organismes.",
     promesse: ["Vos équipes conseillent.", "Granit gère le reste."],
     preuve: "Les rejets sont traités, sans y passer la soirée.",
     agents: [
@@ -218,6 +233,7 @@ const fr: Record<SlugMetier, Metier> = {
   },
   "cliniques-laboratoires": {
     nom: "Cliniques et laboratoires",
+    accroche: "Dossiers d'admission, prises en charge, facturation et relances.",
     promesse: ["Vos soignants soignent.", "Granit gère le reste."],
     preuve: "Le temps des gestionnaires revient aux dossiers qui en ont besoin.",
     agents: [
@@ -258,19 +274,21 @@ const fr: Record<SlugMetier, Metier> = {
 const en: Record<SlugMetier, Metier> = {
   optique: {
     nom: "Opticians and hearing care",
+    accroche: "Coverage, billing and transfer matching, for glasses and hearing aids alike.",
     promesse: ["Your opticians advise.", "Granit handles the rest."],
     preuve: "The coverage approval comes back in under 2 minutes, while the customer is still in the store.",
     agents: [
-      { tache: "Eligibility", titre: "Checks eligibility", texte: "Reads the insurance card and checks the customer's rights on their insurer's platform, before the quote.", enCours: "Checking eligibility", fait: "Eligibility checked" },
-      { tache: "Coverage", titre: "Files the coverage request", texte: "From the quote in your software, files the coverage request on the portal, for glasses and hearing aids alike.", enCours: "Filing the coverage request", fait: "Coverage approved" },
-      { tache: "Billing", titre: "Bills and transmits", texte: "On delivery, sends the invoice to the public scheme and the insurer, then follows every reply.", enCours: "Transmitting", fait: "Invoice transmitted" },
-      { tache: "Rejections and payments", titre: "Handles rejections, matches transfers", texte: "Corrects and resubmits rejected files, matches each transfer to its invoice and follows up on unpaid ones.", enCours: "Matching transfers", fait: "Transfers matched" },
+      { tache: "Eligibility", titre: "Checks eligibility", texte: "Reads the insurance card and checks the customer's rights on their insurer's platform, before the quote.", ou: "On the insurer's platform", enCours: "Checking eligibility", fait: "Eligibility checked" },
+      { tache: "Coverage", titre: "Files the coverage request", texte: "From the quote in your software, files the coverage request on the portal, for glasses and hearing aids alike.", ou: "From Cosium or Optimum, on the insurer's portal", enCours: "Filing the coverage request", fait: "Coverage approved" },
+      { tache: "Billing", titre: "Bills and transmits", texte: "On delivery, sends the invoice to the public scheme and the insurer, then follows every reply.", ou: "From your software, to the public scheme and the insurer", enCours: "Transmitting", fait: "Invoice transmitted" },
+      { tache: "Rejections and payments", titre: "Handles rejections, matches transfers", texte: "Corrects and resubmits rejected files, matches each transfer to its invoice and follows up on unpaid ones.", ou: "On your bank statements and in your software", enCours: "Matching transfers", fait: "Transfers matched" },
     ],
     outils: "In Cosium, Optimum and your other software, on every third-party payment platform: Almerys, Viamédis, Santéclair, Kalixia, Carte Blanche…",
     alt: "A hearing care professional examines a patient's ear.",
   },
   dentaire: {
     nom: "Dental centers",
+    accroche: "Eligibility, prior approval, transmission and patient balances.",
     promesse: ["Your teams care.", "Granit handles the rest."],
     preuve: "Prosthetic quotes and prior approvals move forward without holding up the month's cash.",
     agents: [
@@ -284,6 +302,7 @@ const en: Record<SlugMetier, Metier> = {
   },
   "centres-sante": {
     nom: "Health centers and ophthalmology",
+    accroche: "Today's eligibility, coverage, claims and payments.",
     promesse: ["Your teams welcome patients.", "Granit handles the rest."],
     preuve: "Files move forward 7 days a week, and the front desk focuses on patients.",
     agents: [
@@ -297,6 +316,7 @@ const en: Record<SlugMetier, Metier> = {
   },
   pharmacie: {
     nom: "Pharmacies",
+    accroche: "Returns, rejections and payer payments.",
     promesse: ["Your teams advise.", "Granit handles the rest."],
     preuve: "Rejections get handled without spending the evening on them.",
     agents: [
@@ -310,6 +330,7 @@ const en: Record<SlugMetier, Metier> = {
   },
   "cliniques-laboratoires": {
     nom: "Clinics and laboratories",
+    accroche: "Admission files, coverage, billing and follow-ups.",
     promesse: ["Your caregivers care.", "Granit handles the rest."],
     preuve: "Administrative staff get their time back for the files that need it.",
     agents: [

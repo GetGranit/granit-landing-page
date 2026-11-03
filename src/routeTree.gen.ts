@@ -12,7 +12,6 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AProposRouteImport } from './routes/a-propos'
 import { Route as AffiliationRouteImport } from './routes/affiliation'
-import { Route as AgentsRouteImport } from './routes/agents'
 import { Route as CasUsageRouteImport } from './routes/cas-usage'
 import { Route as CgvRouteImport } from './routes/cgv'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -25,6 +24,8 @@ import { Route as RessourcesRouteImport } from './routes/ressources'
 import { Route as SecuriteRouteImport } from './routes/securite'
 import { Route as SilmoRouteImport } from './routes/silmo'
 import { Route as TarifsRouteImport } from './routes/tarifs'
+import { Route as AgentsIndexRouteImport } from './routes/agents.index'
+import { Route as AgentsMetierRouteImport } from './routes/agents.$metier'
 import { Route as BlogSplatRouteImport } from './routes/blog.$'
 import { Route as EnIndexRouteImport } from './routes/en.index'
 import { Route as EnCgvRouteImport } from './routes/en.cgv'
@@ -48,11 +49,6 @@ const AProposRoute = AProposRouteImport.update({
 const AffiliationRoute = AffiliationRouteImport.update({
   id: '/affiliation',
   path: '/affiliation',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AgentsRoute = AgentsRouteImport.update({
-  id: '/agents',
-  path: '/agents',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CasUsageRoute = CasUsageRouteImport.update({
@@ -115,6 +111,16 @@ const TarifsRoute = TarifsRouteImport.update({
   path: '/tarifs',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AgentsIndexRoute = AgentsIndexRouteImport.update({
+  id: '/agents/',
+  path: '/agents/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AgentsMetierRoute = AgentsMetierRouteImport.update({
+  id: '/agents/$metier',
+  path: '/agents/$metier',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogSplatRoute = BlogSplatRouteImport.update({
   id: '/blog/$',
   path: '/blog/$',
@@ -167,7 +173,6 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/a-propos': typeof AProposRoute
   '/affiliation': typeof AffiliationRoute
-  '/agents': typeof AgentsRoute
   '/cas-usage': typeof CasUsageRoute
   '/cgv': typeof CgvRoute
   '/contact': typeof ContactRoute
@@ -180,10 +185,12 @@ export interface FileRoutesByFullPath {
   '/securite': typeof SecuriteRoute
   '/silmo': typeof SilmoRoute
   '/tarifs': typeof TarifsRoute
+  '/agents/$metier': typeof AgentsMetierRoute
   '/blog/$': typeof BlogSplatRoute
   '/en/cgv': typeof EnCgvRoute
   '/ressources/$slug': typeof RessourcesSlugRoute
   '/webinar/ia-magasin': typeof WebinarIaMagasinRoute
+  '/agents/': typeof AgentsIndexRoute
   '/en/': typeof EnIndexRoute
   '/ressources/': typeof RessourcesIndexRoute
   '/en/blog/$': typeof EnBlogSplatRoute
@@ -194,7 +201,6 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/a-propos': typeof AProposRoute
   '/affiliation': typeof AffiliationRoute
-  '/agents': typeof AgentsRoute
   '/cas-usage': typeof CasUsageRoute
   '/cgv': typeof CgvRoute
   '/contact': typeof ContactRoute
@@ -206,10 +212,12 @@ export interface FileRoutesByTo {
   '/securite': typeof SecuriteRoute
   '/silmo': typeof SilmoRoute
   '/tarifs': typeof TarifsRoute
+  '/agents/$metier': typeof AgentsMetierRoute
   '/blog/$': typeof BlogSplatRoute
   '/en/cgv': typeof EnCgvRoute
   '/ressources/$slug': typeof RessourcesSlugRoute
   '/webinar/ia-magasin': typeof WebinarIaMagasinRoute
+  '/agents': typeof AgentsIndexRoute
   '/en': typeof EnIndexRoute
   '/ressources': typeof RessourcesIndexRoute
   '/en/blog/$': typeof EnBlogSplatRoute
@@ -221,7 +229,6 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/a-propos': typeof AProposRoute
   '/affiliation': typeof AffiliationRoute
-  '/agents': typeof AgentsRoute
   '/cas-usage': typeof CasUsageRoute
   '/cgv': typeof CgvRoute
   '/contact': typeof ContactRoute
@@ -234,10 +241,12 @@ export interface FileRoutesById {
   '/securite': typeof SecuriteRoute
   '/silmo': typeof SilmoRoute
   '/tarifs': typeof TarifsRoute
+  '/agents/$metier': typeof AgentsMetierRoute
   '/blog/$': typeof BlogSplatRoute
   '/en/cgv': typeof EnCgvRoute
   '/ressources/$slug': typeof RessourcesSlugRoute
   '/webinar/ia-magasin': typeof WebinarIaMagasinRoute
+  '/agents/': typeof AgentsIndexRoute
   '/en/': typeof EnIndexRoute
   '/ressources/': typeof RessourcesIndexRoute
   '/en/blog/$': typeof EnBlogSplatRoute
@@ -250,7 +259,6 @@ export interface FileRouteTypes {
     | '/'
     | '/a-propos'
     | '/affiliation'
-    | '/agents'
     | '/cas-usage'
     | '/cgv'
     | '/contact'
@@ -263,10 +271,12 @@ export interface FileRouteTypes {
     | '/securite'
     | '/silmo'
     | '/tarifs'
+    | '/agents/$metier'
     | '/blog/$'
     | '/en/cgv'
     | '/ressources/$slug'
     | '/webinar/ia-magasin'
+    | '/agents/'
     | '/en/'
     | '/ressources/'
     | '/en/blog/$'
@@ -277,7 +287,6 @@ export interface FileRouteTypes {
     | '/'
     | '/a-propos'
     | '/affiliation'
-    | '/agents'
     | '/cas-usage'
     | '/cgv'
     | '/contact'
@@ -289,10 +298,12 @@ export interface FileRouteTypes {
     | '/securite'
     | '/silmo'
     | '/tarifs'
+    | '/agents/$metier'
     | '/blog/$'
     | '/en/cgv'
     | '/ressources/$slug'
     | '/webinar/ia-magasin'
+    | '/agents'
     | '/en'
     | '/ressources'
     | '/en/blog/$'
@@ -303,7 +314,6 @@ export interface FileRouteTypes {
     | '/'
     | '/a-propos'
     | '/affiliation'
-    | '/agents'
     | '/cas-usage'
     | '/cgv'
     | '/contact'
@@ -316,10 +326,12 @@ export interface FileRouteTypes {
     | '/securite'
     | '/silmo'
     | '/tarifs'
+    | '/agents/$metier'
     | '/blog/$'
     | '/en/cgv'
     | '/ressources/$slug'
     | '/webinar/ia-magasin'
+    | '/agents/'
     | '/en/'
     | '/ressources/'
     | '/en/blog/$'
@@ -331,7 +343,6 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AProposRoute: typeof AProposRoute
   AffiliationRoute: typeof AffiliationRoute
-  AgentsRoute: typeof AgentsRoute
   CasUsageRoute: typeof CasUsageRoute
   CgvRoute: typeof CgvRoute
   ContactRoute: typeof ContactRoute
@@ -344,9 +355,11 @@ export interface RootRouteChildren {
   SecuriteRoute: typeof SecuriteRoute
   SilmoRoute: typeof SilmoRoute
   TarifsRoute: typeof TarifsRoute
+  AgentsMetierRoute: typeof AgentsMetierRoute
   BlogSplatRoute: typeof BlogSplatRoute
   EnCgvRoute: typeof EnCgvRoute
   WebinarIaMagasinRoute: typeof WebinarIaMagasinRoute
+  AgentsIndexRoute: typeof AgentsIndexRoute
   EnIndexRoute: typeof EnIndexRoute
   EnBlogSplatRoute: typeof EnBlogSplatRoute
 }
@@ -372,13 +385,6 @@ declare module '@tanstack/react-router' {
       path: '/affiliation'
       fullPath: '/affiliation'
       preLoaderRoute: typeof AffiliationRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/agents': {
-      id: '/agents'
-      path: '/agents'
-      fullPath: '/agents'
-      preLoaderRoute: typeof AgentsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/cas-usage': {
@@ -463,6 +469,20 @@ declare module '@tanstack/react-router' {
       path: '/tarifs'
       fullPath: '/tarifs'
       preLoaderRoute: typeof TarifsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/agents/': {
+      id: '/agents/'
+      path: '/agents'
+      fullPath: '/agents/'
+      preLoaderRoute: typeof AgentsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/agents/$metier': {
+      id: '/agents/$metier'
+      path: '/agents/$metier'
+      fullPath: '/agents/$metier'
+      preLoaderRoute: typeof AgentsMetierRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog/$': {
@@ -553,7 +573,6 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AProposRoute: AProposRoute,
   AffiliationRoute: AffiliationRoute,
-  AgentsRoute: AgentsRoute,
   CasUsageRoute: CasUsageRoute,
   CgvRoute: CgvRoute,
   ContactRoute: ContactRoute,
@@ -566,9 +585,11 @@ const rootRouteChildren: RootRouteChildren = {
   SecuriteRoute: SecuriteRoute,
   SilmoRoute: SilmoRoute,
   TarifsRoute: TarifsRoute,
+  AgentsMetierRoute: AgentsMetierRoute,
   BlogSplatRoute: BlogSplatRoute,
   EnCgvRoute: EnCgvRoute,
   WebinarIaMagasinRoute: WebinarIaMagasinRoute,
+  AgentsIndexRoute: AgentsIndexRoute,
   EnIndexRoute: EnIndexRoute,
   EnBlogSplatRoute: EnBlogSplatRoute,
 }

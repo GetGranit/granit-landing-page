@@ -81,13 +81,15 @@ export function Pastille({ enCours, fait, detail, etat }: { enCours: string; fai
   );
 }
 
-export type EtapePastille = { enCours: string; fait: string; detail?: string; place: string };
+export type EtapePastille = { enCours: string; fait: string; detail?: string; place?: string };
 
 /**
  * Hero : les pastilles se posent l'une après l'autre, se cochent et s'effacent ; la dernière reste.
- * Une seule fois, et seulement quand la photo est à l'écran. Animations réduites : la dernière, cochée.
+ * Une seule fois, et seulement quand le hero est à l'écran. Animations réduites : la dernière, cochée.
+ * « photo » : posées sur la photo (ordinateur). « ligne » : une à la fois, sous le titre (mobile),
+ * pour ne pas couvrir les visages.
  */
-export function SequenceHero({ etapes }: { etapes: EtapePastille[] }) {
+export function SequenceHero({ etapes, variante = "photo" }: { etapes: EtapePastille[]; variante?: "photo" | "ligne" }) {
   const ref = useRef<HTMLDivElement>(null);
   const visible = useInView(ref, { amount: 0.3 });
   const fin = 3 * (etapes.length - 1) + 2;
@@ -104,7 +106,7 @@ export function SequenceHero({ etapes }: { etapes: EtapePastille[] }) {
   }, [visible, pas, fin]);
 
   return (
-    <div ref={ref} className="pointer-events-none absolute inset-0" aria-hidden>
+    <div ref={ref} className={variante === "photo" ? "pointer-events-none absolute inset-0" : "pointer-events-none grid"} aria-hidden>
       {etapes.map((e, k) => {
         const derniere = k === etapes.length - 1;
         const montre = pas >= 3 * k && (derniere || pas < 3 * k + 4);
@@ -112,8 +114,8 @@ export function SequenceHero({ etapes }: { etapes: EtapePastille[] }) {
         return (
           <motion.div
             key={e.fait}
-            className="absolute top-[var(--tm)] left-4 max-w-[calc(100%-32px)] md:top-[var(--t)] md:left-[var(--l)]"
-            style={placeStyle(e.place, k)}
+            className={variante === "photo" ? "absolute top-[var(--t)] left-[var(--l)] max-w-[calc(100%-32px)]" : "col-start-1 row-start-1 max-w-full justify-self-start"}
+            style={variante === "photo" ? placeStyle(e.place) : undefined}
             initial={false}
             animate={montre ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: pas >= 3 * k + 4 ? -8 : 10, scale: 0.97 }}
             transition={{ duration: 0.7, ease: EASE }}
@@ -126,40 +128,8 @@ export function SequenceHero({ etapes }: { etapes: EtapePastille[] }) {
   );
 }
 
-/** « gauche haut » sur ordinateur : « 8% 62% » → left 8 %, top 62 %. Sur mobile, à gauche, une
- * hauteur sur deux pour que deux pastilles qui se croisent ne se couvrent pas. */
-function placeStyle(place: string, k: number) {
-  const [l, t] = place.split(" ");
-  return { "--l": l, "--t": t, "--tm": k % 2 ? "56%" : "34%" } as CSSProperties;
-}
-
-/**
- * Panneau d'un métier : les tâches de ses agents, en pile, se cochent dans l'ordre quand la photo
- * arrive à l'écran. Rendu serveur (lien direct vers un métier) : tout est déjà coché.
- */
-export function SequenceMetier({ etapes }: { etapes: { enCours: string; fait: string }[] }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const visible = useInView(ref, { amount: 0.4, once: true });
-  const hydrate = useHydrate();
-  const n = etapes.length;
-  // Monté après l'hydratation (clic sur un métier) : on part du début ; sinon tout est posé.
-  const [pas, setPas] = useState(() => (hydrate ? 0 : n));
-
-  useEffect(() => {
-    if (mouvementReduit()) {
-      setPas(n);
-      return;
-    }
-    if (!visible || pas >= n) return;
-    const t = setTimeout(() => setPas((p) => p + 1), pas === 0 ? 700 : 900);
-    return () => clearTimeout(t);
-  }, [visible, pas, n]);
-
-  return (
-    <div ref={ref} className="grid gap-2" aria-hidden>
-      {etapes.map((e, k) => (
-        <Pastille key={e.fait} enCours={e.enCours} fait={e.fait} etat={pas > k ? "fait" : pas === k ? "cours" : "attente"} />
-      ))}
-    </div>
-  );
+/** « gauche haut » en pourcentages : « 8% 62% » → left 8 %, top 62 %. */
+function placeStyle(place?: string) {
+  const [l, t] = (place ?? "10% 50%").split(" ");
+  return { "--l": l, "--t": t } as CSSProperties;
 }
