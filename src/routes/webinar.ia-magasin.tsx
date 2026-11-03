@@ -10,7 +10,7 @@ import logoMonogram from "@/assets/logo.svg";
 import photoPaul from "@/assets/paul-pietra.jpg";
 
 /**
- * Inscription au webinar « 5 usages de l'IA en magasin » du 26 novembre. On y
+ * Inscription au webinar « 5 usages de l'IA en magasin » du 13 novembre. On y
  * arrive par les liens de la campagne lemlist « Test 3 messages » (approche
  * Webinar IA, cohortes A et B, distinguées par `utm_content`).
  *
@@ -28,12 +28,12 @@ export const Route = createFileRoute("/webinar/ia-magasin")({
       {
         name: "description",
         content:
-          "Jeudi 26 novembre, 13h15-14h : 5 cas d'usage concrets de l'IA pour gagner du temps en magasin. En ligne, gratuit, sans théorie.",
+          "Vendredi 13 novembre, 13h15-14h : 5 cas d'usage concrets de l'IA pour gagner du temps en magasin. En ligne, gratuit, sans théorie.",
       },
       { property: "og:title", content: "5 usages concrets de l'IA en magasin" },
       {
         property: "og:description",
-        content: "Webinar gratuit, jeudi 26 novembre à 13h15. 45 minutes, des exemples en direct.",
+        content: "Webinar gratuit, vendredi 13 novembre à 13h15. 45 minutes, des exemples en direct.",
       },
     ],
   }),
