@@ -1,0 +1,233 @@
+{
+  "slug": "tiers-payant-opticien",
+  "id": "G0",
+  "category": "guide-tiers-payant",
+  "categoryName": "Third-party payment guide",
+  "type": "standard",
+  "plateforme": null,
+  "title": "Third-party payment for opticians: from coverage request to collection",
+  "primaryKeyword": "tiers payant opticien",
+  "keywordCluster": [
+    "opticien mutuelle",
+    "mutuelle opticien",
+    "opticien et mutuelle",
+    "opticien tiers payant",
+    "devis opticien",
+    "tiers payant opticien",
+    "tiers payant optique",
+    "opticien tiers payant mutuelle",
+    "tiers payant mgen opticien",
+    "opticien tiers payant paris"
+  ],
+  "parentSlug": null,
+  "level": "Pilier global",
+  "author": {
+    "name": "Nathalie",
+    "jobTitle": "Writer, optical industry expert",
+    "photo": "/auteurs/nathalie.jpg",
+    "url": null
+  },
+  "reviewer": null,
+  "datePublished": "2026-10-08",
+  "dateModified": "2026-10-08",
+  "checkedOn": null,
+  "wordCount": 2380,
+  "readTime": 10,
+  "metaDescription": "Third-party payment for opticians: AMO, supplementary insurer, coverage request, 100% Santé quote, payment, rejections. The full process to get paid on every case without delays.",
+  "contentHtml": "<p><strong>Third-party payment (tiers payant: the patient pays nothing upfront, insurers pay the provider directly) lets an optician’s customer avoid paying all or part of the price of their glasses upfront: French national health insurance (Assurance Maladie) and the supplementary health insurer (mutuelle) pay the store directly, each for its own share.</strong> The process comes down to four stages: a quote, a coverage request to the supplementary insurer, an invoice sent to both payers, then a payment to reconcile with each case. The store only gets paid at the end of this chain. An error at any stage blocks collection, sometimes several weeks after the glasses have been handed over.</p><p>This guide follows an optical case from start to finish: who pays what, how to get the insurer’s approval, what 100% Santé (zero out-of-pocket scheme) changes, how you get paid and what to do when a case gets stuck. It is written for the person who enters cases at the front desk as well as for the manager who tracks cash flow.</p><div class=\"key-takeaways\"><strong>Key takeaways</strong><ul><li>Two payers, two channels: the national health insurance share goes through the electronic claim form (SESAM-Vitale), the insurer’s share through the supplementary insurer’s third-party payment platform.</li><li>It is the insurer’s coverage approval that commits it, not the quote: without a valid approval, the supplementary share is not guaranteed.</li><li>Since the 100% Santé reform, the optical quote must offer at least one class A pair of glasses, with no out-of-pocket amount for a customer covered by a “responsible” contract.</li><li>There is no universal payment timeline: each payer has its own, and only case-by-case reconciliation shows what is missing.</li><li>To do today: list the cases billed and unpaid for more than a month, then check their status with each payer.</li></ul></div><h2 id=\"comment-fonctionne-tiers-payant-opticien\">How does third-party payment work at the optician?</h2><p><strong>Third-party payment waives the upfront payment: the store collects only the customer’s out-of-pocket amount and gets paid the rest by mandatory health insurance and by the supplementary insurer.</strong> In practice, the store becomes the creditor of two organizations in place of its customer.</p><p>Two acronyms come up in every case. AMO (mandatory health insurance) is the basic scheme, the local health insurance office (CPAM) for most insured people. AMC (supplementary health insurance) is the mutuelle, provident institution or insurance company that covers all or part of what the AMO does not. Each has its own billing channel and its own payment schedule.</p><p>Optical third-party payment always follows the same sequence, whether you are an independent store in the regions or a high-volume optician offering third-party payment in Paris. What changes from one case to another is the supplementary insurer, the platform that manages it and the documents required.</p><ol class=\"steps\"><li><strong>Check eligibility.</strong> An up-to-date Carte Vitale, the insurer’s third-party payment card valid on the dispensing date, a valid prescription.</li><li><strong>Draw up the standardized quote.</strong> It presents the 100% Santé offer and the chosen pair, with a breakdown of the amounts.</li><li><strong>Request coverage approval.</strong> The quote is sent to the supplementary insurer, usually via its platform’s portal, which returns an approval or a denial.</li><li><strong>Dispense and bill.</strong> The AMO share goes out as an electronic claim form, the AMC share as an invoice sent to the supplementary insurer.</li><li><strong>Receive the payments.</strong> Each payer sends its share by bank transfer, with its own statement.</li><li><strong>Reconcile.</strong> Each bank transfer is matched to the cases it settles; discrepancies are handled one by one.</li></ol><div data-figure=\"circuit-dossier-optique\"></div><h2 id=\"qui-paie-quoi-amo-amc\">Who pays what between the AMO and the AMC?</h2><p><strong>The AMO reimburses on a base set by the nomenclature, the AMC adds to it according to the contract’s coverage, and the customer pays any remainder.</strong> On equipment with unregulated prices, the AMO share is small: most of the amount falls on the supplementary insurer and the customer.</p><p>The AMO reimbursement base comes from the LPP (list of reimbursable products and services), which assigns a code to each lens and each frame. The AMC share depends on the insured person’s contract: optical allowance, percentage, cap, renewal frequency. Two customers with the same prescription and the same pair of glasses can therefore have very different out-of-pocket amounts.</p><p>Two concepts prevent many errors. The policyholder (“ouvrant droit”) is the insured person who holds the contract. The beneficiary is the person who wears the glasses: the policyholder, their spouse or a dependent child. A request entered in the policyholder’s name when the glasses are for a child is one of the inconsistencies that come up most often in denials.</p><div data-figure=\"amo-amc\"></div><p>The AMO channel is highly standardized: the electronic claim form (FSE) is produced by the store’s software and sent through the SESAM-Vitale system. The AMC channel is much more fragmented, because each supplementary insurer chooses its platform and its rules. This is where most of the front-desk work is concentrated. Changes on the AMO side are covered in our article on <a href=\"/ressources/sesam-vitale-evolutions-2025\">the SESAM-Vitale changes to prepare for</a>.</p><h2 id=\"prise-en-charge-mutuelle-opticien\">How do you submit a coverage request to the insurer as an optician?</h2><p><strong>Coverage approval (PEC) is a request for approval sent to the supplementary insurer before dispensing, along with the quote: the response sets the amount the insurer commits to pay.</strong> Without this approval, the insurer’s share is not guaranteed, even if the customer says they have good coverage.</p><h3>Reading the third-party payment card</h3><p>The insurer’s third-party payment card gives three pieces of information to check before entering anything: the platform that manages third-party payment (often recognizable by its logo), the validity dates and the people covered. For an MGEN card as for any other, the reflex is the same: identify the third-party payment manager on the card, not just the insurer’s name. The portal to use follows from that.</p><h3>Choosing the right portal</h3><p>Most supplementary insurers delegate third-party payment to a platform. There are two families. Third-party payment operators, such as Viamedis or Almerys, handle requests and payments on behalf of many insurers. Care networks, such as Santéclair, Kalixia or Itelis, add an agreement signed with the optician, often with pricing conditions. Each portal has its own login, its required fields and its status labels.</p><h3>Reading the response</h3><p>The response usually takes one of these forms: approval, approval pending documents, request on hold, denial. An approval pending documents is not an approval: until the requested document (prescription, signed quote) is provided, payment is not secured. A request on hold must be tracked, because it does not always clear on its own.</p><div class=\"callout callout--tip\"><p><strong>The right reflex:</strong> compare the approved amount with the quote before dispensing. If the approval is lower, the customer needs to know before leaving with their glasses, not when the invoice is issued.</p></div><p>The real cost of this step is the number of portals: one login per platform, different screens, manual follow-ups. We covered this in <a href=\"/ressources/portails-tiers-payant\">our guide to third-party payment portals</a>. When these requests number in the dozens every day, data entry becomes the store’s bottleneck. This is what <a href=\"/agents\">Granit</a> takes on: agents enter coverage requests directly on the platforms’ portals, then send the status of each case back to the team.</p><h2 id=\"devis-opticien-100-sante\">What role do the optician’s quote and 100% Santé play?</h2><p><strong>The standardized quote is the case’s reference document: it informs the customer, serves as the basis for the coverage request and must include a 100% Santé offer.</strong> If the pair changes after the approval, the approval no longer covers what is dispensed.</p><p>The 100% Santé reform was created by the <a href=\"https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000037847595\">2019 social security financing law</a> and has applied to optical care since 2020. It divides equipment into two classes. Class A covers frames and lenses at capped prices, fully covered by the AMO and the AMC for a customer with a “responsible” contract. Class B covers equipment with unregulated prices, reimbursed according to the contract’s coverage.</p><p>For the optician, the consequence is practical: the quote must always present at least one class A pair, even if the customer ultimately chooses class B frames or lenses. A pair can also mix the two classes, for example class A lenses in a class B frame. The coverage request must reflect this exact mix, otherwise the approval returned will not match the invoice.</p><div class=\"callout callout--warn\"><p><strong>The trap:</strong> the customer changes frames or lens options between the coverage request and dispensing. The invoice no longer matches the approval, and the insurer may reject or reduce the payment. Any change to the quote calls for a new request.</p></div><p>The logic is close to that of the 100% Santé baskets in dental care, which we described in <a href=\"/ressources/dentaire-paniers-100-sante-tiers-payant\">securing third-party payment on 100% Santé baskets</a>: the case holds up if the quote, the approval and the invoice tell the same story.</p><h2 id=\"paiement-opticien-delai\">How is the optician paid, and how long does it take?</h2><p><strong>The two shares arrive separately, on different dates and with different statements: the AMO on one side, each platform on the other.</strong> No timeline is universal: only the one announced by each payer counts.</p><p>On the AMO side, payment comes with a NOEMIE remittance file, the exchange standard French national health insurance uses to tell the professional what it has paid, rejected or put on hold, invoice by invoice. This file is read by the store’s software, which can automatically reconcile some of the cases.</p><p>On the AMC side, the invoice goes to the supplementary insurer, often as a DRE (“demande de remboursement électronique”, electronic reimbursement request), the flow that sends the insurer’s share to the organization. Payment usually arrives as a grouped bank transfer from the platform, with a label specific to the payer. The case-by-case detail is in a statement, often available on the portal.</p><h3>Why reconciliation is essential</h3><p>A grouped bank transfer does not, on its own, say which cases it settles. Without reconciliation, a partial payment goes unnoticed: the insurer paid €30 less than the approval and nobody notices. The safest method is to reconcile statements and bank transfers every morning, then handle discrepancies while they are recent. We detail this routine in <a href=\"/ressources/rapprochement-noemie\">reconciling NOEMIE files and bank transfers every morning</a>.</p><p>A billed case is therefore not a collected case. For the manager, the useful question is not “how much did we bill?” but “how many cases are still waiting for payment, with which payer, and since when?”.</p><h2 id=\"refus-prise-en-charge-mutuelle\">What should you do when a supplementary insurer denies a coverage request?</h2><p><strong>Start by reading the exact reason for the denial, then fix the cause before resending: resending it unchanged produces the same denial.</strong> You need to distinguish a coverage denial, before dispensing, from a payment rejection, after billing.</p><p>A coverage denial is resolved while the customer is still in the store: coverage rights, beneficiary, coverage level. A payment rejection comes later, often after the customer has left, and hits cash flow directly. In both cases, there are five families of causes, from the most common to the rarest.</p><div class=\"tbl\"><table><tr><th>Cause</th><th>Where to check</th><th>Fix</th></tr><tr><td>Closed coverage or expired card</td><td>Validity dates on the third-party payment card</td><td>Ask the customer for an up-to-date certificate, re-enter</td></tr><tr><td>Beneficiary unknown</td><td>People covered on the card</td><td>Enter the right beneficiary, not the policyholder</td></tr><tr><td>Renewal period not reached</td><td>Date of the last reimbursed pair</td><td>Check whether an early renewal case applies, otherwise inform the customer</td></tr><tr><td>Amount outside coverage</td><td>Approved amount compared with the quote</td><td>Revise the quote or have the customer pay the difference</td></tr><tr><td>Missing document</td><td>“Sous réserve” (pending documents) status on the portal</td><td>Attach the prescription or the signed quote</td></tr></table></div><p>Keep a record of each exchange: a screenshot of the status, the request date, the document sent. If the denial still seems unjustified after correction, contact the platform’s professional support team, then the supplementary insurer itself if the platform refers you to it. On the AMO side, rejections follow a different logic, described in <a href=\"/ressources/reduire-rejets-cpam\">reducing CPAM rejections without changing your practice management software</a>.</p><h2 id=\"tiers-payant-obligatoire-opticien\">Is third-party payment mandatory for an optician?</h2><p><strong>There is no general obligation to offer third-party payment on the supplementary insurer’s share: it is a service most opticians offer, often governed by the agreements signed with the platforms.</strong> In practice, customers expect not to pay upfront, and third-party payment weighs on their choice of store.</p><p>The text that organized the extension of third-party payment is the law on the modernization of the health system:</p><p>This <a href=\"https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000031912641\">law of January 26, 2016</a> provided for making third-party payment universal. For the supplementary share, this did not become an obligation. The real landscape is therefore made of contractual commitments: by signing with a care network or an operator, the optician generally agrees to offer third-party payment to the members concerned, according to the agreement’s rules.</p><p>The useful question for a store is therefore not “am I required to?” but “which platforms do I have agreements with, and on what terms?”. The list of your agreements determines the portals to monitor, the documents to provide and the timelines to track.</p><h2 id=\"organiser-tiers-payant-optique\">How do you organize optical third-party payment in the store?</h2><p><strong>Third-party payment that runs smoothly rests on three routines: check before dispensing, track every status, reconcile every payment.</strong> Everything else follows from how regularly these three routines are carried out.</p><p>At the front desk, the check is done with the customer present: coverage rights, beneficiary, coverage approval compared with the quote. An error fixed at that moment costs a few minutes. The same error discovered at rejection costs a follow-up, a call to the customer and sometimes an unrecovered receivable.</p><p>In the back office, status tracking and reconciliation need a fixed time slot, ideally daily. Pushing these tasks to Friday creates piles in which the oldest cases become the hardest to recover.</p><h3>Indicators to track</h3><ul><li>The number of coverage requests awaiting a response, by platform.</li><li>The number of billed but unpaid cases, sorted by age.</li><li>Rejections by cause, to fix what keeps recurring at data entry.</li><li>Gaps between the approved amount and the amount paid.</li></ul><p>These indicators fit into a broader management of the back office, presented in <a href=\"/ressources/kpi-back-office-sante\">the 7 healthcare back-office KPIs</a>. For a manager of several stores, they help pinpoint each site’s bottleneck: entering coverage requests, tracking responses or collection.</p>",
+  "tocItems": [
+    {
+      "id": "comment-fonctionne-tiers-payant-opticien",
+      "label": "How third-party payment works for opticians"
+    },
+    {
+      "id": "qui-paie-quoi-amo-amc",
+      "label": "Who pays what: AMO and AMC"
+    },
+    {
+      "id": "prise-en-charge-mutuelle-opticien",
+      "label": "Submitting a coverage request to the insurer"
+    },
+    {
+      "id": "devis-opticien-100-sante",
+      "label": "Optician quotes and 100% Santé"
+    },
+    {
+      "id": "paiement-opticien-delai",
+      "label": "Payment and timelines"
+    },
+    {
+      "id": "refus-prise-en-charge-mutuelle",
+      "label": "Coverage request denials"
+    },
+    {
+      "id": "tiers-payant-obligatoire-opticien",
+      "label": "Is third-party payment mandatory?"
+    },
+    {
+      "id": "organiser-tiers-payant-optique",
+      "label": "Organizing third-party payment in the store"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "How does third-party payment work at the optician?",
+      "answer": "Third-party payment at the optician spares the customer from paying all or part of the price of their glasses upfront. The store draws up a quote, gets the coverage approval from the supplementary insurer, bills the national health insurance share through an electronic claim form and bills the insurer’s share to the supplementary insurer. Each payer then sends its share by bank transfer, which the store reconciles with each case."
+    },
+    {
+      "question": "Who pays what between national health insurance (AMO) and the supplementary insurer (AMC)?",
+      "answer": "Mandatory health insurance (AMO) reimburses on a base set by the list of reimbursable products and services (LPP). The supplementary insurer (AMC) adds to it according to the contract’s coverage, and the customer pays any remainder. On equipment with unregulated prices, the AMO share is small and most of the amount falls on the supplementary insurer and the customer."
+    },
+    {
+      "question": "Is third-party payment mandatory for an optician?",
+      "answer": "There is no general obligation to offer third-party payment on the supplementary insurer’s share. The law of January 26, 2016 provided for making it universal, but this did not become mandatory for the supplementary share. In practice, the agreements signed with care networks and operators commit the optician to offering it to the members concerned."
+    },
+    {
+      "question": "How long does it take to get paid through third-party payment?",
+      "answer": "There is no universal timeline: French national health insurance and each third-party payment platform have their own schedule. Only the timeline announced by each payer counts. Reconciling statements and bank transfers daily lets you quickly spot cases that are running late or partial payments."
+    },
+    {
+      "question": "What should you do when a supplementary insurer denies a coverage request?",
+      "answer": "Read the exact reason for the denial and fix the cause before resending the request, because resending it unchanged produces the same denial. The most common causes are closed coverage, the wrong beneficiary, a renewal period not yet reached, an amount outside the coverage or a missing document. If the denial persists after correction, contact the platform’s professional support team, then the supplementary insurer."
+    }
+  ],
+  "sources": [
+    {
+      "label": "legifrance.gouv.fr · Law No. 2018-1203 of December 22, 2018 on social security financing for 2019",
+      "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000037847595"
+    },
+    {
+      "label": "legifrance.gouv.fr · Law No. 2016-41 of January 26, 2016 on the modernization of the French health system",
+      "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000031912641"
+    }
+  ],
+  "figures": [
+    {
+      "id": "circuit-dossier-optique",
+      "type": "etapes",
+      "titre": "The path of an optical case through third-party payment",
+      "legende": "The coverage approval commits the insurer: it is the step that determines the entire collection.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "Check eligibility",
+          "detail": "Carte Vitale, third-party payment card, prescription",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Standardized quote",
+          "detail": "Including at least one class A offer",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Coverage request",
+          "detail": "Supplementary insurer’s approval before dispensing",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Billing",
+          "detail": "FSE for the AMO, invoice for the AMC",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Payments",
+          "detail": "Each payer sends its share separately",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Reconciliation",
+          "detail": "Each bank transfer matched to the cases it settles",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    },
+    {
+      "id": "amo-amc",
+      "type": "comparaison",
+      "titre": "Two payers, two channels",
+      "legende": "The AMO channel is standardized; the AMC channel varies with each insurer’s platform.",
+      "colonnes": [
+        "AMO",
+        "AMC"
+      ],
+      "elements": [
+        {
+          "label": "Who pays",
+          "detail": "",
+          "valeurs": [
+            "National health insurance",
+            "Mutuelle or insurer"
+          ],
+          "focus": false
+        },
+        {
+          "label": "Basis",
+          "detail": "",
+          "valeurs": [
+            "LPP nomenclature",
+            "Contract coverage"
+          ],
+          "focus": false
+        },
+        {
+          "label": "Prior approval",
+          "detail": "",
+          "valeurs": [
+            "No",
+            "Coverage request"
+          ],
+          "focus": true
+        },
+        {
+          "label": "Transmission",
+          "detail": "",
+          "valeurs": [
+            "FSE via SESAM-Vitale",
+            "Platform or portal"
+          ],
+          "focus": false
+        },
+        {
+          "label": "Payment return",
+          "detail": "",
+          "valeurs": [
+            "NOEMIE remittance file",
+            "Payer statement"
+          ],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [],
+  "liensEntrants": [
+    {
+      "slug": "portails-tiers-payant",
+      "anchor": "third-party payment portals",
+      "type": "enfant"
+    },
+    {
+      "slug": "gerer-tiers-payant-magasin",
+      "anchor": "third-party payment management",
+      "type": "enfant"
+    }
+  ],
+  "remplace": [
+    "optique-tiers-payant-amc",
+    "groupes-multi-sites-pilotage"
+  ],
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-08T09:58:38.920Z",
+    "avertissements": [
+      "source non vérifiable (403) : https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000031912641",
+      "source non vérifiable (403) : https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000037847595"
+    ]
+  }
+}

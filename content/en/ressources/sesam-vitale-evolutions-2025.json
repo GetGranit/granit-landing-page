@@ -1,0 +1,198 @@
+{
+  "slug": "sesam-vitale-evolutions-2025",
+  "id": "R14",
+  "category": "guide-tiers-payant",
+  "categoryName": "Third-party payment guide",
+  "type": "standard",
+  "plateforme": null,
+  "title": "SESAM-Vitale: the changes to prepare for",
+  "primaryKeyword": "SESAM-Vitale 1.40",
+  "keywordCluster": [
+    "appli carte vitale",
+    "téléservices ameli pro",
+    "ADRi",
+    "facturation SESAM-Vitale"
+  ],
+  "parentSlug": null,
+  "level": "Refonte",
+  "author": {
+    "name": "Laura",
+    "jobTitle": "Writer, healthcare expert",
+    "photo": "/auteurs/laura.jpg",
+    "url": null
+  },
+  "reviewer": {
+    "name": "Olivier",
+    "jobTitle": "Writer, third-party payment expert",
+    "photo": "/auteurs/olivier.jpg",
+    "url": null
+  },
+  "datePublished": "2026-10-30",
+  "dateModified": "2026-10-30",
+  "checkedOn": null,
+  "wordCount": 2281,
+  "readTime": 10,
+  "metaDescription": "SESAM-Vitale 1.40: Carte Vitale app, ADRi, scanned documents, digital prescriptions. What changes for your billing and how to prepare.",
+  "contentHtml": "<p><strong>SESAM-Vitale 1.40 is the version of the specifications your software follows to produce electronic claim forms. New features (the Carte Vitale app, built-in online services such as ADRi, scanned supporting documents, digital prescriptions) arrive through updates to this version, not through a new version number.</strong> Preparing for them does not take a major project. You need to know what your vendor has already delivered, what it is preparing, and what the team needs to change at the front desk or reception. This guide is for all professionals who bill through third-party payment (tiers payant: the patient pays nothing upfront, insurers pay the provider directly): optical stores, hearing care centers, pharmacies, dental practices, health centers.</p><div class=\"key-takeaways\"><strong>Key takeaways</strong><ul><li>SESAM-Vitale 1.40 evolves through successive additions: two workstations “on 1.40” do not necessarily have the same features turned on.</li><li>The Carte Vitale app changes how the patient is identified, not the claim form: the software must be able to read it, and the team must know what to do if reading fails.</li><li>ADRi checks the patient’s coverage rights in real time from within the software: it is the habit that prevents a good share of rejections related to coverage rights.</li><li>SESAM-Vitale only covers the mandatory share: the supplementary share follows its own channels, which do not change at the same pace.</li><li>Today’s action: ask your vendor which exact version is installed and which features are available but not yet turned on.</li></ul></div><h2 id=\"sesam-vitale-1-40-definition\">What is SESAM-Vitale 1.40 and why does the version matter?</h2><p>SESAM-Vitale 1.40 refers to the specifications that billing software must meet to send electronic claim forms. The electronic claim form (FSE) is the signed file your software sends to mandatory health insurance (AMO) instead of a paper claim form.</p><p>The version number has stayed the same for years, but its content changes. Each change to the billing system is added to the specifications, then integrated by vendors into their software, which is approved before release. In practice, saying “my software is on 1.40” is not enough: the real question is which 1.40 features it already includes.</p><p>This nuance has very concrete effects. Two optical stores using the same software may have different updates, depending on when they last installed one. One will be able to read the Carte Vitale app, the other will not. One will check the patient’s coverage rights online, the other will rely on the card and its sometimes outdated information.</p><p>The path of a third-party payment invoice, on the other hand, stays stable. The software identifies the patient (card or app), checks their coverage rights, produces the FSE and sends it to French national health insurance (Assurance Maladie). Payment and any rejections then come back through a NOEMIE remittance file (an exchange standard that sends the professional the details of payments and rejections), which you need to reconcile with your bank transfers. This reconciliation is covered in our article on <a href=\"/ressources/rapprochement-noemie\">reconciling NOEMIE files with bank transfers</a>.</p><div data-figure=\"parcours-fse\"></div><p>The changes described below each affect a specific link in this path. The Carte Vitale app affects identification. ADRi affects the eligibility check. Document scanning affects transmission. Digital prescriptions affect what happens before the invoice even exists. Reading them link by link helps you see who on the team is affected.</p><h2 id=\"appli-carte-vitale-facturation\">What does the Carte Vitale app change for billing?</h2><p>The Carte Vitale app changes how the patient is identified, not the claim form. According to <a href=\"https://www.ameli.fr/assure/remboursements/etre-bien-rembourse/carte-vitale\">ameli.fr</a>, the Carte Vitale (French health insurance card) can now exist in digital form, on the insured person’s smartphone, alongside the physical card. For your billing, a patient who shows their phone must end up with the same FSE as one who hands over their card.</p><p>The condition is that your workstation can read this digital version. Depending on the equipment, reading works through a code displayed on the phone or through contactless. If your software does not yet include this feature, or if the hardware is not suitable, a patient with the app finds themselves at a front desk that cannot use it.</p><p>The second change is human. The patient needs to have installed and activated the app before coming in. At the front desk, you will see new situations: a patient who only has their phone, an app that will not open, a phone with a dead battery. The team must know the fallback your software provides: the physical card, or billing in degraded mode with the corresponding documents.</p><div class=\"callout callout--tip\"><p><strong>The right reflex:</strong> add a question at reception, “do you have your card or the app?”, and check once with your vendor that reading the app works on every workstation that bills, not just the main one.</p></div><p>For a health center or a group of stores, this is handled workstation by workstation. A single incompatible workstation is enough to create lines and invoices entered by hand, and therefore errors. The <a href=\"https://www.service-public.fr/particuliers/vosdroits/F167\">service-public.fr page on the Carte Vitale</a> also explains the card’s role in coverage, which the digital version takes over.</p><h2 id=\"adri-teleservices-ameli-pro\">What is ADRi and when should you use the ameli pro online services?</h2><p>ADRi (“acquisition des droits intégrée”, integrated coverage rights check) is the French national health insurance online service that lets your software check the patient’s coverage rights in real time, directly in the AMO databases. It replaces reading the card alone, whose information may date from the insured person’s last update.</p><p>The benefit is simple: an invoice issued on outdated coverage rights comes back rejected. Querying ADRi at billing time shows you right away a change of insurance office, an end of coverage or an exemption that does not appear on the card. In a pharmacy that bills dozens of cases a day, as in a dental practice that bills a treatment in several installments, this check avoids discovering the problem several days later, in the NOEMIE remittance file.</p><p>ADRi is one of the ameli pro online services. These services come in two forms. Some are available from French national health insurance’s online professional portal. Others are built into the software, like ADRi: you use them without leaving the billing screen. The list of built-in services varies by profession and by the version of your software.</p><h3>When should you query ADRi?</h3><div class=\"tbl\"><table><tr><th>Situation at the front desk</th><th>Reflex</th><th>What it prevents</th></tr><tr><td>Patient with neither card nor app</td><td>Query ADRi before billing</td><td>An FSE on unverified coverage rights</td></tr><tr><td>Old card or card not updated</td><td>Compare the card with the ADRi response</td><td>A rejection for closed coverage or the wrong insurance office</td></tr><tr><td>New patient</td><td>Query ADRi on the first invoice</td><td>An enrollment error that keeps repeating</td></tr><tr><td>Rejection already received for a coverage reason</td><td>Query ADRi again before rebilling</td><td>A second rejection on the same case</td></tr></table></div><p>A rejection related to coverage rights shows up in the NOEMIE remittance file. To find out what a code means, our <a href=\"/ressources/codes-rejets-noemie\">list of NOEMIE rejection codes</a> gives the meaning and the action to take. On the supplementary side, the same kind of problem often takes the form of a “bénéficiaire inconnu” (beneficiary unknown) rejection, covered in a dedicated article: <a href=\"/ressources/rejet-beneficiaire-inconnu\">fixing a “bénéficiaire inconnu” rejection</a>.</p><h2 id=\"pieces-justificatives-numerisees\">How is the transmission of supporting documents changing?</h2><p>Supporting documents are moving from paper to scanned files, sent along with the billing. SCOR (for “scannérisation des ordonnances”, prescription scanning) is the system that lets you send French national health insurance a digital copy of the prescription and relevant documents, instead of mailing paper.</p><p>Pharmacies, hearing care professionals, opticians and health centers are affected whenever an invoice relies on a prescription. The gain is real: no more paper batches to prepare, no more risk of loss in the mail. In exchange, the quality of the file becomes your responsibility at the moment you bill.</p><p>A blurry document, an incomplete one or one attached to the wrong invoice has the same effect as a missing one. The invoice may be disputed or rejected, and the correction takes longer than rescanning on the spot. Rigor therefore shifts from mailing to the act of scanning, at the front desk.</p><div class=\"callout callout--warn\"><p><strong>The trap:</strong> scanning prescriptions at the end of the day, in a batch. Matching each one to the right invoice is then done from memory, and patient or date errors surface several days later, at payment time.</p></div><p>The safest rule is to scan the document at the time of the invoice, check that it is fully legible (dates, signature, prescriber identification), then confirm it is attached to the matching FSE before the batch is sent.</p><h2 id=\"ordonnance-numerique\">What does the digital prescription change at your front desk?</h2><p>The digital prescription changes where the case starts: the prescription no longer arrives only on paper, it is recorded by the prescriber and retrieved by the professional who dispenses it. The patient presents a prescription that carries a code, and your software retrieves the prescription data.</p><p>For a pharmacy, it is the main incoming flow that changes: less re-entry, more structured prescriptions. For an optician, a hearing care professional or a health center, the effect depends on how far the rollout has progressed in your profession and on what your software can already retrieve. The rollout happens in stages and by profession.</p><p>Two points deserve the team’s attention. First, the digital prescription does not remove the need to check: the prescription must still match what you dispense and bill. Second, during the transition, both formats coexist. Your organization must work with both without creating two separate control processes.</p><h2 id=\"logiciel-mises-a-jour-sesam-vitale-1-40\">Does the software keep up with SESAM-Vitale 1.40 updates on its own?</h2><p>Only partly. Your vendor integrates the SESAM-Vitale 1.40 changes and the regulatory tables into its updates, but three things remain on your side: installing these updates, turning on the new features and training the team to use them.</p><p>An update that has been delivered is not necessarily installed. On a network of several workstations or several sites, one workstation sometimes falls behind without anyone noticing until the first rejection. A feature that has been installed is not necessarily turned on either: some require configuration, equipment or prior registration.</p><p>The agreements framework adds another layer. The agreements signed between French national health insurance and each profession regularly change prices, procedures or coverage rules. The vendor updates the tables, but your own settings (prices you charge, codes used day to day, quote templates) may need to be revised. A gap between the rule in force and the software’s configuration quickly turns into a series of rejections.</p><p>To reduce these rejections without starting over, the article <a href=\"/ressources/reduire-rejets-cpam\">reducing CPAM rejections without changing your practice management software</a> details the checks to put in place before sending.</p><h3>Questions to ask your vendor</h3><ul><li>Which exact version of SESAM-Vitale 1.40 is installed on each of our workstations?</li><li>Is reading the Carte Vitale app available, and with what hardware?</li><li>Are ADRi and the other built-in online services turned on for our profession?</li><li>Are scanned documents automatically linked to the right invoice?</li><li>Which changes are planned in the next updates, and on what timeline for us?</li></ul><h2 id=\"part-complementaire\">Do these changes affect the supplementary share?</h2><p>No, not directly. SESAM-Vitale governs billing for the mandatory share. The supplementary share (AMC, supplementary health insurance: a mutuelle, an insurance company or a provident institution) follows its own channels, which do not change at the same pace.</p><p>Depending on the profession, the supplementary share goes through an electronic reimbursement request attached to the invoice, or through the portals of third-party payment platforms. In optical and hearing care in particular, a coverage request is often entered on the platform’s portal before the invoice. A well-read Carte Vitale app or a well-used ADRi changes nothing in these steps: the case can be perfect on the AMO side and blocked on the AMC side.</p><p>Our guide to <a href=\"/ressources/portails-tiers-payant\">third-party payment portals</a> describes these channels portal by portal, and the full process, from coverage request to collection, is explained in <a href=\"/ressources/tiers-payant-opticien\">third-party payment for opticians: from coverage request to collection</a>.</p><p>This is often where time gets lost: one portal per platform, different logins, statuses to monitor. When these requests number in the dozens every week, they can be entered on the portals without you, with the status sent back to the team: that is what <a href=\"/agents\">Granit’s agents</a> do, while your software keeps handling the mandatory share.</p><h2 id=\"anticiper-evolutions\">How do you prepare for upcoming changes without disrupting the team?</h2><p>The safest method comes down to one principle: treat each change as a small go-live, tested on a real case before rolling it out. Waiting for the deadline means discovering problems at the busiest time.</p><ol class=\"steps\"><li><strong>Take stock.</strong> Get from your vendor the version installed on each workstation and the list of features that are available but not turned on.</li><li><strong>Pick one change at a time.</strong> Carte Vitale app, ADRi, document scanning: turning everything on at once makes errors hard to trace.</li><li><strong>Test on a real case during a quiet hour.</strong> A willing patient, one complete invoice, then a check of the matching NOEMIE remittance file.</li><li><strong>Train the team in ten minutes.</strong> The new step, the fallback if it fails, and the person to alert if something blocks.</li><li><strong>Monitor the returns the following week.</strong> A rise in rejections right after an update points to settings to revise, not an isolated data entry error.</li></ol><div data-figure=\"anticiper-etapes\"></div><p>Keep a record of each update: date, workstation, feature turned on. If a series of rejections occurs, this log lets you find what changed in a few minutes, and give your vendor precise information rather than “it doesn’t work anymore”.</p><p>Finally, follow official announcements rather than rumors. The pages of French national health insurance, the GIE SESAM-Vitale and your professional association announce changes and their deadlines. Fifteen minutes of monitoring a month is enough to avoid surprises.</p>",
+  "tocItems": [
+    {
+      "id": "sesam-vitale-1-40-definition",
+      "label": "SESAM-Vitale 1.40: what the version covers"
+    },
+    {
+      "id": "appli-carte-vitale-facturation",
+      "label": "The Carte Vitale app and billing"
+    },
+    {
+      "id": "adri-teleservices-ameli-pro",
+      "label": "ADRi and the ameli pro online services"
+    },
+    {
+      "id": "pieces-justificatives-numerisees",
+      "label": "Scanned supporting documents"
+    },
+    {
+      "id": "ordonnance-numerique",
+      "label": "Digital prescriptions at the front desk"
+    },
+    {
+      "id": "logiciel-mises-a-jour-sesam-vitale-1-40",
+      "label": "Does the software keep up with updates on its own?"
+    },
+    {
+      "id": "part-complementaire",
+      "label": "What about the supplementary share?"
+    },
+    {
+      "id": "anticiper-evolutions",
+      "label": "Prepare in five steps"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "What does the Carte Vitale app change for billing?",
+      "answer": "The Carte Vitale app changes how the patient is identified, not the electronic claim form. The patient shows their smartphone instead of their card, and your software must be able to read this digital version on every workstation that bills. The team also needs to know the fallback if the app cannot be read."
+    },
+    {
+      "question": "What is ADRi and when should you use it?",
+      "answer": "ADRi (integrated coverage rights check) is an online service from French national health insurance (Assurance Maladie) that lets the software check the patient’s coverage rights in real time. It is useful when the patient has neither card nor app, when their card is not up to date, for a new patient, or before rebilling after a rejection related to coverage rights. It prevents billing on outdated coverage rights."
+    },
+    {
+      "question": "Which SESAM-Vitale changes are coming?",
+      "answer": "The ongoing changes cover the Carte Vitale app, online services built into the software such as ADRi, scanning of supporting documents and digital prescriptions. They arrive through updates to SESAM-Vitale 1.40, integrated by software vendors. Their timing depends on your profession and your vendor."
+    },
+    {
+      "question": "Does the software keep up with updates on its own?",
+      "answer": "Only partly. The vendor integrates the SESAM-Vitale 1.40 changes and the regulatory tables, but you still have to install the updates on each workstation, turn on the new features and train the team. Your own settings, such as the prices you charge or your quote templates, may also need to be revised."
+    }
+  ],
+  "sources": [
+    {
+      "label": "ameli.fr · Carte Vitale",
+      "url": "https://www.ameli.fr/assure/remboursements/etre-bien-rembourse/carte-vitale"
+    },
+    {
+      "label": "service-public.fr · Carte Vitale",
+      "url": "https://www.service-public.fr/particuliers/vosdroits/F167"
+    }
+  ],
+  "figures": [
+    {
+      "id": "parcours-fse",
+      "type": "flux",
+      "titre": "The path of an invoice on the national health insurance side",
+      "legende": "Each change affects one link: identification, coverage rights, transmission or payment return.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "Patient identification",
+          "detail": "Carte Vitale card or app read by the software",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Eligibility check",
+          "detail": "Coverage rights checked in real time via ADRi",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Electronic claim form",
+          "detail": "FSE sent with the scanned documents",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "National health insurance",
+          "detail": "NOEMIE remittance file: payments and rejections",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Reconciliation",
+          "detail": "NOEMIE remittance file compared with bank transfers",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    },
+    {
+      "id": "anticiper-etapes",
+      "type": "etapes",
+      "titre": "Prepare for a change without disruption",
+      "legende": "One change at a time, tested on a real case before rolling it out.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "Take stock",
+          "detail": "Version installed, workstation by workstation",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "One change at a time",
+          "detail": "So you know where an error comes from",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Test during a quiet hour",
+          "detail": "One complete invoice, then its NOEMIE remittance file",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Train the team",
+          "detail": "The new step, the fallback, who to alert",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Monitor the returns",
+          "detail": "More rejections = settings to revise",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [],
+  "liensEntrants": [],
+  "remplace": [],
+  "verticales": [
+    "optique",
+    "audio",
+    "pharmacie",
+    "dentaire",
+    "centres"
+  ],
+  "refonte": true,
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-30T10:14:37.032Z",
+    "avertissements": [
+      "aucune citation (facultative)",
+      "source non vérifiable (403) : https://www.ameli.fr/assure/remboursements/etre-bien-rembourse/carte-vitale"
+    ]
+  }
+}
