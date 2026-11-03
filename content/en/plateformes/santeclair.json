@@ -106,40 +106,40 @@
     }
   ],
   "conventionnement": [
-    "On santeclair.fr, open the page for the chosen agreement (Tiers-payant TP+ or Partenariat & tiers-payant) and select the Optique (Optical) area.",
+    "On santeclair.fr, open the page for the chosen agreement (“Tiers-payant TP+” or “Partenariat & tiers-payant”) and select the “Optique” (Optical) area.",
     "Create your “Management d'activités” area on services.santeclair.fr.",
     "When creating the area, select your field and your agreement.",
     "To join the partner network, apply from this area during a call for tenders. None is open as of October 7, 2026.",
-    "Once contracted, log in to the partner area on services.santeclair.fr to manage third-party payment."
+    "Once under agreement, log in to the partner area on services.santeclair.fr to manage third-party payment."
   ],
   "statuts": [
     {
-      "libelle": "Accordé (Approved)",
+      "libelle": "“Accordé” (Approved)",
       "sens": "The supplementary insurer approves coverage",
       "action": "Deliver the equipment, then bill"
     },
     {
-      "libelle": "En attente de traitement / En instance / En cours (Awaiting processing / Pending / In progress)",
+      "libelle": "“En attente de traitement / En instance / En cours” (Awaiting processing / Pending / In progress)",
       "sens": "The file is still under review. The portal may announce processing within a few hours",
       "action": "Wait, then come back to check the file"
     },
     {
-      "libelle": "Refusé (Refused)",
+      "libelle": "“Refusé” (Refused)",
       "sens": "No coverage as submitted. The portal gives the reason and offers to print the refusal letter",
       "action": "Read the reason, correct, submit the request again"
     },
     {
-      "libelle": "N° Sécurité sociale inconnu (Unknown social security number)",
+      "libelle": "“N° Sécurité sociale inconnu” (Unknown social security number)",
       "sens": "The file is sent, but no coverage is found behind it",
       "action": "Check the social security number and the third-party payment card before delivering"
     },
     {
-      "libelle": "Service momentanément indisponible (Service temporarily unavailable)",
+      "libelle": "“Service momentanément indisponible” (Service temporarily unavailable)",
       "sens": "The TP+ portal is not responding, the request has not gone out",
       "action": "Try again later"
     },
     {
-      "libelle": "Facturé (Billed)",
+      "libelle": "“Facturé” (Billed)",
       "sens": "The invoice has gone out. The file search shows the bank transfer order",
       "action": "Track the bank transfer"
     }
@@ -165,7 +165,7 @@
       "source": "sc-qsn"
     },
     {
-      "label": "Not contracted yet",
+      "label": "Not under agreement yet",
       "valeur": "Create your “Management d'activités” area",
       "url": "https://services.santeclair.fr/professionnel-sante/compte/creation",
       "source": "sc-tpplus"

@@ -94,42 +94,42 @@
     }
   ],
   "conventionnement": [
-    "Contact the Oxantis contracting department: 0 821 21 00 07 (premium-rate number) or tp-oxantis-convention@oxantis.fr.",
+    "Contact the Oxantis network agreement department: 0 821 21 00 07 (premium-rate number) or tp-oxantis-convention@oxantis.fr.",
     "Once the account is open, log in on oxantis.net with your email address and password, then the code received by phone call or text message."
   ],
   "statuts": [
     {
-      "libelle": "Accordée / acceptée / validée (Approved / accepted / validated)",
+      "libelle": "“Accordée / acceptée / validée” (Approved / accepted / validated)",
       "sens": "The supplementary insurer commits to the amount",
       "action": "Deliver the equipment, then bill on the portal"
     },
     {
-      "libelle": "Accordée sous réserve de pièces justificatives (PECAPJ) (Approved pending supporting documents)",
+      "libelle": "“Accordée sous réserve de pièces justificatives (PECAPJ)” (Approved pending supporting documents)",
       "sens": "Approved, but the supplementary insurer is waiting for documents",
       "action": "Send the supporting documents through the channel indicated by the portal or by Oxantis, quoting the coverage approval (PEC) number"
     },
     {
-      "libelle": "En attente / en instance / en cours (Waiting / pending / in progress)",
+      "libelle": "“En attente / en instance / en cours” (Waiting / pending / in progress)",
       "sens": "The file is still under review",
       "action": "Wait, then follow up at the right time"
     },
     {
-      "libelle": "Refusée / rejetée (Refused / rejected)",
+      "libelle": "“Refusée / rejetée” (Refused / rejected)",
       "sens": "No coverage as submitted",
       "action": "Read the reason on the file page, correct, submit the request again"
     },
     {
-      "libelle": "Expirée / périmée (Expired)",
+      "libelle": "“Expirée / périmée” (Expired)",
       "sens": "The approval has passed its validity period",
       "action": "Submit a new request"
     },
     {
-      "libelle": "Annulée / close / supprimée (Canceled / closed / deleted)",
+      "libelle": "“Annulée / close / supprimée” (Canceled / closed / deleted)",
       "sens": "The file is no longer active",
       "action": "Submit a new request if needed"
     },
     {
-      "libelle": "Facturée (Billed)",
+      "libelle": "“Facturée” (Billed)",
       "sens": "The invoice has gone out",
       "action": "Track the bank transfer"
     }
@@ -137,7 +137,7 @@
   "statutsSource": "granit-connecteur",
   "contacts": [
     {
-      "label": "Contracting (opticians)",
+      "label": "Network agreement (opticians)",
       "valeur": "0 821 21 00 07",
       "detail": "Premium-rate number · or tp-oxantis-convention@oxantis.fr",
       "source": "harmonie-contacts"

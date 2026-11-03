@@ -89,7 +89,7 @@
       "source": "granit-connecteur"
     },
     {
-      "fait": "A store whose contracting file is not up to date is sent, after logging in, to a contracting form. It cannot access the extranet until this form is completed.",
+      "fait": "A store whose network agreement file is not up to date is sent, after logging in, to a network agreement form. It cannot access the extranet until this form is completed.",
       "source": "granit-connecteur"
     },
     {
@@ -121,7 +121,7 @@
       "source": "granit-connecteur"
     },
     {
-      "fait": "If the store’s contracting file is not up to date, Itelis sends you, after the email code, to a form on conventionnement.itelis.fr. The extranet stays inaccessible until this form is completed.",
+      "fait": "If the store’s network agreement file is not up to date, Itelis sends you, after the email code, to a form on conventionnement.itelis.fr. The extranet stays inaccessible until this form is completed.",
       "source": "granit-connecteur"
     },
     {
@@ -140,20 +140,20 @@
   "statutsSource": "",
   "contacts": [
     {
-      "label": "Already contracted",
+      "label": "Already under agreement",
       "valeur": "Secure messaging in the extranet",
       "detail": "The site’s contact form is not intended for partners",
       "source": "itelis-contact"
     },
     {
-      "label": "Not contracted yet",
+      "label": "Not under agreement yet",
       "valeur": "itelis.fr contact form",
-      "detail": "Choose “Professionnel de santé non conventionné” (Non-contracted health professional)",
+      "detail": "Choose “Professionnel de santé non conventionné” (Health professional not under agreement)",
       "url": "https://www.itelis.fr/contact",
       "source": "itelis-contact"
     },
     {
-      "label": "Get contracted",
+      "label": "Get a network agreement",
       "valeur": "Online membership, optical network",
       "url": "https://conventionnement.itelis.fr/adhesion/optique",
       "source": "itelis-adhesion-optique"

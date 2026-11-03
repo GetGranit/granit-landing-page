@@ -43,7 +43,7 @@
     },
     {
       "valeur": "200,000+",
-      "label": "health professionals contracted for Cegedim Assurances third-party payment",
+      "label": "health professionals under agreement for Cegedim Assurances third-party payment",
       "source": "ca-tiers-payant"
     }
   ],
@@ -57,7 +57,7 @@
       "source": "isante-site"
     },
     {
-      "fait": "For an optician, contracting is done directly with iSanté. For this category, the form does not refer to the Inter-AMC association.",
+      "fait": "For an optician, the network agreement is made directly with iSanté. For this category, the form does not refer to the Inter-AMC association.",
       "source": "isante-conv"
     },
     {
@@ -114,7 +114,7 @@
     }
   ],
   "conventionnement": [
-    "On tp-isante.fr, open the contracting request form and choose the Opticien (Optician) category.",
+    "On tp-isante.fr, open the network agreement request form and choose the “Opticien” (Optician) category.",
     "Enter the FINESS or Adeli identifier, the RPPS number, the company name, the SIRET number, the brand or group, the contact person, the software used and the bank details.",
     "Upload the documents: bank details (RIB) in the store’s name and address, company registration extract (Kbis) less than 3 months old, Adeli certificate from the regional health agency (ARS), CPAM certificate, the manager’s ID, and the agreement signed using the template provided.",
     "Accept the agreement and submit. An email confirms the request and explains how to create the account.",
@@ -122,22 +122,22 @@
   ],
   "statuts": [
     {
-      "libelle": "Accepté / Accord N° … (Accepted / Approval No. …)",
+      "libelle": "“Accepté / Accord N° …” (Accepted / Approval No. …)",
       "sens": "The supplementary insurer commits to the amount",
       "action": "Print the approval, deliver the equipment, then bill"
     },
     {
-      "libelle": "En instance / en attente / en cours de traitement (Pending / waiting / being processed)",
+      "libelle": "“En instance / en attente / en cours de traitement” (Pending / waiting / being processed)",
       "sens": "The request is still under review",
       "action": "Wait, then check the status in the request lookup"
     },
     {
-      "libelle": "Refusé (Refused)",
+      "libelle": "“Refusé” (Refused)",
       "sens": "No coverage as submitted",
       "action": "Read the reason, correct, submit the request again"
     },
     {
-      "libelle": "Annulée (Canceled)",
+      "libelle": "“Annulée” (Canceled)",
       "sens": "The request is no longer active",
       "action": "Submit a new request if needed"
     },
@@ -156,8 +156,8 @@
       "source": "ca-coordonnees"
     },
     {
-      "label": "Not contracted yet",
-      "valeur": "Contracting request form",
+      "label": "Not under agreement yet",
+      "valeur": "Network agreement request form",
       "url": "https://www.tp-isante.fr/login#/request-conv",
       "source": "isante-conv"
     },
@@ -232,7 +232,7 @@
       "consulte": "2026-10-07"
     },
     "isante-conv": {
-      "label": "tp-isante.fr · Contracting request form (Optician category)",
+      "label": "tp-isante.fr · Network agreement request form (Optician category)",
       "url": "https://www.tp-isante.fr/login#/request-conv",
       "consulte": "2026-10-07"
     },

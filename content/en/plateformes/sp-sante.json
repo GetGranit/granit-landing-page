@@ -65,7 +65,7 @@
       "source": "cegedim-solutions"
     },
     {
-      "fait": "An optician contracts directly with SP Santé, through a form on spsante.fr. Going through Inter-AMC is reserved for other professions.",
+      "fait": "An optician gets a network agreement directly with SP Santé, through a form on spsante.fr. Going through Inter-AMC is reserved for other professions.",
       "source": "sp-faq"
     },
     {
@@ -114,7 +114,7 @@
     }
   ],
   "conventionnement": [
-    "Open the contracting request form on spsante.fr and choose the Opticien (Optician) category.",
+    "Open the network agreement request form on spsante.fr and choose the “Opticien” (Optician) category.",
     "Enter the FINESS or Adeli identifier, the RPPS number, the company name, the SIRET number, the brand and the store contact.",
     "Specify the e-transmission method: flow, concentrator (OCT), software and vendor.",
     "Attach the supporting documents and the bank details (IBAN and BIC).",
@@ -123,27 +123,27 @@
   ],
   "statuts": [
     {
-      "libelle": "Accordé (Approved)",
+      "libelle": "“Accordé” (Approved)",
       "sens": "The supplementary insurer approves coverage",
       "action": "Deliver the equipment, then e-transmit the invoice under the AMC code on the certificate"
     },
     {
-      "libelle": "Accordé, avec “N° Sécurité sociale inconnu” (Approved, with “Unknown social security number”)",
+      "libelle": "“Accordé”, with “N° Sécurité sociale inconnu” (Approved, with Unknown social security number)",
       "sens": "The file is sent, but the coverage is not recognized: the amounts may come back as zero",
       "action": "Check the INSEE number on the certificate and the Carte Vitale before delivering"
     },
     {
-      "libelle": "En cours d’analyse / traitée sous 48 heures (Under review / processed within 48 hours)",
+      "libelle": "“En cours d’analyse / traitée sous 48 heures” (Under review / processed within 48 hours)",
       "sens": "The supplementary insurer has not decided yet",
       "action": "Wait, then come back to read the decision on the portal"
     },
     {
-      "libelle": "Refusé (Refused)",
+      "libelle": "“Refusé” (Refused)",
       "sens": "No coverage as submitted",
       "action": "Read the reason shown (for example: request to be sent to the platform shown on the certificate), correct, submit the request again"
     },
     {
-      "libelle": "Service momentanément indisponible (Service temporarily unavailable)",
+      "libelle": "“Service momentanément indisponible” (Service temporarily unavailable)",
       "sens": "The transmission did not go through",
       "action": "Try again later"
     }
@@ -217,7 +217,7 @@
       "consulte": "2026-10-07"
     },
     "sp-conv": {
-      "label": "spsante.fr · Contracting request form",
+      "label": "spsante.fr · Network agreement request form",
       "url": "https://www.spsante.fr/components/identity/unauthenticated/request-conv.html",
       "consulte": "2026-10-07"
     }

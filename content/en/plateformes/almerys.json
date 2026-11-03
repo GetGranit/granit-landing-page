@@ -28,7 +28,7 @@
   "chiffres": [
     {
       "valeur": "305,000+",
-      "label": "contracted health professionals, according to Almerys",
+      "label": "health professionals under agreement, according to Almerys",
       "source": "be-almerys-ps"
     },
     {
@@ -57,11 +57,11 @@
       "source": "acuite-aema"
     },
     {
-      "fait": "To become contracted, the optician sends a voided claim form or their local health insurance office (CPAM) certificate to the Almerys contracting unit.",
+      "fait": "To get a network agreement, the optician sends a voided claim form or their local health insurance office (CPAM) certificate to the Almerys network agreement unit.",
       "source": "almerys-ps"
     },
     {
-      "fait": "To access the professional portal, you must be contracted with Almerys and have validated your account following the instructions Almerys sends.",
+      "fait": "To access the professional portal, you must be under agreement with Almerys and have validated your account following the instructions Almerys sends.",
       "source": "almerys-extranet"
     },
     {
@@ -102,42 +102,42 @@
   ],
   "statuts": [
     {
-      "libelle": "Créée (Created)",
+      "libelle": "“Créée” (Created)",
       "sens": "The request is recorded, with no decision yet",
       "action": "Wait for the response, then check the history"
     },
     {
-      "libelle": "En instance (Pending)",
+      "libelle": "“En instance” (Pending)",
       "sens": "The request is still under review",
       "action": "Wait, then follow up if nothing moves"
     },
     {
-      "libelle": "Validée (Approved)",
+      "libelle": "“Validée” (Approved)",
       "sens": "The supplementary insurer approves coverage",
       "action": "Deliver the equipment, then bill"
     },
     {
-      "libelle": "Refusée (Refused)",
+      "libelle": "“Refusée” (Refused)",
       "sens": "No coverage as submitted",
       "action": "Read the reason, correct, submit a new request"
     },
     {
-      "libelle": "Périmée (Expired)",
+      "libelle": "“Périmée” (Expired)",
       "sens": "The approval has passed its validity period",
       "action": "Submit a new request"
     },
     {
-      "libelle": "Annulée (Canceled)",
+      "libelle": "“Annulée” (Canceled)",
       "sens": "The request is no longer active",
       "action": "Submit a new request if the equipment is still being delivered"
     },
     {
-      "libelle": "Facturée (Billed)",
+      "libelle": "“Facturée” (Billed)",
       "sens": "The invoice has been sent",
       "action": "Track the payment"
     },
     {
-      "libelle": "Soldée (Settled)",
+      "libelle": "“Soldée” (Settled)",
       "sens": "The file is paid",
       "action": "Nothing to do, check the amount received"
     }
@@ -151,7 +151,7 @@
       "source": "almerys-ps"
     },
     {
-      "label": "Contracting and account",
+      "label": "Network agreement and account",
       "valeur": "celluleconventionnementalmerys@almerys.com",
       "source": "almerys-contacts"
     },

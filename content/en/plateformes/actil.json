@@ -11,7 +11,7 @@
     },
     {
       "label": "Optical",
-      "valeur": "Yes, by price quote (cotation) then coverage approval",
+      "valeur": "Yes, by pricing request (cotation) then coverage approval",
       "source": "actil-opticiens"
     },
     {
@@ -33,7 +33,7 @@
     },
     {
       "valeur": "400,000+",
-      "label": "contracted health professionals",
+      "label": "health professionals under agreement",
       "source": "actil-home"
     },
     {
@@ -65,11 +65,11 @@
       "source": "actil-opticiens"
     },
     {
-      "fait": "From their private area on actil.com, the optician submits price quote (cotation) and coverage requests online.",
+      "fait": "From their private area on actil.com, the optician submits pricing requests (cotation) and coverage requests online.",
       "source": "actil-opticiens"
     },
     {
-      "fait": "On the optical portal, the request submitted is first a price quote (cotation). Coverage approval comes next, by converting an accepted quote.",
+      "fait": "On the optical portal, the request submitted is first a pricing request (cotation). Coverage approval comes next, by converting an accepted pricing request.",
       "source": "granit-connecteur"
     },
     {
@@ -85,7 +85,7 @@
       "source": "actil-faq"
     },
     {
-      "fait": "You can bill as soon as the equipment is delivered, within the following 2 years, provided you are still contracted. Actil does not pay retroactive invoices.",
+      "fait": "You can bill as soon as the equipment is delivered, within the following 2 years, provided you are still under agreement. Actil does not pay retroactive invoices.",
       "source": "actil-faq"
     },
     {
@@ -114,46 +114,46 @@
     "Wait to be contacted by the Actil teams to finalize registration.",
     "Sign the Actil agreement and provide the requested supporting documents.",
     "After the documents are checked, receive your login for the professional portal.",
-    "Finalize registration online, then submit price quotes and coverage requests on actil.com."
+    "Finalize registration online, then submit pricing requests and coverage requests on actil.com."
   ],
   "statuts": [
     {
-      "libelle": "Accepté / Accord N°… (Accepted / Approval No.…)",
-      "sens": "The supplementary insurer accepts the price quote",
-      "action": "Convert the quote into a coverage approval, deliver, then bill"
+      "libelle": "“Accepté / Accord N°…” (Accepted / Approval No.…)",
+      "sens": "The supplementary insurer accepts the pricing request",
+      "action": "Convert the pricing request into a coverage approval, deliver, then bill"
     },
     {
-      "libelle": "Accord N°… (Facturé) (Approval No.…, Billed)",
+      "libelle": "“Accord N°… (Facturé)” (Approval No.…, Billed)",
       "sens": "The file has already been billed",
       "action": "Track the payment in the payment statements"
     },
     {
-      "libelle": "Refusé (Refused)",
+      "libelle": "“Refusé” (Refused)",
       "sens": "No coverage as submitted. The reason follows, for example “Dépassement grille tarifaire” (price grid exceeded)",
       "action": "Read the reason, correct the quote, submit the request again"
     },
     {
-      "libelle": "En attente (Waiting)",
+      "libelle": "“En attente” (Waiting)",
       "sens": "The request has not been processed yet",
       "action": "Wait, then follow up at the right time"
     },
     {
-      "libelle": "Prise en compte (Received)",
+      "libelle": "“Prise en compte” (Received)",
       "sens": "The request has been received and is in progress",
       "action": "Wait for the response"
     },
     {
-      "libelle": "Validation en cours (Validation in progress)",
+      "libelle": "“Validation en cours” (Validation in progress)",
       "sens": "The request is being reviewed manually at Actil",
       "action": "Wait, then check the status again"
     },
     {
-      "libelle": "Annulée (Canceled)",
+      "libelle": "“Annulée” (Canceled)",
       "sens": "The request is no longer active",
       "action": "Submit a new request if needed"
     },
     {
-      "libelle": "Aucun droit ouvert (No open coverage rights)",
+      "libelle": "“Aucun droit ouvert” (No open coverage rights)",
       "sens": "The portal finds no coverage rights for this social security number",
       "action": "Check the number, then direct the patient to their supplementary insurer"
     }
@@ -161,13 +161,13 @@
   "statutsSource": "granit-connecteur",
   "contacts": [
     {
-      "label": "Not contracted yet",
+      "label": "Not under agreement yet",
       "valeur": "actil.com contact form",
       "url": "https://www.actil.com/contact/",
       "source": "actil-contact"
     },
     {
-      "label": "Already contracted",
+      "label": "Already under agreement",
       "valeur": "Health professional portal",
       "url": "https://www.actil.com/connexion/",
       "source": "actil-connexion"
