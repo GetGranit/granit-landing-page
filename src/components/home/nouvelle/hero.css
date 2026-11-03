@@ -51,6 +51,8 @@
 /* ---------- titre, chapô, boutons ---------- */
 .nh .tv-h1 { margin: 0; font: 400 clamp(36px, 3.5vw, 52px)/1.06 var(--sans); letter-spacing: -.038em; text-wrap: balance; }
 .nh .tv-h1 .tv-l { display: block; }
+/* Geist est plus large que la police de la maquette : sur téléphone, le titre passait sur 3 lignes au lieu de 2 */
+@media (max-width: 480px) { .nh .tv-h1 { font-size: clamp(30px, 8.6vw, 36px); } }
 .nh .tv-lead { margin: 0; font: 400 clamp(16px, 1.2vw, 18px)/1.45 var(--sans); text-wrap: pretty; }
 .nh .tv-ctas { display: flex; flex-wrap: wrap; gap: 10px; }
 .nh .tv-btn { display: inline-flex; align-items: center; gap: 9px; min-height: 42px; padding: 0 19px; border-radius: 999px; font: 400 15px/1 var(--sans); text-decoration: none; white-space: nowrap; transition: background .2s, border-color .2s, color .2s; }
