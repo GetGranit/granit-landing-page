@@ -1,6 +1,40 @@
 import { useRef, useState } from "react";
 
+import { useLanguage } from "@/lib/i18n";
 import { Kicker, Muted, Reassure, Screen, TextLink, Title, bigBtn, focusRing } from "./ui";
+
+const copy = {
+  fr: {
+    kicker: "Pour les opticiens qui font leurs PEC eux-mêmes",
+    title: "Votre prochaine PEC, ",
+    em: "sans la taper",
+    intro:
+      "Prenez en photo la carte de tiers payant de votre client : on identifie le bon portail et on vous donne une estimation du remboursement. La photo n'est jamais conservée.",
+    photo: "Prendre la carte en photo",
+    importer: "Importer une photo ou un PDF",
+    pasDeClient: "Pas de client sous la main ?",
+    exemple: "Essayer avec une carte d'exemple",
+    taper: "Taper le nom de la mutuelle",
+    reassure: ["Photo lue par IA, jamais conservée par Granit", "Gratuit, sans inscription"],
+    frameLabel: "Importer une photo ou un PDF de la carte",
+    frameHint: "carte à plat, recto, bien éclairée",
+  },
+  en: {
+    kicker: "For opticians who submit their own coverage requests",
+    title: "Your next coverage request, ",
+    em: "without typing it",
+    intro:
+      "Take a photo of your customer’s third-party payment card: we identify the right portal and give you an estimate of the reimbursement. The photo is never stored.",
+    photo: "Take a photo of the card",
+    importer: "Upload a photo or a PDF",
+    pasDeClient: "No customer at hand?",
+    exemple: "Try with a sample card",
+    taper: "Type the insurer’s name",
+    reassure: ["Photo read by AI, never stored by Granit", "Free, no sign-up"],
+    frameLabel: "Upload a photo or a PDF of the card",
+    frameHint: "card flat, front side, well lit",
+  },
+};
 
 /**
  * E1 · la photo. Caméra arrière d'abord, import juste en dessous (la carte est
@@ -18,6 +52,7 @@ export function StepCapture({
   onType: () => void;
   error?: string | null;
 }) {
+  const t = copy[useLanguage().lang];
   const camera = useRef<HTMLInputElement>(null);
   const gallery = useRef<HTMLInputElement>(null);
   const pick = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -28,12 +63,9 @@ export function StepCapture({
 
   return (
     <Screen id="capture">
-      <Kicker>Pour les opticiens qui font leurs PEC eux-mêmes</Kicker>
-      <Title em="sans la taper">Votre prochaine PEC, </Title>
-      <Muted>
-        Prenez en photo la carte de tiers payant de votre client : on identifie le bon portail et on
-        vous donne une estimation du remboursement. La photo n'est jamais conservée.
-      </Muted>
+      <Kicker>{t.kicker}</Kicker>
+      <Title em={t.em}>{t.title}</Title>
+      <Muted>{t.intro}</Muted>
 
       <CardFrame onPick={() => gallery.current?.click()} onFile={onFile} />
 
@@ -54,9 +86,9 @@ export function StepCapture({
       />
 
       <button type="button" className={bigBtn} onClick={() => camera.current?.click()}>
-        Prendre la carte en photo <span className="arrow">→</span>
+        {t.photo} <span className="arrow">→</span>
       </button>
-      <TextLink onClick={() => gallery.current?.click()}>Importer une photo ou un PDF</TextLink>
+      <TextLink onClick={() => gallery.current?.click()}>{t.importer}</TextLink>
 
       {error && (
         <p
@@ -70,17 +102,15 @@ export function StepCapture({
 
       <div className="grid w-full gap-2 border-t pt-4" style={{ borderColor: "var(--border)" }}>
         <span className="text-[14px]" style={{ color: "var(--text-muted)" }}>
-          Pas de client sous la main ?
+          {t.pasDeClient}
         </span>
         <div className="flex flex-wrap justify-center gap-x-5 gap-y-2">
-          <TextLink onClick={onExample}>Essayer avec une carte d'exemple</TextLink>
-          <TextLink onClick={onType}>Taper le nom de la mutuelle</TextLink>
+          <TextLink onClick={onExample}>{t.exemple}</TextLink>
+          <TextLink onClick={onType}>{t.taper}</TextLink>
         </div>
       </div>
 
-      <Reassure
-        items={["Photo lue par IA, jamais conservée par Granit", "Gratuit, sans inscription"]}
-      />
+      <Reassure items={t.reassure} />
     </Screen>
   );
 }
@@ -90,6 +120,7 @@ export function StepCapture({
  * aussi le glisser-déposer d'une photo ou d'un PDF.
  */
 function CardFrame({ onPick, onFile }: { onPick: () => void; onFile: (f: File) => void }) {
+  const t = copy[useLanguage().lang];
   const c = "absolute h-6 w-6 border-[3px]";
   const col = { borderColor: "var(--terra)" };
   const [survol, setSurvol] = useState(false);
@@ -108,11 +139,13 @@ function CardFrame({ onPick, onFile }: { onPick: () => void; onFile: (f: File) =
         const f = e.dataTransfer.files?.[0];
         if (f) onFile(f);
       }}
-      aria-label="Importer une photo ou un PDF de la carte"
+      aria-label={t.frameLabel}
       className={`relative grid aspect-[1.586] w-full max-w-[340px] cursor-pointer place-items-center rounded-2xl border transition-colors ${
         survol ? "border-[var(--terra)]" : "border-transparent hover:border-[var(--terra)]"
       } ${focusRing}`}
-      style={{ background: survol ? "color-mix(in oklab, var(--terra) 8%, var(--bg2))" : "var(--bg2)" }}
+      style={{
+        background: survol ? "color-mix(in oklab, var(--terra) 8%, var(--bg2))" : "var(--bg2)",
+      }}
     >
       <span
         className={`${c} left-2 top-2 rounded-tl-lg border-b-0 border-r-0`}
@@ -138,7 +171,7 @@ function CardFrame({ onPick, onFile }: { onPick: () => void; onFile: (f: File) =
         className="text-[13px]"
         style={{ fontFamily: "var(--font-mono)", color: "var(--text-muted)" }}
       >
-        carte à plat, recto, bien éclairée
+        {t.frameHint}
       </span>
     </button>
   );

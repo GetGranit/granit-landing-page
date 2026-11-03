@@ -1,11 +1,49 @@
 import { useState } from "react";
 
+import { useLanguage } from "@/lib/i18n";
 import { PORTAILS, type PecPlatform } from "@/lib/pec/essaiState";
 import { AjoutPortail } from "./AjoutPortail";
 import { Bascule, Progression } from "./Bascule";
 import { Confettis } from "./Confettis";
 import { Card, Kicker, PopCheck, TextButton } from "./ui";
 import { useIdleWhile } from "./useIdle";
+
+const copy = {
+  fr: {
+    etape: "Étape 1 · vos accès",
+    quels: "Quels portails ",
+    utilisez: "utilisez-vous ?",
+    cochez:
+      "Cochez ceux où vous faites des PEC. Granit s'y connecte avec vos accès, une fois pour toutes.",
+    deja: "Déjà connecté",
+    connecterN: (n: number) => `Connecter ${n === 1 ? "ce portail" : `ces ${n} portails`}`,
+    seulement: (l: string) => `Je n'utilise que ${l}`,
+    continuer: "Continuer",
+    connectez: "Connectez vos portails, ",
+    unParUn: "un par un.",
+    noteCarte: "Le portail de votre simulation",
+    connecter: "Connecter",
+    modifier: "Modifier ma liste de portails",
+    connecte: "Connecté",
+  },
+  en: {
+    etape: "Step 1 · your logins",
+    quels: "Which portals ",
+    utilisez: "do you use?",
+    cochez:
+      "Check the ones where you submit coverage requests. Granit connects to them with your login details, once and for all.",
+    deja: "Already connected",
+    connecterN: (n: number) => `Connect ${n === 1 ? "this portal" : `these ${n} portals`}`,
+    seulement: (l: string) => `I only use ${l}`,
+    continuer: "Continue",
+    connectez: "Connect your portals, ",
+    unParUn: "one by one.",
+    noteCarte: "The portal from your simulation",
+    connecter: "Connect",
+    modifier: "Edit my list of portals",
+    connecte: "Connected",
+  },
+};
 
 type Props = {
   /** Portail de la simulation : déjà connecté sur /pec. */
@@ -52,15 +90,16 @@ export function Acces(props: Props) {
 function Choix({ carte, selection, onToggle, onValider }: Props) {
   const autres = PORTAILS.filter((p) => p.id !== carte?.id);
   const n = autres.filter((p) => selection.has(p.id)).length;
+  const t = copy[useLanguage().lang];
   return (
     <>
-      <Kicker>Étape 1 · vos accès</Kicker>
+      <Kicker>{t.etape}</Kicker>
       <h2 id="acces-titre" className="font-serif text-[28px] leading-[1.15]">
-        Quels portails <span className="accent-italic">utilisez-vous ?</span>
+        {t.quels}
+        <span className="accent-italic">{t.utilisez}</span>
       </h2>
       <p className="mt-2 text-[15px] leading-[1.5]" style={{ color: "var(--text-soft)" }}>
-        Cochez ceux où vous faites des PEC. Granit s'y connecte avec vos accès, une fois pour
-        toutes.
+        {t.cochez}
       </p>
       <ul className="mt-5 grid grid-cols-2 gap-2 sm:grid-cols-3">
         {carte && (
@@ -75,7 +114,7 @@ function Choix({ carte, selection, onToggle, onValider }: Props) {
                   {carte.label}
                 </span>
                 <span className="block text-[11px]" style={{ color: "var(--text-soft)" }}>
-                  Déjà connecté
+                  {t.deja}
                 </span>
               </span>
             </div>
@@ -107,11 +146,7 @@ function Choix({ carte, selection, onToggle, onValider }: Props) {
         onClick={onValider}
         className="btn-primary mt-5 w-full justify-center py-3.5 text-[16px]"
       >
-        {n > 0
-          ? `Connecter ${n === 1 ? "ce portail" : `ces ${n} portails`}`
-          : carte
-            ? `Je n'utilise que ${carte.label}`
-            : "Continuer"}{" "}
+        {n > 0 ? t.connecterN(n) : carte ? t.seulement(carte.label) : t.continuer}{" "}
         <span className="arrow">→</span>
       </button>
     </>
@@ -148,6 +183,7 @@ function Connexion({
   const [open, setOpen] = useState<string | null>(premier);
   const [burst, setBurst] = useState<{ id: string; n: number }>({ id: "", n: 0 });
   useIdleWhile(open !== null, onIdle);
+  const t = copy[useLanguage().lang];
 
   function connect(id: string) {
     onConnect(id);
@@ -158,15 +194,16 @@ function Connexion({
 
   return (
     <>
-      <Kicker>Étape 1 · vos accès</Kicker>
+      <Kicker>{t.etape}</Kicker>
       <h2 id="acces-titre" className="font-serif text-[28px] leading-[1.15]">
-        Connectez vos portails, <span className="accent-italic">un par un.</span>
+        {t.connectez}
+        <span className="accent-italic">{t.unParUn}</span>
       </h2>
       <Progression faits={faits} total={total} />
 
       <Card className="mt-5">
         <ul className="divide-y" style={{ borderColor: "var(--border)" }}>
-          {carte && <Ligne platform={carte} connected note="Le portail de votre simulation" />}
+          {carte && <Ligne platform={carte} connected note={t.noteCarte} />}
           {cochés.map((p) => {
             const connected = connectes.has(p.id);
             return (
@@ -177,7 +214,7 @@ function Connexion({
                 burst={burst.id === p.id ? burst.n : 0}
                 action={
                   !connected && open !== p.id ? (
-                    <TextButton onClick={() => setOpen(p.id)}>Connecter</TextButton>
+                    <TextButton onClick={() => setOpen(p.id)}>{t.connecter}</TextButton>
                   ) : null
                 }
               >
@@ -194,7 +231,7 @@ function Connexion({
         </ul>
       </Card>
       <div className="mt-3">
-        <TextButton onClick={onModifier}>Modifier ma liste de portails</TextButton>
+        <TextButton onClick={onModifier}>{t.modifier}</TextButton>
       </div>
     </>
   );
@@ -215,6 +252,7 @@ function Ligne({
   action?: React.ReactNode;
   children?: React.ReactNode;
 }) {
+  const t = copy[useLanguage().lang];
   return (
     <li className="py-3">
       <div className="flex items-center justify-between gap-3">
@@ -234,7 +272,7 @@ function Ligne({
         </div>
         {connected ? (
           <span className="text-[13px]" style={{ color: "var(--sage)", fontWeight: 600 }}>
-            Connecté
+            {t.connecte}
           </span>
         ) : (
           action
