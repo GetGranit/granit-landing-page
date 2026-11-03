@@ -2,6 +2,7 @@ import { type ReactElement, useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { motion } from "framer-motion";
+import { CalendarCheck, CircleCheck } from "lucide-react";
 import { usePostHog } from "posthog-js/react";
 
 import { Reveal } from "@/components/Reveal";
@@ -385,7 +386,7 @@ function HeroDashboard({ t, lang }: { t: typeof copy["fr"]; lang: "fr" | "en" })
       <div className="flex items-center gap-3 border-b px-5 py-3.5" style={{ borderColor: "var(--border)" }}>
         <div className="flex items-center gap-2">
           <div className="flex h-7 w-7 items-center justify-center rounded-[7px]" style={{ background: "var(--succes-fond)", color: "var(--succes-texte)" }}>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 12h3l2-7 4 14 2-7h7"/></svg>
+            <CircleCheck size={14} strokeWidth={1.8} aria-hidden />
           </div>
           <div>
             <div className="text-[14px]" style={{ fontWeight: 600 }}>{t.dashGreeting}</div>
@@ -935,7 +936,7 @@ export function HomeSections() {
               {/* Greeting banner */}
               <div className="flex items-center gap-3 border-b px-5 py-3.5" style={{ borderColor: "var(--border)", background: "var(--surface)" }}>
                 <div className="flex h-9 w-9 items-center justify-center rounded-[8px]" style={{ background: "var(--succes-fond)", color: "var(--succes-texte)" }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 12h3l2-7 4 14 2-7h7"/></svg>
+                  <CircleCheck size={16} strokeWidth={1.8} aria-hidden />
                 </div>
                 <div className="min-w-0">
                   <div className="text-[14px]" style={{ fontWeight: 600 }}>{t.dashGreeting}</div>
@@ -1210,7 +1211,7 @@ export function HomeSections() {
             >
               <div className="flex items-start gap-4">
                 <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[12px]" style={{ background: "var(--encre-2)", color: "var(--menthe)" }}>
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 12h3l2-7 4 14 2-7h7"/></svg>
+                  <CalendarCheck size={22} strokeWidth={1.8} aria-hidden />
                 </span>
                 <div>
                   <div className="text-[18px]" style={{ fontWeight: 600 }}>{t.ctaTitle}</div>
