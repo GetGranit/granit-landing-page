@@ -12,7 +12,11 @@ import { mouvementReduit } from "@/lib/motion";
 const abonner = () => () => {};
 /** Faux au rendu serveur et pendant l'hydratation, vrai ensuite. */
 export function useHydrate() {
-  return useSyncExternalStore(abonner, () => true, () => false);
+  return useSyncExternalStore(
+    abonner,
+    () => true,
+    () => false,
+  );
 }
 
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -35,21 +39,45 @@ function Rond({ etat }: { etat: Etat }) {
     >
       <span
         className="absolute inset-0 animate-spin rounded-full border-[1.5px] border-transparent transition-opacity duration-200"
-        style={{ borderTopColor: "var(--menthe)", opacity: etat === "cours" ? 1 : 0, animationDuration: "0.8s" }}
+        style={{
+          borderTopColor: "var(--menthe)",
+          opacity: etat === "cours" ? 1 : 0,
+          animationDuration: "0.8s",
+        }}
       />
       <svg
         viewBox="0 0 12 12"
         className="size-[10px] transition-[opacity,transform] duration-300"
-        style={{ opacity: etat === "fait" ? 1 : 0, transform: etat === "fait" ? "scale(1)" : "scale(0.3)" }}
+        style={{
+          opacity: etat === "fait" ? 1 : 0,
+          transform: etat === "fait" ? "scale(1)" : "scale(0.3)",
+        }}
         aria-hidden
       >
-        <path d="M2.5 6.2l2.3 2.3 4.7-5" fill="none" stroke="var(--encre)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+        <path
+          d="M2.5 6.2l2.3 2.3 4.7-5"
+          fill="none"
+          stroke="var(--encre)"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
       </svg>
     </span>
   );
 }
 
-export function Pastille({ enCours, fait, detail, etat }: { enCours: string; fait: string; detail?: string; etat: Etat }) {
+export function Pastille({
+  enCours,
+  fait,
+  detail,
+  etat,
+}: {
+  enCours: string;
+  fait: string;
+  detail?: string;
+  etat: Etat;
+}) {
   return (
     <div
       className="flex max-w-full items-center gap-3 rounded-[16px] border py-2.5 pr-4 pl-3 backdrop-blur-md transition-opacity duration-300"
@@ -60,19 +88,29 @@ export function Pastille({ enCours, fait, detail, etat }: { enCours: string; fai
         <span className="grid text-[14px] leading-[1.3] font-medium">
           <span
             className="col-start-1 row-start-1 truncate transition-[opacity,transform] duration-300"
-            style={{ color: "var(--sur-encre-secondaire)", opacity: etat === "fait" ? 0 : 1, transform: etat === "fait" ? "translateY(-5px)" : "none" }}
+            style={{
+              color: "var(--sur-encre-secondaire)",
+              opacity: etat === "fait" ? 0 : 1,
+              transform: etat === "fait" ? "translateY(-5px)" : "none",
+            }}
           >
             {enCours}
           </span>
           <span
             className="col-start-1 row-start-1 truncate transition-[opacity,transform] duration-300"
-            style={{ opacity: etat === "fait" ? 1 : 0, transform: etat === "fait" ? "none" : "translateY(5px)" }}
+            style={{
+              opacity: etat === "fait" ? 1 : 0,
+              transform: etat === "fait" ? "none" : "translateY(5px)",
+            }}
           >
             {fait}
           </span>
         </span>
         {detail && (
-          <span className="truncate text-[12.5px] leading-[1.3]" style={{ color: "var(--sur-encre-secondaire)" }}>
+          <span
+            className="truncate text-[12.5px] leading-[1.3]"
+            style={{ color: "var(--sur-encre-secondaire)" }}
+          >
             {detail}
           </span>
         )}
@@ -89,7 +127,13 @@ export type EtapePastille = { enCours: string; fait: string; detail?: string; pl
  * « photo » : posées sur la photo (ordinateur). « ligne » : une à la fois, sous le titre (mobile),
  * pour ne pas couvrir les visages.
  */
-export function SequenceHero({ etapes, variante = "photo" }: { etapes: EtapePastille[]; variante?: "photo" | "ligne" }) {
+export function SequenceHero({
+  etapes,
+  variante = "photo",
+}: {
+  etapes: EtapePastille[];
+  variante?: "photo" | "ligne";
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const visible = useInView(ref, { amount: 0.3 });
   const fin = 3 * (etapes.length - 1) + 2;
@@ -106,7 +150,13 @@ export function SequenceHero({ etapes, variante = "photo" }: { etapes: EtapePast
   }, [visible, pas, fin]);
 
   return (
-    <div ref={ref} className={variante === "photo" ? "pointer-events-none absolute inset-0" : "pointer-events-none grid"} aria-hidden>
+    <div
+      ref={ref}
+      className={
+        variante === "photo" ? "pointer-events-none absolute inset-0" : "pointer-events-none grid"
+      }
+      aria-hidden
+    >
       {etapes.map((e, k) => {
         const derniere = k === etapes.length - 1;
         const montre = pas >= 3 * k && (derniere || pas < 3 * k + 4);
@@ -114,10 +164,18 @@ export function SequenceHero({ etapes, variante = "photo" }: { etapes: EtapePast
         return (
           <motion.div
             key={e.fait}
-            className={variante === "photo" ? "absolute top-[var(--t)] left-[var(--l)] max-w-[calc(100%-32px)]" : "col-start-1 row-start-1 max-w-full justify-self-start"}
+            className={
+              variante === "photo"
+                ? "absolute top-[var(--t)] left-[var(--l)] max-w-[calc(100%-32px)]"
+                : "col-start-1 row-start-1 max-w-full justify-self-start"
+            }
             style={variante === "photo" ? placeStyle(e.place) : undefined}
             initial={false}
-            animate={montre ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: pas >= 3 * k + 4 ? -8 : 10, scale: 0.97 }}
+            animate={
+              montre
+                ? { opacity: 1, y: 0, scale: 1 }
+                : { opacity: 0, y: pas >= 3 * k + 4 ? -8 : 10, scale: 0.97 }
+            }
             transition={{ duration: 0.7, ease: EASE }}
           >
             <Pastille enCours={e.enCours} fait={e.fait} detail={e.detail} etat={etat} />

@@ -7,10 +7,10 @@
 // Aucun chiffre ici, sauf ceux que TON.md valide (PEC en moins de 2 minutes, en optique seulement).
 // Les catalogues de HomeSections.tsx et de lib/mcp/tools/list-agents.ts ne lisent pas ce fichier.
 
-import audioprothesiste from "@/assets/metiers/audioprothesiste.jpg";
-import equipeSoignante from "@/assets/metiers/equipe-soignante.jpg";
+import centreSante from "@/assets/metiers/centre-sante.jpg";
+import dentaire from "@/assets/metiers/dentaire.jpg";
 import laboratoire from "@/assets/metiers/laboratoire.jpg";
-import ophtalmologie from "@/assets/metiers/ophtalmologie.jpg";
+import opticien from "@/assets/metiers/opticien.jpg";
 import pharmacien from "@/assets/metiers/pharmacien.jpg";
 
 /** Slugs des pages `/agents/<slug>`, dans l'ordre de /agents. */
@@ -56,19 +56,27 @@ export type Metier = {
 };
 
 export const PHOTOS: Record<SlugMetier, string> = {
-  optique: audioprothesiste,
-  // TODO photo dentaire : aucune photo de cabinet dentaire, l'équipe soignante tient la place.
-  dentaire: equipeSoignante,
-  "centres-sante": ophtalmologie,
+  optique: opticien,
+  dentaire,
+  "centres-sante": centreSante,
   pharmacie: pharmacien,
   "cliniques-laboratoires": laboratoire,
 };
 
-/** Position de la photo dans son cadre (object-position), pour garder le visage. */
+/** Taille des photos : 1376 × 768 (paysage) pour les trois nouvelles, 520 × 780 pour les autres. */
+export const TAILLES: Record<SlugMetier, [number, number]> = {
+  optique: [1376, 768],
+  dentaire: [1376, 768],
+  "centres-sante": [1376, 768],
+  pharmacie: [520, 780],
+  "cliniques-laboratoires": [520, 780],
+};
+
+/** Position de la photo dans une carte (object-position) : les visages en haut, hors du texte. */
 export const CADRAGES: Record<SlugMetier, string> = {
-  optique: "70% 40%",
-  dentaire: "55% 50%",
-  "centres-sante": "40% 35%",
+  optique: "55% 30%",
+  dentaire: "60% 30%",
+  "centres-sante": "50% 30%",
   pharmacie: "45% 40%",
   "cliniques-laboratoires": "70% 40%",
 };
@@ -115,7 +123,7 @@ const fr: Record<SlugMetier, Metier> = {
       },
     ],
     outils: "Dans Cosium, Optimum et vos autres logiciels, sur toutes les plateformes de tiers payant : Almerys, Viamédis, Santéclair, Kalixia, Carte Blanche…",
-    alt: "Une audioprothésiste examine l'oreille d'un patient.",
+    alt: "Une opticienne ajuste les lunettes d'une cliente en magasin.",
   },
   dentaire: {
     nom: "Centres dentaires",
@@ -153,7 +161,7 @@ const fr: Record<SlugMetier, Metier> = {
       },
     ],
     outils: "Dans le logiciel de votre cabinet et sur les portails des mutuelles, sans API à demander.",
-    alt: "Une équipe soignante marche dans un couloir de centre de santé.",
+    alt: "Au cabinet dentaire, une assistante parle à une patiente, tablette en main, à côté du praticien.",
   },
   "centres-sante": {
     nom: "Centres de santé et ophtalmologie",
@@ -191,7 +199,7 @@ const fr: Record<SlugMetier, Metier> = {
       },
     ],
     outils: "Dans votre logiciel médical et sur les portails de l'Assurance Maladie et des mutuelles.",
-    alt: "Un ophtalmologiste examine le fond d'œil d'une patiente.",
+    alt: "À l'accueil d'un centre de santé, une secrétaire reçoit une patiente.",
   },
   pharmacie: {
     nom: "Pharmacies",
@@ -284,7 +292,7 @@ const en: Record<SlugMetier, Metier> = {
       { tache: "Rejections and payments", titre: "Handles rejections, matches transfers", texte: "Corrects and resubmits rejected files, matches each transfer to its invoice and follows up on unpaid ones.", ou: "On your bank statements and in your software", enCours: "Matching transfers", fait: "Transfers matched" },
     ],
     outils: "In Cosium, Optimum and your other software, on every third-party payment platform: Almerys, Viamédis, Santéclair, Kalixia, Carte Blanche…",
-    alt: "A hearing care professional examines a patient's ear.",
+    alt: "An optician fits a customer's glasses in the store.",
   },
   dentaire: {
     nom: "Dental centers",
@@ -298,7 +306,7 @@ const en: Record<SlugMetier, Metier> = {
       { tache: "Rejections and follow-ups", titre: "Handles rejections, follows up balances", texte: "Spots rejections, corrects and resubmits, matches transfers and follows up on amounts due.", enCours: "Handling rejections", fait: "Rejection resubmitted" },
     ],
     outils: "In your practice software and on insurer portals, with no API to request.",
-    alt: "A care team walks down a health center corridor.",
+    alt: "At a dental practice, an assistant talks to a patient, tablet in hand, next to the dentist.",
   },
   "centres-sante": {
     nom: "Health centers and ophthalmology",
@@ -312,7 +320,7 @@ const en: Record<SlugMetier, Metier> = {
       { tache: "Payments", titre: "Matches payments, handles rejections", texte: "Matches each payment to its invoice, corrects rejections and follows up on unpaid ones.", enCours: "Matching payments", fait: "Payments matched" },
     ],
     outils: "In your medical software and on public scheme and insurer portals.",
-    alt: "An ophthalmologist examines a patient's eye.",
+    alt: "At a health center front desk, a receptionist welcomes a patient.",
   },
   pharmacie: {
     nom: "Pharmacies",
