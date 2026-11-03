@@ -53,7 +53,7 @@ Recommandation :
 1. `surcharges["facturation-ehpad-controle-humain"] = []` dans `verticales.json` : il sort de toutes les pages métier, il reste accessible à son adresse et depuis le hub.
 2. Corriger `metierDe()` dans `src/lib/ressources/contenu.ts` : avec une liste vide, il retombe sur l'optique dans le fil d'Ariane ; il doit renvoyer `undefined`.
 3. Corriger `verticales: ["pharmacie"]` de l'entrée R2 dans la file, dans la même PR de code (la proposition `articles-queue.v5.json` laisse les entrées publiées telles quelles).
-4. Le jour où le pilier clinique sort (il est en attente, voir RECAP), transférer `hopital-prive-ordonnancement` vers lui (`tiers-payant-clinique-privee`, champ `remplace` dans la file v5) et, **dans la même PR de relecture**, le retirer du `remplace` du JSON EHPAD. Sinon le build casse (« ancien article remplacé deux fois »).
+4. On ne transfère pas `hopital-prive-ordonnancement` (il continue de rediriger vers l'article EHPAD). Si un jour le pilier clinique `tiers-payant-clinique-privee` sort, on pourra le lui transférer, en le retirant du `remplace` du JSON EHPAD dans la même PR (sinon le build casse : « ancien article remplacé deux fois »).
 5. Dans 3 mois, regarder la Search Console. Sans trafic : 301 vers le pilier transverse `tiers-payant-professionnels-de-sante`.
 
 À signaler au passage : `content/ressources/tiers-payant-opticien.json` déclare `remplace: groupes-multi-sites-pilotage`, alors que la file ne le dit pas. Résultat : un ancien article sur les centres multi-sites redirige vers le pilier opticien. Proposition : le transférer au pilier `tiers-payant-centre-de-sante` quand il sortira (même méthode qu'au point 4 ; l'entrée S0 de `articles-queue.v5.json` porte déjà ce `remplace`).
