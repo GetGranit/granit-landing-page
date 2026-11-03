@@ -6,7 +6,7 @@ import { MEET_TEL, MEET_URL } from "@/lib/webinarIa";
  * l'envoi (webinarConfirmation.ts) pour pouvoir le relire hors du serveur.
  */
 
-export const OBJET = "C'est noté : webinar IA en magasin, jeudi 26 novembre à 13h15";
+export const OBJET = "C'est noté : webinar IA en magasin, vendredi 13 novembre à 13h15";
 
 const echapper = (s: string) =>
   s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -19,7 +19,7 @@ export function corpsTexte(prenom: string) {
     "",
     "C'est noté, votre place est réservée pour le webinar « 5 usages concrets de l'IA pour gagner du temps en magasin ».",
     "",
-    "Jeudi 26 novembre, 13h15 – 14h (45 min), en ligne.",
+    "Vendredi 13 novembre, 13h15 – 14h (45 min), en ligne.",
     "",
     "Au programme : analyser vos avis Google, créer vos modèles de mails, suivre vos impayés mutuelles à partir d'un export Excel… et deux surprises gardées pour la fin.",
     "",
@@ -35,7 +35,7 @@ export function corpsTexte(prenom: string) {
     "",
     "Vous ne pourrez pas être là ? Pas de souci, le replay vous sera envoyé.",
     "",
-    "À jeudi 26,",
+    "À vendredi 13,",
     "Paul",
     "Granit",
   ].join("\n");
@@ -49,7 +49,7 @@ export function corpsHtml(prenom: string) {
 <div style="background:#ffffff;border-radius:16px;padding:28px 24px">
 <p style="margin:0 0 16px;font-size:15px">${echapper(bonjour(prenom))}</p>
 <p style="margin:0 0 18px;font-size:15px;line-height:1.55">C'est noté, votre place est réservée pour le webinar <strong>« 5 usages concrets de l'IA pour gagner du temps en magasin »</strong>.</p>
-<p style="margin:0 0 18px;padding:14px 16px;background:#fdf0e8;border-radius:12px;font-size:15px;line-height:1.5">📅 <strong>Jeudi 26 novembre, 13h15 – 14h</strong><br>45 min · en ligne · gratuit</p>
+<p style="margin:0 0 18px;padding:14px 16px;background:#fdf0e8;border-radius:12px;font-size:15px;line-height:1.5">📅 <strong>Vendredi 13 novembre, 13h15 – 14h</strong><br>45 min · en ligne · gratuit</p>
 <p style="margin:0 0 18px;font-size:14.5px;line-height:1.55;color:#4a423b">Au programme : analyser vos avis Google, créer vos modèles de mails, suivre vos impayés mutuelles à partir d'un export Excel… et deux surprises gardées pour la fin.</p>
 <p style="margin:0 0 18px;font-size:14.5px;line-height:1.55">${
     MEET_URL
@@ -60,6 +60,6 @@ export function corpsHtml(prenom: string) {
 <div>${lien(lienGoogle(), "📅 Google Agenda")}${lien(lienOutlook(), "Outlook")}</div>
 <p style="margin:4px 0 18px;font-size:13px;color:#7a7067">Apple / iPhone : ouvrez l'invitation jointe à ce mail.</p>
 <p style="margin:0 0 18px;font-size:14.5px;line-height:1.55;color:#4a423b">Vous ne pourrez pas être là ? Pas de souci, le replay vous sera envoyé.</p>
-<p style="margin:0;font-size:15px;line-height:1.5">À jeudi 26,<br>Paul<br><span style="color:#7a7067">Granit</span></p>
+<p style="margin:0;font-size:15px;line-height:1.5">À vendredi 13,<br>Paul<br><span style="color:#7a7067">Granit</span></p>
 </div></div></body></html>`;
 }
