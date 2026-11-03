@@ -1,0 +1,127 @@
+{
+  "slug": "gtp-gestion-tiers-payant",
+  "nom": "GTP Gestion Tiers Payant",
+  "modele": "prestataire",
+  "logo": null,
+  "checkedOn": "2026-11-03",
+  "aRelire": true,
+  "identite": {
+    "raisonSociale": "GESTION TIERS PAYANT (SARL unipersonnelle)",
+    "siege": "Villefranche-sur-Saône (69)",
+    "site": "https://www.tiers-payant-gtp.com/",
+    "metiers": [
+      "pharmacie",
+      "dentaire",
+      "optique",
+      "médecine",
+      "matériel médical"
+    ]
+  },
+  "axes": {
+    "quiFait": {
+      "valeur": "Un gestionnaire tiers payant dédié de l'équipe GTP, basée à Villefranche-sur-Saône",
+      "detail": "Intervention en présentiel dans la région lyonnaise, à distance dans toute la France et les DOM-TOM ; rapport écrit du gestionnaire après chaque intervention",
+      "source": "gtp-accueil"
+    },
+    "pec": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "rejets": {
+      "valeur": "oui",
+      "detail": "Analyse et traitement des rejets, identification des causes récurrentes, gestion et relance des impayés jusqu'au paiement",
+      "source": "gtp-services"
+    },
+    "rapprochement": {
+      "valeur": "oui",
+      "detail": "Rapprochement entre bordereaux et relevés bancaires via un outil interne, pointage des bordereaux ligne par ligne",
+      "source": "gtp-services"
+    },
+    "avance": {
+      "valeur": "non",
+      "detail": "GTP indique avoir fait le choix de ne pas proposer l'avance de frais",
+      "source": "gtp-linkedin"
+    },
+    "engagement": {
+      "valeur": "1 mois d'essai sans engagement",
+      "detail": "Résiliable à tout moment selon la page d'accueil",
+      "source": "gtp-accueil"
+    },
+    "hds": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "plateformes": {
+      "valeur": "non publié",
+      "source": null
+    }
+  },
+  "citations": [
+    {
+      "texte": "Nous avons confiance en nos solutions tiers payant, c'est pourquoi nous proposons 1 mois d'essai sans engagement à chaque souscription, résiliable à tout moment.",
+      "source": "gtp-accueil"
+    },
+    {
+      "texte": "Analyse et traitement rapide de l’ensemble de vos rejets pour identifier les causes et mettre en place les corrections nécessaires.",
+      "source": "gtp-services"
+    },
+    {
+      "texte": "Vérification et rapprochement systématique entre vos bordereaux et vos relevés bancaires via notre outil interne.",
+      "source": "gtp-services"
+    },
+    {
+      "texte": "Accompagnement complet lors de la cession de votre officine avec gestion des dernières factures et garantie de leur règlement.",
+      "source": "gtp-services"
+    },
+    {
+      "texte": "Chez GTP, nous avons fait le choix de ne pas proposer l’avance de frais afin d’éviter d’ajouter un surcoût aux titulaires d’officines.",
+      "source": "gtp-linkedin"
+    }
+  ],
+  "meilleurSi": [
+    "on veut confier rejets, impayés et rapprochement bancaire à un gestionnaire dédié, avec un rapport écrit après chaque intervention",
+    "on exerce dans la région lyonnaise et on veut un gestionnaire qui puisse venir sur place",
+    "on veut tester la prestation pendant 1 mois sans engagement avant de la garder",
+    "on cède son officine et on veut faire suivre le règlement des dernières factures"
+  ],
+  "exclus": {
+    "_pourquoi": "aucun prix publié (devis sur demande) ; délais et ancienneté déclarés non comparables",
+    "prix": "non publié (« Demander un devis gratuit » sur l'accueil, gtp-accueil)",
+    "chiffresDeclares": "« Traitement sous 48h » des rejets (gtp-services) ; « plus de 25 ans » d'expérience, « des centaines de professionnels de santé » accompagnés (gtp-histoire) ; « l’Assurance Maladie règle les remboursements en seulement 4 jours ouvrés » « dans de nombreux cas » (gtp-linkedin)",
+    "incoherences": "Le site dit « Fondé en 2001 » ; l'annuaire date la création de la SARL actuelle (SIREN 528 424 005) au 24/10/2010 (structure antérieure possible, non vérifiée). Le profil LinkedIn parle tour à tour de « 25 années d'expertise » et, dans une version plus ancienne relevée en recherche, de « 20 années ». La page LinkedIn et une bonne partie des publications visent surtout les pharmacies (« Gestion Externe du Tiers Payant Officine »), alors que la page Histoire cite aussi dentistes, opticiens, médecins et loueurs de matériel médical ; aucune page dédiée à l'optique.",
+    "taille": "SIREN 528 424 005 · création le 24/10/2010 · tranche d'effectif 10 à 19 salariés (2024) · catégorie PME · SARL (code 5499) · NAF 70.22Z (conseil pour les affaires et autres conseils de gestion) · siège Villefranche-sur-Saône (annuaire-gtp-gestion-tiers-payant)"
+  },
+  "sources": {
+    "gtp-accueil": {
+      "label": "tiers-payant-gtp.com · Accueil",
+      "url": "https://www.tiers-payant-gtp.com/",
+      "consulte": "2026-11-03"
+    },
+    "gtp-services": {
+      "label": "tiers-payant-gtp.com · Nos services principaux",
+      "url": "https://www.tiers-payant-gtp.com/service/",
+      "consulte": "2026-11-03"
+    },
+    "gtp-histoire": {
+      "label": "tiers-payant-gtp.com · Notre histoire depuis 2001",
+      "url": "https://www.tiers-payant-gtp.com/histoire/",
+      "consulte": "2026-11-03"
+    },
+    "gtp-mentions": {
+      "label": "tiers-payant-gtp.com · Mentions légales",
+      "url": "https://www.tiers-payant-gtp.com/mentions-legales/",
+      "consulte": "2026-11-03"
+    },
+    "gtp-linkedin": {
+      "label": "LinkedIn · Gestion Tiers Payant - GTP (publications)",
+      "url": "https://www.linkedin.com/in/gtpgestiontierspayant",
+      "consulte": "2026-11-03"
+    },
+    "annuaire-gtp-gestion-tiers-payant": {
+      "label": "annuaire-entreprises.data.gouv.fr · GTP GESTION TIERS PAYANT (SIREN 528 424 005)",
+      "url": "https://annuaire-entreprises.data.gouv.fr/entreprise/528424005",
+      "consulte": "2026-11-03"
+    }
+  },
+  "_relu": "PAS ENCORE RELU : fiche créée/complétée par l'équipe de nuit du 03/11/2026, à relire par Paul."
+}
