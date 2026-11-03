@@ -65,7 +65,7 @@ const content = {
       {
         question: "Nos données de santé sont-elles protégées ?",
         answer:
-          "Oui. L'hébergement HDS est inclus dans tous les plans. Les données sont hébergées en France ; le détail des garanties est sur la page Sécurité.",
+          "Oui. L'hébergement HDS est inclus dans tous les plans. Les données sont stockées chez un hébergeur certifié HDS, dans l'Union européenne ; le détail des garanties est sur la page Sécurité.",
       },
     ],
     tiers: [
@@ -124,7 +124,7 @@ const content = {
       {
         question: "Is our health data protected?",
         answer:
-          "Yes. HDS hosting is included in every plan. Data is hosted in France; the full list of safeguards is on the Security page.",
+          "Yes. HDS hosting is included in every plan. Data is stored with an HDS-certified host, in the European Union; the full list of safeguards is on the Security page.",
       },
     ],
     tiers: [

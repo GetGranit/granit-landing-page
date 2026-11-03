@@ -10,15 +10,15 @@ const copy = {
   fr: {
     eb: "Sécurité et confiance",
     h: "Vos données de santé restent en Europe",
-    lead: "Granit s’appuie sur un hébergement HDS, garde vos données dans l’Union européenne et trace chaque action de ses agents.",
+    lead: "Granit s’appuie sur un hébergement certifié HDS, garde vos données dans l’Union européenne et trace chaque action de ses agents.",
     globe: "Globe centré sur l’Europe, les 27 pays de l’Union européenne en surbrillance",
     arc: "Hébergé en Europe.",
     tipT: "Union européenne",
     tip: "Données, sauvegardes et journaux techniques.",
     cols: [
       [
-        "Hébergement HDS",
-        "Vos données sont hébergées chez un hébergeur de données de santé (HDS), comme l’exige la loi française.",
+        "Hébergement certifié HDS",
+        "Vos données sont hébergées chez un hébergeur certifié pour les données de santé (HDS), comme l’exige la loi française.",
       ],
       [
         "Données dans l’UE, RGPD",
@@ -33,15 +33,15 @@ const copy = {
   en: {
     eb: "Security and trust",
     h: "Your health data stays in Europe",
-    lead: "Granit relies on HDS hosting, keeps your data in the European Union and logs every action its agents take.",
+    lead: "Granit relies on HDS-certified hosting, keeps your data in the European Union and logs every action its agents take.",
     globe: "Globe centered on Europe, with the 27 European Union countries highlighted",
     arc: "Hosted in Europe.",
     tipT: "European Union",
     tip: "Data, backups and technical logs.",
     cols: [
       [
-        "HDS hosting",
-        "Your data is stored with a health data hosting (HDS) provider, as French law requires.",
+        "HDS-certified hosting",
+        "Your data is stored with a host certified for health data (HDS), as French law requires.",
       ],
       [
         "Data in the EU, GDPR",

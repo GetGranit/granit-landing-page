@@ -43,7 +43,7 @@
       "source": "optibot-accueil"
     },
     "hds": {
-      "valeur": "health data host (HDS): Scaleway",
+      "valeur": "HDS-certified host: Scaleway",
       "detail": "Document reading (OCR) in the store’s browser; tracking metadata stored on the server",
       "source": "optibot-mentions"
     },

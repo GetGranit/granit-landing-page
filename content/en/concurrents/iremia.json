@@ -50,7 +50,7 @@
       "source": "iremia-gestion"
     },
     "hds": {
-      "valeur": "health data host (HDS): OVH",
+      "valeur": "HDS-certified host: OVH",
       "source": "iremia-mentions"
     },
     "plateformes": {

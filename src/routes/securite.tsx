@@ -15,7 +15,7 @@ export const Route = createFileRoute("/securite")({
       {
         name: "description",
         content:
-          "Hébergement HDS : données de santé hébergées en France, chiffrées, jamais utilisées pour entraîner des modèles tiers. RGPD, journalisation et réversibilité.",
+          "Données de santé stockées chez un hébergeur certifié HDS, en Europe, chiffrées, jamais utilisées pour entraîner des modèles tiers. RGPD, journalisation et réversibilité.",
       },
       { property: "og:title", content: "Sécurité & conformité santé - Granit" },
       { property: "og:description", content: "Le standard le plus strict du secteur santé français et européen." },
@@ -32,13 +32,13 @@ const content = {
       "Granit est conçu dès l'origine pour les contraintes réglementaires des établissements de santé : HDS, RGPD, secret médical, référentiels ANS. Aucune donnée patient ne sort jamais du périmètre de confiance.",
     summaryLabel: "En bref :",
     summary:
-      "Granit s'appuie sur un hébergement HDS. Les données patients sont hébergées en France, chiffrées en transit et au repos, et ne servent jamais à entraîner des modèles tiers. Chaque action d'agent est journalisée, et vous pouvez récupérer ou faire supprimer vos données à tout moment.",
+      "Les données de santé sont stockées chez un hébergeur certifié HDS, dans des datacenters situés en Europe, chiffrées en transit et au repos, et ne servent jamais à entraîner des modèles tiers. Chaque action d'agent est journalisée, et vous pouvez récupérer ou faire supprimer vos données à tout moment.",
     faqTitle: "Questions fréquentes",
     faq: [
       {
-        question: "Les données sont-elles hébergées en HDS ?",
+        question: "Où sont hébergées les données de santé ?",
         answer:
-          "Oui, les données patients sont hébergées sur une infrastructure HDS, en France, sauvegardes comprises, sans transfert hors de l'Union européenne.",
+          "Chez un hébergeur certifié HDS, dans des datacenters situés en Europe, sauvegardes comprises, sans transfert hors de l'Union européenne.",
       },
       {
         question: "Les données patients servent-elles à entraîner l'IA ?",
@@ -67,17 +67,17 @@ const content = {
       },
     ],
     badges: [
-      { k: "HDS", v: "Hébergement santé" },
+      { k: "HDS", v: "Hébergeur certifié" },
       { k: "RGPD", v: "Conforme art. 9" },
       { k: "ANSSI", v: "Bonnes pratiques" },
-      { k: "🇫🇷", v: "Données en France" },
+      { k: "UE", v: "Hébergement dans l’Union européenne" },
       { k: "PGSSI-S", v: "Référentiel ANS" },
     ],
     pillarsTitle: "Six garanties non négociables",
     items: [
       {
-        t: "Hébergement HDS en France",
-        d: "Données patients hébergées exclusivement sur une infrastructure HDS (Hébergement de Données de Santé), avec résidence et sauvegardes en France. Aucun transfert hors UE.",
+        t: "Hébergement certifié HDS",
+        d: "Vos données de santé sont stockées chez un hébergeur certifié HDS (hébergement de données de santé), dans des datacenters situés en Europe. Aucun transfert hors UE.",
       },
       {
         t: "RGPD & secret médical",
@@ -125,13 +125,13 @@ const content = {
       "Granit is designed from the start for the regulatory constraints of healthcare organizations: HDS, GDPR, medical confidentiality, ANS frameworks (French digital health agency). No patient data ever leaves the trusted perimeter.",
     summaryLabel: "In short:",
     summary:
-      "Granit runs on HDS hosting. Patient data is hosted in France, encrypted in transit and at rest, and never used to train third-party models. Every agent action is logged, and you can retrieve your data or have it deleted at any time.",
+      "Health data is stored with an HDS-certified host, in data centers located in Europe, encrypted in transit and at rest, and never used to train third-party models. Every agent action is logged, and you can retrieve your data or have it deleted at any time.",
     faqTitle: "Frequently asked questions",
     faq: [
       {
-        question: "Is the data hosted on HDS infrastructure?",
+        question: "Where is health data hosted?",
         answer:
-          "Yes, patient data is hosted on HDS infrastructure (French health data hosting standard), in France, backups included, with no transfer outside the European Union.",
+          "With an HDS-certified host (French certification for health data hosting), in data centers located in Europe, backups included, with no transfer outside the European Union.",
       },
       {
         question: "Is patient data used to train AI?",
@@ -160,17 +160,17 @@ const content = {
       },
     ],
     badges: [
-      { k: "HDS", v: "Health data hosting" },
+      { k: "HDS", v: "Certified host" },
       { k: "GDPR", v: "Article 9 compliant" },
       { k: "ANSSI", v: "Best practices" },
-      { k: "🇫🇷", v: "Data in France" },
+      { k: "EU", v: "Hosted in the European Union" },
       { k: "PGSSI-S", v: "ANS framework" },
     ],
     pillarsTitle: "Six non-negotiable guarantees",
     items: [
       {
-        t: "HDS hosting in France",
-        d: "Patient data hosted exclusively on HDS infrastructure (French health data hosting standard), with residency and backups in France. No transfer outside the EU.",
+        t: "HDS-certified hosting",
+        d: "Your health data is stored with an HDS-certified host, in data centers located in Europe. No transfer outside the EU.",
       },
       {
         t: "GDPR & medical confidentiality",
@@ -266,7 +266,7 @@ function SecuritePage() {
             >
               <img
                 src={securiteHero}
-                alt={lang === "fr" ? "Datacenter HDS en France" : "HDS data center in France"}
+                alt={lang === "fr" ? "Datacenter HDS en Europe" : "HDS data center in Europe"}
                 width={1280}
                 height={960}
                 className="h-full w-full object-cover"
@@ -287,7 +287,7 @@ function SecuritePage() {
                   className="rounded-full px-3 py-1 text-[11px]"
                   style={{ background: "rgba(255,255,255,0.92)", color: "var(--text)", fontWeight: 500 }}
                 >
-                  {lang === "fr" ? "Données hébergées en France" : "Data hosted in France"}
+                  {lang === "fr" ? "Données hébergées en Europe" : "Data hosted in Europe"}
                 </span>
               </div>
             </div>

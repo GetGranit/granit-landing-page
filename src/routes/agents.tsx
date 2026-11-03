@@ -53,7 +53,7 @@ const content = {
       {
         question: "Peut-on contrôler ce que font les agents ?",
         answer:
-          "Oui. Chaque action d'agent est journalisée, horodatée et exportable, et chaque décision reste révisable par un humain. Granit s'appuie sur un hébergement HDS.",
+          "Oui. Chaque action d'agent est journalisée, horodatée et exportable, et chaque décision reste révisable par un humain. Les données sont stockées chez un hébergeur certifié HDS.",
       },
       {
         question: "Combien coûte un agent ?",
@@ -121,7 +121,7 @@ const content = {
       {
         question: "Can we control what the agents do?",
         answer:
-          "Yes. Every agent action is logged, timestamped and exportable, and every decision can be reviewed by a human. Granit runs on HDS hosting.",
+          "Yes. Every agent action is logged, timestamped and exportable, and every decision can be reviewed by a human. Data is stored with an HDS-certified host.",
       },
       {
         question: "How much does an agent cost?",
