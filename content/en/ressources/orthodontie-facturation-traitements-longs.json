@@ -1,0 +1,200 @@
+{
+  "slug": "orthodontie-facturation-traitements-longs",
+  "id": "R1",
+  "category": "guide-tiers-payant",
+  "categoryName": "Third-party payment guide",
+  "type": "standard",
+  "plateforme": null,
+  "title": "Orthodontics: making billing for long treatments reliable, semester after semester",
+  "primaryKeyword": "facturation orthodontie",
+  "keywordCluster": [
+    "semestre orthodontie",
+    "demande d'entente préalable orthodontie",
+    "orthodontie 16 ans remboursement",
+    "forfait orthodontie mutuelle",
+    "tiers payant orthodontie"
+  ],
+  "parentSlug": null,
+  "level": "Refonte",
+  "author": {
+    "name": "Laura",
+    "jobTitle": "Writer, health expert",
+    "photo": "/auteurs/laura.jpg",
+    "url": null
+  },
+  "reviewer": {
+    "name": "Olivier",
+    "jobTitle": "Writer, third-party payment expert",
+    "photo": "/auteurs/olivier.jpg",
+    "url": null
+  },
+  "datePublished": "2026-10-22",
+  "dateModified": "2026-10-22",
+  "checkedOn": null,
+  "wordCount": 2249,
+  "readTime": 10,
+  "metaDescription": "Orthodontic billing: DEP, semesters, the age-16 rule, mutuelle allowance, monthly installments. The checks that secure a file over several years.",
+  "contentHtml": "<p><strong>Reliable orthodontic billing rests on three checks: prior approval obtained before the first active procedure, semesters (six-month treatment periods) billed only when treatment is actually active, and regular reconciliation between three money flows that do not move at the same pace (French national health insurance, supplementary health insurer, family).</strong> Most discrepancies are not born on the day of the invoice. They are born months earlier: a start date too close to the sixteenth birthday, a semester billed during a pause, a supplementary health insurer (mutuelle) allowance misread when the quote was drawn up. This guide goes through each breaking point in a dentofacial orthopedics (ODF) file and the step that secures it, for the orthodontic assistant as well as the practice manager.</p><div class=\"key-takeaways\"><strong>Key takeaways</strong><ul><li>Orthodontic treatment requires a prior approval request (DEP, demande d’entente préalable) to French national health insurance (Assurance Maladie): it is filed before the first active procedure.</li><li>According to ameli.fr, French national health insurance covers treatments started before the sixteenth birthday: it is the start date that counts, to be checked as soon as the file is opened.</li><li>A semester is billed only if treatment is actually active during the period: a pause, a change of appliance or widely spaced appointments must be recorded in the file.</li><li>The mutuelle’s orthodontic allowance depends on each contract (amount per semester or overall cap, sometimes its own age condition): read it before calculating the out-of-pocket amount.</li><li>Today’s action: keep one tracking sheet per patient that sets side by side the contract amount, monthly installments collected and semesters reimbursed.</li></ul></div><h2 id=\"facturation-orthodontie-specificites\">Why does orthodontic billing need separate tracking?</h2><p>Because ODF treatment is not a one-off procedure: it is billed per semester of treatment, over several years, after prior approval. Each invoice therefore depends on the ones before it. An error made when the file is opened repeats every semester.</p><p>In other dental specialties, a treatment or a prosthesis is billed once, then the file is closed. In orthodontics, the file stays open throughout the active phase, then during retention. It goes through changes the practice does not control: the patient’s birthday, a change of mutuelle, a move, an interruption decided by the family.</p><p>Three payers share the cost. Mandatory insurance (AMO) reimburses its share according to the fee schedule and subject to prior approval. The supplementary insurer (AMC, supplementary insurance) applies the allowance set in the contract. The family pays the rest, most often in monthly installments set in the quote. These three flows each have their own pace and rules, which explains why discrepancies pile up without a sound. If your practice also does prosthetics, the logic of checks is close to that described for <a href=\"/ressources/dentaire-paniers-100-sante-tiers-payant\">third-party payment on 100% Santé (zero out-of-pocket scheme) dental baskets</a> (tiers payant: the patient pays nothing upfront, insurers pay the provider directly), but spread out over time.</p><p>The cycle of a file comes down to five stages. Each has its own check.</p><div data-figure=\"cycle-dossier-odf\"></div><h2 id=\"entente-prealable-orthodontie\">Is a prior approval request needed in orthodontics?</h2><p>Yes. Orthodontic treatment requires prior approval from French national health insurance, as the <a href=\"https://www.ameli.fr/assure/remboursements/rembourse/soins-protheses-dentaires/orthodontie\">ameli.fr orthodontics page</a> points out. The prior approval request (DEP) is filed before active treatment begins.</p><p>The DEP determines coverage for the entire treatment. Implicitly, it also sets the billing pace to come. A file opened without approval, or with a request that misstates the nature of the treatment, exposes every following semester to rejection. It is the check that protects the most invoices at once.</p><h3>Steps when opening the file</h3><ol class=\"steps\"><li><strong>Record the patient’s date of birth.</strong> Compare it with the planned start date of active treatment, even before drafting the request.</li><li><strong>Describe the nature of the treatment precisely.</strong> The request must match the actual treatment plan, not a generic template.</li><li><strong>Send the request before the first active procedure.</strong> No active appliance should be fitted until the request has gone out.</li><li><strong>File the response in the patient record.</strong> Keep the date sent, the date of the response and the content of the approval: these are your evidence in case of an audit.</li><li><strong>Carry the key dates over to your tracking.</strong> Start date, sixteenth birthday, planned end date: these three dates drive everything else.</li></ol><div class=\"callout callout--warn\"><p><strong>The trap:</strong> starting treatment “so as not to lose time” before the request has been sent. The clinical gain is zero, and the practice alone carries the risk for the entire duration of treatment.</p></div><h2 id=\"semestre-orthodontie\">How is an orthodontic semester billed?</h2><p>ODF treatment is billed per semester of active treatment, not per procedure. Each semester billed must correspond to treatment actually followed during the period: appliance in place, adjustments made, check-up appointments kept.</p><p>In practice, the risk does not come from calculating the invoice, which the practice management software handles well. It comes from the gap between what is billed and what can be clinically observed. A patient who spaces out appointments, interrupts treatment for a few months or changes appliance without the file being updated creates that gap. It often goes unnoticed at billing time, but can come up during a French national health insurance audit.</p><p>The retention phase follows the active phase and has its own coding. For the exact coding in force, always refer to the fee schedule published by French national health insurance (the <a href=\"https://www.ameli.fr/accueil-de-la-ccam/index.php\">online CCAM on ameli.fr</a> for the procedures listed there) rather than a table copied several years ago.</p><h3>Situations that put a semester at risk</h3><div class=\"tbl\"><table><tr><th>Situation</th><th>Risk</th><th>Step</th></tr><tr><td>Appointments spaced over several months</td><td>Semester billed with no demonstrable active follow-up</td><td>Record each session and each adjustment in the file</td></tr><tr><td>Pause requested by the family</td><td>Semester billed during an interruption</td><td>Suspend the semester count and date the restart</td></tr><tr><td>Change of appliance</td><td>File that no longer reflects the treatment plan</td><td>Update the plan and check consistency with the approval</td></tr><tr><td>Move to retention</td><td>Active semester billed although the phase has changed</td><td>Date the end of the active phase and switch the coding</td></tr></table></div><h2 id=\"orthodontie-16-ans\">What does the sixteenth birthday change for coverage?</h2><p>The sixteenth birthday is the age limit for starting covered treatment: according to the <a href=\"https://www.ameli.fr/assure/remboursements/rembourse/soins-protheses-dentaires/orthodontie\">ameli.fr orthodontics page</a>, French national health insurance reimburses treatments started before the patient turns 16. The rule therefore applies to the start date, and that is what you need to secure.</p><p>The breaking point is with 15-year-old patients. An assessment pushed back, a request sent late, an appliance fitted a few weeks after the planned date: the start of treatment slips past the sixteenth birthday and the mandatory share disappears for the entire treatment. Nothing has changed clinically, but the financing plan presented to the family no longer holds.</p><p>This risk can be seen as soon as the file is opened, provided you compare the birthday with the timeline of the request and the fitting. For treatment that straddles the birthday, assume nothing: check the applicable rule in the official source and the approval received, and tell the family about the situation before the final quote.</p><h3>The reflex for patients close to 16</h3><ul><li>Identify, in the list of new patients, those who are 15 or older at the first appointment.</li><li>Calculate the margin between today and the sixteenth birthday.</li><li>Prioritize sending the prior approval request and scheduling the fitting for these files.</li><li>Inform the family, in writing, of what is at stake with the start date.</li></ul><p>The supplementary insurer may have its own age condition, different from French national health insurance’s. It is checked separately, in the contract.</p><h2 id=\"forfait-orthodontie-mutuelle\">How do you read a mutuelle’s orthodontic allowance?</h2><p>The orthodontic allowance is found in the patient’s supplementary insurance contract, not in a general grid: each contract sets its amount, its unit and its conditions. Two patients with the same treatment plan can have very different out-of-pocket amounts.</p><p>The allowance may be expressed in euros per semester, as an overall cap for the duration of treatment, or as a percentage of the reimbursement base. Some contracts add an age condition for starting treatment, or pay nothing when French national health insurance does not cover it. These differences make communicating the price delicate at the time of the initial quote.</p><h3>The five questions to ask of the contract</h3><ol class=\"steps\"><li><strong>What is the amount?</strong> In euros, as a percentage, or both.</li><li><strong>Per what unit?</strong> Per semester, per year or as a cap for the whole treatment.</li><li><strong>Is there an age condition or an AMO coverage condition?</strong> It may differ from the age-16 rule.</li><li><strong>Which documents are required?</strong> Quote, French national health insurance approval, semester invoices.</li><li><strong>Is third-party payment possible for orthodontics?</strong> If not, the family pays the supplementary share upfront and gets reimbursed.</li></ol><p>When a payment from the mutuelle does not match the expected amount, the diagnostic approach is the same as for any supplementary insurer: compare the statement with the contract, then follow up citing the reason. The method is detailed in our article on <a href=\"/ressources/virement-mutuelle-inferieur\">a mutuelle transfer lower than the invoice</a>.</p><h2 id=\"mensualites-remboursements\">How do you reconcile monthly installments with reimbursements?</h2><p>The safest method is one sheet per patient that lines up, month by month, the contract amount, monthly installments collected, semesters billed and reimbursements received from French national health insurance and the supplementary insurer. Without this sheet, reconciliation is rebuilt by hand when a discrepancy appears, often too late.</p><p>The mismatch is structural. The family’s monthly installments follow a schedule set at the start of treatment, spread evenly over the planned duration. Reimbursements arrive per semester, after billing. The two paces never naturally coincide.</p><div data-figure=\"trois-flux-orthodontie\"></div><h3>What the tracking sheet should contain</h3><ul><li>The total treatment amount set in the signed quote.</li><li>The installment schedule and the actual payments, with their dates.</li><li>The list of semesters billed, with the period covered by each.</li><li>Reimbursements received from French national health insurance, matched to each semester.</li><li>Payments from the supplementary insurer, when it pays the practice through third-party payment.</li><li>The theoretical balance to date: what each payer still owes.</li></ul><p>On the French national health insurance side, payment returns arrive through NOEMIE remittance files (the exchange standard for returns from French national health insurance to healthcare professionals). The logic of daily reconciliation between these returns and the bank statement is described in <a href=\"/ressources/rapprochement-noemie\">reconciling NOEMIE files and bank transfers</a>. For a rejected semester, the reason appears in the return: our page on <a href=\"/ressources/codes-rejets-noemie\">NOEMIE rejection codes</a> helps you read it.</p><div class=\"callout callout--tip\"><p><strong>The right reflex:</strong> review once a month, not once a semester. A discrepancy of one installment is fixed with one call; a discrepancy built up over six months requires an explanation to the family.</p></div><h2 id=\"interruption-transfert\">What should you do when treatment is interrupted or moves to another practice?</h2><p>Close the file with a written statement: semesters actually billed, installments already paid, reimbursements received, and the balance to refund or to claim. This statement protects the practice and the relationship with the family.</p><p>A patient who moves, changes orthodontist or stops before the end leaves a file open. These cases are rare relative to the volume, but always sensitive. They take administrative time out of proportion to their frequency, especially when there is no tracking sheet.</p><h3>Closing in five steps</h3><ol class=\"steps\"><li><strong>Date the actual end of treatment.</strong> The last session performed, not the date the family called.</li><li><strong>List the semesters billed.</strong> Check that each one corresponds to a period of active treatment.</li><li><strong>Add up the amounts received.</strong> Installments, French national health insurance share, supplementary share.</li><li><strong>Calculate the balance.</strong> Compare it with the amount due for the care actually provided.</li><li><strong>Send a written statement to the family.</strong> Attach the history for the practitioner taking over the treatment, if the family asks.</li></ol><p>When the balance is in the practice’s favor, the follow-up should stay measured: the family is often going through a change in circumstances. Our article on <a href=\"/ressources/recouvrement-patient-empathie\">patient collections without dehumanizing the relationship</a> gives guidance on tone.</p><p>For an orthodontic group with several sites, internal transfers add one more problem: without a shared history, the semester count and the installment schedule are rebuilt by hand at the new site. The risk of error grows with each transfer. A consolidated view of files, like the one described for <a href=\"/ressources/groupes-multi-sites-pilotage\">managing several centers</a>, avoids this rebuilding.</p><h2 id=\"suivi-dossiers-paralleles\">How do you track dozens of open files in parallel?</h2><p>By replacing memory with a calendar: each file carries its key dates, and a regular review brings up those that need action. Beyond a few dozen active patients, no one can keep birthdays, semester ends and late installments in their head.</p><p>Three fixed reviews are enough to keep the portfolio under control. Every week, new files: age, prior approval request sent, response received. Every month, reconciliation of installments and reimbursements. At the end of each semester, checking that treatment is active before billing.</p><ul><li>Files awaiting a response to the prior approval request.</li><li>15-year-old patients whose treatment has not yet started.</li><li>Semesters to bill this month, with the active follow-up check.</li><li>Reimbursements expected but not received, to follow up according to the <a href=\"/ressources/quand-relancer-mutuelle\">supplementary insurer follow-up</a> schedule.</li><li>Gaps between planned and collected installments.</li></ul><p>This work is repetitive, and it is often done across several screens: practice management software, French national health insurance online services, supplementary insurers’ portals. That is where <a href=\"/agents\">Granit’s agents</a> come in: they do the data entry and checks on those same screens, track payers’ responses and flag discrepancies to the team, which keeps the decision.</p><p>Whatever the organization, the rule stays the same: an orthodontic file is secured when it is opened, checked every semester and closed in writing. The invoices simply follow.</p>",
+  "tocItems": [
+    {
+      "id": "facturation-orthodontie-specificites",
+      "label": "Why orthodontics needs separate tracking"
+    },
+    {
+      "id": "entente-prealable-orthodontie",
+      "label": "The prior approval request"
+    },
+    {
+      "id": "semestre-orthodontie",
+      "label": "Billing an orthodontic semester"
+    },
+    {
+      "id": "orthodontie-16-ans",
+      "label": "The sixteenth birthday"
+    },
+    {
+      "id": "forfait-orthodontie-mutuelle",
+      "label": "Reading the mutuelle’s orthodontic allowance"
+    },
+    {
+      "id": "mensualites-remboursements",
+      "label": "Reconciling installments and reimbursements"
+    },
+    {
+      "id": "interruption-transfert",
+      "label": "Interruption or change of practice"
+    },
+    {
+      "id": "suivi-dossiers-paralleles",
+      "label": "Tracking many files in parallel"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "How is orthodontic treatment billed per semester?",
+      "answer": "Dentofacial orthopedic treatment is billed per semester (six-month period) of active treatment, not per procedure. Each semester billed must correspond to treatment actually followed during the period: appliance in place, adjustments and check-up appointments. A pause or a change of appliance must be recorded in the file before billing the next semester."
+    },
+    {
+      "question": "What does the sixteenth birthday change for coverage?",
+      "answer": "According to ameli.fr, French national health insurance (Assurance Maladie) covers orthodontic treatments started before the patient’s sixteenth birthday. So it is the treatment start date that counts. For a 15-year-old patient, send the prior approval request and schedule the fitting without delay, and check separately any age condition set by the supplementary insurer."
+    },
+    {
+      "question": "Is a prior approval request needed in orthodontics?",
+      "answer": "Yes, orthodontic treatment requires prior approval from French national health insurance. The request is filed before the first active procedure and must describe the treatment actually planned. A file started without approval exposes every following semester to rejection."
+    },
+    {
+      "question": "How do you reconcile monthly installments with reimbursements?",
+      "answer": "The safest method is one sheet per patient that lines up the quote amount, monthly installments collected, semesters billed and reimbursements received from French national health insurance and the supplementary insurer. Installments follow an evenly spread schedule, while reimbursements arrive per semester. A monthly review lets you correct a discrepancy before it builds up."
+    }
+  ],
+  "sources": [
+    {
+      "label": "ameli.fr · Orthodontics: reimbursement",
+      "url": "https://www.ameli.fr/assure/remboursements/rembourse/soins-protheses-dentaires/orthodontie"
+    },
+    {
+      "label": "ameli.fr · Online CCAM",
+      "url": "https://www.ameli.fr/accueil-de-la-ccam/index.php"
+    }
+  ],
+  "figures": [
+    {
+      "id": "cycle-dossier-odf",
+      "type": "etapes",
+      "titre": "The five stages of an orthodontic file",
+      "legende": "Each stage has its check: prior approval protects every semester that follows.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "Quote and contract",
+          "detail": "Mutuelle allowance read, schedule signed",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Prior approval",
+          "detail": "Sent before the first active procedure",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Active semesters",
+          "detail": "Billed if treatment is actually active",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Retention",
+          "detail": "Separate phase, coding to check",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Closing",
+          "detail": "Statement of semesters, installments, balance",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    },
+    {
+      "id": "trois-flux-orthodontie",
+      "type": "comparaison",
+      "titre": "Three payers, three paces",
+      "legende": "Look at the Pace row: no flow moves in step with another, hence the monthly reconciliation.",
+      "colonnes": [
+        "National health insurance",
+        "Supplementary insurer",
+        "Family"
+      ],
+      "elements": [
+        {
+          "label": "Pace",
+          "detail": "",
+          "valeurs": [
+            "Per semester",
+            "Per the contract",
+            "Monthly installments"
+          ],
+          "focus": true
+        },
+        {
+          "label": "Condition",
+          "detail": "",
+          "valeurs": [
+            "Start before age 16",
+            "Contract terms",
+            "Signed schedule"
+          ],
+          "focus": false
+        },
+        {
+          "label": "Key document",
+          "detail": "",
+          "valeurs": [
+            "Prior approval",
+            "Contract allowance",
+            "Signed quote"
+          ],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [],
+  "liensEntrants": [],
+  "remplace": [],
+  "verticales": [
+    "dentaire"
+  ],
+  "refonte": true,
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-22T11:51:38.344Z",
+    "avertissements": [
+      "aucune citation (facultative)",
+      "source non vérifiable (403) : https://www.ameli.fr/assure/remboursements/rembourse/soins-protheses-dentaires/orthodontie",
+      "source non vérifiable (403) : https://www.ameli.fr/accueil-de-la-ccam/index.php"
+    ]
+  }
+}
