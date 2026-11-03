@@ -82,7 +82,29 @@
     "prix": "Abonnement à l'outil Backoffice 29,90 € HT par mois, délégation sur devis après audit (bo-cgu) ; formations à partir de 250 € HT de l'heure (bo-formation) ; en 2022, référencement « prix au dossier » et PEC « prix à la prise en charge » (bo-presse)",
     "chiffresDeclares": "« plus de 312 heures/an » consacrées par les opticiens au tiers payant, puis chiffres d'une étude de la Centrale des Opticiens de 2011 (6 h par semaine, 93 %, « 3,5 dossiers sur 100 » jamais remboursés, « 2,8% du chiffre d'affaires », « 3 semaines et 3 jours ») (bo-optique) ; « Une satisfaction clients qui se situe aux alentours de 98 % » (bo-presse) ; « 96 % de stagiaires satisfaits », « 280 heures de formations dispensées » (bo-formation)",
     "incoherences": "La page Optique ne décrit pas le déroulé du service et ne cite que des chiffres de 2011 ; les CGU (bo-cgu) décrivent la délégation pour la pharmacie et autorisent la sous-traitance de tout ou partie de la prestation ; une offre de recrutement vise des « Gestionnaire Tiers-Payant Indépendant » chefs d'entreprise (bo-recrutement), alors que le communiqué parle d'une équipe de la région lyonnaise (bo-presse) ; les mentions légales disent la société « du groupe Pegasus Network » et les données du site hébergées chez Scaleway / Online (bo-mentions), le communiqué de 2022 la dit « créée par Kozea group » (bo-presse) ; le communiqué est un contenu d'agence de relations presse, pas un article de presse",
-    "taille": "SIREN 822 732 236, SASU (nature juridique 5710), créée le 28/07/2016, tranche d'effectif 3 à 5 salariés (2024), catégorie PME, NAF 62.01Z, un établissement ouvert à Lyon 2e (annuaire-backoffice)"
+    "taille": "SIREN 822 732 236, SASU (nature juridique 5710), créée le 28/07/2016, tranche d'effectif 3 à 5 salariés (2024), catégorie PME, NAF 62.01Z, un établissement ouvert à Lyon 2e (annuaire-backoffice)",
+    "prixType": "rapporté par un tiers",
+    "prixAnalyste": {
+      "releve": "non publié pour l'optique : devis personnalisé ; le communiqué de lancement (2022) décrit une facturation « prix au dossier » (référencement), « prix à la prise en charge » et un prix « déterminé selon un diagnostic préalable » pour la gestion, sans montants (backoffice-optique, rp-2022). Côté pharmacie, la presse rapportait en 2024 un « abonnement moyen de 300 € HT par mois » (250 officines) et le logiciel Kabeo à 29,90 € HT/mois (moniteur-2024)",
+      "notes": "Backoffice (Back Office Services, groupe Kozea, Lyon), site lagestiondutierspayant.fr. Les chiffres tiers concernent uniquement des pharmacies : 300 € est une moyenne déclarée par le dirigeant, pas un tarif. Aucun montant optique trouvé.",
+      "sources": [
+        {
+          "label": "lagestiondutierspayant.fr · Externalisation optique",
+          "url": "https://www.lagestiondutierspayant.fr/optique",
+          "consulte": "2026-11-03"
+        },
+        {
+          "label": "relations-publiques.pro · Lancement offre opticiens (Backoffice)",
+          "url": "https://www.relations-publiques.pro/250706/backoffice-le-specialiste-de-la-gestion-du-tiers-payant-lance-une-offre-dediee-aux-opticiens-et-accompagne-les-pharmaciens-durant-lete.html",
+          "consulte": "2026-11-03"
+        },
+        {
+          "label": "Le Moniteur des pharmacies · « Bien gérer le tiers payant… » (4 sept. 2024)",
+          "url": "https://www.lemoniteurdespharmacies.fr/business/economie/strategie-et-gestion/bien-gerer-le-tiers-payant-pour-eviter-les-rejets-et-impayes",
+          "consulte": "2026-11-03"
+        }
+      ]
+    }
   },
   "sources": {
     "bo-accueil": {

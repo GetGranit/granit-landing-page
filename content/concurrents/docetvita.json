@@ -80,7 +80,29 @@
     "_pourquoi": "aucun prix sur les pages comparatives ; chiffres déclarés non comparables",
     "prix": "Intervention ponctuelle forfaitaire : 149 € HT jusqu'à 10 dossiers, 249 € HT jusqu'à 20, 329 € HT jusqu'à 30, 499 € HT jusqu'à 50, sur devis au-delà ; gestion régulière et intervention sur site sur devis ; échange et diagnostic gratuits (docetvita-tarifs, docetvita-accueil)",
     "chiffresDeclares": "« 10 ans d'expérience en optique et audioprothèse » (docetvita-accueil)",
-    "taille": "SIREN 837 941 293 (SIRET des mentions légales : 837 941 293 00024) ; entrepreneur individuel (nature juridique 1000), création le 04/03/2018, NAF 82.11Z, siège à Jenlain (59) ; tranche d'effectif et catégorie non renseignées ; identité et adresse non diffusibles dans l'annuaire (annuaire-docetvita, docetvita-mentions)"
+    "taille": "SIREN 837 941 293 (SIRET des mentions légales : 837 941 293 00024) ; entrepreneur individuel (nature juridique 1000), création le 04/03/2018, NAF 82.11Z, siège à Jenlain (59) ; tranche d'effectif et catégorie non renseignées ; identité et adresse non diffusibles dans l'annuaire (annuaire-docetvita, docetvita-mentions)",
+    "prixType": "affiché",
+    "prixAnalyste": {
+      "releve": "Intervention ponctuelle sur dossiers en attente, à distance : 149 € HT jusqu'à 10 dossiers, 249 € HT jusqu'à 20, 329 € HT jusqu'à 30, 499 € HT jusqu'à 50, sur devis au-delà ; gestion régulière sur devis (engagement initial de 3 mois puis préavis de 30 jours) ; intervention sur site (60 km autour de Valenciennes) sur devis ; échange et diagnostic gratuits (docetvita-tarifs, docetvita-impayes)",
+      "notes": "Micro-structure (Anaïs Cachera) dédiée aux opticiens et audioprothésistes. Les forfaits couvrent une reprise ponctuelle de stock, pas une gestion mensuelle. Les montants sont identiques sur les trois pages.",
+      "sources": [
+        {
+          "label": "docetvita.fr · Tarifs et fonctionnement",
+          "url": "https://docetvita.fr/tarifs-externalisation-tiers-payant.html",
+          "consulte": "2026-11-03"
+        },
+        {
+          "label": "docetvita.fr · Dossiers en attente",
+          "url": "https://docetvita.fr/mission-impayes.html",
+          "consulte": "2026-11-03"
+        },
+        {
+          "label": "docetvita.fr · Opticiens",
+          "url": "https://docetvita.fr/externalisation-administrative-opticien.html",
+          "consulte": "2026-11-03"
+        }
+      ]
+    }
   },
   "sources": {
     "docetvita-accueil": {

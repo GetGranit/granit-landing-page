@@ -89,7 +89,24 @@
     "prix": "non publié (« Demander un devis gratuit » sur l'accueil, gtp-accueil)",
     "chiffresDeclares": "« Traitement sous 48h » des rejets (gtp-services) ; « plus de 25 ans » d'expérience, « des centaines de professionnels de santé » accompagnés (gtp-histoire) ; « l’Assurance Maladie règle les remboursements en seulement 4 jours ouvrés » « dans de nombreux cas » (gtp-linkedin)",
     "incoherences": "Le site dit « Fondé en 2001 » ; l'annuaire date la création de la SARL actuelle (SIREN 528 424 005) au 24/10/2010 (structure antérieure possible, non vérifiée). Le profil LinkedIn parle tour à tour de « 25 années d'expertise » et, dans une version plus ancienne relevée en recherche, de « 20 années ». La page LinkedIn et une bonne partie des publications visent surtout les pharmacies (« Gestion Externe du Tiers Payant Officine »), alors que la page Histoire cite aussi dentistes, opticiens, médecins et loueurs de matériel médical ; aucune page dédiée à l'optique.",
-    "taille": "SIREN 528 424 005 · création le 24/10/2010 · tranche d'effectif 10 à 19 salariés (2024) · catégorie PME · SARL (code 5499) · NAF 70.22Z (conseil pour les affaires et autres conseils de gestion) · siège Villefranche-sur-Saône (annuaire-gtp-gestion-tiers-payant)"
+    "taille": "SIREN 528 424 005 · création le 24/10/2010 · tranche d'effectif 10 à 19 salariés (2024) · catégorie PME · SARL (code 5499) · NAF 70.22Z (conseil pour les affaires et autres conseils de gestion) · siège Villefranche-sur-Saône (annuaire-gtp-gestion-tiers-payant)",
+    "prixType": "non publié",
+    "prixAnalyste": {
+      "releve": "non publié : devis gratuit ; « 1 mois d'essai sans engagement à chaque souscription, résiliable à tout moment » (gtp-accueil)",
+      "notes": "GTP Gestion Tiers Payant (SIREN 528 424 005, Villefranche-sur-Saône), surtout pharmacies, mais cite les opticiens. Contradiction sur l'essai : 1 mois sur le site actuel, « formule découverte pendant 3 mois » sur la fiche Viadeo (non datée, probablement ancienne).",
+      "sources": [
+        {
+          "label": "tiers-payant-gtp.com · Accueil",
+          "url": "https://www.tiers-payant-gtp.com/",
+          "consulte": "2026-11-03"
+        },
+        {
+          "label": "viadeo.journaldunet.com · GTP Gestion Tiers Payant",
+          "url": "https://viadeo.journaldunet.com/p/gtp-gestion-tiers-payant-3777709",
+          "consulte": "2026-11-03"
+        }
+      ]
+    }
   },
   "sources": {
     "gtp-accueil": {

@@ -80,7 +80,24 @@
     "_pourquoi": "aucun prix sur les pages comparatives ; chiffres de performance déclarés non comparables",
     "prix": "« à partir de 150 € HT / mois », prestations sur devis ; conventionnement sur devis ; audit gratuit (izisante-offres)",
     "chiffresDeclares": "« taux de recouvrement d’impayés supérieur à 97%* », astérisque « Données collectées » sans précision (izisante-accueil)",
-    "taille": "SIREN 882 159 130, création le 02/03/2020, SAS (5710), NAF 82.11Z, siège à Vaugneray (69) ; tranche 3 à 5 salariés (2024), catégorie PME (annuaire-izisante, izisante-cookies)"
+    "taille": "SIREN 882 159 130, création le 02/03/2020, SAS (5710), NAF 82.11Z, siège à Vaugneray (69) ; tranche 3 à 5 salariés (2024), catégorie PME (annuaire-izisante, izisante-cookies)",
+    "prixType": "affiché",
+    "prixAnalyste": {
+      "releve": "Gestion administrative du tiers payant optique : « à partir de 150 € HT / mois », prestations sur devis ; conventionnement : « Tarif sur devis » (izisante-offres)",
+      "notes": "IziSanté SAS (Craponne), fondée par deux opticiennes. L'article de FréquenceOptic dit seulement « tarifs de prestation sur devis », sans le plancher de 150 € : ce n'est pas une contradiction, juste un texte moins précis.",
+      "sources": [
+        {
+          "label": "izisante.net · Nos offres",
+          "url": "https://izisante.net/nos-offres/",
+          "consulte": "2026-11-03"
+        },
+        {
+          "label": "lesannoncesdeloptique.fr (FréquenceOptic) · article IziSanté",
+          "url": "https://www.lesannoncesdeloptique.fr/actualites/izisante-prend-en-main-la-gestion-du-tiers-payant-pour-une-tresorerie-saine.html",
+          "consulte": "2026-11-03"
+        }
+      ]
+    }
   },
   "sources": {
     "izisante-accueil": {

@@ -83,7 +83,19 @@
     "prix": "Gestion mensuelle à partir de 0,4% du chiffre d’affaires géré, plus une commission à partir de 10% sur les impayés et rejets récupérés ; PEC 9€ l'unité, 259€ les 30 demandes, forfait illimité à partir de 549€/mois ; recouvrement : commission à partir de 5% des impayés à récupérer ; audit gratuit (tpzen-accueil)",
     "chiffresDeclares": "« On vous fait gagner plus de 30h par semaine en récupérant plus de 80% de vos impayés! » (tpzen-linkedin)",
     "incoherences": "Mission annoncée « digitaliser et automatiser » et « algorithmes spécialisés pour garantir le recouvrement », alors que le service décrit est rendu par une équipe ; « géré par des professionnels de santé » sans présentation de l'équipe ; téléphone affiché +33 6 76 47 48 03 mais lien d'appel vers un autre numéro, lien mail vers une adresse gmail ; hébergeur non nommé dans les mentions légales ; textes de gabarit restés en ligne (« Benefit one of this feature ») ; métiers non détaillés, l'optique n'apparaît pas sur le site principal (tpzen-accueil, tpzen-mentions)",
-    "taille": "SIREN 932 352 198, SAS au capital de 1 000 € créée le 14/06/2024, NAF 82.11Z, tranche 3 à 5 salariés (2024), catégorie PME (annuaire-tpzen)"
+    "taille": "SIREN 932 352 198, SAS au capital de 1 000 € créée le 14/06/2024, NAF 82.11Z, tranche 3 à 5 salariés (2024), catégorie PME (annuaire-tpzen)",
+    "prixType": "affiché",
+    "prixAnalyste": {
+      "releve": "Gestion mensuelle du tiers payant : forfait « à partir de 0,4 % du chiffre d'affaires géré » plus une commission « à partir de 10 % » sur les impayés et rejets récupérés ; demandes de prise en charge : 9 € l'unité, 259 € les 30, forfait illimité « à partir de 549 €/mois » ; recouvrement : commission « à partir de 5 % des impayés à récupérer » ; audit gratuit (tpzen-accueil)",
+      "notes": "TPZen (Neuilly-sur-Seine) vise les cabinets médicaux et dentaires et les centres de santé, pas spécifiquement l'optique. HT ou TTC non précisé. Dans le rendu de la page, la grille 9 € / 259 € / 549 € se trouve entre le bloc « gestion du tiers payant » et le bloc « prises en charge ». Je l'attribue aux demandes de prise en charge (DPEC) d'après la mise en page alternée, mais c'est à vérifier visuellement.",
+      "sources": [
+        {
+          "label": "tpzen.com · Accueil",
+          "url": "https://www.tpzen.com/",
+          "consulte": "2026-11-03"
+        }
+      ]
+    }
   },
   "sources": {
     "tpzen-accueil": {

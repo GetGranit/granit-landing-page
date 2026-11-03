@@ -96,7 +96,34 @@
     "prix": "non publié sur le site (redevance mensuelle forfaitaire fixée au contrat, indexée sur l'indice SYNTEC selon les CGV de Crésanté Cash ; packs « pour 30 actions Santassist ») (sicorfe-cgv, sicorfe-optique)",
     "chiffresDeclares": "« 10000 clients accompagnés » (sicorfe-santassist) ; « 19,78 % des dossiers qui sont rejetés ou en litige », perte estimée à « 56 965 € de chiffre d’affaires par an » pour un magasin d'optique, « 2 h 30 par mois » et « plus de 15 H par mois » de tâches administratives (sicorfe-optique) ; pour un opticien, « un mois complet chaque année » (sicorfe-santassist) ; « leader incontesté » (sicorfe-chiffres)",
     "incoherences": "« près de 30 ans d’expérience » et « créée il y a 30 ans » (sicorfe-accueil) alors que la société est créée en 1991, soit 35 ans en 2026 (sicorfe-chiffres, annuaire-sicorfe) ; « 13 professions de santé » (sicorfe-accueil) contre « 12 disciplines » pour Santassist (sicorfe-santassist) ; taux de rejet affiché 19,78 % pour l'optique (sicorfe-optique) contre « 3,58 % de dossiers rejetés ou en litige » en moyenne sur la page ophtalmologistes (sicorfe-ophtalmo) ; logos Socotec et Bureau Veritas affichés avec « SICORFÉ SANTÉ est certifié » sans préciser la norme (sicorfe-optique) ; la marque Sicorfé Santé est exploitée par la société SNP (nom « SNP SICORFE » dans les CGV)",
-    "taille": "SIREN 380 527 788 (SNP, société anonyme, nature juridique 5599), créée le 11/01/1991, tranche d'effectif 20 à 49 salariés (2024), catégorie PME, NAF 63.11Z, un établissement ouvert à Saint-Laurent-Blangy ; administrateurs dont la Société Centrale des Opticiens, Cogepharm, Saficard et une association dentaire (annuaire-sicorfe)"
+    "taille": "SIREN 380 527 788 (SNP, société anonyme, nature juridique 5599), créée le 11/01/1991, tranche d'effectif 20 à 49 salariés (2024), catégorie PME, NAF 63.11Z, un établissement ouvert à Saint-Laurent-Blangy ; administrateurs dont la Société Centrale des Opticiens, Cogepharm, Saficard et une association dentaire (annuaire-sicorfe)",
+    "prixType": "non publié",
+    "prixAnalyste": {
+      "releve": "non publié : abonnement par « redevance mensuelle forfaitaire fixée dans le contrat d'abonnement », indexée chaque année sur l'indice Syntec (CGV Crésanté Cash) ; Santassist facturé « uniquement si l'action est aboutie », sans tarif public ; un « Pack essentiel opticiens » est présenté sans prix (sicorfe-cgv, sicorfe-santassist, sicorfe-opticiens). Remise de −10 % sur facture pour les clients La Banque Postale (lbp-sicorfe)",
+      "notes": "Site : sicorfe.com (Sicorfé Santé, Saint-Laurent-Blangy, 62). Les pages métier portent la mention « * Pour 30 actions Santassist RO/RC/Impayés-litiges », ce qui laisse penser qu'un prix existe sous forme d'image ou dans les packs. Aucun montant n'apparaît dans le texte rendu.",
+      "sources": [
+        {
+          "label": "sicorfe.com · Opticiens",
+          "url": "https://sicorfe.com/fonctionnalites/par-metier/opticiens/",
+          "consulte": "2026-11-03"
+        },
+        {
+          "label": "sicorfe.com · CGV Crésanté Cash",
+          "url": "https://sicorfe.com/cgv/",
+          "consulte": "2026-11-03"
+        },
+        {
+          "label": "sicorfe.com · Santassist",
+          "url": "https://sicorfe.com/nos-services/santassist/",
+          "consulte": "2026-11-03"
+        },
+        {
+          "label": "labanquepostale.fr · Encaissement en tiers payant (partenaire Sicorfé)",
+          "url": "https://www.labanquepostale.fr/professionnels-entrepreneurs/nos-services/gestion-encaissements-et-transactions/encaissement-en-tiers-payant.html",
+          "consulte": "2026-11-03"
+        }
+      ]
+    }
   },
   "sources": {
     "sicorfe-accueil": {

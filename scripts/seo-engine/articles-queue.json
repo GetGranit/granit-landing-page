@@ -3936,6 +3936,24 @@
         "slug": "granit-vs-tiers-payant-assistance",
         "anchor": "Granit vs Tiers Payant Assistance",
         "type": "enfant"
+      },
+      {
+        "id": "E2e",
+        "slug": "granit-vs-sicorfe",
+        "anchor": "Granit vs Sicorfé Santé",
+        "type": "enfant"
+      },
+      {
+        "id": "E2f",
+        "slug": "granit-vs-sojema",
+        "anchor": "Granit vs Sojema Santé",
+        "type": "enfant"
+      },
+      {
+        "id": "E2g",
+        "slug": "granit-vs-izisante",
+        "anchor": "Granit vs IziSanté",
+        "type": "enfant"
       }
     ],
     "concurrents": [
@@ -3943,6 +3961,13 @@
       "optibot",
       "stpps",
       "tiers-payant-assistance",
+      "sicorfe",
+      "sojema",
+      "izisante",
+      "backoffice",
+      "conseil-tiers-payant",
+      "gtp-gestion-tiers-payant",
+      "france-tiers-payant",
       "granit"
     ]
   },
@@ -4093,6 +4118,123 @@
       "Des gestionnaires humains ou des agents IA : qu'est-ce qui change au magasin ?",
       "Peut-on utiliser Tiers Payant Assistance et Granit en même temps ?",
       "Comment passer de Tiers Payant Assistance à Granit ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "E2",
+        "slug": "solutions-tiers-payant-optique",
+        "anchor": "toutes les solutions de tiers payant en optique",
+        "type": "parent"
+      }
+    ]
+  },
+  {
+    "id": "E2e",
+    "slug": "granit-vs-sicorfe",
+    "category": "gerer-son-tiers-payant",
+    "title": "Granit ou Sicorfé Santé : lequel choisir pour le tiers payant de votre magasin ?",
+    "primaryKeyword": "sicorfe",
+    "keywordCluster": [
+      "sicorfe"
+    ],
+    "searchVolume": null,
+    "status": "waiting",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "solutions-tiers-payant-optique",
+    "reader": "Gérant",
+    "role": "Vente + LLM",
+    "granitData": "content/concurrents",
+    "cta": "Démo",
+    "toValidate": "Fiche de faits content/concurrents/sicorfe.json à relire par Paul (aRelire), puis status pending. Comparatif : aucun prix, aucun client cité, uniquement les faits des fichiers content/concurrents. Relecture par Paul.",
+    "primaryKeywordMeasured": false,
+    "concurrents": [
+      "sicorfe",
+      "granit"
+    ],
+    "faqQuestions": [
+      "Sicorfé Santé et Granit font-ils la même chose ?",
+      "Avec Sicorfé Santé, qui fait la demande de prise en charge ?",
+      "Peut-on utiliser Sicorfé Santé et Granit en même temps ?",
+      "Comment passer de Sicorfé Santé à Granit ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "E2",
+        "slug": "solutions-tiers-payant-optique",
+        "anchor": "toutes les solutions de tiers payant en optique",
+        "type": "parent"
+      }
+    ]
+  },
+  {
+    "id": "E2f",
+    "slug": "granit-vs-sojema",
+    "category": "gerer-son-tiers-payant",
+    "title": "Granit ou Sojema Santé : lequel choisir pour le tiers payant de votre magasin ?",
+    "primaryKeyword": "sojema",
+    "keywordCluster": [
+      "sojema"
+    ],
+    "searchVolume": null,
+    "status": "waiting",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "solutions-tiers-payant-optique",
+    "reader": "Gérant",
+    "role": "Vente + LLM",
+    "granitData": "content/concurrents",
+    "cta": "Démo",
+    "toValidate": "Fiche de faits content/concurrents/sojema.json à relire par Paul (aRelire), puis status pending. Comparatif : aucun prix, aucun client cité, uniquement les faits des fichiers content/concurrents. Relecture par Paul.",
+    "primaryKeywordMeasured": false,
+    "concurrents": [
+      "sojema",
+      "granit"
+    ],
+    "faqQuestions": [
+      "Sojema Santé et Granit font-ils la même chose ?",
+      "Avec Sojema Santé, qui fait la demande de prise en charge ?",
+      "Peut-on utiliser Sojema Santé et Granit en même temps ?",
+      "Comment passer de Sojema Santé à Granit ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "E2",
+        "slug": "solutions-tiers-payant-optique",
+        "anchor": "toutes les solutions de tiers payant en optique",
+        "type": "parent"
+      }
+    ]
+  },
+  {
+    "id": "E2g",
+    "slug": "granit-vs-izisante",
+    "category": "gerer-son-tiers-payant",
+    "title": "Granit ou IziSanté : lequel choisir pour le tiers payant de votre magasin ?",
+    "primaryKeyword": "izisante",
+    "keywordCluster": [
+      "izisante"
+    ],
+    "searchVolume": null,
+    "status": "waiting",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "solutions-tiers-payant-optique",
+    "reader": "Gérant",
+    "role": "Vente + LLM",
+    "granitData": "content/concurrents",
+    "cta": "Démo",
+    "toValidate": "Fiche de faits content/concurrents/izisante.json à relire par Paul (aRelire), puis status pending. Comparatif : aucun prix, aucun client cité, uniquement les faits des fichiers content/concurrents. Relecture par Paul.",
+    "primaryKeywordMeasured": false,
+    "concurrents": [
+      "izisante",
+      "granit"
+    ],
+    "faqQuestions": [
+      "IziSanté et Granit font-ils la même chose ?",
+      "Avec IziSanté, qui fait la demande de prise en charge ?",
+      "Peut-on utiliser IziSanté et Granit en même temps ?",
+      "Comment passer de IziSanté à Granit ?"
     ],
     "internalLinks": [
       {

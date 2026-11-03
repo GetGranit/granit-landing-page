@@ -81,7 +81,19 @@
     "prix": "5 € par dossier traité (régime obligatoire et mutuelle inclus), 0 € de frais de mise en route (sojema-accueil, sojema-opticiens, sojema-externalisation)",
     "chiffresDeclares": "« 100% des dossiers reçus sont traités dans les 24 heures », « 100% de taux de recouvrement », délai de paiement moyen des OCAM « 17 jours » (accueil) ou « 25 jours » (à propos), « 100% des dossiers sont payés dans les 3 mois », « 16 ans d’expérience », « des dizaines de clients sur toute la France », mise en route « sous 8 jours » (sojema-accueil, sojema-apropos, sojema-services)",
     "incoherences": "Délai moyen de paiement des OCAM : « 17 jours » sur l'accueil, « 25 jours » sur la page À propos ; « Contrat de 1 an avec tacite reconduction » (services) face à « Aucun engagement inutile » (externalisation) ; forme « SARL » dans les informations légales, SAS (5710) dans l'annuaire ; « 16 ans d’expérience » pour une société créée en 2016 (le site la rattache à un service interne monté en 2010 dans des magasins) ; deux numéros de téléphone (04 77 72 68 49 et 04 77 60 95 40) ; « Entreprise Française 100% basée en région AURA » mais site hébergé à Chypre (Hostinger)",
-    "taille": "SIREN 820 627 719, création le 27/05/2016, SAS (5710), NAF 82.99Z, siège à Roanne (42) ; tranche 6 à 9 salariés (2024), catégorie PME ; présidente : SOJEMA FINANCE (annuaire-sojema)"
+    "taille": "SIREN 820 627 719, création le 27/05/2016, SAS (5710), NAF 82.99Z, siège à Roanne (42) ; tranche 6 à 9 salariés (2024), catégorie PME ; présidente : SOJEMA FINANCE (annuaire-sojema)",
+    "prixType": "affiché",
+    "prixAnalyste": {
+      "releve": "« 5 € par dossier traité, incluant régime obligatoire et complémentaire » ; « 0 € de frais de mise en route » (sojema-externalisation)",
+      "notes": "Sojema Santé, Roanne (42), dédiée aux opticiens. Le bandeau du site reprend « Une offre simple : 5 euros par dossier traité (sécurité sociale et mutuelles) ». HT ou TTC non précisé. Une plaquette PDF existe (/wp-content/uploads/2026/02/Plaquette-presentation-Sojema-Sante.pdf), non ouverte.",
+      "sources": [
+        {
+          "label": "sojema.fr · Externalisation du tiers payant",
+          "url": "https://sojema.fr/externalisation-du-tiers-payant/",
+          "consulte": "2026-11-03"
+        }
+      ]
+    }
   },
   "sources": {
     "sojema-accueil": {

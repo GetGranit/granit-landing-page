@@ -95,7 +95,29 @@
     "prix": "non publié pour l'optique (offre « Standard » sur devis ; offres Starter réservées aux centres de santé en création, dentistes et pharmacies)",
     "chiffresDeclares": "« Plus de 150 clients partout en France », « Net Promoter Score de 79 », « Plus de 200 années d’expérience cumulée », « presque 50 experts » / « plus de 48 spécialistes », « 30% des patients dans les grandes agglomérations n’ont jamais avec eux leur carte vitale » (stpps-accueil, stpps-apropos, stpps-services) ; « STPPS emploie 50 salariés » et « leader français de la gestion externalisée du tiers payant et des impayés » (aubigny-actu, article de la commune)",
     "incoherences": "Création « en 2016 » et « depuis 2016 » sur l'accueil, « 2018 » sur la page STPPS et dans l'annuaire (création 01/04/2018) ; forme juridique « SARL » dans les mentions légales, SAS (code 5710) dans l'annuaire ; l'accueil écrit « L’internalisation réduit les coûts » dans un argumentaire pour l'externalisation ; explication probable de l'écart de dates : le site de la commune décrit une « Micro-entreprise fondée en 2016 par Romuald Bossard », la société actuelle datant de 2018 (aubigny-actu)",
-    "taille": "SIREN 838 408 763, créée le 01/04/2018, tranche d'effectif 20 à 49 salariés (2024), catégorie PME, SAS (nature juridique 5710), NAF 82.11Z ; société du GroupeFBO depuis 2023 (annuaire-stpps, stpps-accueil)"
+    "taille": "SIREN 838 408 763, créée le 01/04/2018, tranche d'effectif 20 à 49 salariés (2024), catégorie PME, SAS (nature juridique 5710), NAF 82.11Z ; société du GroupeFBO depuis 2023 (annuaire-stpps, stpps-accueil)",
+    "prixType": "non publié",
+    "prixAnalyste": {
+      "releve": "non publié : optique sans prix, offre « Standard » sur devis ; les offres packagées (Starter centre de santé en création, Starter dentiste, Pharmacie) n'affichent pas de montant non plus (stpps-optique, stpps-offre-creation)",
+      "notes": "Re-vérifié : le champ est correct sur le fond, mais l'offre pharmacie ne s'appelle pas « Starter » (c'est « Offre Pharmacie Tiers Payant », sans prix) ; seules les offres centre en création et dentiste s'appellent Starter. Offre Starter : 1 à 3 mois, renouvelable 1 fois, préavis 1 mois, jusqu'à 3 praticiens, antériorités sur devis séparé. Aucun prix tiers trouvé.",
+      "sources": [
+        {
+          "label": "stpps.net · Optique",
+          "url": "https://www.stpps.net/votre-metier/centre-optique",
+          "consulte": "2026-11-03"
+        },
+        {
+          "label": "stpps.net · Offre centre de santé en création",
+          "url": "https://www.stpps.net/les-offres-tiers-payant-stpps/offre-creation-centre-de-sante",
+          "consulte": "2026-11-03"
+        },
+        {
+          "label": "stpps.net · Offre pharmacie",
+          "url": "https://www.stpps.net/les-offres-tiers-payant-stpps/offre-pharmacie-tiers-payant",
+          "consulte": "2026-11-03"
+        }
+      ]
+    }
   },
   "sources": {
     "stpps-accueil": {

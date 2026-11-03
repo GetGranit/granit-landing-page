@@ -90,7 +90,29 @@
     "prix": "non publié sur le site (diagnostic et rendez-vous proposés)",
     "chiffresDeclares": "« + 100 Gestionnaires en France », « +1200 Clients actifs début 2026 », « +1.7M D'anomalies traitées par an » (tpa-accueil) ; « ancienneté moyenne de 10 ans » des gestionnaires (tpa-logiciels) ; « investissement informatique de 150 000 € en 2025 » (tpa-securite)",
     "incoherences": "Le site dit « Fondée en 1998 » (tpa-apropos) alors que la SAS immatriculée (SIREN 444 465 496) est créée le 04/12/2002 (annuaire-tiers-payant-assistance) ; « + 100 Gestionnaires en France » (tpa-accueil) contre une tranche d'effectif de 10 à 19 salariés en 2024 pour cette SAS (annuaire-tiers-payant-assistance), l'effectif est peut-être réparti dans d'autres sociétés du groupe ; les URL /opticiens et /cas-opticiens affichent la page générique de gestion externalisée, sans contenu propre à l'optique",
-    "taille": "SIREN 444 465 496, créée le 04/12/2002, tranche d'effectif 10 à 19 salariés (2024), catégorie PME, SAS (nature juridique 5710), NAF 70.22Z, un seul établissement ouvert à Limas (annuaire-tiers-payant-assistance)"
+    "taille": "SIREN 444 465 496, créée le 04/12/2002, tranche d'effectif 10 à 19 salariés (2024), catégorie PME, SAS (nature juridique 5710), NAF 70.22Z, un seul établissement ouvert à Limas (annuaire-tiers-payant-assistance)",
+    "prixType": "rapporté par un tiers",
+    "prixAnalyste": {
+      "releve": "non publié sur le site (diagnostic proposé, prestations personnalisées) (tpa-opticiens, tpa-accueil). Seul chiffre public, rapporté en 2016 par la presse pharmacie : un pharmacien client dit externaliser pour « 800 € HT par an » pour 4,5 heures par semaine (moniteur-2016)",
+      "notes": "Le champ exclus.prix actuel (« non publié sur le site ») est confirmé. Le chiffre de 2016 vient du témoignage d'un client pharmacien, pas de TPA. Il a dix ans et concerne une pharmacie. Il paraît faible pour 4,5 h par semaine, mais il est retranscrit tel quel ; mieux vaut ne pas l'utiliser pour l'optique. Le même article cite le DG de TPA sur le dimensionnement (« contrat de 2,5 heures par semaine » pour 1,2 M€ de CA tiers payant), sans montant.",
+      "sources": [
+        {
+          "label": "tierspayantassistance.com · Opticiens",
+          "url": "https://tierspayantassistance.com/opticiens",
+          "consulte": "2026-11-03"
+        },
+        {
+          "label": "tierspayantassistance.com · Accueil",
+          "url": "https://www.tierspayantassistance.com/",
+          "consulte": "2026-11-03"
+        },
+        {
+          "label": "Le Moniteur des pharmacies · « Externaliser le tiers payant » (26 oct. 2016)",
+          "url": "https://www.lemoniteurdespharmacies.fr/business/numerique/digitalisation/externaliser-le-tiers-payant",
+          "consulte": "2026-11-03"
+        }
+      ]
+    }
   },
   "sources": {
     "tpa-accueil": {

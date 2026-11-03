@@ -93,7 +93,29 @@
     "prix": "non publié (devis après diagnostic à distance)",
     "chiffresDeclares": "« Nos experts justifient de plus de 10 ans d’expérience », « 10 ans d’expérience », « Depuis 7 ans » (article du 01/04/2024), « Récupérez entre 2 et 4% d'anomalies de factures » (pharmacie), « une moyenne de 2% d’anomalies dans les factures tiers payant des pharmacies », « réponse sous 24h max », « plus de 10000 points de vente qui distribuent plus de 1300 marques » (ctp-accueil, ctp-suivi, ctp-impayes, ctp-application, ctp-optique)",
     "incoherences": "Les mentions légales désignent « Ofourneau » comme responsable du traitement et donnent une adresse de service client à Ars-sur-Formans (01), différente du siège d'Arnas (69) : vestige probable d'un gabarit ; l'hébergement du site (1&1) est indiqué, rien sur l'hébergement des données de santé ; PEC et rapprochement bancaire ne sont décrits que pour le dentaire (ctp-mentions, ctp-application, ctp-rapprochement)",
-    "taille": "SIREN 830 146 098, SAS créée le 30/05/2017, NAF 70.22Z, tranche 6 à 9 salariés (2024), catégorie PME (annuaire-ctp)"
+    "taille": "SIREN 830 146 098, SAS créée le 30/05/2017, NAF 70.22Z, tranche 6 à 9 salariés (2024), catégorie PME (annuaire-ctp)",
+    "prixType": "non publié",
+    "prixAnalyste": {
+      "releve": "non publié : prestation sur mesure après un état des lieux gratuit ; le site évoque pour l'assistance régulière « un tarif fixe, négocié à l'année », sans montant (ctp-accueil, ctp-assistance)",
+      "notes": "Conseil Tiers Payant SAS (SIREN 830 146 098, Arnas, 69). Se désigne lui-même « CTP » (application CTP) : voir le slug ctp.",
+      "sources": [
+        {
+          "label": "conseiltierspayant.com · Accueil",
+          "url": "https://conseiltierspayant.com/",
+          "consulte": "2026-11-03"
+        },
+        {
+          "label": "conseiltierspayant.com · Optique",
+          "url": "https://conseiltierspayant.com/metier/gestion-tiers-payant-optique/",
+          "consulte": "2026-11-03"
+        },
+        {
+          "label": "conseiltierspayant.com · L'assistance au tiers payant",
+          "url": "https://conseiltierspayant.com/lassistance-au-tiers-payant-comment-ca-marche/",
+          "consulte": "2026-11-03"
+        }
+      ]
+    }
   },
   "sources": {
     "ctp-accueil": {

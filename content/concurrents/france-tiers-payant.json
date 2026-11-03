@@ -90,7 +90,24 @@
     "prix": "non publié (audit gratuit ; « Aucun frais d'installation », « Tarifs préférentiels pour groupements ou plusieurs officines », « des tarifs très compétitifs » ; paiement par carte possible via apayer.fr) (ftp-accueil, ftp-services)",
     "chiffresDeclares": "« +30 ans d'expérience », « +30 collaboratrices et collaborateurs », « 600 clients », « plus de 600 Pharmaciens et Professionnels de santé » (ftp-societe) ; se dit « dans les leaders de sa catégorie » et revendique une contribution au rapport de l'IGAS de 2013 sur le tiers payant (ftp-societe) ; LinkedIn : taille « 11-50 employees », fondée en 1998 (ftp-linkedin)",
     "incoherences": "L'accueil écrit « À vos côtés depuis 1988 », le pied de page et la page services « depuis 1998 » ; la page société date la création de Litipharma de 2003 (annuaire : 01/02/2003), devenue France Tiers Payant en 2023. « Aucun engagement les six premiers mois » figure seulement dans la description (balise meta) de l'accueil, pas dans le texte visible. Les mentions légales ne donnent ni raison sociale, ni SIREN, ni directeur de publication. Site d'abord tourné vers les pharmacies (partenaire d'un groupement de pharmacies, « Mon espace client » sur litipharma.com) ; l'optique n'apparaît qu'en vignette.",
-    "taille": "SIREN 445 050 198 (LITIPHARMA, nom commercial FRANCE TIERS PAYANT) · création le 01/02/2003 · tranche d'effectif 20 à 49 salariés (2024) · catégorie PME · SARL (code 5499) · NAF 82.99Z (autres activités de soutien aux entreprises) · siège Meaux (annuaire-france-tiers-payant)"
+    "taille": "SIREN 445 050 198 (LITIPHARMA, nom commercial FRANCE TIERS PAYANT) · création le 01/02/2003 · tranche d'effectif 20 à 49 salariés (2024) · catégorie PME · SARL (code 5499) · NAF 82.99Z (autres activités de soutien aux entreprises) · siège Meaux (annuaire-france-tiers-payant)",
+    "prixType": "non publié",
+    "prixAnalyste": {
+      "releve": "non publié : audit gratuit ; « aucun frais d'installation », « aucun engagement les six premiers mois », contrats modulables selon la volumétrie de rejets, « tarifs préférentiels pour groupements ou plusieurs officines » (ftp-accueil)",
+      "notes": "France Tiers Payant / Litipharma (Meaux, 77), surtout pharmacies, mais liste les opticiens. « Aucun engagement les six premiers mois » figure dans la description de la page, pas dans le corps du texte rendu. L'article du Moniteur (2016) cite Litipharma sans montant propre : sa fourchette « 340 € à 500 € » n'est attribuée à aucun prestataire et ne doit pas leur être imputée.",
+      "sources": [
+        {
+          "label": "francetierspayant.fr · Accueil",
+          "url": "https://www.francetierspayant.fr/",
+          "consulte": "2026-11-03"
+        },
+        {
+          "label": "Le Moniteur des pharmacies · « Externaliser le tiers payant » (26 oct. 2016)",
+          "url": "https://www.lemoniteurdespharmacies.fr/business/numerique/digitalisation/externaliser-le-tiers-payant",
+          "consulte": "2026-11-03"
+        }
+      ]
+    }
   },
   "sources": {
     "ftp-accueil": {
