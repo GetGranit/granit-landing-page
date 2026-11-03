@@ -30,25 +30,22 @@ export const t = {
     "Je passe mes journées avec des opticiens. Je vous montre ce qui marche vraiment en magasin.",
   cas: [
     {
-      emoji: "⭐",
       titre: "Vos avis Google",
       texte:
         "Les analyser pour savoir ce que vos clients disent vraiment de l'accueil, des délais, des prix.",
     },
     {
-      emoji: "✉️",
       titre: "Vos modèles de mails",
       texte:
         "Relance mutuelle, lunettes prêtes, devis non signé : écrits une fois, réutilisés tous les jours.",
     },
     {
-      emoji: "📊",
       titre: "Vos impayés mutuelles",
       texte: "Un tableau de suivi construit à partir d'un simple export Excel de votre logiciel.",
     },
   ],
   surprise:
-    "Ce que l'IA peut faire à votre place, sans même ouvrir Excel. On les garde pour la fin 😉",
+    "Ce que l'IA peut faire à votre place, sans même ouvrir Excel. On les garde pour la fin",
 
   formTitle: "Réservez votre place",
   formIntro: "L'invitation avec le lien de connexion arrive par mail.",
@@ -70,7 +67,7 @@ export const t = {
   choose: "Choisir…",
   sending: "Envoi…",
   note: "Gratuit. Vos données restent chez nous, jamais revendues.",
-  success: "C'est noté, votre place est réservée 🎉",
+  success: "C'est noté, votre place est réservée",
   successSub:
     "Vous allez recevoir un mail de confirmation avec le lien de connexion. Bloquez le créneau dès maintenant :",
   agendaTitre: "Webinar Granit : 5 usages concrets de l'IA en magasin",

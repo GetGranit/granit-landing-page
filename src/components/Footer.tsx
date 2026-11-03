@@ -112,7 +112,7 @@ export function Footer() {
             © {new Date().getFullYear()} Granit AI · {t.rights}
           </div>
           <div className="inline-flex items-center gap-1.5">
-            {t.made} <span aria-hidden>🇫🇷</span>
+            {t.made}
           </div>
         </div>
       </div>

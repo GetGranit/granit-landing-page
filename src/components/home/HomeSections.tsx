@@ -388,7 +388,7 @@ function HeroDashboard({ t, lang }: { t: typeof copy["fr"]; lang: "fr" | "en" })
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 12h3l2-7 4 14 2-7h7"/></svg>
           </div>
           <div>
-            <div className="text-[14px]" style={{ fontWeight: 600 }}>{t.dashGreeting} <span aria-hidden>👋</span></div>
+            <div className="text-[14px]" style={{ fontWeight: 600 }}>{t.dashGreeting}</div>
             <div className="text-[11px]" style={{ color: "var(--text-muted)" }}>{t.dashSub}</div>
           </div>
         </div>
@@ -938,7 +938,7 @@ export function HomeSections() {
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 12h3l2-7 4 14 2-7h7"/></svg>
                 </div>
                 <div className="min-w-0">
-                  <div className="text-[14px]" style={{ fontWeight: 600 }}>{t.dashGreeting} <span aria-hidden>👋</span></div>
+                  <div className="text-[14px]" style={{ fontWeight: 600 }}>{t.dashGreeting}</div>
                   <div className="text-[11.5px]" style={{ color: "var(--text-muted)" }}>{t.dashSub}</div>
                 </div>
                 <span className="ml-auto inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[10.5px]" style={{ borderColor: "var(--border)", color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}>

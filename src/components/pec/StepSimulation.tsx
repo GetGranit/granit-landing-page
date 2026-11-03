@@ -153,7 +153,7 @@ function Formulaire({
             className="rounded border border-dashed bg-papier px-2 py-1"
             style={{ borderColor: "#cfd6de", color: "#56606b" }}
           >
-            {chiffre ? "⌛ calcul de la part mutuelle…" : "en attente"}
+            {chiffre ? "calcul de la part mutuelle…" : "en attente"}
           </dd>
         </div>
       </dl>

@@ -39,7 +39,7 @@ export function AjouterAgenda() {
         style={style}
         onClick={() => suivre("google")}
       >
-        <span aria-hidden>📅</span> Google Agenda
+        Google Agenda
       </a>
       <div className="flex gap-2.5">
         <button type="button" className={bouton} style={style} onClick={telechargerIcs}>
