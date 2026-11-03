@@ -17,6 +17,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     const stored = window.localStorage.getItem("granit-lang");
     if (stored === "fr" || stored === "en") {
       setLangState(stored);
+      document.documentElement.lang = stored;
     }
   }, []);
 
