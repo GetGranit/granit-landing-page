@@ -5,7 +5,8 @@ import { CalendarDays, Check, Clock3, Lock } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { Faq, WebinarForm } from "@/components/webinar/WebinarShared";
 import { useCompteARebours } from "@/hooks/useWebinarCountdown";
-import { t } from "@/lib/webinarIa";
+import { copy } from "@/lib/webinarIa";
+import { useLanguage } from "@/lib/i18n";
 import logoMonogram from "@/assets/logo.svg";
 import photoPaul from "@/assets/paul-pietra.jpg";
 
@@ -50,6 +51,7 @@ const mono = {
 };
 
 function WebinarPage() {
+  const t = copy[useLanguage().lang];
   return (
     <div
       className="relative min-h-screen overflow-hidden"
@@ -119,6 +121,7 @@ function Cercles() {
 }
 
 function FicheProgramme() {
+  const t = copy[useLanguage().lang];
   return (
     <div
       className="relative overflow-hidden rounded-[24px] px-6 pb-14 pt-8 md:py-12 md:pl-14 md:pr-28"
@@ -152,7 +155,7 @@ function FicheProgramme() {
           <CalendarDays size={17} strokeWidth={1.75} /> {t.date}
         </span>
         <span className="inline-flex items-center gap-2">
-          <Clock3 size={17} strokeWidth={1.75} /> {t.heure} · 45 min · en ligne
+          <Clock3 size={17} strokeWidth={1.75} /> {t.heure} · {t.format}
         </span>
       </div>
 
@@ -164,7 +167,7 @@ function FicheProgramme() {
       </p>
 
       <h2 className="mt-9 text-[15px]" style={{ fontWeight: 600 }}>
-        Votre animateur
+        {t.hostTitle}
       </h2>
       <div className="mt-4 flex items-center gap-5">
         <motion.img
@@ -195,7 +198,7 @@ function FicheProgramme() {
       </div>
 
       <h2 className="mt-9 text-[15px]" style={{ fontWeight: 600 }}>
-        Vous apprendrez…
+        {t.learnTitle}
       </h2>
       <ul className="mt-4 space-y-3">
         {t.cas.map((c, i) => (
@@ -214,8 +217,8 @@ function FicheProgramme() {
               <Check size={13} strokeWidth={3} />
             </span>
             <span>
-              {c.emoji} <span style={{ fontWeight: 600 }}>{c.titre}</span>{" "}
-              <span style={{ color: "var(--text-soft)" }}>: {c.texte}</span>
+              {c.emoji} <span style={{ fontWeight: 600 }}>{c.titre}</span>
+              <span style={{ color: "var(--text-soft)" }}>{t.colon}{c.texte}</span>
             </span>
           </motion.li>
         ))}
@@ -240,6 +243,7 @@ function FicheProgramme() {
 }
 
 function CarteInscription() {
+  const t = copy[useLanguage().lang];
   return (
     <div
       className="rounded-[24px] bg-white px-6 py-8 md:px-9 md:py-10"
@@ -254,7 +258,7 @@ function CarteInscription() {
 
       <div className="mt-8 text-center">
         <p className="text-[12px]" style={{ color: "var(--text-soft)" }}>
-          Le webinar commence dans
+          {t.countdown}
         </p>
         <CompteARebours />
       </div>
@@ -267,7 +271,7 @@ function CarteInscription() {
           buttonBackground={BOUTON}
           heading={
             <p className="mb-5 text-[15px]" style={{ fontWeight: 600 }}>
-              On a hâte de vous voir ! 👋
+              {t.formHeading}
             </p>
           }
         />
@@ -280,23 +284,19 @@ function CarteInscription() {
   );
 }
 
-const UNITES = [
-  { k: "j", label: "jours" },
-  { k: "h", label: "heures" },
-  { k: "m", label: "min" },
-  { k: "s", label: "sec" },
-] as const;
+const UNITES = ["j", "h", "m", "s"] as const;
 
 /** Compte à rebours en cases, dont les chiffres glissent à chaque changement. */
 function CompteARebours() {
   const reste = useCompteARebours();
+  const { units } = copy[useLanguage().lang];
   const reduce = useReducedMotion();
   return (
     <div className="mt-2 flex items-center justify-center gap-1.5">
       {UNITES.map((u, i) => {
-        const v = reste ? String(reste[u.k]).padStart(2, "0") : "--";
+        const v = reste ? String(reste[u]).padStart(2, "0") : "--";
         return (
-          <div key={u.k} className="flex items-center gap-1.5">
+          <div key={u} className="flex items-center gap-1.5">
             <div
               className="flex h-[52px] w-[46px] flex-col items-center justify-center overflow-hidden rounded-[10px]"
               style={{ background: "#f6f1ec" }}
@@ -314,7 +314,7 @@ function CompteARebours() {
                 {v}
               </motion.span>
               <span className="text-[9px]" style={{ color: "var(--text-muted)" }}>
-                {u.label}
+                {units[u]}
               </span>
             </div>
             {i < UNITES.length - 1 && (

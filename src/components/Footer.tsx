@@ -20,6 +20,7 @@ const copy = {
     privacy: "Confidentialité",
     rights: "Tous droits réservés",
     made: "Made in France",
+    gdpr: "RGPD",
   },
   en: {
     baseline: "AI agent platform for healthcare.",
@@ -34,10 +35,11 @@ const copy = {
     partners: "Become a partner",
     demo: "Book a demo",
     legal: "Legal",
-    cgv: "Terms",
+    cgv: "Terms of sale",
     privacy: "Privacy",
     rights: "All rights reserved",
     made: "Made in France",
+    gdpr: "GDPR",
   },
 };
 
@@ -71,7 +73,7 @@ export function Footer() {
             </p>
             <div className="mt-5 flex flex-wrap items-center gap-1.5">
               <Badge>HDS</Badge>
-              <Badge>RGPD</Badge>
+              <Badge>{t.gdpr}</Badge>
             </div>
           </div>
 
