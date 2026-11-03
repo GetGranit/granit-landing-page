@@ -49,7 +49,7 @@
 .nh .tva-body .tv-trust { margin-top: 6px; color: var(--rose); }
 
 /* ---------- titre, chapô, boutons ---------- */
-.nh .tv-h1 { margin: 0; font: 400 clamp(36px, 3.5vw, 52px)/1.06 var(--sans); letter-spacing: -.038em; text-wrap: balance; }
+.nh .tv-h1 { margin: 0; font: 400 clamp(36px, 3.5vw, 52px)/1.06 var(--serif); letter-spacing: -.028em; text-wrap: balance; }
 .nh .tv-h1 .tv-l { display: block; }
 /* Geist est plus large que la police de la maquette : sur téléphone, le titre passait sur 3 lignes au lieu de 2 */
 @media (max-width: 480px) { .nh .tv-h1 { font-size: clamp(30px, 8.6vw, 36px); } }
