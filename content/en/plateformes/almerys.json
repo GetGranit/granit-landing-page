@@ -1,0 +1,222 @@
+{
+  "slug": "portail-almerys",
+  "nom": "Almerys",
+  "logo": "/logos/almerys.webp",
+  "checkedOn": "2026-10-07",
+  "identite": [
+    {
+      "label": "Type",
+      "valeur": "Third-party payment operator",
+      "source": "be-almerys-ps"
+    },
+    {
+      "label": "Optical",
+      "valeur": "Yes, by quote or coverage request",
+      "source": "granit-connecteur"
+    },
+    {
+      "label": "Portal",
+      "valeur": "almerys.com (“Site des PEC”, coverage request site)",
+      "source": "almerys-ps"
+    },
+    {
+      "label": "Login",
+      "valeur": "One-time code sent by email",
+      "source": "granit-connecteur"
+    }
+  ],
+  "chiffres": [
+    {
+      "valeur": "305,000+",
+      "label": "health professionals under agreement, according to Almerys",
+      "source": "be-almerys-ps"
+    },
+    {
+      "valeur": "1",
+      "label": "piece of equipment per optical coverage request",
+      "source": "granit-connecteur"
+    },
+    {
+      "valeur": "8",
+      "label": "possible states of a request in the portal history",
+      "source": "granit-connecteur"
+    },
+    {
+      "valeur": "11,000",
+      "label": "professionals on its third-generation third-party payment system in 2017",
+      "source": "acuite-2017"
+    }
+  ],
+  "faits": [
+    {
+      "fait": "Almerys manages third-party payment (tiers payant: the patient pays nothing upfront, insurers pay the provider directly) on behalf of supplementary insurers: insurance companies, supplementary health insurers (mutuelles) and social protection groups.",
+      "source": "be-almerys-ps"
+    },
+    {
+      "fait": "Almerys is an operator, not a care network. A supplementary health insurer can pair it with a separate network: Aéma Groupe chose Almerys for the third-party payment of its insurers (Aésio mutuelle, Apivia Macif Mutuelle, MNFCT, Math - Prevaris) and Carte Blanche Partenaires as its care network.",
+      "source": "acuite-aema"
+    },
+    {
+      "fait": "To get a network agreement, the optician sends a voided claim form or their local health insurance office (CPAM) certificate to the Almerys network agreement unit.",
+      "source": "almerys-ps"
+    },
+    {
+      "fait": "To access the professional portal, you must be under agreement with Almerys and have validated your account following the instructions Almerys sends.",
+      "source": "almerys-extranet"
+    },
+    {
+      "fait": "Coverage requests are made on the Almerys “Site des PEC” (coverage request site), with a username and password.",
+      "source": "almerys-ps"
+    },
+    {
+      "fait": "Each store logs in with its username and password, then enters a 6-digit one-time code sent by email at every login.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "An optical request can be a quote or a coverage request. The “Valoriser” (Price) button creates the request: a coverage approval (PEC) number is assigned and the amounts are displayed.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "Each item is entered by its LPP code. For lenses, it is the supplier’s code. A request covers only one piece of equipment: a second piece of equipment needs a second request.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "The online professional portal is reopening gradually. Each professional receives an email titled “Réouverture site en ligne Almerys” (Almerys online site reopening) before they can log in.",
+      "source": "almerys-extranet"
+    },
+    {
+      "fait": "Almerys does not handle complaints from insured people. They should be directed to their supplementary insurer, whose name appears on the third-party payment card.",
+      "source": "almerys-ps"
+    },
+    {
+      "fait": "In early 2020, the Rof (a French opticians’ union) issued a formal notice contesting Almerys’s requirement to receive the signed quote and the prescription for coverage requests.",
+      "source": "acuite-rof-2020"
+    }
+  ],
+  "conventionnement": [
+    "Send a voided claim form or the CPAM certificate to celluleconventionnementalmerys@almerys.com.",
+    "Wait for the email from Almerys with the instructions to validate your account.",
+    "Validate your account by following these instructions.",
+    "Log in to the professional portal with your username and password.",
+    "Submit your quotes and coverage requests on the “Site des PEC”."
+  ],
+  "statuts": [
+    {
+      "libelle": "“Créée” (Created)",
+      "sens": "The request is recorded, with no decision yet",
+      "action": "Wait for the response, then check the history"
+    },
+    {
+      "libelle": "“En instance” (Pending)",
+      "sens": "The request is still under review",
+      "action": "Wait, then follow up if nothing moves"
+    },
+    {
+      "libelle": "“Validée” (Approved)",
+      "sens": "The supplementary insurer approves coverage",
+      "action": "Deliver the equipment, then bill"
+    },
+    {
+      "libelle": "“Refusée” (Refused)",
+      "sens": "No coverage as submitted",
+      "action": "Read the reason, correct, submit a new request"
+    },
+    {
+      "libelle": "“Périmée” (Expired)",
+      "sens": "The approval has passed its validity period",
+      "action": "Submit a new request"
+    },
+    {
+      "libelle": "“Annulée” (Canceled)",
+      "sens": "The request is no longer active",
+      "action": "Submit a new request if the equipment is still being delivered"
+    },
+    {
+      "libelle": "“Facturée” (Billed)",
+      "sens": "The invoice has been sent",
+      "action": "Track the payment"
+    },
+    {
+      "libelle": "“Soldée” (Settled)",
+      "sens": "The file is paid",
+      "action": "Nothing to do, check the amount received"
+    }
+  ],
+  "statutsSource": "granit-connecteur",
+  "contacts": [
+    {
+      "label": "Phone",
+      "valeur": "0 825 826 214",
+      "detail": "Premium-rate number",
+      "source": "almerys-ps"
+    },
+    {
+      "label": "Network agreement and account",
+      "valeur": "celluleconventionnementalmerys@almerys.com",
+      "source": "almerys-contacts"
+    },
+    {
+      "label": "Coverage approvals and invoices",
+      "valeur": "almerys@almerys.com",
+      "source": "almerys-contacts"
+    },
+    {
+      "label": "Coverage request site (“Site des PEC”)",
+      "valeur": "Coverage request",
+      "url": "https://www.almerys.com/site/Login.do",
+      "source": "almerys-ps"
+    },
+    {
+      "label": "Address",
+      "valeur": "almerys service PS, 46 rue du Ressort, 63967 Clermont-Ferrand Cedex 9",
+      "source": "almerys-ps"
+    }
+  ],
+  "organismes": {
+    "source": "granit-connecteur",
+    "note": "List from the payer selector of the optical portal, recorded by Granit agents. Phrase it as “what the portal selector offers”, never “this insurer only goes through Almerys”. The Almerys portal has no payer selector: the supplementary insurer appears once the beneficiary is found. The list is therefore empty.",
+    "liste": []
+  },
+  "sources": {
+    "almerys-ps": {
+      "label": "almerys.com · Health professionals area",
+      "url": "https://www.almerys.com/fr/espace-professionnels-de-sante",
+      "consulte": "2026-10-07"
+    },
+    "almerys-extranet": {
+      "label": "almerys.com · Professional portal (login)",
+      "url": "https://www.almerys.com/accueil/Accueil?isPS=true",
+      "consulte": "2026-10-07"
+    },
+    "almerys-contacts": {
+      "label": "almerys.com · Contact us (professional portal)",
+      "url": "https://www.almerys.com/accueil/contacts",
+      "consulte": "2026-10-07"
+    },
+    "be-almerys-ps": {
+      "label": "be-almerys.com · Health professionals",
+      "url": "https://www.be-almerys.com/professionnels-de-sante",
+      "consulte": "2026-10-09"
+    },
+    "acuite-aema": {
+      "label": "Acuité · Aéma Groupe makes its third-party payment operator official",
+      "url": "https://acuite.fr/actualite/ocam/251022/le-5e-acteur-de-lassurance-officialise-son-operateur-de-tiers-payant-et",
+      "consulte": "2026-10-07"
+    },
+    "acuite-2017": {
+      "label": "Acuité · Almerys extends its third-generation third-party payment system (2017)",
+      "url": "https://www.acuite.fr/actualite/economie/2017/almerys-etend-son-tiers-payant-de-3eme-generation-lensemble-des",
+      "consulte": "2026-10-07"
+    },
+    "acuite-rof-2020": {
+      "label": "Acuité · The Rof sends two formal notices to Viamedis and Almerys (2020)",
+      "url": "https://www.acuite.fr/actualites/profession/regime-obligatoire/le-rof-adresse-deux-mises-en-demeure-aux-176198",
+      "consulte": "2026-10-07"
+    },
+    "granit-connecteur": {
+      "label": "Granit’s Almerys connector (checked Oct 7, 2026)",
+      "url": "",
+      "consulte": "2026-10-07"
+    }
+  }
+}

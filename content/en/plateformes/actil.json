@@ -1,0 +1,239 @@
+{
+  "slug": "portail-actil",
+  "nom": "Actil",
+  "logo": "/logos/actil.png",
+  "checkedOn": "2026-10-07",
+  "identite": [
+    {
+      "label": "Type",
+      "valeur": "Third-party payment operator and care network, part of Groupe APICIL",
+      "source": "actil-home"
+    },
+    {
+      "label": "Optical",
+      "valeur": "Yes, by pricing request (cotation) then coverage approval",
+      "source": "actil-opticiens"
+    },
+    {
+      "label": "Portal",
+      "valeur": "actil.com, health professional portal",
+      "source": "actil-opticiens"
+    },
+    {
+      "label": "Login",
+      "valeur": "Username and password, plus a code by email for named accounts",
+      "source": "granit-connecteur"
+    }
+  ],
+  "chiffres": [
+    {
+      "valeur": "13,000",
+      "label": "partner opticians",
+      "source": "actil-opticiens"
+    },
+    {
+      "valeur": "400,000+",
+      "label": "health professionals under agreement",
+      "source": "actil-home"
+    },
+    {
+      "valeur": "2 years",
+      "label": "to bill after delivery",
+      "source": "actil-faq"
+    },
+    {
+      "valeur": "27 months",
+      "label": "of payment statement history online",
+      "source": "actil-faq"
+    }
+  ],
+  "faits": [
+    {
+      "fait": "Actil is a national third-party payment platform created at the initiative of Groupe APICIL.",
+      "source": "apicil-reseau"
+    },
+    {
+      "fait": "Actil does both third-party payment (tiers payant: the patient pays nothing upfront, insurers pay the provider directly) and a care network: negotiated offers in optical, hearing and dental care, built into its third-party payment.",
+      "source": "actil-home"
+    },
+    {
+      "fait": "Since April 1, 2021, the Actil optical third-party payment network has been open to all opticians who want to join. The optician chooses the equipment from all lens, contact lens and frame catalogs on the market.",
+      "source": "actil-reseau-optique"
+    },
+    {
+      "fait": "The optical network includes large chains and independent opticians, in mainland France and the overseas regions (DROM).",
+      "source": "actil-opticiens"
+    },
+    {
+      "fait": "From their private area on actil.com, the optician submits pricing requests (cotation) and coverage requests online.",
+      "source": "actil-opticiens"
+    },
+    {
+      "fait": "On the optical portal, the request submitted is first a pricing request (cotation). Coverage approval comes next, by converting an accepted pricing request.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "The portal finds the patient by their social security number. It does not display a list of supplementary insurers to choose from.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "The Actil card must match the Carte Vitale (French health insurance card) data exactly: social security number, date of birth, birth rank and dependents. If in doubt, the optician can check coverage rights in their private area.",
+      "source": "actil-carte"
+    },
+    {
+      "fait": "A coverage approval is a payment guarantee. If coverage rights are closed afterward, the payment remains valid for the health professional.",
+      "source": "actil-faq"
+    },
+    {
+      "fait": "You can bill as soon as the equipment is delivered, within the following 2 years, provided you are still under agreement. Actil does not pay retroactive invoices.",
+      "source": "actil-faq"
+    },
+    {
+      "fait": "Actil processes incoming files every day. Payments can be viewed in the private area, over 27 months.",
+      "source": "actil-faq"
+    },
+    {
+      "fait": "Actil announces stronger security for access to the professional portal starting June 30.",
+      "source": "actil-connexion"
+    },
+    {
+      "fait": "Named accounts receive a one-time code by email, valid for 5 minutes, after the password.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "The portal warns that after 5 failed login attempts, the account is temporarily locked.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "Actil’s head office is in Lyon.",
+      "source": "actil-mentions"
+    }
+  ],
+  "conventionnement": [
+    "Fill in the form on the Contact page of actil.com.",
+    "Wait to be contacted by the Actil teams to finalize registration.",
+    "Sign the Actil agreement and provide the requested supporting documents.",
+    "After the documents are checked, receive your login for the professional portal.",
+    "Finalize registration online, then submit pricing requests and coverage requests on actil.com."
+  ],
+  "statuts": [
+    {
+      "libelle": "“Accepté / Accord N°…” (Accepted / Approval No.…)",
+      "sens": "The supplementary insurer accepts the pricing request",
+      "action": "Convert the pricing request into a coverage approval, deliver, then bill"
+    },
+    {
+      "libelle": "“Accord N°… (Facturé)” (Approval No.…, Billed)",
+      "sens": "The file has already been billed",
+      "action": "Track the payment in the payment statements"
+    },
+    {
+      "libelle": "“Refusé” (Refused)",
+      "sens": "No coverage as submitted. The reason follows, for example “Dépassement grille tarifaire” (price grid exceeded)",
+      "action": "Read the reason, correct the quote, submit the request again"
+    },
+    {
+      "libelle": "“En attente” (Waiting)",
+      "sens": "The request has not been processed yet",
+      "action": "Wait, then follow up at the right time"
+    },
+    {
+      "libelle": "“Prise en compte” (Received)",
+      "sens": "The request has been received and is in progress",
+      "action": "Wait for the response"
+    },
+    {
+      "libelle": "“Validation en cours” (Validation in progress)",
+      "sens": "The request is being reviewed manually at Actil",
+      "action": "Wait, then check the status again"
+    },
+    {
+      "libelle": "“Annulée” (Canceled)",
+      "sens": "The request is no longer active",
+      "action": "Submit a new request if needed"
+    },
+    {
+      "libelle": "“Aucun droit ouvert” (No open coverage rights)",
+      "sens": "The portal finds no coverage rights for this social security number",
+      "action": "Check the number, then direct the patient to their supplementary insurer"
+    }
+  ],
+  "statutsSource": "granit-connecteur",
+  "contacts": [
+    {
+      "label": "Not under agreement yet",
+      "valeur": "actil.com contact form",
+      "url": "https://www.actil.com/contact/",
+      "source": "actil-contact"
+    },
+    {
+      "label": "Already under agreement",
+      "valeur": "Health professional portal",
+      "url": "https://www.actil.com/connexion/",
+      "source": "actil-connexion"
+    },
+    {
+      "label": "Address",
+      "valeur": "51 boulevard Marius Vivier Merle, 69003 Lyon",
+      "detail": "Head office",
+      "source": "actil-mentions"
+    }
+  ],
+  "organismes": {
+    "source": "granit-connecteur",
+    "note": "The Actil optical portal has no payer selector: it finds the patient by their social security number. No list is therefore recorded by Granit agents. Never write “this insurer only goes through Actil”.",
+    "liste": []
+  },
+  "sources": {
+    "actil-home": {
+      "label": "actil.com · Home",
+      "url": "https://www.actil.com/",
+      "consulte": "2026-10-07"
+    },
+    "actil-opticiens": {
+      "label": "actil.com · Opticians",
+      "url": "https://www.actil.com/professionnel-de-sante/opticiens/",
+      "consulte": "2026-10-07"
+    },
+    "actil-faq": {
+      "label": "actil.com · FAQ",
+      "url": "https://www.actil.com/faq/",
+      "consulte": "2026-10-07"
+    },
+    "actil-reseau-optique": {
+      "label": "actil.com · Join our new optical third-party payment network",
+      "url": "https://www.actil.com/rejoignez-notre-nouveau-reseau-tiers-payant-optique/",
+      "consulte": "2026-10-07"
+    },
+    "actil-carte": {
+      "label": "actil.com · The ACTIL card",
+      "url": "https://www.actil.com/Portail/espacePro/PAGE-EPR-CARTE/page-epr-carte.jsp",
+      "consulte": "2026-10-07"
+    },
+    "actil-connexion": {
+      "label": "actil.com · Login",
+      "url": "https://www.actil.com/connexion/",
+      "consulte": "2026-10-07"
+    },
+    "actil-contact": {
+      "label": "actil.com · Contact",
+      "url": "https://www.actil.com/contact/",
+      "consulte": "2026-10-07"
+    },
+    "actil-mentions": {
+      "label": "actil.com · Legal notice",
+      "url": "https://www.actil.com/mentions-legales/",
+      "consulte": "2026-10-07"
+    },
+    "apicil-reseau": {
+      "label": "mon.apicil.com · The benefits of the ACTIL network",
+      "url": "https://mon.apicil.com/salon-client/les-avantages-du-reseau-actil/",
+      "consulte": "2026-10-07"
+    },
+    "granit-connecteur": {
+      "label": "Granit’s Actil connector (checked Oct 7, 2026)",
+      "url": "",
+      "consulte": "2026-10-07"
+    }
+  }
+}

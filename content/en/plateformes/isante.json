@@ -1,0 +1,275 @@
+{
+  "slug": "portail-isante",
+  "nom": "iSanté",
+  "logo": "/logos/isante.png",
+  "checkedOn": "2026-10-07",
+  "identite": [
+    {
+      "label": "Type",
+      "valeur": "Third-party payment operator (a Cetip brand, Cegedim group)",
+      "source": "ca-marques"
+    },
+    {
+      "label": "Optical",
+      "valeur": "Yes, online coverage request",
+      "source": "granit-connecteur"
+    },
+    {
+      "label": "Portal",
+      "valeur": "tp-isante.fr",
+      "source": "isante-site"
+    },
+    {
+      "label": "Login",
+      "valeur": "Password and code sent by email",
+      "source": "granit-connecteur"
+    }
+  ],
+  "chiffres": [
+    {
+      "valeur": "38",
+      "label": "supplementary insurers active in optical in the list published as of Oct 7, 2026",
+      "source": "isante-amc"
+    },
+    {
+      "valeur": "3 business days",
+      "label": "payment time with e-transmission, versus 7 otherwise",
+      "source": "isante-faq"
+    },
+    {
+      "valeur": "nearly 20M",
+      "label": "beneficiaries of Cetip, with its iSanté and SP Santé brands",
+      "source": "ca-marques"
+    },
+    {
+      "valeur": "200,000+",
+      "label": "health professionals under agreement for Cegedim Assurances third-party payment",
+      "source": "ca-tiers-payant"
+    }
+  ],
+  "faits": [
+    {
+      "fait": "iSanté is the in-house brand of Cetip, a subsidiary of Cegedim Assurances. Cetip also operates the SP Santé brand.",
+      "source": "ca-marques"
+    },
+    {
+      "fait": "The tp-isante.fr site describes itself as a “third-party payment operator” (tiers payant: the patient pays nothing upfront, insurers pay the provider directly). iSanté is not a care network.",
+      "source": "isante-site"
+    },
+    {
+      "fait": "For an optician, the network agreement is made directly with iSanté. For this category, the form does not refer to the Inter-AMC association.",
+      "source": "isante-conv"
+    },
+    {
+      "fait": "Without an iSanté agreement, the optician cannot use iSanté third-party payment.",
+      "source": "isante-faq"
+    },
+    {
+      "fait": "The iSanté e-transmission number is unique and appears on third-party payment cards: 00733931.",
+      "source": "isante-faq"
+    },
+    {
+      "fait": "With e-transmission, iSanté pays in three business days instead of seven, from receipt of the documents (article 3.2 of the agreement).",
+      "source": "isante-faq"
+    },
+    {
+      "fait": "iSanté favors e-transmission as a single combined claim (DRE). Separate handling of mandatory insurance (AMO) and supplementary insurance (AMC) must be set up in the software, otherwise requests do not arrive.",
+      "source": "isante-faq"
+    },
+    {
+      "fait": "The iSanté card shows the iSanté logo, the validity period and, in the column for each area of care, the coverage rate or the coverage request procedure to follow.",
+      "source": "isante-faq"
+    },
+    {
+      "fait": "The list of active supplementary insurers is published on tp-isante.fr. It is updated each time a supplementary insurer opens or closes a segment.",
+      "source": "isante-faq"
+    },
+    {
+      "fait": "Optical coverage requests are made on IsantePEC, opened from the tp-isante.fr area with the “Accéder au service” (Access the service) button.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "For a request with a frame, the portal requires entering the frame on the first line, then the lenses.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "The official coverage approval is printed as a PDF from the request, with the “Imprimer” (Print) button.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "A coverage request cannot be deleted. It is canceled with “Annuler la PEC” (Cancel the coverage approval), by choosing a reason.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "Some supplementary insurers activate a price filter, an optional service of iSanté third-party payment. It lets them refuse a quote or coverage approval whose price is considered “off-market”. It has been available in optical for several years.",
+      "source": "cp-entis"
+    },
+    {
+      "fait": "The filter compares the requested price with the average price charged for the same product in a given geographic area. The optician can then adjust their price according to the grid.",
+      "source": "ca-sinistralite"
+    },
+    {
+      "fait": "Among iSanté clients that use this filter, savings amount to a little under 4% of lens spending: €7.15 million out of €181 million (press release of May 7, 2026).",
+      "source": "cp-entis"
+    }
+  ],
+  "conventionnement": [
+    "On tp-isante.fr, open the network agreement request form and choose the “Opticien” (Optician) category.",
+    "Enter the FINESS or Adeli identifier, the RPPS number, the company name, the SIRET number, the brand or group, the contact person, the software used and the bank details.",
+    "Upload the documents: bank details (RIB) in the store’s name and address, company registration extract (Kbis) less than 3 months old, Adeli certificate from the regional health agency (ARS), CPAM certificate, the manager’s ID, and the agreement signed using the template provided.",
+    "Accept the agreement and submit. An email confirms the request and explains how to create the account.",
+    "Create access to the secure area (“Je souhaite créer mon compte”, I want to create my account) with the FINESS or Adeli identifier, the company name, the postal code, an email address and a password."
+  ],
+  "statuts": [
+    {
+      "libelle": "“Accepté / Accord N° …” (Accepted / Approval No. …)",
+      "sens": "The supplementary insurer commits to the amount",
+      "action": "Print the approval, deliver the equipment, then bill"
+    },
+    {
+      "libelle": "“En instance / en attente / en cours de traitement” (Pending / waiting / being processed)",
+      "sens": "The request is still under review",
+      "action": "Wait, then check the status in the request lookup"
+    },
+    {
+      "libelle": "“Refusé” (Refused)",
+      "sens": "No coverage as submitted",
+      "action": "Read the reason, correct, submit the request again"
+    },
+    {
+      "libelle": "“Annulée” (Canceled)",
+      "sens": "The request is no longer active",
+      "action": "Submit a new request if needed"
+    },
+    {
+      "libelle": "Insurer missing from “Choix de l’AMC” (Choice of supplementary insurer)",
+      "sens": "Coverage from this insurer does not go through iSanté",
+      "action": "Check the third-party payment platform shown on the patient’s card"
+    }
+  ],
+  "statutsSource": "granit-connecteur",
+  "contacts": [
+    {
+      "label": "Phone",
+      "valeur": "0 820 03 12 43",
+      "detail": "iSanté number published by Cegedim Assurances",
+      "source": "ca-coordonnees"
+    },
+    {
+      "label": "Not under agreement yet",
+      "valeur": "Network agreement request form",
+      "url": "https://www.tp-isante.fr/login#/request-conv",
+      "source": "isante-conv"
+    },
+    {
+      "label": "Frequently asked questions",
+      "valeur": "tp-isante.fr Q&A",
+      "url": "https://www.tp-isante.fr/login#/faq/",
+      "source": "isante-faq"
+    },
+    {
+      "label": "Address",
+      "valeur": "114-116 rue d'Aguesseau, 92100 Boulogne-Billancourt",
+      "detail": "Other site: 136 rue du Gros Moulin, 45200 Amilly",
+      "source": "ca-coordonnees"
+    }
+  ],
+  "organismes": {
+    "source": "granit-connecteur",
+    "note": "List from the payer selector of the optical portal, recorded by Granit agents. Phrase it as “what the portal selector offers”, never “this insurer only goes through iSanté”.",
+    "liste": [
+      "AGRICA - MSA",
+      "baloo",
+      "BCAC",
+      "CARCEPT Prev - KLESIA MUT",
+      "Cegema",
+      "CGRM",
+      "COGEVIE",
+      "ENTIS",
+      "FORTEGO",
+      "GESTASSUR",
+      "GESTINEO",
+      "GPMA Hospi",
+      "IGESTION",
+      "IRCEM",
+      "KLESIA",
+      "KLESIA Mut' (CSR: 003)",
+      "LA BANQUE POSTALE PREVOYANCE",
+      "LA MUTUELLE FAMILIALE",
+      "Les Cuisiniers de France",
+      "MFCF - Mut. Fam. Chem. de France",
+      "MHV / TERRITORIA MUTUELLE",
+      "MMA Entreprise",
+      "MNH",
+      "MSG",
+      "MUTUALIA - MSA",
+      "Mutuelle de Pontoise",
+      "Mutuelle GEODIS",
+      "MUTUELLE JUST",
+      "MUTUELLE MARSEILLE METROPOLE",
+      "Mutuelle PREVIFRANCE",
+      "Mutuelle SMIRSEP",
+      "MUTUELLES DU SOLEIL",
+      "Néoliane Santé",
+      "PACIFICA - MSA",
+      "Santiane",
+      "SGSANTE",
+      "SMABTP",
+      "UNEO",
+      "VERSPIEREN",
+      "WTW France(Ex Gras Savoye)"
+    ]
+  },
+  "sources": {
+    "isante-site": {
+      "label": "tp-isante.fr · Home page",
+      "url": "https://www.tp-isante.fr/",
+      "consulte": "2026-10-07"
+    },
+    "isante-faq": {
+      "label": "tp-isante.fr · Q&A",
+      "url": "https://www.tp-isante.fr/login#/faq/",
+      "consulte": "2026-10-07"
+    },
+    "isante-conv": {
+      "label": "tp-isante.fr · Network agreement request form (Optician category)",
+      "url": "https://www.tp-isante.fr/login#/request-conv",
+      "consulte": "2026-10-07"
+    },
+    "isante-amc": {
+      "label": "tp-isante.fr · List of supplementary insurers (Optician category)",
+      "url": "https://www.tp-isante.fr/login#/amc/list",
+      "consulte": "2026-10-07"
+    },
+    "ca-marques": {
+      "label": "cegedim-assurances.com · Our brands",
+      "url": "https://www.cegedim-assurances.com/fr-fr/references-societe/Pages/nos-marques.aspx",
+      "consulte": "2026-10-07"
+    },
+    "ca-tiers-payant": {
+      "label": "cegedim-assurances.com · Outsourced third-party payment management",
+      "url": "https://www.cegedim-assurances.com/fr-fr/ext-services-metiers/Pages/gestion-externalise-tiers-payant.aspx",
+      "consulte": "2026-10-07"
+    },
+    "ca-sinistralite": {
+      "label": "cegedim-assurances.com · Price controls and fraud detection",
+      "url": "https://www.cegedim-assurances.com/fr-fr/vos-enjeux/Pages/maitriser-votre-sinistralite.aspx",
+      "consulte": "2026-10-07"
+    },
+    "ca-coordonnees": {
+      "label": "cegedim-assurances.com · Contact details",
+      "url": "https://www.cegedim-assurances.com/fr-fr/Pages/coordonnees.aspx",
+      "consulte": "2026-10-07"
+    },
+    "cp-entis": {
+      "label": "cegedim.fr · Cegedim Assurances and Entis group press release (May 7, 2026)",
+      "url": "https://www.cegedim.fr/Communique/CegedimAssurances_Entis_07052026.pdf",
+      "consulte": "2026-10-07"
+    },
+    "granit-connecteur": {
+      "label": "Granit’s iSanté connector (checked Oct 7, 2026)",
+      "url": "",
+      "consulte": "2026-10-07"
+    }
+  }
+}

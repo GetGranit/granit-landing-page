@@ -1,0 +1,122 @@
+{
+  "slug": "iremia",
+  "nom": "Iremia Santé",
+  "modele": "prestataire",
+  "logo": null,
+  "checkedOn": "2026-10-07",
+  "aRelire": false,
+  "identite": {
+    "raisonSociale": "EMIS SANTÉ (SAS)",
+    "siege": "Riorges (42)",
+    "site": "https://iremia-sante.fr/",
+    "metiers": [
+      "pharmacie",
+      "optique",
+      "audio",
+      "dentaire",
+      "radiologie",
+      "laboratoires",
+      "cliniques",
+      "MSP"
+    ]
+  },
+  "axes": {
+    "quiFait": {
+      "valeur": "A dedicated third-party payment expert and customer relationship manager",
+      "source": "iremia-gestion"
+    },
+    "pec": {
+      "valeur": "oui",
+      "detail": "Coverage approvals entered by their experts (Admin Santé offering)",
+      "source": "iremia-admin"
+    },
+    "rejets": {
+      "valeur": "oui",
+      "detail": "Identification of the rejection reason and reprocessing of invoices",
+      "source": "iremia-gestion"
+    },
+    "rapprochement": {
+      "valeur": "oui",
+      "detail": "Théo platform, Santé Bank software",
+      "source": "iremia-accueil"
+    },
+    "avance": {
+      "valeur": "oui",
+      "detail": "Next business day on e-transmitted invoices, with the BPCE group (Avance Santé)",
+      "source": "iremia-avance"
+    },
+    "engagement": {
+      "valeur": "no commitment",
+      "source": "iremia-gestion"
+    },
+    "hds": {
+      "valeur": "health data host (HDS): OVH",
+      "source": "iremia-mentions"
+    },
+    "plateformes": {
+      "valeur": "non publié",
+      "source": null
+    }
+  },
+  "citations": [
+    {
+      "texte": "For opticians, managing coverage approvals (PEC) is often time-consuming. Our experts take care of it for you.",
+      "source": "iremia-optique"
+    },
+    {
+      "texte": "A dedicated Third-Party Payment Expert and Customer Relationship Manager (GRC) who know your business.",
+      "source": "iremia-gestion"
+    },
+    {
+      "texte": "Our offers adapt to your needs and come with no commitment at all.",
+      "source": "iremia-gestion"
+    },
+    {
+      "texte": "Credited amounts taken back in case of non-payment at 60 days",
+      "source": "iremia-avance"
+    }
+  ],
+  "meilleurSi": [
+    "cash flow is the main issue (advance on the next business day)",
+    "you want to hand everything to a team with a dedicated contact",
+    "you work in several health professions and want a single provider"
+  ],
+  "exclus": {
+    "_pourquoi": "Decision of Oct 7, 2026: no prices on comparison pages; self-reported performance figures are not comparable",
+    "prix": "Avance Santé €90 to €150/month depending on revenue (public, but not displayed by decision)",
+    "chiffresDeclares": "“Average payment time 4 days”, “Collection rate 99.8%” (iremia-optique)"
+  },
+  "sources": {
+    "iremia-accueil": {
+      "label": "iremia-sante.fr · Home",
+      "url": "https://iremia-sante.fr/",
+      "consulte": "2026-10-07"
+    },
+    "iremia-optique": {
+      "label": "iremia-sante.fr · Opticians",
+      "url": "https://iremia-sante.fr/metier/optique",
+      "consulte": "2026-10-07"
+    },
+    "iremia-admin": {
+      "label": "iremia-sante.fr · Admin Santé",
+      "url": "https://iremia-sante.fr/admin-sante",
+      "consulte": "2026-10-07"
+    },
+    "iremia-gestion": {
+      "label": "iremia-sante.fr · Santé Gestion",
+      "url": "https://iremia-sante.fr/sante-gestion",
+      "consulte": "2026-10-07"
+    },
+    "iremia-avance": {
+      "label": "iremia-sante.fr · Avance Santé",
+      "url": "https://iremia-sante.fr/avance-sante",
+      "consulte": "2026-10-07"
+    },
+    "iremia-mentions": {
+      "label": "iremia-sante.fr · Legal notice",
+      "url": "https://iremia-sante.fr/mentions-legales",
+      "consulte": "2026-10-07"
+    }
+  },
+  "_relu": "Reviewed by Paul on Oct 9, 2026; quotes checked on the rendered pages (JavaScript)."
+}
