@@ -118,42 +118,42 @@
   ],
   "statuts": [
     {
-      "libelle": "“Accepté / Accord N°…” (Accepted / Approval No.…)",
+      "libelle": "Accepté / Accord N°… (Accepted / Approval No.…)",
       "sens": "The supplementary insurer accepts the pricing request",
       "action": "Convert the pricing request into a coverage approval, deliver, then bill"
     },
     {
-      "libelle": "“Accord N°… (Facturé)” (Approval No.…, Billed)",
+      "libelle": "Accord N°… (Facturé) (Approval No.…, Billed)",
       "sens": "The file has already been billed",
       "action": "Track the payment in the payment statements"
     },
     {
-      "libelle": "“Refusé” (Refused)",
+      "libelle": "Refusé (Refused)",
       "sens": "No coverage as submitted. The reason follows, for example “Dépassement grille tarifaire” (price grid exceeded)",
       "action": "Read the reason, correct the quote, submit the request again"
     },
     {
-      "libelle": "“En attente” (Waiting)",
+      "libelle": "En attente (Waiting)",
       "sens": "The request has not been processed yet",
       "action": "Wait, then follow up at the right time"
     },
     {
-      "libelle": "“Prise en compte” (Received)",
+      "libelle": "Prise en compte (Received)",
       "sens": "The request has been received and is in progress",
       "action": "Wait for the response"
     },
     {
-      "libelle": "“Validation en cours” (Validation in progress)",
+      "libelle": "Validation en cours (Validation in progress)",
       "sens": "The request is being reviewed manually at Actil",
       "action": "Wait, then check the status again"
     },
     {
-      "libelle": "“Annulée” (Canceled)",
+      "libelle": "Annulée (Canceled)",
       "sens": "The request is no longer active",
       "action": "Submit a new request if needed"
     },
     {
-      "libelle": "“Aucun droit ouvert” (No open coverage rights)",
+      "libelle": "Aucun droit ouvert (No open coverage rights)",
       "sens": "The portal finds no coverage rights for this social security number",
       "action": "Check the number, then direct the patient to their supplementary insurer"
     }

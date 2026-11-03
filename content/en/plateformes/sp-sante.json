@@ -123,27 +123,27 @@
   ],
   "statuts": [
     {
-      "libelle": "“Accordé” (Approved)",
+      "libelle": "Accordé (Approved)",
       "sens": "The supplementary insurer approves coverage",
       "action": "Deliver the equipment, then e-transmit the invoice under the AMC code on the certificate"
     },
     {
-      "libelle": "“Accordé”, with “N° Sécurité sociale inconnu” (Approved, with Unknown social security number)",
+      "libelle": "Accordé, avec “N° Sécurité sociale inconnu” (Approved, with “Unknown social security number”)",
       "sens": "The file is sent, but the coverage is not recognized: the amounts may come back as zero",
       "action": "Check the INSEE number on the certificate and the Carte Vitale before delivering"
     },
     {
-      "libelle": "“En cours d’analyse / traitée sous 48 heures” (Under review / processed within 48 hours)",
+      "libelle": "En cours d’analyse / traitée sous 48 heures (Under review / processed within 48 hours)",
       "sens": "The supplementary insurer has not decided yet",
       "action": "Wait, then come back to read the decision on the portal"
     },
     {
-      "libelle": "“Refusé” (Refused)",
+      "libelle": "Refusé (Refused)",
       "sens": "No coverage as submitted",
       "action": "Read the reason shown (for example: request to be sent to the platform shown on the certificate), correct, submit the request again"
     },
     {
-      "libelle": "“Service momentanément indisponible” (Service temporarily unavailable)",
+      "libelle": "Service momentanément indisponible (Service temporarily unavailable)",
       "sens": "The transmission did not go through",
       "action": "Try again later"
     }

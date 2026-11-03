@@ -122,22 +122,22 @@
   ],
   "statuts": [
     {
-      "libelle": "“Accepté / Accord N° …” (Accepted / Approval No. …)",
+      "libelle": "Accepté / Accord N° … (Accepted / Approval No. …)",
       "sens": "The supplementary insurer commits to the amount",
       "action": "Print the approval, deliver the equipment, then bill"
     },
     {
-      "libelle": "“En instance / en attente / en cours de traitement” (Pending / waiting / being processed)",
+      "libelle": "En instance / en attente / en cours de traitement (Pending / waiting / being processed)",
       "sens": "The request is still under review",
       "action": "Wait, then check the status in the request lookup"
     },
     {
-      "libelle": "“Refusé” (Refused)",
+      "libelle": "Refusé (Refused)",
       "sens": "No coverage as submitted",
       "action": "Read the reason, correct, submit the request again"
     },
     {
-      "libelle": "“Annulée” (Canceled)",
+      "libelle": "Annulée (Canceled)",
       "sens": "The request is no longer active",
       "action": "Submit a new request if needed"
     },

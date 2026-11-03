@@ -124,32 +124,32 @@
   ],
   "statuts": [
     {
-      "libelle": "“Estimée / saisie en cours” (Estimated / being entered)",
+      "libelle": "Estimée / saisie en cours (Estimated / being entered)",
       "sens": "The file is created but not yet approved",
       "action": "Finish data entry, then wait for the response"
     },
     {
-      "libelle": "“En instance” (Pending)",
+      "libelle": "En instance (Pending)",
       "sens": "The file is still under review",
       "action": "Wait, then follow up at the right time"
     },
     {
-      "libelle": "“Acceptée / validée” (Accepted / approved)",
+      "libelle": "Acceptée / validée (Accepted / approved)",
       "sens": "The supplementary insurer commits to the amount",
       "action": "Deliver the equipment, then click “Facturer” (Bill)"
     },
     {
-      "libelle": "“Refusée” (Refused)",
+      "libelle": "Refusée (Refused)",
       "sens": "No coverage as submitted",
       "action": "Read the reason, correct, submit the request again"
     },
     {
-      "libelle": "“Annulée” (Canceled)",
+      "libelle": "Annulée (Canceled)",
       "sens": "The file is no longer active",
       "action": "Submit a new request if needed"
     },
     {
-      "libelle": "“Facturée” (Billed)",
+      "libelle": "Facturée (Billed)",
       "sens": "The invoice has gone out",
       "action": "Track the bank transfer"
     }
