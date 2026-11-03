@@ -1,0 +1,136 @@
+{
+  "slug": "stpps",
+  "nom": "STPPS",
+  "modele": "prestataire",
+  "logo": null,
+  "checkedOn": "2026-11-03",
+  "aRelire": true,
+  "identite": {
+    "raisonSociale": "STPPS (SAS)",
+    "siege": "Aubigny-Les Clouzeaux (85)",
+    "site": "https://www.stpps.net/",
+    "metiers": [
+      "optique",
+      "dentaire",
+      "audio",
+      "ophtalmologie",
+      "orthodontie",
+      "radiologie",
+      "pharmacie",
+      "médecine générale",
+      "hôpitaux et cliniques"
+    ]
+  },
+  "axes": {
+    "quiFait": {
+      "valeur": "Un binôme dédié de gestionnaires STPPS, basés en Vendée",
+      "detail": "Tiers payant traité en totalité ou en partie, au choix ; services personnalisables selon l'établissement",
+      "source": "stpps-apropos"
+    },
+    "pec": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "rejets": {
+      "valeur": "oui",
+      "detail": "Recherche du motif de chaque rejet, correction des factures et renvoi aux caisses (RO et RC) ; reprise des anciennes factures jusqu'à 2 ans et 3 mois après émission",
+      "source": "stpps-services"
+    },
+    "rapprochement": {
+      "valeur": "oui",
+      "detail": "Rapprochement bancaire par l'interlocuteur dédié, entre versements, relevés des organismes et factures émises ; statistiques consultables sur un extranet client",
+      "source": "stpps-services"
+    },
+    "avance": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "engagement": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "hds": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "plateformes": {
+      "valeur": "non publié",
+      "source": null
+    }
+  },
+  "citations": [
+    {
+      "texte": "STPPS traite intégralement ou partiellement votre tiers-payant",
+      "source": "stpps-accueil"
+    },
+    {
+      "texte": "Vous êtes suivi par un binôme dédié, en charge de la gestion de votre service et du tiers payant.",
+      "source": "stpps-apropos"
+    },
+    {
+      "texte": "Nous détectons rapidement les rejets pour rectifier les factures et garantir le recouvrement des sommes dues.",
+      "source": "stpps-optique"
+    },
+    {
+      "texte": "Quelques jours après l’envoi des factures, votre interlocuteur dédié gère le rapprochement bancaire, avec les relevés des organismes de santé pour définir les soins payés et ceux qui sont rejetés.",
+      "source": "stpps-services"
+    },
+    {
+      "texte": "STPPS intervient sur le recouvrement de vos anciennes factures de tiers payant, jusqu’à deux ans et trois mois après émission.",
+      "source": "stpps-services"
+    },
+    {
+      "texte": "Quel que soit le logiciel de tiers payant utilisé dans votre centre optique, STPPS peut vous accompagner dans son paramétrage pour en maximiser l’efficacité.",
+      "source": "stpps-optique"
+    }
+  ],
+  "meilleurSi": [
+    "on veut confier tout ou partie du tiers payant à une équipe humaine, avec un binôme dédié qui connaît le dossier",
+    "on a un stock d'anciennes factures de tiers payant à récupérer (reprise jusqu'à 2 ans et 3 mois après émission)",
+    "on exerce plusieurs métiers de santé et on veut un seul prestataire",
+    "on veut aussi de l'aide pour paramétrer son logiciel de tiers payant ou faire conventionner un nouvel établissement"
+  ],
+  "exclus": {
+    "_pourquoi": "aucun prix sur les pages comparatives ; chiffres de performance déclarés non comparables",
+    "prix": "non publié pour l'optique (offre « Standard » sur devis ; offres Starter réservées aux centres de santé en création, dentistes et pharmacies)",
+    "chiffresDeclares": "« Plus de 150 clients partout en France », « Net Promoter Score de 79 », « Plus de 200 années d’expérience cumulée », « presque 50 experts » / « plus de 48 spécialistes », « 30% des patients dans les grandes agglomérations n’ont jamais avec eux leur carte vitale » (stpps-accueil, stpps-apropos, stpps-services)",
+    "incoherences": "Création « en 2016 » et « depuis 2016 » sur l'accueil, « 2018 » sur la page STPPS et dans l'annuaire (création 01/04/2018) ; forme juridique « SARL » dans les mentions légales, SAS (code 5710) dans l'annuaire ; l'accueil écrit « L’internalisation réduit les coûts » dans un argumentaire pour l'externalisation"
+  },
+  "sources": {
+    "stpps-accueil": {
+      "label": "stpps.net · Accueil",
+      "url": "https://www.stpps.net/",
+      "consulte": "2026-11-03"
+    },
+    "stpps-apropos": {
+      "label": "stpps.net · STPPS",
+      "url": "https://www.stpps.net/stpps",
+      "consulte": "2026-11-03"
+    },
+    "stpps-services": {
+      "label": "stpps.net · Nos services",
+      "url": "https://www.stpps.net/nos-services",
+      "consulte": "2026-11-03"
+    },
+    "stpps-optique": {
+      "label": "stpps.net · Optique",
+      "url": "https://www.stpps.net/votre-metier/centre-optique",
+      "consulte": "2026-11-03"
+    },
+    "stpps-offre-creation": {
+      "label": "stpps.net · Offre centre de santé en création",
+      "url": "https://www.stpps.net/les-offres-tiers-payant-stpps/offre-creation-centre-de-sante",
+      "consulte": "2026-11-03"
+    },
+    "stpps-mentions": {
+      "label": "stpps.net · Mentions légales",
+      "url": "https://www.stpps.net/mentions-legales",
+      "consulte": "2026-11-03"
+    },
+    "annuaire-stpps": {
+      "label": "annuaire-entreprises.data.gouv.fr · STPPS (SIREN 838 408 763)",
+      "url": "https://annuaire-entreprises.data.gouv.fr/entreprise/838408763",
+      "consulte": "2026-11-03"
+    }
+  }
+}

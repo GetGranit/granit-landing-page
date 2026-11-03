@@ -1,0 +1,146 @@
+{
+  "slug": "tiers-payant-assistance",
+  "nom": "Tiers Payant Assistance (TPA)",
+  "modele": "prestataire",
+  "logo": null,
+  "checkedOn": "2026-11-03",
+  "aRelire": true,
+  "identite": {
+    "raisonSociale": "TIERS PAYANT ASSISTANCE (SAS)",
+    "siege": "Limas (69)",
+    "site": "https://www.tierspayantassistance.com/",
+    "metiers": [
+      "pharmacie",
+      "optique",
+      "matériel médical",
+      "cabinets médicaux",
+      "centres de santé",
+      "établissements de soins",
+      "télésurveillance médicale"
+    ]
+  },
+  "axes": {
+    "quiFait": {
+      "valeur": "Des gestionnaires tiers payant dédiés, qui interviennent à distance dans le logiciel métier du client",
+      "detail": "Gestionnaire dédié rattaché à une équipe ; connexion à distance sécurisée, pas de poste à prévoir ; compte rendu à chaque intervention",
+      "source": "tpa-logiciels"
+    },
+    "pec": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "rejets": {
+      "valeur": "oui",
+      "detail": "Analyse de chaque rejet, correction des anomalies, démarches auprès des organismes AMO et AMC et suivi jusqu'au paiement",
+      "source": "tpa-rejets"
+    },
+    "rapprochement": {
+      "valeur": "oui",
+      "detail": "Rapprochement de chaque virement avec les factures, identification des écarts et pointage des paiements dans le logiciel métier",
+      "source": "tpa-reconciliation"
+    },
+    "avance": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "engagement": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "hds": {
+      "valeur": "hébergement certifié HDS en France (hébergeur non nommé)",
+      "detail": "Données sur leurs propres serveurs et chez des partenaires opérant des datacenters certifiés HDS ; aucune IA dans les traitements",
+      "source": "tpa-securite"
+    },
+    "plateformes": {
+      "valeur": "non publié",
+      "source": null
+    }
+  },
+  "citations": [
+    {
+      "texte": "Nos équipes analysent chaque rejet, corrigent les anomalies, effectuent les démarches auprès des organismes payeurs (AMO et AMC) et assurent le suivi jusqu’au paiement effectif.",
+      "source": "tpa-rejets"
+    },
+    {
+      "texte": "Nos équipes contrôlent les flux financiers, rapprochent chaque virement avec les factures correspondantes, identifient les écarts de paiement et assurent le suivi jusqu’à la régularisation.",
+      "source": "tpa-reconciliation"
+    },
+    {
+      "texte": "Nous accédons à votre logiciel de facturation sans perturber vos équipes, et assurons un suivi régulier via un interlocuteur dédié, pour une gestion fiable et transparente du tiers payant, où que vous soyez.",
+      "source": "tpa-logiciels"
+    },
+    {
+      "texte": "Nous n’utilisons aucune intelligence artificielle pour la gestion du tiers payant, la facturation de la télésurveillance ou l’analyse des données clients.",
+      "source": "tpa-securite"
+    },
+    {
+      "texte": "Avec TPA, vous bénéficiez d’un suivi en temps réel via notre application métier (ComIN), d’un gestionnaire dédié et d’échanges fluides et centralisés avec vos équipes.",
+      "source": "tpa-opticiens"
+    }
+  ],
+  "meilleurSi": [
+    "on veut confier la correction des rejets, les relances et le pointage à des gestionnaires humains, sans IA dans les traitements",
+    "on exerce plusieurs métiers de santé (optique, pharmacie, matériel médical) et on veut un seul prestataire",
+    "on veut qu'un gestionnaire intervienne à distance directement dans son logiciel métier, sans changer son organisation",
+    "on veut un suivi continu avec un interlocuteur dédié et une application de suivi des interventions (Com'In)"
+  ],
+  "exclus": {
+    "_pourquoi": "aucun prix sur les pages comparatives ; chiffres de performance déclarés non comparables",
+    "prix": "non publié sur le site (diagnostic et rendez-vous proposés)",
+    "chiffresDeclares": "« + 100 Gestionnaires en France », « +1200 Clients actifs début 2026 », « +1.7M D'anomalies traitées par an » (tpa-accueil) ; « ancienneté moyenne de 10 ans » des gestionnaires (tpa-logiciels) ; « investissement informatique de 150 000 € en 2025 » (tpa-securite)",
+    "incoherences": "Le site dit « Fondée en 1998 » (tpa-apropos) alors que la SAS immatriculée (SIREN 444 465 496) est créée le 04/12/2002 (annuaire) ; « + 100 Gestionnaires en France » (tpa-accueil) contre une tranche d'effectif de 10 à 19 salariés en 2024 pour cette SAS (annuaire), l'effectif est peut-être réparti dans d'autres sociétés du groupe ; les URL /opticiens et /cas-opticiens affichent la page générique de gestion externalisée, sans contenu propre à l'optique"
+  },
+  "sources": {
+    "tpa-accueil": {
+      "label": "tierspayantassistance.com · Accueil",
+      "url": "https://www.tierspayantassistance.com/",
+      "consulte": "2026-11-03"
+    },
+    "tpa-opticiens": {
+      "label": "tierspayantassistance.com · Opticiens (gestion externalisée)",
+      "url": "https://tierspayantassistance.com/opticiens",
+      "consulte": "2026-11-03"
+    },
+    "tpa-rejets": {
+      "label": "tierspayantassistance.com · Traitement des rejets et anomalies",
+      "url": "https://www.tierspayantassistance.com/traitement-rejets-anomalies-tiers-payant",
+      "consulte": "2026-11-03"
+    },
+    "tpa-reconciliation": {
+      "label": "tierspayantassistance.com · Réconciliation bancaire",
+      "url": "https://www.tierspayantassistance.com/reconciliation-rapprochement-bancaire-tiers-payant",
+      "consulte": "2026-11-03"
+    },
+    "tpa-logiciels": {
+      "label": "tierspayantassistance.com · Agilité et maîtrise des logiciels",
+      "url": "https://www.tierspayantassistance.com/agilite-expertise-logiciels-metiers",
+      "consulte": "2026-11-03"
+    },
+    "tpa-accompagnement": {
+      "label": "tierspayantassistance.com · Accompagnement personnalisé",
+      "url": "https://www.tierspayantassistance.com/accompagnement-tiers-payant",
+      "consulte": "2026-11-03"
+    },
+    "tpa-securite": {
+      "label": "tierspayantassistance.com · Sécurité & protection des données",
+      "url": "https://www.tierspayantassistance.com/securité-informatique-engagements-tpa",
+      "consulte": "2026-11-03"
+    },
+    "tpa-apropos": {
+      "label": "tierspayantassistance.com · À propos",
+      "url": "https://tierspayantassistance.com/a-propos",
+      "consulte": "2026-11-03"
+    },
+    "tpa-mentions": {
+      "label": "tierspayantassistance.com · Mentions légales",
+      "url": "https://www.tierspayantassistance.com/mentions-legales-tiers-payant-assistance",
+      "consulte": "2026-11-03"
+    },
+    "annuaire": {
+      "label": "annuaire-entreprises.data.gouv.fr · Tiers Payant Assistance",
+      "url": "https://annuaire-entreprises.data.gouv.fr/entreprise/444465496",
+      "consulte": "2026-11-03"
+    }
+  }
+}
