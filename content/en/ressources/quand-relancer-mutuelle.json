@@ -97,7 +97,7 @@
     {
       "id": "points-controle-dossier",
       "type": "etapes",
-      "titre": "The four checkpoints of a file",
+      "titre": "The five checkpoints of a file",
       "legende": "Follow up on the step whose signal is missing: until it arrives, the next step does not start.",
       "colonnes": [],
       "elements": [
