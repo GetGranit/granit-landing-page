@@ -45,7 +45,7 @@ export const t = {
     },
   ],
   surprise:
-    "Ce que l'IA peut faire à votre place, sans même ouvrir Excel. On les garde pour la fin",
+    "Ce que l'IA peut faire à votre place, sans même ouvrir Excel. On les garde pour la fin.",
 
   formTitle: "Réservez votre place",
   formIntro: "L'invitation avec le lien de connexion arrive par mail.",
