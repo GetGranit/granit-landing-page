@@ -170,26 +170,6 @@
   ::selection { background: var(--succes-fond); color: var(--encre); }
 }
 
-/* ── Curseur personnalisé : petit losange vert profond (pointeurs fins seulement) ── */
-.cursor-hidden, .cursor-hidden * { cursor: none !important; }
-.cursor-dot {
-  position: fixed;
-  top: 0; left: 0;
-  z-index: 9999;
-  width: 10px; height: 10px;
-  pointer-events: none;
-  display: none;
-  will-change: transform;
-}
-.cursor-hidden .cursor-dot { display: block; }
-.cursor-dot::before {
-  content: "";
-  display: block;
-  width: 100%; height: 100%;
-  border: 1.5px solid var(--profond);
-  transform: rotate(45deg);
-}
-
 @layer components {
   /* Sur-titre : Geist 500, 12 px, capitales, texte discret (cas 1). Sur encre : menthe. */
   .eyebrow {
