@@ -5,6 +5,7 @@
 import { useEffect, useRef, type CSSProperties } from "react";
 import { usePostHog } from "posthog-js/react";
 import { calcomDemoUrl, GaletsSymbol, useLanguage } from "./socle";
+import { Rappel } from "./Rappel";
 import "./cta-fin.css";
 
 const copy = {
@@ -12,7 +13,7 @@ const copy = {
     l1: "Vos équipes soignent.",
     l2: "Nos agents encaissent.",
     lead: "Opérationnel en 48 h sur vos portails. Rien à installer pour vos équipes.",
-    bouton: "Demander une démo",
+    bouton: "Choisir un créneau de démo",
     garanties: "Garanties",
     hds: "Hébergé sur un cloud certifié HDS",
     ue: "Données dans l’UE",
@@ -26,7 +27,7 @@ const copy = {
     l1: "Your teams care.",
     l2: "Our agents get you paid.",
     lead: "Live on your portals in 48 hours. Nothing for your teams to install.",
-    bouton: "Book a demo",
+    bouton: "Pick a demo slot",
     garanties: "Guarantees",
     hds: "Hosted on HDS-certified cloud",
     ue: "EU data",
@@ -123,6 +124,8 @@ export function CtaFinNouvelle() {
 
   return (
     <section ref={secRef} className="ct3" id="cta" aria-labelledby="ct3-t">
+      {/* les anciens liens vers /#demo (pied de page, /demo, mails) arrivent ici */}
+      <span id="demo" className="ct-ancre" aria-hidden="true" />
       <div className="ct3-grad" aria-hidden="true" />
       <div className="ct3-veil" aria-hidden="true" />
       <div className="ct3-light" aria-hidden="true" />
@@ -163,6 +166,7 @@ export function CtaFinNouvelle() {
               />
             </svg>
           </a>
+          <Rappel />
         </div>
         <div className="ct3-fade" style={i(4)}>
           <ul className="ct-trust" aria-label={t.garanties}>

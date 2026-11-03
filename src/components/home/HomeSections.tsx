@@ -11,7 +11,6 @@ import { MetiersNouvelle } from "./nouvelle/Metiers";
 import { SecuriteNouvelle } from "./nouvelle/Securite";
 import { LeveeNouvelle } from "./nouvelle/Levee";
 import { CtaFinNouvelle } from "./nouvelle/CtaFin";
-import { DemandeDemo } from "./DemandeDemo";
 import { useLeveeAnnoncee } from "./nouvelle/socle";
 
 export function HomeSections() {
@@ -29,18 +28,15 @@ export function HomeSections() {
     if (cible) requestAnimationFrame(() => cible.scrollIntoView());
   }, [annoncee]);
   return (
-    <>
-      <div className="nh" ref={root}>
-        <BandeauLevee />
-        <HeroNouvelle />
-        <ProduitNouvelle />
-        <ConnecteursNouvelle />
-        <MetiersNouvelle />
-        <SecuriteNouvelle />
-        <LeveeNouvelle />
-        <CtaFinNouvelle />
-      </div>
-      <DemandeDemo />
-    </>
+    <div className="nh" ref={root}>
+      <BandeauLevee />
+      <HeroNouvelle />
+      <ProduitNouvelle />
+      <ConnecteursNouvelle />
+      <MetiersNouvelle />
+      <SecuriteNouvelle />
+      <LeveeNouvelle />
+      <CtaFinNouvelle />
+    </div>
   );
 }

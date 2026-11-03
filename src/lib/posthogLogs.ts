@@ -4,7 +4,7 @@ import type { PostHog } from "posthog-js";
  * Purpose-built PostHog Logs emitter. Keep this module limited to records
  * intentionally exported by this integration; it does not wrap console logs.
  */
-type DemoFormLocation = "homepage" | "silmo_landing" | "affiliation_landing" | "webinar_landing";
+type DemoFormLocation = "homepage" | "homepage_rappel" | "silmo_landing" | "affiliation_landing" | "webinar_landing";
 
 export function logDemoRequestDelivered(
   posthog: PostHog,

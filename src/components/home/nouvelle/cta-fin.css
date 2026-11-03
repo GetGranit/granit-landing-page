@@ -189,3 +189,39 @@
     animation: none !important;
   }
 }
+
+/* ---------- la voie de secours : « On vous rappelle », dépliée sous le bouton principal (Rappel.tsx) ---------- */
+.nh .ct-ancre { position: absolute; top: 0; }
+.nh .ct3-body > .ct3-fade:has(.ct-rp) { max-width: 720px; }
+.nh .ct-rp { margin-top: 14px; }
+.nh .ct-rp-toggle {
+  appearance: none; display: inline-flex; align-items: center; gap: 6px; padding: 4px 0; border: 0; background: none;
+  color: var(--ink); font: 500 15px/1.3 var(--sans); cursor: pointer;
+  text-decoration: underline; text-decoration-color: rgba(var(--ink-rgb), .3); text-underline-offset: 4px;
+}
+.nh .ct-rp-toggle:hover { text-decoration-color: var(--ink); }
+.nh .ct-rp-toggle svg { width: 13px; height: 13px; transition: rotate .3s var(--lm-ease); }
+.nh .ct-rp.is-open .ct-rp-toggle svg { rotate: 180deg; }
+.nh .ct-rp-form { margin-top: 12px; }
+.nh .ct-rp-form[hidden] { display: none; }
+.nh .ct-rp-champs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) auto; gap: 10px; align-items: end; }
+.nh .ct-rp-champs label { display: grid; gap: 5px; min-width: 0; }
+.nh .ct-rp-champs label span { font: 500 12px/1.2 var(--sans); color: var(--t-muted); }
+.nh .ct-rp-champs input {
+  width: 100%; min-height: 46px; padding: 0 14px; border: 1px solid var(--filet-champ); border-radius: 10px;
+  background: rgba(255, 253, 253, .85); color: var(--ink); font: 400 15px/1 var(--sans);
+}
+.nh .ct-rp-champs input::placeholder { color: var(--t-faint); }
+.nh .ct-rp-champs input:focus { outline: 2px solid var(--deep); outline-offset: 0; border-color: transparent; }
+.nh .ct-rp-envoyer { min-height: 46px; background: var(--paper); color: var(--ink); box-shadow: inset 0 0 0 1px rgba(var(--ink-rgb), .28); cursor: pointer; border: 0; }
+.nh .ct-rp-envoyer:hover { box-shadow: inset 0 0 0 1px var(--ink); }
+.nh .ct-rp-envoyer:disabled { opacity: .7; cursor: wait; }
+.nh .ct-rp-note { margin-top: 8px; font-size: 13px; color: var(--t-muted); }
+.nh .ct-rp-note[role="alert"] { color: var(--alerte-texte); }
+.nh .ct-rp-merci { display: flex; align-items: center; gap: 10px; margin-top: 16px; font: 500 15px/1.4 var(--sans); color: var(--ink); }
+.nh .ct-rp-coche { display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: var(--mint); color: var(--ink); flex: none; }
+.nh .ct-rp-coche svg { width: 12px; height: 12px; }
+@media (max-width: 760px) {
+  .nh .ct-rp-champs { grid-template-columns: minmax(0, 1fr); }
+  .nh .ct-rp-envoyer { justify-content: center; }
+}

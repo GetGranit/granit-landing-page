@@ -29,12 +29,15 @@ export const submitDemo = createServerFn({ method: "POST" })
   .inputValidator((data: DemoLead) => {
     const name = (data.name ?? "").trim();
     const email = (data.email ?? "").trim();
+    const phone = (data.phone ?? "").trim();
     if (name.length < 1) throw new Error("Le nom est requis.");
-    if (!emailRe.test(email)) throw new Error("Email invalide.");
+    /* une demande de rappel (CTA de l'accueil) n'a qu'un téléphone : email OU téléphone, au moins l'un des deux */
+    if (email && !emailRe.test(email)) throw new Error("Email invalide.");
+    if (!email && phone.replace(/\D/g, "").length < 9) throw new Error("Un email ou un téléphone est requis.");
     return {
       name: name.slice(0, 200),
       email: email.slice(0, 200),
-      phone: (data.phone ?? "").trim().slice(0, 50),
+      phone: phone.slice(0, 50),
       company: (data.company ?? "").trim().slice(0, 200),
       orgType: (data.orgType ?? "").trim().slice(0, 100),
       challenge: (data.challenge ?? "").trim().slice(0, 2000),
