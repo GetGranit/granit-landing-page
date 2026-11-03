@@ -1,0 +1,107 @@
+{
+  "slug": "granit-vs-iremia",
+  "id": "E2a",
+  "category": "gerer-son-tiers-payant",
+  "categoryName": "Managing third-party payment",
+  "type": "vs",
+  "plateforme": null,
+  "title": "Granit or Iremia Santé: which one should handle third-party payment for your store?",
+  "primaryKeyword": "iremia santé",
+  "keywordCluster": [
+    "iremia santé"
+  ],
+  "parentSlug": "solutions-tiers-payant-optique",
+  "level": "Fille",
+  "author": {
+    "name": "Laura",
+    "jobTitle": "Writer, health expert",
+    "photo": "/auteurs/laura.jpg",
+    "url": null
+  },
+  "reviewer": {
+    "name": "Olivier",
+    "jobTitle": "Writer, third-party payment expert",
+    "photo": "/auteurs/olivier.jpg",
+    "url": null
+  },
+  "datePublished": "2026-10-09",
+  "dateModified": "2026-10-09",
+  "checkedOn": "2026-10-07",
+  "concurrents": [
+    "iremia",
+    "granit"
+  ],
+  "wordCount": 1257,
+  "readTime": 5,
+  "metaDescription": "Iremia Santé or Granit: a service provider with next-day cash advances, or agents that enter your coverage requests. Compare the models and uses to make an informed choice.",
+  "contentHtml": "<p><strong>Iremia Santé and Granit do not do the same job: Iremia Santé is a service provider that assigns your third-party payment (tiers payant: the patient pays nothing upfront, insurers pay the provider directly) to a dedicated team and can advance your cash, while Granit puts software agents to work directly on the platforms’ portals.</strong> Both handle coverage approvals, rejections and reconciliation. The difference lies in the model: who does the work, at what point in the file, and what you see happening. This page compares the two offers based on their public pages, checked on Oct 7, 2026, without an overall verdict.</p><div class=\"key-takeaways\"><strong>Key takeaways</strong><ul><li>Iremia Santé (EMIS SANTÉ, Riorges) is a multi-specialty service provider: a dedicated third-party payment expert and a dedicated account manager handle your files.</li><li>Granit is a service of software agents that query the platforms, send coverage requests and correct rejections; the Granit team takes over the files the agent cannot finish.</li><li>Iremia Santé also offers a next-day cash advance on e-transmitted invoices, with the BPCE group. Granit does not provide advances.</li><li>Both rely on HDS hosting (the French standard for hosting health data) and state that you can leave them with no minimum commitment or with full reversibility.</li><li>The right choice depends on what weighs most in your store: cash flow or time spent on the portals.</li></ul></div><h2 id=\"granit-vs-iremia-coup-doeil\">What should you compare between Granit and Iremia Santé?</h2><div data-bloc=\"coup-doeil\"></div><h2 id=\"granit-vs-iremia-besoin\">Do Iremia Santé and Granit meet the same need?</h2><p>Only in part. Both take on the third-party payment work your team does today at the counter or in the back office. But Iremia Santé sells delegation to people, with a financing option, whereas Granit sells execution by agents on the portals, file by file as they come in.</p><p>For a store manager, the useful question is therefore not “which one does the most,” but “where does my store lose the most”: waiting for payments, or entering and tracking coverage requests. The guide <a href=\"/ressources/tiers-payant-opticien\">third-party payment for opticians, from coverage approval to collection</a> walks through these steps one by one.</p><h3>Iremia Santé: a dedicated team, several healthcare specialties</h3><p>Iremia Santé is the brand of EMIS SANTÉ, a simplified joint-stock company (SAS) based in Riorges (Loire). It serves pharmacies, optical stores, hearing care, dental practices, radiology, clinical labs, clinics and multidisciplinary health centers. A single provider can therefore cover several activities within a group.</p><p>The service relies on people. On its <a href=\"https://iremia-sante.fr/sante-gestion\">Santé Gestion</a> page, Iremia Santé advertises a dedicated third-party payment expert and a dedicated account manager who know your business. This follow-up covers identifying the reason for a rejection and recycling invoices, that is, correcting and resending them.</p><p>For optical stores, their experts enter coverage requests (PEC) as part of the <a href=\"https://iremia-sante.fr/admin-sante\">Admin Santé</a> offer. Iremia Santé also advertises payment reconciliation, through its Théo platform and its Santé Bank software. Its offers are presented as having no minimum commitment.</p><p>As for which third-party payment platforms it handles, Iremia Santé does not say: no list of portals is published on its pages.</p><h3>Granit: agents that work on the portals</h3><p>Granit does the work with software agents. For a coverage approval, the agent queries the platform, calculates the out-of-pocket amount, then sends the coverage request. When a file is rejected, it analyzes the cause, corrects it and resends it. When the agent cannot finish a file, the Granit team takes it over.</p><p>On the payment side, the agents reconcile bank transfers from mandatory insurance (AMO) and supplementary insurance (AMC) with the invoices. To understand what this reconciliation involves, see <a href=\"/ressources/rapprochement-noemie\">reconciling NOEMIE files and bank transfers</a>.</p><p>Granit displays the logos of the platforms it works with, including Viamedis, Almerys, Santéclair, Carte Blanche and Actil. The screens of these portals are described in our <a href=\"/ressources/portail-viamedis\">Viamedis TP</a> and <a href=\"/ressources/portail-almerys\">Almerys TP</a> pages. Granit relies on HDS hosting (health data hosting) and advertises full reversibility. How the agents work is explained in detail on the <a href=\"/agents\">agents</a> page.</p><h3>At what point in the file each offer steps in</h3><div data-bloc=\"frise\"></div><p>An optical file goes through five stages: choosing the platform, the coverage request, approval or refusal, the invoice, then payment. Both offers cover coverage approval, rejections and reconciliation. Only Iremia Santé also steps in at the payment stage, by advancing the money before the payer pays.</p><h2 id=\"granit-vs-iremia-avance\">Does Iremia Santé’s next-day advance speed up coverage approvals?</h2><p>No. The advance acts on your cash flow, not on how the file is processed. According to its <a href=\"https://iremia-sante.fr/avance-sante\">Avance Santé</a> page, Iremia Santé credits e-transmitted invoices the next day, with the BPCE group. The coverage request, the supplementary health insurer’s (mutuelle) approval and the billing must therefore already have taken place.</p><p>In practice, the advance shortens the wait between the invoice and the money in your account. It changes nothing about the time spent on a portal to obtain approval, or the platform’s response time. The same page specifies that credited amounts are taken back if an invoice is still unpaid after 60 days: a poorly prepared file therefore ends up back in your accounts.</p><div class=\"callout callout--tip\"><p><strong>The right reflex:</strong> before choosing, look at your last three months. If your files go out quickly but the money is slow to arrive, the advance meets your need. If it is coverage requests and rejections that tie up the team, the issue is data entry, not financing.</p></div><p>Granit does not offer cash advances. For a store whose main need is cash flow, a service provider with an advance remains a better fit.</p><h2 id=\"granit-vs-iremia-choisir\">How do you choose between Granit and Iremia Santé?</h2><p>Start from what weighs most on your store, then check that the offer covers your platforms and your exit guarantees.</p><div data-bloc=\"choisir\"></div><p>Three criteria often separate the two models. The first is cash flow: only Iremia Santé addresses it directly. The second is when you get the answer: an agent that works on the portal as the file progresses lets you know the outcome of the coverage request while the customer is still in the store. The third is visibility: with Granit, each file and its status remain visible without going through a contact person, whereas Iremia Santé relies on an ongoing relationship with a dedicated person.</p><p>On health data, both offers rely on HDS hosting: Iremia Santé names in its <a href=\"https://iremia-sante.fr/mentions-legales\">legal notice</a> an HDS host (OVH), and Granit uses HDS infrastructure (health data hosting). The number of portals you use also matters: compare the list of your platforms with those each provider displays, and ask for it when it is not published. Our <a href=\"/ressources/portails-tiers-payant\">third-party payment portals</a> page helps you take this inventory.</p><h3>Can you use both?</h3><p>Yes, if you clearly separate the roles. The two models overlap on coverage approval, rejections and reconciliation, but not on the cash advance. A store can keep a cash advance with a service provider and assign the entry of coverage requests to agents. In that case, set down in writing who handles each step, so the same rejection is not corrected twice.</p><h3>Switching from Iremia Santé to Granit</h3><ol class=\"steps\"><li><strong>Check your contract.</strong> Iremia Santé’s offers are advertised as having no minimum commitment, but reread the notice period in your own contract, especially if you use the advance.</li><li><strong>Start with new files.</strong> Let files in progress finish with your current provider and give new coverage requests to Granit from a set date.</li><li><strong>Compare over one month.</strong> Track the team’s time, rejections and payments received over this period, then decide based on what you see.</li></ol>",
+  "tocItems": [
+    {
+      "id": "granit-vs-iremia-coup-doeil",
+      "label": "What to compare between Granit and Iremia Santé"
+    },
+    {
+      "id": "granit-vs-iremia-besoin",
+      "label": "Do they meet the same need?"
+    },
+    {
+      "id": "granit-vs-iremia-avance",
+      "label": "The next-day advance and coverage approvals"
+    },
+    {
+      "id": "granit-vs-iremia-choisir",
+      "label": "How to choose between the two"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "Do Iremia Santé and Granit do the same thing?",
+      "answer": "In part. Both handle coverage approvals, rejections and payment reconciliation, but Iremia Santé assigns this work to a dedicated third-party payment expert and account manager, while Granit has software agents do it on the platforms’ portals. Iremia Santé also offers a cash advance, which Granit does not."
+    },
+    {
+      "question": "Does Iremia Santé’s next-day advance speed up my coverage approvals?",
+      "answer": "No. Iremia Santé’s advance applies to e-transmitted invoices: it shortens the wait for the money, not the processing of the coverage request. The supplementary health insurer (mutuelle) must already have approved it. Iremia Santé also states that it takes back the amounts credited if an invoice is still unpaid after 60 days."
+    },
+    {
+      "question": "Can you use Iremia Santé and Granit at the same time?",
+      "answer": "Yes, if the roles are kept separate. A store can keep a service provider’s cash advance and assign the entry of coverage requests to agents. You then need to set down in writing who handles each step, so the same rejection is not corrected twice."
+    },
+    {
+      "question": "How do you switch from Iremia Santé to Granit?",
+      "answer": "Start by rereading the notice period in your contract, even though Iremia Santé’s offers are advertised as having no minimum commitment. Then let files in progress finish and give Granit the new coverage requests from a set date. Finally, compare over one month the time spent, the rejections and the payments received."
+    }
+  ],
+  "sources": [
+    {
+      "label": "iremia-sante.fr · Santé Gestion",
+      "url": "https://iremia-sante.fr/sante-gestion"
+    },
+    {
+      "label": "iremia-sante.fr · Admin Santé",
+      "url": "https://iremia-sante.fr/admin-sante"
+    },
+    {
+      "label": "iremia-sante.fr · Avance Santé",
+      "url": "https://iremia-sante.fr/avance-sante"
+    },
+    {
+      "label": "iremia-sante.fr · Legal notice (Mentions légales)",
+      "url": "https://iremia-sante.fr/mentions-legales"
+    }
+  ],
+  "figures": [],
+  "internalLinks": [],
+  "liensEntrants": [],
+  "remplace": [],
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-09T13:40:49.599Z",
+    "avertissements": [
+      "aucune citation (facultative)",
+      "page rendue en JavaScript, citations non vérifiables : https://iremia-sante.fr/sante-gestion",
+      "page rendue en JavaScript, citations non vérifiables : https://iremia-sante.fr/avance-sante",
+      "page rendue en JavaScript, citations non vérifiables : https://iremia-sante.fr/mentions-legales",
+      "page rendue en JavaScript, citations non vérifiables : https://iremia-sante.fr/admin-sante"
+    ]
+  }
+}
