@@ -15,8 +15,7 @@
   --deep: var(--profond);           --deep-rgb: 47, 122, 100;
   --mint: var(--menthe);            --mint-rgb: 168, 220, 203;
   --sky: var(--ciel);               --sky-rgb: 207, 227, 246;
-  --blush: var(--blush);
-  --rose: var(--rose);              --rose-rgb: 250, 240, 242;
+  --rose-rgb: 250, 240, 242;       /* --rose et --blush : déjà les jetons du site, hérités tels quels */
   --paper: var(--papier);
   --wash: var(--lavis);
   --grad: linear-gradient(90deg, var(--blush) 0%, var(--menthe) 52%, var(--ciel) 100%);
