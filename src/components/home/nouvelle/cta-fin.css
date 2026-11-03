@@ -1,0 +1,191 @@
+/* =========================================================
+   NOUVELLE HOME · CTA DE FIN « 03 Dégradé » (portage de lm/cta.css ; tout sous .nh)
+   Le grand fond de la marque, une lumière qui suit la souris (--px, --py), le fond et le filigrane
+   qui suivent la page (--s). Variables posées par CtaFin.tsx ; sans elles, l'état de repos.
+   ========================================================= */
+.nh .ct-h2 {
+  font: 400 clamp(40px, 4.8vw, 68px)/1.03 var(--serif);
+  letter-spacing: -0.033em;
+  text-wrap: balance;
+  color: var(--ink);
+}
+.nh .ct-h2 > span {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.1em;
+  margin-bottom: -0.1em;
+}
+.nh .ct-h2 .ct-acc {
+  color: var(--deep);
+}
+.nh .ct-ln {
+  display: block;
+  transition:
+    transform 1s var(--lm-ease),
+    opacity 1s var(--lm-ease);
+  transition-delay: calc(var(--i, 0) * 120ms);
+}
+.nh .ct-lead {
+  max-width: 46ch;
+  font: 400 clamp(16px, 1.2vw, 18px)/1.5 var(--sans);
+  color: var(--t-muted);
+  text-wrap: pretty;
+}
+.nh .ct-btn {
+  background: var(--ink);
+  color: var(--mint);
+}
+.nh .ct-btn:hover {
+  background: var(--ink-hi);
+}
+.nh .ct-btn svg {
+  transition: translate 0.35s var(--lm-ease);
+}
+.nh .ct-btn:hover svg {
+  translate: 2px -2px;
+}
+.nh .ct3 :focus-visible {
+  outline-color: var(--deep);
+}
+.nh .ct-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  font: 500 12px/1.2 var(--sans);
+  color: var(--t-muted);
+}
+.nh .ct-trust li {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.nh .ct-trust svg {
+  flex: none;
+  width: 18px;
+  height: 18px;
+}
+.nh .ct-trust b {
+  font-weight: 600;
+  font-size: 12.5px;
+  letter-spacing: 0.02em;
+}
+
+.nh .ct3 {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: grid;
+  align-items: center;
+  min-height: max(420px, 58svh);
+  padding-block: 72px;
+  background: var(--rose);
+  color: var(--ink);
+}
+.nh .ct3-grad {
+  position: absolute;
+  inset: -6% -30% -6% -12%;
+  z-index: -4;
+  background: var(--grad);
+  transform: translate3d(calc(var(--s, 0.5) * -10% + (var(--px, 0.7) - 0.5) * -6%), 0, 0);
+}
+.nh .ct3-veil {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgba(var(--rose-rgb), 0.97) 0%,
+    rgba(var(--rose-rgb), 0.86) 30%,
+    rgba(var(--rose-rgb), 0.2) 56%,
+    rgba(var(--rose-rgb), 0) 68%
+  );
+}
+/* la lumière : du papier (255, 253, 253) */
+.nh .ct3-light {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background: radial-gradient(
+    30vmax 30vmax at calc(var(--px, 0.7) * 100%) calc(var(--py, 0.45) * 100%),
+    rgba(255, 253, 253, 0.62),
+    rgba(255, 253, 253, 0) 72%
+  );
+}
+.nh .ct3-motif {
+  position: absolute;
+  z-index: -1;
+  right: -6vmax;
+  bottom: -10vmax;
+  width: auto;
+  height: min(56vmax, 540px);
+  color: var(--paper);
+  opacity: 0.6;
+  translate: 0 calc((0.5 - var(--s, 0.5)) * 14vmax);
+  pointer-events: none;
+}
+.nh .ct3-body {
+  display: grid;
+  justify-items: start;
+  gap: 18px;
+}
+.nh .ct3 .ct-h2 {
+  font-size: clamp(36px, 4.2vw, 58px);
+} /* revue du 3 nov. : section plus courte, titre un cran plus petit */
+.nh .ct3-body > * {
+  max-width: 520px;
+}
+.nh .ct3-body > .ct-h2 {
+  max-width: 720px;
+}
+.nh .ct3 .ct-lead {
+  color: var(--ink);
+  opacity: 0.78;
+}
+.nh .ct3 .ct-trust {
+  color: var(--ink);
+}
+.nh .ct3-fade {
+  transition:
+    opacity 0.85s var(--lm-ease),
+    translate 0.85s var(--lm-ease);
+  transition-delay: calc(var(--i, 0) * 120ms + 120ms);
+}
+@media (max-width: 760px) {
+  .nh .ct3-veil {
+    background: linear-gradient(
+      180deg,
+      rgba(var(--rose-rgb), 0.96) 0%,
+      rgba(var(--rose-rgb), 0.86) 62%,
+      rgba(var(--rose-rgb), 0.2) 100%
+    );
+  }
+  .nh .ct3 {
+    padding-block: 56px;
+  }
+  .nh .ct3-motif {
+    right: -30vmax;
+    bottom: -36vmax;
+    height: 60vmax;
+  }
+}
+
+/* entrée : seulement une fois le JS monté, jamais en mouvements réduits */
+@media (prefers-reduced-motion: no-preference) {
+  .nh.nh-js .ct3:not(.in) .ct-ln {
+    transform: translateY(108%);
+  }
+  .nh.nh-js .ct3:not(.in) .ct3-fade {
+    opacity: 0;
+    translate: 0 14px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nh .ct3 *,
+  .nh .ct3 *::before,
+  .nh .ct3 *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}

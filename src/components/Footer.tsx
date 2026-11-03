@@ -4,7 +4,8 @@ import logoMonogram from "@/assets/logo.svg";
 
 const copy = {
   fr: {
-    baseline: "Plateforme d'agents IA pour la santé.",
+    baseline: "Le back-office qui travaille pendant que vous soignez.",
+    hds: "Infrastructure HDS",
     product: "Produit",
     agents: "Agents",
     pricing: "Tarifs",
@@ -22,7 +23,8 @@ const copy = {
     made: "Made in France",
   },
   en: {
-    baseline: "AI agent platform for healthcare.",
+    baseline: "The back office that works while you care.",
+    hds: "HDS-certified cloud",
     product: "Product",
     agents: "Agents",
     pricing: "Pricing",
@@ -64,7 +66,7 @@ export function Footer() {
               {t.baseline}
             </p>
             <div className="mt-5 flex flex-wrap items-center gap-1.5">
-              <Badge>HDS</Badge>
+              <Badge>{t.hds}</Badge>
               <Badge>RGPD</Badge>
             </div>
           </div>
