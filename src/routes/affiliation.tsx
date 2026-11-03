@@ -204,7 +204,7 @@ function ReferralFlow({ steps }: { steps: Copy["flow"] }) {
       >
         {/* Toujours rendu, même animations réduites : le serveur ne connaît pas la
             préférence (useReducedMotion y vaut null) et rendait le point ; le retirer
-            côté client cassait l'hydratation (React #418). Animations réduites :
+            côté client cassait l'hydratation (erreur React 418). Animations réduites :
             le point reste à son état initial, invisible. */}
         <motion.span
           className="absolute -left-[3px] h-[7px] w-[7px] rounded-full"

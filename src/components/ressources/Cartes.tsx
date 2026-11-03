@@ -293,7 +293,7 @@ export function CarteUne({ fiche, titre = "h2" }: { fiche: Fiche; titre?: "h2" |
         prioritaire="haute"
         rang={0}
       />
-      <H className="mt-5 max-w-[28ch] font-serif text-[clamp(26px,2.6vw,36px)] font-normal leading-[1.15] tracking-[-0.015em]">
+      <H className="mt-5 max-w-[28ch] font-serif text-[clamp(26px,2.6vw,36px)] font-light leading-[1.15] tracking-[-0.015em]">
         <TitreItalique titre={fiche.title} ink={c.ink} />
       </H>
       {fiche.metaDescription && (
@@ -324,7 +324,7 @@ export function CartePilier({ fiche }: { fiche: Fiche }) {
         <span className="eyebrow">
           Pour commencer
         </span>
-        <h2 className="mt-3 font-serif text-[clamp(26px,2.6vw,36px)] font-normal leading-[1.15] tracking-[-0.015em]">
+        <h2 className="mt-3 font-serif text-[clamp(26px,2.6vw,36px)] font-light leading-[1.15] tracking-[-0.015em]">
           <TitreItalique titre={fiche.title} ink={c.ink} />
         </h2>
         {fiche.metaDescription && (

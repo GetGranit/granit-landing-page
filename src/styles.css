@@ -141,19 +141,7 @@
   --text-soft: var(--texte-secondaire);
   --text-muted: var(--texte-secondaire);
 
-  /* ── Alias de transition, supprimés en fin de bascule ──
-     Chaque ancienne variable pointe vers le jeton de son rôle principal (table de correspondance).
-     Les balayeurs remplacent chaque usage selon son rôle réel, puis on supprime ces lignes. */
-  --terra: var(--profond);              /* liens, accents, focus, bordures de mise en avant */
-  --terra-hover: var(--profond);        /* liens dans un texte */
-  --terra-light: var(--succes-fond);    /* pastilles d'icône, sélection légère */
-  --terra-soft: var(--menthe);          /* accent sur fond sombre */
-  --terra-glow: var(--menthe);          /* halos, décor */
-  --sage: var(--succes);                /* succès : forme */
-  --sage-light: var(--succes-fond);     /* succès : fond de pastille */
   --tag-bg: var(--lavis);               /* fond teinté */
-  --gradient-terra: linear-gradient(var(--encre), var(--encre)); /* bouton, avatar : aplat encre */
-  --shadow-terra: var(--ombre-carte);
   --shadow-soft: var(--ombre-douce);
 
   --radius: 12px;
@@ -325,16 +313,6 @@
     box-shadow: var(--ombre-douce);
   }
 }
-
-/* ── Transition du logo, supprimée en fin de bascule ──
-   src/assets/logo.svg est désormais le logo horizontal (symbole + nom vectorisé). Nav, Footer, pec/ui,
-   silmo et webinar tapent encore « Granit » juste après l'image : on masque ce nom tapé pour ne pas
-   l'afficher deux fois, et on rend ses proportions au logo quand le composant force un carré de 28 px (pec/ui).
-   Le logo est inliné par Vite (data:…, viewBox 445.733) ; les balayeurs retirent le <span>, puis ce bloc. */
-img[src*="445.733"] + span,
-img[src*="/logo-"][src$=".svg"] + span { display: none; }
-img[src*="445.733"][width],
-img[src*="/logo-"][src$=".svg"][width] { width: auto; height: 28px; }
 
 /* Testimonials marquee — right to left */
 .testimonials-marquee {

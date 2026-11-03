@@ -2,6 +2,7 @@ import { type ReactElement, useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { motion } from "framer-motion";
+import { CalendarCheck, CircleCheck } from "lucide-react";
 import { usePostHog } from "posthog-js/react";
 
 import { Reveal } from "@/components/Reveal";
@@ -67,9 +68,9 @@ const copy = {
     ],
     dashActivityTitle: "Activité récente",
     dashActivity: [
-      { tag: "Rejet #12453", agent: "Pris en charge par Agent Rejets", status: "Traité", when: "il y a 2 min", tone: "sage" },
-      { tag: "Facture #F-2024-0456", agent: "Pris en charge par Agent Facturation", status: "Validé", when: "il y a 10 min", tone: "sage" },
-      { tag: "Courrier patient #C-7890", agent: "Pris en charge par Agent Courriers Patients", status: "Traité", when: "il y a 15 min", tone: "sage" },
+      { tag: "Rejet #12453", agent: "Pris en charge par Agent Rejets", status: "Traité", when: "il y a 2 min", tone: "succes" },
+      { tag: "Facture #F-2024-0456", agent: "Pris en charge par Agent Facturation", status: "Validé", when: "il y a 10 min", tone: "succes" },
+      { tag: "Courrier patient #C-7890", agent: "Pris en charge par Agent Courriers Patients", status: "Traité", when: "il y a 15 min", tone: "succes" },
     ],
     dashSeeAll: "Voir toute l'activité",
     dashLive: "Démo live",
@@ -191,9 +192,9 @@ const copy = {
     ],
     dashActivityTitle: "Recent activity",
     dashActivity: [
-      { tag: "Rejection #12453", agent: "Handled by Rejections Agent", status: "Done", when: "2 min ago", tone: "sage" },
-      { tag: "Invoice #F-2024-0456", agent: "Handled by Invoicing Agent", status: "Validated", when: "10 min ago", tone: "sage" },
-      { tag: "Patient letter #C-7890", agent: "Handled by Letters Agent", status: "Done", when: "15 min ago", tone: "sage" },
+      { tag: "Rejection #12453", agent: "Handled by Rejections Agent", status: "Done", when: "2 min ago", tone: "succes" },
+      { tag: "Invoice #F-2024-0456", agent: "Handled by Invoicing Agent", status: "Validated", when: "10 min ago", tone: "succes" },
+      { tag: "Patient letter #C-7890", agent: "Handled by Letters Agent", status: "Done", when: "15 min ago", tone: "succes" },
     ],
     dashSeeAll: "See all activity",
     dashLive: "Live demo",
@@ -385,10 +386,10 @@ function HeroDashboard({ t, lang }: { t: typeof copy["fr"]; lang: "fr" | "en" })
       <div className="flex items-center gap-3 border-b px-5 py-3.5" style={{ borderColor: "var(--border)" }}>
         <div className="flex items-center gap-2">
           <div className="flex h-7 w-7 items-center justify-center rounded-[7px]" style={{ background: "var(--succes-fond)", color: "var(--succes-texte)" }}>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 12h3l2-7 4 14 2-7h7"/></svg>
+            <CircleCheck size={14} strokeWidth={1.8} aria-hidden />
           </div>
           <div>
-            <div className="text-[14px]" style={{ fontWeight: 600 }}>{t.dashGreeting} <span aria-hidden>👋</span></div>
+            <div className="text-[14px]" style={{ fontWeight: 600 }}>{t.dashGreeting}</div>
             <div className="text-[11px]" style={{ color: "var(--text-muted)" }}>{t.dashSub}</div>
           </div>
         </div>
@@ -935,10 +936,10 @@ export function HomeSections() {
               {/* Greeting banner */}
               <div className="flex items-center gap-3 border-b px-5 py-3.5" style={{ borderColor: "var(--border)", background: "var(--surface)" }}>
                 <div className="flex h-9 w-9 items-center justify-center rounded-[8px]" style={{ background: "var(--succes-fond)", color: "var(--succes-texte)" }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 12h3l2-7 4 14 2-7h7"/></svg>
+                  <CircleCheck size={16} strokeWidth={1.8} aria-hidden />
                 </div>
                 <div className="min-w-0">
-                  <div className="text-[14px]" style={{ fontWeight: 600 }}>{t.dashGreeting} <span aria-hidden>👋</span></div>
+                  <div className="text-[14px]" style={{ fontWeight: 600 }}>{t.dashGreeting}</div>
                   <div className="text-[11.5px]" style={{ color: "var(--text-muted)" }}>{t.dashSub}</div>
                 </div>
                 <span className="ml-auto inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[10.5px]" style={{ borderColor: "var(--border)", color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}>
@@ -1210,7 +1211,7 @@ export function HomeSections() {
             >
               <div className="flex items-start gap-4">
                 <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[12px]" style={{ background: "var(--encre-2)", color: "var(--menthe)" }}>
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 12h3l2-7 4 14 2-7h7"/></svg>
+                  <CalendarCheck size={22} strokeWidth={1.8} aria-hidden />
                 </span>
                 <div>
                   <div className="text-[18px]" style={{ fontWeight: 600 }}>{t.ctaTitle}</div>

@@ -57,7 +57,7 @@ export function PageCategorie({ cat }: { cat: Categorie }) {
                 { nom: cat.nom },
               ]}
             />
-            <h1 className="mt-4 max-w-[22ch] font-serif text-[clamp(32px,4.4vw,54px)] font-normal leading-[1.08] tracking-[-0.015em]">
+            <h1 className="mt-4 max-w-[22ch] font-serif text-[clamp(32px,4.4vw,54px)] font-light leading-[1.08] tracking-[-0.015em]">
               {cat.nom}
             </h1>
             <p className="mt-4 max-w-[62ch] text-[18px] text-[var(--text-soft)]">

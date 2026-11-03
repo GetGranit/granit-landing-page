@@ -73,7 +73,7 @@ function PortalBox({ card, p, waiting }: { card: CardRead | null; p: Platform; w
               className="rounded border border-dashed bg-papier px-2 py-1"
               style={{ borderColor: "#cfd6de", color: "#56606b" }}
             >
-              ⌛ équipement d'exemple, modifiable ensuite
+              équipement d'exemple, modifiable ensuite
             </dd>
           </div>
         )}
@@ -373,7 +373,7 @@ const ARGUMENTS = [
   { ico: "✓", txt: "Dérogations gérées" },
   { ico: "✓", txt: "Contrôle tarifaire" },
   { ico: "✓", txt: "Zéro faute de saisie, zéro rejet à refaire" },
-  { ico: "🔒", txt: "Hébergé en France, agréé santé (HDS)" },
+  { ico: "✓", txt: "Hébergé en France, agréé santé (HDS)" },
 ];
 
 function GranitFaitPourVous({ target }: { target: string }) {

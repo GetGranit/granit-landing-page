@@ -122,7 +122,7 @@ function FicheProgramme() {
       }}
     >
       <p className="eyebrow">
-        🎙️ {t.badge}
+        {t.badge}
       </p>
       <h1
         className="mt-4 font-serif"
@@ -208,7 +208,7 @@ function FicheProgramme() {
               <Check size={13} strokeWidth={3} />
             </span>
             <span>
-              {c.emoji} <span style={{ fontWeight: 600 }}>{c.titre}</span>{" "}
+              <span style={{ fontWeight: 600 }}>{c.titre}</span>{" "}
               <span style={{ color: "var(--text-soft)" }}>: {c.texte}</span>
             </span>
           </motion.li>
@@ -257,14 +257,14 @@ function CarteInscription() {
           inputBackground="var(--papier)"
           heading={
             <p className="mb-5 text-[15px]" style={{ fontWeight: 600 }}>
-              On a hâte de vous voir ! 👋
+              On a hâte de vous voir !
             </p>
           }
         />
       </div>
 
       <p className="mt-5 text-center text-[12px]" style={{ color: "var(--text-muted)" }}>
-        🎬 {t.replay}
+        {t.replay}
       </p>
     </div>
   );

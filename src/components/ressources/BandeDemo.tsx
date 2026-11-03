@@ -22,7 +22,7 @@ export function BandeDemo() {
         <p className="eyebrow">
           Avec les agents Granit, vous arrêtez de
         </p>
-        <h2 className="mt-4 font-serif text-[clamp(30px,4.4vw,54px)] font-normal leading-[1.1]">
+        <h2 className="mt-4 font-serif text-[clamp(30px,4.4vw,54px)] font-light leading-[1.1]">
           <span className="sr-only">{CORVEES.join(", ")}.</span>
           <span aria-hidden className="corvee-cadre">
             <span

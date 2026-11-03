@@ -195,7 +195,7 @@ export function PageArticle({
                     />
                   </div>
                 )}
-                <h1 className="max-w-[22ch] font-serif text-[clamp(32px,4.4vw,54px)] font-normal leading-[1.08] tracking-[-0.015em] [text-wrap:balance]">
+                <h1 className="max-w-[22ch] font-serif text-[clamp(32px,4.4vw,54px)] font-light leading-[1.08] tracking-[-0.015em] [text-wrap:balance]">
                   <TitreItalique titre={a.title} ink={cat.ink} />
                 </h1>
               </div>

@@ -12,7 +12,7 @@ type Props = {
 /**
  * Mini-formulaire « Connecter [portail] ».
  *
- * ⚠️ SÉCURITÉ : l'identifiant et le mot de passe vivent UNIQUEMENT dans l'état
+ * SÉCURITÉ : l'identifiant et le mot de passe vivent UNIQUEMENT dans l'état
  * React local de ce composant. Ils ne sont ni envoyés, ni écrits dans
  * sessionStorage/localStorage, ni remontés au parent, et sont effacés à la
  * validation. Pas de <form> : le navigateur ne propose pas de les enregistrer.

@@ -485,7 +485,7 @@ export function EncartAgent({
       <div className="ress-cta-encart">
         <div>
           <p className="ress-cta-etiquette">À la fin de cet article</p>
-          <h2 className="mt-2.5 font-serif text-[clamp(26px,3.2vw,36px)] font-normal leading-[1.15]">
+          <h2 className="mt-2.5 font-serif text-[clamp(26px,3.2vw,36px)] font-light leading-[1.15]">
             {c.fin}
           </h2>
           <p className="mt-3 max-w-[46ch] text-[16px] leading-relaxed text-sur-encre-secondaire">
