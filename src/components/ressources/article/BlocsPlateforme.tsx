@@ -158,7 +158,9 @@ export function Statuts({ p }: { p: Plateforme }) {
             {p.statuts.map((s) => (
               <tr key={s.libelle}>
                 <td>
-                  <strong className="font-semibold text-[var(--text)]">{s.libelle}</strong>
+                  <strong className="font-semibold text-[var(--text)]">
+                    {s.libelleAffiche ?? s.libelle}
+                  </strong>
                 </td>
                 <td>{s.sens}</td>
                 <td>{s.action}</td>

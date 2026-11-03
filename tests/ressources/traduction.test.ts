@@ -139,6 +139,7 @@ test("fiche plateforme : le libellé du portail, les URL et le nom restent ceux 
   const p = lire().plateformes.viamedis as typeof plateformeFr;
   assert.equal(p.nom, "Viamedis");
   assert.equal(p.statuts[0].libelle, "Accordée");
+  assert.equal((p.statuts[0] as { libelleAffiche?: string }).libelleAffiche, "Approved");
   assert.equal(p.statuts[0].sens, "The insurer commits to the amount");
   assert.equal(p.chiffres[0].valeur, "+305,000");
   assert.equal(p.contacts[0].detail, "Premium-rate number");

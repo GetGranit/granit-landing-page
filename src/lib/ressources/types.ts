@@ -78,7 +78,8 @@ export type Plateforme = {
   checkedOn: string;
   identite: { label: string; valeur: string; source: string }[];
   chiffres: { valeur: string; label: string; source: string }[];
-  statuts: { libelle: string; sens: string; action: string }[];
+  /** `libelle` : le mot du portail (lu par le code) ; `libelleAffiche` : sa version anglaise, pour l'écran. */
+  statuts: { libelle: string; libelleAffiche?: string; sens: string; action: string }[];
   statutsSource?: string;
   contacts: { label: string; valeur: string; detail?: string; url?: string; source: string }[];
   organismes?: { source: string; note?: string; liste: string[] };

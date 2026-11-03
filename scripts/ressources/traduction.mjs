@@ -15,6 +15,11 @@ const PARAGRAPHES = "paragraphes";
 /** Valeur d'un axe comparé : « oui », « non » et « non publié » sont lus par le code, jamais traduits. */
 const AXE = "axe";
 const VALEURS_AXE = new Set(["oui", "non", "non publié"]);
+/**
+ * Texte lu par le code : la valeur française reste à sa place, l'anglais (facultatif) va dans
+ * `{clé}Affiche`, pour l'affichage seulement.
+ */
+const AFFICHE = "affiche";
 
 // Schémas : seuls les champs nommés sont pris dans le fichier anglais.
 // Objet = champs à traduire ; [schéma] = liste de même longueur, élément par élément ;
@@ -39,11 +44,12 @@ export const SCHEMAS = {
       },
     ],
   },
-  // Le libellé d'un statut est le mot affiché par le portail (et lu par le code) : il reste tel quel.
+  // Le libellé d'un statut est le mot du portail, lu par le code (statutsCarte) : il reste en
+  // français ; sa version anglaise (« Validée (Approved) ») va dans `libelleAffiche`.
   plateforme: {
     identite: [{ label: T, valeur: T }],
     chiffres: [{ valeur: T, label: T }],
-    statuts: [{ sens: T, action: T }],
+    statuts: [{ libelle: AFFICHE, sens: T, action: T }],
     contacts: [{ label: T, valeur: T, detail: T }],
     sources: { "*": { label: T } },
   },
@@ -109,6 +115,10 @@ export function fusionner(fr, en, schema, chemin = "") {
   const cles = "*" in schema ? Object.keys(fr) : Object.keys(schema);
   for (const cle of cles) {
     if (!(cle in fr)) continue;
+    if (schema[cle] === AFFICHE) {
+      if (estTexte(en[cle]) && en[cle] !== fr[cle]) valeur[`${cle}Affiche`] = en[cle];
+      continue;
+    }
     const r = fusionner(fr[cle], en[cle], schema[cle] ?? schema["*"], chemin ? `${chemin}.${cle}` : cle);
     problemes.push(...r.problemes);
     valeur[cle] = r.valeur;
