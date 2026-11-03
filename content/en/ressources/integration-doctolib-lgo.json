@@ -2,7 +2,7 @@
   "slug": "integration-doctolib-lgo",
   "id": "R10",
   "category": "gerer-son-tiers-payant",
-  "categoryName": "Managing third-party payment",
+  "categoryName": "Managing your third-party payment",
   "type": "standard",
   "plateforme": null,
   "title": "Connecting agents to Doctolib and your practice management software",
