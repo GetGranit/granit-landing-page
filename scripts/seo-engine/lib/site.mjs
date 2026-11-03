@@ -78,9 +78,28 @@ export function sortieGithub(valeurs) {
   for (const [k, v] of Object.entries(valeurs)) appendFileSync(f, `${k}=${String(v).replace(/\n/g, " ")}\n`);
 }
 
-/** Message système commun (guide + extrait du gabarit), identique d'un appel à l'autre pour profiter du cache. */
+/**
+ * Règles d'écriture, mots et affirmations de TON.md (copie de internal/marque, à la racine du dépôt) :
+ * de « ## Les règles d'écriture » jusqu'à « ## L'argumentaire ». Les mots interdits sont aussi contrôlés
+ * par lib/checks.mjs (INTERDITS).
+ */
+export function sectionsTon() {
+  const t = readFileSync(join(RACINE, "TON.md"), "utf8");
+  const debut = t.indexOf("## Les règles d'écriture");
+  const fin = t.indexOf("## L'argumentaire");
+  if (debut < 0 || fin < debut) throw new Error("TON.md : sections « Les règles d'écriture » à « L'argumentaire » introuvables");
+  return t.slice(debut, fin).trim();
+}
+
+/** Message système commun (guide + extrait du gabarit + TON.md), identique d'un appel à l'autre pour profiter du cache. */
 export function systemeGuide() {
-  return `${readFileSync(join(MOTEUR, "BLOG_CMS_granit.md"), "utf8")}\n\n---\n\n# Extrait du gabarit (GABARIT_ARTICLE_granit.md)\n\n${sectionsGabarit()}`;
+  return (
+    `${readFileSync(join(MOTEUR, "BLOG_CMS_granit.md"), "utf8")}\n\n---\n\n# Extrait du gabarit (GABARIT_ARTICLE_granit.md)\n\n${sectionsGabarit()}` +
+    `\n\n---\n\n# Le ton de la marque (extrait de TON.md)\n\n` +
+    `Ces règles valent pour tout le texte affiché (corps, FAQ, metaDescription, schémas). Pour la structure d'un article, le guide ci-dessus fait foi. ` +
+    `La colonne « On ne dit pas » et le jargon interdit sont contrôlés après rédaction : un seul de ces mots fait refuser l'article (sauf dans une citation <blockquote> recopiée d'une source).\n\n` +
+    sectionsTon()
+  );
 }
 
 /** Liens internes autorisés pour un article déjà écrit (lui-même exclu) : chemin -> titre. */

@@ -19,7 +19,35 @@ const INTERDITS = [
   [/r[ée]volutionnaire|incontournable/i, "superlatif interdit"],
 ];
 
+// TON.md (« On dit / on ne dit pas », « Jargon interdit », règles d'écriture) : un seul mot fait refuser
+// l'article. Contrôlé hors des citations <blockquote>, recopiées mot pour mot d'une source.
+// Restent permis : « 100 % Santé », « agents IA », « sans intégration », « robot de dispensation »,
+// les noms de conventions Santéclair (« Tiers-payant TP+ », « Partenariat & tiers-payant ») et les adresses web.
+export const INTERDITS_TON = [
+  [/\b[lL]['’]IA\b|\b[uU]ne IA\b/, "« l'IA » ou « une IA » (dire : des agents, des agents IA)"],
+  [/\brobots?\b(?! de dispensation)|\bbots?\b|\bLLM\b|\bchatbots?\b/i, "« robot », « bot » ou « LLM » (dire : des agents)"],
+  [/solutions? de tiers payant/i, "« solution de tiers payant » (dire : un nouveau type de back-office)"],
+  [/Granit automatise|nous automatisons|automatisation de bout en bout/i, "« Granit automatise » (dire ce que fait l'agent)"],
+  [/(?<!sans )\bint[ée]grations?\b/i, "« intégration » (dire : dans vos logiciels, sans intégration)"],
+  [/\bconnecteurs?\b/i, "« connecteur » (dire : les agents travaillent sur vos portails)"],
+  [/\borchestration\b/i, "« orchestration »"],
+  [/plug.and.play|no.code|seamless/i, "« plug-and-play », « no-code » ou « seamless »"],
+  [/\bboost\p{L}*|\boptimis\p{L}*|\bfluidifi\p{L}*|\bdigitalis\p{L}*/iu, "« booster », « optimiser », « fluidifier » ou « digitaliser »"],
+  [/gagner en productivit[ée]/i, "« gagner en productivité »"],
+  [/100[\s\u00a0\u202f]?%[\s\u00a0\u202f]?automatique|z[ée]ro intervention|z[ée]ro rejet|sans faute/i, "« 100 % automatique », « zéro rejet » ou « sans faute »"],
+  [/(?<!Partenariat (?:&|et) )(?<![\w\/.-])tiers-payant(?! TP\+)(?![\w\/-])/i, "« tiers-payant » avec trait d'union (écrire : tiers payant)"],
+  [/dans un contexte o[ùu]/i, "jargon « dans un contexte où »"],
+  [/n['’]h[ée]sitez pas [àa]/i, "jargon « n'hésitez pas à »"],
+  [/je me permets de vous relancer|j['’]esp[èe]re que vous allez bien/i, "formule de mail interdite"],
+  [/\bmagique\b|\bpuissante?s?\b/i, "superlatif creux (« magique », « puissant »)"],
+  [/(?![©®™])\p{Extended_Pictographic}/u, "emoji"],
+];
+
 const A_SURVEILLER = [
+  // TON.md les déconseille, mais ce sont aussi les mots exacts d'une définition (« la mutuelle, l'assureur ou
+  // l'institution de prévoyance ») ou d'un portail (« choisir l'assureur ») : signalés, pas refusés.
+  [/\bassureurs?\b|\ble payeur\b/i, "TON.md : « assureur » ou « payeur » (préférer la mutuelle, l'AMC)"],
+  [/automatis\p{L}* (?:le |votre |vos |du )?tiers payant/iu, "TON.md : « automatiser le tiers payant » (dire ce que fait l'agent)"],
   [/\bprocess\b|\bworkflow\b|best practice|game.changer|\bleverage\b/i, "anglicisme"],
 ];
 
@@ -31,6 +59,16 @@ const DENIGREMENT = [
 ];
 /** Mots minimum par type (cible : fiche VS 1 000 à 1 500, grille 2 000 à 2 800, autres 1 800 à 2 500). */
 export const MOTS_MIN = { vs: 900, grille: 1800 };
+
+/** Mots de TON.md trouvés dans un texte : « quoi (« extrait ») », un par règle. */
+export function motsInterditsTon(t) {
+  const out = [];
+  for (const [re, quoi] of INTERDITS_TON) {
+    const m = t.match(re);
+    if (m) out.push(`${quoi} : « ${m[0]} »`);
+  }
+  return out;
+}
 
 export function typeDePage(article) {
   if (article.concurrents?.length) return /^granit-(vs|ou)-/.test(article.slug) ? "vs" : "grille";
@@ -166,6 +204,10 @@ export function controler(out, ctx) {
   // Liste rouge, sur tout ce qui sera affiché
   const toutLeTexte = [corps, md, texteFigures, ...faq.map((f) => `${f.question} ${f.answer}`)].join("\n");
   for (const [re, quoi] of INTERDITS) if (re.test(toutLeTexte)) erreurs.push(`liste rouge : ${quoi}`);
+  const horsCitations = [texte(html.replace(/<blockquote\b[\s\S]*?<\/blockquote>/g, " ")), md, texteFigures, ...faq.map((f) => `${f.question} ${f.answer}`)].join("\n");
+  for (const t of motsInterditsTon(horsCitations)) erreurs.push(`TON.md : ${t}`);
+  // Le titre vient de la file, Claude ne peut pas le corriger : signalé seulement.
+  for (const t of motsInterditsTon(article.title ?? "")) avert.push(`TON.md, titre de la file : ${t}`);
   for (const [re, quoi] of A_SURVEILLER) {
     const m = toutLeTexte.match(re);
     if (m) avert.push(`${quoi} : « ${m[0]} »`);

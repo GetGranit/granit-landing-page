@@ -9,7 +9,7 @@ import { join } from "node:path";
 import { parseArgs } from "node:util";
 import { citations, controler, typeDePage, verifierSources } from "./lib/checks.mjs";
 import { apiKey, coutDollars, rediger } from "./lib/claude.mjs";
-import { mots, texte } from "./lib/html.mjs";
+import { mots, texte, typographierSortie } from "./lib/html.mjs";
 import {
   CONTENU, MOTEUR, ancienArticle, anciensArticles, concurrentsPour, ecrireFile, ecrireJson, faitsPour, lireFile, lireJson,
   publies, sortieGithub, systemeGuide,
@@ -212,7 +212,7 @@ for (let essai = 1; essai <= 2 && !sortie; essai++) {
     }
     continue;
   }
-  sortie = r.json;
+  sortie = typographierSortie(r.json);
   bilan = { nbMots: c.nbMots, avertissements: [...c.avertissements, ...s.avertissements] };
 }
 console.log(`Coût estimé : ${cout.toFixed(2)} $`);
