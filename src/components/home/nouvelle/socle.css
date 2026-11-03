@@ -1,0 +1,82 @@
+/* =========================================================
+   NOUVELLE HOME : socle commun des sections (portage de la maquette « Last mile », lm.css et marque.css)
+   ---------------------------------------------------------
+   Tout est sous .nh (posé par NouvelleHome) : rien ne fuit sur le reste du site.
+   Les noms de la maquette (--ink, --mint, --rose…) sont gardés comme alias des jetons de DESIGN.md
+   (styles.css), pour porter les règles de la maquette sans les réécrire. Aucune couleur nouvelle :
+   les triplets --*-rgb sont ceux des jetons (encre, profond, menthe, ciel, rosé).
+   Mouvement : le rendu serveur est l'état final, lisible. Les états « avant animation » ne valent
+   que sous .nh.nh-js (posé au montage côté client) et jamais sous « mouvements réduits ».
+   ========================================================= */
+.nh {
+  --ink: var(--encre);              --ink-rgb: 31, 53, 48;
+  --ink-2: var(--encre);            --ink-2-rgb: 31, 53, 48;
+  --ink-hi: var(--encre-halo);
+  --deep: var(--profond);           --deep-rgb: 47, 122, 100;
+  --mint: var(--menthe);            --mint-rgb: 168, 220, 203;
+  --sky: var(--ciel);               --sky-rgb: 207, 227, 246;
+  --blush: var(--blush);
+  --rose: var(--rose);              --rose-rgb: 250, 240, 242;
+  --paper: var(--papier);
+  --wash: var(--lavis);
+  --grad: linear-gradient(90deg, var(--blush) 0%, var(--menthe) 52%, var(--ciel) 100%);
+  --ok: var(--profond);  --ok-soft: var(--succes-fond);  --ok-ink: var(--succes-texte);
+  --alert: var(--alerte);
+  --t-muted: var(--texte-secondaire);
+  --t-faint: var(--texte-discret);
+  --line: var(--filet);
+  --d-text: var(--rose);
+  --d-muted: var(--sur-encre-secondaire);
+  --d-faint: rgba(250, 240, 242, .4);
+  --d-line: rgba(250, 240, 242, .12);
+  --d-card: rgba(250, 240, 242, .035);
+  --serif: var(--font-serif);
+  --sans: var(--font-sans);
+
+  --lm-gut: max(20px, env(safe-area-inset-left, 0px));
+  --lm-gut-r: max(20px, env(safe-area-inset-right, 0px));
+  --lm-max: 1320px;
+  --lm-ease: cubic-bezier(.16, 1, .3, 1);
+  --lm-dark: var(--ink);
+  --lm-dark-2: var(--ink-2);
+
+  font-family: var(--sans);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+@media (min-width: 760px) { .nh { --lm-gut: max(40px, env(safe-area-inset-left, 0px)); --lm-gut-r: max(40px, env(safe-area-inset-right, 0px)); } }
+@media (min-width: 1200px) { .nh { --lm-gut: 56px; --lm-gut-r: 56px; } }
+
+.nh, .nh * { box-sizing: border-box; }
+.nh h1, .nh h2, .nh h3, .nh p, .nh ul, .nh ol, .nh figure { margin: 0; }
+.nh ul, .nh ol { padding: 0; list-style: none; }
+.nh a { color: inherit; }
+.nh h1, .nh h2, .nh h3 { font-variation-settings: "opsz" 20; }
+
+.nh .lm-wrap { max-width: calc(var(--lm-max) + 112px); margin: 0 auto; padding-left: var(--lm-gut); padding-right: var(--lm-gut-r); }
+.nh .lm-eb { display: block; font: 500 12px/1.2 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--d-muted); }
+.nh .lm-h2 { font: 400 clamp(36px, 4.4vw, 64px)/1.04 var(--serif); letter-spacing: -.028em; text-wrap: balance; }
+.nh .lm-lead { font: 400 clamp(16px, 1.15vw, 18px)/1.5 var(--sans); color: var(--d-muted); max-width: 44ch; text-wrap: pretty; }
+.nh .lm-sec { position: relative; padding-block: clamp(80px, 10vw, 150px); background: var(--lm-dark); color: var(--d-text); }
+.nh .lm-sec + .lm-sec.lm-dark { border-top: 1px solid var(--d-line); }
+.nh .lm-sec.lm-light { background: var(--rose); color: var(--ink); }
+.nh .lm-light .lm-eb { color: var(--t-muted); }
+.nh .lm-light .lm-lead { color: var(--t-muted); }
+.nh :focus-visible { outline: 2px solid var(--mint); outline-offset: 3px; border-radius: 4px; }
+.nh .lm-light :focus-visible { outline-color: var(--deep); }
+.nh em { font-style: italic; }
+
+/* bouton pilule de la maquette (lm-btn) */
+.nh .lm-btn { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 22px; border-radius: 999px; font: 500 15px/1 var(--sans); text-decoration: none; white-space: nowrap; transition: background .2s, color .2s; }
+.nh .lm-btn svg { width: 13px; height: 13px; }
+
+/* apparitions au défilement (data-reveal de la maquette) : seulement une fois le JS monté */
+.nh [data-reveal] { transition: opacity .85s var(--lm-ease), transform .85s var(--lm-ease); transition-delay: calc(var(--i, 0) * .07s); }
+.nh.nh-js [data-reveal]:not(.is-in) { opacity: 0; transform: translateY(26px); }
+@media (prefers-reduced-motion: reduce) {
+  .nh [data-reveal] { transition: none !important; }
+  .nh.nh-js [data-reveal]:not(.is-in) { opacity: 1; transform: none; }
+}
+
+/* texte pour lecteurs d'écran seulement */
+.nh .nh-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
