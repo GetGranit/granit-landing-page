@@ -168,7 +168,7 @@ export const articles: ArticleSet = {
       category: "Sécurité",
       title: "Ce qu'un agent IA doit journaliser en environnement de santé",
       seoTitle: "Ce qu'un agent IA doit journaliser en environnement de santé",
-      desc: "Traçabilité, rôles, conservation et audit : les exigences minimales avant mise en production.",
+      desc: "Un agent IA sur des données de santé doit laisser une piste d'audit complète : traçabilité, rôles, conservation. Les exigences avant la mise en production.",
       time: "9 min",
       body: [
         "Un agent IA opérant sur des données de santé doit produire une piste d'audit complète : qui a déclenché l'action, sur quelle donnée, avec quel résultat, et pendant combien de temps cette information est conservée. Cette exigence n'est pas optionnelle : elle est la condition même d'une mise en production conforme.",
@@ -187,7 +187,7 @@ export const articles: ArticleSet = {
       category: "IA & Santé",
       title: "IA générative en santé : ce que le cadre réglementaire impose vraiment",
       seoTitle: "IA générative en santé : ce que la réglementation impose",
-      desc: "RGPD, AI Act, HDS, MDR : démêler ce qui s'applique aux agents IA non-cliniques en établissement.",
+      desc: "RGPD, HDS, AI Act, MDR : quels textes s'appliquent vraiment à un agent IA administratif en établissement de santé, et lesquels ne le concernent pas.",
       time: "10 min",
       body: [
         "Le cadre réglementaire applicable à l'IA en santé est souvent confondu avec celui des dispositifs médicaux. Cette confusion bloque de nombreux projets administratifs qui pourraient avancer rapidement, et freine l'innovation là où elle apporte le plus de valeur immédiate.",
@@ -280,7 +280,7 @@ export const articles: ArticleSet = {
       category: "Hôpital privé",
       title: "Hôpital privé : ordonnancer les flux administratifs autour du parcours patient",
       seoTitle: "Hôpital privé : ordonnancer les flux administratifs",
-      desc: "Pré-admission, séjour, sortie, facturation : aligner les agents IA sur la temporalité réelle du soin.",
+      desc: "Pré-admission, admission, séjour, sortie, facturation : comment aligner les agents IA sur le parcours du patient en hôpital privé plutôt que sur les services.",
       time: "10 min",
       body: [
         "Les flux administratifs en hôpital privé suivent une temporalité précise : pré-admission, admission, séjour, sortie, facturation, recouvrement. Chaque étape a ses propres contraintes, ses propres acteurs, et ses propres systèmes d'information.",
@@ -319,7 +319,7 @@ export const articles: ArticleSet = {
       category: "Architecture",
       title: "IA agentique vs RPA : pourquoi la robotisation classique a échoué en santé",
       seoTitle: "IA agentique vs RPA : pourquoi le RPA a échoué en santé",
-      desc: "Fragilité aux changements d'interface, absence de raisonnement, coût de maintenance : les limites du RPA.",
+      desc: "Le RPA a déçu en santé : fragile aux changements d'interface, incapable de raisonner, coûteux à maintenir. Ce qui change avec des agents qui s'adaptent.",
       time: "9 min",
       body: [
         "La robotisation classique (RPA) a connu un engouement réel en santé entre 2018 et 2022, suivi d'une vague de déceptions. Beaucoup de projets ont été lancés avec des promesses fortes, et beaucoup ont été abandonnés ou réduits à un périmètre symbolique.",

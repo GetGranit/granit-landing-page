@@ -103,10 +103,34 @@ const ANCIENS = {
     seoTitle: "Groupes multi-sites : piloter tous ses centres",
     desc: "Centraliser les indicateurs, comparer les sites, recevoir des alertes consolidées : ce qu'une plateforme unifiée apporte au pilotage d'un groupe multi-sites.",
   },
-  "logs-agent-sante": { seoTitle: "Ce qu'un agent IA doit journaliser en environnement de santé" },
-  "ia-generative-sante-cadre": { seoTitle: "IA générative en santé : ce que la réglementation impose" },
-  "hopital-prive-ordonnancement": { seoTitle: "Hôpital privé : ordonnancer les flux administratifs" },
-  "ia-vs-rpa-sante": { seoTitle: "IA agentique vs RPA : pourquoi le RPA a échoué en santé" },
+  "logs-agent-sante": {
+    seoTitle: "Ce qu'un agent IA doit journaliser en environnement de santé",
+    desc: "Un agent IA sur des données de santé doit laisser une piste d'audit complète : traçabilité, rôles, conservation. Les exigences avant la mise en production.",
+  },
+  "ia-generative-sante-cadre": {
+    seoTitle: "IA générative en santé : ce que la réglementation impose",
+    desc: "RGPD, HDS, AI Act, MDR : quels textes s'appliquent vraiment à un agent IA administratif en établissement de santé, et lesquels ne le concernent pas.",
+  },
+  "hopital-prive-ordonnancement": {
+    seoTitle: "Hôpital privé : ordonnancer les flux administratifs",
+    desc: "Pré-admission, admission, séjour, sortie, facturation : comment aligner les agents IA sur le parcours du patient en hôpital privé plutôt que sur les services.",
+  },
+  "ia-vs-rpa-sante": {
+    seoTitle: "IA agentique vs RPA : pourquoi le RPA a échoué en santé",
+    desc: "Le RPA a déçu en santé : fragile aux changements d'interface, incapable de raisonner, coûteux à maintenir. Ce qui change avec des agents qui s'adaptent.",
+  },
+};
+
+/** Pages métier de src/lib/ressources/verticales.json : metaDescription, séparée de la description affichée sur la page. */
+const VERTICALES = {
+  dentaire:
+    "Comment sécuriser le tiers payant d'un cabinet ou d'un centre dentaire : paniers 100 % Santé, devis et facturation des traitements d'orthodontie.",
+  centres:
+    "Facturation, recouvrement et outils : des repères pour le back-office d'un centre de santé, d'un centre d'ophtalmologie ou d'un groupe multi-sites.",
+  pharmacie:
+    "Des repères pour le back-office d'une officine : solder les créances de tiers payant, traiter les rejets, préparer le réassort et saisir les ordonnances.",
+  cliniques:
+    "Des repères pour le back-office d'une clinique, d'un hôpital privé ou d'un laboratoire : admissions, rejets, retours NOEMIE et rapprochement des paiements.",
 };
 
 const dry = process.argv.includes("--dry");
@@ -118,6 +142,7 @@ function controlerTable() {
   const lignes = [
     ...Object.entries(ARTICLES).map(([slug, a]) => [slug, a.seoTitle, a.metaDescription]),
     ...Object.entries(ANCIENS).map(([slug, a]) => [slug, a.seoTitle, a.desc]),
+    ...Object.entries(VERTICALES).map(([slug, meta]) => [slug, undefined, meta]),
   ];
   for (const [slug, titre, meta] of lignes) {
     if (titre) {
@@ -173,7 +198,23 @@ function appliquerAnciens() {
   return true;
 }
 
+/** Pose metaDescription juste après la description française de chaque métier, sans reformater le fichier. */
+function appliquerVerticales() {
+  const chemin = join(RACINE, "src/lib/ressources/verticales.json");
+  const avant = readFileSync(chemin, "utf8");
+  let apres = avant;
+  for (const [slug, meta] of Object.entries(VERTICALES)) {
+    const motif = new RegExp(`("${slug}": \\{[^}]*?"description": "[^"]+",\\n(\\s*))(?:"metaDescription": "[^"]+",\\n\\s*)?`);
+    if (!motif.test(apres)) throw new Error(`${slug} : introuvable dans verticales.json`);
+    apres = apres.replace(motif, (_, tete, marge) => `${tete}"metaDescription": ${JSON.stringify(meta)},\n${marge}`);
+  }
+  if (apres === avant) return false;
+  if (!dry) writeFileSync(chemin, apres);
+  return true;
+}
+
 controlerTable();
 const changes = Object.entries(ARTICLES).filter(([slug, champs]) => appliquerArticle(slug, champs)).map(([slug]) => slug);
 if (appliquerAnciens()) changes.push("src/lib/articles.ts");
+if (appliquerVerticales()) changes.push("src/lib/ressources/verticales.json");
 console.log(`${changes.length} fichier(s) ${dry ? "à changer" : "changé(s)"}${changes.length ? ` :\n- ${changes.join("\n- ")}` : ""}`);

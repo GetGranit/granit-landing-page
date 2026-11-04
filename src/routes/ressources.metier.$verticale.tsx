@@ -38,14 +38,15 @@ export const Route = createFileRoute("/ressources/metier/$verticale")({
     // Exception : le métier principal (optique) est toujours indexé.
     const indexable =
       v.slug === VERTICALE_PRINCIPALE || propres.filter((f) => !f.preview).length >= 3;
-    const title = `${v.court} : tiers payant et gestion administrative`;
+    const title = `${v.nom} : tiers payant et administratif`;
+    const description = v.metaDescription ?? v.description;
     const image = SITE_URL + photoVerticale(v.slug, 1600);
     return {
       meta: [
         { title },
-        { name: "description", content: v.description },
+        { name: "description", content: description },
         { property: "og:title", content: title },
-        { property: "og:description", content: v.description },
+        { property: "og:description", content: description },
         { property: "og:image", content: image },
         { property: "og:image:width", content: "1600" },
         { property: "og:image:height", content: "900" },
