@@ -5,7 +5,7 @@ import { GaletsSymbol } from "@/components/home/nouvelle/socle";
 import { useLanguage, type Lang } from "@/lib/i18n";
 import "@/levee.css";
 
-/* Le communiqué de la levée, mot pour mot : les PDF finaux du 4 novembre (5 M€ en français, 6 M$ en anglais).
+/* Le communiqué de la levée, mot pour mot : les PDF finaux du 5 novembre (5 M€ en français, 6 M$ en anglais).
    Page à part, sans le menu du site : la mise en page de landing-pages/annonce-levee. */
 const TITRE = "Granit lève 5 millions d’euros - Communiqué de presse";
 const DESCRIPTION =
@@ -37,21 +37,21 @@ const copy = {
     ],
     date: "Communiqué de presse · Paris, le 5\u00a0novembre 2026",
     chapo:
-      "Granit annonce une levée de fonds de 5\u00a0millions d’euros, avec pour mission de libérer les professionnels de santé de la charge administrative qui pèse sur leur quotidien et la vocation de déployer cette promesse dans toute l’Europe. Cette levée se compose de 3,5\u00a0millions d’euros en fonds propres, menés par le fonds britannique Seedcamp, ainsi que 1,5\u00a0million d’euros en financement non dilutif, avec notamment la participation de Bpifrance.",
+      "Granit annonce son premier tour de financement, de 5\u00a0millions d’euros, avec pour mission de libérer les professionnels de santé de la charge administrative qui pèse sur leur quotidien et l’ambition de la porter dans toute l’Europe. Il se compose de 3,5\u00a0millions d’euros en fonds propres, menés par le fonds britannique Seedcamp, ainsi que 1,5\u00a0million d’euros en financement non dilutif, avec notamment la participation de Bpifrance.",
     t1: "Un quotidien saturé par l’administratif",
     p1: "Les professionnels de santé se forment pendant des années pour soigner, mais une part croissante de leur temps part dans l’administratif. Dans une étude menée auprès de plus de 1\u00a0000 soignants dans cinq pays européens, dont la France, 82\u00a0% estiment que ces tâches réduisent le temps consacré aux patients, et 65\u00a0% y passent plus d’une heure par jour (étude Time to Care, Tandem Health).",
     t2: "La promesse de Granit : mettre les logiciels au service des professionnels de santé",
-    p2: "Fondée au premier trimestre 2026 par Jenny Mansour et Corneille Maréchal, Granit développe des agents IA qui se connectent directement aux logiciels métier existants (DPI, logiciels spécifiques aux spécialités) et aux plateformes externes (mutuelles, sécurité sociale, comptabilité) et effectuent à la place des équipes le travail administratif qu’elles feraient elles-mêmes : facturation, relances, corrections de rejets, vérifications de prises en charge, etc.",
-    p3: "Déjà déployée auprès de plus de 250\u00a0structures de santé, la solution Granit permet de réduire jusqu’à 90\u00a0% du temps consacré aux tâches administratives, avec une mise en place effective en quelques jours et sans intégration technique lourde.",
+    p2: "Fondée en mars 2026 par Jenny Mansour et Corneille Maréchal, Granit développe des agents IA qui se connectent directement aux logiciels métier existants (dossier patient informatisé, logiciels de spécialité) et aux plateformes externes (mutuelles, Assurance Maladie, comptabilité), et exécutent, à la place des équipes, le travail administratif qu’elles font aujourd’hui à la main : facturation, relances, correction des rejets, vérification des prises en charge.",
+    p3: "Déjà déployée auprès de plus de 250\u00a0structures de santé en France, la solution Granit permet de réduire jusqu’à 90\u00a0% le temps consacré aux tâches administratives, avec une mise en place en quelques jours et sans intégration technique lourde.",
     p4: "Le temps libéré revient au soin et au suivi des patients, et les équipes administratives se concentrent sur l’accueil et l’orientation des patients.",
     c1: "« Nous ne voulons pas ajouter un logiciel de plus dans le quotidien déjà saturé des professionnels de santé. Nous voulons que les outils qu’ils utilisent déjà travaillent pour eux, et non l’inverse. »",
-    a1: ["Jenny Mansour", ", cofondatrice de Granit"],
+    a1: ["Jenny Mansour", ", CEO de Granit"],
     p5: "Cette levée de fonds permettra à Granit d’accélérer le développement de nouvelles verticales de santé, de renforcer ses équipes techniques et commerciales, et d’amorcer son expansion dans plusieurs pays européens.",
     c2: "« Les tâches administratives répétitives et fragmentées prennent beaucoup trop de temps à des soignants déjà surchargés. Les agents de Granit prennent ce travail en charge directement dans les outils que les équipes utilisent déjà, et libèrent du temps pour le soin des patients. Jenny et l’équipe réunissent une expertise rare, à la croisée des politiques de santé et de la technologie, et nous sommes ravis de mener leur premier tour de financement. »",
     a2: ["Felix Martinez", ", Partner chez Seedcamp"],
     apropos: "À propos de Granit",
     apropos1:
-      "Fondée au premier trimestre 2026 par Jenny Mansour et Corneille Maréchal, Granit développe des agents IA qui automatisent les tâches administratives des professionnels de santé. Déployée auprès de plus de 250\u00a0structures de santé en France, la start-up ambitionne de devenir la référence européenne de l’automatisation administrative en santé.",
+      "Fondée en mars 2026 par Jenny Mansour et Corneille Maréchal, Granit développe des agents IA qui automatisent les tâches administratives des professionnels de santé. Déployée auprès de plus de 250\u00a0structures de santé en France, la start-up ambitionne de devenir la référence européenne de l’automatisation administrative en santé.",
     presse: "Contact presse",
     nom: "Ségolène Redon",
     mail: "segolene.redon@bonsensagence.fr",
@@ -68,21 +68,21 @@ const copy = {
     h1: ["Granit raises $6 million to free healthcare professionals ", "from administrative work."],
     date: "Press release · Paris, 5\u00a0November 2026",
     chapo:
-      "Granit announces a $6 million funding round, with the mission of freeing healthcare professionals from the administrative burden weighing on their daily work, and the ambition to deliver on this promise across Europe. The round comprises $4 million in equity, led by UK fund Seedcamp, as well as $2 million in non-dilutive financing, including participation from Bpifrance.",
-    t1: "A daily routine overloaded with admin",
+      "Granit announces its first funding round, of $6 million, with the mission of freeing healthcare professionals from the administrative burden weighing on their daily work, and the ambition to deliver on this promise across Europe. The round comprises $4 million in equity, led by UK fund Seedcamp, as well as $2 million in non-dilutive financing, including participation from Bpifrance.",
+    t1: "Too much admin, not enough care",
     p1: "Healthcare professionals train for years to care for patients, yet a growing share of their time goes into admin. In a survey of more than 1,000 clinicians across five European countries, including France, 82% said these tasks reduce the time they can give patients, and 65% spend more than an hour a day on them (Time to Care study, Tandem Health).",
     t2: "Granit’s promise: putting software at the service of healthcare professionals",
-    p2: "Founded in the first quarter of 2026 by Jenny Mansour and Corneille Maréchal, Granit develops AI agents that connect directly to existing business software (electronic patient records, specialty-specific software) and to external platforms (complementary health insurers, national health insurance, accounting), and carry out on behalf of teams the administrative work they would otherwise do themselves: invoicing, follow-ups, correcting claim rejections, checking coverage, and more.",
-    p3: "Already deployed with more than 250 healthcare organisations, Granit’s solution reduces the time spent on administrative tasks by up to 90%, with set-up taking just a few days, without the need for complex technical integration.",
+    p2: "Founded in March 2026 by Jenny Mansour and Corneille Maréchal, Granit develops AI agents that connect directly to existing business software (electronic patient records, specialty software) and to external platforms (complementary health insurers, national health insurance, accounting), and take on the administrative work teams do by hand today: invoicing, follow-ups, correcting claim rejections, checking coverage.",
+    p3: "Already deployed with more than 250 healthcare organisations in France, Granit’s solution reduces the time spent on administrative tasks by up to 90%, with set-up taking just a few days, without the need for complex technical integration.",
     p4: "The time saved goes back to patient care, and admin teams focus on welcoming and guiding patients.",
     c1: "“We don’t want to add one more piece of software to healthcare professionals’ already saturated daily lives. We want the tools they already use to work for them, not the other way around.”",
-    a1: ["Jenny Mansour", ", co-founder of Granit"],
+    a1: ["Jenny Mansour", ", CEO of Granit"],
     p5: "This funding will allow Granit to accelerate the development of new healthcare verticals, strengthen its technical and commercial teams, and kick-start its expansion into several European countries.",
     c2: "“Fragmented, routine admin work takes up far too much of already overstretched healthcare workers’ time. Granit’s agents take that work on inside the systems staff already use, freeing up more time for patient care. Jenny and the team bring deep, rare expertise across healthcare policy and technology, and we couldn’t be more excited to lead their first round of funding.”",
     a2: ["Felix Martinez", ", Partner at Seedcamp"],
     apropos: "About Granit",
     apropos1:
-      "Founded in the first quarter of 2026 by Jenny Mansour and Corneille Maréchal, Granit develops AI agents that automate administrative tasks for healthcare professionals. Deployed with more than 250 healthcare organisations in France, the startup aims to become the leading European platform for administrative automation in healthcare.",
+      "Founded in March 2026 by Jenny Mansour and Corneille Maréchal, Granit develops AI agents that automate administrative tasks for healthcare professionals. Deployed with more than 250 healthcare organisations in France, the startup aims to become the European leader in administrative automation for healthcare.",
     presse: "Press contact",
     nom: "Katherine Bassett",
     mail: "kat.bassett@seedcamp.com",
