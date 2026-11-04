@@ -2,7 +2,7 @@
    « Je choisis un créneau » (par défaut) montre le bouton Cal.com ; « On me rappelle » montre le formulaire (nom, téléphone, email, métier).
    Une seule action visible à la fois, pour que les deux voies ne se disputent pas l'attention.
    Le rappel part par submitDemo, comme l'ancien formulaire de l'accueil. */
-import { useId, useState } from "react";
+import { useEffect, useId, useState } from "react";
 import { useServerFn } from "@tanstack/react-start";
 import { usePostHog } from "posthog-js/react";
 
@@ -88,6 +88,15 @@ export function CarteContact() {
   const submit = useServerFn(submitDemo);
   const id = useId();
   const [voie, setVoie] = useState<Voie>("creneau");
+  /* le second bouton du hero (#rappel) ouvre directement le formulaire de rappel */
+  useEffect(() => {
+    const auHash = () => {
+      if (window.location.hash === "#rappel") setVoie("rappel");
+    };
+    auHash();
+    window.addEventListener("hashchange", auHash);
+    return () => window.removeEventListener("hashchange", auHash);
+  }, []);
   const [etat, setEtat] = useState<"idle" | "envoi" | "ok" | "erreur">("idle");
 
   const choisir = (v: Voie) => {

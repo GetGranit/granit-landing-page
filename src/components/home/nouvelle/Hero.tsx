@@ -55,8 +55,8 @@ const copy = {
     barMore: "Lire l’annonce",
     title: ["Vos équipes soignent.", "Granit gère le reste."],
     lead: "Droits, prises en charge, facturation, encaissement : nos agents IA font tourner votre tiers payant de bout en bout, dans vos logiciels actuels.",
-    cta: "Voir Granit sur mes dossiers",
-    ctaSecond: "Trouver mon métier",
+    cta: "Demander une démo",
+    ctaSecond: "On me rappelle",
     trustLabel: "Garanties",
     trust: {
       hds: ["Infrastructure", "certifiée HDS"],
@@ -98,8 +98,8 @@ const copy = {
     barMore: "Read the announcement",
     title: ["Your teams care.", "Granit handles the rest."],
     lead: "Eligibility, pre-approvals, claims, payments: our AI agents run your entire billing cycle inside the software you already use.",
-    cta: "See it on my own files",
-    ctaSecond: "Find my specialty",
+    cta: "Book a demo",
+    ctaSecond: "Call me back",
     trustLabel: "Guarantees",
     trust: {
       hds: ["HDS-certified", "infrastructure"],
@@ -599,7 +599,11 @@ export function HeroNouvelle() {
             >
               {c.cta}
             </a>
-            <a className="tv-btn tv-btn-line" href="#metiers">
+            <a
+              className="tv-btn tv-btn-line"
+              href="#rappel"
+              onClick={() => posthog.capture("demo_callback_clicked", { placement: "hero" })}
+            >
               {c.ctaSecond}
             </a>
           </div>
