@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 // Moteur SEO Granit : rédige le prochain article de la file et l'écrit dans content/ressources/.
 // Usage : node scripts/seo-engine/publish-article.mjs [--slug portail-viamedis] [--dry] [--out dossier] [--model claude-opus-5-5] [--relecture]
+//   --prompt : affiche le message de rédaction et s'arrête (aucun appel à l'API).
+//   --entree fichier.json : avec --prompt ou --dry, rédige cette entrée (fictive) au lieu d'une entrée de la file.
 //   --relecture : force la PR de relecture humaine (lot de nuit), quel que soit le nombre d'articles sortis.
 //   --dry : n'écrit que l'article (dans --out), ne touche ni à la file ni aux autres articles.
 // Le commit, la PR et la notification sont faits par le workflow (ship.sh, notify.mjs).
@@ -9,6 +11,7 @@ import { join } from "node:path";
 import { parseArgs } from "node:util";
 import { citations, controler, typeDePage, verifierSources } from "./lib/checks.mjs";
 import { apiKey, coutDollars, rediger } from "./lib/claude.mjs";
+import { blocMetier, choisirFiche, cibleDuMetier, encartPour, lecteurCourt, signaturePour, sourcesHorsFiche } from "./lib/metiers.mjs";
 import { mots, texte } from "./lib/html.mjs";
 import {
   CONTENU, MOTEUR, ancienArticle, anciensArticles, concurrentsPour, ecrireFile, ecrireJson, faitsPour, lireFile, lireJson,
@@ -16,8 +19,17 @@ import {
 } from "./lib/site.mjs";
 
 const { values: opt } = parseArgs({
-  options: { slug: { type: "string" }, dry: { type: "boolean", default: false }, out: { type: "string" }, model: { type: "string" }, relecture: { type: "boolean", default: false } },
+  options: {
+    slug: { type: "string" },
+    dry: { type: "boolean", default: false },
+    out: { type: "string" },
+    model: { type: "string" },
+    relecture: { type: "boolean", default: false },
+    prompt: { type: "boolean", default: false },
+    entree: { type: "string" },
+  },
 });
+if (opt.entree && !opt.prompt && !opt.dry) throw new Error("--entree seulement avec --prompt ou --dry");
 
 const config = lireJson(join(MOTEUR, "config.json"));
 if (opt.model) config.model = opt.model;
@@ -26,17 +38,23 @@ const aujourdhui = new Date().toISOString().slice(0, 10);
 
 // 1. Choix de l'article
 const file = lireFile();
-const article = opt.slug ? file.find((a) => a.slug === opt.slug) : file.find((a) => a.status === "pending");
+const article = opt.entree
+  ? lireJson(opt.entree)
+  : opt.slug
+    ? file.find((a) => a.slug === opt.slug)
+    : file.find((a) => a.status === "pending");
 if (!article) {
   if (opt.slug) throw new Error(`slug inconnu dans la file : ${opt.slug}`);
   console.log("File vide : aucun article pending. Rien à faire.");
   sortieGithub({ slug: "" });
   process.exit(0);
 }
-if (opt.slug && article.status !== "pending" && !opt.dry) {
+if (opt.slug && article.status !== "pending" && !opt.dry && !opt.prompt) {
   throw new Error(`« ${article.slug} » a le statut ${article.status} : seul un article pending se publie (ou utiliser --dry)`);
 }
 const type = typeDePage(article);
+// Fiche métier (lecteur, sources, Granit, encart) : choisie d'après `verticales`, sans appel au modèle
+const choix = choisirFiche(article);
 const fp = faitsPour(article);
 if (type === "plateforme" && !fp?.faits) throw new Error(`fichier de faits manquant : content/plateformes/${fp?.nom}.json`);
 const comparatif = type === "vs" || type === "grille";
@@ -48,16 +66,17 @@ if (comparatif) {
   // En essai (--dry) on rédige quand même, mais les contrôles refuseront la publication.
   if (nonRelus.length && !opt.dry) throw new Error(`fichiers de faits non relus (aRelire = true) : ${nonRelus.join(", ")}`);
 }
-console.log(`Article ${article.id} · ${article.slug} · type ${type}${fp?.faits ? ` · faits ${fp.nom}` : ""}`);
+console.log(`Article ${article.id} · ${article.slug} · type ${type} · fiche ${choix.tronc ? `tronc + ${choix.fiches.join(", ")}` : choix.fiches[0]}${fp?.faits ? ` · faits ${fp.nom}` : ""}`);
 
 // 2. Cibles de liens autorisées
 const enLigne = publies(file);
 const cibles = new Map();
-for (const a of enLigne) cibles.set(`/ressources/${a.slug}`, a.title);
+// pages du même métier seulement (hors optique : pas de lien vers une page écrite pour l'opticien)
+for (const a of enLigne) if (cibleDuMetier(choix, { entree: a })) cibles.set(`/ressources/${a.slug}`, a.title);
 // anciens articles encore en ligne : ni déjà remplacés, ni remplacés par celui-ci
 const remplaces = new Set([...enLigne, article].flatMap((a) => a.remplace ?? []));
 for (const a of anciensArticles()) {
-  if (remplaces.has(a.slug) || a.slug === article.slug) continue;
+  if (remplaces.has(a.slug) || a.slug === article.slug || !cibleDuMetier(choix, { ancien: a.slug })) continue;
   cibles.set(`/ressources/${a.slug}`, `${a.titre} (ancien article, ${a.categorie})`);
 }
 const inconnus = (article.remplace ?? []).filter((s) => !anciensArticles().some((a) => a.slug === s));
@@ -82,8 +101,9 @@ const meta = {
   parentSlug: article.parentSlug,
   level: article.level,
   reader: article.reader,
-  granitData: article.granitData,
-  ...(article.verticales ? { verticales: article.verticales } : {}),
+  // granitData vient de dossiers optique et audio : jamais envoyé pour un autre métier seul
+  ...(choix.optique || choix.tronc ? { granitData: article.granitData } : {}),
+  verticales: choix.verticales,
 };
 
 const consignesType = {
@@ -111,12 +131,13 @@ function message(retour) {
     `Rédige l'article suivant pour la rubrique Ressources de getgranit.ai.`,
     `## Métadonnées\n\`\`\`json\n${JSON.stringify(meta, null, 2)}\n\`\`\``,
     `## Type de page\n${consignesType[type]}`,
+    blocMetier(choix, { reader: article.reader }),
   ];
   if (ancien) {
     parts.push(
       `## Refonte d'un ancien article (même adresse /ressources/${article.slug})\n` +
         `Réécris cet article au format du gabarit et dans le style du guide. Garde le sujet, l'angle et les idées justes. ` +
-        `Le lecteur n'est pas l'opticien : c'est ${article.reader} (métier : ${(article.verticales ?? []).join(", ")}). ` +
+        `Le lecteur est ${article.reader} (fiche métier ci-dessus). ` +
         `Adapte le vocabulaire et les exemples à ce métier, mais garde toutes les règles du guide (faits sourcés, liste rouge, FAQ, ton).\n` +
         `L'ancien texte contient des affirmations sans source : n'en reprends aucune qui ne soit pas sourcée. Un chiffre de l'ancien texte sans source disparaît.\n\n` +
         `Titre d'origine : ${ancien.title}\nDescription d'origine : ${ancien.desc}\n\nTexte d'origine :\n${ancien.body.map((p) => `> ${p}`).join("\n>\n")}`,
@@ -130,7 +151,7 @@ function message(retour) {
       (liensPrevus.length
         ? `Liens prévus dont la cible est en ligne (ancre conseillée) :\n${liensPrevus.map((l) => `- /ressources/${l.slug} : « ${l.anchor} » (${l.type})`).join("\n")}\n`
         : "Aucun lien prévu n'est encore en ligne.\n") +
-      `Autres pages en ligne que tu peux lier si c'est pertinent pour un opticien :\n${[...cibles]
+      `Autres pages en ligne que tu peux lier si c'est pertinent pour ce lecteur (${lecteurCourt(choix)}) :\n${[...cibles]
         .filter(([c]) => !liensPrevus.some((l) => `/ressources/${l.slug}` === c))
         .map(([c, t]) => `- ${c} : ${t}`)
         .join("\n")}\n` +
@@ -156,7 +177,7 @@ function message(retour) {
   parts.push(
     `## Schémas (champ figures)\n` +
       `0 à 2 schémas, seulement quand un schéma fait comprendre plus vite qu'un paragraphe. Le site les dessine dans la charte Granit : tu ne fournis que le contenu.\n` +
-      `- flux : qui envoie quoi à qui, dans l'ordre (ex. opticien → plateforme → complémentaire). detail = ce qui passe vers l'élément suivant.\n` +
+      `- flux : qui envoie quoi à qui, dans l'ordre (ex. professionnel → plateforme → complémentaire). detail = ce qui passe vers l'élément suivant.\n` +
       `- etapes : actions dans l'ordre, quand la liste d'étapes du texte gagne à être vue d'un coup d'œil.\n` +
       `- comparaison : 2 ou 3 options côte à côte (colonnes), une valeur courte par option pour chaque critère.\n` +
       `Règles : une seule idée par schéma ; libellés de 1 à 4 mots ; detail de 60 caractères max ; focus sur 1 élément au plus (le point à retenir) ; ` +
@@ -169,7 +190,7 @@ function message(retour) {
       `- Pas de H1, pas de FAQ, pas d'encart final, pas d'image dans contentHtml.\n` +
       `- tocItems : un élément par H2, mêmes id, même ordre.\n` +
       `- metaDescription : 140 à 160 caractères, avec le mot-clé principal.\n` +
-      `- sources : chaque lien externe du corps, 2 minimum. Toujours la page exacte qui porte le fait (ex. la fiche ameli.fr sur le 100 % Santé optique), jamais la page d'accueil d'un site. Uniquement des pages officielles dont tu es certain qu'elles existent : une URL qui ne répond pas fait refuser l'article.\n` +
+      `- sources : chaque lien externe du corps, 2 minimum. Toujours la page exacte qui porte le fait (de préférence une page de la liste « Sources officielles autorisées » de la fiche métier), jamais la page d'accueil d'un site. Uniquement des pages officielles dont tu es certain qu'elles existent : une URL qui ne répond pas fait refuser l'article.\n` +
       `- Citation facultative : <blockquote><p>« … »</p><cite>…</cite></blockquote>, seulement si tu connais la phrase exacte, mot pour mot, d'une source de la liste ou du fichier de faits, avec dans <cite> exactement le label de cette source. Le moteur ouvre la page et refuse l'article si la phrase n'y figure pas. Au moindre doute, ne mets pas de citation.\n` +
       `- Mot-clé principal « ${article.primaryKeyword} » dans les 100 premiers mots.`,
   );
@@ -181,6 +202,10 @@ function message(retour) {
 }
 
 const system = systemeGuide();
+if (opt.prompt) {
+  console.log(message(null));
+  process.exit(0);
+}
 
 // 4. Rédaction + contrôles, 2 essais maximum
 const key = apiKey();
@@ -202,6 +227,7 @@ for (let essai = 1; essai <= 2 && !sortie; essai++) {
   const c = controler(r.json, { article, type, faits: fp?.faits, concurrents, cibles, pagesProduit: config.pagesProduit, essai: opt.dry });
   const s = await verifierSources(r.json.sources ?? [], citations(r.json.contentHtml ?? ""));
   const erreurs = [...c.erreurs, ...s.erreurs];
+  s.avertissements.push(...sourcesHorsFiche(r.json.sources ?? [], choix));
   console.log(`  ${c.nbMots} mots · ${erreurs.length} erreur(s) · ${c.avertissements.length + s.avertissements.length} avertissement(s)`);
   if (erreurs.length) {
     erreurs.forEach((e) => console.log(`  ✗ ${e}`));
@@ -230,6 +256,7 @@ const relecture = opt.relecture || dejaSortis < config.relectureDesPremiers || B
 // l'article passe vraiment par une relecture humaine (PR), jamais en publication directe.
 const signature = {
   ...config.signatures[article.category],
+  ...signaturePour(choix),
   ...(article.auteur ? { auteur: article.auteur } : {}),
   ...(article.relecteur ? { relecteur: article.relecteur } : {}),
 };
@@ -276,7 +303,9 @@ const fiche = {
   internalLinks: liensPrevus,
   liensEntrants: [],
   remplace: article.remplace ?? [],
-  ...(article.verticales ? { verticales: article.verticales } : {}),
+  verticales: choix.verticales,
+  // encart de fin propre au métier (absent en optique : l'encart de la catégorie s'applique)
+  ...(encartPour(choix) ? { encart: encartPour(choix) } : {}),
   ...(article.refonte ? { refonte: true } : {}),
   moteur: { model: config.model, genereLe: new Date().toISOString(), avertissements: bilan.avertissements },
 };

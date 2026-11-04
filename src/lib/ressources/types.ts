@@ -27,6 +27,15 @@ export type Personne = { name: string; jobTitle?: string; photo?: string; url?: 
 
 export type LienInterne = { id?: string; slug: string; anchor: string; type: string };
 
+/** Textes des appels à l'action d'un article hors optique (scripts/seo-engine/metiers/*.md, « Encart final »). */
+export type EncartMetier = {
+  titre: string;
+  fin: string;
+  texteFin: string;
+  etapes: [string, string, string];
+  rassure: string;
+};
+
 export type RessourceJson = {
   slug: string;
   id: string;
@@ -66,6 +75,8 @@ export type RessourceJson = {
   wave?: number;
   /** Métiers concernés (facultatif ; par défaut l'optique). */
   verticales?: VerticaleSlug[];
+  /** Encart de fin propre au métier, recopié de la fiche métier par le moteur (absent en optique). */
+  encart?: EncartMetier;
   /** Fichier de content/apercu, jamais en production. */
   preview?: boolean;
 };
