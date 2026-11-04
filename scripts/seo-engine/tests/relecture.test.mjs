@@ -2,7 +2,7 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 import { coutDollars } from "../lib/claude.mjs";
-import { appliquer, boucle, cumulCout, decider, schemaCorrection, verdictMarkdown } from "../lib/relecture.mjs";
+import { appliquer, boucle, cumulCout, decider, messageCorrecteur, regles, schemaCorrection, verdictMarkdown } from "../lib/relecture.mjs";
 
 const point = (gravite, extrait = "x") => ({ gravite, angle: "faits", extrait, correction: "y" });
 const fiche = { slug: "portail-test", contentHtml: "<p>un deux trois</p>", metaDescription: "m", tocItems: [], faqItems: [], sources: [], figures: [], moteur: {} };
@@ -126,4 +126,21 @@ test("verdict markdown : en-tête, coût au format du moteur", () => {
   const md = verdictMarkdown(r, { model: "claude-opus-5-5", cout: 0.734 });
   assert.match(md, /^## Boucle relecture → correction → verdict : ✅ Prête/);
   assert.match(md, /Coût estimé de la boucle : 0\.73 \$/);
+});
+
+test("seoTitle : le correcteur peut l'écrire, et son absence reste absente", () => {
+  assert.equal(appliquer(fiche, { seoTitle: "Titre court" }).seoTitle, "Titre court");
+  assert.equal("seoTitle" in appliquer(fiche, {}), false);
+});
+
+test("seoTitle : un article ancien l'envoie vide au correcteur, pas sous forme de liste", () => {
+  const m = messageCorrecteur("ctx", fiche, [point("A_CORRIGER")]);
+  assert.match(m, /"seoTitle": ""/);
+  assert.match(messageCorrecteur("ctx", { ...fiche, seoTitle: "Titre court" }, []), /"seoTitle": "Titre court"/);
+});
+
+test("règles de relecture : seoTitle et meta qui se lit comme une phrase", () => {
+  const r = regles({ type: "standard" });
+  assert.match(r, /seoTitle de 60 caractères au plus/);
+  assert.match(r, /jamais une suite de mots-clés en ouverture/);
 });

@@ -27,14 +27,15 @@ export function publies(file) {
   return file.filter((a) => a.status === "published" && fichiers.has(`${a.slug}.json`));
 }
 
-/** Anciens articles français de src/lib/articles.ts (cibles de liens au démarrage). */
+/** Anciens articles français de src/lib/articles.ts (cibles de liens au démarrage). seoTitle, s'il existe, suit title. */
 export function anciensArticles() {
   const src = readFileSync(join(RACINE, "src/lib/articles.ts"), "utf8");
   const fr = src.slice(src.indexOf("fr: ["), src.indexOf("en: ["));
-  return [...fr.matchAll(/slug:\s*"([^"]+)",\s*category:\s*"([^"]+)",\s*title:\s*"([^"]+)"/g)].map((m) => ({
+  return [...fr.matchAll(/slug:\s*"([^"]+)",\s*category:\s*"([^"]+)",\s*title:\s*"([^"]+)"(?:,\s*seoTitle:\s*"([^"]+)")?/g)].map((m) => ({
     slug: m[1],
     categorie: m[2],
     titre: m[3],
+    seoTitle: m[4],
   }));
 }
 
@@ -81,6 +82,18 @@ export function sortieGithub(valeurs) {
 /** Message système commun (guide + extrait du gabarit), identique d'un appel à l'autre pour profiter du cache. */
 export function systemeGuide() {
   return `${readFileSync(join(MOTEUR, "BLOG_CMS_granit.md"), "utf8")}\n\n---\n\n# Extrait du gabarit (GABARIT_ARTICLE_granit.md)\n\n${sectionsGabarit()}`;
+}
+
+/** Titres de balise des autres articles encore en ligne ou en relecture : slug -> seoTitle, sinon title. */
+export function titresDesAutres(article) {
+  const fiches = readdirSync(CONTENU).filter((f) => f.endsWith(".json")).map((f) => lireJson(join(CONTENU, f)));
+  const remplaces = new Set([...fiches, article].flatMap((a) => a.remplace ?? []));
+  const titres = new Map(fiches.map((a) => [a.slug, a.seoTitle ?? a.title]));
+  for (const a of anciensArticles()) {
+    if (!remplaces.has(a.slug) && !titres.has(a.slug)) titres.set(a.slug, a.seoTitle ?? a.titre);
+  }
+  titres.delete(article.slug);
+  return titres;
 }
 
 /** Liens internes autorisés pour un article déjà écrit (lui-même exclu) : chemin -> titre. */

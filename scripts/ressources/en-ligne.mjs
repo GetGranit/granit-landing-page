@@ -6,8 +6,8 @@
 // Sans file d'articles (cas de main tant que le moteur n'est pas fusionné), rien n'est en ligne.
 //
 // L'aperçu (content/apercu/) n'est lu que si on le demande : jamais pour la production ni le sitemap.
-import { existsSync, readFileSync, readdirSync } from "node:fs";
-import { join } from "node:path";
+import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
+import { extname, join, relative } from "node:path";
 
 const lireJson = (p) => JSON.parse(readFileSync(p, "utf8"));
 
@@ -125,4 +125,33 @@ export function controler(racine, articles) {
     if (n < 120 || n > 160) erreurs.push(`description de la catégorie ${cle} : ${n} caractères`);
   }
   if (erreurs.length) throw new Error(`Ressources :\n- ${erreurs.join("\n- ")}`);
+}
+
+// Poids des images, relevé le 04/11/2026. Logos : affichés en petit, 51 Ko au plus pour un PNG ; un logo
+// plus lourd est un SVG qui embarque une image, ou un PNG jamais réduit. Ressources : photos de 1 600 px
+// entre 130 et 281 Ko, aperçus de partage à 100 Ko au plus ; 300 Ko laissent passer une photo de ce format.
+const KO = 1024;
+export const PLAFONDS_IMAGES = { "public/logos": 60 * KO, "public/ressources": 300 * KO };
+/** Fichiers déjà trop lourds, tolérés à leur poids du 04/11/2026 : à réduire, jamais à alourdir. */
+export const EXCEPTIONS_IMAGES = {
+  "public/logos/annuaire/harmonie-mutuelle.svg": 150 * KO,
+  "public/logos/annuaire/previfrance.svg": 80 * KO,
+};
+const EXTENSIONS_IMAGES = new Set([".avif", ".gif", ".jpeg", ".jpg", ".png", ".svg", ".webp"]);
+
+/** Images au-dessus de leur plafond : « chemin : 312 Ko (300 Ko maximum) ». */
+export function imagesTropLourdes(racine) {
+  const trop = [];
+  for (const [dossier, plafond] of Object.entries(PLAFONDS_IMAGES)) {
+    if (!existsSync(join(racine, dossier))) continue;
+    for (const e of readdirSync(join(racine, dossier), { recursive: true, withFileTypes: true })) {
+      if (!e.isFile() || !EXTENSIONS_IMAGES.has(extname(e.name).toLowerCase())) continue;
+      const absolu = join(e.parentPath, e.name);
+      const chemin = relative(racine, absolu);
+      const max = EXCEPTIONS_IMAGES[chemin] ?? plafond;
+      const poids = statSync(absolu).size;
+      if (poids > max) trop.push(`${chemin} : ${Math.ceil(poids / KO)} Ko (${max / KO} Ko maximum)`);
+    }
+  }
+  return trop;
 }
