@@ -67,7 +67,7 @@ export function PageCategorie({ cat: catFr }: { cat: Categorie }) {
   const autres = cocon.filter((f) => f !== pilier && !(annuaire && f.slug.startsWith("portail-")));
 
   return (
-    <SiteLayout fond="var(--bg2)">
+    <SiteLayout fond="var(--bg)">
       <div className="ress">
         <SousNav actif={VERTICALE_PRINCIPALE} />
         <section className="border-b border-[var(--border)]" style={{ background: cat.tint }}>
@@ -102,7 +102,7 @@ export function PageCategorie({ cat: catFr }: { cat: Categorie }) {
           </div>
         </section>
 
-        <div className="bg-[var(--bg2)] pb-1">
+        <div className="bg-[var(--bg)] pb-1">
           {annuaire && (
             <section className={`${conteneur} pt-10`}>
               <Annuaire />

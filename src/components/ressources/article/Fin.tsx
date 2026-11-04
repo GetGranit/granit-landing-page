@@ -341,7 +341,7 @@ export function ALireEnsuite({ article }: { article: RessourceJson }) {
   }
   if (!liens.length) return null;
   return (
-    <section className="border-t border-[var(--border)] bg-[var(--bg2)] py-12">
+    <section className="border-t border-[var(--border)] bg-[var(--bg)] py-12">
       <div className="mx-auto max-w-[1280px] px-4 md:px-6">
         <div className="eyebrow">{t.memeTheme}</div>
         <h2 className="mt-2 font-serif text-[30px] font-normal leading-tight">{t.ensuite}</h2>

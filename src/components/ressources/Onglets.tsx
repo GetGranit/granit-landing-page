@@ -162,7 +162,7 @@ function OngletsMetiers({ actif }: { actif: VerticaleSlug | "tout" }) {
 /** Sous-navigation par métier (pages métier, catégorie et article), non collante. */
 export function SousNav({ actif }: { actif: VerticaleSlug | "tout" }) {
   return (
-    <div className="bg-[var(--bg2)]">
+    <div className="bg-[var(--bg)]">
       <div className="mx-auto max-w-[1280px] px-4 md:px-6">
         <OngletsMetiers actif={actif} />
       </div>

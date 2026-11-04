@@ -1,0 +1,87 @@
+/* Le grand logo du pied de page, repris de la maquette « Last mile ». */
+.grand-logo {
+  min-height: 40px;
+  margin-top: clamp(32px, 5vw, 56px);
+  color: var(--rose);
+  user-select: none;
+}
+.grand-logo svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  cursor: default;
+}
+.grand-logo path {
+  fill: currentColor;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.grand-logo .nom {
+  opacity: 0.07;
+}
+.grand-logo .pierre {
+  stroke: currentColor;
+  stroke-linejoin: round;
+  opacity: 0.14;
+  transition: opacity 0.6s ease;
+}
+/* au survol : une onde qui s'amortit, puis la clé de voûte s'allume */
+.grand-logo .quake .pierre {
+  opacity: 0.22;
+  animation: grand-logo-quake 0.9s cubic-bezier(0.37, 0, 0.63, 1) both;
+  animation-delay: calc(var(--k) * 28ms);
+}
+@keyframes grand-logo-quake {
+  0%,
+  100% {
+    transform: none;
+  }
+  16% {
+    transform: translate(var(--qx), calc(var(--qy) * -1)) rotate(var(--qr));
+  }
+  34% {
+    transform: translate(calc(var(--qx) * -0.75), calc(var(--qy) * 0.75)) rotate(calc(var(--qr) * -0.75));
+  }
+  52% {
+    transform: translate(calc(var(--qx) * 0.45), calc(var(--qy) * -0.4)) rotate(calc(var(--qr) * 0.45));
+  }
+  70% {
+    transform: translate(calc(var(--qx) * -0.2), calc(var(--qy) * 0.2)) rotate(calc(var(--qr) * -0.2));
+  }
+  86% {
+    transform: translate(calc(var(--qx) * 0.06), 0) rotate(calc(var(--qr) * 0.06));
+  }
+}
+.grand-logo .lock .pierre {
+  opacity: 0.24;
+  animation: grand-logo-clack 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.grand-logo .lock .pierre.key {
+  opacity: 0.9;
+  animation: grand-logo-cle 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes grand-logo-clack {
+  0% {
+    transform: scale(1.015);
+  }
+  100% {
+    transform: none;
+  }
+}
+@keyframes grand-logo-cle {
+  0% {
+    transform: scale(0.97);
+  }
+  100% {
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .grand-logo .pierre,
+  .grand-logo .quake .pierre,
+  .grand-logo .lock .pierre,
+  .grand-logo .lock .pierre.key {
+    animation: none;
+  }
+}

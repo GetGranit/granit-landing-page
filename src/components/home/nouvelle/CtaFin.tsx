@@ -122,6 +122,7 @@ export function CtaFinNouvelle() {
     <section ref={secRef} className="ct3" id="cta" aria-labelledby="ct3-t">
       {/* les anciens liens vers /#demo (pied de page, /demo, mails) arrivent ici */}
       <span id="demo" className="ct-ancre" aria-hidden="true" />
+      <span id="rappel" className="ct-ancre" aria-hidden="true" />
       <div className="ct3-grad" aria-hidden="true" />
       <div className="ct3-veil" aria-hidden="true" />
       <div className="ct3-light" aria-hidden="true" />

@@ -217,7 +217,7 @@ export function MurPlateformes({ fiches }: { fiches: Fiche[] }) {
           <li
             key={`vide-${i}`}
             aria-hidden
-            className={`bg-[var(--bg2)] ${i < vides[0] ? "block" : "hidden"} ${i < vides[1] ? "md:block" : "md:hidden"} ${i < vides[2] ? "lg:block" : "lg:hidden"}`}
+            className={`bg-[var(--bg)] ${i < vides[0] ? "block" : "hidden"} ${i < vides[1] ? "md:block" : "md:hidden"} ${i < vides[2] ? "lg:block" : "lg:hidden"}`}
           />
         ))}
       </ul>
@@ -312,7 +312,7 @@ function Case({
   cacheMobile?: boolean;
   t: Copy;
 }) {
-  const li = `bg-[var(--bg2)] ${cacheMobile ? "hidden md:block" : ""}`;
+  const li = `bg-[var(--bg)] ${cacheMobile ? "hidden md:block" : ""}`;
   const pied = (
     <span
       className={`${mono} absolute inset-x-3 bottom-2.5 flex items-center justify-between text-[var(--text-muted)]`}
@@ -380,7 +380,7 @@ function CaseLien({
   t: Copy;
 }) {
   return (
-    <li className="bg-[var(--bg2)]">
+    <li className="bg-[var(--bg)]">
       <Link
         to="/ressources/categorie/$category"
         params={{ category: "plateformes" }}
@@ -419,7 +419,7 @@ function CaseAVenir({
   t: Copy;
 }) {
   return (
-    <li className="bg-[var(--bg2)]">
+    <li className="bg-[var(--bg)]">
       <div className={`${cadre} items-start justify-between py-4`}>
         <span className={`${mono} text-[var(--text-muted)]`}>
           <span className="md:hidden">{autres(t, resteMobile, t.suite)}</span>

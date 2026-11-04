@@ -200,7 +200,7 @@ export function PageArticle({
     (a.sources?.length ?? 0) + (p ? Object.values(p.sources).filter((s) => !s.url).length : 0);
 
   return (
-    <SiteLayout fond="var(--bg2)">
+    <SiteLayout fond="var(--bg)">
       <div className="ress">
         {a.preview && <BandeauPreview />}
         {a.readTime >= 3 && <div className="lecture-barre" aria-hidden style={teinte} />}
