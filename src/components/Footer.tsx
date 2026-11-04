@@ -59,7 +59,7 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-4">
             <Link to="/" className="inline-flex items-center gap-2.5">
-              <img src={logoMonogram} alt="Granit" className="h-7 w-auto" />
+              <img src={logoMonogram} width={445} height={96} alt="Granit" className="h-7 w-auto" />
             </Link>
             <p
               className="mt-4 max-w-xs text-[13.5px] leading-[1.6]"

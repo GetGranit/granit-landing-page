@@ -12,6 +12,7 @@
     "test": "node --experimental-strip-types --test \"tests/**/*.test.ts\" \"scripts/seo-engine/tests/*.test.mjs\"",
     "check-marque": "node scripts/check-marque.mjs",
     "planche": "node scripts/planche.mjs",
+    "images": "node scripts/images-web.mjs",
     "format": "prettier --write ."
   },
   "dependencies": {

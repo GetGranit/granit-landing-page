@@ -61,7 +61,7 @@ export function DashboardMockup({ compact = false }: { compact?: boolean }) {
           <span className="h-2.5 w-2.5 rounded-full" style={{ background: "var(--border)" }} />
         </div>
         <div className="flex items-center gap-1.5 text-[11px]" style={{ fontFamily: "var(--font-mono)", color: "var(--text-muted)" }}>
-          <img src="/favicon.svg" alt="" aria-hidden className="h-4 w-4" />
+          <img src="/favicon.svg" width={16} height={16} alt="" aria-hidden className="h-4 w-4" />
           getgranit.ai / centre-paris
         </div>
         <div className="ml-auto flex items-center gap-1.5"><span className="status-dot" /><span className="text-[11px]" style={{ fontFamily: "var(--font-mono)", color: "var(--text-soft)" }}>{t.activeCount}</span></div>

@@ -2,7 +2,12 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Hub } from "@/components/ressources/Hub";
 import { SITE_URL } from "@/lib/seo";
 import { aLaUne } from "@/lib/ressources/contenu";
-import { aCouvertureFenetre, photoFiche, src } from "@/lib/ressources/photos";
+import {
+  aCouvertureFenetre,
+  photoFiche,
+  prechargePhoto,
+  TAILLES_UNE,
+} from "@/lib/ressources/photos";
 
 const TITLE = "Ressources pour les professionnels de santé : mutuelles, paiements - Granit";
 const DESC =
@@ -31,7 +36,7 @@ export const Route = createFileRoute("/ressources/")({
       // (une fiche plateformes n'a pas de photo : sa fenêtre est en CSS).
       links:
         une.length >= 3 && !aCouvertureFenetre(une[0])
-          ? [{ rel: "preload", as: "image", href: src(photoFiche(une[0]), 1600) }]
+          ? [prechargePhoto(photoFiche(une[0], 0), TAILLES_UNE)]
           : [],
     };
   },

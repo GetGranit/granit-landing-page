@@ -6,7 +6,7 @@ import type { CategorySlug, Fiche } from "./types";
 import { verticale } from "./verticales";
 
 export type Photo = {
-  /** Chemin sans la largeur ni l'extension : `${base}-800.jpg`, `${base}-1600.jpg`. */
+  /** Chemin sans la largeur ni l'extension : `${base}-800.jpg`, `${base}-1600.jpg`, et leur WebP. */
   base: string;
   /** Texte alternatif ; vide quand la photo n'est qu'un décor de carte (le titre suit). */
   alt: string;
@@ -58,3 +58,22 @@ export function photoFiche(f: Fiche, rang?: number): Photo {
 
 export const src = (p: Photo, largeur: 800 | 1600) => `${p.base}-${largeur}.jpg`;
 export const srcSet = (p: Photo) => `${src(p, 800)} 800w, ${src(p, 1600)} 1600w`;
+
+/**
+ * WebP de la photo (scripts/images-web.mjs), proposés par <picture>. Le JPEG de `src` reste le repli
+ * et l'image de partage : og:image, twitter:image et les données structurées ne changent pas.
+ */
+export const srcSetWebp = (p: Photo) => `${p.base}-800.webp 800w, ${p.base}-1600.webp 1600w`;
+
+export const TAILLES_UNE = "(min-width: 1024px) 720px, 100vw";
+export const TAILLES_PILIER = "(min-width: 768px) 720px, 100vw";
+
+/** Précharge de l'image principale d'une page : la même que celle que <picture> choisira. */
+export const prechargePhoto = (p: Photo, tailles: string) => ({
+  rel: "preload",
+  as: "image",
+  type: "image/webp",
+  href: `${p.base}-1600.webp`,
+  imageSrcSet: srcSetWebp(p),
+  imageSizes: tailles,
+});

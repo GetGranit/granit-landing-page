@@ -54,7 +54,7 @@ export function Nav() {
             }
           }}
         >
-          <img src={logoMonogram} alt="Granit" className="h-7 w-auto sm:h-8" />
+          <img src={logoMonogram} width={445} height={96} alt="Granit" className="h-7 w-auto sm:h-8" />
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex">

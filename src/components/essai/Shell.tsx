@@ -51,7 +51,7 @@ export function Shell({
       </div>
       <header className="mx-auto flex max-w-[1080px] items-center justify-between gap-3 px-4 py-4 sm:px-6">
         <a href="/" aria-label={t.accueil}>
-          <img src={logo} alt="Granit" className="h-[24px] w-auto" />
+          <img src={logo} width={445} height={96} alt="Granit" className="h-[24px] w-auto" />
         </a>
         <div className="flex flex-wrap justify-end gap-2">
           {exemple && (

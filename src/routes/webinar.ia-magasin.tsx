@@ -244,7 +244,7 @@ function CarteInscription() {
       style={{ boxShadow: "0 40px 90px -30px rgba(31,53,48,0.6)" }}
     >
       <div className="flex items-center justify-center gap-2.5">
-        <img src={logoMonogram} alt="Granit" className="h-[24px] w-auto" />
+        <img src={logoMonogram} width={445} height={96} alt="Granit" className="h-[24px] w-auto" />
       </div>
 
       <div className="mt-8 text-center">

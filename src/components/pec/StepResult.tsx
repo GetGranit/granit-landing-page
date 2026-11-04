@@ -4,6 +4,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { useLanguage, type Lang } from "@/lib/i18n";
 import type { CardRead } from "@/lib/pec/readCard";
 import { platformById, type Platform } from "@/lib/pec/resolve";
+import { tailleLogo } from "@/lib/tailles-logos";
 import { estimationLunettes, type EstimationLunettes } from "@/lib/pec/estimation";
 import { Kicker, Muted, Reassure, Screen, TextLink, Title, bigBtn, focusRing } from "./ui";
 
@@ -481,7 +482,12 @@ function ConnecterLogiciel({ onRdv }: { onRdv: () => void }) {
           {LOGICIELS.map((l) =>
             l.logo ? (
               <li key={l.name} className="flex items-center">
-                <img src={l.logo} alt={l.name} className="h-6 w-auto object-contain opacity-90" />
+                <img
+                  src={l.logo}
+                  {...tailleLogo(l.logo)}
+                  alt={l.name}
+                  className="h-6 w-auto object-contain opacity-90"
+                />
               </li>
             ) : (
               <li

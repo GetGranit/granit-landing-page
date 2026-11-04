@@ -22,11 +22,15 @@ import {
   photoFiche,
   src,
   srcSet,
+  srcSetWebp,
+  TAILLES_PILIER,
+  TAILLES_UNE,
   estFichePlateforme,
   estFicheTousPortails,
   type Photo,
 } from "@/lib/ressources/photos";
 import type { Fiche } from "@/lib/ressources/types";
+import { tailleLogo } from "@/lib/tailles-logos";
 
 const copy = {
   fr: {
@@ -132,7 +136,12 @@ export function FenetrePlateforme({
           {plateforme ? (
             <>
               {logo ? (
-                <img src={logo} alt="" className={estSymbole(logo) ? "symbole" : "logotype"} />
+                <img
+                  src={logo}
+                  {...tailleLogo(logo)}
+                  alt=""
+                  className={estSymbole(logo) ? "symbole" : "logotype"}
+                />
               ) : (
                 <span className="initiale">{plateforme.nom.slice(0, 1).toUpperCase()}</span>
               )}
@@ -161,7 +170,12 @@ export function FenetrePlateforme({
             ))
           : PORTAILS_FENETRE.map((l) => (
               <div key={l.nom} className={`ress-fenetre-ligne portail ${l.classe}`}>
-                <img src={logoPlateforme(l.logo, "fenetre")} alt="" className="marque" />
+                <img
+                  src={logoPlateforme(l.logo, "fenetre")}
+                  {...tailleLogo(logoPlateforme(l.logo, "fenetre"))}
+                  alt=""
+                  className="marque"
+                />
                 <span className="textes">
                   <span className="l1" style={{ width: "58%" }} />
                   <span className="l2" style={{ width: `${l.l2}%` }} />
@@ -174,7 +188,7 @@ export function FenetrePlateforme({
   );
 }
 
-/** Photo de carte : srcset 800/1600, recadrée par object-cover, zoom léger au survol. */
+/** Photo de carte : srcset 800/1600 en WebP, repli JPEG, recadrée par object-cover, zoom léger au survol. */
 export function PhotoCarte({
   photo,
   tailles,
@@ -186,18 +200,21 @@ export function PhotoCarte({
   chargement?: "haute" | "eager" | "lazy";
 }) {
   return (
-    <img
-      src={src(photo, 800)}
-      srcSet={srcSet(photo)}
-      sizes={tailles}
-      width={1600}
-      height={900}
-      loading={chargement === "lazy" ? "lazy" : "eager"}
-      fetchPriority={chargement === "haute" ? "high" : undefined}
-      decoding="async"
-      alt={photo.alt}
-      className="h-full w-full object-cover transition-transform duration-500 ease-[var(--ease-out-quint)] group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
-    />
+    <picture className="contents">
+      <source type="image/webp" srcSet={srcSetWebp(photo)} sizes={tailles} />
+      <img
+        src={src(photo, 800)}
+        srcSet={srcSet(photo)}
+        sizes={tailles}
+        width={1600}
+        height={900}
+        loading={chargement === "lazy" ? "lazy" : "eager"}
+        fetchPriority={chargement === "haute" ? "high" : undefined}
+        decoding="async"
+        alt={photo.alt}
+        className="h-full w-full object-cover transition-transform duration-500 ease-[var(--ease-out-quint)] group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+      />
+    </picture>
   );
 }
 
@@ -230,8 +247,8 @@ function Couverture({
   const tailles = {
     carte: "(min-width: 1024px) 400px, (min-width: 640px) 50vw, 78vw",
     petite: "(min-width: 1024px) 260px, 50vw",
-    une: "(min-width: 1024px) 720px, 100vw",
-    pilier: "(min-width: 768px) 720px, 100vw",
+    une: TAILLES_UNE,
+    pilier: TAILLES_PILIER,
   }[format];
   const nom = fiche.plateforme?.nom ?? titreCourt(fiche.title);
   const chargement = prioritaire === "haute" ? "haute" : prioritaire ? "eager" : "lazy";
@@ -358,9 +375,7 @@ export function CartePilier({ fiche }: { fiche: Fiche }) {
         <Couverture fiche={fiche} etiquette={c.court} format="pilier" prioritaire="haute" />
       </div>
       <div className="md:col-span-5">
-        <span className="eyebrow">
-          {copy[lang].commencer}
-        </span>
+        <span className="eyebrow">{copy[lang].commencer}</span>
         <h2 className="mt-3 font-serif text-[clamp(26px,2.6vw,36px)] font-normal leading-[1.15] tracking-[-0.015em]">
           <TitreItalique titre={fiche.title} ink={c.ink} />
         </h2>

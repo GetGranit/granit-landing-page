@@ -186,10 +186,12 @@ function SilmoPage() {
       >
         <div className="mx-auto flex h-[62px] max-w-[600px] items-center justify-between px-5">
           <div className="flex items-center gap-2.5">
-            <img src={logoMonogram} alt="Granit" className="h-[26px] w-auto" />
+            <img src={logoMonogram} width={445} height={96} alt="Granit" className="h-[26px] w-auto" />
           </div>
           <img
             src={silmoLogo}
+            width={46}
+            height={46}
             alt="SILMO Paris"
             className="h-[46px] w-[46px]"
             style={{ border: `1px solid ${FILET}` }}

@@ -22,7 +22,7 @@ export type Verticale = {
 
 /**
  * Textes alternatifs des photos (public/ressources/metiers/{métier}-800.jpg et -1600.jpg) :
- * ce qu'on voit sur l'image. À mettre à jour ici quand une photo change.
+ * ce qu'on voit sur l'image. À mettre à jour ici quand une photo change (puis npm run images).
  */
 const ALTS: Record<VerticaleSlug, string> = {
   optique:
@@ -95,8 +95,11 @@ export const verticalesLang = (lang: Lang): Verticale[] =>
   ORDRE_VERTICALES.map((v) => verticale(v, lang)!);
 
 /** Photo du métier : 800 ou 1600 px de large, 16:9. */
-export const photoVerticale = (v: VerticaleSlug, largeur: 800 | 1600) =>
-  `/ressources/metiers/${v}-${largeur}.jpg`;
+export const photoVerticale = (
+  v: VerticaleSlug,
+  largeur: 800 | 1600,
+  ext: "jpg" | "webp" = "jpg",
+) => `/ressources/metiers/${v}-${largeur}.${ext}`;
 
 const anciens = data.anciens as Record<string, VerticaleSlug[] | "tous">;
 
