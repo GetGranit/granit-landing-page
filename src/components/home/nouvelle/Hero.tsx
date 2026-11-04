@@ -51,7 +51,7 @@ type Task = { r: string; t: string; u: string };
 
 const copy = {
   fr: {
-    bar: "Granit lève 6\u00a0M$ pour rendre du temps au soin",
+    bar: "Granit lève 5\u00a0M€ pour rendre du temps au soin",
     barMore: "Lire l’annonce",
     title: ["Vos équipes soignent.", "Granit gère le reste."],
     lead: "Droits, prises en charge, facturation, encaissement : nos agents IA font tourner votre tiers payant de bout en bout, dans vos logiciels actuels.",
