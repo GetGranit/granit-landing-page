@@ -1,7 +1,8 @@
 // L'annuaire du tiers payant affiché sur le hub : plateformes, réseaux de soins et mutuelles.
 // Un acteur a une fiche quand content/ressources/{slug}.json est en ligne ; sinon il est
 // annoncé (« Bientôt »). Ajouter un acteur = une ligne ici et son logo dans public/logos/annuaire/.
-import type { Fiche, Plateforme, MetierAnnuaire } from "./types";
+import type { Fiche, Plateforme, MetierAnnuaire, VerticaleSlug } from "./types";
+import { ORDRE_VERTICALES } from "./verticales";
 
 export type Genre = "plateforme" | "reseau" | "mutuelle";
 
@@ -339,8 +340,21 @@ function chiffreEn(slug: string, i: number, n: number) {
 /** Le chiffre le plus parlant : une taille de réseau plutôt qu'une date de création. */
 const PARLANT = /complémentaire|professionnel|opticien|assuré|bénéficiaire|adhérent/i;
 
+/** Le métier du site de chaque métier du relevé ; les EHPAD n'en ont pas. */
+const METIER_DU_SITE: Record<MetierAnnuaire, VerticaleSlug | undefined> = {
+  optique: "optique",
+  audio: "optique",
+  dentaire: "dentaire",
+  centres: "centres",
+  pharmacie: "pharmacie",
+  cliniques: "cliniques",
+  laboratoires: "cliniques",
+  ehpad: undefined,
+};
+
 export type Entree = Omit<Acteur, "metiers"> & {
-  metiers: MetierAnnuaire[];
+  /** Les métiers du site, dans l'ordre du hub. */
+  metiers: VerticaleSlug[];
   /** La fiche, si elle est en ligne. */
   fiche?: Fiche;
   checkedOn?: string;
@@ -367,7 +381,7 @@ export function annuaire(fiches: Fiche[]): Entree[] {
       const chiffre = f?.chiffres.find((c) => PARLANT.test(c.label)) ?? f?.chiffres[0];
       return {
         ...a,
-        metiers: a.metiers ?? [],
+        metiers: ORDRE_VERTICALES.filter((v) => a.metiers?.some((m) => METIER_DU_SITE[m] === v)),
         logo: a.logo ? `/logos/annuaire/${a.logo}` : undefined,
         fiche,
         checkedOn: fiche?.plateforme?.checkedOn,
