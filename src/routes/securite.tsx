@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import {
   Ban,
   Check,
@@ -30,6 +30,10 @@ const DESCRIPTION =
 const CONTACT_EMAIL = "contact@getgranit.ai";
 
 export const Route = createFileRoute("/securite")({
+  // Page retirée pour le moment : elle répond 404. Enlever ce beforeLoad pour la remettre.
+  beforeLoad: () => {
+    throw notFound();
+  },
   head: () => ({
     meta: [
       { title: TITLE },

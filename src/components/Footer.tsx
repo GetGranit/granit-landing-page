@@ -97,7 +97,6 @@ export function Footer({ colle = false }: { colle?: boolean }) {
             links={[
               { to: "/agents", label: t.agents },
               { to: "/tarifs", label: t.pricing },
-              { to: "/securite", label: t.security },
               { to: "/ressources", label: t.resources },
             ]}
           />

@@ -64,7 +64,7 @@ const content: Record<"fr" | "en", Content> = {
         "Le Prestataire ne cède, ne revend ni n'exploite les données à des fins propres. Il recourt à des prestataires techniques (hébergement, modèles d'intelligence artificielle) dans les conditions de l'article 5 des CGV : hébergement au sein de l'Union européenne, niveau de sécurité et de conformité maintenu. Les données sont également transmises aux plateformes que le Client demande d'utiliser pour son compte, et aux autorités lorsque la loi l'impose.",
       ] },
       { title: "6. Hébergement et sécurité", body: [
-        "Les données sont hébergées au sein de l'Union européenne, chez un hébergeur certifié HDS, sans transfert hors UE. Elles sont chiffrées en transit et au repos, les accès sont restreints selon le principe du moindre privilège et chaque action d'agent est journalisée. Le détail des garanties figure sur la page Sécurité (getgranit.ai/securite).",
+        "Les données sont hébergées au sein de l'Union européenne, chez un hébergeur certifié HDS, sans transfert hors UE. Elles sont chiffrées en transit et au repos, les accès sont restreints selon le principe du moindre privilège et chaque action d'agent est journalisée.",
         "Aucune donnée patient n'est utilisée pour entraîner des modèles tiers ; les modèles utilisés sont hébergés en Europe.",
       ] },
       { title: "7. Durées de conservation", body: [
@@ -119,7 +119,7 @@ const content: Record<"fr" | "en", Content> = {
         "The Provider does not transfer, resell or exploit data for its own purposes. It uses technical providers (hosting, artificial intelligence models) under the conditions of article 5 of the GTC: hosting within the European Union, security and compliance levels maintained. Data is also sent to the platforms the Client asks the Service to use on its behalf, and to authorities when required by law.",
       ] },
       { title: "6. Hosting and security", body: [
-        "Data is hosted within the European Union, with an HDS-certified provider (French certification for health data hosting), with no transfer outside the EU. It is encrypted in transit and at rest, access follows the least-privilege principle and every agent action is logged. Full details are on the Security page (getgranit.ai/securite).",
+        "Data is hosted within the European Union, with an HDS-certified provider (French certification for health data hosting), with no transfer outside the EU. It is encrypted in transit and at rest, access follows the least-privilege principle and every agent action is logged.",
         "No patient data is used to train third-party models; the models used are hosted in Europe.",
       ] },
       { title: "7. Retention periods", body: [
