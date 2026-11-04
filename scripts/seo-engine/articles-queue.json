@@ -86,20 +86,14 @@
         "type": "enfant"
       },
       {
-        "id": "G4",
-        "slug": "erreurs-tiers-payant-opticien",
-        "anchor": "Les erreurs de saisie qui coûtent le plus cher en tiers payant",
-        "type": "enfant"
-      },
-      {
         "id": "G5",
-        "slug": "tiers-payant-integral-opticien",
+        "slug": "tiers-payant-integral",
         "anchor": "Tiers payant intégral",
         "type": "enfant"
       },
       {
         "id": "G6",
-        "slug": "cas-particuliers-tiers-payant-optique",
+        "slug": "cas-particuliers-tiers-payant",
         "anchor": "Cas particuliers",
         "type": "enfant"
       },
@@ -441,7 +435,7 @@
       "sp sante telephone"
     ],
     "searchVolume": 20120,
-    "unsplashQuery": "optician computer paperwork",
+    "unsplashQuery": "healthcare administration desk",
     "status": "review",
     "wave": 1,
     "level": "Fille",
@@ -484,7 +478,14 @@
         "type": "transverse"
       }
     ],
-    "publishedAt": "2026-10-09"
+    "publishedAt": "2026-10-09",
+    "verticales": [
+      "optique",
+      "dentaire",
+      "centres",
+      "pharmacie",
+      "cliniques"
+    ]
   },
   {
     "id": "A5",
@@ -1559,9 +1560,7 @@
     ],
     "internalLinks": [],
     "refonte": true,
-    "verticales": [
-      "pharmacie"
-    ],
+    "verticales": [],
     "auteur": "laura",
     "relecteur": "olivier",
     "publishedAt": "2026-10-23"
@@ -2000,7 +1999,7 @@
       },
       {
         "id": "B5",
-        "slug": "tiers-payant-css-opticien",
+        "slug": "tiers-payant-css",
         "anchor": "Facturer un bénéficiaire de la CSS (ex-ACS) en optique",
         "type": "enfant"
       },
@@ -2065,6 +2064,396 @@
     "publishedAt": "2026-11-02"
   },
   {
+    "id": "E2a",
+    "slug": "granit-vs-iremia",
+    "category": "gerer-son-tiers-payant",
+    "title": "Granit ou Iremia Santé : lequel choisir pour le tiers payant de votre magasin ?",
+    "primaryKeyword": "iremia santé",
+    "keywordCluster": [
+      "iremia santé"
+    ],
+    "searchVolume": null,
+    "status": "published",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "solutions-tiers-payant-optique",
+    "reader": "Gérant",
+    "role": "Vente + LLM",
+    "granitData": "content/concurrents",
+    "cta": "Démo",
+    "toValidate": "Comparatif : aucun prix, aucun client cité, uniquement les faits des fichiers content/concurrents. Relecture par Paul.",
+    "primaryKeywordMeasured": false,
+    "concurrents": [
+      "iremia",
+      "granit"
+    ],
+    "faqQuestions": [
+      "Iremia Santé et Granit font-ils la même chose ?",
+      "L'avance à J+1 d'Iremia accélère-t-elle mes prises en charge ?",
+      "Peut-on utiliser Iremia et Granit en même temps ?",
+      "Comment passer d'Iremia à Granit ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "E2",
+        "slug": "solutions-tiers-payant-optique",
+        "anchor": "toutes les solutions de tiers payant en optique",
+        "type": "parent"
+      }
+    ],
+    "publishedAt": "2026-10-09"
+  },
+  {
+    "id": "E2b",
+    "slug": "granit-vs-optibot",
+    "category": "gerer-son-tiers-payant",
+    "title": "Granit ou OptiBot : faire ses PEC plus vite, ou les faire faire ?",
+    "primaryKeyword": "optibot",
+    "keywordCluster": [
+      "optibot"
+    ],
+    "searchVolume": null,
+    "status": "review",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "solutions-tiers-payant-optique",
+    "reader": "Gérant",
+    "role": "Vente + LLM",
+    "granitData": "content/concurrents",
+    "cta": "Démo",
+    "toValidate": "Comparatif : aucun prix, aucun client cité, uniquement les faits des fichiers content/concurrents. Relecture par Paul.",
+    "primaryKeywordMeasured": false,
+    "concurrents": [
+      "optibot",
+      "granit"
+    ],
+    "faqQuestions": [
+      "OptiBot et Granit font-ils la même chose ?",
+      "Avec OptiBot, qui fait la demande de prise en charge ?",
+      "Granit remplace-t-il OptiBot ?",
+      "Comment passer d'OptiBot à Granit ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "E2",
+        "slug": "solutions-tiers-payant-optique",
+        "anchor": "toutes les solutions de tiers payant en optique",
+        "type": "parent"
+      }
+    ],
+    "publishedAt": "2026-11-03",
+    "verticales": [
+      "optique"
+    ]
+  },
+  {
+    "id": "X1",
+    "slug": "ticket-moderateur-2027-tiers-payant",
+    "category": "conformite",
+    "title": "Ticket modérateur 2027 : ce que les décrets d'août 2026 changent pour votre tiers payant",
+    "primaryKeyword": "ticket modérateur 2027",
+    "keywordCluster": [
+      "ticket modérateur dentaire 2027",
+      "décret 2026-809",
+      "décret 2026-810",
+      "décret 2026-811",
+      "part sécurité sociale 2027 dentaire",
+      "remboursement optique 2027 professionnel",
+      "ticket modérateur dentaire",
+      "augmentation ticket modérateur dentaire",
+      "changement remboursement dentaire 2027"
+    ],
+    "searchVolume": 0,
+    "status": "pending",
+    "wave": 4,
+    "level": "Fille",
+    "parentSlug": "tiers-payant-professionnels-de-sante",
+    "reader": "Responsable facturation d'un cabinet ou centre dentaire, d'un centre de santé ou d'une officine, gérant de magasin d'optique ou de centre auditif",
+    "role": "Trafic",
+    "granitData": "—",
+    "cta": "Parlons de votre tiers payant",
+    "toValidate": "Relecture humaine obligatoire (PR). À publier avant le 1er janvier 2027. Décret 2026-809 confirmé (JORFTEXT000054733581, fourchette de participation portée de 35-45 % à 50-60 %, R160-5 3° bis). Décret 2026-810 (dispositifs médicaux, optique et audio) confirmé seulement par des sources secondaires : relire le texte et récupérer son JORFTEXT sur Légifrance avant publication. Aucun taux tant que la décision Uncam ou l'arrêté n'est pas publié. Exemples « AMO 60 % » datés « jusqu'au 31 décembre 2026, taux 2027 à confirmer » (aucune décision Uncam publiée). Répartition 60/40 de l'examen bucco-dentaire en 2027 à revérifier. Ne pas reprendre de liste « ce qui ne change pas » sans la notice du décret, ni de recours syndical sans source primaire. Écrire pour le cabinet et le magasin, pas pour le patient. Quatre décrets du 21 août 2026 : 2026-809 (dentaire, y compris en centre de santé), 2026-810 (produits de la LPP, donc optique, audio et dispositifs délivrés en officine), 2026-811 (médicaments à SMR faible ou modéré, pharmacie) et 2026-812 (transports, hors sujet). Relire 2026-811 sur Légifrance avant publication : confirmé seulement par des sources secondaires.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Qu'est-ce qui change au 1er janvier 2027 pour le ticket modérateur ?",
+      "Qui fixe le nouveau taux de participation de l'assuré ?",
+      "Faut-il refaire les devis signés en 2026 pour des soins faits en 2027 ?",
+      "Le panier 100 % Santé est-il concerné ?",
+      "Les lunettes, les aides auditives et les médicaments sont-ils concernés ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "T0",
+        "slug": "tiers-payant-professionnels-de-sante",
+        "anchor": "tiers payant des professionnels de santé",
+        "type": "parent"
+      },
+      {
+        "id": "D0",
+        "slug": "tiers-payant-dentaire",
+        "anchor": "tiers payant dentaire",
+        "type": "sœur"
+      },
+      {
+        "id": "AU0",
+        "slug": "tiers-payant-audioprothesiste",
+        "anchor": "tiers payant audioprothésiste",
+        "type": "sœur"
+      },
+      {
+        "id": "G5",
+        "slug": "tiers-payant-integral",
+        "anchor": "tiers payant intégral ou partiel",
+        "type": "sœur"
+      },
+      {
+        "id": "F1",
+        "slug": "amo-amc",
+        "anchor": "part AMO et part AMC",
+        "type": "transverse"
+      },
+      {
+        "id": "C1",
+        "slug": "virement-mutuelle-inferieur",
+        "anchor": "virement de mutuelle inférieur à la facture",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "optique",
+      "dentaire",
+      "centres",
+      "pharmacie"
+    ],
+    "unsplashQuery": "calendar documents desk"
+  },
+  {
+    "id": "X6",
+    "slug": "ordonnances-medecins-deconventionnes-2027",
+    "category": "conformite",
+    "title": "Ordonnances de médecins déconventionnés : ce qui change au 1er janvier 2027",
+    "primaryKeyword": "ordonnance médecin déconventionné",
+    "keywordCluster": [
+      "médecin déconventionné",
+      "prescription médecin déconventionné",
+      "médecin hors convention ordonnance",
+      "ordonnance secteur 3 remboursement 2027",
+      "déremboursement prescriptions médecins déconventionnés",
+      "article 76 lfss 2026",
+      "ophtalmologiste déconventionné"
+    ],
+    "searchVolume": 0,
+    "status": "pending",
+    "wave": 4,
+    "level": "Fille",
+    "parentSlug": "tiers-payant-professionnels-de-sante",
+    "reader": "Opticien ou gérant de magasin, titulaire d'officine ou préparateur, secrétariat ou facturation de laboratoire : ceux qui reçoivent l'ordonnance et facturent la part Assurance maladie",
+    "role": "Trafic",
+    "granitData": "—",
+    "cta": "Parlons de votre tiers payant",
+    "toValidate": "Relecture humaine obligatoire (PR). Aucun taux, aucun montant. Source de départ : Acuité (https://www.acuite.fr/actualites/profession/legislation/prescriptions-optiques-le-deremboursement-des-a336648). Citer le texte primaire : article 76 de la LFSS 2026 sur Légifrance et décision du Conseil d'État du 1er octobre 2026 (rejet des recours, QPC non transmise). Zone grise à signaler sans la trancher : renouvellement à partir du 1er janvier 2027 d'une ordonnance signée avant cette date, renouvellement ou adaptation par l'opticien ou le pharmacien, médecin déconventionné après avoir signé l'ordonnance. Réponse des complémentaires non documentée : « à vérifier contrat par contrat ». Comment reconnaître le statut du prescripteur : à sourcer (annuaire ameli), ne rien inventer. Effet sur le 100 % Santé et la CSS : non documenté, à ne pas affirmer. Ne donner aucun nombre de médecins sans source datée. Écrire pour le professionnel, pas pour le patient.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Qu'est-ce qui change au 1er janvier 2027 pour les ordonnances de médecins déconventionnés ?",
+      "Peut-on encore délivrer sur l'ordonnance d'un médecin déconventionné ?",
+      "Comment savoir si un prescripteur est déconventionné ?",
+      "Une ordonnance signée en 2026 reste-t-elle prise en charge en 2027 ?",
+      "Que dire au patient, et que devient la part mutuelle ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "T0",
+        "slug": "tiers-payant-professionnels-de-sante",
+        "anchor": "tiers payant des professionnels de santé",
+        "type": "parent"
+      },
+      {
+        "id": "X1",
+        "slug": "ticket-moderateur-2027-tiers-payant",
+        "anchor": "ticket modérateur 2027",
+        "type": "sœur"
+      },
+      {
+        "id": "G0",
+        "slug": "tiers-payant-opticien",
+        "anchor": "tiers payant opticien",
+        "type": "transverse"
+      },
+      {
+        "id": "PH0",
+        "slug": "gestion-tiers-payant-pharmacie",
+        "anchor": "gestion du tiers payant en pharmacie",
+        "type": "transverse"
+      },
+      {
+        "id": "K0",
+        "slug": "tiers-payant-clinique-privee",
+        "anchor": "tiers payant en clinique privée",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "optique",
+      "pharmacie",
+      "cliniques"
+    ],
+    "unsplashQuery": "doctor prescription desk"
+  },
+  {
+    "id": "T0",
+    "slug": "tiers-payant-professionnels-de-sante",
+    "category": "guide-tiers-payant",
+    "title": "Tiers payant des professionnels de santé : du devis au rapprochement bancaire",
+    "primaryKeyword": "tiers payant professionnel de santé",
+    "keywordCluster": [
+      "tiers payant professionnel de santé",
+      "gestion tiers payant",
+      "tiers payant intégral",
+      "part AMO part AMC",
+      "tiers payant complémentaire",
+      "demande de prise en charge",
+      "retour noemie",
+      "rapprochement bancaire tiers payant"
+    ],
+    "searchVolume": 0,
+    "status": "pending",
+    "wave": 4,
+    "level": "Pilier global",
+    "parentSlug": null,
+    "reader": "Gérant ou direction administrative d'une structure de santé et personne chargée du tiers payant (magasin d'optique, centre auditif, cabinet ou centre dentaire, centre de santé, officine, clinique, laboratoire)",
+    "role": "Trafic + maillage",
+    "granitData": "Constats d'expérience des dossiers optique et audio traités par nos agents, présentés comme tels, sans chiffre ni généralisation aux autres métiers",
+    "cta": "Parlons de votre tiers payant",
+    "toValidate": "Relecture humaine obligatoire (PR). Obligations de tiers payant à sourcer métier par métier : L6323-1-7 CSP pour les centres de santé (part AMO), carte Vitale obligatoire en audio depuis le 1er janvier 2025 (avenant 1 signé le 4 novembre 2024), carte Vitale exigée en officine depuis juin 2025, examen bucco-dentaire en tiers payant intégral depuis le 1er avril 2025. Ne pas écrire « tiers payant obligatoire sur le 100 % Santé » (non confirmé). Exemples « AMO 60 % » datés « jusqu'au 31 décembre 2026, taux 2027 à confirmer » (aucune décision Uncam publiée). Ne pas écrire « délai légal de 2 ans pour facturer » (L332-1 ne vise plus que les prestations en espèces) : seul le délai contractuel Inter-AMC est sûr. Granit : constat d'expérience en optique et audio seulement, simple offre ailleurs (voir la fiche métier). Ne jamais viser « opticien » dans le mot-clé. Ajouter un lien transverse de tiers-payant-opticien vers ce pilier à sa prochaine révision.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Comment fonctionne le tiers payant pour un professionnel de santé ?",
+      "Qui paie quoi entre l'Assurance maladie (AMO) et la mutuelle (AMC) ?",
+      "Le tiers payant est-il obligatoire pour les professionnels de santé ?",
+      "Combien de temps faut-il pour être payé en tiers payant ?",
+      "Que faire quand un paiement de mutuelle n'arrive pas ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "G0",
+        "slug": "tiers-payant-opticien",
+        "anchor": "tiers payant opticien",
+        "type": "enfant"
+      },
+      {
+        "id": "AU0",
+        "slug": "tiers-payant-audioprothesiste",
+        "anchor": "tiers payant audioprothésiste",
+        "type": "enfant"
+      },
+      {
+        "id": "D0",
+        "slug": "tiers-payant-dentaire",
+        "anchor": "tiers payant dentaire",
+        "type": "enfant"
+      },
+      {
+        "id": "S0",
+        "slug": "tiers-payant-centre-de-sante",
+        "anchor": "tiers payant en centre de santé",
+        "type": "enfant"
+      },
+      {
+        "id": "PH0",
+        "slug": "gestion-tiers-payant-pharmacie",
+        "anchor": "gestion du tiers payant en pharmacie",
+        "type": "enfant"
+      },
+      {
+        "id": "K0",
+        "slug": "tiers-payant-clinique-privee",
+        "anchor": "tiers payant en clinique privée",
+        "type": "enfant"
+      },
+      {
+        "id": "C0",
+        "slug": "rapprochement-bancaire-tiers-payant",
+        "anchor": "rapprochement bancaire du tiers payant",
+        "type": "enfant"
+      },
+      {
+        "id": "F0",
+        "slug": "glossaire-tiers-payant",
+        "anchor": "glossaire du tiers payant",
+        "type": "enfant"
+      },
+      {
+        "id": "X1",
+        "slug": "ticket-moderateur-2027-tiers-payant",
+        "anchor": "ticket modérateur 2027",
+        "type": "enfant"
+      },
+      {
+        "id": "X3",
+        "slug": "inter-amc-tiers-payant-complementaire",
+        "anchor": "contrat Inter-AMC",
+        "type": "enfant"
+      },
+      {
+        "id": "X4",
+        "slug": "rejet-mutuelle-acte-hors-perimetre",
+        "anchor": "rejet mutuelle « acte hors périmètre »",
+        "type": "enfant"
+      },
+      {
+        "id": "X5",
+        "slug": "idb-clc-roc-tiers-payant",
+        "anchor": "dispositif ROC, IDB et CLC",
+        "type": "enfant"
+      },
+      {
+        "id": "G5",
+        "slug": "tiers-payant-integral",
+        "anchor": "tiers payant intégral ou partiel",
+        "type": "enfant"
+      },
+      {
+        "id": "B5",
+        "slug": "tiers-payant-css",
+        "anchor": "tiers payant et CSS",
+        "type": "enfant"
+      },
+      {
+        "id": "B3",
+        "slug": "prise-en-charge-refusee",
+        "anchor": "prise en charge refusée",
+        "type": "enfant"
+      },
+      {
+        "id": "E6",
+        "slug": "indicateurs-tiers-payant",
+        "anchor": "indicateurs du tiers payant",
+        "type": "enfant"
+      },
+      {
+        "id": "C3",
+        "slug": "codes-rejets-noemie",
+        "anchor": "liste des codes rejets NOEMIE",
+        "type": "transverse"
+      },
+      {
+        "id": "C2",
+        "slug": "quand-relancer-mutuelle",
+        "anchor": "quand relancer une mutuelle",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "optique",
+      "dentaire",
+      "centres",
+      "pharmacie",
+      "cliniques"
+    ],
+    "auteur": "laura",
+    "unsplashQuery": "healthcare administration desk"
+  },
+  {
     "id": "C0",
     "slug": "rapprochement-bancaire-tiers-payant",
     "category": "paiements",
@@ -2076,12 +2465,12 @@
     "status": "pending",
     "wave": 2,
     "level": "Pilier",
-    "parentSlug": "tiers-payant-opticien",
-    "reader": "Comptoir + gérant",
+    "parentSlug": "tiers-payant-professionnels-de-sante",
+    "reader": "Gérant ou direction administrative d'une structure de santé, tous métiers ; et accueil, comptoir ou facturation d'une structure de santé (magasin d'optique, centre auditif, cabinet ou centre dentaire, centre de santé, officine, clinique, laboratoire)",
     "role": "Résolution",
     "granitData": "Libellés bancaires par payeur (canaux.py), fenêtres de matching",
     "cta": "Démo agent rapprochement",
-    "toValidate": "",
+    "toValidate": "Exemples par métier ; ne pas présenter les constats optique comme valant pour tous. Article multi-métiers : exemples tirés de chaque métier listé dans `verticales`, sans privilégier l'optique ; Granit : constat d'expérience en optique et audio seulement, simple offre ailleurs (voir la fiche métier).",
     "primaryKeywordMeasured": false,
     "faqQuestions": [
       "Comment faire le rapprochement bancaire du tiers payant ?",
@@ -2091,9 +2480,9 @@
     ],
     "internalLinks": [
       {
-        "id": "G0",
-        "slug": "tiers-payant-opticien",
-        "anchor": "tiers payant opticien",
+        "id": "T0",
+        "slug": "tiers-payant-professionnels-de-sante",
+        "anchor": "tiers payant des professionnels de santé",
         "type": "parent"
       },
       {
@@ -2139,12 +2528,6 @@
         "type": "enfant"
       },
       {
-        "id": "C8",
-        "slug": "reste-a-charge-impaye",
-        "anchor": "Reste à charge impayé par le client",
-        "type": "enfant"
-      },
-      {
         "id": "E0",
         "slug": "gerer-tiers-payant-magasin",
         "anchor": "gestion tiers payant",
@@ -2165,13 +2548,135 @@
     ],
     "remplace": [
       "rapprochement-noemie"
+    ],
+    "verticales": [
+      "optique",
+      "dentaire",
+      "centres",
+      "pharmacie",
+      "cliniques"
     ]
+  },
+  {
+    "id": "D0",
+    "slug": "tiers-payant-dentaire",
+    "category": "guide-tiers-payant",
+    "title": "Tiers payant dentaire : du devis à l'encaissement, pour cabinets et centres dentaires",
+    "primaryKeyword": "tiers payant dentaire",
+    "keywordCluster": [
+      "tiers payant dentiste",
+      "tiers payant dentiste obligatoire",
+      "tiers payant cabinet dentaire",
+      "tiers payant centre dentaire",
+      "centre dentaire tiers payant mutuelle",
+      "gestion tiers payant dentaire",
+      "gestionnaire tiers payant dentaire",
+      "part AMC dentaire",
+      "prise en charge prothèse dentaire mutuelle"
+    ],
+    "searchVolume": 0,
+    "status": "pending",
+    "wave": 4,
+    "level": "Pilier métier",
+    "parentSlug": "tiers-payant-professionnels-de-sante",
+    "reader": "Coordinatrice de soins ou assistante dentaire chargée du tiers payant, responsable administratif d'un centre dentaire multi-fauteuils",
+    "role": "Trafic + maillage",
+    "granitData": "—",
+    "cta": "Parlons de votre tiers payant",
+    "toValidate": "Angle méthode : Granit s'écrit comme une offre (« Granit peut… »), sans chiffre ni cas client. Intègre « tiers payant centre dentaire » et le pilotage multi-fauteuils. Retirer « tiers payant obligatoire sur le panier 100 % Santé côté complémentaire » (aucune obligation trouvée). L6323-1-7 confirmé pour les centres ; agrément ARS de l'activité dentaire en centre de santé (loi du 19 mai 2023) à mentionner. Examen bucco-dentaire : tiers payant intégral depuis le 1er avril 2025, soins consécutifs pour les 3-24 ans seulement. Exemples « AMO 60 % » datés « jusqu'au 31 décembre 2026, taux 2027 à confirmer » (aucune décision Uncam publiée). Changements de gestionnaire de plateforme sans source primaire : ne pas les écrire. Aucun prix d'externalisation, aucun concurrent nommé. Cadrer « France » (SERP en partie belge).",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Le tiers payant est-il obligatoire chez le dentiste ?",
+      "Un centre dentaire est-il obligé de pratiquer le tiers payant ?",
+      "Un centre dentaire peut-il demander de payer la prothèse avant la pose ?",
+      "Le tiers payant s'applique-t-il aux prothèses et aux implants ?",
+      "Comment suivre les impayés mutuelles sur plusieurs fauteuils ou plusieurs sites ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "T0",
+        "slug": "tiers-payant-professionnels-de-sante",
+        "anchor": "tiers payant des professionnels de santé",
+        "type": "parent"
+      },
+      {
+        "id": "D1",
+        "slug": "pec-dentaire-portails-mutuelles",
+        "anchor": "PEC dentaire sur les portails des mutuelles",
+        "type": "enfant"
+      },
+      {
+        "id": "D2",
+        "slug": "actes-hors-nomenclature-dentaire",
+        "anchor": "actes hors nomenclature dentaire",
+        "type": "enfant"
+      },
+      {
+        "id": "R4",
+        "slug": "dentaire-paniers-100-sante-tiers-payant",
+        "anchor": "paniers 100 % Santé dentaire",
+        "type": "enfant"
+      },
+      {
+        "id": "R1",
+        "slug": "orthodontie-facturation-traitements-longs",
+        "anchor": "facturation de l'orthodontie",
+        "type": "enfant"
+      },
+      {
+        "id": "S0",
+        "slug": "tiers-payant-centre-de-sante",
+        "anchor": "tiers payant en centre de santé",
+        "type": "sœur"
+      },
+      {
+        "id": "X3",
+        "slug": "inter-amc-tiers-payant-complementaire",
+        "anchor": "contrat Inter-AMC",
+        "type": "sœur"
+      },
+      {
+        "id": "X1",
+        "slug": "ticket-moderateur-2027-tiers-payant",
+        "anchor": "ticket modérateur 2027",
+        "type": "sœur"
+      },
+      {
+        "id": "C0",
+        "slug": "rapprochement-bancaire-tiers-payant",
+        "anchor": "rapprochement bancaire du tiers payant",
+        "type": "transverse"
+      },
+      {
+        "id": "B3",
+        "slug": "prise-en-charge-refusee",
+        "anchor": "prise en charge refusée",
+        "type": "transverse"
+      },
+      {
+        "id": "B5",
+        "slug": "tiers-payant-css",
+        "anchor": "tiers payant et CSS",
+        "type": "transverse"
+      },
+      {
+        "id": "A13",
+        "slug": "mutuelle-quel-portail",
+        "anchor": "savoir par quel portail passe une mutuelle",
+        "type": "outil"
+      }
+    ],
+    "verticales": [
+      "dentaire"
+    ],
+    "auteur": "laura",
+    "unsplashQuery": "dental clinic reception"
   },
   {
     "id": "F0",
     "slug": "glossaire-tiers-payant",
     "category": "glossaire",
-    "title": "Glossaire du tiers payant optique",
+    "title": "Glossaire du tiers payant : AMO, AMC, NOEMIE, DRE, PEC et les autres sigles",
     "primaryKeyword": "glossaire tiers payant",
     "keywordCluster": [],
     "searchVolume": 0,
@@ -2179,12 +2684,12 @@
     "status": "pending",
     "wave": 2,
     "level": "Pilier",
-    "parentSlug": "tiers-payant-opticien",
-    "reader": "Comptoir",
+    "parentSlug": "tiers-payant-professionnels-de-sante",
+    "reader": "Accueil, comptoir ou facturation d'une structure de santé (magasin d'optique, centre auditif, cabinet ou centre dentaire, centre de santé, officine, clinique, laboratoire)",
     "role": "Maillage + citations IA",
     "granitData": "glossaire.json (70 termes)",
     "cta": "Démo",
-    "toValidate": "",
+    "toValidate": "Article multi-métiers : exemples tirés de chaque métier listé dans `verticales`, sans privilégier l'optique ; Granit : constat d'expérience en optique et audio seulement, simple offre ailleurs (voir la fiche métier).",
     "primaryKeywordMeasured": false,
     "faqQuestions": [
       "Que veulent dire AMO, AMC, OCAM ?",
@@ -2193,9 +2698,9 @@
     ],
     "internalLinks": [
       {
-        "id": "G0",
-        "slug": "tiers-payant-opticien",
-        "anchor": "tiers payant opticien",
+        "id": "T0",
+        "slug": "tiers-payant-professionnels-de-sante",
+        "anchor": "tiers payant des professionnels de santé",
         "type": "parent"
       },
       {
@@ -2221,13 +2726,240 @@
         "slug": "questions-tiers-payant-opticien",
         "anchor": "Tiers payant opticien",
         "type": "sœur"
+      }
+    ],
+    "verticales": [
+      "optique",
+      "dentaire",
+      "centres",
+      "pharmacie",
+      "cliniques"
+    ],
+    "auteur": "laura"
+  },
+  {
+    "id": "AU0",
+    "slug": "tiers-payant-audioprothesiste",
+    "category": "guide-tiers-payant",
+    "title": "Tiers payant audioprothésiste : de la prise en charge mutuelle au paiement",
+    "primaryKeyword": "tiers payant audioprothésiste",
+    "keywordCluster": [
+      "tiers payant appareil auditif",
+      "prise en charge mutuelle appareil auditif",
+      "audioprothésiste mutuelle",
+      "carte vitale tiers payant audioprothèse",
+      "facturation aide auditive fin d'essai",
+      "part AMO part AMC aide auditive",
+      "réseaux de soins audioprothésiste",
+      "devis normalisé audioprothèse"
+    ],
+    "searchVolume": 0,
+    "status": "pending",
+    "wave": 4,
+    "level": "Pilier métier",
+    "parentSlug": "tiers-payant-professionnels-de-sante",
+    "reader": "Audioprothésiste titulaire ou gérant de centre auditif, et assistant(e) audio chargé(e) du tiers payant",
+    "role": "Trafic + maillage",
+    "granitData": "Constats d'expérience des dossiers audio traités par nos agents (dépôt et suivi des PEC, alertes avant facturation, rapprochement RO/RC), sans aucun chiffre ni plateforme présentée comme gérée",
+    "cta": "Démo",
+    "toValidate": "Avenant 1 à la convention des audioprothésistes signé le 4 novembre 2024 (et non le 18 octobre) : carte Vitale obligatoire pour le tiers payant depuis le 1er janvier 2025 (exceptions AME et détenus), ADRi, essai de 30 jours minimum avant facture. Montant « 0,01 € » de la prestation de suivi non confirmé : ne pas l'écrire. Exemples « AMO 60 % » datés « jusqu'au 31 décembre 2026, taux 2027 à confirmer » (aucune décision Uncam publiée). Décret 2026-810 à relire sur Légifrance. Section devis normalisé (ex-A6) : la mention des codes LPP sur le devis n'est pas vérifiée. Aucune plateforme présentée comme gérée par Granit sans validation produit ; aucun chiffre client. Passer R5 en enfant de ce pilier (parentSlug) à sa prochaine révision.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Le tiers payant est-il obligatoire chez l'audioprothésiste ?",
+      "La carte Vitale est-elle obligatoire chez l'audioprothésiste ?",
+      "Quand facturer une aide auditive : au devis ou après l'essai ?",
+      "Comment se faire payer la part mutuelle d'un appareil auditif ?",
+      "Combien de temps un devis d'audioprothèse est-il valable ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "T0",
+        "slug": "tiers-payant-professionnels-de-sante",
+        "anchor": "tiers payant des professionnels de santé",
+        "type": "parent"
       },
       {
-        "id": "G4",
-        "slug": "erreurs-tiers-payant-opticien",
-        "anchor": "Les erreurs de saisie qui coûtent le plus cher en tiers payant",
+        "id": "AU1",
+        "slug": "pec-audio-plateformes-tiers-payant",
+        "anchor": "PEC audio sur les portails",
+        "type": "enfant"
+      },
+      {
+        "id": "AU2",
+        "slug": "codes-lpp-audioprothese-facturation",
+        "anchor": "codes LPP audioprothèse",
+        "type": "enfant"
+      },
+      {
+        "id": "AU3",
+        "slug": "paiement-audioprothese-bloque",
+        "anchor": "paiement d'audioprothèse bloqué",
+        "type": "enfant"
+      },
+      {
+        "id": "AU4",
+        "slug": "aides-auditives-css-tiers-payant",
+        "anchor": "appareil auditif et CSS",
+        "type": "enfant"
+      },
+      {
+        "id": "R5",
+        "slug": "audioprothese-renouvellement-tiers-payant",
+        "anchor": "renouvellement d'appareil auditif",
+        "type": "enfant"
+      },
+      {
+        "id": "G0",
+        "slug": "tiers-payant-opticien",
+        "anchor": "tiers payant opticien",
         "type": "sœur"
+      },
+      {
+        "id": "X1",
+        "slug": "ticket-moderateur-2027-tiers-payant",
+        "anchor": "ticket modérateur 2027",
+        "type": "sœur"
+      },
+      {
+        "id": "C0",
+        "slug": "rapprochement-bancaire-tiers-payant",
+        "anchor": "rapprochement bancaire du tiers payant",
+        "type": "transverse"
+      },
+      {
+        "id": "C3",
+        "slug": "codes-rejets-noemie",
+        "anchor": "liste des codes rejets NOEMIE",
+        "type": "transverse"
+      },
+      {
+        "id": "C2",
+        "slug": "quand-relancer-mutuelle",
+        "anchor": "quand relancer une mutuelle",
+        "type": "transverse"
+      },
+      {
+        "id": null,
+        "slug": "/demo",
+        "anchor": "voir une démo de l'agent sur vos dossiers audio",
+        "type": "conversion"
       }
+    ],
+    "verticales": [
+      "optique"
+    ],
+    "auteur": "laura",
+    "unsplashQuery": "hearing aid consultation"
+  },
+  {
+    "id": "S0",
+    "slug": "tiers-payant-centre-de-sante",
+    "category": "guide-tiers-payant",
+    "title": "Tiers payant en centre de santé : obligations, part mutuelle, rejets et paiements",
+    "primaryKeyword": "tiers payant centre de santé",
+    "keywordCluster": [
+      "gestion tiers payant centre de santé",
+      "facturation centre de santé",
+      "logiciel facturation centre de santé",
+      "tiers payant complémentaire centre de santé",
+      "rejets tiers payant centre de santé",
+      "rapprochement bancaire centre de santé",
+      "retour NOEMIE centre de santé",
+      "centre de santé multi-sites"
+    ],
+    "searchVolume": 0,
+    "status": "pending",
+    "wave": 4,
+    "level": "Pilier métier",
+    "parentSlug": "tiers-payant-professionnels-de-sante",
+    "reader": "Direction ou responsable administratif et financier d'un centre de santé, coordinatrice de la facturation, gestionnaire multi-sites d'un organisme gestionnaire",
+    "role": "Trafic + maillage",
+    "granitData": "—",
+    "cta": "Parlons de votre tiers payant",
+    "toValidate": "Angle méthode : Granit s'écrit comme une offre (« Granit peut… »), sans chiffre ni cas client. Rien sur la télétransmission ni la carte CPS (déclarations contradictoires), rien sur les capacités annoncées chez des centres de soins non programmés (non validées). L6323-1-7 confirmé (tiers payant de la part AMO, pas de dépassement, pas de paiement intégral exigé pour des soins non dispensés). Nuancer « C2S : tiers payant intégral par la caisse » (la part complémentaire peut être gérée par un organisme choisi par l'assuré). « FSE sécurisée, mode privilégié » non confirmé. Délais Inter-AMC (7 jours ouvrés, 20 jours ouvrés sur papier, 2 ans, 5 ans) tirés du contrat spécimen version 03 du 24 août 2022 : vérifier qu'aucune version plus récente n'existe, et les citer comme engagement contractuel, pas comme règle légale. FINESS par antenne non vérifié. Aucun prix d'externalisation.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Un centre de santé peut-il refuser le tiers payant ?",
+      "Le tiers payant est-il automatique avec toutes les mutuelles ?",
+      "Un centre de santé peut-il facturer des dépassements d'honoraires ?",
+      "Quel délai de paiement pour une DRE mutuelle en centre de santé ?",
+      "Qui gère le tiers payant dans un centre de santé ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "T0",
+        "slug": "tiers-payant-professionnels-de-sante",
+        "anchor": "tiers payant des professionnels de santé",
+        "type": "parent"
+      },
+      {
+        "id": "S1",
+        "slug": "accord-national-centres-de-sante",
+        "anchor": "accord national des centres de santé",
+        "type": "enfant"
+      },
+      {
+        "id": "S2",
+        "slug": "rejet-cpam-centre-de-sante",
+        "anchor": "rejet CPAM en centre de santé",
+        "type": "enfant"
+      },
+      {
+        "id": "S3",
+        "slug": "tiers-payant-centre-ophtalmologie",
+        "anchor": "tiers payant en centre d'ophtalmologie",
+        "type": "enfant"
+      },
+      {
+        "id": "R9",
+        "slug": "recouvrement-patient-empathie",
+        "anchor": "recouvrer un reste à charge auprès du patient",
+        "type": "enfant"
+      },
+      {
+        "id": "R10",
+        "slug": "integration-doctolib-lgo",
+        "anchor": "intégration Doctolib et logiciel métier",
+        "type": "enfant"
+      },
+      {
+        "id": "X3",
+        "slug": "inter-amc-tiers-payant-complementaire",
+        "anchor": "contrat Inter-AMC",
+        "type": "sœur"
+      },
+      {
+        "id": "D0",
+        "slug": "tiers-payant-dentaire",
+        "anchor": "tiers payant dentaire",
+        "type": "sœur"
+      },
+      {
+        "id": "C0",
+        "slug": "rapprochement-bancaire-tiers-payant",
+        "anchor": "rapprochement bancaire du tiers payant",
+        "type": "transverse"
+      },
+      {
+        "id": "C3",
+        "slug": "codes-rejets-noemie",
+        "anchor": "liste des codes rejets NOEMIE",
+        "type": "transverse"
+      },
+      {
+        "id": "E6",
+        "slug": "indicateurs-tiers-payant",
+        "anchor": "indicateurs du tiers payant",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "centres"
+    ],
+    "auteur": "laura",
+    "unsplashQuery": "medical center reception",
+    "remplace": [
+      "groupes-multi-sites-pilotage"
     ]
   },
   {
@@ -2299,6 +3031,9 @@
         "anchor": "checklist avant d'envoyer une prise en charge",
         "type": "transverse"
       }
+    ],
+    "verticales": [
+      "optique"
     ]
   },
   {
@@ -2356,7 +3091,163 @@
         "anchor": "portails de tiers payant",
         "type": "sœur"
       }
+    ],
+    "verticales": [
+      "optique"
     ]
+  },
+  {
+    "id": "K0",
+    "slug": "tiers-payant-clinique-privee",
+    "category": "guide-tiers-payant",
+    "title": "Tiers payant en clinique privée : de la prise en charge hospitalière à la part mutuelle",
+    "primaryKeyword": "tiers payant clinique privée",
+    "keywordCluster": [
+      "tiers payant hospitalier",
+      "prise en charge hospitalière mutuelle",
+      "bureau des entrées",
+      "facturation séjour clinique",
+      "part complémentaire hospitalisation",
+      "retours NOEMIE établissement",
+      "ROC cliniques"
+    ],
+    "searchVolume": 0,
+    "status": "pending",
+    "wave": 4,
+    "level": "Pilier métier",
+    "parentSlug": "tiers-payant-professionnels-de-sante",
+    "reader": "Responsable du bureau des entrées, de la facturation ou du recouvrement d'une clinique privée (MCO, SMR, psychiatrie)",
+    "role": "Autorité",
+    "granitData": "—",
+    "cta": "Parlons de votre tiers payant",
+    "toValidate": "Aucun call terrain avec une clinique : angle méthode, Granit s'écrit comme une offre (fiche cliniques). ROC en clinique : pilotes en 2025, montée en charge seulement « envisageable » (FHP-MCO), aucune date ferme. Forfait journalier de 23 € et de 17 € en psychiatrie depuis le 1er mars 2026 confirmé. R162-27 « en vigueur depuis le 1er janvier 2025 » non vérifié. Canal réel de la part AMC en clinique non documenté : à confirmer auprès d'un bureau des entrées. Aucun établissement nommé. Ne pas transférer hopital-prive-ordonnancement. Catégorie guide : vérifier la signature.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Est-ce à la clinique ou au patient de demander la prise en charge à la mutuelle ?",
+      "Que faire si la prise en charge n'est pas arrivée le jour de l'admission ?",
+      "La mutuelle doit-elle rembourser le forfait journalier ?",
+      "Qui facture les dépassements d'honoraires du chirurgien : la clinique ou le praticien ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "T0",
+        "slug": "tiers-payant-professionnels-de-sante",
+        "anchor": "tiers payant des professionnels de santé",
+        "type": "parent"
+      },
+      {
+        "id": "K1",
+        "slug": "demande-prise-en-charge-hospitaliere",
+        "anchor": "demande de prise en charge hospitalière",
+        "type": "enfant"
+      },
+      {
+        "id": "K2",
+        "slug": "rejets-fse-laboratoire",
+        "anchor": "rejets FSE en laboratoire",
+        "type": "enfant"
+      },
+      {
+        "id": "X5",
+        "slug": "idb-clc-roc-tiers-payant",
+        "anchor": "dispositif ROC, IDB et CLC",
+        "type": "sœur"
+      },
+      {
+        "id": "C3",
+        "slug": "codes-rejets-noemie",
+        "anchor": "liste des codes rejets NOEMIE",
+        "type": "transverse"
+      },
+      {
+        "id": "C7",
+        "slug": "impayes-mutuelle-anciens",
+        "anchor": "impayés mutuelle anciens",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "cliniques"
+    ],
+    "unsplashQuery": "hospital corridor",
+    "auteur": "laura"
+  },
+  {
+    "id": "AU1",
+    "slug": "pec-audio-plateformes-tiers-payant",
+    "category": "plateformes",
+    "title": "PEC audio : faire une prise en charge d'aide auditive sur les portails des plateformes",
+    "primaryKeyword": "pec audio",
+    "keywordCluster": [
+      "almerys pec audio",
+      "almerys tp audio",
+      "itelis pec audio",
+      "carte blanche pec audio",
+      "kalixia audio pro",
+      "viamedis audioprothese",
+      "partenaire itelis audioprothesiste",
+      "demande de prise en charge appareil auditif",
+      "conventionnement audioprothésiste"
+    ],
+    "searchVolume": 0,
+    "status": "pending",
+    "wave": 4,
+    "level": "Fille",
+    "parentSlug": "tiers-payant-audioprothesiste",
+    "reader": "Assistant(e) audio ou audioprothésiste qui saisit les prises en charge sur les extranets des plateformes",
+    "role": "Résolution",
+    "granitData": "Constats d'expérience des dossiers audio traités par nos agents (dépôt de PEC, alertes avant expiration), sans chiffre et sans citer de plateforme comme gérée",
+    "cta": "Démo",
+    "toValidate": "Aucune plateforme présentée comme « gérée par Granit » sans validation produit. Tableau des plateformes daté et sourcé sur les pages pros des réseaux (sources d'acteurs, pas réglementaires). Validité de la PEC face à l'essai de 30 jours : variable selon la plateforme, écrire « vérifiez la durée affichée sur l'accord ». Numéro de contact Kalixia à revérifier le jour de la rédaction. Pas de page par plateforme : des encadrés audio dans les fiches portail existantes.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Comment faire une PEC audio sur Almerys ?",
+      "Comment devenir audioprothésiste partenaire d'un réseau comme Itelis ou Kalixia ?",
+      "Que faire si la prise en charge expire pendant la période d'essai ?",
+      "Quel numéro appeler pour Kalixia Audio ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "AU0",
+        "slug": "tiers-payant-audioprothesiste",
+        "anchor": "tiers payant audioprothésiste",
+        "type": "parent"
+      },
+      {
+        "id": "AU3",
+        "slug": "paiement-audioprothese-bloque",
+        "anchor": "paiement d'audioprothèse bloqué",
+        "type": "sœur"
+      },
+      {
+        "id": "AU2",
+        "slug": "codes-lpp-audioprothese-facturation",
+        "anchor": "codes LPP audioprothèse",
+        "type": "sœur"
+      },
+      {
+        "id": "B3",
+        "slug": "prise-en-charge-refusee",
+        "anchor": "prise en charge refusée",
+        "type": "transverse"
+      },
+      {
+        "id": "C2",
+        "slug": "quand-relancer-mutuelle",
+        "anchor": "quand relancer une mutuelle",
+        "type": "transverse"
+      },
+      {
+        "id": "A13",
+        "slug": "mutuelle-quel-portail",
+        "anchor": "savoir par quel portail passe une mutuelle",
+        "type": "outil"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ],
+    "unsplashQuery": "hearing aid laptop"
   },
   {
     "id": "F2",
@@ -2382,11 +3273,11 @@
     "wave": 2,
     "level": "Fille",
     "parentSlug": "glossaire-tiers-payant",
-    "reader": "Comptoir",
+    "reader": "Accueil, comptoir ou facturation d'une structure de santé (magasin d'optique, centre auditif, cabinet ou centre dentaire, centre de santé, officine, clinique, laboratoire)",
     "role": "Trafic + maillage",
     "granitData": "glossaire.json",
     "cta": "Démo",
-    "toValidate": "",
+    "toValidate": "Article multi-métiers : exemples tirés de chaque métier listé dans `verticales`, sans privilégier l'optique ; Granit : constat d'expérience en optique et audio seulement, simple offre ailleurs (voir la fiche métier).",
     "primaryKeywordMeasured": true,
     "faqQuestions": [
       "Que veut dire NOEMIE ?",
@@ -2419,7 +3310,117 @@
         "anchor": "tiers payant opticien",
         "type": "transverse"
       }
-    ]
+    ],
+    "verticales": [
+      "optique",
+      "dentaire",
+      "centres",
+      "pharmacie",
+      "cliniques"
+    ],
+    "auteur": "laura"
+  },
+  {
+    "id": "PH0",
+    "slug": "gestion-tiers-payant-pharmacie",
+    "category": "gerer-son-tiers-payant",
+    "title": "Gestion du tiers payant en pharmacie : ARL, retours NOEMIE, rejets et rapprochement",
+    "primaryKeyword": "gestion tiers payant pharmacie",
+    "keywordCluster": [
+      "tiers payant officine",
+      "tiers payant pharmacie mutuelle",
+      "concentrateur pharmacie",
+      "rejet tiers payant pharmacie",
+      "balance tiers payant pharmacie",
+      "VisioDroits",
+      "SCOR pharmacie",
+      "retour NOEMIE pharmacie",
+      "gestionnaire tiers payant pharmacie"
+    ],
+    "searchVolume": 0,
+    "status": "pending",
+    "wave": 4,
+    "level": "Pilier métier",
+    "parentSlug": "tiers-payant-professionnels-de-sante",
+    "reader": "Titulaire d'officine et référent tiers payant (préparateur ou adjoint) chargé du suivi après la télétransmission",
+    "role": "Trafic + maillage",
+    "granitData": "—",
+    "cta": "Parlons de votre tiers payant",
+    "toValidate": "Angle « après la télétransmission ». Granit peut proposer le tiers payant, la gestion des rejets et des prises en charge : offre seulement (fiche pharmacie). Aucun signal terrain, donc aucun constat. Ne rien dire d'une intégration au LGO ou à un concentrateur. Carte Vitale exigée pour le tiers payant depuis juin 2025 (exceptions AME, nourrissons de moins de 3 mois, résidents d'EHPAD, demandeurs d'asile) confirmé. Non vérifiés, à ne pas écrire tels quels : paiement AMO en 4 jours ouvrés, extension du tiers payant contre génériques au 1er septembre 2026, article 32 du PLFSS 2027 (non voté). Ne pas écrire « délai légal de 2 ans pour facturer » (L332-1 ne vise plus que les prestations en espèces) : seul le délai contractuel Inter-AMC est sûr. Aucun montant d'indemnité AMC ni de coût caché. Neutre entre syndicats. Ne pas viser « tiers payant pharmacie » (intention patient).",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Comment fonctionne le tiers payant en pharmacie pour la part mutuelle ?",
+      "Qu'est-ce qu'un concentrateur (OCT) et est-il obligatoire ?",
+      "Peut-on faire le tiers payant sans carte Vitale en pharmacie ?",
+      "Que faire quand un ARL est négatif ?",
+      "Qui contacter quand une mutuelle ne paie pas ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "T0",
+        "slug": "tiers-payant-professionnels-de-sante",
+        "anchor": "tiers payant des professionnels de santé",
+        "type": "parent"
+      },
+      {
+        "id": "R3",
+        "slug": "officine-balance-agee-tiers-payant",
+        "anchor": "balance âgée du tiers payant en officine",
+        "type": "enfant"
+      },
+      {
+        "id": "R6",
+        "slug": "trois-boucles-pharmacie",
+        "anchor": "les trois boucles de la pharmacie",
+        "type": "enfant"
+      },
+      {
+        "id": "PH1",
+        "slug": "rejet-mutuelle-pharmacie",
+        "anchor": "rejet mutuelle en pharmacie",
+        "type": "enfant"
+      },
+      {
+        "id": "PH3",
+        "slug": "tiers-payant-sans-carte-vitale-pharmacie",
+        "anchor": "tiers payant sans carte Vitale",
+        "type": "enfant"
+      },
+      {
+        "id": "PH2",
+        "slug": "externalisation-tiers-payant-pharmacie",
+        "anchor": "externaliser le tiers payant",
+        "type": "enfant"
+      },
+      {
+        "id": "X3",
+        "slug": "inter-amc-tiers-payant-complementaire",
+        "anchor": "contrat Inter-AMC",
+        "type": "sœur"
+      },
+      {
+        "id": "C0",
+        "slug": "rapprochement-bancaire-tiers-payant",
+        "anchor": "rapprochement bancaire du tiers payant",
+        "type": "transverse"
+      },
+      {
+        "id": "C3",
+        "slug": "codes-rejets-noemie",
+        "anchor": "liste des codes rejets NOEMIE",
+        "type": "transverse"
+      },
+      {
+        "id": "X2",
+        "slug": "arl-negatif",
+        "anchor": "ARL négatif",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "pharmacie"
+    ],
+    "unsplashQuery": "pharmacy counter computer"
   },
   {
     "id": "A11",
@@ -2484,6 +3485,9 @@
         "anchor": "checklist avant d'envoyer une prise en charge",
         "type": "transverse"
       }
+    ],
+    "verticales": [
+      "optique"
     ]
   },
   {
@@ -2510,11 +3514,11 @@
     "wave": 2,
     "level": "Fille",
     "parentSlug": "glossaire-tiers-payant",
-    "reader": "Comptoir",
+    "reader": "Accueil, comptoir ou facturation d'une structure de santé (magasin d'optique, centre auditif, cabinet ou centre dentaire, centre de santé, officine, clinique, laboratoire)",
     "role": "Trafic",
     "granitData": "fondations.md",
     "cta": "Démo",
-    "toValidate": "",
+    "toValidate": "Article multi-métiers : exemples tirés de chaque métier listé dans `verticales`, sans privilégier l'optique ; Granit : constat d'expérience en optique et audio seulement, simple offre ailleurs (voir la fiche métier).",
     "primaryKeywordMeasured": true,
     "faqQuestions": [
       "Quelle différence entre AMO et AMC ?",
@@ -2546,14 +3550,99 @@
         "anchor": "tiers payant opticien",
         "type": "transverse"
       }
-    ]
+    ],
+    "verticales": [
+      "optique",
+      "dentaire",
+      "centres",
+      "pharmacie",
+      "cliniques"
+    ],
+    "auteur": "laura"
+  },
+  {
+    "id": "D1",
+    "slug": "pec-dentaire-portails-mutuelles",
+    "category": "plateformes",
+    "title": "PEC dentaire : faire votre demande de prise en charge sur les portails des mutuelles",
+    "primaryKeyword": "pec dentaire",
+    "keywordCluster": [
+      "almerys pec dentaire",
+      "viamedis pec dentaire",
+      "itelis pec dentaire",
+      "carte blanche pec dentaire",
+      "envoyer devis dentaire mutuelle",
+      "réponse devis dentaire mutuelle",
+      "validité devis dentaire mutuelle",
+      "demande de prise en charge dentaire mutuelle"
+    ],
+    "searchVolume": 0,
+    "status": "pending",
+    "wave": 4,
+    "level": "Fille",
+    "parentSlug": "tiers-payant-dentaire",
+    "reader": "Assistante ou coordinatrice dentaire qui saisit les devis de prothèse et d'implant sur les portails des plateformes",
+    "role": "Résolution",
+    "granitData": "—",
+    "cta": "Parlons de votre tiers payant",
+    "toValidate": "Angle méthode : Granit s'écrit comme une offre (« Granit peut… »), sans chiffre ni cas client. Tableau des plateformes daté et sourcé sur les pages pros de chaque plateforme ; changements de gestionnaire sans source primaire exclus. Validité d'un accord : « à lire sur l'accord », pas de règle générale. Aucun concurrent nommé. Arrêté du 23 août 2023 (convention) : récupérer le JORFTEXT direct.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Comment faire une PEC dentaire sur Almerys ou Viamedis ?",
+      "Combien de temps est valable un accord de prise en charge dentaire ?",
+      "Que faire si la mutuelle ne répond pas au devis ?",
+      "Faut-il refaire une PEC si le plan de traitement change ?",
+      "Qui envoie le devis à la mutuelle : le cabinet ou le patient ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "D0",
+        "slug": "tiers-payant-dentaire",
+        "anchor": "tiers payant dentaire",
+        "type": "parent"
+      },
+      {
+        "id": "D2",
+        "slug": "actes-hors-nomenclature-dentaire",
+        "anchor": "actes hors nomenclature dentaire",
+        "type": "sœur"
+      },
+      {
+        "id": "R4",
+        "slug": "dentaire-paniers-100-sante-tiers-payant",
+        "anchor": "paniers 100 % Santé dentaire",
+        "type": "sœur"
+      },
+      {
+        "id": "B3",
+        "slug": "prise-en-charge-refusee",
+        "anchor": "prise en charge refusée",
+        "type": "transverse"
+      },
+      {
+        "id": "C2",
+        "slug": "quand-relancer-mutuelle",
+        "anchor": "quand relancer une mutuelle",
+        "type": "transverse"
+      },
+      {
+        "id": "A13",
+        "slug": "mutuelle-quel-portail",
+        "anchor": "savoir par quel portail passe une mutuelle",
+        "type": "outil"
+      }
+    ],
+    "verticales": [
+      "dentaire"
+    ],
+    "unsplashQuery": "dental office computer"
   },
   {
     "id": "C4",
     "slug": "retour-noemie-sans-virement",
     "category": "paiements",
     "title": "Retour NOEMIE sans virement : dossier payé, rejeté ou perdu ?",
-    "primaryKeyword": "flux noemie",
+    "primaryKeyword": "retour noemie",
     "keywordCluster": [
       "retour noemie",
       "flux noemie assurance maladie"
@@ -2564,11 +3653,11 @@
     "wave": 2,
     "level": "Fille",
     "parentSlug": "rapprochement-bancaire-tiers-payant",
-    "reader": "Comptoir",
+    "reader": "Accueil, comptoir ou facturation d'une structure de santé (magasin d'optique, centre auditif, cabinet ou centre dentaire, centre de santé, officine, clinique, laboratoire)",
     "role": "Résolution",
     "granitData": "—",
     "cta": "Démo",
-    "toValidate": "",
+    "toValidate": "Article multi-métiers : exemples tirés de chaque métier listé dans `verticales`, sans privilégier l'optique ; Granit : constat d'expérience en optique et audio seulement, simple offre ailleurs (voir la fiche métier).",
     "primaryKeywordMeasured": true,
     "faqQuestions": [
       "Qu'est-ce qu'un retour NOEMIE ?",
@@ -2606,7 +3695,175 @@
         "anchor": "Automatiser la saisie des prises en charge",
         "type": "conversion"
       }
+    ],
+    "verticales": [
+      "optique",
+      "dentaire",
+      "centres",
+      "pharmacie",
+      "cliniques"
     ]
+  },
+  {
+    "id": "AU3",
+    "slug": "paiement-audioprothese-bloque",
+    "category": "paiements",
+    "title": "Paiement audioprothèse bloqué : facture en vérification, justificatifs demandés",
+    "primaryKeyword": "paiement audioprothèse bloqué",
+    "keywordCluster": [
+      "remboursement audioprothèse en attente",
+      "contrôle avant paiement audioprothèse",
+      "cpam en cours de vérification audioprothésiste",
+      "mutuelle demande justificatif appareil auditif",
+      "impayé mutuelle audioprothésiste",
+      "facture aide auditive non payée",
+      "fraude audioprothèse"
+    ],
+    "searchVolume": 0,
+    "status": "pending",
+    "wave": 4,
+    "level": "Fille",
+    "parentSlug": "tiers-payant-audioprothesiste",
+    "reader": "Gérant de centre auditif indépendant, assistant(e) audio chargé(e) du suivi des paiements",
+    "role": "Conversion",
+    "granitData": "Constats d'expérience des dossiers audio traités par nos agents : paiements attendus non reçus repérés par le rapprochement RO/RC, sans chiffre",
+    "cta": "Démo",
+    "toValidate": "Aucun chiffre de fraude (montants vus seulement dans la presse, dossier CNAM d'origine non consulté). Ne jamais suggérer que les contrôles sont abusifs ; Granit ne négocie pas avec la caisse. Mot-clé sans suggestion Google directe : hypothèse à mesurer (alternative « remboursement audioprothèse en attente »). Absence de durée de validité de l'ordonnance d'audioprothèse (R165-40, selon la FAQ du syndicat) à vérifier sur Légifrance. Ce que la mutuelle peut exiger sur le devis : non vérifié sur la page DGCCRF.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Pourquoi ma facture d'audioprothèse est-elle « en cours de vérification » ?",
+      "Une ordonnance d'appareil auditif de plus d'un an peut-elle être rejetée ?",
+      "Quels justificatifs une mutuelle peut-elle demander pour une aide auditive ?",
+      "Que faire si la mutuelle ne paie pas l'appareil auditif ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "AU0",
+        "slug": "tiers-payant-audioprothesiste",
+        "anchor": "tiers payant audioprothésiste",
+        "type": "parent"
+      },
+      {
+        "id": "AU1",
+        "slug": "pec-audio-plateformes-tiers-payant",
+        "anchor": "PEC audio sur les portails",
+        "type": "sœur"
+      },
+      {
+        "id": "AU4",
+        "slug": "aides-auditives-css-tiers-payant",
+        "anchor": "appareil auditif et CSS",
+        "type": "sœur"
+      },
+      {
+        "id": "C7",
+        "slug": "impayes-mutuelle-anciens",
+        "anchor": "impayés mutuelle anciens",
+        "type": "transverse"
+      },
+      {
+        "id": "C2",
+        "slug": "quand-relancer-mutuelle",
+        "anchor": "quand relancer une mutuelle",
+        "type": "transverse"
+      },
+      {
+        "id": "C0",
+        "slug": "rapprochement-bancaire-tiers-payant",
+        "anchor": "rapprochement bancaire du tiers payant",
+        "type": "transverse"
+      },
+      {
+        "id": null,
+        "slug": "/demo",
+        "anchor": "voir une démo de l'agent sur vos dossiers audio",
+        "type": "conversion"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ],
+    "unsplashQuery": "waiting clock paperwork"
+  },
+  {
+    "id": "X3",
+    "slug": "inter-amc-tiers-payant-complementaire",
+    "category": "plateformes",
+    "title": "Inter-AMC : le contrat unique de tiers payant complémentaire, inscription et délais",
+    "primaryKeyword": "inter amc",
+    "keywordCluster": [
+      "inter amc portail",
+      "inter amc connexion",
+      "inter amc inscription",
+      "inter amc liste mutuelle",
+      "inter amc dentiste",
+      "tpcomplementaire",
+      "tiers payant examen bucco dentaire",
+      "ebd tiers payant",
+      "tiers payant complémentaire centre de santé"
+    ],
+    "searchVolume": 0,
+    "status": "pending",
+    "wave": 4,
+    "level": "Fille",
+    "parentSlug": "tiers-payant-professionnels-de-sante",
+    "reader": "Responsable facturation d'un centre de santé, coordinatrice d'un cabinet ou centre dentaire, référent tiers payant d'une officine",
+    "role": "Trafic + maillage",
+    "granitData": "—",
+    "cta": "Parlons de votre tiers payant",
+    "toValidate": "Délais Inter-AMC (7 jours ouvrés, 20 jours ouvrés sur papier, 2 ans, 5 ans) tirés du contrat spécimen version 03 du 24 août 2022 : vérifier qu'aucune version plus récente n'existe, et les citer comme engagement contractuel, pas comme règle légale. Section examen bucco-dentaire : tiers payant intégral depuis le 1er avril 2025 (ameli, 15/10/2025) ; soins consécutifs en tiers payant seulement pour les 3-24 ans (femmes enceintes : l'examen seul) ; répartition 60/40 à revérifier pour 2027. Section pharmacie : contrat Inter-AMC propre à la profession, à sourcer. Aucune liste de mutuelles sans source datée. Angle méthode : Granit s'écrit comme une offre (« Granit peut… »), sans chiffre ni cas client.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Comment s'inscrire sur le portail Inter-AMC ?",
+      "Quelles mutuelles sont couvertes par le contrat Inter-AMC ?",
+      "Sous quel délai une mutuelle paie-t-elle une DRE conforme dans le cadre Inter-AMC ?",
+      "Le tiers payant est-il obligatoire pour l'examen bucco-dentaire ?",
+      "Faut-il encore signer des conventions mutuelle par mutuelle ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "T0",
+        "slug": "tiers-payant-professionnels-de-sante",
+        "anchor": "tiers payant des professionnels de santé",
+        "type": "parent"
+      },
+      {
+        "id": "X5",
+        "slug": "idb-clc-roc-tiers-payant",
+        "anchor": "dispositif ROC, IDB et CLC",
+        "type": "sœur"
+      },
+      {
+        "id": "X4",
+        "slug": "rejet-mutuelle-acte-hors-perimetre",
+        "anchor": "rejet mutuelle « acte hors périmètre »",
+        "type": "sœur"
+      },
+      {
+        "id": "S0",
+        "slug": "tiers-payant-centre-de-sante",
+        "anchor": "tiers payant en centre de santé",
+        "type": "sœur"
+      },
+      {
+        "id": "C2",
+        "slug": "quand-relancer-mutuelle",
+        "anchor": "quand relancer une mutuelle",
+        "type": "transverse"
+      },
+      {
+        "id": "C7",
+        "slug": "impayes-mutuelle-anciens",
+        "anchor": "impayés mutuelle anciens",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "centres",
+      "dentaire",
+      "pharmacie"
+    ],
+    "unsplashQuery": "contract signature desk"
   },
   {
     "id": "E1",
@@ -2616,16 +3873,16 @@
     "primaryKeyword": "gestionnaire tiers payant",
     "keywordCluster": [],
     "searchVolume": 210,
-    "unsplashQuery": "optical store manager",
+    "unsplashQuery": "healthcare administration desk",
     "status": "pending",
     "wave": 2,
     "level": "Fille",
-    "parentSlug": "gerer-tiers-payant-magasin",
-    "reader": "Gérant",
+    "parentSlug": "tiers-payant-professionnels-de-sante",
+    "reader": "Gérant ou direction administrative d'un magasin d'optique, d'un centre auditif, dentaire ou de santé",
     "role": "Conversion",
     "granitData": "Offres d'emploi TP (digest), parc Sirene",
     "cta": "Démo",
-    "toValidate": "",
+    "toValidate": "Salaire seulement avec une source datée (offres d'emploi), sinon il sort. Article multi-métiers : exemples tirés de chaque métier listé dans `verticales`, sans privilégier l'optique ; Granit : constat d'expérience en optique et audio seulement, simple offre ailleurs (voir la fiche métier).",
     "primaryKeywordMeasured": true,
     "faqQuestions": [
       "Que fait un gestionnaire tiers payant en optique ?",
@@ -2634,9 +3891,9 @@
     ],
     "internalLinks": [
       {
-        "id": "E0",
-        "slug": "gerer-tiers-payant-magasin",
-        "anchor": "gestion tiers payant",
+        "id": "T0",
+        "slug": "tiers-payant-professionnels-de-sante",
+        "anchor": "tiers payant des professionnels de santé",
         "type": "parent"
       },
       {
@@ -2657,6 +3914,11 @@
         "anchor": "coût du tiers payant pour un magasin",
         "type": "conversion"
       }
+    ],
+    "verticales": [
+      "optique",
+      "dentaire",
+      "centres"
     ]
   },
   {
@@ -2671,12 +3933,12 @@
     "status": "pending",
     "wave": 2,
     "level": "Fille",
-    "parentSlug": "rejet-tiers-payant",
-    "reader": "Comptoir",
+    "parentSlug": "tiers-payant-professionnels-de-sante",
+    "reader": "Accueil, comptoir ou facturation d'une structure de santé (magasin d'optique, centre auditif, cabinet ou centre dentaire, centre de santé, officine, clinique, laboratoire)",
     "role": "Résolution",
     "granitData": "—",
     "cta": "Démo",
-    "toValidate": "Variantes selon logiciel (Cosium, Winoptics…)",
+    "toValidate": "Variantes selon logiciel (Cosium, Winoptics…) Remplacer les noms de logiciels optique par « selon le logiciel métier ». Article multi-métiers : exemples tirés de chaque métier listé dans `verticales`, sans privilégier l'optique ; Granit : constat d'expérience en optique et audio seulement, simple offre ailleurs (voir la fiche métier).",
     "primaryKeywordMeasured": false,
     "faqQuestions": [
       "Peut-on refacturer seulement la part mutuelle ?",
@@ -2685,9 +3947,9 @@
     ],
     "internalLinks": [
       {
-        "id": "B0",
-        "slug": "rejet-tiers-payant",
-        "anchor": "motif rejet tiers payant",
+        "id": "T0",
+        "slug": "tiers-payant-professionnels-de-sante",
+        "anchor": "tiers payant des professionnels de santé",
         "type": "parent"
       },
       {
@@ -2714,7 +3976,94 @@
         "anchor": "savoir par quel portail passe une mutuelle",
         "type": "outil"
       }
+    ],
+    "verticales": [
+      "optique",
+      "dentaire",
+      "centres",
+      "pharmacie",
+      "cliniques"
     ]
+  },
+  {
+    "id": "X5",
+    "slug": "idb-clc-roc-tiers-payant",
+    "category": "guide-tiers-payant",
+    "title": "Dispositif ROC, IDB et CLC : le tiers payant complémentaire en ligne, métier par métier",
+    "primaryKeyword": "dispositif roc",
+    "keywordCluster": [
+      "roc tiers payant hospitalier",
+      "idb clc",
+      "interrogation des droits bénéficiaire",
+      "calcul en ligne des droits",
+      "tiers payant complémentaire en ligne",
+      "dispositif roc mutuelle",
+      "dispositif roc hopital",
+      "roc idb"
+    ],
+    "searchVolume": 0,
+    "status": "pending",
+    "wave": 4,
+    "level": "Fille",
+    "parentSlug": "tiers-payant-professionnels-de-sante",
+    "reader": "Responsable facturation d'un centre de santé ou d'un centre dentaire, responsable du bureau des entrées d'une clinique privée",
+    "role": "Autorité",
+    "granitData": "—",
+    "cta": "Parlons de votre tiers payant",
+    "toValidate": "Section clinique datée : 2 établissements privés pilotes à la rentrée 2025, montée en puissance seulement « envisageable » à partir de septembre 2026 selon la FHP-MCO, aucune obligation ; jamais de date ferme. Vérifier l'état des établissements raccordés sur sante.gouv.fr avant publication. Garantie de paiement liée à IDB/CLC : citer le contrat Inter-AMC (spécimen 2022, à vérifier à jour). Article à dater et à revoir tous les six mois. Catégorie guide : vérifier la signature (pas une signature « experte optique »). Angle méthode : Granit s'écrit comme une offre (« Granit peut… »), sans chiffre ni cas client.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Qu'est-ce que le dispositif ROC ?",
+      "Que font les services IDB, SIM et CLC ?",
+      "Que se passe-t-il si le logiciel n'a pas pu interroger IDB ?",
+      "Les cliniques privées sont-elles concernées par ROC, et quand ?",
+      "ROC remplace-t-il les portails des plateformes de tiers payant ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "T0",
+        "slug": "tiers-payant-professionnels-de-sante",
+        "anchor": "tiers payant des professionnels de santé",
+        "type": "parent"
+      },
+      {
+        "id": "X3",
+        "slug": "inter-amc-tiers-payant-complementaire",
+        "anchor": "contrat Inter-AMC",
+        "type": "sœur"
+      },
+      {
+        "id": "S0",
+        "slug": "tiers-payant-centre-de-sante",
+        "anchor": "tiers payant en centre de santé",
+        "type": "sœur"
+      },
+      {
+        "id": "D0",
+        "slug": "tiers-payant-dentaire",
+        "anchor": "tiers payant dentaire",
+        "type": "sœur"
+      },
+      {
+        "id": "F0",
+        "slug": "glossaire-tiers-payant",
+        "anchor": "glossaire du tiers payant",
+        "type": "transverse"
+      },
+      {
+        "id": "F1",
+        "slug": "amo-amc",
+        "anchor": "part AMO et part AMC",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "cliniques",
+      "centres",
+      "dentaire"
+    ],
+    "unsplashQuery": "server network abstract",
+    "auteur": "laura"
   },
   {
     "id": "B3",
@@ -2728,12 +4077,12 @@
     "status": "pending",
     "wave": 2,
     "level": "Fille",
-    "parentSlug": "rejet-tiers-payant",
-    "reader": "Comptoir",
+    "parentSlug": "tiers-payant-professionnels-de-sante",
+    "reader": "Accueil, comptoir ou facturation d'une structure qui demande des prises en charge (magasin d'optique, centre auditif, cabinet ou centre dentaire, centre de santé)",
     "role": "Résolution",
     "granitData": "verdict.py (Pecrac impossible, plafond, doublon)",
     "cta": "Démo",
-    "toValidate": "",
+    "toValidate": "Article multi-métiers : exemples tirés de chaque métier listé dans `verticales`, sans privilégier l'optique ; Granit : constat d'expérience en optique et audio seulement, simple offre ailleurs (voir la fiche métier).",
     "primaryKeywordMeasured": false,
     "faqQuestions": [
       "Pourquoi une prise en charge est-elle refusée ?",
@@ -2742,9 +4091,9 @@
     ],
     "internalLinks": [
       {
-        "id": "B0",
-        "slug": "rejet-tiers-payant",
-        "anchor": "motif rejet tiers payant",
+        "id": "T0",
+        "slug": "tiers-payant-professionnels-de-sante",
+        "anchor": "tiers payant des professionnels de santé",
         "type": "parent"
       },
       {
@@ -2755,7 +4104,7 @@
       },
       {
         "id": "B5",
-        "slug": "tiers-payant-css-opticien",
+        "slug": "tiers-payant-css",
         "anchor": "Facturer un bénéficiaire de la CSS (ex-ACS) en optique",
         "type": "sœur"
       },
@@ -2771,64 +4120,150 @@
         "anchor": "savoir par quel portail passe une mutuelle",
         "type": "outil"
       }
+    ],
+    "verticales": [
+      "optique",
+      "dentaire",
+      "centres"
     ]
   },
   {
-    "id": "C5",
-    "slug": "libelles-virements-tiers-payant",
-    "category": "paiements",
-    "title": "À qui correspond ce virement ? Libellés bancaires des payeurs (CETIP, KALIVIA…)",
-    "primaryKeyword": "libelles virements tiers payant",
-    "keywordCluster": [],
+    "id": "AU4",
+    "slug": "aides-auditives-css-tiers-payant",
+    "category": "guide-tiers-payant",
+    "title": "Appareil auditif CSS : prix maximal, codes et tiers payant pour l'audioprothésiste",
+    "primaryKeyword": "appareil auditif css",
+    "keywordCluster": [
+      "prise en charge css audioprothèse",
+      "remboursement css audioprothèse",
+      "aide auditive css",
+      "code lpp appareil auditif css",
+      "prix appareil auditif css",
+      "css audioprothèse 800 euros",
+      "cécité aide auditive 1400"
+    ],
     "searchVolume": 0,
-    "unsplashQuery": "bank statement accounting",
     "status": "pending",
-    "wave": 2,
+    "wave": 4,
     "level": "Fille",
-    "parentSlug": "rapprochement-bancaire-tiers-payant",
-    "reader": "Comptoir",
-    "role": "Résolution",
-    "granitData": "canaux.py, payments.py",
+    "parentSlug": "tiers-payant-audioprothesiste",
+    "reader": "Audioprothésiste et assistant(e) audio qui accueillent des bénéficiaires de la Complémentaire santé solidaire",
+    "role": "Trafic",
+    "granitData": "—",
     "cta": "Démo",
-    "toValidate": "",
+    "toValidate": "Montants CSS confirmés sur ameli pro (800 € par oreille à partir de 20 ans, 1 400 € avant 20 ans ou pour une personne sourde et aveugle, codes P2G/P2D quelle que soit la classe, prise en charge à 100 %) : revérifier le jour de la rédaction. Ne pas présenter la vérification des droits comme un service Granit. Lien de sœur obligatoire avec tiers-payant-css (B5), qui garde le mot-clé « tiers payant css » (B5 doit d'abord être renommé dans la file).",
     "primaryKeywordMeasured": false,
     "faqQuestions": [
-      "Comment savoir à quel payeur correspond un virement ?",
-      "Que veut dire le libellé CETIP sur un relevé ?",
-      "Comment rattacher un virement sans référence de dossier ?"
+      "Quel est le prix maximal d'un appareil auditif pour un bénéficiaire de la CSS ?",
+      "Quel code LPP pour un appareil auditif CSS ?",
+      "Un bénéficiaire de la CSS peut-il choisir un appareil de classe II ?",
+      "Faut-il envoyer le devis à l'organisme qui gère la CSS ?"
     ],
     "internalLinks": [
       {
-        "id": "C0",
-        "slug": "rapprochement-bancaire-tiers-payant",
-        "anchor": "Rapprochement bancaire du tiers payant",
+        "id": "AU0",
+        "slug": "tiers-payant-audioprothesiste",
+        "anchor": "tiers payant audioprothésiste",
         "type": "parent"
       },
       {
-        "id": "C6",
-        "slug": "delais-paiement-plateformes",
-        "anchor": "Délais de paiement des plateformes de tiers payant (tableau daté)",
+        "id": "B5",
+        "slug": "tiers-payant-css",
+        "anchor": "tiers payant et CSS",
         "type": "sœur"
       },
       {
-        "id": "C7",
-        "slug": "impayes-mutuelle-anciens",
-        "anchor": "Impayés mutuelles de plus de 6 mois",
+        "id": "AU2",
+        "slug": "codes-lpp-audioprothese-facturation",
+        "anchor": "codes LPP audioprothèse",
         "type": "sœur"
       },
       {
-        "id": "C2",
-        "slug": "quand-relancer-mutuelle",
-        "anchor": "quand relancer une mutuelle",
+        "id": "AU3",
+        "slug": "paiement-audioprothese-bloque",
+        "anchor": "paiement d'audioprothèse bloqué",
+        "type": "sœur"
+      },
+      {
+        "id": "G5",
+        "slug": "tiers-payant-integral",
+        "anchor": "tiers payant intégral ou partiel",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ],
+    "auteur": "laura",
+    "unsplashQuery": "hearing aid closeup"
+  },
+  {
+    "id": "PH1",
+    "slug": "rejet-mutuelle-pharmacie",
+    "category": "rejets",
+    "title": "Rejet mutuelle en pharmacie : lire le motif, corriger, renvoyer",
+    "primaryKeyword": "rejet mutuelle pharmacie",
+    "keywordCluster": [
+      "rejet tiers payant pharmacie",
+      "rejet amc pharmacie",
+      "rejet part mutuelle officine",
+      "tiers payant mutuelle pharmacie",
+      "mutuelle ne paie pas pharmacie"
+    ],
+    "searchVolume": 0,
+    "status": "pending",
+    "wave": 4,
+    "level": "Fille",
+    "parentSlug": "gestion-tiers-payant-pharmacie",
+    "reader": "Préparateur ou adjoint chargé des rejets, titulaire d'officine",
+    "role": "Résolution",
+    "granitData": "—",
+    "cta": "Parlons de votre tiers payant",
+    "toValidate": "Sujet rétabli le 04/11/2026. Demande : Faible à Moyen (suggestion Google, sans volume mesuré). Aucun texte public ne définit les libellés : causes écrites « probables », à vérifier sur le retour réel. Aucune signification de code numérique sans table d'opérateur. Relecture par une personne qui traite des rejets d'officine. Offre seulement (fiche pharmacie) : Granit peut reprendre les rejets, envoyer les demandes de prise en charge et proposer le tiers payant, sans client, chiffre ni résultat. Rien sur une intégration au LGO ou à un concentrateur. Aucun délai de paiement. Neutre entre syndicats.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Pourquoi une mutuelle rejette-t-elle une facture de pharmacie ?",
+      "Comment renvoyer uniquement la part mutuelle ?",
+      "Que faire quand la mutuelle est inconnue ou hors convention ?",
+      "Qui contacter quand une mutuelle ne paie pas ?",
+      "Faut-il facturer le patient après un rejet ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "PH0",
+        "slug": "gestion-tiers-payant-pharmacie",
+        "anchor": "gestion du tiers payant en pharmacie",
+        "type": "parent"
+      },
+      {
+        "id": "R3",
+        "slug": "officine-balance-agee-tiers-payant",
+        "anchor": "balance âgée du tiers payant en officine",
+        "type": "sœur"
+      },
+      {
+        "id": "R6",
+        "slug": "trois-boucles-pharmacie",
+        "anchor": "les trois boucles de la pharmacie",
+        "type": "sœur"
+      },
+      {
+        "id": "C3",
+        "slug": "codes-rejets-noemie",
+        "anchor": "liste des codes rejets NOEMIE",
         "type": "transverse"
       },
       {
-        "id": "E4",
-        "slug": "automatiser-saisie-prise-en-charge",
-        "anchor": "Automatiser la saisie des prises en charge",
-        "type": "conversion"
+        "id": "X2",
+        "slug": "arl-negatif",
+        "anchor": "ARL négatif",
+        "type": "transverse"
       }
-    ]
+    ],
+    "verticales": [
+      "pharmacie"
+    ],
+    "unsplashQuery": "pharmacy computer paperwork"
   },
   {
     "id": "G3",
@@ -2863,62 +4298,14 @@
         "type": "parent"
       },
       {
-        "id": "G4",
-        "slug": "erreurs-tiers-payant-opticien",
-        "anchor": "Les erreurs de saisie qui coûtent le plus cher en tiers payant",
-        "type": "sœur"
-      },
-      {
         "id": "G5",
-        "slug": "tiers-payant-integral-opticien",
+        "slug": "tiers-payant-integral",
         "anchor": "Tiers payant intégral",
         "type": "sœur"
       }
-    ]
-  },
-  {
-    "id": "G4",
-    "slug": "erreurs-tiers-payant-opticien",
-    "category": "guide-tiers-payant",
-    "title": "Les erreurs de saisie qui coûtent le plus cher en tiers payant",
-    "primaryKeyword": "erreurs tiers payant opticien",
-    "keywordCluster": [],
-    "searchVolume": 0,
-    "unsplashQuery": "optician store",
-    "status": "pending",
-    "wave": 2,
-    "level": "Fille",
-    "parentSlug": "tiers-payant-opticien",
-    "reader": "Comptoir",
-    "role": "Résolution",
-    "granitData": "Échecs classés par les agents (motifs les plus fréquents)",
-    "cta": "Démo",
-    "toValidate": "Chiffres d'erreurs : seulement s'ils sont mesurés",
-    "primaryKeywordMeasured": false,
-    "faqQuestions": [
-      "Quelles erreurs de saisie font le plus rejeter un dossier ?",
-      "Comment vérifier l'ouvrant droit et le bénéficiaire ?",
-      "Faut-il ressaisir un dossier après une erreur ?"
     ],
-    "internalLinks": [
-      {
-        "id": "G0",
-        "slug": "tiers-payant-opticien",
-        "anchor": "tiers payant opticien",
-        "type": "parent"
-      },
-      {
-        "id": "G5",
-        "slug": "tiers-payant-integral-opticien",
-        "anchor": "Tiers payant intégral",
-        "type": "sœur"
-      },
-      {
-        "id": "G6",
-        "slug": "cas-particuliers-tiers-payant-optique",
-        "anchor": "Cas particuliers",
-        "type": "sœur"
-      }
+    "verticales": [
+      "optique"
     ]
   },
   {
@@ -2933,12 +4320,12 @@
     "status": "pending",
     "wave": 2,
     "level": "Fille",
-    "parentSlug": "rejet-tiers-payant",
-    "reader": "Comptoir",
+    "parentSlug": "tiers-payant-professionnels-de-sante",
+    "reader": "Accueil, comptoir ou facturation d'une structure de santé (magasin d'optique, centre auditif, cabinet ou centre dentaire, centre de santé, officine, clinique, laboratoire)",
     "role": "Résolution",
     "granitData": "Champs ouvrant droit / bénéficiaire (fields.py)",
     "cta": "Démo",
-    "toValidate": "",
+    "toValidate": "Article multi-métiers : exemples tirés de chaque métier listé dans `verticales`, sans privilégier l'optique ; Granit : constat d'expérience en optique et audio seulement, simple offre ailleurs (voir la fiche métier).",
     "primaryKeywordMeasured": false,
     "faqQuestions": [
       "Quelle différence entre ouvrant droit et bénéficiaire ?",
@@ -2947,9 +4334,9 @@
     ],
     "internalLinks": [
       {
-        "id": "B0",
-        "slug": "rejet-tiers-payant",
-        "anchor": "motif rejet tiers payant",
+        "id": "T0",
+        "slug": "tiers-payant-professionnels-de-sante",
+        "anchor": "tiers payant des professionnels de santé",
         "type": "parent"
       },
       {
@@ -2970,64 +4357,98 @@
         "anchor": "savoir par quel portail passe une mutuelle",
         "type": "outil"
       }
+    ],
+    "verticales": [
+      "optique",
+      "dentaire",
+      "centres",
+      "pharmacie",
+      "cliniques"
     ]
   },
   {
-    "id": "B7",
-    "slug": "contester-refus-prise-en-charge",
+    "id": "X4",
+    "slug": "rejet-mutuelle-acte-hors-perimetre",
     "category": "rejets",
-    "title": "Contester un refus de prise en charge : procédure et modèle de courrier",
-    "primaryKeyword": "contester refus prise en charge",
-    "keywordCluster": [],
+    "title": "Rejet mutuelle « acte hors périmètre » : causes probables et correction de la DRE",
+    "primaryKeyword": "rejet mutuelle acte hors périmètre",
+    "keywordCluster": [
+      "acte hors périmètre signification",
+      "hors champ d'application de la convention",
+      "rejet mutuelle doublon fonctionnel",
+      "rejet mutuelle montant demandé montant calculé",
+      "rejet mutuelle prestation non couverte",
+      "rejet mutuelle situation bénéficiaire",
+      "rejet AMC",
+      "rejet DRE"
+    ],
     "searchVolume": 0,
-    "unsplashQuery": "office paperwork error",
     "status": "pending",
-    "wave": 2,
+    "wave": 4,
     "level": "Fille",
-    "parentSlug": "rejet-tiers-payant",
-    "reader": "Comptoir",
+    "parentSlug": "tiers-payant-professionnels-de-sante",
+    "reader": "Agent de facturation en centre de santé, assistante dentaire qui traite les retours mutuelle",
     "role": "Résolution",
     "granitData": "—",
-    "cta": "Modèle de courrier (lead magnet)",
-    "toValidate": "",
+    "cta": "Parlons de votre tiers payant",
+    "toValidate": "Aucun texte public ne définit ces libellés : causes écrites « probables », à vérifier sur le retour réel (bordereau, retour NOEMIE). Aucune signification de code numérique (0004, 0011…) sans table d'opérateur. Relecture par une personne qui traite des DRE de centre de santé. Angle méthode : Granit s'écrit comme une offre (« Granit peut… »), sans chiffre ni cas client.",
     "primaryKeywordMeasured": false,
     "faqQuestions": [
-      "Comment contester un refus de prise en charge ?",
-      "À qui envoyer la contestation ?",
-      "Combien de temps pour obtenir une réponse ?"
+      "Que signifie « acte hors périmètre » sur un rejet de mutuelle ?",
+      "Que veut dire « doublon fonctionnel » sur un rejet mutuelle ?",
+      "Pourquoi la mutuelle rejette-t-elle « montant demandé supérieur au montant calculé » ?",
+      "Rejet « hors champ d'application de la convention » : faut-il facturer le patient ?",
+      "Comment renvoyer uniquement la part AMC sans renvoyer l'AMO ?"
     ],
     "internalLinks": [
       {
-        "id": "B0",
-        "slug": "rejet-tiers-payant",
-        "anchor": "motif rejet tiers payant",
+        "id": "T0",
+        "slug": "tiers-payant-professionnels-de-sante",
+        "anchor": "tiers payant des professionnels de santé",
         "type": "parent"
       },
       {
-        "id": "B8",
-        "slug": "checklist-prise-en-charge",
-        "anchor": "checklist avant d'envoyer une prise en charge",
+        "id": "X3",
+        "slug": "inter-amc-tiers-payant-complementaire",
+        "anchor": "contrat Inter-AMC",
         "type": "sœur"
       },
       {
-        "id": "B9",
-        "slug": "client-sans-carte-tiers-payant",
-        "anchor": "Le client arrive sans sa carte de tiers payant",
+        "id": "X5",
+        "slug": "idb-clc-roc-tiers-payant",
+        "anchor": "dispositif ROC, IDB et CLC",
         "type": "sœur"
       },
       {
-        "id": "A13",
-        "slug": "mutuelle-quel-portail",
-        "anchor": "savoir par quel portail passe une mutuelle",
-        "type": "outil"
+        "id": "C3",
+        "slug": "codes-rejets-noemie",
+        "anchor": "liste des codes rejets NOEMIE",
+        "type": "transverse"
+      },
+      {
+        "id": "C1",
+        "slug": "virement-mutuelle-inferieur",
+        "anchor": "virement de mutuelle inférieur à la facture",
+        "type": "transverse"
+      },
+      {
+        "id": "R9",
+        "slug": "recouvrement-patient-empathie",
+        "anchor": "recouvrer un reste à charge auprès du patient",
+        "type": "transverse"
       }
-    ]
+    ],
+    "verticales": [
+      "centres",
+      "dentaire"
+    ],
+    "unsplashQuery": "office paperwork review"
   },
   {
     "id": "B9",
     "slug": "client-sans-carte-tiers-payant",
     "category": "rejets",
-    "title": "Le client arrive sans sa carte de tiers payant : que faire ?",
+    "title": "Le patient arrive sans sa carte de tiers payant : que faire ?",
     "primaryKeyword": "client sans carte tiers payant",
     "keywordCluster": [],
     "searchVolume": 0,
@@ -3035,12 +4456,12 @@
     "status": "pending",
     "wave": 2,
     "level": "Fille",
-    "parentSlug": "rejet-tiers-payant",
-    "reader": "Comptoir",
+    "parentSlug": "tiers-payant-professionnels-de-sante",
+    "reader": "Accueil, comptoir ou facturation d'une structure de santé (magasin d'optique, centre auditif, cabinet ou centre dentaire, centre de santé, officine, clinique, laboratoire)",
     "role": "Résolution",
     "granitData": "OCR carte mutuelle des agents",
     "cta": "Démo",
-    "toValidate": "",
+    "toValidate": "Article multi-métiers : exemples tirés de chaque métier listé dans `verticales`, sans privilégier l'optique ; Granit : constat d'expérience en optique et audio seulement, simple offre ailleurs (voir la fiche métier).",
     "primaryKeywordMeasured": false,
     "faqQuestions": [
       "Peut-on faire une prise en charge sans la carte de tiers payant ?",
@@ -3049,9 +4470,9 @@
     ],
     "internalLinks": [
       {
-        "id": "B0",
-        "slug": "rejet-tiers-payant",
-        "anchor": "motif rejet tiers payant",
+        "id": "T0",
+        "slug": "tiers-payant-professionnels-de-sante",
+        "anchor": "tiers payant des professionnels de santé",
         "type": "parent"
       },
       {
@@ -3078,6 +4499,13 @@
         "anchor": "savoir par quel portail passe une mutuelle",
         "type": "outil"
       }
+    ],
+    "verticales": [
+      "optique",
+      "dentaire",
+      "centres",
+      "pharmacie",
+      "cliniques"
     ]
   },
   {
@@ -3092,23 +4520,25 @@
     "status": "pending",
     "wave": 2,
     "level": "Fille",
-    "parentSlug": "rejet-tiers-payant",
-    "reader": "Gérant",
+    "parentSlug": "tiers-payant-professionnels-de-sante",
+    "reader": "Gérant ou direction administrative d'une structure de santé, tous métiers",
     "role": "Conversion",
     "granitData": "Taux d'accord observés (prod) — accord Jenny",
     "cta": "Audit gratuit des rejets",
-    "toValidate": "Pas de taux non mesuré",
+    "toValidate": "Pas de taux non mesuré Article multi-métiers : exemples tirés de chaque métier listé dans `verticales`, sans privilégier l'optique ; Granit : constat d'expérience en optique et audio seulement, simple offre ailleurs (voir la fiche métier).",
     "primaryKeywordMeasured": false,
     "faqQuestions": [
       "Quel est un bon taux de rejet en tiers payant ?",
       "Comment mesurer son taux de rejet ?",
-      "Quelles actions le font baisser le plus vite ?"
+      "Quelles actions le font baisser le plus vite ?",
+      "Quelles erreurs de saisie font le plus rejeter un dossier ?",
+      "Comment vérifier l'ouvrant droit et le bénéficiaire ?"
     ],
     "internalLinks": [
       {
-        "id": "B0",
-        "slug": "rejet-tiers-payant",
-        "anchor": "motif rejet tiers payant",
+        "id": "T0",
+        "slug": "tiers-payant-professionnels-de-sante",
+        "anchor": "tiers payant des professionnels de santé",
         "type": "parent"
       },
       {
@@ -3135,7 +4565,148 @@
         "anchor": "savoir par quel portail passe une mutuelle",
         "type": "outil"
       }
+    ],
+    "verticales": [
+      "optique",
+      "dentaire",
+      "centres",
+      "pharmacie",
+      "cliniques"
     ]
+  },
+  {
+    "id": "S1",
+    "slug": "accord-national-centres-de-sante",
+    "category": "conformite",
+    "title": "Accord national des centres de santé 2025 : ce qui change pour votre facturation",
+    "primaryKeyword": "accord national centre de santé",
+    "keywordCluster": [
+      "accord national centre de santé 2025",
+      "nouvel accord national centre de santé",
+      "rémunération forfaitaire spécifique centre de santé",
+      "dispense d'avance des frais sans carte Vitale",
+      "téléservices centre de santé",
+      "filière visuelle 50 % recettes",
+      "avenant accord national centre de santé"
+    ],
+    "searchVolume": 0,
+    "status": "pending",
+    "wave": 4,
+    "level": "Fille",
+    "parentSlug": "tiers-payant-centre-de-sante",
+    "reader": "Direction et responsable administratif de centre de santé, gestionnaire d'un réseau de centres",
+    "role": "Autorité",
+    "granitData": "—",
+    "cta": "Parlons de votre tiers payant",
+    "toValidate": "Accord signé le 28 août 2025, réputé approuvé le 1er octobre 2025, publié au JO du 15 octobre 2025 (confirmé). Nouveau manquement : dispense d'avance sans carte Vitale « de façon répétée » ; exclusion de la rémunération forfaitaire si une activité de second recours (filière visuelle) fait 50 % ou plus des recettes. « FSE sécurisée, mode de facturation privilégié » non confirmé sur la page ameli : ne pas l'écrire tel quel. Retirer « part des recettes par activité calculée depuis les paiements » (promesse). Numérotation de l'annexe 5 non vérifiée. Délai de paiement AMO de l'ancien accord à ne pas reprendre. Angle méthode : Granit s'écrit comme une offre (« Granit peut… »), sans chiffre ni cas client.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Quand le nouvel accord national des centres de santé est-il entré en vigueur ?",
+      "Un centre peut-il faire le tiers payant sans carte Vitale ?",
+      "Un centre d'ophtalmologie touche-t-il encore la rémunération forfaitaire ?",
+      "Quand la nouvelle rémunération forfaitaire est-elle versée ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "S0",
+        "slug": "tiers-payant-centre-de-sante",
+        "anchor": "tiers payant en centre de santé",
+        "type": "parent"
+      },
+      {
+        "id": "S3",
+        "slug": "tiers-payant-centre-ophtalmologie",
+        "anchor": "tiers payant en centre d'ophtalmologie",
+        "type": "sœur"
+      },
+      {
+        "id": "S2",
+        "slug": "rejet-cpam-centre-de-sante",
+        "anchor": "rejet CPAM en centre de santé",
+        "type": "sœur"
+      },
+      {
+        "id": "E6",
+        "slug": "indicateurs-tiers-payant",
+        "anchor": "indicateurs du tiers payant",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "centres"
+    ],
+    "unsplashQuery": "official documents table"
+  },
+  {
+    "id": "AU2",
+    "slug": "codes-lpp-audioprothese-facturation",
+    "category": "rejets",
+    "title": "Codes LPP audioprothèse : P1G, P1D, P2G, P2D, PIL, SUI, facturer sans rejet",
+    "primaryKeyword": "code lpp audioprothèse",
+    "keywordCluster": [
+      "code lpp audio classe 2",
+      "liste code lpp audioprothèse",
+      "code lpp auditif",
+      "code lpp appareil auditif css",
+      "code prestation aide auditive",
+      "prestation de suivi audioprothésiste",
+      "forfait remboursement piles appareil auditif",
+      "piles appareil auditif remboursement secu"
+    ],
+    "searchVolume": 0,
+    "status": "pending",
+    "wave": 4,
+    "level": "Fille",
+    "parentSlug": "tiers-payant-audioprothesiste",
+    "reader": "Assistant(e) audio qui facture, audioprothésiste qui paramètre son logiciel de facturation",
+    "role": "Résolution",
+    "granitData": "Constats d'expérience des dossiers audio traités par nos agents : lignes de suivi et de piles à reconnaître dans le rapprochement des retours NOEMIE, sans chiffre",
+    "cta": "Démo",
+    "toValidate": "Intègre piles et suivi (ex-A5) sans le montant « 0,01 € » du suivi (non confirmé). Aucune promesse de contrôle de cohérence avant envoi (pas en production). Codes, plafonds et PLV à vérifier sur la page ameli pro 100 % Santé audio et la base LPP le jour de la rédaction ; base de remboursement datée (taux 2027 non publié). Mention des codes LPP sur le devis non vérifiée.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Quel est le code LPP d'une aide auditive de classe 2 ?",
+      "Quel code utiliser pour un bénéficiaire de la CSS ?",
+      "Faut-il un code différent pour l'oreille droite et l'oreille gauche ?",
+      "Combien de paquets de piles sont remboursés par an ?",
+      "Peut-on facturer un an de piles en une fois ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "AU0",
+        "slug": "tiers-payant-audioprothesiste",
+        "anchor": "tiers payant audioprothésiste",
+        "type": "parent"
+      },
+      {
+        "id": "AU4",
+        "slug": "aides-auditives-css-tiers-payant",
+        "anchor": "appareil auditif et CSS",
+        "type": "sœur"
+      },
+      {
+        "id": "AU3",
+        "slug": "paiement-audioprothese-bloque",
+        "anchor": "paiement d'audioprothèse bloqué",
+        "type": "sœur"
+      },
+      {
+        "id": "C3",
+        "slug": "codes-rejets-noemie",
+        "anchor": "liste des codes rejets NOEMIE",
+        "type": "transverse"
+      },
+      {
+        "id": "C4",
+        "slug": "retour-noemie-sans-virement",
+        "anchor": "retour NOEMIE sans virement",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ],
+    "unsplashQuery": "invoice paperwork closeup"
   },
   {
     "id": "C7",
@@ -3150,11 +4721,11 @@
     "wave": 2,
     "level": "Fille",
     "parentSlug": "rapprochement-bancaire-tiers-payant",
-    "reader": "Gérant",
+    "reader": "Gérant ou direction administrative d'une structure de santé, tous métiers",
     "role": "Résolution",
     "granitData": "Reprise de stock (cas clients rapprochement)",
     "cta": "Démo + audit du stock",
-    "toValidate": "",
+    "toValidate": "Article multi-métiers : exemples tirés de chaque métier listé dans `verticales`, sans privilégier l'optique ; Granit : constat d'expérience en optique et audio seulement, simple offre ailleurs (voir la fiche métier).",
     "primaryKeywordMeasured": false,
     "faqQuestions": [
       "Comment récupérer des impayés mutuelles anciens ?",
@@ -3167,12 +4738,6 @@
         "slug": "rapprochement-bancaire-tiers-payant",
         "anchor": "Rapprochement bancaire du tiers payant",
         "type": "parent"
-      },
-      {
-        "id": "C8",
-        "slug": "reste-a-charge-impaye",
-        "anchor": "Reste à charge impayé par le client",
-        "type": "sœur"
       },
       {
         "id": "C1",
@@ -3192,424 +4757,78 @@
         "anchor": "Automatiser la saisie des prises en charge",
         "type": "conversion"
       }
+    ],
+    "verticales": [
+      "optique",
+      "dentaire",
+      "centres",
+      "pharmacie",
+      "cliniques"
     ]
   },
   {
-    "id": "H2",
-    "slug": "devis-normalise-codes-lpp",
-    "category": "conformite",
-    "title": "Devis normalisé et codes LPP : ce qui doit concorder avec la facture",
-    "primaryKeyword": "devis normalise codes lpp",
-    "keywordCluster": [],
+    "id": "K1",
+    "slug": "demande-prise-en-charge-hospitaliere",
+    "category": "plateformes",
+    "title": "Demande de prise en charge hospitalière : obtenir l'accord de la mutuelle à l'admission",
+    "primaryKeyword": "demande de prise en charge hospitalière",
+    "keywordCluster": [
+      "demande de prise en charge hospitalière viamedis",
+      "almerys pec hospitalisation",
+      "isante pec hospitalisation",
+      "prise en charge hospitalière mutuelle",
+      "engagement de paiement mutuelle",
+      "pré-admission clinique",
+      "refus prise en charge hospitalisation mutuelle"
+    ],
     "searchVolume": 0,
-    "unsplashQuery": "compliance documents",
     "status": "pending",
-    "wave": 2,
+    "wave": 4,
     "level": "Fille",
-    "parentSlug": "conformite-opticien",
-    "reader": "Comptoir",
+    "parentSlug": "tiers-payant-clinique-privee",
+    "reader": "Agent du bureau des entrées ou des pré-admissions d'une clinique privée",
     "role": "Résolution",
-    "granitData": "Correspondances LPP ancien → nouveau (EMOA), contrôle devis/facture des agents",
-    "cta": "Démo",
-    "toValidate": "",
-    "primaryKeywordMeasured": false,
-    "faqQuestions": [
-      "Qu'est-ce que le devis normalisé ?",
-      "Que doit contenir un devis optique ?",
-      "À quoi servent les codes LPP ?",
-      "Que faire si le code LPP du devis ne correspond pas à la facture ?"
-    ],
-    "internalLinks": [
-      {
-        "id": "H0",
-        "slug": "conformite-opticien",
-        "anchor": "Conformité administrative de l'opticien",
-        "type": "parent"
-      },
-      {
-        "id": "H3",
-        "slug": "conservation-dossiers-tiers-payant",
-        "anchor": "Combien de temps garder les dossiers de tiers payant ?",
-        "type": "sœur"
-      },
-      {
-        "id": "H4",
-        "slug": "fraude-tiers-payant-optique",
-        "anchor": "Fraude au tiers payant",
-        "type": "sœur"
-      },
-      {
-        "id": "B8",
-        "slug": "checklist-prise-en-charge",
-        "anchor": "checklist avant d'envoyer une prise en charge",
-        "type": "transverse"
-      }
-    ]
-  },
-  {
-    "id": "H6",
-    "slug": "reseaux-de-soins-conventionnement",
-    "category": "conformite",
-    "title": "Réseaux de soins : ce que le conventionnement change pour vos dossiers",
-    "primaryKeyword": "reseaux de soins conventionnement",
-    "keywordCluster": [],
-    "searchVolume": 0,
-    "unsplashQuery": "compliance documents",
-    "status": "pending",
-    "wave": 2,
-    "level": "Fille",
-    "parentSlug": "conformite-opticien",
-    "reader": "Gérant",
-    "role": "Trafic",
-    "granitData": "Base Acteurs TP (réseaux)",
-    "cta": "Démo",
-    "toValidate": "",
-    "primaryKeywordMeasured": false,
-    "faqQuestions": [
-      "Qu'est-ce qu'un réseau de soins ?",
-      "Que change le conventionnement pour l'opticien ?",
-      "Comment rejoindre un réseau ?"
-    ],
-    "internalLinks": [
-      {
-        "id": "H0",
-        "slug": "conformite-opticien",
-        "anchor": "Conformité administrative de l'opticien",
-        "type": "parent"
-      },
-      {
-        "id": "H1",
-        "slug": "controle-assurance-maladie-opticien",
-        "anchor": "Contrôle de l'Assurance maladie",
-        "type": "sœur"
-      },
-      {
-        "id": "H2",
-        "slug": "devis-normalise-codes-lpp",
-        "anchor": "Devis normalisé et codes LPP",
-        "type": "sœur"
-      },
-      {
-        "id": "B8",
-        "slug": "checklist-prise-en-charge",
-        "anchor": "checklist avant d'envoyer une prise en charge",
-        "type": "transverse"
-      }
-    ]
-  },
-  {
-    "id": "E4",
-    "slug": "automatiser-saisie-prise-en-charge",
-    "category": "gerer-son-tiers-payant",
-    "title": "Automatiser la saisie des prises en charge : ce qui est possible aujourd'hui",
-    "primaryKeyword": "automatiser saisie prise en charge",
-    "keywordCluster": [],
-    "searchVolume": 0,
-    "unsplashQuery": "optical store manager",
-    "status": "pending",
-    "wave": 2,
-    "level": "Fille",
-    "parentSlug": "gerer-tiers-payant-magasin",
-    "reader": "Gérant",
-    "role": "Conversion",
-    "granitData": "Agents Granit (DPEC Slack, Cosium)",
-    "cta": "Démo",
-    "toValidate": "",
-    "primaryKeywordMeasured": false,
-    "faqQuestions": [
-      "Peut-on automatiser la saisie des prises en charge ?",
-      "Qu'est-ce qu'un agent IA pour le tiers payant ?",
-      "Faut-il une API avec les portails ?"
-    ],
-    "internalLinks": [
-      {
-        "id": "E0",
-        "slug": "gerer-tiers-payant-magasin",
-        "anchor": "gestion tiers payant",
-        "type": "parent"
-      },
-      {
-        "id": "E5",
-        "slug": "cout-temps-tiers-payant",
-        "anchor": "coût du tiers payant pour un magasin",
-        "type": "sœur"
-      },
-      {
-        "id": "E6",
-        "slug": "indicateurs-tiers-payant",
-        "anchor": "Piloter son tiers payant",
-        "type": "sœur"
-      }
-    ]
-  },
-  {
-    "id": "E5",
-    "slug": "cout-temps-tiers-payant",
-    "category": "gerer-son-tiers-payant",
-    "title": "Combien coûte une heure de tiers payant par jour à un magasin ?",
-    "primaryKeyword": "cout temps tiers payant",
-    "keywordCluster": [],
-    "searchVolume": 0,
-    "unsplashQuery": "optical store manager",
-    "status": "pending",
-    "wave": 2,
-    "level": "Fille",
-    "parentSlug": "gerer-tiers-payant-magasin",
-    "reader": "Gérant",
-    "role": "Conversion",
-    "granitData": "KPI heures économisées de l'app Granit",
-    "cta": "Calculateur (lead magnet)",
-    "toValidate": "Hypothèses affichées",
-    "primaryKeywordMeasured": false,
-    "faqQuestions": [
-      "Combien de temps un magasin passe-t-il sur le tiers payant ?",
-      "Combien coûte une heure de saisie par jour ?",
-      "Comment calculer le retour sur investissement d'une automatisation ?"
-    ],
-    "internalLinks": [
-      {
-        "id": "E0",
-        "slug": "gerer-tiers-payant-magasin",
-        "anchor": "gestion tiers payant",
-        "type": "parent"
-      },
-      {
-        "id": "E6",
-        "slug": "indicateurs-tiers-payant",
-        "anchor": "Piloter son tiers payant",
-        "type": "sœur"
-      },
-      {
-        "id": "E7",
-        "slug": "conges-dossiers-tiers-payant",
-        "anchor": "Fermeture pour congés",
-        "type": "sœur"
-      }
-    ]
-  },
-  {
-    "id": "A19",
-    "slug": "itelis-conventionnement",
-    "category": "plateformes",
-    "title": "Itelis : conventionnement opticien et accès extranet",
-    "primaryKeyword": "partenaire itelis opticien",
-    "keywordCluster": [
-      "itelis partenaires opticiens",
-      "partenaire optique itelis",
-      "partenaire itelis optique",
-      "itelis partenaire optique",
-      "partenaire opticien itelis",
-      "partenaire itelis",
-      "opticien partenaire itelis",
-      "itelis partenaire",
-      "itelis opticien partenaire",
-      "itelis partenaires"
-    ],
-    "searchVolume": 5850,
-    "unsplashQuery": "optician computer paperwork",
-    "status": "pending",
-    "wave": 2,
-    "level": "Petite-fille",
-    "parentSlug": "portail-itelis",
-    "reader": "Comptoir + gérant",
-    "role": "Trafic",
     "granitData": "—",
-    "cta": "Démo",
-    "toValidate": "",
-    "primaryKeywordMeasured": true,
+    "cta": "Parlons de votre tiers payant",
+    "toValidate": "Demande surtout patient ; canal réel de la part AMC non documenté de façon primaire ; Granit : offre seulement (fiche cliniques). Validité et délai de réponse d'une PEC hospitalière : ne rien affirmer. Aucune capture de portail sans accès établissement réel, aucun établissement nommé. Angle méthode.",
+    "primaryKeywordMeasured": false,
     "faqQuestions": [
-      "Comment devenir opticien partenaire Itelis ?",
-      "Quelles pièces fournir pour le conventionnement ?",
-      "Comment accéder à l'extranet Itelis ?"
+      "Quelles informations faut-il pour demander une prise en charge hospitalière ?",
+      "Comment savoir quel portail utiliser pour une mutuelle donnée ?",
+      "Que faire en cas de refus de prise en charge hospitalière ?",
+      "Une prise en charge couvre-t-elle la chambre particulière ?",
+      "Que faire si le séjour est prolongé au-delà de la prise en charge ?"
     ],
     "internalLinks": [
       {
-        "id": "A5",
-        "slug": "portail-itelis",
-        "anchor": "itelis tp",
+        "id": "K0",
+        "slug": "tiers-payant-clinique-privee",
+        "anchor": "tiers payant en clinique privée",
         "type": "parent"
       },
       {
-        "id": "B3",
-        "slug": "prise-en-charge-refusee",
-        "anchor": "Prise en charge refusée",
-        "type": "transverse"
-      },
-      {
-        "id": "B8",
-        "slug": "checklist-prise-en-charge",
-        "anchor": "checklist avant d'envoyer une prise en charge",
-        "type": "transverse"
-      }
-    ]
-  },
-  {
-    "id": "A17",
-    "slug": "sp-sante-espace-pro",
-    "category": "plateformes",
-    "title": "SP Santé : espace pro et prise en charge optique",
-    "primaryKeyword": "sp sante pro",
-    "keywordCluster": [
-      "sp sante espace pro",
-      "sp sante espace professionnel",
-      "sp santé mon compte",
-      "sp sante mon compte",
-      "sp santé mutuelle mon compte",
-      "sp sante espace professionnel de sante",
-      "sp santé pro",
-      "sp sante tp pro",
-      "sp sante pro sante",
-      "sp sante compte pro"
-    ],
-    "searchVolume": 3810,
-    "unsplashQuery": "optician computer paperwork",
-    "status": "pending",
-    "wave": 2,
-    "level": "Petite-fille",
-    "parentSlug": "portail-sp-sante",
-    "reader": "Comptoir",
-    "role": "Trafic",
-    "granitData": "Parcours SP Santé de l'agent",
-    "cta": "Démo",
-    "toValidate": "",
-    "primaryKeywordMeasured": true,
-    "faqQuestions": [
-      "Comment accéder à l'espace pro SP Santé ?",
-      "Comment saisir une prise en charge optique sur SP Santé ?",
-      "Comment suivre un remboursement SP Santé ?"
-    ],
-    "internalLinks": [
-      {
-        "id": "A3",
-        "slug": "portail-sp-sante",
-        "anchor": "sp sante tp",
-        "type": "parent"
-      },
-      {
-        "id": "B3",
-        "slug": "prise-en-charge-refusee",
-        "anchor": "Prise en charge refusée",
-        "type": "transverse"
-      },
-      {
-        "id": "B8",
-        "slug": "checklist-prise-en-charge",
-        "anchor": "checklist avant d'envoyer une prise en charge",
-        "type": "transverse"
-      }
-    ]
-  },
-  {
-    "id": "A16",
-    "slug": "viamedis-prise-en-charge",
-    "category": "plateformes",
-    "title": "Viamédis : faire et suivre une prise en charge",
-    "primaryKeyword": "viamedis pec",
-    "keywordCluster": [
-      "www viamedis net prise en charge",
-      "pec viamedis",
-      "www.viamedis.net prise en charge",
-      "viamedis prise en charge",
-      "viamedis professionnel de santé prise en charge",
-      "viamedis prise en charge optique",
-      "viamedis demande de prise en charge",
-      "prise en charge viamedis",
-      "demande de prise en charge viamedis"
-    ],
-    "searchVolume": 1280,
-    "unsplashQuery": "optician computer paperwork",
-    "status": "pending",
-    "wave": 2,
-    "level": "Petite-fille",
-    "parentSlug": "portail-viamedis",
-    "reader": "Comptoir",
-    "role": "Trafic",
-    "granitData": "Idem",
-    "cta": "Démo agent DPEC",
-    "toValidate": "",
-    "primaryKeywordMeasured": true,
-    "faqQuestions": [
-      "Comment faire une prise en charge sur Viamédis ?",
-      "Combien de temps une PEC Viamédis est-elle valable ?",
-      "Comment suivre une prise en charge Viamédis ?"
-    ],
-    "internalLinks": [
-      {
-        "id": "A1",
-        "slug": "portail-viamedis",
-        "anchor": "viamedis tp",
-        "type": "parent"
-      },
-      {
-        "id": "A15",
-        "slug": "viamedis-espace-pro",
-        "anchor": "viamedis espace pro",
+        "id": "K2",
+        "slug": "rejets-fse-laboratoire",
+        "anchor": "rejets FSE en laboratoire",
         "type": "sœur"
       },
       {
-        "id": "B3",
-        "slug": "prise-en-charge-refusee",
-        "anchor": "Prise en charge refusée",
+        "id": "C1",
+        "slug": "virement-mutuelle-inferieur",
+        "anchor": "virement de mutuelle inférieur à la facture",
         "type": "transverse"
       },
       {
-        "id": "B8",
-        "slug": "checklist-prise-en-charge",
-        "anchor": "checklist avant d'envoyer une prise en charge",
+        "id": "F0",
+        "slug": "glossaire-tiers-payant",
+        "anchor": "glossaire du tiers payant",
         "type": "transverse"
       }
-    ]
-  },
-  {
-    "id": "A18",
-    "slug": "isante-prise-en-charge",
-    "category": "plateformes",
-    "title": "iSanté : créer son compte et demander une prise en charge",
-    "primaryKeyword": "isante pec",
-    "keywordCluster": [
-      "pec isante",
-      "www tp isante fr prise en charge",
-      "tp isante prise en charge",
-      "isante pec professionnel de sante",
-      "tp-isante prise en charge"
     ],
-    "searchVolume": 800,
-    "unsplashQuery": "optician computer paperwork",
-    "status": "pending",
-    "wave": 2,
-    "level": "Petite-fille",
-    "parentSlug": "portail-isante",
-    "reader": "Comptoir",
-    "role": "Trafic",
-    "granitData": "Parcours iSanté de l'agent",
-    "cta": "Démo",
-    "toValidate": "",
-    "primaryKeywordMeasured": true,
-    "faqQuestions": [
-      "Comment créer un compte iSanté ?",
-      "Comment demander une prise en charge sur iSanté ?",
-      "Comment suivre un dossier iSanté ?"
+    "verticales": [
+      "cliniques"
     ],
-    "internalLinks": [
-      {
-        "id": "A4",
-        "slug": "portail-isante",
-        "anchor": "isante tp",
-        "type": "parent"
-      },
-      {
-        "id": "B3",
-        "slug": "prise-en-charge-refusee",
-        "anchor": "Prise en charge refusée",
-        "type": "transverse"
-      },
-      {
-        "id": "B8",
-        "slug": "checklist-prise-en-charge",
-        "anchor": "checklist avant d'envoyer une prise en charge",
-        "type": "transverse"
-      }
-    ]
+    "unsplashQuery": "hospital admission desk"
   },
   {
     "id": "H0",
@@ -3690,6 +4909,662 @@
         "anchor": "remboursement des lunettes",
         "type": "sœur"
       }
+    ],
+    "verticales": [
+      "optique"
+    ]
+  },
+  {
+    "id": "H2",
+    "slug": "devis-normalise-codes-lpp",
+    "category": "conformite",
+    "title": "Devis normalisé et codes LPP en optique : ce qui doit concorder avec la facture",
+    "primaryKeyword": "devis normalisé optique",
+    "keywordCluster": [],
+    "searchVolume": 0,
+    "unsplashQuery": "compliance documents",
+    "status": "pending",
+    "wave": 2,
+    "level": "Fille",
+    "parentSlug": "conformite-opticien",
+    "reader": "Comptoir",
+    "role": "Résolution",
+    "granitData": "Correspondances LPP ancien → nouveau (EMOA), contrôle devis/facture des agents",
+    "cta": "Démo",
+    "toValidate": "Viser « devis normalisé optique » pour laisser la place à l'audio.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Qu'est-ce que le devis normalisé ?",
+      "Que doit contenir un devis optique ?",
+      "À quoi servent les codes LPP ?",
+      "Que faire si le code LPP du devis ne correspond pas à la facture ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "H0",
+        "slug": "conformite-opticien",
+        "anchor": "Conformité administrative de l'opticien",
+        "type": "parent"
+      },
+      {
+        "id": "H3",
+        "slug": "conservation-dossiers-tiers-payant",
+        "anchor": "Combien de temps garder les dossiers de tiers payant ?",
+        "type": "sœur"
+      },
+      {
+        "id": "H4",
+        "slug": "fraude-tiers-payant-optique",
+        "anchor": "Fraude au tiers payant",
+        "type": "sœur"
+      },
+      {
+        "id": "B8",
+        "slug": "checklist-prise-en-charge",
+        "anchor": "checklist avant d'envoyer une prise en charge",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ]
+  },
+  {
+    "id": "PH3",
+    "slug": "tiers-payant-sans-carte-vitale-pharmacie",
+    "category": "guide-tiers-payant",
+    "title": "Tiers payant sans carte Vitale en pharmacie : règle, exceptions et rejets à éviter",
+    "primaryKeyword": "tiers payant sans carte vitale pharmacie",
+    "keywordCluster": [
+      "tiers payant carte vitale pharmacie",
+      "tiers payant contre carte vitale pharmacie",
+      "attestation de droits pharmacie",
+      "mode dégradé pharmacie",
+      "scor pharmacie"
+    ],
+    "searchVolume": 0,
+    "status": "pending",
+    "wave": 4,
+    "level": "Fille",
+    "parentSlug": "gestion-tiers-payant-pharmacie",
+    "reader": "Préparateur au comptoir, adjoint référent tiers payant",
+    "role": "Trafic",
+    "granitData": "—",
+    "cta": "Parlons de votre tiers payant",
+    "toValidate": "Sujet rétabli le 04/11/2026 (encadré de la carte v5). Demande : Moyen (3 suggestions Google, sans volume mesuré), avec une part patient : écrire pour le comptoir. Carte Vitale exigée pour le tiers payant depuis juin 2025 (exceptions AME, nourrissons de moins de 3 mois, résidents d'EHPAD, demandeurs d'asile) confirmé ; reprendre la source ameli pharmacien. SCOR et pièces justificatives : sourcer. Non vérifiés, à ne pas écrire tels quels : paiement AMO en 4 jours ouvrés, extension du tiers payant contre génériques au 1er septembre 2026. Offre seulement (fiche pharmacie) : Granit peut reprendre les rejets, envoyer les demandes de prise en charge et proposer le tiers payant, sans client, chiffre ni résultat. Rien sur une intégration au LGO ou à un concentrateur. Aucun délai de paiement. Neutre entre syndicats.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Peut-on faire le tiers payant sans carte Vitale en pharmacie ?",
+      "Quelles sont les exceptions à la carte Vitale ?",
+      "Une attestation de droits suffit-elle ?",
+      "Que faire quand le patient a oublié sa carte ?",
+      "Quels rejets évite-t-on avec une carte lue ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "PH0",
+        "slug": "gestion-tiers-payant-pharmacie",
+        "anchor": "gestion du tiers payant en pharmacie",
+        "type": "parent"
+      },
+      {
+        "id": "PH1",
+        "slug": "rejet-mutuelle-pharmacie",
+        "anchor": "rejet mutuelle en pharmacie",
+        "type": "sœur"
+      },
+      {
+        "id": "F3",
+        "slug": "carte-vitale-carte-tiers-payant",
+        "anchor": "carte Vitale et carte de tiers payant",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "pharmacie"
+    ],
+    "unsplashQuery": "pharmacy counter card"
+  },
+  {
+    "id": "E4",
+    "slug": "automatiser-saisie-prise-en-charge",
+    "category": "gerer-son-tiers-payant",
+    "title": "Automatiser la saisie des prises en charge : ce qui est possible aujourd'hui",
+    "primaryKeyword": "automatiser saisie prise en charge",
+    "keywordCluster": [],
+    "searchVolume": 0,
+    "unsplashQuery": "optical store manager",
+    "status": "pending",
+    "wave": 2,
+    "level": "Fille",
+    "parentSlug": "gerer-tiers-payant-magasin",
+    "reader": "Gérant",
+    "role": "Conversion",
+    "granitData": "Agents Granit (DPEC Slack, Cosium)",
+    "cta": "Démo",
+    "toValidate": "",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Peut-on automatiser la saisie des prises en charge ?",
+      "Qu'est-ce qu'un agent IA pour le tiers payant ?",
+      "Faut-il une API avec les portails ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "E0",
+        "slug": "gerer-tiers-payant-magasin",
+        "anchor": "gestion tiers payant",
+        "type": "parent"
+      },
+      {
+        "id": "E5",
+        "slug": "cout-temps-tiers-payant",
+        "anchor": "coût du tiers payant pour un magasin",
+        "type": "sœur"
+      },
+      {
+        "id": "E6",
+        "slug": "indicateurs-tiers-payant",
+        "anchor": "Piloter son tiers payant",
+        "type": "sœur"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ]
+  },
+  {
+    "id": "E5",
+    "slug": "cout-temps-tiers-payant",
+    "category": "gerer-son-tiers-payant",
+    "title": "Combien coûte le temps passé sur le tiers payant ? La méthode de calcul",
+    "primaryKeyword": "cout temps tiers payant",
+    "keywordCluster": [],
+    "searchVolume": 0,
+    "unsplashQuery": "healthcare administration desk",
+    "status": "pending",
+    "wave": 2,
+    "level": "Fille",
+    "parentSlug": "tiers-payant-professionnels-de-sante",
+    "reader": "Gérant ou direction administrative d'une structure de santé, tous métiers",
+    "role": "Conversion",
+    "granitData": "—",
+    "cta": "Calculateur (lead magnet)",
+    "toValidate": "Hypothèses affichées Méthode seulement, hypothèses affichées : aucun gain de temps chiffré (mesuré en optique seulement). Article multi-métiers : exemples tirés de chaque métier listé dans `verticales`, sans privilégier l'optique ; Granit : constat d'expérience en optique et audio seulement, simple offre ailleurs (voir la fiche métier).",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Combien de temps un magasin passe-t-il sur le tiers payant ?",
+      "Combien coûte une heure de saisie par jour ?",
+      "Comment calculer le retour sur investissement d'une automatisation ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "T0",
+        "slug": "tiers-payant-professionnels-de-sante",
+        "anchor": "tiers payant des professionnels de santé",
+        "type": "parent"
+      },
+      {
+        "id": "E6",
+        "slug": "indicateurs-tiers-payant",
+        "anchor": "Piloter son tiers payant",
+        "type": "sœur"
+      },
+      {
+        "id": "E7",
+        "slug": "conges-dossiers-tiers-payant",
+        "anchor": "Fermeture pour congés",
+        "type": "sœur"
+      }
+    ],
+    "verticales": [
+      "optique",
+      "dentaire",
+      "centres",
+      "pharmacie",
+      "cliniques"
+    ]
+  },
+  {
+    "id": "D2",
+    "slug": "actes-hors-nomenclature-dentaire",
+    "category": "gerer-son-tiers-payant",
+    "title": "Actes hors nomenclature dentaire : devis, prise en charge et suivi de la part mutuelle",
+    "primaryKeyword": "actes hors nomenclature dentaire",
+    "keywordCluster": [
+      "hors nomenclature dentaire",
+      "code hn dentiste mutuelle",
+      "liste des actes hors nomenclature dentaire",
+      "implant dentaire mutuelle",
+      "devis implant dentaire mutuelle",
+      "forfait implantologie",
+      "entente directe dentaire",
+      "itelis implant dentaire"
+    ],
+    "searchVolume": 0,
+    "status": "pending",
+    "wave": 4,
+    "level": "Fille",
+    "parentSlug": "tiers-payant-dentaire",
+    "reader": "Coordinatrice de soins ou responsable facturation d'un cabinet ou centre dentaire à forte activité implantaire",
+    "role": "Autorité",
+    "granitData": "—",
+    "cta": "Parlons de votre tiers payant",
+    "toValidate": "Part mutuelle du HN seulement (devis, PEC, suivi du forfait) : aucune consigne de cotation (« comment coter un implant » retiré, risque de conseil erroné). Base de remboursement de la couronne sur implant non sourcée : ne pas la citer. Mot-clé en partie patient : écrire pour le cabinet. Angle méthode : Granit s'écrit comme une offre (« Granit peut… »), sans chiffre ni cas client.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Qu'est-ce qu'un acte hors nomenclature en dentaire ?",
+      "La mutuelle rembourse-t-elle un acte HN sans remboursement de la Sécurité sociale ?",
+      "Faut-il un accord de la mutuelle avant la pose d'un implant ?",
+      "Peut-on faire le tiers payant sur un implant ?",
+      "Que faire si le patient change de mutuelle entre le devis et la pose ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "D0",
+        "slug": "tiers-payant-dentaire",
+        "anchor": "tiers payant dentaire",
+        "type": "parent"
+      },
+      {
+        "id": "D1",
+        "slug": "pec-dentaire-portails-mutuelles",
+        "anchor": "PEC dentaire sur les portails des mutuelles",
+        "type": "sœur"
+      },
+      {
+        "id": "R4",
+        "slug": "dentaire-paniers-100-sante-tiers-payant",
+        "anchor": "paniers 100 % Santé dentaire",
+        "type": "sœur"
+      },
+      {
+        "id": "C1",
+        "slug": "virement-mutuelle-inferieur",
+        "anchor": "virement de mutuelle inférieur à la facture",
+        "type": "transverse"
+      },
+      {
+        "id": "C2",
+        "slug": "quand-relancer-mutuelle",
+        "anchor": "quand relancer une mutuelle",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "dentaire"
+    ],
+    "unsplashQuery": "dental model desk"
+  },
+  {
+    "id": "A19",
+    "slug": "itelis-conventionnement",
+    "category": "plateformes",
+    "title": "Itelis : conventionnement opticien et accès extranet",
+    "primaryKeyword": "partenaire itelis opticien",
+    "keywordCluster": [
+      "itelis partenaires opticiens",
+      "partenaire optique itelis",
+      "partenaire itelis optique",
+      "itelis partenaire optique",
+      "partenaire opticien itelis",
+      "partenaire itelis",
+      "opticien partenaire itelis",
+      "itelis partenaire",
+      "itelis opticien partenaire",
+      "itelis partenaires"
+    ],
+    "searchVolume": 5850,
+    "unsplashQuery": "optician computer paperwork",
+    "status": "pending",
+    "wave": 2,
+    "level": "Petite-fille",
+    "parentSlug": "portail-itelis",
+    "reader": "Comptoir + gérant",
+    "role": "Trafic",
+    "granitData": "—",
+    "cta": "Démo",
+    "toValidate": "",
+    "primaryKeywordMeasured": true,
+    "faqQuestions": [
+      "Comment devenir opticien partenaire Itelis ?",
+      "Quelles pièces fournir pour le conventionnement ?",
+      "Comment accéder à l'extranet Itelis ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "A5",
+        "slug": "portail-itelis",
+        "anchor": "itelis tp",
+        "type": "parent"
+      },
+      {
+        "id": "B3",
+        "slug": "prise-en-charge-refusee",
+        "anchor": "Prise en charge refusée",
+        "type": "transverse"
+      },
+      {
+        "id": "B8",
+        "slug": "checklist-prise-en-charge",
+        "anchor": "checklist avant d'envoyer une prise en charge",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ]
+  },
+  {
+    "id": "A17",
+    "slug": "sp-sante-espace-pro",
+    "category": "plateformes",
+    "title": "SP Santé : espace pro et prise en charge optique",
+    "primaryKeyword": "sp sante pro",
+    "keywordCluster": [
+      "sp sante espace pro",
+      "sp sante espace professionnel",
+      "sp santé mon compte",
+      "sp sante mon compte",
+      "sp santé mutuelle mon compte",
+      "sp sante espace professionnel de sante",
+      "sp santé pro",
+      "sp sante tp pro",
+      "sp sante pro sante",
+      "sp sante compte pro"
+    ],
+    "searchVolume": 3810,
+    "unsplashQuery": "optician computer paperwork",
+    "status": "pending",
+    "wave": 2,
+    "level": "Petite-fille",
+    "parentSlug": "portail-sp-sante",
+    "reader": "Comptoir",
+    "role": "Trafic",
+    "granitData": "Parcours SP Santé de l'agent",
+    "cta": "Démo",
+    "toValidate": "",
+    "primaryKeywordMeasured": true,
+    "faqQuestions": [
+      "Comment accéder à l'espace pro SP Santé ?",
+      "Comment saisir une prise en charge optique sur SP Santé ?",
+      "Comment suivre un remboursement SP Santé ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "A3",
+        "slug": "portail-sp-sante",
+        "anchor": "sp sante tp",
+        "type": "parent"
+      },
+      {
+        "id": "B3",
+        "slug": "prise-en-charge-refusee",
+        "anchor": "Prise en charge refusée",
+        "type": "transverse"
+      },
+      {
+        "id": "B8",
+        "slug": "checklist-prise-en-charge",
+        "anchor": "checklist avant d'envoyer une prise en charge",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ]
+  },
+  {
+    "id": "S2",
+    "slug": "rejet-cpam-centre-de-sante",
+    "category": "rejets",
+    "title": "Rejet CPAM en centre de santé : trier et traiter les rejets de part obligatoire",
+    "primaryKeyword": "rejet cpam centre de santé",
+    "keywordCluster": [
+      "rejet cpam",
+      "code rejet cpam",
+      "rejet télétransmission cpam",
+      "rejet noemie traitement caisse",
+      "rejet cpam invalidation à l'initiative de la caisse",
+      "rejet cpam pas de traitement OC",
+      "rejet cpam modulation du ticket modérateur",
+      "rejet cpam prescription interdite à cette date"
+    ],
+    "searchVolume": 0,
+    "status": "pending",
+    "wave": 4,
+    "level": "Fille",
+    "parentSlug": "tiers-payant-centre-de-sante",
+    "reader": "Équipe de facturation d'un centre de santé médical ou polyvalent, coordinatrice administrative d'un centre de soins infirmiers",
+    "role": "Résolution",
+    "granitData": "—",
+    "cta": "Parlons de votre tiers payant",
+    "toValidate": "Sens des libellés CPAM non confirmé (aucun texte public) : causes « probables », à vérifier sur des retours réels. Garder l'angle volume en centre de santé pour ne pas doublonner codes-rejets-noemie et rejet-tiers-payant. Ne pas écrire « délai légal de 2 ans pour facturer » (L332-1 ne vise plus que les prestations en espèces) : seul le délai contractuel Inter-AMC est sûr. Rien sur la télétransmission ou la carte CPS côté Granit. Angle méthode : Granit s'écrit comme une offre (« Granit peut… »), sans chiffre ni cas client.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Que veut dire « invalidation à l'initiative de la caisse » ?",
+      "Rejet CPAM « pas de traitement OC » : qui paie la part complémentaire ?",
+      "La CPAM garantit-elle le paiement d'une FSE sécurisée ?",
+      "Que faire d'un rejet « prescription interdite à cette date » ?",
+      "Combien de temps un centre a-t-il pour refacturer après un rejet CPAM ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "S0",
+        "slug": "tiers-payant-centre-de-sante",
+        "anchor": "tiers payant en centre de santé",
+        "type": "parent"
+      },
+      {
+        "id": "S1",
+        "slug": "accord-national-centres-de-sante",
+        "anchor": "accord national des centres de santé",
+        "type": "sœur"
+      },
+      {
+        "id": "S3",
+        "slug": "tiers-payant-centre-ophtalmologie",
+        "anchor": "tiers payant en centre d'ophtalmologie",
+        "type": "sœur"
+      },
+      {
+        "id": "C3",
+        "slug": "codes-rejets-noemie",
+        "anchor": "liste des codes rejets NOEMIE",
+        "type": "transverse"
+      },
+      {
+        "id": "C4",
+        "slug": "retour-noemie-sans-virement",
+        "anchor": "retour NOEMIE sans virement",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "centres"
+    ],
+    "unsplashQuery": "spreadsheet review office"
+  },
+  {
+    "id": "A16",
+    "slug": "viamedis-prise-en-charge",
+    "category": "plateformes",
+    "title": "Viamédis : faire et suivre une prise en charge",
+    "primaryKeyword": "viamedis pec",
+    "keywordCluster": [
+      "www viamedis net prise en charge",
+      "pec viamedis",
+      "www.viamedis.net prise en charge",
+      "viamedis prise en charge",
+      "viamedis professionnel de santé prise en charge",
+      "viamedis prise en charge optique",
+      "viamedis demande de prise en charge",
+      "prise en charge viamedis",
+      "demande de prise en charge viamedis"
+    ],
+    "searchVolume": 1280,
+    "unsplashQuery": "optician computer paperwork",
+    "status": "pending",
+    "wave": 2,
+    "level": "Petite-fille",
+    "parentSlug": "portail-viamedis",
+    "reader": "Comptoir",
+    "role": "Trafic",
+    "granitData": "Idem",
+    "cta": "Démo agent DPEC",
+    "toValidate": "",
+    "primaryKeywordMeasured": true,
+    "faqQuestions": [
+      "Comment faire une prise en charge sur Viamédis ?",
+      "Combien de temps une PEC Viamédis est-elle valable ?",
+      "Comment suivre une prise en charge Viamédis ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "A1",
+        "slug": "portail-viamedis",
+        "anchor": "viamedis tp",
+        "type": "parent"
+      },
+      {
+        "id": "A15",
+        "slug": "viamedis-espace-pro",
+        "anchor": "viamedis espace pro",
+        "type": "sœur"
+      },
+      {
+        "id": "B3",
+        "slug": "prise-en-charge-refusee",
+        "anchor": "Prise en charge refusée",
+        "type": "transverse"
+      },
+      {
+        "id": "B8",
+        "slug": "checklist-prise-en-charge",
+        "anchor": "checklist avant d'envoyer une prise en charge",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ]
+  },
+  {
+    "id": "A18",
+    "slug": "isante-prise-en-charge",
+    "category": "plateformes",
+    "title": "iSanté : créer son compte et demander une prise en charge",
+    "primaryKeyword": "isante pec",
+    "keywordCluster": [
+      "pec isante",
+      "www tp isante fr prise en charge",
+      "tp isante prise en charge",
+      "isante pec professionnel de sante",
+      "tp-isante prise en charge"
+    ],
+    "searchVolume": 800,
+    "unsplashQuery": "optician computer paperwork",
+    "status": "pending",
+    "wave": 2,
+    "level": "Petite-fille",
+    "parentSlug": "portail-isante",
+    "reader": "Comptoir",
+    "role": "Trafic",
+    "granitData": "Parcours iSanté de l'agent",
+    "cta": "Démo",
+    "toValidate": "",
+    "primaryKeywordMeasured": true,
+    "faqQuestions": [
+      "Comment créer un compte iSanté ?",
+      "Comment demander une prise en charge sur iSanté ?",
+      "Comment suivre un dossier iSanté ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "A4",
+        "slug": "portail-isante",
+        "anchor": "isante tp",
+        "type": "parent"
+      },
+      {
+        "id": "B3",
+        "slug": "prise-en-charge-refusee",
+        "anchor": "Prise en charge refusée",
+        "type": "transverse"
+      },
+      {
+        "id": "B8",
+        "slug": "checklist-prise-en-charge",
+        "anchor": "checklist avant d'envoyer une prise en charge",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ]
+  },
+  {
+    "id": "C5",
+    "slug": "libelles-virements-tiers-payant",
+    "category": "paiements",
+    "title": "À qui correspond ce virement ? Libellés bancaires des payeurs (CETIP, KALIVIA…)",
+    "primaryKeyword": "libelles virements tiers payant",
+    "keywordCluster": [],
+    "searchVolume": 0,
+    "unsplashQuery": "bank statement accounting",
+    "status": "pending",
+    "wave": 2,
+    "level": "Fille",
+    "parentSlug": "rapprochement-bancaire-tiers-payant",
+    "reader": "Accueil, comptoir ou facturation d'une structure de santé (magasin d'optique, centre auditif, cabinet ou centre dentaire, centre de santé, officine, clinique, laboratoire)",
+    "role": "Résolution",
+    "granitData": "canaux.py, payments.py",
+    "cta": "Démo",
+    "toValidate": "Article multi-métiers : exemples tirés de chaque métier listé dans `verticales`, sans privilégier l'optique ; Granit : constat d'expérience en optique et audio seulement, simple offre ailleurs (voir la fiche métier).",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Comment savoir à quel payeur correspond un virement ?",
+      "Que veut dire le libellé CETIP sur un relevé ?",
+      "Comment rattacher un virement sans référence de dossier ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "C0",
+        "slug": "rapprochement-bancaire-tiers-payant",
+        "anchor": "Rapprochement bancaire du tiers payant",
+        "type": "parent"
+      },
+      {
+        "id": "C6",
+        "slug": "delais-paiement-plateformes",
+        "anchor": "Délais de paiement des plateformes de tiers payant (tableau daté)",
+        "type": "sœur"
+      },
+      {
+        "id": "C7",
+        "slug": "impayes-mutuelle-anciens",
+        "anchor": "Impayés mutuelles de plus de 6 mois",
+        "type": "sœur"
+      },
+      {
+        "id": "C2",
+        "slug": "quand-relancer-mutuelle",
+        "anchor": "quand relancer une mutuelle",
+        "type": "transverse"
+      },
+      {
+        "id": "E4",
+        "slug": "automatiser-saisie-prise-en-charge",
+        "anchor": "Automatiser la saisie des prises en charge",
+        "type": "conversion"
+      }
+    ],
+    "verticales": [
+      "optique",
+      "dentaire",
+      "centres",
+      "pharmacie",
+      "cliniques"
     ]
   },
   {
@@ -3747,6 +5622,9 @@
         "anchor": "motif rejet tiers payant",
         "type": "sœur"
       }
+    ],
+    "verticales": [
+      "optique"
     ]
   },
   {
@@ -3800,7 +5678,85 @@
         "anchor": "coût du tiers payant pour un magasin",
         "type": "sœur"
       }
+    ],
+    "verticales": [
+      "optique"
     ]
+  },
+  {
+    "id": "X2",
+    "slug": "arl-negatif",
+    "category": "paiements",
+    "title": "ARL négatif : retrouver le lot, le réémettre et garder la preuve de télétransmission",
+    "primaryKeyword": "arl négatif",
+    "keywordCluster": [
+      "arl négatif que faire",
+      "arl négatif fse non intégré",
+      "arl negatif secu",
+      "arl négatif 2004",
+      "absence d'ARL",
+      "accusé de réception logique",
+      "lot FSE à réémettre",
+      "pièces justificatives SCOR"
+    ],
+    "searchVolume": 0,
+    "status": "pending",
+    "wave": 4,
+    "level": "Fille",
+    "parentSlug": "rapprochement-bancaire-tiers-payant",
+    "reader": "Personne qui télétransmet les FSE et suit les retours, tous métiers (comptoir d'optique ou d'audio, secrétariat dentaire ou de centre de santé, officine, laboratoire)",
+    "role": "Résolution",
+    "granitData": "—",
+    "cta": "Parlons de votre tiers payant",
+    "toValidate": "Écrire multi-métiers, avec des exemples de plusieurs professions sans privilégier l'optique. Délai d'ARL (« au plus tard le surlendemain ») et règles de réémission à sourcer par profession : les pages ameli et l'article VIII de convention relevés dans les notes sont propres aux pharmaciens. R161-47 (8 jours ouvrés en dispense d'avance) ne vaut pas déchéance (Cass. 2e civ., 8 octobre 2015). La réémission reste un geste fait dans le logiciel de facturation : rien d'automatique à promettre.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Que faire quand un ARL est négatif ?",
+      "Que faire quand on ne reçoit aucun ARL ?",
+      "Un ARL positif garantit-il le paiement ?",
+      "Faut-il renvoyer les pièces justificatives après un ARL négatif ?",
+      "Combien de temps garder les ARL ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "C0",
+        "slug": "rapprochement-bancaire-tiers-payant",
+        "anchor": "rapprochement bancaire du tiers payant",
+        "type": "parent"
+      },
+      {
+        "id": "C4",
+        "slug": "retour-noemie-sans-virement",
+        "anchor": "retour NOEMIE sans virement",
+        "type": "sœur"
+      },
+      {
+        "id": "C3",
+        "slug": "codes-rejets-noemie",
+        "anchor": "liste des codes rejets NOEMIE",
+        "type": "sœur"
+      },
+      {
+        "id": "C2",
+        "slug": "quand-relancer-mutuelle",
+        "anchor": "quand relancer une mutuelle",
+        "type": "sœur"
+      },
+      {
+        "id": "F0",
+        "slug": "glossaire-tiers-payant",
+        "anchor": "glossaire du tiers payant",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "optique",
+      "dentaire",
+      "centres",
+      "pharmacie",
+      "cliniques"
+    ],
+    "unsplashQuery": "computer screen error message"
   },
   {
     "id": "B4",
@@ -3837,7 +5793,7 @@
       },
       {
         "id": "B5",
-        "slug": "tiers-payant-css-opticien",
+        "slug": "tiers-payant-css",
         "anchor": "Facturer un bénéficiaire de la CSS (ex-ACS) en optique",
         "type": "sœur"
       },
@@ -3859,7 +5815,879 @@
         "anchor": "savoir par quel portail passe une mutuelle",
         "type": "outil"
       }
+    ],
+    "verticales": [
+      "optique"
     ]
+  },
+  {
+    "id": "B5",
+    "slug": "tiers-payant-css",
+    "category": "rejets",
+    "title": "Tiers payant et CSS : facturer un bénéficiaire de la Complémentaire santé solidaire",
+    "primaryKeyword": "tiers payant css",
+    "keywordCluster": [],
+    "searchVolume": 0,
+    "unsplashQuery": "office paperwork error",
+    "status": "pending",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "tiers-payant-professionnels-de-sante",
+    "reader": "Accueil, comptoir ou facturation d'une structure de santé (magasin d'optique, centre auditif, cabinet ou centre dentaire, centre de santé, officine, clinique, laboratoire)",
+    "role": "Résolution",
+    "granitData": "—",
+    "cta": "Démo",
+    "toValidate": "Validation réglementaire Article multi-métiers : exemples tirés de chaque métier listé dans `verticales`, sans privilégier l'optique ; Granit : constat d'expérience en optique et audio seulement, simple offre ailleurs (voir la fiche métier).",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Comment facturer un bénéficiaire de la CSS chez l'opticien ?",
+      "La CSS remplace-t-elle l'ACS ?",
+      "Quelles pièces conserver ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "T0",
+        "slug": "tiers-payant-professionnels-de-sante",
+        "anchor": "tiers payant des professionnels de santé",
+        "type": "parent"
+      },
+      {
+        "id": "B6",
+        "slug": "ouvrant-droit-beneficiaire",
+        "anchor": "Ouvrant droit ou bénéficiaire",
+        "type": "sœur"
+      },
+      {
+        "id": "B7",
+        "slug": "contester-refus-prise-en-charge",
+        "anchor": "Contester un refus de prise en charge",
+        "type": "sœur"
+      },
+      {
+        "id": "B8",
+        "slug": "checklist-prise-en-charge",
+        "anchor": "checklist avant d'envoyer une prise en charge",
+        "type": "transverse"
+      },
+      {
+        "id": "A13",
+        "slug": "mutuelle-quel-portail",
+        "anchor": "savoir par quel portail passe une mutuelle",
+        "type": "outil"
+      }
+    ],
+    "verticales": [
+      "optique",
+      "dentaire",
+      "centres",
+      "pharmacie",
+      "cliniques"
+    ]
+  },
+  {
+    "id": "H6",
+    "slug": "reseaux-de-soins-conventionnement",
+    "category": "conformite",
+    "title": "Réseaux de soins : ce que le conventionnement change pour vos dossiers",
+    "primaryKeyword": "reseaux de soins conventionnement",
+    "keywordCluster": [],
+    "searchVolume": 0,
+    "unsplashQuery": "compliance documents",
+    "status": "pending",
+    "wave": 2,
+    "level": "Fille",
+    "parentSlug": "tiers-payant-professionnels-de-sante",
+    "reader": "Gérant d'un magasin d'optique, d'un centre auditif ou d'un cabinet dentaire",
+    "role": "Trafic",
+    "granitData": "Base Acteurs TP (réseaux)",
+    "cta": "Démo",
+    "toValidate": "Article multi-métiers : exemples tirés de chaque métier listé dans `verticales`, sans privilégier l'optique ; Granit : constat d'expérience en optique et audio seulement, simple offre ailleurs (voir la fiche métier).",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Qu'est-ce qu'un réseau de soins ?",
+      "Que change le conventionnement pour l'opticien ?",
+      "Comment rejoindre un réseau ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "T0",
+        "slug": "tiers-payant-professionnels-de-sante",
+        "anchor": "tiers payant des professionnels de santé",
+        "type": "parent"
+      },
+      {
+        "id": "H1",
+        "slug": "controle-assurance-maladie-opticien",
+        "anchor": "Contrôle de l'Assurance maladie",
+        "type": "sœur"
+      },
+      {
+        "id": "H2",
+        "slug": "devis-normalise-codes-lpp",
+        "anchor": "Devis normalisé et codes LPP",
+        "type": "sœur"
+      },
+      {
+        "id": "B8",
+        "slug": "checklist-prise-en-charge",
+        "anchor": "checklist avant d'envoyer une prise en charge",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "optique",
+      "dentaire"
+    ]
+  },
+  {
+    "id": "G5",
+    "slug": "tiers-payant-integral",
+    "category": "guide-tiers-payant",
+    "title": "Tiers payant intégral ou partiel : ce que le professionnel de santé applique, et pour qui",
+    "primaryKeyword": "tiers payant intégral",
+    "keywordCluster": [],
+    "searchVolume": 0,
+    "unsplashQuery": "healthcare administration desk",
+    "status": "pending",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "tiers-payant-professionnels-de-sante",
+    "reader": "Accueil, comptoir ou facturation d'une structure de santé (magasin d'optique, centre auditif, cabinet ou centre dentaire, centre de santé, officine, clinique, laboratoire) ; et leur gérant",
+    "role": "Trafic",
+    "granitData": "fondations.md",
+    "cta": "Démo",
+    "toValidate": "Texte réglementaire à citer « Tiers payant obligatoire sur le panier 100 % Santé » non confirmé : ne pas l'affirmer. Une source par métier. Article multi-métiers : exemples tirés de chaque métier listé dans `verticales`, sans privilégier l'optique ; Granit : constat d'expérience en optique et audio seulement, simple offre ailleurs (voir la fiche métier).",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Qu'est-ce que le tiers payant intégral ?",
+      "Quand l'opticien doit-il le proposer ?",
+      "Que faire si la mutuelle ne pratique pas le tiers payant ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "T0",
+        "slug": "tiers-payant-professionnels-de-sante",
+        "anchor": "tiers payant des professionnels de santé",
+        "type": "parent"
+      },
+      {
+        "id": "G6",
+        "slug": "cas-particuliers-tiers-payant",
+        "anchor": "Cas particuliers",
+        "type": "sœur"
+      },
+      {
+        "id": "H0",
+        "slug": "conformite-opticien",
+        "anchor": "Conformité administrative de l'opticien",
+        "type": "sœur"
+      }
+    ],
+    "verticales": [
+      "optique",
+      "dentaire",
+      "centres",
+      "pharmacie",
+      "cliniques"
+    ],
+    "auteur": "laura"
+  },
+  {
+    "id": "G6",
+    "slug": "cas-particuliers-tiers-payant",
+    "category": "guide-tiers-payant",
+    "title": "Alsace-Moselle, régimes spéciaux, étudiants : les cas particuliers du tiers payant",
+    "primaryKeyword": "cas particuliers tiers payant",
+    "keywordCluster": [],
+    "searchVolume": 0,
+    "unsplashQuery": "healthcare administration desk",
+    "status": "pending",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "tiers-payant-professionnels-de-sante",
+    "reader": "Accueil, comptoir ou facturation d'une structure de santé (magasin d'optique, centre auditif, cabinet ou centre dentaire, centre de santé, officine, clinique, laboratoire)",
+    "role": "Résolution",
+    "granitData": "—",
+    "cta": "Démo",
+    "toValidate": "Article multi-métiers : exemples tirés de chaque métier listé dans `verticales`, sans privilégier l'optique ; Granit : constat d'expérience en optique et audio seulement, simple offre ailleurs (voir la fiche métier).",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Comment gérer un client en ALD chez l'opticien ?",
+      "Qu'est-ce qui change avec le régime d'Alsace-Moselle ?",
+      "Pourquoi les dossiers d'étudiants sont-ils souvent rejetés ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "T0",
+        "slug": "tiers-payant-professionnels-de-sante",
+        "anchor": "tiers payant des professionnels de santé",
+        "type": "parent"
+      },
+      {
+        "id": "H0",
+        "slug": "conformite-opticien",
+        "anchor": "Conformité administrative de l'opticien",
+        "type": "sœur"
+      },
+      {
+        "id": "G1",
+        "slug": "100-sante-classe-a-b-opticien",
+        "anchor": "lunettes 100 santé",
+        "type": "sœur"
+      }
+    ],
+    "verticales": [
+      "optique",
+      "dentaire",
+      "centres",
+      "pharmacie",
+      "cliniques"
+    ],
+    "auteur": "laura"
+  },
+  {
+    "id": "S3",
+    "slug": "tiers-payant-centre-ophtalmologie",
+    "category": "guide-tiers-payant",
+    "title": "Tiers payant en centre d'ophtalmologie : agrément, accord national et part mutuelle",
+    "primaryKeyword": "centre ophtalmologique tiers payant",
+    "keywordCluster": [
+      "tiers payant ophtalmologie",
+      "ophtalmologue tiers payant mutuelle",
+      "consultation ophtalmo tiers payant",
+      "orthoptiste tiers payant",
+      "facturation orthoptiste salarié",
+      "agrément ARS centre ophtalmologique",
+      "OPTAM mutuelle"
+    ],
+    "searchVolume": 0,
+    "status": "pending",
+    "wave": 4,
+    "level": "Fille",
+    "parentSlug": "tiers-payant-centre-de-sante",
+    "reader": "Direction administrative et financière ou responsable de la facturation d'un centre de santé ophtalmologique",
+    "role": "Autorité",
+    "granitData": "—",
+    "cta": "Parlons de votre tiers payant",
+    "toValidate": "Recentré sur le centre de santé ophtalmologique : en cabinet libéral d'ophtalmologie, le tiers payant se fait surtout sur la part Sécurité sociale, sans mutuelle. Agrément ARS (loi du 19 mai 2023, structures existantes agréées avant le 21 novembre 2025) confirmé ; il concerne aussi l'activité dentaire. OPTAM réduit à un encadré ; URL Légifrance de R871-2 à rouvrir. Facturation de l'orthoptiste salarié sans source ameli à jour : citer ameli ou Légifrance, sinon s'en tenir aux questions à poser à la CPAM. Rien sur la télésurveillance (non disponible). Angle méthode : Granit s'écrit comme une offre (« Granit peut… »), sans chiffre ni cas client.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Un centre ophtalmologique est-il obligé de pratiquer le tiers payant ?",
+      "Un centre de santé ophtalmologique a-t-il besoin d'un agrément ARS ?",
+      "Un centre d'ophtalmologie touche-t-il encore la rémunération forfaitaire ?",
+      "Qui facture les actes de l'orthoptiste dans un centre d'ophtalmologie ?",
+      "Le tiers payant mutuelle est-il possible sur une consultation d'ophtalmologie ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "S0",
+        "slug": "tiers-payant-centre-de-sante",
+        "anchor": "tiers payant en centre de santé",
+        "type": "parent"
+      },
+      {
+        "id": "S1",
+        "slug": "accord-national-centres-de-sante",
+        "anchor": "accord national des centres de santé",
+        "type": "sœur"
+      },
+      {
+        "id": "S2",
+        "slug": "rejet-cpam-centre-de-sante",
+        "anchor": "rejet CPAM en centre de santé",
+        "type": "sœur"
+      },
+      {
+        "id": "C1",
+        "slug": "virement-mutuelle-inferieur",
+        "anchor": "virement de mutuelle inférieur à la facture",
+        "type": "transverse"
+      },
+      {
+        "id": "F1",
+        "slug": "amo-amc",
+        "anchor": "part AMO et part AMC",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "centres"
+    ],
+    "auteur": "laura",
+    "unsplashQuery": "eye exam equipment"
+  },
+  {
+    "id": "F3",
+    "slug": "carte-vitale-carte-tiers-payant",
+    "category": "glossaire",
+    "title": "Carte Vitale et carte de tiers payant : ce qui change pour le dossier",
+    "primaryKeyword": "carte vitale carte tiers payant",
+    "keywordCluster": [],
+    "searchVolume": 0,
+    "unsplashQuery": "dictionary glossary desk",
+    "status": "pending",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "glossaire-tiers-payant",
+    "reader": "Accueil, comptoir ou facturation d'une structure de santé (magasin d'optique, centre auditif, cabinet ou centre dentaire, centre de santé, officine, clinique, laboratoire)",
+    "role": "Trafic",
+    "granitData": "glossaire.json",
+    "cta": "Démo",
+    "toValidate": "Article multi-métiers : exemples tirés de chaque métier listé dans `verticales`, sans privilégier l'optique ; Granit : constat d'expérience en optique et audio seulement, simple offre ailleurs (voir la fiche métier).",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Quelle différence entre carte Vitale et carte de tiers payant ?",
+      "La carte Vitale suffit-elle pour le tiers payant mutuelle ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "F0",
+        "slug": "glossaire-tiers-payant",
+        "anchor": "Glossaire du tiers payant optique",
+        "type": "parent"
+      },
+      {
+        "id": "F1",
+        "slug": "amo-amc",
+        "anchor": "part amc",
+        "type": "sœur"
+      },
+      {
+        "id": "F2",
+        "slug": "sigles-tiers-payant-noemie",
+        "anchor": "télétransmission noémie",
+        "type": "sœur"
+      },
+      {
+        "id": "G0",
+        "slug": "tiers-payant-opticien",
+        "anchor": "tiers payant opticien",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "optique",
+      "dentaire",
+      "centres",
+      "pharmacie",
+      "cliniques"
+    ],
+    "auteur": "laura"
+  },
+  {
+    "id": "H1",
+    "slug": "controle-assurance-maladie-opticien",
+    "category": "conformite",
+    "title": "Contrôle de l'Assurance maladie : les pièces demandées et comment s'y préparer",
+    "primaryKeyword": "controle assurance maladie opticien",
+    "keywordCluster": [],
+    "searchVolume": 0,
+    "unsplashQuery": "compliance documents",
+    "status": "pending",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "conformite-opticien",
+    "reader": "Gérant",
+    "role": "Crédibilité",
+    "granitData": "Traçabilité des agents (captures, vidéos de soumission)",
+    "cta": "Démo",
+    "toValidate": "",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Comment se passe un contrôle de l'Assurance maladie ?",
+      "Quelles pièces sont demandées ?",
+      "Comment s'y préparer ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "H0",
+        "slug": "conformite-opticien",
+        "anchor": "Conformité administrative de l'opticien",
+        "type": "parent"
+      },
+      {
+        "id": "H2",
+        "slug": "devis-normalise-codes-lpp",
+        "anchor": "Devis normalisé et codes LPP",
+        "type": "sœur"
+      },
+      {
+        "id": "H3",
+        "slug": "conservation-dossiers-tiers-payant",
+        "anchor": "Combien de temps garder les dossiers de tiers payant ?",
+        "type": "sœur"
+      },
+      {
+        "id": "B8",
+        "slug": "checklist-prise-en-charge",
+        "anchor": "checklist avant d'envoyer une prise en charge",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ]
+  },
+  {
+    "id": "K2",
+    "slug": "rejets-fse-laboratoire",
+    "category": "rejets",
+    "title": "Rejets FSE en laboratoire : traiter les rejets et les retours NOEMIE en volume",
+    "primaryKeyword": "rejets fse laboratoire",
+    "keywordCluster": [
+      "rejet fse laboratoire",
+      "retour noemie laboratoire",
+      "rejets cpam laboratoire",
+      "rejet mutuelle laboratoire",
+      "droits fermés mutuelle",
+      "tiers payant laboratoire",
+      "lettrage paiements laboratoire"
+    ],
+    "searchVolume": 0,
+    "status": "pending",
+    "wave": 4,
+    "level": "Fille",
+    "parentSlug": "tiers-payant-clinique-privee",
+    "reader": "Responsable facturation ou équipe chargée des rejets d'un laboratoire de biologie médicale multisite",
+    "role": "Résolution",
+    "granitData": "—",
+    "cta": "Parlons de votre tiers payant",
+    "toValidate": "Angle méthode, sans aucun résultat du POC laboratoire. Angle rejets FSE et retours NOEMIE, pas le tiers payant mutuelle (déjà automatisé chez les laboratoires selon le terrain). Aucun chiffre de laboratoire, aucune intégration au SIL promise. Demande SEO quasi nulle : mot-clé à mesurer. Chiffres de Mon test IST non vérifiés.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Comment traiter un rejet FSE en laboratoire ?",
+      "Que contient un retour NOEMIE pour un laboratoire ?",
+      "Que faire d'un rejet mutuelle « droits fermés » sur un petit montant ?",
+      "Comment éviter un rejet quand le patient a changé de mutuelle sans le dire ?",
+      "Pourquoi le patient paie-t-il quelque chose au laboratoire malgré sa mutuelle ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "K0",
+        "slug": "tiers-payant-clinique-privee",
+        "anchor": "tiers payant en clinique privée",
+        "type": "parent"
+      },
+      {
+        "id": "K1",
+        "slug": "demande-prise-en-charge-hospitaliere",
+        "anchor": "demande de prise en charge hospitalière",
+        "type": "sœur"
+      },
+      {
+        "id": "C3",
+        "slug": "codes-rejets-noemie",
+        "anchor": "liste des codes rejets NOEMIE",
+        "type": "transverse"
+      },
+      {
+        "id": "C4",
+        "slug": "retour-noemie-sans-virement",
+        "anchor": "retour NOEMIE sans virement",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "cliniques"
+    ],
+    "unsplashQuery": "laboratory test tubes"
+  },
+  {
+    "id": "H3",
+    "slug": "conservation-dossiers-tiers-payant",
+    "category": "conformite",
+    "title": "Combien de temps garder les dossiers de tiers payant en optique ?",
+    "primaryKeyword": "conservation dossiers tiers payant",
+    "keywordCluster": [],
+    "searchVolume": 0,
+    "unsplashQuery": "compliance documents",
+    "status": "pending",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "conformite-opticien",
+    "reader": "Gérant",
+    "role": "Crédibilité",
+    "granitData": "—",
+    "cta": "Démo",
+    "toValidate": "Durées à sourcer",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Combien de temps garder les dossiers de tiers payant ?",
+      "Sous quelle forme les conserver ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "H0",
+        "slug": "conformite-opticien",
+        "anchor": "Conformité administrative de l'opticien",
+        "type": "parent"
+      },
+      {
+        "id": "H4",
+        "slug": "fraude-tiers-payant-optique",
+        "anchor": "Fraude au tiers payant",
+        "type": "sœur"
+      },
+      {
+        "id": "H5",
+        "slug": "rgpd-donnees-sante-opticien",
+        "anchor": "Données de santé et RGPD",
+        "type": "sœur"
+      },
+      {
+        "id": "B8",
+        "slug": "checklist-prise-en-charge",
+        "anchor": "checklist avant d'envoyer une prise en charge",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ]
+  },
+  {
+    "id": "H4",
+    "slug": "fraude-tiers-payant-optique",
+    "category": "conformite",
+    "title": "Fraude au tiers payant : les signaux à repérer et vos obligations",
+    "primaryKeyword": "fraude tiers payant optique",
+    "keywordCluster": [],
+    "searchVolume": 0,
+    "unsplashQuery": "compliance documents",
+    "status": "pending",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "conformite-opticien",
+    "reader": "Gérant",
+    "role": "Crédibilité",
+    "granitData": "fondations.md (annexe fraude)",
+    "cta": "Démo",
+    "toValidate": "Section audio possible, aucun chiffre de fraude sans le dossier de presse CNAM d'origine.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Quels signaux doivent alerter un opticien sur une fraude ?",
+      "Quelles sont les obligations de l'opticien ?",
+      "Que faire en cas de doute ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "H0",
+        "slug": "conformite-opticien",
+        "anchor": "Conformité administrative de l'opticien",
+        "type": "parent"
+      },
+      {
+        "id": "H5",
+        "slug": "rgpd-donnees-sante-opticien",
+        "anchor": "Données de santé et RGPD",
+        "type": "sœur"
+      },
+      {
+        "id": "H6",
+        "slug": "reseaux-de-soins-conventionnement",
+        "anchor": "Réseaux de soins",
+        "type": "sœur"
+      },
+      {
+        "id": "B8",
+        "slug": "checklist-prise-en-charge",
+        "anchor": "checklist avant d'envoyer une prise en charge",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ]
+  },
+  {
+    "id": "PH2",
+    "slug": "externalisation-tiers-payant-pharmacie",
+    "category": "gerer-son-tiers-payant",
+    "title": "Externaliser le tiers payant d'une pharmacie : ce qu'on délègue, ce qu'on garde",
+    "primaryKeyword": "externalisation tiers payant pharmacie",
+    "keywordCluster": [
+      "externaliser tiers payant pharmacie",
+      "gestionnaire tiers payant pharmacie",
+      "société gestion tiers payant pharmacie",
+      "déléguer tiers payant officine"
+    ],
+    "searchVolume": 0,
+    "status": "pending",
+    "wave": 4,
+    "level": "Fille",
+    "parentSlug": "gestion-tiers-payant-pharmacie",
+    "reader": "Titulaire d'officine qui se demande s'il faut garder le suivi du tiers payant en interne ou le confier",
+    "role": "Conversion",
+    "granitData": "—",
+    "cta": "Parlons de votre tiers payant",
+    "toValidate": "Sujet rétabli le 04/11/2026, écarté la nuit parce que Granit n'était pas présenté comme alternative : Paul a confirmé l'offre. Demande : Moyen (suggestion Google ; résultats occupés par des sociétés de gestion, sans volume mesuré). Aucun prix, aucun prestataire nommé ni dénigré, aucun taux de récupération. Offre seulement (fiche pharmacie) : Granit peut reprendre les rejets, envoyer les demandes de prise en charge et proposer le tiers payant, sans client, chiffre ni résultat. Rien sur une intégration au LGO ou à un concentrateur. Aucun délai de paiement. Neutre entre syndicats.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Que recouvre l'externalisation du tiers payant en officine ?",
+      "Que reste-t-il à faire à l'officine ?",
+      "Quels documents et accès faut-il confier ?",
+      "Comment suivre le travail d'un prestataire ?",
+      "Quand garder le tiers payant en interne ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "PH0",
+        "slug": "gestion-tiers-payant-pharmacie",
+        "anchor": "gestion du tiers payant en pharmacie",
+        "type": "parent"
+      },
+      {
+        "id": "R3",
+        "slug": "officine-balance-agee-tiers-payant",
+        "anchor": "balance âgée du tiers payant en officine",
+        "type": "sœur"
+      },
+      {
+        "id": "PH1",
+        "slug": "rejet-mutuelle-pharmacie",
+        "anchor": "rejet mutuelle en pharmacie",
+        "type": "sœur"
+      }
+    ],
+    "verticales": [
+      "pharmacie"
+    ],
+    "unsplashQuery": "pharmacy team office"
+  },
+  {
+    "id": "H5",
+    "slug": "rgpd-donnees-sante-opticien",
+    "category": "conformite",
+    "title": "Données de santé et RGPD : ce que le magasin fait des cartes, ordonnances et devis",
+    "primaryKeyword": "rgpd donnees sante opticien",
+    "keywordCluster": [],
+    "searchVolume": 0,
+    "unsplashQuery": "compliance documents",
+    "status": "pending",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "conformite-opticien",
+    "reader": "Gérant",
+    "role": "Crédibilité",
+    "granitData": "Page sécurité Granit",
+    "cta": "Démo",
+    "toValidate": "HDS à trancher avant toute mention",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Le magasin peut-il garder une copie de la carte mutuelle ?",
+      "Combien de temps garder les ordonnances ?",
+      "Quelles obligations RGPD pour les données de santé ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "H0",
+        "slug": "conformite-opticien",
+        "anchor": "Conformité administrative de l'opticien",
+        "type": "parent"
+      },
+      {
+        "id": "H6",
+        "slug": "reseaux-de-soins-conventionnement",
+        "anchor": "Réseaux de soins",
+        "type": "sœur"
+      },
+      {
+        "id": "H1",
+        "slug": "controle-assurance-maladie-opticien",
+        "anchor": "Contrôle de l'Assurance maladie",
+        "type": "sœur"
+      },
+      {
+        "id": "B8",
+        "slug": "checklist-prise-en-charge",
+        "anchor": "checklist avant d'envoyer une prise en charge",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ]
+  },
+  {
+    "id": "E6",
+    "slug": "indicateurs-tiers-payant",
+    "category": "gerer-son-tiers-payant",
+    "title": "Piloter son tiers payant : les indicateurs à suivre chaque mois",
+    "primaryKeyword": "indicateurs tiers payant",
+    "keywordCluster": [],
+    "searchVolume": 0,
+    "unsplashQuery": "healthcare administration desk",
+    "status": "pending",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "tiers-payant-professionnels-de-sante",
+    "reader": "Gérant ou direction administrative d'une structure de santé, tous métiers",
+    "role": "Conversion",
+    "granitData": "KPI de l'app Granit",
+    "cta": "Modèle de tableau de bord",
+    "toValidate": "Article multi-métiers : exemples tirés de chaque métier listé dans `verticales`, sans privilégier l'optique ; Granit : constat d'expérience en optique et audio seulement, simple offre ailleurs (voir la fiche métier).",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Quels indicateurs suivre pour le tiers payant ?",
+      "Comment calculer le délai moyen d'encaissement ?",
+      "À quelle fréquence faire le point ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "T0",
+        "slug": "tiers-payant-professionnels-de-sante",
+        "anchor": "tiers payant des professionnels de santé",
+        "type": "parent"
+      },
+      {
+        "id": "E7",
+        "slug": "conges-dossiers-tiers-payant",
+        "anchor": "Fermeture pour congés",
+        "type": "sœur"
+      },
+      {
+        "id": "E1",
+        "slug": "gestionnaire-tiers-payant",
+        "anchor": "gestionnaire tiers payant",
+        "type": "sœur"
+      },
+      {
+        "id": "E5",
+        "slug": "cout-temps-tiers-payant",
+        "anchor": "coût du tiers payant pour un magasin",
+        "type": "conversion"
+      }
+    ],
+    "verticales": [
+      "optique",
+      "dentaire",
+      "centres",
+      "pharmacie",
+      "cliniques"
+    ]
+  },
+  {
+    "id": "B7",
+    "slug": "contester-refus-prise-en-charge",
+    "category": "rejets",
+    "title": "Contester un refus de prise en charge : procédure et modèle de courrier",
+    "primaryKeyword": "contester refus prise en charge",
+    "keywordCluster": [],
+    "searchVolume": 0,
+    "unsplashQuery": "office paperwork error",
+    "status": "pending",
+    "wave": 2,
+    "level": "Fille",
+    "parentSlug": "tiers-payant-professionnels-de-sante",
+    "reader": "Accueil, comptoir ou facturation d'une structure qui demande des prises en charge (magasin d'optique, centre auditif, cabinet ou centre dentaire, centre de santé)",
+    "role": "Résolution",
+    "granitData": "—",
+    "cta": "Modèle de courrier (lead magnet)",
+    "toValidate": "Article multi-métiers : exemples tirés de chaque métier listé dans `verticales`, sans privilégier l'optique ; Granit : constat d'expérience en optique et audio seulement, simple offre ailleurs (voir la fiche métier).",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Comment contester un refus de prise en charge ?",
+      "À qui envoyer la contestation ?",
+      "Combien de temps pour obtenir une réponse ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "T0",
+        "slug": "tiers-payant-professionnels-de-sante",
+        "anchor": "tiers payant des professionnels de santé",
+        "type": "parent"
+      },
+      {
+        "id": "B8",
+        "slug": "checklist-prise-en-charge",
+        "anchor": "checklist avant d'envoyer une prise en charge",
+        "type": "sœur"
+      },
+      {
+        "id": "B9",
+        "slug": "client-sans-carte-tiers-payant",
+        "anchor": "Le client arrive sans sa carte de tiers payant",
+        "type": "sœur"
+      },
+      {
+        "id": "A13",
+        "slug": "mutuelle-quel-portail",
+        "anchor": "savoir par quel portail passe une mutuelle",
+        "type": "outil"
+      }
+    ],
+    "verticales": [
+      "optique",
+      "dentaire",
+      "centres"
+    ]
+  },
+  {
+    "id": "X7",
+    "slug": "plfss-2027-teletransmission-tiers-payant",
+    "category": "conformite",
+    "title": "PLFSS 2027 : ce que l'article 32 changerait pour la télétransmission et le tiers payant",
+    "primaryKeyword": "plfss 2027 télétransmission",
+    "keywordCluster": [
+      "article 32 plfss 2027",
+      "télétransmission obligatoire 2027",
+      "délai tiers payant un an",
+      "agrément logiciel facturation assurance maladie",
+      "restitution sommes versées tiers payant",
+      "prescription paiement tiers payant"
+    ],
+    "searchVolume": 0,
+    "status": "waiting",
+    "wave": 4,
+    "level": "Fille",
+    "parentSlug": "tiers-payant-professionnels-de-sante",
+    "reader": "Toute personne qui télétransmet et suit le tiers payant part Assurance maladie, dans tous les métiers",
+    "role": "Trafic",
+    "granitData": "—",
+    "cta": "Parlons de votre tiers payant",
+    "toValidate": "à débloquer fin novembre après le vote (Sénat 9 nov., échéance 26 nov.). Relecture humaine obligatoire (PR). Ne rédiger qu'à partir du texte voté : au 4 novembre 2026, l'Assemblée a rejeté le texte le 23 octobre et l'article 32 reste un projet (télétransmission étendue, restitution des sommes, délai d'action de 2 ans à 1 an, agrément des logiciels, report de certaines mesures en 2028-2029). Vérifier ce qui survit dans le texte final, et la date d'entrée en vigueur de chaque mesure. Ces mesures visent l'Assurance maladie, pas les complémentaires. Aucun chiffre sans source primaire.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Que prévoit l'article 32 du PLFSS 2027 ?",
+      "La télétransmission devient-elle obligatoire pour tous les professionnels de santé ?",
+      "Le délai pour réclamer un paiement en tiers payant change-t-il ?",
+      "Quand ces mesures entreraient-elles en vigueur ?",
+      "Que doit vérifier un professionnel auprès de son éditeur de logiciel ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "T0",
+        "slug": "tiers-payant-professionnels-de-sante",
+        "anchor": "tiers payant des professionnels de santé",
+        "type": "parent"
+      },
+      {
+        "id": "X1",
+        "slug": "ticket-moderateur-2027-tiers-payant",
+        "anchor": "ticket modérateur 2027",
+        "type": "sœur"
+      },
+      {
+        "id": "X2",
+        "slug": "arl-negatif",
+        "anchor": "ARL négatif",
+        "type": "transverse"
+      },
+      {
+        "id": "R14",
+        "slug": "sesam-vitale-evolutions-2025",
+        "anchor": "évolutions SESAM-Vitale",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "optique",
+      "dentaire",
+      "centres",
+      "pharmacie",
+      "cliniques"
+    ],
+    "unsplashQuery": "healthcare administration desk"
   },
   {
     "id": "E2",
@@ -3930,143 +6758,9 @@
       "iremia",
       "optibot",
       "granit"
-    ]
-  },
-  {
-    "id": "E2a",
-    "slug": "granit-vs-iremia",
-    "category": "gerer-son-tiers-payant",
-    "title": "Granit ou Iremia Santé : lequel choisir pour le tiers payant de votre magasin ?",
-    "primaryKeyword": "iremia santé",
-    "keywordCluster": [
-      "iremia santé"
     ],
-    "searchVolume": null,
-    "status": "published",
-    "wave": 3,
-    "level": "Fille",
-    "parentSlug": "solutions-tiers-payant-optique",
-    "reader": "Gérant",
-    "role": "Vente + LLM",
-    "granitData": "content/concurrents",
-    "cta": "Démo",
-    "toValidate": "Comparatif : aucun prix, aucun client cité, uniquement les faits des fichiers content/concurrents. Relecture par Paul.",
-    "primaryKeywordMeasured": false,
-    "concurrents": [
-      "iremia",
-      "granit"
-    ],
-    "faqQuestions": [
-      "Iremia Santé et Granit font-ils la même chose ?",
-      "L'avance à J+1 d'Iremia accélère-t-elle mes prises en charge ?",
-      "Peut-on utiliser Iremia et Granit en même temps ?",
-      "Comment passer d'Iremia à Granit ?"
-    ],
-    "internalLinks": [
-      {
-        "id": "E2",
-        "slug": "solutions-tiers-payant-optique",
-        "anchor": "toutes les solutions de tiers payant en optique",
-        "type": "parent"
-      }
-    ],
-    "publishedAt": "2026-10-09"
-  },
-  {
-    "id": "E2b",
-    "slug": "granit-vs-optibot",
-    "category": "gerer-son-tiers-payant",
-    "title": "Granit ou OptiBot : faire ses PEC plus vite, ou les faire faire ?",
-    "primaryKeyword": "optibot",
-    "keywordCluster": [
-      "optibot"
-    ],
-    "searchVolume": null,
-    "status": "review",
-    "wave": 3,
-    "level": "Fille",
-    "parentSlug": "solutions-tiers-payant-optique",
-    "reader": "Gérant",
-    "role": "Vente + LLM",
-    "granitData": "content/concurrents",
-    "cta": "Démo",
-    "toValidate": "Comparatif : aucun prix, aucun client cité, uniquement les faits des fichiers content/concurrents. Relecture par Paul.",
-    "primaryKeywordMeasured": false,
-    "concurrents": [
-      "optibot",
-      "granit"
-    ],
-    "faqQuestions": [
-      "OptiBot et Granit font-ils la même chose ?",
-      "Avec OptiBot, qui fait la demande de prise en charge ?",
-      "Granit remplace-t-il OptiBot ?",
-      "Comment passer d'OptiBot à Granit ?"
-    ],
-    "internalLinks": [
-      {
-        "id": "E2",
-        "slug": "solutions-tiers-payant-optique",
-        "anchor": "toutes les solutions de tiers payant en optique",
-        "type": "parent"
-      }
-    ],
-    "publishedAt": "2026-11-03"
-  },
-  {
-    "id": "B5",
-    "slug": "tiers-payant-css-opticien",
-    "category": "rejets",
-    "title": "Facturer un bénéficiaire de la CSS (ex-ACS) en optique",
-    "primaryKeyword": "tiers payant css opticien",
-    "keywordCluster": [],
-    "searchVolume": 0,
-    "unsplashQuery": "office paperwork error",
-    "status": "pending",
-    "wave": 3,
-    "level": "Fille",
-    "parentSlug": "rejet-tiers-payant",
-    "reader": "Comptoir",
-    "role": "Résolution",
-    "granitData": "—",
-    "cta": "Démo",
-    "toValidate": "Validation réglementaire",
-    "primaryKeywordMeasured": false,
-    "faqQuestions": [
-      "Comment facturer un bénéficiaire de la CSS chez l'opticien ?",
-      "La CSS remplace-t-elle l'ACS ?",
-      "Quelles pièces conserver ?"
-    ],
-    "internalLinks": [
-      {
-        "id": "B0",
-        "slug": "rejet-tiers-payant",
-        "anchor": "motif rejet tiers payant",
-        "type": "parent"
-      },
-      {
-        "id": "B6",
-        "slug": "ouvrant-droit-beneficiaire",
-        "anchor": "Ouvrant droit ou bénéficiaire",
-        "type": "sœur"
-      },
-      {
-        "id": "B7",
-        "slug": "contester-refus-prise-en-charge",
-        "anchor": "Contester un refus de prise en charge",
-        "type": "sœur"
-      },
-      {
-        "id": "B8",
-        "slug": "checklist-prise-en-charge",
-        "anchor": "checklist avant d'envoyer une prise en charge",
-        "type": "transverse"
-      },
-      {
-        "id": "A13",
-        "slug": "mutuelle-quel-portail",
-        "anchor": "savoir par quel portail passe une mutuelle",
-        "type": "outil"
-      }
+    "verticales": [
+      "optique"
     ]
   },
   {
@@ -4078,7 +6772,7 @@
     "keywordCluster": [],
     "searchVolume": 0,
     "unsplashQuery": "bank statement accounting",
-    "status": "pending",
+    "status": "waiting",
     "wave": 3,
     "level": "Fille",
     "parentSlug": "rapprochement-bancaire-tiers-payant",
@@ -4086,7 +6780,7 @@
     "role": "Résolution",
     "granitData": "Stats prod (délais observés) — accord Jenny",
     "cta": "Démo",
-    "toValidate": "Source et date par ligne",
+    "toValidate": "Source et date par ligne Repoussé (cocon V5) : statistiques de production et source datée par ligne à valider avant.",
     "primaryKeywordMeasured": false,
     "faqQuestions": [
       "Quels sont les délais de paiement des plateformes de tiers payant ?",
@@ -4107,12 +6801,6 @@
         "type": "sœur"
       },
       {
-        "id": "C8",
-        "slug": "reste-a-charge-impaye",
-        "anchor": "Reste à charge impayé par le client",
-        "type": "sœur"
-      },
-      {
         "id": "C2",
         "slug": "quand-relancer-mutuelle",
         "anchor": "quand relancer une mutuelle",
@@ -4124,451 +6812,9 @@
         "anchor": "Automatiser la saisie des prises en charge",
         "type": "conversion"
       }
-    ]
-  },
-  {
-    "id": "G5",
-    "slug": "tiers-payant-integral-opticien",
-    "category": "guide-tiers-payant",
-    "title": "Tiers payant intégral : ce que l'opticien doit proposer, et quand",
-    "primaryKeyword": "tiers payant integral opticien",
-    "keywordCluster": [],
-    "searchVolume": 0,
-    "unsplashQuery": "optician store",
-    "status": "pending",
-    "wave": 3,
-    "level": "Fille",
-    "parentSlug": "tiers-payant-opticien",
-    "reader": "Comptoir + gérant",
-    "role": "Trafic",
-    "granitData": "fondations.md",
-    "cta": "Démo",
-    "toValidate": "Texte réglementaire à citer",
-    "primaryKeywordMeasured": false,
-    "faqQuestions": [
-      "Qu'est-ce que le tiers payant intégral ?",
-      "Quand l'opticien doit-il le proposer ?",
-      "Que faire si la mutuelle ne pratique pas le tiers payant ?"
     ],
-    "internalLinks": [
-      {
-        "id": "G0",
-        "slug": "tiers-payant-opticien",
-        "anchor": "tiers payant opticien",
-        "type": "parent"
-      },
-      {
-        "id": "G6",
-        "slug": "cas-particuliers-tiers-payant-optique",
-        "anchor": "Cas particuliers",
-        "type": "sœur"
-      },
-      {
-        "id": "H0",
-        "slug": "conformite-opticien",
-        "anchor": "Conformité administrative de l'opticien",
-        "type": "sœur"
-      }
-    ]
-  },
-  {
-    "id": "G6",
-    "slug": "cas-particuliers-tiers-payant-optique",
-    "category": "guide-tiers-payant",
-    "title": "Cas particuliers : ALD, régime Alsace-Moselle, étudiants en rupture de droits",
-    "primaryKeyword": "cas particuliers tiers payant optique",
-    "keywordCluster": [],
-    "searchVolume": 0,
-    "unsplashQuery": "optician store",
-    "status": "pending",
-    "wave": 3,
-    "level": "Fille",
-    "parentSlug": "tiers-payant-opticien",
-    "reader": "Comptoir",
-    "role": "Résolution",
-    "granitData": "—",
-    "cta": "Démo",
-    "toValidate": "",
-    "primaryKeywordMeasured": false,
-    "faqQuestions": [
-      "Comment gérer un client en ALD chez l'opticien ?",
-      "Qu'est-ce qui change avec le régime d'Alsace-Moselle ?",
-      "Pourquoi les dossiers d'étudiants sont-ils souvent rejetés ?"
-    ],
-    "internalLinks": [
-      {
-        "id": "G0",
-        "slug": "tiers-payant-opticien",
-        "anchor": "tiers payant opticien",
-        "type": "parent"
-      },
-      {
-        "id": "H0",
-        "slug": "conformite-opticien",
-        "anchor": "Conformité administrative de l'opticien",
-        "type": "sœur"
-      },
-      {
-        "id": "G1",
-        "slug": "100-sante-classe-a-b-opticien",
-        "anchor": "lunettes 100 santé",
-        "type": "sœur"
-      }
-    ]
-  },
-  {
-    "id": "C8",
-    "slug": "reste-a-charge-impaye",
-    "category": "paiements",
-    "title": "Reste à charge impayé par le client : récupérer sans abîmer la relation",
-    "primaryKeyword": "reste a charge impaye",
-    "keywordCluster": [],
-    "searchVolume": 0,
-    "unsplashQuery": "bank statement accounting",
-    "status": "pending",
-    "wave": 3,
-    "level": "Fille",
-    "parentSlug": "rapprochement-bancaire-tiers-payant",
-    "reader": "Gérant",
-    "role": "Résolution",
-    "granitData": "—",
-    "cta": "Démo",
-    "toValidate": "",
-    "primaryKeywordMeasured": false,
-    "faqQuestions": [
-      "Comment récupérer un reste à charge impayé par un client ?",
-      "Peut-on demander un acompte ?",
-      "Quand passer au recouvrement ?"
-    ],
-    "internalLinks": [
-      {
-        "id": "C0",
-        "slug": "rapprochement-bancaire-tiers-payant",
-        "anchor": "Rapprochement bancaire du tiers payant",
-        "type": "parent"
-      },
-      {
-        "id": "C1",
-        "slug": "virement-mutuelle-inferieur",
-        "anchor": "Virement de mutuelle inférieur à la facture",
-        "type": "sœur"
-      },
-      {
-        "id": "C2",
-        "slug": "quand-relancer-mutuelle",
-        "anchor": "quand relancer une mutuelle",
-        "type": "sœur"
-      },
-      {
-        "id": "E4",
-        "slug": "automatiser-saisie-prise-en-charge",
-        "anchor": "Automatiser la saisie des prises en charge",
-        "type": "conversion"
-      }
-    ]
-  },
-  {
-    "id": "F3",
-    "slug": "carte-vitale-carte-tiers-payant",
-    "category": "glossaire",
-    "title": "Carte Vitale et carte de tiers payant : ce qui change pour le dossier",
-    "primaryKeyword": "carte vitale carte tiers payant",
-    "keywordCluster": [],
-    "searchVolume": 0,
-    "unsplashQuery": "dictionary glossary desk",
-    "status": "pending",
-    "wave": 3,
-    "level": "Fille",
-    "parentSlug": "glossaire-tiers-payant",
-    "reader": "Comptoir",
-    "role": "Trafic",
-    "granitData": "glossaire.json",
-    "cta": "Démo",
-    "toValidate": "",
-    "primaryKeywordMeasured": false,
-    "faqQuestions": [
-      "Quelle différence entre carte Vitale et carte de tiers payant ?",
-      "La carte Vitale suffit-elle pour le tiers payant mutuelle ?"
-    ],
-    "internalLinks": [
-      {
-        "id": "F0",
-        "slug": "glossaire-tiers-payant",
-        "anchor": "Glossaire du tiers payant optique",
-        "type": "parent"
-      },
-      {
-        "id": "F1",
-        "slug": "amo-amc",
-        "anchor": "part amc",
-        "type": "sœur"
-      },
-      {
-        "id": "F2",
-        "slug": "sigles-tiers-payant-noemie",
-        "anchor": "télétransmission noémie",
-        "type": "sœur"
-      },
-      {
-        "id": "G0",
-        "slug": "tiers-payant-opticien",
-        "anchor": "tiers payant opticien",
-        "type": "transverse"
-      }
-    ]
-  },
-  {
-    "id": "H1",
-    "slug": "controle-assurance-maladie-opticien",
-    "category": "conformite",
-    "title": "Contrôle de l'Assurance maladie : les pièces demandées et comment s'y préparer",
-    "primaryKeyword": "controle assurance maladie opticien",
-    "keywordCluster": [],
-    "searchVolume": 0,
-    "unsplashQuery": "compliance documents",
-    "status": "pending",
-    "wave": 3,
-    "level": "Fille",
-    "parentSlug": "conformite-opticien",
-    "reader": "Gérant",
-    "role": "Crédibilité",
-    "granitData": "Traçabilité des agents (captures, vidéos de soumission)",
-    "cta": "Démo",
-    "toValidate": "",
-    "primaryKeywordMeasured": false,
-    "faqQuestions": [
-      "Comment se passe un contrôle de l'Assurance maladie ?",
-      "Quelles pièces sont demandées ?",
-      "Comment s'y préparer ?"
-    ],
-    "internalLinks": [
-      {
-        "id": "H0",
-        "slug": "conformite-opticien",
-        "anchor": "Conformité administrative de l'opticien",
-        "type": "parent"
-      },
-      {
-        "id": "H2",
-        "slug": "devis-normalise-codes-lpp",
-        "anchor": "Devis normalisé et codes LPP",
-        "type": "sœur"
-      },
-      {
-        "id": "H3",
-        "slug": "conservation-dossiers-tiers-payant",
-        "anchor": "Combien de temps garder les dossiers de tiers payant ?",
-        "type": "sœur"
-      },
-      {
-        "id": "B8",
-        "slug": "checklist-prise-en-charge",
-        "anchor": "checklist avant d'envoyer une prise en charge",
-        "type": "transverse"
-      }
-    ]
-  },
-  {
-    "id": "H3",
-    "slug": "conservation-dossiers-tiers-payant",
-    "category": "conformite",
-    "title": "Combien de temps garder les dossiers de tiers payant ?",
-    "primaryKeyword": "conservation dossiers tiers payant",
-    "keywordCluster": [],
-    "searchVolume": 0,
-    "unsplashQuery": "compliance documents",
-    "status": "pending",
-    "wave": 3,
-    "level": "Fille",
-    "parentSlug": "conformite-opticien",
-    "reader": "Gérant",
-    "role": "Crédibilité",
-    "granitData": "—",
-    "cta": "Démo",
-    "toValidate": "Durées à sourcer",
-    "primaryKeywordMeasured": false,
-    "faqQuestions": [
-      "Combien de temps garder les dossiers de tiers payant ?",
-      "Sous quelle forme les conserver ?"
-    ],
-    "internalLinks": [
-      {
-        "id": "H0",
-        "slug": "conformite-opticien",
-        "anchor": "Conformité administrative de l'opticien",
-        "type": "parent"
-      },
-      {
-        "id": "H4",
-        "slug": "fraude-tiers-payant-optique",
-        "anchor": "Fraude au tiers payant",
-        "type": "sœur"
-      },
-      {
-        "id": "H5",
-        "slug": "rgpd-donnees-sante-opticien",
-        "anchor": "Données de santé et RGPD",
-        "type": "sœur"
-      },
-      {
-        "id": "B8",
-        "slug": "checklist-prise-en-charge",
-        "anchor": "checklist avant d'envoyer une prise en charge",
-        "type": "transverse"
-      }
-    ]
-  },
-  {
-    "id": "H4",
-    "slug": "fraude-tiers-payant-optique",
-    "category": "conformite",
-    "title": "Fraude au tiers payant : les signaux à repérer et vos obligations",
-    "primaryKeyword": "fraude tiers payant optique",
-    "keywordCluster": [],
-    "searchVolume": 0,
-    "unsplashQuery": "compliance documents",
-    "status": "pending",
-    "wave": 3,
-    "level": "Fille",
-    "parentSlug": "conformite-opticien",
-    "reader": "Gérant",
-    "role": "Crédibilité",
-    "granitData": "fondations.md (annexe fraude)",
-    "cta": "Démo",
-    "toValidate": "",
-    "primaryKeywordMeasured": false,
-    "faqQuestions": [
-      "Quels signaux doivent alerter un opticien sur une fraude ?",
-      "Quelles sont les obligations de l'opticien ?",
-      "Que faire en cas de doute ?"
-    ],
-    "internalLinks": [
-      {
-        "id": "H0",
-        "slug": "conformite-opticien",
-        "anchor": "Conformité administrative de l'opticien",
-        "type": "parent"
-      },
-      {
-        "id": "H5",
-        "slug": "rgpd-donnees-sante-opticien",
-        "anchor": "Données de santé et RGPD",
-        "type": "sœur"
-      },
-      {
-        "id": "H6",
-        "slug": "reseaux-de-soins-conventionnement",
-        "anchor": "Réseaux de soins",
-        "type": "sœur"
-      },
-      {
-        "id": "B8",
-        "slug": "checklist-prise-en-charge",
-        "anchor": "checklist avant d'envoyer une prise en charge",
-        "type": "transverse"
-      }
-    ]
-  },
-  {
-    "id": "H5",
-    "slug": "rgpd-donnees-sante-opticien",
-    "category": "conformite",
-    "title": "Données de santé et RGPD : ce que le magasin fait des cartes, ordonnances et devis",
-    "primaryKeyword": "rgpd donnees sante opticien",
-    "keywordCluster": [],
-    "searchVolume": 0,
-    "unsplashQuery": "compliance documents",
-    "status": "pending",
-    "wave": 3,
-    "level": "Fille",
-    "parentSlug": "conformite-opticien",
-    "reader": "Gérant",
-    "role": "Crédibilité",
-    "granitData": "Page sécurité Granit",
-    "cta": "Démo",
-    "toValidate": "HDS à trancher avant toute mention",
-    "primaryKeywordMeasured": false,
-    "faqQuestions": [
-      "Le magasin peut-il garder une copie de la carte mutuelle ?",
-      "Combien de temps garder les ordonnances ?",
-      "Quelles obligations RGPD pour les données de santé ?"
-    ],
-    "internalLinks": [
-      {
-        "id": "H0",
-        "slug": "conformite-opticien",
-        "anchor": "Conformité administrative de l'opticien",
-        "type": "parent"
-      },
-      {
-        "id": "H6",
-        "slug": "reseaux-de-soins-conventionnement",
-        "anchor": "Réseaux de soins",
-        "type": "sœur"
-      },
-      {
-        "id": "H1",
-        "slug": "controle-assurance-maladie-opticien",
-        "anchor": "Contrôle de l'Assurance maladie",
-        "type": "sœur"
-      },
-      {
-        "id": "B8",
-        "slug": "checklist-prise-en-charge",
-        "anchor": "checklist avant d'envoyer une prise en charge",
-        "type": "transverse"
-      }
-    ]
-  },
-  {
-    "id": "E6",
-    "slug": "indicateurs-tiers-payant",
-    "category": "gerer-son-tiers-payant",
-    "title": "Piloter son tiers payant : les indicateurs à suivre chaque mois",
-    "primaryKeyword": "indicateurs tiers payant",
-    "keywordCluster": [],
-    "searchVolume": 0,
-    "unsplashQuery": "optical store manager",
-    "status": "pending",
-    "wave": 3,
-    "level": "Fille",
-    "parentSlug": "gerer-tiers-payant-magasin",
-    "reader": "Gérant",
-    "role": "Conversion",
-    "granitData": "KPI de l'app Granit",
-    "cta": "Modèle de tableau de bord",
-    "toValidate": "",
-    "primaryKeywordMeasured": false,
-    "faqQuestions": [
-      "Quels indicateurs suivre pour le tiers payant ?",
-      "Comment calculer le délai moyen d'encaissement ?",
-      "À quelle fréquence faire le point ?"
-    ],
-    "internalLinks": [
-      {
-        "id": "E0",
-        "slug": "gerer-tiers-payant-magasin",
-        "anchor": "gestion tiers payant",
-        "type": "parent"
-      },
-      {
-        "id": "E7",
-        "slug": "conges-dossiers-tiers-payant",
-        "anchor": "Fermeture pour congés",
-        "type": "sœur"
-      },
-      {
-        "id": "E1",
-        "slug": "gestionnaire-tiers-payant",
-        "anchor": "gestionnaire tiers payant",
-        "type": "sœur"
-      },
-      {
-        "id": "E5",
-        "slug": "cout-temps-tiers-payant",
-        "anchor": "coût du tiers payant pour un magasin",
-        "type": "conversion"
-      }
+    "verticales": [
+      "optique"
     ]
   },
   {
@@ -4580,7 +6826,7 @@
     "keywordCluster": [],
     "searchVolume": 0,
     "unsplashQuery": "optical store manager",
-    "status": "pending",
+    "status": "waiting",
     "wave": 3,
     "level": "Fille",
     "parentSlug": "gerer-tiers-payant-magasin",
@@ -4588,7 +6834,7 @@
     "role": "Résolution",
     "granitData": "—",
     "cta": "Démo",
-    "toValidate": "Publier en juin",
+    "toValidate": "Publier en juin Repoussé (cocon V5) : saisonnier, à relancer en mai 2027.",
     "primaryKeywordMeasured": false,
     "faqQuestions": [
       "Comment préparer le tiers payant avant une fermeture ?",
@@ -4620,6 +6866,9 @@
         "anchor": "coût du tiers payant pour un magasin",
         "type": "conversion"
       }
+    ],
+    "verticales": [
+      "optique"
     ]
   }
 ]
