@@ -145,14 +145,12 @@ const staticPages = [
     priority: "0.8",
     freq: "weekly",
   },
-  { path: "/a-propos", files: ["src/routes/a-propos.tsx"], priority: "0.6", freq: "monthly" },
   {
     path: "/affiliation",
     files: ["src/routes/affiliation.tsx", "src/lib/affiliationCopy.ts"],
     priority: "0.5",
     freq: "monthly",
   },
-  { path: "/demo", files: ["src/routes/demo.tsx"], priority: "0.6", freq: "monthly" },
   { path: "/cgv", files: ["src/routes/cgv.tsx"], priority: "0.3", freq: "yearly" },
   { path: "/privacy", files: ["src/routes/privacy.tsx"], priority: "0.3", freq: "yearly" },
 ];

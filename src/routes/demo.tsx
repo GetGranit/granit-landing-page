@@ -1,8 +1,12 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, redirect } from "@tanstack/react-router";
 import { useLanguage } from "@/lib/i18n";
 import logo from "@/assets/logo.svg";
 
 export const Route = createFileRoute("/demo")({
+  /* page coupée pour le moment (302) : le bloc de fin de l'accueil prend le relais. Retirer ce beforeLoad pour la rouvrir */
+  beforeLoad: () => {
+    throw redirect({ to: "/", hash: "demo", statusCode: 302 });
+  },
   head: () => ({
     meta: [
       { title: "Démo live - Granit" },

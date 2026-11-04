@@ -35,7 +35,6 @@ const pages = [
     "Tarification à l'usage : forfait plateforme par centre et fee par agent selon les volumes traités.",
   ],
   ["Sécurité", "/securite", "Hébergement, protection des données de santé et conformité."],
-  ["À propos", "/a-propos", "L'équipe, la mission et l'histoire de Granit."],
   [
     "Programme partenaires",
     "/affiliation",

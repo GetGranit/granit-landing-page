@@ -1,9 +1,13 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { Reveal } from "@/components/Reveal";
 import { useLanguage } from "@/lib/i18n";
 
 export const Route = createFileRoute("/a-propos")({
+  /* page coupée pour le moment (302) : retirer ce beforeLoad pour la rouvrir */
+  beforeLoad: () => {
+    throw redirect({ to: "/", statusCode: 302 });
+  },
   head: () => ({
     meta: [
       { title: "À propos : agents IA pour l'administratif santé - Granit" },

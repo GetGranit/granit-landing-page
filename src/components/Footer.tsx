@@ -8,18 +8,16 @@ const LINKEDIN_URL = "https://www.linkedin.com/company/getgranit-ai";
 
 const copy = {
   fr: {
-    baseline: "Le back-office qui travaille pendant que vous soignez.",
-    hds: "Hébergeur certifié HDS",
+    baseline: "Vos équipes soignent. Granit gère le reste.",
+    hds: "Infrastructure certifiée HDS",
     product: "Produit",
     agents: "Agents",
     pricing: "Tarifs",
     resources: "Ressources",
     security: "Sécurité",
     company: "Société",
-    about: "À propos",
     contact: "Contact",
     partners: "Devenir partenaire",
-    demo: "Demander une démo",
     linkedin: "Granit sur LinkedIn",
     legal: "Légal",
     cgv: "CGV",
@@ -29,18 +27,16 @@ const copy = {
     gdpr: "RGPD",
   },
   en: {
-    baseline: "The back office that works while you care.",
-    hds: "HDS-certified host",
+    baseline: "Your teams care. Granit handles the rest.",
+    hds: "HDS-certified infrastructure",
     product: "Product",
     agents: "Agents",
     pricing: "Pricing",
     resources: "Resources",
     security: "Security",
     company: "Company",
-    about: "About",
     contact: "Contact",
     partners: "Become a partner",
-    demo: "Book a demo",
     linkedin: "Granit on LinkedIn",
     legal: "Legal",
     cgv: "Terms of sale",
@@ -109,7 +105,6 @@ export function Footer({ colle = false }: { colle?: boolean }) {
             className="md:col-span-2"
             title={t.company}
             links={[
-              { to: "/a-propos", label: t.about },
               { to: "/affiliation", label: t.partners },
               { to: "/", hash: "demo", label: t.contact },
             ]}
@@ -120,7 +115,6 @@ export function Footer({ colle = false }: { colle?: boolean }) {
             links={[
               { to: "/cgv", label: t.cgv },
               { to: "/privacy", label: t.privacy },
-              { to: "/", hash: "demo", label: t.demo },
             ]}
           />
         </div>
