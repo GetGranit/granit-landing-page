@@ -2,6 +2,7 @@
    La vidéo plein cadre tourne en boucle, en pause hors écran ; des pastilles d'agent se posent autour du
    praticien au temps de la vidéo, se cochent et s'effacent. Sous « mouvements réduits » : l'affiche seule
    et une pastille cochée, immobile. Le CSS est dans hero.css. */
+import { lienAnnonce } from "@/lib/levee";
 import { useEffect, useRef, type CSSProperties } from "react";
 import { usePostHog } from "posthog-js/react";
 import { calcomDemoUrl, useLanguage, useLeveeAnnoncee } from "./socle";
@@ -214,7 +215,7 @@ export function BandeauLevee() {
   const c = copy[lang];
   return (
     <div className="tv-bar">
-      <a href="/levee-de-fonds">
+      <a href={lienAnnonce()}>
         <span>{c.bar}</span>
         <b className="tv-bar-more">
           {c.barMore}

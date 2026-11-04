@@ -4,6 +4,7 @@
    « Mouvements réduits » : le logo est posé d'emblée. */
 import { useEffect, useRef, type CSSProperties } from "react";
 import { usePostHog } from "posthog-js/react";
+import { lienAnnonce } from "@/lib/levee";
 import { GALETS_PIECES, GALETS_VIEWBOX, useLanguage, useLeveeAnnoncee, useReveal } from "./socle";
 import "./levee.css";
 
@@ -266,7 +267,7 @@ function Levee() {
           </p>
           <a
             className="lm-lv-more"
-            href="/levee-de-fonds"
+            href={lienAnnonce()}
             data-reveal=""
             style={{ "--i": 3 } as CSSProperties}
             onClick={() => posthog?.capture("levee_annonce_clicked", { placement: "levee" })}

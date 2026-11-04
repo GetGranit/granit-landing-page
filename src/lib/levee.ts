@@ -8,3 +8,10 @@ export function leveeVisible(recherche: string) {
     Date.now() >= new Date(ANNONCE_LEVEE).getTime()
   );
 }
+
+/** Lien vers le communiqué. Garde ?levee=1 pendant une relecture : sans la clé, la page est en 404 avant l'annonce. */
+export function lienAnnonce() {
+  const relecture =
+    typeof window !== "undefined" && new URLSearchParams(window.location.search).get("levee") === "1";
+  return relecture ? "/levee-de-fonds?levee=1" : "/levee-de-fonds";
+}
