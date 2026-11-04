@@ -217,12 +217,11 @@
 .nh .ct-cc-btn:disabled { opacity: .7; cursor: wait; }
 .nh .ct-cc-champs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .nh .ct-cc-champs label { display: grid; gap: 5px; min-width: 0; }
-.nh .ct-cc-champs .ct-cc-large { grid-column: 1 / -1; }
 .nh .ct-cc-champs label span { font: 500 12px/1.2 var(--sans); color: var(--t-muted); }
-.nh .ct-cc-champs input { width: 100%; min-height: 44px; padding: 0 12px; border: 1px solid var(--filet-champ); border-radius: 10px;
+.nh .ct-cc-champs input, .nh .ct-cc-champs select { width: 100%; min-height: 44px; padding: 0 12px; border: 1px solid var(--filet-champ); border-radius: 10px;
   background: var(--paper); color: var(--ink); font: 400 15px/1 var(--sans); }
 .nh .ct-cc-champs input::placeholder { color: var(--t-faint); }
-.nh .ct-cc-champs input:focus { outline: 2px solid var(--deep); outline-offset: 0; border-color: transparent; }
+.nh .ct-cc-champs input:focus, .nh .ct-cc-champs select:focus { outline: 2px solid var(--deep); outline-offset: 0; border-color: transparent; }
 .nh .ct-cc-erreur { font-size: 13px; color: var(--alerte-texte); }
 .nh .ct-cc-merci { display: flex; align-items: center; gap: 10px; font: 500 15px/1.4 var(--sans); color: var(--ink); }
 .nh .ct-cc-coche { display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: var(--mint); color: var(--ink); flex: none; }

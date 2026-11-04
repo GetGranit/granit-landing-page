@@ -94,7 +94,7 @@ async function envoyerParMail(
     body: JSON.stringify({
       from: EXPEDITEUR,
       to: [DESTINATAIRE],
-      ...(payload.email ? { reply_to: payload.email } : {}),
+      reply_to: payload.email,
       subject: `[Site · secours] ${payload.source} : ${qui}`,
       text: corpsMailSecours(payload, raison),
     }),

@@ -1,5 +1,5 @@
 /* Nouvelle home : la carte du CTA de fin, « Comment préférez-vous échanger ? ». Deux tuiles, un seul choix :
-   « Je choisis un créneau » (par défaut) montre le bouton Cal.com ; « On me rappelle » montre deux champs.
+   « Je choisis un créneau » (par défaut) montre le bouton Cal.com ; « On me rappelle » montre le formulaire (nom, téléphone, email, métier).
    Une seule action visible à la fois, pour que les deux voies ne se disputent pas l'attention.
    Le rappel part par submitDemo, comme l'ancien formulaire de l'accueil. */
 import { useId, useState } from "react";
@@ -22,8 +22,17 @@ const copy = {
     voir: "Voir les créneaux",
     nom: "Prénom et nom",
     tel: "Téléphone",
-    etab: "Établissement",
-    etabPh: "Facultatif",
+    email: "Email professionnel",
+    metier: "Votre métier",
+    choisir: "Choisir…",
+    metiers: [
+      "Opticien ou audioprothésiste",
+      "Centre dentaire",
+      "Centre de santé ou ophtalmologie",
+      "Pharmacie",
+      "Clinique ou laboratoire",
+      "Autre",
+    ],
     envoyer: "Être rappelé",
     envoi: "Envoi…",
     merci: "C’est noté : on vous rappelle sous 24 h ouvrées.",
@@ -39,8 +48,17 @@ const copy = {
     voir: "See available times",
     nom: "Full name",
     tel: "Phone",
-    etab: "Organization",
-    etabPh: "Optional",
+    email: "Work email",
+    metier: "Your specialty",
+    choisir: "Choose…",
+    metiers: [
+      "Optician or hearing care",
+      "Dental center",
+      "Health center or ophthalmology",
+      "Pharmacy",
+      "Clinic or laboratory",
+      "Other",
+    ],
     envoyer: "Call me back",
     envoi: "Sending…",
     merci: "Got it: we’ll call you back within one business day.",
@@ -142,20 +160,24 @@ export function CarteContact() {
           onSubmit={async (e) => {
             e.preventDefault();
             const fd = new FormData(e.currentTarget);
+            const orgType = String(fd.get("orgType") || "");
             setEtat("envoi");
             try {
               await submit({
                 data: {
                   name: String(fd.get("name") || ""),
-                  email: "",
+                  email: String(fd.get("email") || ""),
                   phone: String(fd.get("phone") || ""),
-                  company: String(fd.get("company") || ""),
+                  orgType,
                   challenge: "Demande de rappel (CTA de fin de l’accueil)",
                   utm: getAttribution(),
                 },
               });
-              posthog?.capture("demo_request_submitted", { form_location: "homepage_rappel" });
-              if (posthog) logDemoRequestDelivered(posthog, "homepage_rappel", undefined);
+              posthog?.capture("demo_request_submitted", {
+                form_location: "homepage_rappel",
+                organization_type: orgType,
+              });
+              if (posthog) logDemoRequestDelivered(posthog, "homepage_rappel", orgType);
               setEtat("ok");
             } catch {
               if (posthog) logDemoRequestDeliveryFailed(posthog, "homepage_rappel");
@@ -178,9 +200,20 @@ export function CarteContact() {
                 pattern="[0-9 +().-]{9,}"
               />
             </label>
-            <label className="ct-cc-large">
-              <span>{t.etab}</span>
-              <input name="company" autoComplete="organization" placeholder={t.etabPh} />
+            <label>
+              <span>{t.email}</span>
+              <input name="email" type="email" required autoComplete="email" />
+            </label>
+            <label>
+              <span>{t.metier}</span>
+              <select name="orgType" required defaultValue="">
+                <option value="" disabled>
+                  {t.choisir}
+                </option>
+                {t.metiers.map((m) => (
+                  <option key={m}>{m}</option>
+                ))}
+              </select>
             </label>
           </div>
           <button type="submit" className="lm-btn ct-btn ct-cc-btn" disabled={etat === "envoi"}>
