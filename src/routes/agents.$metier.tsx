@@ -16,7 +16,7 @@ import {
   estSlugMetier,
   type SlugMetier,
 } from "@/components/agents/metiers";
-import { PAGES } from "@/components/agents/pages";
+import { LOGOS, LOGOS_AVEC_NOM, PAGES } from "@/components/agents/pages";
 import { useLanguage, type Lang } from "@/lib/i18n";
 import { SITE_URL, faqPageLd, organizationRef } from "@/lib/seo";
 
@@ -400,13 +400,25 @@ function ListeNoms({ titre, noms, suite }: { titre: string; noms: string[]; suit
         {noms.map((n) => (
           <li
             key={n}
-            className="rounded-full border px-4 py-2 text-[15px] font-medium"
-            style={{ background: "var(--lavis)", borderColor: "var(--filet)" }}
+            className="flex h-[64px] w-[118px] items-center justify-center gap-1.5 rounded-[12px] border px-3"
+            style={{ background: "var(--papier)", borderColor: "var(--filet)" }}
           >
-            {n}
+            {LOGOS[n] ? (
+              <>
+                <img
+                  src={LOGOS[n]}
+                  alt={LOGOS_AVEC_NOM.includes(n) ? "" : n}
+                  loading="lazy"
+                  className={`max-w-[94px] min-w-0 object-contain ${LOGOS_AVEC_NOM.includes(n) ? "max-h-[20px]" : "max-h-[32px]"}`}
+                />
+                {LOGOS_AVEC_NOM.includes(n) && <span className="text-[14px] font-medium">{n}</span>}
+              </>
+            ) : (
+              <span className="text-[15px] font-medium">{n}</span>
+            )}
           </li>
         ))}
-        <li className="px-2 py-2 text-[15px]" style={{ color: "var(--texte-secondaire)" }}>
+        <li className="flex items-center px-2 text-[15px]" style={{ color: "var(--texte-secondaire)" }}>
           {suite}
         </li>
       </ul>
