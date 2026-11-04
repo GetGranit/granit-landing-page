@@ -39,7 +39,7 @@ export function Invitation({
     (p) => p !== undefined,
   );
   const autres = PORTAILS.filter(
-    (p) => !p.simulable && platformById(p.id)?.affichage !== "prevenir",
+    (p) => !p.simulable && !platformById(p.id)?.note_fermeture,
   ).sort((a, b) => rang(a.id) - rang(b.id));
   const reste = autres.length - VISIBLES;
   const entree = (i: number) =>
