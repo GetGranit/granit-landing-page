@@ -1,5 +1,5 @@
 /* Nouvelle home : section « Métiers » (maquette Last mile, sections.js § 2 et lm.css « 2. MÉTIERS »).
-   La page finale (data-final) affiche la version 4 « Tableau » : cinq lignes fermées (le métier et sa promesse),
+   La page finale (data-final) affiche la version 4 « Tableau » : sept lignes fermées (le métier et sa promesse),
    chacune s'ouvre au survol, au focus clavier ou au toucher sur les tâches de l'agent et les outils.
    Les trois autres affichages de la maquette (outil de revue) ne sont pas portés. */
 import { useState } from "react";
@@ -45,15 +45,26 @@ const copy: Record<
     k2: "Dans vos outils",
     m: [
       {
-        n: "Opticiens et audioprothésistes",
+        n: "Opticiens",
         img: "optician.jpg",
-        p: "L’accord mutuelle en moins d’une minute, lunettes ou appareils auditifs. Zéro aller-retour.",
+        p: "L’accord mutuelle en moins d’une minute, avant même que le client ait choisi sa monture.",
         t: [
-          "Saisit la demande de prise en charge dès le devis, lunettes ou appareils auditifs",
-          "Joint l’ordonnance, l’audiogramme et le devis normalisé",
+          "Saisit la demande de prise en charge dès le devis",
+          "Joint l’ordonnance et le devis normalisé",
           "Facture la part mutuelle à la livraison et pointe les virements",
         ],
         s: ["Logiciel du magasin", "Toutes les plateformes de tiers payant"],
+      },
+      {
+        n: "Audioprothésistes",
+        img: "audiologist.jpg",
+        p: "Des dossiers complets du premier coup. Zéro aller-retour avec la mutuelle.",
+        t: [
+          "Saisit la demande de prise en charge dès le devis",
+          "Joint l’ordonnance, l’audiogramme et le devis normalisé",
+          "Facture la part mutuelle à la livraison et pointe les virements",
+        ],
+        s: ["Logiciel du centre", "Toutes les plateformes de tiers payant"],
       },
       {
         n: "Centres dentaires",
@@ -99,6 +110,16 @@ const copy: Record<
         ],
         s: ["Logiciel de la clinique", "Logiciel du laboratoire (SIL)", "AmeliPro"],
       },
+      {
+        n: "EHPAD",
+        img: "nurse.jpg",
+        p: "La facturation des résidents bouclée chaque mois, sans relance oubliée.",
+        t: [
+          "Facture chaque mois l’hébergement, la dépendance et les soins",
+          "Suit les paiements des familles et des organismes, et relance",
+        ],
+        s: ["Logiciel de l’établissement", "Mutuelles"],
+      },
     ],
   },
   en: {
@@ -112,15 +133,26 @@ const copy: Record<
     k2: "In your tools",
     m: [
       {
-        n: "Opticians and hearing care professionals",
+        n: "Opticians",
         img: "optician.jpg",
-        p: "Insurer approval in under a minute, glasses or hearing aids. No back-and-forth.",
+        p: "Insurer approval in under a minute, before the customer has picked a frame.",
         t: [
-          "Files the coverage request as soon as the quote is ready, glasses or hearing aids",
-          "Attaches the prescription, the audiogram and the standard quote",
+          "Files the coverage request as soon as the quote is ready",
+          "Attaches the prescription and the standard quote",
           "Bills the insurer’s share at delivery and reconciles payments",
         ],
         s: ["Your store software", "Every third-party payment platform"],
+      },
+      {
+        n: "Hearing care professionals",
+        img: "audiologist.jpg",
+        p: "Complete files, first time. No back-and-forth with insurers.",
+        t: [
+          "Files the coverage request as soon as the quote is ready",
+          "Attaches the prescription, the audiogram and the standard quote",
+          "Bills the insurer’s share at delivery and reconciles payments",
+        ],
+        s: ["Your center software", "Every third-party payment platform"],
       },
       {
         n: "Dental centers",
@@ -166,6 +198,16 @@ const copy: Record<
         ],
         s: ["Clinic software", "Laboratory software (LIS)", "AmeliPro"],
       },
+      {
+        n: "Nursing homes",
+        img: "nurse.jpg",
+        p: "Resident billing closed every month, no missed follow-up.",
+        t: [
+          "Bills accommodation, dependency care and treatment every month",
+          "Tracks family and insurer payments, and follows up",
+        ],
+        s: ["Facility software", "Insurers"],
+      },
     ],
   },
 };
@@ -201,7 +243,7 @@ export function MetiersNouvelle() {
             {t.m.map((m, i) => (
               /* la ligne est focalisable (tabIndex) : elle s'ouvre au clavier, comme dans la maquette */
               <li
-                key={m.img}
+                key={m.n}
                 className={`lm-me4-row${open.has(i) ? " open" : ""}`}
                 tabIndex={0}
                 onClick={() => toggle(i)}

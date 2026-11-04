@@ -15,7 +15,7 @@ export const Route = createFileRoute("/securite")({
       {
         name: "description",
         content:
-          "Granit est certifié HDS : données de santé hébergées en France, chiffrées, jamais utilisées pour entraîner des modèles tiers. RGPD, journalisation et réversibilité.",
+          "Granit s'appuie sur un hébergement certifié HDS : données de santé hébergées en France, chiffrées, jamais utilisées pour entraîner des modèles tiers. RGPD, journalisation et réversibilité.",
       },
       { property: "og:title", content: "Sécurité & conformité santé - Granit" },
       { property: "og:description", content: "Le standard le plus strict du secteur santé français et européen." },
@@ -32,13 +32,13 @@ const content = {
       "Granit est conçu dès l'origine pour les contraintes réglementaires des établissements de santé : HDS, RGPD, secret médical, référentiels ANS. Aucune donnée patient ne sort jamais du périmètre de confiance.",
     summaryLabel: "En bref :",
     summary:
-      "Granit est certifié HDS. Les données patients sont hébergées en France, chiffrées en transit et au repos, et ne servent jamais à entraîner des modèles tiers. Chaque action d'agent est journalisée, et vous pouvez récupérer ou faire supprimer vos données à tout moment.",
+      "Granit s'appuie sur un hébergement certifié HDS. Les données patients sont hébergées en France, chiffrées en transit et au repos, et ne servent jamais à entraîner des modèles tiers. Chaque action d'agent est journalisée, et vous pouvez récupérer ou faire supprimer vos données à tout moment.",
     faqTitle: "Questions fréquentes",
     faq: [
       {
-        question: "Granit est-il certifié HDS ?",
+        question: "Vos données sont-elles chez un hébergeur certifié HDS ?",
         answer:
-          "Oui, Granit est certifié HDS. Les données patients sont hébergées en France, sauvegardes comprises, sans transfert hors de l'Union européenne.",
+          "Oui, Granit s'appuie sur un hébergement certifié HDS. Les données patients sont hébergées en France, sauvegardes comprises, sans transfert hors de l'Union européenne.",
       },
       {
         question: "Les données patients servent-elles à entraîner l'IA ?",
@@ -125,13 +125,13 @@ const content = {
       "Granit is built from day one for healthcare regulatory constraints: HDS, GDPR, medical confidentiality and ANS frameworks. Patient data never leaves the trust perimeter.",
     summaryLabel: "In short:",
     summary:
-      "Granit is HDS certified. Patient data is hosted in France, encrypted in transit and at rest, and never used to train third-party models. Every agent action is logged, and you can retrieve or delete your data at any time.",
+      "Granit runs on HDS-certified hosting. Patient data is hosted in France, encrypted in transit and at rest, and never used to train third-party models. Every agent action is logged, and you can retrieve or delete your data at any time.",
     faqTitle: "Frequently asked questions",
     faq: [
       {
-        question: "Is Granit HDS certified?",
+        question: "Is your data with an HDS-certified provider?",
         answer:
-          "Yes, Granit is HDS certified. Patient data is hosted in France, backups included, with no transfer outside the European Union.",
+          "Yes, Granit runs on HDS-certified hosting. Patient data is hosted in France, backups included, with no transfer outside the European Union.",
       },
       {
         question: "Is patient data used to train AI?",

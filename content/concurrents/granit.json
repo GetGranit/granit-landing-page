@@ -4,7 +4,7 @@
   "modele": "agents-ia",
   "checkedOn": "2026-10-07",
   "aRelire": false,
-  "_note": "Relu par Paul le 09/10/2026. Mise en route : « 48 h » retenu par Paul (le site doit retirer « 5 jours »). HDS : formulation validée « certifié HDS (hébergeur de données de santé) ».",
+  "_note": "Relu par Paul le 09/10/2026. Mise en route : « 48 h » retenu par Paul (le site doit retirer « 5 jours »). HDS : formulation validée « hébergement certifié HDS (hébergeur de données de santé) ».",
   "axes": {
     "quiFait": {
       "valeur": "Des agents logiciels ; l'équipe Granit reprend les dossiers que l'agent ne peut pas finir",
@@ -34,7 +34,7 @@
       "source": "granit-tarifs"
     },
     "hds": {
-      "valeur": "certifié HDS (hébergeur de données de santé)",
+      "valeur": "hébergement certifié HDS (hébergeur de données de santé)",
       "source": "granit-tarifs"
     },
     "plateformes": {
