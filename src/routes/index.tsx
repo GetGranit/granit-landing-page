@@ -20,7 +20,7 @@ export const Route = createFileRoute("/")({
 
 function HomePage() {
   return (
-    <SiteLayout>
+    <SiteLayout piedColle>
       <HomeSections />
     </SiteLayout>
   );
