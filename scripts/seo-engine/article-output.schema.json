@@ -2,6 +2,7 @@
   "type": "object",
   "additionalProperties": false,
   "required": [
+    "seoTitle",
     "metaDescription",
     "contentHtml",
     "tocItems",
@@ -10,9 +11,13 @@
     "figures"
   ],
   "properties": {
+    "seoTitle": {
+      "type": "string",
+      "description": "Titre de la page dans Google et dans les partages (balise <title>). 60 caractères maximum, espaces comprises. Contient les mots du mot-clé principal, tôt dans le titre. Se lit naturellement. Différent du titre de tout autre article. Sans « Granit » en suffixe."
+    },
     "metaDescription": {
       "type": "string",
-      "description": "140 à 160 caractères. Contient le mot-clé principal, un bénéfice concret, finit sur une raison de cliquer."
+      "description": "140 à 160 caractères. Une phrase qui se lit normalement, avec les mots du mot-clé principal (pas forcément collés), jamais une suite de mots-clés en ouverture. Un bénéfice concret, finit sur une raison de cliquer."
     },
     "contentHtml": {
       "type": "string",

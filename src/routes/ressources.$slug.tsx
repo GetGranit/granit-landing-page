@@ -36,7 +36,7 @@ export const Route = createFileRoute("/ressources/$slug")({
   head: ({ loaderData }) => {
     if (loaderData?.kind === "json") {
       const a = loaderData.article;
-      const title = titrePage(a.title);
+      const title = a.seoTitle?.trim() || titrePage(a.title);
       const fiche = ficheJson(a.slug);
       // og:image : l'aperçu dessiné s'il existe (fiches plateformes), sinon la photo du thème.
       const image = fiche ? SITE_URL + (fiche.og ?? src(photoFiche(fiche), 1600)) : undefined;
@@ -46,6 +46,7 @@ export const Route = createFileRoute("/ressources/$slug")({
           { title },
           { name: "description", content: a.metaDescription },
           { property: "og:title", content: title },
+          { name: "twitter:title", content: title },
           { property: "og:description", content: a.metaDescription },
           { property: "og:type", content: "article" },
           ...(image
@@ -65,11 +66,12 @@ export const Route = createFileRoute("/ressources/$slug")({
     const a = loaderData ? getArticle("fr", loaderData.slug) : undefined;
     const title = a ? `${a.title} - Granit` : "Article - Granit";
     const desc = a?.desc ?? "Article Granit.";
+    const balise = a?.seoTitle?.trim() || title;
     return {
       meta: [
-        { title },
+        { title: balise },
         { name: "description", content: desc },
-        { property: "og:title", content: title },
+        { property: "og:title", content: balise },
         { property: "og:description", content: desc },
         { property: "og:type", content: "article" },
       ],

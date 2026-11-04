@@ -44,6 +44,8 @@ export type RessourceJson = {
   /** Page comparative : fichiers content/concurrents/{slug}.json, dans l'ordre (Granit en dernier). */
   concurrents?: string[];
   title: string;
+  /** Balise <title> et titres de partage, 60 caractères max. Absent : titrePage(title). Le H1 reste `title`. */
+  seoTitle?: string;
   primaryKeyword: string;
   keywordCluster: string[];
   parentSlug: string | null;

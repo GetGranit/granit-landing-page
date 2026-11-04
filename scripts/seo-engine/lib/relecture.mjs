@@ -8,7 +8,7 @@ export const ANGLES = ["faits", "conformite", "seo", "copy"];
 export const TOURS_MAX = 2;
 
 // Champs de l'article que le correcteur a le droit de réécrire (même schéma que publish-article)
-export const CHAMPS_ARTICLE = ["metaDescription", "contentHtml", "tocItems", "faqItems", "sources", "figures"];
+export const CHAMPS_ARTICLE = ["seoTitle", "metaDescription", "contentHtml", "tocItems", "faqItems", "sources", "figures"];
 
 // Règles issues de la relecture à la main du lot du 09/10/2026 (4 relecteurs, 8 fiches), paramétrées par
 // le lecteur (fiche métier) et le type de page : les règles « portail » ne valent que pour une page plateforme.
@@ -46,7 +46,8 @@ export function regles({ lecteur = LECTEUR_OPTIQUE, type = "plateforme", metier 
 - Pas de conseil contraire aux conditions d'utilisation (ex. partager un compte nominatif).
 
 ### SEO
-${plateforme ? SEO_PLATEFORME : ""}- metaDescription de 140 à 160 caractères, avec le mot-clé principal.
+${plateforme ? SEO_PLATEFORME : ""}- seoTitle de 60 caractères au plus, avec les mots du mot-clé principal, tôt dans le titre. Vide sur un article ancien : le proposer.
+- metaDescription de 140 à 160 caractères : une phrase qui se lit normalement, avec les mots du mot-clé principal (pas forcément collés), jamais une suite de mots-clés en ouverture.
 - Les requêtes de navigation du groupe de mots-clés trouvent une réponse (H3 ou question de FAQ), sans citer le mot-clé.
 
 ### Copy (lecteur : ${lecteur})
@@ -143,7 +144,7 @@ export function appliquer(fiche, corr) {
   return f;
 }
 
-const corps = (fiche) => Object.fromEntries(CHAMPS_ARTICLE.map((k) => [k, fiche[k] ?? []]));
+const corps = (fiche) => Object.fromEntries(CHAMPS_ARTICLE.map((k) => [k, fiche[k] ?? (k === "seoTitle" ? "" : [])]));
 const bloc = (titre, v) => `## ${titre}\n\`\`\`json\n${JSON.stringify(v, null, 2)}\n\`\`\``;
 const listePoints = (pts) => pts.map((p, i) => `${i + 1}. [${p.gravite} · ${p.angle}] « ${p.extrait} » → ${p.correction}`).join("\n");
 

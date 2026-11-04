@@ -252,6 +252,7 @@ Le moteur refuse l'article (et réessaie une fois) si :
 - l'encadré `key-takeaways` n'est pas le premier bloc après l'ouverture ;
 - un `id` de H2 n'a pas son entrée dans `tocItems`, ou l'inverse ;
 - un lien externe du corps n'est pas dans `sources`, ou `sources` contient moins de 2 entrées ;
+- `seoTitle` manque, dépasse 60 caractères, n'a pas les mots du mot-clé principal ou reprend le titre d'un autre article ;
 - page plateforme : un des 4 marqueurs manque ou apparaît deux fois, ou un nombre du texte n'apparaît pas dans le fichier de faits ;
 - page résolution : pas de `ol.steps`.
 
