@@ -328,7 +328,7 @@ Seulement celles listées dans `granitData` pour l'article, et toujours **datée
 - les champs obligatoires d'une demande de prise en charge par portail ;
 - la lecture des statuts (accord, accord sous réserve de pièces, en instance, refus) ;
 - les libellés de virement par payeur ;
-- **la conformité HDS** : formulation exacte « Granit est certifié HDS (hébergeur de données de santé) ». À citer seulement là où c'est utile (données de santé, RGPD, conformité), jamais comme argument dans une page plateforme ;
+- **la conformité HDS** : formulation exacte « infrastructure certifiée HDS (hébergeur de données de santé) », jamais « Granit est certifié HDS ». À citer seulement là où c'est utile (données de santé, RGPD, conformité), jamais comme argument dans une page plateforme ;
 - les constats d'expérience, formulés sans chiffre non mesuré (« dans les dossiers que traitent nos agents, la cause la plus fréquente est… »). Autorisé **sans chiffre**, sans nom de client ni de magasin.
 
 ### Liste rouge : jamais dans un article

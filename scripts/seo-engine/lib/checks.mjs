@@ -172,7 +172,7 @@ export function controler(out, ctx) {
   }
   if (/\bHDS\b/.test(toutLeTexte)) {
     if (type === "plateforme") erreurs.push("HDS cité dans une page plateforme");
-    else if (!toutLeTexte.includes("certifié HDS (hébergeur de données de santé)")) avert.push("HDS cité sans la formulation validée");
+    else if (!toutLeTexte.includes("infrastructure certifiée HDS (hébergeur de données de santé)")) avert.push("HDS cité sans la formulation validée");
   }
   const mentions = (corps.match(/\bGranit\b/g) ?? []).length;
   if (mentions > 2 && !comparatif) avert.push(`Granit cité ${mentions} fois dans le corps (une mention visée)`);

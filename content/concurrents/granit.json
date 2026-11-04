@@ -4,7 +4,7 @@
   "modele": "agents-ia",
   "checkedOn": "2026-11-04",
   "aRelire": false,
-  "_note": "Enrichi le 04/11/2026 depuis le site en ligne (accueil, /agents, /securite, /tarifs). À relire par Paul. Écarts site à corriger : CGV « 5 jours ouvrés » vs « 48h », frais de setup absents de /tarifs. Mise en route « 48 h » et HDS « certifié » validés par Paul le 09/10. « Gestionnaire Granit qui reprend » et « chaque nuit » : vrais d'après le Kit partenaire Notion mais PAS encore écrits sur le site, à ajouter sur /agents avant publication.",
+  "_note": "Enrichi le 04/11/2026 depuis le site en ligne (accueil, /agents, /securite, /tarifs). À relire par Paul. Écarts site à corriger : CGV « 5 jours ouvrés » vs « 48h », frais de setup absents de /tarifs. Mise en route « 48 h » validée par Paul le 09/10. HDS : formulation corrigée par Paul le 04/11, « infrastructure certifiée HDS » (jamais « Granit est certifié HDS ») ; le site reste à aligner. « Gestionnaire Granit qui reprend » et « chaque nuit » : validés par Paul le 04/11, à ajouter sur /agents.",
   "axes": {
     "quiFait": {
       "valeur": "Des agents logiciels, qui tournent chaque jour et chaque nuit sur les outils du magasin ; un gestionnaire Granit reprend les cas que l'agent ne peut pas finir",
@@ -41,7 +41,7 @@
       "source": "granit-tarifs"
     },
     "hds": {
-      "valeur": "certifié HDS (hébergeur de données de santé)",
+      "valeur": "infrastructure certifiée HDS (hébergeur de données de santé)",
       "detail": "Données hébergées en France, chiffrées en transit et au repos, jamais utilisées pour entraîner des modèles tiers",
       "source": "granit-securite"
     },
@@ -98,10 +98,6 @@
     {
       "texte": "Nos conditions générales de vente ne prévoient pas de durée minimale : le client peut résilier à tout moment, par email, avec un préavis de 30 jours, sans pénalité ni frais.",
       "source": "granit-tarifs"
-    },
-    {
-      "texte": "Granit est certifié HDS. Les données patients sont hébergées en France, chiffrées en transit et au repos, et ne servent jamais à entraîner des modèles tiers.",
-      "source": "granit-securite"
     }
   ]
 }
