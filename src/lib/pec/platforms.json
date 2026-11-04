@@ -26,14 +26,13 @@
   {
    "id": "oxantis",
    "label": "Oxantis",
-   "url": "https://www.oxantis.net/HmNet/page/accueil/index",
+   "url": "https://www.viamedis.net/ViamedisNet/page/accueil/index",
    "simulable": false,
-   "tfa": "sms",
+   "tfa": "totp",
    "pec_optique_granit": true,
-   "reseau_via": null,
-   "note_fermeture": "Le site oxantis.net ferme le 26 octobre 2026. On vous dira où faire ces PEC ensuite.",
-   "note": null,
-   "affichage": "prevenir"
+   "reseau_via": "viamedis",
+   "note_fermeture": "Le site oxantis.net a fermé le 26 octobre 2026. Viamedis reprend l'optique : ces PEC se font désormais sur viamedis.net.",
+   "note": null
   },
   {
    "id": "santeclair",

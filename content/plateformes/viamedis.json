@@ -49,6 +49,10 @@
  ],
  "faits": [
   {
+   "fait": "Depuis le 26 octobre 2026, Viamedis reprend les activités d'optique et d'audioprothèse d'Oxantis (Groupe VYV). Les prises en charge en cours et l'historique de facturation sont transférés automatiquement vers viamedis.net.",
+   "source": "acuite-2026-oxantis"
+  },
+  {
    "fait": "En 2025, Viamedis a traité plus de 94 millions de factures et réglé 3,2 milliards d'euros de prestations.",
    "source": "viamedis-ia"
   },
@@ -294,6 +298,11 @@
    "label": "Connecteur Viamedis de Granit (relevé sur le portail)",
    "url": null,
    "consulte": "2026-10-06"
+  },
+  "acuite-2026-oxantis": {
+   "label": "Acuité · « Fermeture de la plateforme de tiers payant Oxantis le 26 octobre 2026 » (16/09/2026)",
+   "url": "https://www.acuite.fr/actualites/profession/fermeture-de-la-plateforme-de-tiers-payant-oxantis-a335575",
+   "consulte": "2026-11-04"
   }
  }
 }

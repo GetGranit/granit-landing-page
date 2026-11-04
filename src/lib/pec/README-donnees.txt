@@ -9,6 +9,7 @@ url, tfa et note sont des tables écrites à la main dans le script : à revoir 
 Tests : copier dans un dossier, ajouter `with { type: "json" }` aux imports JSON,
 puis `node --experimental-strip-types --test classify.test.ts`. Résultat au 07/10 : 20/20 OK.
 Note de fermeture Oxantis réécrite à la main pour l'opticien dans src/lib/pec/platforms.json (le script d'export met une note interne).
+04/11/2026 : Oxantis a fermé, Viamedis reprend (Acuité). Dans platforms.json, oxantis renvoie vers viamedis (url, tfa, reseau_via), à refaire après un réexport.
 Tests : node --experimental-strip-types --test tests/pec/*.test.ts (routage + garde-fou d'affichage).
 
 estimations.json (21/10/2026) : fourchettes indicatives du remboursement complémentaire par
