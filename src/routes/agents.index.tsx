@@ -101,7 +101,7 @@ const content = {
   },
   en: {
     eyebrow: "Agents",
-    titre: ["Agents for the third-party payment", "of your trade."],
+    titre: ["Agents for third-party payment", "in your trade."],
     chapo:
       "Eligibility, coverage, billing, payments: agents run the administrative work, in the software your teams already use.",
     demo: "Book a demo",
@@ -113,10 +113,10 @@ const content = {
       {
         titre: "Eligibility",
         texte:
-          "They check public and private coverage before the quote, the visit or the admission.",
+          "They check mandatory (AMO) and supplementary (AMC) coverage before the quote, the visit or the admission.",
       },
       { titre: "Coverage", texte: "They file requests on insurer portals and follow the answers." },
-      { titre: "Billing", texte: "They bill and transmit to the public scheme and insurers." },
+      { titre: "Billing", texte: "They bill and transmit to the national health insurance and insurers." },
       {
         titre: "Payments",
         texte: "They match transfers, handle rejections and follow up on unpaid ones.",

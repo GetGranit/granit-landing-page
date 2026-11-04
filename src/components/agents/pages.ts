@@ -66,11 +66,11 @@ const optiqueEn: PageMetier = {
   etapesHero: [
     { enCours: "Checking eligibility", fait: "Eligibility checked", detail: "On the insurer's platform" },
     { enCours: "Filing the coverage request", fait: "Coverage approved", detail: "While the customer is in the store" },
-    { enCours: "Transmitting", fait: "Invoice transmitted", detail: "Public scheme and insurer" },
+    { enCours: "Transmitting", fait: "Invoice transmitted", detail: "National health insurance and insurer" },
     { enCours: "Matching the transfer", fait: "Transfer matched", detail: "Matched to its invoice" },
   ],
   garanties: [
-    { titre: "Coverage in under 2 minutes", texte: "It comes back while the customer is still in the store." },
+    { titre: "Coverage approval in under 2 minutes", texte: "It comes back while the customer is still in the store." },
     { titre: "7 days a week", texte: "Files move forward, even when someone is away." },
     { titre: "HDS-certified host", texte: "Health data stays in the European Union. GDPR compliant." },
     { titre: "Every third-party payment platform", texte: "Agents work on the portals you already use." },
@@ -78,9 +78,9 @@ const optiqueEn: PageMetier = {
   dossierTitre: ["One file, from the quote", "to the insurer's transfer."],
   dossier: [
     { etape: "Quote", texte: "You make the quote in your software, as usual. Nothing changes at the counter." },
-    { etape: "Eligibility", texte: "The agent checks the customer's rights on their insurer's platform." },
+    { etape: "Eligibility", texte: "The agent checks the customer's eligibility on their insurer's platform." },
     { etape: "Coverage", texte: "It files the coverage request on the portal. It comes back in under 2 minutes, while the customer is still in the store." },
-    { etape: "Delivery", texte: "On delivery, it bills and transmits to the public scheme and the insurer." },
+    { etape: "Delivery", texte: "On delivery, it bills and transmits to the national health insurance and the insurer." },
     { etape: "Transfer", texte: "It matches the insurer's transfer to the invoice and follows up if payment is late. A rejection is corrected and resubmitted." },
   ],
   logiciels: ["Cosium", "Optimum"],

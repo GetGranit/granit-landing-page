@@ -83,7 +83,7 @@ const ui = {
     agents: "How it works",
     exemple: "Example",
     garantiesTitre: "What Granit guarantees",
-    agentsTitre: ["The agents", "of your store."] as [string, string],
+    agentsTitre: ["The agents", "for your store."] as [string, string],
     dossierEyebrow: "One file, end to end",
     outilsEyebrow: "Your software and platforms",
     outilsTitre: ["They work where", "you already work."] as [string, string],
