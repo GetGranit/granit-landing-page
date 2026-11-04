@@ -44,6 +44,7 @@
 .lv-apropos p { font-size: 15.5px; color: var(--texte-secondaire); text-wrap: pretty; }
 .lv-apropos b { color: var(--encre); font-weight: 500; }
 .lv-apropos a { overflow-wrap: anywhere; }
+.lv-article .chapo, .lv-corps p, .lv-apropos p:first-of-type { text-align: justify; hyphens: auto; hyphenate-limit-chars: 10 4 4; }
 
 .lv-cta { position: relative; overflow: hidden; background: var(--encre); color: var(--rose); }
 .lv-cta::after { content: ""; position: absolute; inset: auto 0 0; height: 14px; background: var(--degrade-marque); }
