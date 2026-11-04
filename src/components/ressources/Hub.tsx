@@ -96,8 +96,8 @@ export function Hub() {
   const glossaire = glossaireEnLigne();
 
   return (
-    <SiteLayout fond="var(--bg2)">
-      <div className="ress bg-[var(--bg2)]">
+    <SiteLayout fond="var(--bg)">
+      <div className="ress bg-[var(--bg)]">
         <section className={`${conteneur} pb-8 pt-12 text-center md:pt-14`}>
           <div className="eyebrow">{t.surtitre}</div>
           <h1 className="mx-auto mt-4 font-serif text-[clamp(40px,5.2vw,64px)] font-normal leading-[1.14] tracking-[-0.02em] [text-wrap:balance]">

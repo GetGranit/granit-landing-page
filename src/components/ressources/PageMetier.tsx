@@ -76,8 +76,8 @@ export function PageMetier({ v: vFr }: { v: Verticale }) {
     : [];
 
   return (
-    <SiteLayout fond="var(--bg2)">
-      <div className="ress bg-[var(--bg2)] pb-1">
+    <SiteLayout fond="var(--bg)">
+      <div className="ress bg-[var(--bg)] pb-1">
         <SousNav actif={v.slug} />
         <section
           className={`${conteneur} grid items-center gap-8 pb-10 pt-8 md:pt-12 lg:grid-cols-12`}
