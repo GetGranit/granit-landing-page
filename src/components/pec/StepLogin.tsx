@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import { useLanguage } from "@/lib/i18n";
 import {
   Field,
   Kicker,
@@ -11,6 +12,45 @@ import {
   fieldClass,
   fieldStyle,
 } from "./ui";
+
+const copy = {
+  fr: {
+    kicker: "Votre portail",
+    title: "Connectez-vous à ",
+    intro:
+      "Granit se connecte comme vous le feriez. Rien n'est envoyé à la mutuelle, vos accès ne sont pas conservés.",
+    refuse: (portail: string) =>
+      `${portail} n'a pas accepté ces identifiants. Vérifiez les majuscules, ou un mot de passe changé récemment.`,
+    idManquant: "Indiquez votre identifiant.",
+    mdpManquant: "Indiquez votre mot de passe.",
+    identifiant: "Identifiant",
+    idHint: (portail: string) => `Celui que vous tapez d'habitude sur ${portail}.`,
+    mdp: "Mot de passe",
+    masquer: "masquer",
+    afficher: "afficher",
+    lancer: "Lancer la simulation",
+    avecPaul: "Je préfère le faire avec Paul",
+    retour: "← Retour",
+  },
+  en: {
+    kicker: "Your portal",
+    title: "Log in to ",
+    intro:
+      "Granit logs in the way you would. Nothing is sent to the insurer, your login details are not stored.",
+    refuse: (portail: string) =>
+      `${portail} did not accept these credentials. Check capital letters, or a recently changed password.`,
+    idManquant: "Enter your username.",
+    mdpManquant: "Enter your password.",
+    identifiant: "Username",
+    idHint: (portail: string) => `The one you usually type on ${portail}.`,
+    mdp: "Password",
+    masquer: "hide",
+    afficher: "show",
+    lancer: "Start the simulation",
+    avecPaul: "I’d rather do it with Paul",
+    retour: "← Back",
+  },
+};
 
 /**
  * E5 · connexion au portail. Les identifiants restent dans la mémoire de la
@@ -32,6 +72,7 @@ export function StepLogin({
   onPaul: () => void;
   onBack: () => void;
 }) {
+  const t = copy[useLanguage().lang];
   const [identifiant, setIdentifiant] = useState(identifiantInitial ?? "");
   const [motDePasse, setMotDePasse] = useState("");
   const [voir, setVoir] = useState(false);
@@ -39,22 +80,18 @@ export function StepLogin({
 
   return (
     <Screen id="login">
-      <Kicker>Votre portail</Kicker>
+      <Kicker>{t.kicker}</Kicker>
       <Title em={portail} after=".">
-        Connectez-vous à{" "}
+        {t.title}
       </Title>
-      <Muted>
-        Granit se connecte comme vous le feriez. Rien n'est envoyé à la mutuelle, vos accès ne sont
-        pas conservés.
-      </Muted>
+      <Muted>{t.intro}</Muted>
       {refuse && (
         <p
           role="alert"
           className="w-full rounded-xl px-3 py-2 text-[15px]"
           style={{ background: "var(--lavis)", color: "var(--encre)" }}
         >
-          {portail} n'a pas accepté ces identifiants. Vérifiez les majuscules, ou un mot de passe
-          changé récemment.
+          {t.refuse(portail)}
         </p>
       )}
       <form
@@ -64,19 +101,15 @@ export function StepLogin({
           e.preventDefault();
           const v = { identifiant: identifiant.trim(), motDePasse };
           const er = {
-            identifiant: v.identifiant ? undefined : "Indiquez votre identifiant.",
-            motDePasse: v.motDePasse ? undefined : "Indiquez votre mot de passe.",
+            identifiant: v.identifiant ? undefined : t.idManquant,
+            motDePasse: v.motDePasse ? undefined : t.mdpManquant,
           };
           setErr(er);
           if (er.identifiant || er.motDePasse) return;
           onSubmit(v);
         }}
       >
-        <Field
-          label="Identifiant"
-          hint={`Celui que vous tapez d'habitude sur ${portail}.`}
-          error={err.identifiant}
-        >
+        <Field label={t.identifiant} hint={t.idHint(portail)} error={err.identifiant}>
           {(a11y) => (
             <input
               {...a11y}
@@ -90,7 +123,7 @@ export function StepLogin({
             />
           )}
         </Field>
-        <Field label="Mot de passe" error={err.motDePasse}>
+        <Field label={t.mdp} error={err.motDePasse}>
           {(a11y) => (
             <span className="relative block">
               <input
@@ -108,19 +141,19 @@ export function StepLogin({
                 className="absolute right-3 top-1/2 -translate-y-1/2 text-[13px] underline"
                 style={{ color: "var(--text-muted)" }}
               >
-                {voir ? "masquer" : "afficher"}
+                {voir ? t.masquer : t.afficher}
               </button>
             </span>
           )}
         </Field>
         <div className="grid justify-items-center gap-1">
           <button type="submit" className={`${bigBtn} w-full`}>
-            Lancer la simulation <span className="arrow">→</span>
+            {t.lancer} <span className="arrow">→</span>
           </button>
-          <TextLink onClick={onPaul}>Je préfère le faire avec Paul</TextLink>
+          <TextLink onClick={onPaul}>{t.avecPaul}</TextLink>
         </div>
       </form>
-      <TextLink onClick={onBack}>← Retour</TextLink>
+      <TextLink onClick={onBack}>{t.retour}</TextLink>
     </Screen>
   );
 }

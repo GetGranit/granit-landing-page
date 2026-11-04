@@ -1,6 +1,8 @@
 import { createFileRoute, notFound, redirect } from "@tanstack/react-router";
 import { getArticle } from "@/lib/articles";
 import { chargerArticle, ficheJson, metierDe, remplacant } from "@/lib/ressources/contenu";
+import { prechargerEn, useArticleEn } from "@/lib/ressources/langue";
+import { slugFrDeAncienEn } from "@/lib/legacyBlog";
 import { blogPostingLd, breadcrumbLd, faqLd, titrePage } from "@/lib/ressources/seo";
 import { photoFiche, src } from "@/lib/ressources/photos";
 import { SITE_URL } from "@/lib/seo";
@@ -11,17 +13,22 @@ import { PageArticle } from "@/components/ressources/article/PageArticle";
 export const Route = createFileRoute("/ressources/$slug")({
   // Ordre de recherche : articles JSON en ligne (aperçu compris hors production), puis articles.ts.
   // Ancien article remplacé par un article du moteur : redirection permanente.
+  // Ancien slug anglais (articles.en) : même redirection, vers l'adresse française de l'article,
+  // qui sert les deux langues.
   beforeLoad: ({ params }) => {
-    const cible = remplacant(params.slug);
+    const fr = slugFrDeAncienEn(params.slug);
+    const cible = remplacant(fr ?? params.slug) ?? fr;
     if (cible)
       throw redirect({ to: "/ressources/$slug", params: { slug: cible }, statusCode: 301 });
   },
+  // Le serveur rend le français ; en navigation déjà en anglais, la traduction est préchargée.
   loader: async ({ params }) => {
     if (ficheJson(params.slug)) {
-      const data = await chargerArticle(params.slug);
+      const [data] = await Promise.all([chargerArticle(params.slug), prechargerEn(params.slug)]);
       if (data?.article) return { kind: "json" as const, slug: params.slug, ...data };
     }
-    if (getArticle("fr", params.slug) || getArticle("en", params.slug)) {
+    if (getArticle("fr", params.slug)) {
+      await prechargerEn(params.slug);
       return { kind: "ancien" as const, slug: params.slug };
     }
     throw notFound();
@@ -55,9 +62,7 @@ export const Route = createFileRoute("/ressources/$slug")({
         ],
       };
     }
-    const fr = loaderData ? getArticle("fr", loaderData.slug) : undefined;
-    const en = loaderData ? getArticle("en", loaderData.slug) : undefined;
-    const a = fr ?? en;
+    const a = loaderData ? getArticle("fr", loaderData.slug) : undefined;
     const title = a ? `${a.title} - Granit` : "Article - Granit";
     const desc = a?.desc ?? "Article Granit.";
     return {
@@ -67,9 +72,6 @@ export const Route = createFileRoute("/ressources/$slug")({
         { property: "og:title", content: title },
         { property: "og:description", content: desc },
         { property: "og:type", content: "article" },
-        // Marché anglais pas encore lancé : les articles EN restent en ligne (liens
-        // existants) mais hors index, comme pour le sitemap qui ne liste que le FR.
-        ...(en && !fr ? [{ name: "robots", content: "noindex, follow" }] : []),
       ],
     };
   },
@@ -80,6 +82,12 @@ export const Route = createFileRoute("/ressources/$slug")({
 function ArticleRoute() {
   const data = Route.useLoaderData();
   if (data.kind === "ancien") return <PageAncien slug={data.slug} />;
+  return <ArticleJson data={data} />;
+}
+
+function ArticleJson({ data }: { data: Extract<ReturnType<typeof Route.useLoaderData>, { kind: "json" }> }) {
+  // Données structurées en français (comme le rendu serveur) ; la page suit la langue de l'écran.
+  const en = useArticleEn(data.slug);
   const { article, plateforme, concurrents } = data;
   const metier = metierDe(article.slug);
   const lds = [
@@ -100,7 +108,11 @@ function ArticleRoute() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }}
         />
       ))}
-      <PageArticle article={article} plateforme={plateforme} concurrents={concurrents ?? {}} />
+      <PageArticle
+        article={en?.article ?? article}
+        plateforme={en ? en.plateforme : plateforme}
+        concurrents={(en ?? data).concurrents ?? {}}
+      />
     </>
   );
 }

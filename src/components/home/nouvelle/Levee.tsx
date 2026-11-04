@@ -4,6 +4,7 @@
    « Mouvements réduits » : le logo est posé d'emblée. */
 import { useEffect, useRef, type CSSProperties } from "react";
 import { usePostHog } from "posthog-js/react";
+import { lienAnnonce } from "@/lib/levee";
 import { GALETS_PIECES, GALETS_VIEWBOX, useLanguage, useLeveeAnnoncee, useReveal } from "./socle";
 import "./levee.css";
 
@@ -24,9 +25,6 @@ const copy = {
   },
 };
 
-/* la page LinkedIn de Granit (celle de src/lib/seo.ts), suivie comme la prise de rendez-vous */
-const LINKEDIN_LEVEE =
-  "https://www.linkedin.com/company/getgranit-ai/?utm_source=getgranit.ai&utm_medium=site&utm_campaign=homepage&utm_content=levee";
 /* la 3e pierre, au centre, est la clé de voûte (en profond) ; même trait que GaletsSymbol du socle */
 const CLE = 2;
 const TRAIT = 15.67;
@@ -269,12 +267,10 @@ function Levee() {
           </p>
           <a
             className="lm-lv-more"
-            href={LINKEDIN_LEVEE}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={lienAnnonce()}
             data-reveal=""
             style={{ "--i": 3 } as CSSProperties}
-            onClick={() => posthog?.capture("linkedin_clicked", { placement: "levee" })}
+            onClick={() => posthog?.capture("levee_annonce_clicked", { placement: "levee" })}
           >
             {t.lien}
             <svg viewBox="0 0 16 16" aria-hidden="true">

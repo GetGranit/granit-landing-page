@@ -2,7 +2,8 @@
 import { useRef, type CSSProperties } from "react";
 import { Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
-import { categorie, dateFr, ficheJson, metierDe, titreCourt } from "@/lib/ressources/contenu";
+import { useLanguage, type Lang } from "@/lib/i18n";
+import { categorie, dateLang, ficheJson, metierDe, titreCourt } from "@/lib/ressources/contenu";
 import { verticale } from "@/lib/ressources/verticales";
 import type { Concurrent, Plateforme, RessourceJson } from "@/lib/ressources/types";
 import { Annuaire } from "../Annuaire";
@@ -10,7 +11,7 @@ import { FenetrePlateforme, MarquePlateforme, PhotoCarte, TitreItalique } from "
 import { estFicheTousPortails, photoFiche } from "@/lib/ressources/photos";
 import { logoPlateforme, statutsCarte } from "@/lib/ressources/logos";
 import { FIGURE_CSS } from "@/lib/ressources/figures";
-import { Fil, itemMetier } from "../Fil";
+import { Fil, itemMetier, useItemRessources } from "../Fil";
 import { SousNav } from "../Onglets";
 import { FicheIdentite } from "./BlocsPlateforme";
 import { Corps } from "./Corps";
@@ -19,17 +20,47 @@ import { CarteAgent, EncartAgent } from "./CtaAgent";
 import { ALireEnsuite, EtapeSuivante, Faq, Sources, Utile } from "./Fin";
 import { Sommaire, SommaireMobile, type Entree } from "./Sommaire";
 
+const copy = {
+  fr: {
+    apercu: "Aperçu, non publié",
+    equipe: "l'équipe Granit",
+    par: "Par",
+    relu: "Relu par",
+    releve: (d: string) => `Informations relevées le ${d}`,
+    maj: (d: string) => `Mis à jour le ${d}`,
+    lecture: (n: number) => `${n} min de lecture`,
+    sources: (n: number) => `${n} source${n > 1 ? "s" : ""}`,
+    faq: "Questions fréquentes",
+    sourcesTitre: "Sources",
+  },
+  en: {
+    apercu: "Preview, not published",
+    equipe: "the Granit team",
+    par: "By",
+    relu: "Reviewed by",
+    releve: (d: string) => `Information checked on ${d}`,
+    maj: (d: string) => `Updated ${d}`,
+    lecture: (n: number) => `${n} min read`,
+    sources: (n: number) => `${n} source${n > 1 ? "s" : ""}`,
+    faq: "Frequently asked questions",
+    sourcesTitre: "Sources",
+  },
+};
+
 /** Bandeau des pages d'aperçu (content/apercu), jamais en production. */
 function BandeauPreview() {
+  const t = copy[useLanguage().lang];
   return (
     <div className="section-sombre px-4 py-2 text-center text-[12px] font-medium uppercase tracking-[0.08em] text-menthe">
-      Aperçu, non publié
+      {t.apercu}
     </div>
   );
 }
 
 function Signature({ a, nbSources }: { a: RessourceJson; nbSources: number }) {
-  const nom = a.author?.name || "l'équipe Granit";
+  const { lang } = useLanguage();
+  const t = copy[lang];
+  const nom = a.author?.name || t.equipe;
   return (
     <div className="mt-5 flex flex-wrap items-center gap-x-[18px] gap-y-2 text-[14px] text-[var(--text-soft)]">
       <span className="flex items-center gap-2">
@@ -50,7 +81,7 @@ function Signature({ a, nbSources }: { a: RessourceJson; nbSources: number }) {
           </span>
         )}
         <span>
-          Par{" "}
+          {t.par}{" "}
           {a.author?.url ? (
             <a
               href={a.author.url}
@@ -79,7 +110,7 @@ function Signature({ a, nbSources }: { a: RessourceJson; nbSources: number }) {
             <path d="M20 6 9 17l-5-5" />
           </svg>
           <span>
-            Relu par{" "}
+            {t.relu}{" "}
             {a.reviewer.url ? (
               <a
                 href={a.reviewer.url}
@@ -97,14 +128,14 @@ function Signature({ a, nbSources }: { a: RessourceJson; nbSources: number }) {
       )}
       <span>
         {(a.type === "plateforme" || a.type === "vs" || a.type === "grille") && a.checkedOn
-          ? `Informations relevées le ${dateFr(a.checkedOn, true)}`
-          : `Mis à jour le ${dateFr(a.dateModified, true)}`}
+          ? t.releve(dateLang(a.checkedOn, lang, true))
+          : t.maj(dateLang(a.dateModified, lang, true))}
       </span>
-      <span>{a.readTime} min de lecture</span>
-      <Metiers slug={a.slug} />
+      <span>{t.lecture(a.readTime)}</span>
+      <Metiers slug={a.slug} lang={lang} />
       {nbSources > 0 && (
         <a href="#sources" className="underline underline-offset-[3px] hover:text-[var(--text)]">
-          {nbSources} source{nbSources > 1 ? "s" : ""}
+          {t.sources(nbSources)}
         </a>
       )}
     </div>
@@ -112,8 +143,8 @@ function Signature({ a, nbSources }: { a: RessourceJson; nbSources: number }) {
 }
 
 /** Les métiers de l'article, en liens discrets vers leurs pages. */
-function Metiers({ slug }: { slug: string }) {
-  const vs = (ficheJson(slug)?.verticales ?? []).map((v) => verticale(v)!).filter(Boolean);
+function Metiers({ slug, lang }: { slug: string; lang: Lang }) {
+  const vs = (ficheJson(slug)?.verticales ?? []).map((v) => verticale(v, lang)!).filter(Boolean);
   if (!vs.length) return null;
   return (
     <span>
@@ -143,13 +174,16 @@ export function PageArticle({
   /** Page comparative : fichiers content/concurrents/{slug}.json (sans « exclus »). */
   concurrents?: Record<string, Concurrent>;
 }) {
+  const { lang } = useLanguage();
+  const t = copy[lang];
+  const ressources = useItemRessources();
   const acteurs = (a.concurrents ?? []).map((s) => concurrents[s]).filter(Boolean);
-  const cat = categorie(a.category)!;
+  const cat = categorie(a.category, lang)!;
   const estPlateforme = a.type === "plateforme" && p;
   const entrees: Entree[] = [
     ...(a.tocItems ?? []),
-    ...(a.faqItems?.length ? [{ id: "faq", label: "Questions fréquentes" }] : []),
-    ...(a.sources?.length || estPlateforme ? [{ id: "sources", label: "Sources" }] : []),
+    ...(a.faqItems?.length ? [{ id: "faq", label: t.faq }] : []),
+    ...(a.sources?.length || estPlateforme ? [{ id: "sources", label: t.sourcesTitre }] : []),
   ];
   const insertion = estPlateforme ? (
     <FicheIdentite p={p} />
@@ -161,7 +195,7 @@ export function PageArticle({
   const teinte = { "--ink": cat.ink, "--tint": cat.tint } as CSSProperties;
   const corps = useRef<HTMLDivElement>(null);
   const fiche = ficheJson(a.slug);
-  const metier = metierDe(a.slug);
+  const metier = metierDe(a.slug, lang);
   const nbSources =
     (a.sources?.length ?? 0) + (p ? Object.values(p.sources).filter((s) => !s.url).length : 0);
 
@@ -179,7 +213,7 @@ export function PageArticle({
             <div>
               <Fil
                 items={[
-                  { nom: "Ressources", to: "/ressources" },
+                  ressources,
                   ...(metier ? [itemMetier(metier)] : []),
                   { nom: titreCourt(a.title) },
                 ]}
@@ -246,7 +280,7 @@ export function PageArticle({
               <Faq items={a.faqItems} />
               <Sources article={a} plateforme={p} acteurs={acteurs} />
               <Utile slug={a.slug} />
-              <Ancres racine={corps} />
+              <Ancres racine={corps} version={a.title} />
             </div>
             {/* Sommaire et carte de l'agent collent ensemble ; la colonne s'arrête avant l'encart de fin. */}
             <aside className="hidden min-[980px]:block">

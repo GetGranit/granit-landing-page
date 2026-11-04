@@ -270,6 +270,24 @@
   .btn-clair:hover { transform: translateY(-1px); background: var(--papier); }
   .btn-clair:focus-visible { outline: 2px solid var(--menthe); outline-offset: 2px; }
 
+  /* bouton secondaire de DESIGN.md : papier, filet, sur fond clair */
+  .btn-secondaire {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 0 22px;
+    border: 1px solid var(--filet);
+    border-radius: 999px;
+    background: var(--papier);
+    color: var(--encre);
+    font: 500 15px/1 var(--font-sans);
+    text-decoration: none;
+    transition: border-color 200ms ease;
+  }
+  .btn-secondaire:hover { border-color: var(--filet-champ); }
+  .btn-secondaire:focus-visible { outline: 2px solid var(--profond); outline-offset: 2px; }
+
   .status-dot {
     width: 6px; height: 6px; border-radius: 9999px;
     background: var(--succes); display: inline-block; position: relative;

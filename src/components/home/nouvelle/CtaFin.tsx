@@ -10,7 +10,7 @@ import "./cta-fin.css";
 const copy = {
   fr: {
     l1: "Vos équipes soignent.",
-    l2: "Nos agents encaissent.",
+    l2: "Granit gère le reste.",
     lead: "Opérationnel en 48 h sur vos portails. Rien à installer pour vos équipes.",
     garanties: "Garanties",
     hds: "Hébergé sur un cloud certifié HDS",
@@ -23,7 +23,7 @@ const copy = {
   },
   en: {
     l1: "Your teams care.",
-    l2: "Our agents get you paid.",
+    l2: "Granit handles the rest.",
     lead: "Live on your portals in 48 hours. Nothing for your teams to install.",
     garanties: "Guarantees",
     hds: "Hosted on HDS-certified cloud",

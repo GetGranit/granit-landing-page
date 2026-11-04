@@ -2,6 +2,7 @@
    La vidéo plein cadre tourne en boucle, en pause hors écran ; des pastilles d'agent se posent autour du
    praticien au temps de la vidéo, se cochent et s'effacent. Sous « mouvements réduits » : l'affiche seule
    et une pastille cochée, immobile. Le CSS est dans hero.css. */
+import { lienAnnonce } from "@/lib/levee";
 import { useEffect, useRef, type CSSProperties } from "react";
 import { usePostHog } from "posthog-js/react";
 import { calcomDemoUrl, useLanguage, useLeveeAnnoncee } from "./socle";
@@ -50,9 +51,9 @@ type Task = { r: string; t: string; u: string };
 
 const copy = {
   fr: {
-    bar: "Granit lève 5M€ pour rendre du temps au soin",
+    bar: "Granit lève 6\u00a0M$ pour rendre du temps au soin",
     barMore: "Lire l’annonce",
-    title: ["Vos équipes soignent.", "Nos agents encaissent."],
+    title: ["Vos équipes soignent.", "Granit gère le reste."],
     lead: "Droits, prises en charge, facturation, encaissement : nos agents IA font tourner votre tiers payant de bout en bout, dans vos logiciels actuels.",
     cta: "Voir Granit sur mes dossiers",
     ctaSecond: "Trouver mon métier",
@@ -95,7 +96,7 @@ const copy = {
   en: {
     bar: "Granit raises $6M to give time back to care",
     barMore: "Read the announcement",
-    title: ["Your teams care.", "Our agents get you paid."],
+    title: ["Your teams care.", "Granit handles the rest."],
     lead: "Eligibility, pre-approvals, claims, payments: our AI agents run your entire billing cycle inside the software you already use.",
     cta: "See it on my own files",
     ctaSecond: "Find my specialty",
@@ -214,7 +215,7 @@ export function BandeauLevee() {
   const c = copy[lang];
   return (
     <div className="tv-bar">
-      <a href="#levee">
+      <a href={lienAnnonce()}>
         <span>{c.bar}</span>
         <b className="tv-bar-more">
           {c.barMore}

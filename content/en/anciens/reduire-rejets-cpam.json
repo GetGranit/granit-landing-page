@@ -1,0 +1,18 @@
+{
+  "slug": "reduire-rejets-cpam",
+  "category": "Third-party payment",
+  "title": "Reducing CPAM rejections without changing your practice management software",
+  "desc": "The checks to automate before e-transmission to secure your claims on the first pass.",
+  "time": "8 min",
+  "body": [
+    "Rejections from the local health insurance office (CPAM) are rarely a software problem: they reflect a lack of systematic checks before the SESAM-Vitale claim is sent. Most rejections seen in medical practices, optical stores, pharmacies and clinical labs fall into four families: unverified coverage rights, care pathway, misclassified exemptions, or missing supporting documents. These four families alone account for more than 80% of the primary rejections recorded over the last twelve months at the facilities we support.",
+    "The first automation building block is to systematically query the ADRi online service before each billing, to retrieve the patient’s up-to-date situation: insurance scheme, local office, exemptions, long-term condition (ALD, 100% coverage), maternity, work accident or occupational disease. This simple check, done in real time rather than from memory or from a potentially outdated Carte Vitale (French health insurance card), already eliminates 30 to 40% of rejections related to coverage rights.",
+    "The second building block concerns the coordinated care pathway. Many rejections come from a missing declaration of the patient’s primary care doctor or from misclassifying the context (emergency, specific direct access, away from home). An AI agent can cross-check the consultation context, the patient profile and the applicable rules to pre-qualify the billing and alert the front desk if something is inconsistent.",
+    "The third building block covers exemptions. ALD, CMU-C, ACS, AME, the local Alsace-Moselle schemes, special schemes: each case has its own pricing and coverage rules. An agent that knows these rules automatically applies the right schedule, without depending on the biller’s memory.",
+    "Finally, the fourth building block concerns supporting documents. For some procedures (patient transport, medical devices, long sessions), the CPAM requires electronic documents. An agent can check that they are present, legible and compliant before transmission, and block sending until the file is complete.",
+    "Orchestrating these four building blocks transforms the billing chain. The team no longer handles rejections after the fact, 15 or 30 days later, on cold files it no longer remembers. It validates upstream, on day 0, the cases flagged by the agent, while the patient is still present or easy to reach.",
+    "The operational benefit is quickly measurable: 60 to 80% of avoidable rejections are eliminated within a few weeks, without changing the practice management software (LGO) or the billing software. DSO (days sales outstanding) drops mechanically, cash flow improves, and the administrative time freed up is reinvested in following up complex files.",
+    "The ROI is immediate once monthly volume exceeds a few hundred claim forms. For a group practice of 5 practitioners billing 4,000 procedures a month, that means about 200 to 300 rejections avoided, the equivalent of a day and a half of front desk time recovered every week.",
+    "Deployment follows three stages: an audit of historical rejections to calibrate the rules, a supervised production launch with systematic human validation, then a gradual switch to autonomous mode on standard cases."
+  ]
+}

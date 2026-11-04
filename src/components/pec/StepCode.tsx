@@ -1,6 +1,42 @@
 import { useEffect, useRef, useState } from "react";
 
+import { useLanguage } from "@/lib/i18n";
 import { Kicker, Muted, Screen, TextLink, Title, bigBtn, focusRing } from "./ui";
+
+const copy = {
+  fr: {
+    kicker: "Double authentification",
+    demande: (portail: string) => `${portail} demande `,
+    em: "un code",
+    refuse: (essai: number) => `Ce code n'a pas été accepté (essai ${essai} sur 3). `,
+    suivantTotp: "Attendez le code suivant dans l'appli.",
+    suivantEmail: "Prenez le dernier e-mail reçu.",
+    introTotp: (portail: string) =>
+      `Ouvrez votre appli d'authentification et tapez le code ${portail} à 6 chiffres.`,
+    introEmail: (portail: string) =>
+      `${portail} vient d'envoyer un code à 6 chiffres à l'adresse e-mail du compte.`,
+    apercu: "Aperçu : tapez n'importe quel code à 6 chiffres (999999 montre un code refusé).",
+    label: "Code à 6 chiffres",
+    valider: "Valider le code",
+    sansCode: "Je n'ai pas de code : le faire avec Paul",
+  },
+  en: {
+    kicker: "Two-factor authentication",
+    demande: (portail: string) => `${portail} asks for `,
+    em: "a code",
+    refuse: (essai: number) => `This code was not accepted (attempt ${essai} of 3). `,
+    suivantTotp: "Wait for the next code in the app.",
+    suivantEmail: "Use the latest email you received.",
+    introTotp: (portail: string) =>
+      `Open your authenticator app and type the 6-digit ${portail} code.`,
+    introEmail: (portail: string) =>
+      `${portail} just sent a 6-digit code to the account’s email address.`,
+    apercu: "Preview: type any 6-digit code (999999 shows a rejected code).",
+    label: "6-digit code",
+    valider: "Confirm the code",
+    sansCode: "I don’t have a code: do it with Paul",
+  },
+};
 
 /**
  * E6 · le code de double authentification, tapé à la main : appli
@@ -23,6 +59,7 @@ export function StepCode({
   /** Aperçu (simulation factice) : on dit qu'un code inventé suffit. */
   apercu?: boolean;
 }) {
+  const t = copy[useLanguage().lang];
   const [code, setCode] = useState("");
   const ref = useRef<HTMLInputElement>(null);
   const sent = useRef(false);
@@ -39,9 +76,9 @@ export function StepCode({
 
   return (
     <Screen id={`code-${essai}`}>
-      <Kicker>Double authentification</Kicker>
-      <Title em="un code" after=".">
-        {portail} demande{" "}
+      <Kicker>{t.kicker}</Kicker>
+      <Title em={t.em} after=".">
+        {t.demande(portail)}
       </Title>
       {essai > 1 ? (
         <p
@@ -49,21 +86,15 @@ export function StepCode({
           className="w-full rounded-xl px-3 py-2 text-[15px]"
           style={{ background: "var(--lavis)", color: "var(--encre)" }}
         >
-          Ce code n'a pas été accepté (essai {essai} sur 3).{" "}
-          {canal === "totp"
-            ? "Attendez le code suivant dans l'appli."
-            : "Prenez le dernier e-mail reçu."}
+          {t.refuse(essai)}
+          {canal === "totp" ? t.suivantTotp : t.suivantEmail}
         </p>
       ) : (
-        <Muted>
-          {canal === "totp"
-            ? `Ouvrez votre appli d'authentification et tapez le code ${portail} à 6 chiffres.`
-            : `${portail} vient d'envoyer un code à 6 chiffres à l'adresse e-mail du compte.`}
-        </Muted>
+        <Muted>{canal === "totp" ? t.introTotp(portail) : t.introEmail(portail)}</Muted>
       )}
       {apercu && (
         <p className="text-[13px]" style={{ color: "var(--text-muted)" }}>
-          Aperçu : tapez n&apos;importe quel code à 6 chiffres (999999 montre un code refusé).
+          {t.apercu}
         </p>
       )}
       <form
@@ -76,7 +107,7 @@ export function StepCode({
       >
         <input
           ref={ref}
-          aria-label="Code à 6 chiffres"
+          aria-label={t.label}
           className={`w-full max-w-[300px] rounded-2xl border-[1.5px] bg-papier px-4 py-4 text-center text-[34px] ${focusRing}`}
           style={{
             borderColor: "var(--filet-champ)",
@@ -101,10 +132,10 @@ export function StepCode({
           disabled={code.length !== 6}
           className={`${bigBtn} w-full disabled:opacity-50`}
         >
-          Valider le code <span className="arrow">→</span>
+          {t.valider} <span className="arrow">→</span>
         </button>
       </form>
-      <TextLink onClick={onPaul}>Je n'ai pas de code : le faire avec Paul</TextLink>
+      <TextLink onClick={onPaul}>{t.sansCode}</TextLink>
     </Screen>
   );
 }

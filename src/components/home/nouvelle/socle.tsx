@@ -1,6 +1,7 @@
 /* Nouvelle home : outils partagés par les sections (portage de la maquette « Last mile »).
    Chaque section vit dans son fichier (Hero, Produit, Connecteurs, Metiers, Securite, Levee, CtaFin)
    et prend ses textes en fr et en en, selon useLanguage(). */
+import { ANNONCE_LEVEE, leveeVisible } from "@/lib/levee";
 import { useEffect, useState, useSyncExternalStore, type RefObject } from "react";
 import { useLanguage, type Lang } from "@/lib/i18n";
 
@@ -19,15 +20,14 @@ export function calcomDemoUrl(placement: string) {
   return `${CALCOM_DEMO_URL}?${params.toString()}`;
 }
 
-/* ---------- la levée : rien ne se montre avant l'annonce publique du 5 novembre 2026 ----------
+/* ---------- la levée : rien ne se montre avant l'annonce publique du 5 novembre 2026 à 8 h 30 ----------
    Le rendu serveur et le premier rendu client cachent toujours (pas d'écart d'hydratation) ;
    après le montage, on compare à l'heure de Paris. ?levee=1 dans l'URL force l'affichage pour relire. */
-export const ANNONCE_LEVEE = "2026-11-05T00:00:00+01:00";
+export { ANNONCE_LEVEE };
 export function useLeveeAnnoncee() {
   const [annoncee, setAnnoncee] = useState(false);
   useEffect(() => {
-    const force = new URLSearchParams(window.location.search).get("levee") === "1";
-    setAnnoncee(force || Date.now() >= new Date(ANNONCE_LEVEE).getTime());
+    setAnnoncee(leveeVisible(window.location.search));
   }, []);
   return annoncee;
 }

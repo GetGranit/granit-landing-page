@@ -1,9 +1,27 @@
 import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 
+import { useLanguage } from "@/lib/i18n";
 import { Kicker, Muted, Screen, Title } from "./ui";
 
-const STEPS = ["Photo reçue", "Mutuelle lue", "Portail trouvé"];
+const copy = {
+  fr: {
+    steps: ["Photo reçue", "Mutuelle lue", "Portail trouvé"],
+    kicker: "Lecture de la carte",
+    title: "On cherche ",
+    em: "le bon portail",
+    masque: "identité du patient masquée",
+    ia: "Photo lue par IA, jamais conservée par Granit.",
+  },
+  en: {
+    steps: ["Photo received", "Insurer read", "Portal found"],
+    kicker: "Reading the card",
+    title: "Finding ",
+    em: "the right portal",
+    masque: "patient identity hidden",
+    ia: "Photo read by AI, never stored by Granit.",
+  },
+};
 
 /**
  * E2 · la lecture. La photo reste floutée à l'écran (on montre qu'on ne
@@ -20,6 +38,7 @@ export function StepReading({
   onFinished: () => void;
 }) {
   const reduce = useReducedMotion();
+  const t = copy[useLanguage().lang];
   const [n, setN] = useState(0);
 
   useEffect(() => {
@@ -40,9 +59,9 @@ export function StepReading({
 
   return (
     <Screen id="reading">
-      <Kicker>Lecture de la carte</Kicker>
-      <Title em="le bon portail" after=".">
-        On cherche{" "}
+      <Kicker>{t.kicker}</Kicker>
+      <Title em={t.em} after=".">
+        {t.title}
       </Title>
 
       <div
@@ -81,13 +100,13 @@ export function StepReading({
               color: "var(--text-muted)",
             }}
           >
-            identité du patient masquée
+            {t.masque}
           </span>
         )}
       </div>
 
       <ol className="grid w-full max-w-[340px] gap-2 text-left">
-        {STEPS.map((label, i) => {
+        {t.steps.map((label, i) => {
           const ok = n > i;
           const working = n === i;
           return (
@@ -112,12 +131,12 @@ export function StepReading({
           );
         })}
       </ol>
-      {previewUrl && <Muted>Photo lue par IA, jamais conservée par Granit.</Muted>}
+      {previewUrl && <Muted>{t.ia}</Muted>}
     </Screen>
   );
 }
 
-/** Carte fictive dessinée pour le parcours « carte d'exemple » (aucune vraie donnée). */
+/** Carte fictive dessinée pour le parcours « carte d'exemple » (aucune vraie donnée). Reste en français dans les deux langues : c'est une carte française. */
 function ExampleCard() {
   const mono = { fontFamily: "var(--font-mono)" };
   return (

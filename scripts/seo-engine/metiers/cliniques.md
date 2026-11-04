@@ -37,8 +37,6 @@ Ne pas écrire tel quel : « ROC étendu aux cliniques, montée en charge en sep
 
 ## Ce que Granit fait pour ce métier
 
-<!-- À VALIDER PAR PAUL -->
-
 Formuler comme une offre, jamais comme un résultat : Granit peut prendre en charge vos rejets et vos demandes de prise en charge.
 
 - Granit peut reprendre les rejets FSE et les retours NOEMIE : lecture du motif, correction, nouvel envoi.
