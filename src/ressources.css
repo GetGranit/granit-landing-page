@@ -494,7 +494,7 @@ body {
   object-fit: contain;
   object-position: left center;
 }
-/* En-tête d'une fiche : le fond de la page est déjà lavis, la scène passe en blush (forme). */
+/* En-tête d'une fiche : le fond de la page est déjà rosé, la scène passe en blush (forme). */
 .ress-fenetre-entete .ress-fenetre-scene {
   background: var(--blush);
 }

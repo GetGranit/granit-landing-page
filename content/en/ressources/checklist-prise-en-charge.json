@@ -1,0 +1,158 @@
+{
+  "slug": "checklist-prise-en-charge",
+  "id": "B8",
+  "category": "rejets",
+  "categoryName": "Rejections and corrections",
+  "type": "resolution",
+  "plateforme": null,
+  "title": "Checklist before sending a coverage request: the points that prevent rejection",
+  "primaryKeyword": "checklist prise en charge optique",
+  "keywordCluster": [],
+  "parentSlug": "rejet-tiers-payant",
+  "level": "Fille",
+  "author": {
+    "name": "Olivier",
+    "jobTitle": "Writer, third-party payment expert",
+    "photo": "/auteurs/olivier.jpg",
+    "url": null
+  },
+  "reviewer": {
+    "name": "Nathalie",
+    "jobTitle": "Writer, optical industry expert",
+    "photo": "/auteurs/nathalie.jpg",
+    "url": null
+  },
+  "datePublished": "2026-10-19",
+  "dateModified": "2026-10-19",
+  "checkedOn": null,
+  "wordCount": 2201,
+  "readTime": 10,
+  "metaDescription": "Optical coverage request checklist: coverage rights, portal, prescription, quote and documents to check before sending. The 8 checks that prevent rejection.",
+  "contentHtml": "<p><strong>An optical coverage request checklist comes down to five groups of checks: the customer's coverage rights as of today, the right portal for their supplementary health insurer (mutuelle), a usable prescription, a quote consistent with the eyewear codes, and the documents the platform asks for.</strong> An avoidable denial almost always comes from one of these points, not from what the contract covers. Checking them before sending takes two minutes. Fixing a rejection afterwards costs a new entry, a customer to call back and a file left waiting.</p><p>This page follows the order of a file at the counter: the situation, what you see on the portal, the causes, the 8 checks to run, the documents, the proof to keep, when to follow up and when to escalate. It applies to optics, whatever the portal.</p><div class=\"key-takeaways\"><strong>Key points</strong><ul><li>Most avoidable denials are decided before sending: closed coverage rights, wrong beneficiary, wrong insurer selected, unusable prescription or inconsistent quote.</li><li>Check coverage rights as of the planned dispensing date, not just today's date, and on the third-party payment card that is currently valid.</li><li>The quote and the request must describe exactly the same eyewear: same lenses, same frame, same 100% Santé (zero out-of-pocket scheme) class, same amounts.</li><li>Keep the exact reason shown by the portal if the request is denied: it tells you what to fix.</li><li>Action for today: print the 8 checks below and run through them before every entry for one week.</li></ul></div><h2 id=\"dans-quel-cas-utiliser-la-checklist\">When does this checklist help you?</h2><p>It helps at the exact moment the customer has approved their quote and you are about to enter the request on the portal. It is the last moment when an error can be fixed at no cost.</p><p>A coverage approval (PEC, prise en charge) is the request for approval that the optician sends to the customer's supplementary health insurance, the AMC (supplementary insurance), most often through a third-party payment (tiers payant: the patient pays nothing upfront, insurers pay the provider directly) platform. The approval sets what the mutuelle commits to pay. The share of the mandatory insurance (AMO, the French Social Security) follows a separate path. For the full chain, from request to collection, see our guide to <a href=\"/ressources/tiers-payant-opticien\">third-party payment for opticians</a>.</p><p>The typical case looks like this. A customer chooses progressive lenses, shows you their mutuelle card and leaves while waiting for the approval. The next day, the portal shows a denial: the beneficiary entered does not match the contract. You have to call the customer back, find the right card, enter everything again, and wait again. None of this came from the contract's coverage: the error was in the entry.</p><p>The checklist exists to make this scenario rare. It does not replace reading the denial reason when one arrives, but it removes the denials that should never have happened.</p><h2 id=\"ce-que-vous-voyez-sur-le-portail\">What do you see on the portal when a request goes out incomplete?</h2><p>Three situations come up: a denial with a reason, a request for an additional document, or a request that stays unanswered. Each platform has its own labels, but the logic is the same everywhere.</p><p>Statuses fall into four broad groups. Approval means the mutuelle commits to the amount shown. Approval subject to documents means the commitment depends on a document still to be provided. A pending request is waiting to be processed, sometimes by hand. A denial stops the file, with a reason that is more or less precise depending on the portal.</p><p>A fourth case shows up later: the request was approved, but the payment received does not match the approval. It often comes from a gap between the invoice and the request. We covered it in detail in the article on the <a href=\"/ressources/virement-mutuelle-inferieur\">mutuelle bank transfer lower than the invoice</a>.</p><div class=\"callout callout--tip\"><p><strong>The right habit:</strong> copy the exact denial reason into your software or the customer file, word for word. Rewording it from memory (“coverage rights issue”) loses the information that lets you fix it the first time.</p></div><h2 id=\"causes-rejet-prise-en-charge-optique\">What causes an optical coverage request to be rejected?</h2><p>There are five groups of causes: the customer's identity and coverage rights, the choice of portal and insurer, the prescription, the eyewear and its quote, and the documents. The table below lists them in the order they are checked at the counter.</p><div class=\"tbl\"><table><tr><th>Cause</th><th>Where to check</th><th>Fix</th></tr><tr><td>Supplementary coverage rights closed or not yet open</td><td>Third-party payment card (validity dates), online eligibility on the portal</td><td>Ask the customer for their current card, or bill outside third-party payment</td></tr><tr><td>Beneficiary misidentified (dependent entered as the primary policyholder, or the reverse)</td><td>Third-party payment card: name of the main insured person and of the beneficiaries</td><td>Enter the actual wearer of the eyewear, linked to the right insured person</td></tr><tr><td>Wrong portal or wrong insurer selected from the list</td><td>Logo and information on the card, the portal's insurer picker</td><td>Enter the request again on the portal shown on the card</td></tr><tr><td>Prescription expired, illegible or incomplete</td><td>Date, prescriber, corrections, lens details</td><td>Get a valid prescription before the request</td></tr><tr><td>Renewal not yet open</td><td>Date of the last reimbursed eyewear, if the customer knows it</td><td>Check the applicable renewal rule before entering</td></tr><tr><td>Codes, class or amounts inconsistent with the quote</td><td>Standardized quote, LPP codes for the lenses and frame</td><td>Align the request line by line with the signed quote</td></tr><tr><td>Missing or illegible document</td><td>List of documents required by the platform</td><td>Attach a clear, complete scan in the right format</td></tr></table></div><p>The first two rows concern the person, not the eyewear. They are also the easiest to avoid, because everything is written on the card. The case of a beneficiary linked to the wrong person has its own article: <a href=\"/ressources/rejet-beneficiaire-inconnu\">“bénéficiaire inconnu” (unknown beneficiary) rejection</a>, with how to fix it without touching the AMO share.</p><p>The third row often surprises teams: the same mutuelle can appear in several pickers, or not appear where you expect it. The habit to build is to start from the card, then <a href=\"/ressources/mutuelle-quel-portail\">find out which portal a mutuelle uses</a> before entry.</p><p>The last four rows concern the technical file. They need more attention, because a request can be approved for an amount that no longer matches what you dispense, and the problem only surfaces at payment.</p><h2 id=\"points-a-verifier-avant-envoi\">Which points should you check before sending an optical coverage request?</h2><p>The safest method is to always follow the same order: the person, the portal, the prescription, the eyewear, the documents, then a final read-through. Here are the 8 checks to run before each submission.</p><ol class=\"steps\"><li><strong>Check the third-party payment card.</strong> It must be the current year's card, and its validity dates must cover the planned dispensing date of the eyewear.</li><li><strong>Identify the right beneficiary.</strong> Find on the card the primary policyholder (ouvrant droit, the insured person who holds the contract) and the beneficiary who will wear the glasses. A child or spouse is entered as a beneficiary, linked to the primary policyholder.</li><li><strong>Choose the portal and the insurer.</strong> Start from the logo and the information on the card, open the matching portal, then select the exact insurer from the list. A neighboring insurer with a similar name sends the request to the wrong place.</li><li><strong>Check the prescription.</strong> Date, prescriber's identity, patient's identity, corrections eye by eye, addition for progressive lenses. If an item is missing or illegible, the request must not go out.</li><li><strong>Check the renewal rule.</strong> Ask the customer for the date of their last reimbursed eyewear. An early renewal without justification is a classic cause of denial.</li><li><strong>Align the request with the quote.</strong> Same lenses, same frame, same 100% Santé class, same amounts, line by line. The signed quote is the reference.</li><li><strong>Check the eyewear codes.</strong> Each lens and the frame correspond to an LPP code. A code that does not match the correction entered creates a visible inconsistency.</li><li><strong>Attach the documents and read through.</strong> Clear, complete scans, then one more read of the summary screen before confirming, especially the beneficiary's name and the amounts.</li></ol><div data-figure=\"checklist-avant-envoi\"></div><p>Checks 6 and 7 deserve a closer look. According to <a href=\"https://www.ameli.fr/assure/remboursements/rembourse/soins-protheses-dentaires-optique-audition/lunettes-lentilles\">ameli.fr</a>, the 100% Santé optical offer distinguishes class A eyewear, with no out-of-pocket amount, from class B eyewear, which is freely priced. The quote presented to the customer must show this distinction. Your request must reflect the class actually chosen, including when the customer combines a frame from one class with lenses from another.</p><p>The LPP (list of reimbursable products and services) is the nomenclature that codes each lens and each frame. It can be looked up on the <a href=\"http://www.codage.ext.cnamts.fr/codif/tips//index_presentation.php?p_site=AMELI\">French national health insurance (Assurance Maladie) coding site</a>. In practice, your software suggests the code; the check is to make sure it matches the lens ordered and the prescription's correction, especially after the quote has been changed.</p><p>When these checks repeat across dozens of files a day, they are often the first thing dropped at peak hours. This is what <a href=\"/agents\">Granit's agents</a> take over: they run automatic checks on each file before submitting it on the portal, then send the status back to the team. You stay in charge of the cases that need a conversation with the customer.</p><h2 id=\"comment-verifier-les-droits-du-client\">How do you check the customer's coverage rights before the request?</h2><p>Supplementary coverage rights are checked on the third-party payment card the customer presents, then, when the portal allows it, by an online eligibility check before entry. AMO rights are checked separately with the Carte Vitale (French health insurance card).</p><p>The third-party payment card carries three decisive pieces of information: the insurer and the portal, the validity period, and the list of beneficiaries. A card from the previous year is a warning sign, even if the customer says nothing has changed. A change of employer or contract may have closed their coverage rights without the customer knowing.</p><p>Also look at the planned dispensing date. If the order takes time and the coverage rights end before the eyewear is handed over, the approval obtained today may not hold at invoice time. In that case, ask the customer whether they have received a new card, or warn them of the risk.</p><div class=\"callout callout--warn\"><p><strong>The trap:</strong> entering the main insured person because their name is at the top of the card, when the glasses are for their child. The portal expects the wearer of the eyewear, linked to the primary policyholder.</p></div><h2 id=\"pieces-a-joindre-au-dossier\">Which documents should you attach to the coverage request file?</h2><p>The basis is almost always the same: the prescription and the quote. The exact documents and their format depend on the platform, and some require an additional supporting document depending on the case.</p><p>For each document, three rules apply everywhere. The scan must be fully legible, with no cut-off edge or glare. It must match the file entered: the right prescription, the final version of the quote. And it must be in the format the portal accepts, otherwise the upload fails or the document is not visible to the case handler.</p><p>An early renewal, a change of correction or special eyewear may call for a justification. Before submitting this type of file, check the page for the portal concerned in our directory of <a href=\"/ressources/portails-tiers-payant\">third-party payment portals</a>: each page details the platform's coverage requests and statuses.</p><h2 id=\"preuves-a-garder\">What proof should you keep once the request is sent?</h2><p>Keep four items: the request number or reference, the date sent, the status shown with its exact label, and the documents as you uploaded them.</p><p>The request reference is the first thing the platform's support team will ask you for. The date sent tells you when to follow up. The status and its label say what the mutuelle accepted, and for what amount. The uploaded documents prove the file was complete if you are told otherwise.</p><p>Once the approval is granted, keep it with the file until payment. It is what you will compare with the bank transfer. If the amount paid differs, you will know right away whether the gap comes from the invoice or from the mutuelle.</p><h2 id=\"quand-relancer\">When should you follow up if no answer comes?</h2><p>Follow up when the time announced by the platform has passed, and only after checking the status on the portal again. There is no universal deadline: each platform sets its own, when it publishes one.</p><p>A pending request is not necessarily stuck. It may be waiting for a manual review, a document, or an answer from the mutuelle itself. Before following up, open the file: an approval subject to documents shown since the day before is resolved by uploading the document, not by a phone call.</p><p>For the deadlines to respect step by step (coverage request, invoice, acknowledgments, NOEMIE remittance files), follow our calendar: <a href=\"/ressources/quand-relancer-mutuelle\">when to follow up with a mutuelle</a>.</p><h2 id=\"quand-escalader\">When should you escalate a rejection, and to whom?</h2><p>Escalate when the denial reason does not match the file, or when a correction made according to the reason is denied a second time. The first contact is the platform's support team, then the mutuelle if the platform refers you to it.</p><p>Before calling, gather the request reference, the exact reason, the third-party payment card and the uploaded documents. The support contact details are in the contact section of each portal page in our directory. A well-prepared call is often resolved in a single exchange.</p><p>If the problem appears after the invoice, as a rejection in the payment return, the logic changes: you need to read the code sent. Our list of <a href=\"/ressources/codes-rejets-noemie\">NOEMIE rejection codes</a> gives the meaning of each code and the action to take.</p><p>Keep the exact reason shown by the portal: it tells you what to fix.</p>",
+  "tocItems": [
+    {
+      "id": "dans-quel-cas-utiliser-la-checklist",
+      "label": "When to use the checklist"
+    },
+    {
+      "id": "ce-que-vous-voyez-sur-le-portail",
+      "label": "What you see on the portal"
+    },
+    {
+      "id": "causes-rejet-prise-en-charge-optique",
+      "label": "Causes of an optical PEC rejection"
+    },
+    {
+      "id": "points-a-verifier-avant-envoi",
+      "label": "The 8 points to check before sending"
+    },
+    {
+      "id": "comment-verifier-les-droits-du-client",
+      "label": "Checking the customer's coverage rights"
+    },
+    {
+      "id": "pieces-a-joindre-au-dossier",
+      "label": "Documents to attach to the file"
+    },
+    {
+      "id": "preuves-a-garder",
+      "label": "Proof to keep"
+    },
+    {
+      "id": "quand-relancer",
+      "label": "When to follow up"
+    },
+    {
+      "id": "quand-escalader",
+      "label": "When to escalate, and to whom"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "Which points should you check before sending an optical coverage request?",
+      "answer": "Check, in this order, the third-party payment card and its validity dates, the right beneficiary, the portal and the exact insurer, the prescription, the renewal rule, the consistency between the request and the quote, the LPP codes of the eyewear, then the attachments. Reading the summary screen once more before confirming prevents name and amount errors."
+    },
+    {
+      "question": "Which documents should you attach to the coverage request file?",
+      "answer": "The basis is the prescription and the final version of the quote. The exact documents and their format depend on the platform, and some cases, such as an early renewal, may require a justification. Each scan must be fully legible and match the file entered."
+    },
+    {
+      "question": "How do you check the customer's coverage rights?",
+      "answer": "Check the third-party payment card the customer presents: insurer, validity period and list of beneficiaries. When the portal allows it, look up eligibility online before entering the request. Also check that the coverage rights cover the planned dispensing date of the eyewear, not just today's date."
+    },
+    {
+      "question": "How do you know which portal a mutuelle uses?",
+      "answer": "Start from the logo and the information printed on the customer's third-party payment card, then open the matching portal and choose the exact insurer from its list. The same supplementary health insurer (mutuelle) can appear in several pickers, which is why it pays to check before entry rather than guess."
+    }
+  ],
+  "sources": [
+    {
+      "label": "ameli.fr · Glasses and contact lenses: reimbursement and 100% Santé",
+      "url": "https://www.ameli.fr/assure/remboursements/rembourse/soins-protheses-dentaires-optique-audition/lunettes-lentilles"
+    },
+    {
+      "label": "codage.ext.cnamts.fr · List of products and services (LPP)",
+      "url": "http://www.codage.ext.cnamts.fr/codif/tips//index_presentation.php?p_site=AMELI"
+    }
+  ],
+  "figures": [
+    {
+      "id": "checklist-avant-envoi",
+      "type": "etapes",
+      "titre": "The checks before sending a coverage request",
+      "legende": "The order matters: the person and the portal first, the eyewear next, the final read-through last.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "Card and beneficiary",
+          "detail": "Valid on the dispensing date, right wearer",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Portal and insurer",
+          "detail": "Start from the card, exact insurer in the list",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Prescription and renewal",
+          "detail": "Date, prescriber, corrections, last eyewear",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Quote and LPP codes",
+          "detail": "Same lenses, frame, class and amounts",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Documents and read-through",
+          "detail": "Clear scans, summary screen checked",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [
+    {
+      "id": "A13",
+      "slug": "mutuelle-quel-portail",
+      "anchor": "find out which portal a mutuelle uses",
+      "type": "outil"
+    }
+  ],
+  "liensEntrants": [],
+  "remplace": [],
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-19T13:12:28.494Z",
+    "avertissements": [
+      "aucune citation (facultative)",
+      "source non vérifiable (403) : https://www.ameli.fr/assure/remboursements/offre-100-sante/optique",
+      "page rendue en JavaScript, citations non vérifiables : http://www.codage.ext.cnamts.fr/codif/tips//index_presentation.php?p_site=AMELI"
+    ]
+  }
+}

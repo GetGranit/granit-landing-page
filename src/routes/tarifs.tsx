@@ -65,7 +65,7 @@ const content = {
       {
         question: "Nos données de santé sont-elles protégées ?",
         answer:
-          "Oui. Granit est certifié HDS et l'hébergement HDS est inclus dans tous les plans. Les données sont hébergées en France ; le détail des garanties est sur la page Sécurité.",
+          "Oui. L'hébergement HDS est inclus dans tous les plans. Les données sont stockées chez un hébergeur certifié HDS, dans l'Union européenne ; le détail des garanties est sur la page Sécurité.",
       },
     ],
     tiers: [
@@ -89,57 +89,57 @@ const content = {
   en: {
     eyebrow: "Pricing",
     title: "Simple, clear, usage-based.",
-    intro: "A monthly platform fee per center, then a usage fee per agent based on enabled workflows and processed volume.",
+    intro: "A monthly platform fee per center, then a usage-based fee per agent depending on the workflows enabled and the volume processed.",
     summaryLabel: "In short:",
     summary:
-      "Granit is billed per center and per month: from €199 excl. VAT for one center, from €149 per center for 5 to 10 centers, custom pricing above 10 centers. A usage fee per agent is added, based on enabled workflows and processed volume. HDS hosting, connectors and support are included, and the contract can be cancelled at any time with 30 days' notice.",
+      "Granit is priced per center and per month: from €199 excl. VAT for one center, from €149 excl. VAT per center for 5 to 10 centers, and on quote above 10 centers. A usage-based fee per agent is added, depending on the workflows enabled and the volume processed. HDS hosting, connectors and support are included, and the contract can be canceled at any time with 30 days' notice.",
     tiersTitle: "Price per center",
     faqTitle: "Frequently asked questions",
     faq: [
       {
         question: "How much does Granit cost?",
         answer:
-          "A monthly platform fee per center: from €199 excl. VAT per month for one center, from €149 per center for 5 to 10 centers, custom pricing above 10 centers. A usage fee per agent is added. The exact price is set in the quote.",
+          "A monthly platform fee per center: from €199 excl. VAT per month for one center, from €149 excl. VAT per month per center for 5 to 10 centers, and on quote above 10 centers. A usage-based fee per agent is added. The exact price is in the quote.",
       },
       {
         question: "Is there a minimum commitment?",
         answer:
-          "Our terms of sale set no minimum term: the client can cancel at any time by email with 30 days' notice, with no penalty or fee.",
+          "Our terms and conditions of sale set no minimum term: the customer can cancel at any time, by email, with 30 days' notice, with no penalty or fee.",
       },
       {
-        question: "How is the usage fee calculated?",
+        question: "How is the usage-based fee calculated?",
         answer:
           "It depends on the agents enabled, the workflows they handle and the volume they process. It comes on top of the platform fee and is detailed in the quote.",
       },
       {
         question: "What is included in the platform fee?",
         answer:
-          "Access to the Granit platform, custom-configured AI agents, 50+ native connectors, production rollout, HDS hosting, dedicated support and full data reversibility.",
+          "Access to the Granit platform, custom-configured AI agents, 50+ native connectors (AMC, AMO, SESAM-Vitale, NOEMIE, hospital information systems, LGO), go-live, HDS hosting, dedicated support and full reversibility of your data.",
       },
       {
         question: "Which third-party payment platforms are covered?",
         answer:
-          "Granit works with every third-party payment platform. Agents also plug into your practice software, with no migration or API integration.",
+          "Granit works with every third-party payment platform. The agents also connect to your practice management software, with no migration and no API integration.",
       },
       {
         question: "Is our health data protected?",
         answer:
-          "Yes. Granit is HDS certified and HDS hosting is included in every plan. Data is hosted in France; see the Security page for details.",
+          "Yes. HDS hosting is included in every plan. Data is stored with an HDS-certified host, in the European Union; the full list of safeguards is on the Security page.",
       },
     ],
     tiers: [
-      { label: "1 center", price: "From €199", suffix: "/ month excl. VAT per center", desc: "To launch Granit on a single point of sale." },
-      { label: "5 to 10 centers", price: "From €149", suffix: "/ month excl. VAT per center", desc: "Degressive pricing for growing groups.", featured: true, save: "−25%" },
-      { label: "More than 10 centers", price: "Custom", suffix: "deployment, support and volumes adapted", desc: "Network pricing, dedicated support and stronger SLAs." },
+      { label: "1 center", price: "From €199", suffix: "/ month excl. VAT per center", desc: "To launch Granit in one location." },
+      { label: "5 to 10 centers", price: "From €149", suffix: "/ month excl. VAT per center", desc: "Volume pricing for growing groups.", featured: true, save: "−25%" },
+      { label: "More than 10 centers", price: "On quote", suffix: "deployment, support and volumes tailored to you", desc: "Network pricing, dedicated support and enhanced SLAs." },
     ],
-    usage: "+ a usage fee per agent",
+    usage: "+ a usage-based fee per agent",
     included: "Included in every plan",
     cta: "Book a free demo",
     includes: [
       "Access to the Granit platform",
       "Custom-configured AI agents",
-      "50+ native connectors: insurers, public payer, SESAM-Vitale, NOEMIE, hospital systems, ERPs",
-      "Fast production deployment",
+      "Native connectors (50+): AMC, AMO, SESAM-Vitale, NOEMIE, hospital information systems, LGO",
+      "Fast go-live",
       "HDS hosting included",
       "Dedicated support",
       "Full reversibility",

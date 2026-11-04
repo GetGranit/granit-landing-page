@@ -1,0 +1,710 @@
+/* =========================================================
+   NOUVELLE HOME : 0. PRODUIT (portage de lm.css, bloc « 0. PRODUIT », présentation 1 « Démo en calques »)
+   Joue seule, en boucle, sans lien avec le défilement ; en pause hors écran (Produit.tsx).
+   Couleurs de la maquette ramenées aux jetons : blanc → papier, ombres neutres → encre, pastille des agents → encre.
+   ========================================================= */
+.nh .lm-pr {
+  --tag: var(--ink-2);
+  --shade-rgb: var(--ink-rgb);
+  --blush-rgb: 250, 234, 239;
+  background: var(--rose);
+  color: var(--ink);
+  overflow: hidden;
+}
+.nh .lm-pr .lm-eb {
+  color: var(--deep);
+}
+.nh .lm-pr-head {
+  display: grid;
+  gap: 16px;
+}
+.nh .lm-pr-head .lm-h2 {
+  font-size: clamp(34px, 3.6vw, 52px);
+  max-width: 14em;
+}
+.nh .lm-pr-head .lm-lead {
+  color: var(--t-muted);
+}
+
+/* curseurs d'agent (repris de la piste « Agents en calques ») */
+.nh .lm-agent {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 30;
+  pointer-events: none;
+  will-change: transform;
+  --ac: var(--mint);
+}
+.nh .lm-agent .ptr {
+  position: absolute;
+  left: -1px;
+  top: -1px;
+  width: 22px;
+  height: 24px;
+  overflow: visible;
+  filter: drop-shadow(0 3px 5px rgba(var(--shade-rgb), 0.3));
+}
+.nh .lm-agent .ptr path {
+  fill: var(--ac);
+  stroke: var(--ink);
+  stroke-width: 1.3;
+  stroke-linejoin: round;
+}
+.nh .lm-agent .tag {
+  position: absolute;
+  left: 17px;
+  top: 21px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  height: 28px;
+  max-width: var(--mw, 460px);
+  padding: 0 12px 0 8px;
+  border-radius: 999px;
+  background: var(--tag);
+  color: var(--rose);
+  font: 500 12.5px/1 var(--sans);
+  white-space: nowrap;
+  box-shadow:
+    0 8px 22px -6px rgba(var(--shade-rgb), 0.45),
+    inset 0 0 0 1px rgba(var(--rose-rgb), 0.08);
+}
+.nh .lm-agent.flip .tag {
+  left: auto;
+  right: 4px;
+}
+.nh .lm-agent .who {
+  flex: none;
+  font: 500 10px/1 var(--sans);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ac);
+}
+.nh .lm-agent .act {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.nh .lm-agent .act:empty {
+  display: none;
+}
+.nh .lm-agent .spin,
+.nh .lm-agent .okk {
+  width: 14px;
+  height: 14px;
+  flex: none;
+}
+.nh .lm-agent .spin svg {
+  width: 14px;
+  height: 14px;
+  animation: nh-pr-spin 0.9s steps(8) infinite;
+}
+.nh .lm-agent .spin line {
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+}
+.nh .lm-agent .okk {
+  display: none;
+  border-radius: 50%;
+  background: var(--ac);
+  color: var(--ink);
+  font: 700 9px/14px var(--sans);
+  text-align: center;
+}
+.nh .lm-agent.fin .okk {
+  display: block;
+}
+.nh .lm-agent.fin .spin,
+.nh .lm-agent.idle .spin {
+  display: none;
+}
+.nh .lm-agent.idle .tag::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  margin: 0 1px 0 3px;
+  border-radius: 50%;
+  background: var(--ac);
+}
+.nh .lm-agent .ring {
+  position: absolute;
+  left: -15px;
+  top: -15px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid var(--ac);
+  opacity: 0;
+}
+.nh .lm-agent.click .ring {
+  animation: nh-pr-ring 0.55s ease-out;
+}
+.nh .lm-agent.click .ptr {
+  animation: nh-pr-tap 0.3s ease-out;
+}
+@keyframes nh-pr-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes nh-pr-ring {
+  0% {
+    opacity: 0.95;
+    transform: scale(0.3);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.7);
+  }
+}
+@keyframes nh-pr-tap {
+  50% {
+    transform: scale(0.82);
+  }
+}
+
+/* --- Démo en calques : quatre logiciels empilés, lue comme une mini-vidéo --- */
+.nh .lm-pr1 {
+  display: grid;
+  grid-template-columns: minmax(300px, clamp(380px, 35vw, 500px)) minmax(0, 1fr); /* assez large pour le titre sur deux lignes */
+  gap: clamp(16px, 3vw, 48px);
+  align-items: center;
+}
+.nh .lm-pr1-side {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  gap: 0;
+}
+.nh .lm-pr1-side .lm-h2 {
+  font-size: clamp(30px, 3vw, 44px);
+}
+.nh .lm-player {
+  display: grid;
+  gap: 14px;
+  margin-top: 32px;
+}
+.nh .lm-segs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+  max-width: 320px;
+}
+.nh .lm-segs button {
+  appearance: none;
+  position: relative;
+  height: 22px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+.nh .lm-segs button::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 9px;
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(var(--ink-rgb), 0.14);
+}
+.nh .lm-segs button i {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 9px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--deep);
+  transform-origin: left;
+  transform: scaleX(var(--f, 0));
+}
+.nh .lm-segs button:hover::before {
+  background: rgba(var(--ink-rgb), 0.3);
+}
+.nh .lm-pr1-stage {
+  position: relative;
+  min-width: 0;
+  height: clamp(460px, 64vh, 660px);
+}
+.nh .lm-pr1-stage::before {
+  content: "";
+  position: absolute;
+  inset: 8% 4% 4%;
+  background:
+    radial-gradient(closest-side at 30% 60%, rgba(var(--mint-rgb), 0.55), transparent),
+    radial-gradient(closest-side at 72% 38%, rgba(var(--sky-rgb), 0.7), transparent),
+    radial-gradient(closest-side at 55% 80%, rgba(var(--blush-rgb), 0.9), transparent);
+  filter: blur(30px);
+  pointer-events: none;
+}
+/* l'échelle --k ne sert qu'avant le JavaScript (rendu serveur) : ensuite la démo la calcule sur la taille de la scène */
+.nh .lm-pr1-inner {
+  --k: 0.82;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 900px;
+  height: 640px;
+  transform-origin: 50% 50%;
+  transform: translate(-50%, -50%) scale(var(--k));
+}
+.nh .lm-layer {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 560px;
+  height: 320px;
+  margin: -160px 0 0 -280px;
+  transform-origin: 50% 50%;
+  will-change: transform, opacity;
+}
+.nh .lm-win {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 14px;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 13.5px/1.35 var(--sans);
+  box-shadow:
+    0 0 0 1px rgba(var(--ink-rgb), 0.13),
+    0 30px 60px -30px rgba(var(--ink-rgb), 0.5),
+    0 2px 0 rgba(255, 253, 253, 0.9) inset;
+}
+.nh .lm-win::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--rose);
+  opacity: var(--dim, 0);
+  pointer-events: none;
+}
+.nh .lm-wbar {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  height: 44px;
+  padding: 0 16px;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--lc) 42%, var(--paper)),
+    var(--paper) 72%
+  );
+}
+.nh .lm-wbar .ic {
+  width: 18px;
+  height: 18px;
+  border-radius: 6px;
+  background: var(--lc);
+  box-shadow: inset 0 0 0 1px rgba(var(--ink-rgb), 0.15);
+}
+.nh .lm-wbar b {
+  font: 600 15px/1 var(--sans);
+}
+.nh .lm-wbar .cr {
+  color: var(--t-faint);
+  font-size: 12.5px;
+}
+.nh .lm-wbody {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  gap: 14px;
+  align-content: start;
+  padding: 18px;
+}
+.nh .lm-wbody .ph {
+  font: 600 14px/1 var(--sans);
+}
+.nh .lm-st {
+  flex: none;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: var(--wash);
+  color: var(--t-muted);
+  font: 500 11.5px/1 var(--sans);
+  white-space: nowrap;
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+.nh .lm-st.ok {
+  background: rgba(var(--mint-rgb), 0.6);
+  color: var(--ok-ink);
+}
+.nh .lm-st.ask {
+  background: var(--sky);
+  color: var(--ink);
+}
+.nh .lm-tabs {
+  display: flex;
+  gap: 4px;
+  width: max-content;
+  padding: 3px;
+  border-radius: 9px;
+  background: var(--wash);
+}
+.nh .lm-tabs span {
+  padding: 7px 11px;
+  border-radius: 7px;
+  color: var(--t-muted);
+  font-size: 12px;
+}
+.nh .lm-tabs span.on {
+  background: var(--paper);
+  color: var(--ink);
+  font-weight: 600;
+  box-shadow: 0 1px 2px rgba(var(--ink-rgb), 0.12);
+}
+.nh .lm-frm label {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--t-muted);
+  font-size: 12.5px;
+}
+.nh .lm-frm .fr {
+  display: flex;
+  gap: 8px;
+}
+.nh .lm-field {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 38px;
+  padding: 0 12px;
+  border: 1px solid rgba(var(--ink-rgb), 0.18);
+  border-radius: 9px;
+  background: var(--paper);
+  font: 400 13.5px/1 var(--sans);
+  font-variant-numeric: tabular-nums;
+  transition:
+    border-color 0.25s,
+    box-shadow 0.25s;
+}
+.nh .lm-field.sm {
+  flex: none;
+  width: 124px;
+  height: 34px;
+  font-size: 13px;
+}
+.nh .lm-field.focus {
+  border-color: var(--deep);
+  box-shadow: 0 0 0 3px rgba(var(--mint-rgb), 0.5);
+}
+.nh .lm-typed::after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 14px;
+  margin-left: 1px;
+  vertical-align: -2px;
+  background: var(--ink);
+  opacity: 0;
+}
+.nh .lm-field.focus .lm-typed::after {
+  opacity: 1;
+  animation: nh-pr-blink 1s steps(2) infinite;
+}
+@keyframes nh-pr-blink {
+  50% {
+    opacity: 0;
+  }
+}
+.nh .lm-b {
+  appearance: none;
+  border: 0;
+  padding: 11px 14px;
+  border-radius: 9px;
+  background: var(--ink);
+  color: var(--rose);
+  font: 600 12.5px/1 var(--sans);
+  white-space: nowrap;
+  transition:
+    transform 0.15s,
+    background 0.2s;
+}
+.nh .lm-b.press {
+  transform: scale(0.92);
+  background: var(--deep);
+  color: var(--paper);
+}
+.nh .lm-res {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(var(--mint-rgb), 0.22);
+  color: var(--t-muted);
+  font-size: 13px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition:
+    opacity 0.35s,
+    transform 0.35s;
+}
+.nh .lm-res.on {
+  opacity: 1;
+  transform: none;
+}
+.nh .lm-notes {
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--rose) 60%, var(--paper));
+  transition: box-shadow 0.3s;
+}
+.nh .lm-notes.read {
+  box-shadow: 0 0 0 2px rgba(var(--sky-rgb), 0.9);
+}
+.nh .lm-notes span {
+  display: block;
+  margin-bottom: 9px;
+  color: var(--t-faint);
+  font: 500 10px/1 var(--sans);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.nh .lm-notes i {
+  display: block;
+  height: 5px;
+  margin-top: 7px;
+  border-radius: 3px;
+  background: rgba(var(--ink-rgb), 0.11);
+}
+.nh .lm-notes i.s {
+  width: 55%;
+}
+.nh .lm-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 58px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.nh .lm-line .lbl {
+  margin-right: auto;
+  font-weight: 600;
+}
+.nh .lm-codes,
+.nh .lm-att {
+  display: flex;
+  gap: 6px;
+}
+.nh .lm-codes em,
+.nh .lm-att em {
+  padding: 5px 8px;
+  border-radius: 6px;
+  font: 500 11px/1 var(--sans);
+  font-style: normal;
+  transition:
+    opacity 0.3s,
+    transform 0.3s,
+    background 0.3s,
+    color 0.3s;
+}
+.nh .lm-codes em {
+  background: rgba(var(--sky-rgb), 0.75);
+  opacity: 0;
+  transform: translateY(5px);
+}
+.nh .lm-codes.on em {
+  opacity: 1;
+  transform: none;
+}
+.nh .lm-codes.on em + em {
+  transition-delay: 0.15s;
+}
+.nh .lm-att em {
+  background: var(--wash);
+  color: var(--t-faint);
+}
+.nh .lm-att em.on {
+  background: rgba(var(--sky-rgb), 0.85);
+  color: var(--ink);
+}
+.nh .lm-tbl .tr {
+  display: grid;
+  grid-template-columns: 1fr 96px 128px;
+  align-items: center;
+  gap: 10px;
+  height: 54px;
+  padding: 0 10px;
+  border-bottom: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 13px;
+  transition: background 0.3s;
+}
+.nh .lm-tbl .tr.th {
+  height: 30px;
+  color: var(--t-faint);
+  font: 500 10px/1 var(--sans);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.nh .lm-tbl .tr span:nth-child(2) {
+  font: 500 12.5px/1 var(--sans);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.nh .lm-tbl .tr .lm-st {
+  justify-self: end;
+}
+.nh .lm-tbl .tr.hit {
+  background: rgba(var(--mint-rgb), 0.18);
+}
+.nh .lm-home {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+}
+.nh .lm-lyr {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 25;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink);
+  font: 500 11px/1 var(--sans);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+.nh .lm-lyr::before {
+  content: "";
+  width: 26px;
+  height: 1px;
+  background: rgba(var(--ink-rgb), 0.4);
+}
+.nh .lm-lyr b {
+  font-weight: 500;
+  color: var(--t-faint);
+}
+.nh .lm-pr1-over {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 20;
+}
+
+/* la carte « Payé » (titre en Source Serif 4 Regular, comme tous les titres de la marque) */
+.nh .lm-sum {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 380px;
+  margin-left: -190px;
+  margin-top: -190px;
+  padding: 24px 26px 22px;
+  border-radius: 22px;
+  background: var(--ink);
+  color: var(--d-text);
+  box-shadow: 0 40px 80px -30px rgba(var(--ink-rgb), 0.6);
+  opacity: 0;
+  transform: translateY(30px) scale(0.94);
+  transition:
+    opacity 0.5s,
+    transform 0.6s cubic-bezier(0.2, 0.9, 0.3, 1.1);
+  z-index: 50;
+}
+.nh .lm-sum.on {
+  opacity: 1;
+  transform: none;
+}
+.nh .lm-sum .sk {
+  color: var(--d-faint);
+  font: 500 10.5px/1 var(--sans);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.nh .lm-sum .sbig {
+  margin: 14px 0 6px;
+  font: 400 76px/0.9 var(--serif);
+  font-variation-settings: "opsz" 20;
+  letter-spacing: -0.05em;
+}
+.nh .lm-sum .sbig span {
+  color: var(--mint);
+}
+.nh .lm-sum .ssub {
+  color: var(--d-muted);
+  font-size: 13.5px;
+}
+.nh .lm-sum ol {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.nh .lm-sum li {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 9px;
+  border-radius: 8px;
+  background: rgba(var(--rose-rgb), 0.06);
+  font-size: 12px;
+}
+.nh .lm-sum li::before {
+  content: "✓";
+  display: grid;
+  place-items: center;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--mint);
+  color: var(--ink);
+  font-size: 9px;
+  font-weight: 700;
+}
+.nh .lm-sum .sa {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+}
+
+@media (max-width: 860px) {
+  .nh .lm-pr1 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .nh .lm-segs {
+    max-width: none;
+  }
+  .nh .lm-pr1-stage {
+    height: min(118vw, 560px);
+  }
+  .nh .lm-pr1-inner {
+    --k: 0.55;
+  }
+  .nh .lm-lyr {
+    display: none;
+  }
+  .nh .lm-agent:not(.idle) .who {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nh .lm-agent .spin svg,
+  .nh .lm-field.focus .lm-typed::after {
+    animation: none;
+  }
+}

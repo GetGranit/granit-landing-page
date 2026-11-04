@@ -8,10 +8,26 @@ export const ANGLES = ["faits", "conformite", "seo", "copy"];
 export const TOURS_MAX = 2;
 
 // Champs de l'article que le correcteur a le droit de réécrire (même schéma que publish-article)
-export const CHAMPS_ARTICLE = ["metaDescription", "contentHtml", "tocItems", "faqItems", "sources", "figures"];
+export const CHAMPS_ARTICLE = ["seoTitle", "metaDescription", "contentHtml", "tocItems", "faqItems", "sources", "figures"];
 
-// Règles en dur, issues de la relecture à la main du lot du 09/10/2026 (4 relecteurs, 8 fiches)
-export const REGLES = `## Règles de relecture (en plus du guide)
+// Règles issues de la relecture à la main du lot du 09/10/2026 (4 relecteurs, 8 fiches), paramétrées par
+// le lecteur (fiche métier) et le type de page : les règles « portail » ne valent que pour une page plateforme.
+const LECTEUR_OPTIQUE = "un opticien ou une assistante au comptoir, sur téléphone, qui bloque sur une mutuelle";
+
+const SEO_PLATEFORME = `- L'adresse du portail dans la 1re phrase (en gras), liée à la page de connexion si elle est dans les faits, et reprise dans une puce de « L'essentiel ».
+- La réponse de FAQ sur l'accès cite l'adresse.
+`;
+
+const JAMAIS_PLATEFORME = `- Les marqueurs data-bloc (chiffres, organismes, statuts, contacts) : le contrôle du moteur exige chacun une fois, et un bloc dont la liste est vide ne s'affiche pas. Ne jamais demander de retirer, déplacer ou ajouter un marqueur. Seul le texte autour ne doit pas annoncer une liste vide.
+`;
+
+/**
+ * Règles de relecture pour un article.
+ * @param {{ lecteur?: string, type?: string, metier?: string }} p lecteur de la fiche métier, type de page, règles propres au métier
+ */
+export function regles({ lecteur = LECTEUR_OPTIQUE, type = "plateforme", metier = "" } = {}) {
+  const plateforme = type === "plateforme";
+  return `## Règles de relecture (en plus du guide)
 
 ### Faits
 - Le fichier de faits est la seule source de vérité. Toute affirmation précise (nombre, date, délai, contact, URL, libellé de statut, procédure, menu) doit y figurer, ou dans une source citée.
@@ -22,28 +38,32 @@ export const REGLES = `## Règles de relecture (en plus du guide)
 
 ### Conformité
 - Aucun prix ni montant facturé : dire « numéro surtaxé ».
-- Aucune donnée patient, aucun nom de client, de magasin ou d'opticien.
+- Aucune donnée patient, aucun nom de client, de structure ou de professionnel.
 - Aucune source ni allusion à un incident, une cyberattaque, une violation de données, la CNIL, un conflit, une mise en demeure ou un litige.
 - Pas de dénigrement d'une plateforme, d'une mutuelle ou d'un concurrent.
 - Pas de lien vers une ancre (#…).
-- Aucune promesse sur ce que fait Granit au-delà du fichier de faits ; pas d'état interne (« ce que nous relevons », « notre connecteur ») ; Granit au plus une fois, jamais dans « Vous bloquez ? » ni dans un intertitre.
+- Aucune promesse sur ce que fait Granit au-delà du fichier de faits et de la fiche métier ; pas d'état interne (« ce que nous relevons », « notre connecteur ») ; Granit au plus une fois, jamais dans « Vous bloquez ? » ni dans un intertitre.
 - Pas de conseil contraire aux conditions d'utilisation (ex. partager un compte nominatif).
 
 ### SEO
-- L'adresse du portail dans la 1re phrase (en gras), liée à la page de connexion si elle est dans les faits, et reprise dans une puce de « L'essentiel ».
-- La réponse de FAQ sur l'accès cite l'adresse.
-- metaDescription de 140 à 160 caractères, avec le mot-clé principal.
+${plateforme ? SEO_PLATEFORME : ""}- seoTitle de 60 caractères au plus, avec les mots du mot-clé principal, tôt dans le titre. Vide sur un article ancien : le proposer.
+- metaDescription de 140 à 160 caractères : une phrase qui se lit normalement, avec les mots du mot-clé principal (pas forcément collés), jamais une suite de mots-clés en ouverture.
 - Les requêtes de navigation du groupe de mots-clés trouvent une réponse (H3 ou question de FAQ), sans citer le mot-clé.
 
-### Copy (lecteur : un opticien ou une assistante au comptoir, sur téléphone, qui bloque sur une mutuelle)
+### Copy (lecteur : ${lecteur})
 - Ne jamais citer un mot-clé ou une recherche (« que l'on tape », « la requête », « les recherches du type »).
 - Pas de paragraphe de remplissage (« Cette page reprend / rassemble… ») : le sommaire fait ce travail.
 - Phrases de 25 mots au plus.
+- Les mots de TON.md (colonne « On ne dit pas », jargon interdit, emoji) sont BLOQUANT, sauf dans une citation <blockquote>. Proposer le mot de la colonne « On dit ».
 - Ne jamais annoncer un bloc vide ou un relevé absent (« la liste ci-dessous » sans liste).
 
 ### Ce qui n'est jamais un point
-- Les marqueurs data-bloc (chiffres, organismes, statuts, contacts) : le contrôle du moteur exige chacun une fois, et un bloc dont la liste est vide ne s'affiche pas. Ne jamais demander de retirer, déplacer ou ajouter un marqueur. Seul le texte autour ne doit pas annoncer une liste vide.
-- La citation <blockquote> est facultative. Ne la demande que si le fichier de faits contient un texte exact (citation mot pour mot) ; sinon, n'en parle pas.- Définir un terme du portail à sa première apparition. Répondre d'abord à l'idée fausse du lecteur.`;
+${plateforme ? JAMAIS_PLATEFORME : ""}- La citation <blockquote> est facultative. Ne la demande que si le fichier de faits contient un texte exact (citation mot pour mot) ; sinon, n'en parle pas.
+- Définir un terme ${plateforme ? "du portail" : "du métier"} à sa première apparition. Répondre d'abord à l'idée fausse du lecteur.${metier ? `\n\n## Règles du métier (fiche métier)\n\n${metier}` : ""}`;
+}
+
+/** Règles par défaut : page plateforme, lecteur optique (comportement d'avant les fiches métier). */
+export const REGLES = regles();
 
 const POINT = {
   type: "object",
@@ -124,17 +144,17 @@ export function appliquer(fiche, corr) {
   return f;
 }
 
-const corps = (fiche) => Object.fromEntries(CHAMPS_ARTICLE.map((k) => [k, fiche[k] ?? []]));
+const corps = (fiche) => Object.fromEntries(CHAMPS_ARTICLE.map((k) => [k, fiche[k] ?? (k === "seoTitle" ? "" : [])]));
 const bloc = (titre, v) => `## ${titre}\n\`\`\`json\n${JSON.stringify(v, null, 2)}\n\`\`\``;
 const listePoints = (pts) => pts.map((p, i) => `${i + 1}. [${p.gravite} · ${p.angle}] « ${p.extrait} » → ${p.correction}`).join("\n");
 
-/** Contexte commun aux trois rôles : métadonnées, fichier de faits, liens autorisés, règles. */
-export function contexte({ meta, faits, liens }) {
+/** Contexte commun aux trois rôles : métadonnées, fichier de faits, liens autorisés, règles (paramétrées par `relecture`). */
+export function contexte({ meta, faits, liens, relecture }) {
   return [
     bloc("Métadonnées de l'article (file)", meta),
     faits ? bloc("Fichier de faits (seule source de vérité, en lecture seule)", faits) : "## Fichier de faits\nAucun.",
     `## Liens internes autorisés\n${liens.map((l) => `- ${l}`).join("\n")}`,
-    REGLES,
+    relecture ? regles(relecture) : REGLES,
   ].join("\n\n");
 }
 

@@ -1,0 +1,9 @@
+{
+  "slug": "portail-viamedis",
+  "nom": "Viamedis (translated)",
+  "identite": [{ "label": "Type", "valeur": "Third-party payment operator", "source": "x" }],
+  "chiffres": [{ "valeur": "+305,000", "label": "healthcare professionals", "source": "x" }],
+  "statuts": [{ "libelle": "Approved", "sens": "The insurer commits to the amount", "action": "Deliver, then invoice" }],
+  "contacts": [{ "label": "Phone", "valeur": "0 825 076 076", "detail": "Premium-rate number", "url": "https://piege.invalid", "source": "x" }],
+  "sources": { "x": { "label": "viamedis.fr · Healthcare professionals", "url": "https://piege.invalid" } }
+}

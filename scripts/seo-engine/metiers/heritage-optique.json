@@ -1,0 +1,29 @@
+{
+  "_explication": "Entrées publiées sans champ verticales : elles restent optique, explicitement. Liste figée : toute entrée pending ou waiting porte verticales. facturation-ehpad-controle-humain porte verticales vide (hors pages métier) : elle est ici pour que le moteur ne bloque pas dessus.",
+  "slugs": [
+    "tiers-payant-opticien",
+    "portails-tiers-payant",
+    "portail-viamedis",
+    "portail-almerys",
+    "portail-itelis",
+    "portail-isante",
+    "portail-sp-sante",
+    "portail-seveane",
+    "portail-actil",
+    "portail-santeclair",
+    "portail-oxantis",
+    "mutuelle-quel-portail",
+    "codes-rejets-noemie",
+    "quand-relancer-mutuelle",
+    "rejet-beneficiaire-inconnu",
+    "virement-mutuelle-inferieur",
+    "checklist-prise-en-charge",
+    "viamedis-espace-pro",
+    "almerys-prise-en-charge",
+    "gerer-tiers-payant-magasin",
+    "rejet-tiers-payant",
+    "granit-vs-iremia",
+    "facturation-ehpad-controle-humain",
+    "facturation-ehpad-controle-humain"
+  ]
+}

@@ -1,6 +1,8 @@
 import type { ReactNode } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 
+import { useLanguage } from "@/lib/i18n";
+
 /** Petits blocs visuels partagés par les écrans de l'espace d'essai. */
 
 export function Kicker({ children }: { children: ReactNode }) {
@@ -112,7 +114,8 @@ export function TextButton({ onClick, children }: { onClick: () => void; childre
 }
 
 /** Pastille « Aperçu » sur tout ce qui est fictif. */
-export function ApercuBadge({ children = "Aperçu" }: { children?: ReactNode }) {
+export function ApercuBadge({ children }: { children?: ReactNode }) {
+  const { lang } = useLanguage();
   return (
     <span
       className="inline-block shrink-0 rounded-full px-2.5 py-0.5 text-[10px] uppercase"
@@ -123,7 +126,7 @@ export function ApercuBadge({ children = "Aperçu" }: { children?: ReactNode }) 
         letterSpacing: "0.08em",
       }}
     >
-      {children}
+      {children ?? (lang === "en" ? "Preview" : "Aperçu")}
     </span>
   );
 }

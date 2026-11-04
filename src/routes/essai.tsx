@@ -23,6 +23,7 @@ import {
   type DossierFictif,
   type PecCase,
 } from "@/lib/pec/essaiState";
+import { useLanguage } from "@/lib/i18n";
 import { espaceEssaiActif } from "@/lib/pec/simulation";
 
 /**
@@ -51,11 +52,36 @@ export const Route = createFileRoute("/essai")({
 });
 
 const ACCORD_MS = 3500;
-const OFFRE = "Paul vous propose l'offre adaptée à votre magasin.";
+
+const copy = {
+  fr: {
+    offre: "Paul vous propose l'offre adaptée à votre magasin.",
+    idle: "Besoin d'un coup de main pour brancher vos accès ? Paul vous rappelle.",
+    question: "Une question ? Paul vous répond.",
+    kicker: "Votre espace Granit",
+    bienvenue: (nom?: string) => `Bienvenue${nom ? `, ${nom}` : ""}. `,
+    pret: "Votre compte est prêt.",
+    branches: "Vos portails sont branchés : vos PEC partent d'ici.",
+    branchez: "Branchez vos autres portails, puis faites vos PEC d'ici.",
+    gratuit: "Compte gratuit",
+  },
+  en: {
+    offre: "Paul suggests the right plan for your store.",
+    idle: "Need a hand connecting your logins? Paul calls you back.",
+    question: "A question? Paul answers you.",
+    kicker: "Your Granit workspace",
+    bienvenue: (nom?: string) => `Welcome${nom ? `, ${nom}` : ""}. `,
+    pret: "Your account is ready.",
+    branches: "Your portals are connected: your coverage requests go out from here.",
+    branchez: "Connect your other portals, then submit your coverage requests from here.",
+    gratuit: "Free account",
+  },
+};
 
 function EssaiPage() {
   const reduce = useReducedMotion();
   const posthog = usePostHog();
+  const t = copy[useLanguage().lang];
   const [pecCase, setPecCase] = useState<PecCase | null>(null);
   const [phone, setPhone] = useState<string | null>(null);
   const [view, setView] = useState<"espace" | "demande">("espace");
@@ -96,10 +122,7 @@ function EssaiPage() {
   }, [view, courante, reduce]);
 
   const { show } = sheet;
-  const onIdle = useCallback(
-    () => show("rappel", "Besoin d'un coup de main pour brancher vos accès ? Paul vous rappelle."),
-    [show],
-  );
+  const onIdle = useCallback(() => show("rappel", t.idle), [show, t]);
 
   if (!pecCase) return <Shell exemple={false} />;
 
@@ -185,7 +208,7 @@ function EssaiPage() {
         </motion.div>
       ) : (
         <div className="mx-auto max-w-[640px]">
-          <Kicker>Votre espace Granit</Kicker>
+          <Kicker>{t.kicker}</Kicker>
           <h1
             className="font-serif text-text"
             style={{
@@ -194,16 +217,14 @@ function EssaiPage() {
               letterSpacing: "-0.02em",
             }}
           >
-            Bienvenue{nom ? `, ${nom}` : ""}.{" "}
-            <span className="accent-italic">Votre compte est prêt.</span>
+            {t.bienvenue(nom)}
+            <span className="accent-italic">{t.pret}</span>
           </h1>
           <p className="mb-6 mt-3 text-[15px] leading-[1.5]" style={{ color: "var(--text-soft)" }}>
-            {toutBranche
-              ? "Vos portails sont branchés : vos PEC partent d'ici."
-              : "Branchez vos autres portails, puis faites vos PEC d'ici."}
+            {toutBranche ? t.branches : t.branchez}
             {pecCase.compte && (
               <span className="mt-1 block text-[12px]" style={{ color: "var(--text-muted)" }}>
-                Compte gratuit · {pecCase.compte.email}
+                {t.gratuit} · {pecCase.compte.email}
               </span>
             )}
           </p>
@@ -243,7 +264,7 @@ function EssaiPage() {
             minutesManuelles={pecCase.minutesManuelles}
             dureeSec={simulation.dureeSec}
             onDemande={() => openDemande(null)}
-            onPaul={(mode) => show(mode, OFFRE, { force: true })}
+            onPaul={(mode) => show(mode, t.offre, { force: true })}
           >
             <MesDemandes demandes={demandes} onOpen={openDemande} />
           </EtapePec>
@@ -252,11 +273,7 @@ function EssaiPage() {
         </div>
       )}
 
-      {!sheet.open && (
-        <PaulButton
-          onClick={() => show("rappel", "Une question ? Paul vous répond.", { force: true })}
-        />
-      )}
+      {!sheet.open && <PaulButton onClick={() => show("rappel", t.question, { force: true })} />}
       <PaulSheet
         open={sheet.open}
         mode={sheet.mode}

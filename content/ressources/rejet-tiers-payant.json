@@ -1,0 +1,195 @@
+{
+  "slug": "rejet-tiers-payant",
+  "id": "B0",
+  "category": "rejets",
+  "categoryName": "Rejets et corrections",
+  "type": "resolution",
+  "plateforme": null,
+  "title": "Rejet de tiers payant en optique : diagnostic et correction",
+  "primaryKeyword": "motif rejet tiers payant",
+  "keywordCluster": [],
+  "parentSlug": "tiers-payant-opticien",
+  "level": "Pilier",
+  "author": {
+    "name": "Olivier",
+    "jobTitle": "Rédacteur, expert tiers payant",
+    "photo": "/auteurs/olivier.jpg",
+    "url": null
+  },
+  "reviewer": {
+    "name": "Nathalie",
+    "jobTitle": "Rédactrice, experte métier optique",
+    "photo": "/auteurs/nathalie.jpg",
+    "url": null
+  },
+  "datePublished": "2026-11-02",
+  "dateModified": "2026-11-02",
+  "checkedOn": null,
+  "wordCount": 2199,
+  "readTime": 10,
+  "metaDescription": "Motif rejet tiers payant en optique : identifiez s'il vient de l'AMO ou de la mutuelle, corrigez le dossier étape par étape et sachez quand relancer.",
+  "contentHtml": "<p><strong>Un rejet de tiers payant se corrige en trois gestes : identifier qui a rejeté (Assurance maladie ou complémentaire), lire le motif exact, puis corriger la seule donnée en cause avant de renvoyer.</strong> Derrière chaque motif rejet tiers payant, il y a une information précise du dossier : les droits du client, l'identité du bénéficiaire, la prise en charge, le codage ou le montant. Ce guide suit l'ordre du comptoir : ce que vous voyez, ce que ça veut dire, quoi faire maintenant, quoi garder et quand relancer.</p><p>Un rejet n'est pas un refus de payer définitif. C'est un dossier qui revient parce qu'une donnée ne correspond pas à ce que l'organisme attend. Tant que le motif est lu correctement et que la correction porte sur la bonne donnée, le dossier repart et finit payé.</p><div class=\"key-takeaways\"><strong>L'essentiel</strong><ul><li>Un rejet vient soit de l'Assurance maladie obligatoire (AMO), soit de la complémentaire (AMC) ou de son opérateur de tiers payant : ce ne sont ni les mêmes causes, ni les mêmes canaux de correction.</li><li>Le motif exact affiché (retour NOEMIE, portail, relevé) dit quelle donnée corriger. Ne jamais renvoyer un dossier à l'identique.</li><li>Les causes à vérifier en premier : droits du client, bénéficiaire, prise en charge, ordonnance, codage, montant.</li><li>Il n'existe pas de délai de renvoi unique : il dépend des règles de l'AMO et de la convention de chaque complémentaire. Corrigez dès réception.</li><li>Aujourd'hui : listez vos dossiers rejetés, triez-les par origine (AMO ou AMC), puis traitez-les motif par motif.</li></ul></div><h2 id=\"rejet-tiers-payant-definition\">Qu'est-ce qu'un rejet de tiers payant en optique ?</h2><p>Un rejet de tiers payant est le refus, par un organisme payeur, de régler tout ou partie d'une facture telle qu'elle lui a été transmise. Le client est parti avec ses lunettes, mais la part attendue de la Sécurité sociale ou de la mutuelle n'arrive pas, ou arrive incomplète.</p><p>Rappel du circuit : avec le <a href=\"/ressources/tiers-payant-opticien\">tiers payant opticien</a>, le client n'avance pas les frais. Le magasin facture la part obligatoire à l'AMO (la caisse d'Assurance maladie) et la part complémentaire à l'AMC (mutuelle, assureur ou institution de prévoyance), souvent par l'intermédiaire d'un opérateur de tiers payant. Chaque payeur contrôle ce qu'il reçoit, et chacun peut rejeter.</p><p>Il faut distinguer deux moments. Le refus de prise en charge arrive avant la vente : la complémentaire n'accorde pas son engagement sur le devis. Le rejet de facture arrive après : la facture est partie et revient refusée. Ce guide traite surtout le second cas, mais les deux se corrigent avec la même méthode.</p><h3>Ce que vous voyez au comptoir ou en back-office</h3><ul><li>Une ligne rejetée dans le retour NOEMIE (les fichiers de retour de paiement et de rejet que l'Assurance maladie et certains organismes renvoient à votre logiciel), avec un code et un libellé.</li><li>Un statut « refus » ou « rejet » sur le portail de la plateforme qui gère la mutuelle.</li><li>Un relevé ou un décompte de paiement où la facture n'apparaît pas, ou apparaît avec un montant inférieur.</li><li>Un virement qui n'arrive jamais alors que le dossier semblait accepté.</li></ul><p>Le libellé exact compte plus que le code. Un même code peut recouvrir plusieurs situations selon l'organisme, et les nomenclatures évoluent. Pour la lecture des codes côté Assurance maladie, voyez notre <a href=\"/ressources/codes-rejets-noemie\">liste codes rejets NOEMIE</a>.</p><h2 id=\"rejet-securite-sociale-ou-mutuelle\">Rejet de la Sécurité sociale ou de la mutuelle : quelle différence ?</h2><p>La différence tient à qui rejette et sur quelle base : l'AMO rejette selon les règles de l'Assurance maladie, l'AMC selon le contrat du client et la convention qui la lie au magasin. Identifier l'origine du rejet est donc la première étape, avant même de lire le motif.</p><p>Un rejet AMO arrive en général par le retour NOEMIE dans votre logiciel de facturation. Il porte sur ce que contrôle la caisse : ouverture des droits, identité de l'assuré, prescription, codage des produits à la LPP (liste des produits et prestations remboursables). Ces règles relèvent du <a href=\"https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006073189/\">Code de la sécurité sociale</a>, qui encadre aussi les contrats dits responsables auxquels sont soumises la plupart des garanties optiques.</p><p>Un rejet AMC vient de la mutuelle ou de son opérateur de tiers payant. Il porte sur le contrat : bénéficiaire couvert ou non, garantie optique ouverte ou non, prise en charge présente et cohérente avec la facture, plafonds. Les mutuelles relèvent du <a href=\"https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006074067/\">Code de la mutualité</a>, mais le détail de ce qu'elles remboursent est fixé par chaque contrat. C'est pourquoi un même dossier peut être payé par la caisse et rejeté par la complémentaire.</p><div data-figure=\"rejet-amo-vs-amc\"></div><p>Concrètement, un rejet AMO se corrige dans votre logiciel, en refacturant la part obligatoire. Un rejet AMC se corrige selon le canal de l'organisme : nouvelle demande de remboursement électronique (DRE, le flux qui transmet la part complémentaire à l'organisme), correction sur le portail, ou nouvelle prise en charge. Chaque plateforme a ses écrans : notre page sur les <a href=\"/ressources/portails-tiers-payant\">portails de tiers payant</a> les présente un par un.</p><h2 id=\"motif-rejet-tiers-payant\">Motif rejet tiers payant : quelles causes possibles ?</h2><p>Il y a six familles de causes : les droits, le bénéficiaire, la prise en charge, l'ordonnance, le codage et le montant. Le tableau ci-dessous les classe dans l'ordre où il est le plus rapide de les vérifier, du plus simple au plus long.</p><div class=\"tbl\"><table><tr><th>Cause</th><th>Où vérifier</th><th>Correction</th></tr><tr><td>Droits fermés ou non à jour (AMO ou AMC)</td><td>Consultation des droits dans le logiciel, attestation, carte de tiers payant du client</td><td>Mettre à jour les droits, ou demander au client son attestation à jour</td></tr><tr><td>Bénéficiaire inconnu ou mal identifié</td><td>Carte de tiers payant : nom, date de naissance, rang, numéro d'adhérent</td><td>Corriger l'identité ou le rattachement du bénéficiaire</td></tr><tr><td>Prise en charge absente, expirée ou non reprise</td><td>Portail de la plateforme, numéro de prise en charge sur la facture</td><td>Reporter le bon numéro, ou refaire une prise en charge</td></tr><tr><td>Écart entre facture et prise en charge</td><td>Comparer verres, monture, montants et date avec l'accord</td><td>Aligner la facture sur l'accord, ou demander une nouvelle prise en charge</td></tr><tr><td>Ordonnance absente, illisible ou incomplète</td><td>Ordonnance scannée, données du prescripteur</td><td>Joindre la bonne pièce, compléter les données</td></tr><tr><td>Codage LPP ou classe incohérent</td><td>Devis normalisé, codes LPP de la facture, classe A ou B</td><td>Corriger le codage puis refacturer</td></tr><tr><td>Organisme complémentaire mal paramétré</td><td>Numéro AMC dans la fiche client du logiciel</td><td>Corriger l'organisme destinataire</td></tr><tr><td>Doublon</td><td>Historique de facturation du client</td><td>Ne rien renvoyer, vérifier le paiement de la première facture</td></tr></table></div><h3>Les droits et le bénéficiaire</h3><p>Ce sont les causes à écarter en premier, parce qu'elles se vérifient en une minute. Un changement de mutuelle, un enfant rattaché à l'autre parent, une carte de l'année précédente : le dossier part avec une identité ou un contrat qui ne correspond plus. Le cas le plus courant a sa propre page : <a href=\"/ressources/rejet-beneficiaire-inconnu\">Rejet mutuelle « bénéficiaire inconnu »</a>.</p><h3>La prise en charge et le montant</h3><p>En optique, la prise en charge est l'engagement de la complémentaire sur un équipement précis. Si la facture s'en écarte (autres verres, autre montant, date hors validité), l'organisme peut rejeter. Le réflexe : poser l'accord et la facture côte à côte et comparer ligne par ligne.</p><h3>L'ordonnance et le codage</h3><p>Ces rejets touchent souvent les deux payeurs à la fois, puisque l'AMC calcule en général sa part à partir de la base de l'AMO. Un code LPP erroné ou une classe mal déclarée sur le devis normalisé (le devis au format réglementaire qui distingue les équipements de classe A, du panier 100 % Santé, et de classe B) se corrige dans le logiciel avant toute nouvelle transmission.</p><h2 id=\"corriger-renvoyer-dossier-rejete\">Comment corriger et renvoyer un dossier rejeté ?</h2><p>La méthode la plus sûre : une seule correction, sur la donnée désignée par le motif, puis un renvoi par le bon canal. Voici l'ordre à suivre, dossier par dossier.</p><ol class=\"steps\"><li><strong>Identifier l'origine du rejet.</strong> Retour NOEMIE de la caisse, ou retour de la complémentaire et de son opérateur : cela décide du canal de correction.</li><li><strong>Relever le motif exact.</strong> Notez le code et le libellé tels qu'ils s'affichent, sans les résumer.</li><li><strong>Rapprocher le motif d'une famille de causes.</strong> Droits, bénéficiaire, prise en charge, ordonnance, codage ou montant : utilisez le tableau ci-dessus.</li><li><strong>Vérifier la donnée à la source.</strong> Carte de tiers payant, attestation, accord du portail, ordonnance, devis : jamais de mémoire.</li><li><strong>Corriger la donnée dans le logiciel ou sur le portail.</strong> Si les droits du client ont changé, demandez-lui la pièce à jour avant de corriger.</li><li><strong>Renvoyer par le bon canal.</strong> Refacturation de la part AMO dans le logiciel, nouvelle DRE ou correction sur le portail pour la part AMC, selon l'organisme.</li><li><strong>Noter la date de renvoi et surveiller le retour suivant.</strong> Le dossier n'est clos qu'une fois le paiement rapproché.</li></ol><div class=\"callout callout--tip\"><p><strong>Le bon réflexe :</strong> ne renvoyez jamais un dossier rejeté à l'identique en espérant qu'il passe. Il reviendra avec le même motif, et vous aurez perdu un cycle de traitement.</p></div><p>Deux cas demandent une attention particulière. Si la prise en charge a expiré entre la vente et la facturation, une simple correction ne suffit pas : il faut en général une nouvelle demande sur le portail. Si le rejet concerne les droits du client et qu'il a changé de complémentaire, le dossier doit repartir vers le nouvel organisme, pas vers l'ancien.</p><h2 id=\"preuves-a-garder\">Quelles preuves garder après un rejet ?</h2><p>Gardez tout ce qui montre ce que vous avez envoyé, ce qui a été refusé et ce que vous avez corrigé. En cas de contestation ou de relance, c'est ce dossier qui fait foi, pas votre souvenir.</p><ul><li>Le retour de rejet tel qu'il s'est affiché : ligne NOEMIE, capture du statut sur le portail, relevé de l'organisme.</li><li>L'accord de prise en charge avec son numéro, sa date et les montants accordés.</li><li>La facture initiale et la facture corrigée.</li><li>Les pièces justificatives : ordonnance, devis normalisé signé, attestation de droits à jour.</li><li>La date et le canal de chaque renvoi, et le nom de l'interlocuteur si vous avez appelé.</li></ul><p>Rangez ces éléments dans le dossier client de votre logiciel plutôt que sur un poste personnel : ce sont des données de santé. Et notez le motif de chaque rejet dans un même tableau : au bout de quelques semaines, il montre quelles erreurs reviennent dans votre magasin.</p><h2 id=\"delai-renvoi-dossier\">Combien de temps a-t-on pour renvoyer un dossier rejeté ?</h2><p>Il n'existe pas de délai unique : il dépend des règles de l'Assurance maladie pour la part obligatoire et de la convention de chaque complémentaire pour la part mutuelle. La seule règle valable partout : corriger dès réception du rejet.</p><p>Côté AMC, les délais de transmission et de correction sont fixés par la convention de tiers payant signée avec l'organisme ou son opérateur. Ils varient d'une plateforme à l'autre. Relisez votre convention, ou l'espace professionnel de la plateforme, pour connaître celui qui s'applique à vous.</p><div class=\"callout callout--warn\"><p><strong>Le piège :</strong> un dossier rejeté qui attend sur une pile peut perdre sa prise en charge, dont la validité est limitée dans le temps par chaque plateforme. Plus la correction tarde, plus vous risquez de devoir tout refaire.</p></div><p>Une fois le dossier renvoyé, la question devient : quand relancer s'il ne se passe rien ? Notre calendrier détaillé, étape par étape, est ici : <a href=\"/ressources/quand-relancer-mutuelle\">quand relancer une mutuelle</a>.</p><h2 id=\"escalader-rejet\">Quand escalader un rejet, et vers qui ?</h2><p>Escaladez quand la correction ne suffit plus : le même motif revient après un renvoi corrigé, le libellé ne permet pas d'identifier la donnée en cause, ou les droits sont confirmés mais le rejet est maintenu. L'interlocuteur dépend de l'origine du rejet.</p><ul><li><strong>Rejet AMO :</strong> la caisse primaire du client, par les canaux réservés aux professionnels de santé. Ayez sous la main le numéro de facture, la date et le motif exact.</li><li><strong>Rejet AMC :</strong> l'opérateur de tiers payant ou la mutuelle, par le contact indiqué sur sa page professionnelle ou sur la carte de tiers payant. Chaque plateforme publie ses propres canaux.</li><li><strong>Droits du client :</strong> le client lui-même, quand seule son attestation à jour peut débloquer le dossier.</li><li><strong>Votre éditeur de logiciel :</strong> quand le rejet vient d'un paramétrage (organisme, codage, format de transmission) que vous ne pouvez pas modifier.</li></ul><p>Avant d'appeler, préparez le dossier de preuves décrit plus haut. Un appel avec le motif exact, le numéro de prise en charge et la date de chaque envoi se règle bien plus vite qu'un appel où l'on décrit le problème de mémoire.</p><h2 id=\"eviter-prochain-rejet\">Comment éviter le prochain rejet ?</h2><p>La plupart des causes listées ici se contrôlent avant l'envoi : droits, bénéficiaire, prise en charge, cohérence entre accord et facture. Un contrôle systématique au moment de la vente coûte moins de temps qu'une correction après rejet.</p><p>Le plus simple est de suivre la même liste pour chaque dossier. Nous en avons fait une, à imprimer ou à garder ouverte au comptoir : la <a href=\"/ressources/checklist-prise-en-charge\">checklist avant d'envoyer une prise en charge</a>. Elle reprend les points qui déclenchent les rejets les plus faciles à éviter.</p><p>Au-delà du dossier, regardez l'organisation. Qui traite les rejets, à quel moment de la journée, avec quel suivi ? Si personne n'en est clairement chargé, les dossiers s'accumulent et les prises en charge expirent. Notre guide sur la <a href=\"/ressources/gerer-tiers-payant-magasin\">gestion tiers payant</a> compare les façons de répartir ce travail en magasin.</p><p>Quand les prises en charge se comptent par dizaines chaque jour, la saisie sur chaque portail devient le goulot du magasin, et c'est là que naissent beaucoup d'écarts entre accord et facture. C'est ce que font les <a href=\"/agents\">agents de Granit</a> : ils saisissent les prises en charge directement sur les portails des plateformes, puis renvoient le statut à l'équipe.</p><p>Gardez enfin le motif exact affiché par l'organisme, à chaque rejet : c'est lui qui dit quoi corriger.</p>",
+  "tocItems": [
+    {
+      "id": "rejet-tiers-payant-definition",
+      "label": "Qu'est-ce qu'un rejet de tiers payant ?"
+    },
+    {
+      "id": "rejet-securite-sociale-ou-mutuelle",
+      "label": "Rejet Sécurité sociale ou mutuelle"
+    },
+    {
+      "id": "motif-rejet-tiers-payant",
+      "label": "Les causes possibles d'un rejet"
+    },
+    {
+      "id": "corriger-renvoyer-dossier-rejete",
+      "label": "Corriger et renvoyer un dossier rejeté"
+    },
+    {
+      "id": "preuves-a-garder",
+      "label": "Les preuves à garder"
+    },
+    {
+      "id": "delai-renvoi-dossier",
+      "label": "Le délai pour renvoyer un dossier"
+    },
+    {
+      "id": "escalader-rejet",
+      "label": "Quand escalader, et vers qui"
+    },
+    {
+      "id": "eviter-prochain-rejet",
+      "label": "Éviter le prochain rejet"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "Pourquoi un dossier de tiers payant est-il rejeté ?",
+      "answer": "Un dossier de tiers payant est rejeté quand une donnée transmise ne correspond pas à ce que l'organisme payeur attend. Les causes se rangent en six familles : droits du client, identité du bénéficiaire, prise en charge, ordonnance, codage LPP et montant. Le motif exact affiché par l'organisme indique laquelle corriger."
+    },
+    {
+      "question": "Quelle différence entre un rejet de la Sécurité sociale et un rejet de la mutuelle ?",
+      "answer": "Un rejet de la Sécurité sociale (AMO) porte sur les règles de l'Assurance maladie : droits, identité, prescription, codage. Il arrive en général par le retour NOEMIE et se corrige en refacturant dans le logiciel. Un rejet de la mutuelle (AMC) porte sur le contrat du client et la prise en charge, et se corrige par le canal de l'organisme ou de son opérateur de tiers payant."
+    },
+    {
+      "question": "Comment corriger et renvoyer un dossier rejeté ?",
+      "answer": "Identifiez d'abord qui a rejeté, puis relevez le motif exact et rattachez-le à une cause : droits, bénéficiaire, prise en charge, ordonnance, codage ou montant. Vérifiez la donnée à la source, corrigez-la, puis renvoyez par le bon canal : logiciel pour la part obligatoire, nouvelle demande ou portail pour la part complémentaire. Ne renvoyez jamais un dossier à l'identique."
+    },
+    {
+      "question": "Combien de temps a-t-on pour renvoyer un dossier ?",
+      "answer": "Il n'existe pas de délai unique pour renvoyer un dossier rejeté. Il dépend des règles de l'Assurance maladie pour la part obligatoire et de la convention signée avec chaque complémentaire ou opérateur pour la part mutuelle. Le plus sûr est de corriger dès réception du rejet, car la prise en charge a elle aussi une durée de validité limitée."
+    }
+  ],
+  "sources": [
+    {
+      "label": "legifrance.gouv.fr · Code de la sécurité sociale",
+      "url": "https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006073189/"
+    },
+    {
+      "label": "legifrance.gouv.fr · Code de la mutualité",
+      "url": "https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006074067/"
+    }
+  ],
+  "figures": [
+    {
+      "id": "rejet-amo-vs-amc",
+      "type": "comparaison",
+      "titre": "Rejet AMO ou rejet AMC : deux circuits",
+      "legende": "Identifiez d'abord qui rejette : le canal de correction en dépend.",
+      "colonnes": [
+        "Rejet AMO",
+        "Rejet AMC"
+      ],
+      "elements": [
+        {
+          "label": "Qui rejette",
+          "detail": "",
+          "valeurs": [
+            "Caisse d'Assurance maladie",
+            "Mutuelle ou opérateur"
+          ],
+          "focus": false
+        },
+        {
+          "label": "Où le voir",
+          "detail": "",
+          "valeurs": [
+            "Retour NOEMIE",
+            "Portail, retour, relevé"
+          ],
+          "focus": false
+        },
+        {
+          "label": "Ce qui est contrôlé",
+          "detail": "",
+          "valeurs": [
+            "Droits, prescription, codage",
+            "Contrat, bénéficiaire, PEC"
+          ],
+          "focus": false
+        },
+        {
+          "label": "Comment corriger",
+          "detail": "",
+          "valeurs": [
+            "Refacturer dans le logiciel",
+            "Nouvelle DRE ou portail"
+          ],
+          "focus": true
+        }
+      ]
+    }
+  ],
+  "internalLinks": [
+    {
+      "id": "G0",
+      "slug": "tiers-payant-opticien",
+      "anchor": "tiers payant opticien",
+      "type": "parent"
+    },
+    {
+      "id": "B1",
+      "slug": "rejet-beneficiaire-inconnu",
+      "anchor": "Rejet mutuelle « bénéficiaire inconnu »",
+      "type": "enfant"
+    },
+    {
+      "id": "B8",
+      "slug": "checklist-prise-en-charge",
+      "anchor": "checklist avant d'envoyer une prise en charge",
+      "type": "enfant"
+    },
+    {
+      "id": "E0",
+      "slug": "gerer-tiers-payant-magasin",
+      "anchor": "gestion tiers payant",
+      "type": "sœur"
+    },
+    {
+      "id": "C3",
+      "slug": "codes-rejets-noemie",
+      "anchor": "liste codes rejets noemie",
+      "type": "transverse"
+    },
+    {
+      "id": "A0",
+      "slug": "portails-tiers-payant",
+      "anchor": "portails de tiers payant",
+      "type": "transverse"
+    }
+  ],
+  "liensEntrants": [],
+  "remplace": [
+    "reduire-rejets-cpam"
+  ],
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-11-02T15:48:42.015Z",
+    "avertissements": [
+      "aucune citation (facultative)",
+      "source non vérifiable (403) : https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006074067/",
+      "source non vérifiable (403) : https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006073189/"
+    ]
+  }
+}

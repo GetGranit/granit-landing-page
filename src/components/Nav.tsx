@@ -81,7 +81,7 @@ export function Nav() {
               posthog.capture("language_switched", { language_to: languageTo });
               toggleLang();
             }}
-            className="hidden h-8 items-center rounded-full border px-2.5 text-[11px] transition-colors hover:border-[color:var(--text)] sm:inline-flex"
+            className="inline-flex h-8 items-center rounded-full border px-2.5 text-[11px] transition-colors hover:border-[color:var(--text)]"
             style={{ borderColor: "var(--border)", color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}
             aria-label={lang === "fr" ? "Passer en anglais" : "Switch to French"}
           >
@@ -95,7 +95,7 @@ export function Nav() {
           >
             {t.login}
           </a>
-          <Link to="/" hash="demo" className="btn-primary text-[13px]" style={{ padding: "9px 16px" }}>
+          <Link to="/" hash="demo" className="btn-primary whitespace-nowrap text-[13px]" style={{ padding: "9px 14px" }}>
             {t.demo} <span className="arrow">↗</span>
           </Link>
         </div>

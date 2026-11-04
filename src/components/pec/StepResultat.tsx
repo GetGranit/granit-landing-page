@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { animate, motion, useReducedMotion } from "framer-motion";
 
+import { useLanguage } from "@/lib/i18n";
 import { Invitation } from "./Invitation";
 import { duree, type SimResultat } from "./StepSimFin";
 import { Title, euros } from "./ui";
@@ -14,11 +15,47 @@ const MINUTES_A_LA_MAIN = 12;
 /** Fin du count-up : l'invitation apparaît après. */
 const COUNT_MS = 1100;
 
+const copy = {
+  fr: {
+    total: "Total",
+    secu: "Part Sécurité sociale",
+    mutuelle: "Part mutuelle",
+    rac: "Reste à charge",
+    faite: "✓ Simulation faite — rien n'a été envoyé à la mutuelle",
+    title: "Votre PEC ",
+    after: " est chiffrée.",
+    numero: "Simulation n°",
+    auLieuDe: " au lieu de ",
+    hypothese: (m: number) => `~${m} min (hypothèse)`,
+    aLaMain: " à la main",
+    barreMain: "À la main",
+    minutes: (m: number) => `~${m} min`,
+    capture: (portail: string) => `Capture du portail ${portail} après la simulation`,
+  },
+  en: {
+    total: "Total",
+    secu: "National health insurance share",
+    mutuelle: "Insurer share",
+    rac: "Out-of-pocket amount",
+    faite: "✓ Simulation done: nothing was sent to the insurer",
+    title: "Your ",
+    after: " coverage request is priced.",
+    numero: "Simulation no.",
+    auLieuDe: " instead of ",
+    hypothese: (m: number) => `~${m} min (estimate)`,
+    aLaMain: " by hand",
+    barreMain: "By hand",
+    minutes: (m: number) => `~${m} min`,
+    capture: (portail: string) => `Screenshot of the ${portail} portal after the simulation`,
+  },
+};
+
 type Track = (e: string, p?: Record<string, unknown>) => void;
 
 /** Montant qui « compte » de 0 jusqu'à sa valeur (valeur exacte d'emblée si mouvement réduit). */
 function CountUp({ value, delay }: { value: number; delay: number }) {
   const reduce = useReducedMotion();
+  const { lang } = useLanguage();
   const [v, setV] = useState(reduce ? value : 0);
   useEffect(() => {
     if (reduce) return setV(value);
@@ -35,7 +72,7 @@ function CountUp({ value, delay }: { value: number; delay: number }) {
       clearTimeout(t);
     };
   }, [value, delay, reduce]);
-  return <>{euros(v === value ? value : Math.round(v * 100) / 100)}</>;
+  return <>{euros(v === value ? value : Math.round(v * 100) / 100, lang)}</>;
 }
 
 /**
@@ -60,6 +97,8 @@ export function StepSimDone({
   onCreer: () => void;
 }) {
   const reduce = useReducedMotion();
+  const { lang } = useLanguage();
+  const t = copy[lang];
   const vuA = useRef(0);
   const parti = useRef(false);
   const leave = useRef<(action: string) => void>(() => {});
@@ -89,10 +128,10 @@ export function StepSimDone({
 
   const clic = (cible: string) => track("pec_resultat_clic", { platform: platformId, cible });
   const lignes: [string, number, boolean?][] = [
-    ["Total", r.total],
-    ["Part Sécurité sociale", r.partSecu],
-    ["Part mutuelle", r.partMutuelle, true],
-    ["Reste à charge", r.resteACharge],
+    [t.total, r.total],
+    [t.secu, r.partSecu],
+    [t.mutuelle, r.partMutuelle, true],
+    [t.rac, r.resteACharge],
   ];
   const ratio = Math.min(1, r.dureeSec / (MINUTES_A_LA_MAIN * 60));
 
@@ -120,10 +159,10 @@ export function StepSimDone({
           fontFamily: "var(--font-mono)",
         }}
       >
-        ✓ Simulation faite — rien n'a été envoyé à la mutuelle
+        {t.faite}
       </motion.span>
-      <Title em={portail} after=" est chiffrée.">
-        Votre PEC{" "}
+      <Title em={portail} after={t.after}>
+        {t.title}
       </Title>
 
       <dl
@@ -151,7 +190,7 @@ export function StepSimDone({
             className="pt-1 text-[12px]"
             style={{ color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}
           >
-            Simulation n° {r.numero}
+            {t.numero} {r.numero}
           </p>
         )}
       </dl>
@@ -159,15 +198,20 @@ export function StepSimDone({
       {apercu && (
         <div className="grid w-full gap-2 text-left" id="pec-ancrage">
           <p className="text-[15px]" style={{ color: "var(--text)" }}>
-            <strong style={{ fontFamily: "var(--font-mono)" }}>{duree(r.dureeSec)}</strong> au lieu
-            de{" "}
-            <span style={{ color: "var(--text-muted)" }}>~{MINUTES_A_LA_MAIN} min (hypothèse)</span>{" "}
-            à la main
+            <strong style={{ fontFamily: "var(--font-mono)" }}>{duree(r.dureeSec, lang)}</strong>
+            {t.auLieuDe}
+            <span style={{ color: "var(--text-muted)" }}>{t.hypothese(MINUTES_A_LA_MAIN)}</span>
+            {t.aLaMain}
           </p>
-          <Barre label="Granit" texte={duree(r.dureeSec)} ratio={ratio} couleur="var(--succes)" />
           <Barre
-            label="À la main"
-            texte={`~${MINUTES_A_LA_MAIN} min`}
+            label="Granit"
+            texte={duree(r.dureeSec, lang)}
+            ratio={ratio}
+            couleur="var(--succes)"
+          />
+          <Barre
+            label={t.barreMain}
+            texte={t.minutes(MINUTES_A_LA_MAIN)}
             ratio={1}
             couleur="var(--filet)"
             lent
@@ -178,7 +222,7 @@ export function StepSimDone({
       {r.captureUrl && (
         <img
           src={r.captureUrl}
-          alt={`Capture du portail ${portail} après la simulation`}
+          alt={t.capture(portail)}
           className="ph-no-capture w-full rounded-xl border"
           style={{ borderColor: "var(--border2)" }}
         />

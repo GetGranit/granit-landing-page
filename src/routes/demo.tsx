@@ -16,7 +16,7 @@ export const Route = createFileRoute("/demo")({
 
 const copy = {
   fr: { badge: "Démo live · données fictives", cta: "Réserver une démo", title: "Granit - Démo" },
-  en: { badge: "Live demo · fictitious data", cta: "Book a demo", title: "Granit - Demo" },
+  en: { badge: "Live demo · sample data", cta: "Book a demo", title: "Granit - Demo" },
 };
 
 function DemoPage() {

@@ -1,5 +1,11 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useLanguage } from "@/lib/i18n";
 import { mouvementReduit } from "@/lib/motion";
+
+const copy = {
+  fr: { sommaire: "Sommaire", dans: "Dans cet article", haut: "Haut de page ↑" },
+  en: { sommaire: "Contents", dans: "In this article", haut: "Back to top ↑" },
+};
 
 export type Entree = { id: string; label: string };
 
@@ -79,14 +85,15 @@ function Liste({
 
 /** Sommaire de la colonne de droite (écrans larges), entrée de la section lue surlignée. */
 export function Sommaire({ entrees }: { entrees: Entree[] }) {
+  const t = copy[useLanguage().lang];
   const actif = useSectionLue(entrees.map((e) => e.id).join(" "));
   if (!entrees.length) return null;
   return (
     <nav
-      aria-label="Sommaire"
+      aria-label={t.sommaire}
       className="max-h-[calc(100dvh-112px)] overflow-y-auto overscroll-contain rounded-[14px] border border-[var(--border)] bg-papier px-[18px] py-4"
     >
-      <div className="text-[15px] font-semibold">Dans cet article</div>
+      <div className="text-[15px] font-semibold">{t.dans}</div>
       <Liste entrees={entrees} actif={actif} />
     </nav>
   );
@@ -98,6 +105,7 @@ export function Sommaire({ entrees }: { entrees: Entree[] }) {
  * avec « Haut de page » et la même liste. Seul élément flottant de la page.
  */
 export function SommaireMobile({ entrees }: { entrees: Entree[] }) {
+  const t = copy[useLanguage().lang];
   const bloc = useRef<HTMLDetailsElement>(null);
   const actif = useSectionLue(entrees.map((e) => e.id).join(" "));
   const [pastille, setPastille] = useState(false);
@@ -134,7 +142,7 @@ export function SommaireMobile({ entrees }: { entrees: Entree[] }) {
         className="mb-8 rounded-[14px] border border-[var(--border)] bg-papier px-[18px] py-3.5 min-[980px]:hidden"
       >
         <summary className="cursor-pointer rounded-[4px] text-[15px] font-semibold focus-visible:outline-2 focus-visible:outline-[var(--profond)]">
-          Dans cet article
+          {t.dans}
         </summary>
         <Liste entrees={entrees} />
       </details>
@@ -149,7 +157,7 @@ export function SommaireMobile({ entrees }: { entrees: Entree[] }) {
             pastille && !ouvert ? "opacity-100" : "pointer-events-none opacity-0"
           }`}
         >
-          Sommaire
+          {t.sommaire}
         </button>
         {ouvert && (
           <div
@@ -160,7 +168,7 @@ export function SommaireMobile({ entrees }: { entrees: Entree[] }) {
         )}
         <div
           role="dialog"
-          aria-label="Sommaire"
+          aria-label={t.sommaire}
           aria-hidden={!ouvert}
           data-ferme={ouvert ? undefined : ""}
           className={`feuille fixed inset-x-0 bottom-0 z-[66] max-h-[70dvh] overflow-y-auto rounded-t-[18px] bg-papier px-5 pb-[calc(env(safe-area-inset-bottom)+20px)] pt-4 shadow-[0_-10px_30px_-12px_rgba(31,53,48,0.2)] ${ouvert ? "" : "invisible"}`}
@@ -174,7 +182,7 @@ export function SommaireMobile({ entrees }: { entrees: Entree[] }) {
             }}
             className="block w-full rounded-[4px] py-2 text-left text-[15px] font-semibold focus-visible:outline-2 focus-visible:outline-[var(--profond)]"
           >
-            Haut de page ↑
+            {t.haut}
           </button>
           <Liste entrees={entrees} actif={actif} surChoix={() => setOuvert(false)} />
         </div>

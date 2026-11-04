@@ -1,13 +1,15 @@
 // Les deux appels à l'action d'un article : la carte collante de la colonne de droite et l'encart
 // de fin. Tout se déduit de l'article, sans texte écrit article par article :
 // - fiche plateforme (avec connecteur Granit) → nom et logo du portail dans le titre et la fenêtre ;
-// - autre article → la phrase et l'animation de sa catégorie (categories.json).
+// - autre article → la phrase et l'animation de sa catégorie (categories.json) ;
+// - article hors optique (champ `encart`, recopié de la fiche métier par le moteur) → ses textes, sans fenêtre de portail.
 // L'animation montre l'agent au travail : il remplit les champs, envoie, et le statut passe au vert.
 // Rendu serveur et mouvement réduit : l'état final, figé (champs remplis, statut vert, chrono).
 import { useEffect, useRef } from "react";
 import { Link } from "@tanstack/react-router";
 import { usePostHog } from "posthog-js/react";
 import { calcomDemoUrl } from "@/lib/calcom";
+import { useLanguage, type Lang } from "@/lib/i18n";
 import { categorie } from "@/lib/ressources/contenu";
 import { estSymbole, logoPlateforme, nomFenetre } from "@/lib/ressources/logos";
 import type { Plateforme, RessourceJson } from "@/lib/ressources/types";
@@ -37,7 +39,7 @@ type Scene = {
 
 const fmt = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
 
-function scene(animation: "pec" | "controle" | "virements"): Scene {
+function sceneFr(animation: "pec" | "controle" | "virements"): Scene {
   if (animation === "virements")
     return {
       barre: "Relevé · 7 h 02",
@@ -114,43 +116,187 @@ function scene(animation: "pec" | "controle" | "virements"): Scene {
   };
 }
 
+function sceneEn(animation: "pec" | "controle" | "virements"): Scene {
+  if (animation === "virements")
+    return {
+      barre: "Statement · 7:02 am",
+      bouton: "Confirm",
+      duree: 38,
+      champs: [
+        ["TRF VIAMEDIS €1,236.40", "→ 3 invoices ✓"],
+        ["TRF CPAM €92.16", "→ 1 invoice ✓"],
+        ["TRF SANTECLAIR €418.00", "→ 2 invoices ✓"],
+      ],
+      statuts: ["To reconcile", "Checking…", "1 discrepancy to review", "Reconciled"],
+      etat: [
+        "The agent reads the Viamedis transfer…",
+        "The agent finds the Assurance Maladie invoice…",
+        "The agent matches Santéclair…",
+        "The agent confirms the reconciliation…",
+        "Checking amounts…",
+        "3 transfers reconciled in 0:38",
+      ],
+      etapes: [
+        "It reads your Assurance Maladie and insurer transfers every morning",
+        "It matches them to your invoices",
+        "It lists the discrepancies for you, and only those",
+      ],
+    };
+  if (animation === "controle")
+    return {
+      barre: "Check",
+      bouton: "Check",
+      duree: 21,
+      champs: [
+        ["Member no.", "1 284 556 702 ✓"],
+        ["Lens LPP code", "2263508 corrected"],
+        ["Prescription date", "03/12/2025 ✓"],
+      ],
+      statuts: ["To check", "Checking…", "1 code corrected", "Ready to send"],
+      etat: [
+        "The agent checks eligibility…",
+        "The agent compares the LPP code to the lens…",
+        "The agent checks the prescription…",
+        "The agent approves the file…",
+        "Comparing with the platform…",
+        "File checked in 0:21",
+      ],
+      etapes: [
+        "It checks the customer's eligibility on the platform",
+        "It compares LPP codes, amounts and the prescription",
+        "It corrects before sending, not after the rejection",
+      ],
+    };
+  return {
+    barre: "Coverage",
+    bouton: "Send",
+    duree: 47,
+    champs: [
+      ["Member no.", "1 284 556 702"],
+      ["Equipment", "Single vision + frame"],
+      ["Amount", "€412.00"],
+    ],
+    statuts: ["To enter", "Sending…", "Pending", "Approved"],
+    etat: [
+      "The agent fills in the member no.…",
+      "The agent enters the equipment…",
+      "The agent enters the amount…",
+      "The agent sends the request…",
+      "Platform response…",
+      "Coverage approved in 0:47",
+    ],
+    etapes: [
+      "It copies the member no., equipment and amount from your quote",
+      "It sends the request and records the request no.",
+      "It lets you know as soon as it's approved",
+    ],
+  };
+}
+
+const scene = (animation: "pec" | "controle" | "virements", lang: Lang) =>
+  lang === "en" ? sceneEn(animation) : sceneFr(animation);
+
+const copy = {
+  fr: {
+    etiquettePortail: (nom: string) => `Demande de PEC · ${nom}`,
+    titrePortail: (nom: string) => `Vos PEC ${nom}, saisies pour vous en moins d'une minute`,
+    finPortail: (nom: string) => `La prochaine PEC ${nom}, laissez l'agent la saisir.`,
+    texteFin: {
+      virements:
+        "Chaque matin, il lit vos virements, les rattache à vos factures et vous liste ce qui manque encore.",
+      controle:
+        "Avant chaque envoi, il compare le dossier à ce que la plateforme attend. Le dossier part juste du premier coup.",
+      pec: "Vous donnez le devis. L'agent remplit le portail, envoie la demande et surveille la réponse. Vous, vous restez avec votre client.",
+    },
+    rassure: {
+      virements: "Sécu, mutuelles et reste à charge, dans le même tableau",
+      controle: "Droits, codes LPP, ordonnance : contrôlés avant chaque envoi",
+      essai: "Gratuit pour commencer · branché sur vos portails en 48 h",
+      demo: "Démo de 20 min · branché sur vos portails en 48 h",
+    },
+    essai: "Essayer gratuitement",
+    demo: "Demander une démo",
+    voirDemo: "Voir l'agent en démo",
+    ouDemo: "ou voir une démo de 20 min",
+    tousAgentsGranit: "Tous les agents Granit",
+    tousAgents: "Tous les agents",
+    pause: "❙❙ Pause",
+    relancer: "▶ Relancer",
+    curseur: "Agent Granit",
+    finArticle: "À la fin de cet article",
+  },
+  en: {
+    etiquettePortail: (nom: string) => `Coverage request · ${nom}`,
+    titrePortail: (nom: string) => `Your ${nom} coverage requests, entered for you in under a minute`,
+    finPortail: (nom: string) => `Your next ${nom} coverage request: let the agent enter it.`,
+    texteFin: {
+      virements:
+        "Every morning, it reads your transfers, matches them to your invoices and lists what is still missing.",
+      controle:
+        "Before each submission, it compares the file with what the platform expects. The file goes through right the first time.",
+      pec: "You provide the quote. The agent fills in the portal, sends the request and watches for the response. You stay with your customer.",
+    },
+    rassure: {
+      virements: "Assurance Maladie, insurers and out-of-pocket amounts, in one table",
+      controle: "Eligibility, LPP codes, prescription: checked before each submission",
+      essai: "Free to start · connected to your portals in 48 hours",
+      demo: "20-min demo · connected to your portals in 48 hours",
+    },
+    essai: "Try it free",
+    demo: "Book a demo",
+    voirDemo: "See the agent in a demo",
+    ouDemo: "or see a 20-min demo",
+    tousAgentsGranit: "All Granit agents",
+    tousAgents: "All agents",
+    pause: "❙❙ Pause",
+    relancer: "▶ Replay",
+    curseur: "Granit agent",
+    finArticle: "At the end of this article",
+  },
+};
+
 /** Tout ce que les deux appels à l'action affichent, déduit de l'article. */
-function contenuCta(a: RessourceJson, p: Plateforme | null) {
-  const cat = categorie(a.category)!;
+function contenuCta(a: RessourceJson, p: Plateforme | null, lang: Lang) {
+  const t = copy[lang];
+  const cat = categorie(a.category, lang)!;
   const connecteur = p && Object.keys(p.sources).some((k) => k.startsWith("granit"));
   const portail = a.type === "plateforme" && p && connecteur ? p : null;
-  const s = scene(cat.animation);
+  const s = scene(cat.animation, lang);
   const pec = cat.animation === "pec";
   const essai = pec && ESSAI_GRATUIT !== "";
   const logo = logoPlateforme((portail ?? PORTAIL_DEFAUT).logo, "fenetre");
+  const e = a.encart;
+  if (e)
+    return {
+      article: a.slug,
+      cat,
+      s: { ...s, etapes: e.etapes },
+      pec: false,
+      essai: false,
+      // la fenêtre montre un dépôt de PEC sur un portail : capacité validée en optique seulement
+      fenetre: false,
+      portail: { nom: nomFenetre(PORTAIL_DEFAUT.nom), logo },
+      etiquette: `Agent · ${cat.court}`,
+      titre: e.titre,
+      fin: e.fin,
+      texteFin: e.texteFin,
+      rassure: e.rassure,
+    };
   return {
+    t,
     article: a.slug,
     cat,
     s,
     pec,
     essai,
+    fenetre: true,
     portail: { nom: nomFenetre((portail ?? PORTAIL_DEFAUT).nom), logo },
-    etiquette: portail ? `Demande de PEC · ${nomFenetre(portail.nom)}` : `Agent · ${cat.court}`,
-    titre: portail
-      ? `Vos PEC ${nomFenetre(portail.nom)}, saisies pour vous en moins d'une minute`
-      : cat.agent,
-    fin: portail
-      ? `La prochaine PEC ${nomFenetre(portail.nom)}, laissez l'agent la saisir.`
-      : cat.fin,
-    texteFin:
-      cat.animation === "virements"
-        ? "Chaque matin, il lit vos virements, les rattache à vos factures et vous liste ce qui manque encore."
-        : cat.animation === "controle"
-          ? "Avant chaque envoi, il compare le dossier à ce que la plateforme attend. Le dossier part juste du premier coup."
-          : "Vous donnez le devis. L'agent remplit le portail, envoie la demande et surveille la réponse. Vous, vous restez avec votre client.",
+    etiquette: portail ? t.etiquettePortail(nomFenetre(portail.nom)) : `Agent · ${cat.court}`,
+    titre: portail ? t.titrePortail(nomFenetre(portail.nom)) : cat.agent,
+    fin: portail ? t.finPortail(nomFenetre(portail.nom)) : cat.fin,
+    texteFin: t.texteFin[cat.animation],
     rassure:
-      cat.animation === "virements"
-        ? "Sécu, mutuelles et reste à charge, dans le même tableau"
-        : cat.animation === "controle"
-          ? "Droits, codes LPP, ordonnance : contrôlés avant chaque envoi"
-          : essai
-            ? "Gratuit pour commencer · branché sur vos portails en 48 h"
-            : "Démo de 20 min · branché sur vos portails en 48 h",
+      cat.animation === "pec" ? t.rassure[essai ? "essai" : "demo"] : t.rassure[cat.animation],
   };
 }
 
@@ -177,7 +323,7 @@ function BoutonPrincipal({
   if (c.essai)
     return (
       <a href={ESSAI_GRATUIT} className={classe} onClick={() => suivi("essai_gratuit")}>
-        Essayer gratuitement
+        {c.t.essai}
       </a>
     );
   return (
@@ -188,7 +334,7 @@ function BoutonPrincipal({
       className={classe}
       onClick={() => suivi("demo")}
     >
-      {c.pec ? "Demander une démo" : "Voir l'agent en démo"}
+      {c.pec ? c.t.demo : c.t.voirDemo}
     </a>
   );
 }
@@ -219,12 +365,12 @@ function BoutonSecondaire({
         className={classe}
         onClick={() => suivi("demo")}
       >
-        {position === "carte" ? "ou voir une démo de 20 min" : "Demander une démo"}
+        {position === "carte" ? c.t.ouDemo : c.t.demo}
       </a>
     );
   return (
     <Link to="/agents" className={classe} onClick={() => suivi("agents")}>
-      {position === "carte" ? "Tous les agents Granit" : "Tous les agents"}
+      {position === "carte" ? c.t.tousAgentsGranit : c.t.tousAgents}
     </Link>
   );
 }
@@ -235,7 +381,7 @@ function BoutonSecondaire({
  */
 function FenetreAgent({ c }: { c: Contenu }) {
   const racine = useRef<HTMLDivElement>(null);
-  const { s } = c;
+  const { s, t: ui } = c;
 
   useEffect(() => {
     const el = racine.current;
@@ -277,7 +423,7 @@ function FenetreAgent({ c }: { c: Contenu }) {
       const t = ++jeton;
       el.classList.remove("termine");
       if (reduit.matches) return final();
-      revoir.textContent = "❙❙ Pause";
+      revoir.textContent = ui.pause;
       const vivant = () => t === jeton && el.isConnected;
       const attendre = (ms: number) => new Promise((r) => setTimeout(r, ms));
       const vers = (cible: Element) => {
@@ -358,7 +504,7 @@ function FenetreAgent({ c }: { c: Contenu }) {
       if (!enPause) return void jouer();
       arreter();
       el.classList.add("termine");
-      revoir.textContent = "▶ Relancer";
+      revoir.textContent = ui.relancer;
     };
     const io = new IntersectionObserver(
       ([e]) => {
@@ -372,7 +518,7 @@ function FenetreAgent({ c }: { c: Contenu }) {
       jeton++;
       io.disconnect();
     };
-  }, [s]);
+  }, [s, ui]);
 
   const { portail } = c;
   const marque =
@@ -431,7 +577,7 @@ function FenetreAgent({ c }: { c: Contenu }) {
               strokeLinejoin="round"
             />
           </svg>
-          <span>Agent Granit</span>
+          <span>{ui.curseur}</span>
         </div>
       </div>
       <div className="ress-cta-etat repos">
@@ -439,7 +585,7 @@ function FenetreAgent({ c }: { c: Contenu }) {
           {s.etat[5]}
         </span>
         <button type="button" className="ress-cta-revoir">
-          ❙❙ Pause
+          {ui.pause}
         </button>
       </div>
     </div>
@@ -454,13 +600,13 @@ export function CarteAgent({
   article: RessourceJson;
   plateforme: Plateforme | null;
 }) {
-  const c = contenuCta(article, plateforme);
+  const c = contenuCta(article, plateforme, useLanguage().lang);
   return (
     <div className="ress-cta-carte">
       <p className="ress-cta-etiquette">{c.etiquette}</p>
       <p className="mt-2 font-serif text-[21px] leading-[1.22] text-rose">{c.titre}</p>
       <div className="mt-4">
-        <FenetreAgent c={c} />
+        {c.fenetre && <FenetreAgent c={c} />}
       </div>
       <div className="mt-4 flex flex-col gap-2">
         <BoutonPrincipal c={c} position="carte" classe="ress-cta-bouton" />
@@ -479,12 +625,12 @@ export function EncartAgent({
   article: RessourceJson;
   plateforme: Plateforme | null;
 }) {
-  const c = contenuCta(article, plateforme);
+  const c = contenuCta(article, plateforme, useLanguage().lang);
   return (
     <section className="mx-auto mb-20 mt-14 max-w-[1280px] px-4 md:px-6">
       <div className="ress-cta-encart">
         <div>
-          <p className="ress-cta-etiquette">À la fin de cet article</p>
+          <p className="ress-cta-etiquette">{c.t.finArticle}</p>
           <h2 className="mt-2.5 font-serif text-[clamp(26px,3.2vw,36px)] font-normal leading-[1.15]">
             {c.fin}
           </h2>
@@ -505,7 +651,7 @@ export function EncartAgent({
           </div>
           <p className="ress-cta-rassure gauche">{c.rassure}</p>
         </div>
-        <FenetreAgent c={c} />
+        {c.fenetre && <FenetreAgent c={c} />}
       </div>
     </section>
   );

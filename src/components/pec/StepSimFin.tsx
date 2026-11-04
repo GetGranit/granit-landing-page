@@ -1,18 +1,22 @@
+import { useLanguage, type Lang } from "@/lib/i18n";
 import type { SimEchecCause, SimEvent } from "@/lib/pec/simulation";
 import { Kicker, Muted, Reassure, Screen, TextLink, Title, bigBtn } from "./ui";
 
 export type SimResultat = Extract<SimEvent, { type: "resultat" }>;
 
-export function duree(sec: number) {
+export function duree(sec: number, lang: Lang = "fr") {
   const m = Math.floor(sec / 60);
   const s = sec % 60;
+  if (lang === "en") return m ? `${m}m ${String(s).padStart(2, "0")}s` : `${s}s`;
   return m ? `${m} min ${String(s).padStart(2, "0")} s` : `${s} s`;
 }
 
-const ECHECS: Record<
+type Echecs = Record<
   SimEchecCause,
   { titre: string; em: string; texte: (p: string) => string; action: string }
-> = {
+>;
+
+const ECHECS: Echecs = {
   identifiants: {
     titre: "Le portail n'a pas reconnu ",
     em: "ces identifiants",
@@ -49,6 +53,57 @@ const ECHECS: Record<
   },
 };
 
+const ECHECS_EN: Echecs = {
+  identifiants: {
+    titre: "The portal did not recognize ",
+    em: "these credentials",
+    texte: (p) =>
+      `It happens often: a capital letter, a recently changed password. Check them exactly as you type them on ${p}.`,
+    action: "Fix my credentials",
+  },
+  code: {
+    titre: "The code did not ",
+    em: "go through",
+    texte: () =>
+      "Three codes were rejected. Codes change quickly: let’s start again with a fresh one.",
+    action: "Start again",
+  },
+  patient: {
+    titre: "The portal cannot find ",
+    em: "this patient",
+    texte: (p) =>
+      `Check the social security number and the date of birth. If everything is right, the patient may not have active coverage rights on ${p}.`,
+    action: "Check the patient",
+  },
+  portail: {
+    titre: "The portal is not ",
+    em: "responding",
+    texte: (p) => `${p} is not responding right now. It is not you: try again in a few minutes.`,
+    action: "Try again",
+  },
+  inconnu: {
+    titre: "The simulation was ",
+    em: "interrupted",
+    texte: () => "We could not finish this time. Try again, or do it with Paul.",
+    action: "Try again",
+  },
+};
+
+const copy = {
+  fr: {
+    kicker: "Pas cette fois",
+    avecPaul: "Le faire avec Paul",
+    rien: "Rien n'a été envoyé à la mutuelle",
+    retour: "← Retour",
+  },
+  en: {
+    kicker: "Not this time",
+    avecPaul: "Do it with Paul",
+    rien: "Nothing was sent to the insurer",
+    retour: "← Back",
+  },
+};
+
 /** Échec : jamais d'erreur technique, une correction possible, Paul à côté. */
 export function StepSimEchec({
   portail,
@@ -63,10 +118,12 @@ export function StepSimEchec({
   onPaul: () => void;
   onBack: () => void;
 }) {
-  const e = ECHECS[cause];
+  const { lang } = useLanguage();
+  const t = copy[lang];
+  const e = (lang === "en" ? ECHECS_EN : ECHECS)[cause];
   return (
     <Screen id={`echec-${cause}`}>
-      <Kicker>Pas cette fois</Kicker>
+      <Kicker>{t.kicker}</Kicker>
       <Title em={e.em} after=".">
         {e.titre}
       </Title>
@@ -74,9 +131,9 @@ export function StepSimEchec({
       <button type="button" className={`${bigBtn} w-full`} onClick={onFix}>
         {e.action} <span className="arrow">→</span>
       </button>
-      <TextLink onClick={onPaul}>Le faire avec Paul</TextLink>
-      <Reassure items={["Rien n'a été envoyé à la mutuelle"]} />
-      <TextLink onClick={onBack}>← Retour</TextLink>
+      <TextLink onClick={onPaul}>{t.avecPaul}</TextLink>
+      <Reassure items={[t.rien]} />
+      <TextLink onClick={onBack}>{t.retour}</TextLink>
     </Screen>
   );
 }

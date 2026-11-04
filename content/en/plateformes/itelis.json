@@ -1,0 +1,210 @@
+{
+  "slug": "portail-itelis",
+  "nom": "Itelis",
+  "logo": "/logos/itelis.png",
+  "checkedOn": "2026-10-09",
+  "identite": [
+    {
+      "label": "Type",
+      "valeur": "Care network (an Isea brand)",
+      "source": "itelis-apropos"
+    },
+    {
+      "label": "Optical",
+      "valeur": "Yes, a network of more than 3,700 partner opticians",
+      "source": "itelis-opticiens"
+    },
+    {
+      "label": "Portal",
+      "valeur": "extranet.itelis.fr",
+      "source": "granit-connecteur"
+    },
+    {
+      "label": "Login",
+      "valeur": "Password, then a code sent by email",
+      "source": "granit-connecteur"
+    }
+  ],
+  "chiffres": [
+    {
+      "valeur": "13M",
+      "label": "insured people with access to the network",
+      "source": "itelis-adhesion-optique"
+    },
+    {
+      "valeur": "3,700",
+      "label": "partner opticians",
+      "source": "itelis-opticiens"
+    },
+    {
+      "valeur": "2001",
+      "label": "year founded",
+      "source": "itelis-apropos"
+    },
+    {
+      "valeur": "2 out of 3",
+      "label": "optical equipment sold with no out-of-pocket amount in 2025",
+      "source": "itelis-adhesion-optique"
+    }
+  ],
+  "faits": [
+    {
+      "fait": "Itelis is a care network. It negotiates prices with partner health professionals, in optical, hearing, dental and other areas, on behalf of supplementary health insurers.",
+      "source": "itelis-apropos"
+    },
+    {
+      "fait": "Since 2021, Itelis has been a brand of the company Isea.",
+      "source": "itelis-apropos"
+    },
+    {
+      "fait": "The partnership is signed with each optician individually, including in the Krys, Optical Center or Optic 2000 chains, as well as with independents.",
+      "source": "itelis-opticiens"
+    },
+    {
+      "fait": "At a partner optician, Itelis advertises a negotiated lens price, third-party payment (tiers payant: the patient pays nothing upfront, insurers pay the provider directly), included breakage coverage and repair within 24 to 48 hours.",
+      "source": "itelis-opticiens"
+    },
+    {
+      "fait": "Partner opticians sell lenses from 8 lens makers: BBGR, Codir, Essilor, Hoya, Nikon, Novacel, Seiko and Zeiss.",
+      "source": "itelis-opticiens"
+    },
+    {
+      "fait": "Some contracts include the OPTI option, shown by a logo on the third-party payment card. It provides, among other things, high-end lenses 100% reimbursed depending on the prescription and a second pair of prescription sunglasses for €1 including VAT.",
+      "source": "itelis-opticiens"
+    },
+    {
+      "fait": "According to Itelis, in 2025, 58% of single-vision lenses and 69% of progressive lenses sold in the network were advanced or personalized lenses.",
+      "source": "itelis-adhesion-optique"
+    },
+    {
+      "fait": "The partnership has no minimum commitment. The optician can leave the network at any time with one month’s notice, by registered letter with acknowledgment of receipt.",
+      "source": "itelis-adhesion-optique"
+    },
+    {
+      "fait": "The itelis.fr site lists 61 supplementary insurers, insurance companies and brokers whose policyholders have access to Itelis services, for example AG2R La Mondiale, AXA, Klesia or Mutuelle Ociane Matmut.",
+      "source": "itelis-acceder"
+    },
+    {
+      "fait": "Each store logs in on itelis.fr with its username (IFAM or FINESS number) and password, then enters a code sent by email to the account address. This code expires after 10 minutes.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "A store whose network agreement file is not up to date is sent, after logging in, to a network agreement form. It cannot access the extranet until this form is completed.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "A complaint is acknowledged within 10 working days at most. It is handled within 15 business days, up to two months if the case is complex.",
+      "source": "itelis-mentions"
+    },
+    {
+      "fait": "To log in, the optician goes through itelis.fr: the “Accès professionnels” (Professional access) menu, then “Professionnels de santé” (Health professionals). A login window opens over the site.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "The window asks for an “Identifiant” (Username) and a “Mot de passe” (Password). The username is the one Itelis provided to the store (depending on the case, its IFAM or FINESS number).",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "After the password, the same window asks for a “Code OTP” (one-time code). This code is sent by email to the account address, from auth@itelis.fr, and expires after 10 minutes. If it does not arrive, check the spam folder.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "In case of error, the site displays: “L'identifiant et/ou le mot de passe saisi(s) est/sont incorrect(s). Nombre de tentatives restantes :” (The username and/or password entered is incorrect. Remaining attempts:). The number of attempts is therefore limited.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "Once logged in, the optician lands on the extranet.itelis.fr extranet, which may open in a new tab.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "When the session has expired, the site sends you back to the itelis.fr home page: you must log in again, including the email code. An extranet address opened without a session displays “Une erreur vient de se produire” (An error has occurred), followed by a code.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "If the store’s network agreement file is not up to date, Itelis sends you, after the email code, to a form on conventionnement.itelis.fr. The extranet stays inaccessible until this form is completed.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "In the Cosium software, a supplementary insurer that goes through the Itelis network appears as “INSURER_NAME(ITELIS)”.",
+      "source": "granit-connecteur"
+    }
+  ],
+  "conventionnement": [
+    "Prepare the documents: AFNOR or Veritas certification certificate, invoice or certificate for the optician software, IFAM certificate or anonymized CPAM account statement, Kbis extract or Sirene certificate, photos of the refraction area and store floor plan, bank details (RIB).",
+    "Fill in the online membership application on conventionnement.itelis.fr.",
+    "Receive your login details, log in to complete the file and upload the documents.",
+    "After Itelis checks the file, sign the agreement online.",
+    "Log in to the extranet to enter your first coverage requests."
+  ],
+  "statuts": [],
+  "statutsSource": "",
+  "contacts": [
+    {
+      "label": "Already under agreement",
+      "valeur": "Secure messaging in the extranet",
+      "detail": "The site’s contact form is not intended for partners",
+      "source": "itelis-contact"
+    },
+    {
+      "label": "Not under agreement yet",
+      "valeur": "itelis.fr contact form",
+      "detail": "Choose “Professionnel de santé non conventionné” (Health professional not under agreement)",
+      "url": "https://www.itelis.fr/contact",
+      "source": "itelis-contact"
+    },
+    {
+      "label": "Get a network agreement",
+      "valeur": "Online membership, optical network",
+      "url": "https://conventionnement.itelis.fr/adhesion/optique",
+      "source": "itelis-adhesion-optique"
+    },
+    {
+      "label": "Complaints",
+      "valeur": "ISEA, Service réclamations, 218 avenue Jean Jaurès, 75019 Paris",
+      "detail": "Or through the partner area messaging",
+      "source": "itelis-mentions"
+    }
+  ],
+  "organismes": {
+    "source": "granit-connecteur",
+    "note": "List from the payer selector of the optical portal, recorded by Granit agents. Phrase it as “what the portal selector offers”, never “this insurer only goes through Itelis”. For Itelis, the Granit connector does not yet record a payer selector: it stops at login. The list is therefore empty.",
+    "liste": []
+  },
+  "sources": {
+    "itelis-apropos": {
+      "label": "itelis.fr · About Itelis",
+      "url": "https://www.itelis.fr/a-propos-ditelis",
+      "consulte": "2026-10-07"
+    },
+    "itelis-opticiens": {
+      "label": "itelis.fr · Partner optician network",
+      "url": "https://www.itelis.fr/vos-services-sante/trouver-un-opticien",
+      "consulte": "2026-10-07"
+    },
+    "itelis-adhesion-optique": {
+      "label": "itelis.fr · Joining the Itelis optician network",
+      "url": "https://www.itelis.fr/professionnels-de-sante/adhesion-au-reseau-dopticiens-itelis",
+      "consulte": "2026-10-07"
+    },
+    "itelis-acceder": {
+      "label": "itelis.fr · Access your services",
+      "url": "https://www.itelis.fr/acceder-vos-services",
+      "consulte": "2026-10-07"
+    },
+    "itelis-contact": {
+      "label": "itelis.fr · Contact",
+      "url": "https://www.itelis.fr/contact",
+      "consulte": "2026-10-07"
+    },
+    "itelis-mentions": {
+      "label": "itelis.fr · Legal notice and complaints",
+      "url": "https://www.itelis.fr/mentions-legales-et-reclamations",
+      "consulte": "2026-10-07"
+    },
+    "granit-connecteur": {
+      "label": "Granit’s Itelis connector (checked Sep 8 and Oct 5, 2026)",
+      "url": "",
+      "consulte": "2026-10-09"
+    }
+  }
+}

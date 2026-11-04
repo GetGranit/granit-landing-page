@@ -1,14 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useLanguage } from "@/lib/i18n";
 import { Hub } from "@/components/ressources/Hub";
-import { HubEn } from "@/components/ressources/HubEn";
 import { SITE_URL } from "@/lib/seo";
 import { aLaUne } from "@/lib/ressources/contenu";
 import { aCouvertureFenetre, photoFiche, src } from "@/lib/ressources/photos";
 
 const TITLE = "Ressources pour les professionnels de santé : mutuelles, paiements - Granit";
 const DESC =
-  "Opticiens, dentistes, cliniques, EHPAD, centres de santé, laboratoires, audioprothésistes, pharmaciens : des réponses pratiques sur les mutuelles, les remboursements, les paiements et la réglementation.";
+  "Opticiens et audioprothésistes, centres dentaires, centres de santé et ophtalmologie, pharmacies, cliniques et laboratoires : des réponses pratiques sur les mutuelles, les remboursements, les paiements et la réglementation.";
 
 const breadcrumb = {
   "@context": "https://schema.org",
@@ -40,9 +38,8 @@ export const Route = createFileRoute("/ressources/")({
   component: RessourcesPage,
 });
 
+// Même hub dans les deux langues : le composant suit la langue de l'écran.
 function RessourcesPage() {
-  const { lang } = useLanguage();
-  if (lang === "en") return <HubEn />;
   return (
     <>
       <script

@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { motion, useReducedMotion } from "framer-motion";
 
 import logoMonogram from "@/assets/logo.svg";
+import { useLanguage, type Lang } from "@/lib/i18n";
 
 /** Cadre du parcours /pec : logo, barre de progression, une carte centrée. */
 export function PecShell({
@@ -139,6 +140,7 @@ export const bigBtn =
 
 /** Écrans de simulation en mode mock (DEV ou aperçu) : on ne laisse jamais croire que c'est branché. */
 export function ApercuBanner() {
+  const { lang } = useLanguage();
   return (
     <p
       className="mb-3 rounded-full border px-3 py-1.5 text-center text-[12px]"
@@ -149,7 +151,9 @@ export function ApercuBanner() {
         fontFamily: "var(--font-mono)",
       }}
     >
-      Aperçu — résultat d'exemple, rien n'est connecté
+      {lang === "en"
+        ? "Preview: sample result, nothing is connected"
+        : "Aperçu — résultat d'exemple, rien n'est connecté"}
     </p>
   );
 }
@@ -215,5 +219,5 @@ export function fieldStyle(error?: string) {
   return { borderColor: error ? "var(--alerte)" : "var(--filet-champ)", color: "var(--text)" };
 }
 
-export const euros = (n: number) =>
-  n.toLocaleString("fr-FR", { style: "currency", currency: "EUR" });
+export const euros = (n: number, lang: Lang = "fr") =>
+  n.toLocaleString(lang === "en" ? "en-US" : "fr-FR", { style: "currency", currency: "EUR" });

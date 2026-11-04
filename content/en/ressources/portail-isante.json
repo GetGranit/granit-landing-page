@@ -1,0 +1,179 @@
+{
+  "slug": "portail-isante",
+  "id": "A4",
+  "category": "plateformes",
+  "categoryName": "Platforms and portals",
+  "type": "plateforme",
+  "plateforme": "isante",
+  "title": "iSanté TP for opticians: professional portal, coverage approval, statuses, and payment",
+  "primaryKeyword": "isante tp",
+  "keywordCluster": [
+    "tp isante",
+    "isanté professionnel de santé",
+    "tp-isante",
+    "isante professionnel de santé",
+    "isante professionnel de sante",
+    "www.tp-isante.fr",
+    "isante pro de sante",
+    "isante espace professionnel de sante",
+    "isanté tp",
+    "isanté pro"
+  ],
+  "parentSlug": "portails-tiers-payant",
+  "level": "Fille",
+  "author": {
+    "name": "Olivier",
+    "jobTitle": "Writer, third-party payment expert",
+    "photo": "/auteurs/olivier.jpg",
+    "url": null
+  },
+  "reviewer": {
+    "name": "Nathalie",
+    "jobTitle": "Writer, optical industry expert",
+    "photo": "/auteurs/nathalie.jpg",
+    "url": null
+  },
+  "datePublished": "2026-10-09",
+  "dateModified": "2026-10-09",
+  "checkedOn": "2026-10-07",
+  "wordCount": 2236,
+  "readTime": 10,
+  "metaDescription": "iSanté TP for opticians: network agreement, logging in to tp-isante.fr, coverage approval on IsantePEC, statuses, payment in 3 business days with e-transmission.",
+  "contentHtml": "<p><strong>iSanté is the third-party payment operator of Cetip, a subsidiary of Cegedim Assurances: for an optician, everything goes through the tp-isante.fr professional portal, then through the IsantePEC service for optical coverage requests.</strong> iSanté third-party payment (tiers payant: the patient pays nothing upfront, insurers pay the provider directly), or iSanté TP, first requires an agreement signed directly with iSanté. After that, every file follows the same path: choose the supplementary insurer, enter the frame then the lenses, read the status, print the approval. With e-transmission, iSanté states payment in 3 business days.</p><div class=\"key-takeaways\"><strong>Key points</strong><ul><li>An optician signs an agreement directly with iSanté (Optician category), without going through Inter-AMC. No agreement, no iSanté third-party payment.</li><li>Optical coverage approvals are entered on IsantePEC, opened from tp-isante.fr with the “Accéder au service” (Access the service) button. The frame goes on the first line, then the lenses.</li><li>With e-transmission, iSanté pays in 3 business days instead of 7, provided that separate mandatory insurance (AMO) / supplementary insurance (AMC) processing is set up in your software.</li><li>A coverage approval cannot be deleted: it is canceled with “Annuler la PEC” (Cancel the PEC), by choosing a reason.</li><li>Supplementary health insurer (mutuelle) missing from “Choix de l'AMC” (Choice of AMC): check the third-party payment platform shown on the customer's card.</li></ul></div><h2 id=\"isante-mutuelles\">What is iSanté and which supplementary health insurers use it?</h2><p>iSanté is the in-house brand of Cetip, a subsidiary of Cegedim Assurances, which also operates the SP Santé brand (<a href=\"https://www.cegedim-assurances.com/fr-fr/references-societe/Pages/nos-marques.aspx\">Cegedim Assurances, Our brands</a>).</p><div data-bloc=\"chiffres\"></div><p>The tp-isante.fr site presents itself as a third-party payment operator: it manages third-party payment on behalf of supplementary health insurers, which means it receives the optician's requests and pays the supplementary insurer's share. iSanté is not a care network: an agreement with iSanté lets you offer third-party payment for the supplementary insurers it manages, not join a partner network. According to Cegedim Assurances, Cetip has nearly 20 million beneficiaries with its iSanté and SP Santé brands (<a href=\"https://www.cegedim-assurances.com/fr-fr/references-societe/Pages/nos-marques.aspx\">Cegedim Assurances, Our brands</a>).</p><p>To place iSanté among the other <a href=\"/ressources/portails-tiers-payant\">third-party payment portals</a>, remember that it shares the same parent company as SP Santé, but not the same portal. A customer who shows an iSanté card therefore sends you to tp-isante.fr, and nowhere else.</p><p>On the supplementary insurer side (AMC, supplementary health insurance, as opposed to AMO, mandatory health insurance), iSanté publishes on tp-isante.fr the list of active insurers for the Optician category: 38 supplementary insurers active in optical care as of Oct 7, 2026 (<a href=\"https://www.tp-isante.fr/login#/amc/list\">tp-isante.fr, list of supplementary insurers</a>). This list is updated every time a supplementary insurer opens or closes a segment (<a href=\"https://www.tp-isante.fr/login#/faq/\">tp-isante.fr, Questions/Answers</a>). So it changes: a supplementary insurer can open or close optical care without anything changing for you at the counter, except the outcome of the request.</p><p>When you submit the request, the optical portal has you choose the insurer from a selector called “Choix de l'AMC”. The list below shows what this selector offers, recorded by our agents on the portal on Oct 7, 2026. It includes, for example, UNEO and MNH. This record shows what the portal's selector offers, not that an insurer goes only through iSanté: the customer's card remains the reference.</p><div data-bloc=\"organismes\"></div><div class=\"callout callout--tip\"><p><strong>The right habit:</strong> before entering anything, look at the customer's third-party payment card. The iSanté card shows the iSanté logo, the validity period and, in the column for each area of care, either the coverage rate or the coverage request procedure to follow. A card that has expired or has no iSanté logo saves you a pointless request.</p></div><h2 id=\"isante-espace-pro\">How do you access the iSanté professional portal?</h2><p>Access to the iSanté professional portal first requires an agreement, then creating an account on tp-isante.fr. For an optician, the agreement is signed directly with iSanté: the form does not redirect to the Inter-AMC association for this category (<a href=\"https://www.tp-isante.fr/login#/request-conv\">tp-isante.fr, network agreement request form</a>). Without an iSanté agreement, the optician cannot offer iSanté third-party payment.</p><p>In practice, it is an administrative file to prepare once, with a store's usual documents. It is best to gather everything before opening the form: an incomplete submission delays the account opening.</p><h3>The optician agreement, step by step</h3><ol class=\"steps\"><li><strong>Open the form and choose the Optician category.</strong> The network agreement request form is available from tp-isante.fr.</li><li><strong>Fill in the store's identity.</strong> FINESS or Adeli identifier, RPPS number, company name, SIRET number, brand or group, contact, software used, and bank details.</li><li><strong>Upload the documents.</strong> Bank details (RIB) in the store's name and at its address, a Kbis company registration extract less than 3 months old, the Adeli certificate from the regional health agency (ARS), the local health insurance office (CPAM) certificate, the manager's ID, and the agreement signed using the template provided.</li><li><strong>Accept the agreement and submit.</strong> An email confirms the request and explains how to create the account.</li><li><strong>Create access to the secure area.</strong> With “Je souhaite créer mon compte” (I want to create my account): FINESS or Adeli identifier, company name, postal code, email address, and password.</li></ol><p>The bank details must be in the store's name and at its address: this is the account where payments will arrive. In a group or a store with several locations, check that the FINESS or Adeli identifier entered is the one for the store concerned.</p><h3>Logging in day to day</h3><p>Once the account is created, logging in to the iSanté professional portal requires a password and a code received by email, as recorded by our agents on the portal. In practice, the account's email address must therefore be accessible to the person entering the requests: a manager's personal mailbox, when the manager is away that day, blocks the whole counter.</p><p>The sources reviewed here do not describe an unlock procedure for a lost password or a locked account. In that case, the most direct option remains the iSanté phone number, given in the contact section below.</p><h2 id=\"isante-prise-en-charge\">How do you submit an optical coverage request on iSanté?</h2><p>An iSanté optical coverage request is made on IsantePEC, the service opened from the tp-isante.fr portal with the “Accéder au service” button. The coverage approval (PEC) is the agreement by which the supplementary insurer commits to the amount it will pay for the equipment: it is the approval, not the quote, that secures your third-party payment.</p><h3>Before entering anything: read the card</h3><p>The iSanté card shows, in the column for each area of care, either a coverage rate or the coverage request procedure to follow. For optical care, this column tells you whether you need to go through IsantePEC. Also check the validity period: it must cover the delivery date.</p><h3>Entering the request on IsantePEC</h3><ol class=\"steps\"><li><strong>Open IsantePEC.</strong> From the tp-isante.fr portal, “Accéder au service” button.</li><li><strong>Choose the supplementary insurer.</strong> In the “Choix de l'AMC” selector, pick the insurer shown on the customer's card.</li><li><strong>Enter the frame on the first line.</strong> For a request with a frame, the portal enforces this order: the frame first, the lenses next.</li><li><strong>Enter the lenses and submit the request.</strong> Use the items from the quote exactly as they will be billed.</li><li><strong>Track the status and print the approval.</strong> The official coverage approval is printed as a PDF from the request, with the “Imprimer” (Print) button.</li></ol><p>Enter the frame on the first line, then the lenses: in the other order, the request cannot be built. Keep the printed approval with the customer's file: it is the proof of the supplementary insurer's commitment at billing time.</p><h3>Correcting or canceling a request</h3><p>An iSanté coverage request cannot be deleted. It is canceled with the “Annuler la PEC” button, by choosing a reason, and you then submit a clean new request if needed. It is better to cancel an incorrect request than to leave it alive alongside a second one: two active requests for the same equipment make the statuses and billing harder to read.</p><p>To place this step in the whole process, from request to bank transfer, see our page on <a href=\"/ressources/tiers-payant-opticien\">third-party payment for opticians, from coverage approval to collection</a>. When these requests pile up every day across several portals, data entry becomes the store's bottleneck. That is what <a href=\"/agents\">Granit agents</a> do: they enter the coverage requests directly on IsantePEC, then send the status back to the team.</p><h2 id=\"isante-statuts\">What do the statuses of an iSanté coverage approval mean?</h2><p>An iSanté status tells you where the supplementary insurer's commitment stands: only “Accepté” (Accepted), with its approval number, is a commitment to the amount. The labels below were recorded by our agents on the portal, with the action to take for each one.</p><div data-bloc=\"statuts\"></div><p>“Accepté” or “Accord N° …” (Approval No. …): the supplementary insurer commits to the amount. You print the approval, deliver the equipment, then bill. As long as this status is not displayed, do not count the insurer's share as secured, even if the card shows a rate.</p><p>“En instance” (Under review), “en attente” (pending), or “en cours de traitement” (being processed): the request is still being reviewed. There is nothing to correct at this stage. Check the status again in the request lookup before calling the customer back.</p><p>“Refusé” (Rejected): no coverage approval as it stands. The reason displayed tells you what to correct before submitting the request again. “Annulée” (Canceled): the request is no longer active, either because you canceled it or for another reason; a new request is needed if the file continues.</p><p>A last case, which is not a status but a signal: the insurer does not appear in “Choix de l'AMC”. This means its coverage approval does not go through iSanté. In that case, check the third-party payment platform shown on the patient's card.</p><h2 id=\"isante-vous-bloquez\">Stuck on iSanté TP?</h2><p>Blockers on iSanté fall into four symptoms, from the empty selector to the missing payment. For each one: where to look, what to do, and when to call.</p><h3>I can't find the insurer in the list</h3><p>If the insurer does not appear in “Choix de l'AMC”, its optical coverage approval does not go through iSanté. Go back to the customer's card: the logo and the platform shown tell you which portal to use. Also check the list of active supplementary insurers published on tp-isante.fr, updated every time a segment opens or closes. If the card does carry the iSanté logo and the insurer still cannot be found, call iSanté (see the contact section).</p><h3>The coverage request is rejected</h3><p>First read the reason displayed, then correct and submit the request again. If the reason mentions an “hors marché” (off-market) price, it is the price filter that some supplementary insurers turn on as an option (<a href=\"https://www.cegedim.fr/Communique/CegedimAssurances_Entis_07052026.pdf\">Cegedim Assurances and Entis group press release</a>).</p><p>This filter compares the price requested with the average price charged for the same product, in a given geographic area (<a href=\"https://www.cegedim-assurances.com/fr-fr/vos-enjeux/Pages/maitriser-votre-sinistralite.aspx\">Cegedim Assurances, price checks</a>). Adjust the price to the schedule, then submit the request again.</p><h3>It stays pending, with no response</h3><p>A status of “en instance”, “en attente”, or “en cours de traitement” means the request is still being reviewed. iSanté does not publish a response time specific to optical coverage approvals in the sources reviewed here. Check the status in the request lookup before following up; if the request does not move and the customer is waiting for their equipment, call iSanté with the file in front of you.</p><h3>The approval is granted, but the payment does not arrive</h3><p>Check the billing first, not the coverage approval. iSanté favors e-transmission as an electronic reimbursement request (DRE), and separate AMO / AMC processing must be set up in your software: without this setting, the requests do not reach iSanté. Also check that the e-transmission number used is <strong>00733931</strong>, the single number shown on the cards. If everything is in order and the stated time has passed, call iSanté.</p><h2 id=\"isante-paiement\">When and how does iSanté pay the optician?</h2><p>With e-transmission, iSanté pays the optician in 3 business days instead of 7, from receipt of the documents, under article 3.2 of the agreement quoted in the tp-isante.fr FAQ. E-transmission is therefore the method to favor, and it is the one iSanté puts forward.</p><p>The DRE (electronic reimbursement request) is the flow that sends the supplementary share of an invoice to the insurer that pays it. With iSanté, it goes from your software to the single e-transmission number <strong>00733931</strong>, the one shown on the third-party payment cards. Once the approval is printed and the equipment delivered, this e-transmitted invoice is what triggers payment.</p><div class=\"callout callout--warn\"><p><strong>The trap:</strong> separate AMO / AMC processing must be set up in the store's software. Without it, your requests do not reach iSanté.</p></div><p>The path from approval to bank transfer comes down to four actions. The point that matters is the last one: the time limit runs from when iSanté receives the documents, not from delivery.</p><div data-figure=\"isante-accord-paiement\"></div><p>To reconcile these payments on your bank statement, the method is the same as for other payers: match each bank transfer to the invoice it settles. Our article on <a href=\"/ressources/rapprochement-noemie\">reconciling remittance files and bank transfers</a> details this routine. Time limits and rules vary from one operator to another: the <a href=\"/ressources/portail-viamedis\">Viamedis for opticians</a> page follows the same structure if you work with both.</p><h2 id=\"isante-contact\">How do you contact iSanté?</h2><p>The iSanté phone number published by Cegedim Assurances is 0 820 03 12 43 (<a href=\"https://www.cegedim-assurances.com/fr-fr/Pages/coordonnees.aspx\">Cegedim, Our contact details</a>). For an agreement request, use the form on tp-isante.fr; for a question about how things work, the site's Questions/Answers section already covers the most common cases.</p><div data-bloc=\"contacts\"></div><p>Before calling, have at hand the store's FINESS or Adeli identifier, the name of the supplementary insurer chosen in “Choix de l'AMC”, the status displayed and, if there is one, the approval number or the rejection reason.</p><p>The published address is 114-116 rue d'Aguesseau, 92100 Boulogne-Billancourt, with another site at 136 rue du Gros Moulin, 45200 Amilly. For mail related to the agreement, first check on tp-isante.fr whether you can send it online: documents are uploaded in the form.</p>",
+  "tocItems": [
+    {
+      "id": "isante-mutuelles",
+      "label": "iSanté and the insurers that use it"
+    },
+    {
+      "id": "isante-espace-pro",
+      "label": "Accessing the iSanté professional portal"
+    },
+    {
+      "id": "isante-prise-en-charge",
+      "label": "Submitting an optical coverage request"
+    },
+    {
+      "id": "isante-statuts",
+      "label": "Reading the statuses of a coverage approval"
+    },
+    {
+      "id": "isante-vous-bloquez",
+      "label": "Stuck on iSanté TP?"
+    },
+    {
+      "id": "isante-paiement",
+      "label": "How the optician gets paid"
+    },
+    {
+      "id": "isante-contact",
+      "label": "Contacting iSanté"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "How do opticians access the iSanté professional portal?",
+      "answer": "You first need to sign an agreement directly with iSanté, using the network agreement request form on tp-isante.fr, Optician category. An email then confirms the request and explains how to create the account. The account is created with “Je souhaite créer mon compte” (I want to create my account), and logging in requires a password and a code received by email."
+    },
+    {
+      "question": "Which supplementary health insurers use iSanté for optical third-party payment?",
+      "answer": "iSanté publishes on tp-isante.fr the list of supplementary insurers active in optical care: 38 as of Oct 7, 2026. This list is updated every time a supplementary insurer opens or closes a segment. At the counter, the customer's card remains the reference: if it carries the iSanté logo and the insurer appears in the portal's “Choix de l'AMC” (Choice of AMC) selector, the request goes through iSanté."
+    },
+    {
+      "question": "How do you submit an optical coverage request on iSanté?",
+      "answer": "The request is made on IsantePEC, opened from the tp-isante.fr portal with the “Accéder au service” (Access the service) button. Choose the supplementary insurer in “Choix de l'AMC”, enter the frame on the first line then the lenses, and submit. Once the approval is granted, the official approval is printed as a PDF with the “Imprimer” (Print) button."
+    },
+    {
+      "question": "What do the statuses of an iSanté coverage approval mean (approved, pending, rejected)?",
+      "answer": "“Accepté” (Accepted) or “Accord N°” (Approval No.) means the supplementary insurer commits to the amount: you can print the approval, deliver, and bill. “En instance” (Under review), “en attente” (pending), or “en cours de traitement” (being processed) means the request is still being reviewed. “Refusé” (Rejected) means no coverage approval as it stands: read the reason, correct, and submit the request again."
+    },
+    {
+      "question": "How do healthcare professionals contact iSanté?",
+      "answer": "The iSanté phone number published by Cegedim Assurances is 0 820 03 12 43. For an agreement, use the network agreement request form on tp-isante.fr, and for common questions the site's Questions/Answers section. Before calling, have ready your FINESS or Adeli identifier, the supplementary insurer concerned, and the status or reason displayed."
+    },
+    {
+      "question": "How long does iSanté take to pay the optician?",
+      "answer": "With e-transmission, iSanté pays in 3 business days instead of 7, from receipt of the documents, under article 3.2 of the agreement. E-transmission is done as an electronic reimbursement request (DRE), with the single number 00733931 shown on the cards. Separate mandatory insurance (AMO) / supplementary insurance (AMC) processing must be set up in the store's software, otherwise the requests do not arrive."
+    }
+  ],
+  "sources": [
+    {
+      "label": "cegedim-assurances.com · Our brands",
+      "url": "https://www.cegedim-assurances.com/fr-fr/references-societe/Pages/nos-marques.aspx"
+    },
+    {
+      "label": "tp-isante.fr · Questions/Answers, list of insurers, and network agreement form",
+      "url": "https://www.tp-isante.fr/login#/faq/"
+    },
+    {
+      "label": "cegedim.fr · Cegedim Assurances and Entis group press release (May 7, 2026)",
+      "url": "https://www.cegedim.fr/Communique/CegedimAssurances_Entis_07052026.pdf"
+    },
+    {
+      "label": "cegedim-assurances.com · Price checks and fraud detection",
+      "url": "https://www.cegedim-assurances.com/fr-fr/vos-enjeux/Pages/maitriser-votre-sinistralite.aspx"
+    },
+    {
+      "label": "cegedim-assurances.com · Our contact details",
+      "url": "https://www.cegedim-assurances.com/fr-fr/Pages/coordonnees.aspx"
+    }
+  ],
+  "figures": [
+    {
+      "id": "isante-accord-paiement",
+      "type": "etapes",
+      "titre": "From the iSanté approval to payment",
+      "legende": "The payment time runs from when iSanté receives the documents, not from delivery.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "Print the approval",
+          "detail": "PDF from the request, “Imprimer” (Print) button",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Deliver the equipment",
+          "detail": "After the “Accepté” (Accepted) status",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "E-transmit as a DRE",
+          "detail": "Separate AMO / AMC processing set up",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Payment",
+          "detail": "3 business days with e-transmission, 7 otherwise",
+          "valeurs": [],
+          "focus": true
+        }
+      ]
+    }
+  ],
+  "internalLinks": [
+    {
+      "id": "A0",
+      "slug": "portails-tiers-payant",
+      "anchor": "third-party payment portals",
+      "type": "parent"
+    }
+  ],
+  "liensEntrants": [
+    {
+      "slug": "mutuelle-quel-portail",
+      "anchor": "find out which portal an insurer uses",
+      "type": "soeur"
+    }
+  ],
+  "remplace": [],
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-09T07:33:01.623Z",
+    "avertissements": [
+      "aucune citation (facultative)"
+    ]
+  }
+}

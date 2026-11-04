@@ -1,0 +1,11 @@
+{
+  "slug": "ancre",
+  "title": "Anchor renamed",
+  "metaDescription": "The heading id was translated.",
+  "contentHtml": "<h2 id=\"read\">Read</h2>",
+  "categoryName": "Rejections",
+  "author": { "jobTitle": "Co-founder" },
+  "tocItems": [{ "id": "read", "label": "Read" }],
+  "faqItems": [],
+  "sources": []
+}

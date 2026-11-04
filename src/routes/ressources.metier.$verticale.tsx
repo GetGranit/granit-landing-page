@@ -1,12 +1,29 @@
-import { createFileRoute, notFound } from "@tanstack/react-router";
+import { createFileRoute, notFound, redirect } from "@tanstack/react-router";
 import { PageMetier } from "@/components/ressources/PageMetier";
 import { NotFoundRessource } from "@/components/ressources/Introuvable";
 import { fichesVerticale } from "@/lib/ressources/contenu";
 import { breadcrumbLd } from "@/lib/ressources/seo";
-import { VERTICALE_PRINCIPALE, photoVerticale, verticale } from "@/lib/ressources/verticales";
+import {
+  FUSIONS,
+  VERTICALE_PRINCIPALE,
+  photoVerticale,
+  verticale,
+} from "@/lib/ressources/verticales";
 import { SITE_URL } from "@/lib/seo";
 
 export const Route = createFileRoute("/ressources/metier/$verticale")({
+  beforeLoad: ({ params }) => {
+    // Anciennes pages métier (audio, laboratoires, ehpad) : 301 vers le métier qui les reprend.
+    if (!(params.verticale in FUSIONS)) return;
+    const cible = FUSIONS[params.verticale];
+    if (cible)
+      throw redirect({
+        to: "/ressources/metier/$verticale",
+        params: { verticale: cible },
+        statusCode: 301,
+      });
+    throw redirect({ to: "/ressources", statusCode: 301 });
+  },
   loader: ({ params }) => {
     const v = verticale(params.verticale);
     // Chaque métier a sa page (onglet du guide) ; sans article propre, elle montre les transversaux.
