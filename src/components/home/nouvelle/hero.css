@@ -1,0 +1,117 @@
+/* =========================================================
+   NOUVELLE HOME · BANDEAU DE LA LEVÉE ET HERO VIDÉO (portage de landing/index.html, lm/tandem.css)
+   ---------------------------------------------------------
+   La vidéo prend tout le cadre avec ses vraies couleurs, un voile d'encre à gauche seulement.
+   Titre court à gauche, chapô de trois lignes, deux pilules, les garanties en petit.
+   À droite, autour du praticien, des pastilles d'agent se posent au temps de la vidéo (Hero.tsx).
+   Différences avec la maquette : la nav du site (sticky) n'est pas posée sur la vidéo, le hero
+   commence dessous ; le bandeau n'est pas fixe ; les voiles neutres (20, 18, 16) deviennent de l'encre.
+   Le rendu serveur est l'état final ; les entrées (lettres, chapô, boutons) ne partent que sous
+   .nh.nh-js .tva-anim (posé au montage) et jamais sous « mouvements réduits ».
+   ========================================================= */
+
+/* ---------- bandeau de la levée : la barre menthe fine, en haut de la page (pas fixe) ---------- */
+.nh .tv-bar { position: relative; overflow: hidden; background: var(--mint); color: var(--ink); }
+.nh .tv-bar a { position: relative; z-index: 1; display: flex; color: inherit; justify-content: center; align-items: center; gap: 6px 12px; min-height: 34px;
+  padding: 0 var(--lm-gut-r) 0 var(--lm-gut); font: 400 13px/1.25 var(--sans); text-decoration: none; text-align: center; }
+.nh .tv-bar b { display: inline-flex; align-items: center; gap: 5px; font-weight: 500; white-space: nowrap; }
+.nh .tv-bar svg { width: 11px; height: 11px; transition: translate .25s; }
+.nh .tv-bar a:hover svg { translate: 3px 0; }
+.nh .tv-bar a:focus-visible { outline: 2px solid var(--ink); outline-offset: -4px; border-radius: 6px; }
+@media (max-width: 460px) { .nh .tv-bar .tv-bar-more { display: none; } }
+/* un mouvement léger pour qu'on la remarque : un reflet traverse la barre toutes les 6 s, un point respire devant le texte,
+   la flèche avance d'un cran de temps en temps. Rien sous « mouvements réduits ». */
+.nh .tv-bar::after { content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(105deg, transparent 32%, rgba(255, 253, 253, .55) 50%, transparent 68%) 130% 0 / 250% 100% no-repeat;
+  animation: nh-tv-sheen 6s ease-in-out 1s infinite; }
+@keyframes nh-tv-sheen { 0% { background-position: 130% 0; } 50%, 100% { background-position: -30% 0; } }
+.nh .tv-bar a::before { content: ""; flex: none; width: 7px; height: 7px; border-radius: 50%; background: var(--deep); animation: nh-tv-ping 2.5s ease-out infinite; }
+@keyframes nh-tv-ping { 0% { box-shadow: 0 0 0 0 rgba(var(--deep-rgb), .55); } 70%, 100% { box-shadow: 0 0 0 7px rgba(var(--deep-rgb), 0); } }
+.nh .tv-bar b svg { animation: nh-tv-nudge 2.5s ease-in-out infinite; }
+@keyframes nh-tv-nudge { 0%, 60%, 100% { translate: 0 0; } 75% { translate: 4px 0; } }
+@media (prefers-reduced-motion: reduce) { .nh .tv-bar::after, .nh .tv-bar a::before, .nh .tv-bar b svg { animation: none !important; } }
+
+/* ---------- le hero : sous la nav du site (≈ 72 px), plancher 620 px ---------- */
+.nh .tva { display: flex; flex-direction: column; min-height: max(620px, calc(100vh - 72px)); min-height: max(620px, calc(100svh - 72px)); background: var(--paper); }
+.nh .tva-stage { position: relative; isolation: isolate; overflow: hidden; flex: 1; display: flex; background: var(--ink); color: var(--rose); }
+.nh .tva-media { position: absolute; inset: 0; z-index: -3; }
+.nh .tva-media video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 66% 50%; }
+.nh .tva-veil { position: absolute; inset: 0; z-index: -2; pointer-events: none;
+  background: linear-gradient(90deg, rgba(var(--ink-rgb), .64) 0%, rgba(var(--ink-rgb), .4) 30%, rgba(var(--ink-rgb), .06) 58%, rgba(var(--ink-rgb), 0) 74%),
+              linear-gradient(180deg, rgba(var(--ink-rgb), .44) 0%, rgba(var(--ink-rgb), 0) 24%),
+              linear-gradient(0deg, rgba(var(--ink-rgb), .32) 0%, rgba(var(--ink-rgb), 0) 22%); }
+
+.nh .tva-body { position: relative; flex: 1; display: grid; align-content: center; justify-items: start; gap: 20px; padding-top: 64px; padding-bottom: 88px; }
+.nh .tva-body .tv-h1 { max-width: 11.5em; color: var(--paper); }
+.nh .tva-body .tv-h1 .tv-accent { color: var(--mint); }   /* TON.md : la seconde moitié de la promesse prend l'accent (menthe sur fond sombre) */
+.nh .tva-lead { max-width: 44ch; color: rgba(var(--rose-rgb), .9); }   /* 3 lignes sur ordinateur, à la largeur du titre */
+.nh .tva-body .tv-ctas { margin-top: 6px; }
+.nh .tva-body .tv-trust { margin-top: 6px; color: var(--rose); }
+
+/* ---------- titre, chapô, boutons ---------- */
+.nh .tv-h1 { margin: 0; font: 400 clamp(36px, 3.5vw, 52px)/1.06 var(--serif); letter-spacing: -.028em; text-wrap: balance; }
+.nh .tv-h1 .tv-l { display: block; }
+/* sur téléphone, le titre tient sur 2 lignes comme dans la maquette */
+@media (max-width: 480px) { .nh .tv-h1 { font-size: clamp(30px, 8.6vw, 36px); } }
+.nh .tv-lead { margin: 0; font: 400 clamp(16px, 1.2vw, 18px)/1.45 var(--sans); text-wrap: pretty; }
+.nh .tv-ctas { display: flex; flex-wrap: wrap; gap: 10px; }
+.nh .tv-btn { display: inline-flex; align-items: center; gap: 9px; min-height: 42px; padding: 0 19px; border-radius: 999px; font: 400 15px/1 var(--sans); text-decoration: none; white-space: nowrap; transition: background .2s, border-color .2s, color .2s; }
+.nh .tv-btn-light { background: var(--paper); color: var(--ink); }
+.nh .tv-btn-light:hover { background: var(--rose); }
+.nh .tv-btn-line { border: 1px solid rgba(var(--rose-rgb), .72); color: var(--rose); }
+.nh .tv-btn-line:hover { background: rgba(var(--rose-rgb), .12); }
+.nh .tv-btn:focus-visible { outline: 2px solid var(--mint); outline-offset: 3px; }
+
+/* ---------- garanties : nos trois engagements, en petit sous les boutons ---------- */
+.nh .tv-trust { display: flex; flex-wrap: wrap; gap: 10px 22px; margin: 0; padding: 0; list-style: none; }
+.nh .tv-trust li { display: flex; align-items: center; gap: 8px; font: 500 10.5px/1.18 var(--sans); letter-spacing: .02em; opacity: .86; }
+.nh .tv-trust svg { flex: none; width: 24px; height: 24px; }
+.nh .tv-trust .tv-rgpd { flex: none; font: 600 13px/1 var(--sans); letter-spacing: .02em; }
+
+/* ---------- lettres qui entrent une à une, puis chapô, boutons et garanties ---------- */
+.nh .tv-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.nh .tv-w { display: inline-block; white-space: nowrap; }
+.nh .tv-c { display: inline-block; }
+.nh.nh-js .tva-anim .tv-c { animation: nh-tv-c .9s var(--lm-ease) both; animation-delay: calc(var(--k) * 16ms + 200ms); }
+@keyframes nh-tv-c { from { opacity: 0; translate: 0 .28em; filter: blur(6px); } }
+.nh.nh-js .tva-anim .tv-in { animation: nh-tv-in 1s var(--lm-ease) both; animation-delay: calc(var(--i, 0) * 110ms + 520ms); }
+@keyframes nh-tv-in { from { opacity: 0; translate: 0 14px; } }
+@media (prefers-reduced-motion: reduce) { .nh .tv-c, .nh .tv-in { animation: none !important; } }
+
+/* ---------- les pastilles d'agent, en verre léger : posées autour du praticien (position en transform) ---------- */
+.nh .tva-agents { position: absolute; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+.nh .tva-ag { position: absolute; left: 0; top: 0; display: flex; align-items: center; gap: 12px; max-width: min(440px, calc(100% - var(--lm-gut) - var(--lm-gut-r)));
+  padding: 10px 16px 10px 12px; border-radius: 16px; background: rgba(var(--ink-rgb), .4); border: 1px solid rgba(var(--rose-rgb), .16);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2); backdrop-filter: blur(14px) saturate(1.2); color: var(--rose); font: 400 13px/1.3 var(--sans);
+  opacity: 0; translate: 0 10px; scale: .97; transition: opacity .5s var(--lm-ease), translate .8s var(--lm-ease), scale .8s var(--lm-ease); }
+.nh .tva-ag.is-on { opacity: 1; translate: 0 0; scale: 1; }
+.nh .tva-ag.is-out { opacity: 0; translate: 0 -8px; transition-duration: .5s; }
+.nh .tva-ag.is-still { transition: none; }
+.nh .tva-ag-txt { display: grid; gap: 1px; min-width: 0; }
+.nh .tva-ag-t { display: grid; }
+.nh .tva-ag-t b { grid-area: 1 / 1; font-weight: 500; font-size: 14px; white-space: nowrap; transition: opacity .3s ease, translate .4s var(--lm-ease); }
+.nh .tva-ag-t .r { color: rgba(var(--rose-rgb), .8); }
+.nh .tva-ag-t .d { opacity: 0; translate: 0 5px; }
+.nh .tva-ag.is-done .tva-ag-t .r { opacity: 0; translate: 0 -5px; }
+.nh .tva-ag.is-done .tva-ag-t .d { opacity: 1; translate: 0 0; }
+.nh .tva-ag-u { color: rgba(var(--rose-rgb), .68); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* le rond : un arc tourne pendant que l'agent travaille, puis la coche menthe */
+.nh .tva-ag-ok { position: relative; flex: none; display: grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; box-shadow: inset 0 0 0 1.5px rgba(var(--rose-rgb), .24); color: var(--ink); transition: background .3s, box-shadow .3s; }
+.nh .tva-ag-ok::before { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 1.5px solid transparent; border-top-color: var(--mint); animation: nh-tva-spin .8s linear infinite; transition: opacity .2s; }
+.nh .tva-ag-ok svg { width: 10px; height: 10px; opacity: 0; scale: .3; transition: opacity .2s, scale .45s var(--lm-ease); }
+.nh .tva-ag.is-done .tva-ag-ok { background: var(--mint); box-shadow: none; }
+.nh .tva-ag.is-done .tva-ag-ok::before { opacity: 0; animation: none; }
+.nh .tva-ag.is-done .tva-ag-ok svg { opacity: 1; scale: 1; }
+@keyframes nh-tva-spin { to { rotate: 1turn; } }
+.nh .tva-steps { display: flex; gap: 3px; margin-left: 6px; }
+.nh .tva-steps i { width: 14px; height: 3px; border-radius: 2px; background: rgba(var(--rose-rgb), .22); transition: background .4s; }
+.nh .tva-steps i.on, .nh .tva-ag.is-done .tva-steps i.cur { background: var(--mint); }
+.nh .tva-steps i.cur { background: rgba(var(--mint-rgb), .45); }
+
+@media (max-width: 860px) {
+  .nh .tva-media video { object-position: 50% 50%; }
+  .nh .tva-veil { background: linear-gradient(0deg, rgba(var(--ink-rgb), .86) 0%, rgba(var(--ink-rgb), .5) 48%, rgba(var(--ink-rgb), .12) 78%), linear-gradient(180deg, rgba(var(--ink-rgb), .5) 0%, rgba(var(--ink-rgb), 0) 22%); }
+  .nh .tva-body { align-content: end; padding-top: 48px; padding-bottom: 120px; }
+  .nh .tva-ag { gap: 10px; }
+  .nh .tva-steps { display: none; }
+}
