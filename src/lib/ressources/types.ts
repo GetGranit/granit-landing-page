@@ -12,15 +12,13 @@ export type CategorySlug =
   | "conformite"
   | "glossaire";
 
-export type VerticaleSlug =
-  | "optique"
-  | "dentaire"
-  | "cliniques"
-  | "ehpad"
-  | "centres"
-  | "laboratoires"
-  | "audio"
-  | "pharmacie";
+export type VerticaleSlug = "optique" | "dentaire" | "centres" | "pharmacie" | "cliniques";
+
+/**
+ * Métiers du relevé de l'annuaire (08/10/2026), plus fins que les pages métier :
+ * l'audio, les laboratoires et les EHPAD n'ont plus de page mais restent dans le relevé.
+ */
+export type MetierAnnuaire = VerticaleSlug | "audio" | "laboratoires" | "ehpad";
 
 /** Auteur ou relecteur (config.json du moteur) ; `url` = profil LinkedIn, peut être null. */
 export type Personne = { name: string; jobTitle?: string; photo?: string; url?: string | null };

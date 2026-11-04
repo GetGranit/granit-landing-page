@@ -69,7 +69,7 @@ Il faut aussi cocher, dans les réglages du repo, *Actions → General → Allow
 | `metaDescription`, `contentHtml`, `tocItems`, `faqItems`, `sources` | Réponse de Claude, déjà contrôlée |
 | `internalLinks` | Liens prévus dont la cible était en ligne à la rédaction |
 | `liensEntrants` | `{slug, anchor, type}` des articles publiés après lui qui doivent apparaître dans « À lire ensuite » |
-| `refonte`, `verticales` | Refonte d'un ancien article à la même adresse ; métiers concernés (`optique`, `audio`, `pharmacie`, `dentaire`, `centres`) |
+| `refonte`, `verticales` | Refonte d'un ancien article à la même adresse ; métiers concernés (`optique`, `dentaire`, `centres`, `pharmacie`, `cliniques` ; l'audio va dans `optique`, les laboratoires dans `cliniques`) |
 | `remplace` | Anciens articles de `src/lib/articles.ts` que celui-ci remplace : dès sa publication, ils redirigent en 301 vers lui et sortent des listes et du sitemap (champ `remplace` de la file) |
 | `moteur` | Modèle, date de génération, avertissements |
 
