@@ -16,7 +16,7 @@ export function SiteLayout({
   piedColle?: boolean;
 }) {
   return (
-    <div className="min-h-screen flex flex-col" style={{ background: fond ?? "var(--bg)" }}>
+    <div className="isolate flex min-h-screen flex-col" style={{ background: fond ?? "var(--bg)" }}>
       <Nav />
       <main className="flex-1">{children}</main>
       {!hideFooter && <Footer colle={piedColle} />}

@@ -120,7 +120,18 @@ const staticPages = [
     priority: "1.0",
     freq: "weekly",
   },
-  { path: "/agents", files: ["src/routes/agents.tsx"], priority: "0.9", freq: "weekly" },
+  {
+    path: "/agents",
+    files: ["src/routes/agents.index.tsx", "src/components/agents"],
+    priority: "0.9",
+    freq: "weekly",
+  },
+  {
+    path: "/agents/optique",
+    files: ["src/routes/agents.$metier.tsx", "src/components/agents"],
+    priority: "0.8",
+    freq: "weekly",
+  },
   { path: "/tarifs", files: ["src/routes/tarifs.tsx"], priority: "0.8", freq: "monthly" },
   { path: "/securite", files: ["src/routes/securite.tsx"], priority: "0.7", freq: "monthly" },
   {
