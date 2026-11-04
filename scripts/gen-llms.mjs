@@ -35,7 +35,6 @@ const pages = [
     "Granit se facture à l'usage : le tarif se calcule en rendez-vous, sur les dossiers du client.",
   ],
   ["Sécurité", "/securite", "Hébergement, protection des données de santé et conformité."],
-  ["À propos", "/a-propos", "L'équipe, la mission et l'histoire de Granit."],
   [
     "Programme partenaires",
     "/affiliation",
