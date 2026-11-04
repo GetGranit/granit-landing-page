@@ -93,7 +93,7 @@ export function Nav() {
           >
             {t.login}
           </a>
-          <Link to="/" hash="demo" className="btn-primary text-[13px]" style={{ padding: "9px 16px" }}>
+          <Link to="/" hash="demo" className="btn-primary whitespace-nowrap text-[13px]" style={{ padding: "9px 14px" }}>
             {t.demo} <span className="arrow">↗</span>
           </Link>
         </div>

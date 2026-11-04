@@ -334,7 +334,7 @@ function IconTile({ icon: Icon }: { icon: LucideIcon }) {
   return (
     <span
       className="grid size-10 shrink-0 place-items-center rounded-[10px] border"
-      style={{ borderColor: "var(--border)", background: "var(--bg2)", color: "var(--terra)" }}
+      style={{ borderColor: "var(--border)", background: "var(--bg2)", color: "var(--profond)" }}
     >
       <Icon size={18} strokeWidth={1.75} aria-hidden />
     </span>
@@ -350,7 +350,7 @@ function HeroVisual({ visual }: { visual: Content["visual"] }) {
       style={{
         borderColor: "var(--border)",
         backgroundColor: "var(--bg2)",
-        backgroundImage: "var(--gradient-mesh)",
+        backgroundImage: "var(--degrade-marque)",
       }}
     >
       <div
@@ -358,7 +358,7 @@ function HeroVisual({ visual }: { visual: Content["visual"] }) {
         style={{
           borderColor: "var(--border)",
           background: "var(--surface)",
-          boxShadow: "var(--shadow-glass)",
+          boxShadow: "var(--ombre-carte)",
         }}
       >
         <div className="flex items-center justify-between gap-3">
@@ -374,7 +374,7 @@ function HeroVisual({ visual }: { visual: Content["visual"] }) {
             style={{
               borderColor: "var(--border)",
               background: "var(--bg2)",
-              color: "var(--terra-hover)",
+              color: "var(--profond)",
               fontFamily: "var(--font-mono)",
               fontWeight: 600,
             }}
@@ -393,7 +393,7 @@ function HeroVisual({ visual }: { visual: Content["visual"] }) {
               >
                 <span
                   className="grid size-8 shrink-0 place-items-center rounded-[8px]"
-                  style={{ background: "var(--bg2)", color: "var(--terra)" }}
+                  style={{ background: "var(--bg2)", color: "var(--profond)" }}
                 >
                   <Icon size={16} strokeWidth={1.75} />
                 </span>
@@ -423,7 +423,7 @@ function HeroVisual({ visual }: { visual: Content["visual"] }) {
               boxShadow: "var(--shadow-soft)",
             }}
           >
-            <Icon size={16} strokeWidth={1.75} style={{ color: "var(--terra)" }} />
+            <Icon size={16} strokeWidth={1.75} style={{ color: "var(--profond)" }} />
             <span className="text-[13px] leading-snug" style={{ color: "var(--text-soft)" }}>
               {label}
             </span>
@@ -457,7 +457,7 @@ function SecuritePage() {
               <Link to="/" hash="demo" className="btn-primary">
                 {t.heroCta} <span className="arrow">↗</span>
               </Link>
-              <Link to="/privacy" className="btn-ghost">
+              <Link to="/privacy" className="btn-secondaire">
                 {t.heroSecondary}
               </Link>
             </div>
@@ -472,7 +472,7 @@ function SecuritePage() {
                     className="text-[12px]"
                     style={{
                       fontFamily: "var(--font-mono)",
-                      color: "var(--terra-hover)",
+                      color: "var(--profond)",
                       fontWeight: 600,
                     }}
                   >
@@ -549,10 +549,10 @@ function SecuritePage() {
               <p className="body-lg mt-5">{t.complianceIntro}</p>
             </div>
             <div className="flex shrink-0 flex-wrap gap-3">
-              <Link to="/cgv" className="btn-ghost">
+              <Link to="/cgv" className="btn-secondaire">
                 {t.sources.cgv}
               </Link>
-              <Link to="/privacy" className="btn-ghost">
+              <Link to="/privacy" className="btn-secondaire">
                 {t.sources.privacy}
               </Link>
             </div>
@@ -615,7 +615,7 @@ function SecuritePage() {
               >
                 {t.asideText}
               </p>
-              <a href={`mailto:${CONTACT_EMAIL}`} className="btn-ghost mt-6">
+              <a href={`mailto:${CONTACT_EMAIL}`} className="btn-secondaire mt-6">
                 {t.asideCta} <span aria-hidden>→</span>
               </a>
               <p
@@ -647,7 +647,7 @@ function SecuritePage() {
                 <Link to="/" hash="demo" className="btn-primary">
                   {t.ctaBtn} <span className="arrow">↗</span>
                 </Link>
-                <Link to="/agents" className="btn-ghost">
+                <Link to="/agents" className="btn-secondaire">
                   {t.ctaSecondary}
                 </Link>
               </div>
