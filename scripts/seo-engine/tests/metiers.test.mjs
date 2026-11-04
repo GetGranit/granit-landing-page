@@ -49,7 +49,7 @@ test("héritage optique : liste figée, seulement des entrées sans verticales",
   }
 });
 
-test("fiches : toutes les rubriques, encart et signature hors optique, offre à valider", () => {
+test("fiches : toutes les rubriques, encart et signature hors optique, offre validée hors tronc", () => {
   for (const nom of [...FICHES, "tronc"]) {
     const f = lireFiche(nom);
     for (const [k, titre] of Object.entries(RUBRIQUES)) assert.ok(f.rub[k], `${nom} : rubrique « ${titre} » vide`);
@@ -60,7 +60,7 @@ test("fiches : toutes les rubriques, encart et signature hors optique, offre à 
     for (const k of ["titre", "fin", "texteFin", "rassure"]) assert.ok(f.encart[k], `${nom} : encart.${k}`);
     assert.ok(!/48 h/.test(JSON.stringify(f.encart)), `${nom} : pas de 48 h hors optique`);
     assert.ok(f.signature.auteur, nom);
-    assert.ok(f.rub.granit.includes("À VALIDER PAR PAUL"), `${nom} : section Granit non marquée à valider`);
+    assert.equal(f.rub.granit.includes("À VALIDER PAR PAUL"), nom === "tronc", `${nom} : marqueur de validation`);
   }
   for (const nom of ["dentaire", "centres", "pharmacie", "cliniques"]) {
     assert.ok(!/opticien|optique/i.test(lireFiche(nom).md), `${nom} : mention de l'optique`);
