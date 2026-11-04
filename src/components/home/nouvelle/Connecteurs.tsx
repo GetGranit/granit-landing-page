@@ -29,14 +29,14 @@ const N = CN.length * 2;
 
 const copy = {
   fr: {
-    titre: "Opérationnel en 48 h. Déjà connecté à vos logiciels",
+    titre: "Opérationnel en 48h. Déjà connecté à vos logiciels.",
     chapo:
       "Les agents travaillent dans votre logiciel et sur vos portails avec leurs propres accès, comme le ferait une personne de l’équipe. Pas d’API à demander, pas de nouveau logiciel.",
     roue: "Logiciels et organismes où Granit travaille",
     statut: "Agent connecté",
   },
   en: {
-    titre: "Live in 48 hours. No IT project",
+    titre: "Live in 48 hours. No IT project.",
     chapo:
       "The agents work in your software and on your portals with their own logins, just like a member of your team. No API to request, no new software.",
     roue: "Software and payers Granit works with",
