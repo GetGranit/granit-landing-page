@@ -3,7 +3,6 @@ import { Link } from "@tanstack/react-router";
 import { usePostHog } from "posthog-js/react";
 import { useLanguage } from "@/lib/i18n";
 import logoMonogram from "@/assets/logo.svg";
-import { MenuMetiers } from "./MenuMetiers";
 
 const labels = {
   fr: { agents: "Agents", security: "Sécurité", pricing: "Tarifs", resources: "Ressources", login: "Se connecter", demo: "Demander une démo", switch: "EN" },
@@ -25,7 +24,6 @@ export function Nav() {
 
   const links = [
     { to: "/agents", label: t.agents },
-    { to: "/securite", label: t.security },
     { to: "/tarifs", label: t.pricing },
     { to: "/ressources", label: t.resources },
   ] as const;
@@ -59,7 +57,6 @@ export function Nav() {
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex">
-          <MenuMetiers lang={lang} />
           {links.map((l) => (
             <Link
               key={l.to}

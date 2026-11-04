@@ -48,7 +48,7 @@ const content = {
       "Un hébergeur certifié HDS, données dans l’Union européenne",
       "La réversibilité de vos données",
     ],
-    souple: "Sans durée minimale. Résiliable avec 30 jours de préavis.",
+    souple: "Sans durée minimale, résiliable à tout moment.",
     calculEyebrow: "Comment se calcule votre tarif",
     calculTitre: ["Trois choses,", "rien de plus."],
     calcul: [
@@ -73,7 +73,7 @@ const content = {
       {
         question: "Y a-t-il un engagement de durée ?",
         answer:
-          "Nos conditions générales de vente ne prévoient pas de durée minimale : le client peut résilier à tout moment, par email, avec un préavis de 30 jours, sans pénalité ni frais.",
+          "Non. Nos conditions générales de vente ne prévoient pas de durée minimale : vous pouvez résilier à tout moment, par email, sans pénalité ni frais.",
       },
       {
         question: "Faut-il changer de logiciel ?",
@@ -98,7 +98,7 @@ const content = {
       "An HDS-certified host, with data in the European Union",
       "Your data stays portable",
     ],
-    souple: "No minimum term. Cancel with 30 days’ notice.",
+    souple: "No minimum term, cancel at any time.",
     calculEyebrow: "How your price is worked out",
     calculTitre: ["Three things,", "nothing more."],
     calcul: [
@@ -123,7 +123,7 @@ const content = {
       {
         question: "Is there a minimum term?",
         answer:
-          "Our terms of sale set no minimum term: customers can cancel at any time, by email, with 30 days’ notice, with no penalty or fees.",
+          "No. Our terms of sale set no minimum term: you can cancel at any time, by email, with no penalty or fees.",
       },
       {
         question: "Do we need to change software?",
