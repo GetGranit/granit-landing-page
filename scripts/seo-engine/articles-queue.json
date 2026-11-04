@@ -1570,7 +1570,7 @@
     "id": "R3",
     "slug": "officine-balance-agee-tiers-payant",
     "category": "paiements",
-    "title": "Officine : solder le stock de créances tiers-payant avant qu'il ne devienne une perte",
+    "title": "Officine : solder le stock de créances de tiers payant avant qu'il ne devienne une perte",
     "primaryKeyword": "créances tiers payant pharmacie",
     "keywordCluster": [
       "balance âgée pharmacie",
@@ -1608,7 +1608,7 @@
     "id": "R4",
     "slug": "dentaire-paniers-100-sante-tiers-payant",
     "category": "guide-tiers-payant",
-    "title": "Dentaire : sécuriser le tiers-payant sur les paniers 100 % Santé",
+    "title": "Dentaire : sécuriser le tiers payant sur les paniers 100 % Santé",
     "primaryKeyword": "panier 100 santé dentaire",
     "keywordCluster": [
       "RAC 0 dentaire",
@@ -1646,7 +1646,7 @@
     "id": "R5",
     "slug": "audioprothese-renouvellement-tiers-payant",
     "category": "guide-tiers-payant",
-    "title": "Audioprothèse : maîtriser le tiers-payant sur le renouvellement d'appareillage",
+    "title": "Audioprothèse : maîtriser le tiers payant sur le renouvellement d'appareillage",
     "primaryKeyword": "renouvellement appareil auditif",
     "keywordCluster": [
       "classe 1 classe 2 audioprothèse",

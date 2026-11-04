@@ -25,7 +25,7 @@ Le site est en français. La rubrique Ressources (https://www.getgranit.ai/resso
 
 - [Tous les articles : Guide du tiers payant](https://www.getgranit.ai/ressources/categorie/guide-tiers-payant)
 - [Tiers payant opticien : de la prise en charge à l'encaissement](https://www.getgranit.ai/ressources/tiers-payant-opticien): Tiers payant opticien : AMO, mutuelle, prise en charge, devis 100 % Santé, paiement, rejets. Le circuit complet pour encaisser chaque dossier sans retard.
-- [Audioprothèse : maîtriser le tiers-payant sur le renouvellement d'appareillage](https://www.getgranit.ai/ressources/audioprothese-renouvellement-tiers-payant): Renouvellement appareil auditif : règle des 4 ans par oreille, classe I ou II, période d'essai. Les points qui évitent un refus de tiers payant audio.
+- [Audioprothèse : maîtriser le tiers payant sur le renouvellement d'appareillage](https://www.getgranit.ai/ressources/audioprothese-renouvellement-tiers-payant): Renouvellement appareil auditif : règle des 4 ans par oreille, classe I ou II, période d'essai. Les points qui évitent un refus de tiers payant audio.
 
 ## Plateformes et portails
 
@@ -54,7 +54,7 @@ Le site est en français. La rubrique Ressources (https://www.getgranit.ai/resso
 
 - [Tous les articles : Paiements et rapprochement](https://www.getgranit.ai/ressources/categorie/paiements)
 - [Codes rejets NOEMIE : liste, signification et action](https://www.getgranit.ai/ressources/codes-rejets-noemie): Liste codes rejets NOEMIE : où trouver le libellé fiable, comment classer la cause, corriger et relancer une facture rejetée. La méthode pas à pas.
-- [Officine : solder le stock de créances tiers-payant avant qu'il ne devienne une perte](https://www.getgranit.ai/ressources/officine-balance-agee-tiers-payant): Créances tiers payant pharmacie : trier la balance âgée par cause, traiter ARL négatifs, rejets et virements non lettrés avant l'échéance. Méthode pas à pas.
+- [Officine : solder le stock de créances de tiers payant avant qu'il ne devienne une perte](https://www.getgranit.ai/ressources/officine-balance-agee-tiers-payant): Créances tiers payant pharmacie : trier la balance âgée par cause, traiter ARL négatifs, rejets et virements non lettrés avant l'échéance. Méthode pas à pas.
 - [Quand relancer une mutuelle ? Calendrier par étape (PEC, facture, ARL, NOEMIE)](https://www.getgranit.ai/ressources/quand-relancer-mutuelle): Relancer une mutuelle au bon moment : signaux à surveiller par étape (PEC, facture, ARL, NOEMIE), preuves à garder et quand escalader un impayé.
 - [Virement de mutuelle inférieur à la facture : comprendre l'écart et relancer](https://www.getgranit.ai/ressources/virement-mutuelle-inferieur): Virement mutuelle inférieur facture : trouvez la cause de l'écart en 4 vérifications, gardez les preuves et sachez qui relancer pour récupérer le solde.
 
@@ -67,7 +67,7 @@ Le site est en français. La rubrique Ressources (https://www.getgranit.ai/resso
 ## Optional
 
 - [Orthodontie : fiabiliser la facturation des traitements longs, semestre après semestre](https://www.getgranit.ai/ressources/orthodontie-facturation-traitements-longs): DEP, codes semestriels, bascule à 16 ans, mensualités patient : les points de rupture du tiers-payant orthodontique et comment sécuriser un dossier sur plusieurs années.
-- [Dentaire : sécuriser le tiers-payant sur les paniers 100% Santé](https://www.getgranit.ai/ressources/dentaire-paniers-100-sante-tiers-payant): RAC0, panier maîtrisé, devis normalisé : pourquoi le tiers-payant des prothèses dentaires est devenu un risque de trésorerie, et comment le fiabiliser dossier par dossier.
+- [Dentaire : sécuriser le tiers payant sur les paniers 100% Santé](https://www.getgranit.ai/ressources/dentaire-paniers-100-sante-tiers-payant): RAC0, panier maîtrisé, devis normalisé : pourquoi le tiers-payant des prothèses dentaires est devenu un risque de trésorerie, et comment le fiabiliser dossier par dossier.
 - [Réduire les rejets CPAM sans changer de logiciel métier](https://www.getgranit.ai/ressources/reduire-rejets-cpam): Les contrôles à automatiser avant télétransmission pour sécuriser vos flux dès le premier passage.
 - [Automatiser la facturation résident sans perdre le contrôle humain](https://www.getgranit.ai/ressources/facturation-ehpad-controle-humain): Règles, validations, exceptions : structurer un workflow robuste pour les équipes administratives.
 - [Rapprocher flux NOEMIE et virements bancaires chaque matin](https://www.getgranit.ai/ressources/rapprochement-noemie): Une méthode simple pour réduire les écarts de caisse et prioriser les dossiers bloquants.
