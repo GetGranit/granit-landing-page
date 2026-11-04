@@ -15,7 +15,7 @@ const copy = {
   fr: {
     question: "Comment préférez-vous échanger ?",
     creneauT: "Je choisis un créneau",
-    creneauS: "15 min en visio",
+    creneauS: "30 min, en visio ou par téléphone",
     rappelT: "On me rappelle",
     rappelS: "Sous 24 h ouvrées",
     creneauTexte: "Choisissez l’heure qui vous arrange : on regarde ensemble vos propres dossiers.",
@@ -41,7 +41,7 @@ const copy = {
   en: {
     question: "How would you like to talk?",
     creneauT: "I’ll pick a time",
-    creneauS: "15-min video call",
+    creneauS: "30 min, by video or phone",
     rappelT: "Call me back",
     rappelS: "Within one business day",
     creneauTexte: "Pick the time that suits you: we’ll look at your own files together.",
