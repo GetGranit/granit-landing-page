@@ -17,7 +17,7 @@ export type PageMetier = {
   plateformesNote: string;
   /** Témoignage d'un client du métier, avec son accord écrit (TON.md). Sans lui, le bloc disparaît. */
   temoignage?: { citation: string; auteur: string; role: string };
-  faq: { question: string; answer: string; tarifs?: string }[];
+  faq: { question: string; answer: string; rdv?: string }[];
   /** Slug de /ressources/metier/<slug>. */
   ressources: string;
 };
@@ -54,7 +54,7 @@ const optiqueFr: PageMetier = {
     { question: "Quelles plateformes de tiers payant sont couvertes ?", answer: "Granit travaille avec toutes les plateformes de tiers payant, par exemple Almerys, Viamédis, Santéclair, Kalixia ou Carte Blanche." },
     { question: "Que se passe-t-il quand un dossier est rejeté ?", answer: "L'agent repère le rejet, corrige le dossier et le renvoie. Les cas particuliers sont suivis par un gestionnaire Granit, qui prévient l'équipe." },
     { question: "Et pour les audioprothésistes ?", answer: "Ce sont les mêmes agents, pour les appareils auditifs : droits, prise en charge, facturation, pointage des virements." },
-    { question: "Combien coûte Granit ?", answer: "Granit ne facture que les dossiers traités avec succès. Le tarif standard est détaillé sur la page Tarifs.", tarifs: "Voir les tarifs" },
+    { question: "Combien coûte Granit ?", answer: "Granit se facture à l'usage.", rdv: "Prendre rendez-vous" },
   ],
   ressources: "optique",
 };
@@ -91,7 +91,7 @@ const optiqueEn: PageMetier = {
     { question: "Which third-party payment platforms are covered?", answer: "Granit works with every third-party payment platform, for example Almerys, Viamédis, Santéclair, Kalixia or Carte Blanche." },
     { question: "What happens when a file is rejected?", answer: "The agent spots the rejection, corrects the file and resubmits it. Special cases are followed by a Granit case manager, who alerts the team." },
     { question: "What about hearing care?", answer: "The same agents, for hearing aids: eligibility, coverage, billing, transfer matching." },
-    { question: "How much does Granit cost?", answer: "Granit only bills files processed successfully. The standard pricing is detailed on the Pricing page.", tarifs: "See pricing" },
+    { question: "How much does Granit cost?", answer: "Granit is usage-based.", rdv: "Book a meeting" },
   ],
   ressources: "optique",
 };

@@ -91,8 +91,8 @@ const content = {
       {
         question: "Combien coûte Granit ?",
         answer:
-          "Granit ne facture que les dossiers traités avec succès. Le tarif standard est détaillé sur la page Tarifs.",
-        tarifs: "Voir les tarifs",
+          "Granit se facture à l'usage.",
+        rdv: "Prendre rendez-vous",
       },
     ],
     finTitre: ["Voyez les agents", "sur vos propres dossiers."] as [string, string],
@@ -144,8 +144,8 @@ const content = {
       {
         question: "How much does Granit cost?",
         answer:
-          "Granit only bills files processed successfully. The standard pricing is detailed on the Pricing page.",
-        tarifs: "See pricing",
+          "Granit is usage-based.",
+        rdv: "Book a meeting",
       },
     ],
     finTitre: ["See the agents", "on your own files."] as [string, string],

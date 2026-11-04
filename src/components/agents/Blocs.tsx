@@ -6,7 +6,7 @@ import { mouvementReduit } from "@/lib/motion";
 
 // Blocs communs à /agents et aux pages métier.
 
-export type QuestionFaq = { question: string; answer: string; tarifs?: string };
+export type QuestionFaq = { question: string; answer: string; rdv?: string };
 
 export function FaqAgents({
   titre,
@@ -50,15 +50,16 @@ export function FaqAgents({
                   style={{ color: "var(--texte-secondaire)" }}
                 >
                   {f.answer}
-                  {f.tarifs && (
+                  {f.rdv && (
                     <>
                       {" "}
                       <Link
-                        to="/tarifs"
+                        to="/"
+                        hash="demo"
                         className="font-medium underline underline-offset-4"
                         style={{ color: "var(--profond)" }}
                       >
-                        {f.tarifs}
+                        {f.rdv}
                       </Link>
                     </>
                   )}
