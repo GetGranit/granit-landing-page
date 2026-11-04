@@ -33,6 +33,10 @@
       "detail": "Demandes de prise en charge transmises et suivies dans l'application CTP, fonctionnalité présentée pour les cabinets dentaires et dentistes ; rien de publié pour l'optique",
       "source": "ctp-application"
     },
+    "livraison": {
+      "valeur": "non publié",
+      "source": null
+    },
     "rejets": {
       "valeur": "oui",
       "detail": "Traitement de l'ensemble des rejets des parts obligatoires et complémentaires : recyclage de la facture après correction, sinon réclamation papier avec duplicata ; statistiques des erreurs récurrentes par code opérateur",
@@ -58,6 +62,11 @@
     "plateformes": {
       "valeur": "non publié",
       "source": null
+    },
+    "logiciel": {
+      "valeur": "dans le logiciel métier du professionnel, quel qu'il soit",
+      "detail": "Indépendant de tout éditeur, travaille sur n'importe quelle application métier de santé intégrant le tiers payant ; connexion à distance une fois par semaine",
+      "source": "ctp-accueil"
     }
   },
   "citations": [

@@ -13,12 +13,14 @@ export type Comparaison = {
 const LIGNES: { cle: AxeCle; label: string }[] = [
   { cle: "quiFait", label: "Qui fait le travail" },
   { cle: "pec", label: "Demandes de prise en charge" },
+  { cle: "livraison", label: "Bons de livraison et contrôle" },
   { cle: "rejets", label: "Rejets et relances" },
   { cle: "rapprochement", label: "Rapprochement des paiements" },
   { cle: "avance", label: "Avance de trésorerie" },
   { cle: "engagement", label: "Engagement" },
   { cle: "hds", label: "Données de santé" },
   { cle: "plateformes", label: "Plateformes couvertes" },
+  { cle: "logiciel", label: "Logiciel métier" },
 ];
 
 const MODELES: { cle: Modele; nom: string; texte: string }[] = [

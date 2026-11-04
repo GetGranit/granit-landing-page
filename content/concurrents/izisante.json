@@ -24,6 +24,10 @@
       "detail": "L'opticien gère lui-même devis et demandes de prise en charge ; IziSanté prend le relais ensuite (facturation aux mutuelles en option)",
       "source": "izisante-offres"
     },
+    "livraison": {
+      "valeur": "non publié",
+      "source": null
+    },
     "rejets": {
       "valeur": "oui",
       "detail": "Traitement des rejets, relance de l'intégralité des impayés chaque semaine, reprise des anciens impayés jusqu'à 2 ans et un trimestre civil",
@@ -50,6 +54,10 @@
       "valeur": "non publié",
       "detail": "Facturation en option « sur les plateformes des organismes ou manuels », sans liste des plateformes",
       "source": "izisante-offres"
+    },
+    "logiciel": {
+      "valeur": "non publié",
+      "source": null
     }
   },
   "citations": [

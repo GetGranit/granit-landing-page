@@ -25,6 +25,10 @@
       "detail": "Communiqué de lancement de l'offre optique (juin 2022) : demandes de prise en charge des patients auprès des organismes externalisables ; la page Optique actuelle du site ne le reprend pas",
       "source": "bo-presse"
     },
+    "livraison": {
+      "valeur": "non publié",
+      "source": null
+    },
     "rejets": {
       "valeur": "oui",
       "detail": "Traitement des rejets et des impayés, relance des crédits",
@@ -50,6 +54,10 @@
       "source": "bo-cgu"
     },
     "plateformes": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "logiciel": {
       "valeur": "non publié",
       "source": null
     }

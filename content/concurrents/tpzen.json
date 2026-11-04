@@ -24,6 +24,10 @@
       "detail": "Collecte régulière des devis avec le secrétariat, puis demandes de prise en charge (DPEC) transmises en ligne aux complémentaires santé",
       "source": "tpzen-accueil"
     },
+    "livraison": {
+      "valeur": "non publié",
+      "source": null
+    },
     "rejets": {
       "valeur": "oui",
       "detail": "Corrections et renvoi des documents en cas de rejet ; recouvrement des impayés après audit",
@@ -47,6 +51,10 @@
       "source": null
     },
     "plateformes": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "logiciel": {
       "valeur": "non publié",
       "source": null
     }

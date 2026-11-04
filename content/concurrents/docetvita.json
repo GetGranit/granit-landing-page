@@ -24,6 +24,10 @@
       "valeur": "non publié",
       "source": null
     },
+    "livraison": {
+      "valeur": "non publié",
+      "source": null
+    },
     "rejets": {
       "valeur": "oui",
       "detail": "Analyse des rejets mutuelle et Sécurité sociale, relances, reprise des dossiers anciens en attente ; en intervention ponctuelle ou en gestion régulière",
@@ -50,6 +54,11 @@
     "plateformes": {
       "valeur": "réseaux de soins cités : Santéclair, Itelis, Kalixia",
       "source": "docetvita-opticiens"
+    },
+    "logiciel": {
+      "valeur": "dans le logiciel du magasin",
+      "detail": "Accès à distance sécurisé (type RustDesk) ou outils déjà utilisés par la structure, sans changer d'outil",
+      "source": "docetvita-gestion"
     }
   },
   "citations": [

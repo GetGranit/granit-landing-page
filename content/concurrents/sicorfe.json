@@ -34,6 +34,10 @@
       "valeur": "non publié",
       "source": null
     },
+    "livraison": {
+      "valeur": "non publié",
+      "source": null
+    },
     "rejets": {
       "valeur": "oui",
       "detail": "Santassist RO et Santassist RC : traitement des rejets du régime obligatoire et du régime complémentaire par le chargé de dossier, qui relance caisses et patients ; Santassist Impayés/Litiges pour les impayés, litiges et indus",
@@ -59,6 +63,10 @@
       "source": null
     },
     "plateformes": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "logiciel": {
       "valeur": "non publié",
       "source": null
     }

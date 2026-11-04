@@ -29,6 +29,10 @@
       "valeur": "non publié",
       "source": null
     },
+    "livraison": {
+      "valeur": "non publié",
+      "source": null
+    },
     "rejets": {
       "valeur": "oui",
       "detail": "Analyse de chaque rejet, correction des anomalies, démarches auprès des organismes AMO et AMC et suivi jusqu'au paiement",
@@ -55,6 +59,11 @@
     "plateformes": {
       "valeur": "non publié",
       "source": null
+    },
+    "logiciel": {
+      "valeur": "dans le logiciel métier du client",
+      "detail": "Connexion à distance sécurisée, pas de poste à prévoir ; pointage des paiements dans le logiciel métier",
+      "source": "tpa-logiciels"
     }
   },
   "citations": [

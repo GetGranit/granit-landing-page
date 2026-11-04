@@ -28,6 +28,10 @@
       "valeur": "non publié",
       "source": null
     },
+    "livraison": {
+      "valeur": "non publié",
+      "source": null
+    },
     "rejets": {
       "valeur": "oui",
       "detail": "Gestion des rejets RO et RC, traitement des courriers de tiers payant et des indus, surveillance des impayés jusqu'au règlement ; reprise du passif dans la limite des dates de forclusion",
@@ -55,6 +59,11 @@
     "plateformes": {
       "valeur": "non publié",
       "source": null
+    },
+    "logiciel": {
+      "valeur": "tous logiciels",
+      "detail": "Interventions sur site ou par prise de main à distance",
+      "source": "ftp-services"
     }
   },
   "citations": [

@@ -24,6 +24,11 @@
       "detail": "Le site parle seulement d'une vérification des droits qui « sécurise la prise en charge avant facturation », sans dire qui fait la demande de prise en charge",
       "source": "sojema-opticiens"
     },
+    "livraison": {
+      "valeur": "non publié",
+      "detail": "Bons de livraison non mentionnés ; le site cite seulement une vérification des droits qui « sécurise la prise en charge avant facturation »",
+      "source": "sojema-opticiens"
+    },
     "rejets": {
       "valeur": "oui",
       "detail": "Analyse et traitement des rejets, renvoi des lots manquants, contrôle et relance des dossiers à 15 jours",
@@ -49,6 +54,11 @@
     "plateformes": {
       "valeur": "non publié",
       "detail": "Mise en paiement « sur le portail de la complémentaire », sans liste des portails",
+      "source": "sojema-services"
+    },
+    "logiciel": {
+      "valeur": "dans le logiciel métier du magasin",
+      "detail": "Saisie des règlements dans le logiciel métier du magasin et rapprochement aux dossiers clients",
       "source": "sojema-services"
     }
   },

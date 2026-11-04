@@ -31,6 +31,10 @@
       "valeur": "non publié",
       "source": null
     },
+    "livraison": {
+      "valeur": "non publié",
+      "source": null
+    },
     "rejets": {
       "valeur": "oui",
       "detail": "Recherche du motif de chaque rejet, correction des factures et renvoi aux caisses ; reprise des anciennes factures jusqu'à 2 ans et 3 mois après émission",
@@ -56,6 +60,10 @@
     "plateformes": {
       "valeur": "non publié",
       "source": null
+    },
+    "logiciel": {
+      "valeur": "multi-logiciels, s'adapte aux outils du client",
+      "source": "stpps-apropos"
     }
   },
   "citations": [

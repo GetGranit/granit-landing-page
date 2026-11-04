@@ -91,12 +91,14 @@ export type Axe = { valeur: string; detail?: string; source: string | null };
 export type AxeCle =
   | "quiFait"
   | "pec"
+  | "livraison"
   | "rejets"
   | "rapprochement"
   | "avance"
   | "engagement"
   | "hds"
-  | "plateformes";
+  | "plateformes"
+  | "logiciel";
 
 export type Modele = "interne" | "freelance" | "prestataire" | "outil-saisie" | "agents-ia";
 

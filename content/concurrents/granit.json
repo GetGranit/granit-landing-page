@@ -2,27 +2,33 @@
   "slug": "granit",
   "nom": "Granit",
   "modele": "agents-ia",
-  "checkedOn": "2026-10-07",
+  "checkedOn": "2026-11-04",
   "aRelire": false,
-  "_note": "Relu par Paul le 09/10/2026. Mise en route : « 48 h » retenu par Paul (le site doit retirer « 5 jours »). HDS : formulation validée « certifié HDS (hébergeur de données de santé) ».",
+  "_note": "Enrichi le 04/11/2026 depuis le site en ligne (accueil, /agents, /securite, /tarifs). À relire par Paul. Écarts site à corriger : CGV « 5 jours ouvrés » vs « 48h », frais de setup absents de /tarifs. Mise en route « 48 h » et HDS « certifié » validés par Paul le 09/10. « Gestionnaire Granit qui reprend » et « chaque nuit » : vrais d'après le Kit partenaire Notion mais PAS encore écrits sur le site, à ajouter sur /agents avant publication.",
   "axes": {
     "quiFait": {
-      "valeur": "Des agents logiciels ; l'équipe Granit reprend les dossiers que l'agent ne peut pas finir",
-      "source": "granit-accueil"
+      "valeur": "Des agents logiciels, qui tournent chaque jour et chaque nuit sur les outils du magasin ; un gestionnaire Granit reprend les cas que l'agent ne peut pas finir",
+      "detail": "Chaque décision reste révisable par un humain ; le magasin suit chaque dossier sur un tableau de bord",
+      "source": "granit-agents"
     },
     "pec": {
       "valeur": "oui",
-      "detail": "Interrogation des plateformes, calcul du reste à charge et envoi de la demande de prise en charge",
+      "detail": "Interrogation des plateformes AMC, calcul du reste à charge et envoi de la demande, automatiquement, pendant la vente (devis tiers payant optique en 5 secondes annoncé)",
+      "source": "granit-accueil"
+    },
+    "livraison": {
+      "valeur": "oui",
+      "detail": "Suivi des commandes verres et montures, rapprochement des bons de livraison et des factures fournisseurs ; contrôle monture, verres LPP et devis normalisé avant la vente",
       "source": "granit-accueil"
     },
     "rejets": {
       "valeur": "oui",
-      "detail": "Analyse des causes de rejet, correction et renvoi",
+      "detail": "Analyse des causes de rejet, correction et re-soumission automatique ; facturation AMO/AMC et suivi des retours NOEMIE",
       "source": "granit-accueil"
     },
     "rapprochement": {
       "valeur": "oui",
-      "detail": "Rapprochement des virements Sécu et mutuelles avec les factures",
+      "detail": "Rapprochement des virements AMO/AMC avec les factures, détection des écarts et des impayés",
       "source": "granit-accueil"
     },
     "avance": {
@@ -30,34 +36,72 @@
       "source": null
     },
     "engagement": {
-      "valeur": "réversibilité totale",
+      "valeur": "sans durée minimale",
+      "detail": "Résiliation à tout moment par email, préavis de 30 jours, sans pénalité ni frais ; export complet des données (CSV ou JSON)",
       "source": "granit-tarifs"
     },
     "hds": {
       "valeur": "certifié HDS (hébergeur de données de santé)",
-      "source": "granit-tarifs"
+      "detail": "Données hébergées en France, chiffrées en transit et au repos, jamais utilisées pour entraîner des modèles tiers",
+      "source": "granit-securite"
     },
     "plateformes": {
-      "valeur": "logos affichés (Viamedis, Almerys, Santéclair, Carte Blanche, Actil…)",
-      "source": "granit-accueil"
+      "valeur": "toutes les plateformes de tiers payant",
+      "detail": "Par exemple Viamedis, Almerys, Santéclair, SP Santé, Itelis ou iSanté ; plus de 50 connecteurs natifs (AMC, RO, SESAM-Vitale, NOEMIE)",
+      "source": "granit-agents"
+    },
+    "logiciel": {
+      "valeur": "sur le logiciel métier existant",
+      "detail": "Sans migration ni intégration technique, opérationnel en 48 h en moyenne",
+      "source": "granit-agents"
     }
   },
   "meilleurSi": [
-    "le temps passé sur les portails pour les PEC est ce qui coûte le plus",
-    "on veut la réponse de la PEC pendant que le client est en magasin",
-    "on veut voir chaque dossier et son statut sans intermédiaire",
-    "on travaille avec beaucoup de plateformes"
+    "on veut la réponse de la prise en charge pendant que le client est encore au comptoir",
+    "on veut que tout le dossier soit traité, de la PEC au paiement : bons de livraison, facture, rejets, rapprochement",
+    "on veut garder son logiciel métier et suivre chaque dossier soi-même sur un tableau de bord",
+    "on travaille avec beaucoup de plateformes et de mutuelles différentes",
+    "on ne veut pas s'engager sur une durée"
   ],
   "sources": {
     "granit-accueil": {
       "label": "getgranit.ai · Accueil",
-      "url": "https://getgranit.ai/",
-      "consulte": "2026-10-07"
+      "url": "https://www.getgranit.ai/",
+      "consulte": "2026-11-04"
+    },
+    "granit-agents": {
+      "label": "getgranit.ai · Agents",
+      "url": "https://www.getgranit.ai/agents",
+      "consulte": "2026-11-04"
+    },
+    "granit-securite": {
+      "label": "getgranit.ai · Sécurité",
+      "url": "https://www.getgranit.ai/securite",
+      "consulte": "2026-11-04"
     },
     "granit-tarifs": {
       "label": "getgranit.ai · Tarifs",
-      "url": "https://getgranit.ai/tarifs",
-      "consulte": "2026-10-07"
+      "url": "https://www.getgranit.ai/tarifs",
+      "consulte": "2026-11-04"
     }
-  }
+  },
+  "identite": {},
+  "citations": [
+    {
+      "texte": "Granit travaille avec toutes les plateformes de tiers payant, par exemple Viamedis, Almerys, Santéclair, SP Santé, Itelis ou iSanté.",
+      "source": "granit-agents"
+    },
+    {
+      "texte": "Suivi des commandes verres et montures, rapprochement des bons de livraison et des factures fournisseurs.",
+      "source": "granit-accueil"
+    },
+    {
+      "texte": "Nos conditions générales de vente ne prévoient pas de durée minimale : le client peut résilier à tout moment, par email, avec un préavis de 30 jours, sans pénalité ni frais.",
+      "source": "granit-tarifs"
+    },
+    {
+      "texte": "Granit est certifié HDS. Les données patients sont hébergées en France, chiffrées en transit et au repos, et ne servent jamais à entraîner des modèles tiers.",
+      "source": "granit-securite"
+    }
+  ]
 }
