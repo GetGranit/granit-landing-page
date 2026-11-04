@@ -38,9 +38,9 @@ export function Invitation({
   const simulables = SIMULABLES.map((id) => PORTAILS.find((p) => p.id === id)).filter(
     (p) => p !== undefined,
   );
-  const autres = PORTAILS.filter(
-    (p) => !p.simulable && !platformById(p.id)?.note_fermeture,
-  ).sort((a, b) => rang(a.id) - rang(b.id));
+  const autres = PORTAILS.filter((p) => !p.simulable && !platformById(p.id)?.note_fermeture).sort(
+    (a, b) => rang(a.id) - rang(b.id),
+  );
   const reste = autres.length - VISIBLES;
   const entree = (i: number) =>
     reduce
