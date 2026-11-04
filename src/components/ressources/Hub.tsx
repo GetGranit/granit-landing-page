@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
+import { useLanguage } from "@/lib/i18n";
 import {
   GLOSSAIRE_SLUG,
   ORDRE,
@@ -7,6 +8,7 @@ import {
   fichesTransversales,
   categoriesActives,
   ficheJson,
+  ficheLang,
   fichesPlateformes,
   glossaireEnLigne,
   toutCategorie,
@@ -25,12 +27,61 @@ const lienFleche =
 const titreSection = "font-serif text-[24px] font-normal leading-tight md:text-[30px]";
 const SIGLES = ["AMC", "AMO", "DRE", "NOEMIE", "PEC", "LPP"];
 
-/** Le hub /ressources en français : une entrée par thème, pas un fil daté. */
+const copy = {
+  fr: {
+    surtitre: "Ressources · Pour les professionnels de santé",
+    titre: "L'administratif de santé,",
+    titreSuite: "sans le casse-tête",
+    chapo:
+      "Opticiens et audioprothésistes, centres dentaires, centres de santé et ophtalmologie, pharmacies, cliniques et laboratoires : des réponses pratiques sur les mutuelles, les remboursements, les paiements et la réglementation. Partez de votre métier ou de votre question.",
+    parTheme: "Par thème",
+    tousMetiers: "Valable pour tous les métiers, sauf mention.",
+    aLaUne: "À la une",
+    aussi: "Aussi dans le guide",
+    glossaire: "Glossaire",
+    glossaireTitre: "AMC, DRE, NOEMIE… en une phrase",
+    toutGlossaire: "Tout le glossaire",
+    toutTheme: (n: number) => `Tout le thème (${n})`,
+    cherche: "Vous cherchez…",
+    rejet: "Je dois corriger un rejet",
+    portail: "Je cherche le portail d'une mutuelle",
+    paiement: "Un paiement n'est pas arrivé",
+    decouvre: "Je découvre le tiers payant",
+    pourTous: "Pour tous les métiers",
+    pourTousTitre: "Rejets, rapprochement, réglementation et outils",
+  },
+  en: {
+    surtitre: "Resources · For healthcare professionals",
+    titre: "Healthcare admin,",
+    titreSuite: "without the headache",
+    chapo:
+      "Opticians and hearing care, dental centers, health and ophthalmology centers, pharmacies, clinics and labs: practical answers on insurers, reimbursements, payments and regulation. Start from your specialty or your question.",
+    parTheme: "By topic",
+    tousMetiers: "Applies to every profession unless stated otherwise.",
+    aLaUne: "Featured",
+    aussi: "Also in the guide",
+    glossaire: "Glossary",
+    glossaireTitre: "AMC, DRE, NOEMIE… in one sentence",
+    toutGlossaire: "Full glossary",
+    toutTheme: (n: number) => `All articles (${n})`,
+    cherche: "Looking for…",
+    rejet: "I need to fix a rejection",
+    portail: "I need an insurer's portal",
+    paiement: "A payment hasn't arrived",
+    decouvre: "I'm new to third-party payment",
+    pourTous: "For every profession",
+    pourTousTitre: "Rejections, reconciliation, regulations and tools",
+  },
+};
+
+/** Le hub /ressources : une entrée par thème, pas un fil daté. Même hub en français et en anglais. */
 export function Hub() {
+  const { lang } = useLanguage();
+  const t = copy[lang];
   const une = aLaUne();
   // Un article n'apparaît qu'une fois sur le hub : « À la une » d'abord.
   const vus = new Set(une.length >= 3 ? une.map((f) => f.slug) : []);
-  const cats = categoriesActives().map((c) => ({
+  const cats = categoriesActives(lang).map((c) => ({
     cat: c,
     fiches: toutCategorie(c.slug).filter((f) => !vus.has(f.slug)),
   }));
@@ -48,18 +99,13 @@ export function Hub() {
     <SiteLayout fond="var(--bg2)">
       <div className="ress bg-[var(--bg2)]">
         <section className={`${conteneur} pb-8 pt-12 text-center md:pt-14`}>
-          <div className="eyebrow">Ressources · Pour les professionnels de santé</div>
+          <div className="eyebrow">{t.surtitre}</div>
           <h1 className="mx-auto mt-4 font-serif text-[clamp(40px,5.2vw,64px)] font-normal leading-[1.14] tracking-[-0.02em] [text-wrap:balance]">
-            L'administratif de santé,
+            {t.titre}
             <br className="hidden md:block" />{" "}
-            <em className="accent-italic whitespace-nowrap">sans le casse-tête</em>.
+            <em className={`accent-italic ${lang === "fr" ? "whitespace-nowrap" : ""}`}>{t.titreSuite}</em>.
           </h1>
-          <p className="body-lg mx-auto mt-10 max-w-[60ch]">
-            Opticiens et audioprothésistes, centres dentaires, centres de santé et ophtalmologie,
-            pharmacies, cliniques et laboratoires : des réponses pratiques sur les mutuelles, les
-            remboursements, les paiements et la réglementation. Partez de votre métier ou de votre
-            question.
-          </p>
+          <p className="body-lg mx-auto mt-10 max-w-[60ch]">{t.chapo}</p>
           <ParProbleme />
         </section>
 
@@ -70,11 +116,9 @@ export function Hub() {
 
         <section className={`${conteneur} pb-8 pt-14 text-center`}>
           <h2 className="font-serif text-[24px] font-normal leading-tight md:text-[30px]">
-            Par thème
+            {t.parTheme}
           </h2>
-          <p className="mt-2 text-[15px] text-[var(--text-soft)]">
-            Valable pour tous les métiers, sauf mention.
-          </p>
+          <p className="mt-2 text-[15px] text-[var(--text-soft)]">{t.tousMetiers}</p>
           <div className="mt-6 text-left">
             <Onglets actif="tout" centre />
           </div>
@@ -83,7 +127,7 @@ export function Hub() {
         {une.length >= 3 && (
           <section className={conteneur} aria-labelledby="a-la-une">
             <h2 id="a-la-une" className="sr-only">
-              À la une
+              {t.aLaUne}
             </h2>
             <div className="grid gap-8 pt-4 lg:grid-cols-12">
               <div className="lg:col-span-7">
@@ -106,7 +150,7 @@ export function Hub() {
         {aussi.length > 0 && (
           <section className={`${conteneur} monte pt-14`}>
             <div className="mb-6 border-t border-[var(--border)] pt-5">
-              <h2 className={titreSection}>Aussi dans le guide</h2>
+              <h2 className={titreSection}>{t.aussi}</h2>
             </div>
             <Grille fiches={aussi} />
           </section>
@@ -117,9 +161,9 @@ export function Hub() {
             <div className="grid gap-6 rounded-[18px] border border-[var(--border)] bg-lavis p-7 md:grid-cols-[1fr_auto] md:items-end md:p-10">
               <div>
                 <span className="eyebrow">
-                  Glossaire
+                  {t.glossaire}
                 </span>
-                <h2 className={`mt-2 ${titreSection}`}>AMC, DRE, NOEMIE… en une phrase</h2>
+                <h2 className={`mt-2 ${titreSection}`}>{t.glossaireTitre}</h2>
                 <ul className="mt-5 flex flex-wrap gap-2">
                   {SIGLES.map((s) => (
                     <li key={s}>
@@ -140,7 +184,7 @@ export function Hub() {
                 className={lienFleche}
                 style={{ color: "var(--profond)" }}
               >
-                Tout le glossaire <Fleche />
+                {t.toutGlossaire} <Fleche />
               </Link>
             </div>
           </section>
@@ -184,6 +228,7 @@ function Grille({ fiches }: { fiches: Fiche[] }) {
 
 /** Une rangée par catégorie (Seed) : titre coloré, description, 3 cartes, lien vers le thème. */
 function Rangee({ cat, fiches }: { cat: Categorie; fiches: Fiche[] }) {
+  const t = copy[useLanguage().lang];
   const total = toutCategorie(cat.slug).length;
   return (
     <section className={`${conteneur} monte pt-14`}>
@@ -202,7 +247,7 @@ function Rangee({ cat, fiches }: { cat: Categorie; fiches: Fiche[] }) {
           className={lienFleche}
           style={{ color: cat.ink }}
         >
-          Tout le thème ({total}) <Fleche />
+          {t.toutTheme(total)} <Fleche />
         </Link>
       </div>
       <Grille fiches={fiches.slice(0, 3)} />
@@ -212,6 +257,7 @@ function Rangee({ cat, fiches }: { cat: Categorie; fiches: Fiche[] }) {
 
 /** Entrée par problème : on part de la question du lecteur, jamais de notre offre. */
 function ParProbleme() {
+  const t = copy[useLanguage().lang];
   const actives = new Set(categoriesActives().map((c) => c.slug));
   const pilier = ficheJson("tiers-payant-opticien");
   type Tuile = { texte: string; to: string; params: Record<string, string> };
@@ -220,23 +266,17 @@ function ParProbleme() {
       ? [{ texte, to: "/ressources/categorie/$category", params: { category } }]
       : [];
   const tuiles: Tuile[] = [
-    ...cat("Je dois corriger un rejet", "rejets"),
-    ...cat("Je cherche le portail d'une mutuelle", "plateformes"),
-    ...cat("Un paiement n'est pas arrivé", "paiements"),
+    ...cat(t.rejet, "rejets"),
+    ...cat(t.portail, "plateformes"),
+    ...cat(t.paiement, "paiements"),
     ...(pilier
-      ? [
-          {
-            texte: "Je découvre le tiers payant",
-            to: "/ressources/$slug",
-            params: { slug: pilier.slug },
-          },
-        ]
-      : cat("Je découvre le tiers payant", "guide-tiers-payant")),
+      ? [{ texte: t.decouvre, to: "/ressources/$slug", params: { slug: pilier.slug } }]
+      : cat(t.decouvre, "guide-tiers-payant")),
   ];
   if (tuiles.length < 2) return null;
   return (
     <div className="mx-auto mt-8 max-w-[880px] text-left">
-      <p className="text-center text-[13px] font-medium text-[var(--text-muted)]">Vous cherchez…</p>
+      <p className="text-center text-[13px] font-medium text-[var(--text-muted)]">{t.cherche}</p>
       <ul className="mt-3 grid grid-cols-2 gap-2.5 md:grid-cols-4">
         {tuiles.map((t) => (
           <li key={t.texte}>
@@ -257,18 +297,20 @@ function ParProbleme() {
 
 /** Les articles valables pour tous les métiers, en liste compacte, sans ceux déjà montrés. */
 function PourTous({ vus, rangees, aussi }: { vus: Set<string>; rangees: Fiche[]; aussi: Fiche[] }) {
+  const { lang } = useLanguage();
+  const t = copy[lang];
   const montres = new Set([...vus, ...rangees.map((f) => f.slug), ...aussi.map((f) => f.slug)]);
-  const liste = fichesTransversales.filter((f) => !montres.has(f.slug));
+  const liste = fichesTransversales
+    .filter((f) => !montres.has(f.slug))
+    .map((f) => ficheLang(f, lang));
   if (!liste.length) return null;
   return (
     <section className={`${conteneur} pt-14`}>
       <div className="border-t border-[var(--border)] pt-5">
         <span className="eyebrow">
-          Pour tous les métiers
+          {t.pourTous}
         </span>
-        <h2 className="mt-2 font-serif text-[22px] font-normal leading-tight">
-          Rejets, rapprochement, réglementation et outils
-        </h2>
+        <h2 className="mt-2 font-serif text-[22px] font-normal leading-tight">{t.pourTousTitre}</h2>
       </div>
       <ul className="mt-5 grid gap-x-8 md:grid-cols-2 lg:grid-cols-3">
         {liste.map((f) => (

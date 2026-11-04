@@ -1,7 +1,10 @@
 import { Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
+import { useLanguage } from "@/lib/i18n";
 import {
   anciensDeCategorie,
+  categorie,
+  ficheLang,
   fichesCategorie,
   fichesPlateformes,
   titreCourt,
@@ -12,10 +15,25 @@ import { Annuaire } from "./Annuaire";
 import { BandeDemo } from "./BandeDemo";
 import { CarteArticle, CartePilier } from "./Cartes";
 import { VERTICALE_PRINCIPALE, verticale } from "@/lib/ressources/verticales";
-import { Fil, itemMetier } from "./Fil";
+import { Fil, itemMetier, useItemRessources } from "./Fil";
 import { SousNav } from "./Onglets";
 
 const conteneur = "mx-auto max-w-[1280px] px-4 md:px-6";
+
+const copy = {
+  fr: {
+    commencer: "Commencez par",
+    guides: "Les guides",
+    tous: "Tous les articles",
+    aussi: "À lire aussi",
+  },
+  en: {
+    commencer: "Start with",
+    guides: "Guides",
+    tous: "All articles",
+    aussi: "Also worth reading",
+  },
+};
 
 function Grille({ fiches }: { fiches: Fiche[] }) {
   return (
@@ -36,7 +54,11 @@ function Titre({ children }: { children: string }) {
 }
 
 /** Page /ressources/categorie/{category} ; pour « plateformes », c'est l'annuaire. */
-export function PageCategorie({ cat }: { cat: Categorie }) {
+export function PageCategorie({ cat: catFr }: { cat: Categorie }) {
+  const { lang } = useLanguage();
+  const t = copy[lang];
+  const cat = categorie(catFr.slug, lang)!;
+  const ressources = useItemRessources();
   const cocon = fichesCategorie(cat.slug);
   const anciens = anciensDeCategorie(cat.slug);
   const pilier = cocon.find((f) => f.pillar);
@@ -52,8 +74,8 @@ export function PageCategorie({ cat }: { cat: Categorie }) {
           <div className={`${conteneur} pb-8 pt-8 md:pb-10 md:pt-10`}>
             <Fil
               items={[
-                { nom: "Ressources", to: "/ressources" },
-                itemMetier(verticale(VERTICALE_PRINCIPALE)!),
+                ressources,
+                itemMetier(verticale(VERTICALE_PRINCIPALE, lang)!),
                 { nom: cat.nom },
               ]}
             />
@@ -64,14 +86,14 @@ export function PageCategorie({ cat }: { cat: Categorie }) {
               {cat.description}{" "}
               {pilier && (
                 <>
-                  Commencez par{" "}
+                  {t.commencer}{" "}
                   <Link
                     to="/ressources/$slug"
                     params={{ slug: pilier.slug }}
                     className="font-semibold underline underline-offset-4"
                     style={{ color: cat.ink }}
                   >
-                    {titreCourt(pilier.title)}
+                    {titreCourt(ficheLang(pilier, lang).title)}
                   </Link>
                   .
                 </>
@@ -96,7 +118,7 @@ export function PageCategorie({ cat }: { cat: Categorie }) {
           {autres.length > 0 && (
             <section className={`${conteneur} pt-14`}>
               {(pilier || annuaire) && (
-                <Titre>{annuaire ? "Les guides" : "Tous les articles"}</Titre>
+                <Titre>{annuaire ? t.guides : t.tous}</Titre>
               )}
               <Grille fiches={autres} />
             </section>
@@ -104,7 +126,7 @@ export function PageCategorie({ cat }: { cat: Categorie }) {
 
           {anciens.length > 0 && (
             <section className={`${conteneur} pt-14`}>
-              <Titre>À lire aussi</Titre>
+              <Titre>{t.aussi}</Titre>
               <Grille fiches={anciens} />
             </section>
           )}

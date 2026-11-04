@@ -1,0 +1,215 @@
+{
+  "slug": "portail-actil",
+  "id": "A6",
+  "category": "plateformes",
+  "categoryName": "Platforms and portals",
+  "type": "plateforme",
+  "plateforme": "actil",
+  "title": "Actil TP for opticians: professional portal, coverage approval, statuses, and payment",
+  "primaryKeyword": "actil tp",
+  "keywordCluster": [
+    "tp actil",
+    "actil espace pro",
+    "actil professionnel de santé",
+    "actil professionnel de sante",
+    "actil apicil mon compte",
+    "actil pec",
+    "actil professionnels de sante",
+    "actil tp optique",
+    "actil pro",
+    "prise en charge actil"
+  ],
+  "parentSlug": "portails-tiers-payant",
+  "level": "Fille",
+  "author": {
+    "name": "Olivier",
+    "jobTitle": "Writer, third-party payment expert",
+    "photo": "/auteurs/olivier.jpg",
+    "url": null
+  },
+  "reviewer": {
+    "name": "Nathalie",
+    "jobTitle": "Writer, optical industry expert",
+    "photo": "/auteurs/nathalie.jpg",
+    "url": null
+  },
+  "datePublished": "2026-10-09",
+  "dateModified": "2026-10-09",
+  "checkedOn": "2026-10-07",
+  "wordCount": 2046,
+  "readTime": 9,
+  "metaDescription": "Actil TP for opticians: log in to the actil.com professional portal, submit the pricing request then the coverage request, read the statuses, and track payment.",
+  "contentHtml": "<p><strong>Actil TP is handled on <a href=\"https://www.actil.com/connexion/\">actil.com/connexion</a>, the healthcare professional portal: the optician submits a pricing request (cotation), then converts it into a coverage approval once it is accepted.</strong> The pricing request is a first request: it does not guarantee payment. Only the coverage approval does, even if the patient's coverage rights close afterward. The portal finds the patient by their social security number, with no list of supplementary health insurers (mutuelles) to choose from.</p><div class=\"key-takeaways\"><strong>Key points</strong><ul><li>The Actil professional portal for opticians is at <a href=\"https://www.actil.com/connexion/\">actil.com/connexion</a>, using the login ID received after signing the network agreement.</li><li>On Actil, an optical request starts with a pricing request. The coverage approval comes next, by converting an accepted pricing request.</li><li>The patient is found by their social security number: the Actil card must match the data on the Carte Vitale (French health insurance card) exactly.</li><li>A coverage approval is a payment guarantee. You can bill as soon as the equipment is delivered, within 2 years, if you are still under agreement.</li><li>Named accounts receive a code by email after the password, and 5 failed login attempts lock the account temporarily.</li><li>Before each pricing request, check the social security number and the birth rank: that is the first thing to verify when you see “Aucun droit ouvert” (No open rights).</li></ul></div><h2 id=\"actil-tp-mutuelles\">What is Actil TP and which supplementary health insurers use it?</h2><p>Actil is a national third-party payment (tiers payant: the patient pays nothing upfront, insurers pay the provider directly) platform created on the initiative of <a href=\"https://mon.apicil.com/salon-client/les-avantages-du-reseau-actil/\">Groupe APICIL</a>. It handles both third-party payment and a care network.</p><div data-bloc=\"chiffres\"></div><p>In practice, Actil plays two roles for you. As a third-party payment operator, it handles the supplementary insurance (AMC) share of a piece of equipment on the patient's behalf, so the patient does not pay that share upfront. As a care network, it carries negotiated offers in optical, hearing, and dental care, built into its third-party payment. For the optician, these two roles meet in one place: the portal where you submit the pricing request and track payment.</p><p>The optical network changed in nature in 2021. According to Actil, <a href=\"https://www.actil.com/rejoignez-notre-nouveau-reseau-tiers-payant-optique/\">since April 1, 2021, the optical third-party payment network has been open to any optician who wants to join</a>, and the optician chooses the equipment from all lens, contact lens, and frame catalogs on the market. The network brings together large chains and independent opticians, in mainland France and the overseas regions (DROM), according to the <a href=\"https://www.actil.com/professionnel-de-sante/opticiens/\">Opticians page on actil.com</a>.</p><p>That leaves the question asked at the counter: which supplementary health insurers use Actil? The Actil optical portal has no insurer selector. It finds the patient by their social security number and displays their coverage rights directly, or the lack of them. Our agents therefore record no list of insurers on this portal, unlike other platforms such as <a href=\"/ressources/portail-viamedis\">Viamédis</a>, which have you choose the insurer from a list.</p><div data-bloc=\"organismes\"></div><p>The practical consequence: the right way to know whether a patient is covered through Actil is to look at their third-party payment card and run the search by social security number. Never conclude from a single file that an insurer goes only through Actil: the same insurer can assign different contracts to different operators. To place Actil among the other <a href=\"/ressources/portails-tiers-payant\">third-party payment portals</a>, the platform directory gives an overview.</p><div class=\"callout callout--tip\"><p><strong>The right habit:</strong> compare the Actil card with the Carte Vitale before entering anything. Actil requires that the <a href=\"https://www.actil.com/Portail/espacePro/PAGE-EPR-CARTE/page-epr-carte.jsp\">Actil card match the data on the Carte Vitale exactly</a>: social security number, date of birth, birth rank, and dependents. If in doubt, check the coverage rights in your private area.</p></div><h2 id=\"actil-espace-pro\">How do you access the Actil professional portal?</h2><p>Access to the Actil professional portal requires a network agreement: you do not create your account yourself online, you receive it after your documents are checked. Once you have your login ID, you log in on the dedicated page of the actil.com healthcare professional portal.</p><h3>Sign the agreement to get a login ID</h3><p>If your store is not yet a partner, the process runs in this order:</p><ol class=\"steps\"><li><strong>Fill in the form on the actil.com Contact page.</strong> This is the entry point for an optician who does not yet have an account.</li><li><strong>Wait for the Actil teams to contact you.</strong> They complete the registration with you.</li><li><strong>Sign the Actil agreement and provide the supporting documents requested.</strong> Prepare them in advance to avoid back-and-forth.</li><li><strong>Receive your login ID.</strong> It arrives after the documents are checked.</li><li><strong>Complete the registration online.</strong> You can then submit your pricing requests and coverage requests on actil.com.</li></ol><h3>Log in without getting locked out</h3><p>Logging in requires a login ID and a password. For named accounts, a one-time code then arrives by email, valid for 5 minutes: recorded by our agents on the portal. So open the account's mailbox before you start logging in. An expired code means starting over.</p><p>The portal also warns that after 5 failed login attempts, the account is locked temporarily. Named accounts are personal: every team member who handles third-party payment must have their own access.</p><p>Finally, a point of vocabulary: the optician's account is the healthcare professional portal, at <a href=\"https://www.actil.com/connexion/\">actil.com/connexion</a>.</p><h2 id=\"actil-prise-en-charge\">How do you submit an optical coverage request on Actil?</h2><p>On Actil, an optical coverage approval takes two successive requests: a pricing request first, then the conversion of the accepted pricing request into a coverage approval. It is this coverage approval, not the pricing request, that guarantees payment.</p><p>From their private area on actil.com, the optician submits pricing requests and coverage requests online. The patient is identified by their social security number (the NIR). If the data entered does not match what Actil has on file, the portal does not find the coverage rights. Hence the importance of the card check described above.</p><h3>The process at the counter</h3><ol class=\"steps\"><li><strong>Check the patient's Actil card.</strong> Social security number, date of birth, birth rank, and dependents must match the Carte Vitale.</li><li><strong>Submit the pricing request.</strong> Enter the social security number, then the equipment chosen from the lens, contact lens, and frame catalogs.</li><li><strong>Read the response.</strong> The status “Accepté / Accord N°…” (Accepted / Approval No. …) means the supplementary insurer accepts the pricing request.</li><li><strong>Convert the pricing request into a coverage approval.</strong> This is the step that commits the payment: do not deliver on a pricing request alone.</li><li><strong>Deliver the equipment.</strong> Billing becomes possible as soon as it is delivered.</li><li><strong>Bill.</strong> The status then changes to “Accord N°… (Facturé)” (Approval No. … (Billed)), and payment is tracked in the payment statements.</li></ol><p>This split has a consequence for how the store is organized. Between the pricing request and billing, a file can stay open for several days, while the glasses are assembled and delivered. So the team needs one place where it can see which files have an accepted pricing request but no coverage approval yet, and which ones are delivered but not billed.</p><div data-figure=\"parcours-actil\"></div><div class=\"callout callout--warn\"><p><strong>The trap:</strong> a quote above what the patient's contract provides comes back as “Refusé” (Rejected), with a reason such as “Dépassement grille tarifaire” (Price schedule exceeded). Read the reason before calling anyone: it tells you what to correct on the quote.</p></div><p>When these pricing requests number in the dozens every week, entry and follow-up on each portal become the back-office bottleneck. That is what <a href=\"/agents\">Granit agents</a> do: they submit the requests directly on the platforms' portals, then send the status back to the team, which only has to handle rejections and special cases.</p><h2 id=\"actil-statuts\">What do the statuses of an Actil coverage approval mean?</h2><p>The statuses of an Actil request tell you which step the file is at and what you need to do; here are the ones our agents recorded on the portal.</p><div data-bloc=\"statuts\"></div><p>Three distinctions help you read these statuses. The first separates “Accepté / Accord N°…” from “Accord N°… (Facturé)”: the first still waits for action on your side (convert, deliver, bill), the second is closed on the request side and is now tracked in the payment statements.</p><p>The second concerns the waiting statuses, which do not all say the same thing. “Prise en compte” (Received) means the request has been received and is in progress. “Validation en cours” (Validation in progress) indicates that it is being reviewed manually at Actil. “En attente” (Pending) means it has not been processed yet. In all three cases, the right action is to wait and then read the status again, but a manual review can explain why a file takes longer.</p><p>The third concerns the negative statuses. “Refusé” comes with a reason, to read before any new request. “Aucun droit ouvert” means the portal finds no coverage rights for this social security number: it is not a rejection of the quote, it is an identification or coverage rights problem. “Annulée” (Canceled) indicates the request is no longer active; submit a new one if the patient still wants to buy.</p><h2 id=\"actil-vous-bloquez\">Stuck on Actil?</h2><p>Each blocker at the counter has its own place to check and its own fix. The cases below are sorted by symptom, as you see it on screen.</p><h3>I can't find the insurer in the list</h3><p>That is normal: the Actil optical portal does not display a list of supplementary insurers. It searches for the patient by their social security number. If the search returns “Aucun droit ouvert”, first check the number entered, then the birth rank and the date of birth, by comparing the Actil card with the Carte Vitale. Then check the coverage rights in your private area. If nothing comes up, refer the patient to their supplementary insurer: their card may belong to another operator, which you will find in the portal directory.</p><h3>The coverage request is rejected</h3><p>Read the reason shown under the “Refusé” status. Example reason: “Dépassement grille tarifaire”, the quote exceeds what the contract allows. Correct the quote (equipment, lenses, price) with the patient, then submit the request again.</p><h3>It stays pending, with no response</h3><p>First identify the exact status: “En attente”, “Prise en compte”, or “Validation en cours”. The last one signals a manual review at Actil, which can lengthen processing. The pages we reviewed give no response time for a pricing request: wait, read the status again, then follow up through the channels described in the contact section below if the file does not move.</p><h3>The approval is granted, but the payment does not arrive</h3><p>First check that the accepted pricing request was actually converted into a coverage approval, then that the file is billed: the status should read “Accord N°… (Facturé)”. Then check your payment statements in the private area, available for 27 months. Also check that the invoice was issued after delivery, within 2 years, and while the store was under agreement: Actil does not pay retroactive invoices. If everything is in order and the payment is missing, go through your healthcare professional portal, with the approval number at hand.</p><p>Keep the exact reason displayed by the portal: it is what tells you what to correct.</p><h2 id=\"actil-paiement\">When and how does Actil pay the optician?</h2><p>Actil pays the optician on invoice, once the equipment is delivered, and the granted coverage approval guarantees this payment. According to <a href=\"https://www.actil.com/faq/\">Actil's FAQ</a>, if the patient's coverage rights close after the coverage approval, the payment remains validated for the healthcare professional.</p><p>The billing rules come down to three points, all published by Actil:</p><ul><li>Bill as soon as the equipment is delivered.</li><li>You have 2 years after delivery.</li><li>Only if the store is still under agreement: Actil does not pay retroactive invoices.</li></ul><p>Actil processes incoming data every day. Payments can be viewed in the private area, for 27 months.</p><p>The 2-year window seems comfortable, but it mostly matters for forgotten files: an accepted pricing request never converted, or equipment delivered without an invoice. A regular check of “Accepté” files that are not billed avoids discovering a lost receivable too late.</p><p>This page does not state a specific bank transfer time. To know where a payment stands, the reliable source remains your Actil payment statements, to reconcile with your bank statements. The guide <a href=\"/ressources/tiers-payant-opticien\">third-party payment for opticians, from coverage approval to collection</a> details this reconciliation step, across all portals.</p><h2 id=\"actil-contact\">How do you contact Actil?</h2><p>The right channel depends on your situation: a store that is not yet a partner uses the form on the <a href=\"https://www.actil.com/contact/\">actil.com Contact page</a>, a store already under agreement goes through its healthcare professional portal, at <a href=\"https://www.actil.com/connexion/\">actil.com/connexion</a>.</p><div data-bloc=\"contacts\"></div><p>For a question about a specific file, have at hand the approval number displayed by the portal, the exact status and, in case of rejection, the reason word for word. Actil's head office is in Lyon, according to the <a href=\"https://www.actil.com/mentions-legales/\">site's legal notice</a>; the postal address is mainly for official mail, not for day-to-day file follow-up.</p>",
+  "tocItems": [
+    {
+      "id": "actil-tp-mutuelles",
+      "label": "Actil TP and supplementary insurers"
+    },
+    {
+      "id": "actil-espace-pro",
+      "label": "Accessing the Actil professional portal"
+    },
+    {
+      "id": "actil-prise-en-charge",
+      "label": "Submitting an optical coverage request"
+    },
+    {
+      "id": "actil-statuts",
+      "label": "Reading Actil statuses"
+    },
+    {
+      "id": "actil-vous-bloquez",
+      "label": "Stuck on Actil?"
+    },
+    {
+      "id": "actil-paiement",
+      "label": "How the optician gets paid"
+    },
+    {
+      "id": "actil-contact",
+      "label": "Contacting Actil"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "How do opticians access the Actil professional portal?",
+      "answer": "The Actil professional portal for opticians is at actil.com/connexion, the healthcare professional portal. You first need a network agreement: the form on the actil.com Contact page, a signed agreement, and the supporting documents. After checking them, Actil sends a login ID. Logging in requires this login ID, a password and, for named accounts, a code received by email."
+    },
+    {
+      "question": "Actil, APICIL: which site do you log in on?",
+      "answer": "The optician logs in on actil.com/connexion, Actil's healthcare professional portal. Actil is a third-party payment platform created on the initiative of Groupe APICIL."
+    },
+    {
+      "question": "Which supplementary health insurers use Actil for optical third-party payment?",
+      "answer": "The Actil optical portal does not display a list of insurers: it finds the patient by their social security number. To know whether a patient is covered through Actil, look at their third-party payment card and run the search on the portal. The same insurer can assign different contracts to different operators."
+    },
+    {
+      "question": "How do you submit an optical coverage request on Actil?",
+      "answer": "On Actil, the optician first submits a pricing request (cotation) from their professional portal, identifying the patient by their social security number. Once the pricing request is accepted, the optician converts it into a coverage approval. The coverage approval is what guarantees payment; the optician then delivers and bills."
+    },
+    {
+      "question": "What do the statuses of an Actil coverage approval mean (approved, pending, rejected)?",
+      "answer": "“Accepté / Accord N°…” (Accepted / Approval No. …) means the supplementary insurer accepts the pricing request, which still has to be converted into a coverage approval. “En attente” (Pending), “Prise en compte” (Received), and “Validation en cours” (Validation in progress) indicate the request is still being processed. “Refusé” (Rejected) comes with a reason, for example a price schedule exceeded, to correct before submitting the request again."
+    },
+    {
+      "question": "How do healthcare professionals contact Actil?",
+      "answer": "An optician already under agreement goes through their healthcare professional portal, at actil.com/connexion. An optician who is not yet a partner uses the form on the site's Contact page. For a specific file, keep the approval number, the status, and the exact reason displayed by the portal."
+    },
+    {
+      "question": "How long does Actil take to pay the optician?",
+      "answer": "Actil processes incoming data every day and lets you view payments in the private area, for 27 months. The optician can bill as soon as the equipment is delivered, within 2 years, if still under agreement, and Actil does not pay retroactive invoices. To track a specific payment, the reference remains the Actil payment statements reconciled with the bank statements."
+    }
+  ],
+  "sources": [
+    {
+      "label": "mon.apicil.com · The benefits of the ACTIL network",
+      "url": "https://mon.apicil.com/salon-client/les-avantages-du-reseau-actil/"
+    },
+    {
+      "label": "actil.com · Join our new optical third-party payment network",
+      "url": "https://www.actil.com/rejoignez-notre-nouveau-reseau-tiers-payant-optique/"
+    },
+    {
+      "label": "actil.com · Opticians",
+      "url": "https://www.actil.com/professionnel-de-sante/opticiens/"
+    },
+    {
+      "label": "actil.com · The ACTIL card",
+      "url": "https://www.actil.com/Portail/espacePro/PAGE-EPR-CARTE/page-epr-carte.jsp"
+    },
+    {
+      "label": "actil.com · Login",
+      "url": "https://www.actil.com/connexion/"
+    },
+    {
+      "label": "actil.com · FAQ",
+      "url": "https://www.actil.com/faq/"
+    },
+    {
+      "label": "actil.com · Contact",
+      "url": "https://www.actil.com/contact/"
+    },
+    {
+      "label": "actil.com · Legal notice",
+      "url": "https://www.actil.com/mentions-legales/"
+    }
+  ],
+  "figures": [
+    {
+      "id": "parcours-actil",
+      "type": "etapes",
+      "titre": "On Actil, the pricing request comes before the coverage approval",
+      "legende": "Look at step 3: only the coverage approval guarantees payment, not the accepted pricing request.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "Submit the pricing request",
+          "detail": "Patient found by social security number",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Read the approval",
+          "detail": "Status “Accepté / Accord N°…”",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Convert into a coverage approval",
+          "detail": "The step that guarantees payment",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Deliver the equipment",
+          "detail": "Billing becomes possible",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Bill",
+          "detail": "Within 2 years after delivery",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Track the payment",
+          "detail": "Payment statements online for 27 months",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [
+    {
+      "id": "A0",
+      "slug": "portails-tiers-payant",
+      "anchor": "third-party payment portals",
+      "type": "parent"
+    }
+  ],
+  "liensEntrants": [
+    {
+      "slug": "mutuelle-quel-portail",
+      "anchor": "find out which portal an insurer uses",
+      "type": "soeur"
+    }
+  ],
+  "remplace": [],
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-09T07:40:50.527Z",
+    "avertissements": [
+      "aucune citation (facultative)",
+      "source non vérifiable (403) : https://www.actil.com/faq/",
+      "source non vérifiable (403) : https://www.actil.com/contact/",
+      "source non vérifiable (403) : https://www.actil.com/rejoignez-notre-nouveau-reseau-tiers-payant-optique/",
+      "source non vérifiable (403) : https://www.actil.com/Portail/espacePro/PAGE-EPR-CARTE/page-epr-carte.jsp",
+      "source non vérifiable (403) : https://www.actil.com/connexion/",
+      "source non vérifiable (403) : https://www.actil.com/mentions-legales/",
+      "source non vérifiable (403) : https://www.actil.com/professionnel-de-sante/opticiens/",
+      "source non vérifiable (403) : https://mon.apicil.com/salon-client/les-avantages-du-reseau-actil/"
+    ]
+  }
+}

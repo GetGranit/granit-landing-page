@@ -1,3 +1,5 @@
+import type { Lang } from "@/lib/i18n";
+
 /**
  * Les 20 simulations offertes de l'espace freemium (maquette).
  * Seul un nombre est stocké, dans sessionStorage : rien du patient ni des accès.
@@ -43,7 +45,10 @@ export function tempsGagne(n: number, minutesManuelles: number | undefined, dure
   return Math.max(0, Math.round(n * parPec));
 }
 
-export function enHeures(min: number): string {
+export function enHeures(min: number, lang: Lang = "fr"): string {
   if (min < 60) return `${min} min`;
-  return `${Math.floor(min / 60)} h ${String(min % 60).padStart(2, "0")}`;
+  const reste = String(min % 60).padStart(2, "0");
+  return lang === "en"
+    ? `${Math.floor(min / 60)}h ${reste}m`
+    : `${Math.floor(min / 60)} h ${reste}`;
 }

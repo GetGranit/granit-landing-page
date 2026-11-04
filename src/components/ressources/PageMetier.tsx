@@ -1,6 +1,7 @@
 // Page /ressources/metier/{verticale} : les articles d'un métier, sans changer leurs URL.
 import { Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
+import { useLanguage } from "@/lib/i18n";
 import {
   ORDRE_HUB,
   categorie,
@@ -8,10 +9,10 @@ import {
   fichesVerticale,
 } from "@/lib/ressources/contenu";
 import type { Fiche } from "@/lib/ressources/types";
-import type { Verticale } from "@/lib/ressources/verticales";
+import { verticale, type Verticale } from "@/lib/ressources/verticales";
 import { BandeDemo } from "./BandeDemo";
 import { CarteArticle } from "./Cartes";
-import { Fil } from "./Fil";
+import { Fil, useItemRessources } from "./Fil";
 import { Fleche } from "./Hub";
 import { PhotoMetier } from "./Metiers";
 import { SousNav } from "./Onglets";
@@ -30,9 +31,30 @@ function Grille({ fiches }: { fiches: Fiche[] }) {
   );
 }
 
+const copy = {
+  fr: {
+    titre: "tiers payant et gestion administrative",
+    toutTheme: "Tout le thème",
+    aussiOptique: "Aussi pour l'optique",
+    articles: "Les articles",
+    valable: "Valable aussi pour votre métier",
+  },
+  en: {
+    titre: "third-party payment and admin",
+    toutTheme: "All articles",
+    aussiOptique: "Also for opticians",
+    articles: "Articles",
+    valable: "Also relevant to your profession",
+  },
+};
+
 const estPlateforme = (f: Fiche) => f.category === "plateformes" && f.slug.startsWith("portail-");
 
-export function PageMetier({ v }: { v: Verticale }) {
+export function PageMetier({ v: vFr }: { v: Verticale }) {
+  const { lang } = useLanguage();
+  const t = copy[lang];
+  const v = verticale(vFr.slug, lang)!;
+  const ressources = useItemRessources();
   const propres = fichesVerticale(v.slug);
   const optique = v.slug === "optique";
   // Hors optique, les fiches plateformes multi-métiers vont avec les transversaux.
@@ -45,7 +67,7 @@ export function PageMetier({ v }: { v: Verticale }) {
       ];
   const parTheme = optique
     ? ORDRE_HUB.map((c) => ({
-        cat: categorie(c)!,
+        cat: categorie(c, lang)!,
         fiches: propres.filter((f) => f.category === c && (!f.ancien || f.rattache)),
       })).filter((r) => r.fiches.length > 0)
     : [];
@@ -61,9 +83,11 @@ export function PageMetier({ v }: { v: Verticale }) {
           className={`${conteneur} grid items-center gap-8 pb-10 pt-8 md:pt-12 lg:grid-cols-12`}
         >
           <div className="lg:col-span-5">
-            <Fil items={[{ nom: "Ressources", to: "/ressources" }, { nom: v.nom }]} />
+            <Fil items={[ressources, { nom: v.nom }]} />
             <h1 className="mt-4 font-serif text-[clamp(32px,4.4vw,52px)] font-normal leading-[1.08] tracking-[-0.015em] [text-wrap:balance]">
-              {v.nom} : <em className="accent-italic">tiers payant et gestion administrative</em>
+              {v.nom}
+              {lang === "en" ? ": " : " : "}
+              <em className="accent-italic">{t.titre}</em>
             </h1>
             <p className="body-lg mt-4 max-w-[52ch]">{v.description}</p>
           </div>
@@ -92,7 +116,7 @@ export function PageMetier({ v }: { v: Verticale }) {
                 className="group/l inline-flex items-center gap-1 whitespace-nowrap text-[14px] font-semibold hover:underline hover:underline-offset-4"
                 style={{ color: r.cat.ink }}
               >
-                Tout le thème <Fleche />
+                {t.toutTheme} <Fleche />
               </Link>
             </div>
             <Grille fiches={r.fiches.slice(0, 6)} />
@@ -101,14 +125,14 @@ export function PageMetier({ v }: { v: Verticale }) {
 
         {[...grille, ...horsTheme].length > 0 && (
           <section className={`${conteneur} pt-12`}>
-            <h2 className={titreSection}>{optique ? "Aussi pour l'optique" : "Les articles"}</h2>
+            <h2 className={titreSection}>{optique ? t.aussiOptique : t.articles}</h2>
             <Grille fiches={[...grille, ...horsTheme]} />
           </section>
         )}
 
         {aussi.length > 0 && (
           <section className={`${conteneur} pt-14`}>
-            <h2 className={titreSection}>Valable aussi pour votre métier</h2>
+            <h2 className={titreSection}>{t.valable}</h2>
             <Grille fiches={aussi} />
           </section>
         )}

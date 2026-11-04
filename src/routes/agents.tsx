@@ -53,7 +53,7 @@ const content = {
       {
         question: "Peut-on contrôler ce que font les agents ?",
         answer:
-          "Oui. Chaque action d'agent est journalisée, horodatée et exportable, et chaque décision reste révisable par un humain. Les données sont hébergées chez un hébergeur certifié HDS.",
+          "Oui. Chaque action d'agent est journalisée, horodatée et exportable, et chaque décision reste révisable par un humain. Les données sont stockées chez un hébergeur certifié HDS.",
       },
       {
         question: "Combien coûte un agent ?",
@@ -90,10 +90,10 @@ const content = {
   en: {
     eyebrow: "Agents",
     title: "A catalog of agents for every healthcare vertical.",
-    intro: "Granit deploys specialized agents by business vertical and use case. They operate on your existing tools, with no migration or API integration.",
+    intro: "Granit deploys agents specialized by trade and by use case. They work on your existing tools, with no migration and no API integration.",
     summaryLabel: "In short:",
     summary:
-      "Granit deploys AI agents that automate the administrative back office of healthcare professionals: third-party payment, quotes, invoicing, rejection handling, bank reconciliation and collections. Each agent is specialized by trade (optical, hearing care, dental, pharmacy, care homes, clinics, labs) and works on your existing tools, with no migration or API integration.",
+      "Granit deploys AI agents that automate the administrative back office of healthcare professionals: third-party payment (tiers payant: the patient pays nothing upfront, insurers pay the provider directly), quotes, billing, rejection handling, bank reconciliation and collections. Each agent is specialized by trade (optical, hearing care, dental, pharmacy, nursing homes, clinics, clinical labs) and works on your existing tools, with no migration and no API integration.",
     filtersTitle: "Agents by trade and use case",
     catalogTitle: "The catalog",
     faqTitle: "Frequently asked questions",
@@ -101,12 +101,12 @@ const content = {
       {
         question: "What is a Granit AI agent?",
         answer:
-          "An agent specialized by trade and use case that runs an administrative task for you: coverage requests, third-party quotes, claims transmission, rejection handling, bank reconciliation or unpaid follow-ups.",
+          "An agent specialized by trade and by use case that carries out an administrative task for you: coverage request, third-party payment quote, e-transmission, rejection handling, bank reconciliation or follow-up on unpaid invoices.",
       },
       {
-        question: "Do we need to change software or request an API?",
+        question: "Do we need to change software or ask for an API?",
         answer:
-          "No. Agents operate on your existing tools, with no migration or API integration: they plug into your practice software and the portals you already use.",
+          "No. The agents work on your existing tools, with no migration and no API integration: they connect to your practice management software and to the portals you already use.",
       },
       {
         question: "Which third-party payment platforms are covered?",
@@ -114,45 +114,45 @@ const content = {
           "Granit works with every third-party payment platform, for example Viamedis, Almerys, Santéclair, SP Santé, Itelis or iSanté.",
       },
       {
-        question: "Which healthcare trades?",
+        question: "For which healthcare trades?",
         answer:
-          "Optical, hearing care, dental, orthodontics, pharmacy, care homes, clinics, biology labs and pharma labs.",
+          "Optical, hearing care, dental, orthodontics, pharmacy, nursing homes (EHPAD), clinics, clinical labs and pharmaceutical companies.",
       },
       {
         question: "Can we control what the agents do?",
         answer:
-          "Yes. Every agent action is logged, timestamped and exportable, and every decision can be reviewed by a human. Data is hosted with an HDS-certified provider.",
+          "Yes. Every agent action is logged, timestamped and exportable, and every decision can be reviewed by a human. Data is stored with an HDS-certified host.",
       },
       {
         question: "How much does an agent cost?",
         answer:
-          "Granit is billed per center: from €199 excl. VAT per month for one center, plus a usage fee per agent based on enabled workflows and processed volume. See the Pricing page for details.",
+          "Granit is priced per center: from €199 excl. VAT per month for one center, plus a usage-based fee per agent depending on the workflows enabled and the volume processed. Details are on the Pricing page.",
       },
     ],
-    verticalLabel: "Covered verticals",
+    verticalLabel: "Verticals covered",
     useCaseLabel: "Use cases",
     cta: "Book a free demo",
-    verticals: ["Dental", "Optical", "Hearing care", "Clinic", "Care homes", "Pharmacy", "Pharma lab", "Bio lab", "Orthodontics"],
-    useCases: ["Third-party billing", "Eligibility", "Quotes", "Collections", "Admissions", "Invoicing", "Compliance", "Patient follow-up", "Stock & orders", "Market access"],
+    verticals: ["Dental", "Optical", "Hearing care", "Clinic", "Nursing home", "Pharmacy", "Pharma company", "Clinical lab", "Orthodontics"],
+    useCases: ["Third-party payment", "Eligibility", "Quotes", "Collections", "Admissions", "Billing", "Compliance", "Patient follow-up", "Stock & orders", "Market access"],
     agents: [
-      { vertical: "Dental", useCase: "Third-party billing", name: "Complete dental third-party billing", desc: "AMO/AMC eligibility checks, SESAM-Vitale transmission, NOEMIE monitoring, rejection detection and correction.", stat: "99.1% first-pass" },
-      { vertical: "Dental", useCase: "Collections", name: "Automatic dental unpaid follow-ups", desc: "Detects invoices at D+30, D+60 and D+90, sends email/SMS reminders and escalates unresolved cases.", stat: "÷3 collection time" },
-      { vertical: "Optical", useCase: "Quotes", name: "Optical third-party quote in 5 seconds", desc: "Reads insurance card, checks coverage, calculates remaining balance and sends the quote to the patient.", stat: "< 5s per quote" },
-      { vertical: "Optical", useCase: "Third-party billing", name: "Automated optical bank reconciliation", desc: "Matches public/private payer transfers with invoices, detects gaps and flags unassigned payments.", stat: "-85% time" },
-      { vertical: "Optical", useCase: "Compliance", name: "100% Santé basket checks", desc: "Checks frame, LPP lenses and normalized quote before sale, with alerts on non-compliance.", stat: "100% compliant" },
-      { vertical: "Hearing care", useCase: "Admissions", name: "Automatic hearing-aid file assembly", desc: "Collects ENT prescription, audiogram and normalized LPP quote, then sends the complete file to payers.", stat: "-75% assembly" },
-      { vertical: "Hearing care", useCase: "Patient follow-up", name: "Complete hearing-care pathway follow-up", desc: "Trial period reminders, fitting visits, four-year renewal and personalized patient messages.", stat: "+40% retention" },
-      { vertical: "Clinic", useCase: "Admissions", name: "Digital pre-admission with eligibility checks", desc: "Collects documents, verifies coverage in real time and pre-fills the administrative file before admission.", stat: "-60% intake" },
-      { vertical: "Clinic", useCase: "Collections", name: "Hospital remaining-balance collections", desc: "Identifies patient balances, runs graduated reminders, prioritizes receivables and tracks by department.", stat: "-45% receivables" },
-      { vertical: "Care homes", useCase: "Admissions", name: "Automatic APA and social-aid files", desc: "Collects documents, pre-fills forms, sends them to local authorities and follows up on delays.", stat: "-80% file prep" },
-      { vertical: "Care homes", useCase: "Invoicing", name: "Accommodation, dependency and care invoicing", desc: "Calculates fees by GIR and APA decision, then separates social aid from family remaining balance.", stat: "0 invoice error" },
-      { vertical: "Pharmacy", useCase: "Third-party billing", name: "Automatic SESAM-Vitale rejection handling", desc: "Analyzes rejection causes, corrects anomalies and resubmits most cases without human intervention.", stat: "-90% rejections" },
-      { vertical: "Pharmacy", useCase: "Stock & orders", name: "Stock shortage alerts and emergency orders", desc: "Monitors stock levels, alerts under critical thresholds and prepares emergency wholesaler orders.", stat: "0 shortage" },
-      { vertical: "Pharma lab", useCase: "Compliance", name: "Adverse event signal processing", desc: "Collects multi-source signals, triages by severity, pre-qualifies MedDRA and generates CIOMS I forms.", stat: "-65% processing" },
-      { vertical: "Pharma lab", useCase: "Market access", name: "HAS/CEPS comparative analysis", desc: "Analyzes transparency opinions, compares competitor ASMR results and supports medico-economic dossiers.", stat: "+25% efficiency" },
-      { vertical: "Bio lab", useCase: "Invoicing", name: "Automatic NABM coding", desc: "Applies NABM codes, manages accumulation rules, daily caps and derogations.", stat: "0 coding error" },
-      { vertical: "Bio lab", useCase: "Compliance", name: "Pre-analytical non-compliance detection", desc: "Flags wrong tubes, insufficient volume or late transport, then notifies prescriber and patient with audit traceability.", stat: "-50% recalls" },
-      { vertical: "Orthodontics", useCase: "Quotes", name: "Multi-semester orthodontic quotes", desc: "Generates CCAM-compliant quotes with remaining balance by semester, reimbursement caps and patient + payer sending.", stat: "-60% quote time" },
+      { vertical: "Dental", useCase: "Third-party payment", name: "End-to-end dental third-party payment", desc: "Mandatory (AMO) and supplementary (AMC) eligibility checks before each procedure, SESAM-Vitale e-transmission, NOEMIE monitoring, rejection detection and correction.", stat: "99.1% first-pass" },
+      { vertical: "Dental", useCase: "Collections", name: "Automatic follow-up on unpaid dental invoices", desc: "Flags invoices at D+30, D+60 and D+90, sends personalized email/SMS follow-ups and escalates to the manager.", stat: "÷3 collection time" },
+      { vertical: "Optical", useCase: "Quotes", name: "Optical third-party payment quote in 5 seconds", desc: "Reads the supplementary insurance (mutuelle) card, queries the insurer, calculates the out-of-pocket amount for 100% Santé, Class A or Class B, then sends it to the patient.", stat: "< 5s per quote" },
+      { vertical: "Optical", useCase: "Third-party payment", name: "Bank reconciliation of optical transfers", desc: "Automatically matches AMO/AMC bank transfers with invoices, flags discrepancies and unallocated transfers.", stat: "-85% time" },
+      { vertical: "Optical", useCase: "Compliance", name: "100% Santé basket check", desc: "Checks frame, LPP-coded lenses and standard quote before the sale, with an alert on any non-compliance.", stat: "100% compliance" },
+      { vertical: "Hearing care", useCase: "Admissions", name: "Automatic hearing aid file assembly", desc: "Retrieves the ENT prescription, audiogram and standard LPP quote, assembles the file and sends it to the local health insurance office (CPAM) and the supplementary insurer.", stat: "-75% file assembly" },
+      { vertical: "Hearing care", useCase: "Patient follow-up", name: "End-to-end hearing aid patient follow-up", desc: "Trial period reminders, adjustments at M+1/M+3/M+6, renewal after 4 years and personalized messages.", stat: "+40% retention" },
+      { vertical: "Clinic", useCase: "Admissions", name: "Digital pre-admission with verified eligibility", desc: "Collects documents, checks AMO/AMC coverage in real time and pre-fills the administrative file before admission.", stat: "-60% front desk" },
+      { vertical: "Clinic", useCase: "Collections", name: "Collections on hospital out-of-pocket amounts", desc: "Identifies out-of-pocket amounts, runs graduated follow-ups, prioritizes receivables and tracks by department.", stat: "-45% receivables" },
+      { vertical: "Nursing home", useCase: "Admissions", name: "Automatic APA file preparation", desc: "Collects documents, pre-fills CERFA forms, sends them to the département council and follows up when deadlines pass.", stat: "-80% file prep" },
+      { vertical: "Nursing home", useCase: "Billing", name: "Billing for accommodation, dependency and care", desc: "Calculates rates by GIR and APA decisions, and bills social assistance and the family's out-of-pocket amount separately.", stat: "0 billing errors" },
+      { vertical: "Pharmacy", useCase: "Third-party payment", name: "Automatic handling of SESAM-Vitale rejections", desc: "Analyzes rejection causes, corrects anomalies and resubmits without human intervention in most cases.", stat: "-90% rejections" },
+      { vertical: "Pharmacy", useCase: "Stock & orders", name: "Stock-out alerts and emergency orders", desc: "Monitors stock levels, alerts below the critical threshold and places an emergency order with the wholesaler.", stat: "0 stock-outs" },
+      { vertical: "Pharma company", useCase: "Compliance", name: "Adverse event report processing", desc: "Multi-source collection, triage by severity, MedDRA pre-coding and generation of CIOMS I forms.", stat: "-65% processing" },
+      { vertical: "Pharma company", useCase: "Market access", name: "HAS/CEPS comparative analysis", desc: "Analyzes transparency opinions, compares competitors' ASMR ratings and helps build the health-economics dossier.", stat: "+25% efficiency" },
+      { vertical: "Clinical lab", useCase: "Billing", name: "Automatic NABM coding", desc: "Applies NABM codes and handles combination rules, daily caps and exemptions.", stat: "0 coding errors" },
+      { vertical: "Clinical lab", useCase: "Compliance", name: "Pre-analytical non-conformities", desc: "Detects wrong tubes, insufficient volume or exceeded delays, notifies prescriber and patient, with COFRAC traceability.", stat: "-50% recalls" },
+      { vertical: "Orthodontics", useCase: "Quotes", name: "Multi-semester orthodontic quotes", desc: "Generates CCAM quotes with the out-of-pocket amount per semester and coverage caps, then sends them to the patient and the supplementary insurer.", stat: "-60% quote time" },
     ],
   },
 };

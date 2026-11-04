@@ -1,13 +1,29 @@
 import { useEffect, useRef, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
+import { useLanguage } from "@/lib/i18n";
 import {
   GLOSSAIRE_SLUG,
   categorie,
   categoriesActives,
   glossaireEnLigne,
 } from "@/lib/ressources/contenu";
-import { VERTICALES } from "@/lib/ressources/verticales";
+import { verticalesLang } from "@/lib/ressources/verticales";
 import type { VerticaleSlug } from "@/lib/ressources/types";
+
+const copy = {
+  fr: {
+    tout: "Tout le guide",
+    glossaire: "Glossaire",
+    themes: "Thèmes du guide",
+    metiers: "Métiers du guide",
+  },
+  en: {
+    tout: "Whole guide",
+    glossaire: "Glossary",
+    themes: "Guide topics",
+    metiers: "Guide professions",
+  },
+};
 
 const onglet =
   "relative -mb-px snap-start whitespace-nowrap rounded-[4px] py-3 text-[14px] text-[var(--text-soft)] transition-colors duration-150 hover:text-[var(--text)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--profond)]";
@@ -85,12 +101,14 @@ function Rangee({
  * Section « Par thème » du hub.
  */
 export function Onglets({ actif, centre = false }: { actif: string; centre?: boolean }) {
-  const cats = categoriesActives();
+  const { lang } = useLanguage();
+  const t = copy[lang];
+  const cats = categoriesActives(lang);
   const glossaire = glossaireEnLigne();
   return (
-    <Rangee actif={actif} label="Thèmes du guide" centre={centre}>
+    <Rangee actif={actif} label={t.themes} centre={centre}>
       <Onglet to="/ressources" actif={actif === "tout"} couleur="var(--text)">
-        Tout le guide
+        {t.tout}
       </Onglet>
       {cats.map((c) => (
         <Onglet
@@ -110,7 +128,7 @@ export function Onglets({ actif, centre = false }: { actif: string; centre?: boo
           actif={actif === "glossaire"}
           couleur="var(--profond)"
         >
-          Glossaire
+          {t.glossaire}
         </Onglet>
       )}
     </Rangee>
@@ -119,12 +137,14 @@ export function Onglets({ actif, centre = false }: { actif: string; centre?: boo
 
 /** Onglets des métiers, dans l'ordre de verticales.json : la structure du guide. */
 function OngletsMetiers({ actif }: { actif: VerticaleSlug | "tout" }) {
+  const { lang } = useLanguage();
+  const t = copy[lang];
   return (
-    <Rangee actif={actif} label="Métiers du guide">
+    <Rangee actif={actif} label={t.metiers}>
       <Onglet to="/ressources" actif={actif === "tout"} couleur="var(--text)">
-        Tout le guide
+        {t.tout}
       </Onglet>
-      {VERTICALES.map((v) => (
+      {verticalesLang(lang).map((v) => (
         <Onglet
           key={v.slug}
           to="/ressources/metier/$verticale"

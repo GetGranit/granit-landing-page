@@ -5,7 +5,7 @@ import logoMonogram from "@/assets/logo.svg";
 const copy = {
   fr: {
     baseline: "Le back-office qui travaille pendant que vous soignez.",
-    hds: "Infrastructure HDS",
+    hds: "Hébergeur certifié HDS",
     product: "Produit",
     agents: "Agents",
     pricing: "Tarifs",
@@ -21,10 +21,11 @@ const copy = {
     privacy: "Confidentialité",
     rights: "Tous droits réservés",
     made: "Made in France",
+    gdpr: "RGPD",
   },
   en: {
     baseline: "The back office that works while you care.",
-    hds: "HDS-certified cloud",
+    hds: "HDS-certified host",
     product: "Product",
     agents: "Agents",
     pricing: "Pricing",
@@ -36,10 +37,11 @@ const copy = {
     partners: "Become a partner",
     demo: "Book a demo",
     legal: "Legal",
-    cgv: "Terms",
+    cgv: "Terms of sale",
     privacy: "Privacy",
     rights: "All rights reserved",
     made: "Made in France",
+    gdpr: "GDPR",
   },
 };
 
@@ -67,7 +69,7 @@ export function Footer() {
             </p>
             <div className="mt-5 flex flex-wrap items-center gap-1.5">
               <Badge>{t.hds}</Badge>
-              <Badge>RGPD</Badge>
+              <Badge>{t.gdpr}</Badge>
             </div>
           </div>
 

@@ -1,6 +1,48 @@
 import { useState } from "react";
 
+import { useLanguage } from "@/lib/i18n";
 import { Kicker, Muted, Reassure, Screen, TextLink, Title, bigBtn, focusRing } from "./ui";
+
+const copy = {
+  fr: {
+    kicker: "Paul, chez Granit",
+    telInvalide: "Indiquez un numéro où Paul peut vous joindre.",
+    emailInvalide: "Indiquez un e-mail valide.",
+    prenom: "Prénom",
+    telPlaceholder: "06 12 34 56 78",
+    tel: "Téléphone",
+    emailPlaceholder: "contact@votre-magasin.fr",
+    email: "E-mail",
+    instant: "Un instant…",
+    reessayer: "Réessayer",
+    rappel: "Paul me rappelle",
+    creneau: "Je préfère choisir un créneau de 15 min",
+    sous24h: "Rappel sous 24 h ouvrées",
+    retour: "← Retour",
+    note: "C'est noté",
+    choisir: "Choisir un créneau maintenant",
+    autreCarte: "Essayer avec une autre carte",
+  },
+  en: {
+    kicker: "Paul, at Granit",
+    telInvalide: "Enter a number where Paul can reach you.",
+    emailInvalide: "Enter a valid email.",
+    prenom: "First name",
+    telPlaceholder: "+33 6 12 34 56 78",
+    tel: "Phone",
+    emailPlaceholder: "contact@your-store.com",
+    email: "Email",
+    instant: "One moment…",
+    reessayer: "Try again",
+    rappel: "Paul calls me back",
+    creneau: "I’d rather pick a 15-min slot",
+    sous24h: "Callback within 24 business hours",
+    retour: "← Back",
+    note: "Got it",
+    choisir: "Pick a slot now",
+    autreCarte: "Try with another card",
+  },
+};
 
 const emailRe = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 const CALCOM =
@@ -33,6 +75,7 @@ export function StepContact({
   busy: boolean;
   error?: string;
 }) {
+  const t = copy[useLanguage().lang];
   const [prenom, setPrenom] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState(initialEmail ?? "");
@@ -54,7 +97,7 @@ export function StepContact({
       >
         P
       </div>
-      <Kicker>Paul, chez Granit</Kicker>
+      <Kicker>{t.kicker}</Kicker>
       <Title>{title}</Title>
       <Muted>{intro}</Muted>
       <form
@@ -63,12 +106,9 @@ export function StepContact({
         onSubmit={(e) => {
           e.preventDefault();
           if (phone.replace(/\D/g, "").length < 9)
-            return setErr({
-              champ: "phone",
-              texte: "Indiquez un numéro où Paul peut vous joindre.",
-            });
+            return setErr({ champ: "phone", texte: t.telInvalide });
           if (!emailRe.test(email.trim()))
-            return setErr({ champ: "email", texte: "Indiquez un e-mail valide." });
+            return setErr({ champ: "email", texte: t.emailInvalide });
           setErr(null);
           onSubmit({ prenom: prenom.trim(), phone: phone.trim(), email: email.trim() });
         }}
@@ -76,35 +116,35 @@ export function StepContact({
         <input
           className={field}
           style={{ borderColor: "var(--filet-champ)", color: "var(--text)" }}
-          placeholder="Prénom"
+          placeholder={t.prenom}
           autoComplete="given-name"
           value={prenom}
           onChange={(e) => setPrenom(e.target.value)}
-          aria-label="Prénom"
+          aria-label={t.prenom}
         />
         <input
           {...a11y("phone")}
           className={field}
           style={fieldStyle("phone")}
-          placeholder="06 12 34 56 78"
+          placeholder={t.telPlaceholder}
           type="tel"
           inputMode="tel"
           autoComplete="tel"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
-          aria-label="Téléphone"
+          aria-label={t.tel}
         />
         <input
           {...a11y("email")}
           className={field}
           style={fieldStyle("email")}
-          placeholder="contact@votre-magasin.fr"
+          placeholder={t.emailPlaceholder}
           type="email"
           inputMode="email"
           autoComplete="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          aria-label="E-mail"
+          aria-label={t.email}
         />
         {err && (
           <p
@@ -127,10 +167,10 @@ export function StepContact({
         )}
         <button type="submit" disabled={busy} className={`${bigBtn} w-full disabled:opacity-60`}>
           {busy ? (
-            "Un instant…"
+            t.instant
           ) : (
             <>
-              {error ? "Réessayer" : "Paul me rappelle"} <span className="arrow">→</span>
+              {error ? t.reessayer : t.rappel} <span className="arrow">→</span>
             </>
           )}
         </button>
@@ -143,10 +183,10 @@ export function StepContact({
         className="inline-flex min-h-[44px] items-center px-2 py-2.5 text-[15px] underline underline-offset-4"
         style={{ color: "var(--text-soft)" }}
       >
-        Je préfère choisir un créneau de 15 min
+        {t.creneau}
       </a>
-      <Reassure items={["Rappel sous 24 h ouvrées"]} />
-      {onBack && <TextLink onClick={onBack}>← Retour</TextLink>}
+      <Reassure items={[t.sous24h]} />
+      {onBack && <TextLink onClick={onBack}>{t.retour}</TextLink>}
     </Screen>
   );
 }
@@ -166,9 +206,10 @@ export function StepThanks({
   /** Repartir d'une autre carte (évite le cul-de-sac après « Me prévenir »). */
   onRestart?: () => void;
 }) {
+  const t = copy[useLanguage().lang];
   return (
     <Screen id="thanks">
-      <Kicker>C'est noté</Kicker>
+      <Kicker>{t.note}</Kicker>
       <Title>{title}</Title>
       {children}
       {creneau && (
@@ -179,10 +220,10 @@ export function StepThanks({
           onClick={onCal}
           className={bigBtn}
         >
-          Choisir un créneau maintenant <span className="arrow">→</span>
+          {t.choisir} <span className="arrow">→</span>
         </a>
       )}
-      {onRestart && <TextLink onClick={onRestart}>Essayer avec une autre carte</TextLink>}
+      {onRestart && <TextLink onClick={onRestart}>{t.autreCarte}</TextLink>}
     </Screen>
   );
 }
