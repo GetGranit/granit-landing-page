@@ -8,7 +8,6 @@ import anciensData from "./anciens.json";
 import type { CategorySlug, Fiche, VerticaleSlug } from "./types";
 import {
   ORDRE_VERTICALES,
-  VERTICALE_PRINCIPALE,
   teinteAncien,
   verticale,
   verticalesAncien,
@@ -232,12 +231,13 @@ export function verticalesActives() {
 }
 
 /**
- * Métier d'un article pour le fil d'Ariane et l'onglet actif : son premier métier
- * (l'optique par défaut). Aucun pour un ancien article valable pour tous les métiers.
+ * Métier d'un article pour le fil d'Ariane et l'onglet actif : son premier métier.
+ * Aucun pour un ancien article valable pour tous les métiers, ni pour un article sorti
+ * de toutes les pages métier (surcharge vide, ex. l'article EHPAD).
  */
 export function metierDe(slug: string): Verticale | undefined {
   const f = ficheJson(slug);
-  if (f) return verticale(f.verticales[0] ?? VERTICALE_PRINCIPALE);
+  if (f) return f.verticales[0] ? verticale(f.verticales[0]) : undefined;
   const a = verticalesAncien(slug);
   return a.transversal || !a.verticales[0] ? undefined : verticale(a.verticales[0]);
 }

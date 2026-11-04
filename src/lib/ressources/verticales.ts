@@ -25,8 +25,6 @@ export type Verticale = {
 const ALTS: Record<VerticaleSlug, string> = {
   optique:
     "Lunettes en écaille posées sur un linge blanc, leur ombre projetée sur un mur terracotta",
-  audio:
-    "Deux appareils auditifs contour d'oreille posés sur un linge, à côté de leur boîtier de charge ouvert",
   pharmacie:
     "Pilulier, plaquette de comprimés et sachet blanc sur un comptoir de pharmacie, croix verte allumée au fond",
   dentaire:
@@ -35,10 +33,6 @@ const ALTS: Record<VerticaleSlug, string> = {
     "Stéthoscope posé sur un bureau de consultation en bois, à côté d'un agenda de rendez-vous",
   cliniques:
     "Lit de clinique au soleil, couverture grise pliée, pied à perfusion et dossier médical sur pince",
-  ehpad:
-    "Fauteuil vert près d'une fenêtre, plaid en laine, canne en bois, tasse de thé, lunettes et pilulier sur une petite table",
-  laboratoires:
-    "Paillasse de laboratoire avec un portoir de tubes de prélèvement à bouchons colorés, des gants et une centrifugeuse",
 };
 
 /** Le métier principal : sa page est toujours indexée, quel que soit le nombre d'articles. */
@@ -49,6 +43,18 @@ export const ORDRE_VERTICALES = data.ordre as VerticaleSlug[];
 export function verticale(slug: string): Verticale | undefined {
   const v = (data.verticales as Record<string, Omit<Verticale, "slug" | "alt">>)[slug];
   return v ? { slug: slug as VerticaleSlug, ...v, alt: ALTS[slug as VerticaleSlug] } : undefined;
+}
+
+/**
+ * Anciennes pages métier fusionnées (redirection 301) : le métier qui les reprend,
+ * ou `null` quand aucun ne convient (renvoi vers /ressources).
+ */
+export const FUSIONS = data.fusions as Record<string, VerticaleSlug | null>;
+
+/** Métiers valides d'une liste qui peut porter d'anciens slugs (audio → optique…), sans doublon. */
+export function normaliserVerticales(vs: string[]): VerticaleSlug[] {
+  const cibles = vs.map((v) => (v in FUSIONS ? FUSIONS[v] : (v as VerticaleSlug)));
+  return [...new Set(cibles.filter((v): v is VerticaleSlug => v !== null))];
 }
 
 export const VERTICALES: Verticale[] = ORDRE_VERTICALES.map((v) => verticale(v)!);
