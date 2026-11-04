@@ -1,22 +1,17 @@
-import { createFileRoute, notFound } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { usePostHog } from "posthog-js/react";
 import logoClair from "@/assets/logo-light.svg";
 import { GaletsSymbol } from "@/components/home/nouvelle/socle";
 import { useLanguage, type Lang } from "@/lib/i18n";
-import { leveeVisible } from "@/lib/levee";
 import "@/levee.css";
 
 /* Le communiqué de la levée, mot pour mot : les PDF finaux du 4 novembre (5 M€ en français, 6 M$ en anglais).
-   Page à part, sans le menu du site : la mise en page de landing-pages/annonce-levee.
-   La page n'existe pas avant l'annonce : 404 jusqu'au 5 novembre à 8 h 30, sauf avec ?levee=1 pour relire. */
+   Page à part, sans le menu du site : la mise en page de landing-pages/annonce-levee. */
 const TITRE = "Granit lève 5 millions d’euros - Communiqué de presse";
 const DESCRIPTION =
   "Granit lève 5 millions d’euros, menés par Seedcamp, pour libérer les professionnels de santé de l’administratif.";
 
 export const Route = createFileRoute("/levee-de-fonds")({
-  beforeLoad: ({ location }) => {
-    if (!leveeVisible(location.searchStr)) throw notFound();
-  },
   head: () => ({
     meta: [
       { title: TITRE },

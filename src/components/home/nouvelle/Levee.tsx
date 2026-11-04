@@ -1,11 +1,10 @@
 /* Nouvelle home : 4. LEVÉE (portage de lm/sections.js, bloc « 4. LEVÉE »).
    Granit pâle peint une fois en canvas (quand la tuile arrive à l'écran), puis le logo Galets s'y pose pièce par pièce
-   dès qu'un quart de la tuile est visible (niveau N2). Rien ne s'affiche avant l'annonce publique (useLeveeAnnoncee).
+   dès qu'un quart de la tuile est visible (niveau N2).
    « Mouvements réduits » : le logo est posé d'emblée. */
 import { useEffect, useRef, type CSSProperties } from "react";
 import { usePostHog } from "posthog-js/react";
-import { lienAnnonce } from "@/lib/levee";
-import { GALETS_PIECES, GALETS_VIEWBOX, useLanguage, useLeveeAnnoncee, useReveal } from "./socle";
+import { GALETS_PIECES, GALETS_VIEWBOX, useLanguage, useReveal } from "./socle";
 import "./levee.css";
 
 const copy = {
@@ -160,8 +159,6 @@ const ECARTS = GALETS_PIECES.map((_, i) => {
 });
 
 export function LeveeNouvelle() {
-  const annoncee = useLeveeAnnoncee();
-  if (!annoncee) return null;
   return <Levee />;
 }
 
@@ -267,7 +264,7 @@ function Levee() {
           </p>
           <a
             className="lm-lv-more"
-            href={lienAnnonce()}
+            href="/levee-de-fonds"
             data-reveal=""
             style={{ "--i": 3 } as CSSProperties}
             onClick={() => posthog?.capture("levee_annonce_clicked", { placement: "levee" })}
