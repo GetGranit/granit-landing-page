@@ -1,0 +1,213 @@
+{
+  "slug": "gerer-tiers-payant-magasin",
+  "id": "E0",
+  "category": "gerer-son-tiers-payant",
+  "categoryName": "Managing your third-party payment",
+  "type": "standard",
+  "plateforme": null,
+  "title": "Managing third-party payment in a store: in-house, outsourced or automated?",
+  "primaryKeyword": "gestion tiers payant",
+  "keywordCluster": [
+    "gestion tiers payant pharmacie",
+    "gestion du tiers payant",
+    "gestion tiers payant pyrénées atlantiques",
+    "gestion rejets tiers payant",
+    "gestion des tiers payants opticien",
+    "gestion des rejets tiers payant",
+    "gestion tiers payant opticien",
+    "gestion des tiers payant opticien"
+  ],
+  "parentSlug": "tiers-payant-opticien",
+  "level": "Pilier",
+  "author": {
+    "name": "Laura",
+    "jobTitle": "Writer, health expert",
+    "photo": "/auteurs/laura.jpg",
+    "url": null
+  },
+  "reviewer": null,
+  "datePublished": "2026-10-30",
+  "dateModified": "2026-10-30",
+  "checkedOn": null,
+  "wordCount": 2301,
+  "readTime": 10,
+  "metaDescription": "Managing third-party payment in an optical store: in-house, outsourced or automated. Real costs, control over rejections, metrics. The comparison to decide on the evidence.",
+  "contentHtml": "<p><strong>To manage third-party payment (tiers payant: the patient pays nothing upfront, insurers pay the provider directly) in an optical store, there are three models: the team handles everything in-house, a service provider takes over, or tools and agents enter and track files on the portals.</strong> The right choice depends less on the size of the store than on three questions. Who has time to follow each file through to payment? Who stays in control of rejections? How much does a file that drags on cost you? This page compares the three options step by step, without taking sides, so you can decide on the evidence.</p><div class=\"key-takeaways\"><strong>Key takeaways</strong><ul><li>Third-party payment management does not stop at coverage approval: billing, payment reconciliation and rejection handling often weigh more than data entry.</li><li>In-house, you keep control, but everything depends on the availability of one or two people.</li><li>Outsourcing frees up time, provided you keep visibility on rejections, receivables and access to your data.</li><li>Automating means handing data entry and tracking on the portals to agents, with the team keeping the decision on disputed cases.</li><li>Before choosing, measure your current cost: time spent, old receivables and files never collected.</li></ul></div><h2 id=\"gestion-tiers-payant-perimetre\">What does third-party payment management cover in an optical store?</h2><p>Third-party payment management covers the whole life of a file, from checking the customer’s coverage rights to collecting the last supplementary insurer share. It is a five-stage job, and each stage has its own pitfalls.</p><p>Third-party payment is the mechanism by which the customer does not pay upfront: the optician is paid directly by mandatory insurance (AMO, the French national health insurance, Sécurité sociale) and by supplementary insurance (AMC, the supplementary health insurer, or mutuelle, or another insurer). <a href=\"https://www.legifrance.gouv.fr/loda/id/JORFTEXT000031912641\">Law No. 2016-41 of January 26, 2016 on modernizing the French health system</a> set the framework for its expansion. In optical care, the AMC share most often goes through a third-party payment platform (Viamedis, Almerys, Santéclair, Itelis…), which manages approvals and payments on behalf of several supplementary insurers. For the overall picture, see our guide to <a href=\"/ressources/tiers-payant-opticien\">third-party payment for opticians</a>.</p><ol class=\"steps\"><li><strong>Check eligibility.</strong> Read the third-party payment card, identify the supplementary insurer and the portal it goes through.</li><li><strong>Request coverage approval.</strong> The coverage request (PEC) is entered on the platform’s portal, with the quote and the prescription details.</li><li><strong>Bill the AMO and the AMC.</strong> The mandatory share is e-transmitted from the practice management software, the supplementary share according to the platform’s rules.</li><li><strong>Reconcile payments.</strong> Match each bank transfer received to the invoice it settles, payer by payer.</li><li><strong>Handle rejections and follow up.</strong> Correct, resend, follow up until full payment.</li></ol><div data-figure=\"cycle-dossier-tp\"></div><p>In the files our agents handle, the finding is consistent: the first two steps are visible, because they happen at the counter in front of the customer. The last three are done later, and that is where files get lost. Reconciliation is pushed back a week, then a month, and rejections pile up without anyone seeing them. So the first reflex, before any decision about organization, is to know where your files stand after approval.</p><p>The number of portals adds a difficulty. Each platform has its own professional portal, login credentials, fields and statuses. Our page on <a href=\"/ressources/portails-tiers-payant\">third-party payment portals</a> presents them one by one, and the tool <a href=\"/ressources/mutuelle-quel-portail\">Which portal does my mutuelle use?</a> helps you find the right portal from the customer’s card.</p><h2 id=\"trois-modeles\">What are the three ways to organize third-party payment?</h2><p>A store can do everything in-house, hand all or part of the work to a service provider, or automate data entry and tracking. The three models differ on one simple question: who does the work on the portals, and who decides when a file is stuck.</p><p>In-house, the store team does everything, from the counter to reconciliation. Outsourced, a specialized provider takes over all or part of the back-office tasks: billing, tracking, follow-ups, sometimes reconciliation. Automated, tools or software agents enter requests on the portals and track the responses, and the team receives the statuses.</p><div data-figure=\"trois-modeles-tp\"></div><p>These models can be combined. Many stores keep coverage approval at the counter and delegate payment follow-up. Others automate data entry and keep rejection handling in-house. The point is not to pick a side, but to decide step by step who does what.</p><h2 id=\"gestion-interne\">Managing third-party payment in-house: when is it the right choice?</h2><p>In-house management remains the right choice as long as a designated person has time to follow each file through to payment, every week. As soon as that follow-up slips, the model costs more than it brings in.</p><p>Its strengths are real. The team knows the customers, sees the file as it is created and can correct an entry error right away, card in hand. It does not have to pass information to a third party, so there is no handover delay and no question of sharing health data. And it learns, file after file, the quirks of each portal.</p><p>Its main limit is dependence on one person. When the third-party payment administrator goes on vacation or leaves the store, the knowledge leaves too: login credentials, the habits of each platform, files in progress. The second weak point is counter time. A coverage request entered while the customer waits is selling time lost.</p><h3>Signs that in-house management is no longer holding up</h3><ul><li>Bank transfer reconciliation is done late, or not at all.</li><li>Rejections go unanswered because no one has time to open them.</li><li>Follow-ups with supplementary insurers happen when someone thinks of it, not on a schedule.</li><li>Only one person knows how to log in to certain portals.</li><li>The volume of files grows faster than the team.</li></ul><p>If you keep management in-house, two simple tools reduce errors: a <a href=\"/ressources/checklist-prise-en-charge\">checklist before sending a coverage request</a> and a <a href=\"/ressources/quand-relancer-mutuelle\">follow-up schedule by stage</a>. They do not create time, but they keep you from losing it on files that have to be redone.</p><h2 id=\"externaliser\">Outsourcing third-party payment: what do you really delegate?</h2><p>Outsourcing means handing a service provider the third-party payment back office: billing, payment tracking, follow-ups and often rejection handling. Coverage approval at the counter generally stays with the store, because it happens live with the customer.</p><p>The scope varies widely from one offer to another. In the offers and quotes we see, several formulas come up: full takeover of the back office, handling rejections only, clearing a backlog of old receivables, and sometimes a cash advance, where the provider pays the store before being paid itself by the supplementary insurers. This advance meets a cash flow need; on its own, it does not fix the quality of the files.</p><p>The main gain is time freed up for the team. The main risk is losing sight of what is happening. A provider that handles rejections without reporting back to you can fix the symptom without ever getting to the cause, often an entry error repeated at the counter.</p><div class=\"callout callout--warn\"><p><strong>The trap:</strong> signing without planning a regular report of rejections by reason. Without this feedback, the same errors keep happening at the counter and you pay to correct them every time.</p></div><h3>What to check in the contract</h3><ul><li><strong>The exact scope</strong>: who enters coverage requests, who bills, who reconciles, who follows up, who contests.</li><li><strong>The reporting</strong>: rejections by reason, receivables by age and by payer, files closed without payment.</li><li><strong>Access to data</strong>: can you check the status of each file at any time?</li><li><strong>Reversibility</strong>: notice period, recovery of files in progress, handover of portal login credentials.</li><li><strong>Data hosting</strong>: the provider handles health data. Hosting it on behalf of a third party falls under <a href=\"https://esante.gouv.fr/produits-services/hds\">HDS (French health data hosting) certification rules</a>, which you should check before signing.</li></ul><h2 id=\"automatiser\">Can an optician’s third-party payment be automated?</h2><p>Yes, much of the repetitive work can be automated: entering coverage requests on the portals, tracking statuses, reconciling payments, sorting rejections. The decision on disputed cases remains human.</p><p>There are three levels to distinguish. Practice management software already automates e-transmission of the AMO share and, in some cases, the DRE (demande de remboursement électronique, the electronic reimbursement request that transmits the supplementary share). Robot-type scripts, which replay recorded clicks, break as soon as a portal changes a screen. Agents, on the other hand, work on the portals the way an administrator would: they read the screen, fill in the required fields and report the status obtained.</p><p>When requests number in the dozens every day, entry on each portal becomes the store’s bottleneck. That is what <a href=\"/agents\">Granit</a> does: agents enter coverage requests directly on the platforms’ portals, track the responses and send the status back to the team, which keeps control over refusals and disputes. Granit relies on an HDS-certified host (health data hosting).</p><p>Automation does not replace everything. A file with a missing document, an illegible prescription or a contested amount calls for judgment. The right split is to give agents what repeats and the team what needs discussion.</p><div class=\"callout callout--tip\"><p><strong>The right reflex:</strong> before automating, list the steps where your team copies information from one screen to another. These are the first ones to hand over to a tool.</p></div><h2 id=\"cout\">How much does third-party payment management cost?</h2><p>The cost of third-party payment management never comes down to a single invoice: it adds up the team’s time, receivables never collected and money tied up waiting for payment. That total is what you should compare with the price of a provider or a tool.</p><p>In-house, the cost is hidden in salaries: hours spent on entry, follow-ups and reconciliation, and selling hours lost at the counter. It is also hidden in the customer accounts: supplementary insurer shares never paid, for lack of follow-up, end up as losses without anyone having decided so.</p><p>On the provider and tool side, market quotes follow several billing models: a monthly flat fee, a price per file, or a percentage of the amounts managed. Each model has its logic. The flat fee is predictable, the price per file follows your activity, the percentage aligns the provider with collection but weighs more on large purchases. Always compare on the same basis: your actual volume of files over one month.</p><h3>Measuring your current cost in one week</h3><ol class=\"steps\"><li><strong>Count the files.</strong> Number of coverage requests and third-party payment invoices over a typical month.</li><li><strong>Time the work.</strong> For one week, record the time spent on entry, follow-ups, reconciliation and rejections.</li><li><strong>List old receivables.</strong> Export from the software the unsettled AMC shares, by payer and by age.</li><li><strong>Spot the losses.</strong> Identify files closed or abandoned without full payment.</li><li><strong>Compare.</strong> Set this total against the quotes received, on the same volume.</li></ol><p>This calculation has another benefit: it gives you a baseline to judge, six months later, whether the chosen model has delivered on its promises.</p><h2 id=\"choisir\">How do you choose the right model for your store?</h2><p>Choose according to your main need: time for the team, cash flow, or control over files. Each model answers one of these three needs better.</p><div class=\"tbl\"><table><tr><th>Your situation</th><th>Best-suited model</th><th>Point to watch</th></tr><tr><td>Low volume, trained administrator available</td><td>In-house</td><td>Document the logins and the habits of each portal</td></tr><tr><td>Tight cash flow, need to get paid faster</td><td>Provider with a cash advance</td><td>Keep a report of rejections by reason</td></tr><tr><td>Backlog of old receivables to clear</td><td>Provider for a one-off catch-up</td><td>Address the cause too, not just the backlog</td></tr><tr><td>High volume, team overwhelmed by data entry</td><td>Automated entry and tracking</td><td>Define who handles disputed cases</td></tr><tr><td>Several stores, different practices</td><td>Shared automation or outsourcing</td><td>Same metrics for all stores</td></tr></table></div><p>For a manager of several stores, the challenge is often consistency: one store that manages well, another that piles up rejections, and no overall view. The chosen model must make it possible to compare stores on the same metrics.</p><p>If you are hesitating between two specific offers, read their terms on the evidence and compare their model, not their pitch. Our comparison <a href=\"/ressources/granit-vs-iremia\">Granit or Iremia Santé</a> shows how to set up this comparison, including where the other offer is a better fit.</p><h2 id=\"indicateurs\">Which metrics should you track, whatever the model?</h2><p>Five metrics are enough to steer a store’s third-party payment, whether the work is done in-house, by a provider or by agents. Track them every month, store by store.</p><ul><li><strong>Pending coverage requests</strong>: number of requests without a response, and for how long.</li><li><strong>Rejections by reason</strong>: a recurring reason points to an entry error to fix at the source. Our list of <a href=\"/ressources/codes-rejets-noemie\">NOEMIE rejection codes</a> helps you read the returns from French national health insurance (Assurance Maladie) (NOEMIE is the return file that informs the professional of payments and rejections).</li><li><strong>Receivables by age and by payer</strong>: they show which portal or which supplementary insurer is slowing down your collections.</li><li><strong>Gaps between billed and paid</strong>: an unhandled transfer lower than the invoice is a silent loss.</li><li><strong>Time spent</strong>: in-house, it can be measured; with a provider or a tool, it should drop visibly.</li></ul><p>Handling third-party payment rejections is the metric that best reveals overall quality. Many rejections handled quickly point to solid follow-up and data entry that needs work. Few but old rejections point to follow-up that is slipping. In both cases, the figure is only useful if it leads to a specific action: training, fixing a setting, following up with a payer.</p><p>Whatever you choose, keep one rule: the manager must be able to see, at any time, the status of each store’s files and receivables. That is the condition for changing models calmly if this one no longer holds up.</p>",
+  "tocItems": [
+    {
+      "id": "gestion-tiers-payant-perimetre",
+      "label": "What third-party payment management covers"
+    },
+    {
+      "id": "trois-modeles",
+      "label": "The three ways to organize third-party payment"
+    },
+    {
+      "id": "gestion-interne",
+      "label": "Managing in-house: when it is the right choice"
+    },
+    {
+      "id": "externaliser",
+      "label": "Outsourcing: what you really delegate"
+    },
+    {
+      "id": "automatiser",
+      "label": "Automating third-party payment for an optician"
+    },
+    {
+      "id": "cout",
+      "label": "How much third-party payment management costs"
+    },
+    {
+      "id": "choisir",
+      "label": "Choosing the right model for your store"
+    },
+    {
+      "id": "indicateurs",
+      "label": "The metrics to track every month"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "Should you manage third-party payment in-house or outsource it?",
+      "answer": "Keep third-party payment in-house as long as a trained person has time to follow each file through to payment, every week. Outsource when reconciliation falls behind, rejections pile up or cash flow becomes the main need. Many stores combine both: coverage approval stays at the counter, payment follow-up is delegated."
+    },
+    {
+      "question": "How much does third-party payment management cost?",
+      "answer": "The real cost adds up the team’s time, supplementary insurer shares never collected and money tied up waiting for payment. Service providers and tools charge under several models: a monthly flat fee, a price per file or a percentage of the amounts managed. To compare, first measure your current cost over one month of files, then set the quotes against the same volume."
+    },
+    {
+      "question": "Can third-party payment be automated?",
+      "answer": "Yes, much of the repetitive work can be automated: entering coverage requests on the portals, tracking statuses, reconciling payments and sorting rejections. Agents can work directly on the platforms’ portals and send the status back to the team. Disputed cases, such as a missing document or a contested amount, still need to be handled by a person."
+    },
+    {
+      "question": "Who stays in control of rejections when you outsource third-party payment?",
+      "answer": "It depends on the contract: some providers handle rejections themselves, others send them back to the store. In every case, require a regular report of rejections by reason. Without this feedback, the same entry errors keep happening at the counter and you pay to correct them every time."
+    }
+  ],
+  "sources": [
+    {
+      "label": "legifrance.gouv.fr · Law No. 2016-41 of January 26, 2016 on modernizing the French health system",
+      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000031912641"
+    },
+    {
+      "label": "esante.gouv.fr · Health data hosting (HDS)",
+      "url": "https://esante.gouv.fr/produits-services/hds"
+    }
+  ],
+  "figures": [
+    {
+      "id": "cycle-dossier-tp",
+      "type": "etapes",
+      "titre": "The five stages of a third-party payment file",
+      "legende": "The first two stages happen at the counter; files get lost after the invoice.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "Check eligibility",
+          "detail": "Third-party payment card, supplementary insurer, portal",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Request coverage",
+          "detail": "Entry on the portal with the quote and prescription",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Bill AMO and AMC",
+          "detail": "E-transmission and supplementary share",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Reconcile payments",
+          "detail": "Match each transfer to its invoice",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Handle rejections and follow-ups",
+          "detail": "Correct, resend, follow up until paid",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    },
+    {
+      "id": "trois-modeles-tp",
+      "type": "comparaison",
+      "titre": "Three ways to manage third-party payment",
+      "legende": "Look at who enters data on the portals and who decides when a file is stuck.",
+      "colonnes": [
+        "In-house",
+        "Outsourced",
+        "Automated"
+      ],
+      "elements": [
+        {
+          "label": "Who enters data",
+          "detail": "",
+          "valeurs": [
+            "Your team",
+            "The provider",
+            "Agents"
+          ],
+          "focus": false
+        },
+        {
+          "label": "Who decides",
+          "detail": "",
+          "valeurs": [
+            "You",
+            "The provider",
+            "You"
+          ],
+          "focus": true
+        },
+        {
+          "label": "Main cost",
+          "detail": "",
+          "valeurs": [
+            "Team time",
+            "Provider’s invoice",
+            "Subscription"
+          ],
+          "focus": false
+        },
+        {
+          "label": "Cash advance",
+          "detail": "",
+          "valeurs": [
+            "No",
+            "Sometimes offered",
+            "No"
+          ],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [
+    {
+      "id": "G0",
+      "slug": "tiers-payant-opticien",
+      "anchor": "third-party payment for opticians",
+      "type": "parent"
+    }
+  ],
+  "liensEntrants": [],
+  "remplace": [
+    "kpi-back-office-sante"
+  ],
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-30T12:54:19.595Z",
+    "avertissements": [
+      "Granit cité 3 fois dans le corps (une mention visée)",
+      "aucune citation (facultative)",
+      "source non vérifiable (403) : https://www.legifrance.gouv.fr/loda/id/JORFTEXT000031912641"
+    ]
+  }
+}

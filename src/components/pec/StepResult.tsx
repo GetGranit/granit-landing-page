@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 
+import { useLanguage, type Lang } from "@/lib/i18n";
 import type { CardRead } from "@/lib/pec/readCard";
 import { platformById, type Platform } from "@/lib/pec/resolve";
 import { estimationLunettes, type EstimationLunettes } from "@/lib/pec/estimation";
@@ -17,16 +18,160 @@ const LOGICIELS: { name: string; logo?: string }[] = [
 ];
 
 /** Réassurance photo : seulement s'il y a eu une vraie photo (pas la carte d'exemple, pas la saisie). */
-export const PHOTO_NON_CONSERVEE = "Photo lue par IA, jamais conservée par Granit";
+export const PHOTO_NON_CONSERVEE = {
+  fr: "Photo lue par IA, jamais conservée par Granit",
+  en: "Photo read by AI, never stored by Granit",
+} satisfies Record<Lang, string>;
+
+/** Notes de portail (platforms.json, en français) traduites pour l'écran anglais. */
+const NOTE_FERMETURE_EN: Record<string, string> = {
+  oxantis:
+    "The oxantis.net site closes on Oct 26, 2026. We will tell you where to submit these coverage requests next.",
+};
+
+const copy = {
+  fr: {
+    lignes: { mutuelle: "Mutuelle", reseau: "Réseau", amc: "N° AMC", portail: "Portail" },
+    portailEntete: (nom: string) => `PORTAIL ${nom} · DEMANDE DE PRISE EN CHARGE`,
+    equipement: "Équipement",
+    equipementExemple: "⌛ équipement d'exemple, modifiable ensuite",
+    trouve: "✓ Portail trouvé",
+    exemple: "Carte d'exemple · au prochain client, prenez sa vraie carte",
+    simulonsTitre: "Simulons votre PEC sur ",
+    peutEtre: (target: string) => `Votre PEC ${target} peut être `,
+    peutEtreEm: "simulée en direct",
+    expiree: (fin: string | null | undefined) =>
+      `La carte semble expirée (${fin}) : vérifiez les droits du patient.`,
+    surCompte: (target: string) =>
+      `Sur votre compte, pour votre client, sans rien envoyer à la mutuelle. Il faudra son n° de sécu et vos identifiants ${target}.`,
+    simuler: "Simuler ma PEC",
+    rienEnvoye: "Rien n'est envoyé à la mutuelle",
+    accesNonConserves: "Vos accès ne sont pas conservés",
+    paulMontre: (target: string) =>
+      `Paul vous la montre sur votre compte ${target}, avec un de vos clients, en 15 minutes.`,
+    paulBouton: "Paul me la montre",
+    retour: "← Retour",
+    kickerTrouve: "Portail trouvé",
+    seFaitSur: "Votre PEC se fait sur ",
+    estimationTitre: "ESTIMATION DU REMBOURSEMENT · LUNETTES",
+    priseEnCharge: "pris en charge en moyenne par la complémentaire, sur une paire de lunettes.",
+    dapres: "D'après plus de 10\u00a0000 prises en charge déjà gérées pour nos clients opticiens.",
+    jamaisTaper: "Ne plus jamais taper une PEC",
+    compatible: "COMPATIBLE AVEC VOTRE LOGICIEL",
+    etapes: [
+      "Ouvrir le portail",
+      "Se connecter, code de sécurité",
+      "Taper le n° de sécu du client",
+      "Saisir l'équipement, les montants",
+      "Relire, corriger les fautes",
+      "Envoyer la demande",
+    ],
+    ouvrirPortail: (target: string) => `Ouvrir le portail ${target}`,
+    arguments: [
+      { ico: "✓", txt: "Dérogations gérées" },
+      { ico: "✓", txt: "Contrôle tarifaire" },
+      { ico: "✓", txt: "Zéro faute de saisie, zéro rejet à refaire" },
+      { ico: "✓", txt: "Hébergeur certifié HDS, dans l'UE" },
+    ],
+    etSi: "Et si Granit la faisait ",
+    pourVous: "pour vous",
+    etSiFin: " ?",
+    aLaMain: "À LA MAIN",
+    recommence: "…et on recommence à chaque client.",
+    avecGranit: "AVEC GRANIT",
+    prete: "✓ PEC prête.",
+    ouFaire: (portail: string) => `Où faire vos PEC ${portail} `,
+    ensuite: "ensuite",
+    laissez: "Laissez votre e-mail : on vous écrit dès qu'on sait où elles passent.",
+    placeholder: "contact@votre-magasin.fr",
+    emailLabel: "E-mail",
+    emailInvalide: "Indiquez un e-mail valide.",
+    instant: "Un instant…",
+    reessayer: "Réessayer",
+    prevenir: "Me prévenir",
+    presque: "Presque",
+    passePar: "Cette mutuelle passe par ",
+    plusieurs: "plusieurs portails",
+    habitude: "Sur lequel faites-vous d'habitude ses PEC ?",
+    aucun: "Aucun de ceux-là : je tape la mutuelle",
+  },
+  en: {
+    lignes: { mutuelle: "Insurer", reseau: "Network", amc: "AMC no.", portail: "Portal" },
+    portailEntete: (nom: string) => `${nom} PORTAL · COVERAGE REQUEST`,
+    equipement: "Equipment",
+    equipementExemple: "⌛ sample equipment, editable later",
+    trouve: "✓ Portal found",
+    exemple: "Sample card · with your next customer, use their real card",
+    simulonsTitre: "Let’s simulate your coverage request on ",
+    peutEtre: (target: string) => `Your ${target} coverage request can be `,
+    peutEtreEm: "simulated live",
+    expiree: (fin: string | null | undefined) =>
+      `The card seems to have expired (${fin}): check the patient’s coverage rights.`,
+    surCompte: (target: string) =>
+      `On your account, for your customer, without sending anything to the insurer. You will need their social security number and your ${target} login.`,
+    simuler: "Simulate my coverage request",
+    rienEnvoye: "Nothing is sent to the insurer",
+    accesNonConserves: "Your login details are not stored",
+    paulMontre: (target: string) =>
+      `Paul shows it to you on your ${target} account, with one of your customers, in 15 minutes.`,
+    paulBouton: "Paul shows me",
+    retour: "← Back",
+    kickerTrouve: "Portal found",
+    seFaitSur: "Your coverage request goes through ",
+    estimationTitre: "REIMBURSEMENT ESTIMATE · GLASSES",
+    priseEnCharge: "covered on average by the supplementary insurer, for one pair of glasses.",
+    dapres:
+      "Based on more than 10,000 coverage requests already handled for our optician customers.",
+    jamaisTaper: "Never type a coverage request again",
+    compatible: "COMPATIBLE WITH YOUR SOFTWARE",
+    etapes: [
+      "Open the portal",
+      "Log in, security code",
+      "Type the customer’s social security number",
+      "Enter the equipment and amounts",
+      "Proofread, fix typos",
+      "Send the request",
+    ],
+    ouvrirPortail: (target: string) => `Open the ${target} portal`,
+    arguments: [
+      { ico: "✓", txt: "Exceptions handled" },
+      { ico: "✓", txt: "Price checks" },
+      { ico: "✓", txt: "Zero typos, zero rejections to redo" },
+      { ico: "✓", txt: "HDS-certified host, in the EU" },
+    ],
+    etSi: "What if Granit did it ",
+    pourVous: "for you",
+    etSiFin: "?",
+    aLaMain: "BY HAND",
+    recommence: "…and again for every customer.",
+    avecGranit: "WITH GRANIT",
+    prete: "✓ Coverage request ready.",
+    ouFaire: (portail: string) => `Where to submit your ${portail} coverage requests `,
+    ensuite: "next",
+    laissez: "Leave your email: we will write to you as soon as we know where they go.",
+    placeholder: "contact@your-store.com",
+    emailLabel: "Email",
+    emailInvalide: "Enter a valid email.",
+    instant: "One moment…",
+    reessayer: "Try again",
+    prevenir: "Notify me",
+    presque: "Almost there",
+    passePar: "This insurer goes through ",
+    plusieurs: "several portals",
+    habitude: "Which one do you usually use for its coverage requests?",
+    aucun: "None of these: I’ll type the insurer",
+  },
+};
+type Copy = (typeof copy)["fr"];
 const emailRe = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 
 /** Ce qu'on a lu, sans jamais rien sur le patient. */
-function readLines(card: CardRead | null, p: Platform) {
+function readLines(card: CardRead | null, p: Platform, l: Copy["lignes"]) {
   const lines: [string, string][] = [];
-  if (card?.assureur) lines.push(["Mutuelle", card.assureur]);
-  if (card?.reseau) lines.push(["Réseau", card.reseau]);
-  if (card?.amc) lines.push(["N° AMC", card.amc]);
-  lines.push(["Portail", p.reseau_via ? `${p.label} → ${labelOf(p.reseau_via)}` : p.label]);
+  if (card?.assureur) lines.push([l.mutuelle, card.assureur]);
+  if (card?.reseau) lines.push([l.reseau, card.reseau]);
+  if (card?.amc) lines.push([l.amc, card.amc]);
+  lines.push([l.portail, p.reseau_via ? `${p.label} → ${labelOf(p.reseau_via)}` : p.label]);
   return lines;
 }
 const labelOf = (id: string) => platformById(id)?.label ?? id;
@@ -38,42 +183,42 @@ function expired(fin: string | null | undefined): boolean {
 }
 
 function PortalBox({ card, p, waiting }: { card: CardRead | null; p: Platform; waiting: boolean }) {
+  const t = copy[useLanguage().lang];
   return (
     <div
       className="w-full overflow-hidden rounded-xl border text-left text-[13px]"
       style={{ borderColor: "var(--border2)" }}
     >
       <div
-        className="px-3 py-1.5 text-[11px] text-white"
+        className="px-3 py-1.5 text-[11px] text-papier"
         style={{ background: "#34495e", fontFamily: "var(--font-mono)", letterSpacing: ".04em" }}
       >
-        PORTAIL {(p.reseau_via ? labelOf(p.reseau_via) : p.label).toUpperCase()} · DEMANDE DE PRISE
-        EN CHARGE
+        {t.portailEntete((p.reseau_via ? labelOf(p.reseau_via) : p.label).toUpperCase())}
       </div>
       <dl className="grid grid-cols-2 gap-2 p-3" style={{ background: "#f5f7f9" }}>
-        {readLines(card, p).map(([k, v]) => (
+        {readLines(card, p, t.lignes).map(([k, v]) => (
           <div key={k} className="grid gap-0.5">
             <dt className="text-[11px]" style={{ color: "#56606b" }}>
               {k}
             </dt>
             <dd
-              className="rounded border bg-white px-2 py-1"
+              className="rounded border bg-papier px-2 py-1"
               style={{ borderColor: "#cfd6de", fontFamily: "var(--font-mono)", color: "#111" }}
             >
-              {v} <span style={{ color: "var(--sage)" }}>✓</span>
+              {v} <span style={{ color: "var(--succes)" }}>✓</span>
             </dd>
           </div>
         ))}
         {waiting && (
           <div className="col-span-2 grid gap-0.5">
             <dt className="text-[11px]" style={{ color: "#56606b" }}>
-              Équipement
+              {t.equipement}
             </dt>
             <dd
-              className="rounded border border-dashed bg-white px-2 py-1"
+              className="rounded border border-dashed bg-papier px-2 py-1"
               style={{ borderColor: "#cfd6de", color: "#56606b" }}
             >
-              ⌛ équipement d'exemple, modifiable ensuite
+              {t.equipementExemple}
             </dd>
           </div>
         )}
@@ -107,63 +252,52 @@ export function ResultSimulable({
   onPaul: () => void;
   onBack: () => void;
 }) {
-  const photoOk = photo ? [PHOTO_NON_CONSERVEE] : [];
+  const { lang } = useLanguage();
+  const t = copy[lang];
+  const photoOk = photo ? [PHOTO_NON_CONSERVEE[lang]] : [];
   const target = p.reseau_via ? labelOf(p.reseau_via) : p.label;
   return (
     <Screen id="result-sim">
       <span
         className="rounded-full px-3 py-1 text-[12px]"
         style={{
-          background: "var(--sage-light)",
-          color: "#2f6b3d",
+          background: "var(--succes-fond)",
+          color: "var(--succes-texte)",
           fontFamily: "var(--font-mono)",
         }}
       >
-        ✓ Portail trouvé
+        {t.trouve}
       </span>
-      {example && <Kicker>Carte d'exemple · au prochain client, prenez sa vraie carte</Kicker>}
+      {example && <Kicker>{t.exemple}</Kicker>}
       {proposee ? (
         <Title em={target} after=".">
-          Simulons votre PEC sur{" "}
+          {t.simulonsTitre}
         </Title>
       ) : (
-        <Title em="simulée en direct" after=".">
-          Votre PEC {target} peut être{" "}
+        <Title em={t.peutEtreEm} after=".">
+          {t.peutEtre(target)}
         </Title>
       )}
-      {expired(card?.fin_droits) && (
-        <Warn>La carte semble expirée ({card?.fin_droits}) : vérifiez les droits du patient.</Warn>
-      )}
+      {expired(card?.fin_droits) && <Warn>{t.expiree(card?.fin_droits)}</Warn>}
       <PortalBox card={card} p={p} waiting />
       {proposee ? (
         <>
-          <Muted>
-            Sur votre compte, pour votre client, sans rien envoyer à la mutuelle. Il faudra son n°
-            de sécu et vos identifiants {target}.
-          </Muted>
+          <Muted>{t.surCompte(target)}</Muted>
           <button type="button" className={`${bigBtn} w-full`} onClick={onSimulate}>
-            Simuler ma PEC <span className="arrow">→</span>
+            {t.simuler} <span className="arrow">→</span>
           </button>
-          <Reassure
-            items={[
-              "Rien n'est envoyé à la mutuelle",
-              "Vos accès ne sont pas conservés",
-              ...photoOk,
-            ]}
-          />
+          <Reassure items={[t.rienEnvoye, t.accesNonConserves, ...photoOk]} />
         </>
       ) : (
         <>
-          <Muted>
-            Paul vous la montre sur votre compte {target}, avec un de vos clients, en 15 minutes.
-          </Muted>
+          <Muted>{t.paulMontre(target)}</Muted>
           <button type="button" className={`${bigBtn} w-full`} onClick={onPaul}>
-            Paul me la montre <span className="arrow">→</span>
+            {t.paulBouton} <span className="arrow">→</span>
           </button>
-          <Reassure items={["Rien n'est envoyé à la mutuelle", ...photoOk]} />
+          <Reassure items={[t.rienEnvoye, ...photoOk]} />
         </>
       )}
-      <TextLink onClick={onBack}>← Retour</TextLink>
+      <TextLink onClick={onBack}>{t.retour}</TextLink>
     </Screen>
   );
 }
@@ -198,19 +332,23 @@ export function ResultEstimation({
   onPrevenir: (email: string) => void;
   onBack: () => void;
 }) {
+  const { lang } = useLanguage();
+  const t = copy[lang];
   const target = p.reseau_via ? labelOf(p.reseau_via) : p.label;
   const ferme = p.affichage === "prevenir";
   const estim = ferme ? null : estimationLunettes(p);
   return (
     <Screen id="result-portal">
-      <Kicker>Portail trouvé</Kicker>
+      <Kicker>{t.kickerTrouve}</Kicker>
       <Title em={target} after=".">
-        Votre PEC se fait sur{" "}
+        {t.seFaitSur}
       </Title>
-      {expired(card?.fin_droits) && (
-        <Warn>La carte semble expirée ({card?.fin_droits}) : vérifiez les droits du patient.</Warn>
+      {expired(card?.fin_droits) && <Warn>{t.expiree(card?.fin_droits)}</Warn>}
+      {p.note_fermeture && (
+        <Warn>
+          {lang === "en" ? (NOTE_FERMETURE_EN[p.id] ?? p.note_fermeture) : p.note_fermeture}
+        </Warn>
       )}
-      {p.note_fermeture && <Warn>{p.note_fermeture}</Warn>}
       <PortalBox card={card} p={p} waiting={false} />
       {ferme ? (
         <Prevenir portail={target} busy={busy} error={error} onSubmit={onPrevenir} />
@@ -221,18 +359,19 @@ export function ResultEstimation({
           <ConnecterLogiciel onRdv={onRdv} />
         </>
       )}
-      {photo && <Reassure items={[PHOTO_NON_CONSERVEE]} />}
-      <TextLink onClick={onBack}>← Retour</TextLink>
+      {photo && <Reassure items={[PHOTO_NON_CONSERVEE[lang]]} />}
+      <TextLink onClick={onBack}>{t.retour}</TextLink>
     </Screen>
   );
 }
 
-const euros = (n: number) => `${n} €`;
+const euros = (n: number, lang: Lang) =>
+  lang === "en" ? `€${n.toLocaleString("en-US")}` : `${n} €`;
 
-const sageBox = "grid w-full gap-1.5 rounded-xl border p-4 text-left";
-const sageStyle = {
-  borderColor: "color-mix(in oklab, var(--sage) 45%, transparent)",
-  background: "var(--sage-light)",
+const succesBox = "grid w-full gap-1.5 rounded-xl border p-4 text-left";
+const succesStyle = {
+  borderColor: "color-mix(in oklab, var(--succes) 45%, transparent)",
+  background: "var(--succes-fond)",
 } as const;
 
 /** Compteur qui monte de 0 à `target` (easeOutCubic). `run=false` → valeur finale directe. */
@@ -264,45 +403,47 @@ function useCountUp(target: number, run: boolean, ms = 900): number {
  */
 function Estimation({ estim }: { estim: EstimationLunettes }) {
   const reduce = useReducedMotion();
+  const { lang } = useLanguage();
+  const t = copy[lang];
   const run = !reduce;
   const moyenne = useCountUp(estim.f.median, run);
   return (
     <motion.div
-      className={sageBox}
-      style={sageStyle}
+      className={succesBox}
+      style={succesStyle}
       initial={run ? { opacity: 0, y: 10 } : false}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
     >
-      <span className="text-[13px]" style={{ fontFamily: "var(--font-mono)", color: "#2f6b3d" }}>
-        ESTIMATION DU REMBOURSEMENT · LUNETTES
+      <span className="text-[13px]" style={{ fontFamily: "var(--font-mono)", color: "var(--succes-texte)" }}>
+        {t.estimationTitre}
       </span>
       <motion.p
-        className="font-serif font-semibold leading-none"
-        style={{ color: "#2f6b3d" }}
+        className="font-serif leading-none"
+        style={{ color: "var(--succes-texte)" }}
         initial={run ? { scale: 0.85, opacity: 0 } : false}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
       >
-        <span className="text-[40px]">{euros(moyenne)}</span>
+        <span className="text-[40px]">{euros(moyenne, lang)}</span>
       </motion.p>
       <motion.p
         className="text-[14px]"
-        style={{ color: "#4a5a4f" }}
+        style={{ color: "var(--texte-secondaire)" }}
         initial={run ? { opacity: 0 } : false}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 0.5 }}
       >
-        pris en charge en moyenne par la complémentaire, sur une paire de lunettes.
+        {t.priseEnCharge}
       </motion.p>
       <motion.p
         className="text-[12px]"
-        style={{ color: "#6b7d70" }}
+        style={{ color: "var(--texte-secondaire)" }}
         initial={run ? { opacity: 0 } : false}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.3, duration: 0.5 }}
       >
-        D'après plus de 10&nbsp;000 prises en charge déjà gérées pour nos clients opticiens.
+        {t.dapres}
       </motion.p>
     </motion.div>
   );
@@ -310,6 +451,7 @@ function Estimation({ estim }: { estim: EstimationLunettes }) {
 
 /** Le CTA principal : ouvre le calendrier de RDV avec Paul. */
 function ConnecterLogiciel({ onRdv }: { onRdv: () => void }) {
+  const t = copy[useLanguage().lang];
   return (
     <div className="grid w-full gap-3">
       <a
@@ -319,7 +461,7 @@ function ConnecterLogiciel({ onRdv }: { onRdv: () => void }) {
         onClick={onRdv}
         className={`${bigBtn} w-full justify-center`}
       >
-        Ne plus jamais taper une PEC <span className="arrow">→</span>
+        {t.jamaisTaper} <span className="arrow">→</span>
       </a>
       <div
         className="grid gap-2 rounded-xl border p-3"
@@ -327,9 +469,13 @@ function ConnecterLogiciel({ onRdv }: { onRdv: () => void }) {
       >
         <span
           className="text-center text-[11px]"
-          style={{ fontFamily: "var(--font-mono)", letterSpacing: ".06em", color: "var(--text-muted)" }}
+          style={{
+            fontFamily: "var(--font-mono)",
+            letterSpacing: ".06em",
+            color: "var(--text-muted)",
+          }}
         >
-          COMPATIBLE AVEC VOTRE LOGICIEL
+          {t.compatible}
         </span>
         <ul className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
           {LOGICIELS.map((l) =>
@@ -358,26 +504,15 @@ function ConnecterLogiciel({ onRdv }: { onRdv: () => void }) {
  * refait à chaque client, à droite les mêmes étapes qui se cochent toutes
  * seules (en boucle), avec les arguments forts (HDS, vitesse, zéro faute).
  */
-const ETAPES_MANUELLES = [
-  "Ouvrir le portail",
-  "Se connecter, code de sécurité",
-  "Taper le n° de sécu du client",
-  "Saisir l'équipement, les montants",
-  "Relire, corriger les fautes",
-  "Envoyer la demande",
-];
-
-// Le gain de vitesse est déjà dans le comparatif 2-colonnes ci-dessus : on ne
-// répète pas « 30 s / 12 min » en chip (reco design : couper la redondance).
-const ARGUMENTS = [
-  { ico: "✓", txt: "Dérogations gérées" },
-  { ico: "✓", txt: "Contrôle tarifaire" },
-  { ico: "✓", txt: "Zéro faute de saisie, zéro rejet à refaire" },
-  { ico: "🔒", txt: "Hébergé en France, agréé santé (HDS)" },
-];
+// Étapes manuelles : `copy.*.etapes`. Le gain de vitesse est déjà dans le
+// comparatif 2-colonnes ci-dessus : on ne répète pas « 30 s / 12 min » en chip
+// (reco design : couper la redondance). Arguments : `copy.*.arguments`.
 
 function GranitFaitPourVous({ target }: { target: string }) {
   const reduce = useReducedMotion();
+  const t = copy[useLanguage().lang];
+  const ETAPES_MANUELLES = t.etapes;
+  const ARGUMENTS = t.arguments;
   const total = ETAPES_MANUELLES.length;
   const [faites, setFaites] = useState(reduce ? total : 0);
   useEffect(() => {
@@ -390,16 +525,14 @@ function GranitFaitPourVous({ target }: { target: string }) {
     }, 650);
     return () => clearInterval(id);
   }, [reduce, total]);
-  const label = (i: number) => (i === 0 ? `Ouvrir le portail ${target}` : ETAPES_MANUELLES[i]);
+  const label = (i: number) => (i === 0 ? t.ouvrirPortail(target) : ETAPES_MANUELLES[i]);
 
   return (
     <div className="grid w-full gap-4 border-t pt-5" style={{ borderColor: "var(--border)" }}>
       <p className="font-serif text-[22px] leading-tight" style={{ color: "var(--text)" }}>
-        Et si Granit la faisait{" "}
-        <span className="italic" style={{ color: "var(--terra)" }}>
-          pour vous
-        </span>{" "}
-        ?
+        {t.etSi}
+        <span className="accent-italic">{t.pourVous}</span>
+        {t.etSiFin}
       </p>
 
       <div className="grid gap-3 sm:grid-cols-2">
@@ -411,11 +544,11 @@ function GranitFaitPourVous({ target }: { target: string }) {
           <div className="flex items-baseline justify-between">
             <span
               className="text-[11px]"
-              style={{ fontFamily: "var(--font-mono)", letterSpacing: ".08em", color: "#8a8178" }}
+              style={{ fontFamily: "var(--font-mono)", letterSpacing: ".08em", color: "var(--texte-discret)" }}
             >
-              À LA MAIN
+              {t.aLaMain}
             </span>
-            <span className="text-[12px]" style={{ color: "#8a8178" }}>
+            <span className="text-[12px]" style={{ color: "var(--texte-secondaire)" }}>
               ~10 min
             </span>
           </div>
@@ -428,7 +561,7 @@ function GranitFaitPourVous({ target }: { target: string }) {
               >
                 <span
                   className="grid h-4 w-4 shrink-0 place-items-center rounded-full border"
-                  style={{ borderColor: "#cfc8bd", color: "#b2a99c", fontSize: 10 }}
+                  style={{ borderColor: "var(--filet-champ)", color: "var(--texte-secondaire)", fontSize: 10 }}
                 >
                   {i + 1}
                 </span>
@@ -436,8 +569,8 @@ function GranitFaitPourVous({ target }: { target: string }) {
               </li>
             ))}
           </ul>
-          <span className="text-[12px] italic" style={{ color: "#8a8178" }}>
-            …et on recommence à chaque client.
+          <span className="text-[12px]" style={{ color: "var(--texte-secondaire)" }}>
+            {t.recommence}
           </span>
         </div>
 
@@ -445,8 +578,8 @@ function GranitFaitPourVous({ target }: { target: string }) {
         <div
           className="grid content-start gap-2 rounded-xl border p-3 text-left"
           style={{
-            borderColor: "color-mix(in oklab, var(--terra) 40%, transparent)",
-            background: "color-mix(in oklab, var(--terra) 7%, var(--bg3))",
+            borderColor: "var(--profond)",
+            background: "var(--papier)",
           }}
         >
           <div className="flex items-baseline justify-between">
@@ -455,13 +588,13 @@ function GranitFaitPourVous({ target }: { target: string }) {
               style={{
                 fontFamily: "var(--font-mono)",
                 letterSpacing: ".08em",
-                color: "var(--terra)",
+                color: "var(--profond)",
               }}
             >
-              AVEC GRANIT
+              {t.avecGranit}
             </span>
-            <span className="text-[12px] font-semibold" style={{ color: "var(--terra)" }}>
-              pour vous
+            <span className="text-[12px] font-semibold" style={{ color: "var(--profond)" }}>
+              {t.pourVous}
             </span>
           </div>
           <ul className="grid gap-1.5">
@@ -474,13 +607,13 @@ function GranitFaitPourVous({ target }: { target: string }) {
                     initial={false}
                     animate={{
                       scale: done ? 1 : 0.8,
-                      background: done ? "var(--sage)" : "transparent",
+                      background: done ? "var(--succes)" : "transparent",
                     }}
                     transition={{ duration: 0.25 }}
                     style={{
-                      color: "#fff",
+                      color: "var(--rose)",
                       fontSize: 11,
-                      border: done ? "none" : "1px solid #cfd6de",
+                      border: done ? "none" : "1px solid var(--filet-champ)",
                     }}
                   >
                     {done ? "✓" : ""}
@@ -496,9 +629,9 @@ function GranitFaitPourVous({ target }: { target: string }) {
             className="text-[12px] font-semibold"
             animate={{ opacity: faites >= total ? 1 : 0.35 }}
             transition={{ duration: 0.25 }}
-            style={{ color: "#2f6b3d" }}
+            style={{ color: "var(--succes-texte)" }}
           >
-            ✓ PEC prête.
+            {t.prete}
           </motion.span>
         </div>
       </div>
@@ -508,7 +641,7 @@ function GranitFaitPourVous({ target }: { target: string }) {
           <li
             key={a.txt}
             className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[12px]"
-            style={{ background: "var(--sage-light)", color: "#2f6b3d" }}
+            style={{ background: "var(--succes-fond)", color: "var(--succes-texte)" }}
           >
             <span aria-hidden>{a.ico}</span>
             {a.txt}
@@ -531,6 +664,7 @@ function Prevenir({
   error?: string;
   onSubmit: (email: string) => void;
 }) {
+  const t = copy[useLanguage().lang];
   const [email, setEmail] = useState("");
   const [invalide, setInvalide] = useState(false);
   return (
@@ -545,19 +679,17 @@ function Prevenir({
       }}
     >
       <p className="font-serif text-[22px] leading-tight" style={{ color: "var(--text)" }}>
-        Où faire vos PEC {portail}{" "}
-        <span className="italic" style={{ color: "var(--terra)" }}>
-          ensuite
-        </span>{" "}
-        ?
+        {t.ouFaire(portail)}
+        <span className="accent-italic">{t.ensuite}</span>
+        {t.etSiFin}
       </p>
-      <Muted>Laissez votre e-mail : on vous écrit dès qu'on sait où elles passent.</Muted>
+      <Muted>{t.laissez}</Muted>
       <input
         type="email"
         inputMode="email"
         autoComplete="email"
-        placeholder="contact@votre-magasin.fr"
-        aria-label="E-mail"
+        placeholder={t.placeholder}
+        aria-label={t.emailLabel}
         aria-invalid={invalide || undefined}
         aria-describedby={invalide ? "prevenir-erreur" : undefined}
         value={email}
@@ -565,30 +697,30 @@ function Prevenir({
           setEmail(e.target.value);
           setInvalide(false);
         }}
-        className={`w-full rounded-xl border-[1.5px] bg-white px-4 py-3 text-[17px] ${focusRing}`}
-        style={{ borderColor: invalide ? "var(--terra)" : "var(--border2)", color: "var(--text)" }}
+        className={`w-full rounded-xl border-[1.5px] bg-papier px-4 py-3 text-[17px] ${focusRing}`}
+        style={{ borderColor: invalide ? "var(--alerte)" : "var(--filet-champ)", color: "var(--text)" }}
       />
       {invalide && (
         <p
           id="prevenir-erreur"
           role="alert"
           className="text-[14px]"
-          style={{ color: "var(--terra-hover)" }}
+          style={{ color: "var(--alerte-texte)" }}
         >
-          Indiquez un e-mail valide.
+          {t.emailInvalide}
         </p>
       )}
       {error && !invalide && (
         <p
           role="alert"
           className="rounded-xl px-3 py-2 text-[15px]"
-          style={{ background: "#fbf0dc", color: "#7a4f12" }}
+          style={{ background: "var(--lavis)", color: "var(--encre)" }}
         >
           {error}
         </p>
       )}
       <button type="submit" disabled={busy} className={`${bigBtn} w-full disabled:opacity-60`}>
-        {busy ? "Un instant…" : error ? "Réessayer" : "Me prévenir"}
+        {busy ? t.instant : error ? t.reessayer : t.prevenir}
       </button>
     </form>
   );
@@ -606,26 +738,27 @@ export function ResultChoice({
   onType: () => void;
   onBack: () => void;
 }) {
+  const t = copy[useLanguage().lang];
   return (
     <Screen id="result-choice">
-      <Kicker>Presque</Kicker>
-      <Title em="plusieurs portails">Cette mutuelle passe par </Title>
-      <Muted>Sur lequel faites-vous d'habitude ses PEC ?</Muted>
+      <Kicker>{t.presque}</Kicker>
+      <Title em={t.plusieurs}>{t.passePar}</Title>
+      <Muted>{t.habitude}</Muted>
       <div className="grid w-full gap-2.5">
         {platforms.map((p) => (
           <button
             key={p.id}
             type="button"
             onClick={() => onPick(p)}
-            className="w-full rounded-[14px] border-[1.5px] bg-white px-5 py-4 text-[17px] transition-colors hover:border-[var(--text)]"
+            className="w-full rounded-[14px] border-[1.5px] bg-papier px-5 py-4 text-[17px] transition-colors hover:border-[var(--text)]"
             style={{ borderColor: "var(--border2)", color: "var(--text)", fontWeight: 500 }}
           >
             {p.label}
           </button>
         ))}
       </div>
-      <TextLink onClick={onType}>Aucun de ceux-là : je tape la mutuelle</TextLink>
-      <TextLink onClick={onBack}>← Retour</TextLink>
+      <TextLink onClick={onType}>{t.aucun}</TextLink>
+      <TextLink onClick={onBack}>{t.retour}</TextLink>
     </Screen>
   );
 }
@@ -634,7 +767,7 @@ function Warn({ children }: { children: React.ReactNode }) {
   return (
     <p
       className="w-full rounded-xl px-3 py-2 text-[15px]"
-      style={{ background: "#fbf0dc", color: "#7a4f12" }}
+      style={{ background: "var(--lavis)", color: "var(--encre)" }}
     >
       {children}
     </p>

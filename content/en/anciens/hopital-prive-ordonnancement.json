@@ -1,0 +1,20 @@
+{
+  "slug": "hopital-prive-ordonnancement",
+  "category": "Private hospital",
+  "title": "Private hospitals: scheduling administrative workflows around the patient journey",
+  "desc": "Pre-admission, stay, discharge, billing: aligning AI agents with the real timeline of care.",
+  "time": "10 min",
+  "body": [
+    "Administrative workflows in a private hospital follow a precise timeline: pre-admission, admission, stay, discharge, billing, collections. Each step has its own constraints, its own people and its own information systems.",
+    "Pre-admission, which typically takes place 7 to 30 days before the procedure, involves the front desk, the admissions department, sometimes anesthesia, sometimes the supplementary health insurer (mutuelle) for a prior approval request. A file poorly prepared at pre-admission creates friction at every following step.",
+    "Admission on the day must run smoothly: updated eligibility check, signing of consent forms, collection of any deposit, handing over information documents. An admission that takes 30 minutes instead of 10 degrades the patient experience and disrupts the operating room schedule.",
+    "The stay generates procedures, prescriptions, consumables and additional services (private room, television, phone, accompanying person). Everything must be entered in real time so that billing at discharge is complete.",
+    "Discharge must produce a hospital discharge report, a care transition letter, a discharge prescription and a validated pre-invoice. If any of these items is missing, billing is blocked and DSO (days sales outstanding) grows longer.",
+    "Billing combines the national health insurance share (B2 NOEMIE), the supplementary insurer share (electronic claim form (FSE) or portal) and the patient share (direct payment or direct debit). Each part has its own time frames and its own rejection reasons.",
+    "Finally, collections handle rejections, patient follow-ups, disputes and litigation. The longer a rejection waits, the more it costs to recover.",
+    "Aligning AI agents with this timeline, rather than with departmental silos, radically simplifies the teams’ experience. Instead of having one agent that only handles third-party payment or only follow-ups, you have an orchestration that follows the patient from start to finish.",
+    "In practice, a central orchestrator triggers the right actions at the right time: eligibility check 7 days before, prior approval request 5 days before, pre-admission reminder 48 hours before, completeness check on the morning of admission, pre-billing at discharge, transmission the next day, continuous reimbursement tracking.",
+    "Granit orchestrates agents by patient journey, not by department, which reduces friction between teams. The front desk, admissions, billing and collections share the same view of the patient, with actions in progress and clear responsibilities.",
+    "The effect is measured on two indicators: average billing lead time and primary rejection rate."
+  ]
+}

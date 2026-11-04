@@ -107,3 +107,31 @@ export function normalise(s) {
     .replace(/[^a-z0-9]+/g, " ")
     .trim();
 }
+
+// Typographie française (TON.md, règle 9) posée par le moteur plutôt que demandée au modèle :
+// espace fine insécable avant ; ! ?, insécable avant : et à l'intérieur des guillemets « ».
+function typoTexte(t) {
+  return t
+    .replace(/[   ]+([;!?])/g, " $1")
+    .replace(/[   ]+:(?=\s|$)/g, " :")
+    .replace(/«[   ]*/g, "« ")
+    .replace(/[   ]*»/g, " »");
+}
+
+/** Applique typoTexte au texte d'un HTML (jamais dans les balises ni dans les citations <blockquote>). */
+export function typographier(html) {
+  return html
+    .split(/(<blockquote\b[\s\S]*?<\/blockquote>|<[^>]+>)/)
+    .map((morceau, i) => (i % 2 ? morceau : typoTexte(morceau)))
+    .join("");
+}
+
+/** Typographie des champs affichés d'une sortie d'article (contentHtml, metaDescription, FAQ). */
+export function typographierSortie(sortie) {
+  return {
+    ...sortie,
+    metaDescription: typoTexte(sortie.metaDescription ?? ""),
+    contentHtml: typographier(sortie.contentHtml ?? ""),
+    faqItems: (sortie.faqItems ?? []).map((f) => ({ ...f, question: typoTexte(f.question), answer: typoTexte(f.answer) })),
+  };
+}

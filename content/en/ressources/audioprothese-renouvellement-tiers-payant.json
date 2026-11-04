@@ -1,0 +1,205 @@
+{
+  "slug": "audioprothese-renouvellement-tiers-payant",
+  "id": "R5",
+  "category": "guide-tiers-payant",
+  "categoryName": "Third-party payment guide",
+  "type": "standard",
+  "plateforme": null,
+  "title": "Hearing aids: getting third-party payment right on device renewals",
+  "primaryKeyword": "renouvellement appareil auditif",
+  "keywordCluster": [
+    "classe 1 classe 2 audioprothèse",
+    "renouvellement 4 ans audioprothèse",
+    "tiers payant audioprothésiste",
+    "période d'essai audioprothèse"
+  ],
+  "parentSlug": null,
+  "level": "Refonte",
+  "author": {
+    "name": "Laura",
+    "jobTitle": "Writer, health expert",
+    "photo": "/auteurs/laura.jpg",
+    "url": null
+  },
+  "reviewer": {
+    "name": "Olivier",
+    "jobTitle": "Writer, third-party payment expert",
+    "photo": "/auteurs/olivier.jpg",
+    "url": null
+  },
+  "datePublished": "2026-10-28",
+  "dateModified": "2026-10-28",
+  "checkedOn": null,
+  "wordCount": 2219,
+  "readTime": 10,
+  "metaDescription": "Hearing aid renewal: the 4-year rule per ear, class I or II, trial period. The points that prevent a third-party payment denial in hearing care.",
+  "contentHtml": "<p><strong>A hearing aid renewal is only covered after 4 years, ear by ear, counting from the date the previous device was dispensed.</strong> This counter, the hearing aid's class (class I or class II) and the mandatory trial period together decide the outcome of your third-party payment (tiers payant: the patient pays nothing upfront, insurers pay the provider directly) file: approval, denial, or a miscalculated out-of-pocket amount. A file sent one month too early comes back denied, even if everything else is correct.</p><p>This article covers the rules from the hearing care center's point of view: what to check at the quote stage, when to bill after the trial, and how to read a renewal denial. The reimbursement rules cited come from <a href=\"https://www.ameli.fr/assure/remboursements/rembourse/optique-audition/audition-aides-auditives\">ameli.fr</a> and <a href=\"https://www.service-public.fr/particuliers/vosdroits/F34759\">service-public.fr</a>. The rules specific to each supplementary insurance contract still need to be checked file by file.</p><div class=\"key-takeaways\"><strong>Key points</strong><ul><li>Renewal of a hearing aid is covered every 4 years per ear, according to ameli.fr: the period starts from the date the previous device was dispensed, not from the date of the request.</li><li>Class I corresponds to 100% Santé (zero out-of-pocket scheme), with a capped price and a zero out-of-pocket amount under a contrat responsable (a supplementary policy that meets French regulatory criteria); class II is freely priced, with capped coverage.</li><li>The trial period comes before the final sale: the final invoice goes out after the patient's decision, not at the quote stage.</li><li>Before each submission, check three points: the eligibility date of the ear concerned, the class written on the quote, the documents required by the portal.</li></ul></div><h2 id=\"renouvellement-appareil-auditif-4-ans\">How often is a hearing aid renewal covered?</h2><p><strong>The rule is 4 years per ear.</strong> According to <a href=\"https://www.ameli.fr/assure/remboursements/rembourse/optique-audition/audition-aides-auditives\">ameli.fr</a>, the French national health insurance (Assurance Maladie) only covers a new fitting once 4 years have passed since the previous one. Contrat responsable supplementary health policies follow the same cycle for their share.</p><p>The point that causes the most denials is the start of the period. It is calculated from the date the previous device was dispensed, the one shown on the original invoice. The date the patient comes back to the center, or the date of the new quote, does not count. A patient fitted on March 15 of one year is only eligible on March 15 of the fourth year after.</p><p>The counter runs separately for each ear. The same patient can therefore be eligible on the left and not on the right, for example if they were fitted on one side first, then on the other a few months later. The quote and the coverage request must then treat the two ears separately, each with its own reference date.</p><h3>What this changes at the front desk</h3><p>In practice, the date check happens before the quote, not after the denial. The assistant who opens the file needs to find the invoice for the previous fitting for each ear, then calculate the eligibility date. If the patient was fitted elsewhere, you have to ask them for it: without it, the date is a guess.</p><div class=\"callout callout--warn\"><p><strong>The trap:</strong> the counter does not reset when the patient changes centers. A patient fitted at another location, even within the same network, keeps their original dispensing date. If your practice management software only shows your own center's history, the date you read may be wrong.</p></div><h2 id=\"classe-1-classe-2-audioprothese\">What is the difference between class I and class II for third-party payment?</h2><p><strong>Class I is the 100% Santé offer: a capped sale price and a zero out-of-pocket amount for a patient covered by a contrat responsable. Class II is freely priced: coverage is capped and an out-of-pocket amount may remain.</strong> This distinction comes from the LPP (list of reimbursable products and services), the nomenclature that sets the reimbursement base and the class of each hearing aid.</p><p>According to <a href=\"https://www.ameli.fr/assure/remboursements/rembourse/optique-audition/audition-aides-auditives\">ameli.fr</a>, the price of a class I hearing aid is capped at €950 per ear for an adult over 20. For class II, the combined coverage from the mandatory insurance (AMO) and the supplementary insurance (AMC) is capped at €1,700 per ear under a contrat responsable. The 100% Santé scheme has been fully in place for hearing care since January 1, 2021, as <a href=\"https://www.service-public.fr/particuliers/vosdroits/F34759\">service-public.fr</a> notes.</p><div data-figure=\"classe-1-classe-2\"></div><p>For third-party payment, the stakes are simple: the class written on the standardized quote and on the invoice must match the LPP code of the device dispensed. A wrong class produces either a rejection or a wrong out-of-pocket calculation. With amounts of this size, the gap shows right away, and the patient is the first to notice it.</p><h3>The standardized quote, starting point of the file</h3><p>The standardized quote is the mandatory document that presents the patient with at least one class I offer, with a breakdown of prices and services. It is also the document the supplementary insurer reads to give its coverage answer. If the class or the LPP code is copied wrong on it, the error carries over into the request, then into the invoice.</p><h2 id=\"periode-essai-audioprothese\">When should you bill after the hearing aid trial period?</h2><p><strong>The final invoice goes out after the trial, once the patient has confirmed their choice.</strong> The 100% Santé framework provides for a trial period before the final sale of the hearing aid. According to <a href=\"https://www.ameli.fr/assure/remboursements/rembourse/optique-audition/audition-aides-auditives\">ameli.fr</a>, this trial lasts at least 30 days.</p><p>This step sets hearing care apart from optics, where the sale usually follows the quote closely. Between the coverage approval and the invoice, there is a delay the center must track file by file. During that time, the approval obtained from the supplementary insurer is waiting for an invoice.</p><p>The risk is twofold. Billing too early means issuing an invoice before the patient's decision, with a cancellation to handle if they change their mind. Billing too late means leaving completed files unpaid, and sometimes letting an approval expire, since its validity period is set by the supplementary insurer.</p><h3>The path of a renewal file</h3><p>A renewal always follows the same order: medical prescription, eligibility check per ear, standardized quote, coverage request to the supplementary insurer, trial, invoice, then payment. The invoice goes to the AMO through SESAM-Vitale e-transmission, and to the AMC through the DRE (demande de remboursement électronique, electronic reimbursement request), the flow that sends the supplementary share to the insurer or to the platform that manages it.</p><div data-figure=\"circuit-renouvellement\"></div><div class=\"callout callout--tip\"><p><strong>The right habit:</strong> record the trial end date in the file on the day the device is dispensed. That date, and not the team's memory, triggers the follow-up with the patient and then the invoice.</p></div><h2 id=\"pieces-prise-en-charge-audio\">Which documents do you need for a hearing coverage request?</h2><p><strong>A hearing aid coverage request rests on the medical prescription and the standardized quote; the supplementary insurer may ask for other documents depending on its portal.</strong> Requests often go through the same third-party payment platforms as optics, each with its own professional portal and required fields.</p><p>The documents most often found in a hearing aid file:</p><ul><li>the medical prescription for the fitting;</li><li>the standardized quote, with the class and LPP code of each hearing aid;</li><li>the patient's identification details: social security number, the supplementary insurer's third-party payment card, the beneficiary concerned;</li><li>for a renewal, the dispensing date of the previous device for each ear;</li><li>any additional documents the portal asks for, such as an audiogram.</li></ul><p>The exact list depends on the supplementary insurer and the portal it uses. To find out which portal to use, the <a href=\"/ressources/mutuelle-quel-portail\">mutuelle → portal</a> tool starts from the name of the supplementary health insurer (mutuelle) or the AMC number printed on the card. The <a href=\"/ressources/portails-tiers-payant\">third-party payment portals</a> page then details login, coverage requests and payment on each of them.</p><p>Identity fields are the most ordinary cause of rejection, and it affects hearing care as much as optics: beneficiary entered wrong, expired card, a dependent (ayant droit) confused with the primary policyholder (ouvrant droit, the insured person who holds the contract). The <a href=\"/ressources/checklist-prise-en-charge\">checklist before sending a coverage request</a> goes through these checks one by one.</p><h2 id=\"renouvellement-refuse\">Why is a hearing aid renewal denied?</h2><p><strong>There are three main causes of denial: a 4-year period not yet reached for the ear concerned, a class or LPP code that does not match the device, and an incomplete or poorly identified file.</strong> The reason shown by the portal tells you which of the three applies. Keep that exact reason: it tells you what to fix.</p><div class=\"tbl\"><table><tr><th>Cause</th><th>Where to check</th><th>Fix</th></tr><tr><td>4-year period not reached</td><td>Invoice for the previous fitting, ear by ear</td><td>Recalculate the eligibility date; resubmit the request from that date</td></tr><tr><td>Unknown reference date (fitting at another center)</td><td>Patient history, invoice provided by the patient</td><td>Get the original dispensing date before any new submission</td></tr><tr><td>Inconsistent class or LPP code</td><td>Standardized quote and product sheet</td><td>Correct the quote, then the request, before the invoice</td></tr><tr><td>Beneficiary or coverage rights not recognized</td><td>Third-party payment card, certificate of coverage rights</td><td>Check the dependent and the card's validity period</td></tr><tr><td>Missing document</td><td>Portal message</td><td>Add the requested document to the same file</td></tr></table></div><p>A denial for a period not yet reached cannot be appealed: it is postponed. If the eligibility date falls in a few weeks, the right decision is to prepare the file and send it on the right date, without waiting for the patient to come back.</p><p>When the denial arrives after the invoice, as a rejection in the payment return, the wording follows the codes of the NOEMIE flow (the electronic remittance file from the Assurance Maladie). The <a href=\"/ressources/codes-rejets-noemie\">NOEMIE rejection codes</a> page explains how to read them. To know when to follow up with a supplementary insurer that does not respond, see <a href=\"/ressources/quand-relancer-mutuelle\">when to follow up with a mutuelle</a>.</p><h2 id=\"eligibilite-oreille-multi-centres\">How do you track eligibility ear by ear, including across several centers?</h2><p><strong>The safest method is to record, for each ear, the dispensing date and the resulting eligibility date, in a history that every center can see.</strong> Without this data, each renewal means rebuilding the history by hand, from the practice management software, the patient file and sometimes an invoice from elsewhere.</p><p>In a single center, the practice management software's history is usually enough, provided the dispensing date is entered for each ear. The problem appears when the patient was fitted elsewhere. You then need to ask them for their invoice and copy the original date into their file before preparing the quote.</p><p>In a network of several centers, the risk grows. A patient fitted at one center may come back four years later to another location of the same group. If the patient databases are not linked, the new center does not see the first fitting, and the calculated eligibility date is wrong. The challenges of running a network are covered in <a href=\"/ressources/groupes-multi-sites-pilotage\">managing several centers</a>.</p><h3>The three data points to keep up to date for each patient</h3><ul><li>the dispensing date of the current hearing aid, left ear;</li><li>the dispensing date of the current hearing aid, right ear;</li><li>the center that dispensed each device, to find the invoice if in doubt.</li></ul><p>From these three data points, the eligibility date for each ear can be calculated without ambiguity. It can then be used to notify the patient, or at least to block a renewal quote made too early.</p><h2 id=\"securiser-dossier-tiers-payant-audioprothesiste\">How do you secure each hearing care third-party payment file before sending it?</h2><p><strong>A renewal file is ready to go when three conditions are met: the ear's eligibility date has been reached, the class and LPP code on the quote match the device, and the documents required by the portal are complete.</strong> As long as one of the three is missing, sending the request produces a denial.</p><ol class=\"steps\"><li><strong>Find the previous dispensing date.</strong> Ear by ear, from the original invoice, including when the fitting was done at another center.</li><li><strong>Calculate the eligibility date.</strong> Four years after dispensing, for each ear separately.</li><li><strong>Prepare the standardized quote.</strong> With at least one class I offer, and the exact class and LPP code of the proposed device.</li><li><strong>Identify the supplementary insurer's portal.</strong> From the patient's third-party payment card.</li><li><strong>Send the coverage request.</strong> With the prescription, the quote and the documents required by the portal.</li><li><strong>Track the trial.</strong> Record the trial end date and contact the patient again before that date.</li><li><strong>Bill after the patient's decision.</strong> Then track payment from the AMO and the AMC through to reconciliation.</li></ol><p>Each of these steps is simple on its own. What makes them fragile is their number and how they stretch over time: a renewal runs over several weeks, and a center tracks many of them in parallel. Among files that come back denied, the scenario is often the same: a reference date copied wrong, or an invoice left waiting because no one noticed the end of the trial.</p><p>When the volume exceeds what the team can track by hand, entry on the portals and tracking of responses become the center's bottleneck. This is what <a href=\"/agents\">Granit</a> does: agents enter coverage requests directly on the platforms' portals, track the statuses and send the answer back to the team, which stays in charge of advising the patient.</p><p>For an overview of third-party payment, from coverage approval to collection, the guide <a href=\"/ressources/tiers-payant-opticien\">third-party payment, from coverage approval to collection</a> describes the full process. It is written for optics, but the steps and platforms are largely the same in hearing care.</p>",
+  "tocItems": [
+    {
+      "id": "renouvellement-appareil-auditif-4-ans",
+      "label": "The 4-year rule per ear"
+    },
+    {
+      "id": "classe-1-classe-2-audioprothese",
+      "label": "Class I or class II: what changes"
+    },
+    {
+      "id": "periode-essai-audioprothese",
+      "label": "Billing after the trial period"
+    },
+    {
+      "id": "pieces-prise-en-charge-audio",
+      "label": "Documents for a hearing coverage request"
+    },
+    {
+      "id": "renouvellement-refuse",
+      "label": "Why a renewal is denied"
+    },
+    {
+      "id": "eligibilite-oreille-multi-centres",
+      "label": "Tracking eligibility, even across several centers"
+    },
+    {
+      "id": "securiser-dossier-tiers-payant-audioprothesiste",
+      "label": "Securing each file before sending"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "How often can a hearing aid be renewed?",
+      "answer": "According to ameli.fr, renewal of a hearing aid is covered every 4 years. The period is calculated ear by ear, from the date the previous device was dispensed and not from the date of the new request. A patient can therefore be eligible for one ear and not for the other."
+    },
+    {
+      "question": "What is the difference between class I and class II hearing aids?",
+      "answer": "Class I corresponds to 100% Santé (zero out-of-pocket scheme): according to ameli.fr, its price is capped at €950 per ear for an adult over 20, and the out-of-pocket amount is zero with a contrat responsable (a supplementary policy that meets French regulatory criteria). Class II is freely priced, with combined AMO and AMC coverage capped at €1,700 per ear under a contrat responsable. The class must be the same on the standardized quote, the request and the invoice."
+    },
+    {
+      "question": "When should you bill after a hearing aid trial period?",
+      "answer": "The final invoice goes out after the trial period, once the patient has confirmed their choice. According to ameli.fr, this trial lasts at least 30 days before the sale is final. The safest approach is to record the trial end date in the file on the day the device is dispensed, so you can follow up with the patient and then bill without delay."
+    },
+    {
+      "question": "Why is a hearing aid renewal denied?",
+      "answer": "The three main causes are a 4-year period not yet reached for the ear concerned, a class or LPP code that does not match the device, and an incomplete or poorly identified file. The reason shown by the portal tells you which one applies. A denial for a period not yet reached cannot be appealed: you must resubmit the request from the eligibility date."
+    }
+  ],
+  "sources": [
+    {
+      "label": "ameli.fr · Hearing aids: reimbursement",
+      "url": "https://www.ameli.fr/assure/remboursements/rembourse/optique-audition/audition-aides-auditives"
+    },
+    {
+      "label": "service-public.fr · 100% Santé: glasses, dental and hearing prostheses",
+      "url": "https://www.service-public.fr/particuliers/vosdroits/F34759"
+    }
+  ],
+  "figures": [
+    {
+      "id": "classe-1-classe-2",
+      "type": "comparaison",
+      "titre": "Class I and class II: two coverage models",
+      "legende": "Look at the out-of-pocket amount: zero in class I with a contrat responsable, possible in class II.",
+      "colonnes": [
+        "Class I",
+        "Class II"
+      ],
+      "elements": [
+        {
+          "label": "Sale price",
+          "detail": "",
+          "valeurs": [
+            "Capped (€950 per ear, adult)",
+            "Free"
+          ],
+          "focus": false
+        },
+        {
+          "label": "Coverage",
+          "detail": "",
+          "valeurs": [
+            "Full with a contrat responsable",
+            "Capped at €1,700 per ear"
+          ],
+          "focus": false
+        },
+        {
+          "label": "Out-of-pocket amount",
+          "detail": "",
+          "valeurs": [
+            "Zero",
+            "Possible"
+          ],
+          "focus": true
+        },
+        {
+          "label": "Renewal",
+          "detail": "",
+          "valeurs": [
+            "4 years per ear",
+            "4 years per ear"
+          ],
+          "focus": false
+        }
+      ]
+    },
+    {
+      "id": "circuit-renouvellement",
+      "type": "etapes",
+      "titre": "The path of a hearing aid renewal",
+      "legende": "The invoice only goes out after the trial: this is the step that makes the file longer.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "Medical prescription",
+          "detail": "Starting point of the file",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Eligibility per ear",
+          "detail": "4 years after the previous dispensing",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Quote and coverage request",
+          "detail": "Exact class and LPP code",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Trial period",
+          "detail": "At least 30 days according to ameli.fr",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Invoice",
+          "detail": "AMO via SESAM-Vitale, AMC via DRE",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Payment",
+          "detail": "Tracked through to reconciliation",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [],
+  "liensEntrants": [],
+  "remplace": [],
+  "verticales": [
+    "audio"
+  ],
+  "refonte": true,
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-28T12:53:40.797Z",
+    "avertissements": [
+      "aucune citation (facultative)",
+      "source non vérifiable (403) : https://www.ameli.fr/assure/remboursements/rembourse/optique-audition/audition-aides-auditives"
+    ]
+  }
+}

@@ -10,6 +10,7 @@
  * l'état React local.
  */
 
+import type { Lang } from "@/lib/i18n";
 import data from "./platforms.json" with { type: "json" };
 
 export type TfaKind = "email" | "sms" | "totp" | "aucune" | "inconnu";
@@ -255,6 +256,7 @@ export async function contactPaul(req: ContactRequest, c: PecCase): Promise<stri
 
 /* ── Espace freemium (maquette) ── */
 
+/** Valeurs (gardées en état) ; « Autre » s'affiche « Other » en anglais. */
 export const LOGICIELS = [
   "Cosium",
   "Osmose",
@@ -264,20 +266,43 @@ export const LOGICIELS = [
   "Autre",
 ] as const;
 
+export function logicielLabel(l: string, lang: Lang): string {
+  return l === "Autre" && lang === "en" ? "Other" : l;
+}
+
 /** Dossiers du faux sélecteur de la demande de PEC : clairement fictifs. */
 export const DOSSIERS_FICTIFS = [
-  { id: "f1", nom: "Patient fictif A", equipement: "Monture + 2 verres progressifs", total: 630 },
-  { id: "f2", nom: "Patient fictif B", equipement: "2 verres unifocaux", total: 240 },
-  { id: "f3", nom: "Patient fictif C", equipement: "Monture + 2 verres unifocaux", total: 395 },
+  {
+    id: "f1",
+    nom: { fr: "Patient fictif A", en: "Fictional patient A" },
+    equipement: { fr: "Monture + 2 verres progressifs", en: "Frame + 2 progressive lenses" },
+    total: 630,
+  },
+  {
+    id: "f2",
+    nom: { fr: "Patient fictif B", en: "Fictional patient B" },
+    equipement: { fr: "2 verres unifocaux", en: "2 single-vision lenses" },
+    total: 240,
+  },
+  {
+    id: "f3",
+    nom: { fr: "Patient fictif C", en: "Fictional patient C" },
+    equipement: { fr: "Monture + 2 verres unifocaux", en: "Frame + 2 single-vision lenses" },
+    total: 395,
+  },
 ] as const;
 
 export type DossierFictif = (typeof DOSSIERS_FICTIFS)[number];
 
-export function euros(n: number): string {
-  return n.toLocaleString("fr-FR", { style: "currency", currency: "EUR" });
+export function euros(n: number, lang: Lang = "fr"): string {
+  return n.toLocaleString(lang === "en" ? "en-US" : "fr-FR", {
+    style: "currency",
+    currency: "EUR",
+  });
 }
 
-export function duree(s: number): string {
-  if (s < 60) return `${Math.round(s)} s`;
-  return `${Math.floor(s / 60)} min ${String(Math.round(s % 60)).padStart(2, "0")}`;
+export function duree(s: number, lang: Lang = "fr"): string {
+  if (s < 60) return lang === "en" ? `${Math.round(s)}s` : `${Math.round(s)} s`;
+  const sec = String(Math.round(s % 60)).padStart(2, "0");
+  return lang === "en" ? `${Math.floor(s / 60)}m ${sec}s` : `${Math.floor(s / 60)} min ${sec}`;
 }

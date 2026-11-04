@@ -1,0 +1,11 @@
+{
+  "slug": "incomplet",
+  "title": "Incomplete",
+  "metaDescription": "Missing an answer.",
+  "contentHtml": "<h2 id=\"lire\">Read</h2>",
+  "categoryName": "Rejections",
+  "author": { "jobTitle": "Co-founder" },
+  "tocItems": [{ "id": "lire", "label": "Read" }],
+  "faqItems": [{ "question": "Why?" }],
+  "sources": []
+}

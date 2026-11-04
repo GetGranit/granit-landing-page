@@ -1,0 +1,16 @@
+{
+  "slug": "rapprochement-noemie",
+  "category": "Clinical labs",
+  "title": "Reconciling NOEMIE files and bank transfers every morning",
+  "desc": "A simple method to reduce cash discrepancies and prioritize blocking files.",
+  "time": "6 min",
+  "body": [
+    "Reconciling NOEMIE remittance files with the bank remains a pain point for clinical labs. NOEMIE files arrive in batches, grouped bank transfers hide the patient detail, and discrepancies build up at the end of the month until they become unmanageable.",
+    "The underlying problem is timing. Payments arrive aggregated by health insurance office, on varying dates, sometimes several days after the corresponding NOEMIE remittance file. Rebuilding the reconciliation by hand means cross-referencing large files and dealing with partial offsets, adjustments and delayed rejections.",
+    "An automated daily reconciliation, run before 8am, produces a prioritized list of blocking files every morning: invoices not reimbursed beyond the standard time frame, orphan bank transfers with no matching invoice, discrepancies of a few cents to investigate or write off.",
+    "The automation relies on three sources: the NOEMIE remittance file detailed by patient, the bank statement detailed by transfer, and the lab’s internal billing. The agent cross-references these three sources with a configurable tolerance and proposes a match for each line.",
+    "Cases that cannot be resolved automatically are escalated to a console dedicated to the accounting team. Instead of rebuilding the reconciliation, the team works directly on the exceptions identified by the agent, with all the necessary context (patient history, related entries, the agent’s hypotheses).",
+    "The time saved is immediate: the accountant handles only the exceptions instead of reconciling everything by hand. The qualitative gain is even greater: unexplained end-of-month discrepancies disappear.",
+    "For a multi-site lab group, consolidation becomes possible. Every morning, the finance department has an up-to-date view of NOEMIE receivables, by site and by health insurance office, with a clear explanation of the remaining discrepancies."
+  ]
+}
