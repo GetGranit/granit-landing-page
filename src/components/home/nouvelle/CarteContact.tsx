@@ -197,7 +197,7 @@ export function CarteContact() {
                 type="tel"
                 required
                 autoComplete="tel"
-                pattern="[0-9 +().-]{9,}"
+                pattern="[0-9 +\(\)\.\-]{9,}"
               />
             </label>
             <label>
