@@ -31,6 +31,27 @@ const DENIGREMENT = [
 ];
 /** Mots minimum par type (cible : fiche VS 1 000 à 1 500, grille 2 000 à 2 800, autres 1 800 à 2 500). */
 export const MOTS_MIN = { vs: 900, grille: 1800 };
+/** Longueur maximale de seoTitle : au-delà, Google coupe la balise <title> dans ses résultats. */
+export const TITRE_MAX = 60;
+
+// Mots sans poids dans un mot-clé : « prise en charge » se retrouve dans « prises en charge », « rejet NOEMIE » dans « rejets de NOEMIE ».
+const MOTS_OUTILS = new Set("a au aux avec ce d dans de des du en et l la le les ou par pour sans sous sur un une".split(" "));
+const radical = (m) => (m.length > 3 ? m.replace(/[sx]$/, "") : m);
+
+/** Les mots significatifs du mot-clé sont dans le texte, collés ou non, dans n'importe quel ordre (accents, casse et pluriel ignorés). */
+export function contientMotCle(t, motCle) {
+  const presents = new Set(normalise(t).split(" ").map(radical));
+  return normalise(motCle)
+    .split(" ")
+    .filter((m) => !MOTS_OUTILS.has(m))
+    .every((m) => presents.has(radical(m)));
+}
+
+/** La meta s'ouvre sur le mot-clé brut suivi de deux-points (« Liste codes rejets NOEMIE : … ») : une suite de mots, pas une phrase. */
+function ouvreSurMotCle(md, motCle) {
+  const mc = normalise(motCle);
+  return md.includes(":") && mc.split(" ").length >= 3 && normalise(md.split(":")[0]) === mc;
+}
 
 export function typeDePage(article) {
   if (article.concurrents?.length) return /^granit-(vs|ou)-/.test(article.slug) ? "vs" : "grille";
@@ -86,7 +107,10 @@ export function controler(out, ctx) {
   const md = out.metaDescription ?? "";
   if (md.length < 120 || md.length > 170) erreurs.push(`metaDescription fait ${md.length} caractères (140 à 160)`);
   else if (md.length < 140 || md.length > 160) avert.push(`metaDescription fait ${md.length} caractères (140 à 160)`);
-  if (!normalise(md).includes(normalise(article.primaryKeyword))) avert.push("mot-clé principal absent de la metaDescription");
+  if (!contientMotCle(md, article.primaryKeyword)) avert.push("mots du mot-clé principal absents de la metaDescription");
+  if (ouvreSurMotCle(md, article.primaryKeyword)) avert.push("metaDescription ouverte sur le mot-clé brut : à formuler en phrase");
+
+  controlerSeoTitle(out, ctx, erreurs, avert);
 
   // Ouverture et « L'essentiel »
   const iKt = html.indexOf('class="key-takeaways"');
@@ -164,7 +188,7 @@ export function controler(out, ctx) {
   const texteFigures = controlerFigures(figures, html, erreurs, avert);
 
   // Liste rouge, sur tout ce qui sera affiché
-  const toutLeTexte = [corps, md, texteFigures, ...faq.map((f) => `${f.question} ${f.answer}`)].join("\n");
+  const toutLeTexte = [corps, md, out.seoTitle ?? "", texteFigures, ...faq.map((f) => `${f.question} ${f.answer}`)].join("\n");
   for (const [re, quoi] of INTERDITS) if (re.test(toutLeTexte)) erreurs.push(`liste rouge : ${quoi}`);
   for (const [re, quoi] of A_SURVEILLER) {
     const m = toutLeTexte.match(re);
@@ -208,6 +232,29 @@ export function controler(out, ctx) {
   }
 
   return { erreurs, avertissements: avert, nbMots };
+}
+
+/**
+ * seoTitle absent : exigé d'un article qui vient d'être rédigé (ctx.nouvelArticle), seulement signalé sur un article
+ * déjà écrit, dont la page se replie sur title. Présent, il respecte les règles dans tous les cas.
+ * ctx.titresPris = Map(slug -> titre de balise des autres articles)
+ */
+function controlerSeoTitle(out, ctx, erreurs, avert) {
+  if (out.seoTitle === undefined || out.seoTitle === null) {
+    (ctx.nouvelArticle ? erreurs : avert).push("seoTitle absent");
+    return;
+  }
+  const t = out.seoTitle.trim();
+  if (!t) {
+    erreurs.push("seoTitle vide");
+    return;
+  }
+  const { primaryKeyword } = ctx.article;
+  if (t.length > TITRE_MAX) erreurs.push(`seoTitle fait ${t.length} caractères (${TITRE_MAX} maximum) : « ${t} »`);
+  if (!contientMotCle(t, primaryKeyword)) erreurs.push(`seoTitle sans le mot-clé principal « ${primaryKeyword} » : « ${t} »`);
+  for (const [slug, autre] of ctx.titresPris ?? []) {
+    if (normalise(autre) === normalise(t)) erreurs.push(`seoTitle identique au titre de ${slug} : « ${t} »`);
+  }
 }
 
 /**

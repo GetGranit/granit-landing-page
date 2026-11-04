@@ -1,6 +1,7 @@
 // node --test scripts/seo-engine/tests/
 import assert from "node:assert/strict";
 import { test } from "node:test";
+import { TITRE_MAX, contientMotCle } from "../lib/checks.mjs";
 import { controler, typeDePage } from "../lib/checks.mjs";
 import { horsListeBlanche } from "../lib/html.mjs";
 
@@ -174,6 +175,83 @@ test("citation : trop courte ou reprenant le titre de la source, refusée sans r
   const src = [{ label: "ameli.fr · Le tiers payant", url: "https://exemple.invalid/x" }];
   const courte = await verifierSources(src, [{ texte: "Le tiers payant", cite: "ameli.fr · Le tiers payant" }], { timeoutMs: 1 });
   assert.ok(courte.erreurs.some((e) => e.includes("trop courte")));
+});
+
+// seoTitle et meta description
+const titre = (seoTitle) => ({ ...articleValide(), seoTitle });
+
+test("seoTitle conforme : aucune erreur, aucun avertissement sur le titre", () => {
+  const r = controler(titre("Tiers payant opticien : qui paie quoi ?"), ctx({ nouvelArticle: true }));
+  assert.deepEqual(r.erreurs, []);
+  assert.ok(!r.avertissements.some((a) => a.includes("seoTitle")));
+});
+
+test("seoTitle absent : avertissement sur un article existant, erreur à la rédaction", () => {
+  const existant = controler(articleValide(), ctx());
+  assert.deepEqual(existant.erreurs, []);
+  assert.ok(existant.avertissements.includes("seoTitle absent"));
+  assert.ok(controler(articleValide(), ctx({ nouvelArticle: true })).erreurs.includes("seoTitle absent"));
+  assert.ok(controler({ ...articleValide(), seoTitle: null }, ctx({ nouvelArticle: true })).erreurs.includes("seoTitle absent"));
+});
+
+test("seoTitle présent et hors règle : erreur même sur un article existant", () => {
+  const long = "Tiers payant opticien : tout comprendre pour le comptoir en dix points";
+  assert.ok(long.length > TITRE_MAX);
+  assert.ok(controler(titre(long), ctx()).erreurs.some((e) => e.includes(`${long.length} caractères`)));
+  assert.ok(controler(titre("   "), ctx()).erreurs.includes("seoTitle vide"));
+  assert.ok(controler(titre("Qui paie quoi au comptoir ?"), ctx()).erreurs.some((e) => e.includes("sans le mot-clé principal")));
+});
+
+test("seoTitle : 60 caractères passent, 61 non", () => {
+  const base = "Tiers payant opticien ";
+  const juste = base + "x".repeat(TITRE_MAX - base.length);
+  assert.deepEqual(controler(titre(juste), ctx()).erreurs, []);
+  assert.ok(controler(titre(juste + "x"), ctx()).erreurs.some((e) => e.includes("61 caractères")));
+});
+
+test("seoTitle : mots du mot-clé retrouvés sans accent, sans casse, au pluriel, dans le désordre et entre des mots-outils", () => {
+  const c = ctx();
+  c.article = { ...c.article, primaryKeyword: "rejet bénéficiaire inconnu mutuelle" };
+  assert.ok(!controler(titre("Rejets mutuelle : BENEFICIAIRE inconnu, que faire ?"), c).erreurs.some((e) => e.includes("seoTitle")));
+  c.article = { ...c.article, primaryKeyword: "demande de prise en charge" };
+  assert.ok(!controler(titre("Prises en charge : la demande pas à pas"), c).erreurs.some((e) => e.includes("seoTitle")));
+  assert.ok(!contientMotCle("Prise en charge optique", "almerys pec"));
+  assert.ok(contientMotCle("Tiers payant sans carte Vitale en pharmacie", "tiers payant sans carte vitale pharmacie"));
+});
+
+test("seoTitle identique au titre d'un autre article : erreur, accents et casse ignorés", () => {
+  const titresPris = new Map([["autre-article", "Tiers payant opticien : qui paie quoi ?"]]);
+  const r = controler(titre("TIERS PAYANT OPTICIEN, qui paie quoi"), ctx({ titresPris }));
+  assert.ok(r.erreurs.some((e) => e.includes("identique au titre de autre-article")));
+  assert.deepEqual(controler(titre("Tiers payant opticien : le guide"), ctx({ titresPris })).erreurs, []);
+});
+
+test("seoTitle : la liste rouge s'applique", () => {
+  assert.ok(controler(titre("Tiers payant opticien — le guide"), ctx()).erreurs.some((e) => e.includes("tiret long")));
+});
+
+test("metaDescription : les mots du mot-clé suffisent, pas besoin qu'ils soient collés", () => {
+  const c = ctx();
+  c.article = { ...c.article, primaryKeyword: "virement mutuelle inférieur facture" };
+  const a = articleValide();
+  a.metaDescription = "Le virement de la mutuelle est inférieur à la facture ? Retrouvez d'où vient l'écart et ce qu'il faut réclamer, dossier par dossier, avant de relancer.";
+  const r = controler(a, c).avertissements;
+  assert.ok(!r.some((x) => x.includes("metaDescription")));
+  a.metaDescription = "Trois gestes pour comprendre un écart de paiement et réclamer ce qui manque, dossier par dossier, avant de relancer votre interlocuteur au bon moment.";
+  assert.ok(controler(a, c).avertissements.some((x) => x.includes("mot-clé principal absents")));
+});
+
+test("metaDescription ouverte sur le mot-clé brut : signalée, sans bloquer", () => {
+  const c = ctx();
+  c.article = { ...c.article, primaryKeyword: "liste codes rejets noemie" };
+  const a = articleValide();
+  a.metaDescription = "Liste codes rejets NOEMIE : où trouver le libellé fiable, comment classer chaque code et quoi corriger avant de renvoyer la facture à la caisse.";
+  const r = controler(a, c);
+  assert.ok(!r.erreurs.some((e) => e.includes("metaDescription")));
+  assert.ok(r.avertissements.some((x) => x.includes("mot-clé brut")));
+  c.article = { ...c.article, primaryKeyword: "almerys tp" };
+  a.metaDescription = "Almerys TP : l'accès à l'espace pro, la prise en charge optique et les statuts à connaître, pour traiter un dossier sans appeler la plateforme.";
+  assert.ok(!controler(a, c).avertissements.some((x) => x.includes("mot-clé brut")));
 });
 
 // Pages comparatives (gabarit §6 bis)

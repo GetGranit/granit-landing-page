@@ -14,3 +14,6 @@ export function lireContenu(
 export function redirections(articles: RessourceJson[]): Record<string, string>;
 export function anciensSlugsFr(racine: string): string[];
 export function controler(racine: string, articles: RessourceJson[]): void;
+export const PLAFONDS_IMAGES: Record<string, number>;
+export const EXCEPTIONS_IMAGES: Record<string, number>;
+export function imagesTropLourdes(racine: string): string[];
