@@ -36,6 +36,10 @@
 .nh .tva-stage { position: relative; isolation: isolate; overflow: hidden; flex: 1; display: flex; background: var(--ink); color: var(--rose); }
 .nh .tva-media { position: absolute; inset: 0; z-index: -3; }
 .nh .tva-media video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 66% 50%; }
+/* le grain vit au-dessus du film : il échappe ainsi à la compression et ne pèse que 23 Ko */
+.nh .tva-media::after { content: ""; position: absolute; inset: -128px; pointer-events: none; background: url("/home/grain.webp") 0 0 / 256px 256px; opacity: .15; mix-blend-mode: overlay; animation: tva-grain .5s steps(1) infinite; }
+@keyframes tva-grain { 0% { transform: translate(0, 0); } 17% { transform: translate(-61px, 43px); } 33% { transform: translate(37px, -88px); } 50% { transform: translate(-103px, -29px); } 67% { transform: translate(82px, 67px); } 83% { transform: translate(-19px, 111px); } }
+@media (prefers-reduced-motion: reduce) { .nh .tva-media::after { animation: none; } }
 .nh .tva-veil { position: absolute; inset: 0; z-index: -2; pointer-events: none;
   background: linear-gradient(90deg, rgba(var(--ink-rgb), .64) 0%, rgba(var(--ink-rgb), .4) 30%, rgba(var(--ink-rgb), .06) 58%, rgba(var(--ink-rgb), 0) 74%),
               linear-gradient(180deg, rgba(var(--ink-rgb), .44) 0%, rgba(var(--ink-rgb), 0) 24%),
