@@ -7,7 +7,11 @@ import { useServerFn } from "@tanstack/react-start";
 import { usePostHog } from "posthog-js/react";
 
 import { getAttribution } from "@/lib/attribution";
-import { logDemoRequestDelivered, logDemoRequestDeliveryFailed } from "@/lib/posthogLogs";
+import {
+  logDemoRequestDelivered,
+  logDemoRequestDeliveryFailed,
+  type DemoFormLocation,
+} from "@/lib/posthogLogs";
 import { submitDemo } from "@/lib/submitDemo";
 import { calcomDemoUrl, useLanguage } from "./socle";
 
@@ -81,11 +85,20 @@ const FLECHE = (
   </svg>
 );
 
-export function CarteContact() {
+export function CarteContact({
+  placement = "bandeau_bas",
+  formLocation = "homepage_rappel",
+  demande = "Demande de rappel (CTA de fin de l’accueil)",
+}: {
+  /** Emplacement dans PostHog et dans l'UTM Cal.com. */
+  placement?: string;
+  formLocation?: DemoFormLocation;
+  /** Ce que l'équipe lit dans le lead de rappel. */
+  demande?: string;
+}) {
   const { lang } = useLanguage();
   const t = copy[lang];
   const posthog = usePostHog();
-  const submit = useServerFn(submitDemo);
   const id = useId();
   const [voie, setVoie] = useState<Voie>("creneau");
   /* le second bouton du hero (#rappel) ouvre directement le formulaire de rappel */
@@ -97,11 +110,11 @@ export function CarteContact() {
     window.addEventListener("hashchange", auHash);
     return () => window.removeEventListener("hashchange", auHash);
   }, []);
-  const [etat, setEtat] = useState<"idle" | "envoi" | "ok" | "erreur">("idle");
+  const [etat, setEtat] = useState<EtatRappel>("idle");
 
   const choisir = (v: Voie) => {
     if (v !== voie)
-      posthog?.capture("demo_contact_choice", { choice: v, placement: "bandeau_bas" });
+      posthog?.capture("demo_contact_choice", { choice: v, placement });
     setVoie(v);
   };
 
@@ -137,104 +150,131 @@ export function CarteContact() {
           <p className="ct-cc-texte">{t.creneauTexte}</p>
           <a
             className="lm-btn ct-btn ct-cc-btn"
-            href={calcomDemoUrl("bandeau_bas")}
+            href={calcomDemoUrl(placement)}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => posthog?.capture("demo_booking_clicked", { placement: "bandeau_bas" })}
+            onClick={() => posthog?.capture("demo_booking_clicked", { placement })}
           >
             {t.voir}
             {FLECHE}
           </a>
         </div>
-      ) : etat === "ok" ? (
-        <p className="ct-cc-action ct-cc-merci" role="status" key="merci">
-          <span className="ct-cc-coche" aria-hidden="true">
-            <svg viewBox="0 0 16 16">
-              <path
-                d="M3.4 8.5l2.9 2.9 6.3-6.6"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </span>
-          {t.merci}
-        </p>
       ) : (
-        <form
-          className="ct-cc-action ct-cc-form"
-          key="rappel"
-          onSubmit={async (e) => {
-            e.preventDefault();
-            const fd = new FormData(e.currentTarget);
-            const orgType = String(fd.get("orgType") || "");
-            setEtat("envoi");
-            try {
-              await submit({
-                data: {
-                  name: String(fd.get("name") || ""),
-                  email: String(fd.get("email") || ""),
-                  phone: String(fd.get("phone") || ""),
-                  orgType,
-                  challenge: "Demande de rappel (CTA de fin de l’accueil)",
-                  utm: getAttribution(),
-                },
-              });
-              posthog?.capture("demo_request_submitted", {
-                form_location: "homepage_rappel",
-                organization_type: orgType,
-              });
-              if (posthog) logDemoRequestDelivered(posthog, "homepage_rappel", orgType);
-              setEtat("ok");
-            } catch {
-              if (posthog) logDemoRequestDeliveryFailed(posthog, "homepage_rappel");
-              setEtat("erreur");
-            }
-          }}
-        >
-          <div className="ct-cc-champs">
-            <label>
-              <span>{t.nom}</span>
-              <input name="name" required autoComplete="name" />
-            </label>
-            <label>
-              <span>{t.tel}</span>
-              <input
-                name="phone"
-                type="tel"
-                required
-                autoComplete="tel"
-                pattern="[0-9 +\(\)\.\-]{9,}"
-              />
-            </label>
-            <label>
-              <span>{t.email}</span>
-              <input name="email" type="email" required autoComplete="email" />
-            </label>
-            <label>
-              <span>{t.metier}</span>
-              <select name="orgType" required defaultValue="">
-                <option value="" disabled>
-                  {t.choisir}
-                </option>
-                {t.metiers.map((m) => (
-                  <option key={m}>{m}</option>
-                ))}
-              </select>
-            </label>
-          </div>
-          <button type="submit" className="lm-btn ct-btn ct-cc-btn" disabled={etat === "envoi"}>
-            {etat === "envoi" ? t.envoi : t.envoyer}
-          </button>
-          {etat === "erreur" && (
-            <p className="ct-cc-erreur" role="alert">
-              {t.erreur}
-            </p>
-          )}
-        </form>
+        <FormRappel etat={etat} setEtat={setEtat} formLocation={formLocation} demande={demande} />
       )}
     </div>
+  );
+}
+
+export type EtatRappel = "idle" | "envoi" | "ok" | "erreur";
+
+/** Le formulaire de rappel (nom, téléphone, email, métier), puis le remerciement. */
+export function FormRappel({
+  etat,
+  setEtat,
+  formLocation,
+  demande,
+}: {
+  etat: EtatRappel;
+  setEtat: (e: EtatRappel) => void;
+  formLocation: DemoFormLocation;
+  demande: string;
+}) {
+  const { lang } = useLanguage();
+  const t = copy[lang];
+  const posthog = usePostHog();
+  const submit = useServerFn(submitDemo);
+
+  if (etat === "ok")
+    return (
+      <p className="ct-cc-action ct-cc-merci" role="status" key="merci">
+        <span className="ct-cc-coche" aria-hidden="true">
+          <svg viewBox="0 0 16 16">
+            <path
+              d="M3.4 8.5l2.9 2.9 6.3-6.6"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </span>
+        {t.merci}
+      </p>
+    );
+
+  return (
+<form
+      className="ct-cc-action ct-cc-form"
+      key="rappel"
+      onSubmit={async (e) => {
+        e.preventDefault();
+        const fd = new FormData(e.currentTarget);
+        const orgType = String(fd.get("orgType") || "");
+        setEtat("envoi");
+        try {
+          await submit({
+            data: {
+              name: String(fd.get("name") || ""),
+              email: String(fd.get("email") || ""),
+              phone: String(fd.get("phone") || ""),
+              orgType,
+              challenge: demande,
+              utm: getAttribution(),
+            },
+          });
+          posthog?.capture("demo_request_submitted", {
+            form_location: formLocation,
+            organization_type: orgType,
+          });
+          if (posthog) logDemoRequestDelivered(posthog, formLocation, orgType);
+          setEtat("ok");
+        } catch {
+          if (posthog) logDemoRequestDeliveryFailed(posthog, formLocation);
+          setEtat("erreur");
+        }
+      }}
+    >
+      <div className="ct-cc-champs">
+        <label>
+          <span>{t.nom}</span>
+          <input name="name" required autoComplete="name" />
+        </label>
+        <label>
+          <span>{t.tel}</span>
+          <input
+            name="phone"
+            type="tel"
+            required
+            autoComplete="tel"
+            pattern="[0-9 +\(\)\.\-]{9,}"
+          />
+        </label>
+        <label>
+          <span>{t.email}</span>
+          <input name="email" type="email" required autoComplete="email" />
+        </label>
+        <label>
+          <span>{t.metier}</span>
+          <select name="orgType" required defaultValue="">
+            <option value="" disabled>
+              {t.choisir}
+            </option>
+            {t.metiers.map((m) => (
+              <option key={m}>{m}</option>
+            ))}
+          </select>
+        </label>
+      </div>
+      <button type="submit" className="lm-btn ct-btn ct-cc-btn" disabled={etat === "envoi"}>
+        {etat === "envoi" ? t.envoi : t.envoyer}
+      </button>
+      {etat === "erreur" && (
+        <p className="ct-cc-erreur" role="alert">
+          {t.erreur}
+        </p>
+      )}
+    </form>
   );
 }

@@ -2,7 +2,7 @@
    Le grand fond de la marque ; une lumière qui suit la souris (pointeurs fins seulement) ; le fond et le filigrane
    Galets qui glissent avec le défilement ; le titre qui entre ligne à ligne. Rien ne boucle.
    « Mouvements réduits » : l'état final, immobile. */
-import { useEffect, useRef, type CSSProperties } from "react";
+import { useEffect, useRef, type CSSProperties, type RefObject } from "react";
 import { GaletsSymbol, useLanguage } from "./socle";
 import { CarteContact } from "./CarteContact";
 import "./cta-fin.css";
@@ -42,13 +42,10 @@ const ETOILES = Array.from({ length: 12 }, (_, i) => {
 });
 const i = (n: number) => ({ "--i": n }) as CSSProperties;
 
-export function CtaFinNouvelle() {
-  const { lang } = useLanguage();
-  const t = copy[lang];
-  const secRef = useRef<HTMLElement>(null);
-
+/** Le mouvement du bloc .ct3 : le titre qui entre, le fond qui suit la page, la lumière qui suit la souris. */
+export function useCtaVivant(ref: RefObject<HTMLElement | null>) {
   useEffect(() => {
-    const s3 = secRef.current;
+    const s3 = ref.current;
     if (!s3) return;
     const clamp = (v: number, a: number, b: number) => Math.min(b, Math.max(a, v));
     const lerp = (a: number, b: number, k: number) => a + (b - a) * k;
@@ -116,7 +113,15 @@ export function CtaFinNouvelle() {
       if (rafS) cancelAnimationFrame(rafS);
       if (rafP) cancelAnimationFrame(rafP);
     };
-  }, []);
+  }, [ref]);
+}
+
+export function CtaFinNouvelle() {
+  const { lang } = useLanguage();
+  const t = copy[lang];
+  const secRef = useRef<HTMLElement>(null);
+
+  useCtaVivant(secRef);
 
   return (
     <section ref={secRef} className="ct3" id="cta" aria-labelledby="ct3-t">

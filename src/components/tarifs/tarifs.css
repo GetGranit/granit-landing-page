@@ -1,0 +1,74 @@
+/* =========================================================
+   PAGE TARIFS : une seule action, « Prendre rendez-vous », au même libellé partout.
+   Le rappel est un lien sous le bouton, jamais un second bouton.
+   Elle reprend le fond .ct3 du CTA de fin ; ici, seulement ce qui s'y ajoute.
+   Rien ne boucle. « Mouvements réduits » : l'état final, immobile.
+   ========================================================= */
+.nh .ta-hero.ct3 { margin-top: -72px; min-height: min(100svh, 840px); padding-top: 112px; overflow: clip; } /* le fond passe sous la barre de navigation */
+.nh .ta-eb { font: 500 12px/1.2 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--t-muted); }
+
+.nh .ta-action { display: grid; justify-items: start; gap: 12px; margin-top: 8px; width: 100%; max-width: 460px; }
+.nh .ta-rdv { position: relative; min-height: 54px; padding-inline: 28px; font-size: 16px; }
+.nh .ta-precision { font-size: 14px; line-height: 1.4; color: var(--ink); opacity: .78; }
+.nh .ta-lien { padding: 0; border: 0; background: none; cursor: pointer; font: 500 14.5px/1.3 var(--sans); color: var(--ink); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+.nh .ta-rappel { width: 100%; padding: 4px 20px 20px; border-radius: 16px; background: rgba(255, 253, 253, .92); box-shadow: var(--ombre-carte); scroll-margin-top: 96px; }
+.nh .ta-rappel .ct-cc-action { border-top: 0; }
+
+/* une seule fois, quand tout est arrivé : l'œil va au bouton */
+.nh .ta-rdv::after { content: ""; position: absolute; inset: 0; border-radius: 999px; pointer-events: none; opacity: 0; box-shadow: 0 0 0 2px var(--deep); }
+@media (prefers-reduced-motion: no-preference) {
+  .nh .ct3.in .ta-rdv::after { animation: ta-halo 1.4s var(--lm-ease) 1.5s 1 both; }
+}
+@keyframes ta-halo {
+  0% { opacity: .75; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.12, 1.3); }
+}
+
+/* ce qui est compris */
+.nh .ta-compris { padding: 26px; border-radius: 18px; background: rgba(255, 253, 253, .9); box-shadow: var(--ombre-carte); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+.nh .ta-compris h2 { font: 400 22px/1.2 var(--serif); letter-spacing: -.01em; }
+.nh .ta-compris ul { display: grid; gap: 12px; margin-top: 18px; }
+.nh .ta-compris li { display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 10px; font-size: 15px; line-height: 1.4; }
+.nh .ta-compris svg { width: 18px; height: 18px; margin-top: 1px; color: var(--deep); }
+.nh .ta-souple { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 13.5px; line-height: 1.45; color: var(--t-muted); }
+
+/* ce qui fait le tarif */
+.nh .ta-calcul { padding-block: clamp(64px, 8vw, 104px); background: var(--rose); }
+.nh .ta-h2 { margin-top: 14px; max-width: 22ch; font: 400 clamp(30px, 3.4vw, 46px)/1.08 var(--serif); letter-spacing: -.025em; text-wrap: balance; }
+.nh .ta-h2 span { color: var(--deep); }
+.nh .ta-trois { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 36px; }
+.nh .ta-trois li { padding: 24px; border-radius: 14px; background: var(--paper); box-shadow: inset 0 0 0 1px var(--line); }
+.nh .ta-trois b { display: block; font: 400 22px/1.2 var(--serif); font-variation-settings: "opsz" 20; letter-spacing: -.01em; }
+.nh .ta-trois p { margin-top: 8px; font-size: 15px; line-height: 1.5; color: var(--t-muted); }
+
+.nh .ta-faq { padding-bottom: clamp(48px, 6vw, 80px); background: var(--rose); }
+.nh .ta-faq-int { max-width: 720px; margin-inline: auto; }
+
+/* la dernière chance : la même action */
+.nh .ta-bande { padding-bottom: clamp(56px, 7vw, 96px); background: var(--rose); }
+.nh .ta-bande-int { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px 48px; padding: clamp(32px, 4vw, 52px); border-radius: 22px; background: var(--ink); color: var(--rose); }
+.nh .ta-bande h2 { font: 400 clamp(28px, 3vw, 40px)/1.08 var(--serif); letter-spacing: -.02em; }
+.nh .ta-bande h2 span { color: var(--mint); }
+.nh .ta-bande p { margin-top: 8px; font-size: 15.5px; color: var(--d-muted); }
+.nh .ta-bande-cta { display: grid; justify-items: center; gap: 12px; }
+.nh .ta-rdv-clair { min-height: 54px; padding-inline: 28px; font-size: 16px; background: var(--rose); color: var(--ink); }
+.nh .ta-rdv-clair:hover { background: var(--paper); }
+.nh .ta-bande .ta-lien { color: var(--rose); }
+
+/* sur téléphone, le bouton reste à portée quand aucun autre n'est à l'écran */
+.nh .ta-barre { display: none; }
+@media (max-width: 760px) {
+  .nh .ta-barre { position: fixed; z-index: 40; inset: auto 12px max(12px, env(safe-area-inset-bottom)) 12px; display: block; transition: opacity .3s, translate .3s var(--lm-ease); }
+  .nh .ta-barre:not(.is-on) { opacity: 0; translate: 0 16px; pointer-events: none; }
+  .nh .ta-barre .lm-btn { justify-content: center; width: 100%; box-shadow: var(--ombre-carte); }
+  .nh .ta-bande { padding-bottom: 88px; }
+}
+@media (max-width: 860px) {
+  .nh .ta-trois { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 960px) {
+  .nh .ta-compris { max-width: 520px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nh .ta-barre { transition: none; }
+}
