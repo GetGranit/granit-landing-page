@@ -132,7 +132,8 @@ export const articles: ArticleSet = {
       slug: "rapprochement-noemie",
       category: "Laboratoires",
       title: "Rapprocher flux NOEMIE et virements bancaires chaque matin",
-      desc: "Une méthode simple pour réduire les écarts de caisse et prioriser les dossiers bloquants.",
+      seoTitle: "Rapprocher flux NOEMIE et virements bancaires chaque matin",
+      desc: "En laboratoire, rapprocher chaque matin les flux NOEMIE et les virements bancaires réduit les écarts de caisse et donne une liste des dossiers bloquants.",
       time: "6 min",
       body: [
         "Le rapprochement NOEMIE/banque reste un point douloureux pour les laboratoires de biologie médicale. Les flux NOEMIE arrivent par lot, les virements groupés masquent le détail patient, et les écarts s'accumulent en fin de mois jusqu'à devenir ingérables.",
@@ -166,6 +167,7 @@ export const articles: ArticleSet = {
       slug: "logs-agent-sante",
       category: "Sécurité",
       title: "Ce qu'un agent IA doit journaliser en environnement de santé",
+      seoTitle: "Ce qu'un agent IA doit journaliser en environnement de santé",
       desc: "Traçabilité, rôles, conservation et audit : les exigences minimales avant mise en production.",
       time: "9 min",
       body: [
@@ -184,6 +186,7 @@ export const articles: ArticleSet = {
       slug: "ia-generative-sante-cadre",
       category: "IA & Santé",
       title: "IA générative en santé : ce que le cadre réglementaire impose vraiment",
+      seoTitle: "IA générative en santé : ce que la réglementation impose",
       desc: "RGPD, AI Act, HDS, MDR : démêler ce qui s'applique aux agents IA non-cliniques en établissement.",
       time: "10 min",
       body: [
@@ -276,6 +279,7 @@ export const articles: ArticleSet = {
       slug: "hopital-prive-ordonnancement",
       category: "Hôpital privé",
       title: "Hôpital privé : ordonnancer les flux administratifs autour du parcours patient",
+      seoTitle: "Hôpital privé : ordonnancer les flux administratifs",
       desc: "Pré-admission, séjour, sortie, facturation : aligner les agents IA sur la temporalité réelle du soin.",
       time: "10 min",
       body: [
@@ -314,6 +318,7 @@ export const articles: ArticleSet = {
       slug: "ia-vs-rpa-sante",
       category: "Architecture",
       title: "IA agentique vs RPA : pourquoi la robotisation classique a échoué en santé",
+      seoTitle: "IA agentique vs RPA : pourquoi le RPA a échoué en santé",
       desc: "Fragilité aux changements d'interface, absence de raisonnement, coût de maintenance : les limites du RPA.",
       time: "9 min",
       body: [
@@ -333,7 +338,8 @@ export const articles: ArticleSet = {
       slug: "groupes-multi-sites-pilotage",
       category: "Groupes",
       title: "Groupes multi-sites : piloter tous ses centres avec une seule console",
-      desc: "Centralisation, comparaisons inter-sites, alertes consolidées : ce qu'apporte une plateforme unifiée.",
+      seoTitle: "Groupes multi-sites : piloter tous ses centres",
+      desc: "Centraliser les indicateurs, comparer les sites, recevoir des alertes consolidées : ce qu'une plateforme unifiée apporte au pilotage d'un groupe multi-sites.",
       time: "8 min",
       body: [
         "Les groupes de santé multi-sites font face à un défi spécifique : produire un pilotage consolidé sans perdre la finesse locale. Chaque site a ses spécificités (taille, mix d'activité, équipe, patientèle), mais le groupe doit pouvoir comparer, arbitrer et décider à l'échelle.",

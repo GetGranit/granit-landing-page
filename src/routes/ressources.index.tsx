@@ -6,9 +6,9 @@ import { SITE_URL } from "@/lib/seo";
 import { aLaUne } from "@/lib/ressources/contenu";
 import { aCouvertureFenetre, photoFiche, src } from "@/lib/ressources/photos";
 
-const TITLE = "Ressources pour les professionnels de santé : mutuelles, paiements - Granit";
+const TITLE = "Ressources pour les professionnels de santé - Granit";
 const DESC =
-  "Opticiens et audioprothésistes, centres dentaires, centres de santé et ophtalmologie, pharmacies, cliniques et laboratoires : des réponses pratiques sur les mutuelles, les remboursements, les paiements et la réglementation.";
+  "Des réponses pratiques sur les mutuelles, les remboursements et les paiements, pour les opticiens, les centres de santé, les pharmacies et les cliniques.";
 
 const breadcrumb = {
   "@context": "https://schema.org",
