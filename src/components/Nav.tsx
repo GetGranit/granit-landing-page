@@ -24,7 +24,6 @@ export function Nav() {
 
   const links = [
     { to: "/agents", label: t.agents },
-    { to: "/securite", label: t.security },
     { to: "/tarifs", label: t.pricing },
     { to: "/ressources", label: t.resources },
   ] as const;

@@ -133,7 +133,6 @@ const staticPages = [
     freq: "weekly",
   },
   { path: "/tarifs", files: ["src/routes/tarifs.tsx"], priority: "0.8", freq: "monthly" },
-  { path: "/securite", files: ["src/routes/securite.tsx"], priority: "0.7", freq: "monthly" },
   {
     path: "/ressources",
     files: [

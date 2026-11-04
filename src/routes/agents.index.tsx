@@ -320,13 +320,6 @@ function AgentsPage() {
                 </li>
               ))}
             </ul>
-            <Link
-              to="/securite"
-              className="text-[14px] font-medium underline underline-offset-4"
-              style={{ color: "var(--menthe)" }}
-            >
-              {t.securiteLien}
-            </Link>
           </div>
         </Reveal>
       </section>
