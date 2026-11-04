@@ -1,26 +1,31 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
+import { usePostHog } from "posthog-js/react";
 import { SiteLayout } from "@/components/SiteLayout";
-import { Reveal } from "@/components/Reveal";
-import { useLanguage } from "@/lib/i18n";
 import { JsonLd } from "@/components/JsonLd";
+import { FormRappel, type EtatRappel } from "@/components/home/nouvelle/CarteContact";
+import { useCtaVivant } from "@/components/home/nouvelle/CtaFin";
+import { GaletsSymbol, calcomDemoUrl, useReveal } from "@/components/home/nouvelle/socle";
 import { Faq } from "@/components/ressources/article/Fin";
+import { useLanguage } from "@/lib/i18n";
 import { SITE_URL, faqPageLd, organizationRef } from "@/lib/seo";
+import "@/components/home/nouvelle/socle.css";
+import "@/components/home/nouvelle/cta-fin.css";
+import "@/components/tarifs/tarifs.css";
 
+/**
+ * /tarifs : Granit se facture à l'usage, la page ne donne pas de prix. Une seule action,
+ * « Prendre rendez-vous » (Cal.com), avec le même libellé partout. Le rappel est un lien sous
+ * le bouton. Les listes animées ont des clés par position : [data-reveal] pose .is-in hors de
+ * React, une clé tirée du texte recréerait l'élément au changement de langue et le cacherait.
+ */
 export const Route = createFileRoute("/tarifs")({
   head: () => ({
     meta: [
-      { title: "Tarifs des agents IA pour la santé - Granit" },
-      {
-        name: "description",
-        content:
-          "À partir de 199 € HT par mois et par centre, 149 € HT de 5 à 10 centres, plus un coût à l'usage par agent. Hébergement HDS inclus, résiliable avec 30 jours de préavis.",
-      },
-      { property: "og:title", content: "Tarifs des agents IA pour la santé - Granit" },
-      {
-        property: "og:description",
-        content:
-          "À partir de 199 € HT par mois et par centre, plus un coût à l'usage par agent. Hébergement HDS inclus.",
-      },
+      { title: "Tarifs Granit : à l'usage, calculés sur vos volumes" },
+      { name: "description", content: content.fr.lead },
+      { property: "og:title", content: "Tarifs Granit : à l'usage, calculés sur vos volumes" },
+      { property: "og:description", content: content.fr.lead },
     ],
   }),
   component: TarifsPage,
@@ -29,125 +34,106 @@ export const Route = createFileRoute("/tarifs")({
 const content = {
   fr: {
     eyebrow: "Tarifs",
-    title: "Simple, lisible, à l'usage.",
-    intro: "Un forfait plateforme mensuel par centre, puis un coût à l'usage par agent selon les workflows activés et le volume traité.",
-    summaryLabel: "En bref :",
-    summary:
-      "Granit se paie par centre et par mois : à partir de 199 € HT pour un centre, à partir de 149 € HT par centre de 5 à 10 centres, sur devis au-delà de 10 centres. S'ajoute un coût à l'usage par agent, selon les workflows activés et le volume traité. L'hébergement HDS, les connecteurs et le support sont inclus, et le contrat se résilie à tout moment avec 30 jours de préavis.",
-    tiersTitle: "Prix par centre",
-    faqTitle: "Questions fréquentes",
+    titre: ["Un tarif à l’usage,", "calculé sur vos volumes."],
+    lead: "Chaque structure est différente, alors on ne vous donne pas une moyenne. En 30 minutes, on regarde vos volumes et vous repartez avec votre tarif.",
+    rdv: "Prendre rendez-vous",
+    precision: "30 min, en visio ou par téléphone",
+    rappel: "Je préfère être rappelé",
+    comprisTitre: "Compris dans votre tarif",
+    compris: [
+      "Des agents configurés pour votre métier",
+      "Un branchement sur vos portails en 48\u00a0h",
+      "Un gestionnaire Granit pour les cas particuliers",
+      "Un support dédié",
+      "Un hébergeur certifié HDS, données dans l’Union européenne",
+      "La réversibilité de vos données",
+    ],
+    souple: "Sans durée minimale. Résiliable avec 30 jours de préavis.",
+    calculEyebrow: "Comment se calcule votre tarif",
+    calculTitre: ["Trois choses,", "rien de plus."],
+    calcul: [
+      { titre: "Votre métier", texte: "Optique, audio, pharmacie ou centre de santé." },
+      { titre: "Les agents activés", texte: "Droits, prise en charge, facturation, relances." },
+      { titre: "Les dossiers traités", texte: "Vous payez selon votre volume, à l’usage." },
+    ],
+    faqTitre: "Questions fréquentes",
+    finTitre: ["Votre tarif,", "en 30 minutes."],
+    finTexte: "À partir de vos volumes, en visio ou par téléphone.",
     faq: [
       {
-        question: "Combien coûte Granit ?",
+        question: "Pourquoi le prix n’est-il pas affiché ?",
         answer:
-          "Un forfait plateforme mensuel par centre : à partir de 199 € HT par mois pour un centre, à partir de 149 € HT par mois et par centre de 5 à 10 centres, sur devis au-delà de 10 centres. S'y ajoute un coût à l'usage par agent. Le prix exact figure dans le devis.",
+          "Parce que Granit se facture à l’usage : le tarif dépend de votre métier, des agents activés et du volume de dossiers traités. Une moyenne ne vous dirait rien sur votre cas.",
       },
       {
-        question: "Y a-t-il un engagement de durée ?",
+        question: "Que se passe-t-il pendant le rendez-vous ?",
+        answer:
+          "On regarde ensemble vos volumes et vos logiciels, en visio ou par téléphone. Vous repartez avec ce que Granit prendrait en charge chez vous et votre tarif.",
+      },
+      {
+        question: "Y a-t-il un engagement de durée ?",
         answer:
           "Nos conditions générales de vente ne prévoient pas de durée minimale : le client peut résilier à tout moment, par email, avec un préavis de 30 jours, sans pénalité ni frais.",
       },
       {
-        question: "Comment est calculé le coût à l'usage ?",
+        question: "Faut-il changer de logiciel ?",
         answer:
-          "Il dépend des agents activés, des workflows qu'ils prennent en charge et du volume qu'ils traitent. Il s'ajoute au forfait plateforme et il est détaillé dans le devis.",
+          "Non. Les agents travaillent dans les logiciels que vos équipes utilisent déjà. Granit est branché sur vos portails en 48\u00a0h.",
       },
-      {
-        question: "Qu'est-ce qui est compris dans le forfait ?",
-        answer:
-          "L'accès à la plateforme Granit, des agents IA configurés sur mesure, plus de 50 connecteurs natifs (AMC, RO, SESAM-Vitale, NOEMIE, SIH, LGO), la mise en production, l'hébergement HDS, un support dédié et la réversibilité totale de vos données.",
-      },
-      {
-        question: "Quelles plateformes de tiers payant sont couvertes ?",
-        answer:
-          "Granit travaille avec toutes les plateformes de tiers payant. Les agents se branchent aussi sur votre logiciel métier, sans migration ni intégration API.",
-      },
-      {
-        question: "Nos données de santé sont-elles protégées ?",
-        answer:
-          "Oui. L'hébergement HDS est inclus dans tous les plans. Les données sont stockées chez un hébergeur certifié HDS, dans l'Union européenne ; le détail des garanties est sur la page Sécurité.",
-      },
-    ],
-    tiers: [
-      { label: "1 centre", price: "À partir de 199€", suffix: "/ mois HT par centre", desc: "Pour lancer Granit sur un point de vente." },
-      { label: "5 à 10 centres", price: "À partir de 149€", suffix: "/ mois HT par centre", desc: "Tarif dégressif pour les groupes en développement.", featured: true, save: "−25%" },
-      { label: "Plus de 10 centres", price: "Sur devis", suffix: "déploiement, support et volumes adaptés", desc: "Tarification réseau, support dédié et SLA renforcés." },
-    ],
-    usage: "+ un coût à l'usage par agent",
-    included: "Inclus dans tous les plans",
-    cta: "Demander une démo gratuite",
-    includes: [
-      "Accès à la plateforme Granit",
-      "Agents IA configurés sur mesure",
-      "Connecteurs natifs (50+) : AMC, RO, SESAM-Vitale, NOEMIE, SIH, LGO",
-      "Mise en production rapide",
-      "Hébergement HDS inclus",
-      "Support dédié",
-      "Réversibilité totale",
     ],
   },
   en: {
     eyebrow: "Pricing",
-    title: "Simple, clear, usage-based.",
-    intro: "A monthly platform fee per center, then a usage-based fee per agent depending on the workflows enabled and the volume processed.",
-    summaryLabel: "In short:",
-    summary:
-      "Granit is priced per center and per month: from €199 excl. VAT for one center, from €149 excl. VAT per center for 5 to 10 centers, and on quote above 10 centers. A usage-based fee per agent is added, depending on the workflows enabled and the volume processed. HDS hosting, connectors and support are included, and the contract can be canceled at any time with 30 days' notice.",
-    tiersTitle: "Price per center",
-    faqTitle: "Frequently asked questions",
+    titre: ["Usage-based pricing,", "worked out on your volumes."],
+    lead: "Every organization is different, so we won’t give you an average. In 30 minutes, we look at your volumes and you leave with your price.",
+    rdv: "Book a meeting",
+    precision: "30 min, by video or phone",
+    rappel: "I’d rather get a call back",
+    comprisTitre: "Included in your price",
+    compris: [
+      "Agents set up for your specialty",
+      "Connected to your portals in 48\u00a0hours",
+      "A Granit case manager for special cases",
+      "Dedicated support",
+      "An HDS-certified host, with data in the European Union",
+      "Your data stays portable",
+    ],
+    souple: "No minimum term. Cancel with 30 days’ notice.",
+    calculEyebrow: "How your price is worked out",
+    calculTitre: ["Three things,", "nothing more."],
+    calcul: [
+      { titre: "Your specialty", texte: "Optical, hearing care, pharmacy or health center." },
+      { titre: "The agents enabled", texte: "Eligibility, coverage, billing, follow-ups." },
+      { titre: "The files processed", texte: "You pay on your volume, based on usage." },
+    ],
+    faqTitre: "Frequently asked questions",
+    finTitre: ["Your price,", "in 30 minutes."],
+    finTexte: "Based on your volumes, by video or phone.",
     faq: [
       {
-        question: "How much does Granit cost?",
+        question: "Why isn’t the price shown?",
         answer:
-          "A monthly platform fee per center: from €199 excl. VAT per month for one center, from €149 excl. VAT per month per center for 5 to 10 centers, and on quote above 10 centers. A usage-based fee per agent is added. The exact price is in the quote.",
+          "Because Granit is usage-based: the price depends on your specialty, the agents enabled and the volume of files processed. An average would tell you nothing about your case.",
       },
       {
-        question: "Is there a minimum commitment?",
+        question: "What happens during the meeting?",
         answer:
-          "Our terms and conditions of sale set no minimum term: the customer can cancel at any time, by email, with 30 days' notice, with no penalty or fee.",
+          "We look at your volumes and your software together, by video or phone. You leave with what Granit would take over for you and your price.",
       },
       {
-        question: "How is the usage-based fee calculated?",
+        question: "Is there a minimum term?",
         answer:
-          "It depends on the agents enabled, the workflows they handle and the volume they process. It comes on top of the platform fee and is detailed in the quote.",
+          "Our terms of sale set no minimum term: customers can cancel at any time, by email, with 30 days’ notice, with no penalty or fees.",
       },
       {
-        question: "What is included in the platform fee?",
+        question: "Do we need to change software?",
         answer:
-          "Access to the Granit platform, custom-configured AI agents, 50+ native connectors (AMC, AMO, SESAM-Vitale, NOEMIE, hospital information systems, LGO), go-live, HDS hosting, dedicated support and full reversibility of your data.",
+          "No. Agents work in the software your teams already use. Granit is connected to your portals in 48\u00a0hours.",
       },
-      {
-        question: "Which third-party payment platforms are covered?",
-        answer:
-          "Granit works with every third-party payment platform. The agents also connect to your practice management software, with no migration and no API integration.",
-      },
-      {
-        question: "Is our health data protected?",
-        answer:
-          "Yes. HDS hosting is included in every plan. Data is stored with an HDS-certified host, in the European Union; the full list of safeguards is on the Security page.",
-      },
-    ],
-    tiers: [
-      { label: "1 center", price: "From €199", suffix: "/ month excl. VAT per center", desc: "To launch Granit in one location." },
-      { label: "5 to 10 centers", price: "From €149", suffix: "/ month excl. VAT per center", desc: "Volume pricing for growing groups.", featured: true, save: "−25%" },
-      { label: "More than 10 centers", price: "On quote", suffix: "deployment, support and volumes tailored to you", desc: "Network pricing, dedicated support and enhanced SLAs." },
-    ],
-    usage: "+ a usage-based fee per agent",
-    included: "Included in every plan",
-    cta: "Book a free demo",
-    includes: [
-      "Access to the Granit platform",
-      "Custom-configured AI agents",
-      "Native connectors (50+): AMC, AMO, SESAM-Vitale, NOEMIE, hospital information systems, LGO",
-      "Fast go-live",
-      "HDS hosting included",
-      "Dedicated support",
-      "Full reversibility",
     ],
   },
 };
 
-/** SoftwareApplication avec les prix publics de la page (HT, « à partir de »), + FAQPage. */
 const tarifsLd = [
   {
     "@context": "https://schema.org",
@@ -156,168 +142,214 @@ const tarifsLd = [
     url: `${SITE_URL}/tarifs`,
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
-    description:
-      "Agents IA qui automatisent le back-office administratif des professionnels de santé : tiers payant, facturation, traitement des rejets, recouvrement.",
+    description: content.fr.lead,
     publisher: organizationRef,
-    offers: [
-      {
-        "@type": "Offer",
-        name: "1 centre",
-        price: "199",
-        priceCurrency: "EUR",
-        priceSpecification: {
-          "@type": "UnitPriceSpecification",
-          minPrice: 199,
-          priceCurrency: "EUR",
-          valueAddedTaxIncluded: false,
-          unitText: "par mois et par centre, hors coût à l'usage par agent",
-        },
-        url: `${SITE_URL}/tarifs`,
-      },
-      {
-        "@type": "Offer",
-        name: "5 à 10 centres",
-        price: "149",
-        priceCurrency: "EUR",
-        eligibleQuantity: {
-          "@type": "QuantitativeValue",
-          minValue: 5,
-          maxValue: 10,
-          unitText: "centres",
-        },
-        priceSpecification: {
-          "@type": "UnitPriceSpecification",
-          minPrice: 149,
-          priceCurrency: "EUR",
-          valueAddedTaxIncluded: false,
-          unitText: "par mois et par centre, hors coût à l'usage par agent",
-        },
-        url: `${SITE_URL}/tarifs`,
-      },
-    ],
   },
   faqPageLd(content.fr.faq),
 ];
 
+const i = (n: number) => ({ "--i": n }) as CSSProperties;
+
+const FLECHE = (
+  <svg viewBox="0 0 16 16" aria-hidden="true">
+    <path
+      d="M5 11l6-6M6 4.6h5.4V10"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
 function TarifsPage() {
   const { lang } = useLanguage();
   const t = content[lang];
+  const posthog = usePostHog();
+  const racine = useRef<HTMLDivElement>(null);
+  const hero = useRef<HTMLElement>(null);
+  const actionHaut = useRef<HTMLDivElement>(null);
+  const actionFin = useRef<HTMLDivElement>(null);
+  const boiteRappel = useRef<HTMLDivElement>(null);
+  const [barre, setBarre] = useState(false);
+  const [rappel, setRappel] = useState(false);
+  const [etat, setEtat] = useState<EtatRappel>("idle");
+
+  useCtaVivant(hero);
+  useReveal(racine);
+
+  useEffect(() => {
+    racine.current?.classList.add("nh-js");
+    const cibles = [actionHaut.current, actionFin.current].filter(Boolean) as Element[];
+    if (!("IntersectionObserver" in window)) return;
+    const vues = new Set<Element>();
+    const io = new IntersectionObserver((es) => {
+      es.forEach((e) => (e.isIntersecting ? vues.add(e.target) : vues.delete(e.target)));
+      setBarre(vues.size === 0);
+    });
+    cibles.forEach((c) => io.observe(c));
+    return () => io.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!rappel) return;
+    boiteRappel.current?.scrollIntoView({
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+      block: "center",
+    });
+  }, [rappel]);
+
+  const ouvrirRappel = (placement: string) => {
+    posthog?.capture("demo_contact_choice", { choice: "rappel", placement });
+    setRappel(true);
+  };
+
+  const lienRdv = (placement: string, classe: string) => (
+    <a
+      className={`lm-btn ${classe}`}
+      href={calcomDemoUrl(placement)}
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={() => posthog?.capture("demo_booking_clicked", { placement })}
+    >
+      {t.rdv}
+      {FLECHE}
+    </a>
+  );
+
   return (
     <SiteLayout>
       <JsonLd data={tarifsLd} />
-      <section className="mx-auto max-w-[1280px] px-6 pt-24 pb-12 text-center">
-        <Reveal>
-          <div className="eyebrow mb-5">{t.eyebrow}</div>
-          <h1 className="h1-hero mx-auto max-w-3xl" style={{ fontSize: "clamp(40px,5vw,76px)" }}>
-            {t.title}
-          </h1>
-          <p className="body-lg mx-auto mt-8 max-w-xl">{t.intro}</p>
-          <p
-            className="mx-auto mt-6 max-w-2xl text-[14px] leading-[1.7]"
-            style={{ color: "var(--text-soft)" }}
-          >
-            <strong style={{ color: "var(--text)", fontWeight: 600 }}>{t.summaryLabel}</strong>{" "}
-            {t.summary}
-          </p>
-        </Reveal>
-      </section>
-
-      <section className="relative mx-auto max-w-[1280px] px-6 pb-16">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-x-0 top-0 -z-10 mx-auto h-[420px] max-w-[900px] opacity-60"
-          style={{
-            background:
-              "radial-gradient(ellipse at center, color-mix(in oklab, var(--menthe) 14%, transparent), transparent 70%)",
-          }}
-        />
-        <Reveal>
-          <h2 className="eyebrow mb-6 text-center">{t.tiersTitle}</h2>
-          <div className="grid gap-5 md:grid-cols-3">
-            {t.tiers.map((tier) => {
-              const featured = (tier as { featured?: boolean }).featured;
-              const save = (tier as { save?: string }).save;
-              return (
-                <div
-                  key={tier.label}
-                  className="card-hover relative flex flex-col rounded-[18px] p-8"
-                  style={{
-                    background: featured
-                      ? "linear-gradient(180deg, rgba(255,253,253,0.95), rgba(255,253,253,0.75))"
-                      : "rgba(255,253,253,0.55)",
-                    backdropFilter: "blur(14px)",
-                    WebkitBackdropFilter: "blur(14px)",
-                    border: featured
-                      ? "1px solid var(--profond)"
-                      : "1px solid color-mix(in oklab, var(--border) 70%, transparent)",
-                    boxShadow: featured ? "var(--ombre-carte)" : undefined,
-                  }}
-                >
-                  <div className="flex items-center justify-between">
-                    <div className="eyebrow">
-                      {tier.label}
-                    </div>
-                    {save && (
-                      <span
-                        className="rounded-full px-2 py-0.5 text-[10.5px]"
-                        style={{
-                          background: "var(--succes-fond)",
-                          color: "var(--succes-texte)",
-                          fontFamily: "var(--font-mono)",
-                          fontWeight: 600,
-                        }}
-                      >
-                        {save}
-                      </span>
-                    )}
+      <div ref={racine} className="nh">
+        <section ref={hero} className="ct3 ta-hero" aria-labelledby="ta-t">
+          <div className="ct3-grad" aria-hidden="true" />
+          <div className="ct3-veil" aria-hidden="true" />
+          <div className="ct3-light" aria-hidden="true" />
+          <GaletsSymbol className="ct3-motif" />
+          <div className="lm-wrap ct3-body ct3-deux">
+            <div className="ct3-txt">
+              <p className="ta-eb ct3-fade" style={i(0)}>
+                {t.eyebrow}
+              </p>
+              <h1 className="ct-h2" id="ta-t">
+                <span>
+                  <span className="ct-ln" style={i(0)}>
+                    {t.titre[0]}
+                  </span>
+                </span>{" "}
+                <span className="ct-acc">
+                  <span className="ct-ln" style={i(1)}>
+                    {t.titre[1]}
+                  </span>
+                </span>
+              </h1>
+              <p className="ct-lead ct3-fade" style={i(2)}>
+                {t.lead}
+              </p>
+              <div ref={actionHaut} className="ta-action ct3-fade" style={i(3)}>
+                {lienRdv("page_tarifs_haut", "ct-btn ta-rdv")}
+                <p className="ta-precision">{t.precision}</p>
+                {rappel ? (
+                  <div ref={boiteRappel} className="ta-rappel">
+                    <FormRappel
+                      etat={etat}
+                      setEtat={setEtat}
+                      formLocation="tarifs_rappel"
+                      demande="Demande de rappel (page Tarifs)"
+                    />
                   </div>
-                  <div className="mt-7 font-serif leading-none" style={{ fontSize: "clamp(34px,3.4vw,44px)", letterSpacing: "-0.025em", color: featured ? "var(--profond)" : "var(--text)" }}>
-                    {tier.price}
-                  </div>
-                  <div className="mt-3 text-[12.5px]" style={{ color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}>
-                    {tier.suffix}
-                  </div>
-                  <p className="mt-5 flex-1 text-[14px] leading-[1.6]" style={{ color: "var(--text-soft)" }}>
-                    {tier.desc}
-                  </p>
-                </div>
-              );
-            })}
+                ) : (
+                  <button
+                    type="button"
+                    className="ta-lien"
+                    onClick={() => ouvrirRappel("page_tarifs_haut")}
+                  >
+                    {t.rappel}
+                  </button>
+                )}
+              </div>
+            </div>
+            <div className="ta-compris ct3-fade" style={i(4)}>
+              <h2>{t.comprisTitre}</h2>
+              <ul>
+                {t.compris.map((c, k) => (
+                  <li key={k}>
+                    <svg viewBox="0 0 18 18" aria-hidden="true">
+                      <path
+                        d="M3.8 9.6l3.4 3.4 7-7.4"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.8"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                    {c}
+                  </li>
+                ))}
+              </ul>
+              <p className="ta-souple">{t.souple}</p>
+            </div>
           </div>
-          <p
-            className="mt-8 text-center text-[13px]"
-            style={{ color: "var(--profond)", fontFamily: "var(--font-mono)" }}
-          >
-            {t.usage}
-          </p>
-        </Reveal>
-      </section>
+        </section>
 
-      <section className="mx-auto max-w-[1280px] px-6 pb-28">
-        <Reveal>
-          <div className="mx-auto max-w-2xl rounded-[12px] border p-10" style={{ borderColor: "var(--border)", background: "var(--bg2)" }}>
-            <h2 className="eyebrow mb-4">{t.included}</h2>
-            <ul className="space-y-2.5">
-              {t.includes.map((f) => (
-                <li key={f} className="flex items-start gap-2 text-[14px]" style={{ color: "var(--text-soft)" }}>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="mt-1 shrink-0" style={{ color: "var(--profond)" }}>
-                    <path d="M5 12l5 5L20 7" />
-                  </svg>
-                  {f}
+        <section className="ta-calcul">
+          <div className="lm-wrap">
+            <p className="ta-eb" data-reveal>
+              {t.calculEyebrow}
+            </p>
+            <h2 className="ta-h2" data-reveal style={i(1)}>
+              {t.calculTitre[0]} <span>{t.calculTitre[1]}</span>
+            </h2>
+            <ul className="ta-trois">
+              {t.calcul.map((c, k) => (
+                <li key={k} data-reveal style={i(k + 2)}>
+                  <b>{c.titre}</b>
+                  <p>{c.texte}</p>
                 </li>
               ))}
             </ul>
-            <div className="mt-10">
-              <Link to="/" hash="demo" className="btn-primary w-full justify-center">
-                {t.cta} <span className="arrow">↗</span>
-              </Link>
+          </div>
+        </section>
+
+        <section className="ta-faq">
+          <div className="lm-wrap">
+            <div className="ta-faq-int">
+              <Faq items={t.faq} titre={t.faqTitre} />
             </div>
           </div>
-        </Reveal>
-        <div className="mx-auto max-w-2xl">
-          <Faq items={t.faq} titre={t.faqTitle} />
+        </section>
+
+        <section className="ta-bande">
+          <div className="lm-wrap">
+            <div className="ta-bande-int" data-reveal>
+              <div>
+                <h2>
+                  {t.finTitre[0]} <span>{t.finTitre[1]}</span>
+                </h2>
+                <p>{t.finTexte}</p>
+              </div>
+              <div ref={actionFin} className="ta-bande-cta">
+                {lienRdv("page_tarifs_fin", "ta-rdv-clair")}
+                {!rappel && (
+                  <button
+                    type="button"
+                    className="ta-lien"
+                    onClick={() => ouvrirRappel("page_tarifs_fin")}
+                  >
+                    {t.rappel}
+                  </button>
+                )}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div className={"ta-barre" + (barre ? " is-on" : "")}>
+          {lienRdv("page_tarifs_barre", "ct-btn")}
         </div>
-      </section>
+      </div>
     </SiteLayout>
   );
 }

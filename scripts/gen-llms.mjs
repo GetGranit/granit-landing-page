@@ -32,7 +32,7 @@ const pages = [
   [
     "Tarifs",
     "/tarifs",
-    "Tarification à l'usage : forfait plateforme par centre et fee par agent selon les volumes traités.",
+    "Granit se facture à l'usage : le tarif se calcule en rendez-vous, sur les dossiers du client.",
   ],
   ["Sécurité", "/securite", "Hébergement, protection des données de santé et conformité."],
   ["À propos", "/a-propos", "L'équipe, la mission et l'histoire de Granit."],
