@@ -6,7 +6,7 @@ import { Fragment, useState } from "react";
 import { dateFr } from "@/lib/ressources/contenu";
 import { GENRES, annuaire, type Entree, type Genre } from "@/lib/ressources/annuaire";
 import { logoPlateforme } from "@/lib/ressources/logos";
-import type { Fiche, VerticaleSlug } from "@/lib/ressources/types";
+import type { Fiche, MetierAnnuaire } from "@/lib/ressources/types";
 
 /** Cases du mur, case de fin comprise : 4 rangées de 5 (ou 5 de 4). La vedette compte pour 4. */
 const CASES = 20;
@@ -16,7 +16,7 @@ const CASES_MOBILE = 12;
 const FILTRES: (Genre | "tous")[] = ["tous", "plateforme", "reseau", "mutuelle"];
 
 /** Nom court d'un métier sur les étiquettes des cases. */
-const METIER_COURT: Record<VerticaleSlug, string> = {
+const METIER_COURT: Record<MetierAnnuaire, string> = {
   optique: "Optique",
   audio: "Audio",
   dentaire: "Dentaire",
@@ -27,7 +27,7 @@ const METIER_COURT: Record<VerticaleSlug, string> = {
   ehpad: "EHPAD",
 };
 /** Ordre des métiers dans le filtre : les métiers du comptoir d'abord. */
-const ORDRE_METIERS = Object.keys(METIER_COURT) as VerticaleSlug[];
+const ORDRE_METIERS = Object.keys(METIER_COURT) as MetierAnnuaire[];
 /** À partir de ce nombre de métiers, l'étiquette dit « Tous métiers ». */
 const TOUS_METIERS = 6;
 
@@ -38,7 +38,7 @@ const cadre = "relative flex h-[116px] flex-col items-center justify-center px-4
 
 export function MurPlateformes({ fiches }: { fiches: Fiche[] }) {
   const [genre, setGenre] = useState<Genre | "tous">("tous");
-  const [metier, setMetier] = useState<VerticaleSlug | "tous">("tous");
+  const [metier, setMetier] = useState<MetierAnnuaire | "tous">("tous");
   const entrees = annuaire(fiches);
   const passe = (e: Entree, g = genre, m = metier) =>
     (g === "tous" || e.genre === g) && (m === "tous" || e.metiers.includes(m));
@@ -206,8 +206,8 @@ function Etiquettes({
   metiers,
   actif,
 }: {
-  metiers: VerticaleSlug[];
-  actif: VerticaleSlug | "tous";
+  metiers: MetierAnnuaire[];
+  actif: MetierAnnuaire | "tous";
 }) {
   if (metiers.length === 0) return null;
   const tous = metiers.length >= TOUS_METIERS;
@@ -233,7 +233,7 @@ function Case({
   cacheMobile,
 }: {
   e: Entree;
-  metier: VerticaleSlug | "tous";
+  metier: MetierAnnuaire | "tous";
   cacheMobile?: boolean;
 }) {
   const li = `bg-[var(--bg2)] ${cacheMobile ? "hidden md:block" : ""}`;

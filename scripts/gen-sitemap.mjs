@@ -90,12 +90,17 @@ const categoryPages = ordre
 // Pages métier : à partir de 3 articles propres (même règle que le noindex de la page),
 // sauf le métier principal (optique), toujours présent.
 const verticalesData = JSON.parse(readFileSync("src/lib/ressources/verticales.json", "utf8"));
+// Anciens slugs encore portés par des articles publiés (audio → optique, laboratoires → cliniques).
+const fusion = (v) => (v in verticalesData.fusions ? verticalesData.fusions[v] : v);
 const metierPages = verticalesData.ordre
   .map((v) => {
     const dates = [
       ...ressources
         .filter((a) =>
-          (verticalesData.surcharges[a.slug] ?? a.verticales ?? ["optique"]).includes(v),
+          (
+            verticalesData.surcharges[a.slug] ??
+            (a.verticales?.length ? a.verticales.map(fusion) : ["optique"])
+          ).includes(v),
         )
         .map((a) => a.dateModified),
       ...Object.entries(verticalesData.anciens)

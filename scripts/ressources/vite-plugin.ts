@@ -10,15 +10,19 @@ import type { Plugin, ViteDevServer } from "vite";
 import { controler, lireContenu, redirections } from "./en-ligne.mjs";
 import verticalesData from "../../src/lib/ressources/verticales.json";
 import { statutsCarte } from "../../src/lib/ressources/logos";
+import { normaliserVerticales } from "../../src/lib/ressources/verticales";
 import type { Fiche, RessourceJson, VerticaleSlug } from "../../src/lib/ressources/types";
 
 const INDEX = "virtual:ressources";
 const ARTICLE = "virtual:ressources/article/";
 
 const surcharges = verticalesData.surcharges as Record<string, VerticaleSlug[]>;
-/** Métiers d'un article JSON : surcharge éditoriale, sinon le champ du fichier, sinon l'optique. */
+/**
+ * Métiers d'un article JSON : surcharge éditoriale, sinon le champ du fichier (anciens slugs
+ * ramenés au métier qui les reprend : audio → optique…), sinon l'optique.
+ */
 const verticalesDe = (a: RessourceJson): VerticaleSlug[] =>
-  surcharges[a.slug] ?? (a.verticales?.length ? a.verticales : ["optique"]);
+  surcharges[a.slug] ?? (a.verticales?.length ? normaliserVerticales(a.verticales) : ["optique"]);
 
 /** Image d'aperçu d'une fiche, produite par scripts/ressources/og-plateformes.mjs. */
 const og = (slug: string) => `/ressources/og/${slug}.jpg`;

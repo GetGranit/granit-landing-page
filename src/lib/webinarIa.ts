@@ -1,14 +1,14 @@
 /**
- * Texte et réglages du webinar « 5 usages de l'IA en magasin » du 26 novembre,
+ * Texte et réglages du webinar « 5 usages de l'IA en magasin » du 13 novembre,
  * séparés de la mise en page de /webinar/ia-magasin.
  */
 
 /** Valeur `source` du lead dans B11 et Attio. */
 export const SOURCE = "webinar-ia-2026-11";
 /** Début du webinar, heure de Paris (heure d'hiver). */
-export const DEBUT = new Date("2026-11-26T13:15:00+01:00");
+export const DEBUT = new Date("2026-11-13T13:15:00+01:00");
 /** Fin du webinar, heure de Paris. */
-export const FIN = new Date("2026-11-26T14:00:00+01:00");
+export const FIN = new Date("2026-11-13T14:00:00+01:00");
 /** Lien de connexion Google Meet, mis dans le mail de confirmation et l'invitation agenda. */
 export const MEET_URL = "https://meet.google.com/qph-ugvk-sro";
 /** Accès par téléphone au même Meet, pour ceux qui n'ont pas d'ordinateur sous la main. */
@@ -20,7 +20,7 @@ export const t = {
   titleAccent: "pour gagner du temps en magasin.",
   constat:
     "Pointer un virement groupé, vérifier un dossier avant facturation, renvoyer à la mutuelle une pièce jointe déjà dans le dossier client… L'admin prend un temps fou en magasin. On vous montre, en direct, ce que l'IA peut en faire.",
-  date: "Jeudi 26 novembre",
+  date: "Vendredi 13 novembre",
   heure: "13h15 – 14h",
   cta: "Je réserve ma place",
   replay: "Replay envoyé à tous les inscrits",

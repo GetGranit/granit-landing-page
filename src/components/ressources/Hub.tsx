@@ -55,8 +55,8 @@ export function Hub() {
             <em className="accent-italic whitespace-nowrap">sans le casse-tête</em>.
           </h1>
           <p className="body-lg mx-auto mt-10 max-w-[60ch]">
-            Opticiens, dentistes, cliniques, EHPAD, centres de santé, laboratoires,
-            audioprothésistes, pharmaciens : des réponses pratiques sur les mutuelles, les
+            Opticiens et audioprothésistes, centres dentaires, centres de santé et ophtalmologie,
+            pharmacies, cliniques et laboratoires : des réponses pratiques sur les mutuelles, les
             remboursements, les paiements et la réglementation. Partez de votre métier ou de votre
             question.
           </p>

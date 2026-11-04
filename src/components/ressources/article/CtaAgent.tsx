@@ -1,7 +1,8 @@
 // Les deux appels à l'action d'un article : la carte collante de la colonne de droite et l'encart
 // de fin. Tout se déduit de l'article, sans texte écrit article par article :
 // - fiche plateforme (avec connecteur Granit) → nom et logo du portail dans le titre et la fenêtre ;
-// - autre article → la phrase et l'animation de sa catégorie (categories.json).
+// - autre article → la phrase et l'animation de sa catégorie (categories.json) ;
+// - article hors optique (champ `encart`, recopié de la fiche métier par le moteur) → ses textes, sans fenêtre de portail.
 // L'animation montre l'agent au travail : il remplit les champs, envoie, et le statut passe au vert.
 // Rendu serveur et mouvement réduit : l'état final, figé (champs remplis, statut vert, chrono).
 import { useEffect, useRef } from "react";
@@ -123,12 +124,30 @@ function contenuCta(a: RessourceJson, p: Plateforme | null) {
   const pec = cat.animation === "pec";
   const essai = pec && ESSAI_GRATUIT !== "";
   const logo = logoPlateforme((portail ?? PORTAIL_DEFAUT).logo, "fenetre");
+  const e = a.encart;
+  if (e)
+    return {
+      article: a.slug,
+      cat,
+      s: { ...s, etapes: e.etapes },
+      pec: false,
+      essai: false,
+      // la fenêtre montre un dépôt de PEC sur un portail : capacité validée en optique seulement
+      fenetre: false,
+      portail: { nom: nomFenetre(PORTAIL_DEFAUT.nom), logo },
+      etiquette: `Agent · ${cat.court}`,
+      titre: e.titre,
+      fin: e.fin,
+      texteFin: e.texteFin,
+      rassure: e.rassure,
+    };
   return {
     article: a.slug,
     cat,
     s,
     pec,
     essai,
+    fenetre: true,
     portail: { nom: nomFenetre((portail ?? PORTAIL_DEFAUT).nom), logo },
     etiquette: portail ? `Demande de PEC · ${nomFenetre(portail.nom)}` : `Agent · ${cat.court}`,
     titre: portail
@@ -460,7 +479,7 @@ export function CarteAgent({
       <p className="ress-cta-etiquette">{c.etiquette}</p>
       <p className="mt-2 font-serif text-[21px] leading-[1.22] text-rose">{c.titre}</p>
       <div className="mt-4">
-        <FenetreAgent c={c} />
+        {c.fenetre && <FenetreAgent c={c} />}
       </div>
       <div className="mt-4 flex flex-col gap-2">
         <BoutonPrincipal c={c} position="carte" classe="ress-cta-bouton" />
@@ -505,7 +524,7 @@ export function EncartAgent({
           </div>
           <p className="ress-cta-rassure gauche">{c.rassure}</p>
         </div>
-        <FenetreAgent c={c} />
+        {c.fenetre && <FenetreAgent c={c} />}
       </div>
     </section>
   );

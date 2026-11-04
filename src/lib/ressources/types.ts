@@ -12,20 +12,27 @@ export type CategorySlug =
   | "conformite"
   | "glossaire";
 
-export type VerticaleSlug =
-  | "optique"
-  | "dentaire"
-  | "cliniques"
-  | "ehpad"
-  | "centres"
-  | "laboratoires"
-  | "audio"
-  | "pharmacie";
+export type VerticaleSlug = "optique" | "dentaire" | "centres" | "pharmacie" | "cliniques";
+
+/**
+ * Métiers du relevé de l'annuaire (08/10/2026), plus fins que les pages métier :
+ * l'audio, les laboratoires et les EHPAD n'ont plus de page mais restent dans le relevé.
+ */
+export type MetierAnnuaire = VerticaleSlug | "audio" | "laboratoires" | "ehpad";
 
 /** Auteur ou relecteur (config.json du moteur) ; `url` = profil LinkedIn, peut être null. */
 export type Personne = { name: string; jobTitle?: string; photo?: string; url?: string | null };
 
 export type LienInterne = { id?: string; slug: string; anchor: string; type: string };
+
+/** Textes des appels à l'action d'un article hors optique (scripts/seo-engine/metiers/*.md, « Encart final »). */
+export type EncartMetier = {
+  titre: string;
+  fin: string;
+  texteFin: string;
+  etapes: [string, string, string];
+  rassure: string;
+};
 
 export type RessourceJson = {
   slug: string;
@@ -66,6 +73,8 @@ export type RessourceJson = {
   wave?: number;
   /** Métiers concernés (facultatif ; par défaut l'optique). */
   verticales?: VerticaleSlug[];
+  /** Encart de fin propre au métier, recopié de la fiche métier par le moteur (absent en optique). */
+  encart?: EncartMetier;
   /** Fichier de content/apercu, jamais en production. */
   preview?: boolean;
 };

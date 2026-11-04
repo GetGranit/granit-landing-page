@@ -15,7 +15,7 @@ const DESCRIPTION = [
   `Page du webinar : ${PAGE}`,
 ].join("\n");
 
-/** 20261126T121500Z : le format UTC compact de Google et d'iCalendar. */
+/** 20261113T121500Z : le format UTC compact de Google et d'iCalendar. */
 const compact = (d: Date) =>
   d
     .toISOString()
@@ -55,6 +55,8 @@ export const fichierIcs = () =>
     "METHOD:PUBLISH",
     "BEGIN:VEVENT",
     "UID:webinar-ia-2026-11@getgranit.ai",
+    // Date déplacée du 26 au 13 novembre : la séquence monte pour que les agendas mettent à jour l'événement déjà importé.
+    "SEQUENCE:1",
     `DTSTAMP:${compact(new Date())}`,
     `DTSTART:${compact(DEBUT)}`,
     `DTEND:${compact(FIN)}`,

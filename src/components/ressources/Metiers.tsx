@@ -76,7 +76,7 @@ export function VotreMetier() {
       >
         Votre métier
       </h2>
-      <ul className="-mx-4 flex snap-x snap-mandatory scroll-px-4 gap-4 overflow-x-auto px-4 pb-2 [scrollbar-width:none] max-lg:[mask-image:linear-gradient(to_right,black_82%,transparent)] lg:mx-0 lg:grid lg:grid-cols-4 lg:gap-x-5 lg:gap-y-8 lg:overflow-visible lg:px-0">
+      <ul className="-mx-4 flex snap-x snap-mandatory scroll-px-4 gap-4 overflow-x-auto px-4 pb-2 [scrollbar-width:none] max-lg:[mask-image:linear-gradient(to_right,black_82%,transparent)] lg:mx-0 lg:grid lg:grid-cols-5 lg:gap-x-5 lg:gap-y-8 lg:overflow-visible lg:px-0">
         {actives.map((x) => (
           <li
             key={x.v.slug}

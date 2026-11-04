@@ -49,7 +49,7 @@ www.getgranit.ai/
 | `glossaire` | Glossaire | Sigles et notions (AMO, AMC, NOEMIE, DRE…) | Comptoir |
 | `conformite` | Conformité | Contrôle Assurance maladie, devis normalisé, LPP, RGPD, fraude | Gérant |
 
-Chaque article appartient à une seule catégorie. Pas d'article audioprothèse pour l'instant (focus optique).
+Chaque article appartient à une seule catégorie. Il concerne un ou plusieurs métiers (champ `verticales`, obligatoire) : le moteur envoie avec lui la **fiche métier** correspondante (`scripts/seo-engine/metiers/`), ou le tronc commun et les fiches résumées s'il en concerne plusieurs.
 
 ---
 
@@ -151,6 +151,8 @@ Le script refuse l'article (et réessaie une fois) si l'une de ces règles, ou l
 
 Pour la personne ou le modèle qui écrit. Ce sont des règles, pas des suggestions.
 
+Les exemples de ce guide viennent de l'optique, le premier métier du site. Pour un autre métier, la fiche métier envoyée avec l'article (lecteur, vocabulaire, sources, ce que Granit fait, interdits) prime sur eux : transposer la règle, jamais l'exemple.
+
 ---
 
 ## Les deux objectifs de chaque article
@@ -164,7 +166,7 @@ Les deux demandent la même chose : une structure claire, des réponses directes
 
 ## Le lecteur
 
-**Par défaut : la personne qui fait le tiers payant dans un magasin d'optique**, au comptoir ou en back-office (opticienne, conseiller de vente, gestionnaire tiers payant). Pour les catégories `gerer-son-tiers-payant` et `conformite` : **le gérant** d'un ou plusieurs magasins.
+**Le lecteur est celui de la fiche métier envoyée avec l'article** (section « Lecteur ») : opticien ou audioprothésiste, assistante dentaire, accueil d'un centre de santé, officine, bureau des entrées d'une clinique ou accueil d'un laboratoire. Le champ `reader` de la file précise son rôle : au comptoir ou en back-office, ou **le gérant** (catégories `gerer-son-tiers-payant` et `conformite`). Un article multi-métiers prend ses exemples dans chacun des métiers concernés.
 
 Cette personne :
 
@@ -231,7 +233,7 @@ L'ouverture :
 
 ### H2 : des questions que les gens tapent vraiment
 
-Chaque H2 est une question réelle, telle qu'un opticien la taperait dans Google ou la poserait à ChatGPT.
+Chaque H2 est une question réelle, telle que le lecteur de la fiche métier la taperait dans Google ou la poserait à ChatGPT.
 
 **Bons H2 :**
 - « Comment accéder à l'espace pro Almerys ? »
@@ -355,7 +357,7 @@ Autorisées, parce qu'elles prouvent qu'on connaît les écrans mieux que person
 
 ### Sources de référence
 
-À privilégier, en lien direct :
+D'abord les pages listées dans la section « Sources officielles autorisées » de la fiche métier (statut vérifié, avec ce qu'il ne faut pas écrire tel quel). Sinon, en lien direct :
 
 - **ameli.fr** (espace professionnels de santé), **service-public.fr**, **legifrance.gouv.fr**
 - **sesam-vitale.fr**, nomenclature LPP sur **codage.ext.cnamts.fr**
@@ -452,7 +454,7 @@ Chaque article mentionne Granit **une fois** dans le corps, puis dans l'encart f
 - **Une seule mention dans le corps.**
 - **Parler du résultat pour le lecteur**, pas des fonctionnalités : « ces demandes peuvent être saisies sans vous sur le portail », pas « Granit dispose d'un module de saisie ».
 - **Sans emphase** : pas de « solution puissante », « plateforme révolutionnaire ».
-- **Seulement des capacités réelles et validées** (voir « Faits »).
+- **Seulement des capacités réelles et validées** (voir « Faits »), et seulement celles que la fiche métier décrit dans « Ce que Granit fait pour ce métier ». Hors optique et audio, c'est une offre (« Granit peut… »), jamais un résultat ni un client.
 
 **Bonne mention :**
 > Quand ces demandes se comptent par dizaines chaque jour, la saisie sur chaque portail devient le goulot du magasin. C'est ce que fait [Granit](https://www.getgranit.ai) : des agents saisissent les prises en charge directement sur les portails des plateformes, puis renvoient le statut à l'équipe.
@@ -460,9 +462,11 @@ Chaque article mentionne Granit **une fois** dans le corps, puis dans l'encart f
 **Mauvaise mention :**
 > Granit est la meilleure solution pour automatiser votre tiers payant. Essayez-la dès aujourd'hui !
 
-### L'encart final (texte fixe, ne pas modifier)
+### L'encart final (posé par la page, jamais dans le corps)
 
-Texte validé le 07/10/2026. La promesse « 48 h » vit uniquement ici, jamais dans le corps des articles.
+L'encart suit la fiche métier : en optique et en audio, celui de la catégorie (texte validé le 07/10/2026 ci-dessous) ; pour les autres métiers et le tronc, celui de la section « Encart final » de la fiche, que le moteur recopie dans l'article. La promesse « 48 h » ne vit que dans l'encart optique, jamais dans le corps des articles.
+
+Encart optique :
 
 ```html
 <div class="post-cta">
