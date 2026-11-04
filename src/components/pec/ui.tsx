@@ -19,7 +19,7 @@ export function PecShell({
     <div className="min-h-screen" style={{ background: "var(--bg2)", color: "var(--text-soft)" }}>
       <header className="mx-auto flex max-w-[620px] items-center justify-between gap-4 px-4 py-4">
         <Link to="/" className="flex items-center gap-2" style={{ color: "var(--text)" }}>
-          <img src={logoMonogram} alt="Granit" className="h-7 w-auto" />
+          <img src={logoMonogram} width={445} height={96} alt="Granit" className="h-7 w-auto" />
         </Link>
         <Progress value={step / total} />
       </header>

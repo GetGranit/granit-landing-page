@@ -19,18 +19,25 @@ export function PhotoMetier({
 }) {
   return (
     <div className={`relative overflow-hidden bg-[var(--bg3)] ${forme}`}>
-      <img
-        src={photoVerticale(v.slug, 800)}
-        srcSet={`${photoVerticale(v.slug, 800)} 800w, ${photoVerticale(v.slug, 1600)} 1600w`}
-        sizes={tailles}
-        width={1600}
-        height={900}
-        alt={v.alt}
-        loading={chargement === "lazy" ? "lazy" : "eager"}
-        fetchPriority={chargement === "haute" ? "high" : undefined}
-        decoding="async"
-        className="h-full w-full object-cover transition-transform duration-500 ease-[var(--ease-out-quint)] group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
-      />
+      <picture className="contents">
+        <source
+          type="image/webp"
+          srcSet={`${photoVerticale(v.slug, 800, "webp")} 800w, ${photoVerticale(v.slug, 1600, "webp")} 1600w`}
+          sizes={tailles}
+        />
+        <img
+          src={photoVerticale(v.slug, 800)}
+          srcSet={`${photoVerticale(v.slug, 800)} 800w, ${photoVerticale(v.slug, 1600)} 1600w`}
+          sizes={tailles}
+          width={1600}
+          height={900}
+          alt={v.alt}
+          loading={chargement === "lazy" ? "lazy" : "eager"}
+          fetchPriority={chargement === "haute" ? "high" : undefined}
+          decoding="async"
+          className="h-full w-full object-cover transition-transform duration-500 ease-[var(--ease-out-quint)] group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+        />
+      </picture>
     </div>
   );
 }

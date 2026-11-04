@@ -3,6 +3,7 @@
    la taille et la vitesse de la roue se recalculent à la largeur de l'écran, comme dans la maquette.
    La roue se met en pause hors écran et quand l'onglet est caché ; elle continue au survol (revue du 30 oct.). */
 import { useEffect, useRef, type CSSProperties } from "react";
+import { tailleLogo } from "@/lib/tailles-logos";
 import { useLanguage, useReveal } from "./socle";
 import "./connecteurs.css";
 
@@ -130,6 +131,7 @@ export function ConnecteursNouvelle() {
                   <span className="lm-cn-logo">
                     <img
                       src={`/home/connecteurs/${c.f}`}
+                      {...tailleLogo(`/home/connecteurs/${c.f}`)}
                       alt=""
                       className={c.sq ? "sq" : undefined}
                       loading="lazy"

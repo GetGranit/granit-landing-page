@@ -9,7 +9,12 @@ import {
 } from "@/lib/ressources/contenu";
 import { breadcrumbLd } from "@/lib/ressources/seo";
 import { VERTICALE_PRINCIPALE, verticale } from "@/lib/ressources/verticales";
-import { aCouvertureFenetre, photoFiche, src } from "@/lib/ressources/photos";
+import {
+  aCouvertureFenetre,
+  photoFiche,
+  prechargePhoto,
+  TAILLES_PILIER,
+} from "@/lib/ressources/photos";
 
 export const Route = createFileRoute("/ressources/categorie/$category")({
   loader: ({ params }) => {
@@ -36,7 +41,7 @@ export const Route = createFileRoute("/ressources/categorie/$category")({
       ],
       links:
         pilier && !aCouvertureFenetre(pilier)
-          ? [{ rel: "preload", as: "image", href: src(photoFiche(pilier), 1600) }]
+          ? [prechargePhoto(photoFiche(pilier), TAILLES_PILIER)]
           : [],
     };
   },

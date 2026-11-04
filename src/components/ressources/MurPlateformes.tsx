@@ -7,6 +7,7 @@ import { useLanguage, type Lang } from "@/lib/i18n";
 import { dateLang } from "@/lib/ressources/contenu";
 import { GENRES, GENRES_EN, annuaire, type Entree, type Genre } from "@/lib/ressources/annuaire";
 import { logoPlateforme } from "@/lib/ressources/logos";
+import { tailleLogo } from "@/lib/tailles-logos";
 import type { Fiche, MetierAnnuaire } from "@/lib/ressources/types";
 
 /** Cases du mur, case de fin comprise : 4 rangées de 5 (ou 5 de 4). La vedette compte pour 4. */
@@ -251,6 +252,7 @@ function Marque({ e }: { e: Entree }) {
       <span className="flex items-center gap-2.5">
         <img
           src={e.logo}
+          {...tailleLogo(e.logo)}
           alt=""
           loading="lazy"
           className={`size-9 object-contain mix-blend-multiply ${teinte}`}
@@ -266,6 +268,7 @@ function Marque({ e }: { e: Entree }) {
   return (
     <img
       src={e.logo}
+      {...tailleLogo(e.logo)}
       alt=""
       loading="lazy"
       className={`h-auto w-auto object-contain mix-blend-multiply ${e.vertical ? "max-h-14 max-w-[min(96px,60%)]" : "max-h-9 max-w-[min(136px,78%)]"} ${teinte}`}
@@ -446,7 +449,12 @@ function Vedette({ e, t, lang }: { e: Entree; t: Copy; lang: Lang }) {
       >
         <div className="flex items-start justify-between gap-4">
           {logo ? (
-            <img src={logo} alt={t.logo(e.nom)} className="size-16 object-contain md:size-20" />
+            <img
+              src={logo}
+              {...tailleLogo(logo)}
+              alt={t.logo(e.nom)}
+              className="size-16 object-contain md:size-20"
+            />
           ) : (
             <Monogramme nom={e.nom} />
           )}

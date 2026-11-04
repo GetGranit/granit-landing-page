@@ -12,6 +12,7 @@ import { calcomDemoUrl } from "@/lib/calcom";
 import { useLanguage, type Lang } from "@/lib/i18n";
 import { categorie } from "@/lib/ressources/contenu";
 import { estSymbole, logoPlateforme, nomFenetre } from "@/lib/ressources/logos";
+import { tailleLogo } from "@/lib/tailles-logos";
 import type { Plateforme, RessourceJson } from "@/lib/ressources/types";
 
 /**
@@ -528,6 +529,7 @@ function FenetreAgent({ c }: { c: Contenu }) {
       <>
         <img
           src={portail.logo}
+          {...tailleLogo(portail.logo)}
           alt=""
           className={estSymbole(portail.logo) ? "symbole" : "logotype"}
         />

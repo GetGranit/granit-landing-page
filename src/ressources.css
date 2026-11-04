@@ -369,6 +369,7 @@ body {
 }
 .ress-fenetre-barre .logotype {
   display: block;
+  width: auto;
   height: calc(var(--s) * 4.6);
   max-width: calc(var(--s) * 30);
   object-fit: contain;
@@ -775,6 +776,7 @@ body {
   font-weight: 600;
 }
 .ress-cta-portail img.logotype {
+  width: auto;
   height: 15px;
   max-width: 76px;
   object-fit: contain;
