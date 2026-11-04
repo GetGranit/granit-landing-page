@@ -8,8 +8,9 @@ Le site est en français. La rubrique Ressources (https://www.getgranit.ai/resso
 
 - [Accueil](https://www.getgranit.ai/): Présentation de Granit et de ses agents IA pour l'administratif santé.
 - [Agents](https://www.getgranit.ai/agents): Les agents par métier et par tâche : prises en charge, rejets, paiements, relances, facturation.
-- [Tarifs](https://www.getgranit.ai/tarifs): Tarification à l'usage : forfait plateforme par centre et fee par agent selon les volumes traités.
+- [Tarifs](https://www.getgranit.ai/tarifs): Granit se facture à l'usage : le tarif se calcule en rendez-vous, sur les dossiers du client.
 - [Sécurité](https://www.getgranit.ai/securite): Hébergement, protection des données de santé et conformité.
+- [Levée de fonds](https://www.getgranit.ai/levee-de-fonds): Le communiqué de presse de la levée de fonds de Granit, menée par Seedcamp.
 - [Programme partenaires](https://www.getgranit.ai/affiliation): Programme d'affiliation pour les professionnels de santé et prescripteurs.
 
 ## Ressources par métier
