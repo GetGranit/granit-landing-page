@@ -3872,7 +3872,7 @@
     ],
     "searchVolume": 60,
     "unsplashQuery": "optical store manager",
-    "status": "pending",
+    "status": "published",
     "wave": 3,
     "level": "Fille",
     "parentSlug": "gerer-tiers-payant-magasin",
@@ -3969,7 +3969,8 @@
       "gtp-gestion-tiers-payant",
       "france-tiers-payant",
       "granit"
-    ]
+    ],
+    "publishedAt": "2026-11-04"
   },
   {
     "id": "E2a",
@@ -4021,7 +4022,7 @@
       "optibot"
     ],
     "searchVolume": null,
-    "status": "review",
+    "status": "published",
     "wave": 3,
     "level": "Fille",
     "parentSlug": "solutions-tiers-payant-optique",
@@ -4049,7 +4050,7 @@
         "type": "parent"
       }
     ],
-    "publishedAt": "2026-11-03"
+    "publishedAt": "2026-11-04"
   },
   {
     "id": "E2c",
@@ -4061,7 +4062,7 @@
       "stpps"
     ],
     "searchVolume": null,
-    "status": "pending",
+    "status": "published",
     "wave": 3,
     "level": "Fille",
     "parentSlug": "solutions-tiers-payant-optique",
@@ -4088,6 +4089,10 @@
         "anchor": "toutes les solutions de tiers payant en optique",
         "type": "parent"
       }
+    ],
+    "publishedAt": "2026-11-04",
+    "verticales": [
+      "optique"
     ]
   },
   {
@@ -4100,7 +4105,7 @@
       "tiers payant assistance"
     ],
     "searchVolume": null,
-    "status": "pending",
+    "status": "published",
     "wave": 3,
     "level": "Fille",
     "parentSlug": "solutions-tiers-payant-optique",
@@ -4127,6 +4132,10 @@
         "anchor": "toutes les solutions de tiers payant en optique",
         "type": "parent"
       }
+    ],
+    "publishedAt": "2026-11-04",
+    "verticales": [
+      "optique"
     ]
   },
   {
@@ -4139,7 +4148,7 @@
       "sicorfe"
     ],
     "searchVolume": null,
-    "status": "waiting",
+    "status": "published",
     "wave": 3,
     "level": "Fille",
     "parentSlug": "solutions-tiers-payant-optique",
@@ -4166,6 +4175,10 @@
         "anchor": "toutes les solutions de tiers payant en optique",
         "type": "parent"
       }
+    ],
+    "publishedAt": "2026-11-04",
+    "verticales": [
+      "optique"
     ]
   },
   {
@@ -4178,7 +4191,7 @@
       "sojema"
     ],
     "searchVolume": null,
-    "status": "waiting",
+    "status": "published",
     "wave": 3,
     "level": "Fille",
     "parentSlug": "solutions-tiers-payant-optique",
@@ -4205,6 +4218,10 @@
         "anchor": "toutes les solutions de tiers payant en optique",
         "type": "parent"
       }
+    ],
+    "publishedAt": "2026-11-04",
+    "verticales": [
+      "optique"
     ]
   },
   {
@@ -4217,7 +4234,7 @@
       "izisante"
     ],
     "searchVolume": null,
-    "status": "waiting",
+    "status": "published",
     "wave": 3,
     "level": "Fille",
     "parentSlug": "solutions-tiers-payant-optique",
@@ -4244,6 +4261,10 @@
         "anchor": "toutes les solutions de tiers payant en optique",
         "type": "parent"
       }
+    ],
+    "publishedAt": "2026-11-04",
+    "verticales": [
+      "optique"
     ]
   },
   {

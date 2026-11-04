@@ -4,7 +4,7 @@
   "modele": "prestataire",
   "logo": null,
   "checkedOn": "2026-11-03",
-  "aRelire": true,
+  "aRelire": false,
   "identite": {
     "raisonSociale": "LITIPHARMA (SARL), nom commercial FRANCE TIERS PAYANT",
     "siege": "Meaux (77)",
@@ -155,5 +155,5 @@
       "consulte": "2026-11-03"
     }
   },
-  "_relu": "PAS ENCORE RELU : fiche créée/complétée par l'équipe de nuit du 03/11/2026, à relire par Paul."
+  "_relu": "Go de Paul le 04/11/2026 après aperçu local des pages ; fiche non relue ligne à ligne."
 }
