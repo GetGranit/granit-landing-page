@@ -96,6 +96,20 @@ const optiqueEn: PageMetier = {
   ressources: "optique",
 };
 
+/** Les vrais logos des logiciels et plateformes nommés sur les pages métier. Sans logo : le nom, en texte. */
+export const LOGOS: Record<string, string> = {
+  Cosium: "/home/connecteurs/cosium.png",
+  Optimum: "/logos/optimum.png",
+  Almerys: "/home/connecteurs/almerys.png",
+  Viamédis: "/logos/annuaire/viamedis.svg",
+  Santéclair: "/logos/santeclair.svg",
+  Kalixia: "/logos/annuaire/kalixia.png",
+  "Carte Blanche": "/logos/annuaire/carte-blanche.svg",
+};
+
+/** Logos réduits à un symbole : le nom s'affiche à côté. */
+export const LOGOS_AVEC_NOM = ["Optimum"];
+
 export const PAGES: Partial<Record<SlugMetier, { fr: PageMetier; en: PageMetier }>> = {
   optique: { fr: optiqueFr, en: optiqueEn },
 };
