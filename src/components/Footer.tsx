@@ -51,14 +51,15 @@ const copy = {
   },
 };
 
-export function Footer() {
+/** collé : sans marge haute, sous une section pleine largeur (le CTA de fin de l'accueil). */
+export function Footer({ colle = false }: { colle?: boolean }) {
   const { lang } = useLanguage();
   const t = copy[lang];
   const posthog = usePostHog();
 
   return (
     <footer
-      className="section-sombre relative mt-24 overflow-clip"
+      className={`section-sombre relative overflow-clip ${colle ? "" : "mt-24"}`}
       style={{ background: "var(--encre-2)" }}
     >
       <div className="mx-auto max-w-[1240px] px-6 py-14">
