@@ -178,9 +178,7 @@
     "ia-generative-sante-cadre",
     "ia-vs-rpa-sante"
   ],
-  "verticales": [
-    "pharmacie"
-  ],
+  "verticales": [],
   "refonte": true,
   "moteur": {
     "model": "claude-opus-5-5",

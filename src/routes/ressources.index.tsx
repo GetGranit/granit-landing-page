@@ -8,7 +8,7 @@ import { aCouvertureFenetre, photoFiche, src } from "@/lib/ressources/photos";
 
 const TITLE = "Ressources pour les professionnels de santé : mutuelles, paiements - Granit";
 const DESC =
-  "Opticiens, dentistes, cliniques, EHPAD, centres de santé, laboratoires, audioprothésistes, pharmaciens : des réponses pratiques sur les mutuelles, les remboursements, les paiements et la réglementation.";
+  "Opticiens et audioprothésistes, centres dentaires, centres de santé et ophtalmologie, pharmacies, cliniques et laboratoires : des réponses pratiques sur les mutuelles, les remboursements, les paiements et la réglementation.";
 
 const breadcrumb = {
   "@context": "https://schema.org",
