@@ -7,7 +7,8 @@ import { useLanguage, type Lang } from "@/lib/i18n";
 import { dateLang } from "@/lib/ressources/contenu";
 import { GENRES, GENRES_EN, annuaire, type Entree, type Genre } from "@/lib/ressources/annuaire";
 import { logoPlateforme } from "@/lib/ressources/logos";
-import type { Fiche, MetierAnnuaire } from "@/lib/ressources/types";
+import type { Fiche, VerticaleSlug } from "@/lib/ressources/types";
+import { ORDRE_VERTICALES, verticale } from "@/lib/ressources/verticales";
 
 /** Cases du mur, case de fin comprise : 4 rangées de 5 (ou 5 de 4). La vedette compte pour 4. */
 const CASES = 20;
@@ -16,29 +17,21 @@ const CASES_MOBILE = 12;
 
 const FILTRES: (Genre | "tous")[] = ["tous", "plateforme", "reseau", "mutuelle"];
 
-/** Nom court d'un métier sur les étiquettes des cases. */
-const METIER_COURT: Record<MetierAnnuaire, string> = {
+/** Nom d'un métier sur les étiquettes des cases, plus court que celui du filtre. */
+const METIER_COURT: Record<VerticaleSlug, string> = {
   optique: "Optique",
-  audio: "Audio",
   dentaire: "Dentaire",
-  pharmacie: "Pharmacie",
-  laboratoires: "Labos",
-  cliniques: "Cliniques",
   centres: "Centres",
-  ehpad: "EHPAD",
+  pharmacie: "Pharmacie",
+  cliniques: "Cliniques",
 };
 const METIER_COURT_EN: typeof METIER_COURT = {
   optique: "Optical",
-  audio: "Hearing",
   dentaire: "Dental",
-  pharmacie: "Pharmacy",
-  laboratoires: "Labs",
-  cliniques: "Clinics",
   centres: "Centers",
-  ehpad: "Nursing homes",
+  pharmacie: "Pharmacy",
+  cliniques: "Clinics",
 };
-/** Ordre des métiers dans le filtre : les métiers du comptoir d'abord. */
-const ORDRE_METIERS = Object.keys(METIER_COURT) as MetierAnnuaire[];
 
 const copy = {
   fr: {
@@ -102,7 +95,7 @@ const copy = {
 };
 type Copy = (typeof copy)["fr"];
 /** À partir de ce nombre de métiers, l'étiquette dit « Tous métiers ». */
-const TOUS_METIERS = 6;
+const TOUS_METIERS = 4;
 
 const mono = "font-mono text-[10.5px] uppercase tracking-[0.1em]";
 const focus =
@@ -113,11 +106,11 @@ export function MurPlateformes({ fiches }: { fiches: Fiche[] }) {
   const { lang } = useLanguage();
   const t = copy[lang];
   const [genre, setGenre] = useState<Genre | "tous">("tous");
-  const [metier, setMetier] = useState<MetierAnnuaire | "tous">("tous");
+  const [metier, setMetier] = useState<VerticaleSlug | "tous">("tous");
   const entrees = annuaire(fiches);
   const passe = (e: Entree, g = genre, m = metier) =>
     (g === "tous" || e.genre === g) && (m === "tous" || e.metiers.includes(m));
-  const metiers = ORDRE_METIERS.filter((v) => entrees.some((e) => e.metiers.includes(v)));
+  const metiers = ORDRE_VERTICALES.filter((v) => entrees.some((e) => e.metiers.includes(v)));
   const enLigne = entrees.filter((e) => e.fiche).length;
   const dernierReleve = entrees
     .map((e) => e.checkedOn ?? "")
@@ -193,7 +186,7 @@ export function MurPlateformes({ fiches }: { fiches: Fiche[] }) {
                   onClick={() => setMetier(v)}
                   className={`${focus} shrink-0 whitespace-nowrap rounded-full border px-3 py-1 text-[13px] transition-colors ${actif ? "border-transparent bg-succes-fond text-succes-texte" : "border-[var(--border)] text-[var(--text-soft)] hover:border-[var(--text-muted)] hover:text-[var(--text)]"}`}
                 >
-                  {v === "tous" ? t.tousMetiers : t.metiers[v]}
+                  {v === "tous" ? t.tousMetiers : verticale(v, lang)!.court}
                 </button>
               );
             })}
@@ -279,8 +272,8 @@ function Etiquettes({
   actif,
   t,
 }: {
-  metiers: MetierAnnuaire[];
-  actif: MetierAnnuaire | "tous";
+  metiers: VerticaleSlug[];
+  actif: VerticaleSlug | "tous";
   t: Copy;
 }) {
   if (metiers.length === 0) return null;
@@ -308,7 +301,7 @@ function Case({
   t,
 }: {
   e: Entree;
-  metier: MetierAnnuaire | "tous";
+  metier: VerticaleSlug | "tous";
   cacheMobile?: boolean;
   t: Copy;
 }) {
@@ -409,15 +402,7 @@ function CaseLien({
 }
 
 /** Tant qu'une seule fiche est en ligne, la dernière case dit ce qui arrive. */
-function CaseAVenir({
-  reste,
-  resteMobile,
-  t,
-}: {
-  reste: number;
-  resteMobile: number;
-  t: Copy;
-}) {
+function CaseAVenir({ reste, resteMobile, t }: { reste: number; resteMobile: number; t: Copy }) {
   return (
     <li className="bg-[var(--bg)]">
       <div className={`${cadre} items-start justify-between py-4`}>
@@ -463,9 +448,7 @@ function Vedette({ e, t, lang }: { e: Entree; t: Copy; lang: Lang }) {
           <dl className="mt-4 flex flex-wrap gap-x-8 gap-y-3 border-t border-[var(--border)] pt-4">
             {e.organismes > 0 && (
               <div className="flex flex-col-reverse">
-                <dt className="mt-1 text-[13px] text-[var(--text-soft)]">
-                  {t.selecteur}
-                </dt>
+                <dt className="mt-1 text-[13px] text-[var(--text-soft)]">{t.selecteur}</dt>
                 <dd className="font-serif text-[26px] leading-none tabular-nums">{e.organismes}</dd>
               </div>
             )}

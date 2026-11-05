@@ -17,6 +17,7 @@ export type VerticaleSlug = "optique" | "dentaire" | "centres" | "pharmacie" | "
 /**
  * Métiers du relevé de l'annuaire (08/10/2026), plus fins que les pages métier :
  * l'audio, les laboratoires et les EHPAD n'ont plus de page mais restent dans le relevé.
+ * Le hub les regroupe sur les métiers du site (METIER_DU_SITE dans annuaire.ts).
  */
 export type MetierAnnuaire = VerticaleSlug | "audio" | "laboratoires" | "ehpad";
 
