@@ -2,15 +2,15 @@
 // Pas d'import « @/… » : ce module est testé tel quel par node --test.
 
 /** Nom de la rubrique, en majuscules initiales comme dans la manchette. */
-export const NOM_RUBRIQUE = "Le Reste";
+export const NOM_RUBRIQUE = "Granité";
 
 export const SOUS_TITRE = {
-  fr: "Ce qui change pour vos équipes, hors du soin.",
-  en: "What changes for your teams, outside of care.",
+  fr: "La newsletter pour se tenir au courant de l’actualité santé.",
+  en: "The newsletter to keep up with healthcare news.",
 } as const;
 
-/** Nom de la newsletter, distinct de la rubrique. */
-export const NOM_NEWSLETTER = "Granité";
+/** Nom de la newsletter, le même que celui de la rubrique. */
+export const NOM_NEWSLETTER = NOM_RUBRIQUE;
 
 /** Fermée : le composant d'abonnement ne s'affiche pas et la fonction serveur refuse tout envoi. */
 export const NEWSLETTER_OUVERTE: boolean = false;
