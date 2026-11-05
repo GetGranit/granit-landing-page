@@ -29,7 +29,7 @@ export function Nav() {
   ] as const;
 
   return (
-    <header className="sticky top-0 z-50 px-3 pt-3 sm:px-6 sm:pt-4">
+    <header className="sticky top-0 z-50 px-3 py-1.5 sm:px-6 sm:py-2">
       <div
         className="relative mx-auto flex h-14 max-w-[1200px] items-center justify-between rounded-full px-3 pl-5 pr-2 transition-[background-color,border-color,box-shadow] duration-200 sm:px-4 sm:pl-6 sm:pr-2 lg:px-4"
         style={
