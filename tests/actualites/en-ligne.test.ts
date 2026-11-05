@@ -18,12 +18,16 @@ import {
   validerStructure,
 } from "../../scripts/actualites/en-ligne.mjs";
 
+// Une édition qu'on abîme exprès, champ par champ : le typage strict n'aide pas ici.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type Modele = Record<string, any>;
+
 const RACINE = fileURLToPath(new URL("./fixture", import.meta.url));
 const METIERS = metiersValides(RACINE);
 const modele = () => {
   const e = structuredClone(lireEditions(RACINE).find((x) => x.statut === "publie"));
   assert.ok(e);
-  return e as unknown as Record<string, any>;
+  return e as unknown as Modele;
 };
 
 /** Racine temporaire avec un seul fichier d'édition. */
@@ -112,7 +116,7 @@ test("publiée refusée avec une source non primaire seule", () => {
   assert.ok(validerPublication(e).includes("aucune source primaire"));
 });
 
-test("un relevé peut se publier sans source primaire", () => {
+test("un relevé sans aucune source peut se publier : il ne porte que des chiffres maison", () => {
   const e = modele();
   e.format = "le-releve";
   e.chiffres = [{ valeur: "1 sur 2", libelle: "en moins de 2 minutes" }];
@@ -121,13 +125,31 @@ test("un relevé peut se publier sans source primaire", () => {
   assert.deepEqual(validerPublication(e), []);
 });
 
+test("un relevé qui cite une source en exige une primaire", () => {
+  const e = modele();
+  e.format = "le-releve";
+  e.chiffres = [{ valeur: "1 sur 2", libelle: "en moins de 2 minutes" }];
+  e.sources[0].primaire = false;
+  assert.ok(validerPublication(e).includes("aucune source primaire"));
+});
+
+test("hors relevé, aucune source reste refusé", () => {
+  const e = modele();
+  e.sources = [];
+  assert.ok(validerPublication(e).includes("aucune source primaire"));
+});
+
 test("publiée refusée avec une marque, y compris en profondeur", () => {
   for (const poser of [
-    (e: Record<string, any>) => (e.inconnu = ["[à vérifier] état du budget"]),
-    (e: Record<string, any>) => (e.chapo = "Texte [date] à poser."),
-    (e: Record<string, any>) => (e.qui.tableau.lignes[0][1] = "[à vérifier]"),
-    (e: Record<string, any>) => (e.sources[0].libelle = "Moniteur [à sourcer]"),
-    (e: Record<string, any>) => (e.gestes = ["À contrôler le matin de la publication."]),
+    (e: Modele) => (e.inconnu = ["[à vérifier] état du budget"]),
+    (e: Modele) => (e.chapo = "Texte [date] à poser."),
+    (e: Modele) => (e.qui.tableau.lignes[0][1] = "[à vérifier]"),
+    (e: Modele) => (e.sources[0].libelle = "Moniteur [à sourcer]"),
+    (e: Modele) => (e.gestes = ["À contrôler le matin de la publication."]),
+    (e: Modele) => (e.gestes = ["A vérifier : le budget"]),
+    (e: Modele) => (e.gestes = ["A confirmer"]),
+    (e: Modele) => (e.inconnu = ["[à vérifier état du budget"]),
+    (e: Modele) => (e.inconnu = ["état du budget à vérifier]"]),
   ]) {
     const e = modele();
     poser(e);
@@ -158,6 +180,9 @@ test("une phrase n'est pas une marque", () => {
   assert.equal(estMarque("[à vérifier] état"), true);
   assert.equal(estMarque("à contrôler"), true);
   assert.equal(estMarque("À vérifier : le budget"), true);
+  assert.equal(estMarque("A verifier"), true);
+  assert.equal(estMarque("Crochet seul ["), true);
+  assert.equal(estMarque("Crochet seul ]"), true);
 });
 
 test("metaDescription hors de 120 à 160 refusée à la publication", () => {
@@ -190,7 +215,7 @@ test("seoTitle de 61 caractères refusé, 60 accepté", () => {
 });
 
 test("dates, url et relecteur mal formés refusés", () => {
-  const cas: [string, (e: Record<string, any>) => void, string][] = [
+  const cas: [string, (e: Modele) => void, string][] = [
     ["date", (e) => (e.datePublished = "05/11/2026"), "datePublished invalide"],
     ["ordre", (e) => (e.dateModified = "2026-11-01"), "dateModified avant datePublished"],
     ["url", (e) => (e.sources[0].url = "http://a.fr"), "source sans url https : http://a.fr"],

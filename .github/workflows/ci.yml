@@ -44,6 +44,10 @@ jobs:
       - name: Build
         run: npm run build
 
+      # Sur la sortie réelle du build : aucun brouillon, rubrique absente tant que rien n'est publié.
+      - name: Actualités (build sans brouillon)
+        run: node scripts/actualites/verifier-build.mjs
+
       - name: Lint (non bloquant, déjà rouge sur main)
         continue-on-error: true
         run: npm run lint

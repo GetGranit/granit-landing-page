@@ -47,14 +47,17 @@ const estDate = (v) =>
   typeof v === "string" && DATE.test(v) && !Number.isNaN(Date.parse(`${v}T00:00:00Z`));
 
 /**
- * Une marque de relecture : un crochet n'importe où, ou un texte qui commence par une consigne
- * (« À contrôler le matin de la publication… »). « La liste à vérifier avant un contrôle » ou
- * « il reste à confirmer » sont des phrases, pas des marques : elles ne bloquent pas.
+ * Une marque de relecture : un crochet n'importe où, même seul, ou un texte qui commence par une
+ * consigne, accentuée ou non (« À contrôler le matin de la publication… », « A verifier : … »).
+ * « La liste à vérifier avant un contrôle » ou « il reste à confirmer » sont des phrases, pas des
+ * marques : elles ne bloquent pas.
  */
 export function estMarque(texte) {
   return (
-    /\[[^\]]*\]/.test(texte) ||
-    /^\s*à (vérifier|sourcer|confirmer|préciser|retrouver|contrôler|compléter)(\s|:|$)/i.test(texte)
+    /[[\]]/.test(texte) ||
+    /^\s*[àa] (v[ée]rifier|sourcer|confirmer|pr[ée]ciser|retrouver|contr[ôo]ler|compl[ée]ter)(\s|:|$)/i.test(
+      texte,
+    )
   );
 }
 
@@ -126,8 +129,7 @@ export function validerStructure(e, metiers) {
   if (typeof e.seoTitle === "string" && e.seoTitle.length > 60)
     erreurs.push(`seoTitle de ${e.seoTitle.length} caractères (60 au plus)`);
   if (!Array.isArray(e.metiers) || e.metiers.length === 0) erreurs.push("metiers manquants");
-  for (const m of e.metiers ?? [])
-    if (!metiers.includes(m)) erreurs.push(`métier inconnu : ${m}`);
+  for (const m of e.metiers ?? []) if (!metiers.includes(m)) erreurs.push(`métier inconnu : ${m}`);
   if (!estDate(e.datePublished)) erreurs.push("datePublished invalide");
   if (!estDate(e.dateModified)) erreurs.push("dateModified invalide");
   if (estDate(e.datePublished) && estDate(e.dateModified) && e.dateModified < e.datePublished)
@@ -154,7 +156,10 @@ export function validerStructure(e, metiers) {
 export function validerPublication(e) {
   const erreurs = [];
   if (!e.relecteur) erreurs.push("aucun relecteur");
-  if (e.format !== "le-releve" && !e.sources?.some((s) => s?.primaire === true))
+  // Seule exception : un relevé qui ne cite aucune source, car il ne porte que des chiffres maison.
+  // Dès qu'un relevé cite une source, la règle commune s'applique.
+  const relevesSansSource = e.format === "le-releve" && (e.sources?.length ?? 0) === 0;
+  if (!relevesSansSource && !e.sources?.some((s) => s?.primaire === true))
     erreurs.push("aucune source primaire");
   const longueur = e.metaDescription?.length ?? 0;
   if (longueur < 120 || longueur > 160)

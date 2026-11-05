@@ -13,13 +13,7 @@ import { NouvellesGranit } from "./NouvellesGranit";
 import { Releve } from "./Releve";
 
 /** La page /actualites. La répartition vient de repartir() : une colonne de moins si rien ne la remplit. */
-export function Rubrique({
-  fiches,
-  metier,
-}: {
-  fiches: FicheEdition[];
-  metier?: VerticaleSlug;
-}) {
+export function Rubrique({ fiches, metier }: { fiches: FicheEdition[]; metier?: VerticaleSlug }) {
   const { lang } = useLanguage();
   const { une, cote, releve, grille } = repartir(fiches, metier);
   const adroite = releve ? <Releve fiche={releve} /> : cote && <Carte fiche={cote} taille="cote" />;

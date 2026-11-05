@@ -3,7 +3,6 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { Introuvable } from "@/components/actualites/Introuvable";
 import { JsonLd } from "@/components/actualites/JsonLd";
 import { Rubrique } from "@/components/actualites/Rubrique";
-import { fiches } from "@/lib/actualites/contenu";
 import { rubriqueOuverte } from "@/lib/actualites/ouverture";
 import { filRubrique, headRubrique } from "@/lib/actualites/seo";
 import { breadcrumbLd } from "@/lib/ressources/seo";
@@ -16,15 +15,18 @@ export const Route = createFileRoute("/actualites/")({
     return metier ? { metier } : {};
   },
   // Rien de publié en production : 404, et aucune balise de la rubrique sur cette page.
-  loader: () => {
+  loader: async () => {
     if (!rubriqueOuverte) throw notFound();
+    const { fiches } = await import("@/lib/actualites/contenu");
+    return fiches;
   },
-  head: () => (rubriqueOuverte ? headRubrique(fiches) : {}),
+  head: ({ loaderData }) => (loaderData ? headRubrique(loaderData) : {}),
   component: PageRubrique,
   notFoundComponent: Introuvable,
 });
 
 function PageRubrique() {
+  const fiches = Route.useLoaderData();
   const { metier } = Route.useSearch();
   return (
     <SiteLayout>

@@ -61,7 +61,10 @@ test("headEdition : seoTitle, indexable une fois publiée, noindex en brouillon"
   const publie = headEdition(edition).meta as Record<string, string>[];
   assert.equal(publie[0].title, "Le titre SEO");
   assert.equal(robots(publie), undefined);
-  const brouillon = headEdition({ ...edition, statut: "brouillon" }).meta as Record<string, string>[];
+  const brouillon = headEdition({ ...edition, statut: "brouillon" }).meta as Record<
+    string,
+    string
+  >[];
   assert.equal(robots(brouillon)?.content, "noindex, nofollow");
 });
 

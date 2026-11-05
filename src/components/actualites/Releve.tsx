@@ -13,12 +13,12 @@ export function Releve({ fiche }: { fiche: FicheEdition }) {
       params={{ slug: fiche.slug }}
       className="act-encre act-sombre act-releve"
     >
-      <span>
+      <div>
         <span className="act-etiquette">
           {t.releve} · {moisAnnee(fiche.datePublished, lang)}
         </span>
         <h2 className="act-releve-titre">{t.releveTitre}</h2>
-      </span>
+      </div>
       {(fiche.chiffres ?? []).map((c) => (
         <span className="act-chiffre" key={c.libelle}>
           <b className="act-serif">{c.valeur}</b>

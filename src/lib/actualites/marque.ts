@@ -15,11 +15,11 @@ export const NOM_NEWSLETTER = "Le Reste";
 /** Fermée : le composant d'abonnement ne s'affiche pas et la fonction serveur refuse tout envoi. */
 export const NEWSLETTER_OUVERTE: boolean = false;
 
-/** Rythme de parution, encore à trancher. */
-export const RYTHME = {
-  fr: "Toutes les deux semaines",
-  en: "Every two weeks",
-} as const;
+/**
+ * Rythme de parution, affiché seulement une fois décidé : null tant que Paul n'a pas tranché.
+ * À renseigner en { fr, en }, par exemple { fr: "Toutes les deux semaines", en: "Every two weeks" }.
+ */
+export const RYTHME: { fr: string; en: string } | null = null;
 
 /** Sépare le dernier mot, celui qui prend l'accent dans la manchette. */
 export function decouperNom(nom: string = NOM_RUBRIQUE): { debut: string; accent: string } {

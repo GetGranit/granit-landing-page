@@ -162,7 +162,10 @@ const pagesActualites = editions.length
   ? [
       {
         loc: `${SITE}/actualites`,
-        lastmod: editions.map((e) => e.dateModified).sort().at(-1),
+        lastmod: editions
+          .map((e) => e.dateModified)
+          .sort()
+          .at(-1),
         freq: "weekly",
         priority: "0.7",
       },

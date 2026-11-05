@@ -34,7 +34,7 @@ export const LIBELLES = {
     change: "Ce qui change",
     qui: "Qui est concerné",
     gestes: "Ce que vous faites",
-    inconnu: "Ce qu'on ne sait pas encore",
+    inconnu: "Ce qu’on ne sait pas encore",
     sources: "Sources",
     metier: "Métier",
     lecture: "Lecture",
@@ -42,19 +42,21 @@ export const LIBELLES = {
     relu: "Relu par",
     relecturePrevue: "Relecture à venir",
     autresEditions: "Autres éditions",
-    signature: "Préparé avec l'IA, vérifié par l'équipe Granit.",
+    signature: "Préparé par nos agents, vérifié par l’équipe Granit.",
     demo: "Demander une démo",
     retour: "Toutes les éditions",
-    introuvable: "Cette édition n'existe pas.",
+    introuvable: "Cette édition n’existe pas.",
     brouillon: "Brouillon, non publié",
     recevoir: "Recevoir",
     accroche: "Ce qui change, et ce que vous faites.",
     courriel: "Votre e-mail professionnel",
-    abonner: "Je m'abonne",
-    abonnementOk: "C'est noté, merci.",
-    abonnementErreur: "L'envoi a échoué. Réessayez dans un instant.",
+    abonner: "Je m’abonne",
+    abonnementOk: "C’est noté, merci.",
+    abonnementErreur: "L’envoi a échoué. Réessayez dans un instant.",
     consentement:
-      "En vous abonnant, vous acceptez de recevoir cette newsletter par e-mail. Vous pouvez vous désabonner à tout moment.",
+      "En vous abonnant, vous acceptez que Granit utilise votre adresse pour vous envoyer cette newsletter par e-mail. Vous pouvez vous désabonner à tout moment.",
+    confidentialite: "Confidentialité",
+    garanties: "Infrastructure certifiée HDS · Données dans l’UE · RGPD",
   },
   en: {
     rubrique: "News",
@@ -77,7 +79,7 @@ export const LIBELLES = {
     relu: "Reviewed by",
     relecturePrevue: "Review pending",
     autresEditions: "Other issues",
-    signature: "Prepared with AI, checked by the Granit team.",
+    signature: "Prepared by our agents, checked by the Granit team.",
     demo: "Book a demo",
     retour: "All issues",
     introuvable: "This issue does not exist.",
@@ -89,13 +91,15 @@ export const LIBELLES = {
     abonnementOk: "Thank you, you are on the list.",
     abonnementErreur: "Sending failed. Please try again shortly.",
     consentement:
-      "By subscribing, you agree to receive this newsletter by email. You can unsubscribe at any time.",
+      "By subscribing, you agree that Granit may use your address to send you this newsletter by email. You can unsubscribe at any time.",
+    confidentialite: "Privacy",
+    garanties: "HDS-certified infrastructure · Data in the EU · GDPR",
   },
 } as const;
 
 /** Description de la rubrique pour les moteurs de recherche, 120 à 160 caractères. */
 export const DESCRIPTION_RUBRIQUE =
-  "Ce qui change pour vos équipes, hors du soin : règles, contrôles et réflexes de l'administratif santé, avec les sources et ce qu'il faut faire.";
+  "Ce qui change pour vos équipes, hors du soin : règles, contrôles et réflexes de l’administratif santé, avec les sources et ce qu’il faut faire.";
 
 /** Fin d'édition : déclinaisons de TON.md. La seconde moitié ne change jamais. */
 const FIN_PAR_METIER: Record<Lang, Partial<Record<VerticaleSlug, string>>> = {

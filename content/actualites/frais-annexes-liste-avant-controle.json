@@ -4,7 +4,7 @@
   "fait": "28 octobre",
   "titre": "Frais annexes : la liste à vérifier avant un contrôle",
   "seoTitle": "Frais annexes interdits : la liste de l’Assurance maladie",
-  "chapo": "L’Assurance maladie a rappelé le 28 octobre 2026 quels frais ne peuvent pas s’ajouter aux honoraires, et la Cnam annonce des actions conventionnelles. Votre grille tarifaire mérite une relecture, ligne par ligne.",
+  "chapo": "L’Assurance maladie a rappelé le 28 octobre 2026 quels frais ne peuvent pas s’ajouter aux honoraires, et la Cnam (Caisse nationale de l’Assurance maladie) annonce des actions conventionnelles. Votre grille tarifaire mérite une relecture, ligne par ligne.",
   "metaDescription": "Frais de dossier, de rendez-vous, d’annulation : la liste publiée par l’Assurance maladie et les lignes à relire dans votre grille tarifaire.",
   "metiers": [
     "centres",
@@ -79,7 +79,7 @@
       "primaire": true
     },
     {
-      "libelle": "Projet de loi de financement de la sécurité sociale pour 2027, n° 3211, déposé le 1er octobre 2026 (Assemblée nationale)",
+      "libelle": "Projet de loi de financement de la sécurité sociale pour 2027, n° 3211, déposé le 1er octobre 2026 (Assemblée nationale)",
       "url": "https://www.assemblee-nationale.fr/dyn/docs/PRJLANR5L17B3211.raw",
       "primaire": true
     },
@@ -102,7 +102,7 @@
     "L’article 103 de la convention médicale ne nomme pas les frais annexes : il vise les règles de facturation et donne une liste introduite par « notamment ». Le lien avec ces frais vient de la lecture de l’Assurance maladie sur ameli.fr, et le texte le lui attribue. À confirmer par le relecteur.",
     "Application aux « centres médicaux structurés autour de médecins conventionnés » : seule source, la réponse de l’Assurance maladie à Egora, citée comme telle. Aucun texte officiel trouvé sur ce point précis.",
     "Bilan d’enquête de la DGCCRF sur l’information du patient : une source juridique secondaire le date du 12 octobre 2026, et il évoquerait des procédures en cours contre des frais d’accès, de rendez-vous ou d’archivage. La page renvoie une erreur 403 à l’outil de lecture, et un essai en curl a été refusé par le contrôle de permissions de la session. Je n’ai pas contourné ce refus. Je n’ai vu qu’un extrait dans les résultats de recherche, donc rien n’en est repris. Si Paul l’ouvre lui-même, cet élément renforcerait le paragraphe sur les contrôles.",
-    "Budget de la Sécurité sociale 2027 : recherche par mots-clés (frais annexes, coupe-file, frais de dossier, L. 1111-3-4) dans le texte n° 3211, sans résultat sur ce sujet. Le Sénat dit que le texte n° 138 lui a été transmis ; je ne l’ai pas ouvert. Pendant l’audition du 21 octobre, un sénateur a regretté l’absence d’un tel dispositif pour les centres. Le rapport n° 144 n’est pas encore en ligne, et le dépôt des amendements de séance est ouvert jusqu’au 6 novembre selon l’agenda du Sénat. À contrôler le matin de la publication.",
+    "Budget de la Sécurité sociale 2027 : recherche par mots-clés (frais annexes, coupe-file, frais de dossier, L. 1111-3-4) dans le texte n° 3211, sans résultat sur ce sujet. Le Sénat dit que le texte n° 138 lui a été transmis ; je ne l’ai pas ouvert. Pendant l’audition du 21 octobre, un sénateur a regretté l’absence d’un tel dispositif pour les centres. Le rapport n° 144 n’est pas encore en ligne, et le dépôt des amendements de séance est ouvert jusqu’au 6 novembre selon l’agenda du Sénat. À contrôler le matin de la publication.",
     "Contenu exact de la mise à jour du 2 octobre sur ameli.fr : aucune version antérieure comparée. Egora parle d’une page « actualisée », sans préciser quoi.",
     "Vidéo de l’audition au Sénat non visionnée : la citation vient du compte rendu écrit. Y comparer la formulation si elle est reprise en visuel.",
     "Cette édition doit rester en brouillon : le champ relecteur reste à null tant qu’aucune personne n’a relu le texte. Une relecture juridique est conseillée sur les gestes 3 à 5 et sur le champ qui."

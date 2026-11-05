@@ -1,4 +1,6 @@
 // Seul importeur de `virtual:actualites`. Non testable sous node (module virtuel).
+// Ne se charge que par import() dans les loaders : un import statique ferait entrer la liste dans
+// le morceau d'entrée, donc dans toutes les pages du site.
 import { charger, fiches } from "virtual:actualites";
 import type { Edition, FicheEdition } from "./types";
 
@@ -12,9 +14,4 @@ export function ficheEdition(slug: string): FicheEdition | undefined {
 export async function chargerEdition(slug: string): Promise<Edition | null> {
   if (!ficheEdition(slug)) return null;
   return (await charger[slug]()).default;
-}
-
-/** Le relevé le plus récent, ou null : sans relevé, le bloc n'apparaît pas. */
-export function dernierReleve(): FicheEdition | null {
-  return fiches.find((f) => f.format === "le-releve") ?? null;
 }

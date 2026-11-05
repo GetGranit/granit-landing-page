@@ -1,32 +1,32 @@
 {
   "numero": 1,
   "format": "ce-qui-change",
-  "fait": "12 mois",
+  "fait": "12 mois",
   "titre": "Protections menstruelles : la limite à vérifier avant de délivrer",
-  "seoTitle": "Protections menstruelles : 2 produits sur 12 mois",
+  "seoTitle": "Protections menstruelles : 2 produits sur 12 mois",
   "chapo": "Depuis le 1er octobre 2026, les coupes et culottes référencées sont prises en charge en officine, dans la limite de 2 produits par an. L’outil de vérification annoncé pour novembre n’était pas prêt fin octobre.",
-  "metaDescription": "Coupes et culottes menstruelles : qui est éligible, la limite de 2 produits sur 12 mois, et ce qu’il faut vérifier avant de délivrer à l’officine.",
+  "metaDescription": "Coupes et culottes menstruelles : qui est éligible, la limite de 2 produits sur 12 mois, et ce qu’il faut vérifier avant de délivrer à l’officine.",
   "metiers": [
     "pharmacie"
   ],
   "datePublished": "2026-11-05",
   "dateModified": "2026-11-05",
   "change": [
-    "Depuis le 1er octobre 2026, l’Assurance maladie prend en charge les coupes et les culottes menstruelles réutilisables référencées. Elles sont délivrées en officine, sans ordonnance, aux personnes de moins de 26 ans et aux bénéficiaires de la Complémentaire santé solidaire (C2S), sans condition d’âge (décret n° 2026-288 du 17 avril 2026, arrêté du 6 août 2026).",
-    "La prise en charge porte sur 2 produits par an. La période débute à la première délivrance, puis court de date à date (décret du 17 avril 2026). ameli.fr parle de « 2 dispositifs sur 12 mois glissants ».",
-    "Les prix limites de vente sont de 19 € pour une culotte et de 15,80 € pour une coupe (ameli.fr, 29 septembre 2026). L’Assurance maladie rembourse 60 % pour les moins de 26 ans et 100 % pour les bénéficiaires de la C2S (service-public.gouv.fr, 30 septembre 2026).",
+    "Depuis le 1er octobre 2026, l’Assurance maladie prend en charge les coupes et les culottes menstruelles réutilisables référencées. Elles sont délivrées en officine, sans ordonnance, aux personnes de moins de 26 ans et aux bénéficiaires de la Complémentaire santé solidaire (C2S), sans condition d’âge (décret n° 2026-288 du 17 avril 2026, arrêté du 6 août 2026).",
+    "La prise en charge porte sur 2 produits par an. La période débute à la première délivrance, puis court de date à date (décret du 17 avril 2026). ameli.fr parle de « 2 dispositifs sur 12 mois glissants ».",
+    "Les prix limites de vente sont de 19 € pour une culotte et de 15,80 € pour une coupe (ameli.fr, 29 septembre 2026). L’Assurance maladie rembourse 60 % pour les moins de 26 ans et 100 % pour les bénéficiaires de la C2S (service-public.gouv.fr, 30 septembre 2026).",
     "Le téléservice « Aide à la détection d’atypies de consommation » (ADAC), sur amelipro, doit afficher les produits déjà délivrés, leurs dates et le nombre encore possible. L’Assurance maladie annonce cet ajout pour novembre 2026, afin d’éviter les rejets en cas de dépassement."
   ],
   "qui": {
     "texte": "Les titulaires d’officine, ainsi que les adjoints et préparateurs chargés de la délivrance, de la facturation et du suivi des indus."
   },
   "gestes": [
-    "Vérifiez l’éligibilité : moins de 26 ans, ou bénéficiaire de la C2S.",
+    "Vérifiez l’éligibilité : moins de 26 ans, ou bénéficiaire de la C2S.",
     "Vérifiez que le produit est référencé. Les produits non référencés ne sont pas pris en charge.",
     "Facturez le code individuel du fabricant. Saisissez votre numéro de pharmacien comme numéro de prescripteur.",
     "Passez par la carte Vitale, physique ou appli, en tiers payant. ameli.fr demande de le systématiser pour sécuriser la délivrance.",
     "Tant qu’ADAC n’affiche pas ces produits, demandez à la personne si elle en a déjà reçu ailleurs. Votre logiciel ne montre en principe que vos propres délivrances. C’est notre lecture, pas une consigne officielle.",
-    "Dès que la ligne apparaît dans ADAC, regardez l’historique avant de délivrer. L’accès se fait en carte CPS ou e-CPS. Un titulaire peut le déléguer aux collaborateurs munis d’une carte CPE.",
+    "Dès que la ligne apparaît dans ADAC, regardez l’historique avant de délivrer. L’accès se fait en carte CPS (carte de professionnel de santé) ou e-CPS (sa version sur téléphone). Un titulaire peut le déléguer aux collaborateurs munis d’une carte CPE (carte de personnel d’établissement).",
     "Si une notification d’indu arrive, lisez d’abord les voies et délais de recours qu’elle indique."
   ],
   "inconnu": [
@@ -37,7 +37,7 @@
   ],
   "sources": [
     {
-      "libelle": "Décret n° 2026-288 du 17 avril 2026, Journal officiel du 18 avril 2026 (Légifrance)",
+      "libelle": "Décret n° 2026-288 du 17 avril 2026, Journal officiel du 18 avril 2026 (Légifrance)",
       "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053910115",
       "primaire": true
     },
@@ -85,7 +85,7 @@
     "Procédure de contestation d’un indu côté pharmacien : aucune page ameli.fr de l’espace pharmacien trouvée. Seule la page médecin existe, non reprise. Le geste 7 reste donc général et sans lien.",
     "Le geste 5 (demander à la personne, logiciel limité à vos délivrances) est notre lecture. Aucune source ne le prescrit. À valider par un pharmacien relecteur.",
     "Les textes du décret et de l’arrêté ont été lus via un extracteur (WebFetch), pas en page complète. Relire la rédaction exacte sur Légifrance, notamment la numérotation de l’article créé dans le code (R. 162-145 selon l’extraction, non citée dans le texte).",
-    "Liste officielle des produits référencés : la page sante.gouv.fr a renvoyé un contrôle anti-robot, non lue et non citée. La décision du 9 juillet 2026 sur le taux n’a pas été ouverte : le 60 % / 100 % repose sur service-public.gouv.fr.",
+    "Liste officielle des produits référencés : la page sante.gouv.fr a renvoyé un contrôle anti-robot, non lue et non citée. La décision du 9 juillet 2026 sur le taux n’a pas été ouverte : le 60 % / 100 % repose sur service-public.gouv.fr.",
     "Budget de la Sécurité sociale 2027 au Sénat : ma recherche du 5 novembre 2026 ne relie pas le projet à ces produits ni à leur contrôle, mais je n’ai pas lu le texte du projet ni les amendements. À contrôler le jour de la publication.",
     "Réponse de la Cnam aux demandes de moratoire : rien trouvé au 5 novembre 2026.",
     "Publication bloquée par le contrôle au build tant que `relecteur` reste nul : aucune personne n’a relu ce texte.",

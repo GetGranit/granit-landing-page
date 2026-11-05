@@ -22,7 +22,7 @@ export function Manchette({ derniere }: { derniere?: FicheEdition }) {
             </span>
           )}
           {derniere && <span>{moisAnnee(derniere.datePublished, lang)}</span>}
-          <span>{RYTHME[lang]}</span>
+          {RYTHME && <span>{RYTHME[lang]}</span>}
         </div>
         <h1 className="act-titre-rubrique">
           {debut} <span>{accent}</span>

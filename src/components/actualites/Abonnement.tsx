@@ -1,4 +1,5 @@
 import { useId, useState, type FormEvent } from "react";
+import { Link } from "@tanstack/react-router";
 import { getAttribution } from "@/lib/attribution";
 import { useLanguage } from "@/lib/i18n";
 import { sAbonner } from "@/lib/actualites/abonnement";
@@ -40,7 +41,8 @@ function Formulaire() {
         {t.recevoir} {NOM_NEWSLETTER}
       </h2>
       <p>
-        {RYTHME[lang]}. {t.accroche}
+        {RYTHME && `${RYTHME[lang]}. `}
+        {t.accroche}
       </p>
       <form onSubmit={envoyer}>
         <div className="act-abonnement-ligne">
@@ -61,7 +63,9 @@ function Formulaire() {
         </div>
         <label className="act-consentement">
           <input name="consentement" type="checkbox" value="oui" required />
-          <span>{t.consentement}</span>
+          <span>
+            {t.consentement} <Link to="/privacy">{t.confidentialite}</Link>
+          </span>
         </label>
       </form>
       <p role="status">

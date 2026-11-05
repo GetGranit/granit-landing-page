@@ -11,7 +11,7 @@ import { join } from "node:path";
 import type { Plugin, ViteDevServer } from "vite";
 import { apercuAutorise } from "../ressources/en-ligne.mjs";
 import { lireContenu, pourAffichage } from "./en-ligne.mjs";
-import { tempsLecture } from "../../src/lib/actualites/rangement";
+import { tempsLecture } from "../../src/lib/actualites/rangement.ts";
 import type { Edition, FicheEdition } from "../../src/lib/actualites/types";
 
 const INDEX = "virtual:actualites";
@@ -51,13 +51,11 @@ export function actualites(): Plugin {
       if (!id.startsWith("\0" + INDEX)) return;
       const { editions, lus } = lireContenu(racine, { avecBrouillons });
       lus.filter((p) => existsSync(p)).forEach((p) => this.addWatchFile(p));
-      if (id === "\0" + PRESENCE)
-        return `export const rubriqueOuverte = ${editions.length > 0};\n`;
+      if (id === "\0" + PRESENCE) return `export const rubriqueOuverte = ${editions.length > 0};\n`;
       if (id === "\0" + INDEX) {
         const affichees = editions.map(pourAffichage);
         const charger = affichees.map(
-          (e) =>
-            `${JSON.stringify(e.slug)}: () => import(${JSON.stringify(EDITION + e.slug)})`,
+          (e) => `${JSON.stringify(e.slug)}: () => import(${JSON.stringify(EDITION + e.slug)})`,
         );
         return (
           `export const fiches = ${JSON.stringify(affichees.map(fiche))};\n` +

@@ -2,28 +2,20 @@ import { Link } from "@tanstack/react-router";
 import { Fil } from "@/components/ressources/Fil";
 import { calcomDemoUrl } from "@/lib/calcom";
 import { useLanguage } from "@/lib/i18n";
-import { fiches } from "@/lib/actualites/contenu";
 import { NOM_RUBRIQUE } from "@/lib/actualites/marque";
 import { tempsLecture } from "@/lib/actualites/rangement";
-import {
-  dateLongue,
-  finDe,
-  LIBELLES,
-  LIBELLES_FORMAT,
-  SUITE_FIN,
-} from "@/lib/actualites/textes";
-import type { Edition } from "@/lib/actualites/types";
+import { dateLongue, finDe, LIBELLES, LIBELLES_FORMAT, SUITE_FIN } from "@/lib/actualites/textes";
+import type { Edition, FicheEdition } from "@/lib/actualites/types";
 import { metiersEnClair } from "./Cartes";
 
 /** Le gabarit fixe d'une édition : tête encre, quatre blocs, sources, encart, colonne latérale. */
-export function PageEdition({ edition: e }: { edition: Edition }) {
+export function PageEdition({ edition: e, autres }: { edition: Edition; autres: FicheEdition[] }) {
   const { lang } = useLanguage();
   const t = LIBELLES[lang];
   const metiers = metiersEnClair(e.metiers, lang);
   const format = LIBELLES_FORMAT[lang][e.format];
   // Le contenu reste en français quand l'interface est en anglais.
   const langueContenu = lang === "fr" ? undefined : "fr";
-  const autres = fiches.filter((f) => f.slug !== e.slug);
   const tableau = e.qui.tableau;
   return (
     <div className="act">
@@ -32,7 +24,7 @@ export function PageEdition({ edition: e }: { edition: Edition }) {
           <Fil
             items={[
               { nom: t.rubrique, to: "/actualites" },
-              { nom: `${t.numero} ${e.numero}` },
+              { nom: `${t.numero}\u00A0${e.numero}` },
             ]}
           />
           <div className="act-folio">
@@ -142,6 +134,7 @@ export function PageEdition({ edition: e }: { edition: Edition }) {
             >
               {t.demo}
             </a>
+            <p className="act-garanties">{t.garanties}</p>
           </aside>
         </article>
 
@@ -165,7 +158,10 @@ export function PageEdition({ edition: e }: { edition: Edition }) {
               <span className="act-etiquette">{t.autresEditions}</span>
               {autres.map((f) => (
                 <Link key={f.slug} to="/actualites/$slug" params={{ slug: f.slug }}>
-                  {t.numero}&nbsp;{f.numero} · {LIBELLES_FORMAT[lang][f.format]}
+                  <span className="act-autre-surtitre">
+                    {t.numero}&nbsp;{f.numero} · {LIBELLES_FORMAT[lang][f.format]}
+                  </span>
+                  <span lang={langueContenu}>{f.titre}</span>
                 </Link>
               ))}
             </nav>

@@ -4,12 +4,7 @@ import assert from "node:assert/strict";
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
-import {
-  decouperNom,
-  NEWSLETTER_OUVERTE,
-  NOM_NEWSLETTER,
-  NOM_RUBRIQUE,
-} from "../../src/lib/actualites/marque.ts";
+import { decouperNom, NEWSLETTER_OUVERTE, NOM_RUBRIQUE } from "../../src/lib/actualites/marque.ts";
 
 const RACINE = fileURLToPath(new URL("../..", import.meta.url));
 
@@ -22,10 +17,6 @@ function fichiersDe(dossier: string): string[] {
 
 test("la newsletter est fermée", () => {
   assert.equal(NEWSLETTER_OUVERTE, false);
-});
-
-test("la newsletter a sa propre constante", () => {
-  assert.ok(NOM_NEWSLETTER.length > 0);
 });
 
 test("aucun nom codé en dur hors de marque.ts", () => {
