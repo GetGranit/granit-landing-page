@@ -31,8 +31,9 @@
 @keyframes nh-tv-nudge { 0%, 60%, 100% { translate: 0 0; } 75% { translate: 4px 0; } }
 @media (prefers-reduced-motion: reduce) { .nh .tv-bar::after, .nh .tv-bar a::before, .nh .tv-bar b svg { animation: none !important; } }
 
-/* ---------- le hero : sous la nav du site (≈ 72 px), plancher 620 px ---------- */
-.nh .tva { display: flex; flex-direction: column; min-height: max(620px, calc(100vh - 72px)); min-height: max(620px, calc(100svh - 72px)); background: var(--paper); }
+/* ---------- le hero : sous le bandeau (34 px) et la nav du site (72 px, 68 px sous 640 px), plancher 620 px ---------- */
+.nh .tva { --tva-dessus: 106px; display: flex; flex-direction: column; min-height: max(620px, calc(100vh - var(--tva-dessus))); min-height: max(620px, calc(100svh - var(--tva-dessus))); background: var(--paper); }
+@media (max-width: 639px) { .nh .tva { --tva-dessus: 102px; } }
 .nh .tva-stage { position: relative; isolation: isolate; overflow: hidden; flex: 1; display: flex; background: var(--ink); color: var(--rose); }
 .nh .tva-media { position: absolute; inset: 0; z-index: -3; }
 .nh .tva-media video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 66% 50%; }
