@@ -246,7 +246,7 @@
     "id": "A1",
     "slug": "portail-viamedis",
     "category": "plateformes",
-    "title": "Viamédis TP pour les opticiens : espace pro, prise en charge, statuts et paiement",
+    "title": "Viamédis TP : connexion espace pro opticien, prise en charge",
     "primaryKeyword": "viamedis tp",
     "keywordCluster": [
       "viamedis pro",
@@ -336,7 +336,7 @@
     "id": "A2",
     "slug": "portail-almerys",
     "category": "plateformes",
-    "title": "Almerys TP pour les opticiens : espace pro, prise en charge, statuts et paiement",
+    "title": "Almerys TP : connexion espace pro opticien, prise en charge",
     "primaryKeyword": "almerys tp",
     "keywordCluster": [
       "tp almerys",
@@ -491,7 +491,7 @@
     "id": "A5",
     "slug": "portail-itelis",
     "category": "plateformes",
-    "title": "Itelis TP pour les opticiens : espace pro, prise en charge, statuts et paiement",
+    "title": "Itelis TP : connexion espace pro opticien et prise en charge",
     "primaryKeyword": "itelis tp",
     "keywordCluster": [
       "itelis opticien",
@@ -576,7 +576,7 @@
     "id": "A4",
     "slug": "portail-isante",
     "category": "plateformes",
-    "title": "iSanté TP pour les opticiens : espace pro, prise en charge, statuts et paiement",
+    "title": "iSanté TP : connexion espace pro opticien et prise en charge",
     "primaryKeyword": "isante tp",
     "keywordCluster": [
       "tp isante",
@@ -660,7 +660,7 @@
     "id": "A3",
     "slug": "portail-sp-sante",
     "category": "plateformes",
-    "title": "SP Santé TP pour les opticiens : espace pro, prise en charge, statuts et paiement",
+    "title": "SP Santé TP : connexion espace pro opticien, prise en charge",
     "primaryKeyword": "sp sante tp",
     "keywordCluster": [
       "tp sp sante",
@@ -745,7 +745,7 @@
     "id": "A8",
     "slug": "portail-seveane",
     "category": "plateformes",
-    "title": "Sévéane (Korelio) TP pour les opticiens : espace pro, prise en charge, statuts et paiement",
+    "title": "Sévéane TP : connexion espace pro opticien, prise en charge",
     "primaryKeyword": "seveane tp",
     "keywordCluster": [
       "tp seveane",
@@ -823,7 +823,7 @@
     "id": "A6",
     "slug": "portail-actil",
     "category": "plateformes",
-    "title": "Actil TP pour les opticiens : espace pro, prise en charge, statuts et paiement",
+    "title": "Actil TP : connexion espace pro opticien et prise en charge",
     "primaryKeyword": "actil tp",
     "keywordCluster": [
       "tp actil",
@@ -901,7 +901,7 @@
     "id": "A9",
     "slug": "portail-santeclair",
     "category": "plateformes",
-    "title": "Santéclair TP pour les opticiens : espace pro, prise en charge, statuts et paiement",
+    "title": "TP Santéclair : connexion espace pro et prise en charge",
     "primaryKeyword": "tp santeclair",
     "keywordCluster": [
       "opticien santeclair",
@@ -979,7 +979,7 @@
     "id": "A7",
     "slug": "portail-oxantis",
     "category": "plateformes",
-    "title": "Oxantis TP pour les opticiens : espace pro, prise en charge, statuts et paiement",
+    "title": "Oxantis TP a fermé : PEC en cours, factures et passage à Viamedis",
     "primaryKeyword": "oxantis tp",
     "keywordCluster": [
       "tp oxantis",
@@ -2966,7 +2966,7 @@
     "id": "A10",
     "slug": "portail-kalixia",
     "category": "plateformes",
-    "title": "Kalixia TP pour les opticiens : espace pro, prise en charge, statuts et paiement",
+    "title": "Kalixia TP : connexion espace pro opticien, prise en charge",
     "primaryKeyword": "kalixia optique",
     "keywordCluster": [
       "reseau kalixia opticien",
@@ -3426,7 +3426,7 @@
     "id": "A11",
     "slug": "portail-carte-blanche",
     "category": "plateformes",
-    "title": "Carte Blanche TP pour les opticiens : espace pro, prise en charge, statuts et paiement",
+    "title": "Carte Blanche TP : connexion espace pro et prise en charge",
     "primaryKeyword": "carte blanche partenaires",
     "keywordCluster": [
       "partenaire carte blanche",

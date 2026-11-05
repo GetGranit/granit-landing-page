@@ -5,7 +5,7 @@
   "categoryName": "Plateformes et portails",
   "type": "plateforme",
   "plateforme": "actil",
-  "title": "Actil TP pour les opticiens : espace pro, prise en charge, statuts et paiement",
+  "title": "Actil TP : connexion espace pro opticien et prise en charge",
   "primaryKeyword": "actil tp",
   "keywordCluster": [
     "tp actil",
@@ -34,7 +34,7 @@
     "url": null
   },
   "datePublished": "2026-10-09",
-  "dateModified": "2026-10-09",
+  "dateModified": "2026-10-30",
   "checkedOn": "2026-10-07",
   "wordCount": 2046,
   "readTime": 9,

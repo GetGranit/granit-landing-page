@@ -113,6 +113,7 @@ const consignesType = {
     "Page plateforme : les 7 H2 imposés par le guide, rédigés uniquement à partir de `faits` et `conventionnement` du fichier de faits ci-dessous, " +
     "et les 4 marqueurs data-bloc (chiffres, organismes, statuts, contacts) posés une fois chacun à l'endroit indiqué par la section 6 du gabarit. " +
     "Tout nombre du texte doit figurer dans le fichier de faits. Ne cite pas HDS. " +
+    "Le lien de connexion à l'espace pro (`acces`) est déjà affiché par le gabarit en tête de page : ne le répète pas en lien dans le texte. " +
     "Si `organismes.liste` est vide, pose quand même le marqueur organismes et dis en une phrase pourquoi la liste n'est pas relevée (voir `organismes.note`).",
   vs:
     "Page comparative « fiche VS » (gabarit §6 bis) : plan imposé, rédigée uniquement à partir de `axes`, `citations` et `meilleurSi` des fichiers concurrents ci-dessous. " +
