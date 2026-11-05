@@ -2,6 +2,8 @@ export type Article = {
   slug: string;
   category: string;
   title: string;
+  /** Balise <title> et og:title, 60 caractères max. Absent : « {title} - Granit ». Le H1 reste `title`. */
+  seoTitle?: string;
   desc: string;
   time: string;
   body: string[];

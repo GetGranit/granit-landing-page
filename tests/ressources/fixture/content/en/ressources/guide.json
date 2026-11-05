@@ -1,0 +1,29 @@
+{
+  "slug": "guide",
+  "id": "id-traduit",
+  "category": "rejets",
+  "categoryName": "Rejections and corrections",
+  "type": "standard",
+  "plateforme": null,
+  "title": "Rejections: how to fix them",
+  "primaryKeyword": "rejection",
+  "metaDescription": "Read a rejection reason and fix the claim.",
+  "contentHtml": "<h2 id=\"lire\">Read the reason</h2><div data-figure=\"flux\"></div><p>Text.</p>",
+  "author": { "name": "Paul", "jobTitle": "Co-founder" },
+  "reviewer": null,
+  "datePublished": "2030-01-01",
+  "verticales": ["dentaire"],
+  "tocItems": [{ "id": "lire", "label": "Read the reason" }],
+  "faqItems": [{ "question": "Why?", "answer": "Because." }],
+  "sources": [{ "label": "ameli.fr · Rejections", "url": "https://exemple.invalid/en" }],
+  "figures": [
+    {
+      "id": "flux",
+      "type": "flux",
+      "titre": "The flow",
+      "legende": "From quote to payment",
+      "colonnes": [],
+      "elements": [{ "label": "Quote", "detail": "the start", "valeurs": [], "focus": false }]
+    }
+  ]
+}

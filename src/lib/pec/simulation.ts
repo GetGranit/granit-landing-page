@@ -60,9 +60,9 @@ export const SIM_ETAPES: SimEtape[] = [
 
 /** Équipement d'exemple simulé (le même partout : on ne demande rien de plus au comptoir). */
 export const EQUIPEMENT_EXEMPLE = [
-  { label: "Monture classe B", montant: 180 },
-  { label: "Verre progressif droit", montant: 450 },
-  { label: "Verre progressif gauche", montant: 450 },
+  { id: "monture", label: { fr: "Monture classe B", en: "Class B frame" }, montant: 180 },
+  { id: "od", label: { fr: "Verre progressif droit", en: "Right progressive lens" }, montant: 450 },
+  { id: "og", label: { fr: "Verre progressif gauche", en: "Left progressive lens" }, montant: 450 },
 ] as const;
 
 /** Viamédis et Kalixia : appli d'authentification ; EMOA et Génération : code reçu par e-mail. */

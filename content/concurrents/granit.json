@@ -4,7 +4,7 @@
   "modele": "agents-ia",
   "checkedOn": "2026-11-04",
   "aRelire": false,
-  "_note": "Enrichi le 04/11/2026 depuis le site en ligne (accueil, /agents, /securite, /tarifs). À relire par Paul. Écarts site à corriger : CGV « 5 jours ouvrés » vs « 48h », frais de setup absents de /tarifs. Mise en route « 48 h » validée par Paul le 09/10. HDS : formulation corrigée par Paul le 04/11, « infrastructure certifiée HDS » (jamais « Granit est certifié HDS ») ; le site reste à aligner. « Gestionnaire Granit qui reprend » et « chaque nuit » : validés par Paul le 04/11, à ajouter sur /agents.",
+  "_note": "Enrichi le 04/11/2026 depuis le site en ligne (accueil, /agents, /tarifs, /privacy). À relire par Paul. Écarts site à corriger : CGV « 5 jours ouvrés » vs « 48h », frais de setup absents de /tarifs. Mise en route « 48 h » validée par Paul le 09/10. HDS : formulation corrigée par Paul le 04/11, « infrastructure certifiée HDS » (jamais « Granit est certifié HDS ») ; le site reste à aligner. « Gestionnaire Granit qui reprend » et « chaque nuit » : validés par Paul le 04/11, à ajouter sur /agents.",
   "axes": {
     "quiFait": {
       "valeur": "Des agents logiciels, qui tournent chaque jour et chaque nuit sur les outils du magasin ; un gestionnaire Granit reprend les cas que l'agent ne peut pas finir",
@@ -37,13 +37,13 @@
     },
     "engagement": {
       "valeur": "sans durée minimale",
-      "detail": "Résiliation à tout moment par email, préavis de 30 jours, sans pénalité ni frais ; export complet des données (CSV ou JSON)",
+      "detail": "Résiliation à tout moment par email, sans pénalité ni frais ; export complet des données (CSV ou JSON)",
       "source": "granit-tarifs"
     },
     "hds": {
       "valeur": "infrastructure certifiée HDS (hébergeur de données de santé)",
-      "detail": "Données hébergées en France, chiffrées en transit et au repos, jamais utilisées pour entraîner des modèles tiers",
-      "source": "granit-securite"
+      "detail": "Données hébergées en Europe, chiffrées en transit et au repos, jamais utilisées pour entraîner des modèles tiers",
+      "source": "granit-confidentialite"
     },
     "plateformes": {
       "valeur": "toutes les plateformes de tiers payant",
@@ -74,15 +74,15 @@
       "url": "https://www.getgranit.ai/agents",
       "consulte": "2026-11-04"
     },
-    "granit-securite": {
-      "label": "getgranit.ai · Sécurité",
-      "url": "https://www.getgranit.ai/securite",
-      "consulte": "2026-11-04"
-    },
     "granit-tarifs": {
       "label": "getgranit.ai · Tarifs",
       "url": "https://www.getgranit.ai/tarifs",
       "consulte": "2026-11-04"
+    },
+    "granit-confidentialite": {
+      "label": "getgranit.ai · Confidentialité",
+      "url": "https://www.getgranit.ai/privacy",
+      "consulte": "2026-11-05"
     }
   },
   "identite": {},
@@ -96,7 +96,7 @@
       "source": "granit-accueil"
     },
     {
-      "texte": "Nos conditions générales de vente ne prévoient pas de durée minimale : le client peut résilier à tout moment, par email, avec un préavis de 30 jours, sans pénalité ni frais.",
+      "texte": "Nos conditions générales de vente ne prévoient pas de durée minimale : vous pouvez résilier à tout moment, par email, sans pénalité ni frais.",
       "source": "granit-tarifs"
     }
   ]

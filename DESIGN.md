@@ -1,4 +1,4 @@
-<!-- Copie de internal/marque, ne pas modifier ici (source : GetGranit/internal, marque/DESIGN.md @ 95521e8). -->
+<!-- Copie de internal/marque, ne pas modifier ici (source : GetGranit/internal, marque/DESIGN.md @ a763cc7, branche marque/filet-champ). -->
 ---
 # Jetons de la marque Granit, lisibles par une machine (Claude Code, Stitch, Figma Tokens…).
 # Le texte sous ce bloc dit comment s'en servir. En cas de doute, le texte l'emporte.
@@ -20,6 +20,7 @@ colors:
   texte-secondaire: "rgba(31, 53, 48, .70)"   # 4,8:1 sur rosé
   texte-discret: "rgba(31, 53, 48, .50)"      # sur-titres seulement, jamais une phrase
   filet: "rgba(31, 53, 48, .12)"
+  filet-champ: "rgba(31, 53, 48, .20)"       # bordure des champs de formulaire (le filet à 12 % ne se voit pas assez)
   succes: "#2F7A64"
   succes-fond: "rgba(168, 220, 203, .60)"
   succes-texte: "#1D5646"
@@ -59,6 +60,7 @@ components:
   bouton-secondaire: { background: "{colors.papier}", color: "{colors.encre}", border: "1px solid {colors.filet}", radius: "{rounded.bouton}" }
   carte: { background: "{colors.papier}", border: "1px solid {colors.filet}", radius: "{rounded.carte}" }
   section-sombre: { background: "{colors.encre}", color: "{colors.rose}", accent: "{colors.menthe}" }
+  champ: { background: "{colors.papier}", color: "{colors.encre}", border: "1px solid {colors.filet-champ}", focus: "{colors.profond}" }
   pastille-succes: { background: "{colors.succes-fond}", color: "{colors.succes-texte}", radius: "{rounded.bouton}" }
 logo:
   symbole: "logo/granit-symbole.svg"
@@ -212,6 +214,7 @@ le droit d'affirmer, règles par canal). Les trois qui touchent aussi au visuel 
   encre, texte rosé, accent menthe.
 - **Boutons** : pilules (rayon 999 px). Principal : fond encre, texte menthe. Sur fond sombre : fond rosé,
   texte encre. Secondaire : papier et filet. Focus clavier visible, contour vert profond.
+- **Champs de formulaire** : fond papier, bordure encre à 20 % (`filet-champ`), contour vert profond au focus.
 - **Le motif** : le symbole agrandi, rogné par un bord, en filigrane (blush sur rosé, papier à 60 % sur le
   dégradé, `#24413A` sur encre). Un seul par support, jamais derrière un texte à lire.
 - **Grille** : 1120 px de large au plus, gouttière de 16 px minimum, sections espacées de 40 à 72 px.

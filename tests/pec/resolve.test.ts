@@ -41,6 +41,6 @@ test("réseau Kalixia → Viamédis seul (simulable)", () => {
 test("CGRM → portail CGRM, plus Viamédis", () => {
   assert.deepEqual(ids(resolveCard({ ...base, assureur: "CGRM" })), ["cgrm"]);
 });
-test("MGEN → deux portails, on ne devine pas", () => {
-  assert.deepEqual(ids(resolveCard({ ...base, assureur: "MGEN" })), ["viamedis", "oxantis"]);
+test("MGEN → Viamédis seul depuis la fermeture d'Oxantis", () => {
+  assert.deepEqual(ids(resolveCard({ ...base, assureur: "MGEN" })), ["viamedis"]);
 });

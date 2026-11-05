@@ -64,7 +64,7 @@ const content: Record<"fr" | "en", Content> = {
         "Le Prestataire ne cède, ne revend ni n'exploite les données à des fins propres. Il recourt à des prestataires techniques (hébergement, modèles d'intelligence artificielle) dans les conditions de l'article 5 des CGV : hébergement au sein de l'Union européenne, niveau de sécurité et de conformité maintenu. Les données sont également transmises aux plateformes que le Client demande d'utiliser pour son compte, et aux autorités lorsque la loi l'impose.",
       ] },
       { title: "6. Hébergement et sécurité", body: [
-        "Les données sont hébergées au sein de l'Union européenne, chez un hébergeur certifié HDS, sans transfert hors UE. Elles sont chiffrées en transit et au repos, les accès sont restreints selon le principe du moindre privilège et chaque action d'agent est journalisée. Le détail des garanties figure sur la page Sécurité (getgranit.ai/securite).",
+        "Les données sont hébergées au sein de l'Union européenne, chez un hébergeur certifié HDS, sans transfert hors UE. Elles sont chiffrées en transit et au repos, les accès sont restreints selon le principe du moindre privilège et chaque action d'agent est journalisée.",
         "Aucune donnée patient n'est utilisée pour entraîner des modèles tiers ; les modèles utilisés sont hébergés en Europe.",
       ] },
       { title: "7. Durées de conservation", body: [
@@ -86,24 +86,25 @@ const content: Record<"fr" | "en", Content> = {
   en: {
     eyebrow: "Legal",
     title: "Privacy Policy",
-    version: "Version 1.1 — Applicable to the getgranit.ai website and the app.getgranit.ai application",
+    version: "Version 1.1: applicable to the getgranit.ai website and the app.getgranit.ai application",
     intro: [
-      "This policy describes the personal data processed by Granit AI (the \"Provider\"), its purposes, retention periods and the rights of data subjects. It supplements the General Terms and Conditions (GTC) and the Security page, to which it refers.",
+      "This translation is provided for information only; the French version prevails.",
+      "This policy describes the personal data processed by Granit AI (the “Provider”), its purposes, retention periods and the rights of data subjects. It supplements the General Terms and Conditions of Sale (GTC) and the Security page, to which it refers.",
     ],
     sections: [
       { title: "1. Roles", body: [
-        "For data the Client entrusts to the Service (its patients', stores' and third-party platform accounts' data), the Provider acts as Processor (art. 28 GDPR) and the Client is the Controller, in accordance with article 9 of the GTC.",
+        "For data the Client entrusts to the Service (data on its patients, its stores and its accounts on third-party platforms), the Provider acts as Processor (art. 28 GDPR) and the Client is the Controller, in accordance with article 9 of the GTC.",
         "For data about its own contacts (application users, demo requests), the Provider is the Controller.",
       ] },
       { title: "2. Data processed", body: [
         "• Accounts: name, professional email and role of application users.",
         "• Business contacts: information submitted through the demo request form.",
         "• Client access: credentials and authorizations for the tools agents use on the Client's behalf (see section 3).",
-        "• Business data: information needed for the assigned task (beneficiary, complementary insurer, quotes, invoices, payments…), read from the Client's tools.",
+        "• Business data: information needed for the assigned task (beneficiary, supplementary insurer, quotes, invoices, payments…), read from the Client's tools.",
         "• Logs: timestamped records of every agent action and connection, for the security and auditability of the Service.",
       ] },
       { title: "3. Connected tools", body: [
-        "To perform the assigned tasks, agents connect, on the Client's behalf, to the tools the Client has authorized: practice software, third-party payer platforms, bank, mailbox (Gmail, Outlook, IMAP)… They access only the information needed for the task configured by the Client and only perform the actions the Client has configured or approved. Access (credentials or OAuth authorizations) is stored encrypted and can be revoked at any time from the Access page of the application or with the tool's provider.",
+        "To perform the assigned tasks, agents connect, on the Client's behalf, to the tools the Client has authorized: practice management software, third-party payment platforms, bank, mailbox (Gmail, Outlook, IMAP)… They access only the information needed for the task configured by the Client and only perform the actions the Client has configured or approved. Access (credentials or OAuth authorizations) is stored encrypted and can be revoked at any time from the Access page of the application or with the tool's provider.",
         "For a mailbox, agents read the emails relevant to the task (for example two-factor authentication codes from platforms or received invoices) and send those configured by the Client; the content of received emails is kept only if it is part of the requested output. For Gmail, the Service requests the gmail.readonly, gmail.send, openid and email permissions.",
         LIMITED_USE,
       ] },
@@ -118,7 +119,7 @@ const content: Record<"fr" | "en", Content> = {
         "The Provider does not transfer, resell or exploit data for its own purposes. It uses technical providers (hosting, artificial intelligence models) under the conditions of article 5 of the GTC: hosting within the European Union, security and compliance levels maintained. Data is also sent to the platforms the Client asks the Service to use on its behalf, and to authorities when required by law.",
       ] },
       { title: "6. Hosting and security", body: [
-        "Data is hosted within the European Union with an HDS-certified provider, with no transfer outside the EU. It is encrypted in transit and at rest, access follows the least-privilege principle and every agent action is logged. Full details are on the Security page (getgranit.ai/securite).",
+        "Data is hosted within the European Union, with an HDS-certified provider (French certification for health data hosting), with no transfer outside the EU. It is encrypted in transit and at rest, access follows the least-privilege principle and every agent action is logged.",
         "No patient data is used to train third-party models; the models used are hosted in Europe.",
       ] },
       { title: "7. Retention periods", body: [
@@ -127,7 +128,7 @@ const content: Record<"fr" | "en", Content> = {
         "• Business contacts: 3 years after the last exchange.",
       ] },
       { title: "8. Data subject rights", body: [
-        "Everyone has the right to access, rectify, erase, restrict, object to and port their data, by writing to contact@getgranit.ai. When the Provider acts as Processor, it forwards the request to the Client and helps it respond. A complaint may be lodged with the CNIL (cnil.fr).",
+        "Everyone has the right to access, rectify, erase, restrict, object to and port their data, by writing to contact@getgranit.ai. When the Provider acts as Processor, it forwards the request to the Client and helps it respond. A complaint may be lodged with the CNIL, the French data protection authority (cnil.fr).",
         "In the event of a data breach, the Provider notifies the CNIL within 72 hours and informs the affected Clients.",
       ] },
       { title: "9. Cookies", body: [
@@ -135,7 +136,7 @@ const content: Record<"fr" | "en", Content> = {
       { title: "10. Changes", body: [
         "The Provider may modify this policy. The version in force is the one published on this page; any significant change is notified to the affected Clients."] },
     ],
-    end: "End of the Granit AI Privacy Policy — Version 1.1",
+    end: "End of the Granit AI Privacy Policy, Version 1.1",
   },
 };
 
@@ -169,7 +170,7 @@ function PrivacyPage() {
           {t.sections.map((s, i) => (
             <Reveal key={s.title} delay={Math.min(i * 0.02, 0.1)}>
               <div>
-                <h2 className="font-serif text-[22px]" style={{ fontWeight: 700, letterSpacing: "-0.01em" }}>
+                <h2 className="font-serif text-[22px]" style={{ fontWeight: 400, letterSpacing: "-0.01em" }}>
                   {s.title}
                 </h2>
                 <div className="mt-4 space-y-3">

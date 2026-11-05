@@ -120,9 +120,20 @@ const staticPages = [
     priority: "1.0",
     freq: "weekly",
   },
-  { path: "/agents", files: ["src/routes/agents.tsx"], priority: "0.9", freq: "weekly" },
+  {
+    path: "/agents",
+    files: ["src/routes/agents.index.tsx", "src/components/agents"],
+    priority: "0.9",
+    freq: "weekly",
+  },
+  {
+    path: "/agents/optique",
+    files: ["src/routes/agents.$metier.tsx", "src/components/agents"],
+    priority: "0.8",
+    freq: "weekly",
+  },
   { path: "/tarifs", files: ["src/routes/tarifs.tsx"], priority: "0.8", freq: "monthly" },
-  { path: "/securite", files: ["src/routes/securite.tsx"], priority: "0.7", freq: "monthly" },
+  { path: "/levee-de-fonds", files: ["src/routes/levee-de-fonds.tsx"], priority: "0.6", freq: "monthly" },
   {
     path: "/ressources",
     files: [
@@ -134,14 +145,12 @@ const staticPages = [
     priority: "0.8",
     freq: "weekly",
   },
-  { path: "/a-propos", files: ["src/routes/a-propos.tsx"], priority: "0.6", freq: "monthly" },
   {
     path: "/affiliation",
     files: ["src/routes/affiliation.tsx", "src/lib/affiliationCopy.ts"],
     priority: "0.5",
     freq: "monthly",
   },
-  { path: "/demo", files: ["src/routes/demo.tsx"], priority: "0.6", freq: "monthly" },
   { path: "/cgv", files: ["src/routes/cgv.tsx"], priority: "0.3", freq: "yearly" },
   { path: "/privacy", files: ["src/routes/privacy.tsx"], priority: "0.3", freq: "yearly" },
 ];

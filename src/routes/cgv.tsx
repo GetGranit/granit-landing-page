@@ -87,14 +87,15 @@ const content: Record<"fr" | "en", Content> = {
   en: {
     eyebrow: "Legal",
     title: "General Terms and Conditions of Sale",
-    version: "Version 1.1 — Applicable to all Granit AI agents and services",
+    version: "Version 1.1: applicable to all Granit AI agents and services",
     intro: [
+      "This translation is provided for information only; the French version prevails.",
       "These GTC apply to all services provided by Granit AI to its professional clients, regardless of the agent or service subscribed, unless expressly waived in writing. Any order or signed quote constitutes full and unreserved acceptance of these GTC.",
       "These GTC apply regardless of the number of agents subscribed by the Client. A client subscribing to several Granit AI agents is not required to sign the GTC multiple times.",
     ],
     sections: [
       { title: "1. Offers and orders", body: ["Quotes are valid for 30 days. Any order is firm upon receipt of the signed quote. Any subsequent modification requires a written amendment, except for scope extensions provided for contractually."] },
-      { title: "2. Service access", body: ["Access is provided within 5 business days following receipt of the signed quote and payment of setup fees. The Client receives credentials by secure email. The Provider commits to respecting this lead time."] },
+      { title: "2. Service access", body: ["Access is provided within 5 business days following receipt of the signed quote and payment of setup fees. The Client receives credentials by secure email. The Provider undertakes to meet this lead time."] },
       { title: "3. Pricing", body: ["Prices are expressed in euros excluding VAT, applicable VAT in addition (currently 20%). Prices are those stated in the accepted quote. The Provider may revise its prices with 60 days' notice. The Client may terminate without penalty if the increase exceeds 10%, by notifying its decision within this period."] },
       { title: "4. Invoicing and payment", body: [
         "Setup fees are invoiced upon signature. The monthly fee is invoiced at the beginning of the month (in advance). Payment by bank transfer within 30 days from invoice date.",
@@ -114,7 +115,7 @@ const content: Record<"fr" | "en", Content> = {
         "• Provide accurate information for Service configuration",
         "• Not share credentials with third parties outside its organization",
         "• Not attempt to bypass or directly access the underlying technical components of the Service",
-        "• Report any incident or anomaly within 48h",
+        "• Report any incident or anomaly within 48 hours",
         "• Designate a point of contact for the relationship with Granit AI",
         "• Use the Service in accordance with its purpose and applicable regulations in its sector",
       ] },
@@ -122,16 +123,16 @@ const content: Record<"fr" | "en", Content> = {
         "• Provide the Service according to the levels defined in the contract (SLA)",
         "• Fix all minor bugs within the contractual timeframe (48 business hours)",
         "• Maintain the security and confidentiality of processed data",
-        "• Notify the Client of any planned maintenance with 48h notice",
+        "• Notify the Client of any planned maintenance with 48 hours' notice",
         "• Provide a monthly availability report upon request",
-        "• Inform the Client of any significant evolution affecting the main features of the Service, with 30 days' notice",
+        "• Inform the Client of any significant change affecting the main features of the Service, with 30 days' notice",
       ] },
       { title: "8. Confidentiality", body: ["Each party undertakes to keep strictly confidential all confidential information communicated by the other party in the context of the commercial relationship and the execution of the Service. This obligation applies from the first pre-contractual exchange and survives the end of the contract for 3 years."] },
       { title: "9. Personal data and GDPR", body: ["The Provider processes data on behalf of the Client (Data Controller) as a Processor (art. 28 GDPR). Detailed processing terms are defined in the service contract, which incorporates the data processing agreement required by art. 28 GDPR. Data is hosted within the European Union, under security conditions adapted to the nature of the data processed. The Provider does not transfer, resell or exploit Client data for its own purposes."] },
-      { title: "10. Data portability and return", body: ["At any time upon request, and no later than 30 days following the end of the contract, the Provider makes available to the Client all of its data in a standard exploitable format (CSV or JSON). This operation is included in the package for a standard export. After this period, data is permanently and irreversibly deleted."] },
+      { title: "10. Data portability and return", body: ["At any time upon request, and no later than 30 days following the end of the contract, the Provider makes available to the Client all of its data in a standard, usable format (CSV or JSON). This operation is included in the package for a standard export. After this period, data is permanently and irreversibly deleted."] },
       { title: "11. Intellectual property", body: ["The Client benefits from a usage license limited to the duration of the contract, non-exclusive and non-transferable. Any reproduction, adaptation or resale of the Service is prohibited. Data generated by the Client remains its exclusive property."] },
       { title: "12. Liability", body: ["The Service is provided with a best-efforts obligation. The Provider's liability is capped at the amounts paid during the 3 months preceding the triggering event. Indirect damages and loss of business are excluded."] },
-      { title: "13. Force majeure", body: ["No party shall be liable for a breach due to a force majeure event (art. 1218 French Civil Code). The affected party notifies the other within 48h. If the event lasts more than 30 consecutive days, each party may terminate the contract without penalty."] },
+      { title: "13. Force majeure", body: ["No party shall be liable for a breach due to a force majeure event (art. 1218 French Civil Code). The affected party notifies the other within 48 hours. If the event lasts more than 30 consecutive days, each party may terminate the contract without penalty."] },
       { title: "14. Termination", body: [
         "By the Client: at any time, by email with 30 days' notice, without penalty or fees.",
         "By the Provider: in case of persistent non-payment after formal notice, serious breach of the GTC or fraudulent use of the Service, with 15 days' notice.",
@@ -140,7 +141,7 @@ const content: Record<"fr" | "en", Content> = {
       { title: "15. GTC modifications", body: ["The Provider may modify these GTC with 30 days' notice by written notification. Continued use of the Service after this period constitutes acceptance. In case of refusal, the Client may terminate without penalty within this period."] },
       { title: "16. Applicable law and disputes", body: ["These GTC are governed by French law. In the event of a dispute, the parties undertake to seek an amicable solution within 30 days before any judicial action. Failing this, any dispute falls under the exclusive jurisdiction of the Paris Commercial Court."] },
     ],
-    end: "End of Granit AI General Terms and Conditions of Sale — Version 1.1",
+    end: "End of the Granit AI General Terms and Conditions of Sale, Version 1.1",
   },
 };
 
@@ -174,7 +175,7 @@ function CgvPage() {
           {t.sections.map((s, i) => (
             <Reveal key={s.title} delay={Math.min(i * 0.02, 0.1)}>
               <div>
-                <h2 className="font-serif text-[22px]" style={{ fontWeight: 700, letterSpacing: "-0.01em" }}>
+                <h2 className="font-serif text-[22px]" style={{ fontWeight: 400, letterSpacing: "-0.01em" }}>
                   {s.title}
                 </h2>
                 <div className="mt-4 space-y-3">

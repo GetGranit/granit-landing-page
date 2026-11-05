@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { motion, useReducedMotion } from "framer-motion";
 
 import logoMonogram from "@/assets/logo.svg";
+import { useLanguage, type Lang } from "@/lib/i18n";
 
 /** Cadre du parcours /pec : logo, barre de progression, une carte centrée. */
 export function PecShell({
@@ -18,10 +19,7 @@ export function PecShell({
     <div className="min-h-screen" style={{ background: "var(--bg2)", color: "var(--text-soft)" }}>
       <header className="mx-auto flex max-w-[620px] items-center justify-between gap-4 px-4 py-4">
         <Link to="/" className="flex items-center gap-2" style={{ color: "var(--text)" }}>
-          <img src={logoMonogram} alt="" width={28} height={28} />
-          <span className="font-serif text-[19px]" style={{ fontWeight: 700 }}>
-            Granit
-          </span>
+          <img src={logoMonogram} alt="Granit" className="h-7 w-auto" />
         </Link>
         <Progress value={step / total} />
       </header>
@@ -34,14 +32,14 @@ function Progress({ value }: { value: number }) {
   return (
     <div
       className="h-1.5 flex-1 overflow-hidden rounded-full"
-      style={{ maxWidth: 200, background: "var(--bg3)" }}
+      style={{ maxWidth: 200, background: "var(--filet)" }}
       aria-hidden
     >
       <div
         className="h-full rounded-full"
         style={{
           width: `${Math.round(value * 100)}%`,
-          background: "var(--gradient-terra)",
+          background: "var(--encre)",
           transition: "width .6s cubic-bezier(.22,1,.36,1)",
         }}
       />
@@ -62,7 +60,7 @@ export function Screen({ id, children }: { id: string; children: ReactNode }) {
       style={{
         background: "var(--surface)",
         borderColor: "var(--border)",
-        boxShadow: "0 1px 2px rgba(28,17,8,.04),0 8px 30px -10px rgba(28,17,8,.10)",
+        boxShadow: "var(--ombre-douce)",
       }}
     >
       {children}
@@ -71,17 +69,10 @@ export function Screen({ id, children }: { id: string; children: ReactNode }) {
 }
 
 export function Kicker({ children }: { children: ReactNode }) {
-  return (
-    <span
-      className="text-[11px] uppercase"
-      style={{ fontFamily: "var(--font-mono)", letterSpacing: ".14em", color: "var(--terra)" }}
-    >
-      {children}
-    </span>
-  );
+  return <span className="eyebrow">{children}</span>;
 }
 
-/** Titre serif ; `em` = le mot en italique terracotta. */
+/** Titre serif ; `em` = le mot en accent (vert profond, droit). */
 export function Title({
   children,
   em,
@@ -97,11 +88,7 @@ export function Title({
       style={{ color: "var(--text)", letterSpacing: "-.02em", textWrap: "balance" }}
     >
       {children}
-      {em && (
-        <span className="italic" style={{ color: "var(--terra)" }}>
-          {em}
-        </span>
-      )}
+      {em && <span className="accent-italic">{em}</span>}
       {after}
     </h1>
   );
@@ -123,7 +110,7 @@ export function Reassure({ items }: { items: string[] }) {
     >
       {items.map((t) => (
         <span key={t}>
-          <span style={{ color: "var(--sage)" }}>✓ </span>
+          <span style={{ color: "var(--succes)" }}>✓ </span>
           {t}
         </span>
       ))}
@@ -145,30 +132,37 @@ export function TextLink({ onClick, children }: { onClick: () => void; children:
 }
 
 /**
- * Bouton principal du parcours : fond terracotta foncé uni (blanc lisible à
- * 4,5:1, le dégradé du site ne l'est pas) et focus visible. Local au lead
- * magnet : `.btn-primary` du site n'est pas modifié.
+ * Bouton principal du parcours : `.btn-primary` du site (encre, texte menthe),
+ * en plus grand, avec un focus visible.
  */
 export const bigBtn =
-  "btn-primary justify-center !px-6 !py-4 !text-[16px] ![background:var(--terra-hover)] !font-semibold focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-[var(--text)]";
+  "btn-primary justify-center !px-6 !py-4 !text-[16px] !font-semibold focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-[var(--text)]";
 
 /** Écrans de simulation en mode mock (DEV ou aperçu) : on ne laisse jamais croire que c'est branché. */
 export function ApercuBanner() {
+  const { lang } = useLanguage();
   return (
     <p
-      className="mb-3 rounded-full px-3 py-1.5 text-center text-[12px]"
-      style={{ background: "#fbf0dc", color: "#7a4f12", fontFamily: "var(--font-mono)" }}
+      className="mb-3 rounded-full border px-3 py-1.5 text-center text-[12px]"
+      style={{
+        background: "var(--lavis)",
+        borderColor: "var(--filet-champ)",
+        color: "var(--encre)",
+        fontFamily: "var(--font-mono)",
+      }}
     >
-      Aperçu — résultat d'exemple, rien n'est connecté
+      {lang === "en"
+        ? "Preview: sample result, nothing is connected"
+        : "Aperçu — résultat d'exemple, rien n'est connecté"}
     </p>
   );
 }
 
 /** Focus visible des champs : un anneau, pas seulement la couleur de la bordure. */
 export const focusRing =
-  "outline-none focus:border-[var(--terra)] focus:shadow-[0_0_0_4px_color-mix(in_oklab,var(--terra)_28%,transparent)]";
+  "outline-none focus:border-[var(--profond)] focus:shadow-[0_0_0_4px_color-mix(in_oklab,var(--profond)_28%,transparent)]";
 
-export const fieldClass = `w-full rounded-xl border-[1.5px] bg-white px-4 py-3.5 text-[17px] ${focusRing}`;
+export const fieldClass = `w-full rounded-xl border-[1.5px] bg-papier px-4 py-3.5 text-[17px] ${focusRing}`;
 
 /** À poser sur le champ d'un `Field` : état d'erreur annoncé et relié au message. */
 export type FieldA11y = { "aria-invalid"?: true; "aria-describedby"?: string };
@@ -212,7 +206,7 @@ export function Field({
           id={errId}
           role="alert"
           className="text-[14px]"
-          style={{ color: "var(--terra-hover)", fontWeight: 400 }}
+          style={{ color: "var(--alerte-texte)", fontWeight: 400 }}
         >
           {error}
         </span>
@@ -222,8 +216,8 @@ export function Field({
 }
 
 export function fieldStyle(error?: string) {
-  return { borderColor: error ? "var(--terra)" : "var(--border2)", color: "var(--text)" };
+  return { borderColor: error ? "var(--alerte)" : "var(--filet-champ)", color: "var(--text)" };
 }
 
-export const euros = (n: number) =>
-  n.toLocaleString("fr-FR", { style: "currency", currency: "EUR" });
+export const euros = (n: number, lang: Lang = "fr") =>
+  n.toLocaleString(lang === "en" ? "en-US" : "fr-FR", { style: "currency", currency: "EUR" });

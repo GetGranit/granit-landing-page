@@ -1,0 +1,204 @@
+{
+  "slug": "dentaire-paniers-100-sante-tiers-payant",
+  "id": "R4",
+  "category": "guide-tiers-payant",
+  "categoryName": "Third-party payment guide",
+  "type": "standard",
+  "plateforme": null,
+  "title": "Dental: securing third-party payment on 100% Santé baskets",
+  "primaryKeyword": "panier 100 santé dentaire",
+  "keywordCluster": [
+    "RAC 0 dentaire",
+    "panier maîtrisé dentaire",
+    "devis dentaire normalisé",
+    "tiers payant prothèse dentaire"
+  ],
+  "parentSlug": null,
+  "level": "Refonte",
+  "author": {
+    "name": "Laura",
+    "jobTitle": "Writer, health expert",
+    "photo": "/auteurs/laura.jpg",
+    "url": null
+  },
+  "reviewer": {
+    "name": "Olivier",
+    "jobTitle": "Writer, third-party payment expert",
+    "photo": "/auteurs/olivier.jpg",
+    "url": null
+  },
+  "datePublished": "2026-10-27",
+  "dateModified": "2026-10-27",
+  "checkedOn": null,
+  "wordCount": 2182,
+  "readTime": 9,
+  "metaDescription": "Dental 100% Santé basket: classify the prosthesis, lock down the quote, avoid rejection. The method to secure your third-party payment, file by file.",
+  "contentHtml": "<p><strong>On a dental 100% Santé (zero out-of-pocket scheme) basket, third-party payment (tiers payant: the patient pays nothing upfront, insurers pay the provider directly) holds up if three documents tell the same story: the quote, the invoice and the patient's contract.</strong> At the slightest gap (basket misclassified, material changed during treatment, tooth renumbered), the supplementary insurer rejects the file or pays a different amount, and the dental office absorbs the difference. This guide covers the three prosthesis baskets, the quote details to lock down, the most common causes of rejection and a checking method to apply before fitting, rather than after the rejection.</p><div class=\"key-takeaways\"><strong>Key points</strong><ul><li>Each dental prosthesis falls into one of three baskets: 100% Santé (zero out-of-pocket, or RAC 0), controlled prices or free prices. The classification depends on the procedure, the tooth and the material.</li><li>The 100% Santé reform has covered all dental prostheses since January 1, 2021.</li><li>The supplementary insurer compares the invoice with the signed quote: a quote not updated after a change of plan is enough to break third-party payment.</li><li>Check the contract's actual coverage before approving an expensive prosthetic plan, not at billing time.</li><li>Match each invoice against its original quote before sending, then each payment against its invoice.</li></ul></div><h2 id=\"trois-paniers-prothese-dentaire\">What is the difference between the 100% Santé, controlled-price and free-price baskets?</h2><p>The difference lies in the patient's out-of-pocket amount and the freedom to set fees. The 100% Santé basket is the set of dental prostheses whose fees are capped and fully covered by the mandatory insurance (AMO) and the supplementary health insurance (AMC), with no out-of-pocket amount for a patient covered by a contrat responsable (a supplementary policy that meets French regulatory criteria). The controlled-price basket also caps fees, but leaves an out-of-pocket amount that depends on the contract. The free-price basket does not cap fees: reimbursement depends entirely on the patient's coverage.</p><p>According to <a href=\"https://www.service-public.fr/particuliers/vosdroits/F34729\">service-public.fr</a>, the 100% Santé scheme has applied to all dental prostheses since January 1, 2021, after a gradual rollout. Crowns, bridges and removable prostheses therefore all fall into one of the three baskets. For the dental office, this means no prosthetic quote escapes the basket question.</p><p>The classification is not a box you tick freely. It follows from the combination of the CCAM procedure (classification commune des actes médicaux, the French common classification of medical procedures), the tooth's location and the material chosen. The same type of procedure, a crown for example, can fall under 100% Santé on one tooth and under the controlled-price basket on another. The detailed mapping is set by the national dental agreement, and <a href=\"https://www.ameli.fr/chirurgien-dentiste/exercice-liberal/prescription-prise-charge/soins-actes-dentaires/reforme-100-sante\">ameli.fr</a> publishes the rules for dentists.</p><div data-figure=\"comparaison-paniers\"></div><p>In practice, the dental assistant does not need to memorize the whole grid. They do need to know where to check it, and to make sure that the basket written on the quote is the one the supplementary insurer expects for this procedure, on this tooth, with this material.</p><h2 id=\"pourquoi-tiers-payant-fragile\">Why is third-party payment for dental prostheses more fragile than elsewhere?</h2><p>Because the supplementary insurer checks the consistency of several documents produced at different times, for a procedure with a high amount. There are four sources of friction, almost always the same.</p><h3>The classification of the procedure</h3><p>A basket error at the quote stage carries over to the invoice. Two outcomes are possible: the patient is asked for an out-of-pocket amount they should not have on a 100% Santé procedure, or the supplementary insurer rejects the file because the billed basket does not match the expected one. Either way, the file comes back to the dental office.</p><h3>The gap between quote and invoice</h3><p>The signed quote is the reference. If the plan changes along the way (material replaced, tooth renumbered after an X-ray, procedure added or removed) and the quote is not redone, the invoice no longer matches. The third-party payment chain breaks, and the file turns into a rejection or an out-of-pocket amount for the patient.</p><h3>The supplementary insurer's prior approval</h3><p>Some supplementary insurers require a coverage approval before treatment for expensive prosthetic procedures, especially outside the 100% Santé basket. The conditions depend on the patient's contract and on the platform that manages it. Without an upfront check, the dental office sometimes discovers at billing time that part of the plan is not covered as expected.</p><h3>The spread of portals</h3><p>Coverage requests go through different third-party payment platforms depending on the supplementary insurer (Viamedis, Almerys, Santéclair, iSanté, Kalixia…). Each has its own professional portal, fields and statuses. Our page on <a href=\"/ressources/portails-tiers-payant\">third-party payment portals</a> details these screens for optics; the logic for logging in and tracking is the same. In practice, the same quote data is often re-entered portal by portal.</p><h2 id=\"devis-dentaire-normalise\">What must the standardized dental quote contain?</h2><p>The standardized dental quote must let the supplementary insurer find, line by line, what will be billed: the procedure, the tooth, the material, the basket and the amounts. It is the reference document for prosthetic third-party payment, and the first thing compared in a dispute.</p><p>A quote usable for third-party payment includes at least:</p><ul><li>the identification of the patient and the practitioner;</li><li>each procedure with its CCAM code;</li><li>the location, meaning the number of the tooth concerned;</li><li>the material proposed;</li><li>the basket it belongs to (100% Santé, controlled price or free price);</li><li>the fee, the AMO reimbursement base and the amount left for the patient to pay before the supplementary insurer steps in;</li><li>the date and the patient's signature.</li></ul><p>When a free-price prosthesis is offered, the standard quote also requires presenting an alternative with no out-of-pocket amount or at a controlled price when one exists for that procedure. This alternative must be easy to read: it shows that the patient made an informed choice.</p><div class=\"callout callout--warn\"><p><strong>The trap:</strong> changing the treatment plan without redoing the quote. A changed material or a tooth renumbered after an additional exam is enough to create a gap between quote and invoice. Redo the quote and have the patient sign it before continuing treatment.</p></div><p>The right level of rigor is simple to state: at the end of treatment, someone who does not know the file should be able to put the quote next to the invoice and see that everything matches, without any verbal explanation.</p><h2 id=\"verifier-couverture-accord-prealable\">When should you check the patient's coverage?</h2><p>Before approving the treatment plan, not at billing time. It is the only moment when a coverage problem can be solved without loss: you can still adapt the plan, offer an alternative or request a coverage approval.</p><p>The check covers three points. First, are the AMO and AMC coverage rights open on the planned treatment date? Next, which platform manages the patient's contract, and is it a contrat responsable? Finally, does the supplementary insurer require a prior coverage approval for the planned procedures?</p><p>For long or split treatment plans, the question comes up several times. A contract can change between the first session and the final fitting, especially at the start of the year. The same logic applies to treatments spread over several semesters, as described for <a href=\"/ressources/orthodontie-facturation-traitements-longs\">billing orthodontic treatments</a>.</p><div class=\"callout callout--tip\"><p><strong>The right habit:</strong> record in the file the date of the coverage request and the date of the answer. A tracked delay gets followed up in time; a delay discovered after the fact often means missing the window for correction.</p></div><h2 id=\"prothese-rejetee-mutuelle\">Why does the mutuelle reject a prosthesis?</h2><p>A prosthesis is most often rejected because of an inconsistency between documents, not a refusal in principle. The table below lists the classic causes, where to check and the fix to make.</p><div class=\"tbl\"><table><tr><th>Cause</th><th>Where to check</th><th>Fix</th></tr><tr><td>Billed basket different from the basket expected for the procedure</td><td>CCAM code, tooth and material on the quote</td><td>Correct the basket according to the agreement's grid, rebill</td></tr><tr><td>Gap between signed quote and invoice</td><td>Signed quote against the invoice, line by line</td><td>Redo the quote if the plan has changed, align the invoice</td></tr><tr><td>Prior coverage approval missing or expired</td><td>Portal of the platform that manages the contract</td><td>Submit or renew the request, wait for approval</td></tr><tr><td>Coverage rights closed or contract changed</td><td>Third-party payment card and coverage rights on the date of treatment</td><td>Update the patient's supplementary insurer, resend</td></tr><tr><td>Amount paid lower than the amount expected</td><td>Payment return and the supplementary insurer's statement</td><td>Identify the line with the gap, follow up with the quote</td></tr></table></div><p>On the AMO side, payment and rejection returns arrive through NOEMIE, the flow that sends the professional the results of processing their invoices. Rejection reasons are coded; our page on <a href=\"/ressources/codes-rejets-noemie\">NOEMIE rejection codes</a> helps you read them. On the AMC side, the reason is shown on the platform's portal or in its statement.</p><p>When the supplementary insurer's bank transfer is lower than the invoice, the method is to find the line with the gap before calling: this is what the page on the <a href=\"/ressources/virement-mutuelle-inferieur\">mutuelle bank transfer lower than the invoice</a> explains. Always keep the exact reason shown: it tells you what to fix.</p><h2 id=\"tresorerie-dossier-prothetique\">Why does a stuck prosthetic file weigh so heavily on cash flow?</h2><p>Because in dentistry, the unit amount of a prosthetic file is high while the number of files stays limited. A rejection does not get diluted in volume: it shows on the month.</p><p>A pharmacy or an optical store handles a large number of files with smaller amounts. A single rejection weighs little there. A dental office bills fewer prostheses, but each one represents a significant sum. A single stuck or misclassified file is enough to push back a noticeable share of expected collections.</p><p>On top of this comes an organizational constraint. The assistant who handles billing also manages the front desk, sterilization and the schedule between two patients. Tracking portals and matching quotes with invoices naturally come after the day's urgent tasks, and are often done at the end of the week. Yet it is precisely this delay that causes a follow-up or a correction to be missed.</p><p>So the risk is not only the rejection. It is the rejection discovered late, when treatment is over, the patient has left and the documents are harder to piece back together.</p><h2 id=\"securiser-tiers-payant-dossier\">How do you secure third-party payment on a dental 100% Santé basket, file by file?</h2><p>The safest method is to check the file at three moments: before the quote is signed, during treatment, and between the invoice and the payment. Each check is short, but none replaces the others.</p><ol class=\"steps\"><li><strong>Use quote templates by basket.</strong> A template prepared for each common procedure and each basket avoids building the quote case by case, the main source of classification errors.</li><li><strong>Check coverage before approving the plan.</strong> Open coverage rights, the contract's platform, the need for a prior coverage approval: everything is checked before the first prosthetic session.</li><li><strong>Track each coverage request.</strong> Date sent, status, date of answer: a shared spreadsheet is enough to know what to follow up and when.</li><li><strong>Redo the quote at every change of plan.</strong> Material, tooth or procedure changed: a new signed quote before continuing.</li><li><strong>Match the invoice against the quote before sending.</strong> Line by line, basket included. This is the check that prevents most of the back-and-forth.</li><li><strong>Match the payment against the invoice.</strong> NOEMIE remittance file for the AMO, statement or bank transfer for the AMC: any gap is handled the day it appears.</li></ol><div data-figure=\"controles-dossier\"></div><p>For the follow-up calendar, the page <a href=\"/ressources/quand-relancer-mutuelle\">when to follow up with a mutuelle</a> gives the markers step by step. For the daily reconciliation between remittance files and bank transfers, see the method to <a href=\"/ressources/rapprochement-noemie\">reconcile NOEMIE files and bank transfers every morning</a>.</p><p>When these checks come on top of the front desk and the schedule, portal tracking is the first thing to slip. This is where <a href=\"/agents\">Granit's agents</a> come in: they enter requests on the platforms' portals, track the answers and send the status back to the team, in the tools already in place at the dental office. The assistant stays in charge of the file and only handles the cases that need a decision.</p><h2 id=\"organiser-back-office-cabinet\">How do you organize the back office when prosthetic volume grows?</h2><p>By setting who checks what, and when, rather than relying on the memory of the person who does everything. A growing dental office, or a health center that brings together several practitioners, sees the number of prosthetic files rise faster than the administrative time available.</p><p>Three simple decisions keep the workload in check. Appoint a third-party payment lead, even part-time, who has the authority to block an inconsistent quote. Set a daily slot, even a short one, for the portals and payment returns, instead of a weekly pass. And track a few indicators: number of files awaiting an answer, number of rejections in the month, amount of invoices unpaid beyond the usual delay.</p><p>These indicators do not need a complex tool. An up-to-date spreadsheet is enough, as long as the practice manager looks at it every week. The goal is to spot a file that is drifting while there is still time to fix it, not to produce a report.</p><p>Finally, keep the archive clean: signed quote, new versions, coverage request, answer, invoice, payment return. In case of a dispute, this set of documents is what proves that the billed basket was the right one and that the patient had accepted the plan.</p>",
+  "tocItems": [
+    {
+      "id": "trois-paniers-prothese-dentaire",
+      "label": "100% Santé, controlled-price or free-price basket"
+    },
+    {
+      "id": "pourquoi-tiers-payant-fragile",
+      "label": "Why prosthetic third-party payment is fragile"
+    },
+    {
+      "id": "devis-dentaire-normalise",
+      "label": "What the standardized dental quote contains"
+    },
+    {
+      "id": "verifier-couverture-accord-prealable",
+      "label": "Checking coverage before the treatment plan"
+    },
+    {
+      "id": "prothese-rejetee-mutuelle",
+      "label": "Causes of a prosthesis rejection"
+    },
+    {
+      "id": "tresorerie-dossier-prothetique",
+      "label": "The cash flow impact of a stuck file"
+    },
+    {
+      "id": "securiser-tiers-payant-dossier",
+      "label": "Securing each file with six checks"
+    },
+    {
+      "id": "organiser-back-office-cabinet",
+      "label": "Organizing the dental office's back office"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "What is the difference between the 100% Santé, controlled-price and free-price baskets?",
+      "answer": "The 100% Santé (zero out-of-pocket scheme) basket groups dental prostheses with capped fees, fully covered by the French national health insurance (Assurance Maladie) and the supplementary insurer, with no out-of-pocket amount for a patient covered by a contrat responsable (a supplementary policy that meets French regulatory criteria). The controlled-price basket also caps fees but leaves an out-of-pocket amount that depends on the contract. The free-price basket does not cap fees, and reimbursement depends entirely on the patient's coverage."
+    },
+    {
+      "question": "Is third-party payment mandatory for the 100% Santé basket?",
+      "answer": "The 100% Santé basket guarantees no out-of-pocket amount for a patient covered by a contrat responsable, but third-party payment is applied in practice through the patient's supplementary insurer and the platform that manages their contract. The dental office must therefore check coverage rights and, if needed, obtain a coverage approval before treatment. The official rules of the scheme are detailed on ameli.fr and service-public.fr."
+    },
+    {
+      "question": "What must the dental quote contain?",
+      "answer": "The standardized dental quote shows, for each procedure, the CCAM code, the tooth number, the material, the basket it belongs to, the fee, the Assurance Maladie reimbursement base and the out-of-pocket amount before supplementary insurance. When a free-price prosthesis is offered, it also presents an alternative with no out-of-pocket amount or at a controlled price when one exists. It is dated and signed by the patient before treatment."
+    },
+    {
+      "question": "Why does the mutuelle reject a prosthesis?",
+      "answer": "A prosthesis is most often rejected because of an inconsistency between documents: a billed basket different from the expected basket, a gap between the signed quote and the invoice, a missing prior coverage approval or coverage rights closed on the date of treatment. The exact reason shown by the platform or in the payment return tells you what to fix. Matching the invoice against its quote before sending prevents most of these rejections."
+    }
+  ],
+  "sources": [
+    {
+      "label": "service-public.fr · 100% Santé: glasses, dental prostheses and hearing aids",
+      "url": "https://www.service-public.fr/particuliers/vosdroits/F34729"
+    },
+    {
+      "label": "ameli.fr · The 100% Santé reform for dentists",
+      "url": "https://www.ameli.fr/chirurgien-dentiste/exercice-liberal/prescription-prise-charge/soins-actes-dentaires/reforme-100-sante"
+    }
+  ],
+  "figures": [
+    {
+      "id": "comparaison-paniers",
+      "type": "comparaison",
+      "titre": "The three dental prosthesis baskets",
+      "legende": "Only the 100% Santé basket removes the out-of-pocket amount: this is where the classification must be exact.",
+      "colonnes": [
+        "100% Santé",
+        "Controlled price",
+        "Free price"
+      ],
+      "elements": [
+        {
+          "label": "Fees",
+          "detail": "",
+          "valeurs": [
+            "Capped",
+            "Capped",
+            "Free"
+          ],
+          "focus": false
+        },
+        {
+          "label": "Out-of-pocket amount",
+          "detail": "",
+          "valeurs": [
+            "None",
+            "Depends on contract",
+            "Depends on contract"
+          ],
+          "focus": true
+        },
+        {
+          "label": "Alternative on the quote",
+          "detail": "",
+          "valeurs": [
+            "Not required",
+            "If a 100% Santé option exists",
+            "If one exists"
+          ],
+          "focus": false
+        }
+      ]
+    },
+    {
+      "id": "controles-dossier",
+      "type": "etapes",
+      "titre": "Six checks for a prosthetic file",
+      "legende": "Matching the invoice against the quote before sending is the check that saves the most back-and-forth.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "Quote template",
+          "detail": "One template per common procedure and per basket",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Check coverage",
+          "detail": "Coverage rights, platform, prior coverage approval",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Track requests",
+          "detail": "Date sent, status, date of answer",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Redo the quote",
+          "detail": "At every change of plan",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Invoice against quote",
+          "detail": "Line by line, basket included",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Payment against invoice",
+          "detail": "NOEMIE remittance file, statement or bank transfer",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [],
+  "liensEntrants": [],
+  "remplace": [],
+  "verticales": [
+    "dentaire"
+  ],
+  "refonte": true,
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-27T12:10:56.207Z",
+    "avertissements": [
+      "aucune citation (facultative)",
+      "source non vérifiable (403) : https://www.ameli.fr/chirurgien-dentiste/exercice-liberal/prescription-prise-charge/soins-actes-dentaires/reforme-100-sante"
+    ]
+  }
+}

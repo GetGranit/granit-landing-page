@@ -1,0 +1,163 @@
+{
+  "slug": "quand-relancer-mutuelle",
+  "id": "C2",
+  "category": "paiements",
+  "categoryName": "Payments and reconciliation",
+  "type": "resolution",
+  "plateforme": null,
+  "title": "When should you follow up with a supplementary insurer (mutuelle)? Timeline by step (PEC, invoice, ARL, NOEMIE)",
+  "primaryKeyword": "relancer une mutuelle",
+  "keywordCluster": [
+    "impayés tiers payant"
+  ],
+  "parentSlug": "rapprochement-bancaire-tiers-payant",
+  "level": "Fille",
+  "author": {
+    "name": "Olivier",
+    "jobTitle": "Writer, third-party payment expert",
+    "photo": "/auteurs/olivier.jpg",
+    "url": null
+  },
+  "reviewer": {
+    "name": "Nathalie",
+    "jobTitle": "Writer, optical industry expert",
+    "photo": "/auteurs/nathalie.jpg",
+    "url": null
+  },
+  "datePublished": "2026-10-14",
+  "dateModified": "2026-10-14",
+  "checkedOn": null,
+  "wordCount": 2399,
+  "readTime": 10,
+  "metaDescription": "Follow up with a supplementary insurer at the right time: signals to watch at each step (PEC, invoice, ARL, NOEMIE), proof to keep, and when to escalate an unpaid file.",
+  "contentHtml": "<p><strong>You should follow up with a supplementary health insurer (mutuelle) as soon as a step in the file exceeds that payer’s usual timeframe, not after a number of days fixed once and for all.</strong> An optical third-party payment (tiers payant: the patient pays nothing upfront, insurers pay the provider directly) file goes through four checkpoints: the coverage approval (PEC), sending the invoice, the acknowledgment (ARL), and the payment return, often sent through NOEMIE. Each checkpoint has its own signal. Spotting the one that is missing tells you who to follow up with, through which channel, and with what proof.</p><p>No single rule sets a timeframe that applies to all supplementary insurers and all platforms. Response and payment times depend on the third-party payment agreement you signed and on what each platform announces. The most reliable method is therefore to build your own timeline, payer by payer, from your files that have already been paid. This page gives you that timeline by step, the causes to check before calling, and when to escalate.</p><div class=\"key-takeaways\"><strong>Key takeaways</strong><ul><li>You follow up on a specific step (PEC, invoice, ARL, payment return), never on “the file” in general.</li><li>There is no universal timeframe: the reference is your agreement, what the platform announces, and your own payment history by payer.</li><li>Before any follow-up, check that no rejection is pending: a rejection gets corrected, not followed up.</li><li>Follow up first through the portal or in writing, keep a record (date, channel, contact, answer), then escalate if two follow-ups have no effect.</li><li>A weekly review of unpaid files, sorted by age, keeps an unpaid file from turning into a loss.</li></ul></div><h2 id=\"relancer-mutuelle-cas\">When should you follow up with an insurer?</h2><p><strong>You follow up when a file stops moving even though no rejection has been notified to you.</strong> The typical case: the customer has left with their glasses, the share from mandatory insurance (AMO) has arrived, but the share from supplementary insurance (AMC, the customer’s mutuelle or insurance company) appears neither on your statements nor in your account. The file is neither paid nor rejected: it is silent.</p><p>These silent files make up most of the unpaid third-party payment files you find at the end of the month. They cost nothing while they are recent. They cost a lot when you discover them three months later, because nobody remembers what was sent, or when.</p><p>Two situations need to be told apart. If the payer has sent back a rejection reason, there is no point following up: you need to correct and resend. The <a href=\"/ressources/codes-rejets-noemie\">NOEMIE rejection code list</a> helps you read that reason. If no return has arrived, a follow-up is indeed what is needed, and this page applies.</p><p>To review the whole journey of a file, from request to bank transfer, the guide <a href=\"/ressources/tiers-payant-opticien\">Third-party payment for opticians: from coverage approval to collection</a> describes each step in detail.</p><h2 id=\"signaux-dossier-bloque\">What signals show that a file is stuck, step by step?</h2><p><strong>A file is stuck when the signal expected at the end of a step has not arrived.</strong> Each step produces a specific trace. As long as that trace is missing, the next step cannot start, and following up on the next step is pointless.</p><h3>Step 1: the coverage request gets no answer</h3><p>The coverage request was entered on the platform’s portal, but the status does not change. It stays “en attente” (pending) or “en instance” (on hold), with neither approval nor refusal. Until there is an approval, the insurer has committed to nothing. The expected signal is a clear-cut status: approval, approval subject to documents, or refusal.</p><h3>Step 2: the invoice did not go out or was not accepted</h3><p>The approval was obtained, the equipment was dispensed, but the invoice was not sent, or it was sent with amounts that differ from the approval. On some portals, billing is done directly online from the PEC; elsewhere, it goes out by e-transmission from your software. The expected signal is an invoice visible on the payer’s side, linked to the right approval.</p><h3>Step 3: the ARL has not come back</h3><p>The ARL (acknowledgment) is the return that confirms an e-transmitted batch was received and read by its recipient. It says nothing about payment: it only proves the batch arrived and is readable. A missing or negative ARL means the payer may never have had your invoice in hand.</p><h3>Step 4: the payment return or the bank transfer is missing</h3><p>NOEMIE is the exchange standard that sends the professional the payment or rejection information after processing. There are two cases. Either no return has arrived: the file is being processed, or lost. Or the return announces a payment, but you cannot find the bank transfer: it is then a reconciliation problem, not a follow-up one.</p><div data-figure=\"points-controle-dossier\"></div><h2 id=\"causes-impayes-tiers-payant\">Why does a third-party payment file stay unpaid?</h2><p><strong>Most silent files have a cause you can check on your side before you even call.</strong> It is better to rule out these causes first: a follow-up that ends with “we received nothing” or “the beneficiary is not covered” costs you a week. The causes below are ordered from the easiest to check to the longest to handle.</p><div class=\"tbl\"><table><tr><th>Possible cause</th><th>Where to check</th><th>Fix</th></tr><tr><td>Wrong organization or wrong portal selected</td><td>Customer’s third-party payment card, AMC number, portal selector</td><td>Submit the request again to the right payer</td></tr><tr><td>Beneficiary’s coverage rights not active on the date of service</td><td>Third-party payment card (validity dates), portal response</td><td>Check the validity period, ask for an up-to-date certificate</td></tr><tr><td>Invoice different from the approval (amount, LPP codes, date)</td><td>Coverage approval compared with the invoice sent</td><td>Align the invoice with the approval, or request a new approval</td></tr><tr><td>E-transmitted batch not received</td><td>No ARL in your software</td><td>Resend the batch, check the e-transmission setup</td></tr><tr><td>Rejection received but not seen</td><td>NOEMIE remittance files, portal inbox</td><td>Read the reason, correct, resend</td></tr><tr><td>Payment received but not reconciled</td><td>Bank statement, transfer label, payment details</td><td>Reconcile the grouped bank transfer with the files concerned</td></tr><tr><td>File genuinely pending with the payer</td><td>Status on the portal</td><td>Follow up, with the proof</td></tr></table></div><p>The first cause is common when an insurer has changed operators or when the customer has changed contracts. The <a href=\"/ressources/mutuelle-quel-portail\">Which portal does my insurer use?</a> tool lets you find the portal from the AMC number printed on the card.</p><p>The LPP (list of reimbursable products and services) sets the codes for lenses and frames. A billed code that does not match the one in the approval is enough to block the file, even if the total amount is identical.</p><div class=\"callout callout--warn\"><p><strong>The trap:</strong> a payer often settles several files in a single bank transfer. If you look for the exact amount of an invoice on your statement, you will not find it, and you risk following up on a file that has already been paid. Start from the payment details, not from the bank statement.</p></div><p>For this last case, the method described in <a href=\"/ressources/rapprochement-noemie\">Reconciling NOEMIE remittance files and bank transfers every morning</a> also applies to returns from supplementary insurers.</p><h2 id=\"comment-relancer-mutuelle\">How do you follow up with an insurer, step by step?</h2><p><strong>An effective follow-up targets a specific step, cites the file references, and goes through a channel that leaves a record.</strong> In practice, a follow-up that says “where is Mrs. X’s file?” gets a vague answer. A follow-up that says “approval no. …, invoice sent on …, ARL received, no payment return” gets a precise answer.</p><ol class=\"steps\"><li><strong>Identify the stuck step.</strong> PEC with no status, invoice not sent, missing ARL, or missing payment return: each case calls for a different action.</li><li><strong>Rule out internal causes.</strong> Check the payer, the coverage rights, the match between approval and invoice, the ARL, unread rejections, and grouped bank transfers, using the table above.</li><li><strong>Gather the references.</strong> Approval number, invoice number, sending date, batch number, beneficiary’s identity as it appears on the card.</li><li><strong>Follow up through the most traceable channel.</strong> First the portal’s inbox or tracking feature, then something in writing, and the phone last, to unblock a specific point.</li><li><strong>Record the follow-up.</strong> Date, channel, contact, answer received, and date of the next check, in the file itself.</li><li><strong>Set the date of the next follow-up.</strong> If nothing has moved by that date, you move on to escalation, without waiting for the end of the month.</li></ol><h3>Portal, email, or phone: which channel should you choose?</h3><p>The platform’s portal comes first. A request made from the file stays linked to it, and the administrator sees the whole history. The page <a href=\"/ressources/portails-tiers-payant\">Third-party payment portals for opticians</a> details, portal by portal, where the tracking and inbox are.</p><p>Email or the contact form comes next. It leaves a dated written record, useful if the file has to be escalated. The phone is for unblocking a specific situation: a file that cannot be found, a document requested without anyone knowing which one. After each call, write down the name of the person you spoke to and what was agreed, then confirm in writing if the stakes justify it.</p><p>When these follow-ups run into the dozens every week, tracking statuses on each portal becomes the store’s bottleneck. This is what <a href=\"/agents\">Granit’s agents</a> take on: they submit coverage requests directly on the platforms’ portals, track the answers, then send the status back to the team, which then knows which files to follow up on.</p><h2 id=\"preuves-relance\">What proof should you keep to follow up with an insurer?</h2><p><strong>Keep proof for each step completed: it is what turns a follow-up into an admissible claim.</strong> Without proof, the payer can answer that it received nothing, and you start from scratch. With the right document, it has to process the file.</p><ul><li><strong>The coverage approval</strong>, with its number, its date, and the approved amount.</li><li><strong>The invoice</strong> and its sending date, as it went out (not a version corrected afterward).</li><li><strong>The ARL</strong> for the batch that contained the invoice, if it was e-transmitted.</li><li><strong>The payment or rejection returns</strong> received for this file, even partial ones.</li><li><strong>The bank statement</strong> for the period, to prove that no bank transfer matches.</li><li><strong>The follow-up history</strong>: date, channel, contact, answer.</li></ul><p>You should be able to find these documents in under a minute. The simplest way is to attach them to the file in your software, or to sort them by payer and by month in a folder shared by the team.</p><div class=\"callout callout--tip\"><p><strong>The right reflex:</strong> take a screenshot or export of the status displayed by the portal at the time of the follow-up. Statuses change, and a record of what you saw that day settles many discussions.</p></div><h2 id=\"delai-relance-mutuelle\">How long should you wait before following up with an insurer?</h2><p><strong>Follow up when that payer’s usual timeframe for that step has passed.</strong> There is no single timeframe that applies to all supplementary insurers: each third-party payment agreement, each platform, and each organization has its own processing times. Giving a universal figure would be wrong for some of your payers.</p><p>The table below shows, for each step, when to start counting and where to find your reference timeframe.</p><div class=\"tbl\"><table><tr><th>Step</th><th>The clock starts at</th><th>Expected signal</th><th>Where to find the reference</th></tr><tr><td>Coverage approval</td><td>Sending the request on the portal</td><td>Approval, approval subject to conditions, or refusal</td><td>What the platform announces, your past response times</td></tr><tr><td>Invoice</td><td>Dispensing the equipment</td><td>Invoice sent and linked to the approval</td><td>Your internal organization, the approval’s validity period</td></tr><tr><td>ARL</td><td>E-transmitting the batch</td><td>Positive ARL</td><td>Your e-transmission software</td></tr><tr><td>Payment return</td><td>Receipt of the ARL or the invoice</td><td>Payment or rejection return</td><td>Your agreement, your past payment times by payer</td></tr><tr><td>Bank transfer</td><td>The return announcing the payment</td><td>Bank transfer found and reconciled</td><td>Your bank statements</td></tr></table></div><h3>Building your own timeline</h3><p>The method is simple. Take your files paid over the last few months and note, for each payer, the time elapsed between sending the invoice and payment. Keep the usual value, the one most files cluster around. A file that clearly exceeds this value should be followed up.</p><p>This timeline changes over time: a platform may change its timeframes, an insurer may change operators. Review it every quarter, and as soon as a payer starts paying more slowly than usual on several files.</p><h3>Do not let an unpaid file age</h3><p>The legal framework for a supplementary insurer depends on its type: mutuelles fall under the <a href=\"https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006074067/\">Code de la mutualité</a> (Mutual Insurance Code), insurance companies under the <a href=\"https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006073984/\">Code des assurances</a> (Insurance Code), and provident institutions under the <a href=\"https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006073189/\">Code de la sécurité sociale</a> (Social Security Code). The deadlines for taking action are therefore not the same everywhere, and your third-party payment agreement adds its own rules. A file followed up early is often settled with one missing document. A file forgotten for months becomes much harder to recover.</p><h2 id=\"relances-sans-reponse\">What should you do after several follow-ups with no answer?</h2><p><strong>After two follow-ups with no effect, move up a level: switch to writing, to a different contact, with a complete summary of the file.</strong> Continuing to follow up through the same channel, with the same department, usually just gets the same answer.</p><p>Start by identifying the right recipient. The third-party payment platform manages the file on behalf of the supplementary insurer: it handles the coverage approval and, often, the payment. If the platform answers that the file has been forwarded to the organization, ask on what date and under what reference, then contact the organization quoting that reference.</p><p>Then send a written summary. In a few lines, it covers the file references, the proof for each step (approval, invoice, ARL), the list of follow-ups already made with their dates, and the precise request: payment, or a written reason for the blockage. A registered letter with acknowledgment of receipt is justified for large amounts or old files.</p><p>Also reread your third-party payment agreement. It often provides for a department dedicated to healthcare professionals or a complaints procedure, and it governs what you can do if third-party payment does not go through. Before taking any step with the customer, check what it allows.</p><h3>Organizing tracking so you stop chasing files</h3><p>Late follow-ups almost always come from a lack of regular tracking. A weekly review is enough: list the unpaid files, sort them by age and by payer, and handle first those that exceed your timeline. A payer that keeps showing up on this list deserves an overall discussion rather than case-by-case follow-ups.</p><p>Finally, keep the exact reason displayed by the portal or the payment return at each step: it is what tells you whether to follow up, correct, or escalate.</p>",
+  "tocItems": [
+    {
+      "id": "relancer-mutuelle-cas",
+      "label": "When to follow up with an insurer"
+    },
+    {
+      "id": "signaux-dossier-bloque",
+      "label": "Signs of a stuck file, step by step"
+    },
+    {
+      "id": "causes-impayes-tiers-payant",
+      "label": "Why third-party payment files go unpaid"
+    },
+    {
+      "id": "comment-relancer-mutuelle",
+      "label": "How to follow up, step by step"
+    },
+    {
+      "id": "preuves-relance",
+      "label": "The proof to keep"
+    },
+    {
+      "id": "delai-relance-mutuelle",
+      "label": "How long to wait before following up"
+    },
+    {
+      "id": "relances-sans-reponse",
+      "label": "After several follow-ups with no answer"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "How long should you wait before following up with a supplementary insurer?",
+      "answer": "You should follow up with a supplementary insurer when that payer’s usual timeframe for the step concerned has passed. No single timeframe applies to all supplementary insurers: it depends on the third-party payment agreement and on what each platform announces. The most reliable method is to measure, on your files already paid, the usual time between invoice and payment for each payer, then follow up on any file that clearly exceeds it."
+    },
+    {
+      "question": "How do you follow up with an insurer: portal, email, or phone?",
+      "answer": "The platform’s portal comes first, because the request stays linked to the file and the administrator sees the whole history. Email or the contact form comes next, to leave a dated written record. The phone is for unblocking a specific point, provided you write down the name of the person you spoke to and what was agreed."
+    },
+    {
+      "question": "What should you do after several follow-ups with no answer?",
+      "answer": "After two follow-ups with no effect, move up a level: switch to writing, to another contact, with a complete summary. This summary covers the file references, the proof for each step (approval, invoice, ARL), and the list of follow-ups already made. Also reread the third-party payment agreement, which often provides for a department dedicated to professionals or a complaints procedure."
+    },
+    {
+      "question": "What is an ARL in third-party payment?",
+      "answer": "The ARL, or acknowledgment (accusé de réception logique), is the return that confirms an e-transmitted batch was received and read by its recipient. It says nothing about payment: it only proves the invoice arrived and is readable. A missing or negative ARL means the payer may never have received the invoice, and you should then resend the batch rather than follow up."
+    }
+  ],
+  "sources": [
+    {
+      "label": "legifrance.gouv.fr · Code de la mutualité (Mutual Insurance Code)",
+      "url": "https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006074067/"
+    },
+    {
+      "label": "legifrance.gouv.fr · Code des assurances (Insurance Code)",
+      "url": "https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006073984/"
+    },
+    {
+      "label": "legifrance.gouv.fr · Code de la sécurité sociale (Social Security Code)",
+      "url": "https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006073189/"
+    }
+  ],
+  "figures": [
+    {
+      "id": "points-controle-dossier",
+      "type": "etapes",
+      "titre": "The five checkpoints of a file",
+      "legende": "Follow up on the step whose signal is missing: until it arrives, the next step does not start.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "PEC approval",
+          "detail": "Clear-cut status: approval, conditional approval, or refusal",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Invoice sent",
+          "detail": "Linked to the approval, same amounts and LPP codes",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "ARL received",
+          "detail": "The batch arrived and is readable, not paid yet",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Payment return",
+          "detail": "Payment or rejection, often via NOEMIE",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Transfer reconciled",
+          "detail": "Start from the payment details, not the statement",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [
+    {
+      "id": "C3",
+      "slug": "codes-rejets-noemie",
+      "anchor": "NOEMIE rejection code list",
+      "type": "sœur"
+    }
+  ],
+  "liensEntrants": [
+    {
+      "slug": "virement-mutuelle-inferieur",
+      "anchor": "Insurer bank transfer lower than the invoice: understanding the gap and following up",
+      "type": "soeur"
+    }
+  ],
+  "remplace": [],
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-14T11:51:53.475Z",
+    "avertissements": [
+      "aucune citation (facultative)",
+      "source non vérifiable (403) : https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006074067/",
+      "source non vérifiable (403) : https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006073984/",
+      "source non vérifiable (403) : https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006073189/"
+    ]
+  }
+}

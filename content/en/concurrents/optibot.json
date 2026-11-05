@@ -1,0 +1,128 @@
+{
+  "slug": "optibot",
+  "nom": "OptiBot",
+  "modele": "outil-saisie",
+  "logo": null,
+  "checkedOn": "2026-10-09",
+  "aRelire": false,
+  "identite": {
+    "raisonSociale": "Vorreiter Activities (SASU)",
+    "siege": "Ambérieu-en-Bugey (01)",
+    "site": "https://optibot.fr/",
+    "metiers": [
+      "optique"
+    ]
+  },
+  "axes": {
+    "quiFait": {
+      "valeur": "The optician, with a Chrome extension that reads documents and fills in the portal fields",
+      "detail": "Scan of the insurance card and the prescription, then one click on “Remplir” (Fill) in the portal",
+      "source": "optibot-accueil"
+    },
+    "pec": {
+      "valeur": "partial",
+      "detail": "Pre-fills the identity, social security number (NSS) and prescription details; LPP codes and lens / frame amounts are still entered by hand; Viamedis mapping under development",
+      "source": "optibot-almerys"
+    },
+    "rejets": {
+      "valeur": "detection and alerts",
+      "detail": "Detection of mandatory insurance (AMO) and supplementary insurance (AMC) rejections through the extension, alerts and automatic follow-ups based on rules; correction and resubmission not published",
+      "source": "optibot-accueil"
+    },
+    "rapprochement": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "avance": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "engagement": {
+      "valeur": "no commitment",
+      "detail": "Pro, Cabinet and Réseau plans can be canceled at any time; Franchise plan on an annual contract",
+      "source": "optibot-accueil"
+    },
+    "hds": {
+      "valeur": "HDS-certified host: Scaleway",
+      "detail": "Document reading (OCR) in the store’s browser; tracking metadata stored on the server",
+      "source": "optibot-mentions"
+    },
+    "plateformes": {
+      "valeur": "47 portals advertised + Smart Fill on the others",
+      "detail": "Coverage varies by portal: Almerys “Partiel” (Partial), Viamedis “Smart Fill disponible” (Smart Fill available)",
+      "source": "optibot-accueil"
+    }
+  },
+  "citations": [
+    {
+      "texte": "Third-party payment automation software, delivered as a Chrome extension and a web dashboard.",
+      "source": "optibot-accueil"
+    },
+    {
+      "texte": "No, coverage is partial. OptiBot fills in the policyholder’s social security number, last name, first name, prescription date, request date and RPPS number. LPP codes and lens / frame amounts are still entered by hand since they depend on the equipment sold.",
+      "source": "optibot-almerys"
+    },
+    {
+      "texte": "The dedicated Viamedis mapping is under development.",
+      "source": "optibot-viamedis"
+    },
+    {
+      "texte": "OptiBot automatically detects third-party payment rejections (AMO and AMC) through the Chrome extension, centralizes them in your dashboard, and sends you real-time alerts.",
+      "source": "optibot-accueil"
+    },
+    {
+      "texte": "We prefer to be clear: the native connection to the ERP currently exists only for the Optimum family.",
+      "source": "optibot-accueil"
+    }
+  ],
+  "meilleurSi": [
+    "you want to stay in control of every entry and just move faster on the portals",
+    "you work on Optimum (LivebyOptimum, AS3.2, Atol Pro), the only natively connected ERP",
+    "you want prescription and insurance card images to be read within the store’s browser",
+    "you want to test on your own, right away, without a meeting (free trial with no credit card, extension installed the same day)"
+  ],
+  "exclus": {
+    "_pourquoi": "no prices on comparison pages; self-reported performance figures are not comparable",
+    "prix": "Pro €69.90 excl. VAT/month/seat, Cabinet €179 excl. VAT/month (3 seats), Réseau €299 excl. VAT/month (5 seats, +€30/seat), Franchise on quote from €500 excl. VAT/month; 1-month free trial (optibot-tarifs, optibot-accueil)",
+    "chiffresDeclares": "“10 seconds per file”, “47 insurer portals”, “€15,000 of time per year”, ROI “1462%”, “Average rejection rate […] Significantly reduced” (optibot-accueil, optibot-comparatif)",
+    "incoherences": "The home page and /pricing advertise a 1-month trial, the /mutuelles/ pages a “7-day free trial”; /comparatif shows “€479/year (Solo plan)” then “€839” for the Pro plan"
+  },
+  "sources": {
+    "optibot-accueil": {
+      "label": "optibot.fr · Home",
+      "url": "https://optibot.fr/",
+      "consulte": "2026-10-09"
+    },
+    "optibot-comparatif": {
+      "label": "optibot.fr · Comparison",
+      "url": "https://optibot.fr/comparatif",
+      "consulte": "2026-10-09"
+    },
+    "optibot-almerys": {
+      "label": "optibot.fr · Almerys",
+      "url": "https://optibot.fr/mutuelles/almerys",
+      "consulte": "2026-10-09"
+    },
+    "optibot-viamedis": {
+      "label": "optibot.fr · Viamedis",
+      "url": "https://optibot.fr/mutuelles/viamedis",
+      "consulte": "2026-10-09"
+    },
+    "optibot-tarifs": {
+      "label": "optibot.fr · Pricing",
+      "url": "https://optibot.fr/pricing",
+      "consulte": "2026-10-09"
+    },
+    "optibot-mentions": {
+      "label": "optibot.fr · Legal notice",
+      "url": "https://optibot.fr/legal/mentions-legales",
+      "consulte": "2026-10-09"
+    },
+    "optibot-sous-traitants": {
+      "label": "optibot.fr · Subprocessors",
+      "url": "https://optibot.fr/legal/sous-traitants",
+      "consulte": "2026-10-09"
+    }
+  },
+  "_relu": "Reviewed by Paul on Oct 9, 2026."
+}

@@ -1,0 +1,18 @@
+{
+  "slug": "logs-agent-sante",
+  "category": "Security",
+  "title": "What an AI agent must log in a healthcare environment",
+  "desc": "Traceability, roles, retention and audit: the minimum requirements before going into production.",
+  "time": "9 min",
+  "body": [
+    "An AI agent working on health data must produce a complete audit trail: who triggered the action, on which data, with what result, and how long this information is kept. This requirement is not optional: it is the very condition for a compliant production launch.",
+    "The minimum requirements in an HDS environment (French health data hosting standard) include: logging access to patient data (read and write), tracing calls to external APIs (French national health insurance (Assurance Maladie) online services, AMC portals, practice management software, hospital information systems), signed non-repudiable timestamps, and separate retention of technical logs and business logs.",
+    "The technical/business distinction matters. Technical logs (latency, errors, performance) are used for operations and can be kept for short periods. Business logs (patient access, invoice changes, follow-ups sent) are used for audits and must be kept under strict rules, sometimes for several years.",
+    "Traceability must also distinguish human identity from agent identity. When an agent acts on behalf of a user, the log must reflect this dual identity: the user who triggered or supervised the action, and the agent that carried it out. This dual trace is essential in case of a dispute.",
+    "Access control must be granular. An agent should only have access to the data strictly necessary for its task, and this access must be revocable at any time. Permissions must be traced just like actions.",
+    "Calls to language models must themselves be logged: prompt sent, response received, model used, version, parameters. This traceability is essential to reproduce past behavior in case of an audit or a dispute.",
+    "Retention must respect legal periods (HDS framework, sector-specific decrees) and allow selective purging. A GDPR erasure request must be executable without destroying the overall audit trail.",
+    "It must be possible to export and view logs without the vendor’s involvement. A DPO must be able to independently extract the access history of a patient file on request.",
+    "Without these foundations, the annual HDS audit and CNIL (French data protection authority) inspections become impossible to pass with confidence. And beyond compliance, internal trust is at stake: a team only deploys an agent if it can understand and explain each of its actions."
+  ]
+}

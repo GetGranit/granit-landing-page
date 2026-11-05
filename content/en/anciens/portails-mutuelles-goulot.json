@@ -1,0 +1,19 @@
+{
+  "slug": "portails-mutuelles-goulot",
+  "category": "Supplementary insurance",
+  "title": "Why insurer portals remain the real bottleneck",
+  "desc": "Viamedis, Almerys, SP Santé, Carte Blanche: how to treat the portals as a single operational layer.",
+  "time": "9 min",
+  "body": [
+    "Third-party payment (tiers payant: the patient pays nothing upfront, insurers pay the provider directly) with supplementary insurance (AMC) now accounts for most of the administrative time lost in healthcare. Each operator (Viamedis, Almerys, SP Santé, Carte Blanche, Itelis, Kalivia, Santéclair) imposes its own portal, its own rules and its own response formats. No interoperability standard has emerged in fifteen years, and the landscape keeps fragmenting.",
+    "Administrative teams move between 4 and 8 portals a day on average, with sessions that expire every 15 to 30 minutes, regular CAPTCHAs, varying two-factor authentication, and no standard API exposed. The result: AMC billing is handled in late batches, rejections pile up, and patient DSO (days sales outstanding) grows longer.",
+    "The hidden cost is massive. At a mid-sized dental center, the time spent purely navigating portals is estimated at 15 to 20 hours a week: logging in, looking up coverage rights, requesting prior approval, uploading documents, tracking reimbursement. Across a group of 30 centers, that is more than two FTEs dedicated entirely to work that adds no value.",
+    "Worse, the lack of uniformity across portals prevents any industrialization. Written procedures go out of date as soon as an operator changes its interface (which happens several times a year), and training new hires takes weeks. Administrative turnover in the sector is largely tied to this drudgery.",
+    "Granit’s approach is to unify these portals into a single operational layer. In practice, a dedicated agent for each operator carries out the repetitive actions (eligibility checks, approval requests, document uploads, reimbursement tracking) and reports a consolidated status in a single console, accessible to the whole team.",
+    "This operational layer is resilient to interface changes: when an operator modifies its portal, the agent adapts or alerts the Granit team, which updates the connector. Users see no interruption.",
+    "The gain is not only time. It is also qualitative: data consistency across operators becomes possible, anomalies (double billing, inconsistent coverage rights) become detectable, and AMC management finally becomes objective.",
+    "Finance departments gain visibility they never had: rejection rate by operator, average reimbursement time, top rejection reasons, blocked files by center. These indicators make it possible to renegotiate agreements or prioritize corrective actions.",
+    "Deployment is done operator by operator, starting with the largest volumes. Most facilities unify their 5 to 7 main portals in less than a quarter.",
+    "Over time, this operational layer becomes the foundation on which other workflows plug in: collections, follow-up, quality monitoring, regulatory reporting. That is the real leverage of unification."
+  ]
+}

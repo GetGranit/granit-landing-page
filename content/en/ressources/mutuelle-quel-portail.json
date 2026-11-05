@@ -1,0 +1,167 @@
+{
+  "slug": "mutuelle-quel-portail",
+  "id": "A13",
+  "category": "plateformes",
+  "categoryName": "Platforms and portals",
+  "type": "standard",
+  "plateforme": null,
+  "title": "Which portal does my mutuelle use? (free tool + AMC number)",
+  "primaryKeyword": "numéro amc c'est quoi",
+  "keywordCluster": [
+    "numeros amc",
+    "numero amc c'est quoi",
+    "optoamc",
+    "liste des amc",
+    "liste code amc mutuelle"
+  ],
+  "parentSlug": "portails-tiers-payant",
+  "level": "Fille (outil)",
+  "author": {
+    "name": "Olivier",
+    "jobTitle": "Writer, third-party payment expert",
+    "photo": "/auteurs/olivier.jpg",
+    "url": null
+  },
+  "reviewer": {
+    "name": "Nathalie",
+    "jobTitle": "Writer, optical industry expert",
+    "photo": "/auteurs/nathalie.jpg",
+    "url": null
+  },
+  "datePublished": "2026-10-12",
+  "dateModified": "2026-10-12",
+  "checkedOn": null,
+  "wordCount": 2135,
+  "readTime": 9,
+  "metaDescription": "What is an AMC number? Where to find it on the third-party payment card and how to find the right portal for a supplementary insurer, with our free survey of 281 mutuelles.",
+  "contentHtml": "<p><strong>The AMC number (AMC stands for assurance maladie complémentaire, supplementary health insurance) is the code that identifies the customer’s supplementary insurer on their third-party payment card (tiers payant: the patient pays nothing upfront, insurers pay the provider directly). Together with the platform shown on that card, it tells you which portal to send the coverage request to.</strong> If you are wondering “what is an AMC number” at the counter, remember this: the mutuelle’s brand name is not enough, the card decides. This page explains where to find the AMC number, how to go from the card to the right portal, and how to use our free mutuelle → portal survey, compiled by our agents across 281 mutuelles.</p><p>In optical care, the coverage request goes out before the eyewear is dispensed, on the portal of the platform that manages third-party payment on behalf of the supplementary health insurer (mutuelle). Choosing the wrong portal means losing several minutes at the counter, or blocking a file the customer believes is settled. The sections below go from the simplest (reading the card) to the trickiest (the mutuelle you cannot find).</p><div class=\"key-takeaways\"><strong>Key takeaways</strong><ul><li>The AMC number identifies the supplementary insurer that covers the customer. It appears on the third-party payment card and should not be confused with the member number.</li><li>The portal depends on the platform that manages third-party payment for that insurer: the card often shows it with a logo or a mention.</li><li>Our survey covers 281 mutuelles and shows what the portals’ selectors offer. It does not say that a mutuelle goes only through one portal.</li><li>At the counter: read the card, spot the platform, then check that the insurer appears in the portal selector before entering anything.</li><li>If the mutuelle appears nowhere, check the card’s validity and the optical line before calling the insurer.</li></ul></div><h2 id=\"numero-amc-c-est-quoi\">What is an AMC number, and where do you find it on the card?</h2><p><strong>The AMC number is the identifier of the supplementary health insurer that covers your customer.</strong> It designates the insurer, not the person. Two customers covered by the same insurer can therefore show the same AMC number, while their member numbers differ.</p><p>To place this number, go back to the two tiers of reimbursement. Mandatory insurance (AMO) reimburses the base share, using the Carte Vitale (French health insurance card). Supplementary insurance (AMC: a mutuelle, insurance company or provident institution) covers all or part of the rest. As <a href=\"https://www.ameli.fr/assure/remboursements/etre-bien-rembourse/tiers-payant\">ameli.fr</a> points out, third-party payment spares the patient from paying upfront: the professional is paid directly, by French national health insurance (Assurance Maladie) for the mandatory share and by the supplementary insurer for its share, when the contract provides for it.</p><p>The <a href=\"https://www.service-public.fr/particuliers/vosdroits/F167\">service-public.fr</a> page on third-party payment makes the same distinction between the two shares. For the supplementary share, it is the third-party payment card issued by the insurer that grants the right, not the Carte Vitale. So that card is where everything happens for optical coverage approval.</p><h3>Where to find it on the third-party payment card</h3><p>Card layouts vary from one insurer to another, and so does the field label. Look for the area that identifies the supplementary insurer: a numeric code, often placed near its name or logo, separate from the member number. On the same card, you will generally find:</p><ul><li>the insurer’s name and its AMC number;</li><li>the member number and the covered beneficiaries (the policyholder and their dependents);</li><li>the card’s validity period;</li><li>the types of care for which third-party payment is open, including optical;</li><li>the mention or logo of the platform that manages third-party payment, when the insurer has delegated it.</li></ul><h3>AMC number, member number, NIR: what identifies what</h3><p>These identifiers look alike on a card full of numbers. Mixing them up is the first source of entry errors. The table below puts each piece of information in its place.</p><div class=\"tbl\"><table><tr><th>Information</th><th>What it identifies</th><th>What it is used for at the counter</th></tr><tr><td>AMC number</td><td>The supplementary insurer</td><td>Choosing the right insurer in the portal</td></tr><tr><td>Member number</td><td>The insured person in the insurer’s records</td><td>Finding the customer’s coverage rights</td></tr><tr><td>NIR (social security number)</td><td>The person with the AMO</td><td>Processing the mandatory share, via the Carte Vitale</td></tr><tr><td>Platform logo or mention</td><td>The third-party payment manager</td><td>Choosing the portal where you enter the request</td></tr></table></div><h2 id=\"amc-et-portail\">Why is the AMC number not enough to find the portal?</h2><p><strong>Because the AMC number tells you who pays, not who handles the request.</strong> Many supplementary insurers delegate third-party payment management to a platform, also called a third-party payment operator. It is the platform that receives coverage requests, responds to the optician and organizes payment. The portal where you enter data is therefore the platform’s, not the mutuelle’s.</p><p>In practice, the question “which portal does this mutuelle use?” comes down to finding out which platform manages its optical third-party payment. Viamedis, Almerys, Santéclair, Itelis, SP Santé, Actil, iSanté and Sévéane are among them, each with its own professional portal and entry rules. Our pages cover the most common ones in detail, for example <a href=\"/ressources/portail-viamedis\">viamedis tp</a>, <a href=\"/ressources/portail-almerys\">almerys tp</a> or <a href=\"/ressources/portail-itelis\">Itelis TP</a>.</p><p>The name the customer gives is not enough either. A contract can be sold under one brand, underwritten by an insurer with a different name, and managed by yet another platform. That is why the card remains the starting point: it brings together the insurer, its AMC number and, often, the platform. The diagram below sums up the path, from the card to the response.</p><div data-figure=\"carte-vers-portail\"></div><h2 id=\"trouver-portail-mutuelle\">How do you know which portal a mutuelle uses?</h2><p><strong>The safest method combines the customer’s card and the portal selector: the card shows the platform, the selector confirms that the insurer is offered there.</strong> Both checks take less time than starting an entry over on another portal.</p><ol class=\"steps\"><li><strong>Ask for the current third-party payment card.</strong> Check the dates before anything else: last year’s card can point to an insurer or platform that no longer manages the contract.</li><li><strong>Spot the platform on the card.</strong> Look for a logo or a mention of the third-party payment manager, often near the information intended for healthcare professionals.</li><li><strong>Note the insurer’s name and the AMC number.</strong> These are what will let you recognize the insurer in the portal’s list.</li><li><strong>Check the optical line.</strong> Make sure third-party payment is indeed open for optical care on this card, not only for pharmacy or other care.</li><li><strong>Check the portal selector before entering anything.</strong> Log in to the platform’s professional portal and look for the insurer in the list offered at the start of the request.</li></ol><p>Step 5 matters more than it seems. For an optical request, portals generally have you choose the insurer from a list, at the very start of the entry. If the customer’s insurer is not there, there is no point going further on that portal: the request must go elsewhere, or the contract must be checked.</p><div class=\"callout callout--tip\"><p><strong>The right reflex:</strong> note in the customer record the portal used and the card’s validity period. On the next visit, you simply check that the card has not changed, instead of searching everything again.</p></div><h2 id=\"outil-mutuelle-portail\">How do you read the result of our mutuelle → portal tool?</h2><p><strong>For 281 mutuelles, the tool shows what the third-party payment portals’ selectors offer, as our agents recorded it while entering requests.</strong> It saves time when the card does not clearly show the platform, or when you want to know where to log in before opening a portal.</p><p>Read it for what it is: a survey. The fact that a mutuelle appears in a portal’s selector means it was offered there at the time of the survey. It does not mean it goes only through that portal, or that all its contracts are managed there. For a given file, the customer’s card remains the reference.</p><h3>Four uses at the counter</h3><ul><li>Confirm the platform when the logo is missing, faded or illegible on the card.</li><li>Know which portal to open first when the mutuelle’s name means nothing to you.</li><li>Train a new team member on the platforms the store encounters most.</li><li>Prepare the day’s requests before opening, portal by portal.</li></ul><h3>What the tool does not replace</h3><p>The survey says nothing about the customer’s coverage rights: card validity, optical benefits, covered beneficiaries. Only the platform’s response to the coverage request tells you what the supplementary insurer agrees to pay for this file. The tool takes you to the right door, it does not open it.</p><p>When a store juggles several portals every day, finding the right one and then re-entering each file quickly becomes the counter’s bottleneck. That is the work <a href=\"/agents\">Granit’s agents</a> do: they enter coverage requests directly on the platforms’ portals, then send the status back to the team.</p><h2 id=\"liste-codes-amc\">Is there a reliable list of AMC numbers?</h2><p><strong>The lists of AMC numbers in circulation help you get your bearings, but they replace neither the card nor the portal.</strong> You find them by searching for “liste des AMC” (list of AMCs), “liste code AMC mutuelle” (list of mutuelle AMC codes) or “optoamc”: tables copied from software, files shared between stores, forum pages. Their update date is rarely given.</p><p>The problem lies in how much the sector moves. Insurers merge, change names or hand their third-party payment to another platform. A frozen table keeps the old state without warning anyone. The AMC number can stay the same while the portal where you enter the request has changed.</p><p>Your billing software generally keeps its own table of supplementary insurers, updated by the vendor, because it needs it to transmit the invoice. It is the most useful list day to day for billing. To know where to enter the coverage request, the card and the portal selector remain the two checks that count.</p><h3>How to use a list without making mistakes</h3><p>Use a list to form a hypothesis, never to conclude. If the list and the card say the same thing, enter the request. If they differ, follow the card, then check the portal selector. An undated list should never win over a valid card.</p><h2 id=\"mutuelle-introuvable\">What should you do if the mutuelle does not appear on any portal?</h2><p><strong>Before concluding that the contract does not open third-party payment, check four causes, from the simplest to the rarest.</strong> Most can be settled with the card in front of you, without calling anyone.</p><div class=\"tbl\"><table><tr><th>Cause</th><th>Where to check</th><th>Action</th></tr><tr><td>Expired card or card from a former insurer</td><td>Validity period on the card</td><td>Ask for the current year’s card</td></tr><tr><td>Insurer listed under another name</td><td>Portal selector (acronym, group name)</td><td>Search for name variants and match them against the card</td></tr><tr><td>Wrong platform</td><td>Manager’s logo or mention on the card</td><td>Start again from the platform shown, not from the mutuelle’s name</td></tr><tr><td>No optical third-party payment on this contract</td><td>Types-of-care line on the card</td><td>Have the insurer or the platform confirm it</td></tr></table></div><p>If these four checks turn up nothing, call the service for healthcare professionals listed on the card, when there is one. Have the AMC number and the member number in front of you: these are the two pieces of information you will be asked for to identify the contract. Each platform page also lists the contacts published by the portal.</p><div class=\"callout callout--warn\"><p><strong>The trap:</strong> entering the request on the “most likely” portal to save time. A request sent to the wrong place is not an approval, and the customer leaves thinking everything is settled.</p></div><p>If it turns out that the contract does not open optical third-party payment, the supplementary share is handled outside third-party payment for this file. Tell the customer before the order, not on the day of delivery: that is when the conversation is easiest.</p><h2 id=\"erreurs-numero-amc\">What mistakes should you avoid between AMC number, card and portal?</h2><p><strong>Five mistakes come up when looking for a mutuelle’s portal, and all of them can be fixed by reading the card carefully.</strong> Here they are, with the step that avoids them.</p><ul><li><strong>Confusing the AMC number with the member number.</strong> The first designates the insurer, the second the customer. The portal will ask you for both, in different places.</li><li><strong>Starting from the mutuelle’s name rather than the card.</strong> A contract’s brand name can differ from that of the insurer and of the platform that manages it.</li><li><strong>Using a card that is no longer valid.</strong> Check the dates on every file, especially at the start of the year.</li><li><strong>Forgetting the optical line.</strong> A card can open third-party payment for some types of care and not others.</li><li><strong>Treating the portal as settled once and for all.</strong> An insurer can change platforms: the most recent card is what counts.</li></ul><p>For an overview of the platforms, their professional portals and their payments, go back to our guide to <a href=\"/ressources/portails-tiers-payant\">third-party payment portals</a>. And to place coverage approval within the rest of the file, see our article on <a href=\"/ressources/tiers-payant-opticien\">third-party payment for opticians, from coverage approval to collection</a>.</p>",
+  "tocItems": [
+    {
+      "id": "numero-amc-c-est-quoi",
+      "label": "AMC number: definition and where to find it"
+    },
+    {
+      "id": "amc-et-portail",
+      "label": "Why the AMC number is not enough"
+    },
+    {
+      "id": "trouver-portail-mutuelle",
+      "label": "Finding a mutuelle’s portal"
+    },
+    {
+      "id": "outil-mutuelle-portail",
+      "label": "Reading the mutuelle → portal tool"
+    },
+    {
+      "id": "liste-codes-amc",
+      "label": "Lists of AMC numbers"
+    },
+    {
+      "id": "mutuelle-introuvable",
+      "label": "Mutuelle not found on any portal"
+    },
+    {
+      "id": "erreurs-numero-amc",
+      "label": "Mistakes to avoid"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "How do you know which portal a mutuelle uses?",
+      "answer": "Start from the customer’s third-party payment card: it shows the supplementary insurer, its AMC number and, often, the platform that manages third-party payment. Then check that the insurer is offered in that platform’s portal selector before entering anything. A mutuelle → portal survey helps you find your way, but the card remains the reference for the file."
+    },
+    {
+      "question": "What is the AMC number on the third-party payment card?",
+      "answer": "The AMC number is the identifier of the supplementary health insurer that covers the customer. It designates the insurer, not the person, and should not be confused with the member number. Its label and position vary from card to card."
+    },
+    {
+      "question": "Can a mutuelle go through several portals?",
+      "answer": "A mutuelle’s name is not enough to determine the portal: a contract can be underwritten by one insurer and managed by a platform with different names. The fact that a mutuelle appears in a portal’s selector does not mean it goes only through that portal. For a given file, it is the customer’s card, with its AMC number and the platform shown, that tells you where to send the request."
+    },
+    {
+      "question": "What should you do if the mutuelle does not appear on any portal?",
+      "answer": "First check that the card is still valid and that it opens third-party payment for optical care. Then look for the insurer under another name, such as an acronym or the group name, and start again from the platform shown on the card rather than from the mutuelle’s name. If nothing matches, call the professional service listed on the card with the AMC number and the member number."
+    }
+  ],
+  "sources": [
+    {
+      "label": "ameli.fr · Third-party payment (Le tiers payant)",
+      "url": "https://www.ameli.fr/assure/remboursements/etre-bien-rembourse/tiers-payant"
+    },
+    {
+      "label": "service-public.fr · Third-party payment (Tiers payant)",
+      "url": "https://www.service-public.fr/particuliers/vosdroits/F167"
+    }
+  ],
+  "figures": [
+    {
+      "id": "carte-vers-portail",
+      "type": "flux",
+      "titre": "From the third-party payment card to the right portal",
+      "legende": "The AMC number tells you who pays; the platform shown on the card designates the portal.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "Third-party payment card",
+          "detail": "gives the insurer’s AMC number",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Supplementary insurer",
+          "detail": "delegates third-party payment management",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Third-party payment platform",
+          "detail": "opens its professional portal to the optician",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Platform portal",
+          "detail": "receives the coverage request",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Response to the optician",
+          "detail": "",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [
+    {
+      "id": "A0",
+      "slug": "portails-tiers-payant",
+      "anchor": "third-party payment portals",
+      "type": "parent"
+    },
+    {
+      "id": "A1",
+      "slug": "portail-viamedis",
+      "anchor": "viamedis tp",
+      "type": "sœur"
+    },
+    {
+      "id": "A2",
+      "slug": "portail-almerys",
+      "anchor": "almerys tp",
+      "type": "sœur"
+    }
+  ],
+  "liensEntrants": [],
+  "remplace": [],
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-12T15:23:47.247Z",
+    "avertissements": [
+      "aucune citation (facultative)",
+      "source non vérifiable (403) : https://www.ameli.fr/assure/remboursements/etre-bien-rembourse/tiers-payant"
+    ]
+  }
+}

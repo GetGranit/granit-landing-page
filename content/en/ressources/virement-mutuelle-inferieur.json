@@ -1,0 +1,155 @@
+{
+  "slug": "virement-mutuelle-inferieur",
+  "id": "C1",
+  "category": "paiements",
+  "categoryName": "Payments and reconciliation",
+  "type": "resolution",
+  "plateforme": null,
+  "title": "Insurer bank transfer lower than the invoice: understand the gap and follow up",
+  "primaryKeyword": "virement mutuelle inférieur facture",
+  "keywordCluster": [],
+  "parentSlug": "rapprochement-bancaire-tiers-payant",
+  "level": "Fille",
+  "author": {
+    "name": "Olivier",
+    "jobTitle": "Writer, third-party payment expert",
+    "photo": "/auteurs/olivier.jpg",
+    "url": null
+  },
+  "reviewer": null,
+  "datePublished": "2026-10-16",
+  "dateModified": "2026-10-16",
+  "checkedOn": null,
+  "wordCount": 2073,
+  "readTime": 9,
+  "metaDescription": "Supplementary insurer transfer lower than the invoice: find the cause of the gap in 4 checks, keep the evidence and know who to follow up with to recover the balance.",
+  "contentHtml": "<p><strong>When a supplementary health insurer’s (mutuelle’s) bank transfer is lower than the invoice, the gap most often comes from an amount that changed between the coverage approval, the invoice sent and the payment statement.</strong> To handle an insurer transfer that is lower than the invoice, compare three amounts, in this order: the approved amount, the billed amount, the paid amount. The first one that differs tells you where to look. In most cases, the answer is already in the portal’s payment statement, before you even call anyone.</p><p>This guide follows a typical case, from bank statement to follow-up: what you see, the possible causes from most to least common, the steps to take, the records to keep and the right contact.</p><div class=\"key-takeaways\"><strong>Key takeaways</strong><ul><li>A partial payment usually generates no rejection: the case moves to “payé” (paid) and the gap stays invisible unless someone reconciles invoice by invoice.</li><li>Before concluding there is an error, check that the transfer does not contain only the supplementary share, or several grouped cases.</li><li>Under a “responsible” contract, the supplementary insurer’s coverage of the frame is capped at €100 for class B equipment (article R871-2 of the French Social Security Code).</li><li>The first contact is whoever paid: the third-party payment (tiers payant: the patient pays nothing upfront, insurers pay the provider directly) operator whose name appears on the transfer.</li><li>Keep the approval, the invoice, the payment statement and the bank statement line: without these four documents, the claim will not succeed.</li></ul></div><h2 id=\"virement-mutuelle-inferieur-cas\">What does an insurer transfer lower than the invoice look like?</h2><p>The typical case: a pair of glasses is billed through third-party payment, the coverage request has been approved, and the supplementary insurer’s transfer does arrive, but for less than the expected share. The gap ranges from a few euros to several tens of euros. It comes with no rejection message: the case is marked as paid.</p><p>That is what makes it tricky. A rejection is visible, it blocks the case and forces you to act. A partial payment, on the other hand, often goes unnoticed during reconciliation, especially when the transfer groups several invoices. The amount still to be received then settles into the receivables and becomes a loss if no one files a claim.</p><h3>An example to make it concrete</h3><p>A fictitious example: the coverage approval (PEC) shows a supplementary share of €300 for a single-vision pair. The invoice goes out for the same amount. The bank statement shows a transfer of €260 in the operator’s name. €40 is missing, and nothing on the portal indicates a denial.</p><p>Two definitions for what follows. AMO (mandatory health insurance) is the share paid by the national health insurance office. AMC (supplementary health insurance) is the share paid by the mutuelle, insurance company or provident institution, often through a third-party payment operator that manages the coverage request and payment on its behalf. If you want to review the full process, the guide <a href=\"/ressources/tiers-payant-opticien\">third-party payment for opticians, from coverage request to collection</a> covers each step.</p><h2 id=\"ou-voir-montant-paye\">Where can you see the amount the insurer actually paid?</h2><p>The amount paid can be read in three places: the bank statement, the operator’s payment statement and the electronic returns in your software. Only the payment statement details the calculation, invoice by invoice.</p><ul><li><strong>The bank statement</strong>: a total amount, the payer’s label and sometimes a batch reference. It tells you how much you received, never why.</li><li><strong>The portal’s payment statement</strong>: one line per invoice, with the amount requested, the amount paid and, when there is one, the reason for the difference. This is the key document.</li><li><strong>NOEMIE remittance files</strong>: NOEMIE is the exchange standard that feeds the result of each invoice’s processing back into your software, when the insurer sends these returns. A code there may explain the gap.</li><li><strong>Your billing software</strong>: the amount expected per share (AMO and AMC), the one you compare everything else to.</li></ul><p>Always read the payment statement before calling. If the return includes a code, the <a href=\"/ressources/codes-rejets-noemie\">list of NOEMIE rejection codes</a> helps you decode it. And if you already reconcile your files every morning, the method described in the article on <a href=\"/ressources/rapprochement-noemie\">reconciling NOEMIE files with bank transfers</a> applies as is.</p><p>One point never to skip: a single transfer can cover several cases, or even deduct one. Only conclude there is a gap after breaking the transfer down by invoice.</p><h2 id=\"pourquoi-paye-moins\">Why did the supplementary insurer pay less than expected?</h2><p>There are six possible causes, and most are not the insurer’s errors. In the cases we handle, the gap most often comes from a transfer that was not broken down properly or an invoice that no longer matches the approval, well before any calculation error by the insurer.</p><div class=\"tbl\"><table><tr><th>Cause</th><th>Where to check</th><th>Fix</th></tr><tr><td>The transfer contains only the AMC share, the AMO share arrives separately</td><td>Bank statement, transfer from the national health insurance office</td><td>Match both transfers with the invoice</td></tr><tr><td>The transfer groups several cases or splits one</td><td>Detailed payment statement on the portal</td><td>Break the transfer down line by line</td></tr><tr><td>The invoice differs from the approval (lenses changed, extra charge, different frame)</td><td>PEC approval compared with the invoice</td><td>New request or corrected invoice, depending on the portal’s rule</td></tr><tr><td>Contract cap reached (frame allowance, renewal already used)</td><td>Reason on the payment statement, coverage shown on the approval</td><td>If the reason is confirmed, the balance is an out-of-pocket amount</td></tr><tr><td>Offset of an overpayment on another case</td><td>Negative line or deduction on the payment statement</td><td>Find the original case, dispute it if the deduction is unjustified</td></tr><tr><td>Calculation or data entry error by the insurer</td><td>Payment lower than an approval identical to the invoice</td><td>Written claim with the evidence</td></tr></table></div><h3>When the invoice no longer matches the approval</h3><p>The PEC approval commits the insurer to a specific pair of glasses: LPP codes, quantities, beneficiary, date. The LPP (list of reimbursable products and services) is the nomenclature that assigns a code to each lens and each frame. If the customer changes lenses between the quote and delivery, or if an extra charge is added, the invoice no longer matches the approval. The insurer then pays based on what it approved, not on what was billed.</p><h3>The “responsible” contract cap</h3><p>A “responsible” contract is a supplementary insurance contract that meets the minimum and maximum coverage levels set by regulation. For optical care, the <a href=\"https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006073189\">French Social Security Code</a> (article R871-2) caps frame coverage at €100 for class B equipment, meaning equipment with unregulated prices. A frame billed above this amount therefore produces a gap on the supplementary side, even if the contract seems generous on lenses. The same article also sets caps per pair and a renewal frequency: an allowance that has already been used reduces the payment.</p><h3>The 100% Santé case</h3><p>On class A equipment (100% Santé, the zero out-of-pocket scheme), the AMO and the “responsible” supplementary insurer together cover the price, up to the maximum retail prices. French national health insurance (Assurance Maladie) details this zero out-of-pocket basket on <a href=\"https://www.ameli.fr/assure/remboursements/rembourse/soins-protheses-dentaires-optique-audition/lunettes-lentilles\">its glasses and contact lenses page</a>. A partial payment on class A equipment therefore calls for an immediate check: either the invoice exceeds a maximum price or mixes classes, or the insurer processed the case incorrectly. In the second case, the gap is claimed, not billed to the customer.</p><h2 id=\"identifier-corriger-ecart\">How do you identify the gap and fix it?</h2><p>The safest method is to trace the case back in the order it was built: transfer, approval, invoice, payment statement. Each step rules out a cause.</p><ol class=\"steps\"><li><strong>Break the transfer down by invoice.</strong> Match each line of the payment statement to an invoice in your software, and isolate those where the amount paid differs from the amount requested.</li><li><strong>Find the PEC approval.</strong> Note its number, the approved AMC amount and its validity date: an invoice issued after the approval expired is a common reason for a reduction.</li><li><strong>Compare the invoice and the approval.</strong> Same LPP codes, same quantities, same beneficiary, same dispensing date. A single difference is enough to explain the gap.</li><li><strong>Read the reason on the payment statement.</strong> Cap reached, offset, calculation base: the exact wording shown by the portal tells you what to fix.</li><li><strong>Classify the gap.</strong> Justified (cap, AMO share still to come, renewal already used) or to be claimed (approval identical to the invoice, unexplained deduction).</li><li><strong>Act according to the classification.</strong> Justified gap: update the out-of-pocket amount according to the contract’s rules. Invoice error: correct it following the platform’s procedure. Unjustified gap: file a claim.</li><li><strong>Record the status of the case.</strong> In your software, note the cause, the action taken and the date of the next follow-up, so a colleague can pick up the case.</li></ol><div data-figure=\"diagnostic-ecart\"></div><div class=\"callout callout--tip\"><p><strong>The right reflex:</strong> write the PEC approval number on the invoice and in the customer file as soon as the glasses are dispensed. At reconciliation time, it saves you from searching for the approval on the portal, and it serves as the single reference when you file a claim.</p></div><p>When these reconciliations number in the dozens every week, the line-by-line check is often what gets skipped. This is what <a href=\"/agents\">Granit’s agents</a> take on: they collect payments on the platforms’ portals, match each bank transfer to its invoice and flag partially paid cases to the team, with the cause they found.</p><h2 id=\"preuves-a-garder\">What records should you keep to claim the balance?</h2><p>A claim succeeds when it rests on four documents: the approval, the invoice, the payment statement and the bank statement. Without one of them, the insurer will send you a request for more information, and the case goes around again.</p><ul><li><strong>The PEC approval</strong>: its number, the amount approved per share and its validity date, as shown on the portal.</li><li><strong>The invoice sent</strong>: the version sent, with its sending date and, if your software provides it, the acknowledgment.</li><li><strong>The payment statement</strong>: the line showing the amount paid and the reason, exported or printed from the portal.</li><li><strong>The bank statement line</strong>: date, amount, payer label and batch reference.</li><li><strong>The history of exchanges</strong>: date, channel, contact name and ticket reference for each contact.</li></ul><p>File these documents in the customer’s file, not in an inbox. The day the insurer responds, or the day a colleague picks up the case, everything must be in one place.</p><div class=\"callout callout--warn\"><p><strong>The trap:</strong> writing off the gap as a loss at reconciliation time “to move on”. Once the case is closed in the software, no one follows up on it anymore, and the deadline for filing a claim eventually runs out.</p></div><h2 id=\"quand-relancer-paiement-partiel\">When should you follow up on a partial payment?</h2><p>Follow up as soon as the gap is confirmed and classified as to be claimed, without waiting for the next payment. There is no reason for a gap to correct itself: a partial payment is a processed case, not a pending one.</p><p>There is no universal deadline. Each operator sets out in its third-party payment agreement how to dispute a payment and the deadline for doing so. Check these terms in the agreement signed with the platform concerned, and write them into your internal procedure.</p><p>For the pace of the follow-ups themselves, the page <a href=\"/ressources/quand-relancer-mutuelle\">when to follow up with a supplementary insurer</a> details the order of follow-ups and the channels to use. The principle is the same here: a follow-up date noted in the case, and a written follow-up rather than a call that leaves no record.</p><h2 id=\"qui-relancer-mutuelle-portail\">Who should you follow up with: the insurer or the portal?</h2><p>Follow up first with whoever paid, meaning the third-party payment operator whose name appears on the transfer. The supplementary insurer itself only steps in if the operator refers you to a question about the contract’s coverage.</p><p>The operator manages the coverage request and payment on behalf of the supplementary insurer: it calculated the amount paid, so it is the one that can correct it. If you do not know which operator handles a given insurer, the tool <a href=\"/ressources/mutuelle-quel-portail\">which portal does my insurer use</a> points you in the right direction based on the name or the AMC number.</p><h3>Who to contact depending on the cause</h3><ul><li><strong>AMO share missing or lower</strong>: the national health insurance office, not the supplementary insurer. The supplementary insurer’s transfer never included this share.</li><li><strong>Calculation gap, offset or incorrectly processed invoice</strong>: the third-party payment operator, through the claims channel in its professional portal.</li><li><strong>Disputing a cap or a coverage level</strong>: the operator first, which passes it on to the supplementary insurer if the question concerns the contract.</li></ul><h3>When to escalate</h3><p>Escalate when two written follow-ups go unanswered, or when the response does not address the gap. Then move to the operator’s official written channel (claim form or letter), attaching the four documents and the history of exchanges. Each platform’s contact details and channels are gathered in the guide to <a href=\"/ressources/portails-tiers-payant\">third-party payment portals for opticians</a>.</p><p>Keep the exact reason shown by the portal: it tells you what to fix, and it is the first thing the person you contact will ask for.</p>",
+  "tocItems": [
+    {
+      "id": "virement-mutuelle-inferieur-cas",
+      "label": "The case: a transfer lower than the invoice"
+    },
+    {
+      "id": "ou-voir-montant-paye",
+      "label": "Where to see the amount actually paid"
+    },
+    {
+      "id": "pourquoi-paye-moins",
+      "label": "The causes of a partial payment"
+    },
+    {
+      "id": "identifier-corriger-ecart",
+      "label": "Identifying and fixing the gap"
+    },
+    {
+      "id": "preuves-a-garder",
+      "label": "Records to keep"
+    },
+    {
+      "id": "quand-relancer-paiement-partiel",
+      "label": "When to follow up"
+    },
+    {
+      "id": "qui-relancer-mutuelle-portail",
+      "label": "Who to follow up with: insurer or portal"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "Why did the supplementary insurer pay less than expected?",
+      "answer": "Most often, the gap comes from an amount that changed between the coverage approval, the invoice and the payment statement. Common causes are a bank transfer that only contains the supplementary share, a transfer grouping several cases, an invoice that differs from the approval or a contract cap that has been reached. Calculation errors by the insurer do happen, but they come after these checks."
+    },
+    {
+      "question": "How do you identify the gap on an insurer’s bank transfer?",
+      "answer": "First break the transfer down invoice by invoice using the portal’s payment statement. Then, for each case with a gap, compare the approved amount, the billed amount and the paid amount. The first amount that differs points to the cause, and the reason shown on the statement confirms it."
+    },
+    {
+      "question": "Who should you follow up with: the insurer or the portal?",
+      "answer": "Follow up first with the third-party payment operator whose name appears on the bank transfer, because it is the one that calculates and pays on behalf of the supplementary insurer. The insurer itself only steps in if the operator refers you to a coverage question. If it is the national health insurance share that is missing, contact the national health insurance office."
+    },
+    {
+      "question": "Does the supplementary insurer’s transfer include the national health insurance share?",
+      "answer": "No, with third-party payment the mandatory health insurance share and the supplementary share are usually paid in separate bank transfers. An insurer’s transfer that seems too low often covers only the supplementary share. Match both transfers to the same invoice before concluding there is a gap."
+    },
+    {
+      "question": "Can you bill the customer for the gap left by the insurer?",
+      "answer": "Only if the gap is justified by the contract, for example a frame cap that has been reached or a renewal already used, as confirmed by the reason on the statement. On a 100% Santé class A pair, the gap is not billed to the customer: it signals an invoice or processing error to correct with the insurer."
+    }
+  ],
+  "sources": [
+    {
+      "label": "legifrance.gouv.fr · French Social Security Code (Code de la sécurité sociale)",
+      "url": "https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006073189"
+    },
+    {
+      "label": "ameli.fr · Glasses and contact lenses: reimbursement and 100% Santé",
+      "url": "https://www.ameli.fr/assure/remboursements/rembourse/soins-protheses-dentaires-optique-audition/lunettes-lentilles"
+    }
+  ],
+  "figures": [
+    {
+      "id": "diagnostic-ecart",
+      "type": "etapes",
+      "titre": "Tracing a partial payment back, step by step",
+      "legende": "Each step rules out a cause: the reason on the statement confirms the one that remains.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "Break down the transfer",
+          "detail": "One statement line per invoice",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Find the approval",
+          "detail": "Number, AMC amount, validity date",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Compare with the invoice",
+          "detail": "LPP codes, quantities, beneficiary, date",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Read the reason",
+          "detail": "The exact wording tells you what to fix",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Classify the gap",
+          "detail": "Justified or to be claimed",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [
+    {
+      "id": "C2",
+      "slug": "quand-relancer-mutuelle",
+      "anchor": "when to follow up with a supplementary insurer",
+      "type": "sœur"
+    },
+    {
+      "id": "C3",
+      "slug": "codes-rejets-noemie",
+      "anchor": "list of NOEMIE rejection codes",
+      "type": "sœur"
+    }
+  ],
+  "liensEntrants": [],
+  "remplace": [],
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-16T11:23:41.215Z",
+    "avertissements": [
+      "aucune citation (facultative)",
+      "source non vérifiable (403) : https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006073189",
+      "source non vérifiable (403) : https://www.ameli.fr/opticien"
+    ]
+  }
+}

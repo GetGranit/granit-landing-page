@@ -1,7 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useLanguage } from "@/lib/i18n";
 import { Hub } from "@/components/ressources/Hub";
-import { HubEn } from "@/components/ressources/HubEn";
 import { SITE_URL } from "@/lib/seo";
 import { aLaUne } from "@/lib/ressources/contenu";
 import { aCouvertureFenetre, photoFiche, src } from "@/lib/ressources/photos";
@@ -40,9 +38,8 @@ export const Route = createFileRoute("/ressources/")({
   component: RessourcesPage,
 });
 
+// Même hub dans les deux langues : le composant suit la langue de l'écran.
 function RessourcesPage() {
-  const { lang } = useLanguage();
-  if (lang === "en") return <HubEn />;
   return (
     <>
       <script

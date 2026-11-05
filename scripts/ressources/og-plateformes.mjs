@@ -1,5 +1,5 @@
 // Images d'aperçu (og:image, 1200×630) des fiches plateformes : la fenêtre de prise en charge
-// des cartes (FenetrePlateforme), le nom en serif et la marque Granit.
+// des cartes (FenetrePlateforme), le nom en serif et le logo Granit (src/assets/logo.svg, tel quel).
 // Une image par fichier de faits content/plateformes/*.json, plus la fiche « tous portails ».
 // Rendu par le Chrome installé, en headless : aucune dépendance. À relancer quand une plateforme
 // est ajoutée :   node scripts/ressources/og-plateformes.mjs
@@ -40,6 +40,18 @@ const echapper = (t) =>
   );
 const fichier = (chemin) => pathToFileURL(join(racine, "public", chemin)).href;
 
+/** Jetons de la marque, tels quels depuis styles.css (une seule source) : le bloc :root et les
+ *  trois variables de police. La fenêtre de ressources.css les consomme (var(--papier)…). */
+function cssJetons() {
+  const css = readFileSync(join(racine, "src/styles.css"), "utf8");
+  const debut = css.indexOf(":root {");
+  const fin = css.indexOf("\n}", debut);
+  if (debut < 0 || fin < 0) throw new Error("Bloc :root de styles.css introuvable");
+  const polices = css.match(/--font-(sans|serif|mono):[^;]+;/g);
+  if (!polices || polices.length < 3) throw new Error("Variables de police de styles.css introuvables");
+  return `${css.slice(debut, fin)}\n  ${polices.join("\n  ")}\n}`;
+}
+
 /** Styles de la fenêtre, tels quels depuis ressources.css (une seule source). */
 function cssFenetre() {
   const css = readFileSync(join(racine, "src/ressources.css"), "utf8");
@@ -79,36 +91,33 @@ function fenetre(p) {
 function page({ titre, suite, p }) {
   const logoGranit = pathToFileURL(join(racine, "src/assets/logo.svg")).href;
   return `<!doctype html><html lang="fr"><head><meta charset="utf-8">
-<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Inter+Tight:wght@500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@500;600&family=Source+Serif+4:opsz,wght@8..60,400&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --border: #e8e2d3; --text: #0f0c08; --text-muted: #7a7368;
-    --terra: #d4583a; --terra-hover: #b94a2f; --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
-    --font-sans: "Inter Tight", system-ui, sans-serif;
-    --font-serif: "Libre Caslon Text", "Times New Roman", serif;
-    --font-mono: "JetBrains Mono", ui-monospace, monospace;
-  }
+  ${cssJetons()}
   * { box-sizing: border-box; margin: 0; }
   html, body { width: 1200px; height: 630px; overflow: hidden; }
-  body { position: relative; background: #fbeae3; font-family: var(--font-sans); color: var(--text); }
+  /* Grand fond de l'image de partage : le dégradé de la marque (DESIGN.md). */
+  body { position: relative; background: var(--degrade-marque); font-family: var(--font-sans); color: var(--encre); }
   ${cssFenetre()}
-  /* Aperçu : la scène occupe la moitié droite, la fenêtre y est plus grosse que sur une carte. */
+  /* Aperçu : la scène occupe la moitié droite, la fenêtre y est plus grosse que sur une carte.
+     Le dégradé du fond tient lieu de scène : ni aplat ni trame derrière la fenêtre. */
   .droite { position: absolute; top: 0; right: 0; width: 640px; height: 630px; }
+  .droite .ress-fenetre-scene { background: transparent; }
+  .droite .ress-fenetre-scene::before { display: none; }
   .droite .ress-fenetre { --s: 1.5cqw; width: 84%; top: 15%; }
   .texte { position: absolute; left: 72px; top: 0; bottom: 0; width: 470px; display: flex; flex-direction: column; justify-content: center; }
-  .eyebrow { font-family: var(--font-mono); font-size: 18px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--terra-hover); }
-  h1 { margin-top: 22px; font-family: var(--font-serif); font-weight: 400; font-size: ${titre.length > 14 ? 60 : 80}px; line-height: 1.05; letter-spacing: -0.02em; }
-  h1 em { display: block; margin-top: 14px; font-size: 38px; line-height: 1.2; letter-spacing: -0.01em; color: var(--terra-hover); }
-  .granit { position: absolute; left: 72px; bottom: 52px; display: flex; align-items: center; gap: 12px; }
-  .granit img { height: 34px; }
-  .granit b { font-family: var(--font-serif); font-size: 28px; font-weight: 700; letter-spacing: -0.01em; }
+  .eyebrow { font-family: var(--font-sans); font-size: 18px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--texte-discret); }
+  h1 { margin-top: 22px; font-family: var(--font-serif); font-variation-settings: "opsz" 20; font-weight: 400; font-size: ${titre.length > 14 ? 60 : 80}px; line-height: 1.05; letter-spacing: -0.02em; }
+  h1 em { display: block; margin-top: 14px; font-size: 38px; font-style: normal; line-height: 1.2; letter-spacing: -0.01em; color: var(--profond); }
+  .granit { position: absolute; left: 72px; bottom: 52px; }
+  .granit img { display: block; height: 34px; width: auto; }
 </style></head><body>
   <div class="droite"><div class="ress-fenetre-scene"><div class="ress-fenetre">${fenetre(p)}</div></div></div>
   <div class="texte">
     <div class="eyebrow">Plateformes · Tiers payant</div>
     <h1>${echapper(titre)}<em>${echapper(suite)}</em></h1>
   </div>
-  <div class="granit"><img src="${logoGranit}" alt=""><b>Granit</b></div>
+  <div class="granit"><img src="${logoGranit}" alt="Granit"></div>
 </body></html>`;
 }
 

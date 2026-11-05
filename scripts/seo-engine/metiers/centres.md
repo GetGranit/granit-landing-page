@@ -44,8 +44,6 @@ Ne pas écrire tel quel : « FSE sécurisée, mode de facturation privilégié �
 
 ## Ce que Granit fait pour ce métier
 
-<!-- À VALIDER PAR PAUL -->
-
 Formuler comme une offre, jamais comme un résultat : Granit peut prendre en charge vos rejets et vos demandes de prise en charge.
 
 - Granit peut reprendre les rejets Sécurité sociale et mutuelle : lecture du motif, correction, nouvel envoi.

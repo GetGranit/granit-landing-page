@@ -42,8 +42,6 @@ Ne pas écrire tel quel : la répartition 60 % AMO / 40 % AMC de l'EBD en 2027 (
 
 ## Ce que Granit fait pour ce métier
 
-<!-- À VALIDER PAR PAUL -->
-
 Formuler comme une offre, jamais comme un résultat : Granit peut prendre en charge vos rejets et vos demandes de prise en charge.
 
 - Granit peut reprendre les rejets mutuelle et Sécurité sociale : lecture du motif, correction, nouvel envoi.

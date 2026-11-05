@@ -46,14 +46,14 @@ Les piliers (`level` commence par « Pilier ») utilisent le type de leur catég
 | 2 | Sous-navigation du guide | Moteur (liste des catégories) | « Tout le guide » + une pastille par catégorie + Glossaire. Défile horizontalement sur mobile |
 | 3 | En-tête teinté | Moteur | Fond = teinte de la catégorie (section 9). Contient les blocs 4 à 6 |
 | 4 | Fil d'Ariane | Moteur | Accueil › Ressources › {Catégorie} › {Titre}. Tous cliquables sauf le dernier. Balisé `BreadcrumbList` |
-| 5 | H1 | File (`title`) | Le titre de la file, tel quel. Plateforme : logo à gauche du H1 (64 px, fond blanc, bord fin) si `logo` est renseigné, sinon monogramme (initiale sur la couleur de la catégorie) |
+| 5 | H1 | File (`title`) | Le titre de la file, tel quel. Plateforme : logo à gauche du H1 (64 px, fond papier, bord fin) si `logo` est renseigné, sinon monogramme (initiale sur la couleur de la catégorie) |
 | 6 | Signature | Moteur | Photo + nom + fonction de l'auteur · « Relu par {reviewer} » si renseigné · « Mis à jour le {dateModified} » · temps de lecture. Plateforme : « Informations relevées le {checkedOn} » remplace « Mis à jour le » |
 | 7 | Ouverture | Claude (`contentHtml`) | La réponse directe, phrase clé en gras. Pas de couverture au-dessus : la réponse doit être visible sans défiler |
 | 8 | « L'essentiel » | Claude (`contentHtml`) | 3 à 5 puces, juste après l'ouverture |
 | 9 | Fiche d'identité (plateforme) | Gabarit, depuis `identite` | 4 cases : Type, Optique, Portail, Connexion. Insérée juste après « L'essentiel » |
 | 10 | Sections H2 | Claude (`contentHtml`) | H2 en questions, `id` = slug. Composants de la section 5 uniquement |
 | 11 | Questions fréquentes | Claude (`faqItems`) | Accordéon, première question ouverte. Balisé `FAQPage`, texte identique |
-| 12 | Sources | Claude (`sources`) + fichier de faits | Liste « Site · page », liens externes en `rel="noopener"`. Plateforme : ajouter la mention « Relevé par les agents Granit le {date} » pour les données du connecteur |
+| 12 | Sources | Claude (`sources`) + fichier de faits | Liste « Site · page », liens externes en `rel="noopener"`. Plateforme : ajouter la mention « Relevé par les agents Granit le {date} » pour les données relevées par les agents |
 | 13 | Encart final | Fixe (guide, « L'encart final ») | Texte validé, seul endroit où figure la promesse « 48 h » |
 | 14 | « À lire ensuite » | Moteur (`internalLinks` publiés) | 3 cartes : parent d'abord, puis sœurs, puis transverses. Étiquette par type : « Pour aller plus haut », « Même thème », « Outil », « À lire aussi ». Jamais les 3 derniers articles parus |
 | 15 | Pied de page | Site | |
@@ -140,7 +140,7 @@ Le contenu de `plateformes/{nom}.json` : `identite`, `chiffres`, `faits`, `conve
 ### Ce que Claude doit faire
 
 - Rédiger **uniquement à partir de `faits` et `conventionnement`**. Un fait absent du fichier n'existe pas. Si une question du plan n'a pas de réponse dans le fichier, le dire en une phrase (« Viamedis ne publie pas de délai propre à l'optique. ») et passer.
-- Citer chaque chiffre avec un lien vers sa source (`sources[clé].url`). Les données du connecteur Granit (`url` vide) se formulent « relevé par nos agents sur le portail », sans lien.
+- Citer chaque chiffre avec un lien vers sa source (`sources[clé].url`). Les données relevées par les agents Granit (`url` vide) se formulent « relevé par nos agents sur le portail », sans lien.
 - **Ne pas réécrire** les blocs que le gabarit affiche lui-même : poser à la place un marqueur, une seule fois chacun, à l'endroit indiqué.
 
 | Marqueur | Où le poser | Ce que le gabarit affiche |
@@ -252,6 +252,7 @@ Le moteur refuse l'article (et réessaie une fois) si :
 - l'encadré `key-takeaways` n'est pas le premier bloc après l'ouverture ;
 - un `id` de H2 n'a pas son entrée dans `tocItems`, ou l'inverse ;
 - un lien externe du corps n'est pas dans `sources`, ou `sources` contient moins de 2 entrées ;
+- `seoTitle` manque, dépasse 60 caractères, n'a pas les mots du mot-clé principal ou reprend le titre d'un autre article ;
 - page plateforme : un des 4 marqueurs manque ou apparaît deux fois, ou un nombre du texte n'apparaît pas dans le fichier de faits ;
 - page résolution : pas de `ol.steps`.
 
@@ -259,17 +260,19 @@ Le moteur refuse l'article (et réessaie une fois) si :
 
 ## 9. Repères visuels
 
-Charte du site existant : titres en Libre Caslon Text, texte en Inter Tight, étiquettes en JetBrains Mono, accent terracotta `#d4583a`, fonds `#ffffff` et `#faf6ee`. Colonne de texte limitée à 68 caractères environ.
+Charte Granit (`DESIGN.md` à la racine du dépôt, copie de `internal/marque`) : titres en Source Serif 4 (réglage `"opsz" 20`, graisse 400 pour tous les titres depuis le 3/11, jamais de gras ni d'italique), texte et étiquettes en Geist (chiffres tabulaires, plus de police mono). Fond de page rosé `#FAF0F2`, cartes papier `#FFFDFD` (jamais de blanc pur), sections alternées lavis `#F4EEF0`, texte encre `#1F3530`, liens et accent de titre en vert profond `#2F7A64` (l'accent passe par la couleur, pas par l'italique). Aucune autre couleur. Colonne de texte limitée à 68 caractères environ.
+
+Les catégories ne se distinguent plus par la couleur mais par leur nom : toutes prennent la même paire, profond pour le texte, les filets et les numéros, lavis pour le fond d'en-tête (valeurs dans `src/lib/ressources/categories.json`).
 
 | Catégorie | Couleur (texte) | Teinte (fond d'en-tête) | Titre de la carte agent |
 |---|---|---|---|
-| `guide-tiers-payant` | `#3f7a4d` | `#e9f2eb` | L'agent dépose vos prises en charge |
-| `plateformes` | `#b94a2f` | `#fbeae3` | L'agent dépose vos PEC {nom de la plateforme} |
-| `rejets` | `#8a6416` | `#f6eedb` | L'agent vérifie la plateforme avant l'envoi |
-| `paiements` | `#3e5f84` | `#e6ecf4` | L'agent rapproche vos virements chaque matin |
-| `gerer-son-tiers-payant` | `#7a4a74` | `#f3e9f1` | L'agent dépose vos prises en charge |
-| `conformite` | `#2f6f75` | `#e2f0f1` | L'agent dépose vos prises en charge |
-| `glossaire` | `#5e574b` | `#f1ede5` | L'agent dépose vos prises en charge |
+| `guide-tiers-payant` | `#2F7A64` | `#F4EEF0` | L'agent dépose vos prises en charge |
+| `plateformes` | `#2F7A64` | `#F4EEF0` | L'agent dépose vos PEC {nom de la plateforme} |
+| `rejets` | `#2F7A64` | `#F4EEF0` | L'agent vérifie la plateforme avant l'envoi |
+| `paiements` | `#2F7A64` | `#F4EEF0` | L'agent rapproche vos virements chaque matin |
+| `gerer-son-tiers-payant` | `#2F7A64` | `#F4EEF0` | L'agent dépose vos prises en charge |
+| `conformite` | `#2F7A64` | `#F4EEF0` | L'agent dépose vos prises en charge |
+| `glossaire` | `#2F7A64` | `#F4EEF0` | L'agent dépose vos prises en charge |
 
 Le titre de la carte agent « plateformes » n'est utilisé que si la plateforme fait partie de celles que Granit traite (`granitData`). Sinon : « L'agent dépose vos prises en charge ».
 
