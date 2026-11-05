@@ -3,6 +3,11 @@
   "nom": "Oxantis",
   "logo": "/logos/oxantis.png",
   "checkedOn": "2026-10-07",
+  "acces": {
+    "verifieLe": "2026-11-05",
+    "liens": [],
+    "note": "Le portail oxantis.net a fermé le 26 octobre 2026. Viamedis reprend l'activité optique et audioprothèse : la connexion se fait désormais sur viamedis.net."
+  },
   "identite": [
     {
       "label": "Type",

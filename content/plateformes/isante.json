@@ -3,6 +3,16 @@
   "nom": "iSanté",
   "logo": "/logos/isante.png",
   "checkedOn": "2026-10-07",
+  "acces": {
+    "verifieLe": "2026-10-30",
+    "liens": [
+      {
+        "label": "Se connecter sur tp-isante.fr",
+        "url": "https://www.tp-isante.fr/login",
+        "detail": "Mot de passe puis code reçu par e-mail. Les prises en charge se font ensuite sur IsantePEC."
+      }
+    ]
+  },
   "identite": [
     {
       "label": "Type",
