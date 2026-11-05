@@ -16,6 +16,21 @@ export const organizationLd = {
   sameAs: ["https://www.linkedin.com/company/getgranit-ai/"],
 };
 
+/**
+ * WebSite : donne à Google le nom du site affiché au-dessus du lien dans les résultats.
+ * Recommandé sur la page d'accueil seulement.
+ */
+export const websiteLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
+  name: "Granit",
+  alternateName: ["Granit AI", "getgranit"],
+  url: `${SITE_URL}/`,
+  inLanguage: "fr-FR",
+  publisher: { "@id": `${SITE_URL}/#organization` },
+};
+
 /** Référence à l'Organization du site, pour les autres blocs JSON-LD (provider, publisher). */
 export const organizationRef = { "@id": `${SITE_URL}/#organization` };
 
