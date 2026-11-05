@@ -212,12 +212,17 @@ Section envoyée à Claude pour les fiches VS et la grille. Décisions de l'atel
 5. **Aucun chiffre déclaré mis en face** (taux, délais annoncés par un acteur), aucun mot de dénigrement près du nom d'un acteur. On écrit « Iremia ne publie pas… », jamais « Iremia ne sait pas… ».
 6. Pas de vainqueur général, pas de « toutes les plateformes », pas d'offre de bascule.
 7. Granit compte comme un acteur : ses faits viennent de `concurrents/granit.json`, comme les autres.
+8. **`meilleurSi` ne garde que ce que Granit ne fait pas.** Chaque raison se compare à `concurrents/granit.json` : si Granit le fait aussi, elle part ou se réécrit sur la vraie différence (équipe humaine, plusieurs métiers, avance de trésorerie…). Deux raisons vraies valent mieux que quatre qui ne distinguent rien. La première raison doit se suffire : la grille l'affiche seule. Même filtre pour « ce que X a en plus » dans le texte.
+9. **Ne jamais écrire que Granit ne fait pas quelque chose** sans un axe `non` dans `concurrents/granit.json`. L'absence d'une information sur Granit ne vaut pas absence du service : on la signale à Paul, on ne la publie pas.
+10. **« {X} ne mentionne pas… » se vérifie sur les pages du concurrent**, pas seulement dans sa fiche : un service annoncé (facturation en ligne, contrôle de conformité) ne se nie pas. En cas de doute, viser plus étroit (« ne parle pas des bons de livraison »).
+11. **Sources publiques seulement.** Devis, mails, appels et notes Notion (`Acteurs du tiers-payant externalisé`, `Offres et devis`) guident la recherche et la vente, jamais une fiche ni une page : ni citation, ni valeur d'axe, ni reformulation. Une preuve privée ne change pas un `non publié`.
+12. **Les axes binaires valent exactement `oui`, `non` ou `non publié`** : le tableau en fait une coche, une croix ou « Non précisé ». `non` seulement si l'acteur le dit lui-même ou si sa fiche le source : ne rien publier n'est jamais une croix. Un `non` de Granit reste affiché. Tout autre texte (`partiel`, `détection et alertes`) s'affiche tel quel.
 
 ### Marqueurs
 
 | Marqueur | Page | Où le poser | Ce que le gabarit affiche |
 |---|---|---|---|
-| `<div data-bloc="coup-doeil"></div>` | Fiche VS | Sous le 1er H2, seul | Le tableau « en un coup d'œil » des deux acteurs, depuis `axes`, avec la date du relevé |
+| `<div data-bloc="coup-doeil"></div>` | Fiche VS | Sous le 1er H2, seul | Le tableau à coches « en un coup d'œil » des deux acteurs, depuis `axes` (valeurs seules, sans `detail`), avec la date du relevé |
 | `<div data-bloc="frise"></div>` | Les deux | Fiche : sous le H3 « À quel moment du dossier agit chaque offre ». Grille : sous le 1er H2 | Les 5 étapes d'un dossier (plateforme, PEC, accord ou refus, facture, paiement) ; sur une fiche, une bande par offre |
 | `<div data-bloc="choisir"></div>` | Fiche VS | Sous le H2 « Comment choisir… », après une phrase | Les cartes « Choisir {X} si » et « Choisir Granit si » |
 | `<div data-bloc="modeles"></div>` | Grille | Sous le H2 « Les cinq façons… » | Les 5 modèles : interne, freelance, prestataire, outil de saisie, agents IA |

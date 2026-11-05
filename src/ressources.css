@@ -308,6 +308,26 @@ body {
     }
   }
 }
+/* Duel à 2 acteurs : les trois colonnes tiennent sur un téléphone, la colonne Granit ne sort jamais de l'écran. */
+@media (max-width: 639px) {
+  .ress-corps .tbl.tbl-duel {
+    overflow-x: visible;
+    mask-image: none;
+    animation: none;
+  }
+  .ress-corps .tbl.tbl-duel table {
+    min-width: 0;
+    table-layout: fixed;
+    font-size: 13.5px;
+    line-height: 1.4;
+  }
+  .ress-corps .tbl.tbl-duel th,
+  .ress-corps .tbl.tbl-duel td {
+    padding: 9px 8px;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+  }
+}
 @keyframes tbl-fin {
   96% {
     mask-image: linear-gradient(to right, black 88%, transparent);
