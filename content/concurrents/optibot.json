@@ -24,6 +24,10 @@
       "detail": "Pré-remplit l'identité, le NSS et les infos de l'ordonnance ; codes LPP et montants verres / monture restent saisis à la main ; mapping Viamedis en cours de développement",
       "source": "optibot-almerys"
     },
+    "livraison": {
+      "valeur": "non publié",
+      "source": null
+    },
     "rejets": {
       "valeur": "détection et alertes",
       "detail": "Détection des rejets AMO et AMC via l'extension, alertes et relances automatiques selon règles ; correction et renvoi non publiés",
@@ -50,6 +54,11 @@
     "plateformes": {
       "valeur": "47 portails annoncés + Smart Fill sur les autres",
       "detail": "Couverture variable selon le portail : Almerys « Partiel », Viamedis « Smart Fill disponible »",
+      "source": "optibot-accueil"
+    },
+    "logiciel": {
+      "valeur": "connexion native seulement aux logiciels Optimum",
+      "detail": "Famille Optimum (LivebyOptimum, AS3.2, Atol Pro) ; ailleurs, l'extension Chrome remplit les portails depuis le navigateur",
       "source": "optibot-accueil"
     }
   },

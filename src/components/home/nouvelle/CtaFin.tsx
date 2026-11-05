@@ -13,7 +13,7 @@ const copy = {
     l2: "Granit gère le reste.",
     lead: "Opérationnel en 48 h sur vos portails. Rien à installer pour vos équipes.",
     garanties: "Garanties",
-    hds: "Hébergé sur un cloud certifié HDS",
+    hds: "Infrastructure certifiée HDS",
     ue: "Données dans l’UE",
     rgpd: (
       <>
@@ -26,7 +26,7 @@ const copy = {
     l2: "Granit handles the rest.",
     lead: "Live on your portals in 48 hours. Nothing for your teams to install.",
     garanties: "Guarantees",
-    hds: "Hosted on HDS-certified cloud",
+    hds: "HDS-certified infrastructure",
     ue: "EU data",
     rgpd: (
       <>

@@ -30,6 +30,10 @@
       "detail": "Saisie des PEC par leurs experts (offre Admin Santé)",
       "source": "iremia-admin"
     },
+    "livraison": {
+      "valeur": "non publié",
+      "source": null
+    },
     "rejets": {
       "valeur": "oui",
       "detail": "Identification du motif de rejet et recyclage des factures",
@@ -56,6 +60,11 @@
     "plateformes": {
       "valeur": "non publié",
       "source": null
+    },
+    "logiciel": {
+      "valeur": "non publié",
+      "detail": "Le site cite ses propres outils pour le rapprochement (plateforme Théo, logiciel Santé Bank), sans dire s'il travaille dans le logiciel du magasin",
+      "source": "iremia-accueil"
     }
   },
   "citations": [

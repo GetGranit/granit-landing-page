@@ -1,0 +1,177 @@
+{
+  "slug": "conseil-tiers-payant",
+  "nom": "Conseil Tiers Payant",
+  "modele": "prestataire",
+  "logo": null,
+  "checkedOn": "2026-11-03",
+  "aRelire": false,
+  "identite": {
+    "raisonSociale": "CONSEIL TIERS PAYANT (SAS)",
+    "siege": "Arnas (69)",
+    "site": "https://conseiltierspayant.com/",
+    "metiers": [
+      "pharmacie",
+      "optique",
+      "dentaire",
+      "centres de santé",
+      "matériel médical",
+      "kinésithérapie",
+      "médecine",
+      "sages-femmes",
+      "infirmiers",
+      "orthoptie"
+    ]
+  },
+  "axes": {
+    "quiFait": {
+      "valeur": "Un gestionnaire attitré de Conseil Tiers Payant, qui travaille à distance dans le logiciel du professionnel",
+      "detail": "Connexion une fois par semaine au logiciel ; prestation sur mesure après un diagnostic à distance",
+      "source": "ctp-suivi"
+    },
+    "pec": {
+      "valeur": "oui, présenté pour le dentaire",
+      "detail": "Demandes de prise en charge transmises et suivies dans l'application CTP, fonctionnalité présentée pour les cabinets dentaires et dentistes ; rien de publié pour l'optique",
+      "source": "ctp-application"
+    },
+    "livraison": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "rejets": {
+      "valeur": "oui",
+      "detail": "Traitement de l'ensemble des rejets des parts obligatoires et complémentaires : recyclage de la facture après correction, sinon réclamation papier avec duplicata ; statistiques des erreurs récurrentes par code opérateur",
+      "source": "ctp-suivi"
+    },
+    "rapprochement": {
+      "valeur": "oui, présenté pour le dentaire",
+      "detail": "Pointage de chaque règlement de prise en charge dans le logiciel métier, date de règlement remontée dans l'application CTP ; présenté pour les dentistes et centres dentaires",
+      "source": "ctp-rapprochement"
+    },
+    "avance": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "engagement": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "hds": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "plateformes": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "logiciel": {
+      "valeur": "dans le logiciel métier du professionnel, quel qu'il soit",
+      "detail": "Indépendant de tout éditeur, travaille sur n'importe quelle application métier de santé intégrant le tiers payant ; connexion à distance une fois par semaine",
+      "source": "ctp-accueil"
+    }
+  },
+  "citations": [
+    {
+      "texte": "La plupart de nos collaborations avec nos clients opticiens commencent par une mission d’impayés.",
+      "source": "ctp-optique"
+    },
+    {
+      "texte": "Votre gestionnaire attitré prend en charge le suivi quotidien de votre tiers payant en se connectant une fois par semaine sur votre logiciel afin de limiter les délais de paiement et ainsi garder une trésorerie saine.",
+      "source": "ctp-suivi"
+    },
+    {
+      "texte": "Nous traitons l’ensemble des rejets des parts obligatoires et complémentaires.",
+      "source": "ctp-suivi"
+    },
+    {
+      "texte": "Nous sommes indépendants de tout éditeur de logiciel et pouvons travailler sur n’importe quelle application métier de santé intégrant le tiers payant.",
+      "source": "ctp-accueil"
+    },
+    {
+      "texte": "Nous traitons en priorité les factures sur le point de dépasser le délai de forclusion pour arriver aux plus récentes afin d’assainir votre balance âgée jusqu’à atteindre l’objectif que l’on aura fixé ensemble.",
+      "source": "ctp-impayes"
+    }
+  ],
+  "meilleurSi": [
+    "on a un stock d'anciens impayés à récupérer, à traiter en priorité avant la forclusion",
+    "on veut un gestionnaire attitré qui travaille directement dans son logiciel, quel qu'il soit",
+    "on ouvre, transfère ou change de compte bancaire et on veut déléguer le référencement auprès des mutuelles",
+    "on exerce plusieurs métiers de santé et on veut un seul prestataire"
+  ],
+  "exclus": {
+    "_pourquoi": "aucun prix sur les pages comparatives ; chiffres de performance déclarés non comparables",
+    "prix": "non publié (devis après diagnostic à distance)",
+    "chiffresDeclares": "« Nos experts justifient de plus de 10 ans d’expérience », « 10 ans d’expérience », « Depuis 7 ans » (article du 01/04/2024), « Récupérez entre 2 et 4% d'anomalies de factures » (pharmacie), « une moyenne de 2% d’anomalies dans les factures tiers payant des pharmacies », « réponse sous 24h max », « plus de 10000 points de vente qui distribuent plus de 1300 marques » (ctp-accueil, ctp-suivi, ctp-impayes, ctp-application, ctp-optique)",
+    "incoherences": "Les mentions légales désignent « Ofourneau » comme responsable du traitement et donnent une adresse de service client à Ars-sur-Formans (01), différente du siège d'Arnas (69) : vestige probable d'un gabarit ; l'hébergement du site (1&1) est indiqué, rien sur l'hébergement des données de santé ; PEC et rapprochement bancaire ne sont décrits que pour le dentaire (ctp-mentions, ctp-application, ctp-rapprochement)",
+    "taille": "SIREN 830 146 098, SAS créée le 30/05/2017, NAF 70.22Z, tranche 6 à 9 salariés (2024), catégorie PME (annuaire-ctp)",
+    "prixType": "non publié",
+    "prixAnalyste": {
+      "releve": "non publié : prestation sur mesure après un état des lieux gratuit ; le site évoque pour l'assistance régulière « un tarif fixe, négocié à l'année », sans montant (ctp-accueil, ctp-assistance)",
+      "notes": "Conseil Tiers Payant SAS (SIREN 830 146 098, Arnas, 69). Se désigne lui-même « CTP » (application CTP) : voir le slug ctp.",
+      "sources": [
+        {
+          "label": "conseiltierspayant.com · Accueil",
+          "url": "https://conseiltierspayant.com/",
+          "consulte": "2026-11-03"
+        },
+        {
+          "label": "conseiltierspayant.com · Optique",
+          "url": "https://conseiltierspayant.com/metier/gestion-tiers-payant-optique/",
+          "consulte": "2026-11-03"
+        },
+        {
+          "label": "conseiltierspayant.com · L'assistance au tiers payant",
+          "url": "https://conseiltierspayant.com/lassistance-au-tiers-payant-comment-ca-marche/",
+          "consulte": "2026-11-03"
+        }
+      ]
+    }
+  },
+  "sources": {
+    "ctp-accueil": {
+      "label": "conseiltierspayant.com · Accueil",
+      "url": "https://conseiltierspayant.com/",
+      "consulte": "2026-11-03"
+    },
+    "ctp-optique": {
+      "label": "conseiltierspayant.com · Optique",
+      "url": "https://conseiltierspayant.com/metier/gestion-tiers-payant-optique/",
+      "consulte": "2026-11-03"
+    },
+    "ctp-suivi": {
+      "label": "conseiltierspayant.com · Suivi du tiers payant",
+      "url": "https://conseiltierspayant.com/suivi-tiers-payant/",
+      "consulte": "2026-11-03"
+    },
+    "ctp-impayes": {
+      "label": "conseiltierspayant.com · Traitement des impayés",
+      "url": "https://conseiltierspayant.com/traitement-des-impayes-tiers-payant/",
+      "consulte": "2026-11-03"
+    },
+    "ctp-referencement": {
+      "label": "conseiltierspayant.com · Référencement auprès des mutuelles",
+      "url": "https://conseiltierspayant.com/referencement-aupres-des-mutuelles/",
+      "consulte": "2026-11-03"
+    },
+    "ctp-application": {
+      "label": "conseiltierspayant.com · L'application CTP",
+      "url": "https://conseiltierspayant.com/facilitez-vous-le-tiers-payant-avec-lapplication-ctp/",
+      "consulte": "2026-11-03"
+    },
+    "ctp-rapprochement": {
+      "label": "conseiltierspayant.com · Rapprochement bancaire (dentaire)",
+      "url": "https://conseiltierspayant.com/dentistes-et-centres-dentaires-le-rapprochement-bancaire-de-vos-prises-en-charges-tiers-payant-avec-lapplication-ctp/",
+      "consulte": "2026-11-03"
+    },
+    "ctp-mentions": {
+      "label": "conseiltierspayant.com · Mentions légales",
+      "url": "https://conseiltierspayant.com/mentions-legales/",
+      "consulte": "2026-11-03"
+    },
+    "annuaire-ctp": {
+      "label": "annuaire-entreprises.data.gouv.fr · Conseil Tiers Payant (SIREN 830 146 098)",
+      "url": "https://annuaire-entreprises.data.gouv.fr/entreprise/830146098",
+      "consulte": "2026-11-03"
+    }
+  },
+  "_relu": "Go de Paul le 04/11/2026 après aperçu local des pages ; fiche non relue ligne à ligne."
+}

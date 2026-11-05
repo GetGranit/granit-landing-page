@@ -1,0 +1,160 @@
+{
+  "slug": "backoffice",
+  "nom": "Backoffice",
+  "modele": "prestataire",
+  "logo": null,
+  "checkedOn": "2026-11-03",
+  "aRelire": false,
+  "identite": {
+    "raisonSociale": "BACK OFFICE SERVICES (SASU), marque Backoffice",
+    "siege": "Lyon (69)",
+    "site": "https://www.lagestiondutierspayant.fr/",
+    "metiers": [
+      "pharmacie",
+      "optique"
+    ]
+  },
+  "axes": {
+    "quiFait": {
+      "valeur": "Un expert Backoffice spécialisé dans l'optique, à qui l'opticien délègue l'ensemble des tâches de tiers payant",
+      "detail": "Points réguliers avec un expert du tiers payant sur l'évolution du tiers payant ; offre présentée aux réseaux d'opticiens",
+      "source": "bo-optique"
+    },
+    "pec": {
+      "valeur": "oui, annoncé en 2022",
+      "detail": "Communiqué de lancement de l'offre optique (juin 2022) : demandes de prise en charge des patients auprès des organismes externalisables ; la page Optique actuelle du site ne le reprend pas",
+      "source": "bo-presse"
+    },
+    "livraison": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "rejets": {
+      "valeur": "oui",
+      "detail": "Traitement des rejets et des impayés, relance des crédits",
+      "source": "bo-optique"
+    },
+    "rapprochement": {
+      "valeur": "oui",
+      "detail": "Rapprochement bancaire compris dans la prise en charge complète",
+      "source": "bo-optique"
+    },
+    "avance": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "engagement": {
+      "valeur": "période de 90 jours ouvrés reconduite tacitement",
+      "detail": "CGU mises à jour le 16/09/2024 : dénonciation par lettre recommandée au plus tard 45 jours ouvrés avant la fin de la période ; les CGU elles-mêmes courent 12 mois, reconduits tacitement",
+      "source": "bo-cgu"
+    },
+    "hds": {
+      "valeur": "hébergeur agréé annoncé pour les données de santé",
+      "detail": "Les CGU renvoient aux articles L.1111-8 et R.1111-9 du Code de la santé publique, sans nommer l'hébergeur",
+      "source": "bo-cgu"
+    },
+    "plateformes": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "logiciel": {
+      "valeur": "non publié",
+      "source": null
+    }
+  },
+  "citations": [
+    {
+      "texte": "Le service d'externalisation du tiers-payant permet de déléguer l'ensemble des tâches liées à la gestion du tiers-payant à un expert Backoffice spécialisé dans l'optique.",
+      "source": "bo-optique"
+    },
+    {
+      "texte": "Toutes nos prestations sont réalisées en France.",
+      "source": "bo-accueil"
+    },
+    {
+      "texte": "Nous avons donc co-construit le tiers-payant Optique en collaboration avec des opticiens diplômés pour qu’il soit en phase avec la réalité de leur métier.",
+      "source": "bo-presse"
+    },
+    {
+      "texte": "Le montage des dossiers de référencement auprès des réseaux fermés et ouverts",
+      "source": "bo-presse"
+    }
+  ],
+  "meilleurSi": [
+    "on dirige un réseau d'opticiens et on veut externaliser le tiers payant de tous les magasins",
+    "on veut aussi confier le montage des dossiers de référencement auprès des réseaux fermés et ouverts",
+    "on tient à ce que toute la prestation soit réalisée en France"
+  ],
+  "exclus": {
+    "_pourquoi": "aucun prix sur les pages comparatives ; chiffres de performance déclarés non comparables",
+    "prix": "Abonnement à l'outil Backoffice 29,90 € HT par mois, délégation sur devis après audit (bo-cgu) ; formations à partir de 250 € HT de l'heure (bo-formation) ; en 2022, référencement « prix au dossier » et PEC « prix à la prise en charge » (bo-presse)",
+    "chiffresDeclares": "« plus de 312 heures/an » consacrées par les opticiens au tiers payant, puis chiffres d'une étude de la Centrale des Opticiens de 2011 (6 h par semaine, 93 %, « 3,5 dossiers sur 100 » jamais remboursés, « 2,8% du chiffre d'affaires », « 3 semaines et 3 jours ») (bo-optique) ; « Une satisfaction clients qui se situe aux alentours de 98 % » (bo-presse) ; « 96 % de stagiaires satisfaits », « 280 heures de formations dispensées » (bo-formation)",
+    "incoherences": "La page Optique ne décrit pas le déroulé du service et ne cite que des chiffres de 2011 ; les CGU (bo-cgu) décrivent la délégation pour la pharmacie et autorisent la sous-traitance de tout ou partie de la prestation ; une offre de recrutement vise des « Gestionnaire Tiers-Payant Indépendant » chefs d'entreprise (bo-recrutement), alors que le communiqué parle d'une équipe de la région lyonnaise (bo-presse) ; les mentions légales disent la société « du groupe Pegasus Network » et les données du site hébergées chez Scaleway / Online (bo-mentions), le communiqué de 2022 la dit « créée par Kozea group » (bo-presse) ; le communiqué est un contenu d'agence de relations presse, pas un article de presse",
+    "taille": "SIREN 822 732 236, SASU (nature juridique 5710), créée le 28/07/2016, tranche d'effectif 3 à 5 salariés (2024), catégorie PME, NAF 62.01Z, un établissement ouvert à Lyon 2e (annuaire-backoffice)",
+    "prixType": "rapporté par un tiers",
+    "prixAnalyste": {
+      "releve": "non publié pour l'optique : devis personnalisé ; le communiqué de lancement (2022) décrit une facturation « prix au dossier » (référencement), « prix à la prise en charge » et un prix « déterminé selon un diagnostic préalable » pour la gestion, sans montants (backoffice-optique, rp-2022). Côté pharmacie, la presse rapportait en 2024 un « abonnement moyen de 300 € HT par mois » (250 officines) et le logiciel Kabeo à 29,90 € HT/mois (moniteur-2024)",
+      "notes": "Backoffice (Back Office Services, groupe Kozea, Lyon), site lagestiondutierspayant.fr. Les chiffres tiers concernent uniquement des pharmacies : 300 € est une moyenne déclarée par le dirigeant, pas un tarif. Aucun montant optique trouvé.",
+      "sources": [
+        {
+          "label": "lagestiondutierspayant.fr · Externalisation optique",
+          "url": "https://www.lagestiondutierspayant.fr/optique",
+          "consulte": "2026-11-03"
+        },
+        {
+          "label": "relations-publiques.pro · Lancement offre opticiens (Backoffice)",
+          "url": "https://www.relations-publiques.pro/250706/backoffice-le-specialiste-de-la-gestion-du-tiers-payant-lance-une-offre-dediee-aux-opticiens-et-accompagne-les-pharmaciens-durant-lete.html",
+          "consulte": "2026-11-03"
+        },
+        {
+          "label": "Le Moniteur des pharmacies · « Bien gérer le tiers payant… » (4 sept. 2024)",
+          "url": "https://www.lemoniteurdespharmacies.fr/business/economie/strategie-et-gestion/bien-gerer-le-tiers-payant-pour-eviter-les-rejets-et-impayes",
+          "consulte": "2026-11-03"
+        }
+      ]
+    }
+  },
+  "sources": {
+    "bo-accueil": {
+      "label": "lagestiondutierspayant.fr · Accueil",
+      "url": "https://www.lagestiondutierspayant.fr/",
+      "consulte": "2026-11-03"
+    },
+    "bo-optique": {
+      "label": "lagestiondutierspayant.fr · Externalisation Optique",
+      "url": "https://www.lagestiondutierspayant.fr/optique",
+      "consulte": "2026-11-03"
+    },
+    "bo-cgu": {
+      "label": "lagestiondutierspayant.fr · Conditions générales d'utilisation (gestion tiers-payant, 16/09/2024)",
+      "url": "https://www.lagestiondutierspayant.fr/static/pdf/CGU.pdf",
+      "consulte": "2026-11-03"
+    },
+    "bo-mentions": {
+      "label": "lagestiondutierspayant.fr · Mentions légales",
+      "url": "https://www.lagestiondutierspayant.fr/mentions-l%C3%A9gales",
+      "consulte": "2026-11-03"
+    },
+    "bo-formation": {
+      "label": "lagestiondutierspayant.fr · Formation",
+      "url": "https://www.lagestiondutierspayant.fr/formation",
+      "consulte": "2026-11-03"
+    },
+    "bo-recrutement": {
+      "label": "lagestiondutierspayant.fr · Recrutement",
+      "url": "https://www.lagestiondutierspayant.fr/recrutement",
+      "consulte": "2026-11-03"
+    },
+    "bo-presse": {
+      "label": "relations-publiques.pro · Communiqué de lancement de l'offre optique (2022)",
+      "url": "https://www.relations-publiques.pro/250706/backoffice-le-specialiste-de-la-gestion-du-tiers-payant-lance-une-offre-dediee-aux-opticiens-et-accompagne-les-pharmaciens-durant-lete.html",
+      "consulte": "2026-11-03"
+    },
+    "annuaire-backoffice": {
+      "label": "annuaire-entreprises.data.gouv.fr · Back Office Services (SIREN 822 732 236)",
+      "url": "https://annuaire-entreprises.data.gouv.fr/entreprise/822732236",
+      "consulte": "2026-11-03"
+    }
+  },
+  "_relu": "Go de Paul le 04/11/2026 après aperçu local des pages ; fiche non relue ligne à ligne."
+}

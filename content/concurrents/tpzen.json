@@ -1,0 +1,131 @@
+{
+  "slug": "tpzen",
+  "nom": "TP Zen",
+  "modele": "prestataire",
+  "logo": null,
+  "checkedOn": "2026-11-03",
+  "aRelire": false,
+  "identite": {
+    "raisonSociale": "TPZEN (SAS)",
+    "siege": "Neuilly-sur-Seine (92)",
+    "site": "https://www.tpzen.com/",
+    "metiers": [
+      "professionnels de santé médicaux et paramédicaux"
+    ]
+  },
+  "axes": {
+    "quiFait": {
+      "valeur": "Une équipe d'experts TP Zen, après un audit de la situation",
+      "detail": "Le site se présente comme « un service pour les professionnels de santé géré par des professionnels de santé »",
+      "source": "tpzen-accueil"
+    },
+    "pec": {
+      "valeur": "oui",
+      "detail": "Collecte régulière des devis avec le secrétariat, puis demandes de prise en charge (DPEC) transmises en ligne aux complémentaires santé",
+      "source": "tpzen-accueil"
+    },
+    "livraison": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "rejets": {
+      "valeur": "oui",
+      "detail": "Corrections et renvoi des documents en cas de rejet ; recouvrement des impayés après audit",
+      "source": "tpzen-accueil"
+    },
+    "rapprochement": {
+      "valeur": "oui",
+      "detail": "Vérification que les sommes créditées sur le compte bancaire correspondent au logiciel, et rapprochement des sommes reçues sur les dossiers patients",
+      "source": "tpzen-accueil"
+    },
+    "avance": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "engagement": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "hds": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "plateformes": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "logiciel": {
+      "valeur": "non publié",
+      "source": null
+    }
+  },
+  "citations": [
+    {
+      "texte": "TP Zen externalise et simplifie la gestion de votre tiers-payant de A à Z en prenant en charge les feuilles de soins et notes d'honoraires dès leur facturation.",
+      "source": "tpzen-accueil"
+    },
+    {
+      "texte": "TP Zen collabore avec votre secrétariat pour collecter régulièrement vos devis et les transmettre en ligne aux complémentaires santé.",
+      "source": "tpzen-accueil"
+    },
+    {
+      "texte": "En cas de rejet, nous effectuons les corrections nécessaires et renvoyons les documents, tout en suivant les paiements pour garantir l’exactitude des montants crédités.",
+      "source": "tpzen-accueil"
+    },
+    {
+      "texte": "Nous vérifions en temps réel que les sommes créditées sur votre compte bancaire correspondent à celles inscrites dans votre logiciel et intervenons pour rapprocher les sommes reçues mais non rapprochées sur les dossiers patients.",
+      "source": "tpzen-accueil"
+    },
+    {
+      "texte": "Vous êtes informé en temps réel des opérations via un espace partagé.",
+      "source": "tpzen-accueil"
+    }
+  ],
+  "meilleurSi": [
+    "on veut confier aussi les demandes de prise en charge, à partir des devis collectés avec son équipe",
+    "on veut un audit de ses impayés avant de décider de confier ou non le recouvrement",
+    "on veut suivre en continu le travail du prestataire dans un espace partagé en ligne"
+  ],
+  "exclus": {
+    "_pourquoi": "aucun prix sur les pages comparatives ; chiffres de performance déclarés non comparables",
+    "prix": "Gestion mensuelle à partir de 0,4% du chiffre d’affaires géré, plus une commission à partir de 10% sur les impayés et rejets récupérés ; PEC 9€ l'unité, 259€ les 30 demandes, forfait illimité à partir de 549€/mois ; recouvrement : commission à partir de 5% des impayés à récupérer ; audit gratuit (tpzen-accueil)",
+    "chiffresDeclares": "« On vous fait gagner plus de 30h par semaine en récupérant plus de 80% de vos impayés! » (tpzen-linkedin)",
+    "incoherences": "Mission annoncée « digitaliser et automatiser » et « algorithmes spécialisés pour garantir le recouvrement », alors que le service décrit est rendu par une équipe ; « géré par des professionnels de santé » sans présentation de l'équipe ; téléphone affiché +33 6 76 47 48 03 mais lien d'appel vers un autre numéro, lien mail vers une adresse gmail ; hébergeur non nommé dans les mentions légales ; textes de gabarit restés en ligne (« Benefit one of this feature ») ; métiers non détaillés, l'optique n'apparaît pas sur le site principal (tpzen-accueil, tpzen-mentions)",
+    "taille": "SIREN 932 352 198, SAS au capital de 1 000 € créée le 14/06/2024, NAF 82.11Z, tranche 3 à 5 salariés (2024), catégorie PME (annuaire-tpzen)",
+    "prixType": "affiché",
+    "prixAnalyste": {
+      "releve": "Gestion mensuelle du tiers payant : forfait « à partir de 0,4 % du chiffre d'affaires géré » plus une commission « à partir de 10 % » sur les impayés et rejets récupérés ; demandes de prise en charge : 9 € l'unité, 259 € les 30, forfait illimité « à partir de 549 €/mois » ; recouvrement : commission « à partir de 5 % des impayés à récupérer » ; audit gratuit (tpzen-accueil)",
+      "notes": "TPZen (Neuilly-sur-Seine) vise les cabinets médicaux et dentaires et les centres de santé, pas spécifiquement l'optique. HT ou TTC non précisé. Dans le rendu de la page, la grille 9 € / 259 € / 549 € se trouve entre le bloc « gestion du tiers payant » et le bloc « prises en charge ». Je l'attribue aux demandes de prise en charge (DPEC) d'après la mise en page alternée, mais c'est à vérifier visuellement.",
+      "sources": [
+        {
+          "label": "tpzen.com · Accueil",
+          "url": "https://www.tpzen.com/",
+          "consulte": "2026-11-03"
+        }
+      ]
+    }
+  },
+  "sources": {
+    "tpzen-accueil": {
+      "label": "tpzen.com · Accueil, services et FAQ",
+      "url": "https://www.tpzen.com/",
+      "consulte": "2026-11-03"
+    },
+    "tpzen-mentions": {
+      "label": "tpzen.com · Mentions légales",
+      "url": "https://www.tpzen.com/mentions-legales",
+      "consulte": "2026-11-03"
+    },
+    "tpzen-linkedin": {
+      "label": "LinkedIn · TP Zen - Gestion de Tiers Payant",
+      "url": "https://www.linkedin.com/in/tp-zen-gestion-de-tiers-payant-8563ba323",
+      "consulte": "2026-11-03"
+    },
+    "annuaire-tpzen": {
+      "label": "annuaire-entreprises.data.gouv.fr · TPZEN (SIREN 932 352 198)",
+      "url": "https://annuaire-entreprises.data.gouv.fr/entreprise/932352198",
+      "consulte": "2026-11-03"
+    }
+  },
+  "_relu": "Go de Paul le 04/11/2026 après aperçu local des pages ; fiche non relue ligne à ligne."
+}

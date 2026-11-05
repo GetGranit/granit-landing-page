@@ -1,0 +1,143 @@
+{
+  "slug": "izisante",
+  "nom": "IziSanté",
+  "modele": "prestataire",
+  "logo": null,
+  "checkedOn": "2026-11-03",
+  "aRelire": false,
+  "identite": {
+    "raisonSociale": "IZISANTE (SAS)",
+    "siege": "Vaugneray (69)",
+    "site": "https://izisante.net/",
+    "metiers": [
+      "optique"
+    ]
+  },
+  "axes": {
+    "quiFait": {
+      "valeur": "Une équipe de gestionnaires de tiers payant optique",
+      "detail": "Analyse du fonctionnement du magasin et mise en place de process, puis gestion du tiers payant et compte rendu mensuel",
+      "source": "izisante-offres"
+    },
+    "pec": {
+      "valeur": "non",
+      "detail": "L'opticien gère lui-même devis et demandes de prise en charge ; IziSanté prend le relais ensuite (facturation aux mutuelles en option)",
+      "source": "izisante-offres"
+    },
+    "livraison": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "rejets": {
+      "valeur": "oui",
+      "detail": "Traitement des rejets, relance de l'intégralité des impayés chaque semaine, reprise des anciens impayés jusqu'à 2 ans et un trimestre civil",
+      "source": "izisante-offres"
+    },
+    "rapprochement": {
+      "valeur": "oui",
+      "detail": "Identification et vérification de chaque versement bancaire reçu ; compte rendu mensuel",
+      "source": "izisante-offres"
+    },
+    "avance": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "engagement": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "hds": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "plateformes": {
+      "valeur": "non publié",
+      "detail": "Facturation en option « sur les plateformes des organismes ou manuels », sans liste des plateformes",
+      "source": "izisante-offres"
+    },
+    "logiciel": {
+      "valeur": "non publié",
+      "source": null
+    }
+  },
+  "citations": [
+    {
+      "texte": "Pour répondre au mieux à leurs attentes, vous avez besoin de gérer vous-même les devis et demandes de prises en charges auprès des mutuelles.",
+      "source": "izisante-offres"
+    },
+    {
+      "texte": "Vous n’avez plus qu’à établir votre prise en charge, nous gérons le reste !",
+      "source": "izisante-offres"
+    },
+    {
+      "texte": "Nous identifions et vérifions chaque versement bancaire reçu sur votre compte.",
+      "source": "izisante-offres"
+    },
+    {
+      "texte": "Nos gestionnaires de tiers-payant optique relancent l’intégralité de vos impayés chaque semaine, pour des résultats rapides et une trésorerie plus saine !",
+      "source": "izisante-offres"
+    }
+  ],
+  "meilleurSi": [
+    "on veut garder la main sur ses devis et prises en charge et déléguer tout l'aval : rapprochement bancaire, rejets, relances",
+    "on a des impayés anciens à récupérer (reprise jusqu'à 2 ans et un trimestre civil)",
+    "on ouvre un magasin et on veut déléguer les conventionnements auprès des organismes obligatoires et complémentaires",
+    "on prépare le dossier de réponse à l'appel d'offres d'un réseau de soins fermé"
+  ],
+  "exclus": {
+    "_pourquoi": "aucun prix sur les pages comparatives ; chiffres de performance déclarés non comparables",
+    "prix": "« à partir de 150 € HT / mois », prestations sur devis ; conventionnement sur devis ; audit gratuit (izisante-offres)",
+    "chiffresDeclares": "« taux de recouvrement d’impayés supérieur à 97%* », astérisque « Données collectées » sans précision (izisante-accueil)",
+    "taille": "SIREN 882 159 130, création le 02/03/2020, SAS (5710), NAF 82.11Z, siège à Vaugneray (69) ; tranche 3 à 5 salariés (2024), catégorie PME (annuaire-izisante, izisante-cookies)",
+    "prixType": "affiché",
+    "prixAnalyste": {
+      "releve": "Gestion administrative du tiers payant optique : « à partir de 150 € HT / mois », prestations sur devis ; conventionnement : « Tarif sur devis » (izisante-offres)",
+      "notes": "IziSanté SAS (Craponne), fondée par deux opticiennes. L'article de FréquenceOptic dit seulement « tarifs de prestation sur devis », sans le plancher de 150 € : ce n'est pas une contradiction, juste un texte moins précis.",
+      "sources": [
+        {
+          "label": "izisante.net · Nos offres",
+          "url": "https://izisante.net/nos-offres/",
+          "consulte": "2026-11-03"
+        },
+        {
+          "label": "lesannoncesdeloptique.fr (FréquenceOptic) · article IziSanté",
+          "url": "https://www.lesannoncesdeloptique.fr/actualites/izisante-prend-en-main-la-gestion-du-tiers-payant-pour-une-tresorerie-saine.html",
+          "consulte": "2026-11-03"
+        }
+      ]
+    }
+  },
+  "sources": {
+    "izisante-accueil": {
+      "label": "izisante.net · Accueil",
+      "url": "https://izisante.net/",
+      "consulte": "2026-11-03"
+    },
+    "izisante-offres": {
+      "label": "izisante.net · Nos offres",
+      "url": "https://izisante.net/nos-offres/",
+      "consulte": "2026-11-03"
+    },
+    "izisante-apropos": {
+      "label": "izisante.net · Qui sommes-nous ?",
+      "url": "https://izisante.net/qui-sommes-nous/",
+      "consulte": "2026-11-03"
+    },
+    "izisante-mentions": {
+      "label": "izisante.net · Mentions légales",
+      "url": "https://izisante.net/mentions-legales/",
+      "consulte": "2026-11-03"
+    },
+    "izisante-cookies": {
+      "label": "izisante.net · Politique relative aux cookies",
+      "url": "https://izisante.net/politique-relative-aux-cookies/",
+      "consulte": "2026-11-03"
+    },
+    "annuaire-izisante": {
+      "label": "annuaire-entreprises.data.gouv.fr · IZISANTE (SIREN 882 159 130)",
+      "url": "https://annuaire-entreprises.data.gouv.fr/entreprise/882159130",
+      "consulte": "2026-11-03"
+    }
+  },
+  "_relu": "Go de Paul le 04/11/2026 après aperçu local des pages ; fiche non relue ligne à ligne."
+}

@@ -1,0 +1,159 @@
+{
+  "slug": "france-tiers-payant",
+  "nom": "France Tiers Payant",
+  "modele": "prestataire",
+  "logo": null,
+  "checkedOn": "2026-11-03",
+  "aRelire": false,
+  "identite": {
+    "raisonSociale": "LITIPHARMA (SARL), nom commercial FRANCE TIERS PAYANT",
+    "siege": "Meaux (77)",
+    "site": "https://www.francetierspayant.fr/",
+    "metiers": [
+      "médecine",
+      "pharmacie",
+      "dentaire",
+      "optique",
+      "matériel médical",
+      "laboratoire"
+    ]
+  },
+  "axes": {
+    "quiFait": {
+      "valeur": "Un gestionnaire dédié de l'équipe France Tiers Payant, basée à Meaux",
+      "detail": "Interventions sur site ou par prise de main à distance, tous logiciels, France entière ; compte rendu à chaque intervention et hotline pour l'assistance au comptoir",
+      "source": "ftp-services"
+    },
+    "pec": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "livraison": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "rejets": {
+      "valeur": "oui",
+      "detail": "Gestion des rejets RO et RC, traitement des courriers de tiers payant et des indus, surveillance des impayés jusqu'au règlement ; reprise du passif dans la limite des dates de forclusion",
+      "source": "ftp-services"
+    },
+    "rapprochement": {
+      "valeur": "oui",
+      "detail": "Rapprochement bancaire listé dans le suivi personnalisé ; espace client sécurisé avec historique et statistiques",
+      "source": "ftp-services"
+    },
+    "avance": {
+      "valeur": "sur demande",
+      "detail": "La page services indique « Avance trésorerie nous consulter » ; l'accueil présente le service comme compatible avec les prestataires d'avance de trésorerie",
+      "source": "ftp-services"
+    },
+    "engagement": {
+      "valeur": "contrats modulables pendant la mission, sans frais",
+      "detail": "Aucun frais d'installation selon la page services",
+      "source": "ftp-services"
+    },
+    "hds": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "plateformes": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "logiciel": {
+      "valeur": "tous logiciels",
+      "detail": "Interventions sur site ou par prise de main à distance",
+      "source": "ftp-services"
+    }
+  },
+  "citations": [
+    {
+      "texte": "Nous nous occupons de votre référencement auprès des caisses afin que les transmissions soient opérationnelles à date d’ouverture.",
+      "source": "ftp-accueil"
+    },
+    {
+      "texte": "Reprise du passif dans la limite des dates de forclusion",
+      "source": "ftp-services"
+    },
+    {
+      "texte": "Interventions sur site et/ou prise de mains à distance (connexions sécurisées)",
+      "source": "ftp-services"
+    },
+    {
+      "texte": "Contrats modulables pendant la mission, sans frais.",
+      "source": "ftp-services"
+    },
+    {
+      "texte": "Avance trésorerie nous consulter",
+      "source": "ftp-services"
+    }
+  ],
+  "meilleurSi": [
+    "on a un passif de rejets et d'impayés à récupérer avant la forclusion",
+    "on ouvre, reprend ou change d'entité juridique et on veut que le référencement auprès des organismes soit fait avant l'ouverture",
+    "on veut un gestionnaire dédié avec compte rendu à chaque intervention et une hotline pour les questions au comptoir",
+    "on veut aussi former son équipe au tiers payant, sur place ou en visio"
+  ],
+  "exclus": {
+    "_pourquoi": "aucun prix publié ; chiffres de taille et d'ancienneté déclarés non comparables et en partie contradictoires",
+    "prix": "non publié (audit gratuit ; « Aucun frais d'installation », « Tarifs préférentiels pour groupements ou plusieurs officines », « des tarifs très compétitifs » ; paiement par carte possible via apayer.fr) (ftp-accueil, ftp-services)",
+    "chiffresDeclares": "« +30 ans d'expérience », « +30 collaboratrices et collaborateurs », « 600 clients », « plus de 600 Pharmaciens et Professionnels de santé » (ftp-societe) ; se dit « dans les leaders de sa catégorie » et revendique une contribution au rapport de l'IGAS de 2013 sur le tiers payant (ftp-societe) ; LinkedIn : taille « 11-50 employees », fondée en 1998 (ftp-linkedin)",
+    "incoherences": "L'accueil écrit « À vos côtés depuis 1988 », le pied de page et la page services « depuis 1998 » ; la page société date la création de Litipharma de 2003 (annuaire : 01/02/2003), devenue France Tiers Payant en 2023. « Aucun engagement les six premiers mois » figure seulement dans la description (balise meta) de l'accueil, pas dans le texte visible. Les mentions légales ne donnent ni raison sociale, ni SIREN, ni directeur de publication. Site d'abord tourné vers les pharmacies (partenaire d'un groupement de pharmacies, « Mon espace client » sur litipharma.com) ; l'optique n'apparaît qu'en vignette.",
+    "taille": "SIREN 445 050 198 (LITIPHARMA, nom commercial FRANCE TIERS PAYANT) · création le 01/02/2003 · tranche d'effectif 20 à 49 salariés (2024) · catégorie PME · SARL (code 5499) · NAF 82.99Z (autres activités de soutien aux entreprises) · siège Meaux (annuaire-france-tiers-payant)",
+    "prixType": "non publié",
+    "prixAnalyste": {
+      "releve": "non publié : audit gratuit ; « aucun frais d'installation », « aucun engagement les six premiers mois », contrats modulables selon la volumétrie de rejets, « tarifs préférentiels pour groupements ou plusieurs officines » (ftp-accueil)",
+      "notes": "France Tiers Payant / Litipharma (Meaux, 77), surtout pharmacies, mais liste les opticiens. « Aucun engagement les six premiers mois » figure dans la description de la page, pas dans le corps du texte rendu. L'article du Moniteur (2016) cite Litipharma sans montant propre : sa fourchette « 340 € à 500 € » n'est attribuée à aucun prestataire et ne doit pas leur être imputée.",
+      "sources": [
+        {
+          "label": "francetierspayant.fr · Accueil",
+          "url": "https://www.francetierspayant.fr/",
+          "consulte": "2026-11-03"
+        },
+        {
+          "label": "Le Moniteur des pharmacies · « Externaliser le tiers payant » (26 oct. 2016)",
+          "url": "https://www.lemoniteurdespharmacies.fr/business/numerique/digitalisation/externaliser-le-tiers-payant",
+          "consulte": "2026-11-03"
+        }
+      ]
+    }
+  },
+  "sources": {
+    "ftp-accueil": {
+      "label": "francetierspayant.fr · Accueil",
+      "url": "https://www.francetierspayant.fr/",
+      "consulte": "2026-11-03"
+    },
+    "ftp-services": {
+      "label": "francetierspayant.fr · Nos services",
+      "url": "https://www.francetierspayant.fr/nos-services/",
+      "consulte": "2026-11-03"
+    },
+    "ftp-societe": {
+      "label": "francetierspayant.fr · La société",
+      "url": "https://www.francetierspayant.fr/societe/",
+      "consulte": "2026-11-03"
+    },
+    "ftp-formation": {
+      "label": "francetierspayant.fr · Formation",
+      "url": "https://www.francetierspayant.fr/formation-2/",
+      "consulte": "2026-11-03"
+    },
+    "ftp-mentions": {
+      "label": "francetierspayant.fr · Mentions légales",
+      "url": "https://www.francetierspayant.fr/index.php/mentions-legales/",
+      "consulte": "2026-11-03"
+    },
+    "ftp-linkedin": {
+      "label": "LinkedIn · FRANCE TIERS PAYANT",
+      "url": "https://fr.linkedin.com/company/france-tiers-payant",
+      "consulte": "2026-11-03"
+    },
+    "annuaire-france-tiers-payant": {
+      "label": "annuaire-entreprises.data.gouv.fr · LITIPHARMA / FRANCE TIERS PAYANT (SIREN 445 050 198)",
+      "url": "https://annuaire-entreprises.data.gouv.fr/entreprise/445050198",
+      "consulte": "2026-11-03"
+    }
+  },
+  "_relu": "Go de Paul le 04/11/2026 après aperçu local des pages ; fiche non relue ligne à ligne."
+}

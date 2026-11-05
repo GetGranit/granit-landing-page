@@ -35,12 +35,14 @@ const copy: Record<Lang, Textes> = {
     lignes: [
       { cle: "quiFait", label: "Qui fait le travail" },
       { cle: "pec", label: "Demandes de prise en charge" },
+      { cle: "livraison", label: "Bons de livraison et contrôle" },
       { cle: "rejets", label: "Rejets et relances" },
       { cle: "rapprochement", label: "Rapprochement des paiements" },
       { cle: "avance", label: "Avance de trésorerie" },
       { cle: "engagement", label: "Engagement" },
       { cle: "hds", label: "Données de santé" },
       { cle: "plateformes", label: "Plateformes couvertes" },
+      { cle: "logiciel", label: "Logiciel métier" },
     ],
     modeles: [
       {
@@ -101,12 +103,14 @@ const copy: Record<Lang, Textes> = {
     lignes: [
       { cle: "quiFait", label: "Who does the work" },
       { cle: "pec", label: "Coverage requests" },
+      { cle: "livraison", label: "Delivery notes and checks" },
       { cle: "rejets", label: "Rejections and follow-ups" },
       { cle: "rapprochement", label: "Payment reconciliation" },
       { cle: "avance", label: "Cash advance" },
       { cle: "engagement", label: "Commitment" },
       { cle: "hds", label: "Health data" },
       { cle: "plateformes", label: "Platforms covered" },
+      { cle: "logiciel", label: "Practice software" },
     ],
     modeles: [
       {

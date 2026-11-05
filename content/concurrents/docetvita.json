@@ -1,0 +1,149 @@
+{
+  "slug": "docetvita",
+  "nom": "DocetVita",
+  "modele": "freelance",
+  "logo": null,
+  "checkedOn": "2026-11-03",
+  "aRelire": false,
+  "identite": {
+    "raisonSociale": "Anaïs Cachera EI (nom commercial DocetVita)",
+    "siege": "Jenlain (59)",
+    "site": "https://docetvita.fr/",
+    "metiers": [
+      "optique",
+      "audio"
+    ]
+  },
+  "axes": {
+    "quiFait": {
+      "valeur": "Une indépendante (entreprise individuelle), interlocutrice unique, à distance ou sur site",
+      "detail": "Travaille dans le logiciel du magasin via un accès sécurisé (RustDesk) ; sur site dans un rayon de 60 km autour de Valenciennes",
+      "source": "docetvita-accueil"
+    },
+    "pec": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "livraison": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "rejets": {
+      "valeur": "oui",
+      "detail": "Analyse des rejets mutuelle et Sécurité sociale, relances, reprise des dossiers anciens en attente ; en intervention ponctuelle ou en gestion régulière",
+      "source": "docetvita-accueil"
+    },
+    "rapprochement": {
+      "valeur": "oui",
+      "detail": "Pointage des versements AMO et AMC reçus, suivi de chaque dossier jusqu'au versement des deux parts, reporting mensuel",
+      "source": "docetvita-gestion"
+    },
+    "avance": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "engagement": {
+      "valeur": "intervention ponctuelle sans engagement ; gestion régulière : engagement initial de 3 mois",
+      "detail": "Puis résiliation possible avec un préavis de 30 jours",
+      "source": "docetvita-tarifs"
+    },
+    "hds": {
+      "valeur": "non publié",
+      "source": null
+    },
+    "plateformes": {
+      "valeur": "réseaux de soins cités : Santéclair, Itelis, Kalixia",
+      "source": "docetvita-opticiens"
+    },
+    "logiciel": {
+      "valeur": "dans le logiciel du magasin",
+      "detail": "Accès à distance sécurisé (type RustDesk) ou outils déjà utilisés par la structure, sans changer d'outil",
+      "source": "docetvita-gestion"
+    }
+  },
+  "citations": [
+    {
+      "texte": "Je travaille directement dans votre logiciel de gestion, via un accès sécurisé (type RustDesk) ou les outils déjà utilisés par votre structure.",
+      "source": "docetvita-gestion"
+    },
+    {
+      "texte": "Chaque dossier est suivi jusqu'au versement des deux parts. Les écarts et les rejets sont repris sans attendre.",
+      "source": "docetvita-gestion"
+    },
+    {
+      "texte": "Aucun montant de récupération ne peut être garanti à l'avance.",
+      "source": "docetvita-accueil"
+    },
+    {
+      "texte": "Pour la gestion régulière, l'engagement initial est de 3 mois, puis la résiliation est possible avec un préavis de 30 jours.",
+      "source": "docetvita-accueil"
+    }
+  ],
+  "meilleurSi": [
+    "on a un stock de dossiers rejetés ou non réglés à faire reprendre ponctuellement, sans externaliser toute sa gestion",
+    "on veut une seule interlocutrice qui travaille directement dans son logiciel, sans changer d'outil",
+    "on exerce en optique et en audioprothèse et on veut une seule personne pour les deux",
+    "on est à moins de 60 km de Valenciennes et on veut un renfort sur place, dans le magasin"
+  ],
+  "exclus": {
+    "_pourquoi": "aucun prix sur les pages comparatives ; chiffres déclarés non comparables",
+    "prix": "Intervention ponctuelle forfaitaire : 149 € HT jusqu'à 10 dossiers, 249 € HT jusqu'à 20, 329 € HT jusqu'à 30, 499 € HT jusqu'à 50, sur devis au-delà ; gestion régulière et intervention sur site sur devis ; échange et diagnostic gratuits (docetvita-tarifs, docetvita-accueil)",
+    "chiffresDeclares": "« 10 ans d'expérience en optique et audioprothèse » (docetvita-accueil)",
+    "taille": "SIREN 837 941 293 (SIRET des mentions légales : 837 941 293 00024) ; entrepreneur individuel (nature juridique 1000), création le 04/03/2018, NAF 82.11Z, siège à Jenlain (59) ; tranche d'effectif et catégorie non renseignées ; identité et adresse non diffusibles dans l'annuaire (annuaire-docetvita, docetvita-mentions)",
+    "prixType": "affiché",
+    "prixAnalyste": {
+      "releve": "Intervention ponctuelle sur dossiers en attente, à distance : 149 € HT jusqu'à 10 dossiers, 249 € HT jusqu'à 20, 329 € HT jusqu'à 30, 499 € HT jusqu'à 50, sur devis au-delà ; gestion régulière sur devis (engagement initial de 3 mois puis préavis de 30 jours) ; intervention sur site (60 km autour de Valenciennes) sur devis ; échange et diagnostic gratuits (docetvita-tarifs, docetvita-impayes)",
+      "notes": "Micro-structure (Anaïs Cachera) dédiée aux opticiens et audioprothésistes. Les forfaits couvrent une reprise ponctuelle de stock, pas une gestion mensuelle. Les montants sont identiques sur les trois pages.",
+      "sources": [
+        {
+          "label": "docetvita.fr · Tarifs et fonctionnement",
+          "url": "https://docetvita.fr/tarifs-externalisation-tiers-payant.html",
+          "consulte": "2026-11-03"
+        },
+        {
+          "label": "docetvita.fr · Dossiers en attente",
+          "url": "https://docetvita.fr/mission-impayes.html",
+          "consulte": "2026-11-03"
+        },
+        {
+          "label": "docetvita.fr · Opticiens",
+          "url": "https://docetvita.fr/externalisation-administrative-opticien.html",
+          "consulte": "2026-11-03"
+        }
+      ]
+    }
+  },
+  "sources": {
+    "docetvita-accueil": {
+      "label": "docetvita.fr · Accueil",
+      "url": "https://docetvita.fr/",
+      "consulte": "2026-11-03"
+    },
+    "docetvita-gestion": {
+      "label": "docetvita.fr · Gestion du tiers payant",
+      "url": "https://docetvita.fr/gestion-tiers-payant.html",
+      "consulte": "2026-11-03"
+    },
+    "docetvita-opticiens": {
+      "label": "docetvita.fr · Pour les opticiens",
+      "url": "https://docetvita.fr/externalisation-administrative-opticien.html",
+      "consulte": "2026-11-03"
+    },
+    "docetvita-tarifs": {
+      "label": "docetvita.fr · Tarifs et fonctionnement",
+      "url": "https://docetvita.fr/tarifs-externalisation-tiers-payant.html",
+      "consulte": "2026-11-03"
+    },
+    "docetvita-mentions": {
+      "label": "docetvita.fr · Mentions légales",
+      "url": "https://docetvita.fr/mentions-legales.html",
+      "consulte": "2026-11-03"
+    },
+    "annuaire-docetvita": {
+      "label": "annuaire-entreprises.data.gouv.fr · DocetVita (SIREN 837 941 293)",
+      "url": "https://annuaire-entreprises.data.gouv.fr/entreprise/837941293",
+      "consulte": "2026-11-03"
+    }
+  },
+  "_relu": "Go de Paul le 04/11/2026 après aperçu local des pages ; fiche non relue ligne à ligne."
+}
