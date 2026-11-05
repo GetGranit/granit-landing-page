@@ -56,7 +56,7 @@ export const LIBELLES = {
     consentement:
       "En vous abonnant, vous acceptez que Granit utilise votre adresse pour vous envoyer cette newsletter par e-mail. Vous pouvez vous désabonner à tout moment.",
     confidentialite: "Confidentialité",
-    garanties: "Infrastructure certifiée HDS · Données dans l’UE · RGPD",
+    garanties: "Hébergeur certifié HDS · Données dans l’UE · RGPD",
   },
   en: {
     rubrique: "News",
@@ -93,7 +93,7 @@ export const LIBELLES = {
     consentement:
       "By subscribing, you agree that Granit may use your address to send you this newsletter by email. You can unsubscribe at any time.",
     confidentialite: "Privacy",
-    garanties: "HDS-certified infrastructure · Data in the EU · GDPR",
+    garanties: "HDS-certified host · Data in the EU · GDPR",
   },
 } as const;
 
