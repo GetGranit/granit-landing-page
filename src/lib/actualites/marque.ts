@@ -9,8 +9,8 @@ export const SOUS_TITRE = {
   en: "What changes for your teams, outside of care.",
 } as const;
 
-/** Nom de la newsletter, distinct de la rubrique. Valeur provisoire : Paul la change ici. */
-export const NOM_NEWSLETTER = "Le Reste";
+/** Nom de la newsletter, distinct de la rubrique. */
+export const NOM_NEWSLETTER = "Granité";
 
 /** Fermée : le composant d'abonnement ne s'affiche pas et la fonction serveur refuse tout envoi. */
 export const NEWSLETTER_OUVERTE: boolean = false;
