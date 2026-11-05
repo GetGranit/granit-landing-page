@@ -128,6 +128,8 @@ export type Concurrent = {
   slug: string;
   nom: string;
   modele: Modele;
+  /** Logo du concurrent (public/logos/concurrents/), pour la couverture « Granit VS ». */
+  logo?: string | null;
   checkedOn: string;
   aRelire?: boolean;
   axes: Partial<Record<AxeCle, Axe>>;
@@ -160,6 +162,8 @@ export type Fiche = {
     /** Accord et attente, dans les mots du portail (couverture des cartes). */
     statuts: { accord: string; attente: string };
   };
+  /** Page comparative d'un seul concurrent : sa couverture oppose les deux logos. */
+  vs?: { nom: string; logo: string };
   /** Métiers de l'article ; tous les métiers si `transversal`. */
   verticales: VerticaleSlug[];
   transversal: boolean;

@@ -2,7 +2,7 @@
   "slug": "sojema",
   "nom": "Sojema Santé",
   "modele": "prestataire",
-  "logo": null,
+  "logo": "/logos/concurrents/sojema.png",
   "checkedOn": "2026-11-03",
   "aRelire": false,
   "identite": {
