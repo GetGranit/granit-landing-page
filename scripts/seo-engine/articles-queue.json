@@ -2300,6 +2300,191 @@
     "unsplashQuery": "doctor prescription desk"
   },
   {
+    "id": "V1",
+    "slug": "indus-assurance-maladie-pharmacie-protections-menstruelles",
+    "category": "conformite",
+    "title": "Indus de l'Assurance maladie en officine : protections menstruelles et quotas à vérifier avant de délivrer",
+    "primaryKeyword": "indu assurance maladie pharmacie",
+    "keywordCluster": [
+      "indu assurance maladie pharmacie",
+      "contester un indu pharmacie",
+      "protections menstruelles réutilisables remboursement",
+      "quota protections menstruelles pharmacie",
+      "téléservice ADAC",
+      "notification d'indu officine"
+    ],
+    "searchVolume": 0,
+    "status": "pending",
+    "wave": 4,
+    "level": "Fille",
+    "parentSlug": "tiers-payant-professionnels-de-sante",
+    "reader": "Titulaire d'officine et préparateur ou adjoint chargé de la délivrance et du suivi des rejets et des indus",
+    "role": "Trafic",
+    "granitData": "—",
+    "cta": "Parlons de votre tiers payant",
+    "toValidate": "Relecture humaine obligatoire. Actualité issue de la veille : https://www.lemoniteurdespharmacies.fr/profession/socio-professionnel/les-pharmaciens-refusent-de-payer-pour-les-fraudes-des-assures . Date d'effet : 1er octobre 2026 (limite de 2 produits par période de 12 mois glissants pour les protections menstruelles réutilisables). À vérifier : texte primaire de la limitation (arrêté ou LPP sur Légifrance) ; état du téléservice ADAC (non opérationnel au 28 octobre 2026, mise en service annoncée pour novembre sans date confirmée) ; positions de l'USPO et de la FSPF (refus du contrôle, demande d'intégration aux LGO et de moratoire sur les indus) à citer comme positions et non comme faits ; procédure officielle de contestation d'un indu sur ameli.fr. Ne donner aucun montant ni aucune marge (la marge de 1,60 € par culotte vient d'un seul article) sans source primaire. Ne pas affirmer que des pharmacies arrêtent ces produits. Écrire pour le professionnel, pas pour l'assuré.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Quelle limite de prise en charge s'applique aux protections menstruelles réutilisables depuis le 1er octobre 2026 ?",
+      "Comment vérifier l'historique de délivrance tant que le téléservice ADAC n'est pas en service ?",
+      "L'officine peut-elle se voir réclamer un indu en cas de dépassement du quota ?",
+      "Comment contester une notification d'indu de l'Assurance maladie ?",
+      "Quelles informations conserver pour se défendre en cas de contrôle ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "T0",
+        "slug": "tiers-payant-professionnels-de-sante",
+        "anchor": "tiers payant des professionnels de santé",
+        "type": "parent"
+      },
+      {
+        "id": "R6",
+        "slug": "trois-boucles-pharmacie",
+        "anchor": "les trois boucles du tiers payant en pharmacie",
+        "type": "transverse"
+      },
+      {
+        "id": "B0",
+        "slug": "rejet-tiers-payant",
+        "anchor": "rejet de tiers payant",
+        "type": "transverse"
+      },
+      {
+        "id": "R3",
+        "slug": "officine-balance-agee-tiers-payant",
+        "anchor": "balance âgée en officine",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "pharmacie"
+    ],
+    "unsplashQuery": "pharmacy counter documents"
+  },
+  {
+    "id": "V2",
+    "slug": "frais-interdits-centres-sante-controle-cpam",
+    "category": "conformite",
+    "title": "Frais interdits en centre de santé : la liste à vérifier avant un contrôle de l'Assurance maladie",
+    "primaryKeyword": "frais interdits centre de santé",
+    "keywordCluster": [
+      "frais interdits professionnel conventionné",
+      "frais de dossier centre de santé",
+      "frais d'annulation de rendez-vous médecin conventionné",
+      "supplément tiers payant interdit",
+      "actions conventionnelles centres de santé",
+      "déconventionnement centre de santé"
+    ],
+    "searchVolume": 0,
+    "status": "pending",
+    "wave": 4,
+    "level": "Fille",
+    "parentSlug": "tiers-payant-professionnels-de-sante",
+    "reader": "Direction ou responsable administratif d'un centre de santé, d'un centre dentaire ou ophtalmologique, ou d'un laboratoire, chargé de la grille tarifaire et de la facturation",
+    "role": "Trafic",
+    "granitData": "—",
+    "cta": "Parlons de votre tiers payant",
+    "toValidate": "Relecture humaine obligatoire. Actualité issue de la veille : https://www.jechange.fr/assurance/mutuelle-sante/news/medecin-conventionne-0-euro-frais-dossier-annulation-assurance-maladie-sanction . Mise à jour de la liste par la Cnam annoncée le 2 octobre 2026. À vérifier : la liste officielle des frais interdits sur ameli.fr (frais de dossier, prise ou annulation de rendez-vous, envoi de résultats, collecte de prélèvements, supplément lié au tiers payant intégral) ; l'audition de la Cnam au Sénat du 21 octobre 2026 et les « actions conventionnelles » évoquées (forfait de rendez-vous sous 24 h, adhésion à une association exigée) : source primaire à retrouver, ne pas généraliser. Sanction pouvant aller jusqu'au déconventionnement : à sourcer dans la convention. Ne citer aucun nombre de centres visés. Écrire pour le professionnel, ne pas accuser un centre.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Quels frais un professionnel conventionné n'a-t-il pas le droit de facturer au patient ?",
+      "Peut-on facturer un supplément pour le tiers payant intégral ?",
+      "Que risque un centre qui facture des frais de dossier ou d'annulation ?",
+      "La collecte de prélèvements peut-elle être facturée en laboratoire ?",
+      "Comment vérifier sa grille tarifaire avant un contrôle ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "T0",
+        "slug": "tiers-payant-professionnels-de-sante",
+        "anchor": "tiers payant des professionnels de santé",
+        "type": "parent"
+      },
+      {
+        "id": "R9",
+        "slug": "recouvrement-patient-empathie",
+        "anchor": "recouvrement auprès du patient",
+        "type": "transverse"
+      },
+      {
+        "id": "R4",
+        "slug": "dentaire-paniers-100-sante-tiers-payant",
+        "anchor": "paniers 100 % Santé en dentaire",
+        "type": "transverse"
+      },
+      {
+        "id": "B0",
+        "slug": "rejet-tiers-payant",
+        "anchor": "rejet de tiers payant",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "centres",
+      "dentaire",
+      "cliniques"
+    ],
+    "unsplashQuery": "medical center reception"
+  },
+  {
+    "id": "V3",
+    "slug": "cyberattaque-officine-reflexes-72-heures",
+    "category": "conformite",
+    "title": "Cyberattaque en officine : les réflexes des 72 premières heures",
+    "primaryKeyword": "cyberattaque pharmacie",
+    "keywordCluster": [
+      "cyberattaque pharmacie",
+      "piratage officine données patients",
+      "fuite de données pharmacie CNIL",
+      "notification CNIL 72 heures",
+      "faux mail mutuelle remboursement en attente",
+      "sécurité accès portails tiers payant"
+    ],
+    "searchVolume": 0,
+    "status": "pending",
+    "wave": 4,
+    "level": "Fille",
+    "parentSlug": "tiers-payant-professionnels-de-sante",
+    "reader": "Titulaire d'officine et référent tiers payant (préparateur ou adjoint) responsable des accès aux portails et au LGO",
+    "role": "Trafic",
+    "granitData": "—",
+    "cta": "Parlons de votre tiers payant",
+    "toValidate": "Relecture humaine obligatoire. Actualité issue de la veille : https://www.lemoniteurdespharmacies.fr/profession/socio-professionnel/trois-pharmacies-piratees-436-000-dossiers-revendiques-des-centaines-dofficines-dans-le-viseur . Pas de date d'effet : actualité du 31 octobre au 1er novembre 2026. À vérifier : volumes revendiqués (plus de 436 000 dossiers) à confirmer, à citer comme revendications des pirates et non comme faits ; piste d'une intrusion via des opérateurs de tiers payant externes évoquée par l'USPO, sans preuve à ce stade : ne pas l'affirmer ; obligation de notification à la CNIL sous 72 h (RGPD, article 33) et dépôt de plainte, à sourcer sur cnil.fr ; consignes officielles (ANS, CERT Santé) à retrouver. Ne citer aucune pharmacie nommée dans l'article. Ne rien promettre sur la sécurité de Granit sans validation.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Que faire dans les premières heures après une cyberattaque en officine ?",
+      "Dans quel délai faut-il notifier la CNIL en cas de fuite de données de santé ?",
+      "Faut-il prévenir les patients dont les données ont pu être exposées ?",
+      "Comment repérer un faux mail de mutuelle ou de remboursement en attente ?",
+      "Qui a accès à vos portails de tiers payant, et comment couper un accès sans arrêter la facturation ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "T0",
+        "slug": "tiers-payant-professionnels-de-sante",
+        "anchor": "tiers payant des professionnels de santé",
+        "type": "parent"
+      },
+      {
+        "id": "R6",
+        "slug": "trois-boucles-pharmacie",
+        "anchor": "les trois boucles du tiers payant en pharmacie",
+        "type": "transverse"
+      },
+      {
+        "id": "A0",
+        "slug": "portails-tiers-payant",
+        "anchor": "portails de tiers payant",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "pharmacie"
+    ],
+    "unsplashQuery": "computer security desk"
+  },
+  {
     "id": "T0",
     "slug": "tiers-payant-professionnels-de-sante",
     "category": "guide-tiers-payant",
