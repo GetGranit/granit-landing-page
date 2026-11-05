@@ -61,15 +61,10 @@ export const Route = createRootRoute({
       {
         property: "og:description",
         content:
-          "Granit automates healthcare administrative workflows with AI agents, no integration needed.",
+          "Granit déploie des agents IA autonomes qui automatisent les workflows administratifs des établissements de santé. Tiers-payant, facturation, commandes - sans intégration.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      {
-        name: "description",
-        content:
-          "Granit automates healthcare administrative workflows with AI agents, no integration needed.",
-      },
       // Image de partage de la marque (internal/marque/partage/), copiée telle quelle dans public/.
       { property: "og:image", content: "https://www.getgranit.ai/granit-partage-1200x630.png" },
       { property: "og:image:width", content: "1200" },

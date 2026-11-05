@@ -1,5 +1,5 @@
 import { useRouterState } from "@tanstack/react-router";
-import { canonicalFor, organizationLd } from "@/lib/seo";
+import { canonicalFor, organizationLd, websiteLd } from "@/lib/seo";
 
 /**
  * Sitewide SEO tags. React 19 hoists <link>/<meta> to <head>; the JSON-LD
@@ -16,6 +16,12 @@ export function Seo() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationLd) }}
       />
+      {pathname === "/" && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteLd) }}
+        />
+      )}
     </>
   );
 }
