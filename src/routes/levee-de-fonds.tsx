@@ -61,7 +61,7 @@ const copy = {
     lead: "Nous vous montrons nos agents au travail dans les logiciels que vos équipes utilisent déjà, sur vos portails et vos mutuelles.",
     bouton: "Demander une démo",
     suivi: "communique_bas",
-    garanties: ["Hébergeur certifié HDS", "Données dans l’UE", "Conforme RGPD"],
+    garanties: ["Infrastructure certifiée HDS", "Données dans l’UE", "Conforme RGPD"],
   },
   en: {
     surtitre: "Fundraising · Pre-seed",
@@ -92,7 +92,7 @@ const copy = {
     lead: "We’ll show you our agents at work in the software your teams already use, on your portals and with your insurers.",
     bouton: "Book a demo",
     suivi: "communique_bas_en",
-    garanties: ["HDS-certified host", "EU data", "GDPR compliant"],
+    garanties: ["HDS-certified infrastructure", "EU data", "GDPR compliant"],
   },
 };
 

@@ -134,7 +134,7 @@ Seulement ce qui est vrai, déjà validé, et dans les mots validés. Dans le do
 
 | Affirmation | Formulation validée | Où |
 |---|---|---|
-| Certification | « Granit s'appuie sur un hébergement certifié HDS (hébergeur de données de santé) », jamais « Granit est certifié HDS » ; données dans l'UE, RGPD | Partout où les données de santé comptent. Dans un article : seulement si le sujet s'y prête |
+| Certification | « Granit s'appuie sur une infrastructure certifiée HDS (hébergeur de données de santé) », jamais « Granit est certifié HDS » ; données dans l'UE, RGPD | Partout où les données de santé comptent. Dans un article : seulement si le sujet s'y prête |
 | Pas d'intégration | « dans les logiciels que vos équipes utilisent déjà », « sans API à demander » | Partout : c'est l'argument central de la marque |
 | Délai de déploiement | « en quelques jours, pas en mois » ; « branché sur vos portails en 48 h » | Site, LinkedIn, vente. **Jamais dans le corps d'un article** de blog : seulement dans son encart final |
 | Métiers servis | « Granit travaille avec des opticiens, des audioprothésistes, des pharmacies et des centres médicaux » | Partout. Les autres métiers de la cible sont la vision, pas encore une preuve |

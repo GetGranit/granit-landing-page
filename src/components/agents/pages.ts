@@ -35,7 +35,7 @@ const optiqueFr: PageMetier = {
   garanties: [
     { titre: "Prise en charge en moins de 2 minutes", texte: "Elle revient pendant que le client est encore en boutique." },
     { titre: "7 jours sur 7", texte: "Les dossiers avancent, même quand quelqu'un s'absente." },
-    { titre: "Hébergeur certifié HDS", texte: "Les données de santé restent dans l'Union européenne. Conforme RGPD." },
+    { titre: "Infrastructure certifiée HDS", texte: "Les données de santé restent dans l'Union européenne. Conforme RGPD." },
     { titre: "Toutes les plateformes de tiers payant", texte: "Les agents travaillent sur les portails que vous utilisez déjà." },
   ],
   dossierTitre: ["Un dossier, du devis", "au virement de la mutuelle."],
@@ -72,7 +72,7 @@ const optiqueEn: PageMetier = {
   garanties: [
     { titre: "Coverage approval in under 2 minutes", texte: "It comes back while the customer is still in the store." },
     { titre: "7 days a week", texte: "Files move forward, even when someone is away." },
-    { titre: "HDS-certified host", texte: "Health data stays in the European Union. GDPR compliant." },
+    { titre: "HDS-certified infrastructure", texte: "Health data stays in the European Union. GDPR compliant." },
     { titre: "Every third-party payment platform", texte: "Agents work on the portals you already use." },
   ],
   dossierTitre: ["One file, from the quote", "to the insurer's transfer."],

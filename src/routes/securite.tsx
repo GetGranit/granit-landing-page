@@ -21,12 +21,12 @@ import { SITE_URL, faqPageLd, organizationRef } from "@/lib/seo";
 
 // Chaque fait de sécurité de cette page vient des CGV (/cgv), de la politique de confidentialité
 // (/privacy), de la FAQ de la PR #94, de marque/TON.md (dépôt GetGranit/internal) ou des textes validés
-// en revue de la PR #96 (hébergeur certifié HDS, coffre-fort des identifiants).
+// en revue de la PR #96 (infrastructure certifiée HDS, coffre-fort des identifiants).
 // On n'en ajoute aucun qui n'y figure pas.
 
 const TITLE = "Sécurité des données de santé (HDS, RGPD) - Granit";
 const DESCRIPTION =
-  "Données de santé stockées chez un hébergeur certifié HDS, en Europe, chiffrées, jamais utilisées pour entraîner des modèles tiers. RGPD, traçabilité, réversibilité.";
+  "Données de santé stockées sur une infrastructure certifiée HDS, en Europe, chiffrées, jamais utilisées pour entraîner des modèles tiers. RGPD, traçabilité, réversibilité.";
 const CONTACT_EMAIL = "contact@getgranit.ai";
 
 export const Route = createFileRoute("/securite")({
@@ -42,7 +42,7 @@ export const Route = createFileRoute("/securite")({
       {
         property: "og:description",
         content:
-          "Hébergeur certifié HDS, datacenters en Europe, RGPD : comment Granit héberge, protège et trace les données de santé de vos patients.",
+          "Infrastructure certifiée HDS, datacenters en Europe, RGPD : comment Granit héberge, protège et trace les données de santé de vos patients.",
       },
     ],
   }),
@@ -87,7 +87,7 @@ const content: Record<"fr" | "en", Content> = {
     title: "Les données de vos patients restent protégées.",
     summaryLabel: "En bref :",
     summary:
-      "Vos données de santé sont stockées chez un hébergeur certifié HDS, dans des datacenters situés en Europe. Elles sont chiffrées et ne servent jamais à entraîner des modèles. Chaque action des agents est enregistrée, et vos données vous sont rendues à tout moment.",
+      "Vos données de santé sont stockées sur une infrastructure certifiée HDS, dans des datacenters situés en Europe. Elles sont chiffrées et ne servent jamais à entraîner des modèles. Chaque action des agents est enregistrée, et vos données vous sont rendues à tout moment.",
     heroCta: "Demander une démo",
     heroSecondary: "Politique de confidentialité",
     badgesLabel: "Garanties",
@@ -106,8 +106,8 @@ const content: Record<"fr" | "en", Content> = {
     engagementsTitle: "Six garanties pour les données de vos patients.",
     engagements: [
       {
-        t: "Hébergement certifié HDS",
-        d: "Vos données de santé sont stockées chez un hébergeur certifié HDS, dans des datacenters situés en Europe.",
+        t: "Infrastructure certifiée HDS",
+        d: "Vos données de santé sont stockées sur une infrastructure certifiée HDS, dans des datacenters situés en Europe.",
       },
       {
         t: "Respect du RGPD",
@@ -164,7 +164,7 @@ const content: Record<"fr" | "en", Content> = {
     faq: [
       {
         question: "Où sont hébergées les données de santé ?",
-        answer: "Chez un hébergeur certifié HDS, dans des datacenters situés en Europe.",
+        answer: "Sur une infrastructure certifiée HDS, dans des datacenters situés en Europe.",
       },
       {
         question: "Les données des patients servent-elles à entraîner des modèles d’IA ?",
@@ -194,14 +194,14 @@ const content: Record<"fr" | "en", Content> = {
     ctaText: "En démo, nous vous montrons comment chaque dossier est tracé.",
     ctaBtn: "Demander une démo",
     ctaSecondary: "Découvrir les agents",
-    guarantees: "Hébergeur certifié HDS · Données en Europe · RGPD",
+    guarantees: "Infrastructure certifiée HDS · Données en Europe · RGPD",
   },
   en: {
     eyebrow: "Security and compliance",
     title: "Your patients' data stays protected.",
     summaryLabel: "In short:",
     summary:
-      "Your health data is stored with an HDS-certified host (French certification for health data hosting), in data centers located in Europe. It is encrypted and never used to train models. Every agent action is recorded, and your data is returned to you at any time.",
+      "Your health data is stored on HDS-certified infrastructure (French certification for health data hosting), in data centers located in Europe. It is encrypted and never used to train models. Every agent action is recorded, and your data is returned to you at any time.",
     heroCta: "Book a demo",
     heroSecondary: "Privacy policy",
     badgesLabel: "Guarantees",
@@ -220,8 +220,8 @@ const content: Record<"fr" | "en", Content> = {
     engagementsTitle: "Six guarantees for your patients' data.",
     engagements: [
       {
-        t: "HDS-certified hosting",
-        d: "Your health data is stored with an HDS-certified host, in data centers located in Europe.",
+        t: "HDS-certified infrastructure",
+        d: "Your health data is stored on HDS-certified infrastructure, in data centers located in Europe.",
       },
       {
         t: "GDPR compliance",
@@ -278,7 +278,7 @@ const content: Record<"fr" | "en", Content> = {
     faq: [
       {
         question: "Where is the health data hosted?",
-        answer: "With an HDS-certified host, in data centers located in Europe.",
+        answer: "On HDS-certified infrastructure, in data centers located in Europe.",
       },
       {
         question: "Is patient data used to train AI models?",
@@ -308,7 +308,7 @@ const content: Record<"fr" | "en", Content> = {
     ctaText: "In a demo, we show you how every case is traced.",
     ctaBtn: "Book a demo",
     ctaSecondary: "Discover the agents",
-    guarantees: "HDS-certified host · Data in Europe · GDPR",
+    guarantees: "HDS-certified infrastructure · Data in Europe · GDPR",
   },
 };
 

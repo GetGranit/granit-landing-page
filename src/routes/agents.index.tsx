@@ -69,7 +69,7 @@ const content = {
         texte: "Ils pointent les virements, traitent les rejets et relancent les impayés.",
       },
     ],
-    securite: ["Hébergeur certifié HDS", "Conforme RGPD", "Chaque dossier tracé"],
+    securite: ["Infrastructure certifiée HDS", "Conforme RGPD", "Chaque dossier tracé"],
     securiteLien: "Voir la sécurité",
     faqTitre: "Questions fréquentes",
     faq: [
@@ -86,7 +86,7 @@ const content = {
       {
         question: "Peut-on contrôler ce que font les agents ?",
         answer:
-          "Oui. Chaque dossier est tracé : ce qui a été fait, quand, et pourquoi un dossier attend. Les données de santé sont confiées à un hébergeur certifié HDS, dans l'Union européenne, conformément au RGPD.",
+          "Oui. Chaque dossier est tracé : ce qui a été fait, quand, et pourquoi un dossier attend. Les données de santé sont confiées à une infrastructure certifiée HDS, dans l'Union européenne, conformément au RGPD.",
       },
       {
         question: "Combien coûte Granit ?",
@@ -122,7 +122,7 @@ const content = {
         texte: "They match transfers, handle rejections and follow up on unpaid ones.",
       },
     ],
-    securite: ["HDS-certified host", "GDPR compliant", "Every file traced"],
+    securite: ["HDS-certified infrastructure", "GDPR compliant", "Every file traced"],
     securiteLien: "See security",
     faqTitre: "Frequently asked questions",
     faq: [
@@ -139,7 +139,7 @@ const content = {
       {
         question: "Can we control what the agents do?",
         answer:
-          "Yes. Every file is traced: what was done, when, and why a file is waiting. Health data is entrusted to an HDS-certified host in the European Union, in line with GDPR.",
+          "Yes. Every file is traced: what was done, when, and why a file is waiting. Health data is entrusted to HDS-certified infrastructure in the European Union, in line with GDPR.",
       },
       {
         question: "How much does Granit cost?",
