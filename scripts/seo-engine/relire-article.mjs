@@ -10,8 +10,10 @@ import { dirname, join } from "node:path";
 import { parseArgs } from "node:util";
 import { citations, controler, typeDePage, verifierSources } from "./lib/checks.mjs";
 import { apiKey, coutDollars, rediger } from "./lib/claude.mjs";
+import { typographierSortie } from "./lib/html.mjs";
+import { choisirFiche, lecteurCourt, reglesMetier } from "./lib/metiers.mjs";
 import { CHAMPS_ARTICLE, boucle, contexte, cumulCout, verdictMarkdown } from "./lib/relecture.mjs";
-import { CONTENU, MOTEUR, ciblesDeLiens, concurrentsPour, ecrireJson, faitsPour, lireFile, lireJson, sortieGithub, systemeGuide } from "./lib/site.mjs";
+import { CONTENU, MOTEUR, ciblesDeLiens, concurrentsPour, ecrireJson, faitsPour, lireFile, lireJson, sortieGithub, systemeGuide, titresDesAutres } from "./lib/site.mjs";
 
 const { values: opt } = parseArgs({
   options: {
@@ -34,6 +36,7 @@ if (!article) throw new Error(`slug inconnu dans la file : ${opt.slug}`);
 const chemin = join(CONTENU, `${article.slug}.json`);
 const fiche = lireJson(chemin);
 const type = typeDePage(article);
+const choix = choisirFiche(article);
 const fp = faitsPour(article);
 const cibles = ciblesDeLiens(file, article);
 // Page comparative : les fichiers des acteurs remplacent le fichier de faits (sans « exclus », jamais affiché)
@@ -44,13 +47,15 @@ const faitsComparatif = article.concurrents?.length
 console.log(`Relecture ${article.slug} · type ${type}${fp?.faits ? ` · faits ${fp.nom}` : ""}${opt.simuler ? " · SIMULATION" : ""}`);
 
 const ctx = contexte({
-  meta: { slug: article.slug, title: article.title, type, primaryKeyword: article.primaryKeyword, keywordCluster: article.keywordCluster, reader: article.reader },
+  meta: { slug: article.slug, title: article.title, type, primaryKeyword: article.primaryKeyword, keywordCluster: article.keywordCluster, reader: article.reader, verticales: choix.verticales },
   faits: fp?.faits ?? faitsComparatif,
   liens: [...[...cibles].map(([c, t]) => `${c} : ${t}`), `Pages produit (2 liens maximum) : ${config.pagesProduit.join(", ")}`],
+  // lecteur et règles du métier ; règles « portail » seulement pour une page plateforme
+  relecture: { lecteur: lecteurCourt(choix), type, metier: reglesMetier(choix) },
 });
 
 async function controle(out) {
-  const c = controler(out, { article, type, faits: fp?.faits, concurrents, cibles, pagesProduit: config.pagesProduit });
+  const c = controler(out, { article, type, faits: fp?.faits, concurrents, cibles, pagesProduit: config.pagesProduit, titresPris: titresDesAutres(article) });
   const s = await verifierSources(out.sources ?? [], citations(out.contentHtml ?? ""));
   return { erreurs: [...c.erreurs, ...s.erreurs], avertissements: [...c.avertissements, ...s.avertissements] };
 }
@@ -88,6 +93,7 @@ const cout = cumulCout(usages, coutDollars, config.model);
 
 // Article corrigé : seulement s'il a changé ; la trace de la boucle va dans moteur.relecture
 if (r.fiche !== fiche) {
+  Object.assign(r.fiche, typographierSortie(r.fiche));
   r.fiche.moteur = {
     ...r.fiche.moteur,
     avertissements: r.avertissements,

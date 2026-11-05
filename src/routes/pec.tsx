@@ -13,6 +13,7 @@ import type { SimResultat } from "@/components/pec/StepSimFin";
 import type { PatientPrefill } from "@/components/pec/StepPatient";
 import { StepSearch } from "@/components/pec/StepSearch";
 import { Muted, PecShell } from "@/components/pec/ui";
+import { useLanguage } from "@/lib/i18n";
 import { prepareCardFile } from "@/lib/pec/image";
 import { sendPecLead, type PecLeadKind } from "@/lib/pec/lead";
 import { readCard, type CardRead } from "@/lib/pec/readCard";
@@ -61,7 +62,88 @@ export const Route = createFileRoute("/pec")({
 const ESSAI_ON = espaceEssaiActif();
 /** « apercu » | « paul » | « direct » : propriété `mode` de chaque événement. */
 const MODE = modeSimulation();
-const ECHEC_ENVOI = "Ça n'est pas parti : la connexion a coupé. Réessayez dans un instant.";
+
+type CaptureErreur = "image_illisible" | "pas_carte_tp" | "illisible";
+type SearchRaison = "inconnu" | "lecture";
+/** Le dernier envoi n'est pas parti : contact / « Me prévenir », ou création du compte. */
+type EnvoiErreur = "envoi" | "compte";
+
+const copy = {
+  fr: {
+    envoi: {
+      envoi: "Ça n'est pas parti : la connexion a coupé. Réessayez dans un instant.",
+      compte: "Votre compte n'a pas pu être créé : la connexion a coupé. Réessayez.",
+    } satisfies Record<EnvoiErreur, string>,
+    capture: {
+      image_illisible:
+        "Ce fichier ne s'ouvre pas. Reprenez la photo, ou importez une image (JPEG/PNG) ou un PDF.",
+      pas_carte_tp:
+        "Ce n'est pas une carte de tiers payant (carte Vitale ? ordonnance ?). Il nous faut la carte de la mutuelle.",
+      illisible:
+        "On n'arrive pas à lire la carte. Posez-la à plat sur le comptoir, sans reflet, et reprenez la photo.",
+    } satisfies Record<CaptureErreur, string>,
+    search: {
+      inconnu:
+        "On n'a pas reconnu la mutuelle sur la carte. Tapez son nom, on cherche parmi plus de 200 mutuelles.",
+      lecture:
+        "La photo n'a pas pu être lue. Tapez le nom de la mutuelle, ou reprenez la photo bien à plat.",
+    } satisfies Record<SearchRaison, string>,
+    inconnueTitre: "On vous trouve le bon portail.",
+    inconnueIntro: (m?: string) => `Paul regarde « ${m} » et vous rappelle avec la réponse.`,
+    demoTitre: (p: string) => `Paul vous la montre sur votre compte ${p}.`,
+    demoIntro:
+      "Il vous rappelle et fait la simulation avec vous, sur un de vos dossiers, en 15 minutes. Rien n'est envoyé à la mutuelle.",
+    pourVous: (label: string) =>
+      label ? `On fait vos PEC ${label} pour vous.` : "On fait vos PEC pour vous.",
+    pourVousIntro: "Paul vous rappelle et vous le montre sur un de vos dossiers, en 15 minutes.",
+    merciEssaiOff: "Votre espace arrive.",
+    merciOxantis: "On vous prévient.",
+    merciRappel: "Paul vous rappelle sous 24 h ouvrées.",
+    texteEssaiOff:
+      "Paul vous appelle sous 24 h ouvrées pour ouvrir votre espace et brancher votre portail avec vous.",
+    texteOxantis: "Dès qu'on sait où passent les PEC Oxantis après le 26 octobre, on vous écrit.",
+    texteRappel: "Vous pouvez aussi réserver un créneau tout de suite.",
+  },
+  en: {
+    envoi: {
+      envoi: "It did not go through: the connection dropped. Try again in a moment.",
+      compte: "Your account could not be created: the connection dropped. Try again.",
+    } satisfies Record<EnvoiErreur, string>,
+    capture: {
+      image_illisible:
+        "This file does not open. Take the photo again, or upload an image (JPEG/PNG) or a PDF.",
+      pas_carte_tp:
+        "This is not a third-party payment card (Carte Vitale? prescription?). We need the insurer’s card.",
+      illisible:
+        "We cannot read the card. Lay it flat on the counter, without glare, and take the photo again.",
+    } satisfies Record<CaptureErreur, string>,
+    search: {
+      inconnu:
+        "We did not recognize the insurer on the card. Type its name, we search among more than 200 insurers.",
+      lecture:
+        "The photo could not be read. Type the insurer’s name, or take the photo again, nice and flat.",
+    } satisfies Record<SearchRaison, string>,
+    inconnueTitre: "We’ll find you the right portal.",
+    inconnueIntro: (m?: string) => `Paul looks into “${m}” and calls you back with the answer.`,
+    demoTitre: (p: string) => `Paul shows it to you on your ${p} account.`,
+    demoIntro:
+      "He calls you back and runs the simulation with you, on one of your cases, in 15 minutes. Nothing is sent to the insurer.",
+    pourVous: (label: string) =>
+      label
+        ? `We submit your ${label} coverage requests for you.`
+        : "We submit your coverage requests for you.",
+    pourVousIntro: "Paul calls you back and shows you on one of your cases, in 15 minutes.",
+    merciEssaiOff: "Your workspace is on its way.",
+    merciOxantis: "We’ll let you know.",
+    merciRappel: "Paul calls you back within 24 business hours.",
+    texteEssaiOff:
+      "Paul calls you within 24 business hours to open your workspace and connect your portal with you.",
+    texteOxantis:
+      "As soon as we know where Oxantis coverage requests go after Oct 26, we will write to you.",
+    texteRappel: "You can also book a slot right away.",
+  },
+};
+type Copy = (typeof copy)["fr"];
 /** Identité fictive de la carte d'exemple (NIR inventé, clé valide). */
 const EXAMPLE_PATIENT = { nir: "285057800608441", dateNaissance: "12/05/1985" };
 
@@ -75,9 +157,9 @@ function prefillOcr(card: CardIdentite | null): PatientPrefill | undefined {
 }
 
 type Step =
-  | { s: "capture"; error?: string }
+  | { s: "capture"; error?: CaptureErreur }
   | { s: "reading"; previewUrl?: string }
-  | { s: "search"; reason?: string }
+  | { s: "search"; reason?: SearchRaison }
   | { s: "result"; res: Resolution }
   | { s: "sim"; platform: Platform }
   | {
@@ -92,27 +174,21 @@ type Step =
 
 const cible = (p: Platform) => platformById(p.reseau_via ?? p.id) ?? p;
 
-function contactTexte(step: Extract<Step, { s: "contact" }>): { title: string; intro: string } {
+function contactTexte(
+  step: Extract<Step, { s: "contact" }>,
+  t: Copy,
+): { title: string; intro: string } {
   const label = step.platform?.label ?? "";
   if (step.kind === "mutuelle-inconnue")
-    return {
-      title: "On vous trouve le bon portail.",
-      intro: `Paul regarde « ${step.mutuelle} » et vous rappelle avec la réponse.`,
-    };
+    return { title: t.inconnueTitre, intro: t.inconnueIntro(step.mutuelle) };
   if (step.demo && step.platform)
-    return {
-      title: `Paul vous la montre sur votre compte ${cible(step.platform).label}.`,
-      intro:
-        "Il vous rappelle et fait la simulation avec vous, sur un de vos dossiers, en 15 minutes. Rien n'est envoyé à la mutuelle.",
-    };
-  return {
-    title: label ? `On fait vos PEC ${label} pour vous.` : "On fait vos PEC pour vous.",
-    intro: "Paul vous rappelle et vous le montre sur un de vos dossiers, en 15 minutes.",
-  };
+    return { title: t.demoTitre(cible(step.platform).label), intro: t.demoIntro };
+  return { title: t.pourVous(label), intro: t.pourVousIntro };
 }
 
 function PecPage() {
   const posthog = usePostHog();
+  const t = copy[useLanguage().lang];
   const navigate = useNavigate();
   const router = useRouter();
   const read = useServerFn(readCard);
@@ -121,7 +197,7 @@ function PecPage() {
   const [source, setSource] = useState<"photo" | "exemple" | "saisie">("photo");
   const [busy, setBusy] = useState(false);
   /** Le dernier envoi (contact, compte, « Me prévenir ») n'est pas parti. */
-  const [erreur, setErreur] = useState<string>();
+  const [erreur, setErreur] = useState<EnvoiErreur>();
   const [email, setEmail] = useState<string>();
   const pending = useRef<Resolution | null>(null);
   /** Numéro de la lecture de photo en cours : une lecture dépassée (exemple, retour) est ignorée. */
@@ -187,14 +263,7 @@ function PecPage() {
     (res: Resolution, replace?: boolean) => {
       if (res.kind === "inconnu") {
         track("pec_inconnu", { source });
-        return go(
-          {
-            s: "search",
-            reason:
-              "On n'a pas reconnu la mutuelle sur la carte. Tapez son nom, on cherche parmi plus de 200 mutuelles.",
-          },
-          { replace },
-        );
+        return go({ s: "search", reason: "inconnu" }, { replace });
       }
       if (res.kind === "plusieurs")
         track("pec_ambigu", { platforms: res.platforms.map((p) => p.id) });
@@ -218,9 +287,9 @@ function PecPage() {
     [track],
   );
 
-  function refuser(raison: string, error: string) {
+  function refuser(raison: CaptureErreur) {
     track("pec_carte_refusee", { raison });
-    go({ s: "capture", error }, { replace: true });
+    go({ s: "capture", error: raison }, { replace: true });
   }
 
   async function onFile(file: File) {
@@ -233,10 +302,7 @@ function PecPage() {
       payload = await prepareCardFile(file);
     } catch {
       if (id !== lecture.current) return;
-      return refuser(
-        "image_illisible",
-        "Ce fichier ne s'ouvre pas. Reprenez la photo, ou importez une image (JPEG/PNG) ou un PDF.",
-      );
+      return refuser("image_illisible");
     }
     if (id !== lecture.current) return;
     go({ s: "reading", previewUrl: payload.previewUrl });
@@ -248,25 +314,10 @@ function PecPage() {
     if (id !== lecture.current) return;
     if (!r.ok) {
       track("pec_lecture_echec", { reason: r.reason });
-      return go(
-        {
-          s: "search",
-          reason:
-            "La photo n'a pas pu être lue. Tapez le nom de la mutuelle, ou reprenez la photo bien à plat.",
-        },
-        { replace: true },
-      );
+      return go({ s: "search", reason: "lecture" }, { replace: true });
     }
-    if (!r.card.est_carte_tp)
-      return refuser(
-        "pas_carte_tp",
-        "Ce n'est pas une carte de tiers payant (carte Vitale ? ordonnance ?). Il nous faut la carte de la mutuelle.",
-      );
-    if (!r.card.lisible)
-      return refuser(
-        "illisible",
-        "On n'arrive pas à lire la carte. Posez-la à plat sur le comptoir, sans reflet, et reprenez la photo.",
-      );
+    if (!r.card.est_carte_tp) return refuser("pas_carte_tp");
+    if (!r.card.lisible) return refuser("illisible");
     setCard(r.card);
     pending.current = resolveCard(r.card);
     setReadDone(true);
@@ -303,7 +354,7 @@ function PecPage() {
       return true;
     } catch {
       track("pec_contact_echec", { kind, platform: platform?.id });
-      setErreur(ECHEC_ENVOI);
+      setErreur("envoi");
       return false;
     } finally {
       setBusy(false);
@@ -330,7 +381,7 @@ function PecPage() {
     if (!parti) {
       track("pec_contact_echec", { kind: "essai", platform: p.id });
       setBusy(false);
-      setErreur("Votre compte n'a pas pu être créé : la connexion a coupé. Réessayez.");
+      setErreur("compte");
       return;
     }
     posthog?.identify(mail);
@@ -363,7 +414,7 @@ function PecPage() {
       {step.s === "capture" && (
         <StepCapture
           key="c"
-          error={step.error}
+          error={step.error && t.capture[step.error]}
           onFile={onFile}
           onExample={onExample}
           onType={() => {
@@ -385,7 +436,7 @@ function PecPage() {
       {step.s === "search" && (
         <StepSearch
           key="s"
-          reason={step.reason}
+          reason={step.reason && t.search[step.reason]}
           onBack={back}
           onRecherche={onRecherche}
           onPick={(nom, ids) => {
@@ -417,33 +468,33 @@ function PecPage() {
         step.res.kind === "unique" &&
         step.res.platform.simulable &&
         simulationProposee() && (
-        <ResultSimulable
-          key="rs"
-          card={card}
-          p={step.res.platform}
-          example={source === "exemple"}
-          photo={photo}
-          proposee={simulationProposee()}
-          onBack={back}
-          onSimulate={() => {
-            if (step.res.kind !== "unique") return;
-            track("pec_simuler_clic", { platform: step.res.platform.id });
-            go({ s: "sim", platform: step.res.platform });
-          }}
-          onPaul={() => {
-            if (step.res.kind !== "unique") return;
-            track("pec_paul_montre_clic", { platform: step.res.platform.id });
-            go({ s: "contact", kind: "rappel", platform: step.res.platform, demo: true });
-          }}
-        />
-      )}
+          <ResultSimulable
+            key="rs"
+            card={card}
+            p={step.res.platform}
+            example={source === "exemple"}
+            photo={photo}
+            proposee={simulationProposee()}
+            onBack={back}
+            onSimulate={() => {
+              if (step.res.kind !== "unique") return;
+              track("pec_simuler_clic", { platform: step.res.platform.id });
+              go({ s: "sim", platform: step.res.platform });
+            }}
+            onPaul={() => {
+              if (step.res.kind !== "unique") return;
+              track("pec_paul_montre_clic", { platform: step.res.platform.id });
+              go({ s: "contact", kind: "rappel", platform: step.res.platform, demo: true });
+            }}
+          />
+        )}
       {step.s === "sim" && (
         <SimFlow
           key="sim"
           platformId={cible(step.platform).id}
           portail={cible(step.platform).label}
           busy={busy}
-          compteError={erreur}
+          compteError={erreur && t.envoi[erreur]}
           track={track}
           // Carte d'exemple : identité fictive imprimée sur la carte dessinée. Vraie photo :
           // n° de sécu et date de naissance lus par l'OCR, s'ils y sont.
@@ -456,32 +507,32 @@ function PecPage() {
       {step.s === "result" &&
         step.res.kind === "unique" &&
         !(step.res.platform.simulable && simulationProposee()) && (
-        <ResultEstimation
-          key="rp"
-          card={card}
-          p={step.res.platform}
-          photo={photo}
-          busy={busy}
-          error={erreur}
-          onBack={back}
-          onRdv={() =>
-            step.res.kind === "unique" &&
-            track("pec_rdv_clic", { platform: step.res.platform.id })
-          }
-          onPrevenir={async (mail) => {
-            if (step.res.kind !== "unique") return;
-            if (await lead("oxantis", { email: mail }, step.res.platform))
-              go({ s: "thanks", kind: "oxantis" });
-          }}
-        />
-      )}
+          <ResultEstimation
+            key="rp"
+            card={card}
+            p={step.res.platform}
+            photo={photo}
+            busy={busy}
+            error={erreur && t.envoi[erreur]}
+            onBack={back}
+            onRdv={() =>
+              step.res.kind === "unique" &&
+              track("pec_rdv_clic", { platform: step.res.platform.id })
+            }
+            onPrevenir={async (mail) => {
+              if (step.res.kind !== "unique") return;
+              if (await lead("oxantis", { email: mail }, step.res.platform))
+                go({ s: "thanks", kind: "oxantis" });
+            }}
+          />
+        )}
       {step.s === "contact" && (
         <StepContact
           key="ct"
           email={email}
           busy={busy}
-          error={erreur}
-          {...contactTexte(step)}
+          error={erreur && t.envoi[erreur]}
+          {...contactTexte(step, t)}
           onBack={back}
           onCal={() => track("pec_cal_clic", { ecran: "contact", kind: step.kind })}
           onSubmit={async (v) => {
@@ -495,10 +546,10 @@ function PecPage() {
           key="t"
           title={
             step.kind === "essai-off"
-              ? "Votre espace arrive."
+              ? t.merciEssaiOff
               : step.kind === "oxantis"
-                ? "On vous prévient."
-                : "Paul vous rappelle sous 24 h ouvrées."
+                ? t.merciOxantis
+                : t.merciRappel
           }
           creneau={step.kind !== "oxantis"}
           onCal={() => track("pec_cal_clic", { ecran: "merci", kind: step.kind })}
@@ -506,10 +557,10 @@ function PecPage() {
         >
           <Muted>
             {step.kind === "essai-off"
-              ? "Paul vous appelle sous 24 h ouvrées pour ouvrir votre espace et brancher votre portail avec vous."
+              ? t.texteEssaiOff
               : step.kind === "oxantis"
-                ? "Dès qu'on sait où passent les PEC Oxantis après le 26 octobre, on vous écrit."
-                : "Vous pouvez aussi réserver un créneau tout de suite."}
+                ? t.texteOxantis
+                : t.texteRappel}
           </Muted>
         </StepThanks>
       )}

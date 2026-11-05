@@ -1,0 +1,18 @@
+{
+  "slug": "groupes-multi-sites-pilotage",
+  "category": "Groups",
+  "title": "Multi-site groups: managing all your centers from a single console",
+  "desc": "Centralization, cross-site comparisons, consolidated alerts: what a unified platform brings.",
+  "time": "8 min",
+  "body": [
+    "Multi-site healthcare groups face a specific challenge: producing consolidated management without losing local detail. Each site has its own characteristics (size, activity mix, team, patient base), but the group must be able to compare, make trade-offs and decide at scale.",
+    "Legacy tools produce siloed reporting. Each site exports its data, headquarters consolidates it by hand in Excel, and the monthly report comes out two weeks late on data that is already outdated. This lag rules out any quick corrective action.",
+    "Worse, the variety of tools across sites complicates consolidation. One site on Doctolib, another on Maiia, a third on sector-specific practice management software: indicator definitions vary, scopes are not aligned, and comparisons become debatable.",
+    "A unified agentic platform centralizes indicators, enables cross-site comparisons and triggers consolidated alerts at headquarters. It does not replace local business tools: it aggregates them into a shared view.",
+    "This aggregation is based on standardized indicators: billing lead time, rejection rate, DSO (days sales outstanding), administrative productivity, team satisfaction. Definitions are set at group level and applied consistently across all sites.",
+    "Cross-site comparisons become possible and actionable. You identify the best-performing sites, analyze their practices and share them with the others. Conversely, you identify sites in difficulty and trigger targeted support.",
+    "Consolidated alerts replace passive reports. Instead of a monthly PDF, headquarters continuously receives weak signals: one site whose AMC rejection rate is rising, another whose patient DSO is growing longer, a third whose productivity is dropping. Action can be triggered in days, not months.",
+    "Management becomes predictive rather than descriptive. You no longer just observe discrepancies, you anticipate them. This stance changes the conversation between headquarters and sites, which becomes focused on action rather than justification.",
+    "Granit was designed for this need: a group is managed with the same console as a single site, whatever the number of centers. The native multi-tenant architecture avoids technical workarounds and allows smooth scaling."
+  ]
+}

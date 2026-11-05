@@ -1,16 +1,52 @@
 import { useEffect, useState } from "react";
 import { useReducedMotion } from "framer-motion";
 
+import { useLanguage } from "@/lib/i18n";
 import { EQUIPEMENT_EXEMPLE, SIM_ETAPES, type SimEtape } from "@/lib/pec/simulation";
 import type { Patient } from "./StepPatient";
 import { Kicker, Muted, Screen, Title, euros } from "./ui";
 
-const LABELS: Record<SimEtape, string> = {
-  connexion: "Connexion au portail",
-  code: "Code vérifié",
-  beneficiaire: "Patient retrouvé",
-  formulaire: "Demande remplie",
-  chiffrage: "Chiffrage",
+const copy = {
+  fr: {
+    labels: {
+      connexion: "Connexion au portail",
+      code: "Code vérifié",
+      beneficiaire: "Patient retrouvé",
+      formulaire: "Demande remplie",
+      chiffrage: "Chiffrage",
+    } satisfies Record<SimEtape, string>,
+    kicker: "Simulation en cours",
+    title: "Granit travaille sur ",
+    ecoule: "Temps écoulé",
+    rien: "Rien n'est envoyé à la mutuelle : on s'arrête avant la validation.",
+    beneficiaire: "Bénéficiaire",
+    ne: "Né(e) le",
+    prescripteur: "Prescripteur",
+    entete: (portail: string) => `PORTAIL ${portail} · SIMULATION DE PRISE EN CHARGE`,
+    pec: "Prise en charge",
+    calcul: "⌛ calcul de la part mutuelle…",
+    attente: "en attente",
+  },
+  en: {
+    labels: {
+      connexion: "Logging in to the portal",
+      code: "Code verified",
+      beneficiaire: "Patient found",
+      formulaire: "Request filled in",
+      chiffrage: "Pricing",
+    } satisfies Record<SimEtape, string>,
+    kicker: "Simulation in progress",
+    title: "Granit is working on ",
+    ecoule: "Time elapsed",
+    rien: "Nothing is sent to the insurer: we stop before the final submission.",
+    beneficiaire: "Beneficiary",
+    ne: "Date of birth",
+    prescripteur: "Prescriber",
+    entete: (portail: string) => `${portail} PORTAL · COVERAGE SIMULATION`,
+    pec: "Coverage",
+    calcul: "⌛ calculating the insurer’s share…",
+    attente: "pending",
+  },
 };
 
 export function chrono(sec: number) {
@@ -36,6 +72,7 @@ export function StepSimulation({
   t0: number;
   patient: Patient;
 }) {
+  const t = copy[useLanguage().lang];
   const [now, setNow] = useState(() => Date.now());
   useEffect(() => {
     const t = setInterval(() => setNow(Date.now()), 250);
@@ -45,20 +82,20 @@ export function StepSimulation({
 
   return (
     <Screen id="simulation">
-      <Kicker>Simulation en cours</Kicker>
+      <Kicker>{t.kicker}</Kicker>
       <Title em={portail} after=".">
-        Granit travaille sur{" "}
+        {t.title}
       </Title>
       <span
         className="text-[34px]"
         style={{ fontFamily: "var(--font-mono)", color: "var(--text)" }}
-        aria-label="Temps écoulé"
+        aria-label={t.ecoule}
       >
         {chrono(Math.max(0, Math.floor((now - t0) / 1000)))}
       </span>
       <ol className="grid w-full max-w-[340px] gap-2 text-left" aria-live="polite">
         {SIM_ETAPES.map((e, i) => (
-          <Etape key={e} label={LABELS[e]} ok={i < idx} working={i === idx} />
+          <Etape key={e} label={t.labels[e]} ok={i < idx} working={i === idx} />
         ))}
       </ol>
       <Formulaire
@@ -68,7 +105,7 @@ export function StepSimulation({
         chiffre={idx >= 4}
         trouve={idx >= 2}
       />
-      <Muted>Rien n'est envoyé à la mutuelle : on s'arrête avant la validation.</Muted>
+      <Muted>{t.rien}</Muted>
     </Screen>
   );
 }
@@ -83,10 +120,10 @@ function Etape({ label, ok, working }: { label: string; ok: boolean; working: bo
       <span
         className={`grid h-7 w-7 place-items-center rounded-full border-[1.5px] text-[14px] ${working && !reduce ? "animate-spin" : ""}`}
         style={{
-          borderColor: ok ? "var(--sage)" : "var(--terra)",
+          borderColor: ok ? "var(--succes)" : "var(--profond)",
           borderTopColor: working ? "transparent" : undefined,
-          background: ok ? "var(--sage)" : "#fff",
-          color: "#fff",
+          background: ok ? "var(--succes)" : "var(--papier)",
+          color: "var(--rose)",
         }}
       >
         {ok ? "✓" : ""}
@@ -110,13 +147,15 @@ function Formulaire({
   remplis: boolean;
   chiffre: boolean;
 }) {
+  const { lang } = useLanguage();
+  const t = copy[lang];
   const lignes: [string, string, boolean][] = [
-    ["Bénéficiaire", masque(patient.nir), trouve],
-    ["Né(e) le", patient.dateNaissance, trouve],
-    ["Prescripteur", patient.prescripteur, remplis],
+    [t.beneficiaire, masque(patient.nir), trouve],
+    [t.ne, patient.dateNaissance, trouve],
+    [t.prescripteur, patient.prescripteur, remplis],
     ...EQUIPEMENT_EXEMPLE.map((l): [string, string, boolean] => [
-      l.label,
-      euros(l.montant),
+      l.label[lang],
+      euros(l.montant, lang),
       remplis,
     ]),
   ];
@@ -126,10 +165,10 @@ function Formulaire({
       style={{ borderColor: "var(--border2)" }}
     >
       <div
-        className="px-3 py-1.5 text-[11px] text-white"
+        className="px-3 py-1.5 text-[11px] text-papier"
         style={{ background: "#34495e", fontFamily: "var(--font-mono)", letterSpacing: ".04em" }}
       >
-        PORTAIL {portail.toUpperCase()} · SIMULATION DE PRISE EN CHARGE
+        {t.entete(portail.toUpperCase())}
       </div>
       <dl className="grid grid-cols-2 gap-2 p-3" style={{ background: "#f5f7f9" }}>
         {lignes.map(([k, v, on]) => (
@@ -138,7 +177,7 @@ function Formulaire({
               {k}
             </dt>
             <dd
-              className="min-h-[28px] rounded border bg-white px-2 py-1"
+              className="min-h-[28px] rounded border bg-papier px-2 py-1"
               style={{ borderColor: "#cfd6de", fontFamily: "var(--font-mono)", color: "#111" }}
             >
               {on ? <Tape text={v} /> : <span style={{ color: "#9aa3ad" }}>…</span>}
@@ -147,13 +186,13 @@ function Formulaire({
         ))}
         <div className="col-span-2 grid gap-0.5">
           <dt className="text-[11px]" style={{ color: "#56606b" }}>
-            Prise en charge
+            {t.pec}
           </dt>
           <dd
-            className="rounded border border-dashed bg-white px-2 py-1"
+            className="rounded border border-dashed bg-papier px-2 py-1"
             style={{ borderColor: "#cfd6de", color: "#56606b" }}
           >
-            {chiffre ? "⌛ calcul de la part mutuelle…" : "en attente"}
+            {chiffre ? t.calcul : t.attente}
           </dd>
         </div>
       </dl>
@@ -172,7 +211,7 @@ function Tape({ text }: { text: string }) {
   return (
     <>
       {text.slice(0, n)}
-      {n >= text.length && <span style={{ color: "var(--sage)" }}> ✓</span>}
+      {n >= text.length && <span style={{ color: "var(--succes)" }}> ✓</span>}
     </>
   );
 }

@@ -4,35 +4,30 @@
   "logo": "/logos/oxantis.png",
   "checkedOn": "2026-10-07",
   "acces": {
-    "verifieLe": "2026-10-30",
-    "liens": [
-      {
-        "label": "Se connecter sur oxantis.net",
-        "url": "https://www.oxantis.net/HmNet/page/accueil/index",
-        "detail": "Double authentification, code par appel ou SMS."
-      }
-    ]
+    "verifieLe": "2026-11-05",
+    "liens": [],
+    "note": "Le portail oxantis.net a fermé le 26 octobre 2026. Viamedis reprend l'activité optique et audioprothèse : la connexion se fait désormais sur viamedis.net."
   },
   "identite": [
     {
       "label": "Type",
-      "valeur": "Opérateur de tiers payant du Groupe VYV",
+      "valeur": "Ancien opérateur de tiers payant du Groupe VYV",
       "source": "vyv-cp"
     },
     {
-      "label": "Optique",
-      "valeur": "Oui, tiers payant sur accord préalable",
-      "source": "vyv-cp"
+      "label": "Statut",
+      "valeur": "Fermé le 26 octobre 2026",
+      "source": "acuite-2026-fermeture"
     },
     {
-      "label": "Portail",
-      "valeur": "oxantis.net",
-      "source": "vyv-cp"
+      "label": "Repreneur",
+      "valeur": "Viamedis (optique et audioprothèse)",
+      "source": "acuite-2026-fermeture"
     },
     {
-      "label": "Connexion",
-      "valeur": "Double authentification (code par appel ou SMS)",
-      "source": "granit-connecteur"
+      "label": "Nouveau portail",
+      "valeur": "viamedis.net",
+      "source": "acuite-2026-fermeture"
     }
   ],
   "chiffres": [
@@ -58,6 +53,30 @@
     }
   ],
   "faits": [
+    {
+      "fait": "La plateforme oxantis.net ferme définitivement à compter du lundi 26 octobre 2026, annonce publiée le 16 septembre 2026.",
+      "source": "acuite-2026-fermeture"
+    },
+    {
+      "fait": "L'ensemble des activités d'optique et d'audioprothèse gérées par Oxantis est repris par Viamedis, selon les modalités et conventions propres à cet opérateur.",
+      "source": "acuite-2026-fermeture"
+    },
+    {
+      "fait": "Pour les actes réalisés avant la fin de la convention, le transfert est automatisé. Les prises en charge en cours et l'intégralité de l'historique de facturation sont transférés automatiquement vers viamedis.net.",
+      "source": "acuite-2026-fermeture"
+    },
+    {
+      "fait": "De nouvelles précisions sur les modalités pratiques doivent être communiquées par Viamedis aux professionnels de santé.",
+      "source": "acuite-2026-fermeture"
+    },
+    {
+      "fait": "Le dentaire passait déjà par viamedis.net pour Harmonie Mutuelle. La MESE a transféré son tiers payant dentaire à Viamedis le 8 juillet 2025.",
+      "source": "harmonie-contacts"
+    },
+    {
+      "fait": "Vérification Granit du 4 novembre 2026 : oxantis.net ne répondait plus.",
+      "source": "granit-connecteur"
+    },
     {
       "fait": "Oxantis SA regroupe depuis janvier 2023 la gestion du tiers payant optique, audio et dentaire du Groupe VYV. Avant, deux centres du groupe se la partageaient : Equasanté et UHMs.",
       "source": "vyv-cp"
@@ -104,8 +123,11 @@
     }
   ],
   "conventionnement": [
-    "Contacter le service conventionnement Oxantis : 0 821 21 00 07 (numéro surtaxé) ou tp-oxantis-convention@oxantis.fr.",
-    "Une fois le compte ouvert, se connecter sur oxantis.net avec son adresse e-mail et son mot de passe, puis le code reçu par appel ou par SMS."
+    "Créer un compte sur viamedispro.com.",
+    "Déposer depuis son espace les pièces justificatives : informations administratives et bancaires.",
+    "Recevoir l'e-mail confirmant le référencement, une fois le dossier vérifié.",
+    "Après validation du RIB, recevoir un second e-mail avec le lien d'activation de viamedis.net.",
+    "À la première connexion à viamedis.net, accepter les modalités de l'engagement conventionnel."
   ],
   "statuts": [
     {
@@ -147,22 +169,34 @@
   "statutsSource": "granit-connecteur",
   "contacts": [
     {
-      "label": "Conventionnement (opticiens)",
+      "label": "Viamedis, téléphone",
+      "valeur": "0 825 076 076",
+      "detail": "Du lundi au vendredi, 9 h–18 h · numéro surtaxé",
+      "source": "viamedis-ps"
+    },
+    {
+      "label": "Viamedis, déjà référencé",
+      "valeur": "Formulaire de contact de viamedis.net",
+      "url": "https://www.viamedis.net/ViamedisNet/page/commun/p_index_contact_us",
+      "source": "viamedis-ps"
+    },
+    {
+      "label": "Viamedis, pas encore référencé",
+      "valeur": "Formulaire de viamedispro.com",
+      "url": "https://www.viamedispro.com/nous-contacter/",
+      "source": "viamedis-ps"
+    },
+    {
+      "label": "Ancienne ligne Oxantis, conventionnement",
       "valeur": "0 821 21 00 07",
-      "detail": "Numéro surtaxé · ou tp-oxantis-convention@oxantis.fr",
+      "detail": "Publiée avant la fermeture, à confirmer · numéro surtaxé",
       "source": "harmonie-contacts"
     },
     {
-      "label": "Factures et prises en charge (optique)",
+      "label": "Ancienne ligne Oxantis, factures et PEC optique",
       "valeur": "0 821 01 01 02",
-      "detail": "Numéro surtaxé · ou tp-oxantis-optique@oxantis.fr",
+      "detail": "Publiée avant la fermeture, à confirmer · numéro surtaxé",
       "source": "harmonie-contacts"
-    },
-    {
-      "label": "Portail",
-      "valeur": "oxantis.net",
-      "url": "https://www.oxantis.net/HmNet/page/accueil/index",
-      "source": "vyv-cp"
     }
   ],
   "organismes": {
@@ -202,6 +236,16 @@
     ]
   },
   "sources": {
+    "acuite-2026-fermeture": {
+      "label": "Acuité · « Fermeture de la plateforme de tiers payant Oxantis le 26 octobre 2026 » (16/09/2026)",
+      "url": "https://www.acuite.fr/actualites/profession/fermeture-de-la-plateforme-de-tiers-payant-oxantis-a335575",
+      "consulte": "2026-11-04"
+    },
+    "viamedis-ps": {
+      "label": "viamedis.fr · Professionnels de santé",
+      "url": "https://www.viamedis.fr/professionnels-de-sante/",
+      "consulte": "2026-11-04"
+    },
     "vyv-cp": {
       "label": "groupe-vyv.fr · Communiqué « Le Groupe VYV crée Oxantis SA » (28/03/2023)",
       "url": "https://www.groupe-vyv.fr/wp-content/uploads/2023/04/20230328_CP_Oxantis.pdf",

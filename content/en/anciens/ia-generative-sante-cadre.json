@@ -1,0 +1,18 @@
+{
+  "slug": "ia-generative-sante-cadre",
+  "category": "AI & Healthcare",
+  "title": "Generative AI in healthcare: what the regulatory framework really requires",
+  "desc": "GDPR, AI Act, HDS, MDR: sorting out what applies to non-clinical AI agents in healthcare facilities.",
+  "time": "10 min",
+  "body": [
+    "The regulatory framework for AI in healthcare is often confused with the one for medical devices. This confusion holds back many administrative projects that could move quickly, and slows innovation where it delivers the most immediate value.",
+    "Yet an administrative AI agent (third-party payment, billing, collections, scheduling, documentation) is not a medical device and does not fall under the MDR regulation. The criterion is intended purpose: an agent that does not contribute to a diagnosis, a therapeutic decision or a treatment is not a medical device, even if it handles health data.",
+    "Four texts actually apply. The GDPR governs all processing of personal data, and imposes stricter rules for health data (Article 9). HDS hosting (French health data hosting standard) applies as soon as this data is stored or processed. The AI Act, now being phased in, classifies some AI systems as high risk, but administrative uses largely fall outside it. And the CNIL (French data protection authority) guidance specifies the operational details.",
+    "For AI agents, the GDPR requires: a clear legal basis (often legitimate interest or performance of a contract), minimization of the data processed, transparent information for the people concerned, and a data protection impact assessment (DPIA) for high-risk processing.",
+    "The DPIA must be carried out before going into production and document the risks for individuals: risk of disclosure, risk of automated decisions with significant effects, risk of re-identification. For most administrative agents, these risks are low and the DPIA remains light.",
+    "HDS hosting is non-negotiable. Any provider that stores or processes health data on behalf of a facility must hold HDS certification, or rely on a subcontractor that holds it. This requirement also covers AI models and vector databases.",
+    "The AI Act classifies some healthcare AI systems as high risk, but mainly targets clinical uses (triage, diagnostic support, emergency management). Administrative systems are generally outside the high-risk scope, which considerably simplifies their deployment.",
+    "Understanding this boundary avoids over-regulation and unblocks deployments. Many administrative projects are held back today by an overly broad reading of the framework, which applies to them constraints designed for medical devices.",
+    "Conversely, some practices remain risky even in administrative work: training a model on patient data without a clear legal basis, transferring data to models outside the EU, or making high-impact automated decisions without human oversight."
+  ]
+}

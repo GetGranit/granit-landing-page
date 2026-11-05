@@ -12,12 +12,12 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AProposRouteImport } from './routes/a-propos'
 import { Route as AffiliationRouteImport } from './routes/affiliation'
-import { Route as AgentsRouteImport } from './routes/agents'
 import { Route as CasUsageRouteImport } from './routes/cas-usage'
 import { Route as CgvRouteImport } from './routes/cgv'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DemoRouteImport } from './routes/demo'
 import { Route as EssaiRouteImport } from './routes/essai'
+import { Route as LeveeDeFondsRouteImport } from './routes/levee-de-fonds'
 import { Route as PecRouteImport } from './routes/pec'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ProduitRouteImport } from './routes/produit'
@@ -25,6 +25,8 @@ import { Route as RessourcesRouteImport } from './routes/ressources'
 import { Route as SecuriteRouteImport } from './routes/securite'
 import { Route as SilmoRouteImport } from './routes/silmo'
 import { Route as TarifsRouteImport } from './routes/tarifs'
+import { Route as AgentsIndexRouteImport } from './routes/agents.index'
+import { Route as AgentsMetierRouteImport } from './routes/agents.$metier'
 import { Route as BlogSplatRouteImport } from './routes/blog.$'
 import { Route as EnIndexRouteImport } from './routes/en.index'
 import { Route as EnCgvRouteImport } from './routes/en.cgv'
@@ -50,11 +52,6 @@ const AffiliationRoute = AffiliationRouteImport.update({
   path: '/affiliation',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AgentsRoute = AgentsRouteImport.update({
-  id: '/agents',
-  path: '/agents',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const CasUsageRoute = CasUsageRouteImport.update({
   id: '/cas-usage',
   path: '/cas-usage',
@@ -78,6 +75,11 @@ const DemoRoute = DemoRouteImport.update({
 const EssaiRoute = EssaiRouteImport.update({
   id: '/essai',
   path: '/essai',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeveeDeFondsRoute = LeveeDeFondsRouteImport.update({
+  id: '/levee-de-fonds',
+  path: '/levee-de-fonds',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PecRoute = PecRouteImport.update({
@@ -113,6 +115,16 @@ const SilmoRoute = SilmoRouteImport.update({
 const TarifsRoute = TarifsRouteImport.update({
   id: '/tarifs',
   path: '/tarifs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AgentsIndexRoute = AgentsIndexRouteImport.update({
+  id: '/agents/',
+  path: '/agents/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AgentsMetierRoute = AgentsMetierRouteImport.update({
+  id: '/agents/$metier',
+  path: '/agents/$metier',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogSplatRoute = BlogSplatRouteImport.update({
@@ -167,12 +179,12 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/a-propos': typeof AProposRoute
   '/affiliation': typeof AffiliationRoute
-  '/agents': typeof AgentsRoute
   '/cas-usage': typeof CasUsageRoute
   '/cgv': typeof CgvRoute
   '/contact': typeof ContactRoute
   '/demo': typeof DemoRoute
   '/essai': typeof EssaiRoute
+  '/levee-de-fonds': typeof LeveeDeFondsRoute
   '/pec': typeof PecRoute
   '/privacy': typeof PrivacyRoute
   '/produit': typeof ProduitRoute
@@ -180,10 +192,12 @@ export interface FileRoutesByFullPath {
   '/securite': typeof SecuriteRoute
   '/silmo': typeof SilmoRoute
   '/tarifs': typeof TarifsRoute
+  '/agents/$metier': typeof AgentsMetierRoute
   '/blog/$': typeof BlogSplatRoute
   '/en/cgv': typeof EnCgvRoute
   '/ressources/$slug': typeof RessourcesSlugRoute
   '/webinar/ia-magasin': typeof WebinarIaMagasinRoute
+  '/agents/': typeof AgentsIndexRoute
   '/en/': typeof EnIndexRoute
   '/ressources/': typeof RessourcesIndexRoute
   '/en/blog/$': typeof EnBlogSplatRoute
@@ -194,22 +208,24 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/a-propos': typeof AProposRoute
   '/affiliation': typeof AffiliationRoute
-  '/agents': typeof AgentsRoute
   '/cas-usage': typeof CasUsageRoute
   '/cgv': typeof CgvRoute
   '/contact': typeof ContactRoute
   '/demo': typeof DemoRoute
   '/essai': typeof EssaiRoute
+  '/levee-de-fonds': typeof LeveeDeFondsRoute
   '/pec': typeof PecRoute
   '/privacy': typeof PrivacyRoute
   '/produit': typeof ProduitRoute
   '/securite': typeof SecuriteRoute
   '/silmo': typeof SilmoRoute
   '/tarifs': typeof TarifsRoute
+  '/agents/$metier': typeof AgentsMetierRoute
   '/blog/$': typeof BlogSplatRoute
   '/en/cgv': typeof EnCgvRoute
   '/ressources/$slug': typeof RessourcesSlugRoute
   '/webinar/ia-magasin': typeof WebinarIaMagasinRoute
+  '/agents': typeof AgentsIndexRoute
   '/en': typeof EnIndexRoute
   '/ressources': typeof RessourcesIndexRoute
   '/en/blog/$': typeof EnBlogSplatRoute
@@ -221,12 +237,12 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/a-propos': typeof AProposRoute
   '/affiliation': typeof AffiliationRoute
-  '/agents': typeof AgentsRoute
   '/cas-usage': typeof CasUsageRoute
   '/cgv': typeof CgvRoute
   '/contact': typeof ContactRoute
   '/demo': typeof DemoRoute
   '/essai': typeof EssaiRoute
+  '/levee-de-fonds': typeof LeveeDeFondsRoute
   '/pec': typeof PecRoute
   '/privacy': typeof PrivacyRoute
   '/produit': typeof ProduitRoute
@@ -234,10 +250,12 @@ export interface FileRoutesById {
   '/securite': typeof SecuriteRoute
   '/silmo': typeof SilmoRoute
   '/tarifs': typeof TarifsRoute
+  '/agents/$metier': typeof AgentsMetierRoute
   '/blog/$': typeof BlogSplatRoute
   '/en/cgv': typeof EnCgvRoute
   '/ressources/$slug': typeof RessourcesSlugRoute
   '/webinar/ia-magasin': typeof WebinarIaMagasinRoute
+  '/agents/': typeof AgentsIndexRoute
   '/en/': typeof EnIndexRoute
   '/ressources/': typeof RessourcesIndexRoute
   '/en/blog/$': typeof EnBlogSplatRoute
@@ -250,12 +268,12 @@ export interface FileRouteTypes {
     | '/'
     | '/a-propos'
     | '/affiliation'
-    | '/agents'
     | '/cas-usage'
     | '/cgv'
     | '/contact'
     | '/demo'
     | '/essai'
+    | '/levee-de-fonds'
     | '/pec'
     | '/privacy'
     | '/produit'
@@ -263,10 +281,12 @@ export interface FileRouteTypes {
     | '/securite'
     | '/silmo'
     | '/tarifs'
+    | '/agents/$metier'
     | '/blog/$'
     | '/en/cgv'
     | '/ressources/$slug'
     | '/webinar/ia-magasin'
+    | '/agents/'
     | '/en/'
     | '/ressources/'
     | '/en/blog/$'
@@ -277,22 +297,24 @@ export interface FileRouteTypes {
     | '/'
     | '/a-propos'
     | '/affiliation'
-    | '/agents'
     | '/cas-usage'
     | '/cgv'
     | '/contact'
     | '/demo'
     | '/essai'
+    | '/levee-de-fonds'
     | '/pec'
     | '/privacy'
     | '/produit'
     | '/securite'
     | '/silmo'
     | '/tarifs'
+    | '/agents/$metier'
     | '/blog/$'
     | '/en/cgv'
     | '/ressources/$slug'
     | '/webinar/ia-magasin'
+    | '/agents'
     | '/en'
     | '/ressources'
     | '/en/blog/$'
@@ -303,12 +325,12 @@ export interface FileRouteTypes {
     | '/'
     | '/a-propos'
     | '/affiliation'
-    | '/agents'
     | '/cas-usage'
     | '/cgv'
     | '/contact'
     | '/demo'
     | '/essai'
+    | '/levee-de-fonds'
     | '/pec'
     | '/privacy'
     | '/produit'
@@ -316,10 +338,12 @@ export interface FileRouteTypes {
     | '/securite'
     | '/silmo'
     | '/tarifs'
+    | '/agents/$metier'
     | '/blog/$'
     | '/en/cgv'
     | '/ressources/$slug'
     | '/webinar/ia-magasin'
+    | '/agents/'
     | '/en/'
     | '/ressources/'
     | '/en/blog/$'
@@ -331,12 +355,12 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AProposRoute: typeof AProposRoute
   AffiliationRoute: typeof AffiliationRoute
-  AgentsRoute: typeof AgentsRoute
   CasUsageRoute: typeof CasUsageRoute
   CgvRoute: typeof CgvRoute
   ContactRoute: typeof ContactRoute
   DemoRoute: typeof DemoRoute
   EssaiRoute: typeof EssaiRoute
+  LeveeDeFondsRoute: typeof LeveeDeFondsRoute
   PecRoute: typeof PecRoute
   PrivacyRoute: typeof PrivacyRoute
   ProduitRoute: typeof ProduitRoute
@@ -344,9 +368,11 @@ export interface RootRouteChildren {
   SecuriteRoute: typeof SecuriteRoute
   SilmoRoute: typeof SilmoRoute
   TarifsRoute: typeof TarifsRoute
+  AgentsMetierRoute: typeof AgentsMetierRoute
   BlogSplatRoute: typeof BlogSplatRoute
   EnCgvRoute: typeof EnCgvRoute
   WebinarIaMagasinRoute: typeof WebinarIaMagasinRoute
+  AgentsIndexRoute: typeof AgentsIndexRoute
   EnIndexRoute: typeof EnIndexRoute
   EnBlogSplatRoute: typeof EnBlogSplatRoute
 }
@@ -372,13 +398,6 @@ declare module '@tanstack/react-router' {
       path: '/affiliation'
       fullPath: '/affiliation'
       preLoaderRoute: typeof AffiliationRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/agents': {
-      id: '/agents'
-      path: '/agents'
-      fullPath: '/agents'
-      preLoaderRoute: typeof AgentsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/cas-usage': {
@@ -414,6 +433,13 @@ declare module '@tanstack/react-router' {
       path: '/essai'
       fullPath: '/essai'
       preLoaderRoute: typeof EssaiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/levee-de-fonds': {
+      id: '/levee-de-fonds'
+      path: '/levee-de-fonds'
+      fullPath: '/levee-de-fonds'
+      preLoaderRoute: typeof LeveeDeFondsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pec': {
@@ -463,6 +489,20 @@ declare module '@tanstack/react-router' {
       path: '/tarifs'
       fullPath: '/tarifs'
       preLoaderRoute: typeof TarifsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/agents/': {
+      id: '/agents/'
+      path: '/agents'
+      fullPath: '/agents/'
+      preLoaderRoute: typeof AgentsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/agents/$metier': {
+      id: '/agents/$metier'
+      path: '/agents/$metier'
+      fullPath: '/agents/$metier'
+      preLoaderRoute: typeof AgentsMetierRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog/$': {
@@ -553,12 +593,12 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AProposRoute: AProposRoute,
   AffiliationRoute: AffiliationRoute,
-  AgentsRoute: AgentsRoute,
   CasUsageRoute: CasUsageRoute,
   CgvRoute: CgvRoute,
   ContactRoute: ContactRoute,
   DemoRoute: DemoRoute,
   EssaiRoute: EssaiRoute,
+  LeveeDeFondsRoute: LeveeDeFondsRoute,
   PecRoute: PecRoute,
   PrivacyRoute: PrivacyRoute,
   ProduitRoute: ProduitRoute,
@@ -566,9 +606,11 @@ const rootRouteChildren: RootRouteChildren = {
   SecuriteRoute: SecuriteRoute,
   SilmoRoute: SilmoRoute,
   TarifsRoute: TarifsRoute,
+  AgentsMetierRoute: AgentsMetierRoute,
   BlogSplatRoute: BlogSplatRoute,
   EnCgvRoute: EnCgvRoute,
   WebinarIaMagasinRoute: WebinarIaMagasinRoute,
+  AgentsIndexRoute: AgentsIndexRoute,
   EnIndexRoute: EnIndexRoute,
   EnBlogSplatRoute: EnBlogSplatRoute,
 }
@@ -577,10 +619,11 @@ export const routeTree = rootRouteImport
   ._addFileTypes<FileRouteTypes>()
 
 import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
+import type { startInstance } from './start.ts'
 declare module '@tanstack/react-start' {
   interface Register {
     ssr: true
     router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
   }
 }

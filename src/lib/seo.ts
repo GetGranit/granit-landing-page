@@ -4,16 +4,33 @@ export const SITE_URL = "https://www.getgranit.ai";
 export const organizationLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": `${SITE_URL}/#organization`,
   name: "Granit",
   alternateName: "getgranit",
   url: SITE_URL,
-  logo: `${SITE_URL}/favicon.svg`,
+  logo: `${SITE_URL}/granit-logo-1200.png`,
   description:
     "Granit déploie des agents IA qui automatisent le back-office administratif des établissements de santé — tiers-payant, facturation, traitement des rejets, recouvrement.",
   email: "contact@getgranit.ai",
   areaServed: "FR",
   sameAs: ["https://www.linkedin.com/company/getgranit-ai/"],
 };
+
+/** Référence à l'Organization du site, pour les autres blocs JSON-LD (provider, publisher). */
+export const organizationRef = { "@id": `${SITE_URL}/#organization` };
+
+/** FAQPage : mêmes questions et réponses que la FAQ visible de la page. */
+export function faqPageLd(items: { question: string; answer: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+}
 
 /** Absolute canonical URL for a given pathname (trailing slash stripped). */
 export function canonicalFor(pathname: string): string {
@@ -36,7 +53,7 @@ export function articleLd(opts: { title: string; description: string; slug: stri
     publisher: {
       "@type": "Organization",
       name: "Granit",
-      logo: { "@type": "ImageObject", url: `${SITE_URL}/favicon.svg` },
+      logo: { "@type": "ImageObject", url: `${SITE_URL}/granit-logo-1200.png` },
     },
   };
   const breadcrumb = {

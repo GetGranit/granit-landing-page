@@ -9,6 +9,9 @@
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
+    "test": "node --experimental-strip-types --test \"tests/**/*.test.ts\" \"scripts/seo-engine/tests/*.test.mjs\"",
+    "check-marque": "node scripts/check-marque.mjs",
+    "planche": "node scripts/planche.mjs",
     "format": "prettier --write ."
   },
   "dependencies": {
@@ -84,6 +87,7 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^15.15.0",
+    "playwright": "^1.64.1",
     "prettier": "^3.7.3",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.56.1",

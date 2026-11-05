@@ -4,7 +4,7 @@ Chaque jour ouvré à 8 h 17 (heure de Paris), le workflow `.github/workflows/se
 
 1. prend le premier article `pending` de `articles-queue.json` ;
 2. demande l'article à Claude (`claude-opus-5-5`, choisi le 07/10/2026 après comparaison avec Sonnet 5, en streaming, JSON imposé par `article-output.schema.json`). Le message système contient `BLOG_CMS_granit.md` en entier, plus les sections 5 et 6 de `GABARIT_ARTICLE_granit.md` ;
-3. contrôle la réponse (`lib/checks.mjs`) : règles du guide, section 8 du gabarit, et chaque source doit répondre. En cas de refus, il réessaie une fois en renvoyant les erreurs à Claude. S'il échoue deux fois, il s'arrête sans rien publier ;
+3. contrôle la réponse (`lib/checks.mjs`) : règles du guide, section 8 du gabarit, `seoTitle` obligatoire et conforme, et chaque source doit répondre. En cas de refus, il réessaie une fois en renvoyant les erreurs à Claude. S'il échoue deux fois, il s'arrête sans rien publier ;
 4. écrit `content/ressources/{slug}.json` et ajoute le lien de retour dans le parent et les sœurs déjà en ligne (`liensEntrants`) ;
 5. publie, de deux façons possibles :
    - **relecture** pour les 5 premiers articles et pour ceux dont `toValidate` est renseigné : la file passe l'article en `review` sur main, et l'article part dans une PR. Fusionner la PR revient à publier ;
@@ -43,6 +43,8 @@ node scripts/seo-engine/verifier-article.mjs --tous                             
 Les mêmes contrôles tournent dans `.github/workflows/seo-verifier-articles.yml` : sur chaque PR qui touche un article
 ou le moteur, et chaque lundi sur tous les articles (une ligne dans #seo s'il y a des articles à corriger).
 
+Sur `seoTitle`, seule la rédaction (`publish-article.mjs`, `nouvelArticle` dans le contexte de `controler`) refuse un article qui n'en a pas. La vérification et la relecture signalent seulement l'absence, pour que les articles écrits avant ce champ passent. Un `seoTitle` présent et hors règle est une erreur partout.
+
 ## Secrets du repo
 
 | Secret | Usage |
@@ -59,7 +61,8 @@ Il faut aussi cocher, dans les réglages du repo, *Actions → General → Allow
 
 | Champ | Contenu |
 |---|---|
-| `slug`, `id`, `category`, `categoryName`, `title`, `primaryKeyword`, `keywordCluster`, `parentSlug`, `level` | Repris de la file |
+| `slug`, `id`, `category`, `categoryName`, `title`, `primaryKeyword`, `keywordCluster`, `parentSlug`, `level` | Repris de la file. `title` est le H1 |
+| `seoTitle` | Réponse de Claude : balise `<title>`, `og:title` et `twitter:title`, écrit tel quel sur la page. 60 caractères maximum, avec les mots du mot-clé principal, différent du titre des autres articles. Absent des articles écrits avant ce champ : la page utilise `title`, suivi de « - Granit » si le tout tient en 65 caractères. Pas de version anglaise : la balise reste en français (`content/en/` n'en porte pas) |
 | `type` | `standard`, `resolution`, `plateforme`, `vs` ou `grille` (gabarit, section 2) |
 | `concurrents` | Pages comparatives seulement : slugs des fichiers `content/concurrents/{slug}.json`, dans l'ordre d'affichage (Granit en dernier) |
 | `plateforme` | Nom du fichier de faits `content/plateformes/{nom}.json` (sinon `null`) : source des blocs `data-bloc`, du logo et du bloc « Accéder à l'espace pro » en tête de page (champ `acces` du fichier de faits, gabarit §6) |
@@ -69,11 +72,17 @@ Il faut aussi cocher, dans les réglages du repo, *Actions → General → Allow
 | `metaDescription`, `contentHtml`, `tocItems`, `faqItems`, `sources` | Réponse de Claude, déjà contrôlée |
 | `internalLinks` | Liens prévus dont la cible était en ligne à la rédaction |
 | `liensEntrants` | `{slug, anchor, type}` des articles publiés après lui qui doivent apparaître dans « À lire ensuite » |
-| `refonte`, `verticales` | Refonte d'un ancien article à la même adresse ; métiers concernés (`optique`, `audio`, `pharmacie`, `dentaire`, `centres`) |
+| `refonte`, `verticales` | Refonte d'un ancien article à la même adresse ; métiers concernés (`optique`, `dentaire`, `centres`, `pharmacie`, `cliniques` ; l'audio va dans `optique`, les laboratoires dans `cliniques`) |
 | `remplace` | Anciens articles de `src/lib/articles.ts` que celui-ci remplace : dès sa publication, ils redirigent en 301 vers lui et sortent des listes et du sitemap (champ `remplace` de la file) |
 | `moteur` | Modèle, date de génération, avertissements |
 
 Un article est en ligne quand son fichier existe **et** que son statut dans la file est `published`. Le sitemap, les pages catégorie, le hub et « À lire ensuite » se calculent à la compilation à partir de ces fichiers. Le moteur n'y touche pas.
+
+Un ancien article de `src/lib/articles.ts` accepte aussi un `seoTitle` facultatif, juste après `title` (balise `<title>` et `og:title`). Sans lui, la balise reste « {title} - Granit ».
+
+## Poids des images
+
+`npm test` (`scripts/seo-engine/tests/images.test.mjs`) refuse une image trop lourde dans `public/logos` (60 Ko) et `public/ressources` (300 Ko). Les plafonds, leur justification et les deux exceptions sont dans `scripts/ressources/en-ligne.mjs`. Le contrôle bloque la PR, jamais le build : une image ne doit pas empêcher un déploiement.
 
 ## Une PR de relecture refusée
 

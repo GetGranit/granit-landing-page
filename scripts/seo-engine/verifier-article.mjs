@@ -8,7 +8,7 @@
 import { existsSync, readdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { citations, controler, typeDePage, verifierSources } from "./lib/checks.mjs";
-import { CONTENU, MOTEUR, ciblesDeLiens, concurrentsPour, faitsPour, lireFile, lireJson } from "./lib/site.mjs";
+import { CONTENU, MOTEUR, ciblesDeLiens, concurrentsPour, faitsPour, lireFile, lireJson, titresDesAutres } from "./lib/site.mjs";
 
 const args = process.argv.slice(2);
 const iResume = args.indexOf("--resume");
@@ -35,6 +35,7 @@ async function verifier(slug) {
     concurrents: concurrentsPour(article),
     cibles: ciblesDeLiens(file, article),
     pagesProduit: config.pagesProduit,
+    titresPris: titresDesAutres(article),
   });
   const s = await verifierSources(out.sources ?? [], citations(out.contentHtml ?? ""));
   // Liens de connexion à l'espace pro (en tête des pages plateforme) : une adresse morte est une erreur.

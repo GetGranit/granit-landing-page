@@ -3,18 +3,21 @@
 // Règles reprises de /illustre : une idée, labels courts, accent sur le seul élément en focus,
 // flèches orthogonales, pas d'ombre, légende toujours présente.
 
+// Jetons de DESIGN.md (copie de internal/marque) : une couleur = un rôle.
 const C = {
-  encre: "#1f1b16",
-  sourd: "#6b6358",
-  trait: "#d9d0c1",
-  fond: "#ffffff",
-  creme: "#faf6ee",
-  accent: "#d4583a",
-  accentTeinte: "#fbeae3",
+  encre: "#1F3530", // texte, traits forts
+  sourd: "rgba(31,53,48,.70)", // texte-secondaire : détails, légende, flèches
+  trait: "rgba(31,53,48,.12)", // filet
+  fond: "#FFFDFD", // papier : boîtes
+  creme: "#F4EEF0", // lavis : fond du cadre (cas 5)
+  accent: "#2F7A64", // profond : contour et repère de l'élément en focus
+  accentTeinte: "rgba(168,220,203,.60)", // succès-fond : fond de l'élément en focus (cas 2)
+  accentTexte: "#1D5646", // succès-texte : texte posé sur le fond succès
 };
-const SERIF = "'Libre Caslon Text', Georgia, serif";
-const SANS = "'Inter Tight', system-ui, sans-serif";
-const MONO = "'JetBrains Mono', ui-monospace, monospace";
+const SERIF = "'Source Serif 4', Georgia, 'Times New Roman', serif";
+const SANS = "'Geist', system-ui, -apple-system, 'Segoe UI', sans-serif";
+// Plus de mono dans la marque (cas 8) : les détails et chiffres passent en Geist.
+const MONO = SANS;
 
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
@@ -93,7 +96,7 @@ function etapes(f) {
     const cy = pad + r + i * pas, cx = pad + r;
     s += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${e.focus ? C.accent : C.fond}" stroke="${e.focus ? C.accent : C.encre}" stroke-width="1.2"/>`;
     s += texte(cx, cy + 0.5, String(i + 1), { taille: 13, poids: 600, famille: MONO, couleur: e.focus ? C.fond : C.encre });
-    s += texte(cx + r + 16, cy - (e.detail ? 9 : 0), e.label, { taille: 15, poids: 600, ancre: "start", maxCar: 60, couleur: e.focus ? C.accent : C.encre });
+    s += texte(cx + r + 16, cy - (e.detail ? 9 : 0), e.label, { taille: 15, poids: 600, ancre: "start", maxCar: 60, couleur: e.focus ? C.accentTexte : C.encre });
     if (e.detail) s += texte(cx + r + 16, cy + 12, e.detail, { taille: 12, famille: MONO, couleur: C.sourd, ancre: "start", maxCar: 80 });
   });
   return { svg: s, defs: "", W, H };
@@ -111,7 +114,7 @@ function comparaison(f) {
   f.elements.forEach((e, i) => {
     const y = pad + ht + i * hl;
     if (e.focus) s += `<rect x="${pad}" y="${y}" width="${W - 2 * pad}" height="${hl}" fill="${C.accentTeinte}"/>`;
-    s += texte(pad + 10, y + hl / 2, e.label, { taille: 13.5, poids: 600, ancre: "start", maxCar: 22, couleur: e.focus ? C.accent : C.encre });
+    s += texte(pad + 10, y + hl / 2, e.label, { taille: 13.5, poids: 600, ancre: "start", maxCar: 22, couleur: e.focus ? C.accentTexte : C.encre });
     e.valeurs.forEach((v, j) => {
       s += texte(pad + wl + j * wc + wc / 2, y + hl / 2, v, { taille: 13, maxCar: nc === 2 ? 26 : 20 });
     });
@@ -146,7 +149,7 @@ export function figureHtml(f) {
 /** Styles de la figure, à reprendre dans la feuille du site. */
 export const FIGURE_CSS = `
 .granit-figure{margin:2em 0;padding:20px 22px 16px;background:${C.creme};border:1px solid ${C.trait};border-radius:8px}
-.granit-figure__titre{font:400 20px/1.3 ${SERIF};color:${C.encre};margin:0 0 14px;text-wrap:balance}
+.granit-figure__titre{font:400 20px/1.3 ${SERIF};font-variation-settings:"opsz" 20;color:${C.encre};margin:0 0 14px;text-wrap:balance}
 .granit-figure__dessin{overflow-x:auto}
 .granit-figure__dessin svg{display:block;max-width:100%;height:auto}
 .granit-figure--etroit{display:none!important}

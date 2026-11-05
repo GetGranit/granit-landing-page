@@ -1,0 +1,19 @@
+{
+  "slug": "ia-vs-rpa-sante",
+  "category": "Architecture",
+  "title": "Agentic AI vs RPA: why traditional robotic automation failed in healthcare",
+  "desc": "Fragility to interface changes, no reasoning, maintenance costs: the limits of RPA.",
+  "time": "9 min",
+  "body": [
+    "Traditional robotic process automation (RPA) saw real enthusiasm in healthcare between 2018 and 2022, followed by a wave of disappointment. Many projects were launched with big promises, and many were abandoned or reduced to a token scope.",
+    "The cause is structural, not circumstantial. Traditional RPA works by recording deterministic scripts: the robot reproduces exactly the clicks and entries a human would make. This model is fragile as soon as the environment changes.",
+    "And healthcare portals change constantly. AMC operators modify their interfaces several times a year. The CNAM (French national health insurance fund) online services evolve. Practice management software gets regular updates. Each change breaks the RPA scripts, which have to be re-recorded by hand.",
+    "Maintenance costs quickly become prohibitive. On a fleet of 30 to 50 robots covering a group’s AMC portals, the time spent on maintenance is estimated at one full FTE. The initial ROI evaporates.",
+    "RPA also cannot reason. Faced with an unexpected case (an unusual error message, an extra field, a change in wording), it stops or makes a silent error. This rigidity drastically limits the usable cases.",
+    "The consequence is limited coverage. Robots handle standard cases and leave all the others to humans. Yet these non-standard cases often account for most of the administrative time.",
+    "Agentic AI works differently. It understands the goal (check eligibility, upload a document, request an approval), adapts to the interface it encounters, reasons about unexpected cases, and asks a human for help when it is unsure.",
+    "This adaptability changes the game on three fronts. The share of cases handled without human intervention increases. Maintenance costs collapse, because the agent absorbs interface changes without intervention. And reliability increases, because the agent knows how to recognize its own limits.",
+    "It is this difference in nature, not a simple gain in accuracy, that makes AI agents viable in healthcare production. This is not slightly improved RPA, but a fundamentally different architecture.",
+    "For facilities that have already invested in RPA, the transition to agentic AI happens gradually: replacing the robots that are most expensive to maintain first, then extending the scope. The RPA investment is not lost: it serves as a knowledge base to calibrate the agents."
+  ]
+}

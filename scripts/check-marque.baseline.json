@@ -1,0 +1,10 @@
+{
+  "_lisez_moi": "Généré par `node scripts/check-marque.mjs --update-baseline`. Ne pas éditer à la main. Une PR ne doit faire que baisser ces nombres.",
+  "totaux": {
+    "ancienne-variable": 0,
+    "couleur-hors-palette": 0,
+    "police-hors-marque": 0,
+    "ombre-brune": 0
+  },
+  "fichiers": {}
+}

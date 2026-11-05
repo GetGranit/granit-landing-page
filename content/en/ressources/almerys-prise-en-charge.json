@@ -1,0 +1,227 @@
+{
+  "slug": "almerys-prise-en-charge",
+  "id": "A14",
+  "category": "plateformes",
+  "categoryName": "Platforms and portals",
+  "type": "standard",
+  "plateforme": "almerys",
+  "title": "Almerys: submitting an optical coverage request (PEC)",
+  "primaryKeyword": "almerys pec",
+  "keywordCluster": [
+    "pec almerys",
+    "prise en charge almerys",
+    "almerys prise en charge",
+    "www almerys com demande de prise en charge",
+    "www.almerys.com demande de prise en charge",
+    "almerys demande de prise en charge",
+    "tp almerys pec",
+    "prise en charge optique almerys",
+    "mutuelle almerys pec",
+    "almerys prise en charge optique"
+  ],
+  "parentSlug": "portail-almerys",
+  "level": "Petite-fille",
+  "author": {
+    "name": "Olivier",
+    "jobTitle": "Writer, third-party payment expert",
+    "photo": "/auteurs/olivier.jpg",
+    "url": null
+  },
+  "reviewer": null,
+  "datePublished": "2026-10-21",
+  "dateModified": "2026-10-21",
+  "checkedOn": null,
+  "wordCount": 2165,
+  "readTime": 9,
+  "metaDescription": "Almerys optical PEC: login, entry by LPP code, the “Valoriser” button, the 8 statuses, denials. The process as recorded on the portal, step by step.",
+  "contentHtml": "<p><strong>What opticians call an “Almerys PEC” is the optical coverage request entered on the Almerys “Site des PEC” (PEC site): you find the beneficiary, you enter a single pair of eyewear by its LPP codes, then the “Valoriser” (Calculate) button assigns a PEC number and displays the amounts.</strong> After that, it is the request's status in the portal history, not the quote handed to the customer, that tells you whether the supplementary health insurer (mutuelle) will pay its share. This page walks through the process as our agents follow it on the portal, the documents to prepare, how to read the eight statuses and what to do when an Almerys coverage request is stuck.</p><p>The portal belongs to Almerys, a third-party payment (tiers payant: the patient pays nothing upfront, insurers pay the provider directly) operator that presents its services to opticians on its <a href=\"https://www.almerys.com/fr/espace-professionnels-de-sante\">Health professionals area</a> page. For the overview (network agreement, payment, contacts), see our <a href=\"/ressources/portail-almerys\">almerys tp</a> page. Here we focus on a single task: the optical coverage request.</p><div class=\"key-takeaways\"><strong>Key points</strong><ul><li>An Almerys coverage request covers only one pair of eyewear: a second pair needs a second request.</li><li>Each item is entered by its LPP code. For lenses, it is the supplier's code.</li><li>The “Valoriser” button creates the request, assigns a PEC number and displays the amounts. Write that number down right away.</li><li>The portal history has 8 states, from “Créée” (Created) to “Soldée” (Settled). Only “Validée” (Approved) allows you to dispense and then bill.</li><li>Almerys does not publish a response time: track the status and follow up with the PEC number if nothing moves.</li></ul></div><h2 id=\"pec-almerys-definition\">What is an Almerys PEC and who decides on approval?</h2><p>An Almerys PEC (prise en charge, coverage approval) is the request through which the optician asks the customer's supplementary insurer about its share before dispensing the eyewear. Almerys does not decide in place of the mutuelle: it manages third-party payment on behalf of supplementary insurers, meaning insurance companies, mutuelles and social protection groups, as its <a href=\"https://www.be-almerys.com/professionnels-de-sante\">Health professionals</a> page states. Almerys reports more than 305,000 health professionals under agreement there.</p><p>The supplementary insurance (AMC) therefore remains the body that approves or denies coverage. Almerys is the operator: it provides the portal where you enter the request and where the answer appears. This distinction matters when a request is denied, because the reason comes from the rules of the customer's contract, not from a choice made by the portal.</p><p>Almerys is not a care network either. A mutuelle can pair it with a separate network: according to <a href=\"https://acuite.fr/actualite/ocam/251022/le-5e-acteur-de-lassurance-officialise-son-operateur-de-tiers-payant-et\">Acuité</a>, Aéma Groupe chose Almerys for third-party payment at its mutuelles (Aésio mutuelle, Apivia Macif Mutuelle, MNFCT, Math - Prevaris) and Carte Blanche Partenaires as its care network. In practice, being under agreement with Almerys and being a partner of a care network are two separate matters.</p><p>On the portal, there is no list of insurers to pick from: as our agents have recorded, the supplementary insurer appears once the beneficiary is found. The insurer's name is also on the customer's third-party payment card. To know in advance which portal a mutuelle uses, try our <a href=\"/ressources/mutuelle-quel-portail\">Which portal does my mutuelle use?</a> tool.</p><h2 id=\"acces-site-pec-almerys\">What do you need to access the Almerys PEC site?</h2><p>You need to be under agreement with Almerys and to have validated your account following the instructions sent by Almerys, according to its <a href=\"https://www.almerys.com/accueil/Accueil?isPS=true\">professional portal login</a> page. The network agreement takes five steps, in this order:</p><ol class=\"steps\"><li><strong>Send your supporting documents.</strong> A voided claim form or your CPAM certificate, to celluleconventionnementalmerys@almerys.com.</li><li><strong>Wait for the email from Almerys.</strong> It gives the instructions to validate your account.</li><li><strong>Validate your account.</strong> Following those instructions exactly.</li><li><strong>Log in to the professional portal.</strong> With your username and password.</li><li><strong>Prepare your quotes and coverage requests.</strong> On the PEC site.</li></ol><p>Coverage requests are made on the Almerys “Site des PEC”, with a username and password. As our agents have recorded on the portal, each store then enters a 6-digit one-time code, sent by email at every login. So make sure you can reach the store's mailbox when you log in, especially if several people handle PECs during the day.</p><div class=\"callout callout--warn\"><p><strong>The trap:</strong> the online professional portal is reopening gradually. Until you have received the email titled “Réouverture site en ligne Almerys” (Almerys online site reopening), you cannot log in. Check the spam folder of the store's mailbox before concluding that you are blocked.</p></div><h2 id=\"demande-prise-en-charge-almerys\">How do I submit a coverage request on Almerys?</h2><p>An Almerys coverage request takes six steps, from login to the PEC number. Here is the process as our agents follow it on the portal, file by file.</p><ol class=\"steps\"><li><strong>Log in to the PEC site.</strong> Username, password, then the 6-digit code received by email.</li><li><strong>Find the beneficiary.</strong> Using the customer's third-party payment card. The supplementary insurer appears once the beneficiary is found.</li><li><strong>Choose the request type.</strong> An optical request can be a quote or a coverage request.</li><li><strong>Enter the eyewear by its LPP codes.</strong> Frame and lenses, with the supplier's code for the lenses.</li><li><strong>Click “Valoriser”.</strong> The request is created, a PEC number is assigned and the amounts are displayed.</li><li><strong>Track the history.</strong> The status changes until the decision, then until payment.</li></ol><div data-figure=\"parcours-pec-almerys\"></div><h3>Quote or coverage request: which one to choose?</h3><p>The portal offers both request types, and both go through the same entry and then the “Valoriser” button. Choose based on what you need at this stage of the file: a price estimate to show the customer, or a request that leads to a status and an approval before billing. In both cases, keep the number assigned: it is your reference with Almerys.</p><h3>LPP codes: the entry that sets the amounts</h3><p>The LPP (list of reimbursable products and services) is the French national health insurance (Assurance Maladie) nomenclature that codes each item of optical equipment. On Almerys, each item is entered by its LPP code; for lenses, it is the supplier's code. A mistyped code gives wrong amounts after “Valoriser”, or a denial. Take the code from the supplier's document rather than from memory.</p><h3>One pair of eyewear per request</h3><p>A request covers only one pair of eyewear. If the customer takes two pairs, you need two requests, each with its own PEC number. This is a common mistake at the counter: everything is entered in one go, then at billing time no one can tell which approval matches which pair.</p><h2 id=\"pieces-pec-almerys\">Which documents should you prepare for an Almerys PEC?</h2><p>Have three documents ready before you open the portal: the customer's third-party payment card, the prescription and the quote. The card is used to find the beneficiary and gives the name of the supplementary insurer. The prescription and the quote carry the items you will enter, including the eyewear's LPP codes.</p><p>The question of documents has already been debated in the profession. In early 2020, the Rof (Rassemblement des opticiens de France, an association of French opticians) sent a formal notice challenging Almerys's requirement to receive the signed quote and the prescription with coverage requests, according to <a href=\"https://www.acuite.fr/actualites/profession/regime-obligatoire/le-rof-adresse-deux-mises-en-demeure-aux-176198\">Acuité</a>. Our sources do not say how this has evolved since. The safest method is to follow what the portal asks for at the time of entry, and to keep these documents in the customer's file.</p><p>So you don't miss anything, run through the <a href=\"/ressources/checklist-prise-en-charge\">checklist before sending a coverage request</a>: the customer's coverage rights, prescription, quote, codes, one pair of eyewear per request. Two minutes of checking saves you a denied request to redo.</p><div class=\"callout callout--tip\"><p><strong>The right habit:</strong> copy the PEC number assigned by “Valoriser” onto the quote or into your practice management software before leaving the screen. It is the number you will give for any follow-up and the one that links the request to the invoice.</p></div><h2 id=\"statuts-pec-almerys\">What do the statuses of an Almerys coverage request mean?</h2><p>The portal history shows 8 possible states for a request, as recorded by our agents. Only “Validée” means that the supplementary insurer accepts coverage; the others tell you where the file stands, or why it has to be redone.</p><div class=\"tbl\"><table><tr><th>Status</th><th>What it means</th><th>What to do</th></tr><tr><td>“Créée”</td><td>The request is recorded, with no decision yet</td><td>Wait for the answer, then check the history</td></tr><tr><td>“En instance” (Pending)</td><td>The request is still under review</td><td>Wait, then follow up if nothing moves</td></tr><tr><td>“Validée”</td><td>The supplementary insurer accepts coverage</td><td>Dispense the eyewear, then bill</td></tr><tr><td>“Refusée” (Denied)</td><td>No coverage as it stands</td><td>Read the reason, fix it, submit a new request</td></tr><tr><td>“Périmée” (Expired)</td><td>The approval has passed its validity period</td><td>Submit a new request</td></tr><tr><td>“Annulée” (Canceled)</td><td>The request is no longer active</td><td>Submit a new request if the eyewear is still being dispensed</td></tr><tr><td>“Facturée” (Invoiced)</td><td>The invoice has been sent</td><td>Track the payment</td></tr><tr><td>“Soldée”</td><td>The file has been paid</td><td>Nothing to do, check the amount received</td></tr></table></div><p>The normal path of a file goes from “Créée” to “Soldée”, through “En instance”, “Validée” and “Facturée”. Reading the status at each step tells you who needs to act: the supplementary insurer while the request is created or pending, you as soon as it is approved, then the payer once the invoice is sent.</p><div data-figure=\"cycle-statuts-almerys\"></div><p>Three statuses require a new request: “Refusée”, “Périmée” and “Annulée”. An expired approval cannot be extended: we give no validity period here, because it is not published in the sources we consulted. If the eyewear was not dispensed in time, submit the request again before billing.</p><h2 id=\"delai-reponse-almerys\">How long does Almerys take to respond?</h2><p>Almerys does not publish a response time for an optical coverage request on its health professionals page. The only reliable marker is the request's status in the portal history. As long as it stays on “Créée” or “En instance”, no decision has been made.</p><p>Set yourself a tracking rule rather than a theoretical deadline: check the history at a set time, then follow up when a request stops moving. To time these follow-ups step by step (PEC, invoice, payment), use our <a href=\"/ressources/quand-relancer-mutuelle\">When should you follow up with a mutuelle?</a> page. Every follow-up is done with the PEC number at hand.</p><p>This tracking quickly weighs on the counter. Each visit to the portal requires a login and a code received by email, and each file is checked one by one. When these requests number in the dozens every day, entry and tracking can be done without you: that is the role of the <a href=\"/agents\">Granit agents</a>, which enter coverage requests directly on the platforms' portals, then send the status back to the team.</p><h2 id=\"pec-almerys-refusee\">What should you do if the Almerys PEC is denied or stuck?</h2><p>Always start from the status and the reason shown by the portal: they tell you where to act. Here are the four situations you meet at the counter, with what to do for each.</p><h3>The supplementary insurer does not appear</h3><p>On Almerys, the supplementary insurer appears once the beneficiary is found. If nothing comes up, first check the third-party payment card: right person, card still valid, supplementary insurer listed. If the card points to another operator, the request is not made on Almerys. For a rejection of the same kind after billing, see our <a href=\"/ressources/rejet-beneficiaire-inconnu\">Mutuelle rejection “bénéficiaire inconnu” (unknown beneficiary)</a> page.</p><h3>Coverage is denied</h3><p>A “Refusée” request gives no coverage as it stands. Read the reason, fix it, then submit a new request. The points to review first are those of the entry: the beneficiary, the LPP codes (the supplier code for lenses) and that the request covers only one pair of eyewear.</p><h3>It stays pending</h3><p>“En instance” means the request is still under review. Wait, then follow up with the PEC number if nothing moves. Since Almerys publishes no response time, your own follow-up rule decides when to call.</p><h3>Approval is granted, but the payment does not arrive</h3><p>Look at where the file stands after “Validée”: “Facturée” means the invoice has gone out and you need to track the payment, “Soldée” that the file has been paid. If the amount received does not match, our <a href=\"/ressources/virement-mutuelle-inferieur\">Mutuelle bank transfer lower than the invoice</a> page explains how to read the gap and follow up.</p><p>One last case: the customer disputes what their mutuelle covers. Almerys does not handle policyholder complaints; refer the customer to their supplementary insurer, whose name is on their third-party payment card. Keep the exact reason shown by the portal: it tells you what to fix.</p><h2 id=\"contacter-almerys-pec\">Who should you contact at Almerys about an optical coverage request?</h2><p>For a question about a PEC or an invoice, write to almerys@almerys.com; for the network agreement and your account, to celluleconventionnementalmerys@almerys.com. Both addresses are listed on the professional portal's <a href=\"https://www.almerys.com/accueil/contacts\">Contact us</a> page.</p><p>The health professionals service can also be reached at 0 825 826 214 (premium-rate number), and by mail at almerys service PS, 46 rue du Ressort, 63967 Clermont-Ferrand Cedex 9, according to the Almerys Health professionals area page. Before any call or email, gather the PEC number, the status shown and the exact reason: that is what gets you an answer about the file, rather than a general answer.</p>",
+  "tocItems": [
+    {
+      "id": "pec-almerys-definition",
+      "label": "What is an Almerys PEC?"
+    },
+    {
+      "id": "acces-site-pec-almerys",
+      "label": "Accessing the Almerys PEC site"
+    },
+    {
+      "id": "demande-prise-en-charge-almerys",
+      "label": "Submitting a coverage request"
+    },
+    {
+      "id": "pieces-pec-almerys",
+      "label": "Documents to prepare"
+    },
+    {
+      "id": "statuts-pec-almerys",
+      "label": "The 8 statuses of an Almerys PEC"
+    },
+    {
+      "id": "delai-reponse-almerys",
+      "label": "Response time and follow-up"
+    },
+    {
+      "id": "pec-almerys-refusee",
+      "label": "Denied or stuck PEC"
+    },
+    {
+      "id": "contacter-almerys-pec",
+      "label": "Contacting Almerys"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "How do I submit a coverage request on Almerys?",
+      "answer": "Log in to the Almerys “Site des PEC” (PEC site) with your username, your password and the 6-digit code sent by email. Find the beneficiary, choose a quote or a coverage request, then enter the eyewear by its LPP codes. The “Valoriser” (Calculate) button creates the request, assigns a PEC number and displays the amounts."
+    },
+    {
+      "question": "Which documents go with an Almerys PEC?",
+      "answer": "Have the customer's third-party payment card, the prescription and the quote ready before you open the portal. The card lets you find the beneficiary and shows their supplementary health insurer. In early 2020, the Rof (an association of French opticians) challenged Almerys's requirement to receive the signed quote and the prescription: follow what the portal asks for during entry and keep these documents on file."
+    },
+    {
+      "question": "How long does Almerys take to respond?",
+      "answer": "Almerys does not publish a response time for an optical coverage request. The reliable marker is the status in the portal history: as long as it shows “Créée” (Created) or “En instance” (Pending), no decision has been made. If the status stops moving, follow up with Almerys using the PEC number."
+    },
+    {
+      "question": "What should I do if the Almerys PEC is denied?",
+      "answer": "Read the reason shown by the portal, because it tells you what to fix. Check the beneficiary, the LPP codes (the supplier code for lenses) and that the request covers only one pair of eyewear. Fix the issue, then submit a new request: a denied request gives no coverage as it stands."
+    }
+  ],
+  "sources": [
+    {
+      "label": "almerys.com · Health professionals area",
+      "url": "https://www.almerys.com/fr/espace-professionnels-de-sante"
+    },
+    {
+      "label": "be-almerys.com · Health professionals",
+      "url": "https://www.be-almerys.com/professionnels-de-sante"
+    },
+    {
+      "label": "Acuité · Aéma Groupe makes its third-party payment operator official",
+      "url": "https://acuite.fr/actualite/ocam/251022/le-5e-acteur-de-lassurance-officialise-son-operateur-de-tiers-payant-et"
+    },
+    {
+      "label": "almerys.com · Professional portal (login)",
+      "url": "https://www.almerys.com/accueil/Accueil?isPS=true"
+    },
+    {
+      "label": "Acuité · The Rof sends two formal notices to Viamedis and Almerys (2020)",
+      "url": "https://www.acuite.fr/actualites/profession/regime-obligatoire/le-rof-adresse-deux-mises-en-demeure-aux-176198"
+    },
+    {
+      "label": "almerys.com · Contact us (professional portal)",
+      "url": "https://www.almerys.com/accueil/contacts"
+    }
+  ],
+  "figures": [
+    {
+      "id": "parcours-pec-almerys",
+      "type": "etapes",
+      "titre": "An Almerys PEC in six steps",
+      "legende": "The PEC number only exists after “Valoriser” (Calculate): write it down before leaving the screen.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "Login and code",
+          "detail": "Username, password, 6-digit email code",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Find the beneficiary",
+          "detail": "The supplementary insurer then appears",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Quote or PEC",
+          "detail": "Choose the request type",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "LPP codes",
+          "detail": "One pair of eyewear, lenses by supplier code",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "“Valoriser” (Calculate)",
+          "detail": "PEC number assigned, amounts displayed",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Track the history",
+          "detail": "Read the status until “Soldée” (Settled)",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    },
+    {
+      "id": "cycle-statuts-almerys",
+      "type": "flux",
+      "titre": "The normal path of an Almerys PEC",
+      "legende": "Only “Validée” (Approved) lets you dispense and then bill; “Soldée” (Settled) closes the file.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "“Créée” (Created)",
+          "detail": "Request recorded, no decision yet",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "“En instance” (Pending)",
+          "detail": "Request still under review",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "“Validée” (Approved)",
+          "detail": "Approval: dispense, then bill",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "“Facturée” (Invoiced)",
+          "detail": "Invoice sent, track the payment",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "“Soldée” (Settled)",
+          "detail": "File paid, check the amount received",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [
+    {
+      "id": "A2",
+      "slug": "portail-almerys",
+      "anchor": "almerys tp",
+      "type": "parent"
+    },
+    {
+      "id": "B8",
+      "slug": "checklist-prise-en-charge",
+      "anchor": "checklist before sending a coverage request",
+      "type": "transverse"
+    }
+  ],
+  "liensEntrants": [],
+  "remplace": [],
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-21T11:48:43.592Z",
+    "avertissements": [
+      "aucune citation (facultative)",
+      "page rendue en JavaScript, citations non vérifiables : https://www.almerys.com/accueil/Accueil?isPS=true",
+      "page rendue en JavaScript, citations non vérifiables : https://www.almerys.com/accueil/contacts"
+    ]
+  }
+}

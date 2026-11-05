@@ -49,7 +49,7 @@ www.getgranit.ai/
 | `glossaire` | Glossaire | Sigles et notions (AMO, AMC, NOEMIE, DRE…) | Comptoir |
 | `conformite` | Conformité | Contrôle Assurance maladie, devis normalisé, LPP, RGPD, fraude | Gérant |
 
-Chaque article appartient à une seule catégorie. Pas d'article audioprothèse pour l'instant (focus optique).
+Chaque article appartient à une seule catégorie. Il concerne un ou plusieurs métiers (champ `verticales`, obligatoire) : le moteur envoie avec lui la **fiche métier** correspondante (`scripts/seo-engine/metiers/`), ou le tronc commun et les fiches résumées s'il en concerne plusieurs.
 
 ---
 
@@ -61,8 +61,9 @@ Les champs en **gras** viennent de `articles-queue.json`. Les autres sont produi
 |---|---|---|
 | **`slug`** | file | Minuscules, tirets, sans accent. Jamais modifié après publication. |
 | **`category`** | file | Un des slugs ci-dessus. |
-| **`title`** | file | Mot-clé principal dans les premiers mots. **60 caractères maximum** : c'est aussi la balise `<title>`, que Google coupe au-delà (refusé par le moteur sur une page plateforme, signalé ailleurs). Page plateforme : orienté connexion, ex. « iSanté TP : connexion espace pro opticien et prise en charge ». Factuel, précis, pas de racolage. |
-| `metaDescription` | Claude | 140 à 155 caractères (Google coupe au-delà). Contient le mot-clé principal. Un bénéfice concret. Finit sur une raison de cliquer. |
+| **`title`** | file | Le H1 de la page. Mot-clé principal dans les premiers mots. Il peut dépasser 60 caractères : c'est `seoTitle` qui va dans la balise `<title>`. Factuel, précis, pas de racolage. |
+| `seoTitle` | Claude | Le titre affiché par Google et dans les partages. **60 caractères maximum, espaces comprises.** Contient les mots du mot-clé principal, tôt dans le titre. Se lit naturellement, reprend `title` s'il tient en 60 caractères et se lit bien dans Google. Différent du titre de tout autre article. Sans « Granit » en suffixe. Page plateforme : orienté connexion, ex. « iSanté TP : connexion à l'espace pro opticien ». |
+| `metaDescription` | Claude | 140 à 160 caractères. Une phrase qui se lit normalement, avec les mots du mot-clé principal, pas forcément collés. Jamais une suite de mots-clés en ouverture (voir « Titre et meta description »). Un bénéfice concret. Finit sur une raison de cliquer. |
 | **`primaryKeyword`** | file | La requête exacte visée (ex. `almerys pec`). |
 | **`keywordCluster`** | file | 5 à 10 termes associés, à répartir naturellement. |
 | **`faqQuestions`** | file | Questions de départ de la FAQ (réelles : Semrush, forums, calls). Claude peut reformuler légèrement, jamais inventer un sujet. |
@@ -89,13 +90,13 @@ La couverture n'apparaît **pas en haut de l'article** (la réponse doit être v
 ## Balises `<head>`
 
 ```html
-<title>{title} | Granit</title>
+<title>{seoTitle}</title>
 <meta name="description" content="{metaDescription}" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://www.getgranit.ai/ressources/{slug}" />
 <meta property="og:type" content="article" />
 <meta property="og:locale" content="fr_FR" />
-<meta property="og:title" content="{title}" />
+<meta property="og:title" content="{seoTitle}" />
 <meta property="og:description" content="{metaDescription}" />
 <meta property="og:url" content="https://www.getgranit.ai/ressources/{slug}" />
 <meta property="og:image" content="https://www.getgranit.ai/{coverImage}" />
@@ -105,7 +106,7 @@ La couverture n'apparaît **pas en haut de l'article** (la réponse doit être v
 <meta property="article:author" content="{author}" />
 <meta property="article:section" content="{nom de la catégorie}" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="{title}" />
+<meta name="twitter:title" content="{seoTitle}" />
 <meta name="twitter:description" content="{metaDescription}" />
 <meta name="twitter:image" content="https://www.getgranit.ai/{coverImage}" />
 ```
@@ -126,7 +127,7 @@ La couverture n'apparaît **pas en haut de l'article** (la réponse doit être v
 
 **`GABARIT_ARTICLE_granit.md` fait foi** pour l'ordre des blocs, les composants HTML autorisés dans `contentHtml` (section 5), les pages plateformes et leurs marqueurs `data-bloc` (section 6). Claude reçoit ces deux sections avec ce guide.
 
-Claude renvoie uniquement le JSON imposé par `article-output.schema.json` : `metaDescription`, `contentHtml`, `tocItems`, `faqItems`, `sources`. Pas de H1, pas de FAQ, pas d'encart final, pas d'image dans `contentHtml` : la page les ajoute.
+Claude renvoie uniquement le JSON imposé par `article-output.schema.json` : `seoTitle`, `metaDescription`, `contentHtml`, `tocItems`, `faqItems`, `sources`, `figures`. Pas de H1, pas de FAQ, pas d'encart final, pas d'image dans `contentHtml` : la page les ajoute.
 
 ---
 
@@ -140,6 +141,7 @@ Le script refuse l'article (et réessaie une fois) si l'une de ces règles, ou l
 - l'encadré « L'essentiel » est absent ;
 - `faqItems` contient moins de 4 éléments ;
 - le mot-clé principal n'apparaît pas dans les 100 premiers mots ;
+- `seoTitle` dépasse 60 caractères, ne contient pas les mots du mot-clé principal, ou reprend le titre d'un autre article ;
 - un lien interne pointe vers une page non publiée ou inconnue ;
 - le texte contient un mot de la **liste rouge** (voir « Faits ») ;
 - le texte contient « — » (tiret long) ou un terme de la liste « jargon interdit ».
@@ -150,6 +152,8 @@ Le script refuse l'article (et réessaie une fois) si l'une de ces règles, ou l
 # GUIDE DE RÉDACTION
 
 Pour la personne ou le modèle qui écrit. Ce sont des règles, pas des suggestions.
+
+Les exemples de ce guide viennent de l'optique, le premier métier du site. Pour un autre métier, la fiche métier envoyée avec l'article (lecteur, vocabulaire, sources, ce que Granit fait, interdits) prime sur eux : transposer la règle, jamais l'exemple.
 
 ---
 
@@ -164,7 +168,7 @@ Les deux demandent la même chose : une structure claire, des réponses directes
 
 ## Le lecteur
 
-**Par défaut : la personne qui fait le tiers payant dans un magasin d'optique**, au comptoir ou en back-office (opticienne, conseiller de vente, gestionnaire tiers payant). Pour les catégories `gerer-son-tiers-payant` et `conformite` : **le gérant** d'un ou plusieurs magasins.
+**Le lecteur est celui de la fiche métier envoyée avec l'article** (section « Lecteur ») : opticien ou audioprothésiste, assistante dentaire, accueil d'un centre de santé, officine, bureau des entrées d'une clinique ou accueil d'un laboratoire. Le champ `reader` de la file précise son rôle : au comptoir ou en back-office, ou **le gérant** (catégories `gerer-son-tiers-payant` et `conformite`). Un article multi-métiers prend ses exemples dans chacun des métiers concernés.
 
 Cette personne :
 
@@ -231,7 +235,7 @@ L'ouverture :
 
 ### H2 : des questions que les gens tapent vraiment
 
-Chaque H2 est une question réelle, telle qu'un opticien la taperait dans Google ou la poserait à ChatGPT.
+Chaque H2 est une question réelle, telle que le lecteur de la fiche métier la taperait dans Google ou la poserait à ChatGPT.
 
 **Bons H2 :**
 - « Comment accéder à l'espace pro Almerys ? »
@@ -326,7 +330,7 @@ Seulement celles listées dans `granitData` pour l'article, et toujours **datée
 - les champs obligatoires d'une demande de prise en charge par portail ;
 - la lecture des statuts (accord, accord sous réserve de pièces, en instance, refus) ;
 - les libellés de virement par payeur ;
-- **la conformité HDS** : formulation exacte « Granit est certifié HDS (hébergeur de données de santé) ». À citer seulement là où c'est utile (données de santé, RGPD, conformité), jamais comme argument dans une page plateforme ;
+- **la conformité HDS** : formulation exacte « Granit s'appuie sur un hébergement certifié HDS (hébergeur de données de santé) ». À citer seulement là où c'est utile (données de santé, RGPD, conformité), jamais comme argument dans une page plateforme ;
 - les constats d'expérience, formulés sans chiffre non mesuré (« dans les dossiers que traitent nos agents, la cause la plus fréquente est… »). Autorisé **sans chiffre**, sans nom de client ni de magasin.
 
 ### Liste rouge : jamais dans un article
@@ -355,7 +359,7 @@ Autorisées, parce qu'elles prouvent qu'on connaît les écrans mieux que person
 
 ### Sources de référence
 
-À privilégier, en lien direct :
+D'abord les pages listées dans la section « Sources officielles autorisées » de la fiche métier (statut vérifié, avec ce qu'il ne faut pas écrire tel quel). Sinon, en lien direct :
 
 - **ameli.fr** (espace professionnels de santé), **service-public.fr**, **legifrance.gouv.fr**
 - **sesam-vitale.fr**, nomenclature LPP sur **codage.ext.cnamts.fr**
@@ -378,11 +382,25 @@ Jamais un blog de prestataire comme source d'un fait.
 
 ## Mots-clés
 
-- **Mot-clé principal** dans : le H1, les 100 premiers mots, un H2, la meta description, le alt de l'image, le slug.
+- **Mot-clé principal** dans : le H1, `seoTitle`, les 100 premiers mots, un H2, la meta description, le alt de l'image, le slug.
 - Jamais de bourrage. Si la phrase sonne faux, la reformuler.
+- Dans `seoTitle` et la meta description, les mots du mot-clé comptent, pas leur ordre : les mots-outils (de, à, la…) s'ajoutent librement et le mot-clé n'a pas à rester collé.
 - **Les termes du `keywordCluster`** se répartissent naturellement dans les H2, H3 et paragraphes.
 - **Profondeur du sujet** : employer les notions qu'un expert citerait naturellement (AMO, AMC, ouvrant droit, bénéficiaire, DRE, NOEMIE, devis normalisé, classe A/B, LPP, prise en charge, réseau de soins…), chacune définie à sa première apparition.
 - **Pas de cannibalisation** : un mot-clé principal = un seul article. La file y veille ; ne jamais viser le mot-clé principal d'un autre article.
+
+### Titre et meta description
+
+La file donne un mot-clé tel qu'on le tape, pas une phrase. Le lecteur voit le `seoTitle` et la meta description dans Google : ils s'écrivent en français normal.
+
+Pour le mot-clé `virement mutuelle inférieur facture` :
+
+- **`seoTitle` oui** : « Virement mutuelle inférieur à la facture : que faire ? »
+- **`seoTitle` non** : « Virement mutuelle inférieur facture guide complet pour opticiens et audioprothésistes » (mots-clés collés, 85 caractères).
+- **Meta oui** : « Le virement de la mutuelle est inférieur à la facture ? Retrouvez d'où vient l'écart et ce qu'il faut réclamer, dossier par dossier, avant de relancer. »
+- **Meta non** : « Virement mutuelle inférieur facture : causes, solutions, relance. »
+
+*(Les exemples illustrent la forme. Leurs faits sont à vérifier avant tout usage.)*
 
 ---
 
@@ -452,7 +470,7 @@ Chaque article mentionne Granit **une fois** dans le corps, puis dans l'encart f
 - **Une seule mention dans le corps.**
 - **Parler du résultat pour le lecteur**, pas des fonctionnalités : « ces demandes peuvent être saisies sans vous sur le portail », pas « Granit dispose d'un module de saisie ».
 - **Sans emphase** : pas de « solution puissante », « plateforme révolutionnaire ».
-- **Seulement des capacités réelles et validées** (voir « Faits »).
+- **Seulement des capacités réelles et validées** (voir « Faits »), et seulement celles que la fiche métier décrit dans « Ce que Granit fait pour ce métier ». Hors optique et audio, c'est une offre (« Granit peut… »), jamais un résultat ni un client.
 
 **Bonne mention :**
 > Quand ces demandes se comptent par dizaines chaque jour, la saisie sur chaque portail devient le goulot du magasin. C'est ce que fait [Granit](https://www.getgranit.ai) : des agents saisissent les prises en charge directement sur les portails des plateformes, puis renvoient le statut à l'équipe.
@@ -460,9 +478,11 @@ Chaque article mentionne Granit **une fois** dans le corps, puis dans l'encart f
 **Mauvaise mention :**
 > Granit est la meilleure solution pour automatiser votre tiers payant. Essayez-la dès aujourd'hui !
 
-### L'encart final (texte fixe, ne pas modifier)
+### L'encart final (posé par la page, jamais dans le corps)
 
-Texte validé le 07/10/2026. La promesse « 48 h » vit uniquement ici, jamais dans le corps des articles.
+L'encart suit la fiche métier : en optique et en audio, celui de la catégorie (texte validé le 07/10/2026 ci-dessous) ; pour les autres métiers et le tronc, celui de la section « Encart final » de la fiche, que le moteur recopie dans l'article. La promesse « 48 h » ne vit que dans l'encart optique, jamais dans le corps des articles.
+
+Encart optique :
 
 ```html
 <div class="post-cta">

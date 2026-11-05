@@ -90,12 +90,17 @@ const categoryPages = ordre
 // Pages métier : à partir de 3 articles propres (même règle que le noindex de la page),
 // sauf le métier principal (optique), toujours présent.
 const verticalesData = JSON.parse(readFileSync("src/lib/ressources/verticales.json", "utf8"));
+// Anciens slugs encore portés par des articles publiés (audio → optique, laboratoires → cliniques).
+const fusion = (v) => (v in verticalesData.fusions ? verticalesData.fusions[v] : v);
 const metierPages = verticalesData.ordre
   .map((v) => {
     const dates = [
       ...ressources
         .filter((a) =>
-          (verticalesData.surcharges[a.slug] ?? a.verticales ?? ["optique"]).includes(v),
+          (
+            verticalesData.surcharges[a.slug] ??
+            (a.verticales?.length ? a.verticales.map(fusion) : ["optique"])
+          ).includes(v),
         )
         .map((a) => a.dateModified),
       ...Object.entries(verticalesData.anciens)
@@ -115,9 +120,20 @@ const staticPages = [
     priority: "1.0",
     freq: "weekly",
   },
-  { path: "/agents", files: ["src/routes/agents.tsx"], priority: "0.9", freq: "weekly" },
+  {
+    path: "/agents",
+    files: ["src/routes/agents.index.tsx", "src/components/agents"],
+    priority: "0.9",
+    freq: "weekly",
+  },
+  {
+    path: "/agents/optique",
+    files: ["src/routes/agents.$metier.tsx", "src/components/agents"],
+    priority: "0.8",
+    freq: "weekly",
+  },
   { path: "/tarifs", files: ["src/routes/tarifs.tsx"], priority: "0.8", freq: "monthly" },
-  { path: "/securite", files: ["src/routes/securite.tsx"], priority: "0.7", freq: "monthly" },
+  { path: "/levee-de-fonds", files: ["src/routes/levee-de-fonds.tsx"], priority: "0.6", freq: "monthly" },
   {
     path: "/ressources",
     files: [
@@ -129,14 +145,12 @@ const staticPages = [
     priority: "0.8",
     freq: "weekly",
   },
-  { path: "/a-propos", files: ["src/routes/a-propos.tsx"], priority: "0.6", freq: "monthly" },
   {
     path: "/affiliation",
     files: ["src/routes/affiliation.tsx", "src/lib/affiliationCopy.ts"],
     priority: "0.5",
     freq: "monthly",
   },
-  { path: "/demo", files: ["src/routes/demo.tsx"], priority: "0.6", freq: "monthly" },
   { path: "/cgv", files: ["src/routes/cgv.tsx"], priority: "0.3", freq: "yearly" },
   { path: "/privacy", files: ["src/routes/privacy.tsx"], priority: "0.3", freq: "yearly" },
 ];
@@ -176,6 +190,21 @@ const urls = [
     })),
 ];
 
+// Vercel clones with --depth=10: a page untouched in the last 10 commits has no git date there
+// (11 URLs without <lastmod> online on 30/10/2026). Fallback: the date already written in the
+// committed sitemap, generated with the full history. VERCEL_DEEP_CLONE=true on the Vercel
+// project gives the full history and makes this fallback unnecessary.
+const previousLastmod = new Map(
+  existsSync("public/sitemap.xml")
+    ? [
+        ...readFileSync("public/sitemap.xml", "utf8").matchAll(
+          /<loc>([^<]+)<\/loc>\s*<lastmod>([^<]+)<\/lastmod>/g,
+        ),
+      ].map((m) => [m[1], m[2]])
+    : [],
+);
+for (const u of urls) u.lastmod ??= previousLastmod.get(u.loc);
+
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls
@@ -192,6 +221,9 @@ ${urls
 
 writeFileSync("public/sitemap.xml", xml);
 const dated = urls.filter((u) => u.lastmod).length;
+const undated = urls.filter((u) => !u.lastmod).map((u) => u.loc);
+if (undated.length)
+  console.warn(`sitemap.xml: ${undated.length} URL sans lastmod : ${undated.join(", ")}`);
 console.log(
   `sitemap.xml written: ${urls.length} URLs (${slugs.length} articles + ${ressources.length} ressources + ${categoryPages.length} catégories + ${metierPages.length} métiers + ${staticPages.length} pages, ${dated} with lastmod)`,
 );

@@ -24,7 +24,6 @@ export function Nav() {
 
   const links = [
     { to: "/agents", label: t.agents },
-    { to: "/securite", label: t.security },
     { to: "/tarifs", label: t.pricing },
     { to: "/ressources", label: t.resources },
   ] as const;
@@ -32,15 +31,15 @@ export function Nav() {
   return (
     <header className="sticky top-0 z-50 px-3 pt-3 sm:px-6 sm:pt-4">
       <div
-        className="mx-auto flex h-14 max-w-[1200px] items-center justify-between rounded-full px-3 pl-5 pr-2 transition-[background-color,border-color,box-shadow] duration-200 sm:px-4 sm:pl-6 sm:pr-2"
+        className="relative mx-auto flex h-14 max-w-[1200px] items-center justify-between rounded-full px-3 pl-5 pr-2 transition-[background-color,border-color,box-shadow] duration-200 sm:px-4 sm:pl-6 sm:pr-2 lg:px-4"
         style={
           scrolled
             ? {
-                background: "rgba(255,253,249,0.96)",
+                background: "rgba(250,240,242,0.96)",
                 backdropFilter: "blur(16px) saturate(1.2)",
                 WebkitBackdropFilter: "blur(16px) saturate(1.2)",
                 border: "1px solid var(--border)",
-                boxShadow: "0 10px 30px -12px rgba(28,17,8,0.12)",
+                boxShadow: "0 10px 30px -12px rgba(31,53,48,0.12)",
               }
             : { background: "transparent", border: "1px solid transparent" }
         }
@@ -54,13 +53,10 @@ export function Nav() {
             }
           }}
         >
-          <img src={logoMonogram} alt="Granit" className="h-7 w-auto sm:h-9" />
-          <span className="font-serif text-[20px] tracking-tight" style={{ color: "var(--text)", fontWeight: 700 }}>
-            Granit
-          </span>
+          <img src={logoMonogram} alt="Granit" className="h-7 w-auto sm:h-8" />
         </Link>
 
-        <nav className="hidden items-center gap-7 lg:flex">
+        <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-7 lg:flex">
           {links.map((l) => (
             <Link
               key={l.to}
@@ -82,7 +78,7 @@ export function Nav() {
               posthog.capture("language_switched", { language_to: languageTo });
               toggleLang();
             }}
-            className="hidden h-8 items-center rounded-full border px-2.5 text-[11px] transition-colors hover:border-[color:var(--text)] sm:inline-flex"
+            className="inline-flex h-8 items-center rounded-full border px-2.5 text-[11px] transition-colors hover:border-[color:var(--text)]"
             style={{ borderColor: "var(--border)", color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}
             aria-label={lang === "fr" ? "Passer en anglais" : "Switch to French"}
           >
@@ -96,7 +92,7 @@ export function Nav() {
           >
             {t.login}
           </a>
-          <Link to="/" hash="demo" className="btn-primary text-[13px]" style={{ padding: "9px 16px" }}>
+          <Link to="/" hash="demo" className="btn-primary whitespace-nowrap text-[13px]" style={{ padding: "9px 14px" }}>
             {t.demo} <span className="arrow">↗</span>
           </Link>
         </div>

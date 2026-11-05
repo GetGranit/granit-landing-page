@@ -1,0 +1,49 @@
+# CI du site : sur chaque PR et chaque push sur main.
+# Bloquant : installation, build, tests, check-marque --strict (zéro violation de la marque).
+# Non bloquant : le lint (Prettier est déjà rouge sur main : ~1 200 erreurs de mise en forme dans
+# 46 fichiers). Il redeviendra bloquant quand un `npm run format` dédié aura été fusionné.
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verifier:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # garde l'historique pour un retour éventuel au cliquet (--base)
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      # package-lock.json est à jour (npm ci passe) ; bun.lock sert au déploiement Cloudflare.
+      - name: Installer
+        run: npm ci --no-audit --no-fund
+
+      # Fin de bascule : zéro violation exigée, quelle que soit la branche cible.
+      - name: check-marque (strict)
+        run: node scripts/check-marque.mjs --strict --report
+
+      - name: Tests
+        run: npm test
+
+      - name: Build
+        run: npm run build
+
+      - name: Lint (non bloquant, déjà rouge sur main)
+        continue-on-error: true
+        run: npm run lint

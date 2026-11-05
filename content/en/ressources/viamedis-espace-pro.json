@@ -1,0 +1,204 @@
+{
+  "slug": "viamedis-espace-pro",
+  "id": "A15",
+  "category": "plateformes",
+  "categoryName": "Platforms and portals",
+  "type": "standard",
+  "plateforme": "viamedis",
+  "title": "Viamédis: create your account and access the professional portal",
+  "primaryKeyword": "viamedis espace pro",
+  "keywordCluster": [
+    "www viamedis net espace client",
+    "www.viamedis.net espace client",
+    "viamedis mon compte",
+    "viamedis espace professionnel de sante",
+    "viamedis espace professionnels de sante",
+    "www viamedis net créer un compte",
+    "viamedis espace professionnel de santé",
+    "www.viamedis.net créer un compte",
+    "viamedis créer un compte",
+    "viamedis espace professionnel"
+  ],
+  "parentSlug": "portail-viamedis",
+  "level": "Petite-fille",
+  "author": {
+    "name": "Olivier",
+    "jobTitle": "Writer, third-party payment expert",
+    "photo": "/auteurs/olivier.jpg",
+    "url": null
+  },
+  "reviewer": null,
+  "datePublished": "2026-10-20",
+  "dateModified": "2026-10-20",
+  "checkedOn": null,
+  "wordCount": 1970,
+  "readTime": 9,
+  "metaDescription": "Viamedis professional portal: create your account on viamedispro.com, activate viamedis.net and fix login issues. Verified steps and contacts.",
+  "contentHtml": "<p><strong>The Viamedis professional portal is not created on viamedis.net: you first open an account on viamedispro.com to get registered, then Viamedis emails you the activation link for viamedis.net, the portal where you enter coverage requests.</strong> This is the most common source of confusion. Many opticians look for a “créer un compte” (create an account) button on viamedis.net and cannot find it, because that site is only used once registration has been approved. The good news: the network agreement is free for the healthcare professional, according to the <a href=\"https://www.viamedis.fr/professionnels-de-sante/\">Viamedis page for healthcare professionals</a>.</p><p>This page follows the process in order: which site to use, creating the account, the first login, logging in day to day with two-factor authentication, then what to do when access is blocked. The information was gathered on October 6, 2026, on the official Viamedis website and on the portal itself by our agents.</p><div class=\"key-takeaways\"><strong>Key takeaways</strong><ul><li>Two sites, two uses: viamedispro.com is for getting registered, viamedis.net is for working (eligibility, quotes, coverage requests, invoices).</li><li>The process has five steps, from creating the account on viamedispro.com to accepting the network agreement on your first login to viamedis.net.</li><li>The viamedis.net activation link only arrives after the bank details (RIB) are validated: no validated bank details, no access to the portal.</li><li>Logging in requires an email address, a password and a code from an authenticator app (for example Google Authenticator).</li><li>If you are blocked: the viamedis.net contact form if you are already registered, the viamedispro.com form otherwise, or call 0 825 076 076 (premium-rate number).</li></ul></div><h2 id=\"viamedis-espace-pro-deux-sites\">Viamedis professional portal: should you go to viamedis.net or viamedispro.com?</h2><p>Both, but not at the same time. Viamedispro.com is the entry point for becoming a partner; viamedis.net is the healthcare professional portal you use every day once registered.</p><p>Viamedis is a third-party payment (tiers payant: the patient pays nothing upfront, insurers pay the provider directly) operator: it pays the healthcare professional on behalf of the supplementary health insurers that entrust it with their processing. Founded in 2000, it reports more than 75 supplementary insurer clients and more than 280,000 partner healthcare professionals, according to its <a href=\"https://www.viamedis.fr/viamedis-page-ia/\">reference page updated in July 2026</a>. In optical care, it works through coverage requests: the optician sends a request, the supplementary insurer (AMC, supplementary health insurance) responds, then the optician bills.</p><p>For a store, this means two addresses to remember. The first, viamedispro.com, is used only once: to create the account and submit the registration file. The second, viamedis.net, becomes the tool for the front desk and the back office. For an overview of the portal (statuses, payment, insurers), see our page on the <a href=\"/ressources/portail-viamedis\">Viamedis third-party payment portal</a>.</p><div data-figure=\"viamedis-deux-sites\"></div><p>This split explains searches such as “www viamedis net créer un compte”: on viamedis.net, you do not create an account, you activate it from the link received by email. If you land on the viamedis.net login screen without ever having received this link, registration has not been done yet or has not been approved yet.</p><h2 id=\"viamedis-creer-un-compte\">How do you create a Viamedis healthcare professional account?</h2><p>You create the account on viamedispro.com, submit the administrative and banking documents there, then wait for two successive emails from Viamedis. The official process has five steps, described on the <a href=\"https://www.viamedis.fr/professionnels-de-sante/\">healthcare professionals page</a>.</p><ol class=\"steps\"><li><strong>Create an account on viamedispro.com.</strong> This is where, and the only place where, the process starts.</li><li><strong>Submit the supporting documents from your account.</strong> Viamedis asks for the store’s administrative and banking information.</li><li><strong>Receive the registration email.</strong> It arrives once Viamedis has verified the file.</li><li><strong>Receive the second email, with the viamedis.net activation link.</strong> It is only sent after the bank details are validated.</li><li><strong>Accept the terms of the network agreement.</strong> This is done on the first login to viamedis.net.</li></ol><div data-figure=\"viamedis-parcours-compte\"></div><p>The point that most often causes a hold-up is the gap between step 3 and step 4. The store receives the registration email, thinks everything is ready, and waits for access that still depends on the bank details being validated. In practice, if the first email has arrived but not the second, the question to ask is about the bank details, not the account.</p><h3>Preparing the file before you start</h3><p>Viamedis does not list the documents one by one on its public page. It refers to administrative and banking information. Before opening the account, gather the store’s identification details and bank details (RIB) in the name of the entity that will receive the payments. A complete file on the first submission avoids a round of verification back and forth.</p><h3>Registration through Inter-AMC</h3><p>Depending on the specialty, Viamedis states that registration is also possible through Inter-AMC, the shared third-party payment system used by several supplementary insurers. Viamedis does not specify on its healthcare professionals page which specialties are concerned. If your store is already signed up this way, check with Viamedis before creating a second file on viamedispro.com.</p><h2 id=\"viamedis-premiere-connexion\">What happens on your first login to viamedis.net?</h2><p>On the first login, you accept the terms of the network agreement: it is the last step of the network agreement process. Until it is done, the process is not complete.</p><p>You reach viamedis.net through the activation link received in the second email. This link is the only access route provided for a new partner. Keep this email until login works: it proves the activation was sent, and it is the first thing you will pass on to support if something gets stuck.</p><p>The network agreement sets the third-party payment rules between the store and Viamedis. Read it, or have it read by the person who usually signs the store’s agreements. Acceptance is done online, but it commits the business, not just the person who clicks.</p><p>Use this first login to decide who at the store will control access. Logging in to viamedis.net requires an authentication code generated on a phone (see the next section). It is better to decide from the start which device will produce this code, rather than finding out on a busy Saturday.</p><h2 id=\"viamedis-se-connecter\">How do you log in to the Viamedis professional portal day to day?</h2><p>You log in on viamedis.net with three elements: an email address, a password, then a code from an authenticator app. This is what our agents observe each time they log in to the portal: each store has its own credentials.</p><p>Two-factor authentication means a password alone is not enough. After the email address and password, the portal asks for a code produced by an authenticator app installed on a phone, for example Google Authenticator. This code changes regularly: you read it in the app when you log in.</p><h3>Organizing access in a store with several people</h3><p>In an optical store, several people enter coverage requests. The authentication code, however, lives on a single phone. Four simple rules prevent lockouts:</p><ul><li>install the app on a store phone, not on the personal phone of an employee who may leave or be absent;</li><li>write down, somewhere safe, the email address linked to the account, the one that receives messages from Viamedis;</li><li>store the password in a shared password manager rather than on a sticky note at the front desk;</li><li>for a group of several stores, keep a table showing, store by store, the email address and the phone that holds the code.</li></ul><p>When these requests number in the dozens every day across several portals, logging in and data entry become the store’s bottleneck. This is what <a href=\"/agents\">Granit’s agents</a> do: they log in to the platforms’ portals, enter coverage requests for you, then send the status back to the team.</p><h2 id=\"viamedis-espace-professionnel-usages\">What can you do from the Viamedis professional portal?</h2><p>Viamedis.net lets you check patients’ coverage rights in real time, enter and track quotes, coverage requests, invoices and reimbursements, view payment history and update your contact details. This is the list Viamedis gives on its <a href=\"https://www.viamedis.fr/professionnels-de-sante/\">healthcare professionals page</a>.</p><p>For an optician, these features cover the whole life of a case. Before the sale, the eligibility check confirms the customer is covered. During the case, entering the coverage request (PEC) and tracking it shows whether the supplementary insurer commits. After delivery, the invoice and payment history let you check that the payment has arrived.</p><div class=\"callout callout--tip\"><p><strong>The right reflex:</strong> look at the customer’s third-party payment card before entering anything. Viamedis guarantees payment for insured people holding a valid card that shows the supplementary insurer’s name, the coverage and the Viamedis logo.</p></div><p>If you are unsure which portal to use for a given supplementary insurer, our tool <a href=\"/ressources/mutuelle-quel-portail\">Which portal does my insurer use?</a> shows what each portal’s selector offers. And before sending the request, the <a href=\"/ressources/checklist-prise-en-charge\">checklist before sending a coverage request</a> covers the points that prevent a denial.</p><h3>Updating your contact details</h3><p>You update your contact details from viamedis.net. Remember to do so if the store’s email address changes: Viamedis sends its messages by email, including those of the access process. A change of bank deserves the same attention, since portal activation already depended on the bank details being validated. Viamedis does not publish the exact procedure for changing bank details on its healthcare professionals page: if in doubt, ask through the viamedis.net contact form.</p><h2 id=\"viamedis-mot-de-passe-compte-bloque\">What should you do if you forget your password or your account is locked?</h2><p>Viamedis does not publish a password reset or account unlock procedure on its page for healthcare professionals. The safest route is to use its official contact channels, choosing the right one depending on whether the store is already registered.</p><p>Before contacting Viamedis, pin down exactly what is blocked. The situations do not go to the same contact, and a clear message shortens the exchange.</p><div class=\"tbl\"><table><tr><th>Situation</th><th>What it indicates</th><th>Who to turn to</th></tr><tr><td>No registration email received</td><td>The file has not been verified yet</td><td>viamedispro.com form</td></tr><tr><td>Registration email received, no activation link</td><td>The bank details have not been validated yet</td><td>viamedis.net contact form or phone</td></tr><tr><td>Forgotten password</td><td>Active account, access lost</td><td>viamedis.net contact form or phone</td></tr><tr><td>Phone with the authentication code lost or replaced</td><td>The second factor is no longer available</td><td>viamedis.net contact form or phone</td></tr></table></div><div class=\"callout callout--warn\"><p><strong>The trap:</strong> the two-factor authentication code is produced by the app installed on one specific phone. If that phone is replaced or reset without precautions, no one at the store can produce the code anymore, even with the right password.</p></div><p>When you write to Viamedis, give the email address linked to the account, the store’s name and address, and the exact nature of the problem: the message displayed, the step where you are stuck, the date of the last email received. Keep a copy of your message. If the problem drags on, this record lets you follow up without starting from scratch.</p><h2 id=\"viamedis-contact\">Who should you contact when Viamedis access does not work?</h2><p>Viamedis offers a phone line, two forms depending on your situation and a postal address. The right form depends on a single question: is your store already registered?</p><ul><li><strong>Phone:</strong> 0 825 076 076, Monday to Friday from 9 a.m. to 6 p.m. This is a premium-rate number.</li><li><strong>Already registered:</strong> the viamedis.net contact form.</li><li><strong>Not yet registered:</strong> the viamedispro.com form.</li><li><strong>Address:</strong> 1-11 rue Brillat-Savarin, 75013 Paris.</li></ul><p>These contact details appear on the <a href=\"https://www.viamedis.fr/professionnels-de-sante/\">Viamedis page for healthcare professionals</a>, checked on October 6, 2026. The phone is suited to urgent problems, when a sale is waiting at the front desk. The form leaves a written record, which is more useful for a problem that drags on or a bank details issue.</p><p>Viamedis is only one of the portals an optical store uses. To compare access to the other platforms, see our page on <a href=\"/ressources/portails-tiers-payant\">third-party payment portals for opticians</a>. And to place the professional portal within the full life of a case, from request to collection, our guide to <a href=\"/ressources/tiers-payant-opticien\">third-party payment for opticians</a> covers each step.</p>",
+  "tocItems": [
+    {
+      "id": "viamedis-espace-pro-deux-sites",
+      "label": "viamedis.net or viamedispro.com?"
+    },
+    {
+      "id": "viamedis-creer-un-compte",
+      "label": "Creating a Viamedis professional account"
+    },
+    {
+      "id": "viamedis-premiere-connexion",
+      "label": "Your first login to viamedis.net"
+    },
+    {
+      "id": "viamedis-se-connecter",
+      "label": "Logging in day to day"
+    },
+    {
+      "id": "viamedis-espace-professionnel-usages",
+      "label": "What the professional portal lets you do"
+    },
+    {
+      "id": "viamedis-mot-de-passe-compte-bloque",
+      "label": "Forgotten password, locked account"
+    },
+    {
+      "id": "viamedis-contact",
+      "label": "Who to contact at Viamedis"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "How do you create a Viamédis professional account?",
+      "answer": "The account is created on viamedispro.com, not on viamedis.net. You submit the store’s administrative and banking information there, then Viamedis sends a registration email once the file has been verified. After the bank details (RIB) are validated, a second email brings the viamedis.net activation link. The network agreement is free for the healthcare professional."
+    },
+    {
+      "question": "How do you log in to the Viamédis professional portal?",
+      "answer": "You log in on viamedis.net with the store’s email address and password, then a code generated by an authenticator app, for example Google Authenticator. On the very first login, you must accept the terms of the network agreement. Without the activation link received by email, the account cannot be used yet."
+    },
+    {
+      "question": "What should you do if you forget your Viamédis password?",
+      "answer": "Viamedis does not publish a reset procedure on its page for healthcare professionals. The safest option is to use the viamedis.net contact form if the store is already registered, or to call 0 825 076 076, Monday to Friday from 9 a.m. to 6 p.m. (premium-rate number). Give the email address linked to the account and the store’s contact details."
+    },
+    {
+      "question": "Who should you contact if your Viamédis account is locked?",
+      "answer": "If the store is already registered, use the viamedis.net contact form or call 0 825 076 076, a premium-rate number open Monday to Friday from 9 a.m. to 6 p.m. If registration is not complete, use the viamedispro.com form. Describe the problem precisely: the message displayed, the step you reached and the date of the last email received from Viamedis."
+    }
+  ],
+  "sources": [
+    {
+      "label": "viamedis.fr · Healthcare professionals",
+      "url": "https://www.viamedis.fr/professionnels-de-sante/"
+    },
+    {
+      "label": "viamedis.fr · Viamedis reference page (updated July 2026)",
+      "url": "https://www.viamedis.fr/viamedis-page-ia/"
+    }
+  ],
+  "figures": [
+    {
+      "id": "viamedis-deux-sites",
+      "type": "comparaison",
+      "titre": "Two Viamedis sites, two uses",
+      "legende": "You register on viamedispro.com once, then work on viamedis.net every day.",
+      "colonnes": [
+        "viamedispro.com",
+        "viamedis.net"
+      ],
+      "elements": [
+        {
+          "label": "Role",
+          "detail": "",
+          "valeurs": [
+            "Get registered",
+            "Day-to-day work"
+          ],
+          "focus": true
+        },
+        {
+          "label": "When",
+          "detail": "",
+          "valeurs": [
+            "Once, at the start",
+            "After the activation link"
+          ],
+          "focus": false
+        },
+        {
+          "label": "What you do there",
+          "detail": "",
+          "valeurs": [
+            "Account, documents, bank details",
+            "Eligibility, PEC, invoices"
+          ],
+          "focus": false
+        },
+        {
+          "label": "Contact form",
+          "detail": "",
+          "valeurs": [
+            "Not yet registered",
+            "Already registered"
+          ],
+          "focus": false
+        }
+      ]
+    },
+    {
+      "id": "viamedis-parcours-compte",
+      "type": "etapes",
+      "titre": "From a viamedispro.com account to viamedis.net access",
+      "legende": "The viamedis.net activation link only arrives after the bank details are validated.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "Create the account",
+          "detail": "On viamedispro.com",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Submit the documents",
+          "detail": "Administrative and banking information",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Registration email",
+          "detail": "Once the file is verified",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Activation link",
+          "detail": "Second email, after the bank details are validated",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Accept the network agreement",
+          "detail": "On the first login to viamedis.net",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [
+    {
+      "id": "A1",
+      "slug": "portail-viamedis",
+      "anchor": "Viamedis third-party payment portal",
+      "type": "parent"
+    }
+  ],
+  "liensEntrants": [],
+  "remplace": [],
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-20T11:35:23.680Z",
+    "avertissements": [
+      "aucune citation (facultative)",
+      "source non vérifiable (403) : https://www.viamedis.fr/viamedis-page-ia/",
+      "source non vérifiable (403) : https://www.viamedis.fr/professionnels-de-sante/"
+    ]
+  }
+}

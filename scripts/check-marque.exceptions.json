@@ -1,0 +1,56 @@
+{
+  "_lisez_moi": [
+    "Exceptions de check-marque : les cas où une couleur, une police ou un nom ressemble à une violation sans en être une.",
+    "Chaque exception dit pourquoi (champ raison) ; la relecture de la PR la juge comme du code.",
+    "Champs : fichier (chemin ou glob, * et ** permis), regle (ancienne-variable, couleur-hors-palette,",
+    "police-hors-marque, ombre-brune, ou * pour toutes), motif (facultatif : texte cherché dans la ligne,",
+    "ou /regex/drapeaux), raison (obligatoire).",
+    "Pour une seule ligne, on peut aussi écrire le commentaire « check-marque: ignorer » sur la ligne même.",
+    "Une exception que plus rien ne déclenche est signalée par le script : retirez-la.",
+    "Ce n'est PAS l'endroit pour garder l'ancienne marque : une vraie couleur hors palette se remplace par un jeton."
+  ],
+  "exceptions": [
+    {
+      "fichier": "src/components/DashboardMockup.tsx",
+      "regle": "couleur-hors-palette",
+      "motif": "/id: \"#\\d{4}\"/",
+      "raison": "Numéros de dossier fictifs de la maquette (#4816…#4821), pas des couleurs."
+    },
+    {
+      "fichier": "src/components/ui/chart.tsx",
+      "regle": "couleur-hors-palette",
+      "motif": "/\\[(stroke|fill)='#/",
+      "raison": "Sélecteurs shadcn qui ciblent les couleurs par défaut posées par Recharts ([stroke='#ccc']) pour les remplacer par des jetons ; on ne peint rien avec."
+    },
+    {
+      "fichier": "src/components/home/HomeSections.tsx",
+      "regle": "couleur-hors-palette",
+      "motif": "/background: \"#(ff5f57|febc2e|28c840)\"/",
+      "raison": "Boutons de fenêtre macOS (rouge, jaune, vert) des maquettes de navigateur : ils dessinent le logiciel d'un tiers, pas la marque Granit (cas 11 de la table de correspondance, validé par Paul le 2/11)."
+    },
+    {
+      "fichier": "src/components/pec/StepResult.tsx",
+      "regle": "couleur-hors-palette",
+      "motif": "/#(34495e|f5f7f9|56606b|cfd6de|111)\\b/",
+      "raison": "Cas 11 (validé par Paul le 2/11) : faux logiciel tiers dessiné (formulaire du portail de la mutuelle, PortalBox), gardé dans ses couleurs bleu-gris pour qu'on voie que ce n'est pas Granit ; seuls ses blancs passent en papier."
+    },
+    {
+      "fichier": "src/components/pec/StepSimulation.tsx",
+      "regle": "couleur-hors-palette",
+      "motif": "/#(34495e|f5f7f9|56606b|cfd6de|111|9aa3ad)\\b/",
+      "raison": "Cas 11 (validé par Paul le 2/11) : faux logiciel tiers dessiné (formulaire du portail de la mutuelle rempli pendant la simulation), gardé dans ses couleurs bleu-gris pour qu'on voie que ce n'est pas Granit ; seuls ses blancs passent en papier."
+    },
+    {
+      "fichier": "src/components/pec/StepReading.tsx",
+      "regle": "couleur-hors-palette",
+      "motif": "/#(eef3f8|dfe8f1|2b3a4a|34495e|b8c6d4)\\b/",
+      "raison": "Cas 11 (validé par Paul le 2/11) : faux logiciel tiers dessiné (carte de tiers payant d'exemple, ExampleCard), gardé dans ses couleurs bleu-gris pour qu'on voie que ce n'est pas Granit ; seuls ses blancs passent en papier."
+    },
+    {
+      "fichier": "src/lib/webinarMail.ts",
+      "regle": "couleur-hors-palette",
+      "motif": "/#62716E|#E4E5E4/",
+      "raison": "Mail : pas de transparence fiable, donc hex pleins. Ce sont deux jetons aplatis sur le papier (#FFFDFD) : texte-secondaire (encre à 70 %) = #62716E, filet (encre à 12 %) = #E4E5E4 (table de correspondance, section 5)."
+    }
+  ]
+}

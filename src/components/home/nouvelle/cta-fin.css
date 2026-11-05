@@ -1,0 +1,236 @@
+/* =========================================================
+   NOUVELLE HOME · CTA DE FIN « 03 Dégradé » (portage de lm/cta.css ; tout sous .nh)
+   Le grand fond de la marque, une lumière qui suit la souris (--px, --py), le fond et le filigrane
+   qui suivent la page (--s). Variables posées par CtaFin.tsx ; sans elles, l'état de repos.
+   ========================================================= */
+.nh .ct-h2 {
+  font: 400 clamp(40px, 4.8vw, 68px)/1.03 var(--serif);
+  letter-spacing: -0.033em;
+  text-wrap: balance;
+  color: var(--ink);
+}
+.nh .ct-h2 > span {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.1em;
+  margin-bottom: -0.1em;
+}
+.nh .ct-h2 .ct-acc {
+  color: var(--deep);
+}
+.nh .ct-ln {
+  display: block;
+  transition:
+    transform 1s var(--lm-ease),
+    opacity 1s var(--lm-ease);
+  transition-delay: calc(var(--i, 0) * 120ms);
+}
+.nh .ct-lead {
+  max-width: 46ch;
+  font: 400 clamp(16px, 1.2vw, 18px)/1.5 var(--sans);
+  color: var(--t-muted);
+  text-wrap: pretty;
+}
+.nh .ct-btn {
+  background: var(--ink);
+  color: var(--mint);
+}
+.nh .ct-btn:hover {
+  background: var(--ink-hi);
+}
+.nh .ct-btn svg {
+  transition: translate 0.35s var(--lm-ease);
+}
+.nh .ct-btn:hover svg {
+  translate: 2px -2px;
+}
+.nh .ct3 :focus-visible {
+  outline-color: var(--deep);
+}
+.nh .ct-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  font: 500 12px/1.2 var(--sans);
+  color: var(--t-muted);
+}
+.nh .ct-trust li {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.nh .ct-trust svg {
+  flex: none;
+  width: 18px;
+  height: 18px;
+}
+.nh .ct-trust b {
+  font-weight: 600;
+  font-size: 12.5px;
+  letter-spacing: 0.02em;
+}
+
+.nh .ct3 {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: grid;
+  align-items: center;
+  min-height: max(420px, 58svh);
+  padding-block: 72px;
+  background: var(--rose);
+  color: var(--ink);
+}
+.nh .ct3-grad {
+  position: absolute;
+  inset: -6% -30% -6% -12%;
+  z-index: -4;
+  background: var(--grad);
+  transform: translate3d(calc(var(--s, 0.5) * -10% + (var(--px, 0.7) - 0.5) * -6%), 0, 0);
+}
+.nh .ct3-veil {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgba(var(--rose-rgb), 0.97) 0%,
+    rgba(var(--rose-rgb), 0.86) 30%,
+    rgba(var(--rose-rgb), 0.2) 56%,
+    rgba(var(--rose-rgb), 0) 68%
+  );
+}
+/* la lumière : du papier (255, 253, 253) */
+.nh .ct3-light {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background: radial-gradient(
+    30vmax 30vmax at calc(var(--px, 0.7) * 100%) calc(var(--py, 0.45) * 100%),
+    rgba(255, 253, 253, 0.62),
+    rgba(255, 253, 253, 0) 72%
+  );
+}
+.nh .ct3-motif {
+  position: absolute;
+  z-index: -1;
+  right: -6vmax;
+  bottom: -10vmax;
+  width: auto;
+  height: min(56vmax, 540px);
+  color: var(--paper);
+  opacity: 0.6;
+  translate: 0 calc((0.5 - var(--s, 0.5)) * 14vmax);
+  pointer-events: none;
+}
+.nh .ct3-body {
+  display: grid;
+  justify-items: start;
+  gap: 18px;
+}
+.nh .ct3 .ct-h2 {
+  font-size: clamp(36px, 4.2vw, 58px);
+} /* revue du 3 nov. : section plus courte, titre un cran plus petit */
+.nh .ct3-body > * {
+  max-width: 520px;
+}
+.nh .ct3-body > .ct-h2 {
+  max-width: 720px;
+}
+.nh .ct3 .ct-lead {
+  color: var(--ink);
+  opacity: 0.78;
+}
+.nh .ct3 .ct-trust {
+  color: var(--ink);
+}
+.nh .ct3-fade {
+  transition:
+    opacity 0.85s var(--lm-ease),
+    translate 0.85s var(--lm-ease);
+  transition-delay: calc(var(--i, 0) * 120ms + 120ms);
+}
+@media (max-width: 760px) {
+  .nh .ct3-veil {
+    background: linear-gradient(
+      180deg,
+      rgba(var(--rose-rgb), 0.96) 0%,
+      rgba(var(--rose-rgb), 0.86) 62%,
+      rgba(var(--rose-rgb), 0.2) 100%
+    );
+  }
+  .nh .ct3 {
+    padding-block: 56px;
+  }
+  .nh .ct3-motif {
+    right: -30vmax;
+    bottom: -36vmax;
+    height: 60vmax;
+  }
+}
+
+/* entrée : seulement une fois le JS monté, jamais en mouvements réduits */
+@media (prefers-reduced-motion: no-preference) {
+  .nh.nh-js .ct3:not(.in) .ct-ln {
+    transform: translateY(108%);
+  }
+  .nh.nh-js .ct3:not(.in) .ct3-fade {
+    opacity: 0;
+    translate: 0 14px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nh .ct3 *,
+  .nh .ct3 *::before,
+  .nh .ct3 *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* ---------- la carte « Comment préférez-vous échanger ? » (CarteContact.tsx) : texte à gauche, carte à droite ---------- */
+.nh .ct-ancre { position: absolute; top: 0; }
+.nh .ct3-body.ct3-deux { width: 100%; grid-template-columns: minmax(0, 1fr) minmax(0, 460px); align-items: center; gap: 32px clamp(32px, 5vw, 80px); }
+.nh .ct3-deux > * { max-width: none; }
+.nh .ct3-txt { display: grid; justify-items: start; gap: 18px; max-width: 620px; }
+.nh .ct-cc { padding: 24px; border-radius: 18px; background: rgba(255, 253, 253, .9); box-shadow: var(--ombre-carte);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+.nh .ct-cc-choix { margin: 0; padding: 0; border: 0; min-width: 0; }
+.nh .ct-cc-q { padding: 0; margin-bottom: 14px; font: 400 22px/1.2 var(--serif); font-variation-settings: "opsz" 20; letter-spacing: -.01em; color: var(--ink); }
+.nh .ct-cc-tuiles { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.nh .ct-cc-tuile { position: relative; display: flex; align-items: flex-start; gap: 10px; padding: 14px; border-radius: 12px; cursor: pointer;
+  box-shadow: inset 0 0 0 1px var(--line); background: var(--paper); transition: box-shadow .2s, background .2s; }
+.nh .ct-cc-tuile:hover { box-shadow: inset 0 0 0 1px rgba(var(--ink-rgb), .3); }
+.nh .ct-cc-tuile.is-on { box-shadow: inset 0 0 0 1.5px var(--ink); background: rgba(var(--mint-rgb), .18); }
+.nh .ct-cc-tuile input { position: absolute; opacity: 0; pointer-events: none; }
+.nh .ct-cc-tuile:has(input:focus-visible) { outline: 2px solid var(--deep); outline-offset: 2px; }
+.nh .ct-cc-rond { flex: none; width: 18px; height: 18px; margin-top: 1px; border-radius: 50%; box-shadow: inset 0 0 0 1.5px rgba(var(--ink-rgb), .35); transition: box-shadow .2s; }
+.nh .ct-cc-tuile.is-on .ct-cc-rond { box-shadow: inset 0 0 0 5px var(--ink); }
+.nh .ct-cc-tt { display: grid; gap: 2px; min-width: 0; }
+.nh .ct-cc-tt b { font: 500 15px/1.25 var(--sans); color: var(--ink); }
+.nh .ct-cc-tt small { font: 400 13px/1.3 var(--sans); color: var(--t-muted); }
+.nh .ct-cc-action { display: grid; gap: 14px; margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--line); }
+.nh .ct-cc-texte { font-size: 14.5px; line-height: 1.45; color: var(--t-muted); }
+.nh .ct-cc-btn { justify-content: center; width: 100%; border: 0; cursor: pointer; }
+.nh .ct-cc-btn:disabled { opacity: .7; cursor: wait; }
+.nh .ct-cc-champs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.nh .ct-cc-champs label { display: grid; gap: 5px; min-width: 0; }
+.nh .ct-cc-champs label span { font: 500 12px/1.2 var(--sans); color: var(--t-muted); }
+.nh .ct-cc-champs input, .nh .ct-cc-champs select { width: 100%; min-height: 44px; padding: 0 12px; border: 1px solid var(--filet-champ); border-radius: 10px;
+  background: var(--paper); color: var(--ink); font: 400 15px/1 var(--sans); }
+.nh .ct-cc-champs input::placeholder { color: var(--t-faint); }
+.nh .ct-cc-champs input:focus, .nh .ct-cc-champs select:focus { outline: 2px solid var(--deep); outline-offset: 0; border-color: transparent; }
+.nh .ct-cc-erreur { font-size: 13px; color: var(--alerte-texte); }
+.nh .ct-cc-merci { display: flex; align-items: center; gap: 10px; font: 500 15px/1.4 var(--sans); color: var(--ink); }
+.nh .ct-cc-coche { display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: var(--mint); color: var(--ink); flex: none; }
+.nh .ct-cc-coche svg { width: 12px; height: 12px; }
+@media (max-width: 960px) {
+  .nh .ct3-body.ct3-deux { grid-template-columns: minmax(0, 1fr); }
+  .nh .ct-cc { max-width: 520px; }
+}
+@media (max-width: 420px) {
+  .nh .ct-cc { padding: 18px; }
+  .nh .ct-cc-champs { grid-template-columns: minmax(0, 1fr); }
+}
