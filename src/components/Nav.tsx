@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { usePostHog } from "posthog-js/react";
 import { useLanguage } from "@/lib/i18n";
+import { rubriqueOuverte } from "@/lib/actualites/ouverture";
 import logoMonogram from "@/assets/logo.svg";
 
 const labels = {
-  fr: { agents: "Agents", security: "Sécurité", pricing: "Tarifs", resources: "Ressources", login: "Se connecter", demo: "Demander une démo", switch: "EN" },
-  en: { agents: "Agents", security: "Security", pricing: "Pricing", resources: "Resources", login: "Sign in", demo: "Book a demo", switch: "FR" },
+  fr: { agents: "Agents", security: "Sécurité", pricing: "Tarifs", resources: "Ressources", news: "Actualités", login: "Se connecter", demo: "Demander une démo", switch: "EN" },
+  en: { agents: "Agents", security: "Security", pricing: "Pricing", resources: "Resources", news: "News", login: "Sign in", demo: "Book a demo", switch: "FR" },
 };
 
 export function Nav() {
@@ -26,6 +27,8 @@ export function Nav() {
     { to: "/agents", label: t.agents },
     { to: "/tarifs", label: t.pricing },
     { to: "/ressources", label: t.resources },
+    // Le lien n'existe que si une édition est en ligne.
+    ...(rubriqueOuverte ? ([{ to: "/actualites", label: t.news }] as const) : []),
   ] as const;
 
   return (

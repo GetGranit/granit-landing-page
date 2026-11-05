@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { usePostHog } from "posthog-js/react";
 import { useLanguage } from "@/lib/i18n";
+import { rubriqueOuverte } from "@/lib/actualites/ouverture";
 import logoRose from "@/assets/logo-light.svg";
 import { GrandLogo } from "./GrandLogo";
 
@@ -14,6 +15,7 @@ const copy = {
     agents: "Agents",
     pricing: "Tarifs",
     resources: "Ressources",
+    news: "Actualités",
     security: "Sécurité",
     company: "Société",
     contact: "Contact",
@@ -33,6 +35,7 @@ const copy = {
     agents: "Agents",
     pricing: "Pricing",
     resources: "Resources",
+    news: "News",
     security: "Security",
     company: "Company",
     contact: "Contact",
@@ -98,6 +101,7 @@ export function Footer({ colle = false }: { colle?: boolean }) {
               { to: "/agents", label: t.agents },
               { to: "/tarifs", label: t.pricing },
               { to: "/ressources", label: t.resources },
+              ...(rubriqueOuverte ? [{ to: "/actualites", label: t.news }] : []),
             ]}
           />
           <FooterCol

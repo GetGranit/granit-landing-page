@@ -1,0 +1,144 @@
+/* Rubrique d'actualités : la mise en page de la maquette validée, jetons du site seulement.
+   Tout est préfixé .act- et rangé sous .act : rien ne déborde sur le reste du site. */
+.act {
+  --act-filet-sombre: color-mix(in srgb, var(--rose) 16%, transparent);
+  --act-gouttiere: max(16px, env(safe-area-inset-left));
+  overflow-x: clip;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--encre);
+}
+.act h1,
+.act h2,
+.act-serif {
+  font-family: var(--font-serif);
+  font-variation-settings: "opsz" 20;
+  text-wrap: balance;
+}
+.act h1, .act h2 { font-weight: 400; letter-spacing: -0.02em; }
+.act b { font-weight: inherit; }
+.act-cadre { width: 100%; max-width: 1120px; margin-inline: auto; padding-inline: var(--act-gouttiere); }
+
+/* Focus clavier : vert profond sur clair, menthe sur encre. */
+.act :focus-visible { outline: 2px solid var(--profond); outline-offset: 2px; border-radius: 4px; }
+.act .act-sombre :focus-visible,
+.act .act-sombre:focus-visible { outline-color: var(--menthe); }
+.act .act-carte:focus-visible, .act .act-releve:focus-visible { border-radius: var(--rayon-carte); }
+.act .act-pastille:focus-visible { border-radius: var(--rayon-bouton); }
+
+.act-etiquette { font-size: 12px; font-weight: 500; line-height: 1.2; letter-spacing: 0.08em; text-transform: uppercase; color: var(--texte-discret); }
+.act-sombre .act-etiquette { color: var(--sur-encre-secondaire); }
+.act-texte a:not(.btn-clair) { color: var(--profond); text-decoration: underline; text-underline-offset: 3px; }
+
+/* Manchette et tête d'édition : encre, filet dégradé en pied. */
+.act-manchette, .act-tete { position: relative; overflow: hidden; background: var(--encre); color: var(--rose); }
+.act-manchette::after, .act-tete::after { content: ""; position: absolute; inset: auto 0 0 0; height: 4px; background: var(--degrade-marque); }
+.act-manchette > .act-cadre, .act-tete > .act-cadre { position: relative; }
+.act-manchette > .act-cadre { padding-block: 18px 34px; }
+.act-tete > .act-cadre { padding-block: 16px 38px; }
+
+/* Le filigrane reste sous le folio et à droite du nom, rogné par le pied de la manchette :
+   jamais derrière un texte à lire. Trop étroit pour cela sous 640 px, il disparaît. */
+.act-filigrane { position: absolute; top: 56px; right: -2%; width: min(36%, 400px); color: var(--encre-halo); pointer-events: none; }
+.act-filigrane svg { display: block; width: 100%; height: auto; }
+
+.act-folio { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 24px; padding-bottom: 12px; border-bottom: 1px solid var(--act-filet-sombre); font-size: 12px; font-weight: 500; line-height: 1.55; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sur-encre-secondaire); }
+.act .act-titre-rubrique { margin-top: 22px; font-weight: 300; font-size: clamp(84px, 17vw, 196px); line-height: 0.96; letter-spacing: -0.04em; }
+.act-titre-rubrique span { color: var(--menthe); }
+.act-sous-rubrique { max-width: 30ch; margin-top: 16px; font-weight: 400; font-size: clamp(20px, 2.4vw, 28px); line-height: 1.2; letter-spacing: -0.02em; }
+
+/* Filtres par métier */
+.act-filtres { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding-block: 24px 4px; }
+.act-filtres .act-etiquette { margin-right: 6px; }
+.act-pastille { padding: 6px 14px; border: 1px solid var(--filet); border-radius: var(--rayon-bouton); background: var(--papier); font-size: 14px; transition: border-color 200ms ease; }
+.act-pastille:hover { border-color: var(--filet-champ); }
+.act-pastille[aria-current] { border-color: var(--encre); background: var(--encre); color: var(--menthe); }
+
+/* Édition à la une et cartes */
+.act-une { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 20px; padding-block: 20px; }
+.act-une-seule { grid-template-columns: minmax(0, 1fr); }
+.act-grille { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 20px; padding-bottom: 20px; }
+.act-vide { padding-block: 20px; color: var(--texte-secondaire); }
+
+.act-carte { display: flex; flex-direction: column; gap: 12px; min-width: 0; padding: 22px; border: 1px solid var(--filet); border-radius: var(--rayon-carte); background: var(--papier); transition: box-shadow 240ms ease; }
+.act-carte:hover { box-shadow: var(--ombre-carte); }
+.act-carte-haut { display: flex; justify-content: space-between; gap: 12px; }
+.act-fait { margin-top: 10px; font-weight: 300; font-size: 46px; line-height: 1.02; letter-spacing: -0.035em; color: var(--profond); overflow-wrap: break-word; }
+.act .act-carte-titre { font-size: 22px; line-height: 1.16; }
+.act-carte-chapo { max-width: 54ch; color: var(--texte-secondaire); }
+.act-carte-meta { margin-top: auto; padding-top: 8px; font-size: 14px; color: var(--texte-secondaire); }
+.act-carte-cote .act-fait { font-size: clamp(46px, 5.5vw, 64px); }
+.act-carte-grande { gap: 14px; padding: 30px; }
+.act-carte-grande .act-fait { margin-top: 16px; font-size: clamp(52px, 8vw, 92px); }
+.act .act-carte-grande .act-carte-titre { font-size: clamp(25px, 2.8vw, 34px); line-height: 1.1; }
+
+/* Blocs encre : relevé, abonnement, encart de fin */
+.act-encre { min-width: 0; padding: 26px; border-radius: var(--rayon-carte); background: var(--encre); color: var(--rose); }
+.act-releve { display: flex; flex-direction: column; gap: 16px; }
+.act .act-releve-titre { margin-top: 8px; font-size: 24px; line-height: 1.16; }
+.act-chiffre { display: block; padding-top: 12px; border-top: 1px solid var(--act-filet-sombre); font-size: 14px; color: var(--sur-encre-secondaire); }
+.act-chiffre b { display: block; font-weight: 300; font-size: 36px; line-height: 1.05; letter-spacing: -0.03em; color: var(--menthe); }
+
+/* Bas de page de la rubrique */
+.act-bas { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 20px; padding-top: 20px; }
+.act-bas-seul { grid-template-columns: minmax(0, 65ch); }
+.act-nouvelles h2, .act-abonnement h2 { font-size: 24px; line-height: 1.16; }
+.act-nouvelles ul { margin-top: 12px; }
+.act-nouvelles li { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 14px; padding-block: 13px; border-top: 1px solid var(--filet); font-size: 15px; }
+.act-nouvelles time { font-size: 14px; color: var(--texte-secondaire); font-variant-numeric: tabular-nums; }
+.act-abonnement { display: flex; flex-direction: column; gap: 12px; }
+.act-abonnement p { font-size: 15px; color: var(--sur-encre-secondaire); }
+.act-abonnement form { display: flex; flex-direction: column; gap: 12px; }
+.act-abonnement-ligne { display: flex; flex-wrap: wrap; gap: 8px; }
+.act-abonnement input[type="email"] { flex: 1 1 180px; min-width: 0; height: 44px; padding-inline: 16px; border: 1px solid var(--filet-champ); border-radius: var(--rayon-bouton); background: var(--papier); color: var(--encre); }
+.act-consentement { display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 8px; font-size: 13px; color: var(--sur-encre-secondaire); }
+.act-consentement input { accent-color: var(--menthe); margin-top: 3px; }
+
+/* Tête d'une édition */
+.act-tete nav { margin-bottom: 12px; }
+.act-tete nav ol, .act-tete nav a { color: var(--sur-encre-secondaire); }
+.act-tete nav a:hover { color: var(--rose); }
+.act-tete nav a:focus-visible { outline-color: var(--menthe); }
+.act-tete .act-fait { margin-top: 26px; font-size: clamp(60px, 11vw, 132px); color: var(--menthe); }
+.act .act-tete h1 { max-width: 30ch; margin-top: 16px; font-weight: 300; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.08; letter-spacing: -0.025em; }
+.act-chapo { max-width: 58ch; margin-top: 14px; font-size: 18px; color: var(--sur-encre-secondaire); }
+
+/* Corps d'une édition */
+.act-corps { display: grid; grid-template-columns: minmax(0, 1fr) 220px; gap: 44px; padding-top: 32px; }
+.act-article { display: flex; flex-direction: column; gap: 32px; min-width: 0; max-width: 65ch; }
+.act-article h2 { margin-bottom: 10px; font-size: 26px; line-height: 1.12; }
+.act-article p + p { margin-top: 10px; }
+.act-gestes { counter-reset: geste; }
+.act-gestes li { counter-increment: geste; display: grid; grid-template-columns: 36px minmax(0, 1fr); padding-block: 11px; border-top: 1px solid var(--filet); }
+.act-gestes li::before { content: counter(geste); font-family: var(--font-serif); font-variation-settings: "opsz" 20; font-size: 24px; line-height: 1.1; color: var(--profond); }
+.act-tableau { margin-top: 12px; overflow-x: auto; }
+.act-tableau table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.act-tableau th, .act-tableau td { padding: 9px 12px 9px 0; border-top: 1px solid var(--filet); text-align: left; vertical-align: top; }
+.act-tableau th { border-top: 0; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--texte-discret); }
+.act-inconnu { padding: 22px; border: 1px solid var(--filet); border-radius: var(--rayon-carte); background: var(--papier); }
+.act-sources { font-size: 14px; color: var(--texte-secondaire); overflow-wrap: anywhere; }
+.act-article .act-sources h2 { margin-bottom: 6px; font-family: var(--font-sans); font-size: 14px; font-weight: 500; letter-spacing: 0; line-height: 1.5; color: var(--encre); }
+.act-sources ul { padding-left: 18px; list-style: disc; }
+.act-signature { font-size: 14px; color: var(--texte-secondaire); }
+.act-encart { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+.act .act-encart h2 { margin: 0; font-weight: 300; font-size: 28px; line-height: 1.12; }
+.act-encart h2 span { color: var(--menthe); }
+
+/* Colonne latérale */
+.act-cote { position: sticky; top: 88px; display: flex; flex-direction: column; gap: 14px; align-self: start; font-size: 14px; color: var(--texte-secondaire); }
+.act-cote dt { font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--texte-discret); }
+.act-cote dd { margin: 2px 0 12px; color: var(--encre); }
+.act-autres { display: flex; flex-direction: column; gap: 6px; padding-top: 14px; border-top: 1px solid var(--filet); }
+
+@media (max-width: 860px) {
+  .act-une, .act-bas, .act-corps { grid-template-columns: minmax(0, 1fr); }
+  .act-cote { position: static; }
+  .act-nouvelles li { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+}
+@media (max-width: 640px) {
+  .act-filigrane { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .act * { transition: none; }
+  .act .btn-clair:hover { transform: none; }
+}
