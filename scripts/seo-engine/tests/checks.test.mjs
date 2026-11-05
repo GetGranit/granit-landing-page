@@ -2,7 +2,7 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 import { TITRE_MAX, contientMotCle } from "../lib/checks.mjs";
-import { controler, typeDePage } from "../lib/checks.mjs";
+import { controler, controlerAcces, typeDePage } from "../lib/checks.mjs";
 import { horsListeBlanche, typographier } from "../lib/html.mjs";
 
 const remplissage = (n) => Array.from({ length: n }, (_, i) => `mot${i}`).join(" ");
@@ -88,9 +88,15 @@ test("mot-clé principal dans les 100 premiers mots, ordre libre", () => {
   assert.ok(controler(articleValide(), c).erreurs.some((e) => e.includes("100 premiers mots")));
 });
 
+const ACCES = {
+  verifieLe: "2026-10-30",
+  liens: [{ label: "Se connecter sur viamedis.net", url: "https://www.viamedis.net/ViamedisNet/page/accueil/index" }],
+};
+const AUJOURDHUI = new Date("2026-11-02");
+
 test("page plateforme : marqueurs et nombres du fichier de faits", () => {
-  const faits = { chiffres: [{ valeur: "+280 000" }], faits: [{ fait: "fondé en 2000" }] };
-  const c = ctx({ type: "plateforme", faits });
+  const faits = { chiffres: [{ valeur: "+280 000" }], faits: [{ fait: "fondé en 2000" }], acces: ACCES, sources: { site: { url: "https://www.viamedis.net/aide" } } };
+  const c = ctx({ type: "plateforme", faits, aujourdhui: AUJOURDHUI });
   const a = articleValide({ marqueurs: true });
   assert.deepEqual(controler(a, c).erreurs, []);
   a.contentHtml += "<p>Fondé en 2000, plus de 280 000 opticiens, et 37 % de rejets.</p>";
@@ -140,18 +146,18 @@ test("schéma non placé, marqueur orphelin, deux focus : refusés", () => {
 });
 
 test("page plateforme : un nombre inventé dans un schéma est refusé", () => {
-  const faits = { chiffres: [{ valeur: "+280 000" }], faits: [{ fait: "fondé en 2000" }] };
+  const faits = { chiffres: [{ valeur: "+280 000" }], faits: [{ fait: "fondé en 2000" }], acces: ACCES, sources: { site: { url: "https://www.viamedis.net/aide" } } };
   const a = articleValide({ marqueurs: true });
   a.contentHtml += '<div data-figure="circuit"></div>';
   a.figures = [figure({ legende: "Payé sous 15 jours." })];
-  assert.ok(controler(a, ctx({ type: "plateforme", faits })).erreurs.some((x) => x.includes("15")));
+  assert.ok(controler(a, ctx({ type: "plateforme", faits, aujourdhui: AUJOURDHUI })).erreurs.some((x) => x.includes("15")));
 });
 
 test("page plateforme : taille d'une liste et 100 % Santé admis", () => {
-  const faits = { chiffres: [{ valeur: "+280 000" }], organismes: { liste: Array.from({ length: 12 }, (_, i) => `M${i}`) } };
+  const faits = { chiffres: [{ valeur: "+280 000" }], organismes: { liste: Array.from({ length: 12 }, (_, i) => `M${i}`) }, acces: ACCES, sources: { site: { url: "https://www.viamedis.net/aide" } } };
   const a = articleValide({ marqueurs: true });
   a.contentHtml += "<p>Le sélecteur propose 12 complémentaires, y compris pour le 100 % Santé.</p>";
-  assert.deepEqual(controler(a, ctx({ type: "plateforme", faits })).erreurs, []);
+  assert.deepEqual(controler(a, ctx({ type: "plateforme", faits, aujourdhui: AUJOURDHUI })).erreurs, []);
 });
 
 test("source = page d'accueil refusée", () => {
@@ -308,6 +314,58 @@ test("fiche VS : fichier de faits non relu refusé", () => {
 test("marqueur de comparatif refusé sur une page standard", () => {
   assert.ok(horsListeBlanche('<div data-bloc="coup-doeil"></div>')[0].includes("hors page"));
   assert.deepEqual(horsListeBlanche('<div data-bloc="grille"></div>', { marqueurs: ["grille"] }), []);
+});
+
+test("accès espace pro : conforme", () => {
+  const faits = { acces: ACCES, sources: { site: { url: "https://www.viamedis.net/aide" } } };
+  assert.deepEqual(controlerAcces(faits, { aujourdhui: AUJOURDHUI }), { erreurs: [], avertissements: [] });
+});
+
+test("accès espace pro : absent, mal formé ou vide sans note refusé", () => {
+  assert.ok(controlerAcces({}).erreurs[0].includes("sans `acces`"));
+  const r = controlerAcces({ acces: { verifieLe: "30/10/2026", liens: [] } });
+  assert.ok(r.erreurs.some((e) => e.includes("verifieLe")));
+  assert.ok(r.erreurs.some((e) => e.includes("ni note")));
+  const http = controlerAcces({ acces: { verifieLe: "2026-10-30", liens: [{ label: "x", url: "http://www.viamedis.net/" }] } });
+  assert.ok(http.erreurs.some((e) => e.includes("non https")));
+});
+
+test("accès espace pro : note sans lien, domaine inconnu et lien ancien signalés", () => {
+  const note = controlerAcces({ acces: { verifieLe: "2026-10-30", liens: [], note: "Pas de lien public." } }, { aujourdhui: AUJOURDHUI });
+  assert.deepEqual(note.erreurs, []);
+  assert.ok(note.avertissements.some((e) => e.includes("aucun lien")));
+  // services.santeclair.fr accepté grâce à une source sur santeclair.fr ; un autre domaine est signalé
+  const faits = {
+    acces: {
+      verifieLe: "2026-01-02",
+      liens: [
+        { label: "a", url: "https://services.santeclair.fr/professionnel-sante/connexion" },
+        { label: "b", url: "https://portail-tiers-payant.example.com/login" },
+      ],
+    },
+    sources: { sc: { url: "https://www.santeclair.fr/fr/professionnel-sante" } },
+  };
+  const r = controlerAcces(faits, { aujourdhui: AUJOURDHUI });
+  assert.deepEqual(r.erreurs, []);
+  assert.equal(r.avertissements.filter((e) => e.includes("domaine absent")).length, 1);
+  assert.ok(r.avertissements.some((e) => e.includes("à revérifier")));
+});
+
+test("page plateforme sans acces dans le fichier de faits refusée", () => {
+  const faits = { chiffres: [{ valeur: "+280 000" }] };
+  const e = controler(articleValide({ marqueurs: true }), ctx({ type: "plateforme", faits })).erreurs;
+  assert.ok(e.some((x) => x.includes("sans `acces`")));
+});
+
+test("page plateforme : lien d'accès repris tel quel dans le texte signalé, pas une autre page du portail", () => {
+  const faits = { chiffres: [{ valeur: "+280 000" }], acces: ACCES, sources: { site: { url: "https://www.viamedis.net/aide" } } };
+  const c = ctx({ type: "plateforme", faits, aujourdhui: AUJOURDHUI });
+  const a = articleValide({ marqueurs: true });
+  a.sources.push({ label: "viamedis.net · Connexion", url: ACCES.liens[0].url });
+  a.contentHtml += `<p>Voir <a href="${ACCES.liens[0].url}#/faq/">la FAQ</a>.</p>`;
+  assert.ok(!controler(a, c).avertissements.some((e) => e.includes("repris dans le texte")));
+  a.contentHtml += `<p>Puis <a href="${ACCES.liens[0].url}">la connexion</a>.</p>`;
+  assert.ok(controler(a, c).avertissements.some((e) => e.includes("repris dans le texte")));
 });
 
 test("TON.md : un mot de « On ne dit pas » fait refuser l'article", () => {

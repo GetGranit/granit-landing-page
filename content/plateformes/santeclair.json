@@ -3,6 +3,16 @@
   "nom": "Santéclair",
   "logo": "/logos/santeclair.svg",
   "checkedOn": "2026-10-07",
+  "acces": {
+    "verifieLe": "2026-10-30",
+    "liens": [
+      {
+        "label": "Se connecter sur services.santeclair.fr",
+        "url": "https://services.santeclair.fr/professionnel-sante/connexion",
+        "detail": "Identifiant, mot de passe et code reçu par e-mail."
+      }
+    ]
+  },
   "identite": [
     {
       "label": "Type",

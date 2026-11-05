@@ -12,6 +12,8 @@ export type Verticale = {
   nom: string;
   court: string;
   description: string;
+  /** Balise meta, 140 à 160 caractères. Absent : `description`, le texte affiché sur la page. */
+  metaDescription?: string;
   /** Texte alternatif de la photo (ce qu'on y voit). */
   alt: string;
   /** Catégorie dont on reprend les couleurs. */

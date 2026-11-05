@@ -24,6 +24,7 @@
       "nom": "Centres dentaires",
       "court": "Dentaire",
       "description": "Paniers 100 % Santé, devis et traitements d'orthodontie : le tiers payant d'un cabinet ou d'un centre dentaire.",
+      "metaDescription": "Comment sécuriser le tiers payant d'un cabinet ou d'un centre dentaire : paniers 100 % Santé, devis et facturation des traitements d'orthodontie.",
       "teinte": "conformite",
       "agent": "Parlons de votre tiers payant",
       "en": {
@@ -37,6 +38,7 @@
       "nom": "Centres de santé et ophtalmologie",
       "court": "Centres et ophtalmo",
       "description": "Facturation, recouvrement et outils d'un centre de santé, d'un centre d'ophtalmologie ou d'un groupe multi-sites.",
+      "metaDescription": "Facturation, recouvrement et outils : des repères pour le back-office d'un centre de santé, d'un centre d'ophtalmologie ou d'un groupe multi-sites.",
       "teinte": "rejets",
       "agent": "L'agent tient l'agenda et le check-out à jour",
       "en": {
@@ -50,6 +52,7 @@
       "nom": "Pharmacies",
       "court": "Pharmacie",
       "description": "Créances de tiers payant, rejets et réassort : le back-office d'une officine.",
+      "metaDescription": "Des repères pour le back-office d'une officine : solder les créances de tiers payant, traiter les rejets, préparer le réassort et saisir les ordonnances.",
       "teinte": "guide-tiers-payant",
       "agent": "L'agent lit les ordonnances",
       "en": {
@@ -63,6 +66,7 @@
       "nom": "Cliniques et laboratoires",
       "court": "Cliniques et labos",
       "description": "Admissions, rejets, retours NOEMIE et paiements : le back-office d'une clinique, d'un hôpital privé ou d'un laboratoire.",
+      "metaDescription": "Des repères pour le back-office d'une clinique, d'un hôpital privé ou d'un laboratoire : admissions, rejets, retours NOEMIE et rapprochement des paiements.",
       "teinte": "gerer-son-tiers-payant",
       "agent": "Parlons de votre tiers payant",
       "en": {

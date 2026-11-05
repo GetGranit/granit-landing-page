@@ -3,6 +3,21 @@
   "nom": "Sévéane (Korelio)",
   "logo": "/logos/seveane.png",
   "checkedOn": "2026-10-07",
+  "acces": {
+    "verifieLe": "2026-10-30",
+    "liens": [
+      {
+        "label": "Se connecter sur korelio.com",
+        "url": "https://www.korelio.com/mon-compte-korelio.html",
+        "detail": "Identifiant, mot de passe, puis code reçu par e-mail."
+      },
+      {
+        "label": "Espace opticien Sévéane",
+        "url": "https://www.seveane.com/seveaneExt/angular-app/index.jsp#!/login/opticien",
+        "detail": "Pour les opticiens partenaires du réseau Sévéane."
+      }
+    ]
+  },
   "identite": [
     {
       "label": "Type",

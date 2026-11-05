@@ -62,7 +62,7 @@ Les champs en **gras** viennent de `articles-queue.json`. Les autres sont produi
 | **`slug`** | file | Minuscules, tirets, sans accent. Jamais modifié après publication. |
 | **`category`** | file | Un des slugs ci-dessus. |
 | **`title`** | file | Le H1 de la page. Mot-clé principal dans les premiers mots. Il peut dépasser 60 caractères : c'est `seoTitle` qui va dans la balise `<title>`. Factuel, précis, pas de racolage. |
-| `seoTitle` | Claude | Le titre affiché par Google et dans les partages. **60 caractères maximum, espaces comprises.** Contient les mots du mot-clé principal, tôt dans le titre. Se lit naturellement, reprend `title` s'il tient en 60 caractères et se lit bien dans Google. Différent du titre de tout autre article. Sans « Granit » en suffixe. |
+| `seoTitle` | Claude | Le titre affiché par Google et dans les partages. **60 caractères maximum, espaces comprises.** Contient les mots du mot-clé principal, tôt dans le titre. Se lit naturellement, reprend `title` s'il tient en 60 caractères et se lit bien dans Google. Différent du titre de tout autre article. Sans « Granit » en suffixe. Page plateforme : orienté connexion, ex. « iSanté TP : connexion à l'espace pro opticien ». |
 | `metaDescription` | Claude | 140 à 160 caractères. Une phrase qui se lit normalement, avec les mots du mot-clé principal, pas forcément collés. Jamais une suite de mots-clés en ouverture (voir « Titre et meta description »). Un bénéfice concret. Finit sur une raison de cliquer. |
 | **`primaryKeyword`** | file | La requête exacte visée (ex. `almerys pec`). |
 | **`keywordCluster`** | file | 5 à 10 termes associés, à répartir naturellement. |
