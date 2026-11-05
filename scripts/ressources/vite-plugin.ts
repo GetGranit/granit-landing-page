@@ -39,9 +39,11 @@ const estPilier = (level: string) => /^Pilier/.test(level ?? "");
 function fiche(
   a: RessourceJson,
   plateformes: ReturnType<typeof lireContenu>["plateformes"],
+  concurrents: ReturnType<typeof lireContenu>["concurrents"],
   en?: RessourceJson,
 ): Fiche {
   const fp = a.plateforme ? plateformes[a.plateforme] : undefined;
+  const adversaire = a.type === "vs" ? concurrents[a.concurrents?.[0] ?? ""] : undefined;
   return {
     slug: a.slug,
     category: a.category,
@@ -66,6 +68,7 @@ function fiche(
             statuts: statutsCarte(fp.statuts),
           }
         : undefined,
+    vs: adversaire?.logo ? { nom: adversaire.nom, logo: adversaire.logo } : undefined,
     en: en ? { title: en.title, metaDescription: en.metaDescription } : undefined,
   };
 }
@@ -109,7 +112,7 @@ export function ressources(): Plugin {
         controler(racine, contenu.articles);
         en.avertissements.forEach((m) => this.warn(`Ressources (anglais) : ${m}`));
         const fiches = contenu.articles.map((a) =>
-          fiche(a, contenu.plateformes, en.articles[a.slug]),
+          fiche(a, contenu.plateformes, contenu.concurrents, en.articles[a.slug]),
         );
         const charger = contenu.articles.map((a) => module(a.slug, ARTICLE + a.slug));
         const chargerEn = Object.keys(en.articles).map((s) => module(s, ARTICLE_EN + s));

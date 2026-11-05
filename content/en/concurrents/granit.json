@@ -17,7 +17,7 @@
     },
     "rejets": {
       "valeur": "oui",
-      "detail": "Analysis of rejection causes, correction and resubmission",
+      "detail": "Analysis of rejection causes, correction and resubmission; recovery of old unpaid claims",
       "source": "granit-accueil"
     },
     "rapprochement": {

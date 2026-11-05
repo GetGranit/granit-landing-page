@@ -2,7 +2,7 @@
   "slug": "sicorfe",
   "nom": "Sicorfé Santé",
   "modele": "prestataire",
-  "logo": null,
+  "logo": "/logos/concurrents/sicorfe.png",
   "checkedOn": "2026-11-03",
   "aRelire": false,
   "identite": {
@@ -95,7 +95,6 @@
   ],
   "meilleurSi": [
     "le sujet principal est la trésorerie : un virement unique du tiers payant à J+5",
-    "on veut que la télétransmission, le contrôle des règlements et le rapprochement bancaire passent par le même prestataire",
     "on veut déléguer rejets et impayés à la carte, en ne payant que les actions abouties",
     "on veut un chargé de dossier identifié, spécialisé dans sa discipline"
   ],

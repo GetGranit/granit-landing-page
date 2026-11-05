@@ -2,7 +2,7 @@
   "slug": "iremia",
   "nom": "Iremia Santé",
   "modele": "prestataire",
-  "logo": null,
+  "logo": "/logos/concurrents/iremia.png",
   "checkedOn": "2026-10-07",
   "aRelire": false,
   "identite": {
@@ -78,7 +78,7 @@
   ],
   "meilleurSi": [
     "cash flow is the main issue (advance on the next business day)",
-    "you want to hand everything to a team with a dedicated contact",
+    "you want a human team to handle your files, with a dedicated contact",
     "you work in several health professions and want a single provider"
   ],
   "exclus": {
