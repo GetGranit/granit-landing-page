@@ -31,7 +31,7 @@ export function Nav() {
   return (
     <header className="sticky top-0 z-50 px-3 pt-3 sm:px-6 sm:pt-4">
       <div
-        className="mx-auto flex h-14 max-w-[1200px] items-center justify-between rounded-full px-3 pl-5 pr-2 transition-[background-color,border-color,box-shadow] duration-200 sm:px-4 sm:pl-6 sm:pr-2"
+        className="relative mx-auto flex h-14 max-w-[1200px] items-center justify-between rounded-full px-3 pl-5 pr-2 transition-[background-color,border-color,box-shadow] duration-200 sm:px-4 sm:pl-6 sm:pr-2 lg:px-4"
         style={
           scrolled
             ? {
@@ -56,7 +56,7 @@ export function Nav() {
           <img src={logoMonogram} alt="Granit" className="h-7 w-auto sm:h-8" />
         </Link>
 
-        <nav className="hidden items-center gap-7 lg:flex">
+        <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-7 lg:flex">
           {links.map((l) => (
             <Link
               key={l.to}
