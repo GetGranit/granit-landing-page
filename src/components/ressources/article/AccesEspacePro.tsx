@@ -47,7 +47,7 @@ export function AccesEspacePro({ p, slug }: { p: Plateforme; slug: string }) {
   return (
     <section
       aria-labelledby="acces-espace-pro"
-      className="mt-6 max-w-[620px] rounded-[16px] border border-[var(--border)] bg-white px-4 py-4 shadow-[var(--shadow-soft)] sm:px-5"
+      className="mt-6 max-w-[620px] rounded-[var(--rayon-carte)] border border-[var(--border)] bg-[var(--papier)] px-4 py-4 shadow-[var(--shadow-soft)] sm:px-5"
     >
       <p
         id="acces-espace-pro"
@@ -63,7 +63,7 @@ export function AccesEspacePro({ p, slug }: { p: Plateforme; slug: string }) {
               target="_blank"
               rel="noopener"
               onClick={() => clic(principal.url, 1)}
-              className="inline-flex items-center gap-2 rounded-full bg-[var(--terra)] px-4 py-2.5 text-[15px] font-semibold text-white transition-colors hover:bg-[var(--terra-hover)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--terra)]"
+              className="btn-primary"
             >
               {principal.label}
               <Fleche />
@@ -75,7 +75,7 @@ export function AccesEspacePro({ p, slug }: { p: Plateforme; slug: string }) {
                 target="_blank"
                 rel="noopener"
                 onClick={() => clic(l.url, i + 2)}
-                className="inline-flex items-center gap-1.5 text-[15px] font-semibold text-[var(--text)] underline underline-offset-[3px] hover:text-[var(--terra-hover)]"
+                className="inline-flex items-center gap-1.5 text-[15px] font-semibold text-[var(--text)] underline underline-offset-[3px] hover:text-[var(--profond)]"
               >
                 {l.label}
                 <Fleche />
