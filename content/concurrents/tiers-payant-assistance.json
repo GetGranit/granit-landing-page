@@ -2,7 +2,7 @@
   "slug": "tiers-payant-assistance",
   "nom": "Tiers Payant Assistance (TPA)",
   "modele": "prestataire",
-  "logo": null,
+  "logo": "/logos/concurrents/tiers-payant-assistance.png",
   "checkedOn": "2026-11-03",
   "aRelire": false,
   "identite": {

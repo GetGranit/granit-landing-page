@@ -7,7 +7,13 @@ import { categorie, dateLang, ficheJson, metierDe, titreCourt } from "@/lib/ress
 import { verticale } from "@/lib/ressources/verticales";
 import type { Concurrent, Plateforme, RessourceJson } from "@/lib/ressources/types";
 import { Annuaire } from "../Annuaire";
-import { FenetrePlateforme, MarquePlateforme, PhotoCarte, TitreItalique } from "../Cartes";
+import {
+  CouvertureVs,
+  FenetrePlateforme,
+  MarquePlateforme,
+  PhotoCarte,
+  TitreItalique,
+} from "../Cartes";
 import { estFicheTousPortails, photoFiche } from "@/lib/ressources/photos";
 import { logoPlateforme, statutsCarte } from "@/lib/ressources/logos";
 import { FIGURE_CSS } from "@/lib/ressources/figures";
@@ -254,6 +260,8 @@ export function PageArticle({
                   />
                 ) : estFicheTousPortails(fiche) ? (
                   <FenetrePlateforme />
+                ) : fiche.vs ? (
+                  <CouvertureVs vs={fiche.vs} />
                 ) : (
                   <PhotoCarte photo={photoFiche(fiche)} tailles="380px" chargement="haute" />
                 )}

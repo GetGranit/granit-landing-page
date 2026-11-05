@@ -2,7 +2,7 @@
   "slug": "optibot",
   "nom": "OptiBot",
   "modele": "outil-saisie",
-  "logo": null,
+  "logo": "/logos/concurrents/optibot.png",
   "checkedOn": "2026-10-09",
   "aRelire": false,
   "identite": {

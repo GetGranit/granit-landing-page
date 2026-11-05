@@ -35,8 +35,9 @@ export const estFichePlateforme = (f: Pick<Fiche, "slug" | "category">) =>
 export const estFicheTousPortails = (f: Fiche) =>
   f.category === "plateformes" && !estFichePlateforme(f) && (!f.ancien || Boolean(f.rattache));
 
-/** Couverture dessinée en CSS (FenetrePlateforme) : pas de photo à précharger. */
-export const aCouvertureFenetre = (f: Fiche) => estFichePlateforme(f) || estFicheTousPortails(f);
+/** Couverture dessinée en CSS (FenetrePlateforme, CouvertureVs) : pas de photo à précharger. */
+export const aCouvertureDessinee = (f: Fiche) =>
+  estFichePlateforme(f) || estFicheTousPortails(f) || Boolean(f.vs);
 
 export function photoTheme(category: CategorySlug, slug: string, rang?: number): Photo {
   return { base: `/ressources/themes/${category}-${variante(slug, rang)}`, alt: "" };

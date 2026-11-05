@@ -337,6 +337,62 @@ body {
   }
 }
 
+/* ── Couverture des pages comparatives (CouvertureVs, Cartes.tsx) ──
+   Deux logos sur une plaque papier, le fond de la fenêtre des plateformes autour. Mesures en unités
+   de conteneur : le logo Granit garde ses 96 px de large minimum sur une carte de 280 px. */
+.ress-vs {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  container-type: inline-size;
+  background: var(--lavis);
+}
+.ress-vs-plaque {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 92cqw;
+  height: 42cqw;
+  border-radius: 2.8cqw;
+  background: var(--papier);
+  box-shadow: 0 0 0 1px var(--filet);
+}
+.ress-vs-logo {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6cqw;
+}
+.ress-vs-logo img {
+  display: block;
+  width: 34.5cqw;
+  height: 23cqw;
+  object-fit: contain;
+}
+.ress-vs-logo img.symbole {
+  width: 9.5cqw;
+  height: 9.5cqw;
+}
+.ress-vs-logo .nom {
+  font-family: var(--font-sans);
+  font-size: 4.6cqw;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--encre);
+}
+.ress-vs-mot {
+  flex: none;
+  font-family: var(--font-sans);
+  font-size: 3.8cqw;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--encre);
+}
+
 /* ── Fenêtre des fiches plateformes (FenetrePlateforme, Cartes.tsx) ──
    Fenêtre plate, centrée, coupée par le bas de la couverture. Toutes les mesures passent par --s,
    en unités de conteneur : la même illustration de la petite carte à la grande.

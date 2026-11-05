@@ -2,7 +2,7 @@
   "slug": "stpps",
   "nom": "STPPS",
   "modele": "prestataire",
-  "logo": null,
+  "logo": "/logos/concurrents/stpps.png",
   "checkedOn": "2026-11-03",
   "aRelire": false,
   "identite": {

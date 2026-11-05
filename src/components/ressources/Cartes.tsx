@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import logoGranit from "@/assets/logo.svg";
 import { useLanguage } from "@/lib/i18n";
 import {
   categorie,
@@ -202,8 +203,29 @@ export function PhotoCarte({
 }
 
 /**
+ * Couverture d'une page comparative : le logo Granit face au logo du concurrent, tels quels.
+ * Décor de carte : le titre qui suit dit déjà la comparaison.
+ */
+export function CouvertureVs({ vs }: { vs: NonNullable<Fiche["vs"]> }) {
+  return (
+    <div aria-hidden className="ress-vs">
+      <div className="ress-vs-plaque">
+        <span className="ress-vs-logo">
+          <img src={logoGranit} alt="" />
+        </span>
+        <span className="ress-vs-mot">VS</span>
+        <span className="ress-vs-logo">
+          <img src={vs.logo} alt="" className={estSymbole(vs.logo) ? "symbole" : undefined} />
+          {estSymbole(vs.logo) && <span className="nom">{vs.nom}</span>}
+        </span>
+      </div>
+    </div>
+  );
+}
+
+/**
  * Couverture d'une carte : la photo du thème (ou du métier), ou pour une fiche plateforme la
- * fenêtre de prise en charge, et l'étiquette de catégorie en haut à gauche.
+ * fenêtre de prise en charge, pour une page comparative les deux logos, et l'étiquette de catégorie en haut à gauche.
  */
 function Couverture({
   fiche,
@@ -247,6 +269,8 @@ function Couverture({
         />
       ) : estFicheTousPortails(fiche) ? (
         <FenetrePlateforme />
+      ) : fiche.vs ? (
+        <CouvertureVs vs={fiche.vs} />
       ) : (
         <PhotoCarte photo={photoFiche(fiche, rang)} tailles={tailles} chargement={chargement} />
       )}

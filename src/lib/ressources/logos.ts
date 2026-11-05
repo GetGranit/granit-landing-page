@@ -20,7 +20,7 @@ const LOGOTYPES: Record<string, string> = {
 };
 
 /** Logos carrés (un symbole, pas un mot) : la fenêtre écrit le nom à côté. */
-const SYMBOLES = new Set(["/logos/seveane.png"]);
+const SYMBOLES = new Set(["/logos/seveane.png", "/logos/concurrents/optibot.png"]);
 
 export function logoPlateforme(
   logo: string | undefined,

@@ -1,8 +1,9 @@
 // Images d'aperçu (og:image, 1200×630) des fiches plateformes : la fenêtre de prise en charge
 // des cartes (FenetrePlateforme), le nom en serif et le logo Granit (src/assets/logo.svg, tel quel).
 // Une image par fichier de faits content/plateformes/*.json, plus la fiche « tous portails ».
+// Pour une page comparative (granit-vs-*) : la couverture CouvertureVs, les deux logos sur le dégradé.
 // Rendu par le Chrome installé, en headless : aucune dépendance. À relancer quand une plateforme
-// est ajoutée :   node scripts/ressources/og-plateformes.mjs
+// ou un concurrent est ajouté :   node scripts/ressources/og-plateformes.mjs [début du slug]
 // Sortie : public/ressources/og/{slug}.jpg ; le plugin Vite les branche s'ils existent.
 import { execFileSync } from "node:child_process";
 import {
@@ -48,7 +49,8 @@ function cssJetons() {
   const fin = css.indexOf("\n}", debut);
   if (debut < 0 || fin < 0) throw new Error("Bloc :root de styles.css introuvable");
   const polices = css.match(/--font-(sans|serif|mono):[^;]+;/g);
-  if (!polices || polices.length < 3) throw new Error("Variables de police de styles.css introuvables");
+  if (!polices || polices.length < 3)
+    throw new Error("Variables de police de styles.css introuvables");
   return `${css.slice(debut, fin)}\n  ${polices.join("\n  ")}\n}`;
 }
 
@@ -121,6 +123,43 @@ function page({ titre, suite, p }) {
 </body></html>`;
 }
 
+/** Styles de la couverture comparative, tels quels depuis ressources.css (une seule source). */
+function cssVs() {
+  const css = readFileSync(join(racine, "src/ressources.css"), "utf8");
+  const debut = css.indexOf("/* ── Couverture des pages comparatives");
+  const fin = css.indexOf("/* ── Fenêtre des fiches plateformes", debut);
+  if (debut < 0 || fin < 0)
+    throw new Error("Bloc « Couverture des pages comparatives » introuvable");
+  return css.slice(debut, fin);
+}
+
+/** Même balisage que CouvertureVs (Cartes.tsx). Sans texte : l'image sert aux deux langues. */
+function pageVs({ c }) {
+  const logoGranit = pathToFileURL(join(racine, "src/assets/logo.svg")).href;
+  const symbole = estSymbole(c.logo);
+  return `<!doctype html><html lang="fr"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  ${cssJetons()}
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body { position: relative; background: var(--degrade-marque); }
+  ${cssVs()}
+  .ress-vs { background: transparent; }
+  .ress-vs-plaque { width: 80cqw; height: 34cqw; }
+  .ress-vs-logo img { width: 29cqw; height: 19cqw; }
+  .ress-vs-logo img.symbole { width: 8cqw; height: 8cqw; }
+  .ress-vs-logo .nom { font-size: 3.8cqw; }
+  .ress-vs-mot { font-size: 2.6cqw; }
+</style></head><body>
+  <div class="ress-vs"><div class="ress-vs-plaque">
+    <span class="ress-vs-logo"><img src="${logoGranit}" alt=""></span>
+    <span class="ress-vs-mot">VS</span>
+    <span class="ress-vs-logo"><img src="${fichier(c.logo)}" alt="" class="${symbole ? "symbole" : ""}">${symbole ? `<span class="nom">${echapper(c.nom)}</span>` : ""}</span>
+  </div></div>
+</body></html>`;
+}
+
 function capturer(html, slug, dossier) {
   const source = join(dossier, `${slug}.html`);
   const png = join(dossier, `${slug}.png`);
@@ -160,8 +199,19 @@ fiches.push({
   titre: "Portails de tiers payant",
   suite: "connexion, prise en charge, rejet et paiement",
 });
+const comparatives = readdirSync(join(racine, "content/ressources"))
+  .filter((f) => f.startsWith("granit-vs-"))
+  .sort()
+  .map((f) => lireJson(join(racine, "content/ressources", f)))
+  .map((a) => ({
+    slug: a.slug,
+    c: lireJson(join(racine, `content/concurrents/${a.concurrents[0]}.json`)),
+  }))
+  .filter((f) => f.c.logo);
+const debut = process.argv[2] ?? "";
 try {
-  for (const f of fiches) console.log(capturer(page(f), f.slug, dossier).replace(racine + "/", ""));
+  for (const f of [...fiches, ...comparatives].filter((x) => x.slug.startsWith(debut)))
+    console.log(capturer(f.c ? pageVs(f) : page(f), f.slug, dossier).replace(racine + "/", ""));
 } finally {
   rmSync(dossier, { recursive: true, force: true });
 }
