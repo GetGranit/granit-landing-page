@@ -118,11 +118,13 @@ const consignesType = {
   vs:
     "Page comparative « fiche VS » (gabarit §6 bis) : plan imposé, rédigée uniquement à partir de `axes`, `citations` et `meilleurSi` des fichiers concurrents ci-dessous. " +
     "Marqueurs data-bloc coup-doeil, frise et choisir, une fois chacun, à l'endroit indiqué. Aucun prix, aucun client, aucun chiffre déclaré, aucun dénigrement. " +
-    "Dis ce que le concurrent fait mieux. Une information absente des fichiers s'écrit « {nom} ne le précise pas ».",
+    "Dis ce que le concurrent fait mieux, seulement si Granit ne le fait pas : compare à la fiche Granit avant de l'écrire. N'écris jamais que Granit ne fait pas quelque chose sans un axe `non` dans sa fiche. " +
+    "Une information absente des fichiers s'écrit « {nom} ne le précise pas », jamais comme une absence du service. N'affirme pas qu'un acteur ne mentionne pas un service que ses citations ou ses axes évoquent. " +
+    "Aucune source privée : ni devis, ni mail, ni appel.",
   grille:
     "Page comparative « grille du marché » (gabarit §6 bis) : plan imposé, rédigée uniquement à partir des fichiers concurrents ci-dessous. " +
     "Marqueurs data-bloc frise, modeles et grille, une fois chacun, à l'endroit indiqué. Granit est un acteur parmi les autres. " +
-    "Aucun prix, aucun client, aucun chiffre déclaré, aucun dénigrement.",
+    "Aucun prix, aucun client, aucun chiffre déclaré, aucun dénigrement. N'écris jamais que Granit ne fait pas quelque chose sans un axe `non` dans sa fiche. Aucune source privée : ni devis, ni mail, ni appel.",
 };
 
 const longueur = { vs: "1 000 à 1 500 mots (jamais moins de 900)", grille: "2 000 à 2 800 mots (jamais moins de 1 800)" };

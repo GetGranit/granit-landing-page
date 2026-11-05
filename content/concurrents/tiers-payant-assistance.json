@@ -89,10 +89,8 @@
     }
   ],
   "meilleurSi": [
-    "on veut confier la correction des rejets, les relances et le pointage à des gestionnaires humains, sans IA dans les traitements",
-    "on exerce plusieurs métiers de santé (optique, pharmacie, matériel médical) et on veut un seul prestataire",
-    "on veut qu'un gestionnaire intervienne à distance directement dans son logiciel métier, sans changer son organisation",
-    "on veut un suivi continu avec un interlocuteur dédié et une application de suivi des interventions (Com'In)"
+    "on veut confier son tiers payant à des gestionnaires humains, sans IA dans les traitements",
+    "on exerce plusieurs métiers de santé (optique, pharmacie, matériel médical) et on veut un seul prestataire"
   ],
   "exclus": {
     "_pourquoi": "aucun prix sur les pages comparatives ; chiffres de performance déclarés non comparables",

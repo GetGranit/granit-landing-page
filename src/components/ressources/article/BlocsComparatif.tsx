@@ -2,6 +2,7 @@
 // tableau « en un coup d'œil », frise du dossier, cartes « Choisir … si », modèles, grille du marché.
 // Jamais réécrits par Claude. Aucun prix : le fichier de faits n'en contient pas d'affichable.
 import type { ReactElement } from "react";
+import { Check, X } from "lucide-react";
 import { useLanguage, type Lang } from "@/lib/i18n";
 import { dateLang } from "@/lib/ressources/contenu";
 import type { AxeCle, Concurrent, Modele } from "@/lib/ressources/types";
@@ -35,7 +36,7 @@ const copy: Record<Lang, Textes> = {
     lignes: [
       { cle: "quiFait", label: "Qui fait le travail" },
       { cle: "pec", label: "Demandes de prise en charge" },
-      { cle: "livraison", label: "Bons de livraison et contrôle" },
+      { cle: "livraison", label: "Bons de livraison" },
       { cle: "rejets", label: "Rejets et relances" },
       { cle: "rapprochement", label: "Rapprochement des paiements" },
       { cle: "avance", label: "Avance de trésorerie" },
@@ -103,7 +104,7 @@ const copy: Record<Lang, Textes> = {
     lignes: [
       { cle: "quiFait", label: "Who does the work" },
       { cle: "pec", label: "Coverage requests" },
-      { cle: "livraison", label: "Delivery notes and checks" },
+      { cle: "livraison", label: "Delivery notes" },
       { cle: "rejets", label: "Rejections and follow-ups" },
       { cle: "rapprochement", label: "Payment reconciliation" },
       { cle: "avance", label: "Cash advance" },
@@ -196,6 +197,29 @@ function Valeur({ c, cle }: { c: Concurrent; cle: AxeCle }) {
   );
 }
 
+/** Cellule du tableau « en un coup d'œil » : coche ou croix, le texte seulement si ce n'est pas binaire. */
+function Coche({ c, cle }: { c: Concurrent; cle: AxeCle }) {
+  const t = useTextes();
+  const a = c.axes[cle];
+  if (!a || a.valeur === "non publié")
+    return <span className="text-[14px] text-[var(--text-muted)]">{t.nonPrecise}</span>;
+  if (a.valeur === "oui")
+    return (
+      <>
+        <Check aria-hidden size={20} strokeWidth={2.5} className="text-[var(--profond)]" />
+        <span className="sr-only">{t.oui}</span>
+      </>
+    );
+  if (a.valeur === "non")
+    return (
+      <>
+        <X aria-hidden size={20} strokeWidth={2.5} className="text-[var(--text-muted)]" />
+        <span className="sr-only">{t.non}</span>
+      </>
+    );
+  return <>{a.valeur[0].toUpperCase() + a.valeur.slice(1)}</>;
+}
+
 function Releve({ acteurs }: { acteurs: Concurrent[] }) {
   const { lang } = useLanguage();
   const date = acteurs.map((a) => a.checkedOn).sort()[0];
@@ -212,7 +236,7 @@ export function CoupDoeil({ acteurs }: Comparaison) {
   const lignes = t.lignes.filter((l) => acteurs.some((c) => c.axes[l.cle]));
   return (
     <div className="my-4">
-      <div className="tbl">
+      <div className={acteurs.length === 2 ? "tbl tbl-duel" : "tbl"}>
         <table>
           <thead>
             <tr>
@@ -238,7 +262,7 @@ export function CoupDoeil({ acteurs }: Comparaison) {
                 </td>
                 {acteurs.map((c) => (
                   <td key={c.slug}>
-                    <Valeur c={c} cle={l.cle} />
+                    <Coche c={c} cle={l.cle} />
                   </td>
                 ))}
               </tr>
