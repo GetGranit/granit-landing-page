@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 
+import { useLanguage } from "@/lib/i18n";
 import { PORTAILS } from "@/lib/pec/essaiState";
 import { platformById } from "@/lib/pec/resolve";
 import { Reassure, TextLink, bigBtn } from "./ui";
@@ -10,6 +11,36 @@ const SIMULABLES = ["generation", "emoa", "viamedis"];
 /** Les plus courants en optique parmi ceux où Granit fait les vraies PEC. */
 const EN_AVANT = ["sp_sante", "santeclair", "almerys"];
 const VISIBLES = 3;
+
+const copy = {
+  fr: {
+    faite: "✓ 1re simulation faite",
+    autres: "En faire d'autres ? ",
+    simple: "C'est quand même plus simple.",
+    intro: "Simulez aussi sur vos autres portails, puis faites vos vraies PEC avec Granit.",
+    liste: "Portails où simuler",
+    vraies: "Pour vos vraies PEC : ",
+    etAutres: (n: number) => ` et ${n} autres`,
+    entendu: "Entendu. Votre résultat reste affiché ici.",
+    creer: "Créer mon compte gratuit",
+    reassure: ["Gratuit", "20 simulations offertes", "Sans carte bancaire"],
+    plusTard: "Plus tard",
+  },
+  en: {
+    faite: "✓ 1st simulation done",
+    autres: "Run more? ",
+    simple: "It is a lot simpler.",
+    intro:
+      "Simulate on your other portals too, then submit your real coverage requests with Granit.",
+    liste: "Portals to simulate on",
+    vraies: "For your real coverage requests: ",
+    etAutres: (n: number) => ` and ${n} more`,
+    entendu: "Understood. Your result stays here.",
+    creer: "Create my free account",
+    reassure: ["Free", "20 free simulations", "No credit card"],
+    plusTard: "Later",
+  },
+};
 
 /**
  * Sous le résultat : « En faire d'autres ? ». D'abord les portails où l'on peut
@@ -34,6 +65,7 @@ export function Invitation({
   onPlusTard: () => void;
 }) {
   const reduce = useReducedMotion();
+  const t = copy[useLanguage().lang];
   const [plusTard, setPlusTard] = useState(false);
   const simulables = SIMULABLES.map((id) => PORTAILS.find((p) => p.id === id)).filter(
     (p) => p !== undefined,
@@ -68,32 +100,37 @@ export function Invitation({
       <div className="grid gap-1.5">
         <p
           className="text-[12px]"
-          style={{ fontFamily: "var(--font-mono)", color: "var(--sage)", letterSpacing: ".04em" }}
+          style={{
+            fontFamily: "var(--font-mono)",
+            color: "var(--succes-texte)",
+            letterSpacing: ".04em",
+          }}
         >
-          ✓ 1re simulation faite
+          {t.faite}
         </p>
         <h2
           className="font-serif text-[clamp(24px,5.4vw,30px)] leading-tight"
           style={{ color: "var(--text)", letterSpacing: "-.015em", textWrap: "balance" }}
         >
-          En faire d'autres ?{" "}
-          <span className="italic" style={{ color: "var(--terra)" }}>
-            C'est quand même plus simple.
-          </span>
+          {t.autres}<span className="accent-italic">{t.simple}</span>
         </h2>
         <p className="text-[15px]" style={{ color: "var(--text-muted)" }}>
-          Simulez aussi sur vos autres portails, puis faites vos vraies PEC avec Granit.
+          {t.intro}
         </p>
       </div>
 
-      <ul className="flex flex-wrap justify-center gap-2" aria-label="Portails où simuler">
+      <ul className="flex flex-wrap justify-center gap-2" aria-label={t.liste}>
         {simulables.map((p, i) =>
           p.id === platformId ? (
             <motion.li
               key={p.id}
               {...entree(i)}
               className="rounded-full px-3 py-1.5 text-[13px]"
-              style={{ background: "var(--sage)", color: "#fff", fontWeight: 600 }}
+              style={{
+                background: "var(--succes-fond)",
+                color: "var(--succes-texte)",
+                fontWeight: 600,
+              }}
             >
               ✓ {portail}
             </motion.li>
@@ -105,7 +142,7 @@ export function Invitation({
               style={{
                 borderColor: "var(--border2)",
                 color: "var(--text-soft)",
-                background: "#fff",
+                background: "var(--papier)",
               }}
             >
               + {p.label}
@@ -115,21 +152,21 @@ export function Invitation({
       </ul>
       {autres.length > 0 && (
         <p className="text-[13px]" style={{ color: "var(--text-muted)" }}>
-          Pour vos vraies PEC :{" "}
+          {t.vraies}
           {autres
             .slice(0, VISIBLES)
             .map((p) => p.label)
             .join(", ")}
-          {reste > 0 ? ` et ${reste} autres` : ""}.
+          {reste > 0 ? t.etAutres(reste) : ""}.
         </p>
       )}
 
       {plusTard ? (
         <div className="grid justify-items-center gap-2">
           <p className="text-[15px]" style={{ color: "var(--text-muted)" }}>
-            Entendu. Votre résultat reste affiché ici.
+            {t.entendu}
           </p>
-          <TextLink onClick={() => onCreer(true)}>Créer mon compte gratuit</TextLink>
+          <TextLink onClick={() => onCreer(true)}>{t.creer}</TextLink>
         </div>
       ) : (
         <div className="grid justify-items-center gap-3">
@@ -141,16 +178,16 @@ export function Invitation({
             animate={reduce ? undefined : { scale: [1, 1.035, 1] }}
             transition={{ duration: 0.6, delay: delay + 0.35 + (VISIBLES + 2) * 0.12 }}
           >
-            Créer mon compte gratuit <span className="arrow">→</span>
+            {t.creer} <span className="arrow">→</span>
           </motion.button>
-          <Reassure items={["Gratuit", "20 simulations offertes", "Sans carte bancaire"]} />
+          <Reassure items={t.reassure} />
           <TextLink
             onClick={() => {
               setPlusTard(true);
               onPlusTard();
             }}
           >
-            Plus tard
+            {t.plusTard}
           </TextLink>
         </div>
       )}

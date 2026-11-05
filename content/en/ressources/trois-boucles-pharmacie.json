@@ -1,0 +1,152 @@
+{
+  "slug": "trois-boucles-pharmacie",
+  "id": "R6",
+  "category": "gerer-son-tiers-payant",
+  "categoryName": "Managing your third-party payment",
+  "type": "standard",
+  "plateforme": null,
+  "title": "Prescriptions, rejections and restocking: the three loops to automate in a pharmacy",
+  "primaryKeyword": "automatisation pharmacie",
+  "keywordCluster": [
+    "automatiser officine",
+    "rejets pharmacie",
+    "gestion ordonnances pharmacie",
+    "réassort officine"
+  ],
+  "parentSlug": null,
+  "level": "Refonte",
+  "author": {
+    "name": "Laura",
+    "jobTitle": "Writer, health expert",
+    "photo": "/auteurs/laura.jpg",
+    "url": null
+  },
+  "reviewer": {
+    "name": "Olivier",
+    "jobTitle": "Writer, third-party payment expert",
+    "photo": "/auteurs/olivier.jpg",
+    "url": null
+  },
+  "datePublished": "2026-10-29",
+  "dateModified": "2026-10-29",
+  "checkedOn": null,
+  "wordCount": 2189,
+  "readTime": 10,
+  "metaDescription": "Pharmacy automation: prescriptions, third-party payment rejections and restocking. What an agent can prepare, what the pharmacy owner approves, and where to start.",
+  "contentHtml": "<p><strong>In pharmacy automation, the quickest gain does not come from the dispensing robot. It comes from three administrative loops that recur every day: entering prescriptions, handling third-party payment rejections and restocking from suppliers.</strong> All three follow the same pattern: information comes in, someone copies or checks it, then passes it on. This repetitive part is what a software agent can prepare. The pharmacist keeps the approval.</p><p>This article is for the pharmacy owner who wants to know what to automate first, what to keep in hand, and how to make sure a tool does not decide for them. It contains no promises in figures. Every pharmacy starts from a different situation, and the only measurement that counts is the one you take on your own cases.</p><div class=\"key-takeaways\"><strong>Key takeaways</strong><ul><li>Three loops concentrate the repetition in a pharmacy: entering prescriptions, third-party payment (tiers payant: the patient pays nothing upfront, insurers pay the provider directly) rejections and restocking from suppliers.</li><li>In each loop, the agent prepares and a person approves. Dispensing remains the pharmacist’s act (French Public Health Code, article R4235-48).</li><li>A rejection is better corrected the same day than at the end of the week: the case and the patient are still within reach.</li><li>Start with the most repetitive and least clinical loop. In most pharmacies, that is rejections.</li><li>Before connecting anything, measure the time spent today on each loop: it will be your point of comparison.</li></ul></div><h2 id=\"pourquoi-trois-boucles\">Why do these three loops take so much time in a pharmacy?</h2><p>Because they are repetitive, fragmented and constantly interrupted by the counter. None is difficult in itself. It is their frequency and how they are scattered across the day that make them costly.</p><p>A loop, as we use the term here, is a task that recurs the same way: a trigger (a prescription, a payment return, a stock threshold), a series of checks, then an action in the LGO (the pharmacy’s practice management software) or on a portal. As long as this series is done by hand, it depends on who is available. As soon as a patient is waiting, it gets set aside.</p><p>Every team knows the result. Complex prescriptions slow down the line at the counter. Rejections pile up in a tray until things quiet down on Saturday afternoon. Restocking gets done at the end of the day, when the pharmacy owner still has the energy to compare wholesalers’ terms. None of these tasks is forgotten, but all of them are done late.</p><p>Automating these loops does not mean handing them over entirely to a machine. It means the mechanical part (reading, copying, comparing, sorting) is done continuously, and a person steps in only when a decision is needed.</p><h2 id=\"ordonnances\">How do you automate prescription handling in a pharmacy?</h2><p>By automating the preparation, never the decision. The agent reads the prescription, prepares the data entry and flags what is missing. The pharmacist, or the pharmacy technician under their responsibility, analyzes and approves.</p><p>This boundary is not a matter of caution: it is the rule. Article R4235-48 of the <a href=\"https://www.legifrance.gouv.fr/codes/id/LEGITEXT000006072665/\">French Public Health Code</a> requires the pharmacist to carry out the act of dispensing in full. This act combines the handover of medicines with the pharmaceutical analysis of the prescription, any preparation of doses and the information needed for proper use of the medicine. A tool can make each of these steps easier. It cannot take on any of them.</p><h3>What the agent can prepare</h3><ul><li><strong>Reading the prescription</strong>, whether it arrives as a scanned paper or as a digital prescription: prescriber, date, prescription lines, dosages, durations.</li><li><strong>Identifying the patient</strong> and checking their AMO (mandatory health insurance) and AMC (supplementary health insurance) coverage rights before billing.</li><li><strong>Pre-filling the lines</strong> in the file, ready for review.</li><li><strong>Formal alerts</strong>: missing mention, expired prescription, unplanned renewal, quantity inconsistent with the duration.</li></ul><h3>What the pharmacist keeps</h3><p>Pharmaceutical analysis, the substitution decision, any adjustment, refusing to dispense and advising the patient remain human. The interaction and contraindication alerts already provided by your LGO’s drug database remain your reference: an agent must not replace them, let alone hide them.</p><p>In practice, the gain is measured at the counter. When a hospital discharge prescription arrives pre-filled, the pharmacy technician reviews and corrects instead of typing. They keep their attention for the patient and for the points that call for judgment.</p><div class=\"callout callout--warn\"><p><strong>The trap:</strong> a tool that “approves” a prescription on its own to save time. Require that every dispensing prepared by an agent go through explicit, named approval recorded in the file.</p></div><h2 id=\"rejets\">How do you reduce rejections in a pharmacy?</h2><p>By handling them every day, sorted by reason, rather than in batches at the end of the week. A rejection handled the next day is corrected while the context is still fresh. A rejection handled three weeks later means finding the prescription again, calling the patient back and sometimes giving up.</p><p>Third-party payment, as <a href=\"https://www.ameli.fr/assure/remboursements/rembourse/tiers-payant\">ameli.fr</a> points out, spares the patient from paying upfront: the pharmacy is paid directly by French national health insurance (Assurance Maladie) and, where applicable, by the supplementary insurer. Each rejection is therefore an amount the pharmacy has already advanced by dispensing. Until it is corrected, it stays in the aged receivables and, if it gets too old, ends up as a loss. The topic is developed in the article on how to <a href=\"/ressources/officine-balance-agee-tiers-payant\">clear the backlog of third-party payment receivables</a>.</p><p>Rejections arrive through two channels. On the AMO side, through NOEMIE remittance files (the exchange standard French national health insurance uses to send the professional the payments and rejections for their invoices). On the AMC side, through returns from supplementary insurers or their third-party payment operators. The reasons repeat: coverage not open on the date of care, beneficiary incorrectly identified, exemption incorrectly entered, missing document. The page on <a href=\"/ressources/codes-rejets-noemie\">NOEMIE rejection codes</a> explains how to read them.</p><h3>The daily loop, step by step</h3><ol class=\"steps\"><li><strong>Collect the returns every morning.</strong> All of the previous day’s AMO and AMC returns, without waiting for them to pile up.</li><li><strong>Sort by reason.</strong> A coverage rights reason is not handled like a pricing or missing-document reason.</li><li><strong>Prepare the correction.</strong> Updating coverage rights, scheme, exemption or beneficiary enrollment, with the document that justifies the change.</li><li><strong>Get it approved.</strong> A team member reviews the proposed correction and approves or refuses it.</li><li><strong>Resend and track.</strong> The corrected invoice goes out again, and its payment is reconciled with the bank transfer received.</li></ol><p>The first four steps are exactly the ones an agent can take on: reading the returns, sorting them, preparing the correction and presenting it for approval. The fifth connects to bank reconciliation, covered in the article on <a href=\"/ressources/rapprochement-noemie\">reconciling NOEMIE files with bank transfers</a>. To go further on the AMO side, see also how to <a href=\"/ressources/reduire-rejets-cpam\">reduce CPAM rejections without changing your practice management software</a>.</p><p>When these rejections number in the dozens every week, it is often the one loop nobody has time to keep up to date. This is what <a href=\"/agents\">Granit’s agents</a> do for third-party payment: they collect the returns, prepare the corrections and submit them to your team, which keeps the decision.</p><h2 id=\"reassort\">What can you automate in pharmacy restocking?</h2><p>Monitoring and preparing orders, not commercial trade-offs. The agent tracks stock levels, spots upcoming stockouts and prepares an order ready for approval. The pharmacy owner decides on terms, volumes and suppliers.</p><p>Restocking is the least visible loop but the most regular. It combines daily orders to wholesaler-distributors, direct orders to manufacturers, tracking back-orders, managing stockouts and returns. Each of these tasks means comparing scattered information: actual stock, turnover, current commercial terms, products out of stock at the usual wholesaler.</p><p>If your LGO already offers automatic ordering based on thresholds, the agent does not replace it. It handles what remains manual around it:</p><ul><li>spotting products out of stock at a supplier and proposing an alternative already listed;</li><li>tracking back-orders and flagging those that do not arrive;</li><li>preparing direct orders based on the negotiated terms you have given it;</li><li>gathering the details for a supplier return (product, batch, reason) so the team only has to send it.</li></ul><p>What the agent does not do: negotiate, choose a new partner, change a product range. These are management decisions that commit the pharmacy and that the pharmacy owner keeps.</p><div class=\"tbl\"><table><tr><th>Loop</th><th>Trigger</th><th>What the agent prepares</th><th>Who approves</th></tr><tr><td>Prescriptions</td><td>Prescription received (scanned paper or digital)</td><td>Reading, pre-filling, formal alerts, eligibility check</td><td>Pharmacist or pharmacy technician under their responsibility</td></tr><tr><td>Rejections</td><td>AMO or AMC return</td><td>Sorting by reason, proposed correction, supporting document</td><td>Person in charge of third-party payment</td></tr><tr><td>Restocking</td><td>Stock threshold, stockout, back-order</td><td>Proposed order, alternative, return file</td><td>Pharmacy owner or purchasing manager</td></tr></table></div><h2 id=\"par-ou-commencer\">Pharmacy automation: which loop should you start with?</h2><p>With the most repetitive and least clinical loop. In most pharmacies, that is third-party payment rejections: the volume is steady, the reasons are similar, and an error can be corrected with no risk to the patient.</p><p>Four criteria help you choose. Volume: how many times a week does the task come up? Repetition: are the cases similar from one time to the next? Risk: does an error affect the patient or only a payment? Measurement: can you easily count the time spent before and after? Rejections tick all four boxes. Restocking does too, to a lesser extent. Prescriptions come last, because they involve the pharmaceutical act and require the strictest approval.</p><p>The safest method comes down to five stages. First, measure over two weeks the time actually spent on the chosen loop and the number of cases handled. Then connect the agent to that loop only. Let it run for a month on new cases, approving each of its proposals. Compare with your baseline. Extend to the next loop only if the comparison convinces you.</p><div data-figure=\"demarrage-boucle\"></div><p>This progression avoids a common pitfall: wanting to connect everything at once, no longer knowing where a gain or an error comes from, and giving up. It also avoids judging the tool on its first days, when the team is still learning to read its proposals. Traditional software robots have often failed in healthcare for a similar reason, as the article <a href=\"/ressources/ia-vs-rpa-sante\">agentic AI or RPA</a> explains: they reproduced clicks without understanding the cases that fell outside the template.</p><h2 id=\"preparateur\">Does automation replace the pharmacy technician?</h2><p>No. It takes the mechanical part of the work off the pharmacy technician, not their profession. Review, advice, the relationship with the patient and approval remain human, and the regulations on dispensing require it.</p><p>What changes is how the day is divided. The time spent today re-entering a prescription, working through a pile of rejections or comparing wholesalers’ offers can go back to the counter. That is where a pharmacy stands out: advice, support for chronic patients, and the services the profession now provides, such as pharmaceutical consultations or vaccination.</p><p>Say it plainly to the team from the start. A project presented as a way to cut a position breeds mistrust and workarounds. A project presented as the end of the Saturday rejection tray is generally well received. The difference lies less in the tool than in how the pharmacy owner explains what they expect from it.</p><p>One point of attention still applies: the agent prepares, but someone has to review. If approval becomes a reflex click, the control disappears. It is better to assign the review to one identified person per loop, who knows the usual reasons and quickly spots an unusual proposal.</p><h2 id=\"controle\">How do you stay in control of prescriptions and corrections?</h2><p>By requiring three things from any tool: explicit human approval before each action, a complete log of what the agent read, proposed and sent, and the ability to refuse or correct each proposal.</p><p>Explicit approval is the first safeguard. No corrected invoice should go out, no order should be placed, no dispensing should be recorded unless a team member has approved it. For prescriptions, this approval must come from a pharmacist or a pharmacy technician working under their supervision.</p><p>The log is the second. It must make it possible to answer simple questions weeks later: who approved this correction, based on which document, on what date? What did the agent propose, and what did the person change? What a log should contain is covered in the article on <a href=\"/ressources/logs-agent-sante\">what an AI agent should log in a healthcare environment</a>.</p><p>The third safeguard concerns data. Prescriptions, coverage rights and payment returns are health data. Ask any provider where they are hosted, who has access to them and how they are deleted at the end of the contract. A vague answer on any of these three points is enough to rule out a tool.</p><div class=\"callout callout--tip\"><p><strong>The right reflex:</strong> during the first month, review a sample of approved proposals every week. You will quickly see whether the review stays attentive or becomes automatic.</p></div><p>Finally, keep the option of going back. An automated loop must be able to return to manual handling overnight, without losing information. This is also what lets you evaluate the tool honestly: if you can no longer do without it because you no longer know how to work without it, that is not a good sign.</p>",
+  "tocItems": [
+    {
+      "id": "pourquoi-trois-boucles",
+      "label": "Why these three loops take time"
+    },
+    {
+      "id": "ordonnances",
+      "label": "Automating prescription handling"
+    },
+    {
+      "id": "rejets",
+      "label": "Reducing third-party payment rejections"
+    },
+    {
+      "id": "reassort",
+      "label": "Automating pharmacy restocking"
+    },
+    {
+      "id": "par-ou-commencer",
+      "label": "Which loop to start with"
+    },
+    {
+      "id": "preparateur",
+      "label": "Automation and the pharmacy technician"
+    },
+    {
+      "id": "controle",
+      "label": "Staying in control of the agent"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "Which tasks should a pharmacy automate first?",
+      "answer": "Start with the most repetitive and least clinical task, usually handling third-party payment rejections. The volume is steady, the reasons are similar and an error affects a payment, not a patient. Restocking comes next, then prescription preparation, which requires the strictest approval."
+    },
+    {
+      "question": "How do you reduce rejections in a pharmacy?",
+      "answer": "Handle rejections every day rather than in batches at the end of the week, and sort them by reason. Collect the AMO and AMC returns every morning, prepare the correction with its supporting document, have it approved, then track the payment. A rejection corrected the next day gets resolved while the case context is still at hand."
+    },
+    {
+      "question": "Does automation replace the pharmacy technician?",
+      "answer": "No. It removes the mechanical part of the work, such as re-entering data or sorting returns, but review, advice and approval remain human. Under the French Public Health Code, dispensing is an act the pharmacist must carry out in full. The time freed up goes back to the counter and to patient follow-up."
+    },
+    {
+      "question": "How do you stay in control of prescriptions?",
+      "answer": "Require that no prescription prepared by an agent be recorded without explicit approval from a pharmacist or a pharmacy technician under their responsibility. Check that the tool keeps a log of what it read, proposed and sent, and that every proposal can be refused or corrected. During the first month, review a sample of approvals every week."
+    }
+  ],
+  "sources": [
+    {
+      "label": "legifrance.gouv.fr · French Public Health Code (Code de la santé publique)",
+      "url": "https://www.legifrance.gouv.fr/codes/id/LEGITEXT000006072665/"
+    },
+    {
+      "label": "ameli.fr · Third-party payment",
+      "url": "https://www.ameli.fr/assure/remboursements/rembourse/tiers-payant"
+    }
+  ],
+  "figures": [
+    {
+      "id": "demarrage-boucle",
+      "type": "etapes",
+      "titre": "Automate one loop at a time",
+      "legende": "The decisive step: compare with your baseline before extending to the next loop.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "Measure",
+          "detail": "Two weeks: time spent and cases handled",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Pick one loop",
+          "detail": "The most repetitive and least clinical",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Test for a month",
+          "detail": "New cases, every proposal approved",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Compare",
+          "detail": "Against the baseline",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Extend",
+          "detail": "Only if the comparison is convincing",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [],
+  "liensEntrants": [],
+  "remplace": [],
+  "verticales": [
+    "pharmacie"
+  ],
+  "refonte": true,
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-29T12:59:47.570Z",
+    "avertissements": [
+      "aucune citation (facultative)",
+      "source non vérifiable (403) : https://www.ameli.fr/assure/remboursements/rembourse/tiers-payant",
+      "source non vérifiable (403) : https://www.legifrance.gouv.fr/codes/id/LEGITEXT000006072665/"
+    ]
+  }
+}

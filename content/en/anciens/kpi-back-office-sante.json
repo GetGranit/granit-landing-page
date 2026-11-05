@@ -1,0 +1,19 @@
+{
+  "slug": "kpi-back-office-sante",
+  "category": "Operations",
+  "title": "The 7 healthcare back-office KPIs no leadership team tracks (but should)",
+  "desc": "Billing lead time, primary rejection rate, administrative cost per procedure: the indicators that change decisions.",
+  "time": "8 min",
+  "body": [
+    "Most facilities manage clinical activity to the letter, but leave the back office in a gray area. They know the number of procedures per practitioner, room occupancy rates, patient satisfaction. They often do not know the average billing lead time, the administrative cost per procedure, or the primary rejection rate by health insurance office.",
+    "Seven KPIs are enough to take back control. First indicator: the average billing lead time, measured between the date of the procedure and the date of transmission to the payer. A lead time of more than 5 days signals a bottleneck to investigate.",
+    "Second indicator: the primary rejection rate, split between mandatory insurance (AMO) and supplementary insurance (AMC). A rate above 8% on AMO or 15% on AMC signals a billing quality problem upstream, not just a payer problem.",
+    "Third indicator: the follow-up rate. How many invoices need a follow-up before payment? A high rate points to weaknesses in the transmission chain or in the initial qualification of the file.",
+    "Fourth indicator: patient DSO (days sales outstanding on the patient share). It is the reference indicator for the patient share, which keeps growing as supplementary insurer coverage declines.",
+    "Fifth indicator: administrative cost per procedure. Calculated by dividing the administrative payroll by the volume of procedures billed, it allows operational efficiency to be compared across sites and over time. An increase signals drift to correct.",
+    "Sixth indicator: the automation rate. What share of repetitive tasks is carried out without human intervention? A low rate signals an automation opportunity. A high rate with no quality benefit signals overinvestment.",
+    "Seventh indicator: administrative team satisfaction. Measured by a light quarterly survey, it predicts turnover and quality of work. An exhausted administrative team makes more mistakes and costs more in hiring and training.",
+    "Together, these seven indicators tell a clear story about back-office performance. They make it possible to decide between hiring, automation, process redesign and changing tools with objective data.",
+    "Granit provides a standard dashboard to connect to your existing data, without a heavy IT project. Most facilities discover differences between sites they did not suspect."
+  ]
+}

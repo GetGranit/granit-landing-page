@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 
+import { useLanguage } from "@/lib/i18n";
 import {
   Field,
   Kicker,
@@ -15,6 +16,51 @@ import {
 
 const emailRe = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 const MIN_MDP = 8;
+
+const copy = {
+  fr: {
+    kicker: "Votre compte Granit",
+    title: "Créez votre ",
+    em: "compte gratuit",
+    emailInvalide: "Indiquez un e-mail valide.",
+    mdpCourt: (n: number) => `Au moins ${n} caractères, sans compter les espaces.`,
+    cguManquantes: "Acceptez les conditions pour créer le compte.",
+    email: "E-mail",
+    emailPlaceholder: "contact@votre-magasin.fr",
+    mdp: "Mot de passe",
+    mdpHint: (n: number) => `${n} caractères minimum`,
+    masquer: "Masquer",
+    afficher: "Afficher",
+    accepte: "J'accepte les ",
+    conditions: "conditions générales",
+    reessayer: "Réessayer",
+    creer: "Créer mon compte",
+    reassure: ["Gratuit", "20 simulations offertes", "Sans carte bancaire"],
+    revenir: "Revenir au résultat",
+    prepare: "Votre espace se prépare…",
+  },
+  en: {
+    kicker: "Your Granit account",
+    title: "Create your ",
+    em: "free account",
+    emailInvalide: "Enter a valid email.",
+    mdpCourt: (n: number) => `At least ${n} characters, not counting spaces.`,
+    cguManquantes: "Accept the terms to create the account.",
+    email: "Email",
+    emailPlaceholder: "contact@your-store.com",
+    mdp: "Password",
+    mdpHint: (n: number) => `${n} characters minimum`,
+    masquer: "Hide",
+    afficher: "Show",
+    accepte: "I accept the ",
+    conditions: "terms and conditions",
+    reessayer: "Try again",
+    creer: "Create my account",
+    reassure: ["Free", "20 free simulations", "No credit card"],
+    revenir: "Back to the result",
+    prepare: "Your workspace is getting ready…",
+  },
+};
 
 type Erreurs = { email?: string; mdp?: string; cgu?: string };
 
@@ -37,6 +83,7 @@ export function StepCompte({
   onBack: () => void;
   onSubmit: (email: string) => void;
 }) {
+  const t = copy[useLanguage().lang];
   const [email, setEmail] = useState("");
   const [mdp, setMdp] = useState("");
   const [voir, setVoir] = useState(false);
@@ -47,9 +94,9 @@ export function StepCompte({
 
   return (
     <Screen id="compte">
-      <Kicker>Votre compte Granit</Kicker>
-      <Title em="compte gratuit" after=".">
-        Créez votre{" "}
+      <Kicker>{t.kicker}</Kicker>
+      <Title em={t.em} after=".">
+        {t.title}
       </Title>
       <form
         noValidate
@@ -57,16 +104,15 @@ export function StepCompte({
         onSubmit={(e) => {
           e.preventDefault();
           const next: Erreurs = {};
-          if (!emailRe.test(email.trim())) next.email = "Indiquez un e-mail valide.";
-          if (mdp.replace(/\s/g, "").length < MIN_MDP)
-            next.mdp = `Au moins ${MIN_MDP} caractères, sans compter les espaces.`;
-          if (!cgu) next.cgu = "Acceptez les conditions pour créer le compte.";
+          if (!emailRe.test(email.trim())) next.email = t.emailInvalide;
+          if (mdp.replace(/\s/g, "").length < MIN_MDP) next.mdp = t.mdpCourt(MIN_MDP);
+          if (!cgu) next.cgu = t.cguManquantes;
           setErr(next);
           if (Object.keys(next).length) return;
           onSubmit(email.trim());
         }}
       >
-        <Field label="E-mail" error={err.email}>
+        <Field label={t.email} error={err.email}>
           {(a11y) => (
             <input
               {...a11y}
@@ -74,7 +120,7 @@ export function StepCompte({
               name="email"
               autoComplete="email"
               inputMode="email"
-              placeholder="contact@votre-magasin.fr"
+              placeholder={t.emailPlaceholder}
               className={fieldClass}
               style={fieldStyle(err.email)}
               value={email}
@@ -82,7 +128,7 @@ export function StepCompte({
             />
           )}
         </Field>
-        <Field label="Mot de passe" hint={`${MIN_MDP} caractères minimum`} error={err.mdp}>
+        <Field label={t.mdp} hint={t.mdpHint(MIN_MDP)} error={err.mdp}>
           {(a11y) => (
             <span className="relative block">
               <input
@@ -105,7 +151,7 @@ export function StepCompte({
                 className="absolute top-1/2 right-3 -translate-y-1/2 text-[14px] underline underline-offset-4"
                 style={{ color: "var(--text-soft)" }}
               >
-                {voir ? "Masquer" : "Afficher"}
+                {voir ? t.masquer : t.afficher}
               </button>
             </span>
           )}
@@ -117,12 +163,12 @@ export function StepCompte({
               name="cgu"
               aria-invalid={err.cgu ? true : undefined}
               aria-describedby={err.cgu ? "compte-cgu-erreur" : undefined}
-              className="mt-0.5 h-[18px] w-[18px] shrink-0 accent-[var(--terra)]"
+              className="mt-0.5 h-[18px] w-[18px] shrink-0 accent-[var(--encre)]"
               checked={cgu}
               onChange={(e) => setCgu(e.target.checked)}
             />
             <span>
-              J'accepte les{" "}
+              {t.accepte}
               <a
                 href="/cgv"
                 target="_blank"
@@ -130,7 +176,7 @@ export function StepCompte({
                 className="underline underline-offset-4"
                 style={{ color: "var(--text-soft)" }}
               >
-                conditions générales
+                {t.conditions}
               </a>
               .
             </span>
@@ -140,7 +186,7 @@ export function StepCompte({
               id="compte-cgu-erreur"
               role="alert"
               className="text-[14px]"
-              style={{ color: "var(--terra-hover)" }}
+              style={{ color: "var(--alerte-texte)" }}
             >
               {err.cgu}
             </span>
@@ -150,17 +196,17 @@ export function StepCompte({
           <p
             role="alert"
             className="w-full rounded-xl px-3 py-2 text-left text-[15px]"
-            style={{ background: "#fbf0dc", color: "#7a4f12" }}
+            style={{ background: "var(--lavis)", color: "var(--encre)" }}
           >
             {error}
           </p>
         )}
         <button type="submit" className={`${bigBtn} w-full`}>
-          {error ? "Réessayer" : "Créer mon compte"} <span className="arrow">→</span>
+          {error ? t.reessayer : t.creer} <span className="arrow">→</span>
         </button>
       </form>
-      <Reassure items={["Gratuit", "20 simulations offertes", "Sans carte bancaire"]} />
-      <TextLink onClick={onBack}>Revenir au résultat</TextLink>
+      <Reassure items={t.reassure} />
+      <TextLink onClick={onBack}>{t.revenir}</TextLink>
     </Screen>
   );
 }
@@ -168,6 +214,7 @@ export function StepCompte({
 /** Transition courte et honnête : on prépare la page suivante, rien de plus. */
 function Preparation() {
   const reduce = useReducedMotion();
+  const t = copy[useLanguage().lang];
   return (
     <Screen id="preparation">
       <div role="status" aria-live="polite" className="grid justify-items-center gap-4 py-6">
@@ -177,14 +224,14 @@ function Preparation() {
         >
           <motion.div
             className="h-full rounded-full"
-            style={{ background: "var(--gradient-terra)" }}
+            style={{ background: "var(--encre)" }}
             initial={reduce ? { width: "100%" } : { width: "8%" }}
             animate={{ width: "100%" }}
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           />
         </div>
         <p className="font-serif text-[22px]" style={{ color: "var(--text)" }}>
-          Votre espace se prépare…
+          {t.prepare}
         </p>
       </div>
     </Screen>

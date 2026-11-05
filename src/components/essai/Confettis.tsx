@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 
-const COULEURS = ["var(--terra)", "var(--sage)", "var(--terra-soft)", "var(--sage-light)"];
+// Formes seulement (A20) : vert profond, menthe, ciel, blush.
+const COULEURS = ["var(--profond)", "var(--menthe)", "var(--ciel)", "var(--blush)"];
 const N = 22;
 
 /**

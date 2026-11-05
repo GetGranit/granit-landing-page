@@ -1,5 +1,6 @@
 // Les métiers : première porte du hub (grille façon Function) et photo des pages métier.
 import { Link } from "@tanstack/react-router";
+import { useLanguage, type Lang } from "@/lib/i18n";
 import { categorie, verticalesActives } from "@/lib/ressources/contenu";
 import { photoVerticale, type Verticale } from "@/lib/ressources/verticales";
 
@@ -34,13 +35,27 @@ export function PhotoMetier({
   );
 }
 
-function CarteMetier({ v, n }: { v: Verticale; n: number }) {
+const copy = {
+  fr: {
+    titre: "Votre métier",
+    articles: (n: number) => `${n} article${n > 1 ? "s" : ""}`,
+    bases: "Les bases communes",
+  },
+  en: {
+    titre: "Your profession",
+    articles: (n: number) => `${n} article${n > 1 ? "s" : ""}`,
+    bases: "The shared basics",
+  },
+};
+
+function CarteMetier({ v, n, lang }: { v: Verticale; n: number; lang: Lang }) {
+  const t = copy[lang];
   const ink = categorie(v.teinte)!.ink;
   return (
     <Link
       to="/ressources/metier/$verticale"
       params={{ verticale: v.slug }}
-      className="group block rounded-[14px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--terra)]"
+      className="group block rounded-[14px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--profond)]"
     >
       <PhotoMetier
         v={v}
@@ -52,7 +67,7 @@ function CarteMetier({ v, n }: { v: Verticale; n: number }) {
         <span className="decoration-1 underline-offset-[5px] group-hover:underline">{v.nom}</span>
       </h3>
       <p className="mt-1.5 text-[13.5px] font-semibold" style={{ color: ink }}>
-        {n > 0 ? `${n} article${n > 1 ? "s" : ""}` : "Les bases communes"}{" "}
+        {n > 0 ? t.articles(n) : t.bases}{" "}
         <span
           aria-hidden
           className="inline-block transition-transform group-hover:translate-x-0.5 motion-reduce:transition-none"
@@ -66,7 +81,8 @@ function CarteMetier({ v, n }: { v: Verticale; n: number }) {
 
 /** « Votre métier » : une rangée de cartes égales ; sur mobile, elle défile avec un fondu à droite. */
 export function VotreMetier() {
-  const actives = verticalesActives();
+  const { lang } = useLanguage();
+  const actives = verticalesActives(lang);
   if (!actives.length) return null;
   return (
     <section className="mx-auto max-w-[1280px] px-4 pt-10 md:px-6" aria-labelledby="votre-metier">
@@ -74,7 +90,7 @@ export function VotreMetier() {
         id="votre-metier"
         className="mb-6 border-t border-[var(--border)] pt-5 font-serif text-[24px] font-normal leading-tight md:text-[30px]"
       >
-        Votre métier
+        {copy[lang].titre}
       </h2>
       <ul className="-mx-4 flex snap-x snap-mandatory scroll-px-4 gap-4 overflow-x-auto px-4 pb-2 [scrollbar-width:none] max-lg:[mask-image:linear-gradient(to_right,black_82%,transparent)] lg:mx-0 lg:grid lg:grid-cols-5 lg:gap-x-5 lg:gap-y-8 lg:overflow-visible lg:px-0">
         {actives.map((x) => (
@@ -82,7 +98,7 @@ export function VotreMetier() {
             key={x.v.slug}
             className="w-[62vw] max-w-[260px] shrink-0 snap-start lg:w-auto lg:max-w-none"
           >
-            <CarteMetier v={x.v} n={x.n} />
+            <CarteMetier v={x.v} n={x.n} lang={lang} />
           </li>
         ))}
       </ul>

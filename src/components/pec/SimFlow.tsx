@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 import { PaulSheet, usePaulSheet } from "@/components/essai/PaulSheet";
+import { useLanguage } from "@/lib/i18n";
 import {
   canalCode,
   simulationEnDirect,
@@ -17,6 +18,20 @@ import { StepSimDone } from "./StepResultat";
 import { StepSimEchec, type SimResultat } from "./StepSimFin";
 import { StepSimulation } from "./StepSimulation";
 import { ApercuBanner } from "./ui";
+
+const copy = {
+  fr: {
+    echec:
+      "Le portail fait des siennes ? Paul vous montre la simulation sur votre compte, en 15 minutes.",
+    paul: (portail: string) =>
+      `Paul fait la simulation ${portail} avec vous, sur votre compte, en 15 minutes.`,
+  },
+  en: {
+    echec: "Is the portal acting up? Paul shows you the simulation on your account, in 15 minutes.",
+    paul: (portail: string) =>
+      `Paul runs the ${portail} simulation with you, on your account, in 15 minutes.`,
+  },
+};
 
 type Phase =
   | { p: "patient" }
@@ -66,6 +81,7 @@ export function SimFlow({
   onBack: () => void;
   onCompte: (email: string, r: SimResultat) => void;
 }) {
+  const t = copy[useLanguage().lang];
   const [phase, setPhase] = useState<Phase>({ p: "patient" });
   const [patient, setPatient] = useState<Patient>();
   const [etape, setEtape] = useState<SimEtape>("connexion");
@@ -112,20 +128,13 @@ export function SimFlow({
         if (e.cause === "identifiants") creds.current = null;
         track("pec_simulation_echec", { platform: platformId, cause: e.cause, apercu });
         setPhase({ p: "echec", cause: e.cause });
-        paul.show(
-          "creneau",
-          "Le portail fait des siennes ? Paul vous montre la simulation sur votre compte, en 15 minutes.",
-        );
+        paul.show("creneau", t.echec);
       }
     });
   }
 
   function openPaul() {
-    paul.show(
-      "creneau",
-      `Paul fait la simulation ${portail} avec vous, sur votre compte, en 15 minutes.`,
-      { force: true },
-    );
+    paul.show("creneau", t.paul(portail), { force: true });
   }
 
   function fix(cause: SimEchecCause) {

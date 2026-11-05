@@ -54,6 +54,7 @@ ${plateforme ? SEO_PLATEFORME : ""}- seoTitle de 60 caractères au plus, avec le
 - Ne jamais citer un mot-clé ou une recherche (« que l'on tape », « la requête », « les recherches du type »).
 - Pas de paragraphe de remplissage (« Cette page reprend / rassemble… ») : le sommaire fait ce travail.
 - Phrases de 25 mots au plus.
+- Les mots de TON.md (colonne « On ne dit pas », jargon interdit, emoji) sont BLOQUANT, sauf dans une citation <blockquote>. Proposer le mot de la colonne « On dit ».
 - Ne jamais annoncer un bloc vide ou un relevé absent (« la liste ci-dessous » sans liste).
 
 ### Ce qui n'est jamais un point

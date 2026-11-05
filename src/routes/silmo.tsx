@@ -116,16 +116,16 @@ const copy = {
   en: {
     badge: "SILMO 2026",
     eyebrow: "We met in the aisles",
-    titleLead: "Clear vision for your customers.",
+    titleLead: "Clear vision for customers.",
     titleAccent: "And for your cash flow.",
     intro:
-      "Granit plugs into your software and runs third-party payment end to end: coverage requests, claim submission, rejections, payment matching. Nothing to install.",
-    pills: ["No commitment", "Live in 48h", "HDS & GDPR", "No integration"],
+      "Granit connects to your software and handles third-party payment end to end: coverage approvals, e-transmission, rejections, reconciliation of bank transfers. Nothing to install.",
+    pills: ["No commitment", "Up and running in 48h", "HDS & GDPR", "No integration"],
     formTitle: "Leave us your details",
-    formIntro: "We call you back within 24h for a 15-minute demo, on your own numbers.",
+    formIntro: "We call you back within 24 hours for a 15-minute demo, on your own numbers.",
     fields: {
-      name: "Full name",
-      email: "Work email",
+      name: "First and last name",
+      email: "Work email address",
       phone: "Phone",
     },
     placeholders: {
@@ -135,39 +135,39 @@ const copy = {
     },
     cta: "Get a call back",
     sending: "Sending…",
-    note: "Free, no commitment. Your data stays with us, never resold.",
-    success: "Noted. We'll call you within 24h.",
+    note: "Free, no commitment. Your data stays with us and is never resold.",
+    success: "Got it. We'll call you back within 24 hours.",
     successSub: "Fifteen minutes on the phone, on your own numbers.",
-    successContact: "A question before then?",
-    error: "Something went wrong. Please retry, or email us at contact@getgranit.ai.",
-    whatTitle: "What Granit does, in 4 steps",
-    brique: "Step",
+    successContact: "A question in the meantime?",
+    error: "Something went wrong. Please try again, or email us at contact@getgranit.ai.",
+    whatTitle: "What Granit does, in 4 building blocks",
+    brique: "Block",
     what: [
       {
-        name: "Coverage requests",
-        desc: "Queries insurer platforms, computes the out-of-pocket amount, sends the request.",
+        name: "Coverage request (PEC)",
+        desc: "Queries the supplementary insurer (AMC) platforms, calculates the out-of-pocket amount, submits the request.",
         metric: "< 5s",
       },
       {
-        name: "Third-party billing",
-        desc: "AMO/AMC billing, SESAM-Vitale submission, NOEMIE return tracking.",
-        metric: "99% first-pass",
+        name: "Third-party payment billing",
+        desc: "AMO/AMC billing, SESAM-Vitale e-transmission, tracking of NOEMIE remittance files.",
+        metric: "99% first time",
       },
       {
         name: "Rejection handling",
-        desc: "Root-cause analysis, correction and automatic resubmission.",
+        desc: "Analyzes the cause, corrects and automatically resubmits the claim.",
         metric: "-90% rejections",
       },
       {
         name: "Bank reconciliation",
-        desc: "Matches insurer transfers with your invoices, flags what is missing.",
+        desc: "Every AMO/AMC bank transfer is matched to its invoice, and unpaid items surface on their own.",
         metric: "-85% time",
       },
     ],
     kpis: [
-      { value: "250+", label: "healthcare organisations equipped" },
-      { value: "97%", label: "of admin time saved" },
-      { value: "48h", label: "to go live" },
+      { value: "250+", label: "healthcare organizations equipped" },
+      { value: "97%", label: "of administrative time saved" },
+      { value: "48h", label: "to be up and running" },
     ],
   },
 };
@@ -187,9 +187,6 @@ function SilmoPage() {
         <div className="mx-auto flex h-[62px] max-w-[600px] items-center justify-between px-5">
           <div className="flex items-center gap-2.5">
             <img src={logoMonogram} alt="Granit" className="h-[26px] w-auto" />
-            <span className="font-serif text-[19px] tracking-tight" style={{ fontWeight: 700 }}>
-              Granit
-            </span>
           </div>
           <img
             src={silmoLogo}
@@ -203,15 +200,7 @@ function SilmoPage() {
       <main className="mx-auto max-w-[600px] px-5 pb-10">
         <section className="pb-7 pt-8">
           <Reveal>
-            <p
-              className="text-[11px]"
-              style={{
-                fontFamily: "var(--font-mono)",
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-                color: "var(--terra)",
-              }}
-            >
+            <p className="eyebrow">
               {t.badge} · {t.eyebrow}
             </p>
             {/* Le titre tient toujours sur deux lignes, une par membre de
@@ -277,15 +266,7 @@ function SilmoPage() {
                   {/* Les quatre briques suivent le dossier dans l'ordre où il
                       avance : demande, facturation, rejet, encaissement. Le
                       numéro dit donc une chronologie, pas un simple décompte. */}
-                  <span
-                    className="col-span-2 text-[10.5px]"
-                    style={{
-                      fontFamily: "var(--font-mono)",
-                      letterSpacing: "0.12em",
-                      textTransform: "uppercase",
-                      color: "var(--terra)",
-                    }}
-                  >
+                  <span className="eyebrow col-span-2">
                     {t.brique} {i + 1}
                   </span>
                   <h3 className="font-serif text-[16px]" style={{ fontWeight: 400 }}>
@@ -293,7 +274,7 @@ function SilmoPage() {
                   </h3>
                   <span
                     className="num-tabular whitespace-nowrap text-[11px]"
-                    style={{ fontFamily: "var(--font-mono)", color: "var(--terra)" }}
+                    style={{ fontFamily: "var(--font-mono)", color: "var(--profond)" }}
                   >
                     {item.metric}
                   </span>
@@ -383,7 +364,7 @@ function Field({
         inputMode={inputMode}
         className="w-full px-3.5 py-3 text-[16px] outline-none transition-colors"
         style={{ background: CREME, border: `1px solid ${FILET}`, color: ENCRE }}
-        onFocus={(e) => (e.currentTarget.style.borderColor = "var(--text)")}
+        onFocus={(e) => (e.currentTarget.style.borderColor = "var(--profond)")}
         onBlur={(e) => (e.currentTarget.style.borderColor = "var(--border2)")}
       />
     </label>
@@ -406,7 +387,7 @@ function SilmoForm({ t, contact }: { t: (typeof copy)["fr"]; contact?: string })
       >
         <span
           className="flex h-11 w-11 items-center justify-center"
-          style={{ border: `1px solid ${ENCRE}`, color: "var(--terra)" }}
+          style={{ border: `1px solid ${ENCRE}`, color: "var(--profond)" }}
         >
           <svg
             width="20"
@@ -434,7 +415,7 @@ function SilmoForm({ t, contact }: { t: (typeof copy)["fr"]; contact?: string })
           {t.successContact}{" "}
           <a
             href="mailto:contact@getgranit.ai"
-            className="underline transition-colors hover:text-[color:var(--terra)]"
+            className="underline transition-colors hover:text-[color:var(--profond)]"
           >
             contact@getgranit.ai
           </a>
@@ -511,7 +492,7 @@ function SilmoForm({ t, contact }: { t: (typeof copy)["fr"]; contact?: string })
         className="w-full px-5 py-4 text-[13px] transition-opacity"
         style={{
           background: ENCRE,
-          color: CREME,
+          color: "var(--menthe)",
           fontFamily: "var(--font-mono)",
           letterSpacing: "0.08em",
           textTransform: "uppercase",
@@ -523,7 +504,7 @@ function SilmoForm({ t, contact }: { t: (typeof copy)["fr"]; contact?: string })
       </button>
 
       {status === "error" && (
-        <p className="mt-3 text-center text-[12px]" style={{ color: "#c0392b" }}>
+        <p className="mt-3 text-center text-[12px]" style={{ color: "var(--alerte-texte)" }}>
           {t.error}
         </p>
       )}

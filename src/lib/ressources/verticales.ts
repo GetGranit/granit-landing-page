@@ -5,6 +5,8 @@ import anciensData from "./anciens.json";
 import data from "./verticales.json";
 import type { CategorySlug, VerticaleSlug } from "./types";
 
+type Lang = "fr" | "en";
+
 export type Verticale = {
   slug: VerticaleSlug;
   nom: string;
@@ -37,14 +39,43 @@ const ALTS: Record<VerticaleSlug, string> = {
     "Lit de clinique au soleil, couverture grise pliée, pied à perfusion et dossier médical sur pince",
 };
 
+const ALTS_EN: Record<VerticaleSlug, string> = {
+  optique:
+    "Tortoiseshell glasses resting on a white cloth, their shadow cast on a terracotta wall",
+  audio:
+    "Two behind-the-ear hearing aids resting on a cloth, next to their open charging case",
+  pharmacie:
+    "Pill organizer, blister pack and white paper bag on a pharmacy counter, green cross lit in the background",
+  dentaire:
+    "Dental jaw model on a white tray, with a dentist's mirror and probe",
+  centres:
+    "Stethoscope on a wooden consultation desk, next to an appointment book",
+  cliniques:
+    "Clinic bed in the sun, folded gray blanket, IV pole and medical chart on a clipboard",
+  ehpad:
+    "Green armchair by a window, wool throw, wooden cane, cup of tea, glasses and pill organizer on a small table",
+  laboratoires:
+    "Lab bench with a rack of color-capped sample tubes, gloves and a centrifuge",
+};
+
 /** Le métier principal : sa page est toujours indexée, quel que soit le nombre d'articles. */
 export const VERTICALE_PRINCIPALE: VerticaleSlug = "optique";
 
 export const ORDRE_VERTICALES = data.ordre as VerticaleSlug[];
 
-export function verticale(slug: string): Verticale | undefined {
-  const v = (data.verticales as Record<string, Omit<Verticale, "slug" | "alt">>)[slug];
-  return v ? { slug: slug as VerticaleSlug, ...v, alt: ALTS[slug as VerticaleSlug] } : undefined;
+type Textes = Pick<Verticale, "nom" | "court" | "description" | "agent">;
+
+/** Un métier, avec ses textes en anglais si `lang` vaut "en" (champ `en` de verticales.json). */
+export function verticale(slug: string, lang: Lang = "fr"): Verticale | undefined {
+  const v = (
+    data.verticales as Record<string, Omit<Verticale, "slug" | "alt"> & { en?: Textes }>
+  )[slug];
+  if (!v) return undefined;
+  const { en, ...fr } = v;
+  const s = slug as VerticaleSlug;
+  return lang === "en" && en
+    ? { slug: s, ...fr, ...en, alt: ALTS_EN[s] }
+    : { slug: s, ...fr, alt: ALTS[s] };
 }
 
 /**
@@ -60,6 +91,10 @@ export function normaliserVerticales(vs: string[]): VerticaleSlug[] {
 }
 
 export const VERTICALES: Verticale[] = ORDRE_VERTICALES.map((v) => verticale(v)!);
+
+/** Les métiers dans l'ordre, dans la langue demandée. */
+export const verticalesLang = (lang: Lang): Verticale[] =>
+  ORDRE_VERTICALES.map((v) => verticale(v, lang)!);
 
 /** Photo du métier : 800 ou 1600 px de large, 16:9. */
 export const photoVerticale = (v: VerticaleSlug, largeur: 800 | 1600) =>

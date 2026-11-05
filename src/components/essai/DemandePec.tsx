@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import { useLanguage } from "@/lib/i18n";
 import { DOSSIERS_FICTIFS, euros, type DossierFictif } from "@/lib/pec/essaiState";
 import { QUOTA } from "./quotaStore";
 import { ApercuBadge, Card, Kicker, PopCheck, Row, TextButton, Title } from "./ui";
@@ -21,6 +22,59 @@ type Props = {
   onBack: () => void;
 };
 
+const copy = {
+  fr: {
+    kicker: "Nouvelle demande",
+    lead: "Une PEC,",
+    accent: "en deux clics.",
+    partiront: (l: string | null) =>
+      `Vos PEC partiront de ${l ?? "votre logiciel"} dès qu'il est branché : vous choisissez le dossier, Granit remplit le portail.`,
+    choisirLogiciel: "Choisir mon logiciel",
+    enAttendant: "En attendant, choisissez le patient…",
+    fictifs: "Dossiers fictifs",
+    dossier: "Dossier patient",
+    lancer: "Lancer la demande",
+    retour: "Retour à mon espace",
+    lancee: "Demande lancée",
+    leadAccordee: "PEC",
+    leadEnCours: "C'est parti,",
+    accentAccordee: "accordée.",
+    accentEnCours: "on s'en occupe.",
+    offerte: (rang: number, quota: number) => `Simulation offerte ${rang} / ${quota}`,
+    envoyee: (p: string | null) => `Demande envoyée sur ${p ?? "le portail"}`,
+    accordeeMutuelle: "Accordée par la mutuelle",
+    enCours: "En cours…",
+    partMutuelle: "Part mutuelle",
+    rac: "Reste à charge patient",
+    exemple: "Dossier et montants d'exemple · rien n'est envoyé",
+  },
+  en: {
+    kicker: "New request",
+    lead: "A coverage request,",
+    accent: "in two clicks.",
+    partiront: (l: string | null) =>
+      `Your coverage requests will go out from ${l ?? "your software"} once it is connected: you pick the patient file, Granit fills in the portal.`,
+    choisirLogiciel: "Choose my software",
+    enAttendant: "In the meantime, pick the patient…",
+    fictifs: "Fictional files",
+    dossier: "Patient file",
+    lancer: "Start the request",
+    retour: "Back to my workspace",
+    lancee: "Request started",
+    leadAccordee: "Coverage",
+    leadEnCours: "Done,",
+    accentAccordee: "approved.",
+    accentEnCours: "we’re on it.",
+    offerte: (rang: number, quota: number) => `Free simulation ${rang} / ${quota}`,
+    envoyee: (p: string | null) => `Request sent on ${p ?? "the portal"}`,
+    accordeeMutuelle: "Approved by the insurer",
+    enCours: "In progress…",
+    partMutuelle: "Insurer share",
+    rac: "Patient out-of-pocket amount",
+    exemple: "Sample file and amounts · nothing is sent",
+  },
+};
+
 /** Part mutuelle d'exemple : ~77 % du total, comme la 1re PEC d'exemple. */
 function partMutuelle(total: number): number {
   return Math.round(total * 0.77);
@@ -39,6 +93,8 @@ export function DemandePec({
   onChooseLogiciel,
   onBack,
 }: Props) {
+  const { lang } = useLanguage();
+  const t = copy[lang];
   const [choix, setChoix] = useState<DossierFictif["id"] | null>(null);
   const dossier = DOSSIERS_FICTIFS.find((d) => d.id === choix) ?? null;
 
@@ -46,15 +102,14 @@ export function DemandePec({
 
   return (
     <div>
-      <Kicker>Nouvelle demande</Kicker>
-      <Title lead="Une PEC," accent="en deux clics." />
+      <Kicker>{t.kicker}</Kicker>
+      <Title lead={t.lead} accent={t.accent} />
       <p className="mt-3 text-[15px] leading-[1.5]" style={{ color: "var(--text-soft)" }}>
-        Vos PEC partiront de {logiciel ?? "votre logiciel"} dès qu'il est branché : vous choisissez
-        le dossier, Granit remplit le portail.
+        {t.partiront(logiciel)}
         {!logiciel && (
           <>
             {" "}
-            <TextButton onClick={onChooseLogiciel}>Choisir mon logiciel</TextButton>
+            <TextButton onClick={onChooseLogiciel}>{t.choisirLogiciel}</TextButton>
           </>
         )}
       </p>
@@ -62,11 +117,11 @@ export function DemandePec({
       <Card className="mt-6">
         <div className="mb-3 flex items-center justify-between gap-3">
           <p className="text-[14px]" style={{ fontWeight: 600 }}>
-            En attendant, choisissez le patient…
+            {t.enAttendant}
           </p>
-          <ApercuBadge>Dossiers fictifs</ApercuBadge>
+          <ApercuBadge>{t.fictifs}</ApercuBadge>
         </div>
-        <div role="radiogroup" aria-label="Dossier patient" className="space-y-2">
+        <div role="radiogroup" aria-label={t.dossier} className="space-y-2">
           {DOSSIERS_FICTIFS.map((d) => {
             const on = choix === d.id;
             return (
@@ -78,21 +133,21 @@ export function DemandePec({
                 onClick={() => setChoix(d.id)}
                 className="flex w-full items-center justify-between gap-3 rounded-[14px] border px-4 py-3 text-left transition-colors"
                 style={{
-                  borderColor: on ? "var(--terra)" : "var(--border)",
-                  background: on ? "var(--terra-light)" : "white",
+                  borderColor: on ? "var(--encre)" : "var(--border)",
+                  background: on ? "var(--succes-fond)" : "var(--papier)",
                 }}
               >
                 <span>
-                  <span className="block text-[15px]">{d.nom}</span>
+                  <span className="block text-[15px]">{d.nom[lang]}</span>
                   <span className="block text-[12px]" style={{ color: "var(--text-muted)" }}>
-                    {d.equipement}
+                    {d.equipement[lang]}
                   </span>
                 </span>
                 <span
                   className="num-tabular text-[14px]"
                   style={{ fontFamily: "var(--font-mono)" }}
                 >
-                  {euros(d.total)}
+                  {euros(d.total, lang)}
                 </span>
               </button>
             );
@@ -105,12 +160,12 @@ export function DemandePec({
           className="btn-primary mt-4 w-full justify-center py-3.5 text-[16px]"
           style={dossier ? undefined : { opacity: 0.45, cursor: "not-allowed" }}
         >
-          Lancer la demande <span className="arrow">→</span>
+          {t.lancer} <span className="arrow">→</span>
         </button>
       </Card>
 
       <div className="mt-5 text-center">
-        <TextButton onClick={onBack}>Retour à mon espace</TextButton>
+        <TextButton onClick={onBack}>{t.retour}</TextButton>
       </div>
     </div>
   );
@@ -125,21 +180,23 @@ function Suivi({
   portail: string | null;
   onBack: () => void;
 }) {
+  const { lang } = useLanguage();
+  const t = copy[lang];
   const { dossier, statut } = demande;
   const accordee = statut === "accordee";
   const mutuelle = partMutuelle(dossier.total);
   return (
     <div>
-      <Kicker>Demande lancée</Kicker>
+      <Kicker>{t.lancee}</Kicker>
       <Title
-        lead={accordee ? "PEC" : "C'est parti,"}
-        accent={accordee ? "accordée." : "on s'en occupe."}
+        lead={accordee ? t.leadAccordee : t.leadEnCours}
+        accent={accordee ? t.accentAccordee : t.accentEnCours}
       />
 
       <Card className="mt-6">
         <div className="flex items-center justify-between gap-3">
           <p className="text-[15px]" style={{ fontWeight: 600 }}>
-            {dossier.nom}
+            {dossier.nom[lang]}
           </p>
           <ApercuBadge />
         </div>
@@ -147,27 +204,27 @@ function Suivi({
           className="num-tabular mt-1 text-[12px]"
           style={{ color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}
         >
-          Simulation offerte {demande.rang} / {QUOTA}
+          {t.offerte(demande.rang, QUOTA)}
         </p>
         <ol className="mt-4 space-y-3" aria-live="polite">
-          <Etape done label={`Demande envoyée sur ${portail ?? "le portail"}`} />
-          <Etape done={accordee} label={accordee ? "Accordée par la mutuelle" : "En cours…"} />
+          <Etape done label={t.envoyee(portail)} />
+          <Etape done={accordee} label={accordee ? t.accordeeMutuelle : t.enCours} />
         </ol>
         {accordee && (
           <dl
             className="mt-5 space-y-2.5 border-t pt-4 text-[15px]"
             style={{ borderColor: "var(--border)" }}
           >
-            <Row label={dossier.equipement} value={euros(dossier.total)} />
-            <Row label="Part mutuelle" value={euros(mutuelle)} strong />
-            <Row label="Reste à charge patient" value={euros(dossier.total - mutuelle)} strong />
+            <Row label={dossier.equipement[lang]} value={euros(dossier.total, lang)} />
+            <Row label={t.partMutuelle} value={euros(mutuelle, lang)} strong />
+            <Row label={t.rac} value={euros(dossier.total - mutuelle, lang)} strong />
           </dl>
         )}
         <p
           className="mt-4 text-[11px]"
           style={{ color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}
         >
-          Dossier et montants d'exemple · rien n'est envoyé
+          {t.exemple}
         </p>
       </Card>
 
@@ -177,7 +234,7 @@ function Suivi({
           onClick={onBack}
           className="btn-primary w-full justify-center py-3.5 text-[16px]"
         >
-          Retour à mon espace
+          {t.retour}
         </button>
       </div>
     </div>

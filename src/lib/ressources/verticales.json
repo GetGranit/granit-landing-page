@@ -1,12 +1,24 @@
 {
-  "ordre": ["optique", "dentaire", "centres", "pharmacie", "cliniques"],
+  "ordre": [
+    "optique",
+    "dentaire",
+    "centres",
+    "pharmacie",
+    "cliniques"
+  ],
   "verticales": {
     "optique": {
       "nom": "Opticiens et audioprothésistes",
       "court": "Optique et audio",
       "description": "Prises en charge, portails des plateformes, renouvellements, rejets et paiements : le tiers payant au comptoir d'un magasin d'optique ou d'un centre auditif.",
       "teinte": "plateformes",
-      "agent": "L'agent dépose vos prises en charge"
+      "agent": "L'agent dépose vos prises en charge",
+      "en": {
+        "nom": "Optical and hearing care",
+        "court": "Optical and hearing",
+        "description": "Coverage approvals, platform portals, renewals, rejections and payments: third-party payment at the counter of an optical store or hearing center.",
+        "agent": "The agent submits your coverage requests"
+      }
     },
     "dentaire": {
       "nom": "Centres dentaires",
@@ -14,7 +26,13 @@
       "description": "Paniers 100 % Santé, devis et traitements d'orthodontie : le tiers payant d'un cabinet ou d'un centre dentaire.",
       "metaDescription": "Comment sécuriser le tiers payant d'un cabinet ou d'un centre dentaire : paniers 100 % Santé, devis et facturation des traitements d'orthodontie.",
       "teinte": "conformite",
-      "agent": "Parlons de votre tiers payant"
+      "agent": "Parlons de votre tiers payant",
+      "en": {
+        "nom": "Dental",
+        "court": "Dental",
+        "description": "100% Santé baskets, quotes and orthodontic treatment: third-party payment at a dental practice or center.",
+        "agent": "Let's talk about your third-party payment"
+      }
     },
     "centres": {
       "nom": "Centres de santé et ophtalmologie",
@@ -22,7 +40,13 @@
       "description": "Facturation, recouvrement et outils d'un centre de santé, d'un centre d'ophtalmologie ou d'un groupe multi-sites.",
       "metaDescription": "Facturation, recouvrement et outils : des repères pour le back-office d'un centre de santé, d'un centre d'ophtalmologie ou d'un groupe multi-sites.",
       "teinte": "rejets",
-      "agent": "L'agent tient l'agenda et le check-out à jour"
+      "agent": "L'agent tient l'agenda et le check-out à jour",
+      "en": {
+        "nom": "Health centers",
+        "court": "Health centers",
+        "description": "Billing, collections and tools for a health center, an ophthalmology center or a multi-site group.",
+        "agent": "The agent keeps the schedule and check-out up to date"
+      }
     },
     "pharmacie": {
       "nom": "Pharmacies",
@@ -30,7 +54,13 @@
       "description": "Créances de tiers payant, rejets et réassort : le back-office d'une officine.",
       "metaDescription": "Des repères pour le back-office d'une officine : solder les créances de tiers payant, traiter les rejets, préparer le réassort et saisir les ordonnances.",
       "teinte": "guide-tiers-payant",
-      "agent": "L'agent lit les ordonnances"
+      "agent": "L'agent lit les ordonnances",
+      "en": {
+        "nom": "Pharmacy",
+        "court": "Pharmacy",
+        "description": "Third-party payment receivables, rejections and restocking: the back office of a pharmacy.",
+        "agent": "The agent reads prescriptions"
+      }
     },
     "cliniques": {
       "nom": "Cliniques et laboratoires",
@@ -38,7 +68,13 @@
       "description": "Admissions, rejets, retours NOEMIE et paiements : le back-office d'une clinique, d'un hôpital privé ou d'un laboratoire.",
       "metaDescription": "Des repères pour le back-office d'une clinique, d'un hôpital privé ou d'un laboratoire : admissions, rejets, retours NOEMIE et rapprochement des paiements.",
       "teinte": "gerer-son-tiers-payant",
-      "agent": "Parlons de votre tiers payant"
+      "agent": "Parlons de votre tiers payant",
+      "en": {
+        "nom": "Clinics",
+        "court": "Clinics",
+        "description": "Admissions, rejections, NOEMIE returns and payments: the back office of a clinic, private hospital or lab.",
+        "agent": "Let's talk about your third-party payment"
+      }
     }
   },
   "fusions": {
@@ -47,26 +83,64 @@
     "ehpad": null
   },
   "surcharges": {
-    "portail-viamedis": ["optique", "dentaire"],
-    "audioprothese-renouvellement-tiers-payant": ["optique"],
-    "sesam-vitale-evolutions-2025": ["optique", "dentaire", "centres", "pharmacie"],
-    "recouvrement-patient-empathie": ["centres", "dentaire"],
-    "integration-doctolib-lgo": ["centres", "dentaire"],
+    "portail-viamedis": [
+      "optique",
+      "dentaire"
+    ],
+    "audioprothese-renouvellement-tiers-payant": [
+      "optique"
+    ],
+    "sesam-vitale-evolutions-2025": [
+      "optique",
+      "dentaire",
+      "centres",
+      "pharmacie"
+    ],
+    "recouvrement-patient-empathie": [
+      "centres",
+      "dentaire"
+    ],
+    "integration-doctolib-lgo": [
+      "centres",
+      "dentaire"
+    ],
     "facturation-ehpad-controle-humain": []
   },
   "anciens": {
-    "audioprothese-renouvellement-tiers-payant": ["optique"],
-    "officine-balance-agee-tiers-payant": ["pharmacie"],
-    "trois-boucles-pharmacie": ["pharmacie"],
+    "audioprothese-renouvellement-tiers-payant": [
+      "optique"
+    ],
+    "officine-balance-agee-tiers-payant": [
+      "pharmacie"
+    ],
+    "trois-boucles-pharmacie": [
+      "pharmacie"
+    ],
     "facturation-ehpad-controle-humain": [],
-    "dentaire-paniers-100-sante-tiers-payant": ["dentaire"],
-    "orthodontie-facturation-traitements-longs": ["dentaire"],
-    "hopital-prive-ordonnancement": ["cliniques"],
-    "groupes-multi-sites-pilotage": ["centres"],
-    "recouvrement-patient-empathie": ["centres"],
-    "integration-doctolib-lgo": ["centres"],
-    "optique-tiers-payant-amc": ["optique"],
-    "portails-mutuelles-goulot": ["optique"],
+    "dentaire-paniers-100-sante-tiers-payant": [
+      "dentaire"
+    ],
+    "orthodontie-facturation-traitements-longs": [
+      "dentaire"
+    ],
+    "hopital-prive-ordonnancement": [
+      "cliniques"
+    ],
+    "groupes-multi-sites-pilotage": [
+      "centres"
+    ],
+    "recouvrement-patient-empathie": [
+      "centres"
+    ],
+    "integration-doctolib-lgo": [
+      "centres"
+    ],
+    "optique-tiers-payant-amc": [
+      "optique"
+    ],
+    "portails-mutuelles-goulot": [
+      "optique"
+    ],
     "reduire-rejets-cpam": "tous",
     "rapprochement-noemie": "tous",
     "kpi-back-office-sante": "tous",

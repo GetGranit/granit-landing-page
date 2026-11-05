@@ -12,73 +12,123 @@
     "guide-tiers-payant": {
       "nom": "Guide du tiers payant",
       "court": "Guide",
-      "ink": "#3f7a4d",
-      "tint": "#e9f2eb",
+      "ink": "#2F7A64",
+      "tint": "#F4EEF0",
       "description": "Comment fonctionne le tiers payant en optique, de la prise en charge à l'encaissement.",
       "agent": "L'agent dépose vos prises en charge",
       "fin": "Vos prochaines PEC, laissez l'agent les saisir.",
-      "animation": "pec"
+      "animation": "pec",
+      "en": {
+        "nom": "Third-party payment guide",
+        "court": "Guide",
+        "description": "How third-party payment works for optical stores, from coverage approval to getting paid.",
+        "agent": "The agent submits your coverage requests",
+        "fin": "Your next coverage requests: let the agent enter them."
+      }
     },
     "plateformes": {
       "nom": "Plateformes et portails",
       "court": "Plateformes",
-      "ink": "#b94a2f",
-      "tint": "#fbeae3",
+      "ink": "#2F7A64",
+      "tint": "#F4EEF0",
       "description": "Une fiche par portail : espace pro, prise en charge, statuts et paiement.",
       "agent": "L'agent dépose vos prises en charge",
       "fin": "Un portail par mutuelle ? L'agent les connaît tous.",
-      "animation": "pec"
+      "animation": "pec",
+      "en": {
+        "nom": "Platforms and portals",
+        "court": "Platforms",
+        "description": "One fact sheet per portal: professional portal, coverage approval, statuses and payment.",
+        "agent": "The agent submits your coverage requests",
+        "fin": "One portal per insurer? The agent knows them all."
+      }
     },
     "rejets": {
       "nom": "Rejets et corrections",
       "court": "Rejets",
-      "ink": "#8a6416",
-      "tint": "#f6eedb",
+      "ink": "#2F7A64",
+      "tint": "#F4EEF0",
       "description": "Lire un motif de rejet, corriger le dossier, éviter qu'il revienne.",
       "agent": "L'agent vérifie la plateforme avant l'envoi",
       "fin": "Le rejet que vous ne verrez pas : l'agent contrôle avant d'envoyer.",
-      "animation": "controle"
+      "animation": "controle",
+      "en": {
+        "nom": "Rejections and corrections",
+        "court": "Rejections",
+        "description": "Read a rejection reason, correct the claim, keep it from coming back.",
+        "agent": "The agent checks the platform before sending",
+        "fin": "The rejection you won't see: the agent checks before sending."
+      }
     },
     "paiements": {
       "nom": "Paiements et rapprochement",
       "court": "Paiements",
-      "ink": "#3e5f84",
-      "tint": "#e6ecf4",
+      "ink": "#2F7A64",
+      "tint": "#F4EEF0",
       "description": "Rapprocher les virements, comprendre NOEMIE, relancer au bon moment.",
       "agent": "L'agent rapproche vos virements chaque matin",
       "fin": "Qui vous a payé, pour quel dossier ? L'agent le sait avant l'ouverture.",
-      "animation": "virements"
+      "animation": "virements",
+      "en": {
+        "nom": "Payments and reconciliation",
+        "court": "Payments",
+        "description": "Reconcile bank transfers, understand NOEMIE, follow up at the right time.",
+        "agent": "The agent reconciles your transfers every morning",
+        "fin": "Who paid you, for which claim? The agent knows before you open."
+      }
     },
     "gerer-son-tiers-payant": {
       "nom": "Gérer son tiers payant",
       "court": "Gestion",
-      "ink": "#7a4a74",
-      "tint": "#f3e9f1",
+      "ink": "#2F7A64",
+      "tint": "#F4EEF0",
       "description": "En interne, externalisé ou automatisé : organiser le tiers payant d'un magasin.",
       "agent": "L'agent dépose vos prises en charge",
       "fin": "Ni en interne, ni externalisé : délégué à l'agent.",
-      "animation": "pec"
+      "animation": "pec",
+      "en": {
+        "nom": "Managing third-party payment",
+        "court": "Management",
+        "description": "In-house, outsourced or automated: organizing third-party payment in a store.",
+        "agent": "The agent submits your coverage requests",
+        "fin": "Neither in-house nor outsourced: handed to the agent."
+      }
     },
     "conformite": {
       "nom": "Conformité",
       "court": "Conformité",
-      "ink": "#2f6f75",
-      "tint": "#e2f0f1",
+      "ink": "#2F7A64",
+      "tint": "#F4EEF0",
       "description": "Devis, codes LPP, contrôles, conservation : ce qu'on doit pouvoir montrer.",
       "agent": "L'agent dépose vos prises en charge",
       "fin": "Chaque demande saisie, tracée et retrouvable.",
-      "animation": "pec"
+      "animation": "pec",
+      "en": {
+        "nom": "Compliance",
+        "court": "Compliance",
+        "description": "Quotes, LPP codes, audits, record keeping: what you must be able to show.",
+        "agent": "The agent submits your coverage requests",
+        "fin": "Every request entered, tracked and easy to find."
+      }
     },
     "glossaire": {
       "nom": "Glossaire",
       "court": "Glossaire",
-      "ink": "#5e574b",
-      "tint": "#f1ede5",
+      "ink": "#2F7A64",
+      "tint": "#F4EEF0",
       "description": "Les sigles du tiers payant optique (AMC, DRE, NOEMIE, LPP…), expliqués simplement.",
       "agent": "L'agent dépose vos prises en charge",
       "fin": "Les sigles, l'agent s'en occupe. Vous, vous vendez.",
-      "animation": "pec"
+      "animation": "pec",
+      "en": {
+        "nom": "Glossary",
+        "court": "Glossary",
+        "description": "Third-party payment acronyms for opticians (AMC, DRE, NOEMIE, LPP…), explained simply.",
+        "agent": "The agent submits your coverage requests",
+        "fin": "The agent handles the acronyms. You sell."
+      }
     }
   },
-  "suffixeDescription": " Guides et fiches pratiques pour le comptoir des opticiens."
+  "suffixeDescription": " Guides et fiches pratiques pour le comptoir des opticiens.",
+  "suffixeDescriptionEn": " Practical guides and fact sheets for opticians."
 }

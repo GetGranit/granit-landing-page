@@ -1,15 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { HomeSections } from "@/components/home/HomeSections";
+import { BandeauLevee } from "@/components/home/nouvelle/Hero";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Granit - Agents IA santé. Vos équipes soignent, Granit gère le reste." },
+      { title: "Granit - Agents IA santé. Vos équipes soignent. Granit gère le reste." },
       {
         name: "description",
         content:
-          "Granit déploie des agents IA qui automatisent les tâches administratives de vos équipes de santé. Branché sur vos outils existants. Opérationnel en 48h.",
+          "Droits, prises en charge, facturation, encaissement : les agents IA de Granit font tourner votre tiers payant de bout en bout, dans vos logiciels actuels. Opérationnel en 48 h.",
       },
       { property: "og:title", content: "Granit - Agents IA santé" },
       { property: "og:description", content: "Vos équipes soignent. Granit gère le reste." },
@@ -20,7 +21,14 @@ export const Route = createFileRoute("/")({
 
 function HomePage() {
   return (
-    <SiteLayout>
+    <SiteLayout
+      piedColle
+      banniere={
+        <div className="nh">
+          <BandeauLevee />
+        </div>
+      }
+    >
       <HomeSections />
     </SiteLayout>
   );

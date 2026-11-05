@@ -1,0 +1,165 @@
+{
+  "slug": "rejet-beneficiaire-inconnu",
+  "id": "B1",
+  "category": "rejets",
+  "categoryName": "Rejections and corrections",
+  "type": "resolution",
+  "plateforme": null,
+  "title": "“Bénéficiaire inconnu” insurer rejection: fix it without billing the AMO twice",
+  "primaryKeyword": "rejet bénéficiaire inconnu mutuelle",
+  "keywordCluster": [],
+  "parentSlug": "rejet-tiers-payant",
+  "level": "Fille",
+  "author": {
+    "name": "Olivier",
+    "jobTitle": "Writer, third-party payment expert",
+    "photo": "/auteurs/olivier.jpg",
+    "url": null
+  },
+  "reviewer": {
+    "name": "Nathalie",
+    "jobTitle": "Writer, optical industry expert",
+    "photo": "/auteurs/nathalie.jpg",
+    "url": null
+  },
+  "datePublished": "2026-10-15",
+  "dateModified": "2026-10-15",
+  "checkedOn": null,
+  "wordCount": 2043,
+  "readTime": 9,
+  "metaDescription": "“Bénéficiaire inconnu” rejection from a supplementary insurer: causes, a step-by-step fix without rebilling the AMO share, records to keep and when to follow up. The front-desk method.",
+  "contentHtml": "<p><strong>A “bénéficiaire inconnu” (beneficiary unknown) rejection from a supplementary insurer means the insurer could not find the person on the contract you named: you correct the identification and resend only the supplementary share, without rebilling the national health insurance share that has already been processed.</strong> This rejection does not mean your customer has no coverage. It means the insurer, the number, the person or the date does not match what the insurer has on file. The real risk is not the rejection itself: it is rebilling everything, having the AMO pay a second time and creating an overpayment you will have to refund later.</p><div class=\"key-takeaways\"><strong>Key takeaways</strong><ul><li>“Bénéficiaire inconnu” is an identification problem, not a coverage denial: the insurer cannot find the person on the contract named.</li><li>In the cases our agents handle, the most common cause is choosing the wrong insurer when submitting the request, ahead of number or enrollment errors.</li><li>The AMO share (mandatory insurance) follows its own channel: if it has been paid, you only correct the AMC share (supplementary insurance).</li><li>Before any correction, note the exact reason, date and channel of the rejection, then ask the customer for their valid third-party payment card (tiers payant: the patient pays nothing upfront, insurers pay the provider directly).</li><li>The portal is for correcting the request; the insurer is for checking the customer’s coverage rights. They are not the same call.</li></ul></div><h2 id=\"que-veut-dire-beneficiaire-inconnu\">What does “bénéficiaire inconnu” mean on a supplementary insurer rejection?</h2><p><strong>“Bénéficiaire inconnu” means the supplementary insurer found no one matching the identity sent on the contract you named.</strong> The case is not judged on its merits: the insurer did not look at the eyewear, the quote or the coverage level. It stopped at the step before, which is working out who the request is about.</p><p>A few definitions, because everything hinges on them. AMO is mandatory health insurance, in other words the national health insurance share. AMC is supplementary health insurance, the customer’s supplementary health insurer (mutuelle) or other insurer. The policyholder (“ouvrant droit”) is the person who holds the contract; the beneficiary is the person receiving care, who may be the policyholder, their spouse or a dependent child.</p><p>The typical case at the front desk: a customer leaves with their glasses, the national health insurance share has gone through, and the request on the insurer side comes back rejected. On equipment from the 100% Santé (zero out-of-pocket scheme) basket, the amount at stake is far from negligible. <a href=\"https://www.ameli.fr/assure/remboursements/rembourse/soins-protheses-dentaires-optique-audition/lunettes-lentilles\">According to ameli.fr</a>, optical equipment in this basket (class A) is covered with no out-of-pocket amount by French national health insurance (Assurance Maladie) and “responsible” supplementary health insurance: when the AMC share does not go through, the store absorbs the shortfall.</p><h2 id=\"ou-apparait-le-rejet\">Where does this rejection appear and what should you note?</h2><p><strong>The rejection appears wherever the request was sent: in the platform’s portal if you submitted a coverage request online, or in your software’s returns if the invoice went out electronically.</strong> Before correcting anything, write down what you see, exactly as it is.</p><p>The wording is not always literally “bénéficiaire inconnu”. Depending on the channel, it may refer to an insured person or member not found, or show up as a code in the returns. If you get a code in your billing returns, the <a href=\"/ressources/codes-rejets-noemie\">NOEMIE rejection codes</a> page helps you read it. In every case, do not paraphrase: copy the exact reason.</p><p>At a minimum, note these items before touching the case:</p><ul><li>the exact rejection reason, with its date and time if the portal shows it;</li><li>the channel involved: the portal name, or the return file in your software;</li><li>the supplementary insurer selected and the member number entered;</li><li>the beneficiary identity sent: last name, first name, date of birth;</li><li>the status of the AMO share for the same invoice: sent, paid, pending.</li></ul><p>That last point decides everything that follows. Until you know where the national health insurance share stands, do not restart any billing.</p><h2 id=\"pourquoi-beneficiaire-inconnu\">Why doesn’t the insurer recognize the beneficiary?</h2><p><strong>There are five possible causes, and the first one explains most of the cases we see: the request went to the wrong insurer.</strong> The others relate to the number, the person’s enrollment, the coverage dates or the identity entered.</p><h3>1. The wrong insurer was chosen</h3><p>In the cases our agents handle, this is the most common cause. The customer shows an old card, or a card belonging to another family member, or the insurer is picked from the portal’s list based on a name close to the right one. Another recurring case for us: a misrouted MGEN request, sent through a channel that does not match the customer’s contract. The insurer’s name is right, the route is not, and the answer comes back as “bénéficiaire inconnu”.</p><h3>2. The member number does not match</h3><p>Two swapped digits, a policyholder number entered instead of the one the form asks for, a contract number mistaken for a member number. Each portal has its own fields; the right number is the one on the current third-party payment card.</p><h3>3. The person is not enrolled on the contract</h3><p>A recently added child, a spouse with their own insurer, a young adult who has left their parents’ contract. The policyholder is known, but the beneficiary is not, or is no longer, listed on their card.</p><h3>4. Coverage does not include the date of care</h3><p>The contract changed on January 1, the customer canceled it, or the card shown has expired. The person did exist in the insurer’s files, but not on the date sent.</p><h3>5. The identity entered differs from the contract</h3><p>Married name versus birth name, a truncated hyphenated first name, a mistyped date of birth. These errors are rare but easy to check.</p><div class=\"tbl\"><table><tr><th>Cause</th><th>Where to check</th><th>Fix</th></tr><tr><td>Wrong insurer</td><td>Current third-party payment card, portal selector</td><td>Resubmit the request to the right insurer on the right portal</td></tr><tr><td>Wrong number</td><td>Customer’s card, field entered in the case</td><td>Correct the number and resend the AMC share</td></tr><tr><td>Beneficiary not enrolled</td><td>List of beneficiaries on the card</td><td>Ask the customer to check with their insurer</td></tr><tr><td>Coverage out of period</td><td>Card validity dates</td><td>Get the card valid on the date of care</td></tr><tr><td>Different identity</td><td>Card and ID shown</td><td>Match name and date of birth to the contract</td></tr></table></div><div class=\"callout callout--tip\"><p><strong>The right reflex:</strong> before calling anyone, ask the customer for their current third-party payment card, as a photo if needed. A good share of “bénéficiaire inconnu” rejections are resolved with this one document.</p></div><h2 id=\"corriger-rejet-beneficiaire-inconnu-sans-amo\">How do you fix a “bénéficiaire inconnu” rejection from the insurer without rebilling the AMO?</h2><p><strong>The safest method is to handle the supplementary share on its own: you identify the cause, correct the wrong data, then resend only the request or invoice on the insurer side.</strong> The national health insurance share, if it has been sent or paid, is left untouched.</p><p>Why this precaution? Because the two shares do not necessarily travel together. <a href=\"https://www.ameli.fr/assure/remboursements/etre-bien-rembourse/tiers-payant\">According to ameli.fr</a>, third-party payment spares the patient from paying upfront for the national health insurance share and, when the supplementary insurer also applies it, for that insurer’s share. These are two payers. A rejection from one does not call the other’s payment into question.</p><ol class=\"steps\"><li><strong>Check the status of the AMO share.</strong> Look in your software to see whether the national health insurance share of this invoice has been sent, accepted or paid. If it has been paid, leave it alone.</li><li><strong>Get the valid third-party payment card.</strong> The customer’s current card, valid on the date of care, with the beneficiary in question clearly listed.</li><li><strong>Compare the card with what was sent.</strong> Insurer, number, beneficiary, dates, identity: one line at a time, using the table above.</li><li><strong>Check the right portal.</strong> If the insurer was wrong, find out which channel it goes through. The tool to <a href=\"/ressources/mutuelle-quel-portail\">find out which portal a supplementary insurer uses</a> shows what each portal’s selector offers.</li><li><strong>Resend only the supplementary share.</strong> Resubmit the coverage request on the right portal, or use the function in your software that lets you rebill the AMC share on its own. If you cannot find it, ask your software vendor before restarting the whole invoice.</li><li><strong>Record the correction in the case.</strong> Date, data corrected, new channel, new request reference. This is what lets you track the response.</li></ol><div data-figure=\"corriger-sans-doubler-amo\"></div><div class=\"callout callout--warn\"><p><strong>The trap:</strong> canceling the invoice and resending it in full to “start clean”. If the AMO share was already paid, it may be paid a second time, and you will eventually be asked to return the excess. Correcting only the supplementary share avoids this duplicate.</p></div><p>Data entry rules differ from one platform to the next: required fields, number format, list of insurers. If you are unsure about a screen, the guide for each platform, gathered on the <a href=\"/ressources/portails-tiers-payant\">third-party payment portals</a> page, details the coverage request portal by portal, for example on <a href=\"/ressources/portail-almerys\">Almerys</a>.</p><p>When these corrections pile up, it is often re-entering data on each portal that eats up the store’s time. <a href=\"/agents\">Granit’s agents</a> enter coverage requests directly on the platforms’ portals, identify the insurer from the customer’s card, then send the status back to your team.</p><h2 id=\"preuves-a-garder\">What records should you keep after the correction?</h2><p><strong>Keep what you need to show what was rejected, what was corrected and what was resent, with the dates.</strong> If the insurer disputes it or the payment does not arrive, this file is what will save you time.</p><ul><li>the exact reason for the first rejection, copied or exported from the portal or the software;</li><li>a copy of the valid third-party payment card the customer presented;</li><li>the reference of the new request or the new AMC invoice;</li><li>proof that the AMO share was not rebilled (invoice status in the software);</li><li>the date of each exchange, and the name of the person you spoke to if you called.</li></ul><p>Keep these items in the customer’s file, in your software, not on a loose note. They contain health data: they stay in the tools designed for that.</p><h2 id=\"quand-relancer\">When should you follow up if the correction gets no response?</h2><p><strong>Follow up once the usual response time of the platform in question has passed, not before.</strong> There is no universal deadline: each platform announces its own, and it can vary with the type of request.</p><p>In practice, track the new request where you submitted it. On a portal, check its status: an approval lets you move on to billing the AMC share, a new rejection gives you a new reason to read. If the reason is still “bénéficiaire inconnu”, the cause was not the one you thought: go back to the table of causes at the next row.</p><p>Once you have the approval, follow-up shifts to the payment side. The full process, from coverage request to collection, is described on the <a href=\"/ressources/tiers-payant-opticien\">third-party payment for opticians</a> page. When the payment arrives, check that the amount matches the expected supplementary share, no more.</p><h2 id=\"contacter-mutuelle-ou-portail\">Should you contact the insurer or the portal?</h2><p><strong>Contact the portal when the problem comes from the request or the screen; send the customer to their insurer when the problem comes from their coverage rights.</strong> The platform passes on the request and the response; the insurer is the one who knows who is covered, and on what date.</p><h3>When to call the platform</h3><p>The customer’s insurer does not appear in the selector, the form refuses a number that matches the card, or the status stops changing after the announced response time. These questions belong to the portal. Each platform’s contact details are in its guide.</p><h3>When to involve the insurer</h3><p>The card is right, the data entry is correct, and the rejection still comes back. In that case, the person is probably not enrolled on the contract on the date of care, or their coverage has changed. Only the customer can have this corrected with their supplementary insurer, since it is their contract: explain what is blocking and ask them for an up-to-date card.</p><h3>When to escalate</h3><p>Escalate if, after a documented correction and a response time that has passed, you get neither an approval nor a new reason. Gather the records listed above and contact the platform’s healthcare professional support team, quoting both request references. Keep the exact reason shown by the portal: it tells you what to correct.</p>",
+  "tocItems": [
+    {
+      "id": "que-veut-dire-beneficiaire-inconnu",
+      "label": "What “bénéficiaire inconnu” means"
+    },
+    {
+      "id": "ou-apparait-le-rejet",
+      "label": "Where to find the rejection and what to note"
+    },
+    {
+      "id": "pourquoi-beneficiaire-inconnu",
+      "label": "The five possible causes"
+    },
+    {
+      "id": "corriger-rejet-beneficiaire-inconnu-sans-amo",
+      "label": "Fix it without rebilling the AMO"
+    },
+    {
+      "id": "preuves-a-garder",
+      "label": "Records to keep"
+    },
+    {
+      "id": "quand-relancer",
+      "label": "When to follow up"
+    },
+    {
+      "id": "contacter-mutuelle-ou-portail",
+      "label": "Insurer or portal: who to contact"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "What does “bénéficiaire inconnu” mean on a supplementary insurer rejection?",
+      "answer": "It means the supplementary insurer found no one matching the identity sent on the contract you named. It is not a coverage denial: the insurer did not review the eyewear or the quote. The problem is identification, meaning the insurer, the number, the person attached to the contract, the coverage dates or the identity entered."
+    },
+    {
+      "question": "What is the most common cause of a “bénéficiaire inconnu” rejection?",
+      "answer": "In the cases Granit’s agents handle, the most common cause is choosing the wrong insurer when submitting the request. It happens with an old card, a card belonging to another family member, or a request sent through a channel that does not match the contract. Checking the current third-party payment card often settles the case."
+    },
+    {
+      "question": "How do you fix a “bénéficiaire inconnu” rejection without rebilling the national health insurance share?",
+      "answer": "Handle the supplementary share on its own. First check the status of the AMO share in your software: if it has been paid, leave it alone. Then correct the wrong data using the valid third-party payment card, and resubmit the coverage request on the right portal or rebill only the AMC share. Resending the whole invoice risks having the AMO pay twice."
+    },
+    {
+      "question": "Should you contact the insurer or the portal after a “bénéficiaire inconnu” rejection?",
+      "answer": "Contact the portal when the problem comes from the request or the screen, for example an insurer missing from the selector or a number that gets refused. If the card and the data entry are correct and the rejection comes back, the problem lies with the customer’s coverage rights. It is then up to the customer to have their enrollment checked with their insurer and provide an up-to-date card."
+    }
+  ],
+  "sources": [
+    {
+      "label": "ameli.fr · Glasses and contact lenses: reimbursement and 100% Santé",
+      "url": "https://www.ameli.fr/assure/remboursements/rembourse/soins-protheses-dentaires-optique-audition/lunettes-lentilles"
+    },
+    {
+      "label": "ameli.fr · Third-party payment",
+      "url": "https://www.ameli.fr/assure/remboursements/etre-bien-rembourse/tiers-payant"
+    }
+  ],
+  "figures": [
+    {
+      "id": "corriger-sans-doubler-amo",
+      "type": "comparaison",
+      "titre": "Rebill everything or correct only the AMC share",
+      "legende": "Look at the AMO share row: rebilling everything makes it pay twice.",
+      "colonnes": [
+        "Rebill everything",
+        "Correct the AMC share"
+      ],
+      "elements": [
+        {
+          "label": "AMO share",
+          "detail": "",
+          "valeurs": [
+            "Paid twice",
+            "Unchanged"
+          ],
+          "focus": true
+        },
+        {
+          "label": "AMC share",
+          "detail": "",
+          "valeurs": [
+            "Resent",
+            "Resent, corrected"
+          ],
+          "focus": false
+        },
+        {
+          "label": "What happens next",
+          "detail": "",
+          "valeurs": [
+            "Overpayment to refund",
+            "Supplementary payment"
+          ],
+          "focus": false
+        },
+        {
+          "label": "Records to keep",
+          "detail": "",
+          "valeurs": [
+            "Two invoices to justify",
+            "One dated correction"
+          ],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [
+    {
+      "id": "A13",
+      "slug": "mutuelle-quel-portail",
+      "anchor": "find out which portal a supplementary insurer uses",
+      "type": "outil"
+    }
+  ],
+  "liensEntrants": [
+    {
+      "slug": "checklist-prise-en-charge",
+      "anchor": "checklist before sending a coverage request",
+      "type": "soeur"
+    }
+  ],
+  "remplace": [],
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-15T11:27:55.904Z",
+    "avertissements": [
+      "aucune citation (facultative)",
+      "source non vérifiable (403) : https://www.ameli.fr/assure/droits-demarches/principes/tiers-payant",
+      "source non vérifiable (403) : https://www.ameli.fr/assure/remboursements/reste-charge-0/optique"
+    ]
+  }
+}

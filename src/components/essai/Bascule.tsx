@@ -1,15 +1,37 @@
 import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 
+import { useLanguage } from "@/lib/i18n";
 import type { PecPlatform } from "@/lib/pec/essaiState";
 import { Confettis } from "./Confettis";
 import { Card, PopCheck, TextButton } from "./ui";
+
+const copy = {
+  fr: {
+    progression: (faits: number, total: number) =>
+      `${faits} portail${faits > 1 ? "s" : ""} sur ${total} connecté${faits > 1 ? "s" : ""}`,
+    tout: "Tout est ",
+    branche: "branché.",
+    connectes: (n: number) =>
+      `${n} portail${n > 1 ? "s" : ""} connecté${n > 1 ? "s" : ""} · vos PEC peuvent partir.`,
+    ajouter: "Ajouter un portail",
+  },
+  en: {
+    progression: (faits: number, total: number) =>
+      `${faits} of ${total} portal${total > 1 ? "s" : ""} connected`,
+    tout: "Everything is ",
+    branche: "connected.",
+    connectes: (n: number) =>
+      `${n} portal${n > 1 ? "s" : ""} connected · your coverage requests can go out.`,
+    ajouter: "Add a portal",
+  },
+};
 
 /** « 3 portails sur 4 connectés », avec la barre qui avance. */
 export function Progression({ faits, total }: { faits: number; total: number }) {
   const reduce = useReducedMotion();
   const percent = total ? Math.round((faits / total) * 100) : 0;
-  const label = `${faits} portail${faits > 1 ? "s" : ""} sur ${total} connecté${faits > 1 ? "s" : ""}`;
+  const label = copy[useLanguage().lang].progression(faits, total);
   return (
     <div className="mt-4">
       <p className="mb-2 text-[13px]" style={{ color: "var(--text-soft)" }} aria-live="polite">
@@ -19,7 +41,7 @@ export function Progression({ faits, total }: { faits: number; total: number }) 
       </p>
       <div
         className="h-2 overflow-hidden rounded-full"
-        style={{ background: "var(--bg3)" }}
+        style={{ background: "var(--filet)" }}
         role="progressbar"
         aria-valuenow={faits}
         aria-valuemin={0}
@@ -28,7 +50,7 @@ export function Progression({ faits, total }: { faits: number; total: number }) 
       >
         <motion.div
           className="h-full rounded-full"
-          style={{ background: "var(--sage)" }}
+          style={{ background: "var(--succes)" }}
           initial={false}
           animate={{ width: `${percent}%` }}
           transition={reduce ? { duration: 0 } : { type: "spring", stiffness: 120, damping: 20 }}
@@ -50,6 +72,7 @@ export function Bascule({
   onAjouter: () => void;
 }) {
   const reduce = useReducedMotion();
+  const t = copy[useLanguage().lang];
   const [burst, setBurst] = useState(0);
   // Les confettis partent après le montage (pas au rendu serveur).
   useEffect(() => setBurst(celebrer ? 1 : 0), [celebrer]);
@@ -68,10 +91,11 @@ export function Bascule({
           </span>
           <div>
             <h2 id="acces-titre" className="font-serif text-[28px] leading-[1.1]">
-              Tout est <span className="accent-italic">branché.</span>
+              {t.tout}
+              <span className="accent-italic">{t.branche}</span>
             </h2>
             <p className="mt-1 text-[14px]" style={{ color: "var(--text-soft)" }}>
-              {n} portail{n > 1 ? "s" : ""} connecté{n > 1 ? "s" : ""} · vos PEC peuvent partir.
+              {t.connectes(n)}
             </p>
           </div>
         </div>
@@ -80,14 +104,14 @@ export function Bascule({
             <li
               key={p.id}
               className="rounded-full px-3 py-1 text-[12px]"
-              style={{ background: "var(--sage-light)", color: "var(--text-soft)" }}
+              style={{ background: "var(--succes-fond)", color: "var(--succes-texte)" }}
             >
               ✓ {p.label}
             </li>
           ))}
         </ul>
         <div className="mt-3">
-          <TextButton onClick={onAjouter}>Ajouter un portail</TextButton>
+          <TextButton onClick={onAjouter}>{t.ajouter}</TextButton>
         </div>
       </Card>
     </motion.div>
