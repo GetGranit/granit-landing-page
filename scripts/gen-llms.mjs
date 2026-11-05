@@ -6,6 +6,7 @@
 // une page absente du sitemap (aperçu, ancien article remplacé, métier trop maigre) est
 // absente d'ici aussi. Les titres et descriptions viennent des articles eux-mêmes.
 import { readFileSync, writeFileSync } from "node:fs";
+import { editionsEnLigne } from "./actualites/en-ligne.mjs";
 import { articlesEnLigne } from "./ressources/en-ligne.mjs";
 
 const SITE = "https://www.getgranit.ai";
@@ -35,6 +36,7 @@ const pages = [
     "Granit se facture à l'usage : le tarif se calcule en rendez-vous, sur les dossiers du client.",
   ],
   ["Sécurité", "/securite", "Hébergement, protection des données de santé et conformité."],
+  ["Actualités", "/actualites", "Ce qui change pour les équipes de santé, hors du soin."],
   ["Levée de fonds", "/levee-de-fonds", "Le communiqué de presse de la levée de fonds de Granit, menée par Seedcamp."],
   [
     "Programme partenaires",
@@ -82,6 +84,11 @@ const anciens = fr
   }))
   .filter((a) => a.slug && !dejaListes.has(a.slug) && publie(`/ressources/${a.slug}`));
 
+// Actualités : éditions publiées seulement, comme le sitemap.
+const actualites = editionsEnLigne(racine)
+  .filter((e) => publie(`/actualites/${e.slug}`))
+  .map((e) => ligne(e.titre, `/actualites/${e.slug}`, e.metaDescription));
+
 // Pages métier : seulement celles que le sitemap retient.
 const { ordre: ordreMetiers, verticales } = lireJson("src/lib/ressources/verticales.json");
 const metiers = ordreMetiers
@@ -100,6 +107,7 @@ ${section(
   "Pages principales",
   pages.map(([t, p, d]) => ligne(t, p, d)),
 )}
+${section("Actualités", actualites)}
 ${section("Ressources par métier", metiers)}
 ${sectionsCategories.map((s) => section(s.titre, s.lignes)).join("\n")}
 ${section(
@@ -109,5 +117,5 @@ ${section(
 
 writeFileSync("public/llms.txt", txt);
 console.log(
-  `llms.txt written: ${pages.length} pages + ${metiers.length} métiers + ${ressources.length} ressources + ${anciens.length} anciens articles`,
+  `llms.txt written: ${pages.length} pages + ${metiers.length} métiers + ${ressources.length} ressources + ${actualites.length} actualités + ${anciens.length} anciens articles`,
 );

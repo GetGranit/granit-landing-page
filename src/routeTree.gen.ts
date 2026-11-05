@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AProposRouteImport } from './routes/a-propos'
+import { Route as ActualitesRouteImport } from './routes/actualites'
 import { Route as AffiliationRouteImport } from './routes/affiliation'
 import { Route as CasUsageRouteImport } from './routes/cas-usage'
 import { Route as CgvRouteImport } from './routes/cgv'
@@ -25,6 +26,8 @@ import { Route as RessourcesRouteImport } from './routes/ressources'
 import { Route as SecuriteRouteImport } from './routes/securite'
 import { Route as SilmoRouteImport } from './routes/silmo'
 import { Route as TarifsRouteImport } from './routes/tarifs'
+import { Route as ActualitesIndexRouteImport } from './routes/actualites.index'
+import { Route as ActualitesSlugRouteImport } from './routes/actualites.$slug'
 import { Route as AgentsIndexRouteImport } from './routes/agents.index'
 import { Route as AgentsMetierRouteImport } from './routes/agents.$metier'
 import { Route as BlogSplatRouteImport } from './routes/blog.$'
@@ -45,6 +48,11 @@ const IndexRoute = IndexRouteImport.update({
 const AProposRoute = AProposRouteImport.update({
   id: '/a-propos',
   path: '/a-propos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ActualitesRoute = ActualitesRouteImport.update({
+  id: '/actualites',
+  path: '/actualites',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AffiliationRoute = AffiliationRouteImport.update({
@@ -117,6 +125,16 @@ const TarifsRoute = TarifsRouteImport.update({
   path: '/tarifs',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ActualitesIndexRoute = ActualitesIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ActualitesRoute,
+} as any)
+const ActualitesSlugRoute = ActualitesSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => ActualitesRoute,
+} as any)
 const AgentsIndexRoute = AgentsIndexRouteImport.update({
   id: '/agents/',
   path: '/agents/',
@@ -178,6 +196,7 @@ const RessourcesMetierVerticaleRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/a-propos': typeof AProposRoute
+  '/actualites': typeof ActualitesRouteWithChildren
   '/affiliation': typeof AffiliationRoute
   '/cas-usage': typeof CasUsageRoute
   '/cgv': typeof CgvRoute
@@ -192,11 +211,13 @@ export interface FileRoutesByFullPath {
   '/securite': typeof SecuriteRoute
   '/silmo': typeof SilmoRoute
   '/tarifs': typeof TarifsRoute
+  '/actualites/$slug': typeof ActualitesSlugRoute
   '/agents/$metier': typeof AgentsMetierRoute
   '/blog/$': typeof BlogSplatRoute
   '/en/cgv': typeof EnCgvRoute
   '/ressources/$slug': typeof RessourcesSlugRoute
   '/webinar/ia-magasin': typeof WebinarIaMagasinRoute
+  '/actualites/': typeof ActualitesIndexRoute
   '/agents/': typeof AgentsIndexRoute
   '/en/': typeof EnIndexRoute
   '/ressources/': typeof RessourcesIndexRoute
@@ -220,11 +241,13 @@ export interface FileRoutesByTo {
   '/securite': typeof SecuriteRoute
   '/silmo': typeof SilmoRoute
   '/tarifs': typeof TarifsRoute
+  '/actualites/$slug': typeof ActualitesSlugRoute
   '/agents/$metier': typeof AgentsMetierRoute
   '/blog/$': typeof BlogSplatRoute
   '/en/cgv': typeof EnCgvRoute
   '/ressources/$slug': typeof RessourcesSlugRoute
   '/webinar/ia-magasin': typeof WebinarIaMagasinRoute
+  '/actualites': typeof ActualitesIndexRoute
   '/agents': typeof AgentsIndexRoute
   '/en': typeof EnIndexRoute
   '/ressources': typeof RessourcesIndexRoute
@@ -236,6 +259,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/a-propos': typeof AProposRoute
+  '/actualites': typeof ActualitesRouteWithChildren
   '/affiliation': typeof AffiliationRoute
   '/cas-usage': typeof CasUsageRoute
   '/cgv': typeof CgvRoute
@@ -250,11 +274,13 @@ export interface FileRoutesById {
   '/securite': typeof SecuriteRoute
   '/silmo': typeof SilmoRoute
   '/tarifs': typeof TarifsRoute
+  '/actualites/$slug': typeof ActualitesSlugRoute
   '/agents/$metier': typeof AgentsMetierRoute
   '/blog/$': typeof BlogSplatRoute
   '/en/cgv': typeof EnCgvRoute
   '/ressources/$slug': typeof RessourcesSlugRoute
   '/webinar/ia-magasin': typeof WebinarIaMagasinRoute
+  '/actualites/': typeof ActualitesIndexRoute
   '/agents/': typeof AgentsIndexRoute
   '/en/': typeof EnIndexRoute
   '/ressources/': typeof RessourcesIndexRoute
@@ -267,6 +293,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/a-propos'
+    | '/actualites'
     | '/affiliation'
     | '/cas-usage'
     | '/cgv'
@@ -281,11 +308,13 @@ export interface FileRouteTypes {
     | '/securite'
     | '/silmo'
     | '/tarifs'
+    | '/actualites/$slug'
     | '/agents/$metier'
     | '/blog/$'
     | '/en/cgv'
     | '/ressources/$slug'
     | '/webinar/ia-magasin'
+    | '/actualites/'
     | '/agents/'
     | '/en/'
     | '/ressources/'
@@ -309,11 +338,13 @@ export interface FileRouteTypes {
     | '/securite'
     | '/silmo'
     | '/tarifs'
+    | '/actualites/$slug'
     | '/agents/$metier'
     | '/blog/$'
     | '/en/cgv'
     | '/ressources/$slug'
     | '/webinar/ia-magasin'
+    | '/actualites'
     | '/agents'
     | '/en'
     | '/ressources'
@@ -324,6 +355,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/a-propos'
+    | '/actualites'
     | '/affiliation'
     | '/cas-usage'
     | '/cgv'
@@ -338,11 +370,13 @@ export interface FileRouteTypes {
     | '/securite'
     | '/silmo'
     | '/tarifs'
+    | '/actualites/$slug'
     | '/agents/$metier'
     | '/blog/$'
     | '/en/cgv'
     | '/ressources/$slug'
     | '/webinar/ia-magasin'
+    | '/actualites/'
     | '/agents/'
     | '/en/'
     | '/ressources/'
@@ -354,6 +388,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AProposRoute: typeof AProposRoute
+  ActualitesRoute: typeof ActualitesRouteWithChildren
   AffiliationRoute: typeof AffiliationRoute
   CasUsageRoute: typeof CasUsageRoute
   CgvRoute: typeof CgvRoute
@@ -391,6 +426,13 @@ declare module '@tanstack/react-router' {
       path: '/a-propos'
       fullPath: '/a-propos'
       preLoaderRoute: typeof AProposRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/actualites': {
+      id: '/actualites'
+      path: '/actualites'
+      fullPath: '/actualites'
+      preLoaderRoute: typeof ActualitesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/affiliation': {
@@ -491,6 +533,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TarifsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/actualites/': {
+      id: '/actualites/'
+      path: '/'
+      fullPath: '/actualites/'
+      preLoaderRoute: typeof ActualitesIndexRouteImport
+      parentRoute: typeof ActualitesRoute
+    }
+    '/actualites/$slug': {
+      id: '/actualites/$slug'
+      path: '/$slug'
+      fullPath: '/actualites/$slug'
+      preLoaderRoute: typeof ActualitesSlugRouteImport
+      parentRoute: typeof ActualitesRoute
+    }
     '/agents/': {
       id: '/agents/'
       path: '/agents'
@@ -571,6 +627,20 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface ActualitesRouteChildren {
+  ActualitesSlugRoute: typeof ActualitesSlugRoute
+  ActualitesIndexRoute: typeof ActualitesIndexRoute
+}
+
+const ActualitesRouteChildren: ActualitesRouteChildren = {
+  ActualitesSlugRoute: ActualitesSlugRoute,
+  ActualitesIndexRoute: ActualitesIndexRoute,
+}
+
+const ActualitesRouteWithChildren = ActualitesRoute._addFileChildren(
+  ActualitesRouteChildren,
+)
+
 interface RessourcesRouteChildren {
   RessourcesSlugRoute: typeof RessourcesSlugRoute
   RessourcesIndexRoute: typeof RessourcesIndexRoute
@@ -592,6 +662,7 @@ const RessourcesRouteWithChildren = RessourcesRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AProposRoute: AProposRoute,
+  ActualitesRoute: ActualitesRouteWithChildren,
   AffiliationRoute: AffiliationRoute,
   CasUsageRoute: CasUsageRoute,
   CgvRoute: CgvRoute,

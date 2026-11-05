@@ -10,7 +10,7 @@
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 import type { Plugin, ViteDevServer } from "vite";
-import { controler, lireContenu, redirections } from "./en-ligne.mjs";
+import { apercuAutorise, controler, lireContenu, redirections } from "./en-ligne.mjs";
 import { lireTraductions } from "./traduction.mjs";
 import { articles as anciensArticles } from "../../src/lib/articles";
 import verticalesData from "../../src/lib/ressources/verticales.json";
@@ -96,7 +96,7 @@ export function ressources(): Plugin {
   return {
     name: "granit:ressources",
     config(_, { command }) {
-      avecApercu = command !== "build" || process.env.VERCEL_ENV === "preview";
+      avecApercu = apercuAutorise(command);
     },
     resolveId(id) {
       if (id === INDEX || id.startsWith(INDEX + "/")) return "\0" + id;

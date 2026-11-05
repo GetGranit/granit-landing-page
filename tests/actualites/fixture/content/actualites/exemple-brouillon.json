@@ -1,0 +1,20 @@
+{
+  "numero": 2,
+  "format": "le-reflexe",
+  "fait": "72 h",
+  "titre": "Un brouillon d'exemple",
+  "seoTitle": "Un brouillon d'exemple",
+  "chapo": "Texte d'exemple.",
+  "metaDescription": "Courte.",
+  "metiers": ["pharmacie"],
+  "datePublished": "2026-11-05",
+  "dateModified": "2026-11-05",
+  "change": ["Un paragraphe.", "[à vérifier] Une ligne à ne jamais afficher."],
+  "qui": { "texte": "Les titulaires." },
+  "gestes": ["Un geste."],
+  "inconnu": ["À contrôler le matin de la publication."],
+  "sources": [{ "libelle": "Une source", "url": "https://www.example.fr/a", "primaire": false }],
+  "relecteur": null,
+  "statut": "brouillon",
+  "reste_a_verifier": ["Une note de travail."]
+}

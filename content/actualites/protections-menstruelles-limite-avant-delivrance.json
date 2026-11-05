@@ -1,0 +1,94 @@
+{
+  "numero": 3,
+  "format": "ce-qui-change",
+  "fait": "12 mois",
+  "titre": "Protections menstruelles : la limite à vérifier avant de délivrer",
+  "seoTitle": "Protections menstruelles : 2 produits sur 12 mois",
+  "chapo": "Depuis le 1er octobre 2026, les coupes et culottes référencées sont prises en charge en officine, dans la limite de 2 produits par an. L’outil de vérification annoncé pour novembre n’était pas prêt fin octobre.",
+  "metaDescription": "Coupes et culottes menstruelles : qui est éligible, la limite de 2 produits sur 12 mois, et ce qu’il faut vérifier avant de délivrer à l’officine.",
+  "metiers": [
+    "pharmacie"
+  ],
+  "datePublished": "2026-11-05",
+  "dateModified": "2026-11-05",
+  "change": [
+    "Depuis le 1er octobre 2026, l’Assurance maladie prend en charge les coupes et les culottes menstruelles réutilisables référencées. Elles sont délivrées en officine, sans ordonnance, aux personnes de moins de 26 ans et aux bénéficiaires de la Complémentaire santé solidaire (C2S), sans condition d’âge (décret n° 2026-288 du 17 avril 2026, arrêté du 6 août 2026).",
+    "La prise en charge porte sur 2 produits par an. La période débute à la première délivrance, puis court de date à date (décret du 17 avril 2026). ameli.fr parle de « 2 dispositifs sur 12 mois glissants ».",
+    "Les prix limites de vente sont de 19 € pour une culotte et de 15,80 € pour une coupe (ameli.fr, 29 septembre 2026). L’Assurance maladie rembourse 60 % pour les moins de 26 ans et 100 % pour les bénéficiaires de la C2S (service-public.gouv.fr, 30 septembre 2026).",
+    "Le téléservice « Aide à la détection d’atypies de consommation » (ADAC), sur amelipro, doit afficher les produits déjà délivrés, leurs dates et le nombre encore possible. L’Assurance maladie annonce cet ajout pour novembre 2026, afin d’éviter les rejets en cas de dépassement."
+  ],
+  "qui": {
+    "texte": "Les titulaires d’officine, ainsi que les adjoints et préparateurs chargés de la délivrance, de la facturation et du suivi des indus."
+  },
+  "gestes": [
+    "Vérifiez l’éligibilité : moins de 26 ans, ou bénéficiaire de la C2S.",
+    "Vérifiez que le produit est référencé. Les produits non référencés ne sont pas pris en charge.",
+    "Facturez le code individuel du fabricant. Saisissez votre numéro de pharmacien comme numéro de prescripteur.",
+    "Passez par la carte Vitale, physique ou appli, en tiers payant. ameli.fr demande de le systématiser pour sécuriser la délivrance.",
+    "Tant qu’ADAC n’affiche pas ces produits, demandez à la personne si elle en a déjà reçu ailleurs. Votre logiciel ne montre en principe que vos propres délivrances. C’est notre lecture, pas une consigne officielle.",
+    "Dès que la ligne apparaît dans ADAC, regardez l’historique avant de délivrer. L’accès se fait en carte CPS (carte de professionnel de santé) ou e-CPS (sa version sur téléphone). Un titulaire peut le déléguer aux collaborateurs munis d’une carte CPE (carte de personnel d’établissement).",
+    "Si une notification d’indu arrive, lisez d’abord les voies et délais de recours qu’elle indique."
+  ],
+  "inconnu": [
+    "La date de mise en service dans ADAC. Le Moniteur des pharmacies le disait non opérationnel au 28 octobre 2026, avec un déploiement annoncé pour novembre, sans date précise. Nous n’avons pas trouvé d’annonce de mise en service au 5 novembre 2026.",
+    "La suite donnée aux demandes syndicales, rapportées par Le Moniteur des pharmacies. Le président de l’Union des syndicats de pharmaciens d’officine (USPO) refuse de consulter ADAC pour ce contrôle. Le vice-président de la Fédération des syndicats pharmaceutiques de France (FSPF) ne partage pas ce refus, mais réclame l’intégration de l’outil aux logiciels d’officine et un moratoire sur les indus. Ce sont des positions, pas des règles.",
+    "Le traitement d’un indu en cas de dépassement. Les deux syndicats contestent qu’une fraude d’assuré reste à la charge du pharmacien. Nous n’avons pas trouvé de consigne de l’Assurance maladie propre à ces produits.",
+    "La couverture d’ADAC. En octobre 2025, le service excluait les bénéficiaires de la MGEN, des régimes de l’Assemblée nationale et du Sénat, et de la Caisse des Français de l’étranger. Nous ne savons pas si cette exclusion vaut pour ces produits."
+  ],
+  "sources": [
+    {
+      "libelle": "Décret n° 2026-288 du 17 avril 2026, Journal officiel du 18 avril 2026 (Légifrance)",
+      "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053910115",
+      "primaire": true
+    },
+    {
+      "libelle": "Arrêté du 6 août 2026, Journal officiel du 7 août 2026 (Légifrance)",
+      "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054632785",
+      "primaire": true
+    },
+    {
+      "libelle": "Code de la sécurité sociale, article L. 162-59, en vigueur depuis le 28 décembre 2023 (Légifrance)",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000048673558",
+      "primaire": true
+    },
+    {
+      "libelle": "Protections menstruelles réutilisables : les modalités de prise en charge en officine (ameli.fr, 29 septembre 2026)",
+      "url": "https://www.ameli.fr/pharmacien/exercice-professionnel/delivrance-produits-sante/regles-delivrance-prise-charge/protections-menstruelles-reutilisables-modalites-officine",
+      "primaire": true
+    },
+    {
+      "libelle": "Prise en charge des coupes et culottes menstruelles : les règles de délivrance (ameli.fr, 29 septembre 2026)",
+      "url": "https://www.ameli.fr/pharmacien/actualites/prise-en-charge-des-coupes-et-culottes-menstruelles-des-le-1er-octobre-les-regles-de-delivrance",
+      "primaire": true
+    },
+    {
+      "libelle": "Aide à la détection d’atypies de consommation : un nouveau téléservice sur amelipro (ameli.fr, 9 octobre 2025)",
+      "url": "https://www.ameli.fr/pharmacien/actualites/aide-la-detection-d-atypies-de-consommation-en-officine-un-nouveau-teleservice-sur-amelipro",
+      "primaire": true
+    },
+    {
+      "libelle": "Les protections hygiéniques réutilisables remboursées à partir du 1er octobre (service-public.gouv.fr, mise à jour du 30 septembre 2026)",
+      "url": "https://www.service-public.gouv.fr/particuliers/actualites/A18883",
+      "primaire": true
+    },
+    {
+      "libelle": "Les pharmaciens refusent de payer pour les fraudes des assurés (Le Moniteur des pharmacies, 2 novembre 2026)",
+      "url": "https://www.lemoniteurdespharmacies.fr/profession/socio-professionnel/les-pharmaciens-refusent-de-payer-pour-les-fraudes-des-assures",
+      "primaire": false
+    }
+  ],
+  "relecteur": null,
+  "statut": "brouillon",
+  "reste_a_verifier": [
+    "Le matin de la publication : ADAC affiche-t-il les protections menstruelles ? Sinon, garder le geste 5 et l’inconnu 1. Si oui, les réécrire. amelipro a aussi été fermé à titre conservatoire fin octobre 2026 (Le Moniteur, 23 octobre) ; l’USPO annonce sa réouverture sur une page vue en résultat de recherche seulement, non ouverte, sans date lue.",
+    "Faire relire par un juriste la question de l’indu. L’article L. 133-4 du code de la sécurité sociale, version en vigueur depuis le 27 juin 2026, ne cite pas l’article L. 162-59 dans sa liste, alors que ces produits sont facturés par l’outil de la LPP « bien que ces produits n’appartiennent pas directement à cette liste » (ameli.fr). Je n’en tire aucune conclusion : ni ce texte ni le délai de deux mois de l’article R. 133-9-1 ne sont présentés comme applicables dans l’édition.",
+    "Procédure de contestation d’un indu côté pharmacien : aucune page ameli.fr de l’espace pharmacien trouvée. Seule la page médecin existe, non reprise. Le geste 7 reste donc général et sans lien.",
+    "Le geste 5 (demander à la personne, logiciel limité à vos délivrances) est notre lecture. Aucune source ne le prescrit. À valider par un pharmacien relecteur.",
+    "Les textes du décret et de l’arrêté ont été lus via un extracteur (WebFetch), pas en page complète. Relire la rédaction exacte sur Légifrance, notamment la numérotation de l’article créé dans le code (R. 162-145 selon l’extraction, non citée dans le texte).",
+    "Liste officielle des produits référencés : la page sante.gouv.fr a renvoyé un contrôle anti-robot, non lue et non citée. La décision du 9 juillet 2026 sur le taux n’a pas été ouverte : le 60 % / 100 % repose sur service-public.gouv.fr.",
+    "Budget de la Sécurité sociale 2027 au Sénat : ma recherche du 5 novembre 2026 ne relie pas le projet à ces produits ni à leur contrôle, mais je n’ai pas lu le texte du projet ni les amendements. À contrôler le jour de la publication.",
+    "Réponse de la Cnam aux demandes de moratoire : rien trouvé au 5 novembre 2026.",
+    "Publication bloquée par le contrôle au build tant que `relecteur` reste nul : aucune personne n’a relu ce texte.",
+    "Espaces : le texte suit TON.md (espaces insécables, apostrophe courbe), alors que content/ressources utilise des apostrophes droites. À normaliser si le rendu l’exige."
+  ]
+}

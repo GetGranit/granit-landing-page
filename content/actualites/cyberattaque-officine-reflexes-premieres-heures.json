@@ -1,0 +1,100 @@
+{
+  "numero": 1,
+  "format": "le-reflexe",
+  "fait": "72 h",
+  "titre": "Cyberattaque en officine : les réflexes des premières heures",
+  "seoTitle": "Cyberattaque en officine : les premiers réflexes",
+  "chapo": "Entre le 31 octobre et le 1er novembre 2026, trois pharmacies ont été visées par des cyberattaques, revendiquées par des pirates. Ce qu’il faut préparer, et ce qu’il faut faire si cela vous arrive.",
+  "metaDescription": "Cyberattaque en officine : isoler le poste, documenter, notifier la CNIL si possible sous 72 h en cas de risque. Les réflexes, avec les textes officiels.",
+  "metiers": [
+    "pharmacie"
+  ],
+  "datePublished": "2026-11-05",
+  "dateModified": "2026-11-05",
+  "change": [
+    "Entre le 31 octobre et le 1er novembre 2026, trois pharmacies ont été visées par des cyberattaques. Des pirates revendiquent le vol de plus de 436 000 dossiers, selon Le Moniteur des pharmacies du 2 novembre 2026, qui cite le site spécialisé FrenchBreaches. Ce volume est une revendication. Le Moniteur précise qu’il reste à confirmer.",
+    "Le Moniteur rapporte qu’une officine a confirmé le piratage et que son titulaire s’est rendu au commissariat pour porter plainte.",
+    "La règle n’est pas nouvelle. En cas de violation de données personnelles, le responsable du traitement notifie la CNIL (Commission nationale de l’informatique et des libertés) dans les meilleurs délais et, si possible, 72 heures au plus tard après en avoir pris connaissance, sauf si la violation n’est pas susceptible d’engendrer un risque pour les personnes (article 33 du RGPD, le règlement général sur la protection des données du 27 avril 2016). Au-delà de 72 heures, il explique son retard.",
+    "Si le risque est élevé, il informe aussi les personnes concernées dans les meilleurs délais, sauf exceptions prévues par le texte (article 34 du RGPD)."
+  ],
+  "qui": {
+    "texte": "Les titulaires d’officine et les référents tiers payant qui gèrent les accès aux portails et au logiciel."
+  },
+  "gestes": [
+    "Avant : listez qui a accès à vos portails de tiers payant, à amelipro et au logiciel de l’officine. L’Ordre recommande de limiter les droits aux seuls usages nécessaires.",
+    "Avant : vérifiez comment couper un accès sans arrêter la facturation, et que vos sauvegardes sont régulières, déconnectées et testées.",
+    "Le jour même : déconnectez du réseau la machine touchée. Ne l’éteignez pas, ne la redémarrez pas et ne l’utilisez plus (consignes de l’Ordre).",
+    "Prévenez votre prestataire informatique et signalez l’incident sur cybermalveillance.gouv.fr. La CNIL conseille de porter plainte après une cyberattaque. Déclarez aussi l’agression à l’Ordre.",
+    "Documentez l’incident dans tous les cas : nature, personnes et données concernées, conséquences probables, mesures prises (CNIL).",
+    "Risque pour les personnes : notifiez la CNIL dans les meilleurs délais, si possible sous 72 h. Les informations manquent ? Faites une notification initiale, puis complétez. En cas de doute, la CNIL invite à notifier.",
+    "Méfiez-vous des faux mails de mutuelle ou de remboursement en attente. Ouvrez vos portails directement, sans passer par un lien reçu."
+  ],
+  "inconnu": [
+    "Comment les pirates sont entrés. Des responsables syndicaux ont évoqué des pistes, sans preuve à ce stade : nous ne les reprenons pas. Le Moniteur précise qu’aucune compromission de prestataire n’est établie et qu’aucun lien technique entre les trois attaques n’a été identifié.",
+    "Combien d’officines sont visées. FrenchBreaches évoque plusieurs centaines d’officines, sans liste vérifiée. Rien ne permet d’affirmer qu’elles ont été compromises.",
+    "Si une officine doit aussi déclarer l’incident au CERT Santé (le centre de réponse aux incidents de cybersécurité des structures de santé). La loi vise les établissements de santé et les organismes et services de prévention, de diagnostic ou de soins (article L. 1111-8-2 du code de la santé publique), et le portail du CERT Santé s’adresse aux établissements. Nous n’avons pas trouvé de texte qui tranche pour l’officine.",
+    "Si une consigne officielle propre à ces attaques a été publiée. Nous n’en avons pas trouvé de l’ANS (Agence du numérique en santé) ni du CERT Santé au 5 novembre 2026."
+  ],
+  "sources": [
+    {
+      "libelle": "Règlement (UE) 2016/679 du 27 avril 2016 (RGPD), articles 33 et 34 (cnil.fr)",
+      "url": "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4",
+      "primaire": true
+    },
+    {
+      "libelle": "Notifier une violation de données personnelles (cnil.fr, page du 24 mai 2018, consultée le 5 novembre 2026)",
+      "url": "https://www.cnil.fr/fr/notifier-une-violation-de-donnees-personnelles",
+      "primaire": true
+    },
+    {
+      "libelle": "Cyberattaques : comment lutter contre le hacking des données de santé ? (Ordre national des pharmaciens, consulté le 5 novembre 2026)",
+      "url": "https://www.ordre.pharmacien.fr/les-communications/focus-sur/les-actualites/cyberattaques-comment-lutter-contre-le-hacking-des-donnees-de-sante",
+      "primaire": true
+    },
+    {
+      "libelle": "La CNIL et l’Ordre national des pharmaciens publient un guide RGPD (septembre 2023)",
+      "url": "https://www.ordre.pharmacien.fr/les-communications/focus-sur/les-autres-publications/la-cnil-et-l-ordre-national-des-pharmaciens-publient-un-guide-rgpd",
+      "primaire": true
+    },
+    {
+      "libelle": "Code de la santé publique, article L. 1111-8-2, en vigueur depuis le 20 novembre 2020 (Légifrance)",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000042536620",
+      "primaire": true
+    },
+    {
+      "libelle": "Cadre législatif et déclarations (portail du CERT Santé, consulté le 5 novembre 2026)",
+      "url": "https://cyberveille.esante.gouv.fr/le-cadre-legislatif",
+      "primaire": true
+    },
+    {
+      "libelle": "Réagir à un acte de cybermalveillance, fiches réflexes (portail du CERT Santé, fiche Fuite de données du 18 mars 2026)",
+      "url": "https://cyberveille.esante.gouv.fr/reagir-un-acte-de-cybermalveillance-fiches-reflexes",
+      "primaire": true
+    },
+    {
+      "libelle": "Trois pharmacies piratées : 436 000 dossiers revendiqués (Le Moniteur des pharmacies, 2 novembre 2026)",
+      "url": "https://www.lemoniteurdespharmacies.fr/profession/socio-professionnel/trois-pharmacies-piratees-436-000-dossiers-revendiques-des-centaines-dofficines-dans-le-viseur",
+      "primaire": false
+    },
+    {
+      "libelle": "Cybersécurité : l’Ordre met en garde les pharmaciens face à une menace durable (Le Moniteur des pharmacies, 27 janvier 2026)",
+      "url": "https://www.lemoniteurdespharmacies.fr/legislation/justice/cybersecurite-lordre-met-en-garde-les-pharmaciens-face-a-une-menace-durable",
+      "primaire": false
+    }
+  ],
+  "relecteur": null,
+  "statut": "brouillon",
+  "reste_a_verifier": [
+    "Applicabilité de l’article L. 1111-8-2 à une officine : question de juriste ou de l’ANS. L’édition la laisse dans l’inconnu.",
+    "Fiche CERT Santé « déclaration incident » du 15 avril 2026 (PDF) : texte illisible par mes outils, seuls ses liens ont été extraits, dont une mention CNIL « sous 72h ». À lire par une personne : elle dit peut-être qui doit déclarer.",
+    "Fiche ANS « La e-santé en officine » et mémento de sécurité de l’ANS pour les professionnels libéraux : pages non lisibles avec mes outils. Non citées. Elles sont probablement la meilleure source ANS pour l’officine.",
+    "Fiche n° 5 du guide CNIL et Ordre (violation de données) : hébergée sur Calaméo, non lue. Seule la page de présentation est citée. Contrôler que les gestes 5 et 6 ne la contredisent pas.",
+    "Liens non ouverts, donc non donnés : cybermalveillance.gouv.fr et la page de l’Ordre « déclarer une agression ». Le geste 4 les nomme ou s’appuie sur la page de l’Ordre qui les relaie.",
+    "La page de l’Ordre sur les cyberattaques n’affiche pas de date dans la version lue. Ses consignes renvoient à une période 2022-2023. Vérifier qu’elles sont toujours celles de l’Ordre. Le dossier cybersécurité de l’Ordre de janvier 2026 n’a été lu qu’à travers Le Moniteur.",
+    "Les sauvegardes et la limitation des droits viennent du résumé du Moniteur (27 janvier 2026), pas du dossier de l’Ordre lui-même.",
+    "Deux officines semblent confirmer l’attaque : Le Moniteur pour l’une, actu.fr (mis à jour le 4 novembre 2026) pour l’autre, qui conteste en outre le chiffre revendiqué. Je n’ai gardé que le fait du Moniteur, car l’adresse d’actu.fr identifie la ville. À réexaminer si d’autres confirmations paraissent.",
+    "Contrôle le matin de la publication : nouvelles attaques, consigne ANS, CERT Santé ou Ordre, position de la CNIL. Rien sur ces attaques n’a été trouvé auprès de ces autorités au 5 novembre 2026.",
+    "Budget de la Sécurité sociale 2027 au Sénat : aucun lien trouvé avec ce sujet ; texte du projet non lu.",
+    "Publication bloquée par le contrôle au build tant que `relecteur` reste nul."
+  ]
+}
