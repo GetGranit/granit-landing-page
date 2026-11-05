@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { HomeSections } from "@/components/home/HomeSections";
+import { BandeauLevee } from "@/components/home/nouvelle/Hero";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -20,7 +21,14 @@ export const Route = createFileRoute("/")({
 
 function HomePage() {
   return (
-    <SiteLayout piedColle>
+    <SiteLayout
+      piedColle
+      banniere={
+        <div className="nh">
+          <BandeauLevee />
+        </div>
+      }
+    >
       <HomeSections />
     </SiteLayout>
   );
