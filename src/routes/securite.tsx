@@ -1,219 +1,442 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import {
+  Ban,
+  Check,
+  Clock3,
+  Globe,
+  Hourglass,
+  KeyRound,
+  Lock,
+  Mail,
+  ShieldCheck,
+  UserCheck,
+  type LucideIcon,
+} from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { Reveal } from "@/components/Reveal";
 import { useLanguage } from "@/lib/i18n";
-import securiteHero from "@/assets/securite-hero.jpg";
-import securiteTrust from "@/assets/securite-trust.jpg";
 import { JsonLd } from "@/components/JsonLd";
 import { Faq } from "@/components/ressources/article/Fin";
-import { faqPageLd } from "@/lib/seo";
+import { SITE_URL, faqPageLd, organizationRef } from "@/lib/seo";
+
+// Chaque fait de sécurité de cette page vient des CGV (/cgv), de la politique de confidentialité
+// (/privacy), de la FAQ de la PR #94, de marque/TON.md (dépôt GetGranit/internal) ou des textes validés
+// en revue de la PR #96 (hébergeur certifié HDS, coffre-fort des identifiants).
+// On n'en ajoute aucun qui n'y figure pas.
+
+const TITLE = "Sécurité des données de santé (HDS, RGPD) - Granit";
+const DESCRIPTION =
+  "Données de santé stockées chez un hébergeur certifié HDS, en Europe, chiffrées, jamais utilisées pour entraîner des modèles tiers. RGPD, traçabilité, réversibilité.";
+const CONTACT_EMAIL = "contact@getgranit.ai";
 
 export const Route = createFileRoute("/securite")({
+  // Page retirée pour le moment : elle répond 404. Enlever ce beforeLoad pour la remettre.
+  beforeLoad: () => {
+    throw notFound();
+  },
   head: () => ({
     meta: [
-      { title: "Sécurité & conformité santé - Granit" },
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { property: "og:title", content: TITLE },
       {
-        name: "description",
+        property: "og:description",
         content:
-          "Granit est certifié HDS : données de santé hébergées en France, chiffrées, jamais utilisées pour entraîner des modèles tiers. RGPD, journalisation et réversibilité.",
+          "Hébergeur certifié HDS, datacenters en Europe, RGPD : comment Granit héberge, protège et trace les données de santé de vos patients.",
       },
-      { property: "og:title", content: "Sécurité & conformité santé - Granit" },
-      { property: "og:description", content: "Le standard le plus strict du secteur santé français et européen." },
     ],
   }),
   component: SecuritePage,
 });
 
-const content = {
+type Item = { t: string; d: string };
+type Source = "cgv" | "privacy";
+type Content = {
+  eyebrow: string;
+  title: string;
+  summaryLabel: string;
+  summary: string;
+  heroCta: string;
+  heroSecondary: string;
+  badgesLabel: string;
+  badges: { k: string; v: string }[];
+  visual: { title: string; rows: string[]; lock: string; eu: string };
+  engagementsEyebrow: string;
+  engagementsTitle: string;
+  engagements: Item[];
+  complianceEyebrow: string;
+  complianceTitle: string;
+  complianceIntro: string;
+  sources: Record<Source, string>;
+  compliance: { k: string; v: string; src: Source; ref: string }[];
+  faqTitle: string;
+  faq: { question: string; answer: string }[];
+  asideTitle: string;
+  asideText: string;
+  asideCta: string;
+  ctaTitle: string;
+  ctaText: string;
+  ctaBtn: string;
+  ctaSecondary: string;
+  guarantees: string;
+};
+
+const content: Record<"fr" | "en", Content> = {
   fr: {
-    eyebrow: "Sécurité & conformité santé",
-    title: "Vos données de santé méritent le plus haut niveau d'exigence.",
-    intro:
-      "Granit est conçu dès l'origine pour les contraintes réglementaires des établissements de santé : HDS, RGPD, secret médical, référentiels ANS. Aucune donnée patient ne sort jamais du périmètre de confiance.",
-    summaryLabel: "En bref :",
+    eyebrow: "Sécurité et conformité",
+    title: "Les données de vos patients restent protégées.",
+    summaryLabel: "En bref :",
     summary:
-      "Granit est certifié HDS. Les données patients sont hébergées en France, chiffrées en transit et au repos, et ne servent jamais à entraîner des modèles tiers. Chaque action d'agent est journalisée, et vous pouvez récupérer ou faire supprimer vos données à tout moment.",
+      "Vos données de santé sont stockées chez un hébergeur certifié HDS, dans des datacenters situés en Europe. Elles sont chiffrées et ne servent jamais à entraîner des modèles. Chaque action des agents est enregistrée, et vos données vous sont rendues à tout moment.",
+    heroCta: "Demander une démo",
+    heroSecondary: "Politique de confidentialité",
+    badgesLabel: "Garanties",
+    badges: [
+      { k: "HDS", v: "Hébergeur certifié" },
+      { k: "UE", v: "Hébergement dans l’Union européenne" },
+      { k: "RGPD", v: "Données de santé, article 9" },
+    ],
+    visual: {
+      title: "Dossier tracé",
+      rows: ["Ce qui a été fait", "Quand", "Pourquoi il attend"],
+      lock: "Chiffré en transit et au repos",
+      eu: "Hébergé dans l’Union européenne",
+    },
+    engagementsEyebrow: "Nos engagements",
+    engagementsTitle: "Six garanties pour les données de vos patients.",
+    engagements: [
+      {
+        t: "Hébergement certifié HDS",
+        d: "Vos données de santé sont stockées chez un hébergeur certifié HDS, dans des datacenters situés en Europe.",
+      },
+      {
+        t: "Respect du RGPD",
+        d: "Une approche de la confidentialité conçue autour des exigences européennes et du RGPD.",
+      },
+      {
+        t: "Chiffrées",
+        d: "En transit (TLS 1.3) et au repos (AES-256), accès des agents compris.",
+      },
+      {
+        t: "Des accès au strict nécessaire",
+        d: "Les agents n’ouvrent que les outils que vous autorisez, avec double authentification. Vous révoquez un accès à tout moment.",
+      },
+      {
+        t: "Agents sous contrôle",
+        d: "Vos identifiants de portails sont conservés dans un coffre-fort chiffré, et chaque action de nos agents est enregistrée et vérifiable.",
+      },
+      {
+        t: "Jamais pour entraîner des modèles",
+        d: "Vos données ne sont ni revendues, ni utilisées pour entraîner des modèles tiers.",
+      },
+    ],
+    complianceEyebrow: "RGPD et contrat",
+    complianceTitle: "Le cadre RGPD, point par point.",
+    complianceIntro: "Chaque point renvoie à nos CGV ou à notre politique de confidentialité.",
+    sources: { cgv: "Conditions générales de vente", privacy: "Politique de confidentialité" },
+    compliance: [
+      {
+        k: "Rôles",
+        v: "Vous êtes responsable de traitement, Granit est sous-traitant (article 28 du RGPD).",
+        src: "cgv",
+        ref: "CGV, article 9",
+      },
+      {
+        k: "Incident",
+        v: "Notification à la CNIL sous 72 h et information des établissements concernés.",
+        src: "privacy",
+        ref: "Confidentialité, section 8",
+      },
+      {
+        k: "Restitution",
+        v: "Vos données en CSV ou JSON, sur demande et au plus tard 30 jours après la fin du contrat, puis supprimées.",
+        src: "cgv",
+        ref: "CGV, article 10",
+      },
+      {
+        k: "Vos droits",
+        v: "Accès, rectification, effacement et portabilité, auprès de contact@getgranit.ai.",
+        src: "privacy",
+        ref: "Confidentialité, section 8",
+      },
+    ],
     faqTitle: "Questions fréquentes",
     faq: [
       {
-        question: "Granit est-il certifié HDS ?",
-        answer:
-          "Oui, Granit est certifié HDS. Les données patients sont hébergées en France, sauvegardes comprises, sans transfert hors de l'Union européenne.",
+        question: "Où sont hébergées les données de santé ?",
+        answer: "Chez un hébergeur certifié HDS, dans des datacenters situés en Europe.",
       },
       {
-        question: "Les données patients servent-elles à entraîner l'IA ?",
+        question: "Les données des patients servent-elles à entraîner des modèles d’IA ?",
         answer:
-          "Non. Aucune donnée patient n'est utilisée pour entraîner des modèles tiers. Les modèles sont déployés dans des environnements isolés, hébergés en Europe.",
+          "Non. Aucune donnée patient n’entraîne de modèles tiers, et Granit ne revend pas vos données.",
       },
       {
         question: "Comment les données sont-elles protégées ?",
         answer:
-          "Chiffrement en transit (TLS 1.3) et au repos (AES-256), MFA obligatoire, rôles fins par établissement et principe du moindre privilège, appliqué aux humains comme aux agents.",
+          "Chiffrement en transit (TLS 1.3) et au repos (AES-256), double authentification obligatoire, et des accès limités au strict nécessaire.",
       },
       {
         question: "Peut-on contrôler ce que font les agents ?",
         answer:
-          "Oui. Chaque action d'agent est journalisée, horodatée, attribuable et exportable, et chaque décision reste révisable par un humain.",
+          "Oui. Ils ne font que les actions que vous avez configurées ou validées, et chaque action est tracée et exportable.",
       },
       {
         question: "Que deviennent nos données si nous arrêtons Granit ?",
         answer:
-          "Vous pouvez demander à tout moment un export complet et une suppression certifiée de vos données. Le contrat se résilie avec un préavis de 30 jours, sans pénalité ni frais.",
-      },
-      {
-        question: "Que se passe-t-il en cas d'incident de sécurité ?",
-        answer:
-          "La procédure suit le RGPD : notification à la CNIL sous 72 h et information des établissements concernés.",
+          "Elles vous sont remises en CSV ou JSON au plus tard 30 jours après la fin du contrat, puis supprimées.",
       },
     ],
-    badges: [
-      { k: "HDS", v: "Hébergeur certifié" },
-      { k: "RGPD", v: "Conforme art. 9" },
-      { k: "ANSSI", v: "Bonnes pratiques" },
-      { k: "🇫🇷", v: "Données en France" },
-      { k: "PGSSI-S", v: "Référentiel ANS" },
-    ],
-    pillarsTitle: "Six garanties non négociables",
-    items: [
-      {
-        t: "Hébergement HDS en France",
-        d: "Données patients hébergées exclusivement chez un hébergeur certifié HDS (Health Data Hosting), avec résidence et sauvegardes en France. Aucun transfert hors UE.",
-      },
-      {
-        t: "RGPD & secret médical",
-        d: "Traitement conforme au RGPD article 9 (données sensibles) et au Code de la santé publique. DPO dédié, registre des traitements, AIPD, contrats sous-traitants (DPA) et respect du secret professionnel.",
-      },
-      {
-        t: "Chiffrement de bout en bout",
-        d: "Données chiffrées en transit (TLS 1.3) et au repos (AES-256). Clés gérées via KMS dédié, rotation automatique, isolation par établissement.",
-      },
-      {
-        t: "Contrôle d'accès strict",
-        d: "SSO (SAML, OIDC), MFA obligatoire, rôles fins par établissement, service et périmètre métier. Principe du moindre privilège appliqué côté humains et agents.",
-      },
-      {
-        t: "Traçabilité & auditabilité",
-        d: "Chaque action d'agent est journalisée, horodatée, attribuable et exportable. Logs immuables conservés selon les durées légales du secteur santé.",
-      },
-      {
-        t: "Réversibilité totale",
-        d: "Export complet, suppression certifiée et restitution des données à tout moment. Aucun verrou propriétaire, aucune captation. Plan de continuité et de réversibilité contractualisé.",
-      },
-    ],
-    governanceTitle: "Gouvernance & opérations",
-    governance: [
-      { t: "DPO et RSSI dédiés", d: "Une équipe sécurité responsable des audits, de la veille réglementaire et de la réponse à incident." },
-      { t: "Tests de pénétration", d: "Pentests réguliers menés par des cabinets indépendants spécialisés santé." },
-      { t: "Sauvegardes & PRA", d: "Sauvegardes chiffrées multi-zones, plan de reprise testé, RTO et RPO contractualisés." },
-      { t: "Notification d'incident", d: "Procédure conforme RGPD : notification CNIL sous 72 h et information des établissements concernés." },
-    ],
-    aiTitle: "IA responsable & souveraine",
-    aiPoints: [
-      "Aucune donnée patient n'est utilisée pour entraîner des modèles tiers.",
-      "Modèles déployés dans des environnements isolés, hébergés en Europe.",
-      "Chaque décision d'agent est explicable, traçable et révisable par un humain.",
-      "Validation médicale et opérationnelle requise avant tout déploiement en production.",
-    ],
-    ctaTitle: "Besoin du dossier sécurité complet ?",
-    ctaText: "DPA, plan d'assurance sécurité, certifications, architecture technique : nos équipes répondent à vos questionnaires HDS et RSSI.",
-    ctaBtn: "Contacter notre DPO",
+    asideTitle: "Un questionnaire sécurité à remplir ?",
+    asideText: "Envoyez-le-nous, l’équipe Granit y répond.",
+    asideCta: "Écrire à l’équipe",
+    ctaTitle: "Voyez les agents travailler dans vos logiciels.",
+    ctaText: "En démo, nous vous montrons comment chaque dossier est tracé.",
+    ctaBtn: "Demander une démo",
+    ctaSecondary: "Découvrir les agents",
+    guarantees: "Hébergeur certifié HDS · Données en Europe · RGPD",
   },
   en: {
-    eyebrow: "Healthcare security & compliance",
-    title: "Your health data deserves the highest level of rigor.",
-    intro:
-      "Granit is built from day one for healthcare regulatory constraints: HDS, GDPR, medical confidentiality and ANS frameworks. Patient data never leaves the trust perimeter.",
+    eyebrow: "Security and compliance",
+    title: "Your patients' data stays protected.",
     summaryLabel: "In short:",
     summary:
-      "Granit is HDS certified. Patient data is hosted in France, encrypted in transit and at rest, and never used to train third-party models. Every agent action is logged, and you can retrieve or delete your data at any time.",
+      "Your health data is stored with an HDS-certified host (French certification for health data hosting), in data centers located in Europe. It is encrypted and never used to train models. Every agent action is recorded, and your data is returned to you at any time.",
+    heroCta: "Book a demo",
+    heroSecondary: "Privacy policy",
+    badgesLabel: "Guarantees",
+    badges: [
+      { k: "HDS", v: "Certified host" },
+      { k: "EU", v: "Hosted in the European Union" },
+      { k: "GDPR", v: "Health data, article 9" },
+    ],
+    visual: {
+      title: "Traced case",
+      rows: ["What was done", "When", "Why it is waiting"],
+      lock: "Encrypted in transit and at rest",
+      eu: "Hosted in the European Union",
+    },
+    engagementsEyebrow: "Our commitments",
+    engagementsTitle: "Six guarantees for your patients' data.",
+    engagements: [
+      {
+        t: "HDS-certified hosting",
+        d: "Your health data is stored with an HDS-certified host, in data centers located in Europe.",
+      },
+      {
+        t: "GDPR compliance",
+        d: "A privacy approach designed around European requirements and the GDPR.",
+      },
+      {
+        t: "Encrypted",
+        d: "In transit (TLS 1.3) and at rest (AES-256), agent credentials included.",
+      },
+      {
+        t: "Access limited to what is needed",
+        d: "Agents only open the tools you authorize, with two-factor authentication. You revoke access at any time.",
+      },
+      {
+        t: "Agents under control",
+        d: "Your portal credentials are kept in an encrypted vault, and every action of our agents is recorded and verifiable.",
+      },
+      {
+        t: "Never used to train models",
+        d: "Your data is neither resold nor used to train third-party models.",
+      },
+    ],
+    complianceEyebrow: "GDPR and contract",
+    complianceTitle: "The GDPR framework, point by point.",
+    complianceIntro: "Each point links to our terms of sale or our privacy policy.",
+    sources: { cgv: "Terms of sale", privacy: "Privacy policy" },
+    compliance: [
+      {
+        k: "Roles",
+        v: "You are the data controller, Granit is the processor (GDPR article 28).",
+        src: "cgv",
+        ref: "Terms, article 9",
+      },
+      {
+        k: "Incident",
+        v: "Notification to the CNIL within 72 hours and to the organizations concerned.",
+        src: "privacy",
+        ref: "Privacy, section 8",
+      },
+      {
+        k: "Return",
+        v: "Your data in CSV or JSON, on request and no later than 30 days after the contract ends, then deleted.",
+        src: "cgv",
+        ref: "Terms, article 10",
+      },
+      {
+        k: "Your rights",
+        v: "Access, rectification, erasure and portability, via contact@getgranit.ai.",
+        src: "privacy",
+        ref: "Privacy, section 8",
+      },
+    ],
     faqTitle: "Frequently asked questions",
     faq: [
       {
-        question: "Is Granit HDS certified?",
-        answer:
-          "Yes, Granit is HDS certified. Patient data is hosted in France, backups included, with no transfer outside the European Union.",
+        question: "Where is the health data hosted?",
+        answer: "With an HDS-certified host, in data centers located in Europe.",
       },
       {
-        question: "Is patient data used to train AI?",
+        question: "Is patient data used to train AI models?",
         answer:
-          "No. No patient data is used to train third-party models. Models run in isolated environments hosted in Europe.",
+          "No. No patient data trains third-party models, and Granit does not resell your data.",
       },
       {
-        question: "How is data protected?",
+        question: "How is the data protected?",
         answer:
-          "Encryption in transit (TLS 1.3) and at rest (AES-256), mandatory MFA, fine-grained roles per organization and least privilege, applied to humans and agents alike.",
+          "Encryption in transit (TLS 1.3) and at rest (AES-256), mandatory two-factor authentication, and access limited to what is needed.",
       },
       {
         question: "Can we control what the agents do?",
         answer:
-          "Yes. Every agent action is logged, timestamped, attributable and exportable, and every decision can be reviewed by a human.",
+          "Yes. They only perform the actions you have configured or approved, and every action is traced and exportable.",
       },
       {
         question: "What happens to our data if we stop using Granit?",
         answer:
-          "You can request a full export and certified deletion of your data at any time. The contract can be cancelled with 30 days' notice, with no penalty or fee.",
-      },
-      {
-        question: "What happens in case of a security incident?",
-        answer:
-          "The procedure follows GDPR: notification to the CNIL within 72 hours and notification of the organizations concerned.",
+          "It is returned to you in CSV or JSON no later than 30 days after the contract ends, then deleted.",
       },
     ],
-    badges: [
-      { k: "HDS", v: "Certified hosting" },
-      { k: "GDPR", v: "Article 9 compliant" },
-      { k: "ANSSI", v: "Best practices" },
-      { k: "🇫🇷", v: "Data in France" },
-      { k: "PGSSI-S", v: "ANS framework" },
-    ],
-    pillarsTitle: "Six non-negotiable guarantees",
-    items: [
-      {
-        t: "HDS hosting in France",
-        d: "Patient data hosted exclusively with HDS-certified providers, with data residency and backups in France. No transfer outside the EU.",
-      },
-      {
-        t: "GDPR & medical confidentiality",
-        d: "Processing compliant with GDPR Article 9 (sensitive data) and the French Public Health Code. Dedicated DPO, processing register, DPIAs, DPAs and medical confidentiality.",
-      },
-      {
-        t: "End-to-end encryption",
-        d: "Data encrypted in transit (TLS 1.3) and at rest (AES-256). Keys managed via dedicated KMS, automatic rotation, per-organization isolation.",
-      },
-      {
-        t: "Strict access control",
-        d: "SSO (SAML, OIDC), mandatory MFA, fine-grained roles per organization, department and business scope. Least-privilege applied to humans and agents alike.",
-      },
-      {
-        t: "Traceability & auditability",
-        d: "Every agent action is logged, timestamped, attributable and exportable. Immutable logs kept per healthcare retention requirements.",
-      },
-      {
-        t: "Full reversibility",
-        d: "Full export, certified deletion and data return at any time. No proprietary lock-in. Contractual continuity and reversibility plan.",
-      },
-    ],
-    governanceTitle: "Governance & operations",
-    governance: [
-      { t: "Dedicated DPO & CISO", d: "A security team owning audits, regulatory watch and incident response." },
-      { t: "Penetration testing", d: "Regular pentests by independent firms specialized in healthcare." },
-      { t: "Backups & DRP", d: "Encrypted multi-zone backups, tested recovery plan, contractual RTO and RPO." },
-      { t: "Incident notification", d: "GDPR-compliant: CNIL notification within 72h and notification of impacted organizations." },
-    ],
-    aiTitle: "Responsible & sovereign AI",
-    aiPoints: [
-      "No patient data is used to train third-party models.",
-      "Models deployed in isolated environments hosted in Europe.",
-      "Every agent decision is explainable, traceable and reviewable by a human.",
-      "Medical and operational validation required before any production rollout.",
-    ],
-    ctaTitle: "Need the full security pack?",
-    ctaText: "DPA, security assurance plan, certifications, technical architecture: our team answers your HDS and CISO questionnaires.",
-    ctaBtn: "Contact our DPO",
+    asideTitle: "A security questionnaire to fill in?",
+    asideText: "Send it to us, the Granit team answers it.",
+    asideCta: "Email the team",
+    ctaTitle: "See the agents work inside your software.",
+    ctaText: "In a demo, we show you how every case is traced.",
+    ctaBtn: "Book a demo",
+    ctaSecondary: "Discover the agents",
+    guarantees: "HDS-certified host · Data in Europe · GDPR",
   },
 };
 
-const securiteLd = [faqPageLd(content.fr.faq)];
+const ENGAGEMENT_ICONS: LucideIcon[] = [ShieldCheck, Globe, Lock, KeyRound, UserCheck, Ban];
+const VISUAL_ICONS: LucideIcon[] = [Check, Clock3, Hourglass];
+const VISUAL_BARS = ["42%", "24%", "34%"];
+const SOURCE_PATHS = { cgv: "/cgv", privacy: "/privacy" } as const;
+
+const securiteLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${SITE_URL}/securite#webpage`,
+    url: `${SITE_URL}/securite`,
+    name: TITLE,
+    description: DESCRIPTION,
+    inLanguage: "fr-FR",
+    about: organizationRef,
+    publisher: organizationRef,
+  },
+  faqPageLd(content.fr.faq),
+];
+
+const sectionTitle = { fontSize: "clamp(28px,3.2vw,46px)" };
+
+function IconTile({ icon: Icon }: { icon: LucideIcon }) {
+  return (
+    <span
+      className="grid size-10 shrink-0 place-items-center rounded-[10px] border"
+      style={{ borderColor: "var(--border)", background: "var(--bg2)", color: "var(--profond)" }}
+    >
+      <Icon size={18} strokeWidth={1.75} aria-hidden />
+    </span>
+  );
+}
+
+/** Le dossier tracé, en abstrait : pas de donnée, pas de chiffre, seulement la promesse. */
+function HeroVisual({ visual }: { visual: Content["visual"] }) {
+  return (
+    <div
+      aria-hidden
+      className="relative overflow-hidden rounded-[18px] border p-5 sm:p-10"
+      style={{
+        borderColor: "var(--border)",
+        backgroundColor: "var(--bg2)",
+        backgroundImage: "var(--degrade-marque)",
+      }}
+    >
+      <div
+        className="rounded-[14px] border p-5 sm:p-6"
+        style={{
+          borderColor: "var(--border)",
+          background: "var(--surface)",
+          boxShadow: "var(--ombre-carte)",
+        }}
+      >
+        <div className="flex items-center justify-between gap-3">
+          <span
+            className="flex items-center gap-2.5 text-[13.5px]"
+            style={{ color: "var(--text)", fontWeight: 600 }}
+          >
+            <span className="status-dot" />
+            {visual.title}
+          </span>
+          <span
+            className="rounded-full border px-2.5 py-0.5 text-[11px]"
+            style={{
+              borderColor: "var(--border)",
+              background: "var(--bg2)",
+              color: "var(--profond)",
+              fontFamily: "var(--font-mono)",
+              fontWeight: 600,
+            }}
+          >
+            HDS
+          </span>
+        </div>
+        <ul className="mt-5 space-y-2.5">
+          {visual.rows.map((row, i) => {
+            const Icon = VISUAL_ICONS[i];
+            return (
+              <li
+                key={row}
+                className="flex items-center gap-3 rounded-[10px] border px-3 py-2.5"
+                style={{ borderColor: "var(--border)" }}
+              >
+                <span
+                  className="grid size-8 shrink-0 place-items-center rounded-[8px]"
+                  style={{ background: "var(--bg2)", color: "var(--profond)" }}
+                >
+                  <Icon size={16} strokeWidth={1.75} />
+                </span>
+                <span className="whitespace-nowrap text-[13.5px]" style={{ color: "var(--text)" }}>
+                  {row}
+                </span>
+                <span
+                  className="ml-auto h-2 min-w-6 flex-1 rounded-full"
+                  style={{ maxWidth: VISUAL_BARS[i], background: "var(--bg3)" }}
+                />
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+      <div className="mt-3 grid gap-3 sm:grid-cols-2">
+        {[
+          { Icon: Lock, label: visual.lock },
+          { Icon: Globe, label: visual.eu },
+        ].map(({ Icon, label }) => (
+          <div
+            key={label}
+            className="flex items-center gap-3 rounded-[12px] border px-4 py-3"
+            style={{
+              borderColor: "var(--border)",
+              background: "var(--surface)",
+              boxShadow: "var(--shadow-soft)",
+            }}
+          >
+            <Icon size={16} strokeWidth={1.75} style={{ color: "var(--profond)" }} />
+            <span className="text-[13px] leading-snug" style={{ color: "var(--text-soft)" }}>
+              {label}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 function SecuritePage() {
   const { lang } = useLanguage();
@@ -221,183 +444,224 @@ function SecuritePage() {
   return (
     <SiteLayout>
       <JsonLd data={securiteLd} />
-      <section className="mx-auto max-w-[1280px] px-6 pt-24 pb-10">
+
+      {/* Hero : promesse, en bref, bouton et garanties juste en dessous */}
+      <section className="mx-auto max-w-[1280px] px-6 pt-24 pb-20">
         <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_1fr]">
-          <div>
-            <Reveal>
-              <div className="eyebrow mb-5">{t.eyebrow}</div>
-              <h1 className="h1-hero" style={{ fontSize: "clamp(36px,4.4vw,64px)" }}>
-                {t.title}
-              </h1>
-              <p className="body-lg mt-8 max-w-2xl">{t.intro}</p>
-              <p
-                className="mt-6 max-w-2xl text-[14px] leading-[1.7]"
-                style={{ color: "var(--text-soft)" }}
-              >
-                <strong style={{ color: "var(--text)", fontWeight: 600 }}>{t.summaryLabel}</strong>{" "}
-                {t.summary}
-              </p>
-            </Reveal>
-
-            <Reveal delay={0.1}>
-              <div className="mt-10 flex flex-wrap gap-3">
-                {t.badges.map((b) => (
-                  <div
-                    key={b.k}
-                    className="flex items-center gap-2 rounded-full border px-4 py-2"
-                    style={{ borderColor: "var(--border)", background: "var(--bg2)" }}
-                  >
-                    <span className="text-[12px]" style={{ fontFamily: "var(--font-mono)", color: "var(--terra)", fontWeight: 600 }}>
-                      {b.k}
-                    </span>
-                    <span className="text-[12px]" style={{ color: "var(--text-muted)" }}>
-                      {b.v}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </Reveal>
-          </div>
-
-          <Reveal delay={0.15}>
-            <div
-              className="relative overflow-hidden rounded-[16px] border"
-              style={{ borderColor: "var(--border)", boxShadow: "0 30px 60px -30px color-mix(in oklab, var(--terra) 35%, transparent)" }}
-            >
-              <img
-                src={securiteHero}
-                alt={lang === "fr" ? "Datacenter HDS en France" : "HDS data center in France"}
-                width={1280}
-                height={960}
-                className="h-full w-full object-cover"
-              />
-              <div
-                aria-hidden
-                className="pointer-events-none absolute inset-0"
-                style={{ background: "linear-gradient(180deg, transparent 55%, color-mix(in oklab, var(--bg) 75%, transparent) 100%)" }}
-              />
-              <div className="absolute bottom-5 left-5 right-5 flex flex-wrap items-center gap-2">
-                <span
-                  className="rounded-full px-3 py-1 text-[11px]"
-                  style={{ background: "rgba(255,255,255,0.92)", fontFamily: "var(--font-mono)", color: "var(--terra)", fontWeight: 600 }}
-                >
-                  HDS
-                </span>
-                <span
-                  className="rounded-full px-3 py-1 text-[11px]"
-                  style={{ background: "rgba(255,255,255,0.92)", color: "var(--text)", fontWeight: 500 }}
-                >
-                  {lang === "fr" ? "Données hébergées en France" : "Data hosted in France"}
-                </span>
-              </div>
+          <Reveal>
+            <p className="eyebrow mb-5">{t.eyebrow}</p>
+            <h1 className="h1-hero" style={{ fontSize: "clamp(36px,4.4vw,64px)" }}>
+              {t.title}
+            </h1>
+            <p className="body-lg mt-8 max-w-2xl">
+              <strong style={{ color: "var(--text)", fontWeight: 600 }}>{t.summaryLabel}</strong>{" "}
+              {t.summary}
+            </p>
+            <div className="mt-9 flex flex-wrap items-center gap-3">
+              <Link to="/" hash="demo" className="btn-primary">
+                {t.heroCta} <span className="arrow">↗</span>
+              </Link>
+              <Link to="/privacy" className="btn-secondaire">
+                {t.heroSecondary}
+              </Link>
             </div>
+            <ul className="mt-8 flex flex-wrap gap-2.5" aria-label={t.badgesLabel}>
+              {t.badges.map((b) => (
+                <li
+                  key={b.k}
+                  className="flex items-center gap-2 rounded-full border px-3.5 py-1.5"
+                  style={{ borderColor: "var(--border)", background: "var(--bg2)" }}
+                >
+                  <span
+                    className="text-[12px]"
+                    style={{
+                      fontFamily: "var(--font-mono)",
+                      color: "var(--profond)",
+                      fontWeight: 600,
+                    }}
+                  >
+                    {b.k}
+                  </span>
+                  <span className="text-[12.5px]" style={{ color: "var(--text-soft)" }}>
+                    {b.v}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+          <Reveal delay={0.15}>
+            <HeroVisual visual={t.visual} />
           </Reveal>
         </div>
       </section>
 
-      <section className="mx-auto max-w-[1280px] px-6 pb-20">
+      {/* Engagements : grille de six garanties */}
+      <section className="mx-auto max-w-[1280px] px-6 pb-24">
         <Reveal>
-          <h2 className="eyebrow mb-6">{t.pillarsTitle}</h2>
+          <p className="eyebrow">{t.engagementsEyebrow}</p>
+          <h2 className="h2-section mt-4 max-w-3xl" style={sectionTitle}>
+            {t.engagementsTitle}
+          </h2>
         </Reveal>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {t.items.map((it, i) => (
-            <Reveal key={it.t} delay={i * 0.04}>
-              <div className="card-hover h-full rounded-[8px] border bg-white/40 p-6" style={{ borderColor: "var(--border)" }}>
-                <div
-                  className="text-[11px] uppercase tracking-[0.04em]"
-                  style={{ fontFamily: "var(--font-mono)", color: "var(--terra)" }}
-                >
-                  0{i + 1}
+        <Reveal delay={0.05}>
+          <div
+            className="mt-10 grid gap-px overflow-hidden rounded-[18px] border sm:grid-cols-2 lg:grid-cols-3"
+            style={{ borderColor: "var(--border)", background: "var(--border)" }}
+          >
+            {t.engagements.map((e, i) => (
+              <div
+                key={e.t}
+                className="flex flex-col p-7 sm:p-8"
+                style={{ background: "var(--bg)" }}
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <IconTile icon={ENGAGEMENT_ICONS[i]} />
+                  <span
+                    className="text-[11px]"
+                    style={{ fontFamily: "var(--font-mono)", color: "var(--text-muted)" }}
+                  >
+                    0{i + 1}
+                  </span>
                 </div>
-                <h3 className="mt-3 text-[17px]" style={{ fontWeight: 500 }}>
-                  {it.t}
+                <h3
+                  className="mt-6 font-serif text-[21px] leading-snug sm:mt-10"
+                  style={{ fontWeight: 400, letterSpacing: "-0.01em" }}
+                >
+                  {e.t}
                 </h3>
-                <p className="mt-2 text-[14px] leading-[1.65]" style={{ color: "var(--text-soft)" }}>
-                  {it.d}
+                <p
+                  className="mt-2.5 text-[14.5px] leading-[1.65]"
+                  style={{ color: "var(--text-soft)" }}
+                >
+                  {e.d}
                 </p>
               </div>
-            </Reveal>
-          ))}
-        </div>
+            ))}
+          </div>
+        </Reveal>
       </section>
 
-      <section className="mx-auto max-w-[1280px] px-6 pb-20">
-        <div className="grid gap-10 lg:grid-cols-2">
-          <Reveal>
-            <div>
-              <h2 className="eyebrow mb-6">{t.governanceTitle}</h2>
-              <div className="space-y-4">
-                {t.governance.map((g) => (
-                  <div key={g.t} className="border-t pt-4" style={{ borderColor: "var(--border)" }}>
-                    <h3 className="text-[15px]" style={{ fontWeight: 500 }}>
-                      {g.t}
-                    </h3>
-                    <p className="mt-1 text-[14px] leading-[1.65]" style={{ color: "var(--text-soft)" }}>
-                      {g.d}
-                    </p>
-                  </div>
-                ))}
-              </div>
+      {/* Conformité : chaque ligne renvoie aux CGV ou à la politique de confidentialité */}
+      <section id="conformite" className="mx-auto max-w-[1280px] scroll-mt-[96px] px-6 pb-12">
+        <Reveal>
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
+            <div className="max-w-3xl">
+              <p className="eyebrow">{t.complianceEyebrow}</p>
+              <h2 className="h2-section mt-4" style={sectionTitle}>
+                {t.complianceTitle}
+              </h2>
+              <p className="body-lg mt-5">{t.complianceIntro}</p>
             </div>
-          </Reveal>
+            <div className="flex shrink-0 flex-wrap gap-3">
+              <Link to="/cgv" className="btn-secondaire">
+                {t.sources.cgv}
+              </Link>
+              <Link to="/privacy" className="btn-secondaire">
+                {t.sources.privacy}
+              </Link>
+            </div>
+          </div>
+        </Reveal>
+        <Reveal delay={0.05}>
+          <dl className="mt-10 border-t" style={{ borderColor: "var(--border)" }}>
+            {t.compliance.map((c) => (
+              <div
+                key={c.k}
+                className="grid gap-1.5 border-b py-5 md:grid-cols-[200px_1fr_180px] md:items-baseline md:gap-8"
+                style={{ borderColor: "var(--border)" }}
+              >
+                <dt
+                  className="text-[11px] uppercase tracking-[0.12em]"
+                  style={{
+                    fontFamily: "var(--font-mono)",
+                    color: "var(--text-muted)",
+                    fontWeight: 500,
+                  }}
+                >
+                  {c.k}
+                </dt>
+                <dd className="text-[15.5px] leading-[1.6]" style={{ color: "var(--text)" }}>
+                  {c.v}
+                </dd>
+                <dd className="text-[12.5px] md:text-right">
+                  <Link
+                    to={SOURCE_PATHS[c.src]}
+                    className="underline underline-offset-[3px]"
+                    style={{ color: "var(--text-muted)" }}
+                  >
+                    {c.ref}
+                  </Link>
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </Reveal>
+      </section>
 
-          <Reveal delay={0.1}>
+      {/* FAQ (même texte que le FAQPage) et contact pour les questionnaires */}
+      <section className="mx-auto max-w-[1280px] px-6 pb-24">
+        <div className="grid gap-10 lg:grid-cols-[1.6fr_1fr] lg:gap-16">
+          <div className="min-w-0">
+            <Faq items={t.faq} titre={t.faqTitle} />
+          </div>
+          <aside className="lg:sticky lg:top-28 lg:mt-12 lg:self-start">
             <div
-              className="overflow-hidden rounded-[12px] border"
+              className="rounded-[14px] border p-7"
               style={{ borderColor: "var(--border)", background: "var(--bg2)" }}
             >
-              <div className="relative h-[180px] w-full overflow-hidden">
-                <img
-                  src={securiteTrust}
-                  alt={lang === "fr" ? "Confiance et identité" : "Trust and identity"}
-                  width={1024}
-                  height={1024}
-                  loading="lazy"
-                  className="h-full w-full object-cover"
-                />
-                <div
-                  aria-hidden
-                  className="absolute inset-0"
-                  style={{ background: "linear-gradient(180deg, transparent 40%, var(--bg2) 100%)" }}
-                />
-              </div>
-              <div className="p-8 pt-6">
-                <h2 className="eyebrow mb-5">{t.aiTitle}</h2>
-                <ul className="space-y-4">
-                  {t.aiPoints.map((p) => (
-                    <li key={p} className="flex gap-3 text-[14px] leading-[1.65]" style={{ color: "var(--text-soft)" }}>
-                      <span style={{ color: "var(--terra)", fontFamily: "var(--font-mono)" }}>→</span>
-                      <span>{p}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <IconTile icon={Mail} />
+              <h3 className="mt-5 font-serif text-[22px] leading-snug" style={{ fontWeight: 400 }}>
+                {t.asideTitle}
+              </h3>
+              <p
+                className="mt-3 text-[14.5px] leading-[1.65]"
+                style={{ color: "var(--text-soft)" }}
+              >
+                {t.asideText}
+              </p>
+              <a href={`mailto:${CONTACT_EMAIL}`} className="btn-secondaire mt-6">
+                {t.asideCta} <span aria-hidden>→</span>
+              </a>
+              <p
+                className="mt-3 text-[12.5px]"
+                style={{ color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}
+              >
+                {CONTACT_EMAIL}
+              </p>
             </div>
-          </Reveal>
+          </aside>
         </div>
       </section>
 
-      <section className="mx-auto max-w-[1280px] px-6 pb-20">
-        <div className="mx-auto max-w-2xl">
-          <Faq items={t.faq} titre={t.faqTitle} />
-        </div>
-      </section>
-
+      {/* Appel final : bouton, garanties visibles à côté */}
       <section className="mx-auto max-w-[1280px] px-6 pb-28">
         <Reveal>
           <div
-            className="rounded-[12px] border p-10 text-center"
+            className="grid gap-8 rounded-[18px] border p-8 sm:p-12 lg:grid-cols-[1.2fr_1fr] lg:items-center"
             style={{ borderColor: "var(--border)", background: "var(--bg2)" }}
           >
-            <h2 className="font-serif" style={{ fontSize: "clamp(28px,3vw,40px)", lineHeight: 1.15, fontWeight: 700 }}>
-              {t.ctaTitle}
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-[1.7]" style={{ color: "var(--text-soft)" }}>
-              {t.ctaText}
-            </p>
-            <Link to="/" hash="demo" className="btn-primary mt-8 inline-flex">
-              {t.ctaBtn} <span className="arrow">↗</span>
-            </Link>
+            <div>
+              <h2 className="h2-section" style={{ fontSize: "clamp(28px,3vw,42px)" }}>
+                {t.ctaTitle}
+              </h2>
+              <p className="body-lg mt-4 max-w-xl">{t.ctaText}</p>
+            </div>
+            <div className="lg:justify-self-end">
+              <div className="flex flex-wrap gap-3">
+                <Link to="/" hash="demo" className="btn-primary">
+                  {t.ctaBtn} <span className="arrow">↗</span>
+                </Link>
+                <Link to="/agents" className="btn-secondaire">
+                  {t.ctaSecondary}
+                </Link>
+              </div>
+              <p
+                className="mt-4 text-[12.5px]"
+                style={{ color: "var(--text-soft)", fontFamily: "var(--font-mono)" }}
+              >
+                {t.guarantees}
+              </p>
+            </div>
           </div>
         </Reveal>
       </section>

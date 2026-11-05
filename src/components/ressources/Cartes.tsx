@@ -1,5 +1,14 @@
 import { Link } from "@tanstack/react-router";
-import { categorie, couperTitre, dateFr, tempsLecture, titreCourt } from "@/lib/ressources/contenu";
+import { useLanguage } from "@/lib/i18n";
+import {
+  categorie,
+  couperTitre,
+  dateLang,
+  ficheLang,
+  jourMois,
+  tempsLecture,
+  titreCourt,
+} from "@/lib/ressources/contenu";
 import {
   estSymbole,
   LIGNES_FENETRE,
@@ -19,15 +28,33 @@ import {
 } from "@/lib/ressources/photos";
 import type { Fiche } from "@/lib/ressources/types";
 
-/** Titre façon Function : ce qui suit « : » ou « ? » passe en italique, couleur de la catégorie. */
+const copy = {
+  fr: {
+    logo: (nom: string) => `Logo ${nom}`,
+    pec: "Prises en charge",
+    tousPortails: "Tous portails",
+    commencer: "Pour commencer",
+    releve: (date: string) => `Relevé le ${date}`,
+  },
+  en: {
+    logo: (nom: string) => `${nom} logo`,
+    pec: "Coverage approvals",
+    tousPortails: "All portals",
+    commencer: "Start here",
+    releve: (date: string) => `Checked ${date}`,
+  },
+};
+
+/** Titre façon Function : ce qui suit « : » ou « ? » prend la couleur de la catégorie (droit, sans italique). */
 export function TitreItalique({ titre, ink }: { titre: string; ink: string }) {
   const [tete, suite] = couperTitre(titre);
   if (!suite) return <>{titre}</>;
+  // On garde la typographie du titre : « : » en français, « : » sans espace en anglais.
   return (
     <>
       {tete}
-      {tete.endsWith("?") ? " " : " : "}
-      <em className="italic" style={{ color: ink }}>
+      {tete.endsWith("?") ? " " : titre.includes(" : ") ? " : " : ": "}
+      <em className="not-italic" style={{ color: ink }}>
         {suite}
       </em>
     </>
@@ -44,22 +71,23 @@ export function MarquePlateforme({
   logo?: string;
   taille?: "sm" | "xl";
 }) {
+  const t = copy[useLanguage().lang];
   const box = taille === "xl" ? "size-16 rounded-[16px]" : "size-10 rounded-[10px]";
   if (logo) {
     return (
       <img
         src={logo}
-        alt={taille === "xl" ? `Logo ${nom}` : ""}
+        alt={taille === "xl" ? t.logo(nom) : ""}
         width={taille === "xl" ? 64 : 40}
         height={taille === "xl" ? 64 : 40}
-        className={`${box} shrink-0 border border-[var(--border)] bg-white object-contain ${taille === "xl" ? "p-2" : "p-1.5"}`}
+        className={`${box} shrink-0 border border-[var(--border)] bg-papier object-contain ${taille === "xl" ? "p-2" : "p-1.5"}`}
       />
     );
   }
   return (
     <span
       aria-hidden
-      className={`${box} grid shrink-0 place-items-center bg-[#b94a2f] font-serif text-white ${taille === "xl" ? "text-[30px]" : "text-[19px]"}`}
+      className={`${box} grid shrink-0 place-items-center bg-encre font-serif text-rose ${taille === "xl" ? "text-[30px]" : "text-[19px]"}`}
     >
       {nom.slice(0, 1).toUpperCase()}
     </span>
@@ -84,7 +112,9 @@ export function FenetrePlateforme({
   plateforme?: { nom: string; logo?: string; statuts: StatutsCarte };
   anime?: boolean;
 }) {
+  const t = copy[useLanguage().lang];
   const logo = plateforme?.logo;
+  // Statuts : les mots du portail (français), dans les deux langues.
   const attente = plateforme?.statuts.attente ?? "En instance";
   const badge = (statut: "accord" | "attente", libelle: string, classe: string) =>
     anime && classe === "vient" ? (
@@ -109,12 +139,12 @@ export function FenetrePlateforme({
               {(!logo || estSymbole(logo)) && (
                 <span className="nom">{nomFenetre(plateforme.nom)}</span>
               )}
-              <span className="ref">Prises en charge</span>
+              <span className="ref">{t.pec}</span>
             </>
           ) : (
             <>
-              <span className="nom">Prises en charge</span>
-              <span className="ref">Tous portails</span>
+              <span className="nom">{t.pec}</span>
+              <span className="ref">{t.tousPortails}</span>
             </>
           )}
         </div>
@@ -221,7 +251,7 @@ function Couverture({
         <PhotoCarte photo={photoFiche(fiche, rang)} tailles={tailles} chargement={chargement} />
       )}
       <span
-        className="absolute left-3 top-3 rounded-[6px] bg-white/90 px-2 py-1 font-mono text-[10.5px] font-medium uppercase tracking-[0.12em]"
+        className="absolute left-3 top-3 rounded-[6px] bg-papier/90 px-2 py-1 font-mono text-[10.5px] font-medium uppercase tracking-[0.12em]"
         style={{ color: c.ink }}
       >
         {etiquette}
@@ -232,14 +262,15 @@ function Couverture({
 
 /** « 7 min · 12 oct. 2026 » ; un ancien article n'a que sa durée (on n'invente pas de date). */
 function Meta({ fiche }: { fiche: Fiche }) {
+  const { lang } = useLanguage();
   const parts = fiche.ancien
     ? [tempsLecture(fiche.readTime)]
-    : [tempsLecture(fiche.readTime), dateFr(fiche.date)];
+    : [tempsLecture(fiche.readTime), dateLang(fiche.date, lang)];
   return <>{parts.filter(Boolean).join(" · ")}</>;
 }
 
 const lienCarte =
-  "group block rounded-[14px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--terra)]";
+  "group block rounded-[14px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--profond)]";
 const survolTitre =
   "transition-colors group-hover:text-[var(--ink)] group-hover:underline decoration-1 underline-offset-[5px]";
 const meta = "text-[13.5px] text-[var(--text-muted)]";
@@ -256,7 +287,9 @@ export function CarteArticle({
   prioritaire?: "oui";
   rang?: number;
 }) {
-  const c = categorie(fiche.category)!;
+  const { lang } = useLanguage();
+  fiche = ficheLang(fiche, lang);
+  const c = categorie(fiche.category, lang)!;
   return (
     <Link
       to="/ressources/$slug"
@@ -282,7 +315,9 @@ export function CarteArticle({
 
 /** Grande carte (Function) : titre coupé au « : », chapô. */
 export function CarteUne({ fiche, titre = "h2" }: { fiche: Fiche; titre?: "h2" | "h3" }) {
-  const c = categorie(fiche.category)!;
+  const { lang } = useLanguage();
+  fiche = ficheLang(fiche, lang);
+  const c = categorie(fiche.category, lang)!;
   const H = titre;
   return (
     <Link to="/ressources/$slug" params={{ slug: fiche.slug }} className={lienCarte}>
@@ -310,7 +345,9 @@ export function CarteUne({ fiche, titre = "h2" }: { fiche: Fiche; titre?: "h2" |
 
 /** Carte horizontale du pilier en tête d'une page catégorie. */
 export function CartePilier({ fiche }: { fiche: Fiche }) {
-  const c = categorie(fiche.category)!;
+  const { lang } = useLanguage();
+  fiche = ficheLang(fiche, lang);
+  const c = categorie(fiche.category, lang)!;
   return (
     <Link
       to="/ressources/$slug"
@@ -321,8 +358,8 @@ export function CartePilier({ fiche }: { fiche: Fiche }) {
         <Couverture fiche={fiche} etiquette={c.court} format="pilier" prioritaire="haute" />
       </div>
       <div className="md:col-span-5">
-        <span className="eyebrow" style={{ color: c.ink }}>
-          Pour commencer
+        <span className="eyebrow">
+          {copy[lang].commencer}
         </span>
         <h2 className="mt-3 font-serif text-[clamp(26px,2.6vw,36px)] font-normal leading-[1.15] tracking-[-0.015em]">
           <TitreItalique titre={fiche.title} ink={c.ink} />
@@ -342,7 +379,9 @@ export function CartePilier({ fiche }: { fiche: Fiche }) {
 
 /** Petite carte de la grille 2×2 « À la une ». */
 export function CartePetite({ fiche, rang }: { fiche: Fiche; rang?: number }) {
-  const c = categorie(fiche.category)!;
+  const { lang } = useLanguage();
+  fiche = ficheLang(fiche, lang);
+  const c = categorie(fiche.category, lang)!;
   return (
     <Link
       to="/ressources/$slug"
@@ -372,19 +411,21 @@ export function CartePetite({ fiche, rang }: { fiche: Fiche; rang?: number }) {
 
 /** Tuile d'une fiche plateforme : logo ou monogramme, nom, date de relevé. */
 export function TuilePlateforme({ fiche }: { fiche: Fiche }) {
+  const { lang } = useLanguage();
+  fiche = ficheLang(fiche, lang);
   const nom = fiche.plateforme?.nom ?? titreCourt(fiche.title);
   return (
     <Link
       to="/ressources/$slug"
       params={{ slug: fiche.slug }}
-      className="flex items-center gap-3 rounded-[12px] border border-[var(--border)] bg-white p-3.5 transition hover:border-[var(--border2)] hover:shadow-[var(--shadow-soft)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--terra)]"
+      className="flex items-center gap-3 rounded-[12px] border border-[var(--border)] bg-papier p-3.5 transition hover:border-[var(--border2)] hover:shadow-[var(--ombre-douce)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--profond)]"
     >
       <MarquePlateforme nom={nom} logo={logoPlateforme(fiche.plateforme?.logo, "carre")} />
       <span className="min-w-0">
         <span className="block text-[15px] font-semibold leading-tight">{nom}</span>
         {fiche.plateforme?.checkedOn && (
           <span className="mt-1 hidden font-mono text-[10.5px] uppercase tracking-[0.08em] text-[var(--text-muted)] min-[360px]:block">
-            Relevé le {dateFr(fiche.plateforme.checkedOn).replace(/ \d{4}$/, "")}
+            {copy[lang].releve(jourMois(fiche.plateforme.checkedOn, lang))}
           </span>
         )}
       </span>

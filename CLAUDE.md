@@ -39,9 +39,9 @@ copies de `internal/marque/` : on ne les modifie pas ici, on les recopie quand l
 
 - `scripts/check-marque.mjs` scanne `src/`, `public/*.html`, `public/*.svg` (favicon) et `scripts/` et compte quatre règles :
   `ancienne-variable`, `couleur-hors-palette`, `police-hors-marque`, `ombre-brune`.
-- **Cliquet** : `scripts/check-marque.baseline.json` garde le compte par fichier et par règle. Une PR peut
-  le faire baisser, jamais monter. En CI, on compare à la baseline de la branche cible : la réécrire
-  dans la PR ne fait pas passer un ajout.
+- **Cliquet** : `scripts/check-marque.baseline.json` garde le compte par fichier et par règle (tout à zéro
+  depuis la fin de bascule). Une PR peut le faire baisser, jamais monter. En CI, check-marque tourne en
+  `--strict` : zéro violation, quelle que soit la branche cible.
 - Quand vos comptes baissent : `node scripts/check-marque.mjs --update-baseline`, et commitez la baseline.
 - Un cas légitime (numéro qui ressemble à un hex, couleur d'un tiers) va dans
   `scripts/check-marque.exceptions.json`, avec sa raison. Ce n'est pas un endroit pour garder l'ancienne marque.

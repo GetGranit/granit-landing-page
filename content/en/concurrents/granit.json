@@ -1,0 +1,63 @@
+{
+  "slug": "granit",
+  "nom": "Granit",
+  "modele": "agents-ia",
+  "checkedOn": "2026-10-07",
+  "aRelire": false,
+  "_note": "Reviewed by Paul on Oct 9, 2026. Onboarding: “48 hours” chosen by Paul (the site must remove “5 days”). HDS: per Paul’s rule of Nov 3, 2026, the approved wording is “HDS infrastructure” (see the FR file, to be corrected).",
+  "axes": {
+    "quiFait": {
+      "valeur": "Software agents; the Granit team takes over the files the agent cannot finish",
+      "source": "granit-accueil"
+    },
+    "pec": {
+      "valeur": "oui",
+      "detail": "Querying the platforms, calculating the out-of-pocket amount and sending the coverage request",
+      "source": "granit-accueil"
+    },
+    "rejets": {
+      "valeur": "oui",
+      "detail": "Analysis of rejection causes, correction and resubmission",
+      "source": "granit-accueil"
+    },
+    "rapprochement": {
+      "valeur": "oui",
+      "detail": "Reconciliation of national health insurance and supplementary insurer bank transfers with invoices",
+      "source": "granit-accueil"
+    },
+    "avance": {
+      "valeur": "non",
+      "source": null
+    },
+    "engagement": {
+      "valeur": "full reversibility",
+      "source": "granit-tarifs"
+    },
+    "hds": {
+      "valeur": "HDS-certified host (health data hosting)",
+      "source": "granit-tarifs"
+    },
+    "plateformes": {
+      "valeur": "logos displayed (Viamedis, Almerys, Santéclair, Carte Blanche, Actil…)",
+      "source": "granit-accueil"
+    }
+  },
+  "meilleurSi": [
+    "time spent on portals for coverage approvals is what costs you most",
+    "you want the coverage approval response while the customer is still in the store",
+    "you want to see every file and its status without a middleman",
+    "you work with many platforms"
+  ],
+  "sources": {
+    "granit-accueil": {
+      "label": "getgranit.ai · Home",
+      "url": "https://getgranit.ai/",
+      "consulte": "2026-10-07"
+    },
+    "granit-tarifs": {
+      "label": "getgranit.ai · Pricing",
+      "url": "https://getgranit.ai/tarifs",
+      "consulte": "2026-10-07"
+    }
+  }
+}

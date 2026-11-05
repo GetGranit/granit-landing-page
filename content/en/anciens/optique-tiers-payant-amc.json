@@ -1,0 +1,19 @@
+{
+  "slug": "optique-tiers-payant-amc",
+  "category": "Optical",
+  "title": "Optical: taking back control of supplementary insurance third-party payment",
+  "desc": "Quotes, coverage approvals, invoices, rejections: building a seamless process between the store and the back office.",
+  "time": "9 min",
+  "body": [
+    "The optical sector is one of the most exposed to the friction of third-party payment (tiers payant: the patient pays nothing upfront, insurers pay the provider directly) with supplementary insurance (AMC): multiple quotes, annual caps, network agreements, photo evidence, 100% Santé (zero out-of-pocket scheme) equipment, frames and lenses billed separately. Each file involves 3 to 5 parties and requires close coordination.",
+    "The typical process for optical equipment starts with an eye exam, produces a quote, requests coverage approval from the network or the supplementary health insurer (mutuelle), waits for approval, triggers the order, arranges delivery, bills the third-party payment and the patient’s remaining share, then tracks reimbursement.",
+    "At each step, the risk of a break is high. A forgotten coverage request, an annual cap exceeded, a missing supporting document, and the file is blocked. On margins that are already thin, these blocks translate directly into outright losses.",
+    "Building a seamless process between the store (salesperson, optician) and the back office (billing, collections) is the condition for healthy profitability. This structure cannot rely on individual memory or Excel files: it must rely on a system that tracks each file from start to finish.",
+    "An AI agent can track every file in parallel, without forgetting anything, and step in at the right time: alert the store if a quote has not been followed by a coverage request within 5 days, follow up with a network that has not responded, automatically upload a supporting document to the insurer portal.",
+    "Managing network agreements (Optistya, Kalivia, Carte Blanche, Santéclair, Itelis, Optical Essentiel) is particularly complex. Each network has its own rules, its own negotiated prices, its own request procedures. An agent unifies these interfaces.",
+    "100% Santé equipment adds another layer of complexity, with its obligation to systematically offer it, its regulated prices and its specific supporting documents. Compliance must be guaranteed on every sale.",
+    "Granit unifies this process into a single patient timeline, accessible in the store as well as at headquarters. The salesperson sees the complete history of the file, the status of coverage approvals, the actions in progress. The back office sees volumes, blocks and KPIs.",
+    "The benefit is measured on three dimensions: quote-to-sale conversion rate (better follow-up, fewer drop-offs), payment time (faster collection) and administrative productivity (less time per file).",
+    "For a multi-site optical group, the effect is multiplied. Standardizing practices across stores becomes possible, best practices spread, and group-level management finally becomes objective."
+  ]
+}

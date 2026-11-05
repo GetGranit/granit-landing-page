@@ -1,0 +1,170 @@
+{
+  "slug": "officine-balance-agee-tiers-payant",
+  "id": "R3",
+  "category": "paiements",
+  "categoryName": "Payments and reconciliation",
+  "type": "resolution",
+  "plateforme": null,
+  "title": "Pharmacy: clearing the backlog of third-party payment receivables before it turns into a loss",
+  "primaryKeyword": "créances tiers payant pharmacie",
+  "keywordCluster": [
+    "balance âgée pharmacie",
+    "impayés tiers payant officine",
+    "ARL négatif",
+    "rejet tiers payant pharmacie"
+  ],
+  "parentSlug": null,
+  "level": "Refonte",
+  "author": {
+    "name": "Laura",
+    "jobTitle": "Writer, health expert",
+    "photo": "/auteurs/laura.jpg",
+    "url": null
+  },
+  "reviewer": {
+    "name": "Nathalie",
+    "jobTitle": "Writer, optical industry expert",
+    "photo": "/auteurs/nathalie.jpg",
+    "url": null
+  },
+  "datePublished": "2026-10-26",
+  "dateModified": "2026-10-26",
+  "checkedOn": null,
+  "wordCount": 2279,
+  "readTime": 10,
+  "metaDescription": "Pharmacy third-party payment receivables: sort the aged balance by cause, handle negative ARLs, rejections and unreconciled transfers before the deadline. A step-by-step method.",
+  "contentHtml": "<p><strong>Aging pharmacy third-party payment receivables do not form a single backlog, but three: invoices that never reached the payer (negative ARL), invoices rejected and then set aside, and invoices paid but never reconciled.</strong> To clear them, sort them by cause and by payer, then handle first those whose deadline is approaching, not the largest ones. The rest is decided once, in writing: resubmit, follow up or write off.</p><p>Third-party payment (tiers payant: the patient pays nothing upfront, insurers pay the provider directly) spares the patient from paying upfront: the pharmacy is paid directly by French national health insurance (Assurance Maladie) and, for the supplementary share, by the supplementary health insurer (mutuelle) or the operator that pays on its behalf (<a href=\"https://www.ameli.fr/assure/remboursements/etre-bien-rembourse/tiers-payant\">ameli.fr</a>). Each dispensing therefore creates one or two receivables, which follow different channels. Until they are collected and reconciled, they remain open in your pharmacy management software (LGO). Here is a method to clear this backlog without spending your evenings on it.</p><div class=\"key-takeaways\"><strong>Key takeaways</strong><ul><li>An old receivable has one of three causes: negative ARL, rejection not reworked, transfer received but not reconciled. Each has its own treatment.</li><li>A negative ARL generates neither a payment nor a rejection: if no one watches for it, the invoice disappears without a sound.</li><li>Sort by cause and by payer, never patient by patient: a single correction carries over to a whole batch.</li><li>Prioritize by resubmission deadline, not by amount, and check that deadline channel by channel.</li><li>Set a write-off threshold in writing, then track the aged balance every month.</li></ul></div><h2 id=\"pourquoi-creances-anciennes\">Why does a pharmacy build up old third-party payment receivables?</h2><p>Because each third-party payment dispensing is paid in two shares, through two channels, on different dates, and the team handles the day’s flow first. Whatever cannot be settled in a few minutes slips behind, and ages.</p><p>The mandatory share (AMO, mandatory insurance) goes to the local health insurance office by e-transmission of electronic claim forms (FSE). The supplementary share (AMC, supplementary insurance) goes to the mutuelle, often via a third-party payment operator that pays on behalf of several insurers. References, returns and transfers look different from one channel to the other.</p><p>At the counter, easy rejections are corrected the same day: coverage rights to update, an exemption to requalify, an entry error. Those that require a document, a call to the prescriber or the patient coming back are set aside “for later.” Those are precisely the ones that age. The patient has not come back, the prescription has been filed, and the person who had the context in mind has moved on.</p><p>The backlog stays invisible until the day the accountant flags a gap between billed revenue and collections. Handling the daily flow is described in <a href=\"/ressources/trois-boucles-pharmacie\">the three loops to automate in a pharmacy</a>. This article deals with the residue: the pharmacy third-party payment arrears that have piled up behind.</p><h2 id=\"balance-agee-officine\">What is an aged balance in a pharmacy?</h2><p>The aged balance is the list of third-party payment receivables not yet settled, sorted by age since the billing date. It is the screen that shows what the pharmacy is still waiting for, and since when.</p><p>In most LGOs, you can read it in the third-party payment tracking module or export it to a spreadsheet. Each line generally shows the invoice, its date, the patient, the payer, the amount expected (AMO share or AMC share) and a status. Amounts are grouped into age brackets you choose: under 30 days, 30 to 60, 60 to 90, over 90 days, for example.</p><p>Its limit is simple: the pharmacy aged balance shows age, not cause. An old line can be an invoice paid long ago but never reconciled, or an invoice the local health insurance office never received. The two call for completely different actions. Before working on the backlog, you therefore need to add a column the software does not fill in: the cause.</p><h2 id=\"trois-causes-creance\">What are the three causes of an unsettled third-party payment receivable?</h2><p>There are three possible causes: the invoice never entered the payment channel, it entered and was then rejected, or it was paid without being reconciled. Confusing them is the main reason aged balance clean-up campaigns fail.</p><h3>1. The invoice never arrived: the negative ARL</h3><p>The ARL (accusé de réception logique, the acknowledgment) is the message the payer sends back after receiving a batch of FSEs, to say whether the batch is technically accepted. A negative ARL means the batch was refused at entry. The invoice is not rejected in the business sense: it simply does not exist on the payer’s side.</p><p>This is the most costly group, because it is silent. No payment will come. No NOEMIE remittance file (the channel through which French national health insurance sends payments and rejections back to the pharmacy) will come to flag it either. If no one watches the ARLs, the receivable drops off the radar the day it is issued and only reappears at inventory, often too late to be resubmitted.</p><h3>2. The invoice arrived, then was rejected</h3><p>A pharmacy third-party payment rejection comes through the local health insurance office’s NOEMIE remittance file, or through the supplementary insurer’s statement and portal, with a reason. The exact wording of that reason is the key: it tells you what to correct. The list of <a href=\"/ressources/codes-rejets-noemie\">NOEMIE rejection codes</a> helps you read it, and recurring rejections on the mandatory share often have a configuration cause, covered in <a href=\"/ressources/reduire-rejets-cpam\">reducing CPAM rejections without changing your practice management software</a>.</p><p>The problem is not knowing about rejections, but putting limits on them. A rejection set aside with no restart date and no owner becomes a forgotten rejection. And it gets harder over time: the longer it waits, the harder the missing document is to obtain.</p><h3>3. The invoice was paid, but never reconciled</h3><p>Here, the receivable is extinguished: the money is in the account, but the entry has never been settled. Reconciliation is the operation that matches a payment to the invoices it settles. The issue mainly affects the supplementary share, paid by operators that group many files into a single transfer, with no patient identifier on the bank line. As long as that transfer is not broken down, the files remain open.</p><p>The risk goes beyond accounting: you follow up with payers that have already paid, you lose time, and the relationship with the operator suffers. For the daily routine, see how to <a href=\"/ressources/rapprochement-noemie\">reconcile NOEMIE files and bank transfers every morning</a>. For a payment lower than expected, the page on the <a href=\"/ressources/virement-mutuelle-inferieur\">transfer lower than the invoice</a> explains how to read the gap.</p><div data-figure=\"trois-populations\"></div><h2 id=\"solder-stock-etapes\">How do you clear the backlog of pharmacy third-party payment receivables, step by step?</h2><p>The safest method is to work through the backlog in consistent batches, in a precise order: first reconcile what has already been paid, then handle negative ARLs and rejections according to their deadline, and finally decide on write-offs.</p><ol class=\"steps\"><li><strong>Extract and date the full backlog.</strong> Export the aged balance, separating the AMO share and the AMC share, with the billing date of each line.</li><li><strong>Add the cause to each line.</strong> Negative ARL, rejection with its reason, or likely payment not reconciled. A line with no known return or ARL goes in a separate group: it is often the most urgent.</li><li><strong>Sort by cause, then by payer, never by patient.</strong> Sorting patient by patient produces a list of one-off cases. Sorting by cause produces batches: all negative ARLs from one period, all rejections with the same reason, all files waiting on the same operator.</li><li><strong>Reconcile transfers already received.</strong> Break down each grouped transfer using the operator’s statement or payment detail. Each line settled here is one pointless follow-up avoided.</li><li><strong>Note the deadline for each batch.</strong> For each channel, record the limit beyond which an invoice can no longer be resubmitted, then sort the batches by that date.</li><li><strong>Retransmit and resubmit, batch by batch.</strong> For a negative ARL, correct the technical cause then retransmit the batch. For a rejection, apply the correction for the reason to every line in the batch, then resubmit.</li><li><strong>Decide on write-offs, in writing.</strong> Remove lines below your threshold from scope, with a dated note approved by the pharmacy owner.</li></ol><p>If a few causes dominate your backlog, a single correction carries over to dozens of lines. That is why sorting by cause saves more time than any speed-up in data entry.</p><div class=\"callout callout--warn\"><p><strong>The trap:</strong> handling first the large amounts that can still be recovered for several months, and letting small amounts expire whose deadline falls the following week. The amount tells you what you lose; the deadline tells you when you lose it.</p></div><h3>Should you write off small receivables?</h3><p>Yes, below a threshold you set yourself and write down. On lines of a few euros, the time spent researching, correcting and resubmitting can exceed the amount at stake. Leaving them in the balance indefinitely makes it unreadable and discourages the team.</p><p>What matters is that the write-off is a decision, not giving up out of exhaustion. A note specifies the threshold, the list of lines, the date and the name of the person who approves it. Your accountant then relies on this document to record the loss.</p><h2 id=\"preuves-a-garder\">What evidence should you keep for each receivable handled?</h2><p>For each batch, keep a record of the cause, the action taken and its date. Without these documents, a reworked receivable comes back into the balance at the next review and no one knows any more whether it was handled.</p><div class=\"tbl\"><table><tr><th>Cause</th><th>Evidence to keep</th><th>Why</th></tr><tr><td>Negative ARL</td><td>The negative ARL, the retransmitted batch and its new positive ARL</td><td>Prove that the invoice has finally entered the channel</td></tr><tr><td>Rejection</td><td>The return with the exact wording of the reason, the corrected document, the resubmission date</td><td>Know what to answer if the same rejection comes back</td></tr><tr><td>Unreconciled transfer</td><td>The bank statement, the operator’s payment detail, the reconciliation entry</td><td>Never follow up with a payer that has already paid</td></tr><tr><td>Write-off</td><td>The dated note: threshold, list of lines, owner’s approval</td><td>Justify the loss to the accountant</td></tr></table></div><p>Also keep the supporting documents sent with the invoice, such as the scanned prescription. A rejection reworked without the right document is likely to come back with the same reason.</p><h2 id=\"delai-representation\">How long can you resubmit a third-party payment invoice?</h2><p>There is no single date: each channel has its own limit, set by the French Social Security Code, the agreement between the pharmacy and French national health insurance, or the third-party payment contract with the supplementary insurer. Check it channel by channel rather than assuming it.</p><p>The <a href=\"https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006073189\">French Social Security Code</a> governs both the deadlines for transmitting electronic claim forms (Article R161-47) and the limitation period for the action for payment of benefits, set at two years for the insured person by Article L332-1. For the supplementary share, deadlines depend on each insurer or operator: only their agreement and terms are authoritative.</p><p>In practice, record these limits once, note them in a table by payer, and carry them over to each batch in your backlog. Once the limit has passed, a file is no longer a receivable to recover: it is a loss to record. For the pace of follow-ups before that deadline, the <a href=\"/ressources/quand-relancer-mutuelle\">follow-up schedule by stage (invoice, ARL, NOEMIE)</a> gives benchmarks.</p><p>A negative ARL does not give you any extra time: since the invoice was never received, it is the dispensing date that counts. Hence the value of checking ARLs the day after each e-transmission.</p><h2 id=\"quand-escalader\">When should you escalate a receivable, and to whom?</h2><p>Escalate as soon as the same receivable comes back after correction, or no response arrives as the deadline approaches. Who to contact depends on the cause and the channel.</p><ul><li><strong>Repeated negative ARLs across several batches:</strong> the cause is often technical. Contact your LGO vendor, then your local health insurance office’s service for healthcare professionals if the problem persists.</li><li><strong>AMO rejection that comes back after correction:</strong> the local health insurance office, with the exact wording of the reason and the document sent.</li><li><strong>Rejection or delay on the AMC share:</strong> the professional service of the third-party payment operator, then the supplementary insurer itself.</li><li><strong>Transfer impossible to break down:</strong> the paying operator, to get the detail of the files settled.</li><li><strong>Decision to write off or record a loss:</strong> the pharmacy owner, then the accountant.</li></ul><p>For each escalation, send a batch, not an isolated line. A contact handles a list of invoices with the same reason faster than a series of calls file by file.</p><h2 id=\"eviter-nouveau-stock\">How do you keep the backlog of receivables from building up again?</h2><p>By making the aged balance a metric tracked every month, with a target for the residual backlog, rather than a once-a-year finding. A pharmacy that knows, every month, how many receivables are over 60 days old, for what cause and with which payer, does not rebuild the backlog it has just cleared.</p><p>Three reflexes are enough: check ARLs after each e-transmission, give each rejection set aside a restart date and an owner, and reconcile grouped transfers as they come in. These figures fit naturally among the <a href=\"/ressources/gerer-tiers-payant-magasin\">back-office metrics to track</a>. For a pharmacy group or several pharmacies, the consolidated view also brings out differences between locations, which most often come from a local billing practice.</p><p>Rebuilding an old backlog is volume work, repetitive and rule-based: going through the LGO, the returns and the supplementary insurers’ portals, sorting, preparing each correction. That is what <a href=\"/agents\">Granit’s agents</a> can take on: they rebuild the backlog from your access, sort it by cause and by deadline, and prepare each batch to resubmit or reconcile. The decision to resubmit, follow up or write off stays with the team.</p><div class=\"callout callout--tip\"><p><strong>The right reflex:</strong> block out a fixed time slot each month to review the aged balance by cause. One regular hour costs less than a catch-up campaign at inventory time.</p></div>",
+  "tocItems": [
+    {
+      "id": "pourquoi-creances-anciennes",
+      "label": "Why receivables pile up"
+    },
+    {
+      "id": "balance-agee-officine",
+      "label": "What is an aged balance?"
+    },
+    {
+      "id": "trois-causes-creance",
+      "label": "The three causes of an unsettled receivable"
+    },
+    {
+      "id": "solder-stock-etapes",
+      "label": "Clearing the backlog, step by step"
+    },
+    {
+      "id": "preuves-a-garder",
+      "label": "The evidence to keep"
+    },
+    {
+      "id": "delai-representation",
+      "label": "How long you can resubmit an invoice"
+    },
+    {
+      "id": "quand-escalader",
+      "label": "When to escalate, and to whom"
+    },
+    {
+      "id": "eviter-nouveau-stock",
+      "label": "Keeping the backlog from building up again"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "What is an aged balance in a pharmacy?",
+      "answer": "The aged balance is the list of third-party payment receivables not yet settled, sorted by age since the billing date. You can read it in the third-party payment tracking module of the pharmacy management software or in an export. It shows how old the receivables are but not their cause, which you need to add before working on it."
+    },
+    {
+      "question": "How do you handle a negative ARL?",
+      "answer": "A negative acknowledgment (ARL) means the batch of electronic claim forms was rejected for technical reasons: the invoice does not exist on the payer’s side. You need to identify the technical cause, correct it, retransmit the batch and check that the new ARL is positive. If negative ARLs keep recurring, contact the software vendor, then the local health insurance office."
+    },
+    {
+      "question": "How long can you resubmit a third-party payment invoice?",
+      "answer": "There is no single date: each channel has its own limit, set by the French Social Security Code (Code de la sécurité sociale), the agreement with French national health insurance (Assurance Maladie) or the contract with the supplementary insurer. For example, the Code sets a two-year limitation period for the insured person’s action for payment. Record the limits payer by payer and sort your backlog by these dates."
+    },
+    {
+      "question": "Should you write off small receivables?",
+      "answer": "Yes, below a threshold the pharmacy sets and writes down, when the time needed to rework them exceeds the amount at stake. The write-off must be a documented decision: threshold, list of lines, date and approval by the pharmacy owner. The accountant then uses this note to record the loss."
+    }
+  ],
+  "sources": [
+    {
+      "label": "ameli.fr · Third-party payment (Le tiers payant)",
+      "url": "https://www.ameli.fr/assure/remboursements/etre-bien-rembourse/tiers-payant"
+    },
+    {
+      "label": "legifrance.gouv.fr · French Social Security Code (Code de la sécurité sociale)",
+      "url": "https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006073189"
+    }
+  ],
+  "figures": [
+    {
+      "id": "trois-populations",
+      "type": "comparaison",
+      "titre": "Three receivables that are not handled the same way",
+      "legende": "Only the negative ARL leaves no trace afterward: it is the one to watch first.",
+      "colonnes": [
+        "Negative ARL",
+        "Rejection",
+        "Unreconciled"
+      ],
+      "elements": [
+        {
+          "label": "On the payer’s side",
+          "detail": "",
+          "valeurs": [
+            "Invoice unknown",
+            "Invoice refused",
+            "Invoice paid"
+          ],
+          "focus": false
+        },
+        {
+          "label": "Signal received afterward",
+          "detail": "",
+          "valeurs": [
+            "No response",
+            "Rejection reason",
+            "Grouped transfer"
+          ],
+          "focus": true
+        },
+        {
+          "label": "Risk",
+          "detail": "",
+          "valeurs": [
+            "Silent loss",
+            "Forgotten file",
+            "Pointless follow-up"
+          ],
+          "focus": false
+        },
+        {
+          "label": "First step",
+          "detail": "",
+          "valeurs": [
+            "Retransmit",
+            "Correct, resubmit",
+            "Reconcile"
+          ],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [],
+  "liensEntrants": [],
+  "remplace": [],
+  "verticales": [
+    "pharmacie"
+  ],
+  "refonte": true,
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-10-26T13:01:26.957Z",
+    "avertissements": [
+      "aucune citation (facultative)",
+      "source non vérifiable (403) : https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006073189",
+      "source non vérifiable (403) : https://www.ameli.fr/assure/remboursements/etre-bien-rembourse/tiers-payant"
+    ]
+  }
+}

@@ -12,10 +12,10 @@ import { parseArgs } from "node:util";
 import { citations, controler, typeDePage, verifierSources } from "./lib/checks.mjs";
 import { apiKey, coutDollars, rediger } from "./lib/claude.mjs";
 import { blocMetier, choisirFiche, cibleDuMetier, encartPour, lecteurCourt, signaturePour, sourcesHorsFiche } from "./lib/metiers.mjs";
-import { mots, texte } from "./lib/html.mjs";
+import { mots, texte, typographierSortie } from "./lib/html.mjs";
 import {
   CONTENU, MOTEUR, ancienArticle, anciensArticles, concurrentsPour, ecrireFile, ecrireJson, faitsPour, lireFile, lireJson,
-  publies, sortieGithub, systemeGuide,
+  publies, sortieGithub, systemeGuide, titresDesAutres,
 } from "./lib/site.mjs";
 
 const { values: opt } = parseArgs({
@@ -189,7 +189,8 @@ function message(retour) {
       `- contentHtml : ${longueur[type] ?? "1 800 à 2 500 mots (jamais moins de 1 500)"}, ouverture en <p>, puis « L'essentiel », puis les H2 en questions avec un id.\n` +
       `- Pas de H1, pas de FAQ, pas d'encart final, pas d'image dans contentHtml.\n` +
       `- tocItems : un élément par H2, mêmes id, même ordre.\n` +
-      `- metaDescription : 140 à 160 caractères, avec le mot-clé principal.\n` +
+      `- seoTitle : 60 caractères maximum, avec les mots du mot-clé principal, tôt dans le titre. Il reprend title si title tient en 60 caractères et se lit bien dans Google ; title reste le H1.\n` +
+      `- metaDescription : 140 à 160 caractères, une phrase qui se lit normalement, avec les mots du mot-clé principal (pas forcément collés), jamais une suite de mots-clés en ouverture.\n` +
       `- sources : chaque lien externe du corps, 2 minimum. Toujours la page exacte qui porte le fait (de préférence une page de la liste « Sources officielles autorisées » de la fiche métier), jamais la page d'accueil d'un site. Uniquement des pages officielles dont tu es certain qu'elles existent : une URL qui ne répond pas fait refuser l'article.\n` +
       `- Citation facultative : <blockquote><p>« … »</p><cite>…</cite></blockquote>, seulement si tu connais la phrase exacte, mot pour mot, d'une source de la liste ou du fichier de faits, avec dans <cite> exactement le label de cette source. Le moteur ouvre la page et refuse l'article si la phrase n'y figure pas. Au moindre doute, ne mets pas de citation.\n` +
       `- Mot-clé principal « ${article.primaryKeyword} » dans les 100 premiers mots.`,
@@ -213,6 +214,7 @@ let sortie = null;
 let bilan = null;
 let retour = null;
 let cout = 0;
+const titresPris = titresDesAutres(article);
 for (let essai = 1; essai <= 2 && !sortie; essai++) {
   console.log(`Essai ${essai} : appel à ${config.model}…`);
   const t0 = Date.now();
@@ -224,7 +226,7 @@ for (let essai = 1; essai <= 2 && !sortie; essai++) {
     console.log(`  Refusé : ${retour[0]}`);
     continue;
   }
-  const c = controler(r.json, { article, type, faits: fp?.faits, concurrents, cibles, pagesProduit: config.pagesProduit, essai: opt.dry });
+  const c = controler(r.json, { article, type, faits: fp?.faits, concurrents, cibles, pagesProduit: config.pagesProduit, titresPris, nouvelArticle: true, essai: opt.dry });
   const s = await verifierSources(r.json.sources ?? [], citations(r.json.contentHtml ?? ""));
   const erreurs = [...c.erreurs, ...s.erreurs];
   s.avertissements.push(...sourcesHorsFiche(r.json.sources ?? [], choix));
@@ -238,7 +240,7 @@ for (let essai = 1; essai <= 2 && !sortie; essai++) {
     }
     continue;
   }
-  sortie = r.json;
+  sortie = typographierSortie(r.json);
   bilan = { nbMots: c.nbMots, avertissements: [...c.avertissements, ...s.avertissements] };
 }
 console.log(`Coût estimé : ${cout.toFixed(2)} $`);
@@ -277,6 +279,7 @@ const fiche = {
   type,
   plateforme: fp?.faits ? fp.nom : null,
   title: article.title,
+  seoTitle: sortie.seoTitle.trim(),
   primaryKeyword: article.primaryKeyword,
   keywordCluster: article.keywordCluster,
   parentSlug: article.parentSlug,

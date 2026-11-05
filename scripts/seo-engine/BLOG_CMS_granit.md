@@ -61,8 +61,9 @@ Les champs en **gras** viennent de `articles-queue.json`. Les autres sont produi
 |---|---|---|
 | **`slug`** | file | Minuscules, tirets, sans accent. Jamais modifié après publication. |
 | **`category`** | file | Un des slugs ci-dessus. |
-| **`title`** | file | Mot-clé principal dans les premiers mots. **60 caractères max dans la balise `<title>`** (le titre affiché peut être plus long). Factuel, précis, pas de racolage. |
-| `metaDescription` | Claude | 140 à 160 caractères. Contient le mot-clé principal. Un bénéfice concret. Finit sur une raison de cliquer. |
+| **`title`** | file | Le H1 de la page. Mot-clé principal dans les premiers mots. Il peut dépasser 60 caractères : c'est `seoTitle` qui va dans la balise `<title>`. Factuel, précis, pas de racolage. |
+| `seoTitle` | Claude | Le titre affiché par Google et dans les partages. **60 caractères maximum, espaces comprises.** Contient les mots du mot-clé principal, tôt dans le titre. Se lit naturellement, reprend `title` s'il tient en 60 caractères et se lit bien dans Google. Différent du titre de tout autre article. Sans « Granit » en suffixe. |
+| `metaDescription` | Claude | 140 à 160 caractères. Une phrase qui se lit normalement, avec les mots du mot-clé principal, pas forcément collés. Jamais une suite de mots-clés en ouverture (voir « Titre et meta description »). Un bénéfice concret. Finit sur une raison de cliquer. |
 | **`primaryKeyword`** | file | La requête exacte visée (ex. `almerys pec`). |
 | **`keywordCluster`** | file | 5 à 10 termes associés, à répartir naturellement. |
 | **`faqQuestions`** | file | Questions de départ de la FAQ (réelles : Semrush, forums, calls). Claude peut reformuler légèrement, jamais inventer un sujet. |
@@ -89,13 +90,13 @@ La couverture n'apparaît **pas en haut de l'article** (la réponse doit être v
 ## Balises `<head>`
 
 ```html
-<title>{title} | Granit</title>
+<title>{seoTitle}</title>
 <meta name="description" content="{metaDescription}" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://www.getgranit.ai/ressources/{slug}" />
 <meta property="og:type" content="article" />
 <meta property="og:locale" content="fr_FR" />
-<meta property="og:title" content="{title}" />
+<meta property="og:title" content="{seoTitle}" />
 <meta property="og:description" content="{metaDescription}" />
 <meta property="og:url" content="https://www.getgranit.ai/ressources/{slug}" />
 <meta property="og:image" content="https://www.getgranit.ai/{coverImage}" />
@@ -105,7 +106,7 @@ La couverture n'apparaît **pas en haut de l'article** (la réponse doit être v
 <meta property="article:author" content="{author}" />
 <meta property="article:section" content="{nom de la catégorie}" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="{title}" />
+<meta name="twitter:title" content="{seoTitle}" />
 <meta name="twitter:description" content="{metaDescription}" />
 <meta name="twitter:image" content="https://www.getgranit.ai/{coverImage}" />
 ```
@@ -126,7 +127,7 @@ La couverture n'apparaît **pas en haut de l'article** (la réponse doit être v
 
 **`GABARIT_ARTICLE_granit.md` fait foi** pour l'ordre des blocs, les composants HTML autorisés dans `contentHtml` (section 5), les pages plateformes et leurs marqueurs `data-bloc` (section 6). Claude reçoit ces deux sections avec ce guide.
 
-Claude renvoie uniquement le JSON imposé par `article-output.schema.json` : `metaDescription`, `contentHtml`, `tocItems`, `faqItems`, `sources`. Pas de H1, pas de FAQ, pas d'encart final, pas d'image dans `contentHtml` : la page les ajoute.
+Claude renvoie uniquement le JSON imposé par `article-output.schema.json` : `seoTitle`, `metaDescription`, `contentHtml`, `tocItems`, `faqItems`, `sources`, `figures`. Pas de H1, pas de FAQ, pas d'encart final, pas d'image dans `contentHtml` : la page les ajoute.
 
 ---
 
@@ -140,6 +141,7 @@ Le script refuse l'article (et réessaie une fois) si l'une de ces règles, ou l
 - l'encadré « L'essentiel » est absent ;
 - `faqItems` contient moins de 4 éléments ;
 - le mot-clé principal n'apparaît pas dans les 100 premiers mots ;
+- `seoTitle` dépasse 60 caractères, ne contient pas les mots du mot-clé principal, ou reprend le titre d'un autre article ;
 - un lien interne pointe vers une page non publiée ou inconnue ;
 - le texte contient un mot de la **liste rouge** (voir « Faits ») ;
 - le texte contient « — » (tiret long) ou un terme de la liste « jargon interdit ».
@@ -328,7 +330,7 @@ Seulement celles listées dans `granitData` pour l'article, et toujours **datée
 - les champs obligatoires d'une demande de prise en charge par portail ;
 - la lecture des statuts (accord, accord sous réserve de pièces, en instance, refus) ;
 - les libellés de virement par payeur ;
-- **la conformité HDS** : formulation exacte « Granit est certifié HDS (hébergeur de données de santé) ». À citer seulement là où c'est utile (données de santé, RGPD, conformité), jamais comme argument dans une page plateforme ;
+- **la conformité HDS** : formulation exacte « Granit s'appuie sur un hébergement certifié HDS (hébergeur de données de santé) ». À citer seulement là où c'est utile (données de santé, RGPD, conformité), jamais comme argument dans une page plateforme ;
 - les constats d'expérience, formulés sans chiffre non mesuré (« dans les dossiers que traitent nos agents, la cause la plus fréquente est… »). Autorisé **sans chiffre**, sans nom de client ni de magasin.
 
 ### Liste rouge : jamais dans un article
@@ -380,11 +382,25 @@ Jamais un blog de prestataire comme source d'un fait.
 
 ## Mots-clés
 
-- **Mot-clé principal** dans : le H1, les 100 premiers mots, un H2, la meta description, le alt de l'image, le slug.
+- **Mot-clé principal** dans : le H1, `seoTitle`, les 100 premiers mots, un H2, la meta description, le alt de l'image, le slug.
 - Jamais de bourrage. Si la phrase sonne faux, la reformuler.
+- Dans `seoTitle` et la meta description, les mots du mot-clé comptent, pas leur ordre : les mots-outils (de, à, la…) s'ajoutent librement et le mot-clé n'a pas à rester collé.
 - **Les termes du `keywordCluster`** se répartissent naturellement dans les H2, H3 et paragraphes.
 - **Profondeur du sujet** : employer les notions qu'un expert citerait naturellement (AMO, AMC, ouvrant droit, bénéficiaire, DRE, NOEMIE, devis normalisé, classe A/B, LPP, prise en charge, réseau de soins…), chacune définie à sa première apparition.
 - **Pas de cannibalisation** : un mot-clé principal = un seul article. La file y veille ; ne jamais viser le mot-clé principal d'un autre article.
+
+### Titre et meta description
+
+La file donne un mot-clé tel qu'on le tape, pas une phrase. Le lecteur voit le `seoTitle` et la meta description dans Google : ils s'écrivent en français normal.
+
+Pour le mot-clé `virement mutuelle inférieur facture` :
+
+- **`seoTitle` oui** : « Virement mutuelle inférieur à la facture : que faire ? »
+- **`seoTitle` non** : « Virement mutuelle inférieur facture guide complet pour opticiens et audioprothésistes » (mots-clés collés, 85 caractères).
+- **Meta oui** : « Le virement de la mutuelle est inférieur à la facture ? Retrouvez d'où vient l'écart et ce qu'il faut réclamer, dossier par dossier, avant de relancer. »
+- **Meta non** : « Virement mutuelle inférieur facture : causes, solutions, relance. »
+
+*(Les exemples illustrent la forme. Leurs faits sont à vérifier avant tout usage.)*
 
 ---
 

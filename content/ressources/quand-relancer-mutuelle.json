@@ -97,7 +97,7 @@
     {
       "id": "points-controle-dossier",
       "type": "etapes",
-      "titre": "Les quatre points de contrôle d'un dossier",
+      "titre": "Les cinq points de contrôle d'un dossier",
       "legende": "Relancez l'étape dont le signal manque : tant qu'il n'est pas arrivé, l'étape suivante ne démarre pas.",
       "colonnes": [],
       "elements": [

@@ -10,9 +10,10 @@ import { dirname, join } from "node:path";
 import { parseArgs } from "node:util";
 import { citations, controler, typeDePage, verifierSources } from "./lib/checks.mjs";
 import { apiKey, coutDollars, rediger } from "./lib/claude.mjs";
+import { typographierSortie } from "./lib/html.mjs";
 import { choisirFiche, lecteurCourt, reglesMetier } from "./lib/metiers.mjs";
 import { CHAMPS_ARTICLE, boucle, contexte, cumulCout, verdictMarkdown } from "./lib/relecture.mjs";
-import { CONTENU, MOTEUR, ciblesDeLiens, concurrentsPour, ecrireJson, faitsPour, lireFile, lireJson, sortieGithub, systemeGuide } from "./lib/site.mjs";
+import { CONTENU, MOTEUR, ciblesDeLiens, concurrentsPour, ecrireJson, faitsPour, lireFile, lireJson, sortieGithub, systemeGuide, titresDesAutres } from "./lib/site.mjs";
 
 const { values: opt } = parseArgs({
   options: {
@@ -54,7 +55,7 @@ const ctx = contexte({
 });
 
 async function controle(out) {
-  const c = controler(out, { article, type, faits: fp?.faits, concurrents, cibles, pagesProduit: config.pagesProduit });
+  const c = controler(out, { article, type, faits: fp?.faits, concurrents, cibles, pagesProduit: config.pagesProduit, titresPris: titresDesAutres(article) });
   const s = await verifierSources(out.sources ?? [], citations(out.contentHtml ?? ""));
   return { erreurs: [...c.erreurs, ...s.erreurs], avertissements: [...c.avertissements, ...s.avertissements] };
 }
@@ -92,6 +93,7 @@ const cout = cumulCout(usages, coutDollars, config.model);
 
 // Article corrigé : seulement s'il a changé ; la trace de la boucle va dans moteur.relecture
 if (r.fiche !== fiche) {
+  Object.assign(r.fiche, typographierSortie(r.fiche));
   r.fiche.moteur = {
     ...r.fiche.moteur,
     avertissements: r.avertissements,

@@ -1,8 +1,42 @@
 import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 
+import { useLanguage } from "@/lib/i18n";
 import { duree, euros, type PecSimulation } from "@/lib/pec/essaiState";
 import { ApercuBadge, Card, PopCheck, Row, TextButton } from "./ui";
+
+const copy = {
+  fr: {
+    premiere: "Votre 1re simulation",
+    simulee: (p: string | null) => `Simulée sur ${p ?? "le portail"}`,
+    numero: (n: string) => ` · n° ${n}`,
+    auLieuDe: (m: number) => ` au lieu de ~${m} min`,
+    part: (m: string | null) => `Part ${m ?? "mutuelle"}`,
+    total: "Total de l'équipement",
+    secu: "Sécurité sociale",
+    rac: "Reste à charge patient",
+    capture: (p: string | null) => `Capture de la simulation sur ${p ?? "le portail"}`,
+    rien: "Rien n'a été envoyé à la mutuelle.",
+    exemple: " Montants d'exemple pour l'aperçu.",
+    masquer: "Masquer le détail",
+    voir: "Voir le détail",
+  },
+  en: {
+    premiere: "Your 1st simulation",
+    simulee: (p: string | null) => `Simulated on ${p ?? "the portal"}`,
+    numero: (n: string) => ` · no. ${n}`,
+    auLieuDe: (m: number) => ` instead of ~${m} min`,
+    part: (m: string | null) => `${m ?? "Insurer"} share`,
+    total: "Equipment total",
+    secu: "National health insurance",
+    rac: "Patient out-of-pocket amount",
+    capture: (p: string | null) => `Screenshot of the simulation on ${p ?? "the portal"}`,
+    rien: "Nothing was sent to the insurer.",
+    exemple: " Sample amounts for the preview.",
+    masquer: "Hide details",
+    voir: "Show details",
+  },
+};
 
 type Props = {
   simulation: PecSimulation;
@@ -17,6 +51,8 @@ type Props = {
  */
 export function PremierePec({ simulation, portail, mutuelle, minutesManuelles }: Props) {
   const reduce = useReducedMotion();
+  const { lang } = useLanguage();
+  const t = copy[lang];
   const [detail, setDetail] = useState(false);
   const s = simulation;
   return (
@@ -31,14 +67,14 @@ export function PremierePec({ simulation, portail, mutuelle, minutesManuelles }:
             <PopCheck done size={24} />
             <div className="min-w-0">
               <p className="text-[15px]" style={{ fontWeight: 600 }}>
-                Votre 1re simulation
+                {t.premiere}
               </p>
               <p
                 className="truncate text-[12px]"
                 style={{ color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}
               >
-                Simulée sur {portail ?? "le portail"}
-                {s.numero ? ` · n° ${s.numero}` : ""}
+                {t.simulee(portail)}
+                {s.numero ? t.numero(s.numero) : ""}
               </p>
             </div>
           </div>
@@ -49,25 +85,25 @@ export function PremierePec({ simulation, portail, mutuelle, minutesManuelles }:
           {s.dureeSec > 0 && (
             <>
               <span className="num-tabular" style={{ fontFamily: "var(--font-mono)" }}>
-                {duree(s.dureeSec)}
+                {duree(s.dureeSec, lang)}
               </span>
-              {minutesManuelles ? ` au lieu de ~${minutesManuelles} min` : ""} ·{" "}
+              {minutesManuelles ? t.auLieuDe(minutesManuelles) : ""} ·{" "}
             </>
           )}
-          Part {mutuelle ?? "mutuelle"}{" "}
+          {t.part(mutuelle)}{" "}
           <span className="num-tabular" style={{ fontFamily: "var(--font-mono)", fontWeight: 600 }}>
-            {euros(s.partMutuelle)}
+            {euros(s.partMutuelle, lang)}
           </span>
         </p>
 
         {detail && (
           <div className="mt-4 space-y-2.5 text-[15px]">
             <dl className="space-y-2.5">
-              <Row label="Total de l'équipement" value={euros(s.total)} />
-              <Row label="Sécurité sociale" value={euros(s.partSecu)} muted />
-              <Row label={`Part ${mutuelle ?? "mutuelle"}`} value={euros(s.partMutuelle)} strong />
+              <Row label={t.total} value={euros(s.total, lang)} />
+              <Row label={t.secu} value={euros(s.partSecu, lang)} muted />
+              <Row label={t.part(mutuelle)} value={euros(s.partMutuelle, lang)} strong />
               <div className="border-t pt-2.5" style={{ borderColor: "var(--border)" }}>
-                <Row label="Reste à charge patient" value={euros(s.resteACharge)} strong />
+                <Row label={t.rac} value={euros(s.resteACharge, lang)} strong />
               </div>
             </dl>
             {s.captureUrl && (
@@ -80,20 +116,20 @@ export function PremierePec({ simulation, portail, mutuelle, minutesManuelles }:
               >
                 <img
                   src={s.captureUrl}
-                  alt={`Capture de la simulation sur ${portail ?? "le portail"}`}
+                  alt={t.capture(portail)}
                   className="max-h-[180px] w-full object-cover object-top"
                 />
               </a>
             )}
             <p className="text-[12px]" style={{ color: "var(--text-muted)" }}>
-              Rien n'a été envoyé à la mutuelle.
-              {s.apercu ? " Montants d'exemple pour l'aperçu." : ""}
+              {t.rien}
+              {s.apercu ? t.exemple : ""}
             </p>
           </div>
         )}
         <div className="mt-2">
           <TextButton onClick={() => setDetail((d) => !d)}>
-            {detail ? "Masquer le détail" : "Voir le détail"}
+            {detail ? t.masquer : t.voir}
           </TextButton>
         </div>
       </Card>

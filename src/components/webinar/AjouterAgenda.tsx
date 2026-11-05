@@ -1,6 +1,7 @@
 import { usePostHog } from "posthog-js/react";
 
 import { fichierIcs, lienGoogle, lienOutlook } from "@/lib/webinarAgenda";
+import { useLanguage } from "@/lib/i18n";
 
 /**
  * Boutons « ajouter à mon agenda » de l'écran de confirmation. Chaque clic
@@ -9,6 +10,7 @@ import { fichierIcs, lienGoogle, lienOutlook } from "@/lib/webinarAgenda";
  */
 export function AjouterAgenda() {
   const posthog = usePostHog();
+  const { lang } = useLanguage();
   const suivre = (agenda: string) => posthog?.capture("webinar_add_to_calendar", { agenda });
 
   const telechargerIcs = () => {
@@ -26,8 +28,8 @@ export function AjouterAgenda() {
   };
 
   const bouton =
-    "flex flex-1 items-center justify-center gap-2 rounded-full border px-4 py-3 text-[13.5px] transition-colors hover:border-[color:var(--terra)] hover:text-[color:var(--terra)]";
-  const style = { borderColor: "var(--border2)", fontWeight: 600, background: "#fff" };
+    "flex flex-1 items-center justify-center gap-2 rounded-full border px-4 py-3 text-[13.5px] transition-colors hover:border-[color:var(--profond)] hover:text-[color:var(--profond)]";
+  const style = { borderColor: "var(--border2)", fontWeight: 600, background: "var(--papier)" };
 
   return (
     <div className="mt-5 flex w-full max-w-sm flex-col gap-2.5">
@@ -39,7 +41,7 @@ export function AjouterAgenda() {
         style={style}
         onClick={() => suivre("google")}
       >
-        <span aria-hidden>📅</span> Google Agenda
+        {lang === "fr" ? "Google Agenda" : "Google Calendar"}
       </a>
       <div className="flex gap-2.5">
         <button type="button" className={bouton} style={style} onClick={telechargerIcs}>

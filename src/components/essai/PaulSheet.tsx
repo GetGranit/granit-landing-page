@@ -1,6 +1,7 @@
 import { useCallback, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 
+import { useLanguage } from "@/lib/i18n";
 import {
   markPaulSheetShown,
   paulSheetAlreadyShown,
@@ -37,6 +38,49 @@ export type PaulSheetProps = {
   askEmail?: boolean;
 };
 
+const copy = {
+  fr: {
+    dialog: "En parler avec Paul",
+    qui: "Paul, de l'équipe Granit",
+    noteRappel: "C'est noté. Paul vous rappelle sous 24 h ouvrées.",
+    noteCreneau: "Choisissez votre créneau dans l'onglet qui vient de s'ouvrir.",
+    defaut: "Une question ? On peut le faire ensemble, au téléphone.",
+    fermer: "Fermer",
+    emailPlaceholder: "contact@votre-magasin.fr",
+    email: "Votre e-mail",
+    emailInvalide: "Indiquez votre e-mail : c'est là que Paul vous répond.",
+    telPlaceholder: "06 12 34 56 78",
+    tel: "Votre numéro de téléphone",
+    au: (n: string) => `Au ${n} · `,
+    autre: "autre numéro",
+    incomplet: "Ce numéro ne semble pas complet.",
+    envoi: "Envoi…",
+    rappelez: "Rappelez-moi",
+    creneau: "Choisir un créneau",
+    echec: "Ça n'est pas parti. Réessayez dans un instant.",
+  },
+  en: {
+    dialog: "Talk to Paul",
+    qui: "Paul, from the Granit team",
+    noteRappel: "Got it. Paul calls you back within 24 business hours.",
+    noteCreneau: "Pick your slot in the tab that just opened.",
+    defaut: "A question? We can do it together, over the phone.",
+    fermer: "Close",
+    emailPlaceholder: "contact@your-store.com",
+    email: "Your email",
+    emailInvalide: "Enter your email: that is where Paul replies.",
+    telPlaceholder: "+33 6 12 34 56 78",
+    tel: "Your phone number",
+    au: (n: string) => `At ${n} · `,
+    autre: "another number",
+    incomplet: "This number does not look complete.",
+    envoi: "Sending…",
+    rappelez: "Call me back",
+    creneau: "Pick a slot",
+    echec: "It did not go through. Try again in a moment.",
+  },
+};
+
 const PHONE_RE = /^(?:\+33\s?|0)[1-9](?:[\s.-]?\d{2}){4}$/;
 const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 
@@ -50,13 +94,14 @@ export function PaulSheet({
   askEmail,
 }: PaulSheetProps) {
   const reduce = useReducedMotion();
+  const t = copy[useLanguage().lang];
   return (
     <AnimatePresence>
       {open && (
         <motion.aside
           role="dialog"
           aria-modal="false"
-          aria-label="En parler avec Paul"
+          aria-label={t.dialog}
           initial={reduce ? { opacity: 0 } : { y: "110%" }}
           animate={reduce ? { opacity: 1 } : { y: 0 }}
           exit={reduce ? { opacity: 0 } : { y: "110%" }}
@@ -64,10 +109,10 @@ export function PaulSheet({
           className="fixed inset-x-0 bottom-0 z-50 mx-auto w-full max-w-[520px] px-3 pb-3"
         >
           <div
-            className="rounded-[22px] border bg-white p-5"
+            className="rounded-[22px] border bg-papier p-5"
             style={{
               borderColor: "var(--border)",
-              boxShadow: "0 -10px 40px -12px rgba(28,17,8,0.25)",
+              boxShadow: "0 -10px 40px -12px rgba(31,53,48,0.25)",
             }}
           >
             {/* key : remet le formulaire à zéro à chaque ouverture */}
@@ -95,6 +140,7 @@ function SheetBody({
   message,
   askEmail,
 }: Omit<PaulSheetProps, "open">) {
+  const t = copy[useLanguage().lang];
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [editPhone, setEditPhone] = useState(!knownPhone);
@@ -136,27 +182,27 @@ function SheetBody({
       <div className="flex items-start gap-3">
         <span
           aria-hidden
-          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full font-serif text-[20px] text-white"
-          style={{ background: "var(--gradient-terra)" }}
+          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full font-serif text-[20px] text-rose"
+          style={{ background: "var(--encre)" }}
         >
           P
         </span>
         <div className="min-w-0 flex-1">
           <p className="text-[15px]" style={{ fontWeight: 600 }}>
-            Paul, de l'équipe Granit
+            {t.qui}
           </p>
           <p className="mt-0.5 text-[14px] leading-[1.45]" style={{ color: "var(--text-soft)" }}>
             {status === "done"
               ? mode === "rappel"
-                ? "C'est noté. Paul vous rappelle sous 24 h ouvrées."
-                : "Choisissez votre créneau dans l'onglet qui vient de s'ouvrir."
-              : (message ?? "Une question ? On peut le faire ensemble, au téléphone.")}
+                ? t.noteRappel
+                : t.noteCreneau
+              : (message ?? t.defaut)}
           </p>
         </div>
         <button
           type="button"
           onClick={onClose}
-          aria-label="Fermer"
+          aria-label={t.fermer}
           className="-mr-1 -mt-1 rounded-full p-2 text-[18px] leading-none"
           style={{ color: "var(--text-muted)" }}
         >
@@ -170,8 +216,8 @@ function SheetBody({
             type="email"
             inputMode="email"
             autoComplete="email"
-            placeholder="contact@votre-magasin.fr"
-            aria-label="Votre e-mail"
+            placeholder={t.emailPlaceholder}
+            aria-label={t.email}
             aria-invalid={emailInvalide || undefined}
             aria-describedby={emailInvalide ? "paul-email-erreur" : undefined}
             value={email}
@@ -180,16 +226,16 @@ function SheetBody({
               setEmailInvalide(false);
             }}
             className={inputClass}
-            style={{ borderColor: emailInvalide ? "var(--terra)" : "var(--border)" }}
+            style={{ borderColor: emailInvalide ? "var(--alerte)" : "var(--filet-champ)" }}
           />
           {emailInvalide && (
             <p
               id="paul-email-erreur"
               role="alert"
               className="mt-1.5 text-[12px]"
-              style={{ color: "var(--terra-hover)" }}
+              style={{ color: "var(--alerte-texte)" }}
             >
-              Indiquez votre e-mail : c'est là que Paul vous répond.
+              {t.emailInvalide}
             </p>
           )}
         </div>
@@ -202,8 +248,8 @@ function SheetBody({
               type="tel"
               inputMode="tel"
               autoComplete="tel"
-              placeholder="06 12 34 56 78"
-              aria-label="Votre numéro de téléphone"
+              placeholder={t.telPlaceholder}
+              aria-label={t.tel}
               aria-invalid={invalid || undefined}
               aria-describedby={invalid ? "paul-tel-erreur" : undefined}
               value={phone}
@@ -212,13 +258,13 @@ function SheetBody({
                 setInvalid(false);
               }}
               className={inputClass}
-              style={{ borderColor: invalid ? "var(--terra)" : "var(--border)" }}
+              style={{ borderColor: invalid ? "var(--alerte)" : "var(--filet-champ)" }}
             />
           ) : (
             <p className="text-[13px]" style={{ color: "var(--text-muted)" }}>
-              Au {knownPhone} ·{" "}
+              {t.au(knownPhone ?? "")}
               <button type="button" className="underline" onClick={() => setEditPhone(true)}>
-                autre numéro
+                {t.autre}
               </button>
             </p>
           )}
@@ -227,9 +273,9 @@ function SheetBody({
               id="paul-tel-erreur"
               role="alert"
               className="mt-1.5 text-[12px]"
-              style={{ color: "var(--terra-hover)" }}
+              style={{ color: "var(--alerte-texte)" }}
             >
-              Ce numéro ne semble pas complet.
+              {t.incomplet}
             </p>
           )}
           <button
@@ -238,7 +284,7 @@ function SheetBody({
             disabled={status === "sending"}
             className="btn-primary mt-3 w-full justify-center py-3 text-[15px]"
           >
-            {status === "sending" ? "Envoi…" : "Rappelez-moi"}
+            {status === "sending" ? t.envoi : t.rappelez}
           </button>
         </div>
       )}
@@ -256,7 +302,7 @@ function SheetBody({
           disabled={status === "sending"}
           className="btn-primary mt-4 w-full justify-center py-3 text-[15px]"
         >
-          {status === "sending" ? "Envoi…" : "Choisir un créneau"}
+          {status === "sending" ? t.envoi : t.creneau}
         </button>
       )}
 
@@ -264,9 +310,9 @@ function SheetBody({
         <p
           role="alert"
           className="mt-2 text-center text-[12px]"
-          style={{ color: "var(--terra-hover)" }}
+          style={{ color: "var(--alerte-texte)" }}
         >
-          Ça n'est pas parti. Réessayez dans un instant.
+          {t.echec}
         </p>
       )}
     </>
