@@ -16,8 +16,8 @@ export const articles: ArticleSet = {
     {
       slug: "officine-balance-agee-tiers-payant",
       category: "Pharmacie",
-      title: "Officine : solder le stock de créances tiers-payant avant qu'il ne devienne une perte",
-      desc: "ARL négatifs, rejets oubliés, virements non lettrés : comment trier et solder le stock de créances tiers-payant anciennes avant qu'il ne devienne une perte sèche.",
+      title: "Officine : solder le stock de créances de tiers payant avant qu'il ne devienne une perte",
+      desc: "ARL négatifs, rejets oubliés, virements non lettrés : comment trier et solder le stock de créances de tiers payant anciennes avant qu'il ne devienne une perte sèche.",
       time: "9 min",
       body: [
         "En officine, presque toute l'activité passe par le tiers-payant. Le comptoir traite chaque jour un flux continu de factures dont la contrepartie financière n'arrive jamais le jour même, et rarement en une seule fois : une part part vers l'Assurance Maladie, l'autre vers la complémentaire, avec des délais, des références et des circuits différents. La conséquence est structurelle : à tout instant, une officine porte un stock de créances en attente de paiement, qui vit sa propre vie derrière le flux du jour.",
@@ -57,7 +57,7 @@ export const articles: ArticleSet = {
     {
       slug: "dentaire-paniers-100-sante-tiers-payant",
       category: "Dentaire",
-      title: "Dentaire : sécuriser le tiers-payant sur les paniers 100% Santé",
+      title: "Dentaire : sécuriser le tiers payant sur les paniers 100% Santé",
       desc: "RAC0, panier maîtrisé, devis normalisé : pourquoi le tiers-payant des prothèses dentaires est devenu un risque de trésorerie, et comment le fiabiliser dossier par dossier.",
       time: "8 min",
       body: [
@@ -356,7 +356,7 @@ export const articles: ArticleSet = {
     {
       slug: "audioprothese-renouvellement-tiers-payant",
       category: "Audition",
-      title: "Audioprothèse : maîtriser le tiers-payant sur le renouvellement d'appareillage",
+      title: "Audioprothèse : maîtriser le tiers payant sur le renouvellement d'appareillage",
       desc: "LPP, 100% Santé, garantie de renouvellement à 4 ans : les règles spécifiques au tiers-payant audio et comment sécuriser chaque dossier.",
       time: "9 min",
       body: [
