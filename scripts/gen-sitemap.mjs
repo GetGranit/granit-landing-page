@@ -2,6 +2,7 @@
 // Runs automatically before `vite build` (see package.json).
 import { execFileSync } from "node:child_process";
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
+import { editionsEnLigne } from "./actualites/en-ligne.mjs";
 import { articlesEnLigne, controler, redirections } from "./ressources/en-ligne.mjs";
 
 const SITE = "https://www.getgranit.ai";
@@ -155,6 +156,25 @@ const staticPages = [
   { path: "/privacy", files: ["src/routes/privacy.tsx"], priority: "0.3", freq: "yearly" },
 ];
 
+// Actualités : seulement les éditions publiées. Sans édition publiée, la rubrique n'existe pas.
+const editions = editionsEnLigne(process.cwd());
+const pagesActualites = editions.length
+  ? [
+      {
+        loc: `${SITE}/actualites`,
+        lastmod: editions.map((e) => e.dateModified).sort().at(-1),
+        freq: "weekly",
+        priority: "0.7",
+      },
+      ...editions.map((e) => ({
+        loc: `${SITE}/actualites/${e.slug}`,
+        lastmod: e.dateModified,
+        freq: "monthly",
+        priority: "0.6",
+      })),
+    ]
+  : [];
+
 const urls = [
   ...staticPages.map((p) => ({
     loc: SITE + p.path,
@@ -188,6 +208,7 @@ const urls = [
       freq: "monthly",
       priority: "0.7",
     })),
+  ...pagesActualites,
 ];
 
 // Vercel clones with --depth=10: a page untouched in the last 10 commits has no git date there

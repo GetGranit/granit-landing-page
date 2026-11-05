@@ -1,5 +1,6 @@
 import type { Concurrent, Plateforme, RessourceJson } from "../../src/lib/ressources/types";
 
+export function apercuAutorise(command: string, env?: Record<string, string | undefined>): boolean;
 export function lireFile(racine: string): Map<string, { status: string; wave: number }>;
 export function articlesEnLigne(racine: string): RessourceJson[];
 export function lireContenu(

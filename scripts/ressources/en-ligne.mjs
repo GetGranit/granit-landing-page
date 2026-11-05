@@ -19,6 +19,14 @@ function fichiersJson(dossier) {
     .map((f) => join(dossier, f));
 }
 
+/**
+ * Le contenu non publié (aperçu, brouillons) n'est lu qu'en dev ou sur un déploiement Vercel de
+ * prévisualisation : il n'entre jamais dans un build de production.
+ */
+export function apercuAutorise(command, env = process.env) {
+  return command !== "build" || env.VERCEL_ENV === "preview";
+}
+
 /** Statut et vague de chaque slug de la file, ou une Map vide si la file n'existe pas. */
 export function lireFile(racine) {
   const p = join(racine, "scripts/seo-engine/articles-queue.json");

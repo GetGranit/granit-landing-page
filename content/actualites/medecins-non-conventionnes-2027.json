@@ -1,0 +1,114 @@
+{
+  "numero": 4,
+  "format": "ce-qui-change",
+  "fait": "1er janvier 2027",
+  "titre": "Médecins non conventionnés : ce qui change au comptoir",
+  "seoTitle": "Médecins non conventionnés : ce qui change au comptoir",
+  "chapo": "Au 1er janvier 2027, la loi met fin au remboursement de leurs prescriptions par l’Assurance maladie. Le texte ne prévoit pas d’exception pour l’optique. Deux amendements déposés au Sénat cherchent à le modifier.",
+  "metaDescription": "Au 1er janvier 2027, la loi met fin au remboursement des prescriptions des médecins non conventionnés. Ce que cela change pour l’opticien.",
+  "metiers": [
+    "optique"
+  ],
+  "datePublished": "2026-11-05",
+  "dateModified": "2026-11-05",
+  "change": [
+    "L’article 76 de la loi du 30 décembre 2025 de financement de la Sécurité sociale pour 2026 fixe une date : le 1er janvier 2027. À partir de ce jour, les produits de santé, les actes et les prestations prescrits par un médecin non conventionné ne sont plus remboursés par l’Assurance maladie. Seule exception : ce que ce médecin prescrit à titre gracieux, pour lui-même et ses proches.",
+    "Les médecins visés sont ceux qui n’adhèrent pas à la convention nationale, dits de secteur 3. Les médecins de secteur 1 et de secteur 2 sont conventionnés : l’article 76 ne les vise pas.",
+    "Le 1er octobre 2026, le Conseil d’État a rejeté les recours de six syndicats de médecins et refusé de transmettre leur question au Conseil constitutionnel. Il relève que l’assuré reste libre de consulter un médecin conventionné, et d’obtenir ainsi la prise en charge de ses prescriptions selon les règles habituelles.",
+    "Le texte peut encore évoluer. Le budget de la Sécurité sociale 2027 arrive en séance au Sénat le 9 novembre 2026. Au 5 novembre, deux amendements y attendent l’examen de leur recevabilité financière : le n° 51 abroge l’article 76, le n° 217 en exclut les médecins qui exercent en commune rurale, hors maison de santé. Ce sont des propositions, pas des règles."
+  ],
+  "qui": {
+    "texte": "Les opticiens et les audioprothésistes qui reçoivent une ordonnance d’un médecin de secteur 3, et leurs clients. Pour l’optique et l’audition, c’est notre lecture : le texte vise tous les produits de santé prescrits, sans citer ces équipements."
+  },
+  "gestes": [
+    "Regardez le secteur du prescripteur : l’annuaire santé d’ameli indique si un médecin est conventionné.",
+    "S’il est en secteur 3, prévenez le client avant le devis.",
+    "Ne refusez pas l’ordonnance d’office. Le texte porte sur le remboursement et ne dit rien de sa validité : c’est notre lecture, pas une consigne officielle.",
+    "Pour la part mutuelle, invitez le client à vérifier son contrat auprès d’elle."
+  ],
+  "inconnu": [
+    "Le texte ne prévoit pas d’exception pour l’optique. C’est notre lecture : au 5 novembre 2026, nous n’avons trouvé aucune consigne de l’Assurance maladie destinée aux opticiens.",
+    "L’article 76 ne précise pas le sort d’une ordonnance signée avant le 1er janvier 2027 et utilisée après cette date.",
+    "Il ne dit rien du renouvellement, par l’opticien, d’une ordonnance signée par un médecin de secteur 3.",
+    "Il vise les organismes d’assurance maladie et ne dit rien des mutuelles.",
+    "Le syndicat Médecins secteur 3 annonce d’autres procédures pour obtenir l’avis du Conseil constitutionnel (Egora, 2 octobre 2026). C’est son annonce : nous n’en connaissons ni le contenu ni la date.",
+    "[à vérifier] État du budget de la Sécurité sociale 2027 au Sénat, des amendements n° 51 et n° 217 et de l’article 76, à contrôler le matin de la publication."
+  ],
+  "sources": [
+    {
+      "libelle": "Loi n° 2025-1403 du 30 décembre 2025, article 76 (Légifrance)",
+      "url": "https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000053226758",
+      "primaire": true
+    },
+    {
+      "libelle": "Code de la sécurité sociale, article L. 162-5-10, version en vigueur (Légifrance)",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006740760",
+      "primaire": true
+    },
+    {
+      "libelle": "Conseil d’État, 1er octobre 2026, n° 517230 (Légifrance)",
+      "url": "https://www.legifrance.gouv.fr/ceta/id/CETATEXT000054946490",
+      "primaire": true
+    },
+    {
+      "libelle": "Conseil d’État, 1er octobre 2026, n° 517230 (ArianeWeb)",
+      "url": "https://www.conseil-etat.fr/fr/arianeweb/CE/decision/2026-10-01/517230",
+      "primaire": true
+    },
+    {
+      "libelle": "Sénat, dossier législatif du budget de la Sécurité sociale 2027, mis à jour le 5 novembre 2026",
+      "url": "https://www.senat.fr/dossier-legislatif/plfss2027.html",
+      "primaire": true
+    },
+    {
+      "libelle": "Sénat, amendement n° 51 du 2 novembre 2026",
+      "url": "https://www.senat.fr/amendements/2026-2027/138/Amdt_51.html",
+      "primaire": true
+    },
+    {
+      "libelle": "Sénat, amendement n° 217 du 4 novembre 2026",
+      "url": "https://www.senat.fr/amendements/2026-2027/138/Amdt_217.html",
+      "primaire": true
+    },
+    {
+      "libelle": "Service-public.gouv.fr, tarifs d’un médecin conventionné ou non, encadré du 1er janvier 2027",
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F17042",
+      "primaire": true
+    },
+    {
+      "libelle": "Secteurs conventionnels (ameli, page du 12 octobre 2023)",
+      "url": "https://www.ameli.fr/medecin/exercice-liberal/vie-cabinet/convention-secteurs-adhesion/secteurs-conventionnels",
+      "primaire": true
+    },
+    {
+      "libelle": "Annuaire santé mentionné par ameli (page du 29 décembre 2025)",
+      "url": "https://www.ameli.fr/assure/remboursements/complementaire-sante-solidaire",
+      "primaire": true
+    },
+    {
+      "libelle": "Acuité, 6 octobre 2026, conséquences pour les prescriptions optiques",
+      "url": "https://www.acuite.fr/actualites/profession/legislation/prescriptions-optiques-le-deremboursement-des-a336648",
+      "primaire": false
+    },
+    {
+      "libelle": "Egora, 2 octobre 2026, réaction des syndicats à la décision du Conseil d’État",
+      "url": "https://www.egora.fr/actus-pro/politiques/deremboursement-des-prescriptions-des-medecins-en-secteur-3-le-conseil-detat",
+      "primaire": false
+    }
+  ],
+  "relecteur": null,
+  "statut": "brouillon",
+  "reste_a_verifier": [
+    "Le matin de la publication : sort des amendements n° 51 et n° 217 (recevabilité, vote) et état du budget 2027. Séance au Sénat les 9, 10, 12, 13, 14, éventuellement 15, 16, 17 et 18 novembre 2026, d’après le dossier du Sénat. Le marqueur [à vérifier] reste dans « inconnu » pour que le contrôle au build bloque la publication tant que ce point n’est pas levé.",
+    "Ma recherche par mots-clés dans la liasse du Sénat (383 amendements, téléchargée le 5 novembre) n’a trouvé que les n° 51 et n° 217. D’autres peuvent être déposés d’ici la séance. Je n’ai pas pu ouvrir le rapport n° 144 : la position de la commission sur ce sujet n’est pas vérifiée.",
+    "Consigne de l’Assurance maladie aux opticiens : ma recherche limitée à ameli.fr n’en a trouvé aucune, mais la page d’actualités opticiens que j’ai tentée (ameli.fr/opticien-lunetier/actualites) a répondu 404. L’absence n’est donc pas prouvée, d’où la formule « nous n’avons trouvé aucune ». À confirmer auprès d’une caisse ou d’un syndicat d’opticiens.",
+    "Ordonnance signée avant le 1er janvier 2027 et utilisée après, renouvellement par l’opticien, adaptation : aucun texte officiel trouvé. Des sites de magasins en parlent, ce n’est pas une source. C’est le point le plus utile pour un opticien, à creuser en priorité.",
+    "Part mutuelle : plusieurs sites commerciaux affirment que la plupart des contrats responsables ne pourront pas intervenir sans remboursement de l’Assurance maladie. Aucune source primaire trouvée (ni Unocam, ni France Assureurs, ni Mutualité). Non repris dans le texte.",
+    "Effet concret sur le tiers payant et le devis (motif de rejet, mention sur le devis, contrôle du prescripteur par la caisse) : rien trouvé, non repris dans le texte.",
+    "Nombre d’ophtalmologistes de secteur 3 : Acuité (6 octobre 2026) écrit « entre 4 et 5 praticiens » en France, sans source. Non repris dans le texte. Si le chiffre est juste, l’effet réel en optique est très faible, et cela mérite d’être su avant de faire de ce sujet l’édition d’ouverture.",
+    "Chiffres du gouvernement (environ 1 000 médecins hors convention, 200 M€ de prescriptions par an) et chiffres syndicaux (plus d’un million de patients, 56,7 % en zone sous-dense) : vus seulement dans la presse ou dans l’exposé d’un amendement. Non repris dans le texte.",
+    "Lecture juridique : « notre lecture » sur l’optique, l’audition et la validité de l’ordonnance doit être relue par une personne. Relecteur à renseigner avant passage en « publie ».",
+    "La décision du Conseil d’État et l’article 76 ont été lus via un outil de synthèse de page, pas ligne à ligne. La formule exacte de l’alinéa ajouté vient d’une citation du cabinet Delsol (9 octobre 2026), cohérente avec les extraits Légifrance. Le relecteur doit ouvrir les deux textes.",
+    "Métiers : la règle vaut aussi pour la pharmacie et la biologie, puisque tous les produits et actes prescrits sont visés. La maquette reste sur optique seul : à décider si l’édition vise aussi le slug « pharmacie », ce qui demanderait d’adapter le titre et les gestes."
+  ]
+}

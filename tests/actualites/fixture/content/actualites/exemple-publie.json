@@ -1,0 +1,22 @@
+{
+  "numero": 1,
+  "format": "ce-qui-change",
+  "fait": "1er janvier",
+  "titre": "Une édition publiée d'exemple",
+  "seoTitle": "Une édition publiée d'exemple",
+  "chapo": "Texte d'exemple, il reste à confirmer un point.",
+  "metaDescription": "Une description d'exemple assez longue pour passer le contrôle de longueur, qui demande au moins cent vingt caractères au total.",
+  "metiers": ["optique"],
+  "datePublished": "2026-11-05",
+  "dateModified": "2026-11-06",
+  "change": ["La liste à vérifier avant un contrôle."],
+  "qui": {
+    "texte": "Les opticiens.",
+    "tableau": { "entetes": ["Secteur", "Statut"], "lignes": [["1", "Conventionné"]] }
+  },
+  "gestes": ["Un geste."],
+  "inconnu": ["Un inconnu."],
+  "sources": [{ "libelle": "Une loi", "url": "https://www.example.fr/loi", "primaire": true }],
+  "relecteur": { "nom": "Une Personne", "date": "2026-11-05" },
+  "statut": "publie"
+}
