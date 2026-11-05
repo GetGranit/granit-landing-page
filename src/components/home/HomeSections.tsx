@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 
 import "./nouvelle/socle.css";
-import { BandeauLevee, HeroNouvelle } from "./nouvelle/Hero";
+import { HeroNouvelle } from "./nouvelle/Hero";
 import { ProduitNouvelle } from "./nouvelle/Produit";
 import { ConnecteursNouvelle } from "./nouvelle/Connecteurs";
 import { MetiersNouvelle } from "./nouvelle/Metiers";
@@ -19,7 +19,6 @@ export function HomeSections() {
   }, []);
   return (
     <div className="nh" ref={root}>
-      <BandeauLevee />
       <HeroNouvelle />
       <ProduitNouvelle />
       <ConnecteursNouvelle />

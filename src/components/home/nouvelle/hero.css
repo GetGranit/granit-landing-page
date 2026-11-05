@@ -5,7 +5,7 @@
    Titre court à gauche, chapô de trois lignes, deux pilules, les garanties en petit.
    À droite, autour du praticien, des pastilles d'agent se posent au temps de la vidéo (Hero.tsx).
    Différences avec la maquette : la nav du site (sticky) n'est pas posée sur la vidéo, le hero
-   commence dessous ; le bandeau n'est pas fixe ; les voiles neutres (20, 18, 16) deviennent de l'encre.
+   commence dessous ; le bandeau, au-dessus de la nav, n'est pas fixe ; les voiles neutres (20, 18, 16) deviennent de l'encre.
    Le rendu serveur est l'état final ; les entrées (lettres, chapô, boutons) ne partent que sous
    .nh.nh-js .tva-anim (posé au montage) et jamais sous « mouvements réduits ».
    ========================================================= */
