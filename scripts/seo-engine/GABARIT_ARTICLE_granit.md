@@ -197,6 +197,15 @@ Claude peut citer un ou deux organismes en exemple dans son texte, jamais en dre
 <div data-bloc="contacts"></div>
 ```
 
+### Fiche mutuelle (aiguillage)
+
+Une mutuelle n'est pas un portail : sa fiche dit où aller, pas comment fonctionne le portail. Le fichier de faits porte `"genre": "mutuelle"`, `statuts`, `chiffres` et `organismes` vides, et `acces` renvoie vers la connexion des portails concernés. Sans portail ni opérateur confirmé par une source, la fiche n'est pas écrite : l'acteur reste « Bientôt ».
+
+- 600 mots au moins, et seulement ce que les faits permettent : pas de remplissage pour atteindre une longueur.
+- Le seul marqueur est `<div data-bloc="contacts"></div>`, sous le dernier H2. Les trois autres sont refusés.
+- Un tableau `.tbl` donne, pour chaque portail : le métier et le libellé exact du sélecteur. On écrit « le sélecteur du portail propose ce libellé », jamais « cette mutuelle passe par ce portail » : la carte de tiers payant du client décide. Les rapprochements « probables » n'y figurent pas.
+- Cinq H2 : (1) Par quel portail passe le tiers payant {mutuelle} ? (2) Comment lire la carte de tiers payant {mutuelle} ? (3) Comment faire une prise en charge pour un adhérent {mutuelle} ? (renvoi vers la fiche du portail, sans recopier sa procédure) (4) Vous bloquez sur une prise en charge {mutuelle} ? (les 4 cas du guide) (5) Comment contacter {mutuelle} quand on est professionnel de santé ?
+
 ---
 
 ## 6 bis. Pages comparatives : faits et marqueurs

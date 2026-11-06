@@ -1,0 +1,237 @@
+{
+  "slug": "portail-interiale",
+  "nom": "Intériale",
+  "genre": "mutuelle",
+  "logo": "/logos/annuaire/interiale.svg",
+  "checkedOn": "2026-11-06",
+  "acces": {
+    "verifieLe": "2026-11-06",
+    "liens": [
+      {
+        "label": "Se connecter sur services.santeclair.fr",
+        "url": "https://services.santeclair.fr/professionnel-sante/connexion",
+        "detail": "Identifiant, mot de passe et code reçu par e-mail."
+      },
+      {
+        "label": "Se connecter sur spsante.fr",
+        "url": "https://www.spsante.fr/login",
+        "detail": "Identifiant, mot de passe et code reçu par e-mail."
+      },
+      {
+        "label": "Aller sur itelis.fr",
+        "url": "https://www.itelis.fr/",
+        "detail": "Menu « Accès professionnels », puis « Professionnels de santé ». Un code est envoyé par e-mail."
+      }
+    ],
+    "note": "Les pages d'Intériale nomment des réseaux de soins (Santéclair pour l'Intérieur et les collectivités, Itelis pour la Justice), pas un opérateur de tiers payant. Le sélecteur de services.santeclair.fr propose un libellé INTERIALE et celui de spsante.fr un libellé INTERIALE SIGMAGE (relevés du 06/11/2026) : la carte de tiers payant du client indique le portail à utiliser."
+  },
+  "identite": [
+    {
+      "label": "Type",
+      "valeur": "Mutuelle des agents du service public",
+      "source": "interiale-accueil"
+    },
+    {
+      "label": "Portails relevés",
+      "valeur": "Santéclair (INTERIALE) et SP Santé (INTERIALE SIGMAGE), en optique",
+      "source": "granit-releve"
+    },
+    {
+      "label": "Réseau",
+      "valeur": "Santéclair (Intérieur, collectivités) ; Itelis (Justice)",
+      "source": "interiale-santeclair"
+    },
+    {
+      "label": "Espace pro",
+      "valeur": "Les pages consultées n'en indiquent pas",
+      "source": "interiale-contact"
+    }
+  ],
+  "aiguillage": [
+    {
+      "portail": "Santéclair",
+      "slugFiche": "portail-santeclair",
+      "metier": "optique",
+      "libelle": "INTERIALE"
+    },
+    {
+      "portail": "SP Santé",
+      "slugFiche": "portail-sp-sante",
+      "metier": "optique",
+      "libelle": "INTERIALE SIGMAGE"
+    }
+  ],
+  "chiffres": [],
+  "faits": [
+    {
+      "fait": "Intériale se présente comme la mutuelle des agents du service public. Son site distingue trois publics : ministère de l'Intérieur, ministère de la Justice et agents des collectivités territoriales.",
+      "source": "interiale-accueil"
+    },
+    {
+      "fait": "Le Groupe Intériale décrit ainsi la mutuelle : contrats santé et prévoyance du ministère de la Justice gagnés en 2025, prévoyance pour les agents de l'Intérieur, et près de 1 500 collectivités territoriales accompagnées.",
+      "source": "groupe-entites"
+    },
+    {
+      "fait": "Pour les agents des collectivités territoriales, Intériale indique avoir sélectionné le réseau de soins Santéclair, inclus dans les formules Evo, Alto et Excelio. Sa page précise qu'il faut vérifier que le logo Santéclair figure sur la carte de tiers payant.",
+      "source": "interiale-santeclair"
+    },
+    {
+      "fait": "La page Santéclair de la rubrique Intérieur dit la même chose pour les formules Prema, Supra et Ultima.",
+      "source": "interiale-santeclair-interieur"
+    },
+    {
+      "fait": "Selon la page Santéclair, l'adhérent présente sa carte chez le praticien partenaire et demande les tarifs Santéclair et le tiers payant. Les consultations d'ophtalmologie en sont exclues.",
+      "source": "interiale-santeclair"
+    },
+    {
+      "fait": "Intériale met en avant OFFRECLAIR, sa solution de lunettes 100 % Santé dans le réseau Santéclair, avec une collection de 30 montures de marque française.",
+      "source": "interiale-santeclair"
+    },
+    {
+      "fait": "Intériale annonce qu'à partir du 1er janvier 2026, le contrat santé collectif obligatoire des ministères de l'Intérieur et des Outre-mer est confié à un autre assureur. Selon elle, un agent actif déjà adhérent peut rester en cas de dispense ; retraités, conjoints et enfants peuvent aussi rester couverts.",
+      "source": "interiale-interieur"
+    },
+    {
+      "fait": "La MGP indique avoir été désignée, avec MGEN, opérateur de cette couverture santé. Un agent actif de l'Intérieur peut donc présenter une carte qui n'est pas Intériale : c'est le nom sur la carte qui compte.",
+      "source": "mgp-psc"
+    },
+    {
+      "fait": "Le ministère de la Justice a sélectionné le groupement Intériale et AXA France pour son contrat collectif santé et prévoyance, en place depuis le 1er octobre 2025. Intériale y présente Itelis comme réseau de soins.",
+      "source": "interiale-justice"
+    },
+    {
+      "fait": "La page Itelis d'interiale.fr demande de vérifier que le logo Itelis figure sur la carte de tiers payant.",
+      "source": "interiale-itelis"
+    },
+    {
+      "fait": "Sur le portail du contrat Justice, Intériale indique que Sigmage gère les prélèvements santé pour son compte.",
+      "source": "interiale-psc-sigmage"
+    },
+    {
+      "fait": "Le sélecteur optique de services.santeclair.fr propose le libellé « INTERIALE » (relevé Granit du 06/11/2026).",
+      "source": "granit-releve"
+    },
+    {
+      "fait": "Le sélecteur optique de spsante.fr propose le libellé « INTERIALE SIGMAGE » (relevé Granit du 06/11/2026). Ces libellés ne disent pas que l'un ou l'autre portail est celui du client : la carte décide.",
+      "source": "granit-releve"
+    },
+    {
+      "fait": "SP Santé annonce au 1er janvier 2026 une ouverture en tiers payant, dentaire et optique, pour les assurés de la fonction publique sous le code 29993227. Deux cartes circulent : INTERIALE SIGMAGE, fonction publique, code 29993227 ; SIGMAGE, secteur privé, code 00403220.",
+      "source": "sp-pages"
+    },
+    {
+      "fait": "La carte de tiers payant se télécharge dans l'espace adhérent, rubrique « Mon contrat », et se trouve aussi dans l'application Intériale. Elle doit être en cours de validité ; le professionnel est ensuite remboursé directement par la mutuelle.",
+      "source": "interiale-faq-carte"
+    },
+    {
+      "fait": "Les pages consultées sur interiale.fr ne nomment pas d'opérateur de tiers payant et n'ont pas de rubrique pour les professionnels de santé : la page contact propose les profils commercial, adhérent et institutionnel.",
+      "source": "interiale-contact"
+    }
+  ],
+  "conventionnement": [],
+  "statuts": [],
+  "statutsSource": "",
+  "contacts": [
+    {
+      "label": "Page contact d'Intériale",
+      "valeur": "interiale.fr/contact",
+      "url": "https://www.interiale.fr/contact/",
+      "detail": "Pas de rubrique professionnels de santé : profils commercial, adhérent et institutionnel",
+      "source": "interiale-contact"
+    },
+    {
+      "label": "SP Santé, téléphone opticiens",
+      "valeur": "0820 20 61 88",
+      "detail": "Centre d'appel unique · numéro surtaxé",
+      "source": "sp-pages"
+    },
+    {
+      "label": "Santéclair, téléphone convention Tiers-payant (TP+)",
+      "valeur": "0 892 970 400",
+      "detail": "Du lundi au vendredi, 9 h à 18 h · numéro surtaxé",
+      "source": "sc-voix"
+    },
+    {
+      "label": "Santéclair, téléphone convention Partenariat et tiers-payant",
+      "valeur": "0 821 233 050",
+      "detail": "Du lundi au vendredi, 9 h à 18 h · numéro surtaxé",
+      "source": "sc-voix"
+    }
+  ],
+  "organismes": {
+    "liste": [],
+    "source": ""
+  },
+  "sources": {
+    "interiale-accueil": {
+      "label": "interiale.fr · Page d'accueil, la mutuelle des agents du service public",
+      "url": "https://www.interiale.fr/",
+      "consulte": "2026-11-06"
+    },
+    "interiale-santeclair": {
+      "label": "interiale.fr · Réseau de soins Santéclair (collectivités territoriales)",
+      "url": "https://www.interiale.fr/collectivites/interiale-a-vos-cotes/reseau-de-soins-santeclair/",
+      "consulte": "2026-11-06"
+    },
+    "interiale-itelis": {
+      "label": "interiale.fr · Réseau de soins Itelis",
+      "url": "https://www.interiale.fr/justice/interiale-a-vos-cotes/reseau-de-soins-itelis/",
+      "consulte": "2026-11-06"
+    },
+    "interiale-faq-carte": {
+      "label": "interiale.fr · Questions fréquentes : carte de tiers payant",
+      "url": "https://www.interiale.fr/questions-frequentes/?question=jai-egare-ma-carte-mutuelle-carte-tiers-payant-comment-puis-je-obtenir-autre",
+      "consulte": "2026-11-06"
+    },
+    "interiale-contact": {
+      "label": "interiale.fr · Contactez-nous",
+      "url": "https://www.interiale.fr/contact/",
+      "consulte": "2026-11-06"
+    },
+    "granit-releve": {
+      "label": "Relevé Granit des sélecteurs optique de services.santeclair.fr et spsante.fr (06/11/2026)",
+      "url": "",
+      "consulte": "2026-11-06"
+    },
+    "sp-pages": {
+      "label": "spsante.fr · Pages publiques (Nouveautés AMC, Nous contacter)",
+      "url": "https://www.spsante.fr/api/cms/blocklists/Pages",
+      "consulte": "2026-11-06"
+    },
+    "interiale-santeclair-interieur": {
+      "label": "interiale.fr · Réseau de soins Santéclair (ministère de l'Intérieur)",
+      "url": "https://www.interiale.fr/interieur/interiale-a-vos-cotes/reseau-de-soins-santeclair/",
+      "consulte": "2026-11-06"
+    },
+    "interiale-interieur": {
+      "label": "interiale.fr · Rubrique ministère de l'Intérieur",
+      "url": "https://www.interiale.fr/interieur/",
+      "consulte": "2026-11-06"
+    },
+    "interiale-justice": {
+      "label": "interiale.fr · Rubrique ministère de la Justice",
+      "url": "https://www.interiale.fr/justice/",
+      "consulte": "2026-11-06"
+    },
+    "interiale-psc-sigmage": {
+      "label": "pscjustice.interiale.fr · Pourquoi ai-je un prélèvement Sigmage ?",
+      "url": "https://pscjustice.interiale.fr/cotisation-sante/pourquoi-ai-je-un-prelevement-sigmage/",
+      "consulte": "2026-11-06"
+    },
+    "groupe-entites": {
+      "label": "groupeinteriale.fr · Nos entités",
+      "url": "https://www.groupeinteriale.fr/nos-entites/",
+      "consulte": "2026-11-06"
+    },
+    "mgp-psc": {
+      "label": "mgp.fr · Affiliation au contrat collectif santé du ministère de l'Intérieur (15/10/2025)",
+      "url": "https://www.mgp.fr/home/Nos-actualites-MGP/contenu/bloc-liste-des-actualites/affiliation-mi.html",
+      "consulte": "2026-11-06"
+    },
+    "sc-voix": {
+      "label": "santeclair.fr · Assistance téléphonique des professionnels de santé",
+      "url": "https://www.santeclair.fr/fr/professionnel-sante/offre-de-services-assistance/voix",
+      "consulte": "2026-11-06"
+    }
+  }
+}

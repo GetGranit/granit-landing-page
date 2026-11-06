@@ -1,0 +1,215 @@
+{
+  "slug": "portail-apicil",
+  "nom": "Apicil",
+  "genre": "mutuelle",
+  "logo": "/logos/annuaire/apicil.png",
+  "checkedOn": "2026-11-06",
+  "acces": {
+    "verifieLe": "2026-11-06",
+    "liens": [
+      {
+        "label": "Se connecter sur actil.com",
+        "url": "https://www.actil.com/connexion/",
+        "detail": "Choisir « Professionnels de santé », puis « Je me connecte »."
+      },
+      {
+        "label": "Se connecter à pec.carteblanchepartenaires.fr",
+        "url": "https://pec.carteblanchepartenaires.fr/#/login",
+        "detail": "Identifiant et mot de passe, ou Pro Santé Connect. Sur le portail audio, un code de sécurité à 6 chiffres peut être demandé par e-mail à la connexion."
+      }
+    ],
+    "note": "Apicil annonce que l'opticien fait sa demande de prise en charge auprès d'Actil. Le sélecteur audio de Carte Blanche propose aussi le libellé APICIL GESTION (relevé du 06/11/2026) : c'est la carte du patient qui décide."
+  },
+  "identite": [
+    {
+      "label": "Type",
+      "valeur": "Complémentaire santé du Groupe APICIL (APICIL Mutuelle, APICIL Prévoyance)",
+      "source": "groupe-organisation"
+    },
+    {
+      "label": "Opérateur annoncé",
+      "valeur": "Actil : l'opticien y fait sa demande de prise en charge",
+      "source": "apicil-optique"
+    },
+    {
+      "label": "Portails relevés",
+      "valeur": "Carte Blanche (audio), libellé APICIL GESTION",
+      "source": "granit-releve"
+    },
+    {
+      "label": "Espace pro",
+      "valeur": "Espace professionnels de santé d'actil.com",
+      "source": "actil-connexion"
+    }
+  ],
+  "aiguillage": [
+    {
+      "portail": "Carte Blanche Partenaires",
+      "slugFiche": "portail-carte-blanche",
+      "metier": "audio",
+      "libelle": "APICIL GESTION"
+    }
+  ],
+  "chiffres": [],
+  "faits": [
+    {
+      "fait": "Apicil indique que l'opticien qui pratique le tiers payant fait sa demande de prise en charge auprès d'Actil, reçoit la réponse et la communique au patient. Il est ensuite réglé directement de la part prise en charge par la complémentaire.",
+      "source": "apicil-optique"
+    },
+    {
+      "fait": "Actil a été créé à l'initiative du Groupe APICIL. Il assure les échanges de données entre ses partenaires, les caisses d'Assurance Maladie et les professionnels de santé, dont les opticiens.",
+      "source": "apicil-actil"
+    },
+    {
+      "fait": "Le Groupe APICIL range Actil parmi ses services, comme plateforme de gestion de réseaux de santé et du tiers payant.",
+      "source": "groupe-organisation"
+    },
+    {
+      "fait": "Le patient Apicil présente sa carte Vitale et son attestation de droits au tiers payant Actil.",
+      "source": "apicil-actil"
+    },
+    {
+      "fait": "Selon les pages, Apicil parle de « carte d'attestation de droit au tiers payant ACTIL », d'« attestation de droits au tiers payant ACTIL » ou d'« attestation de droits au tiers payant APICIL ».",
+      "source": "apicil-optique"
+    },
+    {
+      "fait": "Cette attestation est dématérialisée. Elle est disponible à tout moment dans l'espace client et sur l'application « APICIL, mon espace santé », et le patient peut l'imprimer ou la télécharger, à jour en temps réel.",
+      "source": "apicil-attestation"
+    },
+    {
+      "fait": "Le tiers payant porte sur les actes qui figurent sur l'attestation. Les informations des bénéficiaires doivent être conformes à celles de l'attestation d'Assurance Maladie. Si la situation change, l'assuré prévient sa caisse, puis transmet son attestation à jour depuis son espace client.",
+      "source": "apicil-attestation"
+    },
+    {
+      "fait": "Si l'opticien ne pratique pas le tiers payant, il remet un devis que le patient transmet à Apicil pour accord, depuis son espace client ou l'application. Apicil précise que ce devis est nécessaire et conditionne le remboursement.",
+      "source": "apicil-optique"
+    },
+    {
+      "fait": "Apicil présente comme services du réseau optique : remplacement gratuit des montures en cas de casse (délai de 2 ans) et des verres (délai de 1 an), et remplacement des verres en cas d'inadaptation aux progressifs (délai de 3 mois).",
+      "source": "apicil-actil"
+    },
+    {
+      "fait": "Apicil indique que le patient peut géolocaliser les professionnels qui pratiquent le tiers payant avec Actil.",
+      "source": "apicil-actil"
+    },
+    {
+      "fait": "Actil annonce 13 000 opticiens partenaires, grandes enseignes et indépendants, sur tout le territoire et dans les DROM.",
+      "source": "actil-opticiens"
+    },
+    {
+      "fait": "Pour faire bénéficier ses clients du tiers payant Actil, l'opticien se conventionne : il remplit le formulaire de la page Contact d'actil.com, les équipes Actil le recontactent, et il reçoit son identifiant après vérification de ses pièces justificatives.",
+      "source": "actil-opticiens"
+    },
+    {
+      "fait": "Les professionnels de santé se connectent à Actil depuis la page de connexion d'actil.com, rubrique « Professionnels de santé ». Une fois inscrit, l'opticien y fait ses demandes de cotation et de prise en charge en ligne.",
+      "source": "actil-opticiens"
+    },
+    {
+      "fait": "Sur le portail optique d'Actil, la demande déposée est d'abord une cotation, puis une prise en charge. Le patient est retrouvé par son numéro de sécurité sociale, sans liste de complémentaires à choisir (relevé Granit du 07/10/2026).",
+      "source": "granit-actil"
+    },
+    {
+      "fait": "APICIL Mutuelle s'appelait MICILS jusqu'en janvier 2019 : le Groupe APICIL indique « MICILS (APICIL MUTUELLE depuis 01/19) ».",
+      "source": "groupe-connaitre"
+    },
+    {
+      "fait": "Une liste de routage vers Actil tenue par Granit, qui n'est pas publiée par Actil, contient les libellés APICIL PREVOYANCE, APICIL PREVOYANCE 2, MICILS MUTUELLE et MICILS MUTUELLE 2 (relevé du 06/11/2026). Ce n'est pas un sélecteur à choisir au comptoir.",
+      "source": "granit-releve"
+    },
+    {
+      "fait": "Le sélecteur « Nom AMC » du portail audio de Carte Blanche propose le libellé APICIL GESTION (relevé du 06/11/2026). Il n'y a pas de relevé côté optique pour Carte Blanche.",
+      "source": "granit-releve"
+    },
+    {
+      "fait": "APICIL GESTION est une association qui met en commun des moyens de gestion et réalise des opérations de gestion pour ses membres : le libellé désigne une structure de gestion du Groupe APICIL, pas un contrat précis. Les pages Apicil consultées ne citent pas Carte Blanche.",
+      "source": "rna-apicil-gestion"
+    },
+    {
+      "fait": "Une mutuelle peut changer d'opérateur selon le contrat : en cas de doute, la carte de tiers payant du patient décide entre Actil et un autre portail.",
+      "source": "granit-releve"
+    }
+  ],
+  "conventionnement": [],
+  "statuts": [],
+  "organismes": {
+    "liste": [],
+    "source": ""
+  },
+  "contacts": [
+    {
+      "label": "Opticien déjà conventionné Actil",
+      "valeur": "Espace professionnels de santé d'actil.com",
+      "url": "https://www.actil.com/connexion/",
+      "source": "actil-connexion"
+    },
+    {
+      "label": "Pas encore conventionné, ou question à Actil",
+      "valeur": "Formulaire de la page Contact d'actil.com, profil « Professionnel de santé » (sujets : conventionnement, prise en charge, facture…)",
+      "url": "https://www.actil.com/contact/",
+      "source": "actil-contact"
+    },
+    {
+      "label": "Adresse d'Actil",
+      "valeur": "51 Boulevard Vivier Merle, 69003 Lyon Cedex, TSA 74540",
+      "detail": "Adresse affichée au pied de la page de connexion",
+      "source": "actil-connexion"
+    }
+  ],
+  "sources": {
+    "apicil-actil": {
+      "label": "mon.apicil.com · Qui est ACTIL ? (page non datée)",
+      "url": "https://mon.apicil.com/faq/particulier/qui-est-actil/",
+      "consulte": "2026-11-06"
+    },
+    "actil-connexion": {
+      "label": "actil.com · Connexion",
+      "url": "https://www.actil.com/connexion/",
+      "consulte": "2026-11-06"
+    },
+    "granit-actil": {
+      "label": "Connecteur Actil de Granit (relevé du 07/10/2026)",
+      "url": "",
+      "consulte": "2026-10-07"
+    },
+    "granit-releve": {
+      "label": "Relevé Granit des sélecteurs et listes (06/11/2026)",
+      "url": "",
+      "consulte": "2026-11-06"
+    },
+    "apicil-optique": {
+      "label": "mon.apicil.com · Que dois-je savoir avant d'acheter des lunettes ? (page non datée)",
+      "url": "https://mon.apicil.com/salon-client/optique-jachete-des-lunettes-que-dois-je-savoir/",
+      "consulte": "2026-11-06"
+    },
+    "apicil-attestation": {
+      "label": "mon.apicil.com · Comment utiliser mon attestation de droits au tiers payant ACTIL ? (page non datée)",
+      "url": "https://mon.apicil.com/faq/particulier/comment-utiliser-ma-carte-de-tiers-payant-actil/",
+      "consulte": "2026-11-06"
+    },
+    "actil-opticiens": {
+      "label": "actil.com · Opticiens",
+      "url": "https://www.actil.com/professionnel-de-sante/opticiens/",
+      "consulte": "2026-11-06"
+    },
+    "actil-contact": {
+      "label": "actil.com · Contact",
+      "url": "https://www.actil.com/contact/",
+      "consulte": "2026-11-06"
+    },
+    "groupe-organisation": {
+      "label": "groupe-apicil.com · Notre organisation",
+      "url": "https://www.groupe-apicil.com/nous-connaitre/organisation/",
+      "consulte": "2026-11-06"
+    },
+    "groupe-connaitre": {
+      "label": "groupe-apicil.com · Nous connaître (notre histoire)",
+      "url": "https://www.groupe-apicil.com/nous-connaitre/",
+      "consulte": "2026-11-06"
+    },
+    "rna-apicil-gestion": {
+      "label": "assoce.fr · APICIL GESTION (données publiques du répertoire RNA)",
+      "url": "https://assoce.fr/waldec/W691059785/APICIL-GESTION",
+      "consulte": "2026-11-06"
+    }
+  }
+}

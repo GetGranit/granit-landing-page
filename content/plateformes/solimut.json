@@ -1,0 +1,164 @@
+{
+  "slug": "portail-solimut",
+  "nom": "Solimut",
+  "genre": "mutuelle",
+  "logo": "/logos/annuaire/solimut.png",
+  "checkedOn": "2026-11-06",
+  "acces": {
+    "verifieLe": "2026-11-06",
+    "liens": [
+      {
+        "label": "Espace professionnel de santé Solimut",
+        "url": "https://espaceadherent.solimut.fr/0700/Identity/Account/Login?returnUrl=%2F",
+        "detail": "Lien de connexion proposé par la page contact de Solimut, rubrique Professionnel de santé : devis, demandes de prise en charge, suivi des remboursements. Même adresse que l'espace adhérent."
+      }
+    ],
+    "note": "Solimut renvoie les professionnels de santé vers un espace de connexion sur espaceadherent.solimut.fr."
+  },
+  "identite": [
+    {
+      "label": "Type",
+      "valeur": "Mutuelle (Solimut Mutuelle de France)",
+      "source": "solimut-lunettes"
+    },
+    {
+      "label": "Portails relevés",
+      "valeur": "Aucun libellé Solimut dans les sélecteurs relevés",
+      "source": "granit-releve"
+    },
+    {
+      "label": "Réseau",
+      "valeur": "Écouter Voir (opticiens partenaires)",
+      "source": "solimut-lunettes"
+    },
+    {
+      "label": "Espace pro",
+      "valeur": "Connexion sur espaceadherent.solimut.fr, depuis la page contact",
+      "source": "solimut-contact"
+    }
+  ],
+  "chiffres": [],
+  "faits": [
+    {
+      "fait": "La page contact de Solimut a une rubrique « Professionnel de santé » : on s'y connecte à son espace professionnel de santé « pour calculer vos devis, réaliser vos demandes de prise en charge et suivre vos demandes de remboursements ».",
+      "source": "solimut-contact"
+    },
+    {
+      "fait": "Le lien de connexion de cet espace est le même que celui de l'espace adhérent (espaceadherent.solimut.fr), d'après la page contact consultée le 6 novembre 2026.",
+      "source": "solimut-contact"
+    },
+    {
+      "fait": "La page de connexion ouverte par ce lien affiche « Connectez-vous pour profiter de tous les services de votre mutuelle ! » et ne mentionne pas les professionnels de santé.",
+      "source": "solimut-connexion"
+    },
+    {
+      "fait": "Pour toute autre demande, Solimut renvoie vers l'adresse e-mail indiquée sur la carte de tiers payant de l'adhérent.",
+      "source": "solimut-contact"
+    },
+    {
+      "fait": "Le règlement mutualiste santé 2026 (article 28) prévoit le tiers payant pour l'hospitalisation, le dentaire et l'optique « sur délivrance au préalable d’une prise en charge obligatoirement demandée par un établissement ou un professionnel de santé ».",
+      "source": "solimut-reglement"
+    },
+    {
+      "fait": "Le même article prévoit que la carte mutualiste est délivrée chaque année et vaut aussi pour les ayants droit qui bénéficient de la garantie.",
+      "source": "solimut-reglement"
+    },
+    {
+      "fait": "Sur sa page d'offres pour les particuliers, Solimut annonce un « Tiers payant intégral lorsque le professionnel de santé le propose ».",
+      "source": "solimut-particulier"
+    },
+    {
+      "fait": "Solimut annonce le tiers payant « dans notre réseau d’opticiens partenaires Ecouter Voir, pour ne pas avancer les frais » (article du 16 janvier 2026).",
+      "source": "solimut-lunettes"
+    },
+    {
+      "fait": "Écouter Voir est présenté par Solimut comme une enseigne française d'optique et d'audition de près de 1 200 points de vente, que la mutuelle recommande à ses adhérents (article du 10 juin 2025).",
+      "source": "solimut-ecoutervoir"
+    },
+    {
+      "fait": "Pour trouver un magasin d'optique ou d'audition, Solimut renvoie vers le site Écouter Voir. Pour les centres de santé mutualistes, elle renvoie vers le site de son partenaire Oxance.",
+      "source": "solimut-reseau"
+    },
+    {
+      "fait": "Les pages consultées ne disent pas si un opérateur de tiers payant extérieur intervient pour Solimut. Le relevé Granit du 6 novembre 2026 ne contient aucun libellé Solimut dans les sélecteurs de portails ; Almerys et Itelis n'ont pas de relevé, et cette absence ne prouve pas qu'aucun portail n'est utilisé.",
+      "source": "granit-releve"
+    },
+    {
+      "fait": "Depuis le 1er janvier 2026, les adhérents de la surcomplémentaire CSMR et leurs ayants droit ont une carte de tiers payant unique, qui regroupe aussi le régime complémentaire Camieg. Elle se présente avec la carte Vitale ; un enfant ayant droit qui a son propre numéro de Sécurité sociale reçoit sa propre carte. Solimut dit à ses adhérents que leur interlocuteur sur cette carte est la Camieg.",
+      "source": "solimut-carte-camieg"
+    }
+  ],
+  "conventionnement": [],
+  "statuts": [],
+  "contacts": [
+    {
+      "label": "Téléphone, rubrique Professionnel de santé",
+      "valeur": "09 77 407 407",
+      "detail": "Du lundi au vendredi, 9 h à 12 h · service et appel gratuits, d'après la page contact",
+      "source": "solimut-contact"
+    },
+    {
+      "label": "Autre demande",
+      "valeur": "Adresse e-mail imprimée sur la carte de tiers payant de l'adhérent",
+      "source": "solimut-contact"
+    },
+    {
+      "label": "Page contact officielle",
+      "valeur": "Nous contacter, choisir « Professionnel de santé »",
+      "url": "https://www.solimut-mutuelle.fr/nous-contacter/",
+      "source": "solimut-contact"
+    }
+  ],
+  "organismes": {
+    "liste": [],
+    "source": ""
+  },
+  "aiguillage": [],
+  "sources": {
+    "solimut-contact": {
+      "label": "solimut-mutuelle.fr · Nous contacter (rubrique Professionnel de santé)",
+      "url": "https://www.solimut-mutuelle.fr/nous-contacter/",
+      "consulte": "2026-11-06"
+    },
+    "solimut-lunettes": {
+      "label": "solimut-mutuelle.fr · Mutuelle lunettes : comment se faire rembourser (16/01/2026)",
+      "url": "https://www.solimut-mutuelle.fr/solimag/fiche-conseil/mutuelle-lunettes-comment-se-faire-rembourser-vos-frais-optiques/",
+      "consulte": "2026-11-06"
+    },
+    "solimut-reseau": {
+      "label": "solimut-mutuelle.fr · Accéder à notre réseau de soins",
+      "url": "https://www.solimut-mutuelle.fr/acceder-a-notre-reseau-de-soins/",
+      "consulte": "2026-11-06"
+    },
+    "solimut-ecoutervoir": {
+      "label": "solimut-mutuelle.fr · Opticien mutualiste : pourquoi choisir Écouter Voir ? (10/06/2025)",
+      "url": "https://www.solimut-mutuelle.fr/solimag/solimut-actu/opticien-mutualiste-pourquoi-choisir-ecouter-voir/",
+      "consulte": "2026-11-06"
+    },
+    "solimut-carte-camieg": {
+      "label": "solimut-mutuelle.fr · Nouvelle carte de tiers payant Camieg et CSMR (22/09/2026)",
+      "url": "https://www.solimut-mutuelle.fr/solimag/contenus-generiques/votre-nouvelle-carte-de-tiers-payant-une-carte-unique-pour-vos-droits-camieg-et-csmr/",
+      "consulte": "2026-11-06"
+    },
+    "granit-releve": {
+      "label": "Relevé Granit des sélecteurs de portails du 2026-11-06 (aucun libellé Solimut)",
+      "url": "",
+      "consulte": "2026-11-06"
+    },
+    "solimut-connexion": {
+      "label": "espaceadherent.solimut.fr · Page de connexion",
+      "url": "https://espaceadherent.solimut.fr/0700/Identity/Account/Login?returnUrl=%2F",
+      "consulte": "2026-11-06"
+    },
+    "solimut-reglement": {
+      "label": "solimut-mutuelle.fr · Règlement mutualiste, volet santé 2026 (conseil d'administration du 12/12/2025), article 28",
+      "url": "https://www.solimut-mutuelle.fr/wp-content/uploads/2025/12/RM-SANTE-2026-VPROV.pdf",
+      "consulte": "2026-11-06"
+    },
+    "solimut-particulier": {
+      "label": "solimut-mutuelle.fr · Mutuelle Particulier",
+      "url": "https://www.solimut-mutuelle.fr/nos-offres-sante/mutuelle-particulier/",
+      "consulte": "2026-11-06"
+    }
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "slug": "portail-allianz",
+  "nom": "Allianz",
+  "genre": "mutuelle",
+  "logo": "/logos/annuaire/allianz.svg",
+  "checkedOn": "2026-11-06",
+  "acces": {
+    "verifieLe": "2026-11-06",
+    "liens": [
+      {
+        "label": "Se connecter sur services.santeclair.fr",
+        "url": "https://services.santeclair.fr/professionnel-sante/connexion",
+        "detail": "Identifiant, mot de passe et code reçu par e-mail."
+      }
+    ],
+    "note": "Le sélecteur du portail Santéclair propose le libellé ALLIANZ (00410001) en optique (relevé du 06/11/2026)."
+  },
+  "identite": [
+    {
+      "label": "Type",
+      "valeur": "Assureur régi par le Code des assurances",
+      "source": "az-mentions"
+    },
+    {
+      "label": "Portail relevé",
+      "valeur": "Santéclair, libellé ALLIANZ (00410001) en optique",
+      "source": "granit-releve"
+    },
+    {
+      "label": "Réseau",
+      "valeur": "Santéclair, présenté par Allianz comme partenaire de sa complémentaire santé",
+      "source": "az-tp"
+    },
+    {
+      "label": "Espace pro",
+      "valeur": "Via Santéclair : services.santeclair.fr",
+      "source": "sc-tpplus"
+    }
+  ],
+  "aiguillage": [
+    {
+      "portail": "Santéclair",
+      "slugFiche": "portail-santeclair",
+      "metier": "optique",
+      "libelle": "ALLIANZ (00410001)"
+    }
+  ],
+  "chiffres": [],
+  "faits": [
+    {
+      "fait": "Sur sa page « Le tiers payant : comment ça marche ? » (mise à jour le 10 mai 2021), Allianz cite les opticiens, chirurgiens-dentistes et audioprothésistes partenaires Santéclair comme exemple de réseau de soins où ses assurés sont sûrs de bénéficier du tiers payant.",
+      "source": "az-tp"
+    },
+    {
+      "fait": "Santéclair, sur sa page consacrée aux assurés Allianz, indique que tous les contrats santé Allianz, souscrits à titre privé ou dans le cadre de l'entreprise, intègrent ses services. Le tiers payant y est signalé par un astérisque : les services varient selon les contrats souscrits.",
+      "source": "sc-allianz"
+    },
+    {
+      "fait": "Santéclair indique aux assurés Allianz de repérer son logo sur la carte de tiers payant : si le logo apparaît, ils bénéficient des services Santéclair prévus dans leur contrat.",
+      "source": "sc-acces"
+    },
+    {
+      "fait": "Le sélecteur du portail Santéclair propose le libellé « ALLIANZ (00410001) » en optique (relevé du 06/11/2026).",
+      "source": "granit-releve"
+    },
+    {
+      "fait": "Le même sélecteur propose aussi « ALLIANZ IGESTION (00410993) » et « ALLIANZ OUTRE-MER (00410985) » (relevé du 06/11/2026). Les pages consultées ne disent pas à quels contrats ces deux libellés correspondent : ils ne sont pas rattachés ici.",
+      "source": "granit-releve"
+    },
+    {
+      "fait": "Le site Allianz Outre-mer présente aussi Santéclair comme partenaire de sa complémentaire santé (page mise à jour le 2 novembre 2026).",
+      "source": "az-om"
+    },
+    {
+      "fait": "Selon sa page mise à jour le 10 mai 2021, Allianz délivre une attestation de tiers payant à chaque assuré qui a son propre numéro de sécurité sociale. Elle est valable un an, renouvelée à la date anniversaire du contrat, et téléchargeable dans l'espace client ou l'application Mon Allianz mobile.",
+      "source": "az-tp"
+    },
+    {
+      "fait": "Santéclair propose aux professionnels trois conventions : Partenariat & tiers-payant, Tiers-payant TP+ et Partenariat simple.",
+      "source": "sc-ps"
+    },
+    {
+      "fait": "L'assistance Santéclair aux professionnels a une ligne par convention, du lundi au vendredi de 9 h à 18 h : 0 821 233 050 pour Partenariat et tiers-payant ou Partenariat simple, 0 892 970 400 pour Tiers-payant.",
+      "source": "sc-assistance"
+    },
+    {
+      "fait": "La page « Nous contacter » d'Allianz s'adresse aux clients et aux prospects. Les pages consultées ne donnent pas de ligne Allianz réservée aux professionnels de santé.",
+      "source": "az-contact"
+    }
+  ],
+  "conventionnement": [],
+  "statuts": [],
+  "statutsSource": "",
+  "contacts": [
+    {
+      "label": "Santéclair, convention Partenariat et tiers-payant ou Partenariat simple",
+      "valeur": "0 821 233 050",
+      "detail": "Du lundi au vendredi, 9 h à 18 h · numéro surtaxé",
+      "source": "sc-assistance"
+    },
+    {
+      "label": "Santéclair, convention Tiers-payant TP+",
+      "valeur": "0 892 970 400",
+      "detail": "Du lundi au vendredi, 9 h à 18 h · numéro surtaxé",
+      "source": "sc-assistance"
+    },
+    {
+      "label": "Santéclair, questions de conventionnement",
+      "valeur": "0 821 617 118",
+      "detail": "Du lundi au vendredi, 9 h à 18 h · numéro surtaxé",
+      "source": "sc-ps"
+    }
+  ],
+  "organismes": {
+    "liste": [],
+    "source": ""
+  },
+  "sources": {
+    "az-tp": {
+      "label": "allianz.fr · Le tiers payant : comment ça marche ? (mise à jour 10 mai 2021)",
+      "url": "https://www.allianz.fr/assurance-particulier/sante-prevoyance/assurance-sante/services-sante/tiers-payant.html",
+      "consulte": "2026-11-06"
+    },
+    "az-contact": {
+      "label": "allianz.fr · Nous contacter",
+      "url": "https://www.allianz.fr/assurance-particulier/infos-contact.html",
+      "consulte": "2026-11-06"
+    },
+    "sc-allianz": {
+      "label": "santeclair.fr · Services Santéclair pour les assurés Allianz",
+      "url": "https://www.santeclair.fr/fr/beneficiaire/services-sante-allianz-contrats-individuels",
+      "consulte": "2026-11-06"
+    },
+    "sc-ps": {
+      "label": "santeclair.fr · Professionnel de la santé",
+      "url": "https://www.santeclair.fr/fr/professionnel-sante",
+      "consulte": "2026-11-06"
+    },
+    "granit-releve": {
+      "label": "Relevé Granit des sélecteurs du portail Santéclair (06/11/2026)",
+      "url": "",
+      "consulte": "2026-11-06"
+    },
+    "az-mentions": {
+      "label": "allianz.fr · Mentions légales",
+      "url": "https://www.allianz.fr/assurance-particulier/mentions-legales.html",
+      "consulte": "2026-11-06"
+    },
+    "az-om": {
+      "label": "outre-mer.allianz.fr · Complémentaire santé (mise à jour 2 novembre 2026)",
+      "url": "https://outre-mer.allianz.fr/assurance-particulier/sante-prevoyance/assurance-sante-outre-mer.html",
+      "consulte": "2026-11-06"
+    },
+    "sc-acces": {
+      "label": "santeclair.fr · Accès aux services depuis l'espace adhérent Allianz",
+      "url": "https://www.santeclair.fr/fr/beneficiaire/acces-mysanteclair/allianz-individuel",
+      "consulte": "2026-11-06"
+    },
+    "sc-assistance": {
+      "label": "santeclair.fr · Assistance aux professionnels, voix",
+      "url": "https://www.santeclair.fr/fr/professionnel-sante/offre-de-services-assistance/voix",
+      "consulte": "2026-11-06"
+    },
+    "sc-tpplus": {
+      "label": "santeclair.fr · Convention Tiers-payant TP+",
+      "url": "https://www.santeclair.fr/fr/professionnel-sante/convention-tiers-payant-tpplus",
+      "consulte": "2026-11-06"
+    }
+  }
+}

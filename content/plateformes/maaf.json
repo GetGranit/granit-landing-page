@@ -1,0 +1,208 @@
+{
+  "slug": "portail-maaf",
+  "nom": "MAAF",
+  "genre": "mutuelle",
+  "logo": "/logos/annuaire/maaf.svg",
+  "checkedOn": "2026-11-06",
+  "acces": {
+    "verifieLe": "2026-11-06",
+    "liens": [
+      {
+        "label": "Se connecter sur services.santeclair.fr",
+        "url": "https://services.santeclair.fr/professionnel-sante/connexion",
+        "detail": "Identifiant, mot de passe et code reçu par e-mail."
+      }
+    ],
+    "note": "Le sélecteur optique du portail Santéclair propose le libellé MAAF (relevé du 06/11/2026). C'est la carte de tiers payant du client qui décide du portail."
+  },
+  "identite": [
+    {
+      "label": "Type",
+      "valeur": "Mutuelle (MAAF Santé), contrat Vivazen distribué par MAAF Assurances",
+      "source": "maaf-garanties"
+    },
+    {
+      "label": "Portails relevés",
+      "valeur": "Santéclair, libellé MAAF (optique)",
+      "source": "granit-releve"
+    },
+    {
+      "label": "Réseau",
+      "valeur": "Santéclair (opticiens « Partenaires Santéclair »)",
+      "source": "maaf-garanties"
+    },
+    {
+      "label": "Espace pro",
+      "valeur": "Les pages consultées ne donnent pas d'espace réservé aux opticiens chez MAAF",
+      "source": "maaf-faq-optique"
+    }
+  ],
+  "aiguillage": [
+    {
+      "portail": "Santéclair",
+      "slugFiche": "portail-santeclair",
+      "metier": "optique",
+      "libelle": "MAAF"
+    }
+  ],
+  "chiffres": [],
+  "faits": [
+    {
+      "fait": "Dans son tableau de garanties Vivazen (en vigueur au 1er décembre 2025), MAAF définit les « Partenaires Santéclair » comme des professionnels du réseau de son partenaire Santéclair.",
+      "source": "maaf-garanties"
+    },
+    {
+      "fait": "Pour accéder aux avantages de ce réseau, MAAF demande à l'assuré de présenter à l'opticien partenaire son attestation de tiers payant MAAF Santé et de demander le tiers payant.",
+      "source": "maaf-faq-optique"
+    },
+    {
+      "fait": "Chez les opticiens partenaires Santéclair, MAAF annonce le tiers payant sur les équipements à prix libres (hors 100 % Santé).",
+      "source": "maaf-optique"
+    },
+    {
+      "fait": "Pour les conditions générales Vivazen, l'attestation de tiers payant MAAF Santé « peut éviter l'avance de certains frais » auprès des professionnels qui l'acceptent et avec lesquels MAAF Santé a des accords. Les pages consultées ne disent pas par quel portail doit passer un opticien hors réseau Santéclair, ni un contrat collectif géré par APRIL.",
+      "source": "maaf-cg"
+    },
+    {
+      "fait": "MAAF réserve les services Santéclair aux titulaires d'un contrat santé en vigueur Vivazen, Biorythm, Vitamine, Medika, Santé Profil salariés ou Santé Profil TNS, selon les garanties souscrites, et précise que ces services peuvent différer selon le contrat. Santé TPE et Santé Modulaire ne figurent pas dans cette liste.",
+      "source": "maaf-faq-optique"
+    },
+    {
+      "fait": "Les contrats collectifs Santé TPE MAAF et Santé Modulaire MAAF sont assurés par MAAF Santé, mais co-conçus et gérés par APRIL Santé Prévoyance.",
+      "source": "maaf-collectif"
+    },
+    {
+      "fait": "APRIL Santé Prévoyance assure la gestion au quotidien de ces contrats collectifs, règlement des prestations compris.",
+      "source": "maaf-collectif-gestion"
+    },
+    {
+      "fait": "Le tableau de garanties Santé TPE MAAF (en vigueur au 1er janvier 2026) parle d'un « Partenariat Optique » avec des opticiens référencés, sans nommer Santéclair.",
+      "source": "maaf-tpe-garanties"
+    },
+    {
+      "fait": "Pour Vivazen, le tableau de garanties distingue l'opticien Partenaire Santéclair d'un « autre opticien ou Internet » : aux niveaux 2 à 4 les forfaits lunettes à prise en charge libre sont plus élevés chez le partenaire. Le montant accordé peut donc différer selon que le magasin est partenaire ou non.",
+      "source": "maaf-garanties"
+    },
+    {
+      "fait": "Pour Vivazen, le niveau 5 rembourse intégralement les verres chez un opticien Partenaire Santéclair, avec un forfait maximum pour la monture. Chez un autre opticien, il applique un forfait lunettes.",
+      "source": "maaf-garanties"
+    },
+    {
+      "fait": "Pour tous les niveaux de Vivazen, les équipements 100 % Santé sont pris en charge aux frais réels, dans la limite des prix limites de vente. La garantie inclut les équipements Offreclair, sélection proposée par les opticiens Partenaires Santéclair.",
+      "source": "maaf-cg"
+    },
+    {
+      "fait": "MAAF présente Offreclair comme une solution sans reste à charge pour les verres 100 % Santé, avec un choix de 80 montures Nocle, collection proposée exclusivement chez les opticiens partenaires Santéclair.",
+      "source": "maaf-faq-optique"
+    },
+    {
+      "fait": "Côté assuré, Santéclair explique que le logo Santéclair sur la carte de tiers payant MAAF indique que les services Santéclair sont prévus au contrat. L'assuré y accède par son espace client MAAF ou par l'application MySantéclair.",
+      "source": "sc-maaf"
+    },
+    {
+      "fait": "Santéclair indique aux assurés que le numéro d'un conseiller Santéclair figure sur leur carte de tiers payant.",
+      "source": "sc-faq"
+    },
+    {
+      "fait": "Le sélecteur optique du portail Santéclair propose le seul libellé MAAF (relevé du 06/11/2026).",
+      "source": "granit-releve"
+    },
+    {
+      "fait": "Pour obtenir de l'aide sur le tiers payant Santéclair, le numéro dépend de la convention du magasin : un numéro pour les conventions Partenariat, un autre pour la convention Tiers-payant TP+.",
+      "source": "sc-voix"
+    },
+    {
+      "fait": "MAAF indique à ses assurés d'écrire à MAAF Santé, Chauray, 79036 Niort Cedex 9, ou de téléphoner à la ligne MAAF Santé du lundi au vendredi de 8 h 30 à 18 h et le samedi de 9 h à 12 h. Cette page s'adresse aux assurés, pas aux opticiens.",
+      "source": "maaf-contact"
+    }
+  ],
+  "conventionnement": [],
+  "statuts": [],
+  "statutsSource": "",
+  "contacts": [
+    {
+      "label": "Santéclair, conventions Partenariat",
+      "valeur": "0 821 233 050",
+      "detail": "Du lundi au vendredi, 9 h à 18 h · numéro surtaxé",
+      "source": "sc-voix"
+    },
+    {
+      "label": "Santéclair, convention Tiers-payant TP+",
+      "valeur": "0 892 970 400",
+      "detail": "Du lundi au vendredi, 9 h à 18 h · numéro surtaxé",
+      "source": "sc-voix"
+    },
+    {
+      "label": "MAAF Santé, ligne indiquée aux assurés",
+      "valeur": "05 49 17 52 52",
+      "detail": "Du lundi au vendredi, 8 h 30 à 18 h, samedi 9 h à 12 h · page destinée aux assurés, pas aux opticiens",
+      "source": "maaf-contact"
+    }
+  ],
+  "organismes": {
+    "liste": [],
+    "source": ""
+  },
+  "sources": {
+    "maaf-garanties": {
+      "label": "maaf.fr · Tableau de garanties Vivazen (en vigueur au 01/12/2025)",
+      "url": "https://www.maaf.fr/fr/files/live/sites/maaf/files/DOCUMENTS/Sante/TABLEAUX_DE_GARANTIES/MAAF_tableau_garanties_contrat_complementaire_sante_vivazen.pdf",
+      "consulte": "2026-11-06"
+    },
+    "maaf-cg": {
+      "label": "maaf.fr · Conditions générales Vivazen (dispositions en vigueur au 01/01/2026)",
+      "url": "https://www.maaf.fr/fr/files/live/sites/maaf/files/DOCUMENTS/Sante/CG/MAAF_conditions_generales_contrat_complementaire_sante_vivazen_2542.pdf",
+      "consulte": "2026-11-06"
+    },
+    "maaf-contact": {
+      "label": "faq-maaf.fr · Comment contacter MAAF Santé ?",
+      "url": "https://www.faq-maaf.fr/contenu/a-propos-de-maaf/comment-contacter-maaf-sante",
+      "consulte": "2026-11-06"
+    },
+    "sc-maaf": {
+      "label": "santeclair.fr · Accéder à MySantéclair depuis l'espace client MAAF",
+      "url": "https://www.santeclair.fr/fr/beneficiaire/acces-mysanteclair/maaf",
+      "consulte": "2026-11-06"
+    },
+    "sc-faq": {
+      "label": "santeclair.fr · FAQ",
+      "url": "https://www.santeclair.fr/fr/faq",
+      "consulte": "2026-11-06"
+    },
+    "sc-voix": {
+      "label": "santeclair.fr · Assistance, Voix",
+      "url": "https://www.santeclair.fr/fr/professionnel-sante/offre-de-services-assistance/voix",
+      "consulte": "2026-11-06"
+    },
+    "granit-releve": {
+      "label": "Relevé Granit du sélecteur optique Santéclair (06/11/2026)",
+      "url": "",
+      "consulte": "2026-11-06"
+    },
+    "maaf-faq-optique": {
+      "label": "faq-maaf.fr · FAQ MAAF, Optique",
+      "url": "https://www.faq-maaf.fr/categorie/sante/optique",
+      "consulte": "2026-11-06"
+    },
+    "maaf-optique": {
+      "label": "maaf.fr · Mutuelle optique, contrat Vivazen",
+      "url": "https://www.maaf.fr/fr/mutuelle-sante/mutuelle-optique",
+      "consulte": "2026-11-06"
+    },
+    "maaf-collectif": {
+      "label": "handicapzero.maaf.fr · Catalogue Pro MAAF, complémentaire santé collective : vos avantages",
+      "url": "https://handicapzero.maaf.fr/catalogues/catalogue-pro/la-complementaire-sante-collective/vos-avantages",
+      "consulte": "2026-11-06"
+    },
+    "maaf-collectif-gestion": {
+      "label": "handicapzero.maaf.fr · Catalogue Pro MAAF, complémentaire santé collective : le contrat au quotidien",
+      "url": "https://handicapzero.maaf.fr/catalogues/catalogue-pro/la-complementaire-sante-collective/le-contrat-au-quotidien",
+      "consulte": "2026-11-06"
+    },
+    "maaf-tpe-garanties": {
+      "label": "handicapzero.maaf.fr · Tableau de garanties Santé TPE MAAF (en vigueur au 01/01/2026)",
+      "url": "https://handicapzero.maaf.fr/catalogues/catalogue-pro/la-complementaire-sante-collective/tableaux-de-garanties-sante-tpe-maaf/contrat-a-adhesion-obligatoire-souscrit-par-lentreprise",
+      "consulte": "2026-11-06"
+    }
+  }
+}

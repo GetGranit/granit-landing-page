@@ -409,3 +409,22 @@ test("typographie : insécables posées hors balises et hors citations", () => {
     `<p>Pourquoi ? Voici : le « test » ; <a href="/x?a=1:2">lien</a></p><blockquote>« cité » ?</blockquote>`,
   );
 });
+
+test("fiche mutuelle : 600 mots, seul le marqueur contacts est admis", () => {
+  const faits = { genre: "mutuelle", acces: { verifieLe: "2026-11-06", liens: [], note: "Pas de portail propre." } };
+  const article = { slug: "portail-mutuelle-test", category: "plateformes", primaryKeyword: "mutuelle test", title: "Mutuelle test" };
+  const base = {
+    metaDescription: "x",
+    contentHtml: `<p>${remplissage(650)}</p><div data-bloc="contacts"></div>`,
+    tocItems: [],
+    faqItems: [],
+    sources: [],
+  };
+  const c = ctx({ article, type: "plateforme", faits });
+  const ok = controler(base, c).erreurs;
+  assert.ok(!ok.some((e) => /marqueur|mots \(minimum/.test(e)), ok.join(" | "));
+  const avecStatuts = { ...base, contentHtml: base.contentHtml + '<div data-bloc="statuts"></div>' };
+  assert.ok(controler(avecStatuts, c).erreurs.some((e) => /statuts/.test(e)));
+  const portail = controler(base, ctx({ article, type: "plateforme", faits: { acces: faits.acces } })).erreurs;
+  assert.ok(portail.some((e) => /data-bloc="statuts"/.test(e)));
+});

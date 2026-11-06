@@ -1,0 +1,219 @@
+{
+  "slug": "portail-mnt",
+  "nom": "MNT",
+  "genre": "mutuelle",
+  "logo": "/logos/annuaire/mnt.svg",
+  "checkedOn": "2026-11-06",
+  "acces": {
+    "verifieLe": "2026-11-06",
+    "liens": [
+      {
+        "label": "Se connecter sur viamedis.net",
+        "url": "https://www.viamedis.net/ViamedisNet/page/accueil/index",
+        "detail": "E-mail, mot de passe, puis code d'une application d'authentification."
+      },
+      {
+        "label": "Se connecter sur services.santeclair.fr",
+        "url": "https://services.santeclair.fr/professionnel-sante/connexion",
+        "detail": "Identifiant, mot de passe et code reçu par e-mail."
+      }
+    ],
+    "note": "Un article mnt.fr de mars 2023 présentait Oxantis comme gestionnaire du tiers payant optique, audio et dentaire du Groupe VYV, dont MNT est membre fondateur. Oxantis a fermé le 26 octobre 2026 et Viamedis reprend l'optique et l'audioprothèse. Le sélecteur optique de viamedis.net propose le libellé « Mutuelle Nationale Territoriale » et celui de Santéclair le libellé « MNT » (relevés du 06/11/2026) : c'est la carte de tiers payant du client qui décide du portail."
+  },
+  "identite": [
+    {
+      "label": "Type",
+      "valeur": "Mutuelle santé et prévoyance des agents territoriaux, membre fondateur du Groupe VYV",
+      "source": "mnt-groupe-vyv"
+    },
+    {
+      "label": "Portails relevés",
+      "valeur": "viamedis.net (« Mutuelle Nationale Territoriale », optique) ; services.santeclair.fr (« MNT », optique)",
+      "source": "granit-releve"
+    },
+    {
+      "label": "Réseau",
+      "valeur": "Kalixia (optique, audio, dentaire, ostéo) ; tiers payant chez tous les opticiens depuis le 1er janvier 2021",
+      "source": "mnt-kalixia-audio"
+    },
+    {
+      "label": "Espace adhérent",
+      "valeur": "adherents.mnt.fr, pour les adhérents : c'est là que le client récupère sa carte",
+      "source": "mnt-espace"
+    }
+  ],
+  "aiguillage": [
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "optique",
+      "libelle": "Mutuelle Nationale Territoriale"
+    },
+    {
+      "portail": "Santéclair",
+      "slugFiche": "portail-santeclair",
+      "metier": "optique",
+      "libelle": "MNT"
+    }
+  ],
+  "chiffres": [],
+  "statuts": [],
+  "organismes": {
+    "liste": [],
+    "source": ""
+  },
+  "conventionnement": [],
+  "faits": [
+    {
+      "fait": "MNT, mutuelle santé et prévoyance des agents territoriaux, est membre fondateur du Groupe VYV et sa mutuelle de référence auprès des services publics locaux.",
+      "source": "mnt-groupe-vyv"
+    },
+    {
+      "fait": "En mars 2023, MNT indiquait que le Groupe VYV avait réuni la gestion du tiers payant optique, audio et dentaire dit complexe dans Oxantis SA, et citait MNT parmi les mutuelles du groupe concernées.",
+      "source": "mnt-vyv"
+    },
+    {
+      "fait": "Oxantis a fermé le 26 octobre 2026 : l'optique et l'audioprothèse qu'il gérait sont repris par Viamedis. Acuité annonçait le transfert automatique des prises en charge en cours et de l'historique de facturation vers viamedis.net.",
+      "source": "acuite-2026-fermeture"
+    },
+    {
+      "fait": "Jusqu'au 26 octobre, le sélecteur Oxantis proposait le libellé « MNT ».",
+      "source": "granit-releve"
+    },
+    {
+      "fait": "Le sélecteur optique de viamedis.net propose le libellé « Mutuelle Nationale Territoriale » et celui de services.santeclair.fr le libellé « MNT » (relevés du 06/11/2026). Un libellé dans un sélecteur ne dit pas que ce portail est celui à utiliser pour un client donné.",
+      "source": "granit-releve"
+    },
+    {
+      "fait": "Viamedis indique que son engagement de paiement s'applique aux actes réalisés pour des assurés bénéficiant d'une carte de tiers payant en cours de validité, portant le nom de la complémentaire, la garantie concernée et le logo Viamedis.",
+      "source": "viamedis-ps"
+    },
+    {
+      "fait": "Depuis le 1er janvier 2021, les adhérents santé MNT bénéficient du tiers payant chez tous les opticiens de France, et non plus chez les seuls opticiens partenaires du réseau Kalixia Optique.",
+      "source": "mnt-kalixia-audio"
+    },
+    {
+      "fait": "En janvier 2024, MNT indiquait à ses adhérents le tiers payant intégral en optique et en audio, sans frais à avancer.",
+      "source": "mnt-100sante"
+    },
+    {
+      "fait": "MNT Santé compte six formules : Hospitalisation, Essentielle, Equilibre, Confort, Optimale et Intégrale. MNT présente le 100 % Santé sans reste à charge en optique, dentaire et aides auditives hors formule Hospitalisation.",
+      "source": "mnt-sante"
+    },
+    {
+      "fait": "Selon MNT (page mise à jour en juin 2025), les opticiens labellisés Kalixia proposent aux adhérents 20 % sur le prix des montures à prix libres, deux offres de verres à tarifs plafonnés et la monture garantie deux ans.",
+      "source": "mnt-kalixia-audio"
+    },
+    {
+      "fait": "La carte de tiers payant MNT se télécharge dans l'espace adhérent, rubrique Mon compte > Mes documents, et peut s'ajouter à Google Wallet ou Apple Cartes. En cas de doute sur le portail, c'est le document à demander.",
+      "source": "mnt-carte"
+    },
+    {
+      "fait": "MNT prévient que, souvent, à partir d'octobre, c'est la carte de l'année à venir qui s'affiche : pour un rendez-vous sur l'année en cours, la bonne version se trouve dans la rubrique « Téléchargez mes documents ».",
+      "source": "mnt-carte"
+    },
+    {
+      "fait": "Les pages consultées de mnt.fr ne donnent ni espace opticien, ni procédure de demande de prise en charge, ni code de télétransmission, et ne citent pas Santéclair. La page de contact s'adresse aux agents territoriaux et aux décideurs de collectivités.",
+      "source": "mnt-contact-accueil"
+    }
+  ],
+  "contacts": [
+    {
+      "label": "Viamedis, téléphone",
+      "valeur": "0 825 076 076",
+      "detail": "Du lundi au vendredi, 9 h–18 h · numéro surtaxé",
+      "source": "viamedis-ps"
+    },
+    {
+      "label": "Viamedis, déjà référencé",
+      "valeur": "Formulaire de contact de viamedis.net",
+      "url": "https://www.viamedis.net/ViamedisNet/page/commun/p_index_contact_us",
+      "source": "viamedis-ps"
+    },
+    {
+      "label": "MNT, aide à l'espace adhérent (pour le client)",
+      "valeur": "0 980 980 606",
+      "detail": "Du lundi au vendredi, 8 h 30–18 h 30",
+      "source": "mnt-carte"
+    },
+    {
+      "label": "MNT, page de contact officielle",
+      "valeur": "Contact pour les agents territoriaux",
+      "url": "https://www.mnt.fr/contact/agents",
+      "detail": "Page destinée aux agents et aux adhérents",
+      "source": "mnt-contact"
+    }
+  ],
+  "sources": {
+    "mnt-vyv": {
+      "label": "mnt.fr · « Le Groupe VYV facilite la gestion du tiers payant optique, audio et dentaire » (30/03/2023)",
+      "url": "https://www.mnt.fr/articles/groupe-vyv-facilite-gestion-tiers-payant",
+      "consulte": "2026-11-06"
+    },
+    "mnt-kalixia-audio": {
+      "label": "mnt.fr · « Kalixia Audio : un seul réseau, beaucoup d'avantages » (mise à jour juin 2025)",
+      "url": "https://www.mnt.fr/articles/kalixia-audio-un-seul-reseau-beaucoup-davantages",
+      "consulte": "2026-11-06"
+    },
+    "mnt-100sante": {
+      "label": "mnt.fr · « 100 % Santé, des soins de qualité sans reste à charge » (23/01/2024)",
+      "url": "https://www.mnt.fr/articles/100-sante-soins-qualite-sans-reste-charge",
+      "consulte": "2026-11-06"
+    },
+    "mnt-espace": {
+      "label": "mnt.fr · Espace adhérent MNT",
+      "url": "https://www.mnt.fr/agents/vos-avantages-mnt/page-espace-adherent",
+      "consulte": "2026-11-06"
+    },
+    "mnt-contact": {
+      "label": "mnt.fr · Contactez-nous (agents territoriaux)",
+      "url": "https://www.mnt.fr/contact/agents",
+      "consulte": "2026-11-06"
+    },
+    "acuite-2026-fermeture": {
+      "label": "Acuité · « Fermeture de la plateforme de tiers payant Oxantis le 26 octobre 2026 » (16/09/2026)",
+      "url": "https://www.acuite.fr/actualites/profession/fermeture-de-la-plateforme-de-tiers-payant-oxantis-a335575",
+      "consulte": "2026-11-06"
+    },
+    "viamedis-ps": {
+      "label": "viamedis.fr · Professionnels de santé",
+      "url": "https://www.viamedis.fr/professionnels-de-sante/",
+      "consulte": "2026-11-06"
+    },
+    "viamedis-net": {
+      "label": "viamedis.net · Accueil du portail",
+      "url": "https://www.viamedis.net/ViamedisNet/page/accueil/index",
+      "consulte": "2026-11-06"
+    },
+    "sc-connexion": {
+      "label": "services.santeclair.fr · Connexion professionnel de santé",
+      "url": "https://services.santeclair.fr/professionnel-sante/connexion",
+      "consulte": "2026-10-07"
+    },
+    "granit-releve": {
+      "label": "Relevé Granit des sélecteurs viamedis.net et services.santeclair.fr, avec la liste de l'ancien sélecteur Oxantis, 06/11/2026",
+      "url": "",
+      "consulte": "2026-11-06"
+    },
+    "mnt-groupe-vyv": {
+      "label": "mnt.fr · La MNT et le Groupe VYV",
+      "url": "https://www.mnt.fr/decouvrir-la-mnt/qui-sommes-nous/la-mnt-et-le-groupe-vyv",
+      "consulte": "2026-11-06"
+    },
+    "mnt-sante": {
+      "label": "mnt.fr · MNT Santé",
+      "url": "https://www.mnt.fr/agents/sante/mnt-sante",
+      "consulte": "2026-11-06"
+    },
+    "mnt-carte": {
+      "label": "mnt.fr · « Carte de tiers payant MNT : comment la récupérer depuis votre espace adhérent » (02/09/2026)",
+      "url": "https://www.mnt.fr/articles/carte-tiers-payant-mnt-recuperer-espace-adherent",
+      "consulte": "2026-11-06"
+    },
+    "mnt-contact-accueil": {
+      "label": "mnt.fr · Contactez-nous",
+      "url": "https://www.mnt.fr/contact",
+      "consulte": "2026-11-06"
+    }
+  }
+}

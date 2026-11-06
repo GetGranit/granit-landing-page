@@ -159,6 +159,11 @@
       "slug": "mutuelle-quel-portail",
       "anchor": "savoir par quel portail passe une mutuelle",
       "type": "soeur"
+    },
+    {
+      "slug": "portail-interiale",
+      "anchor": "Intériale",
+      "type": "soeur"
     }
   ],
   "remplace": [],

@@ -1,0 +1,197 @@
+{
+  "slug": "portail-swiss-life",
+  "nom": "Swiss Life",
+  "genre": "mutuelle",
+  "logo": "/logos/annuaire/swiss-life.svg",
+  "checkedOn": "2026-11-06",
+  "acces": {
+    "verifieLe": "2026-11-06",
+    "liens": [
+      {
+        "label": "Se connecter à pec.carteblanchepartenaires.fr",
+        "url": "https://pec.carteblanchepartenaires.fr/#/login",
+        "detail": "Identifiant et mot de passe, ou Pro Santé Connect. Sur le portail audio, un code de sécurité peut être demandé par e-mail à la connexion."
+      }
+    ],
+    "note": "Swiss Life renvoie les partenaires du réseau Carte Blanche vers ce portail pour la demande de prise en charge. Le sélecteur du portail audio de Carte Blanche propose le libellé SWISSLIFE (relevé du 06/11/2026)."
+  },
+  "identite": [
+    {
+      "label": "Portail annoncé",
+      "valeur": "pec.carteblanchepartenaires.fr (CBPEC)",
+      "source": "sl-tp"
+    },
+    {
+      "label": "Portail relevé",
+      "valeur": "Carte Blanche, libellé SWISSLIFE (audio)",
+      "source": "granit-releve"
+    },
+    {
+      "label": "Réseau",
+      "valeur": "Carte Blanche Partenaires",
+      "source": "sl-reseau"
+    },
+    {
+      "label": "Espace pro",
+      "valeur": "Rubrique Professionnels de santé de swisslife.fr",
+      "source": "sl-tp"
+    }
+  ],
+  "aiguillage": [
+    {
+      "portail": "Carte Blanche",
+      "slugFiche": "portail-carte-blanche",
+      "metier": "audio",
+      "libelle": "SWISSLIFE"
+    }
+  ],
+  "chiffres": [],
+  "faits": [
+    {
+      "fait": "Swiss Life peut proposer le tiers payant, selon l'activité, avec Carte Blanche Partenaires ou avec Inter AMC. Pour un opticien ou un audioprothésiste, son tableau désigne Carte Blanche Partenaire comme accréditeur : il faut avoir signé un contrat avec lui pour être conventionné.",
+      "source": "sl-accred"
+    },
+    {
+      "fait": "L'achat d'équipement optique ainsi que la pose et l'achat d'aides auditives relèvent du tiers payant avec demande de prise en charge préalable. Pour un partenaire du réseau Carte Blanche, Swiss Life renvoie vers pec.carteblanchepartenaires.fr : le client demande la prise en charge en présentant son attestation.",
+      "source": "sl-tp"
+    },
+    {
+      "fait": "En optique, Swiss Life liste les éléments à renseigner : le numéro FINESS, le numéro d'adhérent, le bénéficiaire concerné, la date, le tarif de convention (TC) ou les actes non remboursés, et le prix détaillé par verre, pour la monture et / ou pour les lentilles. En audio, le prix est détaillé par prestation et prothèse.",
+      "source": "sl-tp"
+    },
+    {
+      "fait": "Swiss Life nomme CBPEC l'application par laquelle un professionnel conventionné Carte Blanche Partenaires fait la demande de prise en charge préalable, notamment pour l'équipement optique et les prothèses auditives.",
+      "source": "sl-ma-sante"
+    },
+    {
+      "fait": "Le numéro AMC, le type de convention et le numéro d'adhérent se lisent sur l'attestation de tiers payant. Le datamatrix (flashcode ou QR code) de l'attestation évite de les saisir si le logiciel sait le lire et les enregistrer.",
+      "source": "sl-faq"
+    },
+    {
+      "fait": "Sur le spécimen d'attestation publié par Swiss Life (période 2023-2024), le type de convention se lit colonne par colonne : les colonnes OPTI et AUDI portent CB et CBPEC, alors que TB n'apparaît que sur EXTE et OC que sur HOSP.",
+      "source": "sl-tp"
+    },
+    {
+      "fait": "Swiss Life indique que le type de convention CB ou TB est repris dans le logiciel CBPEC et permet l'envoi des factures vers l'organisme qui gère le tiers payant.",
+      "source": "sl-tp"
+    },
+    {
+      "fait": "Selon Swiss Life, Carte Blanche Partenaires gère depuis le 1er janvier 2025 le tiers payant de la quasi-totalité des domaines. Au 1er janvier 2026, les soins externes (EXTE), jusque-là chez Almerys (TB), sont passés en CB. Swiss Life demande aux assurés de présenter leur nouvelle attestation pour que le professionnel l'enregistre.",
+      "source": "sl-tp-2026"
+    },
+    {
+      "fait": "Si l'opticien n'adhère pas au réseau Carte Blanche, Swiss Life peut quand même faire une prise en charge, à hauteur du ticket modérateur, à condition qu'il ait signé une convention de tiers payant simple avec Carte Blanche.",
+      "source": "sl-tp"
+    },
+    {
+      "fait": "Dans sa fiche client de juillet 2024, Swiss Life indique que chez un opticien non conventionné Carte Blanche Partenaires, le client avance ses frais (sauf la part Assurance maladie si l'opticien pratique le tiers payant avec la CPAM), puis transmet sa facture détaillée et réglée via son espace client.",
+      "source": "sl-fiche-optique"
+    },
+    {
+      "fait": "Côté assuré, Swiss Life précise que la liste des partenaires Carte Blanche se trouve dans l'Espace Client MySwissLife (« Mes services d'accompagnement », puis « Géolocaliser un professionnel de santé »).",
+      "source": "sl-dispense"
+    },
+    {
+      "fait": "Swiss Life précise que la carte Vitale et l'attestation de tiers payant sont indispensables pour faire du tiers payant, et qu'il faut demander les deux à chaque visite, pour s'assurer que les droits sont toujours ouverts.",
+      "source": "sl-faq"
+    },
+    {
+      "fait": "Sur l'attestation, Swiss Life demande de contrôler la période de validité des droits, la présence de la colonne de sa catégorie de professionnel, et la correspondance du numéro Insee, du nom, du prénom et de la date de naissance avec la carte Vitale.",
+      "source": "sl-faq"
+    },
+    {
+      "fait": "Quand la prise en charge est faite sur le site de Carte Blanche, le statut de la facture se consulte dans le portail. Quand elle est faite directement auprès de Swiss Life, le règlement s'accompagne d'un bordereau.",
+      "source": "sl-faq"
+    },
+    {
+      "fait": "Le relevé Granit du 06/11/2026 montre que le sélecteur du portail audio de Carte Blanche propose le libellé SWISSLIFE. Granit n'a pas de relevé du sélecteur optique de Carte Blanche : en optique, le geste repose sur les pages de Swiss Life.",
+      "source": "granit-releve"
+    }
+  ],
+  "conventionnement": [],
+  "statuts": [],
+  "statutsSource": "",
+  "contacts": [
+    {
+      "label": "Convention CB (Carte Blanche)",
+      "valeur": "09 69 39 66 39",
+      "detail": "Renseignements sur les remboursements tiers payant · appel non surtaxé selon Swiss Life",
+      "source": "sl-tp"
+    },
+    {
+      "label": "Convention OC (Swiss Life)",
+      "valeur": "0 825 317 317",
+      "detail": "Renseignements sur les remboursements tiers payant · numéro surtaxé",
+      "source": "sl-tp"
+    },
+    {
+      "label": "Réclamation ou bonne exécution du contrat",
+      "valeur": "09 74 75 09 00",
+      "detail": "Numéro indiqué par Swiss Life sur sa page tiers payant pour les professionnels de santé",
+      "source": "sl-tp"
+    },
+    {
+      "label": "Pas encore conventionné",
+      "valeur": "Comment se faire accréditer",
+      "url": "https://www.swisslife.fr/home/Professionnels-de-sante/Comment-se-faire-accrediter.html",
+      "detail": "Ou Carte Blanche Partenaires au 09 69 39 66 39, touche 1, du lundi au vendredi de 8h45 à 18h",
+      "source": "sl-accred"
+    }
+  ],
+  "organismes": {
+    "liste": [],
+    "source": ""
+  },
+  "sources": {
+    "sl-tp": {
+      "label": "swisslife.fr · Comment pratiquer le tiers payant avec Swiss Life ?",
+      "url": "https://www.swisslife.fr/swiss-life-en-france/professionnels-de-sante/comment-faire-du-tiers-payant-chez-swiss-life.html",
+      "consulte": "2026-11-06"
+    },
+    "sl-accred": {
+      "label": "swisslife.fr · Comment se faire accréditer pour pratiquer le tiers payant avec Swiss Life ?",
+      "url": "https://www.swisslife.fr/home/Professionnels-de-sante/Comment-se-faire-accrediter.html",
+      "consulte": "2026-11-06"
+    },
+    "sl-faq": {
+      "label": "swisslife.fr · FAQ tiers payant pour les professionnels de santé (PDF)",
+      "url": "https://www.swisslife.fr/content/dam/france/content/FAQ.pdf",
+      "consulte": "2026-11-06"
+    },
+    "sl-ma-sante": {
+      "label": "swisslife.fr · Ma santé (MySwissLife)",
+      "url": "https://www.swisslife.fr/particuliers/Landing/MySwissLife/Premiers-pas-sur-MySwissLife/Ma-sante.html",
+      "consulte": "2026-11-06"
+    },
+    "sl-tp-2026": {
+      "label": "swisslife.fr · Tiers payant 2026 : du nouveau !",
+      "url": "https://www.swisslife.fr/landing/newsletter/tiers-payant-ent-ind-part-janv26.html",
+      "consulte": "2026-11-06"
+    },
+    "sl-fiche-optique": {
+      "label": "swisslife.fr · Le remboursement de ma paire de lunettes (fiche PDF, juillet 2024)",
+      "url": "https://www.swisslife.fr/content/dam/france/docuements-%C3%A0-t%C3%A9l%C3%A9charger-pour-articles-blog/sant%C3%A9/demarches%20remboursement%20optique.pdf",
+      "consulte": "2026-11-06"
+    },
+    "sl-dispense": {
+      "label": "swisslife.fr · Dispense d'avance de frais ? Paiement intégral ou partiel des soins ?",
+      "url": "https://www.swisslife.fr/landing/newsletter/Dispense_d_avance_de_frais_paiement_integral_ou_partiel_des_soins.html",
+      "consulte": "2026-11-06"
+    },
+    "sl-reseau": {
+      "label": "swisslife.fr · Carte Blanche Partenaires, le choix d'un réseau innovant",
+      "url": "https://www.swisslife.fr/home/des-services-d-accompagnement-pour-prendre-soin-de-votre-sante/Carte-Blanche-le-choix-d-un-reseau-de-soins-qui-innove.html",
+      "consulte": "2026-11-06"
+    },
+    "cbp-pro": {
+      "label": "carteblanchepartenaires.fr · Espace professionnels de santé",
+      "url": "https://carteblanchepartenaires.fr/sante/espace-professionnels-de-sante",
+      "consulte": "2026-11-06"
+    },
+    "granit-releve": {
+      "label": "Relevé Granit du sélecteur du portail audio de Carte Blanche (06/11/2026)",
+      "url": "",
+      "consulte": "2026-11-06"
+    }
+  }
+}

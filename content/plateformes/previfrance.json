@@ -1,0 +1,196 @@
+{
+  "slug": "portail-previfrance",
+  "nom": "Prévifrance",
+  "genre": "mutuelle",
+  "logo": "/logos/annuaire/previfrance.svg",
+  "checkedOn": "2026-11-06",
+  "acces": {
+    "verifieLe": "2026-11-06",
+    "liens": [
+      {
+        "label": "Se connecter sur tp-isante.fr",
+        "url": "https://www.tp-isante.fr/login",
+        "detail": "Mot de passe puis code reçu par e-mail. Les prises en charge se font ensuite sur IsantePEC."
+      },
+      {
+        "label": "Se connecter sur viamedis.net",
+        "url": "https://www.viamedis.net/ViamedisNet/page/accueil/index",
+        "detail": "E-mail, mot de passe, puis code d'une application d'authentification."
+      },
+      {
+        "label": "Se connecter à pec.carteblanchepartenaires.fr",
+        "url": "https://pec.carteblanchepartenaires.fr/#/login",
+        "detail": "Identifiant et mot de passe, ou Pro Santé Connect. Sur le portail audio, un code de sécurité à 6 chiffres peut être demandé par e-mail à la connexion."
+      }
+    ],
+    "note": "Sur sa page Professionnels de santé, Prévifrance annonce iSanté comme gestionnaire de tiers payant depuis le 1er janvier 2026. Les sélecteurs de viamedis.net, de tp-isante.fr et de Carte Blanche proposent aussi un libellé Prévifrance (relevé du 06/11/2026) : la carte du client indique l'organisme à choisir."
+  },
+  "identite": [
+    {
+      "label": "Opérateur annoncé",
+      "valeur": "iSanté, depuis le 01/01/2026 (optique, audio, dentaire, hospitalisation)",
+      "source": "pf-pro"
+    },
+    {
+      "label": "Portails relevés",
+      "valeur": "tp-isante.fr, viamedis.net, Carte Blanche (audio)",
+      "source": "granit-releve"
+    },
+    {
+      "label": "Réseau",
+      "valeur": "13 espaces Optic par Prévifrance, ouverts à tous",
+      "source": "pf-optic"
+    },
+    {
+      "label": "Espace pro",
+      "valeur": "Page Professionnels de santé de previfrance.fr",
+      "source": "pf-pro"
+    }
+  ],
+  "aiguillage": [
+    {
+      "portail": "iSanté",
+      "slugFiche": "portail-isante",
+      "metier": "optique",
+      "libelle": "Mutuelle PREVIFRANCE"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "optique",
+      "libelle": "PREVIFRANCE"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "audio",
+      "libelle": "PREVIFRANCE"
+    },
+    {
+      "portail": "Carte Blanche",
+      "slugFiche": "portail-carte-blanche",
+      "metier": "audio",
+      "libelle": "Mutuelle PREVIFRANCE"
+    }
+  ],
+  "chiffres": [],
+  "faits": [
+    {
+      "fait": "Prévifrance annonce que, à partir du 1er janvier 2026, iSanté devient son gestionnaire de tiers payant pour l'ensemble des domaines de soins, en tiers payant simple et complexe.",
+      "source": "pf-pro"
+    },
+    {
+      "fait": "Pour les soins à partir du 1er janvier 2026, les demandes de prise en charge et les factures vont directement à iSanté. Pour les soins antérieurs au 1er janvier 2026, la page indique que les factures peuvent continuer à être envoyées à Prévifrance par les moyens habituels.",
+      "source": "pf-pro"
+    },
+    {
+      "fait": "Pour une demande de prise en charge en optique, audio, dentaire ou hospitalisation, la page propose trois voies : e-mail pole.pec@cegedim.fr, fax au 01 49 09 79 22, ou l'espace sécurisé sur tp-isante.fr ou hospipartner.com (même code d'accès sur les deux sites).",
+      "source": "pf-pro"
+    },
+    {
+      "fait": "La facturation optique, audio et dentaire se fait depuis le portail iSanté, à la suite de la prise en charge.",
+      "source": "pf-pro"
+    },
+    {
+      "fait": "En télétransmission, la page demande de programmer un code unique : 00733931.",
+      "source": "pf-pro"
+    },
+    {
+      "fait": "Factures papier pour les professionnels de santé : Service Tiers Payant iSanté, service facturation, BP 60159, 45201 Montargis Cedex. Pour les établissements de santé (frais de séjour, soins externes), l'adresse est BP 10320, 45203 Montargis Cedex.",
+      "source": "pf-pro"
+    },
+    {
+      "fait": "Les sélecteurs de tp-isante.fr (optique), de viamedis.net (optique et audio) et de Carte Blanche (audio) proposent chacun un libellé Prévifrance (relevé du 06/11/2026). C'est la carte du client qui dit quel organisme choisir.",
+      "source": "granit-releve"
+    },
+    {
+      "fait": "Prévifrance exploite 13 espaces optiques, « Optic par Prévifrance », ouverts à tous. Elle y annonce Essilor comme verrier exclusif et un tiers payant « selon accords et conventions ».",
+      "source": "pf-optic"
+    },
+    {
+      "fait": "Prévifrance présente ses centres optiques et d'audition comme son réseau de soins : elle indique une prise en charge majorée en optique et en audition si l'adhérent achète dans ce réseau, selon le niveau de garantie souscrit.",
+      "source": "pf-senior"
+    },
+    {
+      "fait": "Depuis 2023, Prévifrance met chaque année à disposition une carte de tiers payant 100 % digitale : consultable dans l'espace adhérent et l'application, et partageable en PDF par e-mail avec les professionnels de santé.",
+      "source": "pf-carte"
+    },
+    {
+      "fait": "Pour le passage à 2026, Prévifrance annonçait l'envoi de la carte par e-mail d'ici début décembre 2025, et la cohabitation des cartes 2025 et 2026 pendant quelques semaines dans l'espace adhérent (article du 3 octobre 2025).",
+      "source": "pf-carte"
+    },
+    {
+      "fait": "Les pages consultées ne donnent ni le numéro AMC, ni le critère secondaire, ni la mise en page de la carte : ces données se lisent sur la carte du client.",
+      "source": "pf-carte"
+    },
+    {
+      "fait": "Le Service Relation Adhérents de Prévifrance répond du lundi au vendredi de 8 h 30 à 17 h 30. Pour un dossier de tiers payant, la page Professionnels de santé renvoie vers iSanté.",
+      "source": "pf-contact"
+    }
+  ],
+  "conventionnement": [],
+  "statuts": [],
+  "statutsSource": "",
+  "contacts": [
+    {
+      "label": "iSanté, demandes de prise en charge Prévifrance",
+      "valeur": "pole.pec@cegedim.fr",
+      "detail": "Ou fax au 01 49 09 79 22 · optique, audio, dentaire, hospitalisation",
+      "source": "pf-pro"
+    },
+    {
+      "label": "iSanté, facturation",
+      "valeur": "contact-ps@tp-isante.fr",
+      "detail": "Courrier : Service Tiers Payant iSanté, BP 60159, 45201 Montargis Cedex",
+      "source": "pf-pro"
+    },
+    {
+      "label": "iSanté, ligne dédiée",
+      "valeur": "0 820 03 12 43",
+      "detail": "Numéro surtaxé · pour toute autre information, selon la page de Prévifrance",
+      "source": "pf-pro"
+    },
+    {
+      "label": "Prévifrance, contact général",
+      "valeur": "previfrance.fr/contact.html",
+      "detail": "Page de contact officielle · Service Relation Adhérents, lundi-vendredi 8 h 30–17 h 30",
+      "source": "pf-contact"
+    }
+  ],
+  "organismes": {
+    "liste": [],
+    "source": ""
+  },
+  "sources": {
+    "pf-pro": {
+      "label": "previfrance.fr · Professionnels de santé",
+      "url": "https://www.previfrance.fr/professionnels-de-sante.html",
+      "consulte": "2026-11-06"
+    },
+    "pf-optic": {
+      "label": "previfrance.fr · Optic par Prévifrance",
+      "url": "https://www.previfrance.fr/optic-par-previfrance.html",
+      "consulte": "2026-11-06"
+    },
+    "pf-senior": {
+      "label": "previfrance.fr · Les garanties d'une mutuelle senior",
+      "url": "https://www.previfrance.fr/comparatif-garanties-mutuelle-sante",
+      "consulte": "2026-11-06"
+    },
+    "pf-carte": {
+      "label": "previfrance.fr · Votre carte mutuelle digitale Prévifrance 2026 (3 octobre 2025)",
+      "url": "https://www.previfrance.fr/le-mag/actualites/votre-carte-mutuelle-digitale-previfrance-2026",
+      "consulte": "2026-11-06"
+    },
+    "pf-contact": {
+      "label": "previfrance.fr · Contactez-nous",
+      "url": "https://www.previfrance.fr/contact.html",
+      "consulte": "2026-11-06"
+    },
+    "granit-releve": {
+      "label": "Relevé Granit des sélecteurs de portails (06/11/2026)",
+      "url": "",
+      "consulte": "2026-11-06"
+    }
+  }
+}

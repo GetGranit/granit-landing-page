@@ -1,0 +1,231 @@
+{
+  "slug": "portail-aesio",
+  "nom": "Aésio",
+  "genre": "mutuelle",
+  "logo": "/logos/annuaire/aesio.svg",
+  "checkedOn": "2026-11-06",
+  "acces": {
+    "verifieLe": "2026-11-06",
+    "liens": [
+      {
+        "label": "Se connecter au site des PEC Almerys",
+        "url": "https://www.almerys.com/site/Login.do",
+        "detail": "Code à usage unique reçu par e-mail."
+      },
+      {
+        "label": "Se connecter à pec.carteblanchepartenaires.fr",
+        "url": "https://pec.carteblanchepartenaires.fr/#/login",
+        "detail": "Quand la carte porte le logo Carte Blanche. Identifiant et mot de passe, ou Pro Santé Connect. Sur le portail audio, un code de sécurité à 6 chiffres peut être demandé par e-mail à la connexion."
+      },
+      {
+        "label": "Se connecter à tp-adrea.net",
+        "url": "https://www.tp-adrea.net/AdreaNet/page/accueil/index",
+        "detail": "Adresse imprimée pour l'optique et l'audio sur le spécimen de carte Kalixia."
+      },
+      {
+        "label": "Se connecter sur viamedis.net",
+        "url": "https://www.viamedis.net/ViamedisNet/page/accueil/index",
+        "detail": "E-mail, mot de passe, puis code d'une application d'authentification."
+      }
+    ],
+    "note": "Aésio annonce Almerys comme opérateur de tiers payant depuis le 1er janvier 2023, mais c'est la carte du client qui donne le site de demande. Les spécimens publiés par Aésio renvoient l'optique et l'audio vers almerys.com et le portail Carte Blanche sur une carte Carte Blanche, et vers tp-adrea.net sur une carte Kalixia."
+  },
+  "identite": [
+    {
+      "label": "Opérateur annoncé",
+      "valeur": "Almerys, depuis le 1er janvier 2023",
+      "source": "aesio-ps"
+    },
+    {
+      "label": "Portails relevés",
+      "valeur": "viamedis.net (optique), Carte Blanche (audio)",
+      "source": "granit-releve"
+    },
+    {
+      "label": "Réseau",
+      "valeur": "Carte Blanche ou Kalixia, selon la carte",
+      "source": "aesio-ps"
+    },
+    {
+      "label": "Espace pro",
+      "valeur": "Page « Professionnel de santé partenaire » ; espaces sécurisés annoncés fermés au 1er janvier 2024",
+      "source": "aesio-ps"
+    }
+  ],
+  "aiguillage": [
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "optique",
+      "libelle": "AESIO ex ADREA Saint-Aubanaise"
+    },
+    {
+      "portail": "Carte Blanche",
+      "slugFiche": "portail-carte-blanche",
+      "metier": "audio",
+      "libelle": "AESIO Centre 1"
+    },
+    {
+      "portail": "Carte Blanche",
+      "slugFiche": "portail-carte-blanche",
+      "metier": "audio",
+      "libelle": "AESIO Centre 2"
+    }
+  ],
+  "chiffres": [],
+  "faits": [
+    {
+      "fait": "Sur sa page destinée aux professionnels de santé partenaires, Aésio mutuelle indique avoir externalisé son tiers payant chez Almerys depuis le 1er janvier 2023.",
+      "source": "aesio-ps"
+    },
+    {
+      "fait": "Pour les soins réalisés à partir du 1er janvier 2023, Almerys est l'interlocuteur : les droits du patient se consultent auprès d'Almerys, les factures lui sont adressées, et le code de télétransmission à utiliser est celui d'Almerys, présent sur la carte de tiers payant.",
+      "source": "aesio-ps"
+    },
+    {
+      "fait": "Pour les soins réalisés avant le 1er janvier 2023, les factures vont à Aésio par mail : prestation.tiers@aesio.fr pour l'ancienne ADREA Mutuelle et l'ancienne APREVA Mutuelle, prestations-ps@aesio.fr pour l'ancienne EOVI-MCD Mutuelle.",
+      "source": "aesio-ps"
+    },
+    {
+      "fait": "La même page annonce la fermeture au 1er janvier 2024 des espaces sécurisés d'Aésio pour les professionnels. Pour un virement libellé au nom d'Almerys, le détail se consulte sur l'espace personnel Almerys ; pour un virement au nom d'Aésio, la demande d'identification se fait par mail à gestion-ps@aesio.fr avec le bordereau bancaire ou le libellé exact du virement.",
+      "source": "aesio-ps"
+    },
+    {
+      "fait": "Un spécimen de carte publié sur cette page (fichier de mars 2025) porte les logos Aésio, Carte Blanche et Almerys. Il indique : PEC optique, audio, dentaire et hospitalisation sur almerys.com, et pour le réseau Carte Blanche, PEC optique, audio et dentaire via CBPEC, sur pec.carteblanchepartenaires.fr.",
+      "source": "aesio-specimen-cb"
+    },
+    {
+      "fait": "Un autre spécimen publié sur la même page (carte valable en 2024) porte les logos Aésio, Kalixia et Almerys. Il indique : PEC optique et audioprothèse sur www.tp-adrea.net, PEC hospitalisation et dentaire auprès d'Almerys sur www.almerys.com. Sur cette carte, l'optique ne passe donc pas par le site des PEC d'Almerys.",
+      "source": "aesio-specimen-kalixia"
+    },
+    {
+      "fait": "Le site tp-adrea.net s'intitule « Service de Tiers Payant - AESIO mutuelle ex ADREA », affiche une connexion et précise que Viamedis recueille les données pour les services de tiers payant.",
+      "source": "tp-adrea"
+    },
+    {
+      "fait": "Un adhérent peut présenter sa carte de tiers payant sur smartphone, après l'avoir téléchargée depuis son compte extranet, ou l'envoyer par mail. Selon Aésio, la carte dématérialisée a la même validité que la carte papier.",
+      "source": "aesio-ps"
+    },
+    {
+      "fait": "Selon la fiche conseil d'Aésio sur la carte de tiers payant en général, on y trouve notamment le numéro d'AMC, le code de télétransmission, le type de convention et le critère secondaire (CSR), destinés à orienter la demande de remboursement.",
+      "source": "aesio-carte"
+    },
+    {
+      "fait": "Le sélecteur de viamedis.net propose en optique le libellé « AESIO ex ADREA Saint-Aubanaise » (relevé du 06/11/2026). Ce libellé ne dit pas que Viamedis est l'opérateur à utiliser : la carte du client décide.",
+      "source": "granit-releve"
+    },
+    {
+      "fait": "Le sélecteur audio du portail Carte Blanche propose les libellés « AESIO Centre 1 » et « AESIO Centre 2 » (relevé du 06/11/2026). Les pages consultées n'expliquent pas la différence entre les deux.",
+      "source": "granit-releve"
+    },
+    {
+      "fait": "Sur aesio.fr, la page « Réseau de soins » présente le réseau Carte Blanche en optique, audio, dentaire et bien-être, et précise que ces services sont accessibles selon les garanties du contrat.",
+      "source": "aesio-reseau"
+    },
+    {
+      "fait": "Aésio garde aussi une page sur les réseaux Kalixia en optique, audioprothèse et ostéopathie, avec dispense d'avance de frais grâce au tiers payant en optique et en audio.",
+      "source": "aesio-kalixia"
+    },
+    {
+      "fait": "La page professionnels de kalixia.fr renvoie vers Aésio parmi ses principales complémentaires utilisatrices.",
+      "source": "kalixia-ps"
+    }
+  ],
+  "conventionnement": [],
+  "statuts": [],
+  "statutsSource": "",
+  "contacts": [
+    {
+      "label": "Almerys, téléphone praticiens",
+      "valeur": "0 825 826 214",
+      "detail": "Numéro surtaxé · imprimé sur la carte de tiers payant",
+      "source": "aesio-specimen-kalixia"
+    },
+    {
+      "label": "Almerys, PEC et factures",
+      "valeur": "almerys@almerys.com",
+      "source": "almerys-contacts"
+    },
+    {
+      "label": "Aésio, factures de soins avant 2023 (ex ADREA, ex APREVA)",
+      "valeur": "prestation.tiers@aesio.fr",
+      "source": "aesio-contact"
+    },
+    {
+      "label": "Aésio, factures de soins avant 2023 (ex EOVI-MCD)",
+      "valeur": "prestations-ps@aesio.fr",
+      "source": "aesio-contact"
+    },
+    {
+      "label": "Aésio, virements non identifiés",
+      "valeur": "gestion-ps@aesio.fr",
+      "source": "aesio-ps"
+    }
+  ],
+  "organismes": {
+    "liste": [],
+    "source": ""
+  },
+  "sources": {
+    "aesio-ps": {
+      "label": "ensemble.aesio.fr · Professionnel de santé partenaire",
+      "url": "https://ensemble.aesio.fr/connectez-vous-vos-espaces-securises/professionnels-de-sante",
+      "consulte": "2026-11-06"
+    },
+    "aesio-specimen-cb": {
+      "label": "ensemble.aesio.fr · Spécimen de carte de tiers payant Carte Blanche (fichier de mars 2025)",
+      "url": "https://ensemble.aesio.fr/sites/default/files/2025-03/image2.png",
+      "consulte": "2026-11-06"
+    },
+    "aesio-specimen-kalixia": {
+      "label": "ensemble.aesio.fr · Spécimen de carte de tiers payant Kalixia (validité 2024)",
+      "url": "https://ensemble.aesio.fr/sites/default/files/2024-01/visuel_specimen_cartetp-2024.jpg",
+      "consulte": "2026-11-06"
+    },
+    "aesio-contact": {
+      "label": "aesio.fr · Contact, professionnel de santé partenaire",
+      "url": "https://www.aesio.fr/contact",
+      "consulte": "2026-11-06"
+    },
+    "aesio-carte": {
+      "label": "aesio.fr · Carte de tiers payant : à quoi sert-elle ?",
+      "url": "https://www.aesio.fr/fiches-conseil/carte-tiers-payant",
+      "consulte": "2026-11-06"
+    },
+    "aesio-reseau": {
+      "label": "aesio.fr · Réseau de soins",
+      "url": "https://www.aesio.fr/avantages/reseau-de-soins",
+      "consulte": "2026-11-06"
+    },
+    "aesio-kalixia": {
+      "label": "aesio.fr · Réseaux de soins Kalixia",
+      "url": "https://www.aesio.fr/avantages/reseaux-de-soins-kalixia",
+      "consulte": "2026-11-06"
+    },
+    "kalixia-ps": {
+      "label": "kalixia.fr · Professionnels de santé",
+      "url": "https://www.kalixia.fr/professionnels-de-sante/",
+      "consulte": "2026-11-06"
+    },
+    "tp-adrea": {
+      "label": "tp-adrea.net · Service de Tiers Payant - AESIO mutuelle ex ADREA",
+      "url": "https://www.tp-adrea.net/AdreaNet/page/accueil/index",
+      "consulte": "2026-11-06"
+    },
+    "almerys-pec": {
+      "label": "almerys.com · Site des PEC (connexion)",
+      "url": "https://www.almerys.com/site/Login.do",
+      "consulte": "2026-11-06"
+    },
+    "almerys-contacts": {
+      "label": "almerys.com · Contactez-nous (espace professionnel)",
+      "url": "https://www.almerys.com/accueil/contacts",
+      "consulte": "2026-11-06"
+    },
+    "granit-releve": {
+      "label": "Relevé Granit des sélecteurs viamedis.net et Carte Blanche, 06/11/2026",
+      "url": "",
+      "consulte": "2026-11-06"
+    }
+  }
+}

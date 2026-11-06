@@ -1,0 +1,226 @@
+{
+  "slug": "portail-mma",
+  "nom": "MMA",
+  "genre": "mutuelle",
+  "logo": "/logos/annuaire/mma.svg",
+  "checkedOn": "2026-11-06",
+  "acces": {
+    "verifieLe": "2026-11-06",
+    "liens": [
+      {
+        "label": "Se connecter sur services.santeclair.fr",
+        "url": "https://services.santeclair.fr/professionnel-sante/connexion",
+        "detail": "Identifiant, mot de passe et code reçu par e-mail."
+      },
+      {
+        "label": "Se connecter sur tp-isante.fr",
+        "url": "https://www.tp-isante.fr/login",
+        "detail": "Mot de passe puis code reçu par e-mail. Les prises en charge se font ensuite sur IsantePEC."
+      }
+    ],
+    "note": "Les sélecteurs optique des portails Santéclair et iSanté proposent des libellés MMA (relevés du 06/11/2026). Le logo sur la carte de tiers payant oriente le choix."
+  },
+  "identite": [
+    {
+      "label": "Type",
+      "valeur": "Assureur du groupe Covéa : complémentaire santé individuelle et contrat collectif MMA Collective Santé",
+      "source": "mma-collectif"
+    },
+    {
+      "label": "Portails relevés",
+      "valeur": "Santéclair (MMA, MMA ENTREPRISE, SMI-MMA ENTREPRISE) et iSanté (MMA Entreprise), en optique",
+      "source": "granit-releve"
+    },
+    {
+      "label": "Réseau",
+      "valeur": "Santéclair (opticiens partenaires)",
+      "source": "sc-mma"
+    },
+    {
+      "label": "Espace pro",
+      "valeur": "Assistance Santéclair selon la convention du magasin ; formulaire professionnels de santé chez SMI pour les contrats qu'elle gère",
+      "source": "sc-voix"
+    }
+  ],
+  "aiguillage": [
+    {
+      "portail": "Santéclair",
+      "slugFiche": "portail-santeclair",
+      "metier": "optique",
+      "libelle": "MMA"
+    },
+    {
+      "portail": "Santéclair",
+      "slugFiche": "portail-santeclair",
+      "metier": "optique",
+      "libelle": "MMA ENTREPRISE"
+    },
+    {
+      "portail": "Santéclair",
+      "slugFiche": "portail-santeclair",
+      "metier": "optique",
+      "libelle": "SMI-MMA ENTREPRISE"
+    },
+    {
+      "portail": "iSanté",
+      "slugFiche": "portail-isante",
+      "metier": "optique",
+      "libelle": "MMA Entreprise"
+    }
+  ],
+  "chiffres": [],
+  "faits": [
+    {
+      "fait": "Pour le tiers payant, MMA demande à l'assuré de présenter sa carte Vitale et son attestation de tiers payant. Une nouvelle attestation est envoyée par courrier à chaque échéance et reste téléchargeable dans l'espace client. Elle indique les domaines ouverts au tiers payant, dont l'optique, et porte un flash code (Datamatrix) qui évite de saisir les données.",
+      "source": "mma-tp"
+    },
+    {
+      "fait": "MMA écrit que le tiers payant est possible avec les professionnels de santé avec lesquels elle a signé une convention, et chez les opticiens, dentistes et audioprothésistes partenaires Santéclair.",
+      "source": "mma-optique"
+    },
+    {
+      "fait": "Hors réseau aussi : pour les contrats Assurance Santé MMA (CG 374, 376, 377, 378, 379 et 381), si le professionnel utilise l'attestation et pratique le tiers payant sur la part complémentaire, MMA prend en charge les frais d'optique à hauteur des garanties, même hors partenaire du réseau Santéclair.",
+      "source": "mma-tp"
+    },
+    {
+      "fait": "Pour des lentilles, MMA décrit ce parcours : l'assuré remet l'ordonnance et sa carte de complémentaire santé, l'opticien fait une demande de prise en charge à MMA, et l'assuré paie le reste à charge. La prise en charge suppose une prescription médicale.",
+      "source": "mma-lentilles"
+    },
+    {
+      "fait": "La complémentaire santé individuelle MMA se décline en formules Vitale, Essentielle, Famille, Senior et Confort, chacune en plusieurs niveaux. MMA publie pour les lentilles un barème par formule et par niveau (en Essentielle : 100 % de la base Sécurité sociale au niveau 1, puis 50, 100 et 150 € aux niveaux 2 à 4), identique que les lentilles soient prises en charge ou non par l'Assurance maladie (page du 04/02/2026).",
+      "source": "mma-lentilles"
+    },
+    {
+      "fait": "Pour le contrat collectif MMA Collective Santé, MMA écrit que le tiers payant évite l'avance de frais chez les opticiens, dentistes et audioprothésistes partenaires Santéclair, et renvoie l'assuré vers le site du gestionnaire de son contrat.",
+      "source": "mma-collectif"
+    },
+    {
+      "fait": "Santéclair décrit un partenariat avec MMA : ses réseaux de partenaires permettent de proposer aux assurés MMA le tiers payant via les partenaires en optique, dentaire et audioprothèse.",
+      "source": "sc-mma"
+    },
+    {
+      "fait": "MMA prévient que, selon la nature du contrat santé MMA, les services Santéclair peuvent différer.",
+      "source": "mma-lentilles"
+    },
+    {
+      "fait": "Santéclair donne le même repère aux assurés MMA, MMA Entreprise et MMA gérés par SMI : si le logo Santéclair apparaît sur la carte de tiers payant, ils bénéficient des services Santéclair prévus au contrat. Au comptoir, regardez ce logo avant de choisir le portail.",
+      "source": "sc-acces-mma"
+    },
+    {
+      "fait": "Santéclair consacre une page distincte aux assurés MMA dont le contrat est géré par SMI, avec un espace client SMI, sous le nom « SMI - MMA entreprise ».",
+      "source": "sc-smi-mma"
+    },
+    {
+      "fait": "Le sélecteur optique du portail Santéclair propose les libellés MMA, MMA ENTREPRISE et SMI-MMA ENTREPRISE (relevé du 06/11/2026). Il propose aussi SMI, seul : ce libellé n'est pas rattaché à MMA dans cette fiche. Le sélecteur optique du portail iSanté propose le libellé MMA Entreprise (relevé du 06/11/2026).",
+      "source": "granit-releve"
+    },
+    {
+      "fait": "Les pages consultées ne disent pas dans quels cas un contrat MMA Entreprise se traite sur iSanté plutôt que sur Santéclair.",
+      "source": "granit-releve"
+    },
+    {
+      "fait": "Les pages mma.fr consultées s'adressent aux assurés et aux entreprises : elles ne donnent pas de ligne ni d'espace réservés aux opticiens.",
+      "source": "mma-tp"
+    },
+    {
+      "fait": "SMI propose un formulaire « Mon espace professionnel de santé » : il demande le n° Finess et offre le sujet « Devis ou prise en charge en optique ».",
+      "source": "smi-ps"
+    },
+    {
+      "fait": "Pour obtenir de l'aide sur le tiers payant Santéclair, le numéro dépend de la convention du magasin : un numéro pour les conventions Partenariat, un autre pour la convention Tiers-payant TP+.",
+      "source": "sc-voix"
+    }
+  ],
+  "conventionnement": [],
+  "statuts": [],
+  "statutsSource": "",
+  "contacts": [
+    {
+      "label": "Santéclair, conventions Partenariat",
+      "valeur": "0 821 233 050",
+      "detail": "Du lundi au vendredi, 9 h à 18 h · numéro surtaxé",
+      "source": "sc-voix"
+    },
+    {
+      "label": "Santéclair, convention Tiers-payant TP+",
+      "valeur": "0 892 970 400",
+      "detail": "Du lundi au vendredi, 9 h à 18 h · numéro surtaxé",
+      "source": "sc-voix"
+    },
+    {
+      "label": "SMI, professionnels de santé",
+      "valeur": "mutuelle-smi.com/contact-professionnel-sante",
+      "url": "https://www.mutuelle-smi.com/contact-professionnel-sante",
+      "detail": "Formulaire avec n° Finess, pour un contrat géré par SMI",
+      "source": "smi-ps"
+    },
+    {
+      "label": "Conseillers santé MMA (assurés)",
+      "valeur": "mma.fr · Conseillers santé",
+      "url": "https://www.mma.fr/mutuelle-complementaire-sante/gps-sante.html",
+      "detail": "Du lundi au vendredi, 9 h à 18 h · pour les assurés",
+      "source": "mma-conseillers"
+    }
+  ],
+  "organismes": {
+    "liste": [],
+    "source": ""
+  },
+  "sources": {
+    "mma-lentilles": {
+      "label": "mma.fr · Remboursement des lentilles de contact (mise à jour le 04/02/2026)",
+      "url": "https://www.mma.fr/mutuelle-complementaire-sante/remboursement-lentilles-contact.html",
+      "consulte": "2026-11-06"
+    },
+    "mma-collectif": {
+      "label": "entreprise.mma.fr · Complémentaire santé artisan, MMA Collective Santé (mise à jour le 10/04/2025)",
+      "url": "https://entreprise.mma.fr/assurance-metier/mutuelle-artisan.html",
+      "consulte": "2026-11-06"
+    },
+    "sc-mma": {
+      "label": "santeclair.fr · Assuré MMA, services Santéclair inclus dans le contrat",
+      "url": "https://www.santeclair.fr/fr/beneficiaire/services-sante-mma",
+      "consulte": "2026-11-06"
+    },
+    "sc-voix": {
+      "label": "santeclair.fr · Assistance, Voix",
+      "url": "https://www.santeclair.fr/fr/professionnel-sante/offre-de-services-assistance/voix",
+      "consulte": "2026-11-06"
+    },
+    "granit-releve": {
+      "label": "Relevé Granit des sélecteurs optique Santéclair et iSanté (06/11/2026)",
+      "url": "",
+      "consulte": "2026-11-06"
+    },
+    "mma-tp": {
+      "label": "mma.fr · Comment fonctionne le tiers payant chez MMA (mise à jour le 20/04/2026)",
+      "url": "https://www.mma.fr/mutuelle-complementaire-sante/tiers-payant-generalise.html",
+      "consulte": "2026-11-06"
+    },
+    "mma-optique": {
+      "label": "mma.fr · Remboursement optique (mise à jour le 05/02/2026)",
+      "url": "https://www.mma.fr/mutuelle-complementaire-sante/remboursement-optique.html",
+      "consulte": "2026-11-06"
+    },
+    "mma-conseillers": {
+      "label": "mma.fr · Conseillers santé (mise à jour le 06/01/2026)",
+      "url": "https://www.mma.fr/mutuelle-complementaire-sante/gps-sante.html",
+      "consulte": "2026-11-06"
+    },
+    "sc-acces-mma": {
+      "label": "santeclair.fr · Accès MySantéclair, assurés MMA Entreprise",
+      "url": "https://www.santeclair.fr/fr/beneficiaire/acces-mysanteclair/mma-entreprise",
+      "consulte": "2026-11-06"
+    },
+    "sc-smi-mma": {
+      "label": "santeclair.fr · Accès MySantéclair, SMI - MMA entreprise",
+      "url": "https://www.santeclair.fr/fr/beneficiaire/acces-mysanteclair/smi-mma-entreprise",
+      "consulte": "2026-11-06"
+    },
+    "smi-ps": {
+      "label": "mutuelle-smi.com · Mon espace professionnel de santé",
+      "url": "https://www.mutuelle-smi.com/contact-professionnel-sante",
+      "consulte": "2026-11-06"
+    }
+  }
+}

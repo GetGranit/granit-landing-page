@@ -1,0 +1,290 @@
+{
+  "slug": "portail-carte-blanche",
+  "nom": "Carte Blanche Partenaires",
+  "logo": "/logos/annuaire/carte-blanche.svg",
+  "checkedOn": "2026-11-06",
+  "acces": {
+    "verifieLe": "2026-11-06",
+    "liens": [
+      {
+        "label": "Se connecter à pec.carteblanchepartenaires.fr",
+        "url": "https://pec.carteblanchepartenaires.fr/#/login",
+        "detail": "Identifiant et mot de passe, ou Pro Santé Connect. Sur le portail audio, un code de sécurité à 6 chiffres peut être demandé par e-mail à la connexion."
+      },
+      {
+        "label": "Devenir partenaire (créer un compte)",
+        "url": "https://pec.carteblanchepartenaires.fr/#/creationCompte",
+        "detail": "Pour un magasin pas encore conventionné."
+      }
+    ]
+  },
+  "identite": [
+    {
+      "label": "Type",
+      "valeur": "Réseau de soins ouvert et opérateur de tiers payant",
+      "source": "cbp-complementaire"
+    },
+    {
+      "label": "Optique",
+      "valeur": "Futur réseau 2027 : conventionnement ouvert jusqu'au 20 décembre 2026 inclus, déploiement prévu en janvier 2027",
+      "source": "acuite-2027"
+    },
+    {
+      "label": "Portail",
+      "valeur": "pec.carteblanchepartenaires.fr",
+      "source": "cbp-contact"
+    },
+    {
+      "label": "Sur la carte",
+      "valeur": "Le logo Carte Blanche",
+      "source": "cbp-assure"
+    }
+  ],
+  "chiffres": [
+    {
+      "valeur": "60",
+      "label": "complémentaires santé partenaires",
+      "source": "cbp-conventionnement"
+    },
+    {
+      "valeur": "12 M",
+      "label": "bénéficiaires",
+      "source": "cbp-conventionnement"
+    },
+    {
+      "valeur": "7 900",
+      "label": "opticiens partenaires recensés en 2026",
+      "source": "acuite-2027"
+    },
+    {
+      "valeur": "2,3 M",
+      "label": "prises en charge optiques traitées en 2025",
+      "source": "acuite-2027"
+    }
+  ],
+  "faits": [
+    {
+      "fait": "Carte Blanche Partenaires a deux métiers : gérer des réseaux de professionnels de santé pour des complémentaires, et faire office d'opérateur de tiers payant. Le réseau de maîtrise médico-économique concerne les opticiens, chirurgiens-dentistes et audioprothésistes, avec contrôle préalable des prises en charge.",
+      "source": "cbp-complementaire"
+    },
+    {
+      "fait": "Le réseau est dit « ouvert » : un professionnel de santé peut y adhérer à tout moment, en s'engageant à respecter les critères de qualité et tarifaires fixés par la convention. Ce principe général se lit avec la date limite du conventionnement optique 2027.",
+      "source": "cbp-qsn"
+    },
+    {
+      "fait": "Un assuré bénéficie des services Carte Blanche quand le logo Carte Blanche figure sur sa carte de tiers payant.",
+      "source": "cbp-assure"
+    },
+    {
+      "fait": "Pour des renseignements sur les services dont il bénéficie, le bénéficiaire est invité à contacter directement sa complémentaire santé.",
+      "source": "cbp-contact"
+    },
+    {
+      "fait": "Le 1er octobre 2026, Carte Blanche a ouvert le conventionnement de son futur réseau optique, avec un déploiement effectif prévu en janvier 2027. Les opticiens ont jusqu'au 20 décembre 2026 inclus pour adhérer en ligne.",
+      "source": "acuite-2027"
+    },
+    {
+      "fait": "Ce conventionnement s'inscrit dans le « renouvellement global du réseau optique » annoncé par Carte Blanche le 2 février 2026 : ce n'est pas un réseau créé de zéro. Les pages consultées ne disent pas ce que doit faire un opticien déjà partenaire.",
+      "source": "cbp-verriers"
+    },
+    {
+      "fait": "L'adhésion en ligne prend en moyenne 15 minutes. Il faut fournir un extrait Kbis, un RIB et les attestations RPPS ou ADELI des opticiens diplômés du magasin.",
+      "source": "acuite-2027"
+    },
+    {
+      "fait": "Selon un communiqué de Carte Blanche du 9 octobre 2026 relayé par Acuité, les conditions tarifaires optiques 2027 sont consultables dans le parcours de conventionnement avant toute signature, et la convention ne comporte aucune obligation d'achat de montures auprès de Carte Blanche.",
+      "source": "acuite-2027"
+    },
+    {
+      "fait": "Le réseau optique s'appuie sur 13 fabricants de verres partenaires. Les opticiens conventionnés « Vision de l'enfant » et « Basse vision » ont une valorisation spécifique des verres.",
+      "source": "cbp-conventionnement"
+    },
+    {
+      "fait": "Sur sa page Conventionnement 2027, Carte Blanche indique que prise en charge, tiers payant et facturation se font « depuis le logiciel », sans double saisie et en temps réel, avec le montant pris en charge et le reste à charge communiqués tout de suite. La page ne nomme pas ce logiciel.",
+      "source": "cbp-conventionnement"
+    },
+    {
+      "fait": "Selon Acuité, le dispositif maintient la possibilité pour les opticiens d'utiliser leurs fournisseurs habituels ou de proposer des verres sous marque de distributeur (MDD).",
+      "source": "acuite-2027"
+    },
+    {
+      "fait": "Sur le portail, que Carte Blanche appelle CBPEC, on se connecte avec son identifiant ou avec Pro Santé Connect. Un compte existant doit d'abord être rattaché à Pro Santé Connect (« accrochage ») ; ensuite, l'ancien identifiant et son mot de passe sont inactifs.",
+      "source": "cbp-savoir-plus"
+    },
+    {
+      "fait": "Sur le portail audio, l'organisme est choisi en premier dans une liste « Nom AMC », puis le bénéficiaire est recherché avec son numéro de sécurité sociale, sa date de naissance et son rang (« Lancer la recherche »). Ce parcours et les statuts ci-dessous viennent du portail audio : pas encore de relevé côté optique.",
+      "source": "granit-connecteur"
+    }
+  ],
+  "conventionnement": [
+    "Sans compte : en créer un via « Devenir partenaire » sur pec.carteblanchepartenaires.fr. Avec un compte : se connecter, le bouton « Je rejoins le réseau » de la page Conventionnement 2027 mène à la connexion.",
+    "Préparer le Kbis, le RIB et les attestations RPPS ou ADELI des opticiens diplômés, puis remplir l'adhésion en ligne (environ 15 minutes) jusqu'au 20 décembre 2026 inclus.",
+    "S'engager à respecter la charte de qualité Carte Blanche et les bonnes pratiques de la profession.",
+    "Une fois conventionné, gérer ses demandes depuis le même portail."
+  ],
+  "statuts": [
+    {
+      "libelle": "En instance",
+      "sens": "Le dossier est encore étudié",
+      "action": "Attendre, puis relancer au bon moment"
+    },
+    {
+      "libelle": "Validée",
+      "sens": "La complémentaire s'engage sur le montant",
+      "action": "Délivrer l'équipement, puis facturer"
+    },
+    {
+      "libelle": "Refusée",
+      "sens": "Pas de prise en charge en l'état",
+      "action": "Lire le motif, corriger, refaire la demande"
+    },
+    {
+      "libelle": "Annulée",
+      "sens": "Le dossier n'est plus actif",
+      "action": "Refaire une demande si besoin"
+    },
+    {
+      "libelle": "Soldée",
+      "sens": "Le dossier est facturé et soldé",
+      "action": "Contrôler le règlement"
+    }
+  ],
+  "statutsSource": "granit-connecteur",
+  "contacts": [
+    {
+      "label": "Professionnels conventionnés",
+      "valeur": "09 69 39 66 39",
+      "detail": "Numéro affiché sur la page Contact pour les professionnels conventionnés",
+      "source": "cbp-contact"
+    },
+    {
+      "label": "Pas encore conventionné",
+      "valeur": "Espace professionnels de santé",
+      "url": "https://carteblanchepartenaires.fr/sante/espace-professionnels-de-sante",
+      "source": "cbp-contact"
+    },
+    {
+      "label": "Éditeur du site",
+      "valeur": "01 53 24 04 39 · contact@carteblanchepartenaires.fr · Carré Feydeau, 5 rue Feydeau, 75002 Paris",
+      "detail": "Coordonnées données dans les mentions légales",
+      "source": "cbp-mentions"
+    }
+  ],
+  "organismes": {
+    "source": "granit-connecteur",
+    "note": "Liste « Nom AMC » du portail AUDIO de Carte Blanche, relevée par Granit, version du 2026-11-06. Pas de relevé côté optique. Formuler : « ce que propose le sélecteur du portail », jamais « cette mutuelle passe uniquement par Carte Blanche ».",
+    "liste": [
+      "ACORIS mutuelles",
+      "AESIO Centre 1",
+      "AESIO Centre 2",
+      "APICIL GESTION",
+      "APIVIA-MATHPREVARIS",
+      "APS Prévoyance",
+      "Abeille IARD & Santé",
+      "BANQUE POPULAIRE - CAISSE D'EPARGNE",
+      "BCAC",
+      "BENEFIZ",
+      "Baloo",
+      "CCMO MUTUELLE",
+      "CEGEMA",
+      "CGRM-SPVIE",
+      "CNP Assurances",
+      "COGEVIE",
+      "COLLECTEAM",
+      "COLLECTEAM (ALMERYS)",
+      "CPMS",
+      "ENTORIA",
+      "GENERALI GESTION SANTE",
+      "GENERATION",
+      "GROUPE VICTOR HUGO-CIPREV",
+      "HELIUM",
+      "Hemos Santé",
+      "KLESIA Mut'",
+      "Les Ménages Prévoyants",
+      "MACIF",
+      "MHV",
+      "MNFCT",
+      "MNH",
+      "MPPM",
+      "MSG",
+      "MUTUELLE DU MEDECIN - MPS",
+      "Mutuelle PREVIFRANCE",
+      "Mutuelle Saint Aubannaise",
+      "Mutuelle du Ministère de la Justice",
+      "NUOMA MUTUELLE",
+      "PACIFICA",
+      "PLANSANTE - NOVEOCARE",
+      "ROEDERER",
+      "SFP - DIOT BY HELIUM",
+      "SG SANTE",
+      "SOGECAP Santé",
+      "SWISSLIFE",
+      "So'Lyon",
+      "THELEM assurances",
+      "UNC Gestion",
+      "WTW France (ex GRAS SAVOYE)"
+    ]
+  },
+  "sources": {
+    "cbp-pro": {
+      "label": "carteblanchepartenaires.fr · Espace professionnels de santé",
+      "url": "https://carteblanchepartenaires.fr/sante/espace-professionnels-de-sante",
+      "consulte": "2026-11-06"
+    },
+    "cbp-conventionnement": {
+      "label": "carteblanchepartenaires.fr · Conventionnement 2027",
+      "url": "https://carteblanchepartenaires.fr/conventionnement",
+      "consulte": "2026-11-06"
+    },
+    "cbp-complementaire": {
+      "label": "carteblanchepartenaires.fr · Espace complémentaire santé",
+      "url": "https://carteblanchepartenaires.fr/sante/espace-complementaire-sante",
+      "consulte": "2026-11-06"
+    },
+    "cbp-assure": {
+      "label": "carteblanchepartenaires.fr · Espace assuré",
+      "url": "https://carteblanchepartenaires.fr/sante/espace-assure",
+      "consulte": "2026-11-06"
+    },
+    "cbp-contact": {
+      "label": "carteblanchepartenaires.fr · Contact",
+      "url": "https://carteblanchepartenaires.fr/contact",
+      "consulte": "2026-11-06"
+    },
+    "cbp-mentions": {
+      "label": "carteblanchepartenaires.fr · Mentions légales",
+      "url": "https://carteblanchepartenaires.fr/sante/mentions-legales",
+      "consulte": "2026-11-06"
+    },
+    "cbp-verriers": {
+      "label": "carteblanchepartenaires.fr · Communiqué du 2 février 2026 (appel à référencement des verriers)",
+      "url": "https://carteblanchepartenaires.fr/sante-visuelle/actualites/communique-de-presse-carte-blanche-partenaires-lance-un-appel",
+      "consulte": "2026-11-06"
+    },
+    "acuite-2027": {
+      "label": "Acuité · Carte Blanche Partenaires ouvre les demandes de conventionnement opticiens pour son réseau optique 2027 (octobre 2026)",
+      "url": "https://www.acuite.fr/actualites/profession/regime-complementaire/carte-blanche-partenaires-ouvre-les-demandes-de-a336825",
+      "consulte": "2026-11-06"
+    },
+    "granit-connecteur": {
+      "label": "Relevé Granit du portail audio de Carte Blanche (06/11/2026)",
+      "url": "",
+      "consulte": "2026-11-06"
+    },
+    "cbp-qsn": {
+      "label": "carteblanchepartenaires.fr · À propos de Carte Blanche Partenaires",
+      "url": "https://carteblanchepartenaires.fr/sante/qui-sommes-nous",
+      "consulte": "2026-11-06"
+    },
+    "cbp-savoir-plus": {
+      "label": "carteblanchepartenaires.fr · En savoir plus (FAQ Pro Santé Connect et CBPEC)",
+      "url": "https://carteblanchepartenaires.fr/sante/en-savoir-plus",
+      "consulte": "2026-11-06"
+    },
+    "cbp-portail": {
+      "label": "pec.carteblanchepartenaires.fr · Connexion",
+      "url": "https://pec.carteblanchepartenaires.fr/#/login",
+      "consulte": "2026-11-06"
+    }
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "slug": "portail-mutuelle-familiale",
+  "nom": "Mutuelle Familiale",
+  "genre": "mutuelle",
+  "logo": "/logos/annuaire/mutuelle-familiale.svg",
+  "checkedOn": "2026-11-06",
+  "acces": {
+    "verifieLe": "2026-11-06",
+    "liens": [
+      {
+        "label": "Se connecter sur viamedis.net",
+        "url": "https://www.viamedis.net/ViamedisNet/page/accueil/index",
+        "detail": "E-mail, mot de passe, puis code d'une application d'authentification."
+      },
+      {
+        "label": "Se connecter sur tp-isante.fr",
+        "url": "https://www.tp-isante.fr/login",
+        "detail": "Mot de passe puis code reçu par e-mail. Les prises en charge se font ensuite sur IsantePEC."
+      }
+    ],
+    "note": "La Mutuelle Familiale indique que Viamedis traite l'optique et l'audioprothèse depuis le 1er janvier 2019, et iSanté ses autres prestations. Le sélecteur optique de tp-isante.fr propose aussi un libellé à son nom (relevé du 06/11/2026) : la carte de tiers payant du client tranche."
+  },
+  "identite": [
+    {
+      "label": "Opérateurs annoncés",
+      "valeur": "Viamedis (optique, audio), iSanté (autres prestations)",
+      "source": "lmf-faq"
+    },
+    {
+      "label": "Portails relevés",
+      "valeur": "viamedis.net (optique, audio) et tp-isante.fr (optique)",
+      "source": "granit-releve"
+    },
+    {
+      "label": "Réseau",
+      "valeur": "Kalixia (optique, audio)",
+      "source": "lmf-kalixia"
+    },
+    {
+      "label": "Espace pro",
+      "valeur": "Le site affiche un espace personnel et un espace entreprise",
+      "source": "lmf-contact"
+    }
+  ],
+  "aiguillage": [
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "optique",
+      "libelle": "LA MUTUELLE FAMILIALE"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "audio",
+      "libelle": "LA MUTUELLE FAMILIALE"
+    },
+    {
+      "portail": "iSanté",
+      "slugFiche": "portail-isante",
+      "metier": "optique",
+      "libelle": "LA MUTUELLE FAMILIALE"
+    }
+  ],
+  "chiffres": [],
+  "faits": [
+    {
+      "fait": "Dans sa FAQ, La Mutuelle Familiale indique que, depuis le 1er janvier 2019, Viamedis est son prestataire de tiers payant pour l'optique et l'audioprothèse, et qu'iSanté reste son partenaire sur les autres prestations (hospitalisation, pharmacie, consultations, dentaire…).",
+      "source": "lmf-faq"
+    },
+    {
+      "fait": "La même FAQ précise que ces informations figurent sur la carte de tiers payant à présenter aux professionnels de santé, avec les coordonnées de Viamedis.",
+      "source": "lmf-faq"
+    },
+    {
+      "fait": "La Mutuelle Familiale précise que pour l'optique, comme pour l'hospitalisation, le professionnel de santé doit faire une demande de prise en charge préalable pour que le tiers payant s'applique.",
+      "source": "lmf-tp"
+    },
+    {
+      "fait": "Le sélecteur de viamedis.net propose le libellé « LA MUTUELLE FAMILIALE » en optique comme en audio (relevé du 06/11/2026).",
+      "source": "granit-releve"
+    },
+    {
+      "fait": "Le même sélecteur affiche aussi « KLESIA LA MUTUELLE FAMILIALE », un libellé distinct en optique et en audio (relevé du 06/11/2026). Les pages consultées ne disent pas à quels contrats il correspond : il reste hors du tableau.",
+      "source": "granit-releve"
+    },
+    {
+      "fait": "Le sélecteur optique de tp-isante.fr propose aussi le libellé « LA MUTUELLE FAMILIALE » (relevé du 06/11/2026), alors que la FAQ de la mutuelle place l'optique chez Viamedis. Un libellé ne dit pas quel portail traite un contrat donné : la carte de tiers payant du client tranche.",
+      "source": "granit-releve"
+    },
+    {
+      "fait": "La carte de tiers payant La Mutuelle Familiale liste les actes ouvrant droit au tiers payant pour l'assuré et ses bénéficiaires inscrits, l'adresse d'envoi des factures et le numéro de téléphone de l'agence.",
+      "source": "lmf-tp"
+    },
+    {
+      "fait": "Une nouvelle carte est envoyée chaque année, et aussi en cas de changement de garantie ou de composition familiale. Elle existe en version dématérialisée dans l'espace adhérent et l'application mobile.",
+      "source": "lmf-pme"
+    },
+    {
+      "fait": "Les droits au tiers payant ne sont ouverts que si l'assuré est à jour de ses cotisations à la date des soins.",
+      "source": "lmf-tp"
+    },
+    {
+      "fait": "La Mutuelle Familiale présente Kalixia comme son réseau de soins partenaire, notamment pour l'optique et l'audition. Dans un article de décembre 2025, elle demande à l'adhérent de présenter sa carte Vitale et sa carte de tiers payant lors du rendez-vous.",
+      "source": "lmf-kalixia"
+    },
+    {
+      "fait": "Les pages consultées ne donnent pas d'espace ni de page réservés aux professionnels de santé, ni de procédure propre à La Mutuelle Familiale pour la demande de prise en charge.",
+      "source": "lmf-contact"
+    }
+  ],
+  "conventionnement": [],
+  "statuts": [],
+  "statutsSource": "",
+  "contacts": [
+    {
+      "label": "La Mutuelle Familiale, centre de contact",
+      "valeur": "09 71 10 15 15",
+      "detail": "Lundi au vendredi, 8 h 30–18 h · numéro non surtaxé",
+      "source": "lmf-contact"
+    },
+    {
+      "label": "La Mutuelle Familiale, page contact",
+      "valeur": "Page contact officielle",
+      "url": "https://www.mutuelle-familiale.fr/contact",
+      "source": "lmf-contact"
+    },
+    {
+      "label": "Viamedis, téléphone",
+      "valeur": "0 825 076 076",
+      "detail": "Du lundi au vendredi, 9 h–18 h · numéro surtaxé",
+      "source": "viamedis-ps"
+    }
+  ],
+  "organismes": {
+    "liste": [],
+    "source": ""
+  },
+  "sources": {
+    "lmf-pme": {
+      "label": "mutuelle-familiale.fr · Mutuelle santé PME, FAQ « Comment bénéficier du tiers payant avec ma carte ? »",
+      "url": "https://www.mutuelle-familiale.fr/sante/complementaire-sante-pme",
+      "consulte": "2026-11-06"
+    },
+    "lmf-tp": {
+      "label": "mutuelle-familiale.fr · Carte de tiers payant, de quoi parle-t-on ?",
+      "url": "https://www.mutuelle-familiale.fr/beneficier-du-tiers-payant",
+      "consulte": "2026-11-06"
+    },
+    "lmf-faq": {
+      "label": "mutuelle-familiale.fr · Foire aux questions, « Quels sont les partenaires de tiers payant de la Mutuelle Familiale ? »",
+      "url": "https://www.mutuelle-familiale.fr/faq",
+      "consulte": "2026-11-06"
+    },
+    "lmf-kalixia": {
+      "label": "mutuelle-familiale.fr · « Réseau de santé partenaire » (16/12/2025)",
+      "url": "https://www.mutuelle-familiale.fr/actualites/reseau-de-sante-partenaire-profitez-de-soins-de-haute-qualite-au-meilleur-prix-0",
+      "consulte": "2026-11-06"
+    },
+    "lmf-contact": {
+      "label": "mutuelle-familiale.fr · Nous contacter",
+      "url": "https://www.mutuelle-familiale.fr/contact",
+      "consulte": "2026-11-06"
+    },
+    "viamedis-ps": {
+      "label": "viamedis.fr · Professionnels de santé",
+      "url": "https://www.viamedis.fr/professionnels-de-sante/",
+      "consulte": "2026-11-06"
+    },
+    "granit-releve": {
+      "label": "Relevé Granit des sélecteurs de portails (06/11/2026)",
+      "url": "",
+      "consulte": "2026-11-06"
+    }
+  }
+}

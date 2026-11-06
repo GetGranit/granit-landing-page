@@ -1,0 +1,445 @@
+{
+  "slug": "portail-kalixia",
+  "nom": "Kalixia",
+  "logo": "/logos/annuaire/kalixia.png",
+  "genre": "mutuelle",
+  "checkedOn": "2026-11-06",
+  "acces": {
+    "verifieLe": "2026-11-06",
+    "liens": [
+      {
+        "label": "Se connecter sur viamedis.net",
+        "url": "https://www.viamedis.net/ViamedisNet/page/accueil/index",
+        "detail": "Prise en charge et facture. E-mail, mot de passe, puis code d'une application d'authentification."
+      },
+      {
+        "label": "Portail partenaires Kalixia",
+        "url": "https://partenaires.kalixia.fr/portail/s/",
+        "detail": "Conventionnement au réseau. Les pages consultées n'y décrivent pas de demande de prise en charge."
+      }
+    ],
+    "note": "Kalixia est un réseau de soins : aucune page consultée ne présente un portail de prise en charge Kalixia. Le lien viamedis.net vaut quand la carte de tiers payant du client renvoie vers Viamedis. Oxantis a fermé le 26 octobre 2026."
+  },
+  "identite": [
+    {
+      "label": "Type",
+      "valeur": "Réseau de soins",
+      "source": "kalixia-cp-2023"
+    },
+    {
+      "label": "Réseaux",
+      "valeur": "Optique, audio, dentaire, ostéo",
+      "source": "kalixia-optique"
+    },
+    {
+      "label": "Prise en charge",
+      "valeur": "viamedis.net, selon la carte du client",
+      "source": "viamedis-reseaux"
+    },
+    {
+      "label": "Espace réseau",
+      "valeur": "partenaires.kalixia.fr (conventionnement)",
+      "source": "kalixia-mentions"
+    }
+  ],
+  "aiguillage": [
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "optique",
+      "libelle": "AMELLIS"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "optique",
+      "libelle": "APRIL SANTE PREVOYANCE"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "optique",
+      "libelle": "Avenir Mutuelle"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "optique",
+      "libelle": "Avenir Santé Mutuelle"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "optique",
+      "libelle": "Groupe Mutualiste RATP"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "optique",
+      "libelle": "Groupe Pasteur Mutualité - A.G.M.F"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "optique",
+      "libelle": "HARMONIE MUTUELLE"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "optique",
+      "libelle": "IPECA"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "optique",
+      "libelle": "LA MUTUELLE FAMILIALE"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "optique",
+      "libelle": "Ma Mutuelle MGEN"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "optique",
+      "libelle": "Malakoff Humanis Prévoyance"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "optique",
+      "libelle": "MGEN"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "optique",
+      "libelle": "MGEN SOLUTION"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "optique",
+      "libelle": "MIE"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "optique",
+      "libelle": "Mutuelle Malakoff Humanis"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "optique",
+      "libelle": "Mutuelle Nationale Territoriale"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "audio",
+      "libelle": "AMELLIS"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "audio",
+      "libelle": "APRIL SANTE PREVOYANCE"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "audio",
+      "libelle": "AVENIR MUTUELLE"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "audio",
+      "libelle": "AVENIR SANTÉ MUTUELLE"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "audio",
+      "libelle": "Groupe Mutualiste RATP"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "audio",
+      "libelle": "GROUPE PASTEUR MUTUALITÉ -  A.G.M.F"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "audio",
+      "libelle": "IPECA"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "audio",
+      "libelle": "LA MUTUELLE FAMILIALE"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "audio",
+      "libelle": "MALAKOFF HUMANIS PREVOYANCE"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "audio",
+      "libelle": "MGEN"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "audio",
+      "libelle": "MGEN SOLUTION"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "audio",
+      "libelle": "MIE"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "audio",
+      "libelle": "MUTUELLE MALAKOFF HUMANIS"
+    }
+  ],
+  "chiffres": [],
+  "faits": [
+    {
+      "fait": "Kalixia est issu du rapprochement des réseaux de soins de Malakoff Humanis et du Groupe VYV (communiqué de 2023).",
+      "source": "kalixia-cp-2023"
+    },
+    {
+      "fait": "Kalixia annonce 15 millions d'adhérents, plus de 6 500 opticiens partenaires, 4 300 centres d'audioprothèse, plus de 7 500 chirurgiens-dentistes et 500 ostéopathes.",
+      "source": "kalixia-optique"
+    },
+    {
+      "fait": "Le professionnel partenaire s'engage sur une charte qualité, des tarifs maîtrisés et la pratique systématique du tiers payant selon une procédure dématérialisée, sauf pour l'ostéopathie.",
+      "source": "kalixia-ps"
+    },
+    {
+      "fait": "La page pros de kalixia.fr affiche 16 complémentaires utilisatrices principales, renvoyant vers Aésio, Amellis, April, Avenir Mutuelle, Avenir Santé Mutuelle, Groupe Pasteur Mutualité, Harmonie Mutuelle, Klesia, Ipeca, La Mutuelle Familiale, MGEN, Malakoff Humanis, Mutuelle MIE, Mutuelle Mieux-Être, MNT et VYV Partenariat.",
+      "source": "kalixia-ps"
+    },
+    {
+      "fait": "Le portail partenaires de Kalixia sert au conventionnement : il donne accès aux documents contractuels et aux informations du partenariat, et permet de candidater aux appels. Ses mentions légales ne citent pas la saisie d'une prise en charge.",
+      "source": "kalixia-mentions"
+    },
+    {
+      "fait": "Aller sur kalixia.fr/optique ou kalixia.fr/audio, puis cliquer sur « Devenir partenaire » pour demander la création d'un compte sur le portail partenaires.",
+      "source": "kalixia-optique"
+    },
+    {
+      "fait": "Un partenaire de Kalixia Optique 2020-2023 a reçu par e-mail ses informations de connexion au nouveau portail. En cas de perte, vérifier les courriers indésirables, puis passer par le contact.",
+      "source": "kalixia-optique"
+    },
+    {
+      "fait": "Le partenariat audio en cours s'intitule Kalixia Audio 2024-2028.",
+      "source": "kalixia-audio"
+    },
+    {
+      "fait": "Un particulier qui cherche un professionnel partenaire est invité à se rapprocher de sa complémentaire santé.",
+      "source": "kalixia-contact"
+    },
+    {
+      "fait": "Viamedis indique travailler avec les principaux réseaux de soins, dont Kalixia, pour assurer la gestion du tiers payant.",
+      "source": "viamedis-reseaux"
+    },
+    {
+      "fait": "Dans ce cadre, le professionnel conventionné du réseau saisit la demande sur le portail de sa structure ou via son logiciel professionnel. Viamedis contrôle en temps réel les droits du bénéficiaire et l'appartenance au réseau, interroge la complémentaire, puis règle le professionnel dans la limite du montant accordé.",
+      "source": "viamedis-reseaux"
+    },
+    {
+      "fait": "Une fois la demande approuvée, le professionnel la facture via son outil habituel. Viamedis présente un canal de facturation unique, pour les prestations encadrées ou non par un réseau.",
+      "source": "viamedis-reseaux"
+    },
+    {
+      "fait": "Viamedis garantit le paiement pour une carte de tiers payant en cours de validité portant le nom de la complémentaire, la garantie et le logo Viamedis.",
+      "source": "viamedis-ps"
+    },
+    {
+      "fait": "Le portail oxantis.net a fermé le 26 octobre 2026. Viamedis reprend l'ensemble des activités d'optique et d'audioprothèse, selon les modalités et conventions propres à cet opérateur.",
+      "source": "acuite-oxantis"
+    },
+    {
+      "fait": "Pour les actes réalisés avant la fin de la convention, les prises en charge en cours et l'historique de facturation sont transférés automatiquement vers viamedis.net.",
+      "source": "oxantis-fiche"
+    },
+    {
+      "fait": "Pour les opticiens, audioprothésistes et dentistes, la page pro d'Harmonie Mutuelle renvoie la facture et la prise en charge vers viamedis.net, et le conventionnement vers viamedispro.com.",
+      "source": "harmonie-contacts"
+    },
+    {
+      "fait": "Depuis le 1er janvier 2026, le groupe mutualiste RATP a rejoint Kalixia en optique et en audioprothèse. Les demandes de prise en charge passent par Viamedis, que l'opticien soit partenaire Kalixia ou non. Chez un partenaire, l'adhérent a en plus les remises du réseau.",
+      "source": "acuite-ratp"
+    },
+    {
+      "fait": "La page pro de la MESE, consultée le 6 novembre 2026, nomme encore le site Oxantis pour les devis et les prises en charge, et indique qu'un non-partenaire Kalixia fait sa demande directement auprès de la MESE.",
+      "source": "mese-pro"
+    },
+    {
+      "fait": "Au relevé du 6 novembre 2026, le sélecteur optique de viamedis.net propose notamment : AMELLIS, APRIL SANTE PREVOYANCE, Avenir Mutuelle, Avenir Santé Mutuelle, Groupe Mutualiste RATP, Groupe Pasteur Mutualité - A.G.M.F, HARMONIE MUTUELLE, IPECA, LA MUTUELLE FAMILIALE, Ma Mutuelle MGEN, Malakoff Humanis Prévoyance, MGEN, MGEN SOLUTION, MIE, Mutuelle Malakoff Humanis, Mutuelle Nationale Territoriale.",
+      "source": "granit-releve"
+    },
+    {
+      "fait": "Au même relevé, le sélecteur audio de viamedis.net ne propose ni HARMONIE MUTUELLE ni Mutuelle Nationale Territoriale. Cette liste peut ne pas avoir intégré les organismes repris d'Oxantis : une absence n'y prouve rien.",
+      "source": "granit-releve"
+    },
+    {
+      "fait": "L'ancien sélecteur oxantis.net proposait HARMONIE MUTUELLE, MNT, MESE, MGEN, MGEN ACCOLADE, MGEN SOLUTIONS et Ma mutuelle MGEN. Sur le sélecteur optique de viamedis.net, ni MESE ni MGEN ACCOLADE n'apparaissent sous ce nom au relevé du 6 novembre 2026.",
+      "source": "granit-releve"
+    },
+    {
+      "fait": "MNT est le sigle de Mutuelle Nationale Territoriale.",
+      "source": "mnt-accueil"
+    },
+    {
+      "fait": "Un même nom de complémentaire peut changer de portail selon le contrat : c'est la carte de tiers payant du client qui décide, pas le logo du réseau seul.",
+      "source": "granit-releve"
+    },
+    {
+      "fait": "En dentaire, Kalixia annonce un montant garanti de prise en charge pendant 6 mois et un règlement sous 4 jours après facturation.",
+      "source": "kalixia-dentaire"
+    },
+    {
+      "fait": "Kalixia oriente les bénéficiaires vers ses partenaires avec des outils de géolocalisation.",
+      "source": "kalixia-ps"
+    }
+  ],
+  "conventionnement": [],
+  "statuts": [],
+  "statutsSource": "",
+  "contacts": [
+    {
+      "label": "Réseau : optique, audio, ostéo",
+      "valeur": "0 820 895 895",
+      "detail": "Questions de partenariat · numéro surtaxé",
+      "source": "kalixia-contact"
+    },
+    {
+      "label": "Réseau : dentaire",
+      "valeur": "01 84 95 15 70",
+      "detail": "Appel non surtaxé",
+      "source": "kalixia-contact"
+    },
+    {
+      "label": "Formulaire pro",
+      "valeur": "Aide & contact de kalixia.fr",
+      "url": "https://www.kalixia.fr/aide-contact/",
+      "detail": "Demande la discipline et le n° FINESS ou ADELI",
+      "source": "kalixia-contact"
+    },
+    {
+      "label": "Prise en charge : Viamedis",
+      "valeur": "0 825 076 076",
+      "detail": "Du lundi au vendredi, 9 h–18 h · numéro surtaxé",
+      "source": "viamedis-ps"
+    },
+    {
+      "label": "Adresse",
+      "valeur": "143 rue Blomet, 75015 Paris",
+      "source": "kalixia-mentions"
+    }
+  ],
+  "organismes": {
+    "liste": [],
+    "source": ""
+  },
+  "sources": {
+    "kalixia-optique": {
+      "label": "kalixia.fr · Kalixia Optique 2023-2026",
+      "url": "https://www.kalixia.fr/optique/",
+      "consulte": "2026-11-06"
+    },
+    "kalixia-audio": {
+      "label": "kalixia.fr · Kalixia Audio 2024-2028",
+      "url": "https://www.kalixia.fr/audio/",
+      "consulte": "2026-11-06"
+    },
+    "kalixia-dentaire": {
+      "label": "kalixia.fr · Kalixia Dentaire",
+      "url": "https://www.kalixia.fr/dentaire/",
+      "consulte": "2026-11-06"
+    },
+    "kalixia-ps": {
+      "label": "kalixia.fr · Professionnels de santé",
+      "url": "https://www.kalixia.fr/professionnels-de-sante/",
+      "consulte": "2026-11-06"
+    },
+    "kalixia-contact": {
+      "label": "kalixia.fr · Aide & contact",
+      "url": "https://www.kalixia.fr/aide-contact/",
+      "consulte": "2026-11-06"
+    },
+    "kalixia-mentions": {
+      "label": "kalixia.fr · Mentions légales",
+      "url": "https://www.kalixia.fr/mentions-legales/",
+      "consulte": "2026-11-06"
+    },
+    "kalixia-cp-2023": {
+      "label": "kalixia.fr · Communiqué « Ouverture du nouveau partenariat Optique 2023-2026 » (31/10/2023)",
+      "url": "https://www.kalixia.fr/wp-content/uploads/2023/10/CP-Nouveau-partenariat-Kalixia-Optique-2023-2026.pdf",
+      "consulte": "2026-11-06"
+    },
+    "viamedis-reseaux": {
+      "label": "viamedis.fr · Réseaux de soins",
+      "url": "https://www.viamedis.fr/solutions/reseaux-de-soins/",
+      "consulte": "2026-11-06"
+    },
+    "viamedis-ps": {
+      "label": "viamedis.fr · Professionnels de santé",
+      "url": "https://www.viamedis.fr/professionnels-de-sante/",
+      "consulte": "2026-11-06"
+    },
+    "acuite-oxantis": {
+      "label": "Acuité · « Fermeture de la plateforme de tiers payant Oxantis le 26 octobre 2026 » (16/09/2026)",
+      "url": "https://www.acuite.fr/actualites/profession/fermeture-de-la-plateforme-de-tiers-payant-oxantis-a335575",
+      "consulte": "2026-11-06"
+    },
+    "acuite-ratp": {
+      "label": "Acuité · « Mutuelle RATP : le groupe rejoint Kalixia et bascule le tiers payant sur Viamedis »",
+      "url": "https://www.acuite.fr/actualites/profession/regime-obligatoire/mutuelle-ratp-le-groupe-rejoint-kalixia-et-327020",
+      "consulte": "2026-11-06"
+    },
+    "harmonie-contacts": {
+      "label": "harmonie-mutuelle.fr · Professionnels de santé, contacts utiles",
+      "url": "https://www.harmonie-mutuelle.fr/professionnels-de-sante/professionnels-sante-contacts-utiles",
+      "consulte": "2026-11-06"
+    },
+    "mese-pro": {
+      "label": "mese.fr · Vous êtes opticien, audioprothésiste ou dentiste",
+      "url": "https://www.mese.fr/vous-etes-opticien",
+      "consulte": "2026-11-06"
+    },
+    "granit-releve": {
+      "label": "Relevés Granit des sélecteurs viamedis.net (optique, audio) et de l'ancien sélecteur oxantis.net (relevé du 06/11/2026)",
+      "url": "",
+      "consulte": "2026-11-06"
+    },
+    "oxantis-fiche": {
+      "label": "Fiche Oxantis de l'annuaire Granit (vérifiée le 05/11/2026)",
+      "url": "",
+      "consulte": "2026-11-06"
+    },
+    "mnt-accueil": {
+      "label": "mnt.fr · Accueil",
+      "url": "https://www.mnt.fr/",
+      "consulte": "2026-11-06"
+    }
+  }
+}

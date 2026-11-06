@@ -239,6 +239,41 @@
       "slug": "mutuelle-quel-portail",
       "anchor": "savoir par quel portail passe une mutuelle",
       "type": "soeur"
+    },
+    {
+      "slug": "portail-allianz",
+      "anchor": "Allianz",
+      "type": "soeur"
+    },
+    {
+      "slug": "portail-interiale",
+      "anchor": "Intériale",
+      "type": "soeur"
+    },
+    {
+      "slug": "portail-klesia",
+      "anchor": "Klesia",
+      "type": "soeur"
+    },
+    {
+      "slug": "portail-maaf",
+      "anchor": "MAAF",
+      "type": "soeur"
+    },
+    {
+      "slug": "portail-malakoff-humanis",
+      "anchor": "Malakoff Humanis",
+      "type": "soeur"
+    },
+    {
+      "slug": "portail-mma",
+      "anchor": "MMA",
+      "type": "soeur"
+    },
+    {
+      "slug": "portail-mnt",
+      "anchor": "MNT",
+      "type": "soeur"
     }
   ],
   "remplace": [],

@@ -1,0 +1,212 @@
+{
+  "slug": "portail-groupama",
+  "nom": "Groupama",
+  "genre": "mutuelle",
+  "logo": "/logos/annuaire/groupama.svg",
+  "checkedOn": "2026-11-06",
+  "acces": {
+    "verifieLe": "2026-11-06",
+    "liens": [
+      {
+        "label": "Espace privé opticien du GIE Groupama TPG",
+        "url": "https://www.tpg.groupama.com/tpg/public/login/opticien",
+        "detail": "Identifiant et mot de passe."
+      },
+      {
+        "label": "Espace opticien Sévéane",
+        "url": "https://www.seveane.com/seveaneExt/angular-app/index.jsp#!/login/opticien",
+        "detail": "Pour les opticiens partenaires du réseau Sévéane."
+      }
+    ],
+    "note": "Le sélecteur du portail Groupama et celui du portail Sévéane proposent le libellé Groupama en optique (relevé du 06/11/2026). La carte de tiers payant du client indique l'organisme à choisir."
+  },
+  "identite": [
+    {
+      "label": "Type",
+      "valeur": "Groupe d'assurance mutualiste",
+      "source": "seveane-presentation"
+    },
+    {
+      "label": "Portails relevés",
+      "valeur": "Portail Groupama (optique) et portail Sévéane (optique et audio)",
+      "source": "granit-releve"
+    },
+    {
+      "label": "Réseau",
+      "valeur": "Sévéane, né d'un accord entre Groupama et PRO BTP",
+      "source": "probtp-partenaires"
+    },
+    {
+      "label": "Espace pro",
+      "valeur": "Espace privé opticien sur tpg.groupama.com",
+      "source": "groupama-tpg"
+    }
+  ],
+  "aiguillage": [
+    {
+      "portail": "Groupama",
+      "slugFiche": "",
+      "metier": "optique",
+      "libelle": "Groupama"
+    },
+    {
+      "portail": "Sévéane",
+      "slugFiche": "portail-seveane",
+      "metier": "optique",
+      "libelle": "Groupama"
+    },
+    {
+      "portail": "Sévéane",
+      "slugFiche": "portail-seveane",
+      "metier": "audio",
+      "libelle": "GROUPAMA"
+    }
+  ],
+  "chiffres": [],
+  "faits": [
+    {
+      "fait": "Groupama présente Sévéane comme le réseau de professionnels de santé ouvert à ses assurés, avec plus de 5 000 opticiens (chiffre 2024 de Groupama).",
+      "source": "groupama-seveane"
+    },
+    {
+      "fait": "Sévéane est né d'un accord de partenariat entre Groupama et PRO BTP.",
+      "source": "probtp-partenaires"
+    },
+    {
+      "fait": "Le site tpg.groupama.com, du GIE Groupama Tiers Payant Généralisé, s'adresse notamment aux opticiens et audioprothésistes qui souhaitent pratiquer le tiers payant avec ce GIE. Il propose un espace privé opticien, avec identifiant et mot de passe.",
+      "source": "groupama-tpg"
+    },
+    {
+      "fait": "Chez l'opticien Sévéane, Groupama annonce un tiers payant « systématique » : l'assuré n'avance pas la part prise en charge par la complémentaire et le professionnel est réglé directement par Groupama.",
+      "source": "groupama-seveane"
+    },
+    {
+      "fait": "L'assuré doit présenter sa carte Vitale et son attestation de tiers payant Groupama. Groupama invite aussi à vérifier que le professionnel fait toujours partie du réseau.",
+      "source": "groupama-seveane"
+    },
+    {
+      "fait": "Le client peut lui-même localiser les opticiens Sévéane depuis son espace client Groupama (menu « Santé & Prévoyance », puis « Mes services en ligne ») ou l'application « Groupama et moi ». Ces informations sont réservées aux titulaires d'un contrat santé Groupama.",
+      "source": "groupama-seveane"
+    },
+    {
+      "fait": "Groupama explique que, sur une carte de mutuelle, les catégories de dépenses sont codifiées, avec OPTI pour l'opticien. Si « PEC » est mentionné, le professionnel doit faire une demande de prise en charge.",
+      "source": "groupama-attestation"
+    },
+    {
+      "fait": "Selon la même page, un code précise le mode de gestion : « SE » pour une prise en charge par le réseau Sévéane, ou un autre code pour un système de tiers payant comme SP Santé ou une gestion par l'organisme complémentaire (OC).",
+      "source": "groupama-attestation"
+    },
+    {
+      "fait": "La carte de mutuelle porte les identifiants de l'assureur, dont son code AMC.",
+      "source": "groupama-attestation"
+    },
+    {
+      "fait": "Selon la page mise à jour le 24/03/2026, chaque assuré majeur possède sa propre attestation, où il figure avec ses enfants mineurs rattachés, et ne peut plus consulter celle des autres majeurs du foyer. Celle du souscripteur porte les membres du foyer rattachés au contrat.",
+      "source": "groupama-attestation"
+    },
+    {
+      "fait": "Les opticiens Sévéane ont signé un contrat de partenariat pour la période 2024 à 2027. L'assuré garde la liberté de consulter un opticien non partenaire.",
+      "source": "seveane-optique"
+    },
+    {
+      "fait": "Sévéane agit pour ses membres, notamment les groupes Groupama et PRO BTP. Sa politique de données, actualisée en mai 2018 selon la page, cite le « GIE Groupama TPG (ou Korélio) » comme en charge de la gestion du tiers payant.",
+      "source": "seveane-donnees"
+    },
+    {
+      "fait": "Le site seveane.com réserve aux partenaires un espace restreint (identifiant personnel et mot de passe) : contrat de partenariat, grilles tarifaires, documentation et contractualisation en ligne.",
+      "source": "seveane-mentions"
+    },
+    {
+      "fait": "Gan Assurances indique que ses audioprothésistes et opticiens partenaires du réseau Sévéane pratiquent le tiers payant.",
+      "source": "gan-tiers-payant"
+    },
+    {
+      "fait": "Les sélecteurs des portails Groupama et Sévéane proposent aussi le libellé « Gan Anips Agrica » en optique, et celui de Sévéane le libellé « GAN » en audio (relevé du 06/11/2026). Ces libellés ne sont pas « Groupama » : c'est la carte de tiers payant du client qui décide.",
+      "source": "granit-releve"
+    },
+    {
+      "fait": "La page de contact de groupama.fr s'adresse aux assurés. Les pages consultées ne donnent pas de numéro réservé aux opticiens.",
+      "source": "groupama-contact"
+    }
+  ],
+  "conventionnement": [],
+  "statuts": [],
+  "statutsSource": "",
+  "contacts": [
+    {
+      "label": "Sévéane, siège et contact",
+      "valeur": "8/10 rue d'Astorg, 75008 Paris",
+      "detail": "Adresse de siège et de contact selon les mentions légales. Le site seveane.com gère les demandes de renseignements et de partenariat des professionnels de santé.",
+      "url": "https://www.seveane.com/home/mentions-legales.html",
+      "source": "seveane-mentions"
+    },
+    {
+      "label": "Groupama, page contact officielle",
+      "valeur": "Formulaire, rappel ou téléphone via groupama.fr",
+      "detail": "Page destinée aux assurés.",
+      "url": "https://www.groupama.fr/contact/",
+      "source": "groupama-contact"
+    }
+  ],
+  "organismes": {
+    "liste": [],
+    "source": ""
+  },
+  "sources": {
+    "groupama-seveane": {
+      "label": "groupama.fr · Trouver un professionnel de santé Sévéane (mis à jour le 10/09/2025)",
+      "url": "https://www.groupama.fr/mutuelle-sante/conseils/les-avantages-du-reseau-de-sante-seveane/",
+      "consulte": "2026-11-06"
+    },
+    "groupama-attestation": {
+      "label": "groupama.fr · Carte de mutuelle ou attestation de tiers payant (mis à jour le 24/03/2026)",
+      "url": "https://www.groupama.fr/mutuelle-sante/conseils/attestation-tiers-payant/",
+      "consulte": "2026-11-06"
+    },
+    "groupama-contact": {
+      "label": "groupama.fr · Échanger avec un conseiller Groupama",
+      "url": "https://www.groupama.fr/contact/",
+      "consulte": "2026-11-06"
+    },
+    "seveane-optique": {
+      "label": "seveane.com · Le partenariat avec les opticiens Sévéane",
+      "url": "https://www.seveane.com/home/optique.html",
+      "consulte": "2026-11-06"
+    },
+    "seveane-mentions": {
+      "label": "seveane.com · Mentions légales",
+      "url": "https://www.seveane.com/home/mentions-legales.html",
+      "consulte": "2026-11-06"
+    },
+    "seveane-donnees": {
+      "label": "seveane.com · Politique de protection des données (actualisée en mai 2018 selon la page)",
+      "url": "https://www.seveane.com/home/accessibilite.html",
+      "consulte": "2026-11-06"
+    },
+    "gan-tiers-payant": {
+      "label": "gan.fr · Pratiquez-vous le tiers payant ?",
+      "url": "https://www.gan.fr/faq/pratiquez-vous-le-tiers-payant/",
+      "consulte": "2026-11-06"
+    },
+    "granit-releve": {
+      "label": "Relevé Granit des sélecteurs des portails Groupama et Sévéane (06/11/2026)",
+      "url": "",
+      "consulte": "2026-11-06"
+    },
+    "groupama-tpg": {
+      "label": "tpg.groupama.com · Accès à mon espace privé Opticien (GIE Groupama Tiers Payant Généralisé)",
+      "url": "https://www.tpg.groupama.com/tpg/public/login/opticien",
+      "consulte": "2026-11-06"
+    },
+    "probtp-partenaires": {
+      "label": "groupe.probtp.com · Nos partenaires",
+      "url": "https://groupe.probtp.com/accueil/notre-ecosysteme/nos-partenaires.html",
+      "consulte": "2026-11-06"
+    },
+    "seveane-presentation": {
+      "label": "seveane.com · Présentation de Groupama et PRO BTP",
+      "url": "https://www.seveane.com/home/seveane.html",
+      "consulte": "2026-11-06"
+    }
+  }
+}

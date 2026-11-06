@@ -1,0 +1,234 @@
+{
+  "slug": "portail-klesia",
+  "nom": "Klesia",
+  "genre": "mutuelle",
+  "logo": "/logos/annuaire/klesia.svg",
+  "checkedOn": "2026-11-06",
+  "acces": {
+    "verifieLe": "2026-11-06",
+    "liens": [
+      {
+        "label": "Se connecter sur services.santeclair.fr",
+        "url": "https://services.santeclair.fr/professionnel-sante/connexion",
+        "detail": "Identifiant, mot de passe et code reçu par e-mail."
+      },
+      {
+        "label": "Se connecter sur tp-isante.fr",
+        "url": "https://www.tp-isante.fr/login",
+        "detail": "Mot de passe puis code reçu par e-mail. Les prises en charge se font ensuite sur IsantePEC."
+      },
+      {
+        "label": "Se connecter à pec.carteblanchepartenaires.fr",
+        "url": "https://pec.carteblanchepartenaires.fr/#/login",
+        "detail": "Identifiant et mot de passe, ou Pro Santé Connect. Sur le portail audio, un code de sécurité à 6 chiffres peut être demandé par e-mail à la connexion."
+      }
+    ],
+    "note": "klesia.fr renvoie aux points de contact imprimés au dos de la carte de tiers payant de l'assuré. Les sélecteurs de Santéclair, d'iSanté et de Carte Blanche proposent un libellé Klesia (relevé du 06/11/2026) : l'assistante choisit le portail d'après la carte."
+  },
+  "identite": [
+    {
+      "label": "Type",
+      "valeur": "Groupe KLESIA : KLESIA Mut' (mutuelle) et KLESIA Prévoyance (institution de prévoyance)",
+      "source": "klesia-institutions"
+    },
+    {
+      "label": "Portails relevés",
+      "valeur": "Santéclair et iSanté (optique), Carte Blanche (audio)",
+      "source": "granit-releve"
+    },
+    {
+      "label": "Réseau",
+      "valeur": "Selon le contrat ; Santéclair dans le guide salarié restauration rapide",
+      "source": "klesia-restauration"
+    },
+    {
+      "label": "Espace pro",
+      "valeur": "Page « Opticien(ne) » de klesia.fr : points de contact au dos de la carte",
+      "source": "klesia-opticien"
+    }
+  ],
+  "aiguillage": [
+    {
+      "portail": "Santéclair",
+      "slugFiche": "portail-santeclair",
+      "metier": "optique",
+      "libelle": "KLESIA MUT"
+    },
+    {
+      "portail": "Santéclair",
+      "slugFiche": "portail-santeclair",
+      "metier": "optique",
+      "libelle": "KLESIA PREVOYANCE"
+    },
+    {
+      "portail": "iSanté",
+      "slugFiche": "portail-isante",
+      "metier": "optique",
+      "libelle": "KLESIA"
+    },
+    {
+      "portail": "iSanté",
+      "slugFiche": "portail-isante",
+      "metier": "optique",
+      "libelle": "KLESIA Mut' (CSR: 003)"
+    },
+    {
+      "portail": "iSanté",
+      "slugFiche": "portail-isante",
+      "metier": "optique",
+      "libelle": "CARCEPT Prev - KLESIA MUT"
+    },
+    {
+      "portail": "Carte Blanche",
+      "slugFiche": "portail-carte-blanche",
+      "metier": "audio",
+      "libelle": "KLESIA Mut'"
+    },
+    {
+      "portail": "Santéclair",
+      "slugFiche": "portail-santeclair",
+      "metier": "optique",
+      "libelle": "CARCEPT PREV"
+    }
+  ],
+  "chiffres": [],
+  "faits": [
+    {
+      "fait": "Sur la page « Opticien(ne) » de klesia.fr, Klesia écrit que depuis le 1er janvier 2020 les demandes de prise en charge et de remboursement optique ne sont plus traitées à partir du formulaire web optique en ligne, et renvoie aux points de contact spécifiques (plateforme, adresse et téléphone) « au dos de la carte de Tiers Payant de l'assuré ».",
+      "source": "klesia-opticien"
+    },
+    {
+      "fait": "Une page de Carcept Prev, non datée, présente encore des formulaires en ligne de prise en charge et de remboursement optique pour les contrats santé KLESIA. Leur lien aboutissait à une page introuvable le 06/11/2026 : le geste à retenir est celui de klesia.fr, la carte du client.",
+      "source": "carcept-opticien"
+    },
+    {
+      "fait": "Carcept Prev, dédiée aux entreprises et salariés du Transport, est une marque du groupe KLESIA, comme KLESIA Mut'.",
+      "source": "klesia-groupe"
+    },
+    {
+      "fait": "Exemple de gestion déléguée, le contrat de la branche restauration rapide : l'assureur est KLESIA Prévoyance, le gestionnaire est Vivinter, et la carte de tiers payant dématérialisée est transmise par Vivinter sur l'espace client du salarié. Le recto de la carte porte les numéros de contact de Vivinter.",
+      "source": "klesia-restauration"
+    },
+    {
+      "fait": "Pour le contrat Ma Santé KLESIA Mut', l'assureur et le gestionnaire sont KLESIA Mut'. La carte de tiers payant est disponible dans l'espace assuré et l'application, imprimable ou dématérialisée avec un QR code à présenter aux professionnels de santé. Elle est renouvelée automatiquement tous les 1er janvier et 1er juillet pour le semestre suivant.",
+      "source": "klesiamut-guide"
+    },
+    {
+      "fait": "Pour la plupart des professionnels de santé, le tiers payant KLESIA nécessite le tiers payant Sécurité sociale : le client présente la carte Vitale et la carte de tiers payant KLESIA ensemble. La carte d'un contrat santé KLESIA est éditée chaque année et envoyée en fin d'année, avant le 31 décembre.",
+      "source": "klesia-carte"
+    },
+    {
+      "fait": "La FAQ d'adhérents de KLESIA Mut' (ancienne page encore en ligne, qui parle de la carte 2025) écrit que le logo PlanSanté sur la carte désigne son « nouvel opérateur de gestion », et que pour les adhérents du secteur de la Défense la carte porte le logo iSanté.",
+      "source": "klesiamut-faq"
+    },
+    {
+      "fait": "Le guide salarié santé de la branche restauration rapide présente le réseau de soins Santéclair : tarifs négociés de 10 à 40 % en tant qu'adhérents KLESIA Mut' et 7 600 opticiens, dentistes et audioprothésistes recommandés.",
+      "source": "klesia-restauration"
+    },
+    {
+      "fait": "Sur klesiamut.fr, les adhérents Ma Santé KLESIA Mut' ont accès au réseau Écouter Voir en optique et audition, présenté avec plus de 1 200 points de vente.",
+      "source": "klesiamut-parcours"
+    },
+    {
+      "fait": "L'offre VITA SANTÉ de KLESIA Mut', pour les personnels civils de la défense, donne accès au réseau de soins Carte Blanche : aucune avance de frais et tarifs négociés, avec 7 456 opticiens et 3 398 audioprothésistes annoncés.",
+      "source": "klesiamut-vita"
+    },
+    {
+      "fait": "Le contrat KLESIA Pro Santé (chefs d'entreprise et travailleurs non salariés) donne accès au réseau Itelis, présenté avec 3 000 opticiens. L'espace sécurisé de l'assuré permet de télécharger des demandes de prise en charge optique, dentaire ou hospitalière.",
+      "source": "klesia-pro-sante"
+    },
+    {
+      "fait": "Le sélecteur de Santéclair propose les libellés KLESIA MUT et KLESIA PREVOYANCE en optique (relevé du 06/11/2026).",
+      "source": "granit-releve"
+    },
+    {
+      "fait": "Le sélecteur d'iSanté propose les libellés KLESIA, KLESIA Mut' (CSR: 003) et CARCEPT Prev - KLESIA MUT en optique (relevé du 06/11/2026).",
+      "source": "granit-releve"
+    },
+    {
+      "fait": "Le sélecteur du portail audio de Carte Blanche propose le libellé KLESIA Mut' (relevé du 06/11/2026).",
+      "source": "granit-releve"
+    },
+    {
+      "fait": "Les pages consultées ne donnent ni numéro AMC unique, ni ligne téléphonique réservée aux opticiens, ni portail de prise en charge propre à Klesia.",
+      "source": "klesia-opticien"
+    }
+  ],
+  "conventionnement": [],
+  "statuts": [],
+  "statutsSource": "",
+  "contacts": [
+    {
+      "label": "Klesia, démarches des opticiens",
+      "valeur": "Page « Opticien(ne) » de klesia.fr ; plateforme, adresse et téléphone au dos de la carte de tiers payant du client",
+      "url": "https://www.klesia.fr/opticienne-comment-effectuer-vos-demandes-de-prise-en-charge-et-remboursement-optique",
+      "source": "klesia-opticien"
+    }
+  ],
+  "organismes": {
+    "liste": [],
+    "source": ""
+  },
+  "sources": {
+    "klesia-opticien": {
+      "label": "klesia.fr · Opticien(ne) : demandes de prise en charge et remboursement optique",
+      "url": "https://www.klesia.fr/opticienne-comment-effectuer-vos-demandes-de-prise-en-charge-et-remboursement-optique",
+      "consulte": "2026-11-06"
+    },
+    "carcept-opticien": {
+      "label": "carcept-prev.fr · Opticiens : demandes de prise en charge et remboursement optique",
+      "url": "https://www.carcept-prev.fr/opticiens-comment-effectuer-vos-demandes-de-prise-en-charge-et-remboursement-optique",
+      "consulte": "2026-11-06"
+    },
+    "klesia-carte": {
+      "label": "klesia.fr · Comment fonctionne ma carte de tiers payant ?",
+      "url": "https://www.klesia.fr/comment-fonctionne-ma-carte-de-tiers-payant",
+      "consulte": "2026-11-06"
+    },
+    "klesia-restauration": {
+      "label": "klesia.fr · Restauration rapide, guide salarié santé",
+      "url": "https://www.klesia.fr/restauration-rapide-guide-salarie-sante",
+      "consulte": "2026-11-06"
+    },
+    "klesia-pro-sante": {
+      "label": "klesia.fr · KLESIA Pro Santé",
+      "url": "https://www.klesia.fr/klesia-pro-sante-la-complementaire-sante-des-chefs-dentreprise-et-des-travailleurs-non-salaries",
+      "consulte": "2026-11-06"
+    },
+    "klesiamut-parcours": {
+      "label": "klesiamut.fr · Nos services pour faciliter votre parcours de soins",
+      "url": "https://www.klesiamut.fr/fr/nos-services-pour-faciliter-votre-parcours-de-soins",
+      "consulte": "2026-11-06"
+    },
+    "granit-releve": {
+      "label": "Relevé Granit des sélecteurs de portails (06/11/2026)",
+      "url": "",
+      "consulte": "2026-11-06"
+    },
+    "klesia-institutions": {
+      "label": "klesia.fr · La présidence de nos institutions",
+      "url": "https://www.klesia.fr/la-presidence-de-nos-institutions",
+      "consulte": "2026-11-06"
+    },
+    "klesia-groupe": {
+      "label": "klesia.fr · Notre Groupe",
+      "url": "https://www.klesia.fr/notre-groupe",
+      "consulte": "2026-11-06"
+    },
+    "klesiamut-guide": {
+      "label": "klesiamut.fr · Guide de bienvenue Ma Santé KLESIA Mut'",
+      "url": "https://www.klesiamut.fr/fr/guide-bienvenue-ma-sante-klesia-mut-mkm",
+      "consulte": "2026-11-06"
+    },
+    "klesiamut-faq": {
+      "label": "klesiamut.fr · Foire aux questions (ancienne page)",
+      "url": "https://www.klesiamut.fr/fr/old-foire-aux-questions",
+      "consulte": "2026-11-06"
+    },
+    "klesiamut-vita": {
+      "label": "klesiamut.fr · VITA SANTÉ, personnels civils de la défense",
+      "url": "https://www.klesiamut.fr/fr/vita-sante-le-pack-mutuelle-sante-et-prevoyance-des-personnels-civils-de-la-defense",
+      "consulte": "2026-11-06"
+    }
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "slug": "portail-viasante",
+  "nom": "Viasanté",
+  "genre": "mutuelle",
+  "logo": "/logos/annuaire/viasante.svg",
+  "checkedOn": "2026-11-06",
+  "acces": {
+    "verifieLe": "2026-11-06",
+    "liens": [
+      {
+        "label": "Se connecter au site des PEC Almerys",
+        "url": "https://www.almerys.com/site/Login.do",
+        "detail": "Code à usage unique reçu par e-mail."
+      },
+      {
+        "label": "Aller sur itelis.fr",
+        "url": "https://www.itelis.fr/",
+        "detail": "Menu « Accès professionnels », puis « Professionnels de santé ». Un code est envoyé par e-mail."
+      },
+      {
+        "label": "Se connecter sur viamedis.net",
+        "url": "https://www.viamedis.net/ViamedisNet/page/accueil/index",
+        "detail": "E-mail, mot de passe, puis code d'une application d'authentification."
+      }
+    ],
+    "note": "Viasanté nomme Almerys sur la page de son offre EQUIVIA. Le portail à ouvrir est celui que désigne la carte de tiers payant du client. Le lien Viamedis ne sert que si la carte le désigne : son sélecteur propose le libellé « Mutuelle Bleue »."
+  },
+  "identite": [
+    {
+      "label": "Type",
+      "valeur": "Mutuelle, membre du Groupe AG2R La Mondiale",
+      "source": "viasante-accueil"
+    },
+    {
+      "label": "Opérateur annoncé",
+      "valeur": "Almerys (page de l'offre EQUIVIA)",
+      "source": "viasante-equivia"
+    },
+    {
+      "label": "Réseau",
+      "valeur": "Itelis (optique, dentaire, audiologie)",
+      "source": "viasante-equivia"
+    },
+    {
+      "label": "Portails relevés",
+      "valeur": "Aucun libellé Viasanté. Viamedis propose « Mutuelle Bleue », mutuelle absorbée par Viasanté",
+      "source": "granit-releve"
+    }
+  ],
+  "chiffres": [],
+  "faits": [
+    {
+      "fait": "Sur la page de son offre EQUIVIA, Viasanté indique que ses adhérents n'avancent plus leurs frais médicaux « grâce au tiers-payant Almerys ».",
+      "source": "viasante-equivia"
+    },
+    {
+      "fait": "La même page annonce que Viasanté fait bénéficier ses adhérents du réseau de soins Itelis, pour des tarifs négociés en optique, dentaire et audiologie.",
+      "source": "viasante-equivia"
+    },
+    {
+      "fait": "La page de l'offre collective VIACOLL pour les TPE cite aussi le « réseau de soins Itelis » et le tiers payant, sans nommer d'opérateur.",
+      "source": "viasante-viacoll-tpe"
+    },
+    {
+      "fait": "Viasanté Mutuelle est membre du Groupe AG2R La Mondiale.",
+      "source": "viasante-accueil"
+    },
+    {
+      "fait": "Mutuelle Bleue a été absorbée par Viasanté, avec effet au 31 décembre 2023.",
+      "source": "ag2r-fusion-mutuelle-bleue"
+    },
+    {
+      "fait": "La page « Votre espace adhérent » de viasante.fr garde un accès à part pour les adhérents « ex-Mutuelle Bleue », et un autre pour plusieurs anciennes mutuelles, dont ex-Primamut et ex-Mutuelle du Midi.",
+      "source": "viasante-espace-adherent"
+    },
+    {
+      "fait": "Le relevé Granit du 6 novembre 2026 ne trouve aucun libellé au nom de Viasanté dans les sélecteurs d'organisme de Viamedis, Santéclair, iSanté, SP Santé, Carte Blanche, Sévéane et Groupama. Almerys et Itelis n'ont pas de relevé. Cette absence ne prouve pas qu'aucun contrat Viasanté ne passe par ces portails.",
+      "source": "granit-releve"
+    },
+    {
+      "fait": "Le sélecteur du portail Viamedis propose le libellé « Mutuelle Bleue » en optique et « MUTUELLE BLEUE » en audio. Le relevé ne dit pas quel portail gère ces contrats : c'est la carte de tiers payant du client qui décide.",
+      "source": "granit-releve"
+    },
+    {
+      "fait": "Les pages de viasante.fr consultées ne donnent pas de mode de demande de prise en charge pour l'opticien. Parmi elles, seule la page EQUIVIA nomme un opérateur de tiers payant.",
+      "source": "viasante-plan-du-site"
+    },
+    {
+      "fait": "Quand la carte de tiers payant désigne Almerys, la demande de prise en charge se fait sur le site des PEC d'Almerys. La procédure détaillée est sur la fiche Almerys.",
+      "source": "almerys-pec"
+    }
+  ],
+  "conventionnement": [],
+  "statuts": [],
+  "contacts": [
+    {
+      "label": "Viasanté, page contact officielle",
+      "valeur": "Nous contacter, viasante.fr (adhérent ou pas encore adhérent)",
+      "url": "https://www.viasante.fr/contact/",
+      "detail": "Les pages consultées ne donnent pas de ligne réservée aux professionnels de santé.",
+      "source": "viasante-contact"
+    }
+  ],
+  "organismes": {
+    "liste": [],
+    "source": ""
+  },
+  "aiguillage": [],
+  "sources": {
+    "viasante-equivia": {
+      "label": "viasante.fr · Complémentaire santé EQUIVIA",
+      "url": "https://www.viasante.fr/particuliers/complementaire-sante-economique-equivia/",
+      "consulte": "2026-11-06"
+    },
+    "viasante-accueil": {
+      "label": "viasante.fr · Accueil",
+      "url": "https://www.viasante.fr/",
+      "consulte": "2026-11-06"
+    },
+    "viasante-contact": {
+      "label": "viasante.fr · Nous contacter",
+      "url": "https://www.viasante.fr/contact/",
+      "consulte": "2026-11-06"
+    },
+    "granit-releve": {
+      "label": "Relevé Granit des sélecteurs de portails (GetGranit/granit@feee11c, 06/11/2026)",
+      "url": "",
+      "consulte": "2026-11-06"
+    },
+    "viasante-viacoll-tpe": {
+      "label": "viasante.fr · Mutuelle santé TPE (VIACOLL)",
+      "url": "https://www.viasante.fr/entreprises/mutuelle-tpe-viacoll/",
+      "consulte": "2026-11-06"
+    },
+    "viasante-espace-adherent": {
+      "label": "viasante.fr · Votre espace adhérent",
+      "url": "https://www.viasante.fr/espace-adherent/",
+      "consulte": "2026-11-06"
+    },
+    "viasante-plan-du-site": {
+      "label": "viasante.fr · Plan du site",
+      "url": "https://www.viasante.fr/plan-du-site/",
+      "consulte": "2026-11-06"
+    },
+    "ag2r-fusion-mutuelle-bleue": {
+      "label": "AG2R La Mondiale · Fusion de Mutuelle Bleue et VIASANTÉ Mutuelle (15/12/2023)",
+      "url": "https://presse.ag2rlamondiale.fr/actualites/lacpr-approuve-la-fusion-entre-mutuelle-bleue-et-viasante-mutuelle-8bc7-3a203.html",
+      "consulte": "2026-11-06"
+    },
+    "almerys-pec": {
+      "label": "almerys.com · Site des PEC (connexion)",
+      "url": "https://www.almerys.com/site/Login.do",
+      "consulte": "2026-11-06"
+    },
+    "itelis-acces": {
+      "label": "itelis.fr · Accéder à vos services",
+      "url": "https://www.itelis.fr/acceder-vos-services",
+      "consulte": "2026-11-06"
+    }
+  },
+  "statutsSource": ""
+}

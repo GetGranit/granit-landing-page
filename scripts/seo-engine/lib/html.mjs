@@ -4,6 +4,9 @@
 const MARQUEURS = ["chiffres", "organismes", "statuts", "contacts"];
 
 /** Marqueurs data-bloc attendus (une fois chacun) selon le type de page (gabarit §6 et §6 bis). */
+/** Fiche mutuelle (aiguillage) : ni chiffres, ni organismes, ni statuts, seulement les contacts. */
+export const MARQUEURS_MUTUELLE = ["contacts"];
+
 export const MARQUEURS_PAR_TYPE = {
   plateforme: MARQUEURS,
   vs: ["coup-doeil", "frise", "choisir"],
