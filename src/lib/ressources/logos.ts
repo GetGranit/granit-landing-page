@@ -3,12 +3,6 @@
 // fichiers du moteur.
 
 /**
- * Logos trop petits pour être affichés proprement : on montre l'initiale à la place.
- * isante.png fait 32 px et itelis.png 53 px (fichiers absents de public/logos).
- */
-const TROP_PETITS = new Set(["/logos/isante.png", "/logos/itelis.png"]);
-
-/**
  * Dans la barre de la fenêtre, un logotype large et sans fond se lit mieux. Fichiers nettoyés :
  * Viamedis sans son fond bleuté, Oxantis rogné autour du mot, SP Santé sans sa signature.
  * Les originaux restent pour les tuiles, l'en-tête mobile et l'accueil du site.
@@ -26,7 +20,7 @@ export function logoPlateforme(
   logo: string | undefined,
   usage: "fenetre" | "carre",
 ): string | undefined {
-  if (!logo || TROP_PETITS.has(logo)) return undefined;
+  if (!logo) return undefined;
   return usage === "fenetre" ? (LOGOTYPES[logo] ?? logo) : logo;
 }
 
