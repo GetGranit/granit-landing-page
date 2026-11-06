@@ -167,5 +167,45 @@
       "source non vérifiable (403) : https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006073189",
       "source non vérifiable (403) : https://www.ameli.fr/assure/remboursements/etre-bien-rembourse/tiers-payant"
     ]
+  },
+  "couverture": {
+    "scene": "paliers",
+    "titre": "Balance âgée",
+    "repere": "Balance âgée",
+    "elements": [
+      {
+        "label": "Moins de 30 jours",
+        "etat": "fait"
+      },
+      {
+        "label": "30 à 60",
+        "etat": "fait"
+      },
+      {
+        "label": "60 à 90",
+        "etat": "attente"
+      },
+      {
+        "label": "Plus de 90",
+        "etat": "alerte"
+      }
+    ],
+    "badge": null,
+    "marque": null,
+    "accroche": {
+      "debut": "Trier par cause,",
+      "fin": "pas par patient."
+    },
+    "en": {
+      "titre": "Aged balance",
+      "repere": "Aged balance",
+      "labels": [
+        "Under 30 days",
+        "30 to 60",
+        "60 to 90",
+        "Over 90"
+      ],
+      "badge": null
+    }
   }
 }

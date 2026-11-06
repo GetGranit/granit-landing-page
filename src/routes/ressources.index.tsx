@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Hub } from "@/components/ressources/Hub";
 import { SITE_URL } from "@/lib/seo";
 import { aLaUne } from "@/lib/ressources/contenu";
-import { aCouvertureDessinee, photoFiche, src } from "@/lib/ressources/photos";
 
 const TITLE = "Ressources pour les professionnels de santé - Granit";
 const DESC =
@@ -27,12 +26,6 @@ export const Route = createFileRoute("/ressources/")({
         { property: "og:title", content: TITLE },
         { property: "og:description", content: DESC },
       ],
-      // La grande couverture « À la une » est l'image principale de la page
-      // (une fiche plateformes n'a pas de photo : sa fenêtre est en CSS).
-      links:
-        une.length >= 3 && !aCouvertureDessinee(une[0])
-          ? [{ rel: "preload", as: "image", href: src(photoFiche(une[0]), 1600) }]
-          : [],
     };
   },
   component: RessourcesPage,

@@ -7,14 +7,9 @@ import { categorie, dateLang, ficheJson, metierDe, titreCourt } from "@/lib/ress
 import { verticale } from "@/lib/ressources/verticales";
 import type { Concurrent, Plateforme, RessourceJson } from "@/lib/ressources/types";
 import { Annuaire } from "../Annuaire";
-import {
-  CouvertureVs,
-  FenetrePlateforme,
-  MarquePlateforme,
-  PhotoCarte,
-  TitreItalique,
-} from "../Cartes";
-import { estFicheTousPortails, photoFiche } from "@/lib/ressources/photos";
+import { CouvertureVs, FenetrePlateforme, MarquePlateforme, TitreItalique } from "../Cartes";
+import { estFicheTousPortails } from "@/lib/ressources/couverture";
+import { CouvertureDessinee } from "../CouvertureDessinee";
 import { logoPlateforme, statutsCarte } from "@/lib/ressources/logos";
 import { FIGURE_CSS } from "@/lib/ressources/figures";
 import { Fil, itemMetier, useItemRessources } from "../Fil";
@@ -244,7 +239,7 @@ export function PageArticle({
               {/* Lien officiel de connexion au portail : beaucoup de lecteurs viennent pour ça. */}
               {p?.acces && <AccesEspacePro p={p} slug={a.slug} />}
             </div>
-            {/* Photo du thème à droite, sur grand écran seulement : la réponse reste visible sans défiler. */}
+            {/* Couverture à droite, sur grand écran seulement : la réponse reste visible sans défiler. */}
             {fiche && (
               <div
                 className={`group relative hidden aspect-[4/3] overflow-hidden rounded-[16px] min-[980px]:block ${estPlateforme || estFicheTousPortails(fiche) ? "ress-fenetre-entete" : ""}`}
@@ -263,7 +258,7 @@ export function PageArticle({
                 ) : fiche.vs ? (
                   <CouvertureVs vs={fiche.vs} />
                 ) : (
-                  <PhotoCarte photo={photoFiche(fiche)} tailles="380px" chargement="haute" />
+                  <CouvertureDessinee fiche={fiche} />
                 )}
               </div>
             )}

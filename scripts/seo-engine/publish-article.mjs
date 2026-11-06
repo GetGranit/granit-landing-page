@@ -9,13 +9,16 @@
 import { mkdirSync } from "node:fs";
 import { join } from "node:path";
 import { parseArgs } from "node:util";
-import { citations, controler, typeDePage, verifierSources } from "./lib/checks.mjs";
+import { citations, controler, motsInterditsTon, typeDePage, verifierSources } from "./lib/checks.mjs";
 import { apiKey, coutDollars, rediger } from "./lib/claude.mjs";
+import { consigneCouverture, retenirCouverture, texteArticle } from "./lib/couverture.mjs";
 import { blocMetier, choisirFiche, cibleDuMetier, encartPour, lecteurCourt, signaturePour, sourcesHorsFiche } from "./lib/metiers.mjs";
 import { mots, texte, typographierSortie } from "./lib/html.mjs";
 import {
   CONTENU, MOTEUR, ancienArticle, anciensArticles, concurrentsPour, ecrireFile, ecrireJson, faitsPour, lireFile, lireJson,
   publies, sortieGithub, systemeGuide, titresDesAutres,
+  logosPlateformes,
+  scenesRecentes,
 } from "./lib/site.mjs";
 
 const { values: opt } = parseArgs({
@@ -33,7 +36,7 @@ if (opt.entree && !opt.prompt && !opt.dry) throw new Error("--entree seulement a
 
 const config = lireJson(join(MOTEUR, "config.json"));
 if (opt.model) config.model = opt.model;
-const schema = lireJson(join(MOTEUR, "article-output.schema.json"));
+const schemaArticle = lireJson(join(MOTEUR, "article-output.schema.json"));
 const aujourdhui = new Date().toISOString().slice(0, 10);
 
 // 1. Choix de l'article
@@ -58,6 +61,14 @@ const choix = choisirFiche(article);
 const fp = faitsPour(article);
 if (type === "plateforme" && !fp?.faits) throw new Error(`fichier de faits manquant : content/plateformes/${fp?.nom}.json`);
 const comparatif = type === "vs" || type === "grille";
+// Fiches plateformes et pages « VS » : le site dessine leur couverture sans rien demander.
+const avecCouverture = type !== "plateforme" && type !== "vs";
+const schema = structuredClone(schemaArticle);
+if (!avecCouverture) {
+  delete schema.properties.couverture;
+  schema.required = schema.required.filter((k) => k !== "couverture");
+}
+const plateformesLogos = logosPlateformes();
 const concurrents = concurrentsPour(article);
 if (comparatif) {
   const manquants = article.concurrents.filter((s) => !concurrents[s]);
@@ -187,6 +198,8 @@ function message(retour) {
       `la légende dit quoi regarder ; aucun fait ni chiffre qui ne soit pas déjà dans le texte. ` +
       `Place chaque schéma dans contentHtml par <div data-figure="{id}"></div>, juste après le paragraphe qu'il illustre, jamais avant « L'essentiel ».`,
   );
+  if (avecCouverture)
+    parts.push(consigneCouverture({ plateformes: plateformesLogos, recentes: scenesRecentes(article.category) }));
   parts.push(
     `## Rappels de sortie\n` +
       `- contentHtml : ${longueur[type] ?? "1 800 à 2 500 mots (jamais moins de 1 500)"}, ouverture en <p>, puis « L'essentiel », puis les H2 en questions avec un id.\n` +
@@ -274,6 +287,16 @@ const personne = (cle) => {
 
 // 5. Fichier de l'article (lu par la page /ressources/{slug})
 const nbMots = mots(texte(sortie.contentHtml)).length;
+const couverture = avecCouverture
+  ? retenirCouverture(
+      sortie.couverture,
+      { texte: texteArticle({ ...article, ...sortie }), plateformes: plateformesLogos, interdits: motsInterditsTon },
+      (m) => {
+        bilan.avertissements.push(m);
+        console.log(`  ! ${m}`);
+      },
+    )
+  : null;
 const fiche = {
   slug: article.slug,
   id: article.id,
@@ -306,6 +329,7 @@ const fiche = {
   faqItems: sortie.faqItems,
   sources: sortie.sources,
   figures: sortie.figures ?? [],
+  ...(couverture ? { couverture } : {}),
   internalLinks: liensPrevus,
   liensEntrants: [],
   remplace: article.remplace ?? [],

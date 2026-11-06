@@ -5,6 +5,7 @@
 // et verticales.json ; sans traduction, le français reste affiché.
 import {
   anciensEn,
+  couverturesAnciens,
   charger,
   chargerAncienEn,
   chargerEn,
@@ -82,6 +83,7 @@ function ficheAncien(a: Article): Fiche {
     // Hors cocon, la carte porte le métier de l'ancien article (« Pharmacie »), pas une catégorie.
     etiquette: rattache ? undefined : a.category,
     rattache: Boolean(rattache),
+    couverture: couverturesAnciens[a.slug],
     en: en && {
       title: en.title,
       metaDescription: en.desc,

@@ -202,5 +202,50 @@
       "aucune citation (facultative)",
       "source non vérifiable (403) : https://www.ameli.fr/assure/remboursements/rembourse/soins-protheses-dentaires-optique-audition/protheses-auditives"
     ]
+  },
+  "couverture": {
+    "scene": "frise",
+    "titre": "Renouvellement audio",
+    "repere": "Tous les quatre ans",
+    "elements": [
+      {
+        "label": "Éligibilité",
+        "etat": "alerte"
+      },
+      {
+        "label": "Devis",
+        "etat": "attente"
+      },
+      {
+        "label": "Accord",
+        "etat": "attente"
+      },
+      {
+        "label": "Essai",
+        "etat": "attente"
+      },
+      {
+        "label": "Facture",
+        "etat": "attente"
+      }
+    ],
+    "badge": "Par oreille",
+    "marque": null,
+    "accroche": {
+      "debut": "Un mois trop tôt,",
+      "fin": "le dossier revient refusé."
+    },
+    "en": {
+      "titre": "Hearing aid renewal",
+      "repere": "Every four years",
+      "labels": [
+        "Eligibility",
+        "Quote",
+        "Approval",
+        "Trial",
+        "Invoice"
+      ],
+      "badge": "Per ear"
+    }
   }
 }

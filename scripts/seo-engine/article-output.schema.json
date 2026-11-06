@@ -8,7 +8,8 @@
     "tocItems",
     "faqItems",
     "sources",
-    "figures"
+    "figures",
+    "couverture"
   ],
   "properties": {
     "seoTitle": {
@@ -164,6 +165,124 @@
                   "description": "true sur 1 élément au plus : le point à retenir"
                 }
               }
+            }
+          }
+        }
+      }
+    },
+    "couverture": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Couverture dessinée par le site. Voir la consigne « Couverture ».",
+      "required": [
+        "scene",
+        "titre",
+        "repere",
+        "elements",
+        "badge",
+        "marque",
+        "accroche",
+        "en"
+      ],
+      "properties": {
+        "scene": {
+          "type": "string",
+          "enum": [
+            "statuts",
+            "frise",
+            "ecart",
+            "paliers",
+            "controles",
+            "options",
+            "agenda",
+            "boucles"
+          ]
+        },
+        "titre": {
+          "type": "string"
+        },
+        "repere": {
+          "type": "string"
+        },
+        "elements": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "label",
+              "etat"
+            ],
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "etat": {
+                "type": "string",
+                "enum": [
+                  "fait",
+                  "attente",
+                  "alerte"
+                ]
+              }
+            }
+          }
+        },
+        "badge": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "marque": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "accroche": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "debut",
+            "fin"
+          ],
+          "properties": {
+            "debut": {
+              "type": "string"
+            },
+            "fin": {
+              "type": "string"
+            }
+          }
+        },
+        "en": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "titre",
+            "repere",
+            "labels",
+            "badge"
+          ],
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "repere": {
+              "type": "string"
+            },
+            "labels": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "badge": {
+              "type": [
+                "string",
+                "null"
+              ]
             }
           }
         }

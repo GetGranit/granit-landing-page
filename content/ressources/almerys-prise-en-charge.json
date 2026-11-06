@@ -223,5 +223,45 @@
       "page rendue en JavaScript, citations non vérifiables : https://www.almerys.com/accueil/Accueil?isPS=true",
       "page rendue en JavaScript, citations non vérifiables : https://www.almerys.com/accueil/contacts"
     ]
+  },
+  "couverture": {
+    "scene": "statuts",
+    "titre": "PEC optique Almerys",
+    "repere": "Historique des PEC",
+    "elements": [
+      {
+        "label": "Validée",
+        "etat": "fait"
+      },
+      {
+        "label": "En instance",
+        "etat": "attente"
+      },
+      {
+        "label": "Refusée",
+        "etat": "alerte"
+      },
+      {
+        "label": "Soldée",
+        "etat": "fait"
+      }
+    ],
+    "badge": null,
+    "marque": "almerys",
+    "accroche": {
+      "debut": "Seul « Validée »",
+      "fin": "vous autorise à facturer."
+    },
+    "en": {
+      "titre": "Almerys optical PEC",
+      "repere": "PEC history",
+      "labels": [
+        "Approved",
+        "Pending",
+        "Rejected",
+        "Settled"
+      ],
+      "badge": null
+    }
   }
 }

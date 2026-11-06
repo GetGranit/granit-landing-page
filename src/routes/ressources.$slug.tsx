@@ -4,7 +4,6 @@ import { chargerArticle, ficheJson, metierDe, remplacant } from "@/lib/ressource
 import { prechargerEn, useArticleEn } from "@/lib/ressources/langue";
 import { slugFrDeAncienEn } from "@/lib/legacyBlog";
 import { blogPostingLd, breadcrumbLd, faqLd, titrePage } from "@/lib/ressources/seo";
-import { photoFiche, src } from "@/lib/ressources/photos";
 import { SITE_URL } from "@/lib/seo";
 import { PageAncien } from "@/components/ressources/PageAncien";
 import { NotFoundRessource } from "@/components/ressources/Introuvable";
@@ -38,9 +37,8 @@ export const Route = createFileRoute("/ressources/$slug")({
       const a = loaderData.article;
       const title = a.seoTitle?.trim() || titrePage(a.title);
       const fiche = ficheJson(a.slug);
-      // og:image : l'aperçu dessiné s'il existe (fiches plateformes), sinon la photo du thème.
-      const image = fiche ? SITE_URL + (fiche.og ?? src(photoFiche(fiche), 1600)) : undefined;
-      const [largeur, hauteur] = fiche?.og ? ["1200", "630"] : ["1600", "900"];
+      // og:image : l'image dessinée de l'article ; sans elle, celle de la marque (__root).
+      const image = fiche?.og ? SITE_URL + fiche.og : undefined;
       return {
         meta: [
           { title },
@@ -52,8 +50,8 @@ export const Route = createFileRoute("/ressources/$slug")({
           ...(image
             ? [
                 { property: "og:image", content: image },
-                { property: "og:image:width", content: largeur },
-                { property: "og:image:height", content: hauteur },
+                { property: "og:image:width", content: "1200" },
+                { property: "og:image:height", content: "630" },
                 { property: "og:image:alt", content: a.title },
                 { name: "twitter:card", content: "summary_large_image" },
                 { name: "twitter:image", content: image },

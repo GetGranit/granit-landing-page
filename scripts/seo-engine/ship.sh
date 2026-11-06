@@ -14,8 +14,13 @@ envoyer_main() {
   git push origin HEAD:main
 }
 
+# Image de partage : si elle manque, l'article garde celle de la marque.
+npm install --no-save --no-package-lock --ignore-scripts playwright-core@1.64.1 >/dev/null \
+  && node scripts/ressources/og-couvertures.mjs "$SLUG" \
+  || echo "::warning::image de partage non générée pour $SLUG"
+
 if [ "$REVIEW" != "true" ]; then
-  git add content "$Q"
+  git add content public/ressources/og "$Q"
   git commit -m "Ressources : $TITLE"
   envoyer_main
   exit 0
@@ -28,7 +33,7 @@ envoyer_main
 BRANCHE="seo/$SLUG"
 git checkout -b "$BRANCHE"
 node scripts/seo-engine/set-status.mjs "$SLUG" published
-git add content "$Q"
+git add content public/ressources/og "$Q"
 git commit -m "Ressources : $TITLE"
 git push -u origin "$BRANCHE"
 node scripts/seo-engine/corps-pr.mjs "$SLUG" > "$RUNNER_TEMP/corps-pr.md"

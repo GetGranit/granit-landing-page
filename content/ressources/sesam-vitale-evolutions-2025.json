@@ -194,5 +194,45 @@
       "aucune citation (facultative)",
       "source non vérifiable (403) : https://www.ameli.fr/assure/remboursements/etre-bien-rembourse/carte-vitale"
     ]
+  },
+  "couverture": {
+    "scene": "statuts",
+    "titre": "SESAM-Vitale",
+    "repere": "Fonctions activées",
+    "elements": [
+      {
+        "label": "Appli carte Vitale",
+        "etat": "fait"
+      },
+      {
+        "label": "ADRi",
+        "etat": "alerte"
+      },
+      {
+        "label": "Pièces numérisées",
+        "etat": "fait"
+      },
+      {
+        "label": "Ordonnance numérique",
+        "etat": "attente"
+      }
+    ],
+    "badge": null,
+    "marque": null,
+    "accroche": {
+      "debut": "Une mise à jour livrée",
+      "fin": "n’est pas activée."
+    },
+    "en": {
+      "titre": "SESAM-Vitale",
+      "repere": "Enabled features",
+      "labels": [
+        "Vitale card app",
+        "ADRi",
+        "Scanned documents",
+        "E-prescription"
+      ],
+      "badge": null
+    }
   }
 }

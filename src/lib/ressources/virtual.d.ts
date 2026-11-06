@@ -1,6 +1,7 @@
 // Modules produits par scripts/ressources/vite-plugin.ts.
 declare module "virtual:ressources" {
   import type { Article } from "@/lib/articles";
+  import type { CouvertureFiche } from "@/lib/ressources/couverture";
   import type { Concurrent, Fiche, Plateforme, RessourceJson } from "@/lib/ressources/types";
   type Corps = () => Promise<{
     default: {
@@ -10,6 +11,8 @@ declare module "virtual:ressources" {
     };
   }>;
   export const fiches: Fiche[];
+  /** Couvertures des anciens articles de articles.ts (content/couvertures-anciens.json). */
+  export const couverturesAnciens: Record<string, CouvertureFiche>;
   /** Ancien slug remplacé -> slug de l'article qui le remplace. */
   export const redirections: Record<string, string>;
   export const charger: Record<string, Corps>;

@@ -144,5 +144,35 @@
     "avertissements": [
       "aucune citation (facultative)"
     ]
+  },
+  "couverture": {
+    "scene": "agenda",
+    "titre": "Agents sur Doctolib",
+    "repere": "Palier par palier",
+    "elements": [
+      {
+        "label": "Agenda Doctolib",
+        "etat": "fait"
+      },
+      {
+        "label": "Logiciel métier",
+        "etat": "fait"
+      }
+    ],
+    "badge": null,
+    "marque": null,
+    "accroche": {
+      "debut": "Lire d’abord,",
+      "fin": "écrire ensuite sous contrôle."
+    },
+    "en": {
+      "titre": "Agents on Doctolib",
+      "repere": "Step by step",
+      "labels": [
+        "Doctolib calendar",
+        "Practice software"
+      ],
+      "badge": null
+    }
   }
 }

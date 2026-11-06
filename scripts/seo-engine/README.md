@@ -11,6 +11,8 @@ Chaque jour ouvré à 8 h 17 (heure de Paris), le workflow `.github/workflows/se
    - **direct** dans tous les autres cas : commit sur main, puis Vercel redéploie ;
 6. poste une ligne dans le canal Slack SEO (ou une alerte avec le lien des logs).
 
+La rédaction écrit aussi le bloc `couverture` (scène dessinée par le site, `lib/couverture.mjs`). Ses contrôles ne bloquent jamais : un bloc refusé est retiré et le site dessine sa scène générique. `ship.sh` génère l'image de partage (`scripts/ressources/og-couvertures.mjs`). Pour les articles déjà en ligne : `node --experimental-strip-types scripts/seo-engine/couvrir-articles.mjs`, qui ne refait que les blocs absents ou non conformes.
+
 ## Refontes d'anciens articles
 
 Une entrée de la file avec `"refonte": true` réécrit un ancien article de `src/lib/articles.ts` **à la même adresse**. L'ancien texte est donné à Claude comme matière première. Le lecteur et le métier viennent de `reader` et `verticales`, la signature de `auteur` et `relecteur`. Une refonte passe toujours par une PR de relecture. Une fois publiée, la version JSON remplace l'ancienne sur la page, dans les listes et dans le sitemap. Le build accepte ce slug partagé uniquement pour une refonte.

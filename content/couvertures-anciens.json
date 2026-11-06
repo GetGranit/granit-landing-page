@@ -1,0 +1,82 @@
+{
+  "rapprochement-noemie": {
+    "scene": "statuts",
+    "titre": "Rapprochement NOEMIE",
+    "repere": "Dossiers bloquants",
+    "elements": [
+      {
+        "label": "Retour NOEMIE",
+        "etat": "fait"
+      },
+      {
+        "label": "Relevé bancaire",
+        "etat": "fait"
+      },
+      {
+        "label": "Facturation interne",
+        "etat": "fait"
+      },
+      {
+        "label": "Virements orphelins",
+        "etat": "alerte"
+      }
+    ],
+    "badge": null,
+    "marque": null,
+    "accroche": {
+      "debut": "Le comptable ne traite plus",
+      "fin": "que les exceptions."
+    },
+    "en": {
+      "titre": "NOEMIE reconciliation",
+      "repere": "Blocking cases",
+      "labels": [
+        "NOEMIE return",
+        "Bank statement",
+        "Internal billing",
+        "Orphan transfers"
+      ],
+      "badge": null
+    }
+  },
+  "groupes-multi-sites-pilotage": {
+    "scene": "controles",
+    "titre": "Une seule console",
+    "repere": "Indicateurs groupe",
+    "elements": [
+      {
+        "label": "Délai de facturation",
+        "etat": "fait"
+      },
+      {
+        "label": "Taux de rejet AMC",
+        "etat": "alerte"
+      },
+      {
+        "label": "DSO patient",
+        "etat": "attente"
+      },
+      {
+        "label": "Productivité",
+        "etat": "fait"
+      }
+    ],
+    "badge": null,
+    "marque": null,
+    "accroche": {
+      "debut": "Tous vos centres,",
+      "fin": "un seul pilotage."
+    },
+    "en": {
+      "titre": "One single console",
+      "repere": "Group indicators",
+      "labels": [
+        "Billing delay",
+        "AMC rejection rate",
+        "Patient DSO",
+        "Productivity"
+      ],
+      "badge": null
+    }
+  }
+}

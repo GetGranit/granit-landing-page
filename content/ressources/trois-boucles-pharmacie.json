@@ -149,5 +149,40 @@
       "source non vérifiable (403) : https://www.ameli.fr/assure/remboursements/etre-bien-rembourse/tiers-payant",
       "source non vérifiable (403) : https://www.legifrance.gouv.fr/codes/id/LEGITEXT000006072665/"
     ]
+  },
+  "couverture": {
+    "scene": "boucles",
+    "titre": "Automatiser l’officine",
+    "repere": "Trois boucles",
+    "elements": [
+      {
+        "label": "Ordonnances",
+        "etat": "attente"
+      },
+      {
+        "label": "Rejets",
+        "etat": "alerte"
+      },
+      {
+        "label": "Réassort",
+        "etat": "attente"
+      }
+    ],
+    "badge": null,
+    "marque": null,
+    "accroche": {
+      "debut": "L’agent prépare,",
+      "fin": "le pharmacien valide."
+    },
+    "en": {
+      "titre": "Pharmacy automation",
+      "repere": "Three loops",
+      "labels": [
+        "Prescriptions",
+        "Rejections",
+        "Restocking"
+      ],
+      "badge": null
+    }
   }
 }

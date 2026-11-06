@@ -103,7 +103,10 @@ export function Hub() {
           <h1 className="mx-auto mt-4 font-serif text-[clamp(40px,5.2vw,64px)] font-normal leading-[1.14] tracking-[-0.02em] [text-wrap:balance]">
             {t.titre}
             <br className="hidden md:block" />{" "}
-            <em className={`accent-italic ${lang === "fr" ? "whitespace-nowrap" : ""}`}>{t.titreSuite}</em>.
+            <em className={`accent-italic ${lang === "fr" ? "whitespace-nowrap" : ""}`}>
+              {t.titreSuite}
+            </em>
+            .
           </h1>
           <p className="body-lg mx-auto mt-10 max-w-[60ch]">{t.chapo}</p>
           <ParProbleme />
@@ -136,7 +139,7 @@ export function Hub() {
               <div className="grid grid-cols-2 content-start gap-x-3 gap-y-6 md:gap-x-5 md:gap-y-8 lg:col-span-5">
                 {une.slice(1).map((f, i) => (
                   // Damier décalé d'un cran par rapport à la grande carte (rang 0) : aucune voisine identique.
-                  <CartePetite key={f.slug} fiche={f} rang={(Math.floor(i / 2) + i + 1) % 2} />
+                  <CartePetite key={f.slug} fiche={f} />
                 ))}
               </div>
             </div>
@@ -160,9 +163,7 @@ export function Hub() {
           <section className={`${conteneur} pt-14`}>
             <div className="grid gap-6 rounded-[18px] border border-[var(--border)] bg-lavis p-7 md:grid-cols-[1fr_auto] md:items-end md:p-10">
               <div>
-                <span className="eyebrow">
-                  {t.glossaire}
-                </span>
+                <span className="eyebrow">{t.glossaire}</span>
                 <h2 className={`mt-2 ${titreSection}`}>{t.glossaireTitre}</h2>
                 <ul className="mt-5 flex flex-wrap gap-2">
                   {SIGLES.map((s) => (
@@ -219,7 +220,7 @@ function Grille({ fiches }: { fiches: Fiche[] }) {
           key={f.slug}
           className="w-[78vw] max-w-[320px] shrink-0 snap-start md:w-auto md:max-w-none"
         >
-          <CarteArticle fiche={f} rang={i} />
+          <CarteArticle fiche={f} />
         </div>
       ))}
     </div>
@@ -307,9 +308,7 @@ function PourTous({ vus, rangees, aussi }: { vus: Set<string>; rangees: Fiche[];
   return (
     <section className={`${conteneur} pt-14`}>
       <div className="border-t border-[var(--border)] pt-5">
-        <span className="eyebrow">
-          {t.pourTous}
-        </span>
+        <span className="eyebrow">{t.pourTous}</span>
         <h2 className="mt-2 font-serif text-[22px] font-normal leading-tight">{t.pourTousTitre}</h2>
       </div>
       <ul className="mt-5 grid gap-x-8 md:grid-cols-2 lg:grid-cols-3">

@@ -216,5 +216,40 @@
       "aucune citation (facultative)",
       "source non vérifiable (403) : https://www.legifrance.gouv.fr/loda/id/JORFTEXT000031912641"
     ]
+  },
+  "couverture": {
+    "scene": "options",
+    "titre": "Gérer le tiers payant",
+    "repere": "Trois modèles",
+    "elements": [
+      {
+        "label": "Interne",
+        "etat": "attente"
+      },
+      {
+        "label": "Externalisé",
+        "etat": "attente"
+      },
+      {
+        "label": "Automatisé",
+        "etat": "fait"
+      }
+    ],
+    "badge": null,
+    "marque": null,
+    "accroche": {
+      "debut": "Qui suit vos dossiers",
+      "fin": "jusqu’au paiement ?"
+    },
+    "en": {
+      "titre": "Third-party payment",
+      "repere": "Three models",
+      "labels": [
+        "In-house",
+        "Outsourced",
+        "Automated"
+      ],
+      "badge": null
+    }
   }
 }

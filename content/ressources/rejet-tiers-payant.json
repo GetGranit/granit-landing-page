@@ -191,5 +191,45 @@
       "source non vérifiable (403) : https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006074067/",
       "source non vérifiable (403) : https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006073189/"
     ]
+  },
+  "couverture": {
+    "scene": "frise",
+    "titre": "Rejet de tiers payant",
+    "repere": "Dossier rejeté",
+    "elements": [
+      {
+        "label": "Origine du rejet",
+        "etat": "fait"
+      },
+      {
+        "label": "Motif exact",
+        "etat": "alerte"
+      },
+      {
+        "label": "Corriger la donnée",
+        "etat": "attente"
+      },
+      {
+        "label": "Renvoyer",
+        "etat": "attente"
+      }
+    ],
+    "badge": "Lire le motif",
+    "marque": null,
+    "accroche": {
+      "debut": "Lisez le motif exact,",
+      "fin": "corrigez la bonne donnée."
+    },
+    "en": {
+      "titre": "Rejected claim",
+      "repere": "Rejected file",
+      "labels": [
+        "Rejection source",
+        "Exact reason",
+        "Fix the data",
+        "Resubmit"
+      ],
+      "badge": "Read reason"
+    }
   }
 }

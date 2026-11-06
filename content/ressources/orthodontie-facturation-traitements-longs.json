@@ -197,5 +197,40 @@
       "source non vérifiable (403) : https://www.ameli.fr/assure/remboursements/rembourse/soins-protheses-dentaires-optique-audition/consultations-soins-protheses-dentaires/remboursement-traitements-orthodontie",
       "source non vérifiable (403) : https://www.ameli.fr/accueil-de-la-ccam/index.php"
     ]
+  },
+  "couverture": {
+    "scene": "boucles",
+    "titre": "Orthodontie",
+    "repere": "Rapprochement",
+    "elements": [
+      {
+        "label": "Assurance maladie",
+        "etat": "fait"
+      },
+      {
+        "label": "Mutuelle",
+        "etat": "alerte"
+      },
+      {
+        "label": "Famille",
+        "etat": "attente"
+      }
+    ],
+    "badge": null,
+    "marque": null,
+    "accroche": {
+      "debut": "Trois payeurs, trois rythmes :",
+      "fin": "un seul suivi."
+    },
+    "en": {
+      "titre": "Orthodontics",
+      "repere": "Reconciliation",
+      "labels": [
+        "Health insurance",
+        "Top-up insurer",
+        "Family"
+      ],
+      "badge": null
+    }
   }
 }

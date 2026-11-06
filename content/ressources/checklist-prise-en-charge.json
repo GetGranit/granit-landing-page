@@ -155,5 +155,45 @@
       "source non vérifiable (403) : https://www.ameli.fr/assure/remboursements/offre-100-sante/optique",
       "page rendue en JavaScript, citations non vérifiables : http://www.codage.ext.cnamts.fr/codif/tips//index_presentation.php?p_site=AMELI"
     ]
+  },
+  "couverture": {
+    "scene": "controles",
+    "titre": "Avant d’envoyer la PEC",
+    "repere": "Checklist optique",
+    "elements": [
+      {
+        "label": "Droits du client",
+        "etat": "fait"
+      },
+      {
+        "label": "Bon bénéficiaire",
+        "etat": "alerte"
+      },
+      {
+        "label": "Ordonnance",
+        "etat": "fait"
+      },
+      {
+        "label": "Devis signé",
+        "etat": "attente"
+      }
+    ],
+    "badge": null,
+    "marque": null,
+    "accroche": {
+      "debut": "Deux minutes avant l’envoi",
+      "fin": "évitent le rejet."
+    },
+    "en": {
+      "titre": "Before sending a claim",
+      "repere": "Optical checklist",
+      "labels": [
+        "Client rights",
+        "Right beneficiary",
+        "Prescription",
+        "Signed quote"
+      ],
+      "badge": null
+    }
   }
 }

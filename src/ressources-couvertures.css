@@ -1,0 +1,300 @@
+/* ── Scènes des couvertures dessinées (CouvertureDessinee.tsx) ──
+   Elles habillent la fenêtre des fiches plateformes (ressources.css) : même papier, mêmes points,
+   mêmes unités --s. Le fond suit le thème de l'article. Ce fichier est repris tel quel par
+   l'image de partage (scripts/ressources/og-couvertures.mjs). */
+.ress-fenetre-scene.blush {
+  background: var(--blush);
+}
+.ress-fenetre-scene.ciel {
+  background: color-mix(in oklab, var(--ciel) 55%, var(--papier));
+}
+.ress-fenetre-scene.ciel::before {
+  background-image: radial-gradient(
+    circle,
+    color-mix(in oklab, var(--ciel) 72%, var(--profond)) 1px,
+    transparent 1.2px
+  );
+}
+.ress-fenetre-scene.encre {
+  background: var(--encre);
+}
+.ress-fenetre-scene.encre::before {
+  background-image: radial-gradient(
+    circle,
+    color-mix(in oklab, var(--menthe) 55%, transparent) 1px,
+    transparent 1.2px
+  );
+}
+
+/* États partagés */
+.ress-fenetre-ligne .alerte {
+  color: var(--alerte-texte);
+  background: color-mix(in oklab, var(--alerte) 13%, transparent);
+}
+.ress-fenetre-ligne.alerte::before {
+  background: var(--alerte);
+}
+
+/* Frise */
+.ress-sc-frise {
+  position: relative;
+  display: grid;
+  grid-auto-columns: minmax(0, 1fr);
+  grid-auto-flow: column;
+  gap: calc(var(--s) * 0.8);
+  padding: calc(var(--s) * 4.4) calc(var(--s) * 2) calc(var(--s) * 2.6);
+  font-size: calc(var(--s) * 2.2);
+  line-height: 1.2;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+.ress-sc-frise::before {
+  content: "";
+  position: absolute;
+  top: calc(var(--s) * 6.05);
+  right: calc(var(--s) * 8);
+  left: calc(var(--s) * 8);
+  height: 1.5px;
+  background: var(--filet-champ);
+}
+.ress-sc-frise .etape {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: calc(var(--s) * 1.3);
+  text-align: center;
+}
+.ress-sc-frise i {
+  width: calc(var(--s) * 3.4);
+  height: calc(var(--s) * 3.4);
+  border-radius: 50%;
+  background: var(--profond);
+  box-shadow: 0 0 0 calc(var(--s) * 0.7) var(--papier);
+}
+.ress-sc-frise .attente i {
+  background: var(--papier);
+  box-shadow:
+    0 0 0 calc(var(--s) * 0.7) var(--papier),
+    inset 0 0 0 1.4px var(--filet-champ);
+}
+.ress-sc-frise .alerte {
+  font-weight: 600;
+  color: var(--alerte-texte);
+}
+.ress-sc-frise .alerte i {
+  background: var(--alerte);
+}
+
+/* Écart */
+.ress-sc-ecart {
+  display: grid;
+  gap: calc(var(--s) * 3.6);
+  padding: calc(var(--s) * 3.8) calc(var(--s) * 3);
+  font-size: calc(var(--s) * 2.2);
+  font-weight: 500;
+  color: var(--text-muted);
+}
+.ress-sc-ecart .piste {
+  display: flex;
+  height: calc(var(--s) * 7);
+  margin-top: calc(var(--s) * 0.9);
+}
+.ress-sc-ecart .piste > span {
+  border-radius: calc(var(--s) * 1);
+}
+.ress-sc-ecart .plein {
+  width: 100%;
+  background: var(--encre);
+}
+.ress-sc-ecart .recu {
+  width: 68%;
+  border-radius: calc(var(--s) * 1) 0 0 calc(var(--s) * 1) !important;
+  background: var(--profond);
+}
+.ress-sc-ecart .manque {
+  display: grid;
+  flex: 1;
+  place-items: center;
+  border: 1.2px dashed var(--alerte);
+  border-left: 0;
+  border-radius: 0 calc(var(--s) * 1) calc(var(--s) * 1) 0 !important;
+  background: color-mix(in oklab, var(--alerte) 8%, transparent);
+  font-size: calc(var(--s) * 2.1);
+  font-weight: 600;
+  color: var(--alerte-texte);
+}
+
+/* Paliers : hauteurs décoratives, la scène ne porte aucun chiffre */
+.ress-sc-paliers {
+  display: flex;
+  align-items: flex-end;
+  gap: calc(var(--s) * 2.4);
+  height: calc(var(--s) * 33);
+  padding: calc(var(--s) * 2.4) calc(var(--s) * 3) 0;
+}
+.ress-sc-paliers .palier {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: calc(var(--s) * 0.8);
+  height: 100%;
+  min-width: 0;
+  font-size: calc(var(--s) * 1.9);
+  font-weight: 500;
+  line-height: 1.15;
+  text-align: center;
+  color: var(--text-muted);
+}
+/* Deux lignes réservées : les barres partent toutes du même niveau. */
+.ress-sc-paliers .palier span {
+  display: grid;
+  align-content: start;
+  min-height: 2.3em;
+}
+.ress-sc-paliers i {
+  flex: none;
+  border-radius: calc(var(--s) * 0.9) calc(var(--s) * 0.9) 0 0;
+  background: var(--encre);
+}
+.ress-sc-paliers .rang-0 {
+  background: var(--menthe);
+}
+.ress-sc-paliers .rang-1 {
+  background: var(--profond);
+}
+.ress-sc-paliers .alerte {
+  background: color-mix(in oklab, var(--alerte) 72%, var(--papier));
+}
+
+/* Contrôles */
+.ress-sc-controle {
+  padding: calc(var(--s) * 2) 0;
+  font-size: calc(var(--s) * 2.5);
+  font-weight: 500;
+}
+.ress-sc-controle .libelle {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ress-sc-controle .coche {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: calc(var(--s) * 3);
+  height: calc(var(--s) * 3);
+  border-radius: calc(var(--s) * 0.8);
+  background: var(--succes-fond);
+  font-size: calc(var(--s) * 2.2);
+  font-weight: 700;
+  color: var(--succes-texte);
+}
+.ress-sc-controle .coche:not(.fait) {
+  background: none;
+  box-shadow: inset 0 0 0 1.2px var(--filet-champ);
+}
+
+/* Options */
+.ress-sc-options {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column;
+  gap: calc(var(--s) * 1.6);
+  padding: calc(var(--s) * 2.6) calc(var(--s) * 3);
+}
+.ress-sc-options .option {
+  display: grid;
+  align-content: start;
+  gap: calc(var(--s) * 2.2);
+  min-width: 0;
+  min-height: calc(var(--s) * 25);
+  padding: calc(var(--s) * 2.4) calc(var(--s) * 1.8);
+  border: 1px solid var(--filet);
+  border-radius: calc(var(--s) * 1.4);
+  font-size: calc(var(--s) * 2.2);
+  font-weight: 600;
+}
+.ress-sc-options .choisie {
+  border-color: var(--profond);
+  box-shadow: 0 0 0 1px var(--profond);
+}
+.ress-sc-options i {
+  height: calc(var(--s) * 1.3);
+  border-radius: 9px;
+  background: var(--filet);
+}
+.ress-sc-options .court {
+  width: 66%;
+}
+
+/* Agenda */
+.ress-sc-agenda {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: calc(var(--s) * 0.9);
+  padding: calc(var(--s) * 2.4) calc(var(--s) * 3);
+}
+.ress-sc-agenda i {
+  height: calc(var(--s) * 4.4);
+  border-radius: calc(var(--s) * 0.7);
+  background: var(--lavis);
+}
+.ress-sc-agenda .ciel {
+  background: var(--ciel);
+}
+.ress-sc-agenda .menthe {
+  background: var(--succes-fond);
+}
+.ress-sc-lien {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--s) * 1.4);
+  margin-top: calc(var(--s) * 1.2);
+  padding: 0 calc(var(--s) * 3);
+  font-size: calc(var(--s) * 2.3);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.ress-sc-lien u {
+  flex: 1;
+  border-top: 2px dotted var(--profond);
+  text-decoration: none;
+}
+
+/* Boucles */
+.ress-sc-boucles {
+  display: flex;
+  justify-content: space-around;
+  padding: calc(var(--s) * 5.5) calc(var(--s) * 2);
+}
+.ress-sc-boucles .boucle {
+  display: grid;
+  justify-items: center;
+  gap: calc(var(--s) * 1.6);
+  min-width: 0;
+  font-size: calc(var(--s) * 2.3);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.ress-sc-boucles svg {
+  width: calc(var(--s) * 18);
+  height: calc(var(--s) * 18);
+}
+.ress-sc-boucles circle {
+  fill: none;
+  stroke: var(--profond);
+  stroke-width: 9;
+  stroke-linecap: round;
+}
+.ress-sc-boucles .fond {
+  stroke: var(--lavis);
+}
+.ress-sc-boucles .attente {
+  stroke: var(--encre);
+}
+.ress-sc-boucles .alerte {
+  stroke: var(--alerte);
+}

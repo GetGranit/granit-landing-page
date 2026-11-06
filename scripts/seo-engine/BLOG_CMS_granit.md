@@ -83,7 +83,7 @@ Les champs en **gras** viennent de `articles-queue.json`. Les autres sont produi
 
 ## Image de couverture
 
-La couverture n'apparaît **pas en haut de l'article** (la réponse doit être visible sans défiler) : seulement sur les cartes et en `og:image`. **Décidé le 07/10/2026 : couverture typographique générée par le site** (titre + couleur de la catégorie + trait du logo Granit). Pas de photo Unsplash, pas de clé d'API, pas de registre anti-doublon. Claude ne s'en occupe pas.
+La couverture n'apparaît **pas en haut de l'article** sur mobile (la réponse doit être visible sans défiler) : seulement sur les cartes, à droite de l'en-tête sur grand écran et en `og:image`. **Décidé le 06/11/2026 : plus de photo.** Le site dessine une fenêtre Granit sur la trame de points, avec une scène propre à l'article. La rédaction écrit le champ `couverture` dans sa réponse (`lib/couverture.mjs`) ; ses contrôles ne bloquent jamais : un bloc refusé est retiré et le site dessine sa scène générique. Fiches plateformes et pages « VS » : couverture dessinée sans ce champ. L'image de partage (l'accroche en grand) est produite par `scripts/ressources/og-couvertures.mjs` à la publication.
 
 ---
 

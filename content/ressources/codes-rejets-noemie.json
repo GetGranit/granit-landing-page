@@ -152,5 +152,45 @@
       "aucune citation (facultative)",
       "source non vérifiable (403) : https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006073189"
     ]
+  },
+  "couverture": {
+    "scene": "controles",
+    "titre": "Codes rejets NOEMIE",
+    "repere": "Retour NOEMIE",
+    "elements": [
+      {
+        "label": "Lire le libellé",
+        "etat": "fait"
+      },
+      {
+        "label": "Classer la cause",
+        "etat": "fait"
+      },
+      {
+        "label": "Vérifier doublon",
+        "etat": "alerte"
+      },
+      {
+        "label": "Renvoyer facture",
+        "etat": "attente"
+      }
+    ],
+    "badge": null,
+    "marque": null,
+    "accroche": {
+      "debut": "Le code ne suffit pas :",
+      "fin": "lisez le libellé."
+    },
+    "en": {
+      "titre": "NOEMIE rejection codes",
+      "repere": "NOEMIE return",
+      "labels": [
+        "Read the label",
+        "Classify the cause",
+        "Check duplicates",
+        "Resend invoice"
+      ],
+      "badge": null
+    }
   }
 }
