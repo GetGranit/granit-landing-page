@@ -6,7 +6,7 @@ export const organizationLd = {
   "@type": "Organization",
   "@id": `${SITE_URL}/#organization`,
   name: "Granit",
-  alternateName: "getgranit",
+  alternateName: "Granit AI",
   url: SITE_URL,
   logo: `${SITE_URL}/granit-logo-1200.png`,
   description:
@@ -25,7 +25,7 @@ export const websiteLd = {
   "@type": "WebSite",
   "@id": `${SITE_URL}/#website`,
   name: "Granit",
-  alternateName: ["Granit AI", "getgranit"],
+  alternateName: "Granit AI",
   url: `${SITE_URL}/`,
   inLanguage: "fr-FR",
   publisher: { "@id": `${SITE_URL}/#organization` },
