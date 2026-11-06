@@ -164,5 +164,50 @@
       "aucune citation (facultative)",
       "source non vérifiable (403) : https://www.ameli.fr/assure/remboursements/etre-bien-rembourse/tiers-payant"
     ]
+  },
+  "couverture": {
+    "scene": "frise",
+    "titre": "De la carte au portail",
+    "repere": "Numéro AMC",
+    "elements": [
+      {
+        "label": "Carte valide",
+        "etat": "fait"
+      },
+      {
+        "label": "Plateforme",
+        "etat": "fait"
+      },
+      {
+        "label": "Numéro AMC",
+        "etat": "fait"
+      },
+      {
+        "label": "Ligne optique",
+        "etat": "fait"
+      },
+      {
+        "label": "Sélecteur",
+        "etat": "alerte"
+      }
+    ],
+    "badge": "Avant saisie",
+    "marque": null,
+    "accroche": {
+      "debut": "Pas le nom de la mutuelle :",
+      "fin": "la carte tranche."
+    },
+    "en": {
+      "titre": "From card to portal",
+      "repere": "AMC number",
+      "labels": [
+        "Valid card",
+        "Platform",
+        "AMC number",
+        "Optical line",
+        "Selector"
+      ],
+      "badge": "Before entry"
+    }
   }
 }

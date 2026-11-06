@@ -155,5 +155,45 @@
     "avertissements": [
       "aucune citation (facultative)"
     ]
+  },
+  "couverture": {
+    "scene": "paliers",
+    "titre": "Recouvrement patient",
+    "repere": "Relancer par paliers",
+    "elements": [
+      {
+        "label": "Rappel courtois",
+        "etat": "fait"
+      },
+      {
+        "label": "Relance écrite",
+        "etat": "fait"
+      },
+      {
+        "label": "Appel humain",
+        "etat": "attente"
+      },
+      {
+        "label": "Mise en demeure",
+        "etat": "attente"
+      }
+    ],
+    "badge": null,
+    "marque": null,
+    "accroche": {
+      "debut": "Vérifier d’abord,",
+      "fin": "relancer ensuite par paliers."
+    },
+    "en": {
+      "titre": "Patient collections",
+      "repere": "Follow up in steps",
+      "labels": [
+        "Polite reminder",
+        "Written follow-up",
+        "Personal call",
+        "Formal notice"
+      ],
+      "badge": null
+    }
   }
 }

@@ -98,6 +98,9 @@ export const SCHEMA_VERDICT = {
 /** Schéma du correcteur : l'article (schéma de publish-article) + ce qu'il ne peut pas trancher. */
 export function schemaCorrection(schemaArticle) {
   const s = structuredClone(schemaArticle);
+  // La couverture a ses contrôles et ne bloque jamais : le correcteur n'y touche pas.
+  delete s.properties.couverture;
+  s.required = s.required.filter((k) => k !== "couverture");
   s.properties.decision_humaine = {
     type: "array",
     description: "points qui demandent de changer un fait ou de décider à la place d'un humain (publier, changer la file). Vide sinon.",

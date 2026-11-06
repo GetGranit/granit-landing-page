@@ -7,7 +7,7 @@
 //   `virtual:ressources/ancien-en/{slug}`. Sans traduction valide, rien n'est exposé : repli français.
 // L'aperçu (content/apercu) n'est lu qu'en dev ou sur un déploiement Vercel de prévisualisation :
 // il n'entre jamais dans un build de production.
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import type { Plugin, ViteDevServer } from "vite";
 import { apercuAutorise, controler, lireContenu, redirections } from "./en-ligne.mjs";
@@ -16,6 +16,7 @@ import { articles as anciensArticles } from "../../src/lib/articles";
 import verticalesData from "../../src/lib/ressources/verticales.json";
 import { statutsCarte } from "../../src/lib/ressources/logos";
 import { normaliserVerticales } from "../../src/lib/ressources/verticales";
+import type { Couverture, CouvertureFiche } from "../../src/lib/ressources/couverture";
 import type { Fiche, RessourceJson, VerticaleSlug } from "../../src/lib/ressources/types";
 
 const INDEX = "virtual:ressources";
@@ -33,6 +34,17 @@ const verticalesDe = (a: RessourceJson): VerticaleSlug[] =>
 
 /** Image d'aperçu d'une fiche, produite par scripts/ressources/og-plateformes.mjs. */
 const og = (slug: string) => `/ressources/og/${slug}.jpg`;
+
+/** Le sujet de la couverture : son nom et son logo, si on a sa fiche de faits. */
+function resoudre(
+  c: Couverture | undefined,
+  plateformes: ReturnType<typeof lireContenu>["plateformes"],
+): CouvertureFiche | undefined {
+  if (!c) return undefined;
+  const { marque, ...reste } = c;
+  const fp = marque ? plateformes[marque] : undefined;
+  return fp?.logo ? { ...reste, marque: { nom: fp.nom, logo: fp.logo } } : reste;
+}
 
 const estPilier = (level: string) => /^Pilier/.test(level ?? "");
 
@@ -68,6 +80,7 @@ function fiche(
             statuts: statutsCarte(fp.statuts),
           }
         : undefined,
+    couverture: resoudre(a.couverture, plateformes),
     vs: adversaire?.logo ? { nom: adversaire.nom, logo: adversaire.logo } : undefined,
     en: en ? { title: en.title, metaDescription: en.metaDescription } : undefined,
   };
@@ -121,8 +134,17 @@ export function ressources(): Plugin {
         const anciensEn = Object.fromEntries(
           Object.values(en.anciens).map(({ body: _body, ...a }) => [a.slug, a]),
         );
+        // Les anciens articles (src/lib/articles.ts) gardent leur bloc à part.
+        const fichierAnciens = join(racine, "content/couvertures-anciens.json");
+        const blocsAnciens: Record<string, Couverture> = existsSync(fichierAnciens)
+          ? JSON.parse(readFileSync(fichierAnciens, "utf8"))
+          : {};
+        const couverturesAnciens = Object.fromEntries(
+          Object.entries(blocsAnciens).map(([s, c]) => [s, resoudre(c, contenu.plateformes)]),
+        );
         return (
           `export const fiches = ${JSON.stringify(fiches)};\n` +
+          `export const couverturesAnciens = ${JSON.stringify(couverturesAnciens)};\n` +
           `export const redirections = ${JSON.stringify(redirections(contenu.articles))};\n` +
           `export const charger = {\n${charger.join(",\n")}\n};\n` +
           `export const chargerEn = {\n${chargerEn.join(",\n")}\n};\n` +

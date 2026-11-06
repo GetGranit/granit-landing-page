@@ -153,5 +153,45 @@
     "avertissements": [
       "rédigé par l'équipe de nuit, hors moteur ; fiches à relire"
     ]
+  },
+  "couverture": {
+    "scene": "controles",
+    "titre": "Choisir une offre",
+    "repere": "Tiers payant optique",
+    "elements": [
+      {
+        "label": "Moment où ça coince",
+        "etat": "attente"
+      },
+      {
+        "label": "Qui garde la main",
+        "etat": "fait"
+      },
+      {
+        "label": "Plateformes traitées",
+        "etat": "alerte"
+      },
+      {
+        "label": "Données HDS",
+        "etat": "fait"
+      }
+    ],
+    "badge": null,
+    "marque": null,
+    "accroche": {
+      "debut": "Demandez la liste",
+      "fin": "des plateformes traitées."
+    },
+    "en": {
+      "titre": "Choose an offer",
+      "repere": "Optical third-party",
+      "labels": [
+        "Where it gets stuck",
+        "Who stays in control",
+        "Platforms covered",
+        "HDS data hosting"
+      ],
+      "badge": null
+    }
   }
 }

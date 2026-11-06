@@ -1,3 +1,4 @@
+import type { Couverture, CouvertureFiche } from "./couverture";
 import type { Figure } from "./figures";
 
 // Contrat du fichier content/ressources/{slug}.json écrit par le moteur SEO
@@ -66,6 +67,8 @@ export type RessourceJson = {
   sources: { label: string; url: string }[];
   /** Schémas, placés dans contentHtml par <div data-figure="{id}"></div>. */
   figures?: Figure[];
+  /** Couverture dessinée ; absente sur une fiche plateforme ou comparative. */
+  couverture?: Couverture;
   internalLinks: LienInterne[];
   liensEntrants: LienInterne[];
   /** Anciens articles (articles.ts) que celui-ci remplace : ils redirigent vers lui (301). */
@@ -162,6 +165,8 @@ export type Fiche = {
     /** Accord et attente, dans les mots du portail (couverture des cartes). */
     statuts: { accord: string; attente: string };
   };
+  /** Scène de la couverture ; absente : scène générique. */
+  couverture?: CouvertureFiche;
   /** Page comparative d'un seul concurrent : sa couverture oppose les deux logos. */
   vs?: { nom: string; logo: string };
   /** Métiers de l'article ; tous les métiers si `transversal`. */

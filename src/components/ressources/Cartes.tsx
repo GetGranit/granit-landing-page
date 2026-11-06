@@ -19,15 +19,9 @@ import {
   statutsCarte,
   type StatutsCarte,
 } from "@/lib/ressources/logos";
-import {
-  photoFiche,
-  src,
-  srcSet,
-  estFichePlateforme,
-  estFicheTousPortails,
-  type Photo,
-} from "@/lib/ressources/photos";
+import { estFichePlateforme, estFicheTousPortails } from "@/lib/ressources/couverture";
 import type { Fiche } from "@/lib/ressources/types";
+import { CouvertureDessinee } from "./CouvertureDessinee";
 
 const copy = {
   fr: {
@@ -175,33 +169,6 @@ export function FenetrePlateforme({
   );
 }
 
-/** Photo de carte : srcset 800/1600, recadrée par object-cover, zoom léger au survol. */
-export function PhotoCarte({
-  photo,
-  tailles,
-  chargement = "lazy",
-}: {
-  photo: Photo;
-  tailles: string;
-  /** "haute" : image principale de la page ; "eager" : visible au chargement. */
-  chargement?: "haute" | "eager" | "lazy";
-}) {
-  return (
-    <img
-      src={src(photo, 800)}
-      srcSet={srcSet(photo)}
-      sizes={tailles}
-      width={1600}
-      height={900}
-      loading={chargement === "lazy" ? "lazy" : "eager"}
-      fetchPriority={chargement === "haute" ? "high" : undefined}
-      decoding="async"
-      alt={photo.alt}
-      className="h-full w-full object-cover transition-transform duration-500 ease-[var(--ease-out-quint)] group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
-    />
-  );
-}
-
 /**
  * Couverture d'une page comparative : le logo Granit face au logo du concurrent, tels quels.
  * Décor de carte : le titre qui suit dit déjà la comparaison.
@@ -224,23 +191,17 @@ export function CouvertureVs({ vs }: { vs: NonNullable<Fiche["vs"]> }) {
 }
 
 /**
- * Couverture d'une carte : la photo du thème (ou du métier), ou pour une fiche plateforme la
- * fenêtre de prise en charge, pour une page comparative les deux logos, et l'étiquette de catégorie en haut à gauche.
+ * Couverture d'une carte : pour une fiche plateforme la fenêtre de prise en charge, pour une page
+ * comparative les deux logos, sinon la scène de l'article, et l'étiquette de catégorie en haut à gauche.
  */
 function Couverture({
   fiche,
   etiquette,
   format = "carte",
-  prioritaire,
-  rang,
 }: {
   fiche: Fiche;
   etiquette: string;
   format?: Format;
-  /** Position dans la liste : fait alterner les photos a/b entre cartes voisines. */
-  rang?: number;
-  /** "haute" : image principale de la page ; "oui" : visible au chargement. */
-  prioritaire?: "haute" | "oui";
 }) {
   const c = categorie(fiche.category)!;
   const forme = {
@@ -249,14 +210,7 @@ function Couverture({
     une: "aspect-[4/3] rounded-[16px] lg:aspect-[16/10]",
     pilier: "aspect-[16/10] rounded-[16px]",
   }[format];
-  const tailles = {
-    carte: "(min-width: 1024px) 400px, (min-width: 640px) 50vw, 78vw",
-    petite: "(min-width: 1024px) 260px, 50vw",
-    une: "(min-width: 1024px) 720px, 100vw",
-    pilier: "(min-width: 768px) 720px, 100vw",
-  }[format];
   const nom = fiche.plateforme?.nom ?? titreCourt(fiche.title);
-  const chargement = prioritaire === "haute" ? "haute" : prioritaire ? "eager" : "lazy";
   return (
     <div className={`relative overflow-hidden ${forme}`} style={{ backgroundColor: c.tint }}>
       {estFichePlateforme(fiche) ? (
@@ -272,7 +226,7 @@ function Couverture({
       ) : fiche.vs ? (
         <CouvertureVs vs={fiche.vs} />
       ) : (
-        <PhotoCarte photo={photoFiche(fiche, rang)} tailles={tailles} chargement={chargement} />
+        <CouvertureDessinee fiche={fiche} />
       )}
       <span
         className="absolute left-3 top-3 rounded-[6px] bg-papier/90 px-2 py-1 font-mono text-[10.5px] font-medium uppercase tracking-[0.12em]"
@@ -300,17 +254,7 @@ const survolTitre =
 const meta = "text-[13.5px] text-[var(--text-muted)]";
 
 /** Carte article (Seed) : couverture, étiquette, titre, durée · date. Un seul lien. */
-export function CarteArticle({
-  fiche,
-  etiquette,
-  prioritaire,
-  rang,
-}: {
-  fiche: Fiche;
-  etiquette?: string;
-  prioritaire?: "oui";
-  rang?: number;
-}) {
+export function CarteArticle({ fiche, etiquette }: { fiche: Fiche; etiquette?: string }) {
   const { lang } = useLanguage();
   fiche = ficheLang(fiche, lang);
   const c = categorie(fiche.category, lang)!;
@@ -321,12 +265,7 @@ export function CarteArticle({
       className={lienCarte}
       style={{ ["--ink" as string]: c.ink }}
     >
-      <Couverture
-        fiche={fiche}
-        etiquette={etiquette ?? fiche.etiquette ?? c.court}
-        prioritaire={prioritaire}
-        rang={rang}
-      />
+      <Couverture fiche={fiche} etiquette={etiquette ?? fiche.etiquette ?? c.court} />
       <h3 className="mt-4 line-clamp-3 font-serif text-[19px] font-normal leading-[1.25] tracking-[-0.01em] [text-wrap:balance] md:text-[20px]">
         <span className={survolTitre}>{fiche.title}</span>
       </h3>
@@ -345,13 +284,7 @@ export function CarteUne({ fiche, titre = "h2" }: { fiche: Fiche; titre?: "h2" |
   const H = titre;
   return (
     <Link to="/ressources/$slug" params={{ slug: fiche.slug }} className={lienCarte}>
-      <Couverture
-        fiche={fiche}
-        etiquette={fiche.etiquette ?? c.court}
-        format="une"
-        prioritaire="haute"
-        rang={0}
-      />
+      <Couverture fiche={fiche} etiquette={fiche.etiquette ?? c.court} format="une" />
       <H className="mt-5 max-w-[28ch] font-serif text-[clamp(26px,2.6vw,36px)] font-normal leading-[1.15] tracking-[-0.015em]">
         <TitreItalique titre={fiche.title} ink={c.ink} />
       </H>
@@ -379,12 +312,10 @@ export function CartePilier({ fiche }: { fiche: Fiche }) {
       className={`${lienCarte} grid items-center gap-6 md:grid-cols-12 md:gap-8`}
     >
       <div className="md:col-span-7">
-        <Couverture fiche={fiche} etiquette={c.court} format="pilier" prioritaire="haute" />
+        <Couverture fiche={fiche} etiquette={c.court} format="pilier" />
       </div>
       <div className="md:col-span-5">
-        <span className="eyebrow">
-          {copy[lang].commencer}
-        </span>
+        <span className="eyebrow">{copy[lang].commencer}</span>
         <h2 className="mt-3 font-serif text-[clamp(26px,2.6vw,36px)] font-normal leading-[1.15] tracking-[-0.015em]">
           <TitreItalique titre={fiche.title} ink={c.ink} />
         </h2>
@@ -402,7 +333,7 @@ export function CartePilier({ fiche }: { fiche: Fiche }) {
 }
 
 /** Petite carte de la grille 2×2 « À la une ». */
-export function CartePetite({ fiche, rang }: { fiche: Fiche; rang?: number }) {
+export function CartePetite({ fiche }: { fiche: Fiche }) {
   const { lang } = useLanguage();
   fiche = ficheLang(fiche, lang);
   const c = categorie(fiche.category, lang)!;
@@ -413,13 +344,7 @@ export function CartePetite({ fiche, rang }: { fiche: Fiche; rang?: number }) {
       className={lienCarte}
       style={{ ["--ink" as string]: c.ink }}
     >
-      <Couverture
-        fiche={fiche}
-        etiquette={fiche.etiquette ?? c.court}
-        format="petite"
-        prioritaire="oui"
-        rang={rang}
-      />
+      <Couverture fiche={fiche} etiquette={fiche.etiquette ?? c.court} format="petite" />
       <h3 className="mt-3 line-clamp-3 font-serif text-[15px] font-normal leading-[1.3] md:text-[17px]">
         <span className={survolTitre}>{titreCourt(fiche.title)}</span>
       </h3>

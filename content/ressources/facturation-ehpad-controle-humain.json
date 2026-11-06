@@ -187,5 +187,50 @@
     "avertissements": [
       "aucune citation (facultative)"
     ]
+  },
+  "couverture": {
+    "scene": "frise",
+    "titre": "Facturation résident",
+    "repere": "Validation humaine",
+    "elements": [
+      {
+        "label": "Pré-calcul",
+        "etat": "fait"
+      },
+      {
+        "label": "Sources",
+        "etat": "fait"
+      },
+      {
+        "label": "Anomalies",
+        "etat": "fait"
+      },
+      {
+        "label": "Validation",
+        "etat": "attente"
+      },
+      {
+        "label": "Envoi",
+        "etat": "attente"
+      }
+    ],
+    "badge": "Équipe valide",
+    "marque": null,
+    "accroche": {
+      "debut": "L’outil pré-calcule,",
+      "fin": "votre équipe valide."
+    },
+    "en": {
+      "titre": "Resident billing",
+      "repere": "Human validation",
+      "labels": [
+        "Pre-calc",
+        "Sources",
+        "Anomalies",
+        "Validation",
+        "Sending"
+      ],
+      "badge": "Team approves"
+    }
   }
 }

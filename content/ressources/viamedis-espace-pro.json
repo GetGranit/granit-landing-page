@@ -201,5 +201,45 @@
       "source non vérifiable (403) : https://www.viamedis.fr/viamedis-page-ia/",
       "source non vérifiable (403) : https://www.viamedis.fr/professionnels-de-sante/"
     ]
+  },
+  "couverture": {
+    "scene": "controles",
+    "titre": "Espace pro Viamedis",
+    "repere": "Parcours d’accès",
+    "elements": [
+      {
+        "label": "Création du compte",
+        "etat": "fait"
+      },
+      {
+        "label": "Référencement",
+        "etat": "fait"
+      },
+      {
+        "label": "Validation du RIB",
+        "etat": "alerte"
+      },
+      {
+        "label": "Lien d’activation",
+        "etat": "attente"
+      }
+    ],
+    "badge": null,
+    "marque": "viamedis",
+    "accroche": {
+      "debut": "Pas de lien d’activation ?",
+      "fin": "Le RIB d’abord."
+    },
+    "en": {
+      "titre": "Viamedis pro space",
+      "repere": "Access path",
+      "labels": [
+        "Account creation",
+        "Referencing",
+        "Bank details check",
+        "Activation link"
+      ],
+      "badge": null
+    }
   }
 }

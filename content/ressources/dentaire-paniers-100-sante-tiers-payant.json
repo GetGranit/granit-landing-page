@@ -201,5 +201,45 @@
       "aucune citation (facultative)",
       "source non vérifiable (403) : https://www.ameli.fr/chirurgien-dentiste/exercice-liberal/prescription-prise-charge/materieux-actes-prothetiques-100-sante-dentaire"
     ]
+  },
+  "couverture": {
+    "scene": "controles",
+    "titre": "Tiers payant prothèse",
+    "repere": "Avant la pose",
+    "elements": [
+      {
+        "label": "Droits ouverts",
+        "etat": "fait"
+      },
+      {
+        "label": "Devis signé",
+        "etat": "fait"
+      },
+      {
+        "label": "Prise en charge",
+        "etat": "attente"
+      },
+      {
+        "label": "Panier facturé",
+        "etat": "alerte"
+      }
+    ],
+    "badge": null,
+    "marque": null,
+    "accroche": {
+      "debut": "Devis, facture, contrat :",
+      "fin": "la même histoire."
+    },
+    "en": {
+      "titre": "Dental third-party pay",
+      "repere": "Before fitting",
+      "labels": [
+        "Rights open",
+        "Signed quote",
+        "Prior approval",
+        "Billed basket"
+      ],
+      "badge": null
+    }
   }
 }

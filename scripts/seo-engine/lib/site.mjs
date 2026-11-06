@@ -27,6 +27,28 @@ export function publies(file) {
   return file.filter((a) => a.status === "published" && fichiers.has(`${a.slug}.json`));
 }
 
+/** Plateformes qui ont un logo : le sujet possible d'une couverture. */
+export function logosPlateformes() {
+  return Object.fromEntries(
+    readdirSync(FAITS)
+      .filter((f) => f.endsWith(".json"))
+      .map((f) => [f.replace(/\.json$/, ""), lireJson(join(FAITS, f))])
+      .filter(([, p]) => p.logo)
+      .map(([slug, p]) => [slug, { nom: p.nom, logo: p.logo }]),
+  );
+}
+
+/** Scènes des derniers articles d'un thème, du plus récent au plus ancien. */
+export function scenesRecentes(category, nombre = 3) {
+  return readdirSync(CONTENU)
+    .filter((f) => f.endsWith(".json"))
+    .map((f) => lireJson(join(CONTENU, f)))
+    .filter((a) => a.category === category && a.couverture)
+    .sort((a, b) => (b.dateModified ?? "").localeCompare(a.dateModified ?? ""))
+    .slice(0, nombre)
+    .map((a) => a.couverture.scene);
+}
+
 /** Anciens articles français de src/lib/articles.ts (cibles de liens au démarrage). seoTitle, s'il existe, suit title. */
 export function anciensArticles() {
   const src = readFileSync(join(RACINE, "src/lib/articles.ts"), "utf8");

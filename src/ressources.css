@@ -413,7 +413,11 @@ body {
     transparent 1.2px
   );
   background-size: 14px 14px;
-  mask-image: radial-gradient(120% 90% at 90% 100%, black 10%, transparent 70%);
+  mask-image: radial-gradient(
+    120% 90% at var(--points-x, 90%) var(--points-y, 100%),
+    black 10%,
+    transparent 70%
+  );
 }
 .ress-fenetre {
   --s: 1.18cqw;

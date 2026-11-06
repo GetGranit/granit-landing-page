@@ -162,5 +162,40 @@
       "source non vérifiable (403) : https://www.ameli.fr/assure/droits-demarches/principes/tiers-payant",
       "source non vérifiable (403) : https://www.ameli.fr/assure/remboursements/reste-charge-0/optique"
     ]
+  },
+  "couverture": {
+    "scene": "statuts",
+    "titre": "Bénéficiaire inconnu",
+    "repere": "Rejet mutuelle",
+    "elements": [
+      {
+        "label": "Part AMO payée",
+        "etat": "fait"
+      },
+      {
+        "label": "Part AMC rejetée",
+        "etat": "alerte"
+      },
+      {
+        "label": "Nouvelle demande",
+        "etat": "attente"
+      }
+    ],
+    "badge": null,
+    "marque": null,
+    "accroche": {
+      "debut": "Corrigez la part mutuelle,",
+      "fin": "pas la part Sécu."
+    },
+    "en": {
+      "titre": "Unknown beneficiary",
+      "repere": "Insurer rejection",
+      "labels": [
+        "AMO share paid",
+        "AMC share rejected",
+        "New request"
+      ],
+      "badge": null
+    }
   }
 }

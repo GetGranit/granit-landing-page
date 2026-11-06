@@ -350,7 +350,6 @@ export function ALireEnsuite({ article }: { article: RessourceJson }) {
             <CarteArticle
               key={fiche.slug}
               fiche={fiche}
-              rang={i}
               etiquette={t.etiquettes[type] ?? t.aussi}
             />
           ))}
