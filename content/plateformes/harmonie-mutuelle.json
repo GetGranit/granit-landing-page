@@ -1,0 +1,229 @@
+{
+  "slug": "portail-harmonie-mutuelle",
+  "nom": "Harmonie Mutuelle",
+  "genre": "mutuelle",
+  "logo": "/logos/annuaire/harmonie-mutuelle.svg",
+  "checkedOn": "2026-11-06",
+  "acces": {
+    "verifieLe": "2026-11-06",
+    "liens": [
+      {
+        "label": "Se connecter sur viamedis.net",
+        "url": "https://www.viamedis.net/ViamedisNet/page/accueil/index",
+        "detail": "E-mail, mot de passe, puis code d'une application d'authentification."
+      }
+    ],
+    "note": "Le portail oxantis.net a fermé le 26 octobre 2026 et Viamedis reprend l'optique et l'audioprothèse. Le sélecteur de viamedis.net propose le libellé HARMONIE MUTUELLE en optique (relevé du 06/11/2026)."
+  },
+  "identite": [
+    {
+      "label": "Portail annoncé",
+      "valeur": "viamedis.net (optique, audio, dentaire)",
+      "source": "hm-contacts"
+    },
+    {
+      "label": "Portail relevé",
+      "valeur": "viamedis.net, libellé HARMONIE MUTUELLE (optique)",
+      "source": "granit-releve"
+    },
+    {
+      "label": "Réseau",
+      "valeur": "Kalixia",
+      "source": "hm-conv"
+    },
+    {
+      "label": "Espace pro",
+      "valeur": "Rubrique Professionnels de santé de harmonie-mutuelle.fr",
+      "source": "hm-pro"
+    }
+  ],
+  "aiguillage": [
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "optique",
+      "libelle": "HARMONIE MUTUELLE"
+    }
+  ],
+  "chiffres": [],
+  "faits": [
+    {
+      "fait": "Sur sa page de contacts pour les professionnels de santé, Harmonie Mutuelle a une rubrique « Service Viamedis » qui vise les opticiens, les audioprothésistes et les dentistes.",
+      "source": "hm-contacts"
+    },
+    {
+      "fait": "Pour ces trois métiers, la page indique : conventionnement via l'espace viamedispro.com, factures et prises en charge via l'espace viamedis.net.",
+      "source": "hm-contacts"
+    },
+    {
+      "fait": "Le portail oxantis.net a fermé le 26 octobre 2026. Viamedis reprend l'optique et l'audioprothèse, selon les modalités et conventions propres à cet opérateur.",
+      "source": "acuite-2026-fermeture"
+    },
+    {
+      "fait": "Selon l'annonce d'Acuité, pour les actes réalisés avant la fin de la convention, les prises en charge en cours et l'historique de facturation sont transférés automatiquement vers viamedis.net.",
+      "source": "acuite-2026-fermeture"
+    },
+    {
+      "fait": "Le sélecteur de viamedis.net propose le libellé « HARMONIE MUTUELLE » en optique (relevé du 06/11/2026).",
+      "source": "granit-releve"
+    },
+    {
+      "fait": "Le relevé du 06/11/2026 ne montre pas de libellé Harmonie en audio. Cela ne prouve rien : la liste audio n'a peut-être pas encore intégré les organismes repris d'Oxantis.",
+      "source": "granit-releve"
+    },
+    {
+      "fait": "Pour les dentistes, opticiens, audioprothésistes et ostéopathes, l'Union Harmonie Mutuelles, mandatée à cet effet, propose une convention de tiers payant unique : le réseau Kalixia.",
+      "source": "hm-conv"
+    },
+    {
+      "fait": "Harmonie Mutuelle annonce un tiers payant systématique chez les centres d'optique partenaires Kalixia, sur présentation de la carte Vitale et de la carte mutuelle.",
+      "source": "hm-kalixia"
+    },
+    {
+      "fait": "Sur kalixia.fr/optique, un opticien sans compte le demande par le bouton « Devenir partenaire » pour rejoindre Kalixia Optique 2023-2026 ; l'équipe répond au 0 820 895 895 (numéro surtaxé).",
+      "source": "kalixia-optique"
+    },
+    {
+      "fait": "Le numéro AMC d'Harmonie Mutuelle est le 442224671, avec deux critères secondaires possibles, 024 ou 022 ; le type de convention est « MU » en gestion séparée.",
+      "source": "hm-facturation"
+    },
+    {
+      "fait": "Le critère secondaire sert à orienter la demande de remboursement électronique vers le système de gestion du patient.",
+      "source": "hm-facturation"
+    },
+    {
+      "fait": "Les paramètres à utiliser apparaissent sur la carte de l'adhérent. La mutuelle indique que certains anciens paramètres d'envoi ne sont plus à jour : il faut alors mettre à jour les tables de convention du logiciel et les dossiers patients.",
+      "source": "hm-dre"
+    },
+    {
+      "fait": "Sur la carte : le numéro AMC, le type de convention et le critère secondaire sont en haut à droite, le numéro de télétransmission (concentrateur, norme B2) en haut au centre.",
+      "source": "hm-facturation"
+    },
+    {
+      "fait": "L'adresse de contact pour les factures papier est en haut à gauche de la carte mutualiste.",
+      "source": "hm-faq"
+    },
+    {
+      "fait": "Le datamatrix de la carte donne au logiciel compatible le numéro AMC, le type de convention, le critère secondaire et le numéro d'adhérent. Si la carte n'en a pas ou si le logiciel ne permet pas sa lecture, ces quatre données se saisissent à la main.",
+      "source": "hm-faq"
+    },
+    {
+      "fait": "Un adhérent peut présenter sa carte sur smartphone via l'application Harmonie & Moi, l'envoyer par e-mail en PDF ou l'imprimer lui-même ; le format peut alors être légèrement différent.",
+      "source": "hm-carte"
+    },
+    {
+      "fait": "Les factures papier Harmonie Mutuelle partent à Gestion du Tiers-Payant, TSA 40134, 37049 Tours Cedex 1. La page donne d'autres adresses pour certaines entrées : Argedis et Total à Angers (TSA 11236), Safran Harmonie à Fenouillet (TSA 30154).",
+      "source": "hm-contacts"
+    },
+    {
+      "fait": "La page indique que France Maritime a été reprise par Harmonie Mutuelle au 01/01/2026.",
+      "source": "hm-contacts"
+    }
+  ],
+  "conventionnement": [],
+  "statuts": [],
+  "statutsSource": "",
+  "contacts": [
+    {
+      "label": "Harmonie, conventionnement et coordonnées",
+      "valeur": "0 821 01 00 85",
+      "detail": "Du lundi au vendredi, 8 h 30–17 h 30 · numéro surtaxé",
+      "source": "hm-contacts"
+    },
+    {
+      "label": "Harmonie, toute autre demande",
+      "valeur": "0 821 01 20 80",
+      "detail": "Du lundi au vendredi, 8 h 30–17 h 30 · numéro surtaxé",
+      "source": "hm-contacts"
+    },
+    {
+      "label": "Harmonie, gestion du tiers payant",
+      "valeur": "tiers-payant@harmonie-mutuelle.fr",
+      "detail": "Envoi des factures papier · TSA 40134, 37049 Tours Cedex 1",
+      "source": "hm-contacts"
+    },
+    {
+      "label": "Viamedis, professionnels de santé",
+      "valeur": "0 825 076 076",
+      "detail": "Référencé ou non · numéro surtaxé",
+      "source": "viamedis-contact"
+    },
+    {
+      "label": "Kalixia, opticiens et audioprothésistes",
+      "valeur": "0 820 895 895",
+      "detail": "Centres d'optique et d'audioprothèse · numéro surtaxé · formulaire sur kalixia.fr/aide-contact",
+      "source": "kalixia-contact"
+    }
+  ],
+  "organismes": {
+    "liste": [],
+    "source": ""
+  },
+  "sources": {
+    "hm-contacts": {
+      "label": "harmonie-mutuelle.fr · Professionnels de santé, contacts utiles (date affichée 29/06/2026)",
+      "url": "https://www.harmonie-mutuelle.fr/professionnels-de-sante/professionnels-sante-contacts-utiles",
+      "consulte": "2026-11-06"
+    },
+    "hm-pro": {
+      "label": "harmonie-mutuelle.fr · Professionnels de santé",
+      "url": "https://www.harmonie-mutuelle.fr/professionnels-de-sante",
+      "consulte": "2026-11-06"
+    },
+    "hm-conv": {
+      "label": "harmonie-mutuelle.fr · Je souhaite me conventionner",
+      "url": "https://www.harmonie-mutuelle.fr/professionnels-de-sante/je-souhaite-me-conventionner",
+      "consulte": "2026-11-06"
+    },
+    "hm-facturation": {
+      "label": "harmonie-mutuelle.fr · Comment dois-je facturer mes soins ? (mise à jour 01/01/2021)",
+      "url": "https://www.harmonie-mutuelle.fr/professionnels-de-sante/je-suis-conventionne/facturation-soins",
+      "consulte": "2026-11-06"
+    },
+    "hm-dre": {
+      "label": "harmonie-mutuelle.fr · Mettez à jour vos paramètres d'échange (mise à jour 01/01/2021)",
+      "url": "https://www.harmonie-mutuelle.fr/professionnels-de-sante/informations-de-reference/facture-dre-parametrage",
+      "consulte": "2026-11-06"
+    },
+    "hm-faq": {
+      "label": "harmonie-mutuelle.fr · Foire aux questions des professionnels de santé (mise à jour 01/01/2021)",
+      "url": "https://www.harmonie-mutuelle.fr/professionnels-de-sante/informations-de-reference/faq",
+      "consulte": "2026-11-06"
+    },
+    "hm-carte": {
+      "label": "harmonie-mutuelle.fr · La carte d'adhérent mutualiste dématérialisée (mise à jour 03/01/2021)",
+      "url": "https://www.harmonie-mutuelle.fr/professionnels-de-sante/informations-de-reference/carte-adherent-dematerialisee",
+      "consulte": "2026-11-06"
+    },
+    "hm-kalixia": {
+      "label": "harmonie-mutuelle.fr · Professionnels de santé partenaires Kalixia",
+      "url": "https://www.harmonie-mutuelle.fr/particuliers/solutions/services-assistance/kalixia",
+      "consulte": "2026-11-06"
+    },
+    "kalixia-optique": {
+      "label": "kalixia.fr · Kalixia Optique 2023-2026",
+      "url": "https://www.kalixia.fr/optique/",
+      "consulte": "2026-11-06"
+    },
+    "acuite-2026-fermeture": {
+      "label": "Acuité · « Fermeture de la plateforme de tiers payant Oxantis le 26 octobre 2026 » (16/09/2026)",
+      "url": "https://www.acuite.fr/actualites/profession/fermeture-de-la-plateforme-de-tiers-payant-oxantis-a335575",
+      "consulte": "2026-11-06"
+    },
+    "viamedis-contact": {
+      "label": "viamedis.fr · Nous contacter",
+      "url": "https://www.viamedis.fr/nous-contacter/",
+      "consulte": "2026-11-06"
+    },
+    "granit-releve": {
+      "label": "Relevé Granit du sélecteur de viamedis.net (06/11/2026)",
+      "url": "",
+      "consulte": "2026-11-06"
+    },
+    "kalixia-contact": {
+      "label": "kalixia.fr · Aide & contact",
+      "url": "https://www.kalixia.fr/aide-contact/",
+      "consulte": "2026-11-06"
+    }
+  }
+}

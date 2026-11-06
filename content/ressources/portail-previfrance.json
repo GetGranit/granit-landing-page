@@ -1,0 +1,129 @@
+{
+  "slug": "portail-previfrance",
+  "id": "A46",
+  "category": "plateformes",
+  "categoryName": "Plateformes et portails",
+  "type": "plateforme",
+  "plateforme": "previfrance",
+  "title": "Prévifrance tiers payant : quel portail pour l'opticien ?",
+  "seoTitle": "Prévifrance tiers payant : quel portail pour l'opticien ?",
+  "primaryKeyword": "prévifrance tiers payant",
+  "keywordCluster": [
+    "prévifrance opticien",
+    "prévifrance espace professionnel",
+    "prévifrance prise en charge optique",
+    "prévifrance professionnel de santé"
+  ],
+  "parentSlug": "portails-tiers-payant",
+  "level": "Fille",
+  "author": {
+    "name": "Olivier",
+    "jobTitle": "Rédacteur, expert tiers payant",
+    "photo": "/auteurs/olivier.jpg",
+    "url": null
+  },
+  "reviewer": {
+    "name": "Nathalie",
+    "jobTitle": "Rédactrice, experte métier optique",
+    "photo": "/auteurs/nathalie.jpg",
+    "url": null
+  },
+  "datePublished": "2026-11-06",
+  "dateModified": "2026-11-06",
+  "checkedOn": "2026-11-06",
+  "wordCount": 843,
+  "readTime": 4,
+  "metaDescription": "Au comptoir, le tiers payant Prévifrance passe chez iSanté depuis 2026. Voyez quel libellé choisir, quel code programmer et qui contacter si le dossier bloque.",
+  "contentHtml": "<p><strong>Pour le tiers payant Prévifrance, l'opticien va sur <a href=\"https://www.tp-isante.fr/login\">tp-isante.fr</a> : la mutuelle annonce iSanté comme gestionnaire depuis le 1er janvier 2026.</strong> C'est écrit sur sa <a href=\"https://www.previfrance.fr/professionnels-de-sante.html\">page Professionnels de santé</a>, pour tous les domaines de soins. La carte du client reste la référence pour chaque dossier.</p><div class=\"key-takeaways\"><strong>L'essentiel</strong><ul><li>Pour les soins à partir du 1er janvier 2026, les demandes de prise en charge (PEC) et les factures vont directement à iSanté.</li><li>Pour les soins antérieurs, les factures peuvent continuer à partir vers Prévifrance, par les moyens habituels.</li><li>Sur tp-isante.fr, en optique, le sélecteur propose le libellé Mutuelle PREVIFRANCE (relevé du 06/11/2026).</li><li>La demande passe par l'espace sécurisé, par pole.pec@cegedim.fr ou par fax au 01 49 09 79 22.</li><li>En télétransmission, le code unique à programmer est 00733931.</li></ul></div><h2 id=\"previfrance-portail\">Par quel portail passe le tiers payant Prévifrance ?</h2><p>Prévifrance indique iSanté, en tiers payant simple comme en tiers payant complexe. Le changement date du 1er janvier 2026 : c'est donc la date des soins qui oriente le dossier. Voici ce que proposent les sélecteurs, d'après le relevé du 6 novembre 2026 :</p><div class=\"tbl\"><table><tr><th>Portail</th><th>Métier</th><th>Libellé du sélecteur</th></tr><tr><td>tp-isante.fr</td><td>Optique</td><td>Mutuelle PREVIFRANCE</td></tr><tr><td>viamedis.net</td><td>Optique</td><td>PREVIFRANCE</td></tr><tr><td>viamedis.net</td><td>Audio</td><td>PREVIFRANCE</td></tr><tr><td>Carte Blanche</td><td>Audio</td><td>Mutuelle PREVIFRANCE</td></tr></table></div><p>Ce tableau montre des libellés disponibles, pas le circuit d'un contrat donné. Un libellé sur viamedis.net ou Carte Blanche ne contredit pas l'annonce de Prévifrance, et ne la confirme pas non plus. Une mutuelle peut changer d'opérateur selon le contrat : c'est la carte de tiers payant du client qui décide.</p><p>Pour un autre client, notre outil permet de <a href=\"/ressources/mutuelle-quel-portail\">savoir par quel portail passe une mutuelle</a>. La liste des <a href=\"/ressources/portails-tiers-payant\">portails de tiers payant</a> présente les autres opérateurs.</p><p>Prévifrance tient aussi ses propres magasins : <a href=\"https://www.previfrance.fr/optic-par-previfrance.html\">13 espaces Optic par Prévifrance</a>, ouverts à tous. Elle <a href=\"https://www.previfrance.fr/comparatif-garanties-mutuelle-sante\">présente ses centres optiques et d'audition</a> comme son réseau de soins, avec une prise en charge majorée selon la garantie. Un client peut donc vous en parler : la majoration annoncée vaut pour un achat dans ce réseau.</p><h2 id=\"previfrance-carte\">Comment lire la carte de tiers payant Prévifrance ?</h2><p>La carte Prévifrance est <a href=\"https://www.previfrance.fr/le-mag/actualites/votre-carte-mutuelle-digitale-previfrance-2026\">100 % digitale depuis 2023</a> et remise à disposition chaque année. Le client l'ouvre dans son espace adhérent ou dans l'application. Il peut aussi vous la transmettre en PDF par e-mail.</p><div class=\"callout callout--warn\"><p><strong>Le piège :</strong> pour le passage à 2026, Prévifrance annonçait en octobre 2025 que les cartes 2025 et 2026 cohabiteraient quelques semaines dans l'espace adhérent. Vérifiez l'année de la carte qu'on vous présente.</p></div><p>Les pages consultées ne donnent ni le numéro AMC (assurance maladie complémentaire), ni le critère secondaire, ni la mise en page de la carte. Relevez ces données sur la carte du client, sans les reprendre d'un autre dossier.</p><h2 id=\"previfrance-prise-en-charge\">Comment faire une prise en charge pour un adhérent Prévifrance ?</h2><p>La demande part vers iSanté, à partir de la carte du client. La saisie sur le portail est décrite dans notre page <a href=\"/ressources/portail-isante\">iSanté TP pour les opticiens</a>. Voici ce qui est propre à Prévifrance :</p><ol class=\"steps\"><li><strong>Lire la carte.</strong> Relevez l'organisme indiqué, le numéro AMC et le critère secondaire. Si la carte renvoie vers un autre opérateur, suivez la carte.</li><li><strong>Choisir la voie d'envoi.</strong> Pour l'optique, l'audio, le dentaire et l'hospitalisation, la page propose l'espace sécurisé, l'e-mail ou le fax. Le même code d'accès ouvre tp-isante.fr et hospipartner.com.</li><li><strong>Choisir l'organisme.</strong> Sur tp-isante.fr, en optique, prenez Mutuelle PREVIFRANCE. Ne prenez pas une entrée voisine.</li><li><strong>Facturer après l'accord.</strong> En optique, en audio et en dentaire, la facture se fait depuis le portail iSanté, à la suite de la prise en charge. En télétransmission, programmez le code 00733931.</li></ol><h2 id=\"previfrance-vous-bloquez\">Vous bloquez sur une prise en charge Prévifrance ?</h2><h3>Je ne trouve pas la mutuelle dans la liste</h3><p>Le libellé change d'un portail à l'autre. Sur tp-isante.fr et Carte Blanche, il commence par « Mutuelle ». Sur viamedis.net, c'est PREVIFRANCE seul. Le relevé de tp-isante.fr porte sur l'optique uniquement : en audio, il ne dit donc rien. La demande audio reste possible par e-mail ou par fax.</p><h3>La prise en charge est refusée</h3><p>Les pages consultées ne donnent pas de motifs de refus propres à Prévifrance. Comparez d'abord votre saisie avec la carte, et vérifiez l'année de celle-ci. Écrivez ensuite à pole.pec@cegedim.fr si le refus reste incompris.</p><h3>Elle reste en attente, sans réponse</h3><p>Vérifiez que la demande est bien partie vers iSanté, et non vers Prévifrance : c'est la consigne pour les soins depuis le 1er janvier 2026. Relancez ensuite à pole.pec@cegedim.fr, ou appelez iSanté.</p><h3>L'accord est obtenu, mais le paiement n'arrive pas</h3><p>Partez de la date des soins. À partir du 1er janvier 2026, la facture va à iSanté. Avant cette date, elle peut aller à Prévifrance. Vérifiez ensuite le code 00733931 dans votre logiciel. En papier, l'adresse est : Service Tiers Payant iSanté, service facturation, BP 60159, 45201 Montargis Cedex. Pour un établissement de santé, c'est BP 10320, 45203 Montargis Cedex.</p><h2 id=\"previfrance-contact\">Comment contacter Prévifrance quand on est professionnel de santé ?</h2><p>Pour un dossier de tiers payant, contactez iSanté : la page Professionnels de santé de Prévifrance renvoie vers lui. Les prises en charge et la facturation ont chacune leur adresse e-mail. Pour toute autre information, la ligne dédiée est un numéro surtaxé. Le <a href=\"https://www.previfrance.fr/contact.html\">Service Relation Adhérents</a> de Prévifrance répond aux adhérents.</p><div data-bloc=\"contacts\"></div>",
+  "tocItems": [
+    {
+      "id": "previfrance-portail",
+      "label": "Le portail du tiers payant Prévifrance"
+    },
+    {
+      "id": "previfrance-carte",
+      "label": "Lire la carte de tiers payant"
+    },
+    {
+      "id": "previfrance-prise-en-charge",
+      "label": "Faire une prise en charge"
+    },
+    {
+      "id": "previfrance-vous-bloquez",
+      "label": "Vous bloquez sur une prise en charge ?"
+    },
+    {
+      "id": "previfrance-contact",
+      "label": "Contacter Prévifrance"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "Par quel portail passe le tiers payant Prévifrance ?",
+      "answer": "Prévifrance annonce iSanté comme gestionnaire de tiers payant depuis le 1er janvier 2026. L'opticien va donc sur tp-isante.fr. La carte de tiers payant du client reste la référence pour chaque dossier."
+    },
+    {
+      "question": "Comment faire une prise en charge pour un adhérent Prévifrance ?",
+      "answer": "Partez de la carte du client. Envoyez la demande par l'espace sécurisé de tp-isante.fr, par e-mail à pole.pec@cegedim.fr ou par fax au 01 49 09 79 22. La facture se fait ensuite depuis le portail iSanté."
+    },
+    {
+      "question": "Que faire si Prévifrance n'apparaît pas dans le portail ?",
+      "answer": "Ne concluez pas qu'elle est hors portail, et ne prenez pas une entrée voisine. Sur tp-isante.fr, en optique, cherchez Mutuelle PREVIFRANCE. Sinon, reprenez la carte, puis appelez iSanté au 0 820 03 12 43, un numéro surtaxé."
+    },
+    {
+      "question": "Comment contacter Prévifrance quand on est opticien ?",
+      "answer": "Pour un dossier de tiers payant, la page de Prévifrance renvoie vers iSanté. Pour une prise en charge, écrivez à pole.pec@cegedim.fr. Pour la facturation, écrivez à contact-ps@tp-isante.fr."
+    }
+  ],
+  "sources": [
+    {
+      "label": "tp-isante.fr · Connexion",
+      "url": "https://www.tp-isante.fr/login"
+    },
+    {
+      "label": "previfrance.fr · Professionnels de santé",
+      "url": "https://www.previfrance.fr/professionnels-de-sante.html"
+    },
+    {
+      "label": "previfrance.fr · Optic par Prévifrance",
+      "url": "https://www.previfrance.fr/optic-par-previfrance.html"
+    },
+    {
+      "label": "previfrance.fr · Les garanties d'une mutuelle senior",
+      "url": "https://www.previfrance.fr/comparatif-garanties-mutuelle-sante"
+    },
+    {
+      "label": "previfrance.fr · Votre carte mutuelle digitale Prévifrance 2026 (3 octobre 2025)",
+      "url": "https://www.previfrance.fr/le-mag/actualites/votre-carte-mutuelle-digitale-previfrance-2026"
+    },
+    {
+      "label": "previfrance.fr · Contactez-nous",
+      "url": "https://www.previfrance.fr/contact.html"
+    }
+  ],
+  "figures": [],
+  "internalLinks": [
+    {
+      "id": "A0",
+      "slug": "portails-tiers-payant",
+      "anchor": "portails de tiers payant",
+      "type": "parent"
+    },
+    {
+      "id": "A13",
+      "slug": "mutuelle-quel-portail",
+      "anchor": "savoir par quel portail passe une mutuelle",
+      "type": "outil"
+    }
+  ],
+  "liensEntrants": [],
+  "remplace": [],
+  "verticales": [
+    "optique"
+  ],
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-11-06T12:00:00.000Z",
+    "avertissements": []
+  }
+}

@@ -213,6 +213,131 @@
       "slug": "rejet-tiers-payant",
       "anchor": "motif rejet tiers payant",
       "type": "soeur"
+    },
+    {
+      "slug": "portail-aesio",
+      "anchor": "Aésio",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-ag2r-la-mondiale",
+      "anchor": "AG2R La Mondiale",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-alan",
+      "anchor": "Alan",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-allianz",
+      "anchor": "Allianz",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-apicil",
+      "anchor": "Apicil",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-april",
+      "anchor": "April",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-carte-blanche",
+      "anchor": "Carte Blanche Partenaires",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-generali",
+      "anchor": "Generali",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-groupama",
+      "anchor": "Groupama",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-harmonie-mutuelle",
+      "anchor": "Harmonie Mutuelle",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-interiale",
+      "anchor": "Intériale",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-kalixia",
+      "anchor": "Kalixia",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-klesia",
+      "anchor": "Klesia",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-maaf",
+      "anchor": "MAAF",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-malakoff-humanis",
+      "anchor": "Malakoff Humanis",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-matmut",
+      "anchor": "Matmut",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-mgen",
+      "anchor": "MGEN",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-mma",
+      "anchor": "MMA",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-mnt",
+      "anchor": "MNT",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-mutuelle-familiale",
+      "anchor": "Mutuelle Familiale",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-previfrance",
+      "anchor": "Prévifrance",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-pro-btp",
+      "anchor": "Pro BTP",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-solimut",
+      "anchor": "Solimut",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-swiss-life",
+      "anchor": "Swiss Life",
+      "type": "enfant"
+    },
+    {
+      "slug": "portail-viasante",
+      "anchor": "Viasanté",
+      "type": "enfant"
     }
   ],
   "remplace": [

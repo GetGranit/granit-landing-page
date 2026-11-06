@@ -1,0 +1,196 @@
+{
+  "slug": "portail-alan",
+  "nom": "Alan",
+  "genre": "mutuelle",
+  "logo": "/logos/annuaire/alan.svg",
+  "checkedOn": "2026-11-06",
+  "acces": {
+    "verifieLe": "2026-11-06",
+    "liens": [
+      {
+        "label": "Se connecter au site des PEC Almerys",
+        "url": "https://www.almerys.com/site/Login.do",
+        "detail": "Code à usage unique reçu par e-mail."
+      }
+    ],
+    "note": "Alan renvoie vers Almérys : sa page de candidature annonce une facturation via Almérys et OptoAMC, reliés au logiciel métier. Pour les partenaires du Réseau Alan Optique, la convention type prévoit le portail de l'opérateur si OptoAMC n'est pas utilisable. Les relevés de sélecteurs Granit ne couvrent pas Almérys : l'absence de libellé Alan ne dit rien du contrat du client, c'est sa carte de tiers payant qui décide."
+  },
+  "identite": [
+    {
+      "label": "Type",
+      "valeur": "Assureur santé (Alan Insurance)",
+      "source": "alan-reseau-candidature"
+    },
+    {
+      "label": "Opérateur annoncé",
+      "valeur": "Almérys (avec OptoAMC dans le logiciel)",
+      "source": "alan-reseau-candidature"
+    },
+    {
+      "label": "Réseau",
+      "valeur": "Réseau Alan Optique, fermé, à partir du 1er janvier 2027",
+      "source": "alan-dossier"
+    },
+    {
+      "label": "Espace pro",
+      "valeur": "Page de candidature au Réseau Alan",
+      "source": "alan-reseau-candidature"
+    }
+  ],
+  "aiguillage": [],
+  "chiffres": [],
+  "faits": [
+    {
+      "fait": "Sur sa page de candidature au Réseau Alan, Alan écrit : « Facturez via Almérys et OptoAMC, déjà reliés à votre logiciel métier sans passer par un portail dédié ».",
+      "source": "alan-reseau-candidature"
+    },
+    {
+      "fait": "La convention type du Réseau Alan Optique désigne Almérys comme opérateur de tiers payant, « ou tout opérateur qui lui serait substitué ». Pour les partenaires du réseau, demandes de prise en charge et factures passent par cet opérateur selon la norme OptoAMC. Si OptoAMC n'est pas utilisable, notamment en cas d'indisponibilité technique, elles passent par le portail de l'opérateur.",
+      "source": "alan-dossier"
+    },
+    {
+      "fait": "La première étape de sélection du Réseau Alan, l'éligibilité, demande un opticien qualifié et un magasin en activité, assuré et conventionné Almérys.",
+      "source": "alan-reseau-candidature"
+    },
+    {
+      "fait": "Dans la presse optique, Alan précise que le parcours de candidature demande « un logiciel compatible OptoAMC et le conventionnement avec Almérys, opérateur de tiers-payant d'Alan ».",
+      "source": "frequenceoptic-2026"
+    },
+    {
+      "fait": "Le Réseau Alan est un réseau optique fermé. Appel à candidatures ouvert jusqu'au 30 novembre 2026 à 18 h, première évaluation à partir du 1er décembre, lancement le 1er janvier 2027.",
+      "source": "alan-reseau-candidature"
+    },
+    {
+      "fait": "Le règlement prévoit ensuite des candidatures jusqu'au 30 juin 2028 dans certains cas, dont un magasin qui n'a pas candidaté à la sélection initiale. Elles sont instruites par sessions, selon les places disponibles. Le réseau couvre la période du 1er janvier 2027 au 31 décembre 2028.",
+      "source": "alan-dossier"
+    },
+    {
+      "fait": "Au plus 3 000 opticiens seront référencés sur le territoire (mise à jour du 26/10/2026 de FréquenceOptic).",
+      "source": "frequenceoptic-2026"
+    },
+    {
+      "fait": "Alan indique que la majorité de ses membres ont des garanties renforcées quand ils achètent des lunettes de correction simple ou des lentilles dans le Réseau Alan.",
+      "source": "alan-reseau-candidature"
+    },
+    {
+      "fait": "La convention type précise que le bénéficiaire reste libre de s'adresser à l'opticien de son choix, partenaire ou non du réseau.",
+      "source": "alan-dossier"
+    },
+    {
+      "fait": "Alan présente aujourd'hui une offre pour ses membres chez des opticiens partenaires (enseignes citées sur sa page : Krys, Optic2000, Lissac, Le Collectif des Lunetiers, Lynx Optique) : -15 % sur les montures de panier B hors lunettes connectées et jusqu'à -20 % sur les verres, sur demande de « l'offre spéciale Alan » en magasin.",
+      "source": "alan-opticiens-partenaires"
+    },
+    {
+      "fait": "Les remises d'Alan s'appliquent aux verres et montures, sauf certaines montures spécifiées en magasin, et pas aux autres produits. Un reste à charge peut rester selon le forfait et les options choisies. L'offre vaut en France métropolitaine uniquement.",
+      "source": "alan-opticiens-partenaires"
+    },
+    {
+      "fait": "Alan propose aussi à ses membres deux packs de verres progressifs (Essentiel et Premium) à tarifs négociés.",
+      "source": "alan-opticiens-partenaires"
+    },
+    {
+      "fait": "Chez Alan, la carte de tiers payant est disponible dans l'application. Alan peut aussi l'envoyer par courrier sur demande (guide mis à jour le 10/04/2026).",
+      "source": "alan-carte-guide"
+    },
+    {
+      "fait": "Alan indique que la carte de tiers payant peut aussi se trouver dans le wallet Apple ou Google du membre.",
+      "source": "alan-app"
+    },
+    {
+      "fait": "Alan distingue son « réseau optique en ligne », bâti autour d'un partenaire sélectionné pour les lunettes et les lentilles, du Réseau Alan Optique accessible aux membres en magasin. La page du réseau en ligne précise qu'il est constitué et n'est pas ouvert à de nouvelles candidatures.",
+      "source": "alan-reseau-en-ligne"
+    },
+    {
+      "fait": "Le portail Almerys n'a pas de sélecteur d'organisme : la complémentaire s'affiche une fois le bénéficiaire trouvé.",
+      "source": "granit-connecteur"
+    },
+    {
+      "fait": "Les pages et le dossier consultés ne donnent ni numéro AMC pour Alan, ni ligne téléphonique réservée aux opticiens.",
+      "source": "alan-dossier"
+    }
+  ],
+  "conventionnement": [],
+  "statuts": [],
+  "statutsSource": "",
+  "contacts": [
+    {
+      "label": "Almérys, téléphone",
+      "valeur": "0 825 826 214",
+      "detail": "Opérateur cité par Alan · numéro surtaxé",
+      "source": "almerys-contacts"
+    },
+    {
+      "label": "Almérys, conventionnement et compte",
+      "valeur": "celluleconventionnementalmerys@almerys.com",
+      "source": "almerys-contacts"
+    },
+    {
+      "label": "Almérys, PEC et factures",
+      "valeur": "almerys@almerys.com",
+      "source": "almerys-contacts"
+    },
+    {
+      "label": "Alan, Réseau Alan Optique",
+      "valeur": "support-reseau-alan@alan.eu",
+      "detail": "Canal dédié aux candidats et aux membres du réseau",
+      "source": "alan-dossier"
+    },
+    {
+      "label": "Alan, Réseau Alan et candidature",
+      "valeur": "Page de candidature et foire aux questions",
+      "url": "https://alan.com/fr-fr/l/rejoindre-reseau-alan",
+      "source": "alan-reseau-candidature"
+    }
+  ],
+  "organismes": {
+    "liste": [],
+    "source": ""
+  },
+  "sources": {
+    "alan-reseau-candidature": {
+      "label": "alan.com · Rejoignez le Réseau Alan (appel à candidatures)",
+      "url": "https://alan.com/fr-fr/l/rejoindre-reseau-alan",
+      "consulte": "2026-11-06"
+    },
+    "alan-opticiens-partenaires": {
+      "label": "alan.com · Notre réseau d'opticiens partenaires Alan",
+      "url": "https://alan.com/fr-fr/assurance-sante/pourquoi-alan/opticien-partenaire",
+      "consulte": "2026-11-06"
+    },
+    "alan-reseau-en-ligne": {
+      "label": "alan.com · Réseau optique en ligne d'Alan",
+      "url": "https://alan.com/fr-fr/reseau-optique",
+      "consulte": "2026-11-06"
+    },
+    "frequenceoptic-2026": {
+      "label": "FréquenceOptic · Alan prépare son réseau optique fermé (23/10/2026, mis à jour le 26/10)",
+      "url": "https://frequenceoptic.fr/actualites/alan-prepare-son-reseau-optique-ferme-appel-a-candidatures-imminent.html",
+      "consulte": "2026-11-06"
+    },
+    "almerys-contacts": {
+      "label": "almerys.com · Contactez-nous (espace professionnel)",
+      "url": "https://www.almerys.com/accueil/contacts",
+      "consulte": "2026-10-07"
+    },
+    "alan-dossier": {
+      "label": "alan.com · Dossier de candidature au Réseau Alan Optique (règlement v2 du 02/11/2026, convention type)",
+      "url": "https://alan-health.cdn.prismic.io/alan-health/2FShEMaHTwAa2xU4_dossier-candidature-optique-v2.zip",
+      "consulte": "2026-11-06"
+    },
+    "alan-carte-guide": {
+      "label": "alan.com · Carte de mutuelle : à quoi sert-elle ? (mis à jour le 10/04/2026)",
+      "url": "https://alan.com/fr-fr/assurance-sante/guides/a/carte-mutuelle-sante",
+      "consulte": "2026-11-06"
+    },
+    "alan-app": {
+      "label": "alan.com · L'app santé",
+      "url": "https://alan.com/fr-fr/assurance-sante/pourquoi-alan/app-sante",
+      "consulte": "2026-11-06"
+    },
+    "granit-connecteur": {
+      "label": "Connecteur Almerys de Granit (relevé du 07/10/2026)",
+      "url": "",
+      "consulte": "2026-10-07"
+    }
+  }
+}

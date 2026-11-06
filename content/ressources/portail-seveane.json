@@ -210,6 +210,11 @@
       "slug": "mutuelle-quel-portail",
       "anchor": "savoir par quel portail passe une mutuelle",
       "type": "soeur"
+    },
+    {
+      "slug": "portail-groupama",
+      "anchor": "Groupama",
+      "type": "soeur"
     }
   ],
   "remplace": [],

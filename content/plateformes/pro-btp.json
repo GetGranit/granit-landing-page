@@ -1,0 +1,237 @@
+{
+  "slug": "portail-pro-btp",
+  "nom": "Pro BTP",
+  "genre": "mutuelle",
+  "logo": "/logos/annuaire/pro-btp.svg",
+  "checkedOn": "2026-11-06",
+  "acces": {
+    "verifieLe": "2026-11-06",
+    "liens": [
+      {
+        "label": "Se connecter sur korelio.com",
+        "url": "https://www.korelio.com/mon-compte-korelio.html",
+        "detail": "Identifiant, mot de passe, puis code reçu par e-mail."
+      },
+      {
+        "label": "Espace opticien Sévéane",
+        "url": "https://www.seveane.com/seveaneExt/angular-app/index.jsp#!/login/opticien",
+        "detail": "Pour les opticiens partenaires du réseau Sévéane."
+      }
+    ],
+    "note": "Le tiers payant PRO BTP est géré par Korelio. La carte de tiers payant du client fait foi."
+  },
+  "identite": [
+    {
+      "label": "Type",
+      "valeur": "Groupe de protection sociale du BTP, tiers payant géré par Korelio",
+      "source": "groupe-histoire"
+    },
+    {
+      "label": "Portail annoncé",
+      "valeur": "korelio.com, ou seveane.com pour les partenaires Sévéane",
+      "source": "korelio-attestation"
+    },
+    {
+      "label": "Réseau",
+      "valeur": "Sévéane",
+      "source": "probtp-seveane"
+    },
+    {
+      "label": "Espace pro",
+      "valeur": "Espace pro de korelio.com",
+      "source": "korelio-accueil"
+    }
+  ],
+  "aiguillage": [],
+  "chiffres": [],
+  "faits": [
+    {
+      "fait": "Korelio est le réseau de services créé par PRO BTP et ses partenaires pour les échanges avec les professionnels de santé, notamment le tiers payant.",
+      "source": "probtp-partenaires"
+    },
+    {
+      "fait": "Korelio liste les organismes qui lui ont confié la gestion de leur tiers payant : BTP-Prévoyance, SAF BTP IARD, MBBTP (Mutuelle Boissière), SMABTP, Auxiliaire, MGI, Prodigéo Assurances, Audiens et Mutuelle Mieux-Être.",
+      "source": "korelio-partenaires"
+    },
+    {
+      "fait": "La complémentaire santé PRO BTP est présentée comme accessible à tous, du BTP ou non. Les offres détaillées sur la page sont assurées par BTP-Prévoyance, une institution de prévoyance.",
+      "source": "probtp-complementaire"
+    },
+    {
+      "fait": "Sur l'attestation Korelio, les opticiens portent le code « OPTI » ; les audioprothésistes, « AUDIO ». Le fac-similé liste au recto les organismes partenaires (PRO BTP, Lourmel, SMABTP, MGI, MBTP, Audiens, Prodigéo Assurances, Mutuelle Entrenous) ; au verso, les points de contact réservés aux professionnels et un code organisme unique Korelio.",
+      "source": "korelio-attestation"
+    },
+    {
+      "fait": "Pour les opticiens et les audioprothésistes, les demandes de prise en charge s'effectuent dans l'espace personnel Korelio.",
+      "source": "korelio-convention"
+    },
+    {
+      "fait": "L'attestation renvoie vers une prise en charge à télécharger sur korelio.com, ou sur seveane.com pour les partenaires Sévéane.",
+      "source": "korelio-attestation"
+    },
+    {
+      "fait": "Korelio se présente comme l'interlocuteur unique du professionnel pour le tiers payant : l'attestation confirme les droits de l'assuré et garantit le remboursement par Korelio.",
+      "source": "korelio-attestation"
+    },
+    {
+      "fait": "La carte de tiers payant existe en papier ou en numérique, dans l'application PRO BTP Santé.",
+      "source": "probtp-complementaire"
+    },
+    {
+      "fait": "Pour une erreur sur sa carte, PRO BTP invite l'assuré à le contacter : espace client, téléphone de sa direction régionale ou application PRO BTP Santé.",
+      "source": "probtp-carte"
+    },
+    {
+      "fait": "Sur la part complémentaire, PRO BTP règle directement le professionnel de santé, dans la limite du ticket modérateur ou des garanties du contrat.",
+      "source": "probtp-carte"
+    },
+    {
+      "fait": "PRO BTP annonce un tiers payant systématique chez les opticiens et audioprothésistes du réseau Sévéane : l'assuré n'avance pas la partie remboursée par sa couverture santé PRO BTP.",
+      "source": "probtp-seveane"
+    },
+    {
+      "fait": "Sévéane est le réseau de soins accessible avec la complémentaire santé PRO BTP. La page de PRO BTP affiche 5 064 opticiens et 4 557 audioprothésistes partenaires, et renvoie l'assuré vers son espace « Mon compte » ou l'appli PRO BTP Santé pour les localiser.",
+      "source": "probtp-seveane"
+    },
+    {
+      "fait": "Chez les opticiens du réseau, PRO BTP annonce pour l'assuré 20 % minimum de réduction sur les montures, 10 % sur les lentilles, accessoires et solaires sans correction, une garantie casse sans franchise et « satisfait ou échangé » 6 mois sur les progressifs.",
+      "source": "probtp-seveane"
+    },
+    {
+      "fait": "PRO BTP annonce jusqu'à 100 € de remboursement supplémentaire sur un équipement de classe B (monture + 2 unifocaux hors 100 % Santé) chez un opticien partenaire Sévéane. La page ne précise pas le niveau de garantie requis.",
+      "source": "probtp-seveane"
+    },
+    {
+      "fait": "L'assuré conserve la liberté de consulter l'opticien de son choix, partenaire ou non. Le contrat de partenariat des opticiens Sévéane couvre la période 2024 / 2027.",
+      "source": "seveane-optique"
+    },
+    {
+      "fait": "Un opticien qui souhaite pratiquer le tiers payant avec Korelio passe par la convention optique, en trois étapes : demande d'adhésion en ligne, envoi des pièces justificatives, signature électronique après analyse.",
+      "source": "korelio-conv-opticiens"
+    },
+    {
+      "fait": "Le relevé du 06/11/2026 ne montre aucun libellé au nom de PRO BTP. Les sélecteurs du portail Sévéane proposent un libellé de gestionnaire : « Korelio » en optique, « KORELIO » en audio.",
+      "source": "granit-releve"
+    },
+    {
+      "fait": "Le 28 juillet 2023, Korelio a demandé aux opticiens et audioprothésistes d'adhérer en ligne à la nouvelle convention, depuis leur espace abonné, pour continuer à bénéficier des avantages du tiers payant Korelio.",
+      "source": "korelio-renouvellement"
+    }
+  ],
+  "conventionnement": [],
+  "statuts": [],
+  "statutsSource": "",
+  "organismes": {
+    "liste": [],
+    "source": ""
+  },
+  "contacts": [
+    {
+      "label": "Korelio Floirac",
+      "valeur": "05 57 80 72 57",
+      "detail": "PRO BTP - Korelio, Professionnels de santé, CS 60010, 33278 Floirac Cedex",
+      "url": "https://www.korelio.com/contacter-korelio.html",
+      "source": "korelio-contact"
+    },
+    {
+      "label": "Korelio Créteil",
+      "valeur": "01 49 80 85 90",
+      "detail": "PRO BTP - Korelio, Professionnels de santé, 94966 Créteil Cedex 9",
+      "url": "https://www.korelio.com/contacter-korelio.html",
+      "source": "korelio-contact"
+    },
+    {
+      "label": "Korelio Rouen",
+      "valeur": "02 35 15 72 64",
+      "detail": "PRO BTP - Korelio, Professionnels de santé, BP 61054, 76172 Rouen Cedex 1",
+      "url": "https://www.korelio.com/contacter-korelio.html",
+      "source": "korelio-contact"
+    },
+    {
+      "label": "Korelio Sophia-Antipolis",
+      "valeur": "04 93 22 38 88",
+      "detail": "PRO BTP - Korelio, Professionnels de santé, 06922 Sophia Antipolis Cedex",
+      "url": "https://www.korelio.com/contacter-korelio.html",
+      "source": "korelio-contact"
+    },
+    {
+      "label": "Korelio Wasquehal",
+      "valeur": "03 20 25 66 01",
+      "detail": "PRO BTP - Korelio, Professionnels de santé, CS 41001, 59447 Wasquehal Cedex",
+      "url": "https://www.korelio.com/contacter-korelio.html",
+      "source": "korelio-contact"
+    }
+  ],
+  "sources": {
+    "probtp-partenaires": {
+      "label": "groupe.probtp.com · Nos partenaires",
+      "url": "https://groupe.probtp.com/accueil/notre-ecosysteme/nos-partenaires.html",
+      "consulte": "2026-11-06"
+    },
+    "korelio-attestation": {
+      "label": "korelio.com · L'attestation de tiers payant Korelio",
+      "url": "https://www.korelio.com/attestation-tiers-payant.html",
+      "consulte": "2026-11-06"
+    },
+    "korelio-accueil": {
+      "label": "korelio.com · Accueil",
+      "url": "https://www.korelio.com/accueil.html",
+      "consulte": "2026-11-06"
+    },
+    "korelio-contact": {
+      "label": "korelio.com · Contacter un centre de gestion",
+      "url": "https://www.korelio.com/contacter-korelio.html",
+      "consulte": "2026-11-06"
+    },
+    "probtp-seveane": {
+      "label": "probtp.com · Plateforme santé Sévéane",
+      "url": "https://www.probtp.com/part/faq-sante/reseaux-soins-seveane.html",
+      "consulte": "2026-11-06"
+    },
+    "probtp-carte": {
+      "label": "probtp.com · Carte tiers payant",
+      "url": "https://www.probtp.com/part/faq-sante/carte-tiers-payant.html",
+      "consulte": "2026-11-06"
+    },
+    "probtp-complementaire": {
+      "label": "probtp.com · Complémentaire santé",
+      "url": "https://www.probtp.com/part/proteger-ma-sante/complementaire-sante.html",
+      "consulte": "2026-11-06"
+    },
+    "granit-releve": {
+      "label": "Relevé Granit des sélecteurs de portails (06/11/2026)",
+      "url": "",
+      "consulte": "2026-11-06"
+    },
+    "groupe-histoire": {
+      "label": "groupe.probtp.com · Notre histoire",
+      "url": "https://groupe.probtp.com/accueil/nous-connaitre/notre-histoire.html",
+      "consulte": "2026-11-06"
+    },
+    "korelio-partenaires": {
+      "label": "korelio.com · Les partenaires de Korelio",
+      "url": "https://www.korelio.com/partenaires.html",
+      "consulte": "2026-11-06"
+    },
+    "korelio-convention": {
+      "label": "korelio.com · Signer une convention Korelio",
+      "url": "https://www.korelio.com/conventionnement/signer-une-convention-korelio.html",
+      "consulte": "2026-11-06"
+    },
+    "korelio-conv-opticiens": {
+      "label": "korelio.com · Conventionnement opticiens",
+      "url": "https://www.korelio.com/conventionnementOpticiens.html",
+      "consulte": "2026-11-06"
+    },
+    "korelio-renouvellement": {
+      "label": "korelio.com · Opticiens et audioprothésistes, vos conventions doivent être renouvelées (28/07/2023)",
+      "url": "https://www.korelio.com/contents/actus/opticiens-et-audioprothesistes-vos-conventions-doivent-etre-renouvelees.html",
+      "consulte": "2026-11-06"
+    },
+    "seveane-optique": {
+      "label": "seveane.com · Le partenariat avec les opticiens Sévéane",
+      "url": "https://www.seveane.com/home/optique.html",
+      "consulte": "2026-11-06"
+    }
+  }
+}

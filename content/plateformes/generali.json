@@ -1,0 +1,184 @@
+{
+  "slug": "portail-generali",
+  "nom": "Generali",
+  "genre": "mutuelle",
+  "logo": "/logos/annuaire/generali.svg",
+  "checkedOn": "2026-11-06",
+  "acces": {
+    "verifieLe": "2026-11-06",
+    "liens": [
+      {
+        "label": "Se connecter à pec.carteblanchepartenaires.fr",
+        "url": "https://pec.carteblanchepartenaires.fr/#/login",
+        "detail": "Identifiant et mot de passe, ou Pro Santé Connect. Sur le portail audio, un code de sécurité à 6 chiffres peut être demandé par e-mail à la connexion."
+      },
+      {
+        "label": "Se connecter au site des PEC Almerys",
+        "url": "https://www.almerys.com/site/Login.do",
+        "detail": "Code à usage unique reçu par e-mail. Pour une carte qui indique Almerys."
+      }
+    ],
+    "note": "Le sélecteur audio du portail Carte Blanche propose le libellé GENERALI GESTION SANTE (relevé du 06/11/2026). Generali cite aussi Almerys pour La Santé Entreprise : la carte de tiers payant du patient décide du portail."
+  },
+  "identite": [
+    {
+      "label": "Type",
+      "valeur": "Assureur, complémentaire santé",
+      "source": "gen-faq-services"
+    },
+    {
+      "label": "Portail relevé",
+      "valeur": "Carte Blanche, libellé GENERALI GESTION SANTE en audio",
+      "source": "granit-releve"
+    },
+    {
+      "label": "Réseau",
+      "valeur": "Carte Blanche pour les opticiens et audioprothésistes",
+      "source": "gen-faq-tp"
+    },
+    {
+      "label": "Espace pro",
+      "valeur": "Via Carte Blanche : espace professionnels de santé",
+      "source": "cbp-pro"
+    }
+  ],
+  "aiguillage": [
+    {
+      "portail": "Carte Blanche",
+      "slugFiche": "portail-carte-blanche",
+      "metier": "audio",
+      "libelle": "GENERALI GESTION SANTE"
+    }
+  ],
+  "chiffres": [],
+  "faits": [
+    {
+      "fait": "Dans sa FAQ, Generali indique être associé à Carte Blanche : ses assurés santé accèdent à un réseau d'opticiens, d'audioprothésistes et de chirurgiens-dentistes partenaires.",
+      "source": "gen-aide-opticien"
+    },
+    {
+      "fait": "Sur sa page Carte Blanche publiée le 08/10/2021, Generali précise que, avec le tiers payant, l'assuré ne fait pas l'avance des frais couverts par Generali, et que les opticiens, dentistes et audioprothésistes conventionnés Carte Blanche s'occupent des demandes de prise en charge.",
+      "source": "gen-actu-cb"
+    },
+    {
+      "fait": "Dans sa foire aux questions sur le tiers payant, Generali nomme « partenaires Carte Blanche pour les opticiens et audioprothésistes » dans son réseau de partenaires de santé.",
+      "source": "gen-faq-tp"
+    },
+    {
+      "fait": "Le sélecteur audio du portail Carte Blanche propose le libellé « GENERALI GESTION SANTE » (relevé du 06/11/2026). Il n'y a pas de relevé de ce sélecteur côté optique, ce qui ne dit rien du libellé à choisir : devant un patient Generali en optique, c'est la carte de tiers payant qui dit où faire la demande.",
+      "source": "granit-releve"
+    },
+    {
+      "fait": "Le nom de ce libellé vient de Generali : sa FAQ santé propose à l'assuré de « contacter Generali Gestion Santé au 0 969 365 365 ».",
+      "source": "gen-faq-services"
+    },
+    {
+      "fait": "Sur la page de son contrat collectif La Santé Entreprise, Generali cite deux réseaux : « Accès aux réseaux Almérys et Carte blanche », sans avance de frais sur présentation de la carte de tiers payant. La page ne précise pas quel réseau s'applique à quel assuré : pour un salarié couvert par ce contrat, c'est la carte qui tranche. Almerys n'a pas de relevé de sélecteur : aucun libellé n'est donné ici.",
+      "source": "gen-ani"
+    },
+    {
+      "fait": "Generali met à disposition de l'assuré une carte de tiers payant, téléchargeable à tout moment dans son espace client (rubrique « Mes Contrats », puis « Consulter ma carte de tiers payant »). C'est ce document qu'il faut lire quand le portail à utiliser n'est pas évident.",
+      "source": "gen-faq-tp"
+    },
+    {
+      "fait": "Pour trouver un opticien Carte Blanche, Generali renvoie l'assuré vers son espace client : « Mes services », « Carte blanche », « J'accède au service », « Mon compte », puis l'option « réseau optique ».",
+      "source": "gen-aide-opticien"
+    },
+    {
+      "fait": "Sur le portail Carte Blanche, on se connecte avec un identifiant ou avec Pro Santé Connect. Un professionnel pas encore conventionné passe par l'espace professionnels de santé de Carte Blanche pour créer son compte.",
+      "source": "cbp-pro"
+    },
+    {
+      "fait": "Sur cette même page de 2021, Generali rappelle que l'assuré peut aussi consulter un professionnel hors réseau Carte Blanche, avec le remboursement prévu par son contrat mais sans les avantages du réseau.",
+      "source": "gen-actu-cb"
+    },
+    {
+      "fait": "Sur le portail audio de Carte Blanche, l'organisme est choisi en premier dans une liste « Nom AMC », puis le bénéficiaire est recherché avec son numéro de sécurité sociale, sa date de naissance et son rang.",
+      "source": "granit-releve-audio"
+    }
+  ],
+  "conventionnement": [],
+  "statuts": [],
+  "statutsSource": "",
+  "contacts": [
+    {
+      "label": "Carte Blanche, professionnels conventionnés",
+      "valeur": "09 69 39 66 39",
+      "detail": "Numéro affiché sur la page contact de Carte Blanche pour les professionnels conventionnés",
+      "source": "cbp-contact"
+    },
+    {
+      "label": "Carte Blanche, professionnels non conventionnés",
+      "valeur": "Espace professionnels de santé",
+      "url": "https://carteblanchepartenaires.fr/sante/espace-professionnels-de-sante",
+      "source": "cbp-contact"
+    },
+    {
+      "label": "Generali, accueil client santé (numéro destiné aux assurés)",
+      "valeur": "09 69 36 53 65",
+      "detail": "Numéro donné aux assurés, aussi sous le nom Generali Gestion Santé. Les pages consultées ne donnent pas de ligne dédiée aux professionnels de santé",
+      "source": "gen-aide-opticien"
+    }
+  ],
+  "organismes": {
+    "liste": [],
+    "source": ""
+  },
+  "sources": {
+    "gen-actu-cb": {
+      "label": "generali.fr · Carte Blanche, le réseau d'opticiens, d'audioprothésistes et de dentistes (publié le 08/10/2021)",
+      "url": "https://www.generali.fr/actu/opticiens-carte-blanche/",
+      "consulte": "2026-11-06"
+    },
+    "gen-faq-tp": {
+      "label": "generali.fr · FAQ Tiers payant",
+      "url": "https://www.generali.fr/aide/categories/complementaire-sante/tiers-payant",
+      "consulte": "2026-11-06"
+    },
+    "gen-aide-opticien": {
+      "label": "generali.fr · FAQ Opticien agréé Generali",
+      "url": "https://www.generali.fr/aide/user-question/opticien-agree-generali",
+      "consulte": "2026-11-06"
+    },
+    "gen-ani": {
+      "label": "generali.fr · Complémentaire santé obligatoire (La Santé Entreprise)",
+      "url": "https://www.generali.fr/professionnel/complementaire-sante-entreprise-ani/",
+      "consulte": "2026-11-06"
+    },
+    "cbp-pro": {
+      "label": "carteblanchepartenaires.fr · Espace professionnels de santé",
+      "url": "https://carteblanchepartenaires.fr/sante/espace-professionnels-de-sante",
+      "consulte": "2026-11-06"
+    },
+    "cbp-contact": {
+      "label": "carteblanchepartenaires.fr · Contact",
+      "url": "https://carteblanchepartenaires.fr/contact",
+      "consulte": "2026-11-06"
+    },
+    "granit-releve": {
+      "label": "Relevé Granit des sélecteurs du portail Carte Blanche (06/11/2026)",
+      "url": "",
+      "consulte": "2026-11-06"
+    },
+    "granit-releve-audio": {
+      "label": "Relevé Granit du portail audio de Carte Blanche (06/11/2026)",
+      "url": "",
+      "consulte": "2026-11-06"
+    },
+    "gen-faq-services": {
+      "label": "generali.fr · FAQ Services contrat Santé",
+      "url": "https://www.generali.fr/aide/categories/complementaire-sante/services-contrat-sante",
+      "consulte": "2026-11-06"
+    },
+    "cbp-pec": {
+      "label": "pec.carteblanchepartenaires.fr · Connexion",
+      "url": "https://pec.carteblanchepartenaires.fr/#/login",
+      "consulte": "2026-11-06"
+    },
+    "almerys-pec": {
+      "label": "almerys.com · Site des PEC almerys",
+      "url": "https://www.almerys.com/site/Login.do",
+      "consulte": "2026-11-06"
+    }
+  }
+}

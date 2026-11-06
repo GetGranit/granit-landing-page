@@ -1,6 +1,6 @@
 // Contrôles avant publication : guide (« Contrôles automatiques ») + gabarit (section 8).
 // erreurs = l'article est refusé ; avertissements = publié, mais signalé au relecteur.
-import { compteMarqueur, h2s, horsListeBlanche, liens, MARQUEURS_PAR_TYPE, mots, normalise, texte } from "./html.mjs";
+import { compteMarqueur, h2s, horsListeBlanche, liens, MARQUEURS_MUTUELLE, MARQUEURS_PAR_TYPE, mots, normalise, texte } from "./html.mjs";
 
 const SITE = "https://www.getgranit.ai";
 
@@ -59,6 +59,8 @@ const DENIGREMENT = [
 ];
 /** Mots minimum par type (cible : fiche VS 1 000 à 1 500, grille 2 000 à 2 800, autres 1 800 à 2 500). */
 export const MOTS_MIN = { vs: 900, grille: 1800 };
+/** Fiche mutuelle (fichier de faits `genre: "mutuelle"`) : une page d'aiguillage courte, pas une fiche portail. */
+export const MOTS_MIN_MUTUELLE = 600;
 /** Longueur maximale de seoTitle : au-delà, Google coupe la balise <title> dans ses résultats. */
 export const TITRE_MAX = 60;
 
@@ -134,11 +136,13 @@ export function controler(out, ctx) {
 
   // Balisage
   const comparatif = type === "vs" || type === "grille";
-  for (const f of horsListeBlanche(html, { marqueurs: MARQUEURS_PAR_TYPE[type] ?? [] })) erreurs.push(f);
+  const mutuelle = type === "plateforme" && ctx.faits?.genre === "mutuelle";
+  const marqueurs = mutuelle ? MARQUEURS_MUTUELLE : (MARQUEURS_PAR_TYPE[type] ?? []);
+  for (const f of horsListeBlanche(html, { marqueurs })) erreurs.push(f);
 
   const corps = texte(html);
   const nbMots = mots(corps).length;
-  const min = MOTS_MIN[type] ?? 1400;
+  const min = mutuelle ? MOTS_MIN_MUTUELLE : (MOTS_MIN[type] ?? 1400);
   if (nbMots < min) erreurs.push(`contentHtml fait ${nbMots} mots (minimum ${min})`);
 
   // Titre (file) : au-delà de 60 caractères, Google le coupe. Refusé sur une page plateforme.
@@ -252,7 +256,7 @@ export function controler(out, ctx) {
 
   // Par type de page
   if (type === "resolution" && !/<ol class="steps">/.test(html)) erreurs.push('page résolution sans <ol class="steps">');
-  for (const m of MARQUEURS_PAR_TYPE[type] ?? []) {
+  for (const m of marqueurs) {
     const n = compteMarqueur(html, m);
     if (n !== 1) erreurs.push(`marqueur data-bloc="${m}" présent ${n} fois (1 attendu)`);
   }

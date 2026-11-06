@@ -1,0 +1,198 @@
+{
+  "slug": "portail-april",
+  "nom": "April",
+  "genre": "mutuelle",
+  "logo": "/logos/annuaire/april.svg",
+  "checkedOn": "2026-11-06",
+  "acces": {
+    "verifieLe": "2026-11-06",
+    "liens": [
+      {
+        "label": "Se connecter sur viamedis.net",
+        "url": "https://www.viamedis.net/ViamedisNet/page/accueil/index",
+        "detail": "E-mail, mot de passe, puis code d'une application d'authentification."
+      }
+    ],
+    "note": "Les pages april.fr consultées ne nomment pas l'opérateur de tiers payant d'April. Le sélecteur optique de viamedis.net propose deux libellés April (relevé du 06/11/2026) : la carte de tiers payant du client indique l'opérateur et l'organisme à choisir."
+  },
+  "identite": [
+    {
+      "label": "Type",
+      "valeur": "Gestionnaire de contrats santé ; Tranquillité Santé est co-conçu et assuré par Quatrem",
+      "source": "april-optique"
+    },
+    {
+      "label": "Portail relevé",
+      "valeur": "viamedis.net : APRIL SANTE PREVOYANCE (optique, audio) et ASP COLLECTIVES ex APRIL ENTREPRISE PREV (optique)",
+      "source": "granit-releve"
+    },
+    {
+      "label": "Réseau",
+      "valeur": "Kalixia (annoncé pour la santé individuelle, particuliers et professionnels)",
+      "source": "april-kalixia-2023"
+    },
+    {
+      "label": "Contact",
+      "valeur": "Formulaire général d'april.fr, rubriques produit et contrat",
+      "source": "april-contact"
+    }
+  ],
+  "aiguillage": [
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "optique",
+      "libelle": "APRIL SANTE PREVOYANCE"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "optique",
+      "libelle": "ASP COLLECTIVES ex APRIL ENTREPRISE PREV"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "audio",
+      "libelle": "APRIL SANTE PREVOYANCE"
+    }
+  ],
+  "chiffres": [],
+  "faits": [
+    {
+      "fait": "Le sélecteur de viamedis.net propose en optique deux libellés April, « APRIL SANTE PREVOYANCE » et « ASP COLLECTIVES ex APRIL ENTREPRISE PREV », et en audio « APRIL SANTE PREVOYANCE » (relevé du 06/11/2026). Ces libellés ne disent pas que Viamedis est l'opérateur de tous les contrats April : en cas de doute entre les deux, lisez l'organisme et la garantie inscrits sur la carte.",
+      "source": "granit-releve"
+    },
+    {
+      "fait": "April indique que ses assurés ont tous accès aux réductions tarifaires et au tiers payant des professionnels de son réseau Kalixia : opticiens, audioprothésistes, chirurgiens-dentistes et ostéopathes.",
+      "source": "april-optique"
+    },
+    {
+      "fait": "Le partenariat avec Kalixia, en place depuis le 1er décembre 2023, a été annoncé pour les assurés en santé individuelle, particuliers ou professionnels. Les contrats collectifs n'y sont pas cités : sur un contrat d'entreprise, vérifiez la carte avant d'annoncer les tarifs Kalixia. L'assuré reste libre d'aller chez son praticien habituel, avec le même niveau de garantie, qu'il soit ou non dans le réseau.",
+      "source": "april-kalixia-2023"
+    },
+    {
+      "fait": "Sur sa page d'avantages, April précise que la dispense d'avance de frais chez les partenaires Kalixia passe par la carte de tiers payant, sauf en ostéopathie.",
+      "source": "april-avantages"
+    },
+    {
+      "fait": "April décrit le réseau comme un outil pour l'assuré : il retrouve les professionnels partenaires par géolocalisation depuis son espace assuré.",
+      "source": "april-sante"
+    },
+    {
+      "fait": "La carte de tiers payant d'un assuré April se retrouve dans l'application mobile April, avec ses documents de contrat. Un client sans sa carte papier peut donc l'ouvrir sur son téléphone.",
+      "source": "april-sante"
+    },
+    {
+      "fait": "April permet à l'assuré d'envoyer son devis depuis son Espace Assuré ou l'application avant d'accepter le soin, pour connaître à l'avance le montant exact de son remboursement. Un client peut donc arriver avec une réponse d'April sur son devis.",
+      "source": "april-non-responsable"
+    },
+    {
+      "fait": "Dans la notice du contrat APRIL Santé (conventions IDM2020, version de 2020 ; assureur Identités Mutuelle), la dispense de paiement du service tiers payant est limitée à la base de remboursement ou aux plafonds et forfaits du tableau de garanties. La notice nomme un « service Tiers payant Optique » ; sans lui, l'assuré envoie factures et ordonnances à April pour être remboursé.",
+      "source": "april-notice"
+    },
+    {
+      "fait": "April écrit que « la grande majorité » de ses formules donne droit au 100 % Santé optique, dentaire et auditif (réponse publiée en août 2025).",
+      "source": "april-optique"
+    },
+    {
+      "fait": "Selon April, le tableau de garanties du contrat indique en en-tête s'il est responsable ou non, et mentionne s'il couvre le 100 % Santé.",
+      "source": "april-non-responsable"
+    },
+    {
+      "fait": "Le contrat Tranquillité Santé est présenté par April comme géré par APRIL Santé Prévoyance, co-conçu et assuré par Quatrem.",
+      "source": "april-optique"
+    },
+    {
+      "fait": "Les pages april.fr consultées s'adressent aux assurés : elles ne décrivent pas de procédure de prise en charge pour le professionnel de santé et ne donnent pas de ligne ou de messagerie réservée aux opticiens. Le formulaire de la page contact propose les rubriques « Des informations produit » et « Des informations sur mon contrat ».",
+      "source": "april-contact"
+    }
+  ],
+  "conventionnement": [],
+  "statuts": [],
+  "statutsSource": "",
+  "contacts": [
+    {
+      "label": "April, page contact officielle",
+      "valeur": "Formulaire de contact d'april.fr",
+      "url": "https://www.april.fr/contact",
+      "detail": "Rubriques produit et contrat, pensées pour les assurés",
+      "source": "april-contact"
+    },
+    {
+      "label": "April, ligne des assurés déjà clients en santé",
+      "valeur": "04 87 94 04 04",
+      "detail": "Du lundi au vendredi, 9 h–18 h · ligne destinée aux assurés, utile pour que le client appelle lui-même",
+      "source": "april-sante"
+    },
+    {
+      "label": "Viamedis, téléphone",
+      "valeur": "0 825 076 076",
+      "detail": "Du lundi au vendredi, 9 h–18 h · numéro surtaxé",
+      "source": "viamedis-ps"
+    },
+    {
+      "label": "Viamedis, déjà référencé",
+      "valeur": "Formulaire de contact de viamedis.net",
+      "url": "https://www.viamedis.net/ViamedisNet/page/commun/p_index_contact_us",
+      "source": "viamedis-ps"
+    },
+    {
+      "label": "Viamedis, pas encore référencé",
+      "valeur": "Formulaire de viamedispro.com",
+      "url": "https://www.viamedispro.com/nous-contacter/",
+      "source": "viamedis-ps"
+    }
+  ],
+  "organismes": {
+    "liste": [],
+    "source": ""
+  },
+  "sources": {
+    "april-sante": {
+      "label": "april.fr · Complémentaire santé APRIL",
+      "url": "https://www.april.fr/complementaire-sante",
+      "consulte": "2026-11-06"
+    },
+    "april-optique": {
+      "label": "april.fr · Assurance ou mutuelle optique : quelles garanties doit-elle couvrir ?",
+      "url": "https://www.april.fr/complementaire-sante/assurance-optique",
+      "consulte": "2026-11-06"
+    },
+    "april-avantages": {
+      "label": "april.fr · Programme Avantages Assurés APRIL Santé Prévoyance",
+      "url": "https://www.april.fr/edito/avantage-assures",
+      "consulte": "2026-11-06"
+    },
+    "april-kalixia-2023": {
+      "label": "april.com · APRIL devient partenaire du 1er réseau de soins en France, Kalixia (communiqué du 07/12/2023)",
+      "url": "https://www.april.com/fr/communique-de-presse/april-devient-partenaire-du-1er-reseau-de-soins-en-france-kalixia/",
+      "consulte": "2026-11-06"
+    },
+    "april-non-responsable": {
+      "label": "april.fr · Focus mutuelle et contrat santé « non responsable » (mise à jour 13/10/2026)",
+      "url": "https://www.april.fr/complementaire-sante/guide/mutuelle-non-responsable",
+      "consulte": "2026-11-06"
+    },
+    "april-notice": {
+      "label": "assets.april.fr · APRIL Santé, notice valant conditions générales (réf. ASA201120, conventions IDM2020)",
+      "url": "https://assets.april.fr/prismic/documents/particuliers/doc-part-april-sante-notice-garanties.pdf",
+      "consulte": "2026-11-06"
+    },
+    "april-contact": {
+      "label": "april.fr · Contacter APRIL",
+      "url": "https://www.april.fr/contact",
+      "consulte": "2026-11-06"
+    },
+    "viamedis-ps": {
+      "label": "viamedis.fr · Professionnels de santé",
+      "url": "https://www.viamedis.fr/professionnels-de-sante/",
+      "consulte": "2026-11-06"
+    },
+    "granit-releve": {
+      "label": "Relevé Granit du sélecteur viamedis.net, 06/11/2026",
+      "url": "",
+      "consulte": "2026-11-06"
+    }
+  }
+}

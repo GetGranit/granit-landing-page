@@ -1,0 +1,129 @@
+{
+  "slug": "portail-swiss-life",
+  "id": "A25",
+  "category": "plateformes",
+  "categoryName": "Plateformes et portails",
+  "type": "plateforme",
+  "plateforme": "swiss-life",
+  "title": "Swiss Life tiers payant : quel portail pour l'opticien ?",
+  "seoTitle": "Swiss Life tiers payant : le portail de l'opticien",
+  "primaryKeyword": "swiss life tiers payant",
+  "keywordCluster": [
+    "swiss life opticien",
+    "swiss life espace professionnel",
+    "swiss life prise en charge optique",
+    "swiss life professionnel de santé"
+  ],
+  "parentSlug": "portails-tiers-payant",
+  "level": "Fille",
+  "author": {
+    "name": "Olivier",
+    "jobTitle": "Rédacteur, expert tiers payant",
+    "photo": "/auteurs/olivier.jpg",
+    "url": null
+  },
+  "reviewer": {
+    "name": "Nathalie",
+    "jobTitle": "Rédactrice, experte métier optique",
+    "photo": "/auteurs/nathalie.jpg",
+    "url": null
+  },
+  "datePublished": "2026-11-06",
+  "dateModified": "2026-11-06",
+  "checkedOn": "2026-11-06",
+  "wordCount": 1013,
+  "readTime": 4,
+  "metaDescription": "Pour le tiers payant Swiss Life, l'opticien partenaire va sur le portail Carte Blanche. Voyez quoi lire sur l'attestation et qui appeler si ça bloque.",
+  "contentHtml": "<p><strong>Pour le tiers payant Swiss Life, l'opticien partenaire de Carte Blanche va sur pec.carteblanchepartenaires.fr, le portail indiqué par Swiss Life.</strong> Swiss Life le dit sur sa <a href=\"https://www.swisslife.fr/swiss-life-en-france/professionnels-de-sante/comment-faire-du-tiers-payant-chez-swiss-life.html\">page tiers payant pour les professionnels de santé</a>. L'attestation du client reste la référence : c'est elle qui décide pour ce dossier.</p><div class=\"key-takeaways\"><strong>L'essentiel</strong><ul><li>Swiss Life renvoie les partenaires du réseau Carte Blanche vers pec.carteblanchepartenaires.fr, l'application qu'elle nomme CBPEC.</li><li>L'équipement optique et les aides auditives demandent une prise en charge (PEC) préalable.</li><li>Sur l'attestation, regardez les colonnes OPTI et AUDI : le spécimen 2023-2024 y porte CB et CBPEC.</li><li>Le sélecteur audio de Carte Blanche propose le libellé SWISSLIFE (relevé du 06/11/2026).</li><li>Le numéro à appeler dépend du type de convention : CB ou OC.</li></ul></div><h2 id=\"swiss-life-portail\">Par quel portail passe le tiers payant Swiss Life ?</h2><p>Swiss Life indique pec.carteblanchepartenaires.fr aux partenaires du réseau Carte Blanche. Son <a href=\"https://www.swisslife.fr/home/Professionnels-de-sante/Comment-se-faire-accrediter.html\">tableau des accréditations</a> désigne Carte Blanche Partenaire pour les opticiens et les audioprothésistes. Il faut avoir signé un contrat avec lui pour être conventionné. Inter AMC, l'autre accréditeur cité, concerne d'autres activités.</p><p>Sur sa <a href=\"https://www.swisslife.fr/particuliers/Landing/MySwissLife/Premiers-pas-sur-MySwissLife/Ma-sante.html\">page Ma santé</a>, Swiss Life appelle CBPEC l'application de demande de prise en charge préalable. Si vous entendez CBPEC, c'est donc bien ce portail. Son sélecteur audio propose ce libellé, relevé le 6 novembre 2026 :</p><div class=\"tbl\"><table><tr><th>Portail</th><th>Métier</th><th>Libellé du sélecteur</th></tr><tr><td>Carte Blanche</td><td>Audio</td><td>SWISSLIFE</td></tr></table></div><p>Le sélecteur optique n'a pas été relevé : en optique, le geste repose sur les pages de Swiss Life. Une mutuelle peut changer d'opérateur selon le contrat : c'est l'attestation de tiers payant du client qui décide.</p><p>Depuis le 1er janvier 2025, <a href=\"https://www.swisslife.fr/landing/newsletter/tiers-payant-ent-ind-part-janv26.html\">selon Swiss Life</a>, Carte Blanche Partenaires gère le tiers payant de la quasi-totalité des domaines. Au 1er janvier 2026, les soins externes sont passés d'Almerys à Carte Blanche. Notre outil aide à <a href=\"/ressources/mutuelle-quel-portail\">savoir par quel portail passe une mutuelle</a>, et la page des <a href=\"/ressources/portails-tiers-payant\">portails de tiers payant</a> situe les autres opérateurs.</p><h2 id=\"swiss-life-carte\">Comment lire la carte de tiers payant Swiss Life ?</h2><p>Swiss Life parle d'attestation de tiers payant, et elle se lit colonne par colonne. Chaque colonne porte son type de convention. Voici le spécimen publié par Swiss Life, pour la période 2023-2024 :</p><div class=\"tbl\"><table><tr><th>Colonne</th><th>Type de convention sur le spécimen</th></tr><tr><td>OPTI</td><td>CB et CBPEC</td></tr><tr><td>AUDI</td><td>CB et CBPEC</td></tr><tr><td>EXTE (soins externes)</td><td>TB, passé en CB au 1er janvier 2026</td></tr><tr><td>HOSP</td><td>OC</td></tr></table></div><p>Le type de convention CB ou TB est repris dans le logiciel CBPEC. Il permet d'envoyer les factures vers l'organisme qui gère le tiers payant.</p><p>Selon la <a href=\"https://www.swisslife.fr/content/dam/france/content/FAQ.pdf\">FAQ de Swiss Life</a>, le numéro AMC (assurance maladie complémentaire), le type de convention et le numéro d'adhérent figurent sur l'attestation. Le datamatrix, flashcode ou QR code, évite de les saisir si votre logiciel sait le lire et les enregistrer.</p><div class=\"callout callout--warn\"><p><strong>Le piège :</strong> le passage en CB de 2026 vise la colonne EXTE, et une attestation plus ancienne peut encore y porter TB. Swiss Life demande aux assurés de présenter la nouvelle, pour que le professionnel l'enregistre.</p></div><h2 id=\"swiss-life-prise-en-charge\">Comment faire une prise en charge pour un adhérent Swiss Life ?</h2><p>La demande se fait sur pec.carteblanchepartenaires.fr, sur présentation de l'attestation du client. Voici ce que Swiss Life demande de vérifier et de renseigner, en plus de notre <a href=\"/ressources/checklist-prise-en-charge\">checklist de prise en charge</a> :</p><ol class=\"steps\"><li><strong>Demander les deux documents.</strong> Swiss Life juge la carte Vitale et l'attestation indispensables, à chaque visite, pour s'assurer que les droits sont toujours ouverts.</li><li><strong>Contrôler l'attestation.</strong> Vérifiez la période de validité et la colonne de votre métier. Le numéro Insee, le nom, le prénom et la date de naissance doivent correspondre à la carte Vitale.</li><li><strong>Remplir la demande en optique.</strong> Il faut le numéro FINESS, le numéro d'adhérent, le bénéficiaire, la date, puis le tarif de convention (TC) ou les actes non remboursés.</li><li><strong>Détailler les prix.</strong> En optique, le prix se donne par verre, pour la monture et / ou pour les lentilles. En audio, il se donne par prestation et prothèse.</li></ol><p>Vous n'adhérez pas au réseau ? Swiss Life peut quand même faire une prise en charge, à hauteur du ticket modérateur. Il faut pour cela avoir signé une convention de tiers payant simple avec Carte Blanche.</p><p>Une <a href=\"https://www.swisslife.fr/content/dam/france/docuements-%C3%A0-t%C3%A9l%C3%A9charger-pour-articles-blog/sant%C3%A9/demarches%20remboursement%20optique.pdf\">fiche client de juillet 2024</a> décrit le cas de l'opticien non conventionné. Le client avance ses frais, sauf la part Assurance maladie si vous pratiquez le tiers payant avec la CPAM. Il transmet ensuite sa facture détaillée et réglée via son espace client.</p><h2 id=\"swiss-life-vous-bloquez\">Vous bloquez sur une prise en charge Swiss Life ?</h2><h3>Je ne trouve pas la mutuelle dans la liste</h3><p>En audio, cherchez SWISSLIFE, en un seul mot. En optique, le libellé exact n'a pas été relevé : ne concluez pas à une absence. Vérifiez la colonne OPTI de l'attestation, puis appelez le 09 69 39 66 39, le numéro de la convention CB donné par Swiss Life.</p><h3>La prise en charge est refusée</h3><p>Les pages consultées ne donnent pas de motifs de refus propres à Swiss Life. Reprenez la période de validité, la colonne de votre métier et l'identité du client. Comparez ensuite le numéro d'adhérent et le numéro AMC à votre saisie.</p><h3>Elle reste en attente, sans réponse</h3><p>Les pages consultées ne donnent pas de délai de réponse. Regardez la demande sur le portail, puis appelez le 09 69 39 66 39 avec le numéro d'adhérent sous les yeux.</p><h3>L'accord est obtenu, mais le paiement n'arrive pas</h3><p>Tout dépend de l'endroit où la prise en charge a été faite. Sur le site de Carte Blanche, le statut de la facture se consulte dans le portail. Faite directement auprès de Swiss Life, elle donne lieu à un règlement accompagné d'un bordereau. Pour un renseignement sur le remboursement, appelez le numéro de votre convention : 09 69 39 66 39 en CB, 0 825 317 317 en OC (numéro surtaxé).</p><h2 id=\"swiss-life-contact\">Comment contacter Swiss Life quand on est professionnel de santé ?</h2><p>Swiss Life donne un numéro par type de convention pour les remboursements en tiers payant : CB chez Carte Blanche, OC chez Swiss Life. Une troisième ligne reçoit les réclamations. L'espace pro de Swiss Life est la rubrique Professionnels de santé de swisslife.fr. Pour vous faire accréditer, Carte Blanche Partenaires répond au 09 69 39 66 39, touche 1, du lundi au vendredi de 8h45 à 18h.</p><div data-bloc=\"contacts\"></div>",
+  "tocItems": [
+    {
+      "id": "swiss-life-portail",
+      "label": "Le portail du tiers payant Swiss Life"
+    },
+    {
+      "id": "swiss-life-carte",
+      "label": "Lire l'attestation de tiers payant"
+    },
+    {
+      "id": "swiss-life-prise-en-charge",
+      "label": "Faire une prise en charge"
+    },
+    {
+      "id": "swiss-life-vous-bloquez",
+      "label": "Vous bloquez sur une prise en charge ?"
+    },
+    {
+      "id": "swiss-life-contact",
+      "label": "Contacter Swiss Life"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "Par quel portail passe le tiers payant Swiss Life ?",
+      "answer": "Swiss Life indique pec.carteblanchepartenaires.fr aux partenaires du réseau Carte Blanche. Elle appelle CBPEC cette application de demande de prise en charge. L'attestation de tiers payant du client reste la référence pour chaque dossier."
+    },
+    {
+      "question": "Comment faire une prise en charge pour un adhérent Swiss Life ?",
+      "answer": "Demandez la carte Vitale et l'attestation, puis contrôlez les droits et la colonne de votre métier. Faites ensuite la demande sur pec.carteblanchepartenaires.fr. En optique, il faut le numéro FINESS, le numéro d'adhérent, le bénéficiaire, la date et le prix détaillé par verre et pour la monture."
+    },
+    {
+      "question": "Que faire si Swiss Life n'apparaît pas dans le portail ?",
+      "answer": "Ne choisissez pas une entrée voisine. En audio, le sélecteur de Carte Blanche propose SWISSLIFE, en un seul mot. Sinon, reprenez l'attestation, puis appelez le 09 69 39 66 39, le numéro Carte Blanche donné par Swiss Life."
+    },
+    {
+      "question": "Comment contacter Swiss Life quand on est opticien ?",
+      "answer": "Le numéro dépend du type de convention de l'attestation. En CB, appelez le 09 69 39 66 39, non surtaxé selon Swiss Life. En OC, c'est le 0 825 317 317, un numéro surtaxé. Pour une réclamation, Swiss Life indique le 09 74 75 09 00."
+    }
+  ],
+  "sources": [
+    {
+      "label": "swisslife.fr · Comment pratiquer le tiers payant avec Swiss Life ?",
+      "url": "https://www.swisslife.fr/swiss-life-en-france/professionnels-de-sante/comment-faire-du-tiers-payant-chez-swiss-life.html"
+    },
+    {
+      "label": "swisslife.fr · Comment se faire accréditer pour pratiquer le tiers payant avec Swiss Life ?",
+      "url": "https://www.swisslife.fr/home/Professionnels-de-sante/Comment-se-faire-accrediter.html"
+    },
+    {
+      "label": "swisslife.fr · Ma santé (MySwissLife)",
+      "url": "https://www.swisslife.fr/particuliers/Landing/MySwissLife/Premiers-pas-sur-MySwissLife/Ma-sante.html"
+    },
+    {
+      "label": "swisslife.fr · Tiers payant 2026 : du nouveau !",
+      "url": "https://www.swisslife.fr/landing/newsletter/tiers-payant-ent-ind-part-janv26.html"
+    },
+    {
+      "label": "swisslife.fr · FAQ tiers payant pour les professionnels de santé (PDF)",
+      "url": "https://www.swisslife.fr/content/dam/france/content/FAQ.pdf"
+    },
+    {
+      "label": "swisslife.fr · Le remboursement de ma paire de lunettes (fiche PDF, juillet 2024)",
+      "url": "https://www.swisslife.fr/content/dam/france/docuements-%C3%A0-t%C3%A9l%C3%A9charger-pour-articles-blog/sant%C3%A9/demarches%20remboursement%20optique.pdf"
+    }
+  ],
+  "figures": [],
+  "internalLinks": [
+    {
+      "id": "A0",
+      "slug": "portails-tiers-payant",
+      "anchor": "portails de tiers payant",
+      "type": "parent"
+    },
+    {
+      "id": "A13",
+      "slug": "mutuelle-quel-portail",
+      "anchor": "savoir par quel portail passe une mutuelle",
+      "type": "outil"
+    }
+  ],
+  "liensEntrants": [],
+  "remplace": [],
+  "verticales": [
+    "optique"
+  ],
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-11-06T12:00:00.000Z",
+    "avertissements": []
+  }
+}

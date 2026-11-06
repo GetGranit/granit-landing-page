@@ -3382,7 +3382,7 @@
     ],
     "searchVolume": 8880,
     "unsplashQuery": "optician computer paperwork",
-    "status": "pending",
+    "status": "published",
     "wave": 2,
     "level": "Fille",
     "parentSlug": "portails-tiers-payant",
@@ -3414,12 +3414,6 @@
         "type": "sœur"
       },
       {
-        "id": "A12",
-        "slug": "contacts-plateformes-tiers-payant",
-        "anchor": "contacts pros des plateformes de tiers payant",
-        "type": "sœur"
-      },
-      {
         "id": "A13",
         "slug": "mutuelle-quel-portail",
         "anchor": "savoir par quel portail passe une mutuelle",
@@ -3434,7 +3428,8 @@
     ],
     "verticales": [
       "optique"
-    ]
+    ],
+    "publishedAt": "2026-11-06"
   },
   {
     "id": "G1",
@@ -3842,7 +3837,7 @@
     ],
     "searchVolume": 3740,
     "unsplashQuery": "optician computer paperwork",
-    "status": "pending",
+    "status": "published",
     "wave": 2,
     "level": "Fille",
     "parentSlug": "portails-tiers-payant",
@@ -3868,12 +3863,6 @@
         "type": "parent"
       },
       {
-        "id": "A12",
-        "slug": "contacts-plateformes-tiers-payant",
-        "anchor": "contacts pros des plateformes de tiers payant",
-        "type": "sœur"
-      },
-      {
         "id": "A13",
         "slug": "mutuelle-quel-portail",
         "anchor": "savoir par quel portail passe une mutuelle",
@@ -3888,7 +3877,8 @@
     ],
     "verticales": [
       "optique"
-    ]
+    ],
+    "publishedAt": "2026-11-06"
   },
   {
     "id": "F1",
@@ -7310,5 +7300,1372 @@
     "verticales": [
       "optique"
     ]
+  },
+  {
+    "id": "A20",
+    "slug": "portail-harmonie-mutuelle",
+    "category": "plateformes",
+    "title": "Harmonie Mutuelle tiers payant : quel portail pour l'opticien ?",
+    "primaryKeyword": "harmonie mutuelle tiers payant",
+    "keywordCluster": [
+      "harmonie mutuelle opticien",
+      "harmonie mutuelle espace professionnel",
+      "harmonie mutuelle prise en charge optique",
+      "harmonie mutuelle professionnel de santé"
+    ],
+    "searchVolume": 0,
+    "unsplashQuery": "optician computer paperwork",
+    "status": "published",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "portails-tiers-payant",
+    "reader": "Comptoir",
+    "role": "Trafic",
+    "granitData": "Sélecteurs relevés sur les portails (name_options_*.json), vérification web sur source primaire",
+    "cta": "Outil mutuelle → portail + démo",
+    "toValidate": "Fiche mutuelle (aiguillage), gabarit §6. Mots-clés non mesurés.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Par quel portail passe le tiers payant Harmonie Mutuelle ?",
+      "Comment faire une prise en charge pour un adhérent Harmonie Mutuelle ?",
+      "Que faire si Harmonie Mutuelle n'apparaît pas dans le portail ?",
+      "Comment contacter Harmonie Mutuelle quand on est opticien ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "A0",
+        "slug": "portails-tiers-payant",
+        "anchor": "portails de tiers payant",
+        "type": "parent"
+      },
+      {
+        "id": "A13",
+        "slug": "mutuelle-quel-portail",
+        "anchor": "savoir par quel portail passe une mutuelle",
+        "type": "outil"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ],
+    "publishedAt": "2026-11-06"
+  },
+  {
+    "id": "A21",
+    "slug": "portail-mgen",
+    "category": "plateformes",
+    "title": "MGEN tiers payant : quel portail pour l'opticien ?",
+    "primaryKeyword": "mgen tiers payant",
+    "keywordCluster": [
+      "mgen opticien",
+      "mgen espace professionnel",
+      "mgen prise en charge optique",
+      "mgen professionnel de santé"
+    ],
+    "searchVolume": 0,
+    "unsplashQuery": "optician computer paperwork",
+    "status": "published",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "portails-tiers-payant",
+    "reader": "Comptoir",
+    "role": "Trafic",
+    "granitData": "Sélecteurs relevés sur les portails (name_options_*.json), vérification web sur source primaire",
+    "cta": "Outil mutuelle → portail + démo",
+    "toValidate": "Fiche mutuelle (aiguillage), gabarit §6. Mots-clés non mesurés.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Par quel portail passe le tiers payant MGEN ?",
+      "Comment faire une prise en charge pour un adhérent MGEN ?",
+      "Que faire si MGEN n'apparaît pas dans le portail ?",
+      "Comment contacter MGEN quand on est opticien ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "A0",
+        "slug": "portails-tiers-payant",
+        "anchor": "portails de tiers payant",
+        "type": "parent"
+      },
+      {
+        "id": "A13",
+        "slug": "mutuelle-quel-portail",
+        "anchor": "savoir par quel portail passe une mutuelle",
+        "type": "outil"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ],
+    "publishedAt": "2026-11-06"
+  },
+  {
+    "id": "A22",
+    "slug": "portail-malakoff-humanis",
+    "category": "plateformes",
+    "title": "Malakoff Humanis tiers payant : quel portail pour l'opticien ?",
+    "primaryKeyword": "malakoff humanis tiers payant",
+    "keywordCluster": [
+      "malakoff humanis opticien",
+      "malakoff humanis espace professionnel",
+      "malakoff humanis prise en charge optique",
+      "malakoff humanis professionnel de santé"
+    ],
+    "searchVolume": 0,
+    "unsplashQuery": "optician computer paperwork",
+    "status": "published",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "portails-tiers-payant",
+    "reader": "Comptoir",
+    "role": "Trafic",
+    "granitData": "Sélecteurs relevés sur les portails (name_options_*.json), vérification web sur source primaire",
+    "cta": "Outil mutuelle → portail + démo",
+    "toValidate": "Fiche mutuelle (aiguillage), gabarit §6. Mots-clés non mesurés.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Par quel portail passe le tiers payant Malakoff Humanis ?",
+      "Comment faire une prise en charge pour un adhérent Malakoff Humanis ?",
+      "Que faire si Malakoff Humanis n'apparaît pas dans le portail ?",
+      "Comment contacter Malakoff Humanis quand on est opticien ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "A0",
+        "slug": "portails-tiers-payant",
+        "anchor": "portails de tiers payant",
+        "type": "parent"
+      },
+      {
+        "id": "A13",
+        "slug": "mutuelle-quel-portail",
+        "anchor": "savoir par quel portail passe une mutuelle",
+        "type": "outil"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ],
+    "publishedAt": "2026-11-06"
+  },
+  {
+    "id": "A23",
+    "slug": "portail-ag2r-la-mondiale",
+    "category": "plateformes",
+    "title": "AG2R La Mondiale tiers payant : quel portail pour l'opticien ?",
+    "primaryKeyword": "ag2r la mondiale tiers payant",
+    "keywordCluster": [
+      "ag2r la mondiale opticien",
+      "ag2r la mondiale espace professionnel",
+      "ag2r la mondiale prise en charge optique",
+      "ag2r la mondiale professionnel de santé"
+    ],
+    "searchVolume": 0,
+    "unsplashQuery": "optician computer paperwork",
+    "status": "published",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "portails-tiers-payant",
+    "reader": "Comptoir",
+    "role": "Trafic",
+    "granitData": "Sélecteurs relevés sur les portails (name_options_*.json), vérification web sur source primaire",
+    "cta": "Outil mutuelle → portail + démo",
+    "toValidate": "Fiche mutuelle (aiguillage), gabarit §6. Mots-clés non mesurés.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Par quel portail passe le tiers payant AG2R La Mondiale ?",
+      "Comment faire une prise en charge pour un adhérent AG2R La Mondiale ?",
+      "Que faire si AG2R La Mondiale n'apparaît pas dans le portail ?",
+      "Comment contacter AG2R La Mondiale quand on est opticien ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "A0",
+        "slug": "portails-tiers-payant",
+        "anchor": "portails de tiers payant",
+        "type": "parent"
+      },
+      {
+        "id": "A13",
+        "slug": "mutuelle-quel-portail",
+        "anchor": "savoir par quel portail passe une mutuelle",
+        "type": "outil"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ],
+    "publishedAt": "2026-11-06"
+  },
+  {
+    "id": "A24",
+    "slug": "portail-alan",
+    "category": "plateformes",
+    "title": "Alan tiers payant : quel portail pour l'opticien ?",
+    "primaryKeyword": "alan tiers payant",
+    "keywordCluster": [
+      "alan opticien",
+      "alan espace professionnel",
+      "alan prise en charge optique",
+      "alan professionnel de santé"
+    ],
+    "searchVolume": 0,
+    "unsplashQuery": "optician computer paperwork",
+    "status": "published",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "portails-tiers-payant",
+    "reader": "Comptoir",
+    "role": "Trafic",
+    "granitData": "Sélecteurs relevés sur les portails (name_options_*.json), vérification web sur source primaire",
+    "cta": "Outil mutuelle → portail + démo",
+    "toValidate": "Fiche mutuelle (aiguillage), gabarit §6. Mots-clés non mesurés.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Par quel portail passe le tiers payant Alan ?",
+      "Comment faire une prise en charge pour un adhérent Alan ?",
+      "Que faire si Alan n'apparaît pas dans le portail ?",
+      "Comment contacter Alan quand on est opticien ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "A0",
+        "slug": "portails-tiers-payant",
+        "anchor": "portails de tiers payant",
+        "type": "parent"
+      },
+      {
+        "id": "A13",
+        "slug": "mutuelle-quel-portail",
+        "anchor": "savoir par quel portail passe une mutuelle",
+        "type": "outil"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ],
+    "publishedAt": "2026-11-06"
+  },
+  {
+    "id": "A25",
+    "slug": "portail-swiss-life",
+    "category": "plateformes",
+    "title": "Swiss Life tiers payant : quel portail pour l'opticien ?",
+    "primaryKeyword": "swiss life tiers payant",
+    "keywordCluster": [
+      "swiss life opticien",
+      "swiss life espace professionnel",
+      "swiss life prise en charge optique",
+      "swiss life professionnel de santé"
+    ],
+    "searchVolume": 0,
+    "unsplashQuery": "optician computer paperwork",
+    "status": "published",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "portails-tiers-payant",
+    "reader": "Comptoir",
+    "role": "Trafic",
+    "granitData": "Sélecteurs relevés sur les portails (name_options_*.json), vérification web sur source primaire",
+    "cta": "Outil mutuelle → portail + démo",
+    "toValidate": "Fiche mutuelle (aiguillage), gabarit §6. Mots-clés non mesurés.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Par quel portail passe le tiers payant Swiss Life ?",
+      "Comment faire une prise en charge pour un adhérent Swiss Life ?",
+      "Que faire si Swiss Life n'apparaît pas dans le portail ?",
+      "Comment contacter Swiss Life quand on est opticien ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "A0",
+        "slug": "portails-tiers-payant",
+        "anchor": "portails de tiers payant",
+        "type": "parent"
+      },
+      {
+        "id": "A13",
+        "slug": "mutuelle-quel-portail",
+        "anchor": "savoir par quel portail passe une mutuelle",
+        "type": "outil"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ],
+    "publishedAt": "2026-11-06"
+  },
+  {
+    "id": "A26",
+    "slug": "portail-axa",
+    "category": "plateformes",
+    "title": "AXA tiers payant : quel portail pour l'opticien ?",
+    "primaryKeyword": "axa tiers payant",
+    "keywordCluster": [
+      "axa opticien",
+      "axa espace professionnel",
+      "axa prise en charge optique",
+      "axa professionnel de santé"
+    ],
+    "searchVolume": 0,
+    "unsplashQuery": "optician computer paperwork",
+    "status": "waiting",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "portails-tiers-payant",
+    "reader": "Comptoir",
+    "role": "Trafic",
+    "granitData": "Sélecteurs relevés sur les portails (name_options_*.json), vérification web sur source primaire",
+    "cta": "Outil mutuelle → portail + démo",
+    "toValidate": "Fiche mutuelle (aiguillage), gabarit §6. Mots-clés non mesurés.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Par quel portail passe le tiers payant AXA ?",
+      "Comment faire une prise en charge pour un adhérent AXA ?",
+      "Que faire si AXA n'apparaît pas dans le portail ?",
+      "Comment contacter AXA quand on est opticien ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "A0",
+        "slug": "portails-tiers-payant",
+        "anchor": "portails de tiers payant",
+        "type": "parent"
+      },
+      {
+        "id": "A13",
+        "slug": "mutuelle-quel-portail",
+        "anchor": "savoir par quel portail passe une mutuelle",
+        "type": "outil"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ]
+  },
+  {
+    "id": "A27",
+    "slug": "portail-allianz",
+    "category": "plateformes",
+    "title": "Allianz tiers payant : quel portail pour l'opticien ?",
+    "primaryKeyword": "allianz tiers payant",
+    "keywordCluster": [
+      "allianz opticien",
+      "allianz espace professionnel",
+      "allianz prise en charge optique",
+      "allianz professionnel de santé"
+    ],
+    "searchVolume": 0,
+    "unsplashQuery": "optician computer paperwork",
+    "status": "published",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "portails-tiers-payant",
+    "reader": "Comptoir",
+    "role": "Trafic",
+    "granitData": "Sélecteurs relevés sur les portails (name_options_*.json), vérification web sur source primaire",
+    "cta": "Outil mutuelle → portail + démo",
+    "toValidate": "Fiche mutuelle (aiguillage), gabarit §6. Mots-clés non mesurés.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Par quel portail passe le tiers payant Allianz ?",
+      "Comment faire une prise en charge pour un adhérent Allianz ?",
+      "Que faire si Allianz n'apparaît pas dans le portail ?",
+      "Comment contacter Allianz quand on est opticien ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "A0",
+        "slug": "portails-tiers-payant",
+        "anchor": "portails de tiers payant",
+        "type": "parent"
+      },
+      {
+        "id": "A13",
+        "slug": "mutuelle-quel-portail",
+        "anchor": "savoir par quel portail passe une mutuelle",
+        "type": "outil"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ],
+    "publishedAt": "2026-11-06"
+  },
+  {
+    "id": "A28",
+    "slug": "portail-groupama",
+    "category": "plateformes",
+    "title": "Groupama tiers payant : quel portail pour l'opticien ?",
+    "primaryKeyword": "groupama tiers payant",
+    "keywordCluster": [
+      "groupama opticien",
+      "groupama espace professionnel",
+      "groupama prise en charge optique",
+      "groupama professionnel de santé"
+    ],
+    "searchVolume": 0,
+    "unsplashQuery": "optician computer paperwork",
+    "status": "published",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "portails-tiers-payant",
+    "reader": "Comptoir",
+    "role": "Trafic",
+    "granitData": "Sélecteurs relevés sur les portails (name_options_*.json), vérification web sur source primaire",
+    "cta": "Outil mutuelle → portail + démo",
+    "toValidate": "Fiche mutuelle (aiguillage), gabarit §6. Mots-clés non mesurés.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Par quel portail passe le tiers payant Groupama ?",
+      "Comment faire une prise en charge pour un adhérent Groupama ?",
+      "Que faire si Groupama n'apparaît pas dans le portail ?",
+      "Comment contacter Groupama quand on est opticien ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "A0",
+        "slug": "portails-tiers-payant",
+        "anchor": "portails de tiers payant",
+        "type": "parent"
+      },
+      {
+        "id": "A13",
+        "slug": "mutuelle-quel-portail",
+        "anchor": "savoir par quel portail passe une mutuelle",
+        "type": "outil"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ],
+    "publishedAt": "2026-11-06"
+  },
+  {
+    "id": "A29",
+    "slug": "portail-apicil",
+    "category": "plateformes",
+    "title": "Apicil tiers payant : quel portail pour l'opticien ?",
+    "primaryKeyword": "apicil tiers payant",
+    "keywordCluster": [
+      "apicil opticien",
+      "apicil espace professionnel",
+      "apicil prise en charge optique",
+      "apicil professionnel de santé"
+    ],
+    "searchVolume": 0,
+    "unsplashQuery": "optician computer paperwork",
+    "status": "published",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "portails-tiers-payant",
+    "reader": "Comptoir",
+    "role": "Trafic",
+    "granitData": "Sélecteurs relevés sur les portails (name_options_*.json), vérification web sur source primaire",
+    "cta": "Outil mutuelle → portail + démo",
+    "toValidate": "Fiche mutuelle (aiguillage), gabarit §6. Mots-clés non mesurés.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Par quel portail passe le tiers payant Apicil ?",
+      "Comment faire une prise en charge pour un adhérent Apicil ?",
+      "Que faire si Apicil n'apparaît pas dans le portail ?",
+      "Comment contacter Apicil quand on est opticien ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "A0",
+        "slug": "portails-tiers-payant",
+        "anchor": "portails de tiers payant",
+        "type": "parent"
+      },
+      {
+        "id": "A13",
+        "slug": "mutuelle-quel-portail",
+        "anchor": "savoir par quel portail passe une mutuelle",
+        "type": "outil"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ],
+    "publishedAt": "2026-11-06"
+  },
+  {
+    "id": "A30",
+    "slug": "portail-klesia",
+    "category": "plateformes",
+    "title": "Klesia tiers payant : quel portail pour l'opticien ?",
+    "primaryKeyword": "klesia tiers payant",
+    "keywordCluster": [
+      "klesia opticien",
+      "klesia espace professionnel",
+      "klesia prise en charge optique",
+      "klesia professionnel de santé"
+    ],
+    "searchVolume": 0,
+    "unsplashQuery": "optician computer paperwork",
+    "status": "published",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "portails-tiers-payant",
+    "reader": "Comptoir",
+    "role": "Trafic",
+    "granitData": "Sélecteurs relevés sur les portails (name_options_*.json), vérification web sur source primaire",
+    "cta": "Outil mutuelle → portail + démo",
+    "toValidate": "Fiche mutuelle (aiguillage), gabarit §6. Mots-clés non mesurés.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Par quel portail passe le tiers payant Klesia ?",
+      "Comment faire une prise en charge pour un adhérent Klesia ?",
+      "Que faire si Klesia n'apparaît pas dans le portail ?",
+      "Comment contacter Klesia quand on est opticien ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "A0",
+        "slug": "portails-tiers-payant",
+        "anchor": "portails de tiers payant",
+        "type": "parent"
+      },
+      {
+        "id": "A13",
+        "slug": "mutuelle-quel-portail",
+        "anchor": "savoir par quel portail passe une mutuelle",
+        "type": "outil"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ],
+    "publishedAt": "2026-11-06"
+  },
+  {
+    "id": "A31",
+    "slug": "portail-pro-btp",
+    "category": "plateformes",
+    "title": "Pro BTP tiers payant : quel portail pour l'opticien ?",
+    "primaryKeyword": "pro btp tiers payant",
+    "keywordCluster": [
+      "pro btp opticien",
+      "pro btp espace professionnel",
+      "pro btp prise en charge optique",
+      "pro btp professionnel de santé"
+    ],
+    "searchVolume": 0,
+    "unsplashQuery": "optician computer paperwork",
+    "status": "published",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "portails-tiers-payant",
+    "reader": "Comptoir",
+    "role": "Trafic",
+    "granitData": "Sélecteurs relevés sur les portails (name_options_*.json), vérification web sur source primaire",
+    "cta": "Outil mutuelle → portail + démo",
+    "toValidate": "Fiche mutuelle (aiguillage), gabarit §6. Mots-clés non mesurés.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Par quel portail passe le tiers payant Pro BTP ?",
+      "Comment faire une prise en charge pour un adhérent Pro BTP ?",
+      "Que faire si Pro BTP n'apparaît pas dans le portail ?",
+      "Comment contacter Pro BTP quand on est opticien ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "A0",
+        "slug": "portails-tiers-payant",
+        "anchor": "portails de tiers payant",
+        "type": "parent"
+      },
+      {
+        "id": "A13",
+        "slug": "mutuelle-quel-portail",
+        "anchor": "savoir par quel portail passe une mutuelle",
+        "type": "outil"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ],
+    "publishedAt": "2026-11-06"
+  },
+  {
+    "id": "A32",
+    "slug": "portail-la-mutuelle-generale",
+    "category": "plateformes",
+    "title": "La Mutuelle Générale tiers payant : quel portail pour l'opticien ?",
+    "primaryKeyword": "la mutuelle générale tiers payant",
+    "keywordCluster": [
+      "la mutuelle générale opticien",
+      "la mutuelle générale espace professionnel",
+      "la mutuelle générale prise en charge optique",
+      "la mutuelle générale professionnel de santé"
+    ],
+    "searchVolume": 0,
+    "unsplashQuery": "optician computer paperwork",
+    "status": "waiting",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "portails-tiers-payant",
+    "reader": "Comptoir",
+    "role": "Trafic",
+    "granitData": "Sélecteurs relevés sur les portails (name_options_*.json), vérification web sur source primaire",
+    "cta": "Outil mutuelle → portail + démo",
+    "toValidate": "Fiche mutuelle (aiguillage), gabarit §6. Mots-clés non mesurés.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Par quel portail passe le tiers payant La Mutuelle Générale ?",
+      "Comment faire une prise en charge pour un adhérent La Mutuelle Générale ?",
+      "Que faire si La Mutuelle Générale n'apparaît pas dans le portail ?",
+      "Comment contacter La Mutuelle Générale quand on est opticien ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "A0",
+        "slug": "portails-tiers-payant",
+        "anchor": "portails de tiers payant",
+        "type": "parent"
+      },
+      {
+        "id": "A13",
+        "slug": "mutuelle-quel-portail",
+        "anchor": "savoir par quel portail passe une mutuelle",
+        "type": "outil"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ]
+  },
+  {
+    "id": "A33",
+    "slug": "portail-aesio",
+    "category": "plateformes",
+    "title": "Aésio tiers payant : quel portail pour l'opticien ?",
+    "primaryKeyword": "aésio tiers payant",
+    "keywordCluster": [
+      "aésio opticien",
+      "aésio espace professionnel",
+      "aésio prise en charge optique",
+      "aésio professionnel de santé"
+    ],
+    "searchVolume": 0,
+    "unsplashQuery": "optician computer paperwork",
+    "status": "published",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "portails-tiers-payant",
+    "reader": "Comptoir",
+    "role": "Trafic",
+    "granitData": "Sélecteurs relevés sur les portails (name_options_*.json), vérification web sur source primaire",
+    "cta": "Outil mutuelle → portail + démo",
+    "toValidate": "Fiche mutuelle (aiguillage), gabarit §6. Mots-clés non mesurés.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Par quel portail passe le tiers payant Aésio ?",
+      "Comment faire une prise en charge pour un adhérent Aésio ?",
+      "Que faire si Aésio n'apparaît pas dans le portail ?",
+      "Comment contacter Aésio quand on est opticien ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "A0",
+        "slug": "portails-tiers-payant",
+        "anchor": "portails de tiers payant",
+        "type": "parent"
+      },
+      {
+        "id": "A13",
+        "slug": "mutuelle-quel-portail",
+        "anchor": "savoir par quel portail passe une mutuelle",
+        "type": "outil"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ],
+    "publishedAt": "2026-11-06"
+  },
+  {
+    "id": "A34",
+    "slug": "portail-maaf",
+    "category": "plateformes",
+    "title": "MAAF tiers payant : quel portail pour l'opticien ?",
+    "primaryKeyword": "maaf tiers payant",
+    "keywordCluster": [
+      "maaf opticien",
+      "maaf espace professionnel",
+      "maaf prise en charge optique",
+      "maaf professionnel de santé"
+    ],
+    "searchVolume": 0,
+    "unsplashQuery": "optician computer paperwork",
+    "status": "published",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "portails-tiers-payant",
+    "reader": "Comptoir",
+    "role": "Trafic",
+    "granitData": "Sélecteurs relevés sur les portails (name_options_*.json), vérification web sur source primaire",
+    "cta": "Outil mutuelle → portail + démo",
+    "toValidate": "Fiche mutuelle (aiguillage), gabarit §6. Mots-clés non mesurés.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Par quel portail passe le tiers payant MAAF ?",
+      "Comment faire une prise en charge pour un adhérent MAAF ?",
+      "Que faire si MAAF n'apparaît pas dans le portail ?",
+      "Comment contacter MAAF quand on est opticien ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "A0",
+        "slug": "portails-tiers-payant",
+        "anchor": "portails de tiers payant",
+        "type": "parent"
+      },
+      {
+        "id": "A13",
+        "slug": "mutuelle-quel-portail",
+        "anchor": "savoir par quel portail passe une mutuelle",
+        "type": "outil"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ],
+    "publishedAt": "2026-11-06"
+  },
+  {
+    "id": "A35",
+    "slug": "portail-macif",
+    "category": "plateformes",
+    "title": "Macif tiers payant : quel portail pour l'opticien ?",
+    "primaryKeyword": "macif tiers payant",
+    "keywordCluster": [
+      "macif opticien",
+      "macif espace professionnel",
+      "macif prise en charge optique",
+      "macif professionnel de santé"
+    ],
+    "searchVolume": 0,
+    "unsplashQuery": "optician computer paperwork",
+    "status": "waiting",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "portails-tiers-payant",
+    "reader": "Comptoir",
+    "role": "Trafic",
+    "granitData": "Sélecteurs relevés sur les portails (name_options_*.json), vérification web sur source primaire",
+    "cta": "Outil mutuelle → portail + démo",
+    "toValidate": "Fiche mutuelle (aiguillage), gabarit §6. Mots-clés non mesurés.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Par quel portail passe le tiers payant Macif ?",
+      "Comment faire une prise en charge pour un adhérent Macif ?",
+      "Que faire si Macif n'apparaît pas dans le portail ?",
+      "Comment contacter Macif quand on est opticien ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "A0",
+        "slug": "portails-tiers-payant",
+        "anchor": "portails de tiers payant",
+        "type": "parent"
+      },
+      {
+        "id": "A13",
+        "slug": "mutuelle-quel-portail",
+        "anchor": "savoir par quel portail passe une mutuelle",
+        "type": "outil"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ]
+  },
+  {
+    "id": "A36",
+    "slug": "portail-matmut",
+    "category": "plateformes",
+    "title": "Matmut tiers payant : quel portail pour l'opticien ?",
+    "primaryKeyword": "matmut tiers payant",
+    "keywordCluster": [
+      "matmut opticien",
+      "matmut espace professionnel",
+      "matmut prise en charge optique",
+      "matmut professionnel de santé"
+    ],
+    "searchVolume": 0,
+    "unsplashQuery": "optician computer paperwork",
+    "status": "published",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "portails-tiers-payant",
+    "reader": "Comptoir",
+    "role": "Trafic",
+    "granitData": "Sélecteurs relevés sur les portails (name_options_*.json), vérification web sur source primaire",
+    "cta": "Outil mutuelle → portail + démo",
+    "toValidate": "Fiche mutuelle (aiguillage), gabarit §6. Mots-clés non mesurés.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Par quel portail passe le tiers payant Matmut ?",
+      "Comment faire une prise en charge pour un adhérent Matmut ?",
+      "Que faire si Matmut n'apparaît pas dans le portail ?",
+      "Comment contacter Matmut quand on est opticien ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "A0",
+        "slug": "portails-tiers-payant",
+        "anchor": "portails de tiers payant",
+        "type": "parent"
+      },
+      {
+        "id": "A13",
+        "slug": "mutuelle-quel-portail",
+        "anchor": "savoir par quel portail passe une mutuelle",
+        "type": "outil"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ],
+    "publishedAt": "2026-11-06"
+  },
+  {
+    "id": "A37",
+    "slug": "portail-viasante",
+    "category": "plateformes",
+    "title": "Viasanté tiers payant : quel portail pour l'opticien ?",
+    "primaryKeyword": "viasanté tiers payant",
+    "keywordCluster": [
+      "viasanté opticien",
+      "viasanté espace professionnel",
+      "viasanté prise en charge optique",
+      "viasanté professionnel de santé"
+    ],
+    "searchVolume": 0,
+    "unsplashQuery": "optician computer paperwork",
+    "status": "published",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "portails-tiers-payant",
+    "reader": "Comptoir",
+    "role": "Trafic",
+    "granitData": "Sélecteurs relevés sur les portails (name_options_*.json), vérification web sur source primaire",
+    "cta": "Outil mutuelle → portail + démo",
+    "toValidate": "Fiche mutuelle (aiguillage), gabarit §6. Mots-clés non mesurés.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Par quel portail passe le tiers payant Viasanté ?",
+      "Comment faire une prise en charge pour un adhérent Viasanté ?",
+      "Que faire si Viasanté n'apparaît pas dans le portail ?",
+      "Comment contacter Viasanté quand on est opticien ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "A0",
+        "slug": "portails-tiers-payant",
+        "anchor": "portails de tiers payant",
+        "type": "parent"
+      },
+      {
+        "id": "A13",
+        "slug": "mutuelle-quel-portail",
+        "anchor": "savoir par quel portail passe une mutuelle",
+        "type": "outil"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ],
+    "publishedAt": "2026-11-06"
+  },
+  {
+    "id": "A38",
+    "slug": "portail-generali",
+    "category": "plateformes",
+    "title": "Generali tiers payant : quel portail pour l'opticien ?",
+    "primaryKeyword": "generali tiers payant",
+    "keywordCluster": [
+      "generali opticien",
+      "generali espace professionnel",
+      "generali prise en charge optique",
+      "generali professionnel de santé"
+    ],
+    "searchVolume": 0,
+    "unsplashQuery": "optician computer paperwork",
+    "status": "published",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "portails-tiers-payant",
+    "reader": "Comptoir",
+    "role": "Trafic",
+    "granitData": "Sélecteurs relevés sur les portails (name_options_*.json), vérification web sur source primaire",
+    "cta": "Outil mutuelle → portail + démo",
+    "toValidate": "Fiche mutuelle (aiguillage), gabarit §6. Mots-clés non mesurés.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Par quel portail passe le tiers payant Generali ?",
+      "Comment faire une prise en charge pour un adhérent Generali ?",
+      "Que faire si Generali n'apparaît pas dans le portail ?",
+      "Comment contacter Generali quand on est opticien ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "A0",
+        "slug": "portails-tiers-payant",
+        "anchor": "portails de tiers payant",
+        "type": "parent"
+      },
+      {
+        "id": "A13",
+        "slug": "mutuelle-quel-portail",
+        "anchor": "savoir par quel portail passe une mutuelle",
+        "type": "outil"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ],
+    "publishedAt": "2026-11-06"
+  },
+  {
+    "id": "A39",
+    "slug": "portail-april",
+    "category": "plateformes",
+    "title": "April tiers payant : quel portail pour l'opticien ?",
+    "primaryKeyword": "april tiers payant",
+    "keywordCluster": [
+      "april opticien",
+      "april espace professionnel",
+      "april prise en charge optique",
+      "april professionnel de santé"
+    ],
+    "searchVolume": 0,
+    "unsplashQuery": "optician computer paperwork",
+    "status": "published",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "portails-tiers-payant",
+    "reader": "Comptoir",
+    "role": "Trafic",
+    "granitData": "Sélecteurs relevés sur les portails (name_options_*.json), vérification web sur source primaire",
+    "cta": "Outil mutuelle → portail + démo",
+    "toValidate": "Fiche mutuelle (aiguillage), gabarit §6. Mots-clés non mesurés.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Par quel portail passe le tiers payant April ?",
+      "Comment faire une prise en charge pour un adhérent April ?",
+      "Que faire si April n'apparaît pas dans le portail ?",
+      "Comment contacter April quand on est opticien ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "A0",
+        "slug": "portails-tiers-payant",
+        "anchor": "portails de tiers payant",
+        "type": "parent"
+      },
+      {
+        "id": "A13",
+        "slug": "mutuelle-quel-portail",
+        "anchor": "savoir par quel portail passe une mutuelle",
+        "type": "outil"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ],
+    "publishedAt": "2026-11-06"
+  },
+  {
+    "id": "A40",
+    "slug": "portail-solimut",
+    "category": "plateformes",
+    "title": "Solimut tiers payant : quel portail pour l'opticien ?",
+    "primaryKeyword": "solimut tiers payant",
+    "keywordCluster": [
+      "solimut opticien",
+      "solimut espace professionnel",
+      "solimut prise en charge optique",
+      "solimut professionnel de santé"
+    ],
+    "searchVolume": 0,
+    "unsplashQuery": "optician computer paperwork",
+    "status": "published",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "portails-tiers-payant",
+    "reader": "Comptoir",
+    "role": "Trafic",
+    "granitData": "Sélecteurs relevés sur les portails (name_options_*.json), vérification web sur source primaire",
+    "cta": "Outil mutuelle → portail + démo",
+    "toValidate": "Fiche mutuelle (aiguillage), gabarit §6. Mots-clés non mesurés.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Par quel portail passe le tiers payant Solimut ?",
+      "Comment faire une prise en charge pour un adhérent Solimut ?",
+      "Que faire si Solimut n'apparaît pas dans le portail ?",
+      "Comment contacter Solimut quand on est opticien ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "A0",
+        "slug": "portails-tiers-payant",
+        "anchor": "portails de tiers payant",
+        "type": "parent"
+      },
+      {
+        "id": "A13",
+        "slug": "mutuelle-quel-portail",
+        "anchor": "savoir par quel portail passe une mutuelle",
+        "type": "outil"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ],
+    "publishedAt": "2026-11-06"
+  },
+  {
+    "id": "A41",
+    "slug": "portail-interiale",
+    "category": "plateformes",
+    "title": "Intériale tiers payant : quel portail pour l'opticien ?",
+    "primaryKeyword": "intériale tiers payant",
+    "keywordCluster": [
+      "intériale opticien",
+      "intériale espace professionnel",
+      "intériale prise en charge optique",
+      "intériale professionnel de santé"
+    ],
+    "searchVolume": 0,
+    "unsplashQuery": "optician computer paperwork",
+    "status": "published",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "portails-tiers-payant",
+    "reader": "Comptoir",
+    "role": "Trafic",
+    "granitData": "Sélecteurs relevés sur les portails (name_options_*.json), vérification web sur source primaire",
+    "cta": "Outil mutuelle → portail + démo",
+    "toValidate": "Fiche mutuelle (aiguillage), gabarit §6. Mots-clés non mesurés.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Par quel portail passe le tiers payant Intériale ?",
+      "Comment faire une prise en charge pour un adhérent Intériale ?",
+      "Que faire si Intériale n'apparaît pas dans le portail ?",
+      "Comment contacter Intériale quand on est opticien ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "A0",
+        "slug": "portails-tiers-payant",
+        "anchor": "portails de tiers payant",
+        "type": "parent"
+      },
+      {
+        "id": "A13",
+        "slug": "mutuelle-quel-portail",
+        "anchor": "savoir par quel portail passe une mutuelle",
+        "type": "outil"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ],
+    "publishedAt": "2026-11-06"
+  },
+  {
+    "id": "A42",
+    "slug": "portail-mnt",
+    "category": "plateformes",
+    "title": "MNT tiers payant : quel portail pour l'opticien ?",
+    "primaryKeyword": "mnt tiers payant",
+    "keywordCluster": [
+      "mnt opticien",
+      "mnt espace professionnel",
+      "mnt prise en charge optique",
+      "mnt professionnel de santé"
+    ],
+    "searchVolume": 0,
+    "unsplashQuery": "optician computer paperwork",
+    "status": "published",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "portails-tiers-payant",
+    "reader": "Comptoir",
+    "role": "Trafic",
+    "granitData": "Sélecteurs relevés sur les portails (name_options_*.json), vérification web sur source primaire",
+    "cta": "Outil mutuelle → portail + démo",
+    "toValidate": "Fiche mutuelle (aiguillage), gabarit §6. Mots-clés non mesurés.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Par quel portail passe le tiers payant MNT ?",
+      "Comment faire une prise en charge pour un adhérent MNT ?",
+      "Que faire si MNT n'apparaît pas dans le portail ?",
+      "Comment contacter MNT quand on est opticien ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "A0",
+        "slug": "portails-tiers-payant",
+        "anchor": "portails de tiers payant",
+        "type": "parent"
+      },
+      {
+        "id": "A13",
+        "slug": "mutuelle-quel-portail",
+        "anchor": "savoir par quel portail passe une mutuelle",
+        "type": "outil"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ],
+    "publishedAt": "2026-11-06"
+  },
+  {
+    "id": "A43",
+    "slug": "portail-mutuelle-des-motards",
+    "category": "plateformes",
+    "title": "Mutuelle des Motards tiers payant : quel portail pour l'opticien ?",
+    "primaryKeyword": "mutuelle des motards tiers payant",
+    "keywordCluster": [
+      "mutuelle des motards opticien",
+      "mutuelle des motards espace professionnel",
+      "mutuelle des motards prise en charge optique",
+      "mutuelle des motards professionnel de santé"
+    ],
+    "searchVolume": 0,
+    "unsplashQuery": "optician computer paperwork",
+    "status": "waiting",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "portails-tiers-payant",
+    "reader": "Comptoir",
+    "role": "Trafic",
+    "granitData": "Sélecteurs relevés sur les portails (name_options_*.json), vérification web sur source primaire",
+    "cta": "Outil mutuelle → portail + démo",
+    "toValidate": "Fiche mutuelle (aiguillage), gabarit §6. Mots-clés non mesurés.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Par quel portail passe le tiers payant Mutuelle des Motards ?",
+      "Comment faire une prise en charge pour un adhérent Mutuelle des Motards ?",
+      "Que faire si Mutuelle des Motards n'apparaît pas dans le portail ?",
+      "Comment contacter Mutuelle des Motards quand on est opticien ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "A0",
+        "slug": "portails-tiers-payant",
+        "anchor": "portails de tiers payant",
+        "type": "parent"
+      },
+      {
+        "id": "A13",
+        "slug": "mutuelle-quel-portail",
+        "anchor": "savoir par quel portail passe une mutuelle",
+        "type": "outil"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ]
+  },
+  {
+    "id": "A44",
+    "slug": "portail-uniprevoyance",
+    "category": "plateformes",
+    "title": "Uniprévoyance tiers payant : quel portail pour l'opticien ?",
+    "primaryKeyword": "uniprévoyance tiers payant",
+    "keywordCluster": [
+      "uniprévoyance opticien",
+      "uniprévoyance espace professionnel",
+      "uniprévoyance prise en charge optique",
+      "uniprévoyance professionnel de santé"
+    ],
+    "searchVolume": 0,
+    "unsplashQuery": "optician computer paperwork",
+    "status": "waiting",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "portails-tiers-payant",
+    "reader": "Comptoir",
+    "role": "Trafic",
+    "granitData": "Sélecteurs relevés sur les portails (name_options_*.json), vérification web sur source primaire",
+    "cta": "Outil mutuelle → portail + démo",
+    "toValidate": "Fiche mutuelle (aiguillage), gabarit §6. Mots-clés non mesurés.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Par quel portail passe le tiers payant Uniprévoyance ?",
+      "Comment faire une prise en charge pour un adhérent Uniprévoyance ?",
+      "Que faire si Uniprévoyance n'apparaît pas dans le portail ?",
+      "Comment contacter Uniprévoyance quand on est opticien ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "A0",
+        "slug": "portails-tiers-payant",
+        "anchor": "portails de tiers payant",
+        "type": "parent"
+      },
+      {
+        "id": "A13",
+        "slug": "mutuelle-quel-portail",
+        "anchor": "savoir par quel portail passe une mutuelle",
+        "type": "outil"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ]
+  },
+  {
+    "id": "A45",
+    "slug": "portail-mutuelle-familiale",
+    "category": "plateformes",
+    "title": "Mutuelle Familiale tiers payant : quel portail pour l'opticien ?",
+    "primaryKeyword": "mutuelle familiale tiers payant",
+    "keywordCluster": [
+      "mutuelle familiale opticien",
+      "mutuelle familiale espace professionnel",
+      "mutuelle familiale prise en charge optique",
+      "mutuelle familiale professionnel de santé"
+    ],
+    "searchVolume": 0,
+    "unsplashQuery": "optician computer paperwork",
+    "status": "published",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "portails-tiers-payant",
+    "reader": "Comptoir",
+    "role": "Trafic",
+    "granitData": "Sélecteurs relevés sur les portails (name_options_*.json), vérification web sur source primaire",
+    "cta": "Outil mutuelle → portail + démo",
+    "toValidate": "Fiche mutuelle (aiguillage), gabarit §6. Mots-clés non mesurés.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Par quel portail passe le tiers payant Mutuelle Familiale ?",
+      "Comment faire une prise en charge pour un adhérent Mutuelle Familiale ?",
+      "Que faire si Mutuelle Familiale n'apparaît pas dans le portail ?",
+      "Comment contacter Mutuelle Familiale quand on est opticien ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "A0",
+        "slug": "portails-tiers-payant",
+        "anchor": "portails de tiers payant",
+        "type": "parent"
+      },
+      {
+        "id": "A13",
+        "slug": "mutuelle-quel-portail",
+        "anchor": "savoir par quel portail passe une mutuelle",
+        "type": "outil"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ],
+    "publishedAt": "2026-11-06"
+  },
+  {
+    "id": "A46",
+    "slug": "portail-previfrance",
+    "category": "plateformes",
+    "title": "Prévifrance tiers payant : quel portail pour l'opticien ?",
+    "primaryKeyword": "prévifrance tiers payant",
+    "keywordCluster": [
+      "prévifrance opticien",
+      "prévifrance espace professionnel",
+      "prévifrance prise en charge optique",
+      "prévifrance professionnel de santé"
+    ],
+    "searchVolume": 0,
+    "unsplashQuery": "optician computer paperwork",
+    "status": "published",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "portails-tiers-payant",
+    "reader": "Comptoir",
+    "role": "Trafic",
+    "granitData": "Sélecteurs relevés sur les portails (name_options_*.json), vérification web sur source primaire",
+    "cta": "Outil mutuelle → portail + démo",
+    "toValidate": "Fiche mutuelle (aiguillage), gabarit §6. Mots-clés non mesurés.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Par quel portail passe le tiers payant Prévifrance ?",
+      "Comment faire une prise en charge pour un adhérent Prévifrance ?",
+      "Que faire si Prévifrance n'apparaît pas dans le portail ?",
+      "Comment contacter Prévifrance quand on est opticien ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "A0",
+        "slug": "portails-tiers-payant",
+        "anchor": "portails de tiers payant",
+        "type": "parent"
+      },
+      {
+        "id": "A13",
+        "slug": "mutuelle-quel-portail",
+        "anchor": "savoir par quel portail passe une mutuelle",
+        "type": "outil"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ],
+    "publishedAt": "2026-11-06"
+  },
+  {
+    "id": "A47",
+    "slug": "portail-mma",
+    "category": "plateformes",
+    "title": "MMA tiers payant : quel portail pour l'opticien ?",
+    "primaryKeyword": "mma tiers payant",
+    "keywordCluster": [
+      "mma opticien",
+      "mma espace professionnel",
+      "mma prise en charge optique",
+      "mma professionnel de santé"
+    ],
+    "searchVolume": 0,
+    "unsplashQuery": "optician computer paperwork",
+    "status": "published",
+    "wave": 3,
+    "level": "Fille",
+    "parentSlug": "portails-tiers-payant",
+    "reader": "Comptoir",
+    "role": "Trafic",
+    "granitData": "Sélecteurs relevés sur les portails (name_options_*.json), vérification web sur source primaire",
+    "cta": "Outil mutuelle → portail + démo",
+    "toValidate": "Fiche mutuelle (aiguillage), gabarit §6. Mots-clés non mesurés.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Par quel portail passe le tiers payant MMA ?",
+      "Comment faire une prise en charge pour un adhérent MMA ?",
+      "Que faire si MMA n'apparaît pas dans le portail ?",
+      "Comment contacter MMA quand on est opticien ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "A0",
+        "slug": "portails-tiers-payant",
+        "anchor": "portails de tiers payant",
+        "type": "parent"
+      },
+      {
+        "id": "A13",
+        "slug": "mutuelle-quel-portail",
+        "anchor": "savoir par quel portail passe une mutuelle",
+        "type": "outil"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ],
+    "publishedAt": "2026-11-06"
   }
 ]

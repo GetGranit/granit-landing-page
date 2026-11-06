@@ -1,0 +1,190 @@
+{
+  "slug": "portail-matmut",
+  "nom": "Matmut",
+  "logo": "/logos/annuaire/matmut.svg",
+  "genre": "mutuelle",
+  "checkedOn": "2026-11-06",
+  "acces": {
+    "verifieLe": "2026-11-06",
+    "liens": [
+      {
+        "label": "Aller sur itelis.fr",
+        "url": "https://www.itelis.fr/",
+        "detail": "Menu « Accès professionnels », puis « Professionnels de santé ». Un code est envoyé par e-mail."
+      },
+      {
+        "label": "Se connecter sur tp-isante.fr",
+        "url": "https://www.tp-isante.fr/login",
+        "detail": "Mot de passe puis code reçu par e-mail. Les prises en charge se font ensuite sur IsantePEC."
+      },
+      {
+        "label": "Se connecter sur viamedis.net",
+        "url": "https://www.viamedis.net/ViamedisNet/page/accueil/index",
+        "detail": "E-mail, mot de passe, puis code d'une application d'authentification. Libellé relevé pour le seul régime d'entreprise Safran."
+      }
+    ]
+  },
+  "identite": [
+    {
+      "label": "Type",
+      "valeur": "Mutuelle Ociane Matmut, complémentaire santé",
+      "source": "matmut-carte"
+    },
+    {
+      "label": "Codes de facturation de la carte",
+      "valeur": "IS (iSanté), OC (organisme complémentaire), KA (Itelis)",
+      "source": "matmut-carte"
+    },
+    {
+      "label": "Réseau optique",
+      "valeur": "Itelis",
+      "source": "matmut-opticiens"
+    },
+    {
+      "label": "Portail relevé",
+      "valeur": "viamedis.net (optique), libellé SAFRAN OCIANE MATMUT : régime d'entreprise Safran, pas l'ensemble des adhérents",
+      "source": "granit-releve"
+    }
+  ],
+  "chiffres": [],
+  "faits": [
+    {
+      "fait": "La page carte de mutuelle de la Matmut explique les codes de prise en charge de sa carte de tiers payant : OPTI désigne l'opticien, AUDI l'audioprothèse.",
+      "source": "matmut-carte"
+    },
+    {
+      "fait": "La même légende liste trois codes de facturation : « IS - Facturation iSanté », « OC - Facturation à l'organisme complémentaire » et « KA - Facturation Itelis ». La page ne dit pas lequel s'applique à l'optique : regardez ce que porte la carte du client.",
+      "source": "matmut-carte"
+    },
+    {
+      "fait": "La Matmut écrit que le tiers payant optique est systématique auprès des opticiens du réseau Itelis, service mis en œuvre par Itelis, marque d'Isea.",
+      "source": "matmut-faq-carte"
+    },
+    {
+      "fait": "Itelis propose « MUTUELLE OCIANE MATMUT » dans la liste des complémentaires de sa page d'accès aux services.",
+      "source": "itelis-acceder"
+    },
+    {
+      "fait": "Côté adhérent, la page des opticiens partenaires donne l'accès au réseau par l'espace personnel : Ma Mutuelle santé, Mes partenaires santé, puis Réseau Optique.",
+      "source": "matmut-opticiens"
+    },
+    {
+      "fait": "Chez ses opticiens partenaires, la Matmut décrit ainsi le tiers payant : l'adhérent choisit son équipement sur devis complet de l'opticien, celui-ci fait la demande de prise en charge à la mutuelle, qui le paie directement.",
+      "source": "matmut-lunettes"
+    },
+    {
+      "fait": "Le sélecteur optique de Viamedis proposait, au relevé Granit du 6 novembre 2026, le libellé « SAFRAN OCIANE MATMUT ». Son nom renvoie au régime d'entreprise du groupe Safran, pas à l'ensemble des adhérents Matmut.",
+      "source": "granit-releve"
+    },
+    {
+      "fait": "La notice 2025 du régime Ma Prévoyance by Safran liste la Mutuelle Ociane Matmut parmi ses mutuelles gestionnaires et co-assureurs.",
+      "source": "safran-notice-2025"
+    },
+    {
+      "fait": "Le guide salarié 2025 de ce régime donne Kalixia comme réseau de partenaires de soins, notamment en optique et en audition, et non Itelis.",
+      "source": "safran-guide-2025"
+    },
+    {
+      "fait": "Jusqu'au 26 octobre 2026, le libellé « Safran-Ociane » figurait sur les sélecteurs optique et audio d'Oxantis.",
+      "source": "granit-releve-oxantis"
+    },
+    {
+      "fait": "Le portail oxantis.net a fermé le 26 octobre 2026 ; Viamedis reprend ses activités d'optique et d'audioprothèse.",
+      "source": "acuite-2026-oxantis"
+    },
+    {
+      "fait": "L'espace presse Matmut annonce la fusion de la Mutuelle Ociane Matmut et de la Mgéfi dans une nouvelle entité, Matmut Santé Prévoyance, avec une échéance au 1er janvier 2027, sous réserve notamment du calendrier de l'ACPR. Les pages consultées ne disent pas ce qui changera sur la carte ni pour le tiers payant.",
+      "source": "matmut-fusion"
+    }
+  ],
+  "conventionnement": [],
+  "statuts": [],
+  "statutsSource": "",
+  "contacts": [
+    {
+      "label": "Matmut, nous contacter",
+      "valeur": "Page de contact officielle de matmut.fr",
+      "detail": "Page grand public : les pages consultées ne donnent pas de ligne dédiée aux professionnels de santé.",
+      "url": "https://www.matmut.fr/services-en-ligne/nous-contacter",
+      "source": "matmut-contact"
+    },
+    {
+      "label": "Viamedis, téléphone pro",
+      "valeur": "0 825 076 076",
+      "detail": "Du lundi au vendredi, 9 h–18 h · numéro surtaxé. Pour un dossier passé sur viamedis.net.",
+      "source": "viamedis-ps"
+    }
+  ],
+  "organismes": {
+    "liste": [],
+    "source": ""
+  },
+  "aiguillage": [],
+  "sources": {
+    "matmut-carte": {
+      "label": "matmut.fr · La carte de mutuelle santé (Mutuelle Ociane Matmut)",
+      "url": "https://www.matmut.fr/mutuelle/services/carte-mutuelle",
+      "consulte": "2026-11-06"
+    },
+    "matmut-faq-carte": {
+      "label": "matmut.fr · FAQ, À quoi me sert une carte de tiers payant",
+      "url": "https://www.matmut.fr/faq?question=obtenir-carte-tiers-payant",
+      "consulte": "2026-11-06"
+    },
+    "matmut-opticiens": {
+      "label": "matmut.fr · Le réseau d'opticiens partenaire de la Matmut",
+      "url": "https://www.matmut.fr/mutuelle/services/opticiens-partenaires",
+      "consulte": "2026-11-06"
+    },
+    "matmut-lunettes": {
+      "label": "matmut.fr · Lunettes et lentilles : les remboursements",
+      "url": "https://www.matmut.fr/mutuelle/remboursements/lunettes-lentilles",
+      "consulte": "2026-11-06"
+    },
+    "viamedis-ps": {
+      "label": "viamedis.fr · Professionnels de santé",
+      "url": "https://www.viamedis.fr/professionnels-de-sante/",
+      "consulte": "2026-11-06"
+    },
+    "granit-releve": {
+      "label": "Relevé Granit du sélecteur optique Viamedis (GetGranit/granit@feee11c)",
+      "url": "",
+      "consulte": "2026-11-06"
+    },
+    "acuite-2026-oxantis": {
+      "label": "Acuité · « Fermeture de la plateforme de tiers payant Oxantis le 26 octobre 2026 » (16/09/2026)",
+      "url": "https://www.acuite.fr/actualites/profession/fermeture-de-la-plateforme-de-tiers-payant-oxantis-a335575",
+      "consulte": "2026-11-06"
+    },
+    "matmut-contact": {
+      "label": "matmut.fr · Nous contacter",
+      "url": "https://www.matmut.fr/services-en-ligne/nous-contacter",
+      "consulte": "2026-11-06"
+    },
+    "itelis-acceder": {
+      "label": "itelis.fr · Accéder à vos services",
+      "url": "https://www.itelis.fr/acceder-vos-services",
+      "consulte": "2026-11-06"
+    },
+    "safran-notice-2025": {
+      "label": "maprevoyancebysafran.fr · Notice d'information, édition 2025 (Ma Prévoyance Santé +)",
+      "url": "https://www.maprevoyancebysafran.fr/wp-content/uploads/2025/04/2025-Notice-Frais-de-sante-surcomplementaire-2.pdf",
+      "consulte": "2026-11-06"
+    },
+    "safran-guide-2025": {
+      "label": "maprevoyancebysafran.fr · Guide salarié 2025, L'essentiel",
+      "url": "https://www.maprevoyancebysafran.fr/wp-content/uploads/2025/03/Brochure-prevoyance-salaries-2025.pdf",
+      "consulte": "2026-11-06"
+    },
+    "granit-releve-oxantis": {
+      "label": "Relevé Granit des anciens sélecteurs Oxantis (portail fermé)",
+      "url": "",
+      "consulte": "2026-11-06"
+    },
+    "matmut-fusion": {
+      "label": "presse.matmut.fr · Les délégués de la Mgéfi approuvent la création de Matmut Santé Prévoyance (20/06/2026)",
+      "url": "https://presse.matmut.fr/communique/229204/Les-delegues-de-Mgefi-approuvent-creation-de-Matmut-Sante-Prevoyance?cm=1",
+      "consulte": "2026-11-06"
+    }
+  }
+}

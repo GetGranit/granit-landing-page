@@ -1,0 +1,262 @@
+{
+  "slug": "portail-malakoff-humanis",
+  "nom": "Malakoff Humanis",
+  "genre": "mutuelle",
+  "logo": "/logos/annuaire/malakoff-humanis.png",
+  "checkedOn": "2026-11-06",
+  "acces": {
+    "verifieLe": "2026-11-06",
+    "liens": [
+      {
+        "label": "Se connecter sur viamedis.net",
+        "url": "https://www.viamedis.net/ViamedisNet/page/accueil/index",
+        "detail": "E-mail, mot de passe, puis code d'une application d'authentification."
+      },
+      {
+        "label": "Se connecter sur services.santeclair.fr",
+        "url": "https://services.santeclair.fr/professionnel-sante/connexion",
+        "detail": "Identifiant, mot de passe et code reçu par e-mail."
+      }
+    ],
+    "note": "Le sélecteur de viamedis.net (optique et audio) et celui de Santéclair (optique) proposent chacun des libellés Malakoff Humanis (relevé du 06/11/2026). La carte de tiers payant du client dit quel portail utiliser."
+  },
+  "identite": [
+    {
+      "label": "Type",
+      "valeur": "Groupe paritaire et mutualiste (mutuelles, institutions de prévoyance)",
+      "source": "mh-gouvernance"
+    },
+    {
+      "label": "Portails relevés",
+      "valeur": "Viamedis (optique, audio) et Santéclair (optique)",
+      "source": "granit-releve"
+    },
+    {
+      "label": "Réseau",
+      "valeur": "Kalixia",
+      "source": "mh-kalixia"
+    },
+    {
+      "label": "Espace pro",
+      "valeur": "Page Nous contacter du site, sans entrée opticiens",
+      "source": "mh-contact"
+    }
+  ],
+  "aiguillage": [
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "optique",
+      "libelle": "Malakoff Humanis Assurance"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "optique",
+      "libelle": "Malakoff Humanis Nationale"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "optique",
+      "libelle": "Malakoff Humanis Prévoyance"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "optique",
+      "libelle": "Malakoff Humanis Prévoyance (CS)"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "optique",
+      "libelle": "Malakoff Humanis Prévoyance (GT AIA)"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "optique",
+      "libelle": "Mutuelle Malakoff Humanis"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "optique",
+      "libelle": "Mutuelle Malakoff Humanis (CS)"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "optique",
+      "libelle": "Mutuelle Malakoff Humanis (GT AIA)"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "audio",
+      "libelle": "MALAKOFF HUMANIS MUTUELLE"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "audio",
+      "libelle": "MALAKOFF HUMANIS PREVOYANCE"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "audio",
+      "libelle": "MUTUELLE MALAKOFF HUMANIS"
+    },
+    {
+      "portail": "Santéclair",
+      "slugFiche": "portail-santeclair",
+      "metier": "optique",
+      "libelle": "MALAKOFF HUMANIS (00402883)"
+    },
+    {
+      "portail": "Santéclair",
+      "slugFiche": "portail-santeclair",
+      "metier": "optique",
+      "libelle": "MALAKOFF HUMANIS (03800000)"
+    }
+  ],
+  "chiffres": [],
+  "faits": [
+    {
+      "fait": "Dans sa foire aux questions, Malakoff Humanis écrit que le client n'avance pas les frais si son opticien est conventionné avec Viamédis : la part mutuelle est alors remboursée directement à l'opticien.",
+      "source": "mh-faq"
+    },
+    {
+      "fait": "Dans le sélecteur de viamedis.net en optique, huit libellés désignent Malakoff Humanis, dont des suffixes (CS) et (GT AIA) ; en audio, trois libellés (relevé du 06/11/2026). La liste complète est dans le tableau d'aiguillage. Les pages consultées n'expliquent pas ces suffixes : c'est la carte du client qui tranche.",
+      "source": "granit-releve"
+    },
+    {
+      "fait": "En audio, le relevé ne montre ni les suffixes (CS) et (GT AIA), ni « Assurance », ni « Nationale » : une absence dans cette liste ne prouve rien pour un contrat donné.",
+      "source": "granit-releve"
+    },
+    {
+      "fait": "Le relevé du 06/11/2026 montre aussi, dans le sélecteur de Santéclair en optique, deux libellés « MALAKOFF HUMANIS » distingués par un code entre parenthèses : (00402883) et (03800000).",
+      "source": "granit-releve"
+    },
+    {
+      "fait": "Le sélecteur de viamedis.net propose aussi HENNER MALAKOFF HUMANIS en optique et HENNER ET MALAKOFF HUMANIS en audio. Ces libellés restent hors du tableau : seule la carte du client dit s'il faut les choisir.",
+      "source": "granit-releve"
+    },
+    {
+      "fait": "Viamedis classe l'optique, l'audiologie et le dentaire en « tiers payant complexe » : sur demande de prise en charge ou devis.",
+      "source": "viamedis-ia"
+    },
+    {
+      "fait": "Le réseau de soins mis en avant sur le site de Malakoff Humanis est Kalixia, avec, côté client, aucune avance de frais et pas de devis à transmettre.",
+      "source": "mh-kalixia"
+    },
+    {
+      "fait": "Sur sa page Kalixia, le site indique que, chez l'opticien, le client reçoit immédiatement par SMS et e-mail le montant éventuel qui reste à payer (service « Devis immédiat »).",
+      "source": "mh-kalixia"
+    },
+    {
+      "fait": "La carte de tiers payant du client est dans son Espace Client (rubrique « Ma carte de tiers payant »), dans l'application Malakoff Humanis et dans le portefeuille de son mobile. Il peut la télécharger et la présenter à l'opticien.",
+      "source": "mh-carte"
+    },
+    {
+      "fait": "Pour un client dont l'opticien n'est pas conventionné, la FAQ prévoit l'envoi de la facture acquittée et de l'ordonnance, à l'adresse figurant sur la carte de tiers payant, ou via l'Espace Client ou l'application.",
+      "source": "mh-faq"
+    },
+    {
+      "fait": "Sur kalixia.fr, un centre d'optique ou d'audioprothèse joint l'équipe Kalixia au 0 820 895 895 (numéro surtaxé) ; les chirurgiens-dentistes ont une autre ligne. Un formulaire « Professionnel ou établissement de santé » existe aussi.",
+      "source": "kalixia-contact"
+    },
+    {
+      "fait": "Les pages consultées de malakoffhumanis.com ne donnent ni adresse e-mail ni numéro dédié aux opticiens : la page Nous contacter propose des entrées pour particuliers, entreprises, indépendants, courtiers, experts-comptables et agents.",
+      "source": "mh-contact"
+    }
+  ],
+  "conventionnement": [],
+  "statuts": [],
+  "statutsSource": "",
+  "contacts": [
+    {
+      "label": "Viamedis, professionnels de santé",
+      "valeur": "0 825 076 076",
+      "detail": "Du lundi au vendredi, 9 h–18 h · numéro surtaxé",
+      "source": "viamedis-ps"
+    },
+    {
+      "label": "Santéclair, convention TP+",
+      "valeur": "0 892 970 400",
+      "detail": "Du lundi au vendredi, 9 h à 18 h · numéro surtaxé",
+      "source": "sc-voix"
+    },
+    {
+      "label": "Kalixia, centres d'optique et d'audioprothèse",
+      "valeur": "0 820 895 895",
+      "detail": "Numéro surtaxé · formulaire sur kalixia.fr/aide-contact",
+      "url": "https://www.kalixia.fr/aide-contact",
+      "source": "kalixia-contact"
+    },
+    {
+      "label": "Malakoff Humanis, page contact officielle",
+      "valeur": "malakoffhumanis.com/contact",
+      "url": "https://www.malakoffhumanis.com/contact/",
+      "source": "mh-contact"
+    }
+  ],
+  "organismes": {
+    "liste": [],
+    "source": ""
+  },
+  "sources": {
+    "mh-faq": {
+      "label": "faq.malakoffhumanis.com · Dois-je avancer les frais en magasin ?",
+      "url": "https://faq.malakoffhumanis.com/contents/dois-je-avancer-les-frais-en-magasin",
+      "consulte": "2026-11-06"
+    },
+    "mh-carte": {
+      "label": "faq.malakoffhumanis.com · Puis-je accéder à ma carte de tiers payant sur mon Espace Client ?",
+      "url": "https://faq.malakoffhumanis.com/contents/puis-je-acceder-a-ma-carte-de-tiers-payant-sur-mon-espace-client",
+      "consulte": "2026-11-06"
+    },
+    "mh-kalixia": {
+      "label": "malakoffhumanis.com · Réseau Kalixia (optique, dentaire, audio, ostéo)",
+      "url": "https://www.malakoffhumanis.com/particuliers/services/reseau-kalixia/",
+      "consulte": "2026-11-06"
+    },
+    "mh-contact": {
+      "label": "malakoffhumanis.com · Nous contacter",
+      "url": "https://www.malakoffhumanis.com/contact/",
+      "consulte": "2026-11-06"
+    },
+    "kalixia-contact": {
+      "label": "kalixia.fr · Aide & contact",
+      "url": "https://www.kalixia.fr/aide-contact",
+      "consulte": "2026-11-06"
+    },
+    "viamedis-ps": {
+      "label": "viamedis.fr · Professionnels de santé",
+      "url": "https://www.viamedis.fr/professionnels-de-sante/",
+      "consulte": "2026-11-06"
+    },
+    "viamedis-ia": {
+      "label": "viamedis.fr · Page de référence de Viamedis (mise à jour juillet 2026)",
+      "url": "https://www.viamedis.fr/viamedis-page-ia/",
+      "consulte": "2026-11-06"
+    },
+    "granit-releve": {
+      "label": "Relevé Granit des sélecteurs de portails du 06/11/2026",
+      "url": "",
+      "consulte": "2026-11-06"
+    },
+    "sc-voix": {
+      "label": "santeclair.fr · Assistance, service Voix",
+      "url": "https://www.santeclair.fr/fr/professionnel-sante/offre-de-services-assistance/voix",
+      "consulte": "2026-11-06"
+    },
+    "mh-gouvernance": {
+      "label": "malakoffhumanis.com · Notre gouvernance",
+      "url": "https://www.malakoffhumanis.com/groupe/notre-gouvernance/",
+      "consulte": "2026-11-06"
+    }
+  }
+}

@@ -219,6 +219,51 @@
       "slug": "viamedis-espace-pro",
       "anchor": "viamedis espace pro",
       "type": "enfant"
+    },
+    {
+      "slug": "portail-aesio",
+      "anchor": "Aésio",
+      "type": "soeur"
+    },
+    {
+      "slug": "portail-april",
+      "anchor": "April",
+      "type": "soeur"
+    },
+    {
+      "slug": "portail-harmonie-mutuelle",
+      "anchor": "Harmonie Mutuelle",
+      "type": "soeur"
+    },
+    {
+      "slug": "portail-kalixia",
+      "anchor": "Kalixia",
+      "type": "soeur"
+    },
+    {
+      "slug": "portail-malakoff-humanis",
+      "anchor": "Malakoff Humanis",
+      "type": "soeur"
+    },
+    {
+      "slug": "portail-mgen",
+      "anchor": "MGEN",
+      "type": "soeur"
+    },
+    {
+      "slug": "portail-mnt",
+      "anchor": "MNT",
+      "type": "soeur"
+    },
+    {
+      "slug": "portail-mutuelle-familiale",
+      "anchor": "Mutuelle Familiale",
+      "type": "soeur"
+    },
+    {
+      "slug": "portail-previfrance",
+      "anchor": "Prévifrance",
+      "type": "soeur"
     }
   ],
   "remplace": [],

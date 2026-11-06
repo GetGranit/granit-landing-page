@@ -1,0 +1,277 @@
+{
+  "slug": "portail-mgen",
+  "nom": "MGEN",
+  "genre": "mutuelle",
+  "logo": "/logos/annuaire/mgen.png",
+  "checkedOn": "2026-11-06",
+  "acces": {
+    "verifieLe": "2026-11-06",
+    "liens": [
+      {
+        "label": "Se connecter sur viamedis.net",
+        "url": "https://www.viamedis.net/ViamedisNet/page/accueil/index",
+        "detail": "E-mail, mot de passe, puis double authentification."
+      }
+    ],
+    "note": "Le portail oxantis.net a fermé le 26 octobre 2026 et Viamedis reprend l'optique et l'audioprothèse. Le sélecteur de viamedis.net propose les libellés MGEN, MGEN SOLUTION et Ma Mutuelle MGEN en optique (relevé du 06/11/2026). Réclamez la carte de tiers payant : elle indique l'organisme à choisir."
+  },
+  "identite": [
+    {
+      "label": "Type",
+      "valeur": "Mutuelle, membre du Groupe VYV",
+      "source": "mgen-msp"
+    },
+    {
+      "label": "Portail relevé",
+      "valeur": "viamedis.net, libellés MGEN, MGEN SOLUTION, Ma Mutuelle MGEN (optique)",
+      "source": "granit-releve"
+    },
+    {
+      "label": "Réseau",
+      "valeur": "Kalixia",
+      "source": "mgen-msp"
+    },
+    {
+      "label": "Opérateur annoncé",
+      "valeur": "Viamedis, bascule finalisée le 1er juillet 2026",
+      "source": "fspf-2026-juillet"
+    }
+  ],
+  "aiguillage": [
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "optique",
+      "libelle": "MGEN"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "optique",
+      "libelle": "MGEN SOLUTION"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "optique",
+      "libelle": "Ma Mutuelle MGEN"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "audio",
+      "libelle": "MGEN"
+    },
+    {
+      "portail": "Viamedis",
+      "slugFiche": "portail-viamedis",
+      "metier": "audio",
+      "libelle": "MGEN SOLUTION"
+    }
+  ],
+  "chiffres": [],
+  "faits": [
+    {
+      "fait": "MGEN présente Kalixia comme son réseau de soins partenaire (opticiens, dentistes, audioprothésistes) et annonce le tiers payant automatique chez ces professionnels.",
+      "source": "mgen-msp"
+    },
+    {
+      "fait": "MGEN annonce une date d'effet au 1er mai 2026 pour le contrat collectif de protection sociale complémentaire (PSC) de l'Éducation nationale, de la Jeunesse, des Sports, de l'Enseignement supérieur et de la Recherche, avec des garanties en optique, dentaire et audiologie.",
+      "source": "mgen-psc"
+    },
+    {
+      "fait": "À compter du 1er mai 2026, Viamedis assure la gestion du tiers payant complémentaire des bénéficiaires MGEN relevant de ce contrat collectif (information publiée par l'USPO le 30/04/2026).",
+      "source": "uspo-2026-mai"
+    },
+    {
+      "fait": "La lettre de Viamedis à ses partenaires, reproduite sur yotera.fr le 10/06/2026, demande de réclamer la nouvelle carte de tiers payant et de contrôler sa période de validité et le logo Viamedis : seule cette carte compte. Pour un soin à compter du 1er mai 2026, le devis, la demande de prise en charge ou la facture se refait auprès de Viamedis.",
+      "source": "yotera-viamedis"
+    },
+    {
+      "fait": "La FSPF indique que MGEN finalise le 1er juillet 2026 sa réorganisation, sous le titre « MGEN : dernière bascule complémentaire vers Viamedis au 1er juillet 2026 ».",
+      "source": "fspf-2026-juillet"
+    },
+    {
+      "fait": "Selon l'USPO (14/08/2026), à partir du 1er septembre 2026, la ligne téléphonique Relation Professionnels de Santé MGEN est remplacée par la plateforme Viamedis.",
+      "source": "uspo-2026-ligne"
+    },
+    {
+      "fait": "Ces annonces viennent de syndicats de pharmaciens et d'un site de kinésithérapeutes : les pages consultées ne donnent pas de consigne propre à l'optique.",
+      "source": "yotera-viamedis"
+    },
+    {
+      "fait": "Le portail oxantis.net a fermé le 26 octobre 2026. Viamedis reprend l'optique et l'audioprothèse d'Oxantis, selon les modalités et conventions propres à cet opérateur.",
+      "source": "acuite-2026-fermeture"
+    },
+    {
+      "fait": "Selon l'annonce d'Acuité, les prises en charge en cours et l'historique de facturation sont transférés automatiquement vers viamedis.net.",
+      "source": "acuite-2026-fermeture"
+    },
+    {
+      "fait": "Le sélecteur de viamedis.net propose trois libellés MGEN en optique : « MGEN », « MGEN SOLUTION » et « Ma Mutuelle MGEN » (relevé du 06/11/2026).",
+      "source": "granit-releve"
+    },
+    {
+      "fait": "En audio, le même relevé montre « MGEN » et « MGEN SOLUTION ». La liste audio n'a peut-être pas encore intégré tous les organismes repris d'Oxantis : l'absence de « Ma Mutuelle MGEN » ne prouve rien.",
+      "source": "granit-releve"
+    },
+    {
+      "fait": "Avant sa fermeture, le sélecteur d'oxantis.net proposait « MGEN », « MGEN ACCOLADE », « MGEN SOLUTIONS » et « Ma mutuelle MGEN ».",
+      "source": "granit-oxantis"
+    },
+    {
+      "fait": "Le relevé du 06/11/2026 ne montre pas de libellé « MGEN ACCOLADE » sur viamedis.net. Cela ne prouve rien sur le sort de ces adhérents : si la carte indique Accolade, c'est la carte qui décide, et Viamedis est à appeler en cas de doute.",
+      "source": "granit-releve"
+    },
+    {
+      "fait": "Le 30 juin 2025, Acuité annonçait qu'à compter du 1er juillet 2025 bon nombre d'adhérents MGEN migraient vers l'offre MGEN Accolade, avec une nouvelle carte, et demandait de réclamer systématiquement la carte de tiers payant, qui indique l'organisme complémentaire à sélectionner.",
+      "source": "acuite-2025-accolade"
+    },
+    {
+      "fait": "En février 2022, Acuité annonçait que les adhérents MGEN, MGEN Efficience Santé et MAEE pouvaient avoir le tiers payant optique chez tous les opticiens, et plus seulement chez ceux du réseau Kalixia. Cette annonce précède la bascule vers Viamedis.",
+      "source": "acuite-2022-mgen"
+    },
+    {
+      "fait": "Sur mgen.fr, MGEN Solutions figure dans la rubrique destinée aux employeurs. La page indique que ses pages sont en cours de création et renvoie vers une adresse de contact sur les contrats collectifs.",
+      "source": "mgen-solutions"
+    },
+    {
+      "fait": "MGEN propose aussi l'offre Efficience Santé, ouverte sans condition de statut professionnel, avec accès aux réseaux de soins MGEN.",
+      "source": "mgen-msp"
+    },
+    {
+      "fait": "Viamedis garantit le paiement pour les assurés munis d'une carte de tiers payant en cours de validité, portant le nom de la complémentaire, la garantie et le logo Viamedis.",
+      "source": "viamedis-ps"
+    },
+    {
+      "fait": "Sur kalixia.fr/optique, un opticien sans compte le demande par le bouton « Devenir partenaire » pour rejoindre Kalixia Optique 2023-2026 ; l'équipe répond au 0 820 895 895 (numéro surtaxé).",
+      "source": "kalixia-optique"
+    }
+  ],
+  "conventionnement": [],
+  "statuts": [],
+  "statutsSource": "",
+  "contacts": [
+    {
+      "label": "Viamedis, professionnels de santé",
+      "valeur": "0 825 076 076",
+      "detail": "Du lundi au vendredi, 9 h–18 h · numéro surtaxé",
+      "source": "viamedis-espace-pro"
+    },
+    {
+      "label": "Viamedis, déjà référencé",
+      "valeur": "Formulaire de contact de viamedis.net",
+      "url": "https://www.viamedis.net/ViamedisNet/page/commun/p_index_contact_us",
+      "source": "viamedis-espace-pro"
+    },
+    {
+      "label": "Viamedis, pas encore référencé",
+      "valeur": "Formulaire de viamedispro.com",
+      "url": "https://www.viamedispro.com/nous-contacter/",
+      "source": "viamedis-espace-pro"
+    },
+    {
+      "label": "Kalixia, centres d'optique et d'audioprothèse",
+      "valeur": "0 820 895 895",
+      "detail": "Numéro surtaxé · formulaire sur kalixia.fr/aide-contact",
+      "source": "kalixia-contact"
+    },
+    {
+      "label": "MGEN, page contact officielle",
+      "valeur": "Aide et contact de mgen.fr",
+      "url": "https://www.mgen.fr/aide-et-contact/",
+      "source": "mgen-contact"
+    }
+  ],
+  "organismes": {
+    "liste": [],
+    "source": ""
+  },
+  "sources": {
+    "mgen-msp": {
+      "label": "mgen.fr · MGEN Santé Prévoyance (page de 2026, réseau Kalixia et Efficience Santé)",
+      "url": "https://www.mgen.fr/nos-solutions/mgen-sante-prevoyance/",
+      "consulte": "2026-11-06"
+    },
+    "mgen-solutions": {
+      "label": "mgen.fr · MGEN Solutions (rubrique Employeurs)",
+      "url": "https://www.mgen.fr/employeurs/mgen-solutions/les-solutions/",
+      "consulte": "2026-11-06"
+    },
+    "mgen-contact": {
+      "label": "mgen.fr · Aide et contact",
+      "url": "https://www.mgen.fr/aide-et-contact/",
+      "consulte": "2026-11-06"
+    },
+    "acuite-2026-fermeture": {
+      "label": "Acuité · « Fermeture de la plateforme de tiers payant Oxantis le 26 octobre 2026 » (16/09/2026)",
+      "url": "https://www.acuite.fr/actualites/profession/fermeture-de-la-plateforme-de-tiers-payant-oxantis-a335575",
+      "consulte": "2026-11-06"
+    },
+    "acuite-2025-accolade": {
+      "label": "Acuité · « Tiers payant : la MGEN apporte des changements » (30/06/2025)",
+      "url": "https://www.acuite.fr/actualites/profession/regime-obligatoire/tiers-payant-la-mgen-apporte-des-changements-313606",
+      "consulte": "2026-11-06"
+    },
+    "acuite-2022-mgen": {
+      "label": "Acuité · « La MGEN modifie son contrat de tiers payant » (04/02/2022)",
+      "url": "https://www.acuite.fr/actualite/ocam/224229/la-mgen-modifie-son-contrat-de-tiers-payant",
+      "consulte": "2026-11-06"
+    },
+    "viamedis-ps": {
+      "label": "viamedis.fr · Professionnels de santé",
+      "url": "https://www.viamedis.fr/professionnels-de-sante/",
+      "consulte": "2026-11-04"
+    },
+    "kalixia-optique": {
+      "label": "kalixia.fr · Kalixia Optique 2023-2026",
+      "url": "https://www.kalixia.fr/optique/",
+      "consulte": "2026-11-06"
+    },
+    "granit-releve": {
+      "label": "Relevé Granit du sélecteur de viamedis.net (06/11/2026)",
+      "url": "",
+      "consulte": "2026-11-06"
+    },
+    "granit-oxantis": {
+      "label": "Relevé Granit du sélecteur d'oxantis.net avant sa fermeture",
+      "url": "",
+      "consulte": "2026-10-07"
+    },
+    "kalixia-contact": {
+      "label": "kalixia.fr · Aide & contact",
+      "url": "https://www.kalixia.fr/aide-contact/",
+      "consulte": "2026-11-06"
+    },
+    "viamedis-espace-pro": {
+      "label": "viamedis.fr · Espace professionnels de santé (questions fréquentes)",
+      "url": "https://www.viamedis.fr/espace-professionnels-de-sante/",
+      "consulte": "2026-11-06"
+    },
+    "mgen-psc": {
+      "label": "mgen.fr · « Protection Sociale Complémentaire Education Nationale : ce qui change pour vous en 2026 » (17/12/2025)",
+      "url": "https://www.mgen.fr/ressources/actualites/votre-mutuelle/protection-sociale-complementaire-education-nationale-ce-qui-change-pour-vous-en-2026/",
+      "consulte": "2026-11-06"
+    },
+    "uspo-2026-mai": {
+      "label": "USPO · « 1er mai 2026 : migration des bénéficiaires MGEN vers VIAMEDIS » (30/04/2026, début d'article public)",
+      "url": "https://uspo.fr/1er-mai-2026-migration-des-beneficiaires-mgen-vers-viamedis/",
+      "consulte": "2026-11-06"
+    },
+    "uspo-2026-ligne": {
+      "label": "USPO · « MGEN Actus – professionnel de santé » (14/08/2026, début d'article public)",
+      "url": "https://uspo.fr/mgen-actus-professionnel-de-sante/",
+      "consulte": "2026-11-06"
+    },
+    "fspf-2026-juillet": {
+      "label": "FSPF · Relations Complémentaires santé, actualité du 01/07/2026 (titre et chapô publics)",
+      "url": "https://www.fspf.fr/relations-complementaires-sante/",
+      "consulte": "2026-11-06"
+    },
+    "yotera-viamedis": {
+      "label": "yotera.fr · Lettre de Viamedis reproduite dans « Comment éviter les rejets de la MGEN ? » (10/06/2026)",
+      "url": "https://yotera.fr/2026/06/10/comment-eviter-les-rejets-de-la-mgen-avec-viamedis/",
+      "consulte": "2026-11-06"
+    }
+  }
+}
