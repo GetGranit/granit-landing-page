@@ -64,6 +64,7 @@ export const Route = createRootRoute({
           "Granit déploie des agents IA autonomes qui automatisent les workflows administratifs des établissements de santé. Tiers-payant, facturation, commandes - sans intégration.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Granit" },
       { name: "twitter:card", content: "summary_large_image" },
       // Image de partage de la marque (internal/marque/partage/), copiée telle quelle dans public/.
       { property: "og:image", content: "https://www.getgranit.ai/granit-partage-1200x630.png" },
