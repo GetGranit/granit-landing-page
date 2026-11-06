@@ -1,7 +1,7 @@
 {
   "slug": "portail-isante",
   "nom": "iSanté",
-  "logo": "/logos/isante.png",
+  "logo": "/logos/annuaire/isante.png",
   "checkedOn": "2026-10-07",
   "acces": {
     "verifieLe": "2026-10-30",
