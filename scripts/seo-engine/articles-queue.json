@@ -7462,7 +7462,7 @@
     ],
     "searchVolume": 0,
     "unsplashQuery": "optician computer paperwork",
-    "status": "published",
+    "status": "waiting",
     "wave": 3,
     "level": "Fille",
     "parentSlug": "portails-tiers-payant",
@@ -7470,7 +7470,7 @@
     "role": "Trafic",
     "granitData": "Sélecteurs relevés sur les portails (name_options_*.json), vérification web sur source primaire",
     "cta": "Outil mutuelle → portail + démo",
-    "toValidate": "Fiche mutuelle (aiguillage), gabarit §6. Mots-clés non mesurés.",
+    "toValidate": "Fiche mutuelle (aiguillage), gabarit §6. Mots-clés non mesurés. Fiche écrite, en attente : opérateur à confirmer sur une carte récente.",
     "primaryKeywordMeasured": false,
     "faqQuestions": [
       "Par quel portail passe le tiers payant AG2R La Mondiale ?",
@@ -7494,8 +7494,7 @@
     ],
     "verticales": [
       "optique"
-    ],
-    "publishedAt": "2026-11-06"
+    ]
   },
   {
     "id": "A24",
