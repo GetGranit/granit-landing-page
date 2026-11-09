@@ -1,6 +1,7 @@
 # IndexNow : après chaque déploiement en production réussi (Vercel), prévient Bing des articles
 # publiés, refondus ou redirigés depuis le dernier envoi. Le tag `indexnow-envoye` marque le dernier
-# commit envoyé. Déclenché par le déploiement (et pas par le push) pour couvrir aussi les commits du bot.
+# commit envoyé. Annonce aussi dans #seo chaque nouvel article en ligne (titre + lien).
+# Déclenché par le déploiement (et pas par le push) pour couvrir aussi les commits du bot.
 name: SEO · IndexNow
 
 on:
@@ -35,9 +36,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Envoyer à IndexNow
+      - name: Annoncer les nouveaux articles et envoyer à IndexNow
         env:
           TOUT: ${{ inputs.tout }}
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_CANAL_SEO: ${{ secrets.SLACK_CANAL_SEO }}
         run: |
           set -euo pipefail
           if [ "${TOUT:-false}" = "true" ]; then
@@ -48,6 +51,8 @@ jobs:
             echo "Déploiement plus ancien que le dernier envoi : rien à faire."
             exit 0
           else
+            # un message Slack par nouvel article une fois sa page servie (un échec Slack ne bloque pas IndexNow)
+            node scripts/seo-engine/annoncer-en-ligne.mjs --depuis indexnow-envoye || echo "::warning::annonce Slack incomplète"
             node scripts/seo-engine/indexnow.mjs --depuis indexnow-envoye
           fi
           git tag -f indexnow-envoye HEAD

@@ -31,3 +31,9 @@ export function message({ etat, fiche, titre, url, pr, cout, runUrl }) {
   );
   return lignes.join("\n");
 }
+
+/** Message court une fois les articles servis en production : titre + lien, un seul message par déploiement. */
+export function messageEnLigne(articles) {
+  if (articles.length === 1) return `✅ Article en ligne : *${articles[0].titre}*\n${articles[0].url}`;
+  return [`✅ ${articles.length} articles en ligne :`, ...articles.map((a) => `• <${a.url}|${a.titre}>`)].join("\n");
+}

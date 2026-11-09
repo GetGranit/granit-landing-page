@@ -3,6 +3,8 @@
 # Facultatives : VERDICT (pret/humain) et VERDICT_MD (verdict de la boucle de relecture, ajouté au corps de la PR).
 # REVIEW=false : commit direct sur main (Vercel publie).
 # REVIEW=true  : la file passe l'article en « review » sur main, l'article part dans une PR à relire.
+# REVIEW=true + VERDICT=pret (boucle des agents) : contrôles repassés, puis commit direct sur main sans PR
+#   (sauf page comparative). Sortie en_ligne=true.
 set -euo pipefail
 cd "$(git rev-parse --show-toplevel)"
 Q=scripts/seo-engine/articles-queue.json
@@ -24,6 +26,26 @@ if [ "$REVIEW" != "true" ]; then
   git commit -m "Ressources : $TITLE"
   envoyer_main
   exit 0
+fi
+
+# Verdict « pret » de la boucle des agents : en ligne sans PR, sauf page comparative (toujours relue par un humain).
+# Les contrôles du moteur repassent d'abord ; au moindre échec, l'article part en PR comme avant.
+comparatif() {
+  node -e 'const q=require("./'"$Q"'");const a=q.find((x)=>x.slug===process.argv[1]);process.exit(a?.concurrents?.length?0:1)' "$SLUG"
+}
+if [ "${VERDICT:-}" = "pret" ] && ! comparatif; then
+  if node scripts/seo-engine/verifier-article.mjs "$SLUG"; then
+    node scripts/seo-engine/set-status.mjs "$SLUG" published
+    # aucun humain n'a relu : pas de relecteur affiché sur l'article
+    node -e 'const f=require("fs"),p=process.argv[1],a=JSON.parse(f.readFileSync(p,"utf8"));a.reviewer=null;f.writeFileSync(p,JSON.stringify(a,null,2)+"\n")' "content/ressources/$SLUG.json"
+    git add content public/ressources/og "$Q"
+    git commit -m "Ressources : $TITLE"
+    envoyer_main
+    echo "en_ligne=true" >> "$GITHUB_OUTPUT"
+    exit 0
+  fi
+  echo "::warning::$SLUG : verdict prêt mais contrôles du moteur en échec, l'article part en PR"
+  VERDICT=humain
 fi
 
 git add "$Q"
