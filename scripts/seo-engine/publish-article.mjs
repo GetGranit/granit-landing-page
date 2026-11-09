@@ -266,12 +266,13 @@ if (!sortie) {
 }
 bilan.avertissements.forEach((a) => console.log(`  ! ${a}`));
 
-// Relecture humaine (PR) pour les premiers articles et ceux qui ont des points à valider
+// Relecture par les agents pour les premiers articles, ceux qui ont des points à valider, les refontes et les comparatifs
 const dejaSortis = file.filter((a) => ["published", "review"].includes(a.status)).length;
-const relecture = opt.relecture || dejaSortis < config.relectureDesPremiers || Boolean(article.toValidate) || Boolean(article.refonte) || comparatif; // comparatif : toujours relu (gabarit §6 bis)
+// « relecture » = passage par la boucle des agents (plus de relecture humaine : l'article part en ligne ensuite)
+const relecture = opt.relecture || dejaSortis < config.relectureDesPremiers || Boolean(article.toValidate) || Boolean(article.refonte) || comparatif;
 
-// Signature : auteur et relecteur selon la catégorie. Le relecteur n'est affiché que si
-// l'article passe vraiment par une relecture humaine (PR), jamais en publication directe.
+// Signature : auteur et relecteur selon la catégorie. Plus de relecture humaine : ship.sh retire le
+// relecteur avant la mise en ligne.
 const signature = {
   ...config.signatures[article.category],
   ...signaturePour(choix),

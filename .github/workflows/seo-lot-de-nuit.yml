@@ -1,6 +1,6 @@
 # Moteur SEO : rédige un lot d'articles à la suite (une nuit).
 # Chaque article passe ensuite par la boucle relecture → correction → verdict (relire-article.mjs) ;
-# verdict « pret » = en ligne sans PR (sauf comparatif) ; sinon PR avec le verdict dans le corps.
+# puis mise en ligne directe quel que soit le verdict ; PR seulement si les contrôles du moteur échouent.
 # Lancé à la main : liste de slugs pending + plafond de dépense. S'arrête avant de dépasser le plafond.
 name: SEO · lot de nuit
 

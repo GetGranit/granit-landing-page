@@ -40,9 +40,9 @@ async function enLigne(url) {
 const articles = await Promise.all(
   ajoutes.map(async (slug) => {
     const p = join(CONTENU, `${slug}.json`);
-    const titre = existsSync(p) ? JSON.parse(readFileSync(p, "utf8")).title : slug;
+    const fiche = existsSync(p) ? JSON.parse(readFileSync(p, "utf8")) : null;
     const url = `${site}/ressources/${slug}`;
-    return { titre, url, ok: await enLigne(url) };
+    return { titre: fiche?.title ?? slug, verdict: fiche?.moteur?.relecture?.verdict, url, ok: await enLigne(url) };
   }),
 );
 const absents = articles.filter((a) => !a.ok);

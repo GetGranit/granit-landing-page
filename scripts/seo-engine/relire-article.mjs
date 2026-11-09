@@ -49,9 +49,9 @@ console.log(`Relecture ${article.slug} · type ${type}${fp?.faits ? ` · faits $
 const ctx = contexte({
   meta: {
     slug: article.slug, title: article.title, type, primaryKeyword: article.primaryKeyword, keywordCluster: article.keywordCluster, reader: article.reader, verticales: choix.verticales,
-    // points non tranchés de la file : un verdict « pret » publie sans relecture humaine, donc l'article ne doit
-    // rien affirmer sur ces points qui ne soit sourcé (sinon BLOQUANT). La consigne « relecture humaine » d'origine
-    // est retirée : c'est cette boucle qui décide désormais.
+    // points non tranchés de la file : l'article part en ligne sans relecture humaine, donc il ne doit rien
+    // affirmer sur ces points qui ne soit sourcé (BLOQUANT : le correcteur retire). La consigne « relecture
+    // humaine » d'origine est retirée.
     ...(article.toValidate
       ? { pointsNonTranches: `${article.toValidate.replace(/Relecture humaine obligatoire( \(PR\))?\.\s*/i, "")} → Toute affirmation sur ces points sans source citée qui la confirme est BLOQUANT.` }
       : {}),

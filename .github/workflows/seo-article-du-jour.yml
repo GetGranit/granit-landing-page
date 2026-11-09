@@ -59,8 +59,8 @@ jobs:
           name: essai-article
           path: ${{ runner.temp }}/essai
 
-      # Relecture par les agents (relecteur → correcteur → contre-relecture). Verdict « pret » = en ligne sans PR.
-      # Si la boucle plante, l'article part en PR en décision humaine.
+      # Relecture par les agents (relecteur → correcteur → contre-relecture), puis mise en ligne directe quel que
+      # soit le verdict ; seuls les contrôles du moteur peuvent la bloquer. Si la boucle plante, l'article part tel quel.
       - name: Relire avec les agents
         id: relire
         if: steps.run.outputs.slug != '' && steps.run.outputs.review == 'true' && !inputs.dry
@@ -89,7 +89,7 @@ jobs:
           VERDICT_MD: ${{ runner.temp }}/verdict.md
         run: bash scripts/seo-engine/ship.sh
 
-      - name: Prévenir sur Slack (article à relire)
+      - name: Prévenir sur Slack (article non publié)
         if: steps.ship.outputs.pr != '' && !inputs.dry
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
