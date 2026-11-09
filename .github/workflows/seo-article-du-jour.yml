@@ -59,6 +59,24 @@ jobs:
           name: essai-article
           path: ${{ runner.temp }}/essai
 
+      # Relecture par les agents (relecteur → correcteur → contre-relecture), puis mise en ligne directe quel que
+      # soit le verdict ; seuls les contrôles du moteur peuvent la bloquer. Si la boucle plante, l'article part tel quel.
+      - name: Relire avec les agents
+        id: relire
+        if: steps.run.outputs.slug != '' && steps.run.outputs.review == 'true' && !inputs.dry
+        shell: bash
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SLUG: ${{ steps.run.outputs.slug }}
+        run: |
+          set -o pipefail
+          if node scripts/seo-engine/relire-article.mjs --slug "$SLUG" --verdict "$RUNNER_TEMP/verdict.md" 2>&1 | tee "$RUNNER_TEMP/relecture.log"; then
+            :
+          else
+            echo "verdict=humain" >> "$GITHUB_OUTPUT"
+            printf '## Boucle relecture → correction → verdict : 🟡 Décision humaine\n\nLa boucle automatique a échoué (voir les logs du run) : article non relu par les agents.\n' > "$RUNNER_TEMP/verdict.md"
+          fi
+
       - name: Publier
         id: ship
         if: steps.run.outputs.slug != '' && !inputs.dry
@@ -67,10 +85,12 @@ jobs:
           SLUG: ${{ steps.run.outputs.slug }}
           TITLE: ${{ steps.run.outputs.title }}
           REVIEW: ${{ steps.run.outputs.review }}
+          VERDICT: ${{ steps.relire.outputs.verdict || 'humain' }}
+          VERDICT_MD: ${{ runner.temp }}/verdict.md
         run: bash scripts/seo-engine/ship.sh
 
-      - name: Prévenir sur Slack
-        if: steps.run.outputs.slug != '' && !inputs.dry
+      - name: Prévenir sur Slack (article non publié)
+        if: steps.ship.outputs.pr != '' && !inputs.dry
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
           SLACK_CANAL_SEO: ${{ secrets.SLACK_CANAL_SEO }}

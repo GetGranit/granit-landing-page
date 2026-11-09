@@ -4,7 +4,7 @@ export function message({ etat, fiche, titre, url, pr, cout, runUrl }) {
     return `⚠️ Moteur SEO en erreur, rien n'est publié. <${runUrl}|Voir les logs>`;
   const prOuverte = pr && pr.includes("/pull/");
   const tete = pr
-    ? `👀 *Article à relire* : ${titre}\n${prOuverte ? `<${pr}|Ouvrir la PR>` : `<${pr}|Créer la PR> (le bot n'a pas le droit de l'ouvrir)`} · fusionner = publier`
+    ? `🔴 *Article non publié* (contrôles du moteur en échec) : ${titre}\n${prOuverte ? `<${pr}|Ouvrir la PR>` : `<${pr}|Créer la PR> (le bot n'a pas le droit de l'ouvrir)`} · corriger puis fusionner = publier`
     : `📝 *Article publié* : <${url}|${titre}>`;
   if (!fiche) return tete;
   const lignes = [tete, ""];
@@ -30,4 +30,12 @@ export function message({ etat, fiche, titre, url, pr, cout, runUrl }) {
       : "• Avertissements : aucun",
   );
   return lignes.join("\n");
+}
+
+/** Message court une fois les articles servis en production : titre + lien, un seul message par déploiement.
+ * Un article que les agents n'ont pas jugé prêt (verdict « humain ») porte une mention, sans bloquer. */
+export function messageEnLigne(articles) {
+  const note = (a) => (a.verdict === "humain" ? " (les agents ont laissé des points ouverts)" : "");
+  if (articles.length === 1) return `✅ Article en ligne : *${articles[0].titre}*${note(articles[0])}\n${articles[0].url}`;
+  return [`✅ ${articles.length} articles en ligne :`, ...articles.map((a) => `• <${a.url}|${a.titre}>${note(a)}`)].join("\n");
 }

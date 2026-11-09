@@ -1,6 +1,6 @@
-# Moteur SEO : rédige un lot d'articles à la suite (une nuit), chacun en PR de relecture humaine.
+# Moteur SEO : rédige un lot d'articles à la suite (une nuit).
 # Chaque article passe ensuite par la boucle relecture → correction → verdict (relire-article.mjs) ;
-# le verdict va dans le corps de la PR. Rien n'est jamais fusionné automatiquement.
+# puis mise en ligne directe quel que soit le verdict ; PR seulement si les contrôles du moteur échouent.
 # Lancé à la main : liste de slugs pending + plafond de dépense. S'arrête avant de dépasser le plafond.
 name: SEO · lot de nuit
 
@@ -72,7 +72,7 @@ jobs:
               total=$(awk -v t="$total" -v c="${crel:-0}" 'BEGIN{print t + c}')
               export SLUG="$slug" TITLE="$(val title)" REVIEW=true URL="$(val url)" COUT="$cout" VERDICT="${VERDICT:-humain}" VERDICT_MD
               if GITHUB_OUTPUT="$out" bash scripts/seo-engine/ship.sh; then
-                export PR="$(val pr)"; node scripts/seo-engine/notify.mjs ok || true; ok+=("$slug")
+                export PR="$(val pr)"; [ -n "$PR" ] && { node scripts/seo-engine/notify.mjs ok || true; }; ok+=("$slug")
               else
                 ko+=("$slug (envoi)"); git reset -q --hard origin/main
               fi

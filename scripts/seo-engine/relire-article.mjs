@@ -47,7 +47,15 @@ const faitsComparatif = article.concurrents?.length
 console.log(`Relecture ${article.slug} · type ${type}${fp?.faits ? ` · faits ${fp.nom}` : ""}${opt.simuler ? " · SIMULATION" : ""}`);
 
 const ctx = contexte({
-  meta: { slug: article.slug, title: article.title, type, primaryKeyword: article.primaryKeyword, keywordCluster: article.keywordCluster, reader: article.reader, verticales: choix.verticales },
+  meta: {
+    slug: article.slug, title: article.title, type, primaryKeyword: article.primaryKeyword, keywordCluster: article.keywordCluster, reader: article.reader, verticales: choix.verticales,
+    // points non tranchés de la file : l'article part en ligne sans relecture humaine, donc il ne doit rien
+    // affirmer sur ces points qui ne soit sourcé (BLOQUANT : le correcteur retire). La consigne « relecture
+    // humaine » d'origine est retirée.
+    ...(article.toValidate
+      ? { pointsNonTranches: `${article.toValidate.replace(/Relecture humaine obligatoire( \(PR\))?\.\s*/i, "")} → Toute affirmation sur ces points sans source citée qui la confirme est BLOQUANT.` }
+      : {}),
+  },
   faits: fp?.faits ?? faitsComparatif,
   liens: [...[...cibles].map(([c, t]) => `${c} : ${t}`), `Pages produit (2 liens maximum) : ${config.pagesProduit.join(", ")}`],
   // lecteur et règles du métier ; règles « portail » seulement pour une page plateforme
