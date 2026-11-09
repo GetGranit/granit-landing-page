@@ -2515,6 +2515,277 @@
     "unsplashQuery": "doctor prescription desk"
   },
   {
+    "id": "W1",
+    "slug": "reseau-optique-alan-candidature-2027",
+    "category": "conformite",
+    "title": "Réseau optique Alan : candidater ou pas avant le 30 novembre ?",
+    "primaryKeyword": "réseau alan optique",
+    "keywordCluster": [
+      "alan réseau optique candidature",
+      "réseau de soins optique 2027",
+      "candidater réseau optique",
+      "réseau fermé optique mutuelle",
+      "carte blanche renouvellement réseau"
+    ],
+    "searchVolume": 0,
+    "status": "pending",
+    "wave": 4,
+    "level": "Fille",
+    "parentSlug": "tiers-payant-opticien",
+    "reader": "Gérant ou responsable d'un magasin d'optique (ou centre auditif) indépendant qui décide de candidater ou non à un réseau de soins",
+    "role": "Trafic",
+    "granitData": "—",
+    "cta": "Parlons de votre tiers payant",
+    "toValidate": "Relecture humaine obligatoire. Actualité issue de la veille : https://opticien-lunetier.media/2026/10/22/alan-ouvre-les-candidatures-pour-son-reseau-optique/. Date d'effet : 1er janvier 2027. Appel à candidatures du 27 octobre au 30 novembre 2026 (18 h) ; à publier avant le 30 novembre. À vérifier : nombre maximal d'opticiens retenus, critères de sélection (formation, équipement, expertise), contreparties tarifaires exactes (inconnues à ce jour, ne rien affirmer), dates du renouvellement du réseau Carte Blanche. Ne pas conseiller de candidater ou non : donner les questions à se poser. Article distinct de portail-alan (portail de PEC, réseau en ligne déjà constitué).",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Quand se termine l'appel à candidatures du réseau optique d'Alan ?",
+      "Quels critères le réseau Alan retient-il pour sélectionner les opticiens ?",
+      "Que change l'appartenance à un réseau de soins pour la prise en charge au comptoir ?",
+      "Un opticien hors réseau peut-il encore servir un client Alan ?",
+      "Quelles autres dates de réseaux 2027 faut-il suivre ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "W1a",
+        "slug": "tiers-payant-opticien",
+        "anchor": "tiers payant opticien",
+        "type": "parent"
+      },
+      {
+        "id": "W1b",
+        "slug": "portail-alan",
+        "anchor": "portail Alan",
+        "type": "sœur"
+      },
+      {
+        "id": "W1c",
+        "slug": "reseaux-de-soins-conventionnement",
+        "anchor": "réseaux de soins et conventionnement",
+        "type": "sœur"
+      },
+      {
+        "id": "W1d",
+        "slug": "portail-carte-blanche",
+        "anchor": "portail Carte Blanche",
+        "type": "transverse"
+      },
+      {
+        "id": "W1e",
+        "slug": "checklist-prise-en-charge",
+        "anchor": "checklist avant d'envoyer une prise en charge",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ],
+    "unsplashQuery": "optician store"
+  },
+  {
+    "id": "W2",
+    "slug": "plfss-2027-senat-taxe-complementaires-groupements",
+    "category": "conformite",
+    "title": "Budget de la Sécu 2027 au Sénat : ce qui peut encore changer pour votre officine ou votre magasin",
+    "primaryKeyword": "plfss 2027 sénat",
+    "keywordCluster": [
+      "plfss 2027 taxe complémentaires santé",
+      "contribution groupements pharmacies",
+      "contribution dispositifs médicaux 2027",
+      "budget sécurité sociale 2027",
+      "article 10 plfss 2027"
+    ],
+    "searchVolume": 0,
+    "status": "pending",
+    "wave": 4,
+    "level": "Fille",
+    "parentSlug": "tiers-payant-professionnels-de-sante",
+    "reader": "Gérant ou responsable administratif d'une officine, d'un magasin d'optique ou d'audio, d'un centre dentaire, d'un centre de santé ou d'une clinique",
+    "role": "Trafic",
+    "granitData": "—",
+    "cta": "Parlons de votre tiers payant",
+    "toValidate": "Relecture humaine obligatoire. Actualité issue de la veille : https://www.lemoniteurdespharmacies.fr/profession/socio-professionnel/groupements-le-senat-veut-supprimer-la-taxe-de-120-millions-deuros-les-pharmaciens-seront-ils-penalises. Examen en séance au Sénat à partir du 9 novembre 2026 ; rien n'est voté, le texte passe encore en séance puis en navette. À vérifier : mesures proposées par le rapporteur général (taxe sur les complémentaires santé, contribution sur les dispositifs médicaux, contribution sur les rémunérations des laboratoires aux groupements de pharmacies, article 10), montants annoncés, calendrier. Ne présenter aucune mesure comme adoptée. À relire à la lumière du vote final ; complète plfss-2027-teletransmission-tiers-payant (article 32, en attente).",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Que propose la commission des affaires sociales du Sénat sur le PLFSS 2027 ?",
+      "La taxe sur les complémentaires santé est-elle supprimée ?",
+      "Qu'est-ce que la contribution sur les groupements de pharmacies ?",
+      "Les dispositifs médicaux (optique, audio) sont-ils concernés ?",
+      "Où suivre le calendrier du texte jusqu'au vote final ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "W2a",
+        "slug": "tiers-payant-professionnels-de-sante",
+        "anchor": "tiers payant des professionnels de santé",
+        "type": "parent"
+      },
+      {
+        "id": "W2b",
+        "slug": "ticket-moderateur-2027-tiers-payant",
+        "anchor": "ticket modérateur 2027",
+        "type": "sœur"
+      },
+      {
+        "id": "W2c",
+        "slug": "plfss-2027-teletransmission-tiers-payant",
+        "anchor": "article 32 du PLFSS 2027",
+        "type": "sœur"
+      },
+      {
+        "id": "W2d",
+        "slug": "amo-amc",
+        "anchor": "part AMO et part AMC",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "optique",
+      "dentaire",
+      "centres",
+      "pharmacie",
+      "cliniques"
+    ],
+    "unsplashQuery": "parliament building"
+  },
+  {
+    "id": "W3",
+    "slug": "reste-a-charge-drees-expliquer-devis",
+    "category": "guide-tiers-payant",
+    "title": "Reste à charge : les chiffres de la Drees pour expliquer un devis au comptoir",
+    "primaryKeyword": "reste à charge drees",
+    "keywordCluster": [
+      "reste à charge optique",
+      "reste à charge dentaire",
+      "reste à charge audioprothèse",
+      "étude drees reste à charge 2023",
+      "expliquer un devis à un client"
+    ],
+    "searchVolume": 0,
+    "status": "pending",
+    "wave": 4,
+    "level": "Fille",
+    "parentSlug": "tiers-payant-opticien",
+    "reader": "Opticien, audioprothésiste ou responsable de centre dentaire qui doit expliquer un reste à charge à un client",
+    "role": "Trafic",
+    "granitData": "—",
+    "cta": "Démo",
+    "toValidate": "Relecture humaine obligatoire. Actualité issue de la veille : https://opticien-lunetier.media/2026/11/06/loptique-reste-en-1e-ligne-des-restes-a-charge-en-sante/. Étude Drees publiée le 5 novembre 2026 sur les données 2023. Aucune date d'effet. À vérifier sur l'étude originale de la Drees : montants moyens de reste à charge (global, optique, dentaire, audio), part du panier sans reste à charge, chiffres après 70 ans ; citer la Drees et l'année des données (2023), jamais comme chiffres 2026. Angle pro : une phrase pour expliquer le devis, pas de commentaire sur les prix.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Quel est le reste à charge moyen des Français selon la Drees ?",
+      "Quels postes pèsent le plus dans le reste à charge ?",
+      "Comment expliquer un reste à charge à un client qui trouve la note salée ?",
+      "Le panier 100 % Santé supprime-t-il tout reste à charge ?",
+      "Pourquoi le reste à charge est-il plus élevé après 70 ans ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "W3a",
+        "slug": "tiers-payant-opticien",
+        "anchor": "tiers payant opticien",
+        "type": "parent"
+      },
+      {
+        "id": "W3b",
+        "slug": "remboursement-optique-amo-amc",
+        "anchor": "remboursement optique : AMO, AMC et reste à charge",
+        "type": "sœur"
+      },
+      {
+        "id": "W3c",
+        "slug": "dentaire-paniers-100-sante-tiers-payant",
+        "anchor": "paniers 100 % Santé en dentaire",
+        "type": "transverse"
+      },
+      {
+        "id": "W3d",
+        "slug": "audioprothese-renouvellement-tiers-payant",
+        "anchor": "renouvellement d'appareillage en audioprothèse",
+        "type": "transverse"
+      },
+      {
+        "id": "W3e",
+        "slug": "checklist-prise-en-charge",
+        "anchor": "checklist avant d'envoyer une prise en charge",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "optique",
+      "dentaire"
+    ],
+    "unsplashQuery": "consultation desk"
+  },
+  {
+    "id": "W4",
+    "slug": "part-des-reseaux-de-soins-optique-tresorerie",
+    "category": "guide-tiers-payant",
+    "title": "Réseaux de soins en optique : ce que pèse la prise en charge dans votre trésorerie",
+    "primaryKeyword": "réseaux de soins optique",
+    "keywordCluster": [
+      "remboursement optique malakoff humanis",
+      "observatoire malakoff humanis optique",
+      "trésorerie tiers payant optique",
+      "délais de paiement mutuelle optique",
+      "renouvellement lunettes ralentissement"
+    ],
+    "searchVolume": 0,
+    "status": "pending",
+    "wave": 4,
+    "level": "Fille",
+    "parentSlug": "tiers-payant-opticien",
+    "reader": "Gérant ou responsable d'un magasin d'optique qui suit sa trésorerie et ses délais de paiement",
+    "role": "Trafic",
+    "granitData": "—",
+    "cta": "Démo + calcul du temps perdu",
+    "toValidate": "Relecture humaine obligatoire. Actualité issue de la veille : https://opticien-lunetier.media/2026/11/03/une-etude-malakoff-humanis-confirme-le-leger-recul-des-renouvellements-de-lunettes/. Observatoire 2026 de Malakoff Humanis, contrats collectifs, premier semestre 2026 : citer l'étude et son périmètre, ne généraliser à aucun marché. Aucune date d'effet. À vérifier sur l'étude : évolution du remboursement moyen optique, part des actes en réseau de soins, remboursement moyen par monture et par verres, évolution des coûts en réseau et hors réseau. Ne chiffrer le délai de paiement ni la trésorerie d'aucun magasin : renvoyer vers les articles de suivi des paiements.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Quelle part des actes optiques passe par un réseau de soins ?",
+      "Le renouvellement des lunettes ralentit-il ?",
+      "Pourquoi un rejet de prise en charge pèse-t-il sur la trésorerie ?",
+      "Comment suivre les délais de paiement des plateformes ?",
+      "Quels indicateurs suivre chaque mois ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "W4a",
+        "slug": "tiers-payant-opticien",
+        "anchor": "tiers payant opticien",
+        "type": "parent"
+      },
+      {
+        "id": "W4b",
+        "slug": "reseaux-de-soins-conventionnement",
+        "anchor": "réseaux de soins et conventionnement",
+        "type": "sœur"
+      },
+      {
+        "id": "W4c",
+        "slug": "portail-malakoff-humanis",
+        "anchor": "portail Malakoff Humanis",
+        "type": "sœur"
+      },
+      {
+        "id": "W4d",
+        "slug": "virement-mutuelle-inferieur",
+        "anchor": "virement de mutuelle inférieur à la facture",
+        "type": "transverse"
+      },
+      {
+        "id": "W4e",
+        "slug": "indicateurs-tiers-payant",
+        "anchor": "indicateurs de tiers payant à suivre chaque mois",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ],
+    "unsplashQuery": "optician store"
+  },
+  {
     "id": "V1",
     "slug": "indus-assurance-maladie-pharmacie-protections-menstruelles",
     "category": "conformite",
