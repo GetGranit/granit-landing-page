@@ -34,7 +34,7 @@ export function Nav() {
   return (
     <header className="sticky top-0 z-50 px-3 py-1.5 sm:px-6 sm:py-2">
       <div
-        className="relative mx-auto flex h-14 max-w-[1200px] items-center justify-between rounded-full px-3 pl-5 pr-2 transition-[background-color,border-color,box-shadow] duration-200 sm:px-4 sm:pl-6 sm:pr-2 lg:px-4"
+        className="relative mx-auto flex h-16 max-w-[1200px] items-center justify-between rounded-full px-3 pl-5 pr-2 transition-[background-color,border-color,box-shadow] duration-200 sm:px-4 sm:pl-6 sm:pr-2 lg:px-4"
         style={
           scrolled
             ? {
@@ -56,17 +56,17 @@ export function Nav() {
             }
           }}
         >
-          <img src={logoMonogram} alt="Granit" className="h-7 w-auto sm:h-8" />
+          <img src={logoMonogram} alt="Granit" className="h-8 w-auto sm:h-9" />
         </Link>
 
-        <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-7 lg:flex">
+        <nav className="hidden items-center gap-1 lg:flex xl:absolute xl:left-1/2 xl:-translate-x-1/2">
           {links.map((l) => (
             <Link
               key={l.to}
               to={l.to}
-              className="text-[13.5px] transition-colors"
-              style={{ color: "var(--text-soft)" }}
-              activeProps={{ style: { color: "var(--text)", fontWeight: 500 } }}
+              className="rounded-full px-3.5 py-2 text-[15px] font-medium transition-colors hover:bg-[color:var(--lavis)]"
+              style={{ color: "var(--text)" }}
+              activeProps={{ className: "bg-[color:var(--lavis)]" }}
             >
               {l.label}
             </Link>
@@ -89,13 +89,13 @@ export function Nav() {
           </button>
           <a
             href="https://app.getgranit.ai"
-            className="hidden text-[13.5px] sm:inline-block sm:px-2"
-            style={{ color: "var(--text-soft)" }}
+            className="hidden text-[15px] font-medium sm:inline-block sm:px-2"
+            style={{ color: "var(--text)" }}
             onClick={() => posthog.capture("sign_in_clicked", { location: "navigation" })}
           >
             {t.login}
           </a>
-          <Link to="/" hash="demo" className="btn-primary whitespace-nowrap text-[13px]" style={{ padding: "9px 14px" }}>
+          <Link to="/" hash="demo" className="btn-primary whitespace-nowrap text-[14px]" style={{ padding: "11px 18px" }}>
             {t.demo} <span className="arrow">↗</span>
           </Link>
         </div>
