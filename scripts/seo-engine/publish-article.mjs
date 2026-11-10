@@ -271,20 +271,14 @@ const dejaSortis = file.filter((a) => ["published", "review"].includes(a.status)
 // « relecture » = passage par la boucle des agents (plus de relecture humaine : l'article part en ligne ensuite)
 const relecture = opt.relecture || dejaSortis < config.relectureDesPremiers || Boolean(article.toValidate) || Boolean(article.refonte) || comparatif;
 
-// Signature : auteur et relecteur selon la catégorie. Plus de relecture humaine : ship.sh retire le
-// relecteur avant la mise en ligne.
+// Signature : la catégorie (ou la fiche métier) doit en avoir une dans config.json, mais la page signe
+// « l'équipe Granit » (voir author plus bas). Plus de relecture humaine : aucun relecteur affiché.
 const signature = {
   ...config.signatures[article.category],
   ...signaturePour(choix),
   ...(article.auteur ? { auteur: article.auteur } : {}),
-  ...(article.relecteur ? { relecteur: article.relecteur } : {}),
 };
 if (!signature.auteur) throw new Error(`pas de signature pour la catégorie ${article.category} (config.json)`);
-const personne = (cle) => {
-  const p = config.auteurs[cle];
-  if (!p) throw new Error(`auteur inconnu dans config.json : ${cle}`);
-  return { name: p.nom, jobTitle: p.fonction, photo: p.photo, url: p.linkedin || null };
-};
 
 // 5. Fichier de l'article (lu par la page /ressources/{slug})
 const nbMots = mots(texte(sortie.contentHtml)).length;
@@ -311,8 +305,10 @@ const fiche = {
   keywordCluster: article.keywordCluster,
   parentSlug: article.parentSlug,
   level: article.level,
-  author: personne(signature.auteur),
-  reviewer: relecture ? personne(signature.relecteur) : null,
+  // Signé « l'équipe Granit » (page et JSON-LD Organization) : les prénoms de config.json ne sont pas
+  // des personnes réelles, et aucun humain ne relit. Remettre personne(...) seulement pour une vraie personne.
+  author: null,
+  reviewer: null,
   datePublished: aujourdhui,
   dateModified: aujourdhui,
   checkedOn:

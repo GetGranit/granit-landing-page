@@ -16,18 +16,8 @@
   ],
   "parentSlug": null,
   "level": "Refonte",
-  "author": {
-    "name": "Laura",
-    "jobTitle": "Writer, health expert",
-    "photo": "/auteurs/laura.jpg",
-    "url": null
-  },
-  "reviewer": {
-    "name": "Olivier",
-    "jobTitle": "Writer, third-party payment expert",
-    "photo": "/auteurs/olivier.jpg",
-    "url": null
-  },
+  "author": null,
+  "reviewer": null,
   "datePublished": "2026-10-22",
   "dateModified": "2026-10-22",
   "checkedOn": null,

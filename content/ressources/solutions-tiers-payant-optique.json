@@ -12,18 +12,8 @@
   ],
   "parentSlug": "gerer-tiers-payant-magasin",
   "level": "Fille",
-  "author": {
-    "name": "Laura",
-    "jobTitle": "Rédactrice, experte santé",
-    "photo": "/auteurs/laura.jpg",
-    "url": null
-  },
-  "reviewer": {
-    "name": "Olivier",
-    "jobTitle": "Rédacteur, expert tiers payant",
-    "photo": "/auteurs/olivier.jpg",
-    "url": null
-  },
+  "author": null,
+  "reviewer": null,
   "datePublished": "2026-11-04",
   "dateModified": "2026-11-04",
   "checkedOn": "2026-10-07",

@@ -17,18 +17,8 @@
   ],
   "parentSlug": "portails-tiers-payant",
   "level": "Fille (outil)",
-  "author": {
-    "name": "Olivier",
-    "jobTitle": "Rédacteur, expert tiers payant",
-    "photo": "/auteurs/olivier.jpg",
-    "url": null
-  },
-  "reviewer": {
-    "name": "Nathalie",
-    "jobTitle": "Rédactrice, experte métier optique",
-    "photo": "/auteurs/nathalie.jpg",
-    "url": null
-  },
+  "author": null,
+  "reviewer": null,
   "datePublished": "2026-10-12",
   "dateModified": "2026-10-12",
   "checkedOn": null,

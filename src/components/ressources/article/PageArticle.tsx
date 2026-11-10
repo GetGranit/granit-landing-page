@@ -237,7 +237,7 @@ export function PageArticle({
               </div>
               <Signature a={a} nbSources={nbSources} />
               {/* Lien officiel de connexion au portail : beaucoup de lecteurs viennent pour ça. */}
-              {p?.acces && <AccesEspacePro p={p} slug={a.slug} />}
+              {p?.acces && <AccesEspacePro p={p} slug={a.slug} ancres={a.tocItems} />}
             </div>
             {/* Couverture à droite, sur grand écran seulement : la réponse reste visible sans défiler. */}
             {fiche && (

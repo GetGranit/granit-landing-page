@@ -21,18 +21,8 @@
   ],
   "parentSlug": "portails-tiers-payant",
   "level": "Fille",
-  "author": {
-    "name": "Olivier",
-    "jobTitle": "Writer, third-party payment expert",
-    "photo": "/auteurs/olivier.jpg",
-    "url": null
-  },
-  "reviewer": {
-    "name": "Nathalie",
-    "jobTitle": "Writer, optical industry expert",
-    "photo": "/auteurs/nathalie.jpg",
-    "url": null
-  },
+  "author": null,
+  "reviewer": null,
   "datePublished": "2026-10-08",
   "dateModified": "2026-10-08",
   "checkedOn": "2026-10-06",

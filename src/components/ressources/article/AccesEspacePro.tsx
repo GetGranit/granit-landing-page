@@ -29,10 +29,25 @@ function Fleche() {
   );
 }
 
-export function AccesEspacePro({ p, slug }: { p: Plateforme; slug: string }) {
+// Les recherches « <plateforme> téléphone / contact » reviennent sur toutes les pages portail : le
+// lecteur bloqué trouve tout de suite le numéro (déjà sourcé dans `contacts`) et les sections d'aide.
+const estTelephone = (valeur: string) => /^0[\d\s.]{8,}$/.test(valeur.trim());
+
+export function AccesEspacePro({
+  p,
+  slug,
+  ancres = [],
+}: {
+  p: Plateforme;
+  slug: string;
+  ancres?: { id: string }[];
+}) {
   const posthog = usePostHog();
   const acces = p.acces;
   if (!acces) return null;
+  const telephone = p.contacts?.find((c) => estTelephone(c.valeur));
+  const ancreBloque = ancres.find((t) => /bloqu/.test(t.id))?.id;
+  const ancreContacts = ancres.find((t) => /contact/.test(t.id))?.id;
   const [principal, ...autres] = acces.liens;
   // Le lien peut être chez l'opérateur du TP (Sévéane → korelio.com) : on nomme le domaine, pas la marque.
   const domaines = [...new Set(acces.liens.map((l) => domaine(l.url)))];
@@ -101,6 +116,38 @@ export function AccesEspacePro({ p, slug }: { p: Plateforme; slug: string }) {
         acces.note && (
           <p className="mt-2 text-[14px] leading-snug text-[var(--text-soft)]">{acces.note}</p>
         )
+      )}
+      {(telephone || ancreBloque || ancreContacts) && (
+        <p className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-[14px] leading-snug text-[var(--text-soft)]">
+          {telephone && (
+            <span>
+              {/^t[ée]l[ée]phone/i.test(telephone.label) ? "Téléphone" : telephone.label} :{" "}
+              <a
+                href={`tel:${telephone.valeur.replace(/[^\d]/g, "")}`}
+                className="font-semibold text-[var(--text)] underline underline-offset-[3px] hover:text-[var(--profond)]"
+              >
+                {telephone.valeur}
+              </a>
+              {/surtax/i.test(telephone.detail ?? "") ? " (surtaxé)" : ""}
+            </span>
+          )}
+          {ancreBloque && (
+            <a
+              href={`#${ancreBloque}`}
+              className="font-semibold text-[var(--text)] underline underline-offset-[3px] hover:text-[var(--profond)]"
+            >
+              Ça ne marche pas ?
+            </a>
+          )}
+          {ancreContacts && (
+            <a
+              href={`#${ancreContacts}`}
+              className="font-semibold text-[var(--text)] underline underline-offset-[3px] hover:text-[var(--profond)]"
+            >
+              Tous les contacts
+            </a>
+          )}
+        </p>
       )}
       <p className="mt-3 text-[13px] leading-snug text-[var(--text-muted)]">
         {principal
