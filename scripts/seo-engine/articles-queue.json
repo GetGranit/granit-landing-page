@@ -2379,7 +2379,7 @@
       "changement remboursement dentaire 2027"
     ],
     "searchVolume": 0,
-    "status": "pending",
+    "status": "published",
     "wave": 4,
     "level": "Fille",
     "parentSlug": "tiers-payant-professionnels-de-sante",
@@ -2440,7 +2440,8 @@
       "centres",
       "pharmacie"
     ],
-    "unsplashQuery": "calendar documents desk"
+    "unsplashQuery": "calendar documents desk",
+    "publishedAt": "2026-11-10"
   },
   {
     "id": "X6",
