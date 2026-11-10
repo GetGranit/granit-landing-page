@@ -21,12 +21,7 @@
   ],
   "parentSlug": "portail-almerys",
   "level": "Petite-fille",
-  "author": {
-    "name": "Olivier",
-    "jobTitle": "Writer, third-party payment expert",
-    "photo": "/auteurs/olivier.jpg",
-    "url": null
-  },
+  "author": null,
   "reviewer": null,
   "datePublished": "2026-10-21",
   "dateModified": "2026-10-21",

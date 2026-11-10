@@ -6,7 +6,7 @@
   "type": "plateforme",
   "plateforme": "oxantis",
   "title": "Oxantis TP a fermé : PEC en cours, factures et passage à Viamedis",
-  "seoTitle": "Oxantis TP a fermé le 26 octobre 2026 : passage à Viamedis",
+  "seoTitle": "Oxantis TP fermé : PEC, factures et passage à Viamedis",
   "primaryKeyword": "oxantis tp",
   "keywordCluster": [
     "tp oxantis",
@@ -22,18 +22,8 @@
   ],
   "parentSlug": "portails-tiers-payant",
   "level": "Fille",
-  "author": {
-    "name": "Olivier",
-    "jobTitle": "Rédacteur, expert tiers payant",
-    "photo": "/auteurs/olivier.jpg",
-    "url": null
-  },
-  "reviewer": {
-    "name": "Nathalie",
-    "jobTitle": "Rédactrice, experte métier optique",
-    "photo": "/auteurs/nathalie.jpg",
-    "url": null
-  },
+  "author": null,
+  "reviewer": null,
   "datePublished": "2026-10-09",
   "dateModified": "2026-11-04",
   "checkedOn": "2026-11-04",

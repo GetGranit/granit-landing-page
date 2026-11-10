@@ -19,7 +19,7 @@ export function message({ etat, fiche, titre, url, pr, cout, runUrl }) {
     `• Taille : ${fiche.wordCount.toLocaleString("fr-FR")} mots (${fiche.readTime} min) · ${fiche.faqItems?.length ?? 0} FAQ · ${fiche.sources?.length ?? 0} sources · ${fiche.figures?.length ?? 0} schéma(s)`,
   );
   lignes.push(
-    `• Signature : ${fiche.author?.name ?? "?"}${fiche.reviewer ? `, relu par ${fiche.reviewer.name}` : ""}`,
+    `• Signature : ${fiche.author?.name ?? "l'équipe Granit"}${fiche.reviewer ? `, relu par ${fiche.reviewer.name}` : ""}`,
   );
   if (fiche.remplace?.length) lignes.push(`• Remplace (301) : ${fiche.remplace.join(", ")}`);
   if (cout) lignes.push(`• Coût : ${cout} $`);

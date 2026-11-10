@@ -10,18 +10,8 @@
   "keywordCluster": [],
   "parentSlug": "rejet-tiers-payant",
   "level": "Fille",
-  "author": {
-    "name": "Olivier",
-    "jobTitle": "Writer, third-party payment expert",
-    "photo": "/auteurs/olivier.jpg",
-    "url": null
-  },
-  "reviewer": {
-    "name": "Nathalie",
-    "jobTitle": "Writer, optical industry expert",
-    "photo": "/auteurs/nathalie.jpg",
-    "url": null
-  },
+  "author": null,
+  "reviewer": null,
   "datePublished": "2026-10-19",
   "dateModified": "2026-10-19",
   "checkedOn": null,

@@ -12,7 +12,7 @@ const lignes = [
   `- Catégorie : ${f.categoryName} · type ${f.type} · ${f.wordCount} mots · ${f.faqItems.length} questions de FAQ · ${f.sources.length} sources`,
   `- Mot-clé principal : \`${f.primaryKeyword}\``,
   "",
-  `Signé par **${f.author.name}**${f.reviewer ? `, relu par **${f.reviewer.name}** : la page affichera « Relu par ${f.reviewer.name} », donc c'est à cette personne de relire avant de fusionner.` : "."}`,
+  `Signé par **${f.author?.name ?? "l'équipe Granit"}**${f.reviewer ? `, relu par **${f.reviewer.name}** : la page affichera « Relu par ${f.reviewer.name} », donc c'est à cette personne de relire avant de fusionner.` : "."}`,
   "",
   "### À vérifier avant de fusionner",
   "- [ ] Chaque fait et chaque chiffre correspond à sa source",

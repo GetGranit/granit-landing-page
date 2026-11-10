@@ -10,18 +10,8 @@
   "keywordCluster": [],
   "parentSlug": "tiers-payant-opticien",
   "level": "Pilier",
-  "author": {
-    "name": "Olivier",
-    "jobTitle": "Rédacteur, expert tiers payant",
-    "photo": "/auteurs/olivier.jpg",
-    "url": null
-  },
-  "reviewer": {
-    "name": "Nathalie",
-    "jobTitle": "Rédactrice, experte métier optique",
-    "photo": "/auteurs/nathalie.jpg",
-    "url": null
-  },
+  "author": null,
+  "reviewer": null,
   "datePublished": "2026-11-02",
   "dateModified": "2026-11-02",
   "checkedOn": null,
