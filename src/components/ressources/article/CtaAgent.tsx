@@ -268,6 +268,7 @@ function contenuCta(a: RessourceJson, p: Plateforme | null, lang: Lang) {
   const e = a.encart;
   if (e)
     return {
+      t,
       article: a.slug,
       cat,
       s: { ...s, etapes: e.etapes },
