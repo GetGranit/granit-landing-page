@@ -224,7 +224,13 @@
       "type": "transverse"
     }
   ],
-  "liensEntrants": [],
+  "liensEntrants": [
+    {
+      "slug": "ordonnances-medecins-deconventionnes-2027",
+      "anchor": "Ordonnances de médecins déconventionnés : ce qui change au 1er janvier 2027",
+      "type": "soeur"
+    }
+  ],
   "remplace": [],
   "verticales": [
     "optique",
