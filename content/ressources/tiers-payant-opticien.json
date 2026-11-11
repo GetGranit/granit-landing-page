@@ -217,6 +217,11 @@
       "slug": "rejet-tiers-payant",
       "anchor": "motif rejet tiers payant",
       "type": "enfant"
+    },
+    {
+      "slug": "reseau-optique-alan-candidature-2027",
+      "anchor": "Réseau optique Alan : candidater ou pas avant le 30 novembre ?",
+      "type": "enfant"
     }
   ],
   "remplace": [

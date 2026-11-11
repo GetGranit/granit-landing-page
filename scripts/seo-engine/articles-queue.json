@@ -2530,7 +2530,7 @@
       "carte blanche renouvellement réseau"
     ],
     "searchVolume": 0,
-    "status": "pending",
+    "status": "published",
     "wave": 4,
     "level": "Fille",
     "parentSlug": "tiers-payant-opticien",
@@ -2582,7 +2582,8 @@
     "verticales": [
       "optique"
     ],
-    "unsplashQuery": "optician store"
+    "unsplashQuery": "optician store",
+    "publishedAt": "2026-11-11"
   },
   {
     "id": "W2",

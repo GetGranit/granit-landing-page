@@ -323,6 +323,11 @@
       "slug": "portail-viasante",
       "anchor": "Viasanté",
       "type": "enfant"
+    },
+    {
+      "slug": "reseau-optique-alan-candidature-2027",
+      "anchor": "Réseau optique Alan : candidater ou pas avant le 30 novembre ?",
+      "type": "soeur"
     }
   ],
   "remplace": [
