@@ -104,8 +104,16 @@ const metierPages = verticalesData.ordre
           ).includes(v),
         )
         .map((a) => a.dateModified),
+      // Anciens encore en ligne seulement (ni remplacés en 301, ni réécrits à la même adresse),
+      // comme fichesVerticale() côté page.
       ...Object.entries(verticalesData.anciens)
-        .filter(([, vs]) => Array.isArray(vs) && vs.includes(v))
+        .filter(
+          ([slug, vs]) =>
+            Array.isArray(vs) &&
+            vs.includes(v) &&
+            !remplaces[slug] &&
+            !ressources.some((a) => a.slug === slug),
+        )
         .map(([slug]) => slugDates.get(slug) ?? ""),
     ];
     if (dates.length < 3 && v !== "optique") return undefined;
