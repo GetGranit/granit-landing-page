@@ -2599,7 +2599,7 @@
       "article 10 plfss 2027"
     ],
     "searchVolume": 0,
-    "status": "pending",
+    "status": "published",
     "wave": 4,
     "level": "Fille",
     "parentSlug": "tiers-payant-professionnels-de-sante",
@@ -2649,7 +2649,8 @@
       "pharmacie",
       "cliniques"
     ],
-    "unsplashQuery": "parliament building"
+    "unsplashQuery": "parliament building",
+    "publishedAt": "2026-11-12"
   },
   {
     "id": "W3",
