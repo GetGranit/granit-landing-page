@@ -163,7 +163,13 @@
       "type": "transverse"
     }
   ],
-  "liensEntrants": [],
+  "liensEntrants": [
+    {
+      "slug": "reste-a-charge-drees-expliquer-devis",
+      "anchor": "Reste à charge : les chiffres de la Drees pour expliquer un devis au comptoir",
+      "type": "soeur"
+    }
+  ],
   "remplace": [],
   "verticales": [
     "optique"

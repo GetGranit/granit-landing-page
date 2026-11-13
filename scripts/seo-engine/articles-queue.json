@@ -2666,7 +2666,7 @@
       "expliquer un devis à un client"
     ],
     "searchVolume": 0,
-    "status": "pending",
+    "status": "published",
     "wave": 4,
     "level": "Fille",
     "parentSlug": "tiers-payant-opticien",
@@ -2719,7 +2719,8 @@
       "optique",
       "dentaire"
     ],
-    "unsplashQuery": "consultation desk"
+    "unsplashQuery": "consultation desk",
+    "publishedAt": "2026-11-13"
   },
   {
     "id": "W4",
