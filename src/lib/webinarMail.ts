@@ -9,7 +9,7 @@ import { MEET_TEL, MEET_URL } from "@/lib/webinarIa";
  * transparence, donc les jetons sont en hex pleins. Les deux valeurs calculées sont des jetons
  * aplatis sur le papier : #62716E = texte-secondaire (encre à 70 %), #E4E5E4 = filet (encre à 12 %).
  */
-const MAIL = {
+export const MAIL = {
   fond: "#FAF0F2", // rosé
   carte: "#FFFDFD", // papier
   encadre: "#FAEAEF", // blush (forme : fond de l'encadré date)
