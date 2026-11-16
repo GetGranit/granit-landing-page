@@ -168,6 +168,11 @@
       "slug": "reste-a-charge-drees-expliquer-devis",
       "anchor": "Reste à charge : les chiffres de la Drees pour expliquer un devis au comptoir",
       "type": "soeur"
+    },
+    {
+      "slug": "part-des-reseaux-de-soins-optique-tresorerie",
+      "anchor": "Réseaux de soins en optique : ce que pèse la prise en charge dans votre trésorerie",
+      "type": "soeur"
     }
   ],
   "remplace": [],

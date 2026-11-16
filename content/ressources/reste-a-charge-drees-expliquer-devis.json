@@ -243,7 +243,13 @@
       "type": "transverse"
     }
   ],
-  "liensEntrants": [],
+  "liensEntrants": [
+    {
+      "slug": "part-des-reseaux-de-soins-optique-tresorerie",
+      "anchor": "Réseaux de soins en optique : ce que pèse la prise en charge dans votre trésorerie",
+      "type": "soeur"
+    }
+  ],
   "remplace": [],
   "verticales": [
     "optique",
