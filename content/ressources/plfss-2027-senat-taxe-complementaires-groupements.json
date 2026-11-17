@@ -191,7 +191,13 @@
       "type": "sœur"
     }
   ],
-  "liensEntrants": [],
+  "liensEntrants": [
+    {
+      "slug": "indus-assurance-maladie-pharmacie-protections-menstruelles",
+      "anchor": "Indus de l'Assurance maladie en officine : protections menstruelles et quotas à vérifier avant de délivrer",
+      "type": "soeur"
+    }
+  ],
   "remplace": [],
   "verticales": [
     "optique",

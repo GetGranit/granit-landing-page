@@ -2806,7 +2806,7 @@
       "notification d'indu officine"
     ],
     "searchVolume": 0,
-    "status": "pending",
+    "status": "published",
     "wave": 4,
     "level": "Fille",
     "parentSlug": "tiers-payant-professionnels-de-sante",
@@ -2852,7 +2852,8 @@
     "verticales": [
       "pharmacie"
     ],
-    "unsplashQuery": "pharmacy counter documents"
+    "unsplashQuery": "pharmacy counter documents",
+    "publishedAt": "2026-11-17"
   },
   {
     "id": "V2",
