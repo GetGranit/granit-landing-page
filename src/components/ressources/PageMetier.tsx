@@ -15,6 +15,7 @@ import { CarteArticle } from "./Cartes";
 import { Fil, useItemRessources } from "./Fil";
 import { Fleche } from "./Hub";
 import { PhotoMetier } from "./Metiers";
+import { AgentsOptique, ProblemesOptique, TitreTousGuides } from "./OptiqueProblemes";
 import { SousNav } from "./Onglets";
 
 const conteneur = "mx-auto max-w-[1280px] px-4 md:px-6";
@@ -38,6 +39,12 @@ const copy = {
     aussiOptique: "Aussi pour l'optique",
     articles: "Les articles",
     valable: "Valable aussi pour votre métier",
+    // Optique : la page part du comptoir (problèmes), pas de notre classement par thème.
+    titreOptique: "le tiers payant, sans y passer vos journées",
+    introOptique:
+      "Prise en charge refusée, mutuelle qui ne paie pas, portail inconnu : trouvez la réponse à ce qui coince. Ou confiez le tout aux agents Granit.",
+    voirProblemes: "Ce qui coince",
+    voirAgents: "Voir les agents",
   },
   en: {
     titre: "third-party payment and admin",
@@ -45,6 +52,11 @@ const copy = {
     aussiOptique: "Also for opticians",
     articles: "Articles",
     valable: "Also relevant to your profession",
+    titreOptique: "third-party payment, without losing your days to it",
+    introOptique:
+      "Rejected coverage, an insurer that won't pay, an unfamiliar portal: find the answer to what's stuck. Or hand it all to Granit agents.",
+    voirProblemes: "What's stuck",
+    voirAgents: "See the agents",
   },
 };
 
@@ -86,10 +98,20 @@ export function PageMetier({ v: vFr }: { v: Verticale }) {
             <Fil items={[ressources, { nom: v.nom }]} />
             <h1 className="mt-4 font-serif text-[clamp(32px,4.4vw,52px)] font-normal leading-[1.08] tracking-[-0.015em] [text-wrap:balance]">
               {v.nom}
-              {lang === "en" ? ": " : " : "}
-              <em className="accent-italic">{t.titre}</em>
+              {lang === "en" ? ": " : "\u00a0: "}
+              <em className="accent-italic">{optique ? t.titreOptique : t.titre}</em>
             </h1>
-            <p className="body-lg mt-4 max-w-[52ch]">{v.description}</p>
+            <p className="body-lg mt-4 max-w-[52ch]">{optique ? t.introOptique : v.description}</p>
+            {optique && (
+              <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-[15px] font-semibold">
+                <a href="#problemes" className="hover:underline hover:underline-offset-4">
+                  {t.voirProblemes} ↓
+                </a>
+                <a href="#agents" className="hover:underline hover:underline-offset-4">
+                  {t.voirAgents} ↓
+                </a>
+              </div>
+            )}
           </div>
           <div className="lg:col-span-7">
             <PhotoMetier
@@ -100,6 +122,14 @@ export function PageMetier({ v: vFr }: { v: Verticale }) {
             />
           </div>
         </section>
+
+        {optique && (
+          <>
+            <ProblemesOptique />
+            <AgentsOptique />
+            <TitreTousGuides />
+          </>
+        )}
 
         {parTheme.map((r) => (
           <section key={r.cat.slug} className={`${conteneur} monte pt-12`}>
@@ -137,7 +167,8 @@ export function PageMetier({ v: vFr }: { v: Verticale }) {
           </section>
         )}
 
-        <BandeDemo />
+        {/* Optique : l'appel à la démo est déjà dans le bloc agents, plus haut. */}
+        {!optique && <BandeDemo />}
       </div>
     </SiteLayout>
   );
