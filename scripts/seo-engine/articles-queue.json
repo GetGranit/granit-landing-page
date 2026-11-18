@@ -2723,6 +2723,205 @@
     "publishedAt": "2026-11-13"
   },
   {
+    "id": "Y1",
+    "slug": "controle-cotations-ccam-centres-dentaires-checklist",
+    "category": "conformite",
+    "title": "Contrôle des cotations CCAM : la checklist pour être prêt avant décembre",
+    "primaryKeyword": "contrôle cotation CCAM",
+    "keywordCluster": [
+      "contrôle cotations CCAM",
+      "indu CCAM centre dentaire",
+      "justification médicale CCAM",
+      "contrôle Assurance maladie centre de santé",
+      "codification CCAM dentaire"
+    ],
+    "searchVolume": 0,
+    "status": "pending",
+    "wave": 4,
+    "level": "Fille",
+    "parentSlug": "tiers-payant-professionnels-de-sante",
+    "reader": "Gérant ou responsable de la facturation d'un centre dentaire ou d'un centre de santé à activité dentaire",
+    "role": "Trafic",
+    "granitData": "—",
+    "cta": "Parlons de votre tiers payant",
+    "toValidate": "Relecture humaine obligatoire. Actualité issue de la veille : https://www.information-dentaire.fr/actualites/ccam-controles-de-cotation-en-vue/ . Date d'effet : première campagne de contrôle annoncée entre décembre 2026 et janvier 2027, seconde au 2e trimestre 2027. À vérifier : source primaire de l'annonce (alerte de la FSDL du 4 novembre 2026, courrier ou communiqué de l'Assurance maladie) ; actes et centres ciblés, non précisés à ce jour ; conditions de récupération d'indus ; chiffres de la phase pédagogique de juin 2025 (15 % d'anomalies sur la justification médicale, 25 % sur la codification), à citer comme relevés rapportés par la source et non comme faits établis. Aucun montant d'indu. Ne rien promettre sur ce que Granit contrôle sans validation.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Quand l'Assurance maladie contrôlera-t-elle les cotations CCAM des centres dentaires ?",
+      "Quelles pièces conserver pour justifier une cotation ?",
+      "Quels actes faut-il revérifier en priorité ?",
+      "Que risque un centre en cas d'anomalie de cotation ?",
+      "Quel lien entre cotation, devis et prise en charge mutuelle ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "Y1a",
+        "slug": "tiers-payant-professionnels-de-sante",
+        "anchor": "tiers payant des professionnels de santé",
+        "type": "parent"
+      },
+      {
+        "id": "Y1b",
+        "slug": "dentaire-paniers-100-sante-tiers-payant",
+        "anchor": "tiers payant sur les paniers 100 % Santé en dentaire",
+        "type": "sœur"
+      },
+      {
+        "id": "Y1c",
+        "slug": "orthodontie-facturation-traitements-longs",
+        "anchor": "facturation des traitements longs en orthodontie",
+        "type": "sœur"
+      },
+      {
+        "id": "Y1d",
+        "slug": "rejet-tiers-payant",
+        "anchor": "rejet de tiers payant",
+        "type": "transverse"
+      },
+      {
+        "id": "Y1e",
+        "slug": "ticket-moderateur-2027-tiers-payant",
+        "anchor": "ticket modérateur 2027",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "dentaire",
+      "centres"
+    ],
+    "unsplashQuery": "dental clinic"
+  },
+  {
+    "id": "Y2",
+    "slug": "justificatifs-cpam-officine-reponses-indu",
+    "category": "conformite",
+    "title": "Demande de justificatif de la CPAM en officine : répondre sans laisser naître un indu",
+    "primaryKeyword": "justificatif CPAM pharmacie indu",
+    "keywordCluster": [
+      "justificatif CPAM pharmacie",
+      "indu CPAM officine",
+      "accusé de réception logique ARL",
+      "Scor ordonnance électronique pharmacie",
+      "contester un indu pharmacie"
+    ],
+    "searchVolume": 0,
+    "status": "pending",
+    "wave": 4,
+    "level": "Fille",
+    "parentSlug": "tiers-payant-professionnels-de-sante",
+    "reader": "Titulaire d'officine et préparateur ou adjoint chargé du suivi des rejets, des retours de caisse et des indus",
+    "role": "Trafic",
+    "granitData": "—",
+    "cta": "Parlons de votre tiers payant",
+    "toValidate": "Relecture humaine obligatoire. Actualité issue de la veille : https://www.lemoniteurdespharmacies.fr/profession/socio-professionnel/indus-les-justifications-abusives-de-certaines-cpam-denoncees . Aucune date d'effet : communiqué de l'USPO du 6 novembre 2026. À vérifier : source primaire (communiqué de l'USPO) ; caisses concernées (Seine-et-Marne citée), à ne pas généraliser à toutes les CPAM ; délai de réponse laissé aux officines ; procédure officielle de contestation d'un indu sur ameli.fr. Position de l'USPO à citer comme position, pas comme fait. Aucun montant d'indu. Écrire pour le professionnel. Distinct de l'article sur les indus liés aux protections menstruelles. Ne rien promettre sur Granit sans validation.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Que faire quand la CPAM redemande une ordonnance déjà transmise ?",
+      "Quelles preuves de transmission conserver (ARL, flux Scor) ?",
+      "Quel délai pour répondre à une demande de justificatif ?",
+      "Comment éviter qu'un courriel de la caisse reste ignoré ?",
+      "Comment contester un indu notifié à l'officine ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "Y2a",
+        "slug": "tiers-payant-professionnels-de-sante",
+        "anchor": "tiers payant des professionnels de santé",
+        "type": "parent"
+      },
+      {
+        "id": "Y2b",
+        "slug": "trois-boucles-pharmacie",
+        "anchor": "les trois boucles à automatiser en officine",
+        "type": "sœur"
+      },
+      {
+        "id": "Y2c",
+        "slug": "officine-balance-agee-tiers-payant",
+        "anchor": "créances de tiers payant en officine",
+        "type": "sœur"
+      },
+      {
+        "id": "Y2d",
+        "slug": "codes-rejets-noemie",
+        "anchor": "codes rejets NOEMIE",
+        "type": "transverse"
+      },
+      {
+        "id": "Y2e",
+        "slug": "rejet-tiers-payant",
+        "anchor": "rejet de tiers payant",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "pharmacie"
+    ],
+    "unsplashQuery": "pharmacy counter"
+  },
+  {
+    "id": "Y3",
+    "slug": "protocole-biologie-2027-2029-laboratoires",
+    "category": "guide-tiers-payant",
+    "title": "Protocole biologie 2027-2029 : ce qui change pour votre laboratoire, en une page",
+    "primaryKeyword": "protocole biologie médicale 2027-2029",
+    "keywordCluster": [
+      "protocole biologie 2027-2029",
+      "accord biologistes Assurance maladie",
+      "laboratoire biologie médicale rentabilité",
+      "enveloppe actes courants biologie",
+      "rejets mutuelle laboratoire"
+    ],
+    "searchVolume": 0,
+    "status": "pending",
+    "wave": 4,
+    "level": "Fille",
+    "parentSlug": "tiers-payant-professionnels-de-sante",
+    "reader": "Responsable facturation ou direction d'un laboratoire de biologie médicale",
+    "role": "Trafic",
+    "granitData": "—",
+    "cta": "Parlons de votre tiers payant",
+    "toValidate": "Relecture humaine obligatoire. Actualité issue de la veille : https://toute-la.veille-acteurs-sante.fr/246686/lassurance-maladie-et-lensemble-des-syndicats-representatifs-de-biologistes-medicaux-signent-un-nouveau-protocole-daccord-pour-la-periode-2027-2029/ . Date de signature : 2 novembre 2026 ; période 2027-2029. À vérifier : texte du protocole sur ameli.fr ou communiqué officiel (signataires, dont l'Unocam) ; hausse annuelle de l'enveloppe des actes courants, enveloppe d'actes innovants, santé publique et maîtrise médicalisée : chaque chiffre à reprendre uniquement depuis la source primaire ; mécanisme du comité de suivi ; négociations conventionnelles à venir. Ne chiffrer le manque à gagner d'aucun laboratoire. Ne rien promettre sur Granit sans validation.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Que prévoit le protocole d'accord 2027-2029 pour la biologie médicale ?",
+      "Qui a signé le protocole ?",
+      "Quel impact sur la rentabilité d'un laboratoire ?",
+      "Quelles nouvelles missions sont prévues (dépistage, vaccination) ?",
+      "Pourquoi le suivi des rejets mutuelle compte-t-il davantage ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "Y3a",
+        "slug": "tiers-payant-professionnels-de-sante",
+        "anchor": "tiers payant des professionnels de santé",
+        "type": "parent"
+      },
+      {
+        "id": "Y3b",
+        "slug": "rejet-tiers-payant",
+        "anchor": "rejet de tiers payant",
+        "type": "transverse"
+      },
+      {
+        "id": "Y3c",
+        "slug": "codes-rejets-noemie",
+        "anchor": "codes rejets NOEMIE",
+        "type": "transverse"
+      },
+      {
+        "id": "Y3d",
+        "slug": "recouvrement-patient-empathie",
+        "anchor": "recouvrement patient",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "cliniques"
+    ],
+    "unsplashQuery": "medical laboratory"
+  },
+  {
     "id": "W4",
     "slug": "part-des-reseaux-de-soins-optique-tresorerie",
     "category": "guide-tiers-payant",
