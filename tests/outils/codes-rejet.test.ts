@@ -36,7 +36,10 @@ import {
 const site = siteNode();
 const HUB = "/outils/codes-rejet";
 const OUVERT = { liste: true, pages: true };
+const FERME = { liste: false, pages: false };
 const GIE_OUVERT = { ...FAMILLES, arl: OUVERT, "sesam-vitale": OUVERT };
+// Réglage fermé explicite : les comptes d'ouverture restent justes quel que soit GIE_SESAM_VITALE.
+const GIE_FERME = { ...FAMILLES, arl: FERME, "sesam-vitale": FERME };
 const GIE = new Set(["arl", "sesam-vitale"]);
 
 // Entrées tirées des tables du GIE (ARL, messages de service) : tenues hors du dépôt en attendant
@@ -75,15 +78,20 @@ describe("outil codes-rejet : réglages de publication", () => {
   });
 
   test("ouvrir les familles du GIE : + 83 lignes et + 1 page une fois leurs entrées remises, rien sans elles", () => {
-    const lignes = lignesHub({ site, familles: GIE_OUVERT });
-    const avant = new Set(publiees().map((p) => p.slug));
-    const apres = pages({ site, familles: GIE_OUVERT }).filter((p) => p.type === "entree");
-    const nouvelles = apres.map((p) => p.slug).filter((s) => !avant.has(s!));
+    const ajout =
+      lignesHub({ site, familles: GIE_OUVERT }).length -
+      lignesHub({ site, familles: GIE_FERME }).length;
+    const entrees = (familles: typeof GIE_OUVERT) =>
+      pages({ site, familles }).filter((p) => p.type === "entree");
+    const avant = new Set(entrees(GIE_FERME).map((p) => p.slug));
+    const nouvelles = entrees(GIE_OUVERT)
+      .map((p) => p.slug)
+      .filter((s) => !avant.has(s!));
     if (nbGie === 0) {
-      assert.equal(lignes.length, lignesHub({ site }).length);
+      assert.equal(ajout, 0);
       assert.deepEqual(nouvelles, []);
     } else {
-      assert.equal(lignes.length - lignesHub({ site }).length, GIE_HORS_DEPOT);
+      assert.equal(ajout, GIE_HORS_DEPOT);
       assert.deepEqual(nouvelles, ["arl-2004-certificat-vitale"]);
     }
   });
@@ -169,7 +177,7 @@ describe("outil codes-rejet : écritures et redirections", () => {
     }
     // Familles fermées : une adresse inconnue est introuvable (404).
     assert.deepEqual(resoudre("noemie-0999999", { site }), { type: "introuvable" });
-    assert.deepEqual(resoudre("2004", { site }), { type: "introuvable" });
+    assert.deepEqual(resoudre("2004", { site, familles: GIE_FERME }), { type: "introuvable" });
   });
 });
 
