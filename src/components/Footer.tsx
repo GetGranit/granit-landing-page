@@ -12,7 +12,7 @@ const copy = {
     baseline: "Vos équipes soignent. Granit gère le reste.",
     hds: "Infrastructure certifiée HDS",
     product: "Produit",
-    agents: "Agents",
+    agents: "Métiers",
     pricing: "Tarifs",
     resources: "Ressources",
     news: "Actualités",
@@ -32,7 +32,7 @@ const copy = {
     baseline: "Your teams care. Granit handles the rest.",
     hds: "HDS-certified infrastructure",
     product: "Product",
-    agents: "Agents",
+    agents: "Trades",
     pricing: "Pricing",
     resources: "Resources",
     news: "News",
@@ -98,7 +98,7 @@ export function Footer({ colle = false }: { colle?: boolean }) {
             className="md:col-span-2 md:col-start-6"
             title={t.product}
             links={[
-              { to: "/agents", label: t.agents },
+              { to: "/metiers", label: t.agents },
               { to: "/tarifs", label: t.pricing },
               { to: "/ressources", label: t.resources },
               ...(rubriqueOuverte ? [{ to: "/actualites", label: t.news }] : []),

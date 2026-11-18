@@ -651,7 +651,7 @@ function SecuritePage() {
                 <Link to="/" hash="demo" className="btn-primary">
                   {t.ctaBtn} <span className="arrow">↗</span>
                 </Link>
-                <Link to="/agents" className="btn-secondaire">
+                <Link to="/metiers" className="btn-secondaire">
                   {t.ctaSecondary}
                 </Link>
               </div>

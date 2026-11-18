@@ -117,7 +117,7 @@ function AffiliationPage() {
               </span>
             ))}
             <Link
-              to="/agents"
+              to="/metiers"
               className="ml-1 text-[13px] underline-offset-4 hover:underline"
               style={{ color: "var(--profond)", fontFamily: "var(--font-mono)" }}
             >

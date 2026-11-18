@@ -7,13 +7,13 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.getgranit.ai/agents</loc>
+    <loc>https://www.getgranit.ai/metiers</loc>
     <lastmod>2026-11-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.getgranit.ai/agents/optique</loc>
+    <loc>https://www.getgranit.ai/metiers/opticiens</loc>
     <lastmod>2026-11-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -32,7 +32,7 @@
   </url>
   <url>
     <loc>https://www.getgranit.ai/ressources</loc>
-    <lastmod>2026-11-06</lastmod>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -56,7 +56,7 @@
   </url>
   <url>
     <loc>https://www.getgranit.ai/ressources/categorie/guide-tiers-payant</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -85,26 +85,32 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.getgranit.ai/ressources/categorie/conformite</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.getgranit.ai/ressources/metier/optique</loc>
-    <lastmod>2026-11-06</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.getgranit.ai/ressources/metier/dentaire</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.getgranit.ai/ressources/metier/centres</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.getgranit.ai/ressources/metier/pharmacie</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -193,6 +199,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.getgranit.ai/ressources/indus-assurance-maladie-pharmacie-protections-menstruelles</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.getgranit.ai/ressources/integration-doctolib-lgo</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
@@ -211,8 +223,26 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.getgranit.ai/ressources/ordonnances-medecins-deconventionnes-2027</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.getgranit.ai/ressources/orthodontie-facturation-traitements-longs</loc>
     <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.getgranit.ai/ressources/part-des-reseaux-de-soins-optique-tresorerie</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.getgranit.ai/ressources/plfss-2027-senat-taxe-complementaires-groupements</loc>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -445,6 +475,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.getgranit.ai/ressources/reseau-optique-alan-candidature-2027</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.getgranit.ai/ressources/reste-a-charge-drees-expliquer-devis</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.getgranit.ai/ressources/sesam-vitale-evolutions-2025</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
@@ -453,6 +495,12 @@
   <url>
     <loc>https://www.getgranit.ai/ressources/solutions-tiers-payant-optique</loc>
     <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.getgranit.ai/ressources/ticket-moderateur-2027-tiers-payant</loc>
+    <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
