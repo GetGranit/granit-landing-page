@@ -2723,6 +2723,61 @@
     "publishedAt": "2026-11-13"
   },
   {
+    "id": "Y4",
+    "slug": "refus-pec-verres-myopie-miyosmart-courrier",
+    "category": "guide-tiers-payant",
+    "title": "Refus de prise en charge sur des verres myopie enfant : le courrier de contestation à envoyer",
+    "primaryKeyword": "refus prise en charge verres myopie",
+    "keywordCluster": [
+      "verres freinateurs de myopie remboursement",
+      "MiyoSmart prise en charge",
+      "contester refus réseau de soins optique",
+      "verres myopie astigmatisme LPP"
+    ],
+    "searchVolume": 0,
+    "status": "pending",
+    "wave": 4,
+    "level": "Fille",
+    "parentSlug": "tiers-payant-professionnels-de-sante",
+    "reader": "Opticien ou conseiller de vente qui fait les prises en charge de verres pour enfants, et gérant de magasin",
+    "role": "Trafic",
+    "granitData": "—",
+    "cta": "Parlons de votre tiers payant",
+    "toValidate": "Actualité issue de la veille : https://app.notion.com/41bba273162f816c92eae234691509fc — source : https://opticien-lunetier.media/2026/11/16/verres-miyosmart-une-elue-denonce-les-pratiques-de-certains-reseaux-de-soins/. Aucune date d'effet ; fenêtre « à chaud », à publier pendant la Semaine nationale de la myopie (23-29 novembre 2026). Relecture humaine obligatoire. À vérifier : question écrite au JO du 10 novembre 2026 (texte et réponse éventuelle du ministère) ; lecture des codes LPP de l'arrêté du 13 juin 2025 (plage de cylindre jusqu'à -4,00) à reprendre uniquement du texte officiel ; réseaux concernés non nommés, ne pas les citer. La position de la députée est à citer comme position. Courrier-type et liste de pièces : aucune promesse de résultat. Ne rien promettre sur ce que Granit contrôle sans validation.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Un réseau de soins peut-il refuser des verres myopie pour un enfant astigmate ?",
+      "Que dit l'arrêté LPP sur la plage de cylindre ?",
+      "Quelles pièces joindre à un courrier de contestation ?",
+      "Que faire si le réseau demande de changer de marque de verre ?",
+      "Comment documenter chaque refus de prise en charge ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "Y4a",
+        "slug": "tiers-payant-professionnels-de-sante",
+        "anchor": "tiers payant des professionnels de santé",
+        "type": "parent"
+      },
+      {
+        "id": "Y4b",
+        "slug": "part-des-reseaux-de-soins-optique-tresorerie",
+        "anchor": "poids des réseaux de soins dans votre trésorerie",
+        "type": "sœur"
+      },
+      {
+        "id": "Y4c",
+        "slug": "rejet-tiers-payant",
+        "anchor": "rejet de tiers payant",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ],
+    "unsplashQuery": "optician eyeglasses child"
+  },
+  {
     "id": "Y1",
     "slug": "controle-cotations-ccam-centres-dentaires-checklist",
     "category": "conformite",
@@ -3175,6 +3230,237 @@
       "pharmacie"
     ],
     "unsplashQuery": "computer security desk"
+  },
+  {
+    "id": "Y5",
+    "slug": "carte-blanche-reseau-optique-2027-signer",
+    "category": "guide-tiers-payant",
+    "title": "Carte Blanche Partenaires : signer ou non son nouveau réseau optique avant 2027 ?",
+    "primaryKeyword": "carte blanche partenaires réseau optique 2027",
+    "keywordCluster": [
+      "réseau optique Carte Blanche conventionnement",
+      "réseaux de soins optique 2027",
+      "faut-il signer un réseau de soins optique",
+      "conventionnement réseau opticien grille de décision"
+    ],
+    "searchVolume": 0,
+    "status": "pending",
+    "wave": 4,
+    "level": "Fille",
+    "parentSlug": "tiers-payant-professionnels-de-sante",
+    "reader": "Gérant de magasin d'optique ou opticien indépendant qui décide d'adhérer ou non à un réseau de soins",
+    "role": "Trafic",
+    "granitData": "—",
+    "cta": "Parlons de votre tiers payant",
+    "toValidate": "Actualité issue de la veille : https://app.notion.com/405ba273162f8104b87ec6de1c190d78 — source : lien à retrouver sur Acuité (non fourni dans la ligne). Date d'effet : déploiement prévu en janvier 2027 ; conventionnement ouvert depuis le 1er octobre selon la veille. Relecture humaine obligatoire. À vérifier : source primaire (Carte Blanche Partenaires ou Acuité), date limite de candidature, conditions tarifaires et critères du réseau, non connus à ce jour : ne rien chiffrer. Ne comparer aucun autre réseau avec des chiffres non sourcés. Angle : grille de décision d'une page. Distinct de l'article sur le réseau Alan. Ne rien promettre sur Granit sans validation.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Quand le réseau optique de Carte Blanche Partenaires sera-t-il déployé ?",
+      "Comment candidater au conventionnement ?",
+      "Quels critères regarder avant de signer ?",
+      "Quel effet sur le flux de clients et sur le tiers payant ?",
+      "Peut-on être dans plusieurs réseaux de soins ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "Y5a",
+        "slug": "tiers-payant-professionnels-de-sante",
+        "anchor": "tiers payant des professionnels de santé",
+        "type": "parent"
+      },
+      {
+        "id": "Y5b",
+        "slug": "reseau-optique-alan-candidature-2027",
+        "anchor": "réseau optique Alan",
+        "type": "sœur"
+      },
+      {
+        "id": "Y5c",
+        "slug": "part-des-reseaux-de-soins-optique-tresorerie",
+        "anchor": "ce que pèse la prise en charge des réseaux",
+        "type": "sœur"
+      },
+      {
+        "id": "Y5d",
+        "slug": "portail-carte-blanche",
+        "anchor": "portail Carte Blanche",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ],
+    "unsplashQuery": "optician shop"
+  },
+  {
+    "id": "Y6",
+    "slug": "optique-remboursee-100-complementaires-rapport",
+    "category": "guide-tiers-payant",
+    "title": "Optique remboursée à 100 % par les complémentaires : ce que le rapport changerait pour votre tiers payant",
+    "primaryKeyword": "optique remboursement complémentaires rapport",
+    "keywordCluster": [
+      "transfert remboursement optique complémentaires",
+      "rapport Assurance maladie complémentaires optique",
+      "payeur unique optique mutuelle",
+      "tiers payant optique Ocam"
+    ],
+    "searchVolume": 0,
+    "status": "pending",
+    "wave": 4,
+    "level": "Fille",
+    "parentSlug": "tiers-payant-professionnels-de-sante",
+    "reader": "Gérant ou opticien qui suit l'évolution du financement de l'optique et de son tiers payant",
+    "role": "Trafic",
+    "granitData": "—",
+    "cta": "Parlons de votre tiers payant",
+    "toValidate": "Actualité issue de la veille : https://app.notion.com/405ba273162f8170b897c78900c2b58f — source : https://opticien-lunetier.media/2026/09/30/vers-un-transfert-integral-des-remboursements-optiques-aux-ocam/. Aucune date d'effet : sujet évoqué pour le débat présidentiel de 2027, pas pour le prochain PLFSS. Relecture humaine obligatoire. À vérifier : texte du rapport remis au gouvernement le 23 septembre 2026 (recommandation, chiffres : environ 350 M€ pris en charge par l'AMO, 68,2 % financés par les complémentaires, à reprendre uniquement de la source primaire) ; position de la ministre. Écrire au conditionnel : rien n'est décidé. Ne rien promettre sur Granit sans validation.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Que recommande le rapport sur l'optique et les complémentaires ?",
+      "Quand ce transfert pourrait-il s'appliquer ?",
+      "Qu'est-ce que cela changerait pour le tiers payant ?",
+      "Les garanties socles resteraient-elles fixées par la réglementation ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "Y6a",
+        "slug": "tiers-payant-professionnels-de-sante",
+        "anchor": "tiers payant des professionnels de santé",
+        "type": "parent"
+      },
+      {
+        "id": "Y6b",
+        "slug": "ticket-moderateur-2027-tiers-payant",
+        "anchor": "ticket modérateur 2027",
+        "type": "sœur"
+      },
+      {
+        "id": "Y6c",
+        "slug": "plfss-2027-senat-taxe-complementaires-groupements",
+        "anchor": "budget de la Sécu 2027 au Sénat",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ],
+    "unsplashQuery": "optician paperwork"
+  },
+  {
+    "id": "Y7",
+    "slug": "codes-lpp-individuels-2027-eviter-rejets",
+    "category": "guide-tiers-payant",
+    "title": "Codes LPP individuels en optique : les 5 vérifications pour éviter les rejets en 2027",
+    "primaryKeyword": "codes LPP individuels optique",
+    "keywordCluster": [
+      "identification individuelle LPP verres montures",
+      "catalogue EDI optique",
+      "exploitant LPP marque propre opticien",
+      "rejet tiers payant code LPP"
+    ],
+    "searchVolume": 0,
+    "status": "pending",
+    "wave": 4,
+    "level": "Fille",
+    "parentSlug": "tiers-payant-professionnels-de-sante",
+    "reader": "Gérant de magasin d'optique, enseigne avec marques propres, ou opticien chargé de la facturation",
+    "role": "Trafic",
+    "granitData": "—",
+    "cta": "Parlons de votre tiers payant",
+    "toValidate": "Actualité issue de la veille : https://app.notion.com/417ba273162f8193bdb3f11c7361e457 — source : https://www.acuite.fr/actualites/profession/le-senat-propose-de-supprimer-la-taxe-de-36-a338176. Date d'effet de l'identification individuelle : à vérifier (aucune date confirmée). Texte du PLFSS 2027 encore en navette (CMP) : écrire au conditionnel. Relecture humaine obligatoire. À vérifier : article du PLFSS et amendements retenus ; statut d'exploitant pour les marques propres ; audioprothésistes concernés seulement si leurs produits relèvent d'une description générique (non établi). Ne pas présenter la taxe de 3,6 % comme supprimée : le Sénat s'y est opposé en séance le 10 novembre, la suite n'est pas connue. Ne rien promettre sur ce que Granit détecte sans validation.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Que change l'identification individuelle des produits LPP ?",
+      "Quand s'applique-t-elle ?",
+      "Que faire si mon catalogue EDI n'est pas à jour ?",
+      "Une marque propre doit-elle obtenir ses propres numéros ?",
+      "Comment contrôler les lignes avant l'envoi ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "Y7a",
+        "slug": "tiers-payant-professionnels-de-sante",
+        "anchor": "tiers payant des professionnels de santé",
+        "type": "parent"
+      },
+      {
+        "id": "Y7b",
+        "slug": "codes-rejets-noemie",
+        "anchor": "codes rejets NOEMIE",
+        "type": "transverse"
+      },
+      {
+        "id": "Y7c",
+        "slug": "rejet-tiers-payant",
+        "anchor": "rejet de tiers payant",
+        "type": "transverse"
+      },
+      {
+        "id": "Y7d",
+        "slug": "plfss-2027-senat-taxe-complementaires-groupements",
+        "anchor": "budget de la Sécu 2027 au Sénat",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ],
+    "unsplashQuery": "optician computer"
+  },
+  {
+    "id": "Y8",
+    "slug": "biosimilaires-refus-tiers-payant-officine-checklist",
+    "category": "guide-tiers-payant",
+    "title": "Biosimilaire refusé, tiers payant perdu : le script comptoir et la checklist de facturation",
+    "primaryKeyword": "biosimilaire tiers payant pharmacie",
+    "keywordCluster": [
+      "tiers payant contre biosimilaires",
+      "substitution biosimilaires officine",
+      "refus biosimilaire patient avance les frais",
+      "facturation biosimilaire pharmacie"
+    ],
+    "searchVolume": 0,
+    "status": "pending",
+    "wave": 4,
+    "level": "Fille",
+    "parentSlug": "tiers-payant-professionnels-de-sante",
+    "reader": "Titulaire ou préparateur d'officine qui délivre et facture les médicaments biologiques",
+    "role": "Trafic",
+    "granitData": "—",
+    "cta": "Parlons de votre tiers payant",
+    "toValidate": "Actualité issue de la veille : https://app.notion.com/415ba273162f81d3bc18d1476ddf88e9 — source : https://www.lemoniteurdespharmacies.fr/profession/socio-professionnel/biosimilaires-le-senat-veut-accelerer-la-substitution-et-limiter-les-refus-des-medecins. Dispositif « tiers payant contre biosimilaires » en vigueur depuis le 1er septembre 2026 ; amendements n° 1045 et n° 306 au PLFSS 2027 non adoptés à ce stade (vote du Sénat attendu le 18 novembre, date d'effet à vérifier). Relecture humaine obligatoire. À vérifier : texte du dispositif et liste ANSM des groupes substituables ; chiffres de marché (1 Md€ HT en 2025, 14 groupes sur 26 substituables fin septembre) à reprendre seulement de la source primaire ; cas d'exception. Écrire pour le professionnel. Ne rien promettre sur Granit sans validation.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Que se passe-t-il si le patient refuse le biosimilaire ?",
+      "Quelles mentions vérifier sur l'ordonnance ?",
+      "Quels sont les cas d'exception à la substitution ?",
+      "Que changeraient les amendements en discussion au Sénat ?",
+      "Comment expliquer la règle au patient en trois phrases ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "Y8a",
+        "slug": "tiers-payant-professionnels-de-sante",
+        "anchor": "tiers payant des professionnels de santé",
+        "type": "parent"
+      },
+      {
+        "id": "Y8b",
+        "slug": "trois-boucles-pharmacie",
+        "anchor": "les trois boucles à automatiser en officine",
+        "type": "sœur"
+      },
+      {
+        "id": "Y8c",
+        "slug": "rejet-tiers-payant",
+        "anchor": "rejet de tiers payant",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "pharmacie"
+    ],
+    "unsplashQuery": "pharmacy counter"
   },
   {
     "id": "T0",
