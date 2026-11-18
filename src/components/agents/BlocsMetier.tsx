@@ -126,7 +126,7 @@ export function ListeNoms({
         {noms.map((n) => (
           <li
             key={n}
-            className="flex h-[64px] w-[118px] items-center justify-center gap-1.5 rounded-[12px] border px-3"
+            className="flex h-[64px] w-[110px] items-center justify-center gap-1.5 rounded-[12px] border px-3"
             style={{ background: "var(--papier)", borderColor: "var(--filet)" }}
           >
             {LOGOS[n] ? (
@@ -135,7 +135,7 @@ export function ListeNoms({
                   src={LOGOS[n]}
                   alt={LOGOS_AVEC_NOM.includes(n) ? "" : n}
                   loading="lazy"
-                  className={`max-w-[94px] min-w-0 object-contain ${LOGOS_AVEC_NOM.includes(n) ? "max-h-[20px]" : "max-h-[32px]"}`}
+                  className={`max-w-[86px] min-w-0 object-contain ${LOGOS_AVEC_NOM.includes(n) ? "max-h-[20px]" : "max-h-[32px]"}`}
                 />
                 {LOGOS_AVEC_NOM.includes(n) && <span className="text-[14px] font-medium">{n}</span>}
               </>

@@ -354,7 +354,8 @@ function PageMetier({ slug, lang }: { slug: SlugMetier; lang: Lang }) {
             <h2 className="mt-4 font-serif text-[clamp(28px,3.2vw,44px)] leading-[1.08] tracking-[-0.02em]">
               {t.outilsTitre[0]} <span className="accent-italic">{t.outilsTitre[1]}</span>
             </h2>
-            <div className="mt-9 grid gap-8 md:grid-cols-[1fr_2fr]">
+            {/* Les deux listes l'une sous l'autre : côte à côte, la plus courte laissait un grand vide. */}
+            <div className="mt-9 grid gap-8">
               {p.logiciels.length > 0 && (
                 <ListeNoms titre={t.logiciels} noms={p.logiciels} suite="…" />
               )}
@@ -362,12 +363,6 @@ function PageMetier({ slug, lang }: { slug: SlugMetier; lang: Lang }) {
                 <ListeNoms titre={t.plateformes} noms={p.plateformes} suite={t.etAutres} />
               )}
             </div>
-            <p
-              className="mt-6 max-w-[60ch] text-[15px] leading-[1.55]"
-              style={{ color: "var(--texte-secondaire)" }}
-            >
-              {p.plateformesNote}
-            </p>
           </div>
         </Reveal>
       </section>
