@@ -12,8 +12,9 @@ import { SEUIL_DEFAUT } from "../socle/mots.mjs";
 export const ALIAS_FICHES = { "la-mutuelle-familiale": "mutuelle-familiale" };
 
 /**
- * Décision n° 2 : le seuil. 100 mots propres dédupliqués (défaut du socle) : le hub et 2 pages
- * (Mutualia, SMABTP). Les candidates relevées dans une seule liste tiennent en 45 à 65 mots propres :
+ * Décision n° 2 : le seuil. 100 mots propres dédupliqués (défaut du socle) : le hub et 1 page
+ * (Mutualia). À 85 : + Abeille Assurances, Mutuelle de Poitiers ; à 70 : + SMABTP, Henner (comptés le
+ * 18/11/2026). Les candidates relevées dans une seule liste tiennent en 45 à 65 mots propres :
  * descendre à 50 donnerait une vingtaine de pages presque identiques (déconseillé).
  */
 export const SEUIL_MOTS_PROPRES = SEUIL_DEFAUT;
@@ -59,7 +60,7 @@ export const PRIORITE = [
  * Décision n° 3 : les faits « à vérifier ». true : le hub montre les opérateurs `a_verifier` avec
  * « à confirmer sur la carte » et la raison (ex. MNT → Viamedis, déduit de la fermeture d'Oxantis),
  * jamais sur une page comme acquis. false : ces métiers n'affichent que « pas de source publique datée »
- * (44 couples mutuelle et métier, dans 19 entrées dont les 12 entièrement « à vérifier »).
+ * (45 couples mutuelle et métier, dans 19 entrées dont les 12 entièrement « à vérifier »).
  */
 export const A_CONFIRMER_VISIBLE = true;
 

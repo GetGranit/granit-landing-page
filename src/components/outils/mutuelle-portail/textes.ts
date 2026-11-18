@@ -35,7 +35,7 @@ export const FAQ = [
   {
     question: "Quelles mutuelles passent par iSanté ou SP santé ?",
     reponse:
-      "Les deux opérateurs publient la liste des complémentaires ouvertes, métier par métier, avec leurs dates. L’annuaire les reprend : filtrez par opérateur et par métier. Les autres opérateurs, dont Viamedis et Almerys, ne publient pas de liste de leurs clients par métier ; pour eux, l’annuaire s’appuie sur les pages des complémentaires et la presse professionnelle.",
+      "Les deux opérateurs publient la liste des complémentaires ouvertes, métier par métier, avec leurs dates. L’annuaire les reprend : filtrez par opérateur et par métier. Pour les autres opérateurs, dont Viamedis et Almerys, nous n’avons trouvé aucune liste publique de leurs clients par métier ; l’annuaire s’appuie alors sur les pages des complémentaires et la presse professionnelle.",
   },
   {
     question: "Pourquoi une même mutuelle a-t-elle deux portails ?",

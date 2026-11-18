@@ -111,7 +111,7 @@ Dessous, dans les deux premiers cas : « Les portails des opérateurs : » p
 > numéro AMC et les métiers ouverts, avec leurs dates ; elles sont mises à jour à chaque ouverture ou fermeture d’un
 > segment. Il y ajoute les pages des complémentaires et la presse professionnelle, datées. Un métier n’est affiché comme
 > relevé que si une source publique datée nomme l’opérateur pour ce métier ; sinon, il est marqué « à confirmer sur la
-> carte ». Les autres opérateurs, dont Viamedis et Almerys, ne publient pas de liste de leurs clients par métier.
+> carte ». Pour les autres opérateurs, dont Viamedis et Almerys, nous n’avons trouvé aucune liste publique de leurs clients par métier.
 > [sp-liste-amc, isante-liste-amc, isante-faq ; sources.md, « Ce qui a bloqué »]
 
 ### 1.7 Carte pont (hub et entrées)
@@ -135,8 +135,7 @@ n’apparaît dans aucun portail ? ») : chaque réponse s’appuie sur les d
 
 **Quelles mutuelles passent par iSanté ou SP santé ?**
 Les deux opérateurs publient la liste des complémentaires ouvertes, métier par métier, avec leurs dates. L’annuaire
-les reprend : filtrez par opérateur et par métier. Les autres opérateurs, dont Viamedis et Almerys, ne publient pas de
-liste de leurs clients par métier ; pour eux, l’annuaire s’appuie sur les pages des complémentaires et la presse
+les reprend : filtrez par opérateur et par métier. Pour les autres opérateurs, dont Viamedis et Almerys, nous n’avons trouvé aucune liste publique de leurs clients par métier ; l’annuaire s’appuie alors sur les pages des complémentaires et la presse
 professionnelle. [sp-liste-amc, isante-liste-amc ; sources.md]
 
 **Pourquoi une même mutuelle a-t-elle deux portails ?**

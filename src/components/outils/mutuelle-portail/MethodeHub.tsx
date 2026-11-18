@@ -42,8 +42,9 @@ export function MethodeHub() {
           elles sont mises à jour à chaque ouverture ou fermeture d’un segment. Il y ajoute les
           pages des complémentaires et la presse professionnelle, datées. Un métier n’est affiché
           comme relevé que si une source publique datée nomme l’opérateur pour ce métier&nbsp;;
-          sinon, il est marqué «&nbsp;à confirmer sur la carte&nbsp;». Les autres opérateurs, dont
-          Viamedis et Almerys, ne publient pas de liste de leurs clients par métier.
+          sinon, il est marqué «&nbsp;à confirmer sur la carte&nbsp;». Pour les autres opérateurs,
+          dont Viamedis et Almerys, nous n’avons trouvé aucune liste publique de leurs clients par
+          métier.
         </p>
       </SectionOutil>
     </>
