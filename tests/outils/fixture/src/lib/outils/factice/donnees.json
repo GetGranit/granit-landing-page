@@ -1,0 +1,105 @@
+{
+  "genere_le": "2026-11-18",
+  "sources": [
+    {
+      "id": "memo-a",
+      "titre": "Mémo factice des codes de démonstration",
+      "url": "https://exemple.org/memo-factice.pdf",
+      "editeur": "Éditeur factice",
+      "date_source": "2025-03-01",
+      "consulte_le": "2026-11-18"
+    },
+    {
+      "id": "page-b",
+      "titre": "Page factice d'aide",
+      "url": "https://exemple.org/aide",
+      "editeur": "Autre éditeur factice",
+      "date_source": "non datée",
+      "consulte_le": "2026-11-18"
+    }
+  ],
+  "entrees": [
+    {
+      "slug": "alpha",
+      "code": "0001001",
+      "libelle": "Premier code factice",
+      "famille": "ouverte",
+      "metiers": ["optique-audio", "dentaire"],
+      "explication": "Le premier code factice signale une pièce absente du dossier. La caisse factice ne peut pas traiter la demande sans elle.",
+      "cause": "La pièce a été oubliée lors de l'envoi ou le scan est illisible.",
+      "action": "Joignez la pièce manquante puis renvoyez le dossier. Si le nouvel essai échoue, contactez l'éditeur factice.",
+      "voisins": ["beta", "gamma"],
+      "articles": ["guide-factice"],
+      "source_ids": ["memo-a"],
+      "statut": "sur",
+      "verifie_le": "2026-11-10"
+    },
+    {
+      "slug": "beta",
+      "code": "0001002",
+      "libelle": "Deuxième code factice",
+      "famille": "ouverte",
+      "metiers": ["optique-audio"],
+      "explication": "Le deuxième code factice indique une date de soins postérieure à la date d'envoi. Le dossier part avant la prestation.",
+      "cause": "La date a été saisie à la main avec une erreur de jour ou de mois.",
+      "action": "Corrigez la date de soins dans le logiciel, puis renvoyez la facture. Si le nouvel essai échoue, contactez l'éditeur factice.",
+      "voisins": ["alpha", "gamma"],
+      "source_ids": ["memo-a", "page-b"],
+      "statut": "sur"
+    },
+    {
+      "slug": "gamma",
+      "code": "0001003",
+      "libelle": "Troisième code factice",
+      "famille": "ouverte",
+      "metiers": ["dentaire"],
+      "explication": "Le troisième code factice refuse un montant supérieur au plafond de la démonstration. La part complémentaire est recalculée.",
+      "cause": "Le tarif appliqué dépasse le plafond publié pour cet acte de démonstration.",
+      "action": "Ramenez le montant au plafond publié et renvoyez. Si le nouvel essai échoue, contactez l'éditeur factice.",
+      "voisins": ["alpha", "beta"],
+      "voisins_ressources": ["guide-factice"],
+      "source_ids": ["memo-a"],
+      "statut": "sur"
+    },
+    {
+      "slug": "delta",
+      "code": "0001004",
+      "libelle": "Quatrième code factice",
+      "famille": "ouverte",
+      "metiers": ["optique-audio"],
+      "explication": "Un code court.",
+      "cause": "Inconnue.",
+      "action": "Si le nouvel essai échoue, contactez l'éditeur factice.",
+      "voisins": ["alpha"],
+      "source_ids": ["memo-a"],
+      "statut": "sur"
+    },
+    {
+      "slug": "zeta",
+      "code": "0009001",
+      "libelle": "Code d'une famille fermée",
+      "famille": "fermee",
+      "metiers": ["dentaire"],
+      "explication": "Ce code factice appartient à une famille que publication.mjs garde fermée. Il pourrait avoir une page si la famille ouvrait un jour.",
+      "cause": "Sa source demande un accord avant toute reproduction, même partielle, de la table.",
+      "action": "Lisez le libellé de votre retour, qui fait foi, et suivez la consigne de votre logiciel.",
+      "voisins": ["alpha", "beta"],
+      "source_ids": ["memo-a"],
+      "statut": "sur"
+    },
+    {
+      "slug": "epsilon",
+      "code": "0001005",
+      "libelle": "Code à vérifier",
+      "famille": "ouverte",
+      "metiers": ["optique-audio"],
+      "explication": "Ce code n'apparaît que sur un forum : il n'a jamais de page, ni de ligne dans le hub.",
+      "cause": "Source secondaire.",
+      "action": "Aucune.",
+      "voisins": ["alpha", "beta"],
+      "source_ids": ["page-b"],
+      "statut": "a_verifier",
+      "note_verification": "Lu sur un forum, sans source officielle."
+    }
+  ]
+}

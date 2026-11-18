@@ -35,6 +35,7 @@ import { Route as EnIndexRouteImport } from './routes/en.index'
 import { Route as EnCgvRouteImport } from './routes/en.cgv'
 import { Route as MetiersIndexRouteImport } from './routes/metiers.index'
 import { Route as MetiersMetierRouteImport } from './routes/metiers.$metier'
+import { Route as OutilsIndexRouteImport } from './routes/outils.index'
 import { Route as OutilsHeuresDeDecembreRouteImport } from './routes/outils.heures-de-decembre'
 import { Route as OutilsTriDesMarquesRouteImport } from './routes/outils.tri-des-marques'
 import { Route as RessourcesIndexRouteImport } from './routes/ressources.index'
@@ -174,6 +175,11 @@ const MetiersMetierRoute = MetiersMetierRouteImport.update({
   path: '/metiers/$metier',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OutilsIndexRoute = OutilsIndexRouteImport.update({
+  id: '/outils/',
+  path: '/outils/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OutilsHeuresDeDecembreRoute = OutilsHeuresDeDecembreRouteImport.update({
   id: '/outils/heures-de-decembre',
   path: '/outils/heures-de-decembre',
@@ -248,6 +254,7 @@ export interface FileRoutesByFullPath {
   '/agents/': typeof AgentsIndexRoute
   '/en/': typeof EnIndexRoute
   '/metiers/': typeof MetiersIndexRoute
+  '/outils/': typeof OutilsIndexRoute
   '/ressources/': typeof RessourcesIndexRoute
   '/en/blog/$': typeof EnBlogSplatRoute
   '/ressources/categorie/$category': typeof RessourcesCategorieCategoryRoute
@@ -282,6 +289,7 @@ export interface FileRoutesByTo {
   '/agents': typeof AgentsIndexRoute
   '/en': typeof EnIndexRoute
   '/metiers': typeof MetiersIndexRoute
+  '/outils': typeof OutilsIndexRoute
   '/ressources': typeof RessourcesIndexRoute
   '/en/blog/$': typeof EnBlogSplatRoute
   '/ressources/categorie/$category': typeof RessourcesCategorieCategoryRoute
@@ -319,6 +327,7 @@ export interface FileRoutesById {
   '/agents/': typeof AgentsIndexRoute
   '/en/': typeof EnIndexRoute
   '/metiers/': typeof MetiersIndexRoute
+  '/outils/': typeof OutilsIndexRoute
   '/ressources/': typeof RessourcesIndexRoute
   '/en/blog/$': typeof EnBlogSplatRoute
   '/ressources/categorie/$category': typeof RessourcesCategorieCategoryRoute
@@ -357,6 +366,7 @@ export interface FileRouteTypes {
     | '/agents/'
     | '/en/'
     | '/metiers/'
+    | '/outils/'
     | '/ressources/'
     | '/en/blog/$'
     | '/ressources/categorie/$category'
@@ -391,6 +401,7 @@ export interface FileRouteTypes {
     | '/agents'
     | '/en'
     | '/metiers'
+    | '/outils'
     | '/ressources'
     | '/en/blog/$'
     | '/ressources/categorie/$category'
@@ -427,6 +438,7 @@ export interface FileRouteTypes {
     | '/agents/'
     | '/en/'
     | '/metiers/'
+    | '/outils/'
     | '/ressources/'
     | '/en/blog/$'
     | '/ressources/categorie/$category'
@@ -461,6 +473,7 @@ export interface RootRouteChildren {
   AgentsIndexRoute: typeof AgentsIndexRoute
   EnIndexRoute: typeof EnIndexRoute
   MetiersIndexRoute: typeof MetiersIndexRoute
+  OutilsIndexRoute: typeof OutilsIndexRoute
   EnBlogSplatRoute: typeof EnBlogSplatRoute
 }
 
@@ -648,6 +661,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MetiersMetierRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/outils/': {
+      id: '/outils/'
+      path: '/outils'
+      fullPath: '/outils/'
+      preLoaderRoute: typeof OutilsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/outils/heures-de-decembre': {
       id: '/outils/heures-de-decembre'
       path: '/outils/heures-de-decembre'
@@ -767,6 +787,7 @@ const rootRouteChildren: RootRouteChildren = {
   AgentsIndexRoute: AgentsIndexRoute,
   EnIndexRoute: EnIndexRoute,
   MetiersIndexRoute: MetiersIndexRoute,
+  OutilsIndexRoute: OutilsIndexRoute,
   EnBlogSplatRoute: EnBlogSplatRoute,
 }
 export const routeTree = rootRouteImport

@@ -4,6 +4,7 @@ import { execFileSync } from "node:child_process";
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { editionsEnLigne } from "./actualites/en-ligne.mjs";
 import { articlesEnLigne, controler, redirections } from "./ressources/en-ligne.mjs";
+import { decouvrirOutils, pagesSitemap } from "./outils/decouvrir.mjs";
 
 const SITE = "https://www.getgranit.ai";
 const ARTICLES = "src/lib/articles.ts";
@@ -186,6 +187,16 @@ const pagesActualites = editions.length
     ]
   : [];
 
+// Outils référentiels (src/lib/outils/<id>/, voir scripts/outils/decouvrir.mjs) : /outils puis le hub et
+// les entrées publiées de chaque outil, découverts seuls. Sans dossier d'outil : aucune URL.
+const outils = await decouvrirOutils(process.cwd());
+const pagesOutils = pagesSitemap(outils).map((p) => ({
+  loc: SITE + p.chemin,
+  lastmod: p.lastmod,
+  freq: p.frequence,
+  priority: p.priorite,
+}));
+
 const urls = [
   ...staticPages.map((p) => ({
     loc: SITE + p.path,
@@ -220,6 +231,7 @@ const urls = [
       priority: "0.7",
     })),
   ...pagesActualites,
+  ...pagesOutils,
 ];
 
 // Vercel clones with --depth=10: a page untouched in the last 10 commits has no git date there
@@ -257,5 +269,5 @@ const undated = urls.filter((u) => !u.lastmod).map((u) => u.loc);
 if (undated.length)
   console.warn(`sitemap.xml: ${undated.length} URL sans lastmod : ${undated.join(", ")}`);
 console.log(
-  `sitemap.xml written: ${urls.length} URLs (${slugs.length} articles + ${ressources.length} ressources + ${categoryPages.length} catégories + ${metierPages.length} métiers + ${staticPages.length} pages, ${dated} with lastmod)`,
+  `sitemap.xml written: ${urls.length} URLs (${slugs.length} articles + ${ressources.length} ressources + ${categoryPages.length} catégories + ${metierPages.length} métiers + ${staticPages.length} pages + ${outils.length} outils, ${dated} with lastmod)`,
 );
