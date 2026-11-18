@@ -42,6 +42,8 @@ import { Route as RessourcesIndexRouteImport } from './routes/ressources.index'
 import { Route as RessourcesSlugRouteImport } from './routes/ressources.$slug'
 import { Route as WebinarIaMagasinRouteImport } from './routes/webinar.ia-magasin'
 import { Route as EnBlogSplatRouteImport } from './routes/en.blog.$'
+import { Route as OutilsCodesRejetIndexRouteImport } from './routes/outils.codes-rejet.index'
+import { Route as OutilsCodesRejetSlugRouteImport } from './routes/outils.codes-rejet.$slug'
 import { Route as RessourcesCategorieCategoryRouteImport } from './routes/ressources.categorie.$category'
 import { Route as RessourcesMetierVerticaleRouteImport } from './routes/ressources.metier.$verticale'
 
@@ -210,6 +212,16 @@ const EnBlogSplatRoute = EnBlogSplatRouteImport.update({
   path: '/en/blog/$',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OutilsCodesRejetIndexRoute = OutilsCodesRejetIndexRouteImport.update({
+  id: '/outils/codes-rejet/',
+  path: '/outils/codes-rejet/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OutilsCodesRejetSlugRoute = OutilsCodesRejetSlugRouteImport.update({
+  id: '/outils/codes-rejet/$slug',
+  path: '/outils/codes-rejet/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const RessourcesCategorieCategoryRoute =
   RessourcesCategorieCategoryRouteImport.update({
     id: '/categorie/$category',
@@ -257,8 +269,10 @@ export interface FileRoutesByFullPath {
   '/outils/': typeof OutilsIndexRoute
   '/ressources/': typeof RessourcesIndexRoute
   '/en/blog/$': typeof EnBlogSplatRoute
+  '/outils/codes-rejet/$slug': typeof OutilsCodesRejetSlugRoute
   '/ressources/categorie/$category': typeof RessourcesCategorieCategoryRoute
   '/ressources/metier/$verticale': typeof RessourcesMetierVerticaleRoute
+  '/outils/codes-rejet/': typeof OutilsCodesRejetIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -292,8 +306,10 @@ export interface FileRoutesByTo {
   '/outils': typeof OutilsIndexRoute
   '/ressources': typeof RessourcesIndexRoute
   '/en/blog/$': typeof EnBlogSplatRoute
+  '/outils/codes-rejet/$slug': typeof OutilsCodesRejetSlugRoute
   '/ressources/categorie/$category': typeof RessourcesCategorieCategoryRoute
   '/ressources/metier/$verticale': typeof RessourcesMetierVerticaleRoute
+  '/outils/codes-rejet': typeof OutilsCodesRejetIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -330,8 +346,10 @@ export interface FileRoutesById {
   '/outils/': typeof OutilsIndexRoute
   '/ressources/': typeof RessourcesIndexRoute
   '/en/blog/$': typeof EnBlogSplatRoute
+  '/outils/codes-rejet/$slug': typeof OutilsCodesRejetSlugRoute
   '/ressources/categorie/$category': typeof RessourcesCategorieCategoryRoute
   '/ressources/metier/$verticale': typeof RessourcesMetierVerticaleRoute
+  '/outils/codes-rejet/': typeof OutilsCodesRejetIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -369,8 +387,10 @@ export interface FileRouteTypes {
     | '/outils/'
     | '/ressources/'
     | '/en/blog/$'
+    | '/outils/codes-rejet/$slug'
     | '/ressources/categorie/$category'
     | '/ressources/metier/$verticale'
+    | '/outils/codes-rejet/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -404,8 +424,10 @@ export interface FileRouteTypes {
     | '/outils'
     | '/ressources'
     | '/en/blog/$'
+    | '/outils/codes-rejet/$slug'
     | '/ressources/categorie/$category'
     | '/ressources/metier/$verticale'
+    | '/outils/codes-rejet'
   id:
     | '__root__'
     | '/'
@@ -441,8 +463,10 @@ export interface FileRouteTypes {
     | '/outils/'
     | '/ressources/'
     | '/en/blog/$'
+    | '/outils/codes-rejet/$slug'
     | '/ressources/categorie/$category'
     | '/ressources/metier/$verticale'
+    | '/outils/codes-rejet/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -475,6 +499,8 @@ export interface RootRouteChildren {
   MetiersIndexRoute: typeof MetiersIndexRoute
   OutilsIndexRoute: typeof OutilsIndexRoute
   EnBlogSplatRoute: typeof EnBlogSplatRoute
+  OutilsCodesRejetSlugRoute: typeof OutilsCodesRejetSlugRoute
+  OutilsCodesRejetIndexRoute: typeof OutilsCodesRejetIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -710,6 +736,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EnBlogSplatRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/outils/codes-rejet/': {
+      id: '/outils/codes-rejet/'
+      path: '/outils/codes-rejet'
+      fullPath: '/outils/codes-rejet/'
+      preLoaderRoute: typeof OutilsCodesRejetIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/outils/codes-rejet/$slug': {
+      id: '/outils/codes-rejet/$slug'
+      path: '/outils/codes-rejet/$slug'
+      fullPath: '/outils/codes-rejet/$slug'
+      preLoaderRoute: typeof OutilsCodesRejetSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/ressources/categorie/$category': {
       id: '/ressources/categorie/$category'
       path: '/categorie/$category'
@@ -789,6 +829,8 @@ const rootRouteChildren: RootRouteChildren = {
   MetiersIndexRoute: MetiersIndexRoute,
   OutilsIndexRoute: OutilsIndexRoute,
   EnBlogSplatRoute: EnBlogSplatRoute,
+  OutilsCodesRejetSlugRoute: OutilsCodesRejetSlugRoute,
+  OutilsCodesRejetIndexRoute: OutilsCodesRejetIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
