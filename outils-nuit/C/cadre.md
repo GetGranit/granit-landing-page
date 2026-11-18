@@ -73,8 +73,8 @@ Blocs dans l'ordre :
    portails pour une même mutuelle » (métier, contrat, date) ; « Opérateur ou réseau de soins » (Kalixia n'est
    pas un portail : la PEC passe par l'opérateur) ; « Comment ce relevé est fait » (listes publiques SP santé et
    iSanté, pages des complémentaires, presse professionnelle, dates).
-6. `BlocSources` (46 sources, avec l'accès : « lu en direct », « lu via un outil de lecture », « extrait
-   d'index, date inconnue » pour les sources `index Linkup uniquement`).
+6. `BlocSources` (46 sources, avec l'accès : « lu en direct », « texte intégral lu, le site refusant l’accès direct »,
+   « extraits de la page seulement, date inconnue »).
 7. `FaqOutil jsonLd` : Comment savoir si une mutuelle passe par Viamedis, Almerys ou SP santé ? · Où trouver
    le numéro AMC ? · Une mutuelle peut-elle passer par plusieurs portails ? · Que faire si la mutuelle
    n'apparaît dans aucun portail ? · Ce relevé change-t-il ?

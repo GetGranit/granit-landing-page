@@ -10,7 +10,7 @@
    "editeur": "Actil",
    "date_source": "non datée",
    "consulte_le": "2026-11-18",
-   "acces": "linkup-fetch (le site répond 403 en accès direct)"
+   "acces": "texte intégral de la page lu le 2026-11-18 (le site répond 403 aux requêtes directes)"
   },
   {
    "id": "acuite-aema",
@@ -82,7 +82,7 @@
    "editeur": "Groupe APICIL",
    "date_source": "non datée",
    "consulte_le": "2026-11-18",
-   "acces": "linkup-fetch (le site répond 403 en accès direct)"
+   "acces": "texte intégral de la page lu le 2026-11-18 (le site répond 403 aux requêtes directes)"
   },
   {
    "id": "april-optique",
@@ -98,9 +98,9 @@
    "titre": "AXA · Tiers payant : fonctionnement et modalités de remboursement (réseau Itelis)",
    "url": "https://www.axa.fr/particuliers/conseils/sante/remboursements-sante/tout-savoir-tiers-payant-modalites-remboursements.html",
    "editeur": "AXA France",
-   "date_source": "inconnue : extrait de l'index de recherche Linkup",
+   "date_source": "inconnue : extrait de la page www.axa.fr, non relue en entier",
    "consulte_le": "2026-11-18",
-   "acces": "index Linkup uniquement"
+   "acces": "extraits de la page seulement"
   },
   {
    "id": "cbp-qsn",
@@ -199,7 +199,7 @@
    "editeur": "Itelis (Isea)",
    "date_source": "état au 2026-11-18",
    "consulte_le": "2026-11-18",
-   "acces": "linkup-fetch (le site répond 403 en accès direct)"
+   "acces": "texte intégral de la page lu le 2026-11-18 (le site répond 403 aux requêtes directes)"
   },
   {
    "id": "ivoirnet-mgen",
@@ -224,9 +224,9 @@
    "titre": "Korelio · Partenaires, concentrateurs, conventions (extraits)",
    "url": "https://www.korelio.com/partenaires.html",
    "editeur": "Korelio (PRO BTP)",
-   "date_source": "inconnue : extraits de l'index de recherche Linkup",
+   "date_source": "inconnue : extraits des pages de www.korelio.com, non relues en entier",
    "consulte_le": "2026-11-18",
-   "acces": "index Linkup uniquement (korelio.com en maintenance le 2026-11-18)"
+   "acces": "extraits de la page seulement (korelio.com en maintenance le 2026-11-18)"
   },
   {
    "id": "lmf-faq",
@@ -343,7 +343,7 @@
    "editeur": "Swiss Life",
    "date_source": "non datée (spécimen d'attestation 2025 sur la page)",
    "consulte_le": "2026-11-18",
-   "acces": "linkup-fetch (le site répond 403 en accès direct)"
+   "acces": "texte intégral de la page lu le 2026-11-18 (le site répond 403 aux requêtes directes)"
   },
   {
    "id": "solimut-contact",
@@ -377,9 +377,9 @@
    "titre": "GIE Groupama Tiers Payant Généralisé · Espace privé (extrait)",
    "url": "https://www.tpg.groupama.com/tpg/public/login",
    "editeur": "GIE Groupama TPG",
-   "date_source": "inconnue : extrait de l'index de recherche Linkup",
+   "date_source": "inconnue : extrait de la page www.tpg.groupama.com, non relue en entier",
    "consulte_le": "2026-11-18",
-   "acces": "index Linkup uniquement"
+   "acces": "extraits de la page seulement"
   },
   {
    "id": "uspo-mgen-ligne",
@@ -404,9 +404,9 @@
    "titre": "Viamedis · Réseaux de soins ; communiqués (filiale du groupe Malakoff Humanis, homologation ROC)",
    "url": "https://www.viamedis.fr/solutions/reseaux-de-soins/",
    "editeur": "Viamedis",
-   "date_source": "inconnue (communiqués de 2022 et 2023) : extraits de l'index de recherche Linkup",
+   "date_source": "inconnue (communiqués de 2022 et 2023) : extraits des pages de www.viamedis.fr, non relues en entier",
    "consulte_le": "2026-11-18",
-   "acces": "index Linkup uniquement (viamedis.fr répond 403 en accès direct)"
+   "acces": "extraits de la page seulement (viamedis.fr répond 403 en accès direct)"
   },
   {
    "id": "viasante-equivia",
@@ -482,7 +482,7 @@
     "uspo-mgen-ligne"
    ],
    "statut": "sur",
-   "note": "Factures et prises en charge sur viamedis.net, conventionnement sur viamedispro.com (page pro Harmonie Mutuelle). Reprend depuis le 26/10/2026 l'optique et l'audioprothèse d'Oxantis (Acuité). Se présente comme opérateur de tiers payant, filiale du groupe Malakoff Humanis, et gère le tiers payant pour des réseaux de soins (Carte Blanche Partenaires, Itelis, Kalixia, Santéclair) : extraits de viamedis.fr lus via l'index Linkup, le site répondant 403."
+   "note": "Factures et prises en charge sur viamedis.net, conventionnement sur viamedispro.com (page pro Harmonie Mutuelle). Reprend depuis le 26/10/2026 l'optique et l'audioprothèse d'Oxantis (Acuité). Se présente comme opérateur de tiers payant, filiale du groupe Malakoff Humanis, et gère le tiers payant pour des réseaux de soins (Carte Blanche Partenaires, Itelis, Kalixia, Santéclair) : extraits des pages de viamedis.fr consultés le 18/11/2026, non relus en entier, le site répondant 403."
   },
   {
    "id": "almerys",
@@ -537,7 +537,7 @@
     "korelio-index"
    ],
    "statut": "a_verifier",
-   "note": "Réseau de services créé par PRO BTP, incluant le tiers payant. Selon ses pages (extraits de l'index Linkup, site en maintenance le 18/11/2026) : flux des pharmaciens, laboratoires, radiologues, opticiens et hôpitaux ; conventions opticiens, audioprothésistes, centres dentaires, établissements hospitaliers ; prise en charge sur seveane.com pour les partenaires Sévéane."
+   "note": "Réseau de services créé par PRO BTP, incluant le tiers payant. Selon ses pages (extraits des pages de korelio.com consultés le 18/11/2026, site en maintenance ce jour-là) : flux des pharmaciens, laboratoires, radiologues, opticiens et hôpitaux ; conventions opticiens, audioprothésistes, centres dentaires, établissements hospitaliers ; prise en charge sur seveane.com pour les partenaires Sévéane."
   },
   {
    "id": "groupama-tpg",
@@ -554,7 +554,7 @@
     "tpg-groupama-index"
    ],
    "statut": "a_verifier",
-   "note": "Site destiné aux audioprothésistes, centres dentaires, chirurgiens-dentistes, opticiens et transporteurs sanitaires qui pratiquent le tiers payant avec le GIE (extrait de l'index Linkup)."
+   "note": "Site destiné aux audioprothésistes, centres dentaires, chirurgiens-dentistes, opticiens et transporteurs sanitaires qui pratiquent le tiers payant avec le GIE (extrait de la page tpg.groupama.com consulté le 18/11/2026)."
   },
   {
    "id": "santeclair",
@@ -639,7 +639,7 @@
     "korelio-index"
    ],
    "statut": "sur",
-   "note": "Réseau de professionnels de santé (code « SE » sur la carte Groupama). Les partenaires Sévéane font leur prise en charge Korelio sur seveane.com (extrait Korelio, index Linkup)."
+   "note": "Réseau de professionnels de santé (code « SE » sur la carte Groupama). Les partenaires Sévéane font leur prise en charge Korelio sur seveane.com (extrait des pages de korelio.com consulté le 18/11/2026)."
   },
   {
    "id": "oxantis",
@@ -1356,7 +1356,7 @@
     "iSanté « MALAKOFF HUMANIS PREVOYANCE » : Établissement hospitalier privé (fermé le 31/12/2021)"
    ],
    "notes": [
-    "Viamedis se présente comme filiale du groupe Malakoff Humanis (communiqué lu via l'index Linkup)."
+    "Viamedis se présente comme filiale du groupe Malakoff Humanis (extrait d'un communiqué de viamedis.fr consulté le 18/11/2026)."
    ],
    "source_ids": [
     "kalixia-ps",
@@ -1707,7 +1707,7 @@
      ],
      "statut": "a_verifier",
      "restriction": null,
-     "note_verification": "Korelio liste BTP Prévoyance parmi les organismes qui lui ont confié leur tiers payant et indique gérer les flux des pharmaciens, laboratoires, opticiens et hôpitaux ; des conventions existent pour les audioprothésistes et les centres dentaires. Lu uniquement dans l'index Linkup (korelio.com en maintenance le 18/11/2026) : à relire sur le site."
+     "note_verification": "Korelio liste BTP Prévoyance parmi les organismes qui lui ont confié leur tiers payant et indique gérer les flux des pharmaciens, laboratoires, opticiens et hôpitaux ; des conventions existent pour les audioprothésistes et les centres dentaires. Lu seulement en extrait des pages de korelio.com, consultées le 18/11/2026 (site en maintenance ce jour-là) : à relire sur le site."
     },
     "audio": {
      "operateur": "Korelio",
@@ -1720,7 +1720,7 @@
      ],
      "statut": "a_verifier",
      "restriction": null,
-     "note_verification": "Korelio liste BTP Prévoyance parmi les organismes qui lui ont confié leur tiers payant et indique gérer les flux des pharmaciens, laboratoires, opticiens et hôpitaux ; des conventions existent pour les audioprothésistes et les centres dentaires. Lu uniquement dans l'index Linkup (korelio.com en maintenance le 18/11/2026) : à relire sur le site."
+     "note_verification": "Korelio liste BTP Prévoyance parmi les organismes qui lui ont confié leur tiers payant et indique gérer les flux des pharmaciens, laboratoires, opticiens et hôpitaux ; des conventions existent pour les audioprothésistes et les centres dentaires. Lu seulement en extrait des pages de korelio.com, consultées le 18/11/2026 (site en maintenance ce jour-là) : à relire sur le site."
     },
     "pharmacie": {
      "operateur": "Korelio",
@@ -1733,7 +1733,7 @@
      ],
      "statut": "a_verifier",
      "restriction": null,
-     "note_verification": "Korelio liste BTP Prévoyance parmi les organismes qui lui ont confié leur tiers payant et indique gérer les flux des pharmaciens, laboratoires, opticiens et hôpitaux ; des conventions existent pour les audioprothésistes et les centres dentaires. Lu uniquement dans l'index Linkup (korelio.com en maintenance le 18/11/2026) : à relire sur le site."
+     "note_verification": "Korelio liste BTP Prévoyance parmi les organismes qui lui ont confié leur tiers payant et indique gérer les flux des pharmaciens, laboratoires, opticiens et hôpitaux ; des conventions existent pour les audioprothésistes et les centres dentaires. Lu seulement en extrait des pages de korelio.com, consultées le 18/11/2026 (site en maintenance ce jour-là) : à relire sur le site."
     },
     "centre-de-sante": {
      "operateur": "Korelio",
@@ -1746,7 +1746,7 @@
      ],
      "statut": "a_verifier",
      "restriction": null,
-     "note_verification": "Korelio liste BTP Prévoyance parmi les organismes qui lui ont confié leur tiers payant et indique gérer les flux des pharmaciens, laboratoires, opticiens et hôpitaux ; des conventions existent pour les audioprothésistes et les centres dentaires. Lu uniquement dans l'index Linkup (korelio.com en maintenance le 18/11/2026) : à relire sur le site."
+     "note_verification": "Korelio liste BTP Prévoyance parmi les organismes qui lui ont confié leur tiers payant et indique gérer les flux des pharmaciens, laboratoires, opticiens et hôpitaux ; des conventions existent pour les audioprothésistes et les centres dentaires. Lu seulement en extrait des pages de korelio.com, consultées le 18/11/2026 (site en maintenance ce jour-là) : à relire sur le site."
     },
     "laboratoire": {
      "operateur": "Korelio",
@@ -1759,7 +1759,7 @@
      ],
      "statut": "a_verifier",
      "restriction": null,
-     "note_verification": "Korelio liste BTP Prévoyance parmi les organismes qui lui ont confié leur tiers payant et indique gérer les flux des pharmaciens, laboratoires, opticiens et hôpitaux ; des conventions existent pour les audioprothésistes et les centres dentaires. Lu uniquement dans l'index Linkup (korelio.com en maintenance le 18/11/2026) : à relire sur le site."
+     "note_verification": "Korelio liste BTP Prévoyance parmi les organismes qui lui ont confié leur tiers payant et indique gérer les flux des pharmaciens, laboratoires, opticiens et hôpitaux ; des conventions existent pour les audioprothésistes et les centres dentaires. Lu seulement en extrait des pages de korelio.com, consultées le 18/11/2026 (site en maintenance ce jour-là) : à relire sur le site."
     },
     "hospitalisation": {
      "operateur": "Korelio",
@@ -1772,7 +1772,7 @@
      ],
      "statut": "a_verifier",
      "restriction": null,
-     "note_verification": "Korelio liste BTP Prévoyance parmi les organismes qui lui ont confié leur tiers payant et indique gérer les flux des pharmaciens, laboratoires, opticiens et hôpitaux ; des conventions existent pour les audioprothésistes et les centres dentaires. Lu uniquement dans l'index Linkup (korelio.com en maintenance le 18/11/2026) : à relire sur le site."
+     "note_verification": "Korelio liste BTP Prévoyance parmi les organismes qui lui ont confié leur tiers payant et indique gérer les flux des pharmaciens, laboratoires, opticiens et hôpitaux ; des conventions existent pour les audioprothésistes et les centres dentaires. Lu seulement en extrait des pages de korelio.com, consultées le 18/11/2026 (site en maintenance ce jour-là) : à relire sur le site."
     }
    },
    "reseau_soins": [
@@ -1819,7 +1819,7 @@
      ],
      "statut": "a_verifier",
      "restriction": null,
-     "note_verification": "Le site du GIE Groupama TPG s'adresse aux audioprothésistes, centres dentaires, chirurgiens-dentistes et opticiens qui pratiquent le tiers payant avec le GIE (extrait de l'index Linkup, non relu en direct)."
+     "note_verification": "Le site du GIE Groupama TPG s'adresse aux audioprothésistes, centres dentaires, chirurgiens-dentistes et opticiens qui pratiquent le tiers payant avec le GIE (extrait de la page tpg.groupama.com consulté le 18/11/2026, non relu en direct)."
     },
     "audio": {
      "operateur": "GIE Groupama Tiers Payant Généralisé",
@@ -1832,7 +1832,7 @@
      ],
      "statut": "a_verifier",
      "restriction": null,
-     "note_verification": "Le site du GIE Groupama TPG s'adresse aux audioprothésistes, centres dentaires, chirurgiens-dentistes et opticiens qui pratiquent le tiers payant avec le GIE (extrait de l'index Linkup, non relu en direct)."
+     "note_verification": "Le site du GIE Groupama TPG s'adresse aux audioprothésistes, centres dentaires, chirurgiens-dentistes et opticiens qui pratiquent le tiers payant avec le GIE (extrait de la page tpg.groupama.com consulté le 18/11/2026, non relu en direct)."
     },
     "dentaire": {
      "operateur": "SP santé",
@@ -1858,7 +1858,7 @@
        ],
        "statut": "a_verifier",
        "restriction": null,
-       "note_verification": "Le site du GIE Groupama TPG s'adresse aux audioprothésistes, centres dentaires, chirurgiens-dentistes et opticiens qui pratiquent le tiers payant avec le GIE (extrait de l'index Linkup, non relu en direct)."
+       "note_verification": "Le site du GIE Groupama TPG s'adresse aux audioprothésistes, centres dentaires, chirurgiens-dentistes et opticiens qui pratiquent le tiers payant avec le GIE (extrait de la page tpg.groupama.com consulté le 18/11/2026, non relu en direct)."
       }
      ]
     },
@@ -1899,7 +1899,7 @@
        ],
        "statut": "a_verifier",
        "restriction": null,
-       "note_verification": "Le site du GIE Groupama TPG s'adresse aux audioprothésistes, centres dentaires, chirurgiens-dentistes et opticiens qui pratiquent le tiers payant avec le GIE (extrait de l'index Linkup, non relu en direct)."
+       "note_verification": "Le site du GIE Groupama TPG s'adresse aux audioprothésistes, centres dentaires, chirurgiens-dentistes et opticiens qui pratiquent le tiers payant avec le GIE (extrait de la page tpg.groupama.com consulté le 18/11/2026, non relu en direct)."
       }
      ]
     },
@@ -2114,7 +2114,7 @@
       "axa-tp-index"
      ],
      "statut": "a_verifier",
-     "note_verification": "AXA présente le réseau Itelis (opticiens, dentistes, audioprothésistes) ; extrait de la page AXA lu via l'index Linkup. Présente dans la liste des complémentaires de la page « Accéder à vos services » d'Itelis ; l'accès dépend du contrat, métiers non précisés."
+     "note_verification": "AXA présente le réseau Itelis (opticiens, dentistes, audioprothésistes) ; extrait de la page axa.fr consulté le 18/11/2026, non relu en entier. Présente dans la liste des complémentaires de la page « Accéder à vos services » d'Itelis ; l'accès dépend du contrat, métiers non précisés."
     }
    ],
    "segments_fermes": [],
@@ -5167,7 +5167,7 @@
     "iSanté « SMABTP VIE » : Opticien (fermé le 31/12/2025)"
    ],
    "notes": [
-    "Korelio cite SMABTP parmi les organismes qui lui ont confié leur tiers payant (extrait de l'index Linkup, à relire)."
+    "Korelio cite SMABTP parmi les organismes qui lui ont confié leur tiers payant (extrait des pages de korelio.com consulté le 18/11/2026, à relire)."
    ],
    "source_ids": [
     "isante-liste-amc",
@@ -5194,7 +5194,7 @@
      ],
      "statut": "a_verifier",
      "restriction": null,
-     "note_verification": "Korelio cite Audiens parmi ses partenaires de tiers payant (extrait de l'index Linkup, korelio.com en maintenance) ; métier non précisé."
+     "note_verification": "Korelio cite Audiens parmi ses partenaires de tiers payant (extrait des pages de korelio.com consulté le 18/11/2026, site en maintenance) ; métier non précisé."
     },
     "pharmacie": {
      "operateur": "Korelio",
@@ -5207,13 +5207,13 @@
      ],
      "statut": "a_verifier",
      "restriction": null,
-     "note_verification": "Korelio cite Audiens parmi ses partenaires de tiers payant (extrait de l'index Linkup, korelio.com en maintenance) ; métier non précisé."
+     "note_verification": "Korelio cite Audiens parmi ses partenaires de tiers payant (extrait des pages de korelio.com consulté le 18/11/2026, site en maintenance) ; métier non précisé."
     }
    },
    "reseau_soins": [],
    "segments_fermes": [],
    "notes": [
-    "Korelio cite Audiens parmi les organismes qui lui ont confié leur tiers payant (extrait de l'index Linkup, à relire) ; métiers non précisés."
+    "Korelio cite Audiens parmi les organismes qui lui ont confié leur tiers payant (extrait des pages de korelio.com consulté le 18/11/2026, à relire) ; métiers non précisés."
    ],
    "source_ids": [
     "korelio-index"
@@ -5242,7 +5242,7 @@
      ],
      "statut": "a_verifier",
      "restriction": null,
-     "note_verification": "Korelio cite « MME » parmi ses partenaires de tiers payant (extrait de l'index Linkup) ; métier non précisé."
+     "note_verification": "Korelio cite « MME » parmi ses partenaires de tiers payant (extrait des pages de korelio.com consulté le 18/11/2026) ; métier non précisé."
     }
    },
    "reseau_soins": [

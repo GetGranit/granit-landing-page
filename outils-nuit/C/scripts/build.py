@@ -63,15 +63,15 @@ src('lmf-faq', "La Mutuelle Familiale · FAQ (tiers payant Viamedis et iSanté)"
 src('pf-pro', "Prévifrance · Professionnels de santé (iSanté gestionnaire de tiers payant au 01/01/2026)", 'https://www.previfrance.fr/professionnels-de-sante.html',
     'Prévifrance', 'annonce d\'effet au 01/01/2026')
 src('sl-tp', "Swiss Life · Comment faire du tiers payant chez Swiss Life ?", 'https://www.swisslife.fr/swiss-life-en-france/professionnels-de-sante/comment-faire-du-tiers-payant-chez-swiss-life.html',
-    'Swiss Life', 'non datée (spécimen d\'attestation 2025 sur la page)', acces='linkup-fetch (le site répond 403 en accès direct)')
+    'Swiss Life', 'non datée (spécimen d\'attestation 2025 sur la page)', acces='texte intégral de la page lu le 2026-11-18 (le site répond 403 aux requêtes directes)')
 src('apicil-optique', "Apicil · Que dois-je savoir avant d'acheter des lunettes ?", 'https://mon.apicil.com/salon-client/optique-jachete-des-lunettes-que-dois-je-savoir/',
-    'Groupe APICIL', 'non datée', acces='linkup-fetch (le site répond 403 en accès direct)')
+    'Groupe APICIL', 'non datée', acces='texte intégral de la page lu le 2026-11-18 (le site répond 403 aux requêtes directes)')
 src('actil-home', "Actil · Accueil (tiers payant, réseau de soins, clients)", 'https://www.actil.com/', 'Actil', 'non datée',
-    acces='linkup-fetch (le site répond 403 en accès direct)')
+    acces='texte intégral de la page lu le 2026-11-18 (le site répond 403 aux requêtes directes)')
 src('korelio-index', "Korelio · Partenaires, concentrateurs, conventions (extraits)", 'https://www.korelio.com/partenaires.html', 'Korelio (PRO BTP)',
-    'inconnue : extraits de l\'index de recherche Linkup', acces='index Linkup uniquement (korelio.com en maintenance le 2026-11-18)')
+    'inconnue : extraits des pages de www.korelio.com, non relues en entier', acces='extraits de la page seulement (korelio.com en maintenance le 2026-11-18)')
 src('tpg-groupama-index', "GIE Groupama Tiers Payant Généralisé · Espace privé (extrait)", 'https://www.tpg.groupama.com/tpg/public/login',
-    'GIE Groupama TPG', 'inconnue : extrait de l\'index de recherche Linkup', acces='index Linkup uniquement')
+    'GIE Groupama TPG', 'inconnue : extrait de la page www.tpg.groupama.com, non relue en entier', acces='extraits de la page seulement')
 src('groupama-attestation', "Groupama · Carte de mutuelle ou attestation de tiers payant", 'https://www.groupama.fr/mutuelle-sante/conseils/attestation-tiers-payant/',
     'Groupama', 'mis à jour le 24/03/2026')
 src('sc-ps', "Santéclair · Professionnel de la santé (conventions, connexion)", 'https://www.santeclair.fr/fr/professionnel-sante', 'Santéclair', 'non datée')
@@ -82,7 +82,7 @@ src('gen-faq-tp', "Generali · Aide, complémentaire santé, tiers payant", 'htt
 src('mh-faq', "Malakoff Humanis · Dois-je avancer les frais en magasin ?", 'https://faq.malakoffhumanis.com/contents/dois-je-avancer-les-frais-en-magasin', 'Malakoff Humanis', 'non datée')
 src('kalixia-ps', "Kalixia · Professionnels de santé (principales complémentaires utilisatrices)", 'https://www.kalixia.fr/professionnels-de-sante/', 'Kalixia', 'non datée')
 src('itelis-acceder', "Itelis · Accéder à vos services (liste des complémentaires partenaires)", 'https://www.itelis.fr/acceder-vos-services', 'Itelis (Isea)', 'état au 2026-11-18',
-    acces='linkup-fetch (le site répond 403 en accès direct)')
+    acces='texte intégral de la page lu le 2026-11-18 (le site répond 403 aux requêtes directes)')
 src('matmut-carte', "Matmut · Carte mutuelle (légende des codes de facturation)", 'https://www.matmut.fr/mutuelle/services/carte-mutuelle', 'Matmut', 'non datée')
 src('klesia-opticien', "Klesia · Opticien(ne) : comment effectuer vos demandes de prise en charge", 'https://www.klesia.fr/opticienne-comment-effectuer-vos-demandes-de-prise-en-charge-et-remboursement-optique', 'Klesia', 'non datée')
 src('klesiamut-faq', "KLESIA Mut' · Ancienne foire aux questions (PlanSanté, iSanté)", 'https://www.klesiamut.fr/fr/old-foire-aux-questions', "KLESIA Mut'", 'non datée (ancienne page encore en ligne)')
@@ -95,9 +95,9 @@ src('lmg-tp', "La Mutuelle Générale · Un service de tiers payant simple, prat
 src('solimut-contact', "Solimut · Nous contacter (espace professionnel de santé)", 'https://www.solimut-mutuelle.fr/nous-contacter/', 'Solimut Mutuelle de France', 'non datée')
 src('alan-reseau', "Alan · Rejoindre le Réseau Alan (opticiens)", 'https://alan.com/fr-fr/l/rejoindre-reseau-alan', 'Alan', 'appel à candidatures jusqu\'au 30/11/2026, réseau lancé le 01/01/2027')
 src('axa-tp-index', "AXA · Tiers payant : fonctionnement et modalités de remboursement (réseau Itelis)", 'https://www.axa.fr/particuliers/conseils/sante/remboursements-sante/tout-savoir-tiers-payant-modalites-remboursements.html',
-    'AXA France', 'inconnue : extrait de l\'index de recherche Linkup', acces='index Linkup uniquement')
+    'AXA France', 'inconnue : extrait de la page www.axa.fr, non relue en entier', acces='extraits de la page seulement')
 src('viamedis-index', "Viamedis · Réseaux de soins ; communiqués (filiale du groupe Malakoff Humanis, homologation ROC)", 'https://www.viamedis.fr/solutions/reseaux-de-soins/',
-    'Viamedis', 'inconnue (communiqués de 2022 et 2023) : extraits de l\'index de recherche Linkup', acces='index Linkup uniquement (viamedis.fr répond 403 en accès direct)')
+    'Viamedis', 'inconnue (communiqués de 2022 et 2023) : extraits des pages de www.viamedis.fr, non relues en entier', acces='extraits de la page seulement (viamedis.fr répond 403 en accès direct)')
 src('cbp-qsn', "Carte Blanche Partenaires · Qui sommes-nous / espace complémentaire santé", 'https://carteblanchepartenaires.fr/sante/qui-sommes-nous', 'Carte Blanche Partenaires', 'non datée')
 
 # ---------------------------------------------------------------- opérateurs / portails
@@ -110,7 +110,7 @@ OPS = {
      note="Se présente comme « opérateur de tiers-payant ». Numéro de télétransmission unique 00733931 (FAQ iSanté). Pour l'hospitalisation, Prévifrance renvoie aussi vers hospipartner.com (même code d'accès que tp-isante.fr)."),
  'viamedis': dict(nom='Viamedis', role='operateur-tp', espace_pro_url='https://www.viamedis.net/',
      metiers=['optique', 'audio', 'dentaire', 'pharmacie', 'hospitalisation'], source_ids=['hm-contacts', 'acuite-oxantis', 'viamedis-index', 'uspo-mgen-ligne'], statut='sur',
-     note="Factures et prises en charge sur viamedis.net, conventionnement sur viamedispro.com (page pro Harmonie Mutuelle). Reprend depuis le 26/10/2026 l'optique et l'audioprothèse d'Oxantis (Acuité). Se présente comme opérateur de tiers payant, filiale du groupe Malakoff Humanis, et gère le tiers payant pour des réseaux de soins (Carte Blanche Partenaires, Itelis, Kalixia, Santéclair) : extraits de viamedis.fr lus via l'index Linkup, le site répondant 403."),
+     note="Factures et prises en charge sur viamedis.net, conventionnement sur viamedispro.com (page pro Harmonie Mutuelle). Reprend depuis le 26/10/2026 l'optique et l'audioprothèse d'Oxantis (Acuité). Se présente comme opérateur de tiers payant, filiale du groupe Malakoff Humanis, et gère le tiers payant pour des réseaux de soins (Carte Blanche Partenaires, Itelis, Kalixia, Santéclair) : extraits des pages de viamedis.fr consultés le 18/11/2026, non relus en entier, le site répondant 403."),
  'almerys': dict(nom='Almerys', role='operateur-tp', espace_pro_url='https://www.almerys.com/',
      metiers=['optique', 'audio', 'dentaire', 'hospitalisation'], source_ids=['aesio-ps', 'aesio-specimen-2025', 'acuite-aema'], statut='sur',
      note="Opérateur de tiers payant choisi par Aéma Groupe (Acuité, 2023). Le spécimen de carte Aésio 2025 indique « PEC optique, audio, dentaire et hospitalisation : almerys.com ». almerys.com répond 401 en accès direct : l'adresse exacte de l'espace pro n'a pas été relue."),
@@ -119,10 +119,10 @@ OPS = {
      note="Services de tiers payant et réseau de soins (offres négociées en optique, audiologie et dentaire intégrées au tiers payant). Clients affichés : Alptis, ASSIA, Cigna, Gentto, Integrance, Mutuelle de la Corse, Mutami, Rempart, M comme Mutuelle (logos, sans détail par métier)."),
  'korelio': dict(nom='Korelio', role='operateur-tp', espace_pro_url='https://www.korelio.com/',
      metiers=['optique', 'audio', 'pharmacie', 'laboratoire', 'hospitalisation', 'centre-de-sante'], source_ids=['korelio-index'], statut='a_verifier',
-     note="Réseau de services créé par PRO BTP, incluant le tiers payant. Selon ses pages (extraits de l'index Linkup, site en maintenance le 18/11/2026) : flux des pharmaciens, laboratoires, radiologues, opticiens et hôpitaux ; conventions opticiens, audioprothésistes, centres dentaires, établissements hospitaliers ; prise en charge sur seveane.com pour les partenaires Sévéane."),
+     note="Réseau de services créé par PRO BTP, incluant le tiers payant. Selon ses pages (extraits des pages de korelio.com consultés le 18/11/2026, site en maintenance ce jour-là) : flux des pharmaciens, laboratoires, radiologues, opticiens et hôpitaux ; conventions opticiens, audioprothésistes, centres dentaires, établissements hospitaliers ; prise en charge sur seveane.com pour les partenaires Sévéane."),
  'groupama-tpg': dict(nom='GIE Groupama Tiers Payant Généralisé', role='operateur-tp', espace_pro_url='https://www.tpg.groupama.com/tpg/public/login',
      metiers=['optique', 'audio', 'dentaire', 'centre-de-sante'], source_ids=['tpg-groupama-index'], statut='a_verifier',
-     note="Site destiné aux audioprothésistes, centres dentaires, chirurgiens-dentistes, opticiens et transporteurs sanitaires qui pratiquent le tiers payant avec le GIE (extrait de l'index Linkup)."),
+     note="Site destiné aux audioprothésistes, centres dentaires, chirurgiens-dentistes, opticiens et transporteurs sanitaires qui pratiquent le tiers payant avec le GIE (extrait de la page tpg.groupama.com consulté le 18/11/2026)."),
  'santeclair': dict(nom='Santéclair', role='les-deux', espace_pro_url='https://services.santeclair.fr/professionnel-sante/connexion',
      metiers=['optique', 'audio', 'dentaire'], source_ids=['sc-ps', 'sc-partenaires'], statut='sur',
      note="Réseau de soins qui propose aussi des conventions de tiers payant : « Partenariat et Tiers-payant SC », « Tiers-payant TP+ », « Partenariat simple SC ». Plus de 60 complémentaires partenaires selon sa page."),
@@ -137,7 +137,7 @@ OPS = {
      note="Réseau de soins (marque d'Isea). L'accès aux services dépend du contrat. La carte Matmut porte un code « KA - Facturation Itelis » : le rôle d'Itelis dans la facturation reste à préciser pour les autres complémentaires."),
  'seveane': dict(nom='Sévéane', role='reseau', espace_pro_url='https://www.seveane.com/',
      metiers=['optique', 'audio'], source_ids=['groupama-attestation', 'korelio-index'], statut='sur',
-     note="Réseau de professionnels de santé (code « SE » sur la carte Groupama). Les partenaires Sévéane font leur prise en charge Korelio sur seveane.com (extrait Korelio, index Linkup)."),
+     note="Réseau de professionnels de santé (code « SE » sur la carte Groupama). Les partenaires Sévéane font leur prise en charge Korelio sur seveane.com (extrait des pages de korelio.com consulté le 18/11/2026)."),
  'oxantis': dict(nom='Oxantis (fermé)', role='operateur-tp', espace_pro_url=None,
      metiers=['optique', 'audio', 'dentaire'], source_ids=['acuite-oxantis', 'mnt-vyv'], statut='sur',
      note="Plateforme du Groupe VYV fermée le 26/10/2026 ; optique et audioprothèse reprises par Viamedis (viamedis.net). Ne plus l'utiliser."),
@@ -356,7 +356,7 @@ entree('Malakoff Humanis', 'malakoff-humanis',
     listes=[ISL('MALAKOFF HUMANIS NATIONALE'), ISL('MALAKOFF HUMANIS PREVOYANCE')],
     reseaux=[R('Kalixia', ['optique', 'audio', 'dentaire'], ['kalixia-ps'], 'a_verifier', KAL_NOTE),
              R('Santéclair', ['optique', 'audio', 'dentaire'], ['sc-partenaires'], 'a_verifier', SC_NOTE)],
-    notes=["Viamedis se présente comme filiale du groupe Malakoff Humanis (communiqué lu via l'index Linkup)."])
+    notes=["Viamedis se présente comme filiale du groupe Malakoff Humanis (extrait d'un communiqué de viamedis.fr consulté le 18/11/2026)."])
 
 entree('AG2R La Mondiale', 'ag2r-la-mondiale',
     reseaux=[R('Itelis', ['optique', 'audio', 'dentaire'], ['itelis-acceder'], 'a_verifier', ITE_NOTE)],
@@ -380,12 +380,12 @@ entree('Apicil', 'apicil', autres_noms=['APICIL Mutuelle', 'Groupe APICIL'], gro
 
 entree('PRO BTP', 'pro-btp', autres_noms=['BTP-Prévoyance', 'BTP Prévoyance'],
     manual={m: [M('korelio', True, ['korelio-index'], 'a_verifier',
-        "Korelio liste BTP Prévoyance parmi les organismes qui lui ont confié leur tiers payant et indique gérer les flux des pharmaciens, laboratoires, opticiens et hôpitaux ; des conventions existent pour les audioprothésistes et les centres dentaires. Lu uniquement dans l'index Linkup (korelio.com en maintenance le 18/11/2026) : à relire sur le site.")]
+        "Korelio liste BTP Prévoyance parmi les organismes qui lui ont confié leur tiers payant et indique gérer les flux des pharmaciens, laboratoires, opticiens et hôpitaux ; des conventions existent pour les audioprothésistes et les centres dentaires. Lu seulement en extrait des pages de korelio.com, consultées le 18/11/2026 (site en maintenance ce jour-là) : à relire sur le site.")]
         for m in ['optique', 'audio', 'pharmacie', 'laboratoire', 'hospitalisation', 'centre-de-sante']},
     reseaux=[R('Sévéane', ['optique', 'audio'], ['korelio-index'], 'a_verifier', "Korelio : prise en charge sur seveane.com pour les partenaires Sévéane.")])
 
 grp = {m: [M('groupama-tpg', True, ['tpg-groupama-index'], 'a_verifier',
-    "Le site du GIE Groupama TPG s'adresse aux audioprothésistes, centres dentaires, chirurgiens-dentistes et opticiens qui pratiquent le tiers payant avec le GIE (extrait de l'index Linkup, non relu en direct).")]
+    "Le site du GIE Groupama TPG s'adresse aux audioprothésistes, centres dentaires, chirurgiens-dentistes et opticiens qui pratiquent le tiers payant avec le GIE (extrait de la page tpg.groupama.com consulté le 18/11/2026, non relu en direct).")]
     for m in ['optique', 'audio', 'dentaire', 'centre-de-sante']}
 entree('Groupama', 'groupama', autres_noms=['Groupama TPG', 'GIE Groupama Tiers Payant Généralisé'], manual=grp,
     listes=[SPL('GROUPAMA TPG')],
@@ -395,7 +395,7 @@ entree('Groupama', 'groupama', autres_noms=['Groupama TPG', 'GIE Groupama Tiers 
 entree('Gan Assurances', 'gan', autres_noms=['Gan'], listes=[SPL('GAN')])
 
 entree('AXA', 'axa', autres_noms=['AXA France'], listes=[SPL('AXA'), ISL('AXA SE ISANTE')],
-    reseaux=[R('Itelis', ['optique', 'audio', 'dentaire'], ['itelis-acceder', 'axa-tp-index'], 'a_verifier', "AXA présente le réseau Itelis (opticiens, dentistes, audioprothésistes) ; extrait de la page AXA lu via l'index Linkup. " + ITE_NOTE)])
+    reseaux=[R('Itelis', ['optique', 'audio', 'dentaire'], ['itelis-acceder', 'axa-tp-index'], 'a_verifier', "AXA présente le réseau Itelis (opticiens, dentistes, audioprothésistes) ; extrait de la page axa.fr consulté le 18/11/2026, non relu en entier. " + ITE_NOTE)])
 
 entree('Allianz', 'allianz', listes=[SPL('ALLIANZ'), SPL('ALLIANZ IGESTION'), SPL('ALLIANZ OUTRE MER')],
     reseaux=[R('Santéclair', ['optique', 'audio', 'dentaire'], ['sc-allianz', 'sc-partenaires'], 'a_verifier', "Santéclair : tous les contrats santé Allianz, individuels ou d'entreprise, intègrent ses services ; métiers et tiers payant selon le contrat.")])
@@ -482,13 +482,13 @@ entree('CPCEA - Agrica', 'cpcea-agrica', autres_noms=['CPCEA', 'Agrica'], listes
 
 entree('SMABTP', 'smabtp', autres_noms=['SMABTP Vie'], listes=[ISL('SMABTP VIE')],
     reseaux=[R('Santéclair', ['optique', 'audio', 'dentaire'], ['sc-partenaires'], 'a_verifier', SC_NOTE)],
-    notes=["Korelio cite SMABTP parmi les organismes qui lui ont confié leur tiers payant (extrait de l'index Linkup, à relire)."])
+    notes=["Korelio cite SMABTP parmi les organismes qui lui ont confié leur tiers payant (extrait des pages de korelio.com consulté le 18/11/2026, à relire)."])
 
-entree('Audiens', 'audiens', notes=["Korelio cite Audiens parmi les organismes qui lui ont confié leur tiers payant (extrait de l'index Linkup, à relire) ; métiers non précisés."],
-    manual={m: [M('korelio', False, ['korelio-index'], 'a_verifier', "Korelio cite Audiens parmi ses partenaires de tiers payant (extrait de l'index Linkup, korelio.com en maintenance) ; métier non précisé.")] for m in ['optique', 'pharmacie']})
+entree('Audiens', 'audiens', notes=["Korelio cite Audiens parmi les organismes qui lui ont confié leur tiers payant (extrait des pages de korelio.com consulté le 18/11/2026, à relire) ; métiers non précisés."],
+    manual={m: [M('korelio', False, ['korelio-index'], 'a_verifier', "Korelio cite Audiens parmi ses partenaires de tiers payant (extrait des pages de korelio.com consulté le 18/11/2026, site en maintenance) ; métier non précisé.")] for m in ['optique', 'pharmacie']})
 
 entree('Mutuelle Mieux-Être', 'mutuelle-mieux-etre', autres_noms=['MME'], listes=[ISL('MUTUELLE MIEUX ETRE')],
-    manual={'optique': [M('korelio', False, ['korelio-index'], 'a_verifier', "Korelio cite « MME » parmi ses partenaires de tiers payant (extrait de l'index Linkup) ; métier non précisé.")]},
+    manual={'optique': [M('korelio', False, ['korelio-index'], 'a_verifier', "Korelio cite « MME » parmi ses partenaires de tiers payant (extrait des pages de korelio.com consulté le 18/11/2026) ; métier non précisé.")]},
     reseaux=[R('Kalixia', ['optique', 'audio', 'dentaire'], ['kalixia-ps'], 'a_verifier', KAL_NOTE), R('Itelis', ['optique', 'audio', 'dentaire'], ['itelis-acceder'], 'a_verifier', ITE_NOTE)])
 
 entree('Ipeca Prévoyance', 'ipeca', autres_noms=['IPECA'], listes=[SPL('IPECA')],
