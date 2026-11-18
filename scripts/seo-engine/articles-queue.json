@@ -2735,7 +2735,7 @@
       "verres myopie astigmatisme LPP"
     ],
     "searchVolume": 0,
-    "status": "pending",
+    "status": "published",
     "wave": 4,
     "level": "Fille",
     "parentSlug": "tiers-payant-professionnels-de-sante",
@@ -2775,7 +2775,8 @@
     "verticales": [
       "optique"
     ],
-    "unsplashQuery": "optician eyeglasses child"
+    "unsplashQuery": "optician eyeglasses child",
+    "publishedAt": "2026-11-18"
   },
   {
     "id": "Y1",

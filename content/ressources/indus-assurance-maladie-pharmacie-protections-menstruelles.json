@@ -158,7 +158,13 @@
       "type": "transverse"
     }
   ],
-  "liensEntrants": [],
+  "liensEntrants": [
+    {
+      "slug": "refus-pec-verres-myopie-miyosmart-courrier",
+      "anchor": "Refus de prise en charge sur des verres myopie enfant : le courrier de contestation à envoyer",
+      "type": "soeur"
+    }
+  ],
   "remplace": [],
   "verticales": [
     "pharmacie"
