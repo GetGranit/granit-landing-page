@@ -2,7 +2,7 @@
 // dans le HTML serveur, chacune avec son relevé ; la recherche (nom, autre nom, numéro AMC) et les
 // filtres (métier, opérateur) ne font que masquer des lignes. Sans JavaScript, ?q=, ?metier= et
 // ?operateur= filtrent côté serveur.
-import { useMemo } from "react";
+import { useCallback, useMemo, useRef } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import {
   BlocAvertissement,
@@ -14,7 +14,7 @@ import {
   RechercheOutil,
   useRechercheHub,
 } from "@/components/outils/socle";
-import { useSuiviOutil } from "@/components/outils/OutilShared";
+import { useSuiviOutil, type MesureRecherche } from "@/components/outils/OutilShared";
 import { ApercuLigne } from "@/components/outils/mutuelle-portail/ApercuLigne";
 import { MethodeHub } from "@/components/outils/mutuelle-portail/MethodeHub";
 import { ReleveLigne } from "@/components/outils/mutuelle-portail/Releve";
@@ -30,14 +30,15 @@ import {
   VIDE,
 } from "@/components/outils/mutuelle-portail/textes";
 import { OUTIL } from "@/lib/outils/mutuelle-portail/outil.mjs";
-import { variantes } from "@/lib/outils/mutuelle-portail/recherche";
+import { filtresListe, variantes } from "@/lib/outils/mutuelle-portail/recherche";
 import { chargerHub } from "@/lib/outils/mutuelle-portail/serveur";
 import type { LigneMutuelle } from "@/lib/outils/mutuelle-portail/types";
 import { estMetierOutil } from "@/lib/outils/socle/metiers.mjs";
 import { filtrerLignes, suggestions, versSuggestion } from "@/lib/outils/socle/recherche";
 import { headOutil } from "@/lib/outils/socle/seo";
+import { EVENEMENTS } from "@/lib/outils/socle/suivi";
 import { cleCode } from "@/lib/outils/socle/texte.mjs";
-import type { MetierOutil } from "@/lib/outils/socle/types";
+import type { Filtres, MetierOutil } from "@/lib/outils/socle/types";
 
 type Recherche = { q?: string | number; metier?: MetierOutil; operateur?: string };
 
@@ -69,15 +70,49 @@ function Hub() {
   const operateurValide = data.operateurs.some((o) => o.valeur === operateur)
     ? (operateur ?? null)
     : null;
+
+  // Métier et opérateur ensemble : la liste applique un seul filtre « couple » (filtresListe). Le
+  // compteur et le suivi (lm_recherche, lm_filtre) comptent les lignes réellement affichées.
+  const compter = useCallback(
+    (qq: string, f: Filtres) => filtrerLignes(data.lignes, qq, filtresListe(f), { variantes }),
+    [data.lignes],
+  );
+  const etat = useRef<{ q: string; filtres: Filtres }>({ q: "", filtres: {} });
+  const { suivre: suivreBrut, rechercher: rechercherBrut } = suivi;
+  const suiviHub = useMemo(
+    () => ({
+      suivre: (evenement: string, proprietes: Record<string, unknown> = {}) => {
+        if (evenement === EVENEMENTS.filtre && typeof proprietes.facette === "string") {
+          const f = {
+            ...etat.current.filtres,
+            [proprietes.facette]: (proprietes.valeur as string | null) ?? null,
+          };
+          proprietes = { ...proprietes, nb_resultats: compter(etat.current.q, f).visibles.length };
+        }
+        return suivreBrut(evenement, proprietes);
+      },
+      rechercher: (qq: string, r: MesureRecherche, origine?: "saisie" | "url") => {
+        const res = compter(qq, r.filtres);
+        rechercherBrut(qq, { ...r, visibles: res.visibles.length, exact: res.exact }, origine);
+      },
+    }),
+    [suivreBrut, rechercherBrut, compter],
+  );
   const hub = useRechercheHub<LigneMutuelle>({
     lignes: data.lignes,
     chemin: OUTIL.chemin,
     q: q === undefined ? "" : String(q),
     filtres: { metier: metier ?? null, operateur: operateurValide },
-    suivi,
+    suivi: suiviHub,
     variantes,
   });
+  etat.current = { q: hub.q, filtres: hub.filtres };
   const metierFiltre = (hub.filtres.metier as MetierOutil | null) ?? null;
+  const filtresVus = filtresListe(hub.filtres);
+  const visibles = useMemo(
+    () => compter(hub.q, hub.filtres).visibles.length,
+    [compter, hub.q, hub.filtres],
+  );
 
   // Noms courts des sources (colonne « Source » des relevés dépliés).
   const noms = useMemo(
@@ -92,13 +127,16 @@ function Hub() {
     const requete = qq.trim();
     const filtres = hub.filtres;
     const sansFiltre = requete ? filtrerLignes(data.lignes, qq, {}, { variantes }).visibles : [];
-    // La mutuelle existe, mais un filtre la masque.
+    // La mutuelle existe, mais un filtre la masque (les deux ensemble : on retire l'opérateur).
     if (sansFiltre.length && (filtres.metier || filtres.operateur)) {
       const noms = sansFiltre.slice(0, 3).map((l) => l.nom);
-      const facette = filtres.metier ? "metier" : "operateur";
+      const facette = filtres.operateur ? "operateur" : "metier";
+      const chez = filtres.operateur
+        ? `chez ${data.operateurs.find((o) => o.valeur === filtres.operateur)?.libelle ?? ""}`
+        : "";
       const complement = filtres.metier
-        ? `pour ${METIER_PROSE[filtres.metier] ?? filtres.metier}`
-        : `chez ${data.operateurs.find((o) => o.valeur === filtres.operateur)?.libelle ?? ""}`;
+        ? `pour ${METIER_PROSE[filtres.metier] ?? filtres.metier}${chez ? ` ${chez}` : ""}`
+        : chez;
       return (
         <EtatVide
           q={qq}
@@ -175,7 +213,7 @@ function Hub() {
             placeholder={RECHERCHE.placeholder}
             aide={RECHERCHE.aide}
             total={hub.total}
-            visibles={hub.visibles}
+            visibles={visibles}
             unite={RECHERCHE.unite}
             filtres={hub.filtres}
             onSoumettre={() =>
@@ -215,7 +253,7 @@ function Hub() {
             lignes={data.lignes}
             groupes={data.groupes}
             q={hub.q}
-            filtres={hub.filtres}
+            filtres={filtresVus}
             variantes={variantes}
             suivre={suivi.suivre}
             refResultat={suivi.resultat}

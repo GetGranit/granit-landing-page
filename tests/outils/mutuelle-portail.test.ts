@@ -26,7 +26,7 @@ import {
   forme,
   titres,
 } from "../../src/lib/outils/mutuelle-portail/redaction.mjs";
-import { variantes } from "../../src/lib/outils/mutuelle-portail/recherche.ts";
+import { filtresListe, variantes } from "../../src/lib/outils/mutuelle-portail/recherche.ts";
 import { filtrerLignes } from "../../src/lib/outils/socle/recherche.ts";
 import { fauteTypo } from "../../src/lib/outils/socle/texte.mjs";
 
@@ -264,6 +264,73 @@ describe("outil mutuelle-portail : hub et textes", () => {
       optique.visibles.map((l) => l.id),
       ["harmonie-mutuelle"],
     );
+  });
+
+  test("filtres combinés : « Optique » + « iSanté » ne garde que les mutuelles dont l'optique passe par iSanté (fait sûr)", () => {
+    const f = { metier: "optique", operateur: "isante" };
+    const juste = filtrerLignes(hub.lignes, "", filtresListe(f), { variantes }).visibles;
+    const attendus = donnees.entrees
+      .filter((e) =>
+        itemsDe(e).some(
+          (it) =>
+            ["optique", "audio"].includes(it.metier) &&
+            it.operateur_id === "isante" &&
+            it.statut === "sur",
+        ),
+      )
+      .map((e) => e.slug)
+      .sort();
+    assert.deepEqual(juste.map((l) => l.id).sort(), attendus);
+    // Le cas relevé à la relecture : les deux facettes testées séparément gardaient des mutuelles
+    // qui ne sont chez iSanté que pour un autre métier.
+    const separees = filtrerLignes(hub.lignes, "", f, { variantes }).visibles;
+    assert.ok(
+      separees.length > juste.length,
+      `${separees.length} lignes sans le couple, ${juste.length} avec`,
+    );
+    assert.ok(
+      !juste.some((l) => l.id === "la-mutuelle-familiale"),
+      "La Mutuelle Familiale : Viamedis en optique, iSanté pour les autres métiers",
+    );
+    assert.equal(juste.length, 13);
+  });
+
+  test("filtres combinés : pour chaque métier et chaque opérateur, seulement les couples sûrs", () => {
+    const SITE: Record<string, string> = {
+      optique: "optique",
+      audio: "optique",
+      dentaire: "dentaire",
+      "centre-de-sante": "centres",
+      pharmacie: "pharmacie",
+      laboratoire: "cliniques",
+      hospitalisation: "cliniques",
+    };
+    for (const metier of ["optique", "dentaire", "centres", "pharmacie", "cliniques"])
+      for (const [operateur] of OPERATEURS_FILTRE) {
+        const vus = filtrerLignes(hub.lignes, "", filtresListe({ metier, operateur }), {
+          variantes,
+        })
+          .visibles.map((l) => l.id)
+          .sort();
+        const attendus = donnees.entrees
+          .filter((e) =>
+            itemsDe(e).some(
+              (it) =>
+                it.statut === "sur" &&
+                it.operateur_id === operateur &&
+                SITE[it.metier] === metier &&
+                it.restriction !== "stomatologue uniquement",
+            ),
+          )
+          .map((e) => e.slug)
+          .sort();
+        assert.deepEqual(vus, attendus, `${metier} + ${operateur}`);
+      }
+    // Un filtre seul garde sa facette (faits sûrs et à confirmer).
+    assert.deepEqual(filtresListe({ metier: "dentaire", operateur: null }), {
+      metier: "dentaire",
+      operateur: null,
+    });
   });
 
   test("titres et descriptions des 26 complémentaires sûres sans fiche tiennent dans les bornes, sans faute", () => {

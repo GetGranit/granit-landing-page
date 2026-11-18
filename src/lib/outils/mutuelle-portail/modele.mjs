@@ -56,8 +56,8 @@ const IDS_FILTRE = new Set(OPERATEURS_FILTRE.map(([id]) => id));
 /** Comment une source a été lue (BlocSources du hub et des pages, cadre.md § 4). */
 export function mentionAcces(s) {
   const a = s.acces ?? "";
-  if (a.startsWith("index Linkup")) return "extrait d’index, date inconnue";
-  if (a.startsWith("linkup-fetch")) return "lu via un outil de lecture";
+  if (a.startsWith("extraits de la page")) return "extraits de la page seulement, date inconnue";
+  if (a.startsWith("texte intégral")) return "texte intégral lu, le site refusant l’accès direct";
   if (a.startsWith("direct")) return "lu en direct";
   return undefined;
 }
@@ -310,6 +310,14 @@ function ligneDe(x, site, publies) {
       metier: [...new Set(affiches.map(metierFacette).filter(Boolean))],
       operateur: [
         ...new Set(affiches.map((f) => f.operateurId).filter((id) => IDS_FILTRE.has(id))),
+      ],
+      // Métier et opérateur posés ensemble (recherche.ts, filtresListe) : seulement les couples sûrs.
+      couple: [
+        ...new Set(
+          faits
+            .filter((f) => f.statut === "sur" && metierFacette(f) && IDS_FILTRE.has(f.operateurId))
+            .map((f) => `${metierFacette(f)}@${f.operateurId}`),
+        ),
       ],
     },
     chemin:
