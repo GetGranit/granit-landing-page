@@ -19,6 +19,7 @@ import {
 } from "../../src/lib/outils/codes-rejet/pages.mjs";
 import {
   FAMILLES,
+  GIE_HORS_DEPOT,
   GIE_SESAM_VITALE,
   LIBELLES_COURTS,
   PRIORITE,
@@ -37,6 +38,12 @@ const HUB = "/outils/codes-rejet";
 const OUVERT = { liste: true, pages: true };
 const GIE_OUVERT = { ...FAMILLES, arl: OUVERT, "sesam-vitale": OUVERT };
 const GIE = new Set(["arl", "sesam-vitale"]);
+
+// Entrées tirées des tables du GIE (ARL, messages de service) : tenues hors du dépôt en attendant
+// l'accord du GIE (0 ici), ou remises dans donnees.json quand la décision n° 1 les ouvre (83).
+const nbGie = donnees.entrees.filter(
+  (e) => GIE.has(e.famille) && e.source_ids.some((s) => s.startsWith("gie-")),
+).length;
 
 const publiees = () => pages({ site }).filter((p) => p.type === "entree");
 const entree = (slug: string) => donnees.entrees.find((e) => e.slug === slug)!;
@@ -61,15 +68,24 @@ describe("outil codes-rejet : réglages de publication", () => {
     assert.equal(lignesHub({ site }).length, 27);
   });
 
-  test("ouvrir les familles du GIE : + 83 lignes et + 1 page (arl-2004-certificat-vitale)", () => {
+  test("les tables du GIE ne sont dans le dépôt que si la décision n° 1 les ouvre, et alors toutes", () => {
+    assert.equal(GIE_HORS_DEPOT, 83);
+    const ouvert = GIE_SESAM_VITALE.liste || GIE_SESAM_VITALE.pages;
+    assert.equal(nbGie, ouvert ? GIE_HORS_DEPOT : 0, `${nbGie} entrées du GIE dans donnees.json`);
+  });
+
+  test("ouvrir les familles du GIE : + 83 lignes et + 1 page une fois leurs entrées remises, rien sans elles", () => {
     const lignes = lignesHub({ site, familles: GIE_OUVERT });
-    assert.equal(lignes.length - lignesHub({ site }).length, 83);
     const avant = new Set(publiees().map((p) => p.slug));
     const apres = pages({ site, familles: GIE_OUVERT }).filter((p) => p.type === "entree");
-    assert.deepEqual(
-      apres.map((p) => p.slug).filter((s) => !avant.has(s!)),
-      ["arl-2004-certificat-vitale"],
-    );
+    const nouvelles = apres.map((p) => p.slug).filter((s) => !avant.has(s!));
+    if (nbGie === 0) {
+      assert.equal(lignes.length, lignesHub({ site }).length);
+      assert.deepEqual(nouvelles, []);
+    } else {
+      assert.equal(lignes.length - lignesHub({ site }).length, GIE_HORS_DEPOT);
+      assert.deepEqual(nouvelles, ["arl-2004-certificat-vitale"]);
+    }
   });
 });
 
@@ -142,13 +158,15 @@ describe("outil codes-rejet : écritures et redirections", () => {
   });
 
   test("aucune écriture ne redirige vers deux entrées ; une écriture partagée part en 302 vers la recherche", () => {
-    // Familles du GIE ouvertes : « 2004 » est l'écriture de deux ARL.
-    const ro = redirections({ site, familles: GIE_OUVERT });
-    assert.ok(!Object.hasOwn(ro, "2004"));
-    assert.deepEqual(resoudre("2004", { site, familles: GIE_OUVERT }), {
-      type: "recherche",
-      vers: `${HUB}?q=2004`,
-    });
+    // Familles du GIE ouvertes (entrées remises) : « 2004 » est l'écriture de deux ARL.
+    if (nbGie > 0) {
+      const ro = redirections({ site, familles: GIE_OUVERT });
+      assert.ok(!Object.hasOwn(ro, "2004"));
+      assert.deepEqual(resoudre("2004", { site, familles: GIE_OUVERT }), {
+        type: "recherche",
+        vers: `${HUB}?q=2004`,
+      });
+    }
     // Familles fermées : une adresse inconnue est introuvable (404).
     assert.deepEqual(resoudre("noemie-0999999", { site }), { type: "introuvable" });
     assert.deepEqual(resoudre("2004", { site }), { type: "introuvable" });

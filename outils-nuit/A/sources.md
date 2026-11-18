@@ -1,25 +1,31 @@
 # Outil A · Codes rejet · sources et vérifications
 
-Généré le 18/11/2026. Données : `donnees.json` (même dossier). Scripts d'extraction : `scripts/A/extraire_tables.py`
-et `scripts/A/construire_donnees.py` (dans le dossier de travail de la nuit, hors dépôt).
+Généré le 18/11/2026. Données : `donnees.json` (même dossier). Scripts : `scripts/extraire_tables.py`,
+`scripts/construire_donnees.py` et `scripts/corriger_dev_a.py` (même dossier).
+
+**Tables du GIE SESAM-Vitale tenues hors du dépôt (relecture du 18/11/2026).** Les 83 entrées tirées du cahier des
+charges SESAM-Vitale (30 ARL négatifs de l'annexe 1-B, 53 messages de service de l'annexe 4) ne sont plus dans
+`donnees.json`, ni la partie des scripts qui les extrait et les rédige : le GIE demande son accord pour toute reproduction,
+même partielle (décision de Paul n° 1). Une copie complète est conservée hors du dépôt. Les fiches de ces sources restent
+dans `donnees.json` : citer un document n'est pas le reproduire, et la méthode du hub cite l'annexe 1-B.
 
 ## En bref
 
 | Famille | Entrées | Sûres | À vérifier | Pages conseillées |
 |---|---|---|---|---|
 | `noemie` (rejets des retours NOEMIE de l'Assurance Maladie) | 105 | 27 | 78 | 27 |
-| `arl` (ARL négatifs SESAM-Vitale, plus 7 rejets de lot de l’OCT Résopharma) | 37 | 30 | 7 | 11 |
-| `sesam-vitale` (messages de service de la messagerie SESAM-Vitale) | 53 | 53 | 0 | 4 |
+| `arl` (7 rejets de lot de l’OCT Résopharma ; les 30 ARL négatifs SESAM-Vitale sont hors du dépôt) | 7 | 0 | 7 | 0 |
 | `amc-tiers-payant` (rejets de factures complémentaires, OCT Résopharma) | 6 | 0 | 6 | 0 |
 | `autre` (OCT Résopharma, abonnement) | 1 | 0 | 1 | 0 |
-| **Total** | **202** | **110** | **92** | **42** (sur, avec assez de contenu propre) |
+| **Total dans `donnees.json`** | **119** | **27** | **92** | **27** |
+| Hors du dépôt, en attendant l'accord du GIE : 30 ARL négatifs et 53 messages de service, tous sûrs | 83 | 83 | 0 | 15 |
 
 Comptes mis à jour par dev-A le 18/11/2026 après les corrections décrites plus bas (2 entrées NOEMIE passées
-« à vérifier »).
+« à vérifier »), puis par la relecture (83 entrées du GIE sorties du dépôt).
 
-Ce qui est vraiment utile au comptoir tient dans les **27 codes NOEMIE sûrs**, **les ARL négatifs** et **4 messages de service**
-(`page_conseillee: true`). Les 49 autres messages de service sont sûrs mais très techniques (structure du fichier) :
-ils servent la recherche, pas une page.
+Ce qui est vraiment utile au comptoir tient dans les **27 codes NOEMIE sûrs** ; viendraient ensuite, avec l'accord du GIE,
+**les ARL négatifs** et **4 messages de service** (`page_conseillee: true`). Les 49 autres messages de service sont sûrs
+mais très techniques (structure du fichier) : ils serviraient la recherche, pas une page.
 
 ## Règles appliquées
 
@@ -32,7 +38,8 @@ ils servent la recherche, pas une page.
   - NOEMIE : code et libellé lus dans au moins un document CPAM ou ameli.fr **daté de 2016 ou après** (mémos CPAM de la Gironde
     2016 à 2019, mémo établissements 2018, mémo CPAM de l'Isère 2023, pages ameli.fr 2022 et 2026).
   - ARL et messages de service : tables officielles complètes du cahier des charges SESAM-Vitale (version 8.60 du 11/04/2025),
-    extraites entièrement par script et vérifiées ligne par ligne contre le texte du PDF.
+    extraites entièrement par script et vérifiées ligne par ligne contre le texte du PDF (entrées et script tenus hors du
+    dépôt, voir plus haut).
 - **Statut `a_verifier`** : source ancienne (2009-2015), non datée, propre à un concentrateur, ou libellé ambigu. Voir plus bas.
 - **Cause et action** : `cause_action_origine: "source"` quand le document les donne ; sinon formulation prudente et générale,
   marquée `deduit_du_libelle` (cas des codes du lexique 2010 et de Résopharma). Aucune procédure inventée.
@@ -116,13 +123,13 @@ du mémo établissements 2018. Ces règles ont pu changer ; elles ne sont pas ci
 
 ## Pièges relevés (à garder en tête pour les pages)
 
-- **Même numéro, autre famille** : ARL 4005 « TLA non homologué » et message de service 4005 « Pièce jointe chiffrée en erreur » ;
-  ARL 5001 / 5002 (lot trop ancien / postdaté) et 5001 / 5002 des rapports de réclamation (non repris) ; 9999 « autre erreur »
-  dans deux tables de messages de service. Slugs distincts : `arl-4005`, `sv-chiffrement-4005`, etc.
+- **Même numéro, autre famille** : dans le cahier des charges SESAM-Vitale, un même numéro peut désigner un ARL et un message
+  de service (4005), un ARL et un rejet de rapport de réclamation (5001, 5002), ou figurer dans deux tables de messages de
+  service (9999). Slugs distincts par famille : `arl-…`, `sv-chiffrement-…`, `sv-smtp-…`, `sv-fichier-…`.
 - **Même code, deux libellés** : 0450072 (« DIVERGENCE VITALE/EXO BDO ABSENTE » en 2018, « Situation d'exonération inconnue… »
-  en 2016 et 2023) ; ARL 2004 (« FSE ou DRE non intègre » et « certificat Vitale incorrect », avec deux conduites différentes).
-- **Les versions changent** : entre l'annexe OCT de 2016 et l'annexe 4 de 2025, le code 4020 « pièce jointe non chiffrée »
-  devient 4025, le code 1032 apparaît et des codes 3003, 3005, 3006 disparaissent. D'où la date sur chaque source.
+  en 2016 et 2023) ; ARL 2004, qui a deux libellés et deux conduites à tenir (fiche d'information du GIE n° 94, 2012).
+- **Les versions changent** : entre l'annexe OCT de 2016 et l'annexe 4 de 2025, des codes de messages de service sont
+  renumérotés, apparaissent ou disparaissent. D'où la date sur chaque source.
 - **Les codes NOEMIE sont ceux du régime général** (CPAM) ; un autre régime (MSA, régimes spéciaux) peut employer d'autres textes.
 - Des codes courts du type « 153 », « 14 », « 56 » circulent : aucun n'apparaît dans les documents officiels lus. Un code NOEMIE
   du régime général a 7 chiffres ; un code court est souvent un code tronqué ou propre à un logiciel. L'outil peut le dire.
@@ -134,6 +141,11 @@ reproduction, même partielle, est soumise à l'accord du GIE. Les libellés de 
 qui cite son libellé et renvoie au document relève de la courte citation, mais republier les tables entières est plus discutable.
 Options : demander l'accord du GIE (relations-industriels), ou ne publier que les pages conseillées et garder le reste dans la
 recherche. Les mémos CPAM et pages ameli.fr ne portent pas de mention restrictive dans le texte lu.
+
+En attendant la décision, les 83 entrées et la partie des scripts qui les produit sont hors du dépôt (copie complète conservée
+à part). Les commits antérieurs de la branche `outils/codes-rejet` contiennent encore ces tables : une fusion en squash suivie
+de la suppression de la branche les fait disparaître de `main` ; les effacer de l'historique tout de suite demande de
+reconstruire la branche (décision de Paul).
 
 ## Ce qui manque
 
@@ -150,9 +162,9 @@ recherche. Les mémos CPAM et pages ameli.fr ne portent pas de mention restricti
 
 ## Conseils de mise à jour
 
-1. **Chaque trimestre**, retélécharger le corpus du cahier des charges SESAM-Vitale (page « Cahier des charges » de sesam-vitale.fr,
-   lien « corpus … documents individuels ») et relancer `extraire_tables.py` puis `construire_donnees.py` : le script s'arrête si
-   un code ARL ou de message de service apparaît ou disparaît.
+1. **Chaque trimestre**, relancer `extraire_tables.py` puis `construire_donnees.py` et `corriger_dev_a.py`. Les tables ARL et
+   messages de service ne sont plus produites par les scripts du dépôt : après l'accord du GIE, la version complète (tenue
+   à part) retélécharge le corpus du cahier des charges SESAM-Vitale et s'arrête si un code apparaît ou disparaît.
 2. Chercher les nouveaux mémos « rejets les plus courants » des CPAM (ameli.fr, pages locales « près de chez vous ») ; un mémo daté
    récent qui confirme un code « à vérifier » le fait passer en « sûr ».
 3. Demander aux éditeurs partenaires leur table de libellés (elle vient de la documentation diffusée aux éditeurs) pour l'optique

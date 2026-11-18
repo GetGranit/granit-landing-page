@@ -11,8 +11,14 @@ import { SEUIL_DEFAUT } from "../socle/mots.mjs";
  *   { liste: true,  pages: false }  la liste seulement (courte citation) : + 83 lignes (30 ARL, 53 messages) ;
  *   { liste: true,  pages: true  }  tout ouvert, après accord du GIE : + 83 lignes et + 1 page
  *                                   (arl-2004-certificat-vitale, seul ARL au-dessus du seuil).
+ * Ces 83 entrées sont tenues hors du dépôt en attendant l'accord du GIE (GIE_HORS_DEPOT) : avant
+ * d'ouvrir, remettre leurs lignes dans donnees.json (et les deux libellés courts des ARL 2004 dans
+ * LIBELLES_COURTS). Tant qu'elles n'y sont pas, ouvrir la constante n'ajoute rien.
  */
 export const GIE_SESAM_VITALE = { liste: false, pages: false };
+
+/** 83 entrées tenues hors du dépôt en attendant l'accord du GIE (30 ARL, 53 messages de service). */
+export const GIE_HORS_DEPOT = 83;
 
 /** Familles de données : `liste` = lignes du hub, `pages` = pages d'entrée. */
 export const FAMILLES = {
@@ -36,7 +42,8 @@ export const PAGES_MAX = 25;
  * Ordre de publication (fréquence dans les mémos des CPAM, questions.md) ; hors de cette liste,
  * jamais de page. noemie-2600650 reste dans la liste : passé « à vérifier » (sa seule source vise
  * les établissements publics), il aura sa page dès qu'une source le confirme pour un des 5 métiers.
- * Les ARL n'ont d'effet que si GIE_SESAM_VITALE.pages est vrai.
+ * Les 7 ARL prioritaires (arl-2004, arl-2004-certificat-vitale, arl-2502, arl-3001, arl-4003,
+ * arl-5001, arl-5002, dans cet ordre, à la fin) sont à remettre ici avec les entrées du GIE.
  */
 export const PRIORITE = [
   "noemie-0450056",
@@ -67,13 +74,6 @@ export const PRIORITE = [
   "noemie-4000067",
   "noemie-4000072",
   "noemie-0100052",
-  "arl-2004",
-  "arl-2004-certificat-vitale",
-  "arl-2502",
-  "arl-3001",
-  "arl-4003",
-  "arl-5001",
-  "arl-5002",
 ];
 
 /** Libellé court du <title> : 30 caractères au plus, fidèle au libellé officiel (textes.md § 3.1). */
@@ -106,10 +106,8 @@ export const LIBELLES_COURTS = {
   "noemie-4000057": "quantité au-delà du seuil",
   "noemie-4000072": "vaccin grippe sans code 7",
   "noemie-0100052": "habilitation envoi de messages",
-  // Ajoutés par dev-A (extraits du libellé officiel, pour que les deux ARL 2004 aient chacun leur
-  // titre si la famille ARL ouvre) :
-  "arl-2004": "FSE ou DRE non intègre",
-  "arl-2004-certificat-vitale": "certificat vitale incorrect",
+  // Les deux libellés courts des ARL 2004 (extraits du libellé officiel) sont tenus hors du dépôt
+  // avec les familles du GIE : à remettre ici si GIE_SESAM_VITALE ouvre.
 };
 
 /** Ce que la caisse reproche, en une proposition tirée de `explication` (description, voisins). */

@@ -4,9 +4,11 @@ Usage : python3 -I construire_donnees.py <dossier_extraits> <fichier_sortie>
 
 - Les entrées NOEMIE « sûres » sont rédigées à la main ci-dessous, chacune à partir des
   documents CPAM / ameli.fr cités dans `source_ids` (libellé recopié tel quel).
-- Les tables officielles complètes (ARL de l'annexe 1-B, messages de service de l'annexe 4
-  du cahier des charges SESAM-Vitale v8.60 du 11/04/2025) sont reprises entièrement depuis
-  les extraits produits par extraire_tables.py.
+- Les tables du cahier des charges SESAM-Vitale (ARL négatifs de l'annexe 1-B, messages de
+  service de l'annexe 4, v8.60 du 11/04/2025 : 83 entrées) ne sont pas construites ici : le GIE
+  SESAM-Vitale demande son accord pour toute reproduction, même partielle. Cette partie du
+  script est tenue hors du dépôt en attendant cet accord (décision de Paul n° 1). Leurs fiches
+  de source restent dans SOURCES : la méthode du hub cite l'annexe 1-B.
 - Le lexique CPAM Loire-Atlantique d'octobre 2010 est repris entièrement, mais seuls les codes
   confirmés par un document CPAM daté de 2016 ou après passent en « sur » (entrées rédigées à
   la main) ; les autres restent « a_verifier » (document ancien).
@@ -102,6 +104,12 @@ SOURCES = [
      "url": "https://www.resopharma.fr/documents/normes/nomenclature_des_rejets_OCT.pdf",
      "editeur": "Résopharma (organisme concentrateur technique)", "date_source": "2013-04-17", "consulte_le": CONSULTE},
 ]
+
+# Sources des ARL et des messages de service (familles tenues hors du dépôt), dont deux que la
+# méthode du hub cite (annexe 1-B, mode d'emploi FSE d'ameli.fr) : gardées même sans entrée qui les cite.
+SOURCES_GARDEES = {"gie-cdc-annexe1b-2025", "gie-cdc-annexe4-2025", "gie-fiche-info-094-2012",
+                   "gie-actu-addendum-2023", "orisha-desmos-arl-securite-lot", "julie-teletransmission-2023",
+                   "ameli-pharmacien-fse-mode-emploi-2021"}
 
 # ------------------------------------------------------------------ entrées NOEMIE rédigées
 # Chaque texte reformule la source citée, sans rien y ajouter.
@@ -536,163 +544,6 @@ for code, lib, expl, voisins in [
            ["optique-audio"], ["fiche-rejets-opticiens-bretagne"], statut="a_verifier", voisins=voisins,
            professions=["opticiens"], note=note, page=False)
 
-# ---------------------------------------------------------------------------- ARL (GIE 2025)
-ACTION_LOT = ("Le lot n'a pas été pris en charge par la caisse. Votre logiciel doit reconstituer un nouveau lot à partir des mêmes factures "
-              "(nouveau numéro de lot), le sécuriser comme un nouveau lot et le réémettre. Un lot qui a reçu un ARL négatif ne se réémet qu'une fois : "
-              "après un second échec, les factures sont éditées en duplicata papier et traitées manuellement. Si le nouvel essai échoue aussi, ameli.fr conseille de contacter la caisse concernée.")
-ACTION_FACTURE = ("L'ARL indique le numéro de la première facture en erreur du lot (il peut y en avoir d'autres). Votre logiciel reconstitue un nouveau lot "
-                  "avec toutes les autres factures, sans celle-ci, et le réémet ; la facture en erreur est éditée en duplicata papier.")
-ARL_TEXTES = {
-    "1001": ("La structure du lot envoyé n'est pas conforme au format attendu par la caisse.", "Lot mal constitué par le logiciel de facturation.", True),
-    "2001": ("La signature électronique du lot n'a pas pu être vérifiée.", "Problème de signature du lot au moment de sa constitution.", False),
-    "2002": ("Le lot reçu n'est pas intègre : son contrôle de sécurité ne correspond pas à son contenu.", "Lot altéré ou mal sécurisé.", True),
-    "2003": ("L'enregistrement de fin de lot n'est pas intègre.", "Lot altéré ou mal sécurisé.", False),
-    "2005": ("Le lot a été sécurisé avec une clé interdite.", "Clé de sécurisation non autorisée.", False),
-    "2502": ("La sécurité du lot est erronée.", "D'après deux éditeurs de logiciel : lot constitué avec une carte CPS ou CPE révoquée ou obsolète.", True),
-    "3001": ("La carte (CPS du professionnel ou CPE d'un salarié) qui a constitué le lot est en opposition.", "Carte en opposition utilisée pour la mise en lot.", True),
-    "4001": ("L'agrément du logiciel de facturation est absent.", "Logiciel sans agrément pour la télétransmission.", False),
-    "4002": ("Le logiciel de facturation n'est pas agréé.", "Logiciel ou version non agréé.", True),
-    "4003": ("La date de validité de votre logiciel (ou de sa version) est dépassée : les flux qu'il produit ne sont plus acceptés.", "Version de logiciel trop ancienne. Le GIE SESAM-Vitale l'a rappelé lors de l'arrêt des flux en addendum 2 bis et 3, refusés à partir de fin 2023.", True),
-    "4004": ("La date de validité de votre logiciel n'est pas encore atteinte.", "Version de logiciel utilisée avant sa date de validité.", False),
-    "4005": ("Le terminal lecteur applicatif (TLA) utilisé n'est pas homologué.", "TLA non homologué.", False),
-    "4006": ("La date de validité du terminal lecteur applicatif (TLA) est dépassée.", "Version du TLA trop ancienne.", False),
-    "4007": ("La date de validité du terminal lecteur applicatif (TLA) n'est pas encore atteinte.", "Version du TLA utilisée avant sa date de validité.", False),
-    "4008": ("Le logiciel n'est pas agréé pour produire des flux issus d'un TLA.", "Logiciel non agréé pour les flux TLA.", False),
-    "4009": ("Le numéro de version de norme n'est pas valide pour l'homologation du TLA.", "Version de norme invalide.", False),
-    "4010": ("Le numéro de version de norme n'est pas valide pour l'agrément du logiciel.", "Version de norme invalide.", False),
-    "4011": ("La version du cahier des charges indiquée n'est pas valide.", "Version de cahier des charges invalide.", False),
-    "5001": ("Le lot a été créé il y a plus de 90 jours : il est refusé.", "Lot resté trop longtemps sans être envoyé.", True),
-    "5002": ("Le lot est postdaté de plus de 2 jours : sa date de création est trop loin dans le futur.", "Date de création du lot postérieure de plus de 2 jours à la réception.", True),
-    "1002": ("La structure de la facture dont le numéro est indiqué n'est pas conforme.", "Facture mal constituée.", False),
-    "2004": ("La facture dont le numéro est indiqué n'est pas intègre.", "Facture altérée ou mal sécurisée.", True),
-    "2004c": ("Le certificat de la carte Vitale de la facture indiquée n'est pas reconnu par le système SESAM-Vitale : tout le lot est refusé.", "Selon le GIE SESAM-Vitale, facture suspectée d'avoir été faite avec une carte Vitale frauduleuse (clone).", True),
-    "2007": ("La facture indiquée utilise un mode de certification interdit.", "Mode de certification non autorisé.", False),
-    "2500": ("La facture indiquée n'a pas pu être déchiffrée.", "Problème de chiffrement de la facture.", False),
-    "2501": ("Le chiffrement de la facture indiquée est erroné.", "Problème de chiffrement de la facture.", False),
-    "2503": ("La signature de la facture indiquée est incontrôlable.", "Problème de signature de la facture.", False),
-    "2504": ("La sécurité de la facture indiquée est erronée.", "Problème de sécurisation de la facture.", False),
-    "3002": ("La facture indiquée a été faite avec une carte CPS en opposition.", "Carte CPS en opposition utilisée pour la facture.", True),
-    "2006": ("La facture indiquée utilise une clé interdite.", "Clé de sécurisation non autorisée.", False),
-}
-EXTRA_ACTION = {
-    "2005": " Avec un lecteur SESAM-Vitale, contactez la société qui vous l'a fourni ; avec un lecteur PC/SC, contactez votre éditeur de logiciel (cas prévu par l'annexe 1-B).",
-    "2006": " Avec un lecteur SESAM-Vitale, contactez la société qui vous l'a fourni ; avec un lecteur PC/SC, contactez votre éditeur de logiciel (cas prévu par l'annexe 1-B).",
-    "2502": " Un éditeur conseille de demander à la caisse quelles cartes CPS ou CPE sont révoquées, puis de refaire la mise en lot avec une carte valide.",
-    "4003": " Mettez votre logiciel à jour avec votre éditeur avant de reconstituer le lot.",
-    "2004c": " Le GIE précise que, dans ce cas, vous n'avez pas à contacter votre éditeur, votre industriel ou votre OCT ; pour l'autre libellé du code 2004 (« FSE ou DRE non intègre »), contactez votre maintenance, éditeur ou OCT.",
-    "2004": " Selon le GIE, pour ce libellé, prenez contact avec votre maintenance, votre éditeur ou votre OCT selon le cas.",
-}
-
-
-def entrees_arl(arl):
-    out = []
-    vus = {}
-    for e in arl:
-        code = e["code"]
-        cle = code
-        if code == "2004" and "certificat" in e["libelle"]:
-            cle = "2004c"
-        expl, cause, page = ARL_TEXTES[cle]
-        action = (ACTION_FACTURE if e["niveau"] == "facture" else ACTION_LOT) + EXTRA_ACTION.get(cle, "")
-        slug = "arl-2004-certificat-vitale" if cle == "2004c" else f"arl-{code}"
-        src = ["gie-cdc-annexe1b-2025"]
-        if e["niveau"] == "lot":
-            src.append("ameli-pharmacien-fse-mode-emploi-2021")
-        if code == "2004":
-            src.append("gie-fiche-info-094-2012")
-        if code == "4003":
-            src.append("gie-actu-addendum-2023")
-        if code == "2502":
-            src += ["orisha-desmos-arl-securite-lot", "julie-teletransmission-2023"]
-        item = {
-            "code": code, "slug": slug, "famille": "arl",
-            "emetteur": "Assurance Maladie (système d'accueil des flux, ARL SESAM-Vitale)",
-            "libelle_officiel": e["libelle"], "explication": expl, "cause": cause, "action": action,
-            "cause_action_origine": "source",
-            "metiers": TOUS, "codes_voisins": [], "source_ids": src, "statut": "sur",
-            "niveau_arl": e["niveau"], "page_conseillee": page,
-        }
-        notes = ["Table officielle des ARL négatifs (annexe 1-B, version 8.60 du 11/04/2025). L'action vient de la table ; la cause est la reformulation du libellé."]
-        if code == "4005":
-            notes.append("Ne pas confondre avec le message de service 4005 « Pièce jointe chiffrée en erreur » (même numéro, autre famille : voir sv-chiffrement-4005).")
-        if code in ("5001", "5002"):
-            notes.append("Les numéros 5001 et 5002 désignent aussi, ailleurs dans le cahier des charges, des rejets de rapports de réclamation : autre famille, non reprise ici.")
-        if code == "2004":
-            notes.append("Même code ARL pour deux libellés : « FSE ou DRE non intègre » et « FSE ou DRE certificat Vitale incorrect » (fiche GIE n° 94 de 2012).")
-        if code == "2502":
-            notes.append("La cause (carte CPS ou CPE révoquée ou obsolète) vient de deux éditeurs de logiciel, pas du GIE.")
-        item["note_verification"] = " ".join(notes)
-        item["autres_ecritures"] = [f"ARL {code}", f"ARL négatif {code}"]
-        out.append(item)
-    groupes = [["arl-2001", "arl-2002", "arl-2003", "arl-2502", "arl-1001"],
-               ["arl-2004", "arl-2004-certificat-vitale", "arl-1002", "arl-2504"],
-               ["arl-3001", "arl-3002", "arl-2502"],
-               ["arl-4001", "arl-4002", "arl-4003", "arl-4004", "arl-4011"],
-               ["arl-4005", "arl-4006", "arl-4007", "arl-4008", "arl-4009"],
-               ["arl-5001", "arl-5002", "arl-1001"],
-               ["arl-2005", "arl-2006", "arl-2007"],
-               ["arl-2500", "arl-2501", "arl-2503", "arl-2504"]]
-    lier(out, groupes)
-    return out
-
-
-# ------------------------------------------------------------- messages de service (GIE 2025)
-ACTION_SERVICE = ("Le fichier envoyé n'a pas été accepté (en-tête du message ou structure du fichier) : aucun lot de ce fichier n'a été pris en charge. "
-                  "Votre logiciel note les lots à réémettre (s'ils n'ont été transmis qu'une fois) et permet de recréer le message après analyse ; "
-                  "un lot déjà retransmis une fois se traite manuellement. Le message contient une fiche détaillée de l'incident : transmettez-la à votre éditeur pour analyse.")
-SERVICE_SPECIFIQUE = {
-    "chiffrement-4005": ("Le flux chiffré n'a pas pu être déchiffré par l'Assurance Maladie (le certificat peut notamment être révoqué au niveau du frontal) : il est rejeté.",
-                         "Flux chiffré avec un mauvais certificat.",
-                         "Réémettez le flux à l'identique, chiffré avec le bon certificat (consigne de l'annexe 4).", True),
-    "chiffrement-4015": ("Simple avertissement : le flux a bien été déchiffré, mais le certificat utilisé est périmé (il en existe un plus récent).",
-                         "Certificat de chiffrement périmé.",
-                         "Rien à renvoyer ; utilisez le nouveau certificat pour vos prochaines télétransmissions (consigne de l'annexe 4).", True),
-    "chiffrement-4025": ("Le flux reçu n'était pas chiffré alors qu'il devait l'être.",
-                         "Pièce jointe envoyée sans chiffrement.",
-                         "Réémettez le flux à l'identique en chiffrant la pièce jointe (consigne de l'annexe 4).", True),
-    "smtp-1070": ("Le même message a déjà été reçu : c'est un envoi en double.", "Message renvoyé avec un sujet identique à un envoi précédent.", None, True),
-    "fichier-2011": ("Un flux réel contient un numéro de facturation de test.", "Mélange entre flux de test et flux réel.", None, False),
-    "fichier-2040": ("Le numéro d'organisme complémentaire (AMC) est incohérent dans le fichier.", "Numéro AMC discordant entre les parties du fichier.", None, False),
-}
-
-
-def entrees_service(tables):
-    out = []
-    for table, prefixe in (("REJET_SMTP", "smtp"), ("REJET_FICHIER", "fichier"), ("CHIFFREMENT", "chiffrement")):
-        for e in tables[table]:
-            cle = f"{prefixe}-{e['code']}"
-            spec = SERVICE_SPECIFIQUE.get(cle)
-            if spec:
-                expl, cause, action, page = spec
-                action = action or ACTION_SERVICE
-                origine = "source"
-            else:
-                expl = "Message de service de l'Assurance Maladie : le fichier transmis a été refusé avant tout traitement. Motif indiqué : « " + e["libelle"] + " »."
-                cause = "Message transmis incorrect, soit dans le format de son en-tête, soit dans la structure du fichier joint (définition des messages de service par le GIE SESAM-Vitale)."
-                action, page, origine = ACTION_SERVICE, False, "source"
-            nature = {"REJET_SMTP": "message de service « rejet SMTP » (en-tête du message)",
-                      "REJET_FICHIER": "message de service « rejet fichier » (structure du fichier)",
-                      "CHIFFREMENT": "message de service « erreur de chiffrement »"}[table]
-            out.append({
-                "code": e["code"], "slug": f"sv-{cle}", "famille": "sesam-vitale",
-                "emetteur": "Assurance Maladie (organismes AMO et AMC, messagerie SESAM-Vitale)",
-                "libelle_officiel": e["libelle"], "explication": expl, "cause": cause, "action": action,
-                "cause_action_origine": origine, "metiers": TOUS, "codes_voisins": [],
-                "source_ids": ["gie-cdc-annexe4-2025", "gie-cdc-annexe1b-2025"], "statut": "sur",
-                "type_message": nature, "page_conseillee": page,
-                "note_verification": "Table officielle (annexe 4, version 8.60 du 11/04/2025), liste déclarée non exhaustive par le GIE. Action tirée de l'annexe 1-B (§ 4)."
-                                     + (" Ne pas confondre avec l'ARL 4005 « TLA non homologué » (voir arl-4005)." if cle == "chiffrement-4005" else "")
-                                     + (" Le code 9999 « autre erreur » existe dans deux tables (rejet SMTP et rejet fichier)." if e["code"] == "9999" else ""),
-                "autres_ecritures": [f"message de service {e['code']}"],
-            })
-    lier(out, [["sv-chiffrement-4005", "sv-chiffrement-4015", "sv-chiffrement-4025", "sv-smtp-1032"],
-               ["sv-smtp-1060", "sv-smtp-1061", "sv-smtp-1062", "sv-smtp-1063", "sv-smtp-1070"],
-               ["sv-smtp-1010", "sv-smtp-1020", "sv-smtp-1030", "sv-smtp-1031"],
-               ["sv-fichier-2010", "sv-fichier-2011", "sv-fichier-2012", "sv-fichier-2020"],
-               ["sv-fichier-2216", "sv-fichier-2217", "sv-fichier-2300", "sv-fichier-3004"]])
-    return out
-
-
 # ------------------------------------------------------------ lexique optique 2010 (à vérifier)
 def entrees_lexique(lex, deja):
     out = []
@@ -855,8 +706,6 @@ def main():
     deja = {e["slug"] for e in entrees}
     # voisins des entrées NOEMIE rédigées qui pointent vers des codes du lexique : gardés si présents
     entrees += entrees_lexique(lire("lexique_optique_cpam44_2010.json"), deja)
-    entrees += entrees_arl(lire("arl_annexe1b_2025.json"))
-    entrees += entrees_service(lire("messages_service_2025.json"))
     entrees += entrees_resopharma(lire("resopharma_oct_2013.json"))
     tous = {e["slug"] for e in entrees}
     for e in entrees:
@@ -866,6 +715,7 @@ def main():
     for e in entrees:
         appliquer_typo(e)
     inutiles = valider(entrees, SOURCES)
+    inutiles = {i for i in inutiles if i not in SOURCES_GARDEES}
     sources = [s for s in SOURCES if s["id"] not in inutiles]
     donnees = {"genere_le": GENERE_LE, "sources": sources, "entrees": entrees}
     with open(sortie, "w", encoding="utf-8") as f:

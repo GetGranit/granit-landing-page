@@ -4,6 +4,7 @@ export type Famille = { liste: boolean; pages: boolean };
 export type Nature = "droits" | "identification" | "facture" | "transmission" | "attente";
 
 export const GIE_SESAM_VITALE: Famille;
+export const GIE_HORS_DEPOT: number;
 export const FAMILLES: Record<string, Famille>;
 export const SEUIL_MOTS_PROPRES: number;
 export const PAGES_MAX: number;
