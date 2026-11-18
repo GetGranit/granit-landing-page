@@ -4,10 +4,11 @@ import { usePostHog } from "posthog-js/react";
 import { useLanguage } from "@/lib/i18n";
 import { rubriqueOuverte } from "@/lib/actualites/ouverture";
 import logoMonogram from "@/assets/logo.svg";
+import { MenuMetiers } from "./MenuMetiers";
 
 const labels = {
-  fr: { agents: "Agents", security: "Sécurité", pricing: "Tarifs", resources: "Ressources", news: "Actualités", login: "Se connecter", demo: "Demander une démo", switch: "EN" },
-  en: { agents: "Agents", security: "Security", pricing: "Pricing", resources: "Resources", news: "News", login: "Sign in", demo: "Book a demo", switch: "FR" },
+  fr: { security: "Sécurité", pricing: "Tarifs", resources: "Ressources", news: "Actualités", login: "Se connecter", demo: "Demander une démo", demoCourt: "Démo", switch: "EN" },
+  en: { security: "Security", pricing: "Pricing", resources: "Resources", news: "News", login: "Sign in", demo: "Book a demo", demoCourt: "Demo", switch: "FR" },
 };
 
 export function Nav() {
@@ -24,7 +25,6 @@ export function Nav() {
   }, []);
 
   const links = [
-    { to: "/agents", label: t.agents },
     { to: "/tarifs", label: t.pricing },
     { to: "/ressources", label: t.resources },
     // Le lien n'existe que si une édition est en ligne.
@@ -49,17 +49,18 @@ export function Nav() {
       >
         <Link
           to="/"
-          className="flex items-center gap-2.5"
+          className="flex shrink-0 items-center gap-2.5"
           onClick={() => {
             if (typeof window !== "undefined" && window.location.pathname === "/") {
               window.scrollTo({ top: 0, behavior: "smooth" });
             }
           }}
         >
-          <img src={logoMonogram} alt="Granit" className="h-8 w-auto sm:h-9" />
+          <img src={logoMonogram} alt="Granit" className="h-7 w-auto min-[400px]:h-8 sm:h-9" />
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex xl:absolute xl:left-1/2 xl:-translate-x-1/2">
+          <MenuMetiers lang={lang} />
           {links.map((l) => (
             <Link
               key={l.to}
@@ -73,7 +74,16 @@ export function Nav() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1 sm:gap-2">
+          {/* Sous lg, la navigation est masquée : « Métiers » reste accessible en un clic. */}
+          <Link
+            to="/metiers"
+            className="hidden rounded-full px-2 py-2 text-[14px] font-medium transition-colors hover:bg-[color:var(--lavis)] min-[340px]:inline-block lg:hidden"
+            style={{ color: "var(--text)" }}
+            activeProps={{ className: "bg-[color:var(--lavis)]" }}
+          >
+            {lang === "fr" ? "Métiers" : "Trades"}
+          </Link>
           <button
             type="button"
             onClick={() => {
@@ -95,8 +105,10 @@ export function Nav() {
           >
             {t.login}
           </a>
-          <Link to="/" hash="demo" className="btn-primary whitespace-nowrap text-[14px]" style={{ padding: "11px 18px" }}>
-            {t.demo} <span className="arrow">↗</span>
+          <Link to="/" hash="demo" className="btn-primary whitespace-nowrap px-3.5 py-[11px] text-[14px] sm:px-[18px]">
+            {/* Sur petit écran, « Démo » laisse la place au logo et à « Métiers ». */}
+            <span className="sm:hidden">{t.demoCourt}</span>
+            <span className="hidden sm:inline">{t.demo}</span> <span className="arrow">↗</span>
           </Link>
         </div>
       </div>

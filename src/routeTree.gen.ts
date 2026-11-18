@@ -33,6 +33,8 @@ import { Route as AgentsMetierRouteImport } from './routes/agents.$metier'
 import { Route as BlogSplatRouteImport } from './routes/blog.$'
 import { Route as EnIndexRouteImport } from './routes/en.index'
 import { Route as EnCgvRouteImport } from './routes/en.cgv'
+import { Route as MetiersIndexRouteImport } from './routes/metiers.index'
+import { Route as MetiersMetierRouteImport } from './routes/metiers.$metier'
 import { Route as OutilsHeuresDeDecembreRouteImport } from './routes/outils.heures-de-decembre'
 import { Route as OutilsTriDesMarquesRouteImport } from './routes/outils.tri-des-marques'
 import { Route as RessourcesIndexRouteImport } from './routes/ressources.index'
@@ -162,6 +164,16 @@ const EnCgvRoute = EnCgvRouteImport.update({
   path: '/en/cgv',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MetiersIndexRoute = MetiersIndexRouteImport.update({
+  id: '/metiers/',
+  path: '/metiers/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MetiersMetierRoute = MetiersMetierRouteImport.update({
+  id: '/metiers/$metier',
+  path: '/metiers/$metier',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OutilsHeuresDeDecembreRoute = OutilsHeuresDeDecembreRouteImport.update({
   id: '/outils/heures-de-decembre',
   path: '/outils/heures-de-decembre',
@@ -227,6 +239,7 @@ export interface FileRoutesByFullPath {
   '/agents/$metier': typeof AgentsMetierRoute
   '/blog/$': typeof BlogSplatRoute
   '/en/cgv': typeof EnCgvRoute
+  '/metiers/$metier': typeof MetiersMetierRoute
   '/outils/heures-de-decembre': typeof OutilsHeuresDeDecembreRoute
   '/outils/tri-des-marques': typeof OutilsTriDesMarquesRoute
   '/ressources/$slug': typeof RessourcesSlugRoute
@@ -234,6 +247,7 @@ export interface FileRoutesByFullPath {
   '/actualites/': typeof ActualitesIndexRoute
   '/agents/': typeof AgentsIndexRoute
   '/en/': typeof EnIndexRoute
+  '/metiers/': typeof MetiersIndexRoute
   '/ressources/': typeof RessourcesIndexRoute
   '/en/blog/$': typeof EnBlogSplatRoute
   '/ressources/categorie/$category': typeof RessourcesCategorieCategoryRoute
@@ -259,6 +273,7 @@ export interface FileRoutesByTo {
   '/agents/$metier': typeof AgentsMetierRoute
   '/blog/$': typeof BlogSplatRoute
   '/en/cgv': typeof EnCgvRoute
+  '/metiers/$metier': typeof MetiersMetierRoute
   '/outils/heures-de-decembre': typeof OutilsHeuresDeDecembreRoute
   '/outils/tri-des-marques': typeof OutilsTriDesMarquesRoute
   '/ressources/$slug': typeof RessourcesSlugRoute
@@ -266,6 +281,7 @@ export interface FileRoutesByTo {
   '/actualites': typeof ActualitesIndexRoute
   '/agents': typeof AgentsIndexRoute
   '/en': typeof EnIndexRoute
+  '/metiers': typeof MetiersIndexRoute
   '/ressources': typeof RessourcesIndexRoute
   '/en/blog/$': typeof EnBlogSplatRoute
   '/ressources/categorie/$category': typeof RessourcesCategorieCategoryRoute
@@ -294,6 +310,7 @@ export interface FileRoutesById {
   '/agents/$metier': typeof AgentsMetierRoute
   '/blog/$': typeof BlogSplatRoute
   '/en/cgv': typeof EnCgvRoute
+  '/metiers/$metier': typeof MetiersMetierRoute
   '/outils/heures-de-decembre': typeof OutilsHeuresDeDecembreRoute
   '/outils/tri-des-marques': typeof OutilsTriDesMarquesRoute
   '/ressources/$slug': typeof RessourcesSlugRoute
@@ -301,6 +318,7 @@ export interface FileRoutesById {
   '/actualites/': typeof ActualitesIndexRoute
   '/agents/': typeof AgentsIndexRoute
   '/en/': typeof EnIndexRoute
+  '/metiers/': typeof MetiersIndexRoute
   '/ressources/': typeof RessourcesIndexRoute
   '/en/blog/$': typeof EnBlogSplatRoute
   '/ressources/categorie/$category': typeof RessourcesCategorieCategoryRoute
@@ -330,6 +348,7 @@ export interface FileRouteTypes {
     | '/agents/$metier'
     | '/blog/$'
     | '/en/cgv'
+    | '/metiers/$metier'
     | '/outils/heures-de-decembre'
     | '/outils/tri-des-marques'
     | '/ressources/$slug'
@@ -337,6 +356,7 @@ export interface FileRouteTypes {
     | '/actualites/'
     | '/agents/'
     | '/en/'
+    | '/metiers/'
     | '/ressources/'
     | '/en/blog/$'
     | '/ressources/categorie/$category'
@@ -362,6 +382,7 @@ export interface FileRouteTypes {
     | '/agents/$metier'
     | '/blog/$'
     | '/en/cgv'
+    | '/metiers/$metier'
     | '/outils/heures-de-decembre'
     | '/outils/tri-des-marques'
     | '/ressources/$slug'
@@ -369,6 +390,7 @@ export interface FileRouteTypes {
     | '/actualites'
     | '/agents'
     | '/en'
+    | '/metiers'
     | '/ressources'
     | '/en/blog/$'
     | '/ressources/categorie/$category'
@@ -396,6 +418,7 @@ export interface FileRouteTypes {
     | '/agents/$metier'
     | '/blog/$'
     | '/en/cgv'
+    | '/metiers/$metier'
     | '/outils/heures-de-decembre'
     | '/outils/tri-des-marques'
     | '/ressources/$slug'
@@ -403,6 +426,7 @@ export interface FileRouteTypes {
     | '/actualites/'
     | '/agents/'
     | '/en/'
+    | '/metiers/'
     | '/ressources/'
     | '/en/blog/$'
     | '/ressources/categorie/$category'
@@ -430,11 +454,13 @@ export interface RootRouteChildren {
   AgentsMetierRoute: typeof AgentsMetierRoute
   BlogSplatRoute: typeof BlogSplatRoute
   EnCgvRoute: typeof EnCgvRoute
+  MetiersMetierRoute: typeof MetiersMetierRoute
   OutilsHeuresDeDecembreRoute: typeof OutilsHeuresDeDecembreRoute
   OutilsTriDesMarquesRoute: typeof OutilsTriDesMarquesRoute
   WebinarIaMagasinRoute: typeof WebinarIaMagasinRoute
   AgentsIndexRoute: typeof AgentsIndexRoute
   EnIndexRoute: typeof EnIndexRoute
+  MetiersIndexRoute: typeof MetiersIndexRoute
   EnBlogSplatRoute: typeof EnBlogSplatRoute
 }
 
@@ -608,6 +634,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EnCgvRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/metiers/': {
+      id: '/metiers/'
+      path: '/metiers'
+      fullPath: '/metiers/'
+      preLoaderRoute: typeof MetiersIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/metiers/$metier': {
+      id: '/metiers/$metier'
+      path: '/metiers/$metier'
+      fullPath: '/metiers/$metier'
+      preLoaderRoute: typeof MetiersMetierRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/outils/heures-de-decembre': {
       id: '/outils/heures-de-decembre'
       path: '/outils/heures-de-decembre'
@@ -720,11 +760,13 @@ const rootRouteChildren: RootRouteChildren = {
   AgentsMetierRoute: AgentsMetierRoute,
   BlogSplatRoute: BlogSplatRoute,
   EnCgvRoute: EnCgvRoute,
+  MetiersMetierRoute: MetiersMetierRoute,
   OutilsHeuresDeDecembreRoute: OutilsHeuresDeDecembreRoute,
   OutilsTriDesMarquesRoute: OutilsTriDesMarquesRoute,
   WebinarIaMagasinRoute: WebinarIaMagasinRoute,
   AgentsIndexRoute: AgentsIndexRoute,
   EnIndexRoute: EnIndexRoute,
+  MetiersIndexRoute: MetiersIndexRoute,
   EnBlogSplatRoute: EnBlogSplatRoute,
 }
 export const routeTree = rootRouteImport

@@ -421,7 +421,7 @@ Les articles sortent un par un, donc les premiers ont peu de voisins publiés. Q
 1. **L'ordre de la file publie les piliers en premier** (guide général, puis pilier Plateformes, puis les pages plateformes). Chaque nouvel article a donc toujours au moins son parent déjà en ligne.
 2. **Les liens reviennent en arrière.** À chaque publication, le moteur ajoute un lien vers le nouvel article dans son parent et dans ses sœurs déjà publiées. Le maillage se densifie tout seul, sans réécrire les anciens articles.
 3. **Le bloc « À lire aussi » et les pages catégorie sont calculés à chaque déploiement** à partir de la file (statut `published`), sans appel à Claude : ils sont toujours à jour.
-4. **On s'appuie sur l'existant dès le premier jour** : les 7 articles actuels de `/ressources` rattachables à l'optique et les pages produit (`/agents`, `/demo`) servent de cibles en attendant que le cocon se remplisse. Pas plus de 2 liens vers des pages produit par article.
+4. **On s'appuie sur l'existant dès le premier jour** : les 7 articles actuels de `/ressources` rattachables à l'optique et les pages produit (`/metiers`, `/demo`) servent de cibles en attendant que le cocon se remplisse. Pas plus de 2 liens vers des pages produit par article.
 
 Au bout de la vague 1 (20 articles), chaque page plateforme est reliée au pilier, à 2 sœurs, à l'outil mutuelle → portail, aux contacts et à la checklist.
 

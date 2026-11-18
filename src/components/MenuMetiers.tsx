@@ -4,13 +4,13 @@ import { METIERS, PUBLIES, SLUGS_METIERS } from "@/components/agents/metiers";
 import type { Lang } from "@/lib/i18n";
 
 const textes = {
-  fr: { metiers: "Métiers", tous: "Tous les métiers", bientot: "Bientôt" },
-  en: { metiers: "Trades", tous: "All trades", bientot: "Soon" },
+  fr: { metiers: "Métiers", tous: "Tous les métiers", bientot: "Bientôt", liste: "Voir la liste des métiers" },
+  en: { metiers: "Trades", tous: "All trades", bientot: "Soon", liste: "Show the list of trades" },
 };
 
 /**
  * Entrée « Métiers » du menu : les cinq pages métier, seules les pages publiées sont des liens,
- * puis « Tous les métiers » (/agents). S'ouvre au survol et au clic, se ferme avec Échap ou en
+ * puis « Tous les métiers » (/metiers). S'ouvre au survol et au clic, se ferme avec Échap ou en
  * cliquant ailleurs. Fermé au rendu serveur.
  */
 export function MenuMetiers({ lang }: { lang: Lang }) {
@@ -45,19 +45,33 @@ export function MenuMetiers({ lang }: { lang: Lang }) {
 
   return (
     <div ref={boite} className="relative" onMouseEnter={entrer} onMouseLeave={sortir}>
-      <button
-        type="button"
-        aria-expanded={ouvert}
-        aria-controls="menu-metiers"
-        onClick={() => setOuvert((o) => !o)}
-        className="inline-flex items-center gap-1 text-[13.5px] transition-colors"
-        style={{ color: ouvert ? "var(--text)" : "var(--text-soft)" }}
+      {/* Un clic sur « Métiers » mène à /metiers ; le survol (ou la flèche, au clavier) déroule la liste. */}
+      <div
+        className="inline-flex items-center rounded-full transition-colors hover:bg-[color:var(--lavis)]"
+        style={{ background: ouvert ? "var(--lavis)" : undefined }}
       >
-        {t.metiers}
-        <svg viewBox="0 0 12 12" className="size-3 transition-transform duration-200" style={{ transform: ouvert ? "rotate(180deg)" : "none" }} aria-hidden>
-          <path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      </button>
+        <Link
+          to="/metiers"
+          onClick={() => setOuvert(false)}
+          className="rounded-l-full py-2 pl-3.5 pr-1 text-[15px] font-medium"
+          style={{ color: "var(--text)" }}
+        >
+          {t.metiers}
+        </Link>
+        <button
+          type="button"
+          aria-expanded={ouvert}
+          aria-controls="menu-metiers"
+          aria-label={t.liste}
+          onClick={() => setOuvert((o) => !o)}
+          className="rounded-r-full py-2 pl-1 pr-3"
+          style={{ color: "var(--text)" }}
+        >
+          <svg viewBox="0 0 12 12" className="size-3 transition-transform duration-200" style={{ transform: ouvert ? "rotate(180deg)" : "none" }} aria-hidden>
+            <path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+      </div>
       <div
         id="menu-metiers"
         hidden={!ouvert}
@@ -70,7 +84,7 @@ export function MenuMetiers({ lang }: { lang: Lang }) {
               <li key={slug}>
                 {PUBLIES.includes(slug) ? (
                   <Link
-                    to="/agents/$metier"
+                    to="/metiers/$metier"
                     params={{ metier: slug }}
                     onClick={() => setOuvert(false)}
                     className="block rounded-[10px] px-3 py-2.5 text-[14px] font-medium transition-colors hover:bg-[var(--lavis)]"
@@ -90,7 +104,7 @@ export function MenuMetiers({ lang }: { lang: Lang }) {
           })}
           <li className="mt-1 border-t pt-1" style={{ borderColor: "var(--filet)" }}>
             <Link
-              to="/agents"
+              to="/metiers"
               onClick={() => setOuvert(false)}
               className="block rounded-[10px] px-3 py-2.5 text-[14px] font-medium transition-colors hover:bg-[var(--lavis)]"
               style={{ color: "var(--profond)" }}

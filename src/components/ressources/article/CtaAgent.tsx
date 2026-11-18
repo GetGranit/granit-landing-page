@@ -370,7 +370,7 @@ function BoutonSecondaire({
       </a>
     );
   return (
-    <Link to="/agents" className={classe} onClick={() => suivi("agents")}>
+    <Link to="/metiers" className={classe} onClick={() => suivi("agents")}>
       {position === "carte" ? c.t.tousAgentsGranit : c.t.tousAgents}
     </Link>
   );

@@ -26,9 +26,14 @@ const ligne = (titre, path, desc) =>
 const pages = [
   ["Accueil", "/", "Présentation de Granit et de ses agents IA pour l'administratif santé."],
   [
-    "Agents",
-    "/agents",
-    "Les agents par métier et par tâche : prises en charge, rejets, paiements, relances, facturation.",
+    "Métiers",
+    "/metiers",
+    "Ce que fait Granit pour chaque métier de la santé : prises en charge, rejets, paiements, relances, facturation.",
+  ],
+  [
+    "Opticiens",
+    "/metiers/opticiens",
+    "Le tiers payant fait à la place de l'opticien, depuis le devis de son logiciel jusqu'au virement de la mutuelle.",
   ],
   [
     "Tarifs",

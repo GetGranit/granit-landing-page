@@ -121,7 +121,7 @@ const metierPages = verticalesData.ordre
   })
   .filter(Boolean);
 
-// /produit and /cas-usage redirect to /agents: they don't belong in the sitemap.
+// /produit, /cas-usage and /agents redirect to /metiers: they don't belong in the sitemap.
 const staticPages = [
   {
     path: "/",
@@ -130,14 +130,14 @@ const staticPages = [
     freq: "weekly",
   },
   {
-    path: "/agents",
-    files: ["src/routes/agents.index.tsx", "src/components/agents"],
+    path: "/metiers",
+    files: ["src/routes/metiers.index.tsx", "src/components/agents"],
     priority: "0.9",
     freq: "weekly",
   },
   {
-    path: "/agents/optique",
-    files: ["src/routes/agents.$metier.tsx", "src/components/agents"],
+    path: "/metiers/opticiens",
+    files: ["src/routes/metiers.$metier.tsx", "src/components/agents"],
     priority: "0.8",
     freq: "weekly",
   },

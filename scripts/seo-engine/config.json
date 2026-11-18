@@ -4,7 +4,7 @@
   "maxTokens": 64000,
   "relectureDesPremiers": 5,
   "pagesProduit": [
-    "/agents",
+    "/metiers",
     "/demo"
   ],
   "categories": {

@@ -2,7 +2,7 @@ import { createFileRoute, redirect } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/produit")({
   beforeLoad: () => {
-    throw redirect({ to: "/agents", statusCode: 301 });
+    throw redirect({ to: "/metiers", statusCode: 301 });
   },
   head: () => ({
     meta: [
