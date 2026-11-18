@@ -121,10 +121,12 @@ commentaire dans le code.
 >
 > **## Un numéro court n’est pas un code NOEMIE**
 >
-> Des numéros comme « 153 » ou « 159 » circulent sur le web. Aucun ne figure dans les documents officiels lus : un code
-> rejet NOEMIE du régime général s’écrit sur 7 chiffres. Un numéro court est souvent un code tronqué ou propre à un
-> logiciel. Cherchez un mot du libellé, ou demandez la table à votre éditeur : la table complète des codes n’est pas
-> publique, elle est diffusée aux éditeurs.
+> Des numéros comme « 153 » ou « 159 » circulent sur le web. Aucun ne figure dans les documents officiels lus : dans les
+> mémos des caisses, un code rejet NOEMIE s’écrit sur 7 chiffres. Un numéro court est souvent un code tronqué ou propre à
+> un logiciel. Cherchez un mot du libellé, ou demandez la table à votre éditeur : nous n’avons trouvé aucune table
+> complète des codes qui soit publique. [Relecture du 18/11/2026 : « du régime général s’écrit sur 7 chiffres » et
+> « la table n’est pas publique, elle est diffusée aux éditeurs » affirmaient plus que les sources ; le cahier des
+> charges NOEMIE PS prévoit une codification sur 10 caractères.]
 > [sources.md, « Pièges relevés » et « Ce qui manque »]
 >
 > **## Et la part mutuelle ?**
@@ -156,8 +158,8 @@ Les questions évitent celles de la FAQ de l’article `codes-rejets-noemie` («
 « Où trouver la liste… ? ») pour ne pas lui disputer ses réponses.
 
 **Que veut dire un code rejet comme 153 ?**
-Aucun code de ce format ne figure dans les documents officiels lus : un code rejet NOEMIE du régime général s’écrit
-sur 7 chiffres, comme 0450054. Un numéro court est souvent un code tronqué ou propre à votre logiciel. Cherchez plutôt
+Aucun code de ce format ne figure dans les documents officiels lus : dans les mémos des caisses, un code rejet NOEMIE
+s’écrit sur 7 chiffres, comme 0450054. Un numéro court est souvent un code tronqué ou propre à votre logiciel. Cherchez plutôt
 un mot du libellé affiché sur votre retour. [sources.md, « Pièges relevés » ; questions.md]
 
 **Pourquoi un même code a-t-il deux libellés ?**

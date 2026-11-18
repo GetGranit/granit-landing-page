@@ -45,7 +45,7 @@ export const FAQ_HUB: QuestionOutil[] = [
   {
     question: "Que veut dire un code rejet comme 153\u00a0?",
     reponse:
-      "Aucun code de ce format ne figure dans les documents officiels lus\u00a0: un code rejet NOEMIE du régime général s’écrit sur 7\u00a0chiffres, comme 0450054. Un numéro court est souvent un code tronqué ou propre à votre logiciel. Cherchez plutôt un mot du libellé affiché sur votre retour.",
+      "Aucun code de ce format ne figure dans les documents officiels lus\u00a0: dans les mémos des caisses, un code rejet NOEMIE s’écrit sur 7\u00a0chiffres, comme 0450054. Un numéro court est souvent un code tronqué ou propre à votre logiciel. Cherchez plutôt un mot du libellé affiché sur votre retour.",
   },
   {
     question: "Pourquoi un même code a-t-il deux libellés\u00a0?",

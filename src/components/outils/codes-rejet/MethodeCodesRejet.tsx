@@ -49,10 +49,10 @@ export function MethodeCodesRejet({ suivre }: { suivre: Suivre }) {
       <SectionOutil id="numero-court" titre="Un numéro court n’est pas un code NOEMIE">
         <p>
           Des numéros comme «&nbsp;153&nbsp;» ou «&nbsp;159&nbsp;» circulent sur le web. Aucun ne
-          figure dans les documents officiels lus&nbsp;: un code rejet NOEMIE du régime général
-          s’écrit sur 7&nbsp;chiffres. Un numéro court est souvent un code tronqué ou propre à un
-          logiciel. Cherchez un mot du libellé, ou demandez la table à votre éditeur&nbsp;: la table
-          complète des codes n’est pas publique, elle est diffusée aux éditeurs.
+          figure dans les documents officiels lus&nbsp;: dans les mémos des caisses, un code rejet
+          NOEMIE s’écrit sur 7&nbsp;chiffres. Un numéro court est souvent un code tronqué ou propre
+          à un logiciel. Cherchez un mot du libellé, ou demandez la table à votre éditeur&nbsp;:
+          nous n’avons trouvé aucune table complète des codes qui soit publique.
         </p>
       </SectionOutil>
 
