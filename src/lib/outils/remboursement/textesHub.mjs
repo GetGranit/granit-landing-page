@@ -25,7 +25,7 @@ export const RECHERCHE = {
 
 /** Phrase « fait foi » (textes.md § 1.3) : la version et la date viennent de la source LPP. */
 export const FAIT_FOI =
-  "Ces montants viennent de la base LPP de l'Assurance Maladie (version {version} du {datelpp}), qui fait foi. Un code par fabricant reprend les montants de son code générique.";
+  "Ces montants viennent de la base LPP de l'Assurance Maladie (version {version} du {datelpp}), qui fait foi. Un code par fabricant reprend en général les montants de son code générique.";
 
 /** Fourchette du décret n° 2026-810 pour la part Sécu de la LPP au 01/01/2027 (formules.md § 5). */
 export const FOURCHETTE_LPP_2027 = "entre 40 et 50 %";
@@ -45,7 +45,7 @@ export const BANDEAU_2027 = {
     texte:
       "La part de la Sécurité sociale sur les produits de la LPP (optique, aides auditives) va baisser : le taux, aujourd'hui de {taux:2263287} %, sera compris " +
       FOURCHETTE_LPP_2027 +
-      " (décret n° 2026-810 du 21 août 2026). Le taux exact n'était pas publié au {verifie}. La base et le prix limite ne changent pas ; en 100 % Santé, le reste à charge reste nul en contrat responsable : c'est la part de la complémentaire qui augmente.",
+      " (décret n° 2026-810 du 21 août 2026). Le taux exact n'était pas publié au {verifie}. Le décret ne change ni la base ni le prix limite ; en 100 % Santé, le reste à charge reste nul en contrat responsable : c'est la part de la complémentaire qui augmente.",
   },
   nonPublie: {
     titre: "Depuis le 1er janvier 2027",
@@ -57,7 +57,7 @@ export const BANDEAU_2027 = {
   publie: {
     titre: "Depuis le 1er janvier 2027",
     texte:
-      "Depuis le 1er janvier 2027, la part de la Sécurité sociale sur les produits de la LPP (optique, aides auditives) est de {taux:2263287} % de la base (décret n° 2026-810). La base et le prix limite ne changent pas ; en 100 % Santé, le reste à charge reste nul en contrat responsable.",
+      "Depuis le 1er janvier 2027, la part de la Sécurité sociale sur les produits de la LPP (optique, aides auditives) est de {taux:2263287} % de la base (décret n° 2026-810). Le décret ne change ni la base ni le prix limite ; en 100 % Santé, le reste à charge reste nul en contrat responsable.",
   },
   source_ids: ["decret-2026-810", "css-r160-5-2027", "css-r871-2"],
 };
@@ -105,7 +105,7 @@ export const METHODE = [
     titre: "Codes génériques et codes par fabricant",
     p: [
       {
-        p: "Les montants de l'outil sont ceux des codes génériques de la LPP, qui commencent par 2. Un code par fabricant, qui commence par 7, reprend la désignation d'un code générique suivie du nom du fabricant, avec les mêmes montants : cherchez sa désignation pour les retrouver.",
+        p: "Les montants de l'outil sont ceux des codes génériques de la LPP, qui commencent par 2. Un code par fabricant, qui commence par 7, reprend, souvent en abrégé, la désignation d'un code générique suivie du nom du fabricant, en général avec les mêmes montants : cherchez sa désignation pour les retrouver.",
         source_ids: ["lpp-cnam-v910"],
       },
     ],
@@ -147,20 +147,20 @@ export const FAQ = [
     p:
       "Oui. Le décret n° 2026-810 du 21 août 2026 fait passer la participation de l'assuré sur les produits de la LPP (optique, aides auditives) de 40 à 50 % à 50 à 60 % au 1er janvier 2027 : la part de la Sécurité sociale sera comprise " +
       FOURCHETTE_LPP_2027 +
-      ", au lieu de {taux:2263287} %. Le taux exact n'était pas publié au {verifie}. La base et le prix limite ne changent pas ; en 100 % Santé, la complémentaire d'un contrat responsable prend la différence.",
+      ", au lieu de {taux:2263287} %. Le taux exact n'était pas publié au {verifie}. Le décret ne change ni la base ni le prix limite ; en 100 % Santé, la complémentaire d'un contrat responsable prend la différence.",
     apres: {
       nonPublie:
         "Oui. Depuis le 1er janvier 2027, le décret n° 2026-810 du 21 août 2026 fait passer la participation de l'assuré sur les produits de la LPP (optique, aides auditives) à 50 à 60 % : la part de la Sécurité sociale est comprise " +
         FOURCHETTE_LPP_2027 +
-        ". Le taux exact n'est pas encore publié. La base et le prix limite ne changent pas ; en 100 % Santé, la complémentaire d'un contrat responsable prend la différence.",
+        ". Le taux exact n'est pas encore publié. Le décret ne change ni la base ni le prix limite ; en 100 % Santé, la complémentaire d'un contrat responsable prend la différence.",
       publie:
-        "Oui. Depuis le 1er janvier 2027 (décret n° 2026-810 du 21 août 2026), la part de la Sécurité sociale sur les produits de la LPP (optique, aides auditives) est de {taux:2263287} % de la base. La base et le prix limite ne changent pas ; en 100 % Santé, la complémentaire d'un contrat responsable prend la différence.",
+        "Oui. Depuis le 1er janvier 2027 (décret n° 2026-810 du 21 août 2026), la part de la Sécurité sociale sur les produits de la LPP (optique, aides auditives) est de {taux:2263287} % de la base. Le décret ne change ni la base ni le prix limite ; en 100 % Santé, la complémentaire d'un contrat responsable prend la différence.",
     },
     source_ids: ["decret-2026-810", "css-r160-5-2027", "css-r871-2"],
   },
   {
     question: "Pourquoi le code LPP du devis commence-t-il par 7 ?",
-    p: "C'est un code par fabricant. Il reprend la désignation d'un code générique, qui commence par 2, suivie du nom du fabricant, avec les mêmes montants. Cherchez la désignation (« verre unifocal classe A ») pour retrouver la base et le prix limite.",
+    p: "C'est un code par fabricant. Il reprend, souvent en abrégé, la désignation d'un code générique, qui commence par 2, suivie du nom du fabricant, en général avec les mêmes montants. Cherchez la désignation (« verre unifocal classe A ») pour retrouver la base et le prix limite.",
     source_ids: ["lpp-cnam-v910"],
   },
 ];
@@ -186,7 +186,7 @@ export const OUTILS_LIES = {
  */
 export const ETAT_VIDE = {
   fabricant:
-    "Les codes qui commencent par 7 sont des codes par fabricant : ils reprennent la désignation et les montants d'un code générique, qui commence par 2. Cherchez la désignation (« verre unifocal classe A ») ou retrouvez le code générique dans la base LPP.",
+    "Les codes qui commencent par 7 sont des codes par fabricant : ils reprennent en général la désignation et les montants d'un code générique, qui commence par 2. Cherchez la désignation (« verre unifocal classe A ») ou retrouvez le code générique dans la base LPP.",
   inconnu:
     "Ce code n'est pas un code générique d'optique ou d'audio de la base LPP du {datelpp}. Vérifiez-le dans la base LPP de l'Assurance Maladie.",
   ccam: "Le dentaire n'est pas encore dans l'outil. Les honoraires limites des prothèses sont publiés par l'Assurance Maladie.",

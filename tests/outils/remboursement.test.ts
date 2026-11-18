@@ -249,7 +249,7 @@ describe("remboursement : groupes", () => {
     );
     assert.equal(
       nb(c("aides-auditives", APRES).reponse.join(" ")),
-      "Depuis le 1er janvier 2027, le nouveau taux de la Sécurité sociale n'est pas encore publié : nous n'affichons pas sa part. La base (400 € ou 1 400 €) et le prix limite de la classe I ne changent pas ; en classe I et en contrat responsable, le patient ne paie rien jusqu'à ce prix.",
+      "Depuis le 1er janvier 2027, le nouveau taux de la Sécurité sociale n'est pas encore publié : nous n'affichons pas sa part. Le décret ne change ni la base (400 € ou 1 400 €) ni le prix limite de la classe I ; en classe I et en contrat responsable, le patient ne paie rien jusqu'à ce prix.",
     );
     assert.equal(nb(u.paragraphes[0].texte).includes("revient au plus à 95 €"), true);
   });

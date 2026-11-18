@@ -50,7 +50,7 @@ chaque code » : hors 100 % Santé, l’outil ne donne que le minimum dû par
 
 > La part de la Sécurité sociale sur les produits de la LPP (optique, aides auditives) va baisser : le taux,
 > aujourd’hui de 60 %, sera compris entre 40 et 50 % (décret n° 2026-810 du 21 août 2026). Le taux exact n’était pas
-> publié au 18/11/2026. La base et le prix limite ne changent pas ; en 100 % Santé, le reste à charge reste nul en
+> publié au 18/11/2026. Le décret ne change ni la base ni le prix limite ; en 100 % Santé, le reste à charge reste nul en
 > contrat responsable : c’est la part de la complémentaire qui augmente.
 
 [decret-2026-810, css-r160-5-2027, css-r871-2 ; `formules.md` § 5]
@@ -63,13 +63,13 @@ chaque code » : hors 100 % Santé, l’outil ne donne que le minimum dû par
 `fait-foi` (pages de groupe, sous L’essentiel ; hub : au-dessus des sources) :
 
 > Ces montants viennent de la base LPP de l’Assurance Maladie (version 910 du 13/11/2026), qui fait foi. Un code par
-> fabricant reprend les montants de son code générique.
+> fabricant reprend en général les montants de son code générique.
 
 ### 1.4 État vide
 
 | Requête | Message |
 |---|---|
-| 7 chiffres commençant par 7 | Les codes qui commencent par 7 sont des codes par fabricant : ils reprennent la désignation et les montants d’un code générique, qui commence par 2. Cherchez la désignation (« verre unifocal classe A ») ou retrouvez le code générique dans la base LPP. + lien « Base LPP de l’Assurance Maladie » (source `lpp-cnam-v910`) |
+| 7 chiffres commençant par 7 | Les codes qui commencent par 7 sont des codes par fabricant : ils reprennent en général la désignation et les montants d’un code générique, qui commence par 2. Cherchez la désignation (« verre unifocal classe A ») ou retrouvez le code générique dans la base LPP. + lien « Base LPP de l’Assurance Maladie » (source `lpp-cnam-v910`) |
 | 7 chiffres, inconnus | Ce code n’est pas un code générique d’optique ou d’audio de la base LPP du 13/11/2026. Vérifiez-le dans la base LPP de l’Assurance Maladie. |
 | Code CCAM (4 lettres, 3 chiffres) | Le dentaire n’est pas encore dans l’outil. Les honoraires limites des prothèses sont publiés par l’Assurance Maladie. + lien `dentaire-paniers-100-sante-tiers-payant` |
 | 13 chiffres commençant par 34 | Les médicaments ne sont pas dans l’outil. La base de données publique des médicaments donne le prix et le taux de chaque boîte. + lien base-donnees-publique.medicaments.gouv.fr |
@@ -117,7 +117,7 @@ un code manquant » (`mailto:contact@getgranit.ai?subject=Code%20LPP%20manquant
 > **## Codes génériques et codes par fabricant**
 >
 > Les montants de l’outil sont ceux des codes génériques de la LPP, qui commencent par 2. Un code par fabricant, qui
-> commence par 7, reprend la désignation d’un code générique suivie du nom du fabricant, avec les mêmes montants :
+> commence par 7, reprend, souvent en abrégé, la désignation d’un code générique suivie du nom du fabricant, en général avec les mêmes montants :
 > cherchez sa désignation pour les retrouver.
 > [lpp-cnam-v910 ; sources.md, « Ce qu’on a extrait »]
 >
@@ -169,8 +169,8 @@ changent pas ; en 100 % Santé, la complémentaire d’un contrat responsable 
 [decret-2026-810, css-r160-5-2027, css-r871-2]
 
 **Pourquoi le code LPP du devis commence-t-il par 7 ?**
-C’est un code par fabricant. Il reprend la désignation d’un code générique, qui commence par 2, suivie du nom du
-fabricant, avec les mêmes montants. Cherchez la désignation (« verre unifocal classe A ») pour retrouver la base et le
+C’est un code par fabricant. Il reprend, souvent en abrégé, la désignation d’un code générique, qui commence par 2, suivie du nom du
+fabricant, en général avec les mêmes montants. Cherchez la désignation (« verre unifocal classe A ») pour retrouver la base et le
 prix limite. [lpp-cnam-v910 ; sources.md]
 
 ## 3. Les pages de groupe `/outils/remboursement/<groupe>`
@@ -350,7 +350,7 @@ Les équipements à 95 € et 180 € concordent avec la page du ministère su
 - **Description** (147) : Aide auditive classe I ou II, avant ou après 20 ans : base de remboursement, part Sécu, prix limite, plafond de 1 700 € et calcul pour un code LPP.
 - **H1** : Aide auditive classe I ou II : base de remboursement et part mutuelle
 - **Réponse** (chapeau, jusqu’au 31/12/2026) : En classe I (100 % Santé), la base est de 400 € pour les plus de 20 ans et de 1 400 € pour les 20 ans et moins : la Sécurité sociale en rembourse 60 %, et un contrat responsable paie le reste jusqu’au prix limite (950 € ou 1 400 €). En classe II, la base est la même et le prix libre ; la prise en charge d’un contrat responsable est plafonnée à 1 700 € par aide auditive, Sécurité sociale comprise.
-- **Réponse** (à partir du 01/01/2027, taux non publié) : Depuis le 1er janvier 2027, le nouveau taux de la Sécurité sociale n’est pas encore publié : nous n’affichons pas sa part. La base (400 € ou 1 400 €) et le prix limite de la classe I ne changent pas ; en classe I et en contrat responsable, le patient ne paie rien jusqu’à ce prix.
+- **Réponse** (à partir du 01/01/2027, taux non publié) : Depuis le 1er janvier 2027, le nouveau taux de la Sécurité sociale n’est pas encore publié : nous n’affichons pas sa part. Le décret ne change ni la base (400 € ou 1 400 €) ni le prix limite de la classe I ; en classe I et en contrat responsable, le patient ne paie rien jusqu’à ce prix.
 - **L’essentiel** : Base 400 € (plus de 20 ans) ou 1 400 € (20 ans et moins) · Taux Sécu 60 % (jusqu’au 31/12/2026) ·
   Prix limite en classe I : 950 € ou 1 400 € · Reste à charge en contrat responsable : 0 € en classe I, selon le
   contrat en classe II (plafond 1 700 €) · Tarif en vigueur depuis le 07/07/2023

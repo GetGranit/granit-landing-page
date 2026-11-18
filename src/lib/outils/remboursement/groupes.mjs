@@ -374,7 +374,7 @@ export const GROUPES = [
         "En classe II, la base est la même et le prix libre ; la prise en charge d'un contrat responsable est plafonnée à {plafond:2341840} par aide auditive, Sécurité sociale comprise.",
       ],
       nonPublie: [
-        "La base ({base:2351057} ou {base:2325120}) et le prix limite de la classe I ne changent pas ; en classe I et en contrat responsable, le patient ne paie rien jusqu'à ce prix.",
+        "Le décret ne change ni la base ({base:2351057} ou {base:2325120}) ni le prix limite de la classe I ; en classe I et en contrat responsable, le patient ne paie rien jusqu'à ce prix.",
       ],
     },
     parties: {
