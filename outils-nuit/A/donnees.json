@@ -625,7 +625,7 @@
    "slug": "noemie-0460051",
    "famille": "noemie",
    "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
-   "libelle_officiel": "PRESCRIPTEUR INCONNU DANS LE REPERTOIRE NATIONAL",
+   "libelle_officiel": "PRESCRIPTEUR INCONNU DANS REPERTOIRE NATIONAL",
    "explication": "Le numéro du prescripteur indiqué dans la facture est inconnu du répertoire national des professionnels de santé, ou erroné.",
    "cause": "Numéro de prescripteur mal saisi ou mal enregistré dans votre fichier des prescripteurs ; prescripteur salarié, remplaçant ou militaire saisi avec un numéro inadapté.",
    "action": "Reprenez le numéro qui figure sur l’ordonnance (recherche par numéro, pas par nom) et corrigez votre fichier des prescripteurs. Prescripteur salarié : numéro de la structure, avec la spécialité. Remplaçant : numéro du médecin remplacé. Médecin militaire : FINESS 750821092 du Service de santé des armées (mémo infirmiers de la CPAM de la Gironde).",
@@ -654,8 +654,8 @@
    "note_verification": "Les sources visent les pharmaciens, les infirmiers et les opticiens ; le rattachement aux centres de santé et aux laboratoires est déduit (soins sur prescription). Libellés publiés par des CPAM du régime général ; le libellé reçu dans votre propre retour fait foi et un autre régime peut employer un autre texte.",
    "libelles_variantes": [
     {
-     "texte": "PRESCRIPTEUR INCONNU DANS REPERTOIRE NATIONAL",
-     "source_id": "cpam33-pharmaciens-2019"
+     "texte": "PRESCRIPTEUR INCONNU DANS LE REPERTOIRE NATIONAL",
+     "source_id": "cpam33-infirmiers-2019"
     },
     {
      "texte": "Prescripteur inconnu au fichier des professionnels de santé",

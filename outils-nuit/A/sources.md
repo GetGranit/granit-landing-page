@@ -103,6 +103,12 @@ Faites avec `scripts/A/corriger_dev_a.py` (dossier de travail de la nuit), avant
 | `noemie-0710060` | `sur`, métier `clinique-laboratoire`, liste seulement | `a_verifier` | Même source, même problème, et sa note disait déjà « concerne les établissements publics, pas les cliniques privées » (T2A publique). |
 | sources | 25 | 26 | `cdc-noemie-ps-2004` ajoutée (voir plus haut). |
 
+Correction de la relecture (18/11/2026), sources rouvertes le jour même :
+
+| Entrée | Avant | Après | Pourquoi |
+|---|---|---|---|
+| `noemie-0460051` | libellé « PRESCRIPTEUR INCONNU DANS LE REPERTOIRE NATIONAL » attribué au mémo pharmaciens de la Gironde (12/04/2019) | libellé « PRESCRIPTEUR INCONNU DANS REPERTOIRE NATIONAL » (mémo pharmaciens, 12/04/2019) ; la forme avec « LE » passe en variante, attribuée au mémo infirmiers (22/11/2019) | Le mémo pharmaciens écrit « DANS REPERTOIRE » ; la forme avec « LE » est celle du mémo infirmiers. La page montrait deux libellés différents sous le même document. |
+
 À surveiller (non corrigé, la note de l'entrée le dit déjà sur la page) : `noemie-0460051` et `noemie-0460053` citent les
 centres de santé et les laboratoires par déduction (« soins sur prescription ») ; `noemie-0100052` (mémo « fournisseurs »)
 est rattaché à l'optique.
