@@ -2795,7 +2795,7 @@
       "codification CCAM dentaire"
     ],
     "searchVolume": 0,
-    "status": "pending",
+    "status": "published",
     "wave": 4,
     "level": "Fille",
     "parentSlug": "tiers-payant-professionnels-de-sante",
@@ -2848,7 +2848,8 @@
       "dentaire",
       "centres"
     ],
-    "unsplashQuery": "dental clinic"
+    "unsplashQuery": "dental clinic",
+    "publishedAt": "2026-11-19"
   },
   {
     "id": "VE1",

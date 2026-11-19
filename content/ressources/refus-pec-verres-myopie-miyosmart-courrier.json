@@ -150,7 +150,13 @@
       "type": "transverse"
     }
   ],
-  "liensEntrants": [],
+  "liensEntrants": [
+    {
+      "slug": "controle-cotations-ccam-centres-dentaires-checklist",
+      "anchor": "Contrôle des cotations CCAM : la checklist pour être prêt avant décembre",
+      "type": "soeur"
+    }
+  ],
   "remplace": [],
   "verticales": [
     "optique"
