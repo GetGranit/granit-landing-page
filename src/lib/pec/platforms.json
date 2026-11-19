@@ -1,5 +1,4 @@
 {
- "_source": "GetGranit/granit@d016145 tp/platforms.py, connectors/*/constants.py + manifest.json, agents/agent_pec/simulation_optique.py:42",
  "platforms": [
   {
    "id": "viamedis",

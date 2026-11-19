@@ -5,8 +5,8 @@ import data from "./estimations.json" with { type: "json" };
  * Estimation indicative du remboursement de la complémentaire, par portail de
  * gestion (pas par mutuelle : plusieurs mutuelles passent par le même portail).
  *
- * Source : facturations réelles de Granit (`tp_facturation.part_tp`), agrégées
- * HORS LIGNE en fourchettes anonymes (p25–médiane–p75) et figées dans
+ * Source : facturations optique réelles de Granit (part payée par la complémentaire),
+ * agrégées HORS LIGNE en fourchettes anonymes (p25–médiane–p75) et figées dans
  * estimations.json. Aucune donnée patient n'est embarquée ni ne transite ici :
  * ce ne sont que des ordres de grandeur. Ce N'EST PAS le remboursement du
  * client (il dépend de son contrat, de l'équipement et des prix du magasin).

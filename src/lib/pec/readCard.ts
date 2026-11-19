@@ -9,9 +9,7 @@ import { dateValide, nirCoherentAvecDate, nirValide } from "./simulation";
  * La photo est la carte d'un patient : donnée de santé. Elle ne fait que
  * traverser cette fonction (mémoire → API Anthropic → oubli) : aucun stockage,
  * aucun log de son contenu, et on ne demande au modèle QUE l'organisme et les
- * champs tiers payant, jamais l'identité ni le NIR. Le prompt reprend la partie
- * « organisme + tp » de granit_shared/medical_file_ocr/mutuelle_card.py
- * (GetGranit/granit@d016145), plus la date de fin de droits.
+ * champs tiers payant (plus la date de fin de droits), jamais l'identité ni le NIR.
  */
 
 /** Sortie du modèle : chaînes vides quand rien n'est lu (comme le produit). */

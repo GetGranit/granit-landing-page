@@ -1,22 +1,23 @@
-Données carte mutuelle -> portail TP (optique), exportées de GetGranit/granit@d016145 (07/10/2026).
-Sources : tp/platforms.py:101 (registre, alias, réseaux), tp/routing.py:19-38 (fold, catalogue),
-tp/classify.py:53 (candidates_for_card), connectors/*/name_options_optique.json (catalogues),
-connectors/*/constants.py Url.LOGIN (url), connectors/*/manifest.json + otp_email.py (tfa),
-agents/agent_pec/simulation_optique.py:42 (simulable), medical_file_ocr/mutuelle_card.py (prompt).
-Fermeture d'Oxantis le 26/10/2026 : source Acuité, absente du code. Le catalogue isanté n'est pas branché dans le registre, donc ignoré.
-Réexporter : cloner le repo produit, puis `python3 pec-export.py <clone> pec-data` (scratchpad/pec-export.py).
-url, tfa et note sont des tables écrites à la main dans le script : à revoir si un connecteur change.
-Tests : copier dans un dossier, ajouter `with { type: "json" }` aux imports JSON,
-puis `node --experimental-strip-types --test classify.test.ts`. Résultat au 07/10 : 20/20 OK.
-Note de fermeture Oxantis réécrite à la main pour l'opticien dans src/lib/pec/platforms.json (le script d'export met une note interne).
-04/11/2026 : Oxantis a fermé, Viamedis reprend (Acuité). Dans platforms.json, oxantis renvoie vers viamedis (url, tfa, reseau_via), à refaire après un réexport.
-Tests : node --experimental-strip-types --test tests/pec/*.test.ts (routage + garde-fou d'affichage).
+Données du lead magnet /pec. Ce dépôt est PUBLIC : on n'y met rien du code produit
+(chemin, numéro de ligne, table de routage, catalogue de portail, nom de table ou d'accès à
+la base). Ce qui en vient reste dans les dépôts privés.
+
+platforms.json : les portails de tiers payant que /pec sait nommer (libellé, adresse de
+connexion, double authentification, simulable ou non, note pour l'opticien). Liste reprise
+du produit le 07/10/2026, tenue à la main depuis.
+04/11/2026 : Oxantis a fermé le 26/10/2026, Viamedis reprend (Acuité). Dans platforms.json,
+oxantis renvoie vers viamedis (url, tfa, reseau_via).
+
+Carte → portail (resolve.ts) : seulement le portail ou le réseau écrit sur la carte
+(gestionnaire, ligne optique, réseau). Aucune correspondance mutuelle → portail. Une carte
+qui ne nomme aucun portail connu donne « inconnu », et l'opticien est orienté vers Paul.
+Une table mutuelle → portail ne reviendra ici que construite sur des sources publiques,
+chacune citée et datée.
 
 estimations.json (21/10/2026) : fourchettes indicatives du remboursement complémentaire par
-portail de gestion, pour l'écran résultat du lead magnet. Source = prod `tp_facturation.part_tp`
-(ce que le TP a réellement payé), agrégé HORS LIGNE en p25/médiane/p75 par portail x équipement,
-seuil n>=10, Oxantis exclu (fermeture 26/10). Que des agrégats anonymes : aucun dossier patient
-n'est embarqué (OK pour Vercel, non-HDS). À régénérer périodiquement (la fenêtre de départ ne fait
-que ~8 jours) : requête lecture seule sur la base prod (granit_readonly), cf. skill
-smoke-test-connecteurs pour le montage de connexion. Ce n'est PAS le remboursement d'un client
-donné (dépend du contrat, de l'équipement, des prix du magasin) — c'est dit explicitement à l'écran.
+portail, pour l'écran résultat. Agrégats anonymes (p25/médiane/p75 par portail x équipement,
+seuil n>=10, Oxantis exclu) : aucun dossier patient n'est embarqué. Ce n'est PAS le
+remboursement d'un client donné (contrat, équipement, prix du magasin) : c'est dit à l'écran.
+La procédure de régénération n'est pas dans ce dépôt public.
+
+Tests : npm test (dont tests/pec/*.test.ts).

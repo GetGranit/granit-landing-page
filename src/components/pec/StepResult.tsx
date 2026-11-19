@@ -93,7 +93,7 @@ const copy = {
     passePar: "Cette mutuelle passe par ",
     plusieurs: "plusieurs portails",
     habitude: "Sur lequel faites-vous d'habitude ses PEC ?",
-    aucun: "Aucun de ceux-là : je tape la mutuelle",
+    aucun: "Aucun de ceux-là : je tape le portail",
   },
   en: {
     lignes: { mutuelle: "Insurer", reseau: "Network", amc: "AMC no.", portail: "Portal" },
@@ -159,7 +159,7 @@ const copy = {
     passePar: "This insurer goes through ",
     plusieurs: "several portals",
     habitude: "Which one do you usually use for its coverage requests?",
-    aucun: "None of these: I’ll type the insurer",
+    aucun: "None of these: I’ll type the portal",
   },
 };
 type Copy = (typeof copy)["fr"];

@@ -14,7 +14,7 @@ const copy = {
     importer: "Importer une photo ou un PDF",
     pasDeClient: "Pas de client sous la main ?",
     exemple: "Essayer avec une carte d'exemple",
-    taper: "Taper le nom de la mutuelle",
+    taper: "Taper le nom du portail",
     reassure: ["Photo lue par IA, jamais conservée par Granit", "Gratuit, sans inscription"],
     frameLabel: "Importer une photo ou un PDF de la carte",
     frameHint: "carte à plat, recto, bien éclairée",
@@ -29,7 +29,7 @@ const copy = {
     importer: "Upload a photo or a PDF",
     pasDeClient: "No customer at hand?",
     exemple: "Try with a sample card",
-    taper: "Type the insurer’s name",
+    taper: "Type the portal’s name",
     reassure: ["Photo read by AI, never stored by Granit", "Free, no sign-up"],
     frameLabel: "Upload a photo or a PDF of the card",
     frameHint: "card flat, front side, well lit",
@@ -39,7 +39,7 @@ const copy = {
 /**
  * E1 · la photo. Caméra arrière d'abord, import juste en dessous (la carte est
  * souvent déjà en photo sur le téléphone), et deux portes de sortie sans
- * jugement : la carte d'exemple et la saisie du nom de la mutuelle.
+ * jugement : la carte d'exemple et la saisie du nom du portail.
  */
 export function StepCapture({
   onFile,
