@@ -148,5 +148,12 @@ export function ciblesDeLiens(file, article) {
     cibles.set(`/ressources/${a.slug}`, a.titre);
   }
   cibles.set("/ressources", "Hub des ressources");
+  // Les outils gratuits (src/lib/outils/<id>/ avec outil.mjs et pages.mjs) : leur hub est une cible.
+  const outils = join(RACINE, "src/lib/outils");
+  if (existsSync(outils))
+    for (const e of readdirSync(outils, { withFileTypes: true }))
+      if (e.isDirectory() && existsSync(join(outils, e.name, "outil.mjs")) && existsSync(join(outils, e.name, "pages.mjs")))
+        cibles.set(`/outils/${e.name}`, `Outil ${e.name}`);
+  cibles.set("/outils", "Outils gratuits");
   return cibles;
 }

@@ -42,6 +42,8 @@ import { Route as RessourcesIndexRouteImport } from './routes/ressources.index'
 import { Route as RessourcesSlugRouteImport } from './routes/ressources.$slug'
 import { Route as WebinarIaMagasinRouteImport } from './routes/webinar.ia-magasin'
 import { Route as EnBlogSplatRouteImport } from './routes/en.blog.$'
+import { Route as OutilsCodesRejetIndexRouteImport } from './routes/outils.codes-rejet.index'
+import { Route as OutilsCodesRejetSlugRouteImport } from './routes/outils.codes-rejet.$slug'
 import { Route as OutilsRemboursementIndexRouteImport } from './routes/outils.remboursement.index'
 import { Route as OutilsRemboursementSlugRouteImport } from './routes/outils.remboursement.$slug'
 import { Route as RessourcesCategorieCategoryRouteImport } from './routes/ressources.categorie.$category'
@@ -212,6 +214,16 @@ const EnBlogSplatRoute = EnBlogSplatRouteImport.update({
   path: '/en/blog/$',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OutilsCodesRejetIndexRoute = OutilsCodesRejetIndexRouteImport.update({
+  id: '/outils/codes-rejet/',
+  path: '/outils/codes-rejet/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OutilsCodesRejetSlugRoute = OutilsCodesRejetSlugRouteImport.update({
+  id: '/outils/codes-rejet/$slug',
+  path: '/outils/codes-rejet/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OutilsRemboursementIndexRoute =
   OutilsRemboursementIndexRouteImport.update({
     id: '/outils/remboursement/',
@@ -270,9 +282,11 @@ export interface FileRoutesByFullPath {
   '/outils/': typeof OutilsIndexRoute
   '/ressources/': typeof RessourcesIndexRoute
   '/en/blog/$': typeof EnBlogSplatRoute
+  '/outils/codes-rejet/$slug': typeof OutilsCodesRejetSlugRoute
   '/outils/remboursement/$slug': typeof OutilsRemboursementSlugRoute
   '/ressources/categorie/$category': typeof RessourcesCategorieCategoryRoute
   '/ressources/metier/$verticale': typeof RessourcesMetierVerticaleRoute
+  '/outils/codes-rejet/': typeof OutilsCodesRejetIndexRoute
   '/outils/remboursement/': typeof OutilsRemboursementIndexRoute
 }
 export interface FileRoutesByTo {
@@ -307,9 +321,11 @@ export interface FileRoutesByTo {
   '/outils': typeof OutilsIndexRoute
   '/ressources': typeof RessourcesIndexRoute
   '/en/blog/$': typeof EnBlogSplatRoute
+  '/outils/codes-rejet/$slug': typeof OutilsCodesRejetSlugRoute
   '/outils/remboursement/$slug': typeof OutilsRemboursementSlugRoute
   '/ressources/categorie/$category': typeof RessourcesCategorieCategoryRoute
   '/ressources/metier/$verticale': typeof RessourcesMetierVerticaleRoute
+  '/outils/codes-rejet': typeof OutilsCodesRejetIndexRoute
   '/outils/remboursement': typeof OutilsRemboursementIndexRoute
 }
 export interface FileRoutesById {
@@ -347,9 +363,11 @@ export interface FileRoutesById {
   '/outils/': typeof OutilsIndexRoute
   '/ressources/': typeof RessourcesIndexRoute
   '/en/blog/$': typeof EnBlogSplatRoute
+  '/outils/codes-rejet/$slug': typeof OutilsCodesRejetSlugRoute
   '/outils/remboursement/$slug': typeof OutilsRemboursementSlugRoute
   '/ressources/categorie/$category': typeof RessourcesCategorieCategoryRoute
   '/ressources/metier/$verticale': typeof RessourcesMetierVerticaleRoute
+  '/outils/codes-rejet/': typeof OutilsCodesRejetIndexRoute
   '/outils/remboursement/': typeof OutilsRemboursementIndexRoute
 }
 export interface FileRouteTypes {
@@ -388,9 +406,11 @@ export interface FileRouteTypes {
     | '/outils/'
     | '/ressources/'
     | '/en/blog/$'
+    | '/outils/codes-rejet/$slug'
     | '/outils/remboursement/$slug'
     | '/ressources/categorie/$category'
     | '/ressources/metier/$verticale'
+    | '/outils/codes-rejet/'
     | '/outils/remboursement/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -425,9 +445,11 @@ export interface FileRouteTypes {
     | '/outils'
     | '/ressources'
     | '/en/blog/$'
+    | '/outils/codes-rejet/$slug'
     | '/outils/remboursement/$slug'
     | '/ressources/categorie/$category'
     | '/ressources/metier/$verticale'
+    | '/outils/codes-rejet'
     | '/outils/remboursement'
   id:
     | '__root__'
@@ -464,9 +486,11 @@ export interface FileRouteTypes {
     | '/outils/'
     | '/ressources/'
     | '/en/blog/$'
+    | '/outils/codes-rejet/$slug'
     | '/outils/remboursement/$slug'
     | '/ressources/categorie/$category'
     | '/ressources/metier/$verticale'
+    | '/outils/codes-rejet/'
     | '/outils/remboursement/'
   fileRoutesById: FileRoutesById
 }
@@ -500,7 +524,9 @@ export interface RootRouteChildren {
   MetiersIndexRoute: typeof MetiersIndexRoute
   OutilsIndexRoute: typeof OutilsIndexRoute
   EnBlogSplatRoute: typeof EnBlogSplatRoute
+  OutilsCodesRejetSlugRoute: typeof OutilsCodesRejetSlugRoute
   OutilsRemboursementSlugRoute: typeof OutilsRemboursementSlugRoute
+  OutilsCodesRejetIndexRoute: typeof OutilsCodesRejetIndexRoute
   OutilsRemboursementIndexRoute: typeof OutilsRemboursementIndexRoute
 }
 
@@ -737,6 +763,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EnBlogSplatRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/outils/codes-rejet/': {
+      id: '/outils/codes-rejet/'
+      path: '/outils/codes-rejet'
+      fullPath: '/outils/codes-rejet/'
+      preLoaderRoute: typeof OutilsCodesRejetIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/outils/codes-rejet/$slug': {
+      id: '/outils/codes-rejet/$slug'
+      path: '/outils/codes-rejet/$slug'
+      fullPath: '/outils/codes-rejet/$slug'
+      preLoaderRoute: typeof OutilsCodesRejetSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/outils/remboursement/': {
       id: '/outils/remboursement/'
       path: '/outils/remboursement'
@@ -830,7 +870,9 @@ const rootRouteChildren: RootRouteChildren = {
   MetiersIndexRoute: MetiersIndexRoute,
   OutilsIndexRoute: OutilsIndexRoute,
   EnBlogSplatRoute: EnBlogSplatRoute,
+  OutilsCodesRejetSlugRoute: OutilsCodesRejetSlugRoute,
   OutilsRemboursementSlugRoute: OutilsRemboursementSlugRoute,
+  OutilsCodesRejetIndexRoute: OutilsCodesRejetIndexRoute,
   OutilsRemboursementIndexRoute: OutilsRemboursementIndexRoute,
 }
 export const routeTree = rootRouteImport
