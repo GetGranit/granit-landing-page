@@ -1,0 +1,12 @@
+sc-partenaires https://www.santeclair.fr/fr/complementaires-sante-partenaires
+sc-gmf https://www.santeclair.fr/fr/beneficiaire/services-sante-gmf
+sc-maaf https://www.santeclair.fr/fr/beneficiaire/services-sante-maaf
+mutuelle-sg https://mutuelle-sg.com/demarches-tiers-payant
+lmg-tp https://www.lamutuellegenerale.fr/a-propos/newsroom/un-service-de-tiers-payant-simple-pratique-efficace
+cbp-qsn https://carteblanchepartenaires.fr/sante/qui-sommes-nous
+kalixia-optique https://www.kalixia.fr/optique/
+mese-pro https://www.mese.fr/vous-etes-opticien
+mutelios-viamedis https://www.mutelios.com/partenaires-de-sante/viamedis
+mcvpap-viamedis https://www.mutcomplementaire.fr/services-et-avantages-adherents/services-inclus/le-tiers-payant-avec-viamedis/
+gan-tp https://www.gan.fr/faq/pratiquez-vous-le-tiers-payant/
+seveane-optique https://www.seveane.com/home/optique.html

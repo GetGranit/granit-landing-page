@@ -35,12 +35,15 @@ import { Route as EnIndexRouteImport } from './routes/en.index'
 import { Route as EnCgvRouteImport } from './routes/en.cgv'
 import { Route as MetiersIndexRouteImport } from './routes/metiers.index'
 import { Route as MetiersMetierRouteImport } from './routes/metiers.$metier'
+import { Route as OutilsIndexRouteImport } from './routes/outils.index'
 import { Route as OutilsHeuresDeDecembreRouteImport } from './routes/outils.heures-de-decembre'
 import { Route as OutilsTriDesMarquesRouteImport } from './routes/outils.tri-des-marques'
 import { Route as RessourcesIndexRouteImport } from './routes/ressources.index'
 import { Route as RessourcesSlugRouteImport } from './routes/ressources.$slug'
 import { Route as WebinarIaMagasinRouteImport } from './routes/webinar.ia-magasin'
 import { Route as EnBlogSplatRouteImport } from './routes/en.blog.$'
+import { Route as OutilsMutuellePortailIndexRouteImport } from './routes/outils.mutuelle-portail.index'
+import { Route as OutilsMutuellePortailSlugRouteImport } from './routes/outils.mutuelle-portail.$slug'
 import { Route as RessourcesCategorieCategoryRouteImport } from './routes/ressources.categorie.$category'
 import { Route as RessourcesMetierVerticaleRouteImport } from './routes/ressources.metier.$verticale'
 
@@ -174,6 +177,11 @@ const MetiersMetierRoute = MetiersMetierRouteImport.update({
   path: '/metiers/$metier',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OutilsIndexRoute = OutilsIndexRouteImport.update({
+  id: '/outils/',
+  path: '/outils/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OutilsHeuresDeDecembreRoute = OutilsHeuresDeDecembreRouteImport.update({
   id: '/outils/heures-de-decembre',
   path: '/outils/heures-de-decembre',
@@ -204,6 +212,18 @@ const EnBlogSplatRoute = EnBlogSplatRouteImport.update({
   path: '/en/blog/$',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OutilsMutuellePortailIndexRoute =
+  OutilsMutuellePortailIndexRouteImport.update({
+    id: '/outils/mutuelle-portail/',
+    path: '/outils/mutuelle-portail/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const OutilsMutuellePortailSlugRoute =
+  OutilsMutuellePortailSlugRouteImport.update({
+    id: '/outils/mutuelle-portail/$slug',
+    path: '/outils/mutuelle-portail/$slug',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const RessourcesCategorieCategoryRoute =
   RessourcesCategorieCategoryRouteImport.update({
     id: '/categorie/$category',
@@ -248,10 +268,13 @@ export interface FileRoutesByFullPath {
   '/agents/': typeof AgentsIndexRoute
   '/en/': typeof EnIndexRoute
   '/metiers/': typeof MetiersIndexRoute
+  '/outils/': typeof OutilsIndexRoute
   '/ressources/': typeof RessourcesIndexRoute
   '/en/blog/$': typeof EnBlogSplatRoute
+  '/outils/mutuelle-portail/$slug': typeof OutilsMutuellePortailSlugRoute
   '/ressources/categorie/$category': typeof RessourcesCategorieCategoryRoute
   '/ressources/metier/$verticale': typeof RessourcesMetierVerticaleRoute
+  '/outils/mutuelle-portail/': typeof OutilsMutuellePortailIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -282,10 +305,13 @@ export interface FileRoutesByTo {
   '/agents': typeof AgentsIndexRoute
   '/en': typeof EnIndexRoute
   '/metiers': typeof MetiersIndexRoute
+  '/outils': typeof OutilsIndexRoute
   '/ressources': typeof RessourcesIndexRoute
   '/en/blog/$': typeof EnBlogSplatRoute
+  '/outils/mutuelle-portail/$slug': typeof OutilsMutuellePortailSlugRoute
   '/ressources/categorie/$category': typeof RessourcesCategorieCategoryRoute
   '/ressources/metier/$verticale': typeof RessourcesMetierVerticaleRoute
+  '/outils/mutuelle-portail': typeof OutilsMutuellePortailIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -319,10 +345,13 @@ export interface FileRoutesById {
   '/agents/': typeof AgentsIndexRoute
   '/en/': typeof EnIndexRoute
   '/metiers/': typeof MetiersIndexRoute
+  '/outils/': typeof OutilsIndexRoute
   '/ressources/': typeof RessourcesIndexRoute
   '/en/blog/$': typeof EnBlogSplatRoute
+  '/outils/mutuelle-portail/$slug': typeof OutilsMutuellePortailSlugRoute
   '/ressources/categorie/$category': typeof RessourcesCategorieCategoryRoute
   '/ressources/metier/$verticale': typeof RessourcesMetierVerticaleRoute
+  '/outils/mutuelle-portail/': typeof OutilsMutuellePortailIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -357,10 +386,13 @@ export interface FileRouteTypes {
     | '/agents/'
     | '/en/'
     | '/metiers/'
+    | '/outils/'
     | '/ressources/'
     | '/en/blog/$'
+    | '/outils/mutuelle-portail/$slug'
     | '/ressources/categorie/$category'
     | '/ressources/metier/$verticale'
+    | '/outils/mutuelle-portail/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -391,10 +423,13 @@ export interface FileRouteTypes {
     | '/agents'
     | '/en'
     | '/metiers'
+    | '/outils'
     | '/ressources'
     | '/en/blog/$'
+    | '/outils/mutuelle-portail/$slug'
     | '/ressources/categorie/$category'
     | '/ressources/metier/$verticale'
+    | '/outils/mutuelle-portail'
   id:
     | '__root__'
     | '/'
@@ -427,10 +462,13 @@ export interface FileRouteTypes {
     | '/agents/'
     | '/en/'
     | '/metiers/'
+    | '/outils/'
     | '/ressources/'
     | '/en/blog/$'
+    | '/outils/mutuelle-portail/$slug'
     | '/ressources/categorie/$category'
     | '/ressources/metier/$verticale'
+    | '/outils/mutuelle-portail/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -461,7 +499,10 @@ export interface RootRouteChildren {
   AgentsIndexRoute: typeof AgentsIndexRoute
   EnIndexRoute: typeof EnIndexRoute
   MetiersIndexRoute: typeof MetiersIndexRoute
+  OutilsIndexRoute: typeof OutilsIndexRoute
   EnBlogSplatRoute: typeof EnBlogSplatRoute
+  OutilsMutuellePortailSlugRoute: typeof OutilsMutuellePortailSlugRoute
+  OutilsMutuellePortailIndexRoute: typeof OutilsMutuellePortailIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -648,6 +689,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MetiersMetierRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/outils/': {
+      id: '/outils/'
+      path: '/outils'
+      fullPath: '/outils/'
+      preLoaderRoute: typeof OutilsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/outils/heures-de-decembre': {
       id: '/outils/heures-de-decembre'
       path: '/outils/heures-de-decembre'
@@ -688,6 +736,20 @@ declare module '@tanstack/react-router' {
       path: '/en/blog/$'
       fullPath: '/en/blog/$'
       preLoaderRoute: typeof EnBlogSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/outils/mutuelle-portail/': {
+      id: '/outils/mutuelle-portail/'
+      path: '/outils/mutuelle-portail'
+      fullPath: '/outils/mutuelle-portail/'
+      preLoaderRoute: typeof OutilsMutuellePortailIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/outils/mutuelle-portail/$slug': {
+      id: '/outils/mutuelle-portail/$slug'
+      path: '/outils/mutuelle-portail/$slug'
+      fullPath: '/outils/mutuelle-portail/$slug'
+      preLoaderRoute: typeof OutilsMutuellePortailSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/ressources/categorie/$category': {
@@ -767,7 +829,10 @@ const rootRouteChildren: RootRouteChildren = {
   AgentsIndexRoute: AgentsIndexRoute,
   EnIndexRoute: EnIndexRoute,
   MetiersIndexRoute: MetiersIndexRoute,
+  OutilsIndexRoute: OutilsIndexRoute,
   EnBlogSplatRoute: EnBlogSplatRoute,
+  OutilsMutuellePortailSlugRoute: OutilsMutuellePortailSlugRoute,
+  OutilsMutuellePortailIndexRoute: OutilsMutuellePortailIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

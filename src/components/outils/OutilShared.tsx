@@ -5,6 +5,8 @@ import { usePostHog } from "posthog-js/react";
 import { getAttribution } from "@/lib/attribution";
 import { envoyerMailOutil, type CorpsMailOutil } from "@/lib/outils/envoyerMailOutil";
 import { lienRdv } from "@/lib/outils/mailOutils";
+import { nettoyerRequete } from "@/lib/outils/socle/recherche";
+import { EVENEMENTS } from "@/lib/outils/socle/suivi";
 import {
   logDemoRequestDelivered,
   logDemoRequestDeliveryFailed,
@@ -13,30 +15,79 @@ import {
 import { submitDemo } from "@/lib/submitDemo";
 
 /**
- * Ce que partagent les deux outils gratuits (/outils/tri-des-marques et
+ * Ce que partagent les deux outils gratuits de campagne (/outils/tri-des-marques et
  * /outils/heures-de-decembre) : le suivi PostHog, l'en-tête, le bloc de
  * résultat et le formulaire qui livre le lead (B11 puis mail de secours) et
- * envoie son mail à l'opticien.
+ * envoie son mail à l'opticien. Les trois outils référentiels (codes-rejet,
+ * remboursement, mutuelle-portail) prennent ici le suivi et l'en-tête ; le reste
+ * de leurs composants est dans src/components/outils/socle/.
  *
- * Suivi PostHog, le même tunnel pour les deux outils (propriété `outil`) :
+ * Suivi PostHog, le même tunnel pour les deux outils de campagne (propriété `outil`) :
  *   lm_page_vue → lm_outil_commence → lm_resultat_vu → lm_formulaire_envoye
  * plus lm_pont_rempli (tri des marques), lm_mail_envoye et lm_rdv_clic.
+ * Les outils référentiels ajoutent le catalogue de src/lib/outils/socle/suivi.ts.
  * Les utm_* du lien d'arrivée sont déjà attachées à chaque événement par
  * __root.tsx (posthog.register) : pas besoin de les repasser ici.
  */
-export type Outil = "tri-des-marques" | "heures-de-decembre";
+export type Outil =
+  "tri-des-marques" | "heures-de-decembre" | "codes-rejet" | "remboursement" | "mutuelle-portail";
 
-export function useSuiviOutil(outil: Outil) {
+/** Où l'on est dans un outil référentiel ; fusionné dans chaque événement. */
+export type ContexteSuivi = {
+  page?: "hub" | "entree" | "index" | "introuvable";
+  entree?: string;
+  groupe?: string;
+};
+
+/** Ce que mesure lm_recherche, en plus de la requête nettoyée. */
+export type MesureRecherche = {
+  visibles: number;
+  exact: boolean;
+  filtres: Record<string, string | null>;
+};
+
+/** lm_recherche part 800 ms après la dernière frappe (ou tout de suite pour un ?q= à l'arrivée). */
+const DELAI_RECHERCHE = 800;
+
+/**
+ * Sans `contexte` (les deux outils de campagne) : les mêmes événements et les mêmes propriétés
+ * qu'avant le socle. Avec `contexte`, ses valeurs sont ajoutées à chaque événement ; les effets
+ * dépendent de ces valeurs, pas de l'objet : lm_page_vue ne repart que si la page change (navigation
+ * d'une entrée à sa voisine).
+ */
+export function useSuiviOutil(outil: Outil, contexte: ContexteSuivi = {}) {
   const posthog = usePostHog();
   const dejaCommence = useRef(false);
   const dejaVu = useRef(false);
   const resultat = useRef<HTMLDivElement | null>(null);
+  const derniereRecherche = useRef("");
+  const minuterie = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  const { page, entree, groupe } = contexte;
 
   const suivre = useCallback(
     (evenement: string, proprietes: Record<string, unknown> = {}) =>
-      posthog?.capture(evenement, { outil, ...proprietes }),
-    [posthog, outil],
+      posthog?.capture(evenement, {
+        outil,
+        ...(page !== undefined && { page }),
+        ...(entree !== undefined && { entree }),
+        ...(groupe !== undefined && { groupe }),
+        ...proprietes,
+      }),
+    [posthog, outil, page, entree, groupe],
   );
+
+  // Nouvelle page dans le même composant (entrée → entrée voisine) : le tunnel repart de zéro.
+  // Déclaré avant lm_page_vue pour passer avant lui ; sans contexte, il ne fait jamais rien.
+  const premiereFois = useRef(true);
+  useEffect(() => {
+    if (premiereFois.current) {
+      premiereFois.current = false;
+      return;
+    }
+    dejaCommence.current = false;
+    dejaVu.current = false;
+    derniereRecherche.current = "";
+  }, [page, entree, groupe]);
 
   useEffect(() => {
     suivre("lm_page_vue");
@@ -66,37 +117,91 @@ export function useSuiviOutil(outil: Outil) {
     return () => io.disconnect();
   }, [suivre]);
 
-  return { suivre, commence, resultat };
+  useEffect(() => () => clearTimeout(minuterie.current), []);
+
+  /**
+   * À appeler à chaque frappe dans la recherche d'un hub (et une fois avec origine « url » quand la
+   * page arrive avec ?q=). La première frappe envoie lm_outil_commence ; lm_recherche part 800 ms
+   * après la dernière, si la requête nettoyée a 2 caractères ou plus et diffère du dernier envoi.
+   */
+  const rechercher = useCallback(
+    (q: string, r: MesureRecherche, origine: "saisie" | "url" = "saisie") => {
+      if (origine === "saisie") commence();
+      clearTimeout(minuterie.current);
+      const envoyer = () => {
+        const propre = nettoyerRequete(q);
+        if (propre.length < 2 || propre === derniereRecherche.current) return;
+        derniereRecherche.current = propre;
+        suivre(EVENEMENTS.recherche, {
+          q: propre,
+          longueur: q.replace(/\s+/g, " ").trim().length,
+          nb_resultats: r.visibles,
+          exact: r.exact,
+          metier: r.filtres.metier ?? null,
+          origine,
+        });
+      };
+      if (origine === "url") envoyer();
+      else minuterie.current = setTimeout(envoyer, DELAI_RECHERCHE);
+    },
+    [commence, suivre],
+  );
+
+  return { suivre, commence, resultat, rechercher };
 }
 
-/** Bandeau d'ouverture : le dégradé de marque en grand fond (DESIGN.md), titre en deux temps. */
+/** Ce que renvoie useSuiviOutil : à passer tel quel à useRechercheHub. */
+export type SuiviOutil = ReturnType<typeof useSuiviOutil>;
+
+/**
+ * Bandeau d'ouverture : le dégradé de marque en grand fond (DESIGN.md), titre en deux temps.
+ * Sans les props facultatives : le rendu des deux outils de campagne, à l'identique.
+ * `compact` (hubs des outils référentiels) : H1 plus petit et moins d'air, pour qu'à 375 px le champ
+ * de recherche, passé en `children` sous le chapeau, soit visible sans défiler.
+ */
 export function EnTeteOutil({
   titre,
   accent,
   chapeau,
+  surTitre = "Outil gratuit pour les opticiens",
+  compact = false,
+  children,
 }: {
   titre: string;
   accent: string;
   chapeau: string;
+  surTitre?: string;
+  compact?: boolean;
+  children?: ReactNode;
 }) {
   return (
     <header style={{ background: "var(--degrade-marque)" }}>
-      <div className="mx-auto max-w-[1120px] px-4 py-12 md:px-8 md:py-20">
-        <p className="eyebrow">Outil gratuit pour les opticiens</p>
+      <div
+        className={
+          compact
+            ? "mx-auto max-w-[1120px] px-4 py-10 md:px-8 md:py-14"
+            : "mx-auto max-w-[1120px] px-4 py-12 md:px-8 md:py-20"
+        }
+      >
+        <p className="eyebrow">{surTitre}</p>
         <h1
-          className="mt-4 max-w-[18ch] font-serif text-balance"
+          className={`${compact ? "mt-3 max-w-[1000px]" : "mt-4 max-w-[1000px]"} font-serif text-balance`}
           style={{
-            fontSize: "clamp(36px, 5.4vw, 64px)",
-            lineHeight: 1.04,
+            fontSize: compact ? "clamp(30px, 4.4vw, 52px)" : "clamp(36px, 5.4vw, 64px)",
+            lineHeight: compact ? 1.06 : 1.04,
             letterSpacing: "-0.03em",
             fontWeight: 300,
           }}
         >
           {titre} <span className="accent-italic">{accent}</span>
         </h1>
-        <p className="mt-5 max-w-[56ch] text-[17px]" style={{ lineHeight: 1.55 }}>
+        <p
+          className={`${compact ? "mt-4" : "mt-5"} max-w-[56ch] text-justify text-[17px] hyphens-auto`}
+          style={{ lineHeight: 1.55 }}
+        >
           {chapeau}
         </p>
+        {children && <div className="mt-6 max-w-[720px]">{children}</div>}
       </div>
     </header>
   );
