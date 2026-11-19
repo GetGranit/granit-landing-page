@@ -185,7 +185,7 @@ export function EnTeteOutil({
       >
         <p className="eyebrow">{surTitre}</p>
         <h1
-          className={`${compact ? "mt-3 max-w-[22ch]" : "mt-4 max-w-[18ch]"} font-serif text-balance`}
+          className={`${compact ? "mt-3 max-w-[1000px]" : "mt-4 max-w-[1000px]"} font-serif text-balance`}
           style={{
             fontSize: compact ? "clamp(30px, 4.4vw, 52px)" : "clamp(36px, 5.4vw, 64px)",
             lineHeight: compact ? 1.06 : 1.04,
@@ -196,7 +196,7 @@ export function EnTeteOutil({
           {titre} <span className="accent-italic">{accent}</span>
         </h1>
         <p
-          className={`${compact ? "mt-4" : "mt-5"} max-w-[56ch] text-[17px]`}
+          className={`${compact ? "mt-4" : "mt-5"} max-w-[56ch] text-justify text-[17px] hyphens-auto`}
           style={{ lineHeight: 1.55 }}
         >
           {chapeau}
