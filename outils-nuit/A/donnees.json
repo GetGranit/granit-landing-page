@@ -1,0 +1,4282 @@
+{
+ "genere_le": "2026-11-18",
+ "sources": [
+  {
+   "id": "ameli-medecin-rejets-2026",
+   "titre": "Les rejets de facturation et les solutions en cas de rejet (ameli.fr, espace Médecin)",
+   "url": "https://www.ameli.fr/medecin/exercice-liberal/accompagnement-l-installation/l-accompagnement-dans-la-premiere-annee-d-exercice/les-rejets-de-facturation-et-les-solutions-en-cas-de-rejet",
+   "editeur": "Assurance Maladie",
+   "date_source": "2026-01-26",
+   "consulte_le": "2026-11-18"
+  },
+  {
+   "id": "ameli-pharmacien-retour-noemie-2022",
+   "titre": "Le retour NOEMIE (ameli.fr, espace Pharmacien)",
+   "url": "https://www.ameli.fr/pharmacien/exercice-professionnel/teletransmission/retour-noemie",
+   "editeur": "Assurance Maladie",
+   "date_source": "2022-04-29",
+   "consulte_le": "2026-11-18"
+  },
+  {
+   "id": "ameli-pharmacien-fse-mode-emploi-2021",
+   "titre": "La télétransmission des feuilles de soins électroniques (FSE) : mode d'emploi (ameli.fr, espace Pharmacien)",
+   "url": "https://www.ameli.fr/pharmacien/exercice-professionnel/teletransmission/teletransmission/teletransmission-fse-mode-emploi",
+   "editeur": "Assurance Maladie",
+   "date_source": "2021-01-02",
+   "consulte_le": "2026-11-18"
+  },
+  {
+   "id": "cpam38-pharmaciens-2023",
+   "titre": "Les principaux motifs de rejets. Mémo facturation pharmaciens",
+   "url": "https://local.pastel.cpam-isere.fr/wp-content/uploads/2024/12/20230830_MemoPS_facturation-pharmaciens.pdf",
+   "editeur": "CPAM de l'Isère",
+   "date_source": "2023-08-30",
+   "consulte_le": "2026-11-18"
+  },
+  {
+   "id": "cpam33-infirmiers-2019",
+   "titre": "Rejets de télétransmission les plus courants. Infirmiers (mémo, MAJ 22.11.19)",
+   "url": "https://www.ameli.fr/sites/default/files/memo_infirmiers_rejets_ok.pdf",
+   "editeur": "CPAM de la Gironde (publié sur ameli.fr)",
+   "date_source": "2019-11-22",
+   "consulte_le": "2026-11-18"
+  },
+  {
+   "id": "cpam33-pharmaciens-2019",
+   "titre": "Rejets de télétransmission les plus courants. Pharmaciens (mémo, MAJ 12.04.19)",
+   "url": "https://www.ameli.fr/content/memo-rejets-de-teletransmission-les-plus-courants-pharmaciens",
+   "editeur": "CPAM de la Gironde (publié sur ameli.fr)",
+   "date_source": "2019-04-12",
+   "consulte_le": "2026-11-18"
+  },
+  {
+   "id": "cpam33-dentistes-2019",
+   "titre": "Rejets de télétransmission les plus courants. Chirurgiens-dentistes (mémo, MAJ 10.04.19)",
+   "url": "https://www.ameli.fr/content/memo-rejets-de-teletransmission-les-plus-courants-chirurgiens-dentistes",
+   "editeur": "CPAM de la Gironde (publié sur ameli.fr)",
+   "date_source": "2019-04-10",
+   "consulte_le": "2026-11-18"
+  },
+  {
+   "id": "cpam33-laboratoires-2018",
+   "titre": "Rejets de télétransmission les plus courants. Laboratoires (mémo, MAJ 29.06.18)",
+   "url": "https://www.ameli.fr/content/memo-rejets-de-teletransmission-les-plus-courants-laboratoires",
+   "editeur": "CPAM de la Gironde (publié sur ameli.fr)",
+   "date_source": "2018-06-29",
+   "consulte_le": "2026-11-18"
+  },
+  {
+   "id": "cpam-ets-publics-2018",
+   "titre": "Rejets de télétransmission les plus courants. Établissements publics (mémo, MAJ 26.06.18)",
+   "url": "https://www.ameli.fr/sites/default/files/memo_ets_publics_rejets.pdf",
+   "editeur": "Assurance Maladie (mémo CPAM publié sur ameli.fr ; caisse non nommée dans le texte lu)",
+   "date_source": "2018-06-26",
+   "consulte_le": "2026-11-18"
+  },
+  {
+   "id": "cpam33-fournisseurs-2016",
+   "titre": "Rejets de télétransmission les plus courants. Fournisseurs (mémo, MAJ 23.11.16)",
+   "url": "https://www.cpam-bordeaux.fr/newsletter/2016/images/images_1216/MEMO_FOURNISSEURS_REJETS_OK.pdf",
+   "editeur": "CPAM de la Gironde",
+   "date_source": "2016-11-23",
+   "consulte_le": "2026-11-18"
+  },
+  {
+   "id": "cpam33-pharmaciens-2016",
+   "titre": "Rejets de télétransmission les plus courants. Pharmaciens (mémo, MAJ 23.11.16)",
+   "url": "https://www.cpam-bordeaux.fr/newsletter/2016/images/images_1216/MEMO_PHARMACIENS_REJETS_OK.pdf",
+   "editeur": "CPAM de la Gironde",
+   "date_source": "2016-11-23",
+   "consulte_le": "2026-11-18"
+  },
+  {
+   "id": "cpam33-laboratoires-2016",
+   "titre": "Rejets de télétransmission les plus courants. Laboratoires (mémo, MAJ 23.11.16)",
+   "url": "https://www.cpam-bordeaux.fr/newsletter/2016/images/images_1216/MEMO_LABORATOIRES_REJETS_OK.pdf",
+   "editeur": "CPAM de la Gironde",
+   "date_source": "2016-11-23",
+   "consulte_le": "2026-11-18"
+  },
+  {
+   "id": "cpam33-dentistes-2016",
+   "titre": "Rejets de télétransmission les plus courants. Chirurgiens-dentistes (mémo, MAJ 23.11.16)",
+   "url": "https://www.cpam-bordeaux.fr/newsletter/2016/images/images_1216/MEMO_CHIRDEN_REJETS_OK.pdf",
+   "editeur": "CPAM de la Gironde",
+   "date_source": "2016-11-23",
+   "consulte_le": "2026-11-18"
+  },
+  {
+   "id": "cpam67-medecins",
+   "titre": "Mémo des rejets. Médecins généralistes & spécialistes",
+   "url": "https://www.ameli.fr/sites/default/files/cpam-basrhin_rejets-medecins.pdf",
+   "editeur": "CPAM du Bas-Rhin (publié sur ameli.fr)",
+   "date_source": "non datée dans le texte lu",
+   "consulte_le": "2026-11-18"
+  },
+  {
+   "id": "cpam67-pharmaciens",
+   "titre": "Mémo des rejets. Pharmaciens",
+   "url": "https://www.ameli.fr/sites/default/files/cpam-basrhin_glossaire-rejets-pharmaciens.pdf",
+   "editeur": "CPAM du Bas-Rhin (publié sur ameli.fr)",
+   "date_source": "non datée dans le texte lu",
+   "consulte_le": "2026-11-18"
+  },
+  {
+   "id": "cpam67-dentistes",
+   "titre": "Mémo des rejets. Chirurgiens-dentistes",
+   "url": "https://www.ameli.fr/sites/default/files/cpam-basrhin_rejets-dentistes.pdf",
+   "editeur": "CPAM du Bas-Rhin (publié sur ameli.fr)",
+   "date_source": "non datée dans le texte lu",
+   "consulte_le": "2026-11-18"
+  },
+  {
+   "id": "cpam44-optique-2010",
+   "titre": "Lexique des rejets. Fournitures optiques (octobre 2010)",
+   "url": "http://www.myeasyoptic.com/wp-content/uploads/2015/12/Lexique_Rejets_Opticien.pdf",
+   "editeur": "CPAM de la Loire-Atlantique (document hébergé par un éditeur de logiciel optique)",
+   "date_source": "2010-10",
+   "consulte_le": "2026-11-18"
+  },
+  {
+   "id": "fiche-rejets-opticiens-bretagne",
+   "titre": "Fiche technique. Traitement des rejets. Profession : opticiens",
+   "url": "https://www.prooptic-idm.com/wiki/wp-content/uploads/2015/05/traite_DOCAMOAMC.pdf",
+   "editeur": "Émetteur non nommé (contenu de CPAM, caisses de Bretagne citées), hébergé par un éditeur de logiciel optique",
+   "date_source": "2009-04 (fichier modifié en 2015-05)",
+   "consulte_le": "2026-11-18"
+  },
+  {
+   "id": "gie-cdc-annexe1b-2025",
+   "titre": "Cahier des charges SESAM-Vitale 1.40 addendum 8, annexe 1-B : principe de traitement des retours et gestion des ARL (version 8.60)",
+   "url": "https://www.sesam-vitale.fr/documents/d/sesam-vitale/corpus-cdc_v8-50-2025-t1-documents-individuels-zip",
+   "editeur": "GIE SESAM-Vitale",
+   "date_source": "2025-04-11",
+   "consulte_le": "2026-11-18"
+  },
+  {
+   "id": "gie-cdc-annexe4-2025",
+   "titre": "Cahier des charges SESAM-Vitale 1.40 addendum 8, annexe 4 : télécommunications et chiffrement de pièce jointe (version 8.60)",
+   "url": "https://www.sesam-vitale.fr/documents/d/sesam-vitale/corpus-cdc_v8-50-2025-t1-documents-individuels-zip",
+   "editeur": "GIE SESAM-Vitale",
+   "date_source": "2025-04-11",
+   "consulte_le": "2026-11-18"
+  },
+  {
+   "id": "gie-fiche-info-094-2012",
+   "titre": "Fiche d'information n° 94 : ajout d'un nouveau libellé pour l'ARL 2004",
+   "url": "https://www.sesam-vitale.fr/documents/20195/20710/PDT-INF-094.pdf/f6a79adf-ea3b-4c37-afc2-298b6f93b2de?version=1.0",
+   "editeur": "GIE SESAM-Vitale",
+   "date_source": "2012-06-06",
+   "consulte_le": "2026-11-18"
+  },
+  {
+   "id": "gie-actu-addendum-2023",
+   "titre": "Report de l'arrêt des flux en addendum 2 bis et addendum 3 au 31 décembre 2023",
+   "url": "https://www.sesam-vitale.fr/web/sesam-vitale/actualites/-/blogs/report-de-l-arret-des-flux-en-addendum-2-bis-et-addendum-3-au-31-decembre-2023",
+   "editeur": "GIE SESAM-Vitale",
+   "date_source": "2023-06-27",
+   "consulte_le": "2026-11-18"
+  },
+  {
+   "id": "orisha-desmos-arl-securite-lot",
+   "titre": "DESMOS : comment traiter la réception d'ARL négatives « Sécurité lot erronée » ?",
+   "url": "https://healthcare-orisha.my.site.com/CustomerCommunityKnowledge/s/article/DESMOS-Comment-traiter-la-r%C3%A9ception-d-ARL-n%C3%A9gatives-S%C3%A9curit%C3%A9-lot-erron%C3%A9e",
+   "editeur": "Orisha Healthcare (éditeur de logiciel, base d'aide publique)",
+   "date_source": "non datée",
+   "consulte_le": "2026-11-18"
+  },
+  {
+   "id": "julie-teletransmission-2023",
+   "titre": "« Houston : on a un problème… de télétransmission ! »",
+   "url": "https://www.julie.fr/article-houston-probleme-de-teletransmission/",
+   "editeur": "Julie (éditeur de logiciel dentaire)",
+   "date_source": "2023-02-10",
+   "consulte_le": "2026-11-18"
+  },
+  {
+   "id": "resopharma-oct-2013",
+   "titre": "Nomenclature des codes rejets de l'OCT",
+   "url": "https://www.resopharma.fr/documents/normes/nomenclature_des_rejets_OCT.pdf",
+   "editeur": "Résopharma (organisme concentrateur technique)",
+   "date_source": "2013-04-17",
+   "consulte_le": "2026-11-18"
+  },
+  {
+   "id": "cdc-noemie-ps-2004",
+   "titre": "Cahier des charges NOEMIE PS (mai 2004)",
+   "url": "https://www.sesam-vitale.fr/documents/20182/55864/cdc_noemie-ps-052004.pdf",
+   "editeur": "Document publié sur sesam-vitale.fr",
+   "date_source": "2004-05",
+   "consulte_le": "2026-11-18"
+  }
+ ],
+ "entrees": [
+  {
+   "code": "0450054",
+   "slug": "noemie-0450054",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "ETM NON TROUVEE EN BDO",
+   "explication": "La facture demande une prise en charge à 100 % (exonération du ticket modérateur, ETM) que la caisse ne retrouve pas dans son fichier des assurés (BDO). Le patient n’est pas ou plus pris en charge à 100 %, ou le code d’exonération transmis est erroné.",
+   "cause": "Exonération saisie à tort ou périmée (ALD, maternité, invalidité…), code d’exonération erroné ; en mode dégradé, exonération indiquée sans l’avoir vérifiée ; pour la CPAM du Bas-Rhin, forçage des données de la carte Vitale.",
+   "action": "Vérifiez les droits du patient avant de refacturer : ADRi dans votre logiciel, amelipro, attestation de droits et notification de prise en charge à 100 %. Retransmettez avec le bon code d’exonération (ou sans exonération si elle n’existe plus) et invitez le patient à mettre à jour sa carte Vitale.",
+   "cause_action_origine": "source",
+   "metiers": [
+    "optique-audio",
+    "dentaire",
+    "centre-de-sante",
+    "pharmacie",
+    "clinique-laboratoire"
+   ],
+   "codes_voisins": [
+    "noemie-0450056",
+    "noemie-0450072",
+    "noemie-0450082",
+    "noemie-0700060",
+    "noemie-0450057"
+   ],
+   "source_ids": [
+    "cpam33-infirmiers-2019",
+    "cpam38-pharmaciens-2023",
+    "cpam33-fournisseurs-2016",
+    "cpam-ets-publics-2018",
+    "cpam67-medecins",
+    "cpam44-optique-2010",
+    "fiche-rejets-opticiens-bretagne"
+   ],
+   "statut": "sur",
+   "questions_reelles": [
+    "Patient en ALD et bénéficiaire de la CMU-C, facturé en mode dégradé : la facture revient « ETM non trouvée en BDO ». Comment régler la fiche patient avant de renvoyer ?"
+   ],
+   "note_verification": "Libellés publiés par des CPAM du régime général ; le libellé reçu dans votre propre retour fait foi et un autre régime peut employer un autre texte.",
+   "libelles_variantes": [
+    {
+     "texte": "Exoneration du ticket modérateur absente au référentiel",
+     "source_id": "cpam38-pharmaciens-2023"
+    },
+    {
+     "texte": "ETM non trouvée en BDO",
+     "source_id": "cpam33-fournisseurs-2016"
+    },
+    {
+     "texte": "ETM NON TROUVE EN BDO",
+     "source_id": "cpam-ets-publics-2018"
+    }
+   ],
+   "professions_citees_par_les_sources": [
+    "infirmiers",
+    "pharmaciens",
+    "fournisseurs",
+    "établissements publics",
+    "médecins",
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0450 054",
+    "0450-054",
+    "450054"
+   ],
+   "page_conseillee": true
+  },
+  {
+   "code": "0450056",
+   "slug": "noemie-0450056",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "ETM CONNUE BDO NON TRANSMISE",
+   "explication": "Le patient bénéficie d’une exonération du ticket modérateur (prise en charge à 100 %) connue de la caisse, mais la facture a été envoyée sans cette exonération.",
+   "cause": "Exonération (ALD, régime exonérant, maternité) non saisie dans la facture ; en mode dégradé, facture transmise au taux normal alors que l’assuré est exonéré (CPAM de la Loire-Atlantique).",
+   "action": "Vérifiez les droits du patient (amelipro, identification du patient, ADRi, attestation de droits), puis retransmettez avec le code d’exonération adéquat. Invitez le patient à mettre à jour sa carte Vitale.",
+   "cause_action_origine": "source",
+   "metiers": [
+    "optique-audio",
+    "dentaire",
+    "centre-de-sante",
+    "pharmacie",
+    "clinique-laboratoire"
+   ],
+   "codes_voisins": [
+    "noemie-0450054",
+    "noemie-0450082",
+    "noemie-0450072",
+    "noemie-0700060"
+   ],
+   "source_ids": [
+    "cpam33-pharmaciens-2019",
+    "cpam33-infirmiers-2019",
+    "cpam38-pharmaciens-2023",
+    "cpam33-fournisseurs-2016",
+    "cpam44-optique-2010",
+    "fiche-rejets-opticiens-bretagne"
+   ],
+   "statut": "sur",
+   "note_verification": "Libellés publiés par des CPAM du régime général ; le libellé reçu dans votre propre retour fait foi et un autre régime peut employer un autre texte.",
+   "libelles_variantes": [
+    {
+     "texte": "ETM CONNUE EN BDO MAIS NON TRANSMISE",
+     "source_id": "cpam33-infirmiers-2019"
+    },
+    {
+     "texte": "Exoneration du ticket modérateur connue au référentiel non transmise",
+     "source_id": "cpam38-pharmaciens-2023"
+    }
+   ],
+   "professions_citees_par_les_sources": [
+    "pharmaciens",
+    "infirmiers",
+    "fournisseurs",
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0450 056",
+    "0450-056",
+    "450056"
+   ],
+   "page_conseillee": true
+  },
+  {
+   "code": "0450072",
+   "slug": "noemie-0450072",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "DIVERGENCE VITALE/EXO BDO ABSENTE",
+   "explication": "Une exonération figure sur la carte Vitale, mais la caisse ne la retrouve pas dans son fichier à la date des soins.",
+   "cause": "Carte Vitale pas à jour par rapport au fichier de la caisse ; exonération terminée ou différente de celle de la carte ; données de la facture (caisse, numéro de sécurité sociale, date de naissance) à revoir.",
+   "action": "Consultez les droits du patient (amelipro ou attestation de droits). Avant de retransmettre, vérifiez sur la facture la caisse d’affiliation, le numéro de sécurité sociale de l’assuré, la date de naissance et les exonérations. Actualisez votre fichier patients et rappelez au patient de mettre à jour sa carte Vitale.",
+   "cause_action_origine": "source",
+   "metiers": [
+    "optique-audio",
+    "dentaire",
+    "centre-de-sante",
+    "pharmacie",
+    "clinique-laboratoire"
+   ],
+   "codes_voisins": [
+    "noemie-0450054",
+    "noemie-0450056",
+    "noemie-0700060"
+   ],
+   "source_ids": [
+    "cpam33-laboratoires-2018",
+    "cpam33-laboratoires-2016",
+    "cpam38-pharmaciens-2023",
+    "cpam67-medecins"
+   ],
+   "statut": "sur",
+   "note_verification": "Deux libellés publiés pour le même code selon la caisse et l’année (« DIVERGENCE VITALE/EXO BDO ABSENTE » en 2018, « Situation d’exonération inconnue… » en 2016 et 2023) ; le sens est le même. La CPAM du Bas-Rhin associe aussi le code 0450071 à ce libellé. Libellés publiés par des CPAM du régime général ; le libellé reçu dans votre propre retour fait foi et un autre régime peut employer un autre texte.",
+   "libelles_variantes": [
+    {
+     "texte": "SITUATION D'EXONERATION INCONNUE POUR LE BENEFICIAIRE",
+     "source_id": "cpam33-laboratoires-2016"
+    },
+    {
+     "texte": "Situation d'exonération inconnue pour ce bénéficiaire",
+     "source_id": "cpam38-pharmaciens-2023"
+    }
+   ],
+   "professions_citees_par_les_sources": [
+    "laboratoires",
+    "pharmaciens",
+    "médecins"
+   ],
+   "autres_ecritures": [
+    "0450 072",
+    "0450-072",
+    "450072"
+   ],
+   "page_conseillee": true
+  },
+  {
+   "code": "0450082",
+   "slug": "noemie-0450082",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "ETM MATERNITE EN BDO MAIS NON TRANSMISE",
+   "explication": "La patiente a une exonération au titre de la maternité en cours, connue de la caisse, mais la facture a été envoyée sans exonération.",
+   "cause": "Exonération maternité non saisie ; en mode dégradé, facture non établie à 100 % alors que l’assurée en bénéficie (CPAM de la Loire-Atlantique).",
+   "action": "Vérifiez les droits de la patiente (consultation des droits, carte Vitale à jour, attestation), corrigez l’exonération de la facture puis retransmettez. Pour les établissements, le mémo demande de retransmettre en changeant le numéro de facture.",
+   "cause_action_origine": "source",
+   "metiers": [
+    "optique-audio",
+    "dentaire",
+    "centre-de-sante",
+    "pharmacie",
+    "clinique-laboratoire"
+   ],
+   "codes_voisins": [
+    "noemie-0450056",
+    "noemie-0450054",
+    "noemie-0700060"
+   ],
+   "source_ids": [
+    "cpam-ets-publics-2018",
+    "cpam38-pharmaciens-2023",
+    "cpam44-optique-2010",
+    "fiche-rejets-opticiens-bretagne"
+   ],
+   "statut": "sur",
+   "note_verification": "Libellés publiés par des CPAM du régime général ; le libellé reçu dans votre propre retour fait foi et un autre régime peut employer un autre texte.",
+   "libelles_variantes": [
+    {
+     "texte": "Exonération maternité connue de notre référentiel n'a pas été transmise",
+     "source_id": "cpam38-pharmaciens-2023"
+    },
+    {
+     "texte": "ETM MAT EN BDO MAIS NON TRANSMISE",
+     "source_id": "cpam44-optique-2010"
+    }
+   ],
+   "professions_citees_par_les_sources": [
+    "établissements publics",
+    "pharmaciens",
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0450 082",
+    "0450-082",
+    "450082"
+   ],
+   "page_conseillee": true
+  },
+  {
+   "code": "0250050",
+   "slug": "noemie-0250050",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "ASSURE ABSENT DE LA BDO",
+   "explication": "La caisse qui a reçu la facture ne connaît pas l’assuré dans son fichier : il ne dépend pas ou plus de cette caisse, ou son numéro d’identification est erroné.",
+   "cause": "Mauvais organisme d’affiliation choisi (fréquent en mode dégradé) ; numéro de sécurité sociale erroné ; bénéficiaire connu sous son propre numéro.",
+   "action": "Vérifiez le numéro de sécurité sociale et la caisse d’affiliation (ADRi, amelipro, attestation de droits), puis transmettez la facture à l’organisme compétent. La CPAM de l’Isère recommande de mettre à jour la carte Vitale, de facturer en SESAM-Vitale sécurisé et d’éviter de forcer les données lues sur la carte.",
+   "cause_action_origine": "source",
+   "metiers": [
+    "optique-audio",
+    "dentaire",
+    "centre-de-sante",
+    "pharmacie",
+    "clinique-laboratoire"
+   ],
+   "codes_voisins": [
+    "noemie-0270051",
+    "noemie-0170050",
+    "noemie-0317051"
+   ],
+   "source_ids": [
+    "cpam33-laboratoires-2018",
+    "cpam38-pharmaciens-2023",
+    "cpam33-fournisseurs-2016",
+    "cpam33-laboratoires-2016",
+    "cpam67-medecins",
+    "cpam44-optique-2010",
+    "fiche-rejets-opticiens-bretagne"
+   ],
+   "statut": "sur",
+   "note_verification": "Libellés publiés par des CPAM du régime général ; le libellé reçu dans votre propre retour fait foi et un autre régime peut employer un autre texte.",
+   "libelles_variantes": [
+    {
+     "texte": "Assuré absent de notre réferentiel assuré",
+     "source_id": "cpam38-pharmaciens-2023"
+    },
+    {
+     "texte": "Assuré absent en BDO",
+     "source_id": "cpam33-fournisseurs-2016"
+    },
+    {
+     "texte": "L'assuré est absent de notre référentiel",
+     "source_id": "cpam33-laboratoires-2016"
+    }
+   ],
+   "professions_citees_par_les_sources": [
+    "laboratoires",
+    "pharmaciens",
+    "fournisseurs",
+    "médecins",
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0250 050",
+    "0250-050",
+    "250050"
+   ],
+   "page_conseillee": true
+  },
+  {
+   "code": "0270051",
+   "slug": "noemie-0270051",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "BENEFICIAIRE INCONNU DANS LA BDO",
+   "explication": "L’assuré est connu, mais pas le bénéficiaire des soins tel qu’il a été saisi : la date de naissance ou le rang ne correspondent pas, ou la personne est affiliée sous un autre numéro ou à un autre organisme.",
+   "cause": "Date de naissance ou rang de naissance erronés ; bénéficiaire passé du statut d’ayant droit à celui d’assuré (il a son propre numéro) ; affiliation à un autre organisme.",
+   "action": "Vérifiez la date de naissance, le rang et le numéro sous lequel le patient est couvert (ADRi, amelipro, attestation de droits), puis retransmettez à la caisse dont il dépend avec ces données exactes. Pour les établissements, le mémo demande de changer le numéro de facture.",
+   "cause_action_origine": "source",
+   "metiers": [
+    "optique-audio",
+    "dentaire",
+    "centre-de-sante",
+    "pharmacie",
+    "clinique-laboratoire"
+   ],
+   "codes_voisins": [
+    "noemie-0250050",
+    "noemie-0270052",
+    "noemie-0317051"
+   ],
+   "source_ids": [
+    "cpam33-laboratoires-2018",
+    "cpam-ets-publics-2018",
+    "cpam38-pharmaciens-2023",
+    "cpam33-laboratoires-2016",
+    "cpam67-medecins",
+    "cpam44-optique-2010",
+    "fiche-rejets-opticiens-bretagne"
+   ],
+   "statut": "sur",
+   "note_verification": "Libellés publiés par des CPAM du régime général ; le libellé reçu dans votre propre retour fait foi et un autre régime peut employer un autre texte.",
+   "libelles_variantes": [
+    {
+     "texte": "BENEFICIAIRE DE PRESTATIONS INCONNU DANS LA BDO",
+     "source_id": "cpam-ets-publics-2018"
+    },
+    {
+     "texte": "Bénéficiaire de prestations inconnu dans le référentiel assuré",
+     "source_id": "cpam38-pharmaciens-2023"
+    },
+    {
+     "texte": "Bénéficiaire de prestations inconnu dans BDO",
+     "source_id": "cpam67-medecins"
+    }
+   ],
+   "professions_citees_par_les_sources": [
+    "laboratoires",
+    "établissements publics",
+    "pharmaciens",
+    "médecins",
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0270 051",
+    "0270-051",
+    "270051"
+   ],
+   "page_conseillee": true
+  },
+  {
+   "code": "0700060",
+   "slug": "noemie-0700060",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "ECART TAUX DEMANDE / TAUX CALCULE",
+   "explication": "Le taux de remboursement demandé dans la facture n’est pas celui que la caisse calcule pour la situation du patient.",
+   "cause": "Taux de prise en charge ou nature d’assurance qui ne correspond pas à la situation de l’assuré : facture à 100 % sans motif d’exonération, exonération (invalidité, maternité…) non prise en compte, ou situation particulière (AME…).",
+   "action": "Avant de retransmettre, vérifiez pour chaque prestation le taux demandé au regard du taux de remboursement et des exonérations du patient (amelipro ou ADRi à partir du NIR ou de la carte Vitale). Invitez le patient à mettre à jour sa carte Vitale.",
+   "cause_action_origine": "source",
+   "metiers": [
+    "optique-audio",
+    "dentaire",
+    "centre-de-sante",
+    "pharmacie",
+    "clinique-laboratoire"
+   ],
+   "codes_voisins": [
+    "noemie-0450054",
+    "noemie-0450056",
+    "noemie-0450072",
+    "noemie-0450082"
+   ],
+   "source_ids": [
+    "cpam33-fournisseurs-2016",
+    "cpam33-laboratoires-2016",
+    "cpam38-pharmaciens-2023",
+    "cpam67-medecins",
+    "cpam67-pharmaciens",
+    "cpam67-dentistes",
+    "cpam44-optique-2010",
+    "fiche-rejets-opticiens-bretagne"
+   ],
+   "statut": "sur",
+   "note_verification": "Libellés publiés par des CPAM du régime général ; le libellé reçu dans votre propre retour fait foi et un autre régime peut employer un autre texte.",
+   "libelles_variantes": [
+    {
+     "texte": "LE TAUX DE REMBOURSEMENT DEMAMDE EST DIFFERENT DU TAUX DE REMBOURSEMENT CALCULE",
+     "source_id": "cpam33-laboratoires-2016"
+    },
+    {
+     "texte": "Taux de remboursement demandé est différent du taux de remboursement calculé en fonction de la situation du bénéficiaire des soins (AME, maternité, invalidité,…)",
+     "source_id": "cpam38-pharmaciens-2023"
+    }
+   ],
+   "professions_citees_par_les_sources": [
+    "fournisseurs",
+    "laboratoires",
+    "pharmaciens",
+    "médecins",
+    "chirurgiens-dentistes",
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0700 060",
+    "0700-060",
+    "700060"
+   ],
+   "page_conseillee": true
+  },
+  {
+   "code": "0460051",
+   "slug": "noemie-0460051",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "PRESCRIPTEUR INCONNU DANS REPERTOIRE NATIONAL",
+   "explication": "Le numéro du prescripteur indiqué dans la facture est inconnu du répertoire national des professionnels de santé, ou erroné.",
+   "cause": "Numéro de prescripteur mal saisi ou mal enregistré dans votre fichier des prescripteurs ; prescripteur salarié, remplaçant ou militaire saisi avec un numéro inadapté.",
+   "action": "Reprenez le numéro qui figure sur l’ordonnance (recherche par numéro, pas par nom) et corrigez votre fichier des prescripteurs. Prescripteur salarié : numéro de la structure, avec la spécialité. Remplaçant : numéro du médecin remplacé. Médecin militaire : FINESS 750821092 du Service de santé des armées (mémo infirmiers de la CPAM de la Gironde).",
+   "cause_action_origine": "source",
+   "metiers": [
+    "pharmacie",
+    "optique-audio",
+    "centre-de-sante",
+    "clinique-laboratoire"
+   ],
+   "codes_voisins": [
+    "noemie-0460053",
+    "noemie-0470049",
+    "noemie-0460030"
+   ],
+   "source_ids": [
+    "cpam33-pharmaciens-2019",
+    "cpam33-infirmiers-2019",
+    "cpam38-pharmaciens-2023",
+    "cpam33-pharmaciens-2016",
+    "cpam67-pharmaciens",
+    "cpam44-optique-2010",
+    "fiche-rejets-opticiens-bretagne"
+   ],
+   "statut": "sur",
+   "note_verification": "Les sources visent les pharmaciens, les infirmiers et les opticiens ; le rattachement aux centres de santé et aux laboratoires est déduit (soins sur prescription). Libellés publiés par des CPAM du régime général ; le libellé reçu dans votre propre retour fait foi et un autre régime peut employer un autre texte.",
+   "libelles_variantes": [
+    {
+     "texte": "PRESCRIPTEUR INCONNU DANS LE REPERTOIRE NATIONAL",
+     "source_id": "cpam33-infirmiers-2019"
+    },
+    {
+     "texte": "Prescripteur inconnu au fichier des professionnels de santé",
+     "source_id": "cpam38-pharmaciens-2023"
+    },
+    {
+     "texte": "PRESCRIPT. INCONNU DANS REP. NAT.",
+     "source_id": "cpam67-pharmaciens"
+    }
+   ],
+   "professions_citees_par_les_sources": [
+    "pharmaciens",
+    "infirmiers",
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0460 051",
+    "0460-051",
+    "460051"
+   ],
+   "page_conseillee": true
+  },
+  {
+   "code": "0460053",
+   "slug": "noemie-0460053",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "PRESCRIPTEUR ETABLISSEMENT INCONNU",
+   "explication": "L’établissement prescripteur indiqué dans la facture est inconnu du fichier national des établissements.",
+   "cause": "Numéro FINESS erroné ou mal enregistré ; numéro du médecin saisi à la place de celui de l’établissement ; FINESS juridique saisi au lieu du FINESS géographique (CPAM de l’Isère).",
+   "action": "Indiquez le numéro de l’établissement qui figure sur l’ordonnance (à défaut, recherchez-le sur finess.sante.gouv.fr), le FINESS géographique et non le juridique, et supprimez le numéro erroné de votre fichier des prescripteurs.",
+   "cause_action_origine": "source",
+   "metiers": [
+    "pharmacie",
+    "optique-audio",
+    "centre-de-sante",
+    "clinique-laboratoire"
+   ],
+   "codes_voisins": [
+    "noemie-0460051",
+    "noemie-0470049"
+   ],
+   "source_ids": [
+    "cpam33-pharmaciens-2019",
+    "cpam38-pharmaciens-2023",
+    "cpam33-pharmaciens-2016",
+    "cpam67-pharmaciens",
+    "cpam44-optique-2010"
+   ],
+   "statut": "sur",
+   "note_verification": "Rattachement aux centres de santé et aux laboratoires déduit (soins sur prescription). Libellés publiés par des CPAM du régime général ; le libellé reçu dans votre propre retour fait foi et un autre régime peut employer un autre texte.",
+   "libelles_variantes": [
+    {
+     "texte": "L'établissement prescripteur est inconnu au fichier national des établissements",
+     "source_id": "cpam38-pharmaciens-2023"
+    },
+    {
+     "texte": "PRESCRIPTEUR ETAB. INCONNU",
+     "source_id": "cpam67-pharmaciens"
+    }
+   ],
+   "professions_citees_par_les_sources": [
+    "pharmaciens",
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0460 053",
+    "0460-053",
+    "460053"
+   ],
+   "page_conseillee": true
+  },
+  {
+   "code": "0470049",
+   "slug": "noemie-0470049",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "PRESCRIPTION INTERDITE A CETTE DATE",
+   "explication": "À la date de prescription indiquée, le prescripteur n’était pas autorisé à prescrire selon le fichier de la caisse : date antérieure à son début d’exercice, postérieure à sa fin d’exercice, ou prescripteur décédé.",
+   "cause": "Date de prescription mal saisie ; numéro de prescripteur qui n’était pas valide à cette date ; pour les dentistes, date d’accord préalable antérieure au début d’exercice ou changement de numéro de praticien.",
+   "action": "Vérifiez sur l’ordonnance le prescripteur et la date de prescription, ainsi que la validité du numéro utilisé (entre les dates de début et de fin d’exercice, en cas de changement de numéro), puis retransmettez.",
+   "cause_action_origine": "source",
+   "metiers": [
+    "optique-audio",
+    "dentaire",
+    "centre-de-sante",
+    "pharmacie",
+    "clinique-laboratoire"
+   ],
+   "codes_voisins": [
+    "noemie-0460051",
+    "noemie-0730055",
+    "noemie-0470004"
+   ],
+   "source_ids": [
+    "cpam33-laboratoires-2018",
+    "cpam33-laboratoires-2016",
+    "cpam33-dentistes-2019",
+    "cpam67-dentistes",
+    "cpam44-optique-2010",
+    "fiche-rejets-opticiens-bretagne"
+   ],
+   "statut": "sur",
+   "note_verification": "Libellés publiés par des CPAM du régime général ; le libellé reçu dans votre propre retour fait foi et un autre régime peut employer un autre texte.",
+   "libelles_variantes": [
+    {
+     "texte": "Prescription interdite à cette date",
+     "source_id": "cpam33-dentistes-2019"
+    },
+    {
+     "texte": "PRESC. INTERDITE A CETTE DATE",
+     "source_id": "cpam44-optique-2010"
+    }
+   ],
+   "professions_citees_par_les_sources": [
+    "laboratoires",
+    "chirurgiens-dentistes",
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0470 049",
+    "0470-049",
+    "470049"
+   ],
+   "page_conseillee": true
+  },
+  {
+   "code": "0730055",
+   "slug": "noemie-0730055",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "INCOMP. NATURE. EXERCICE. DATE PRESTATIONS",
+   "explication": "Votre numéro d’exécutant n’est pas valide à la date des soins : la caisse vous connaît, mais les soins facturés sont antérieurs à votre date de début d’exercice (ou hors de la période sous laquelle vous êtes connu).",
+   "cause": "Soins antérieurs à la date d’installation déclarée ; changement de numéro d’identification au cours d’une série d’actes ; nouvelle carte CPS non utilisée ou numéro mal paramétré dans le logiciel.",
+   "action": "Vérifiez que la facturation est dans la période où votre numéro est valide. En cas de changement de numéro, utilisez votre nouvelle carte CPS et vérifiez le paramétrage du logiciel ; la CPAM du Bas-Rhin conseille de scinder les soins en deux factures si le numéro a changé en cours de série.",
+   "cause_action_origine": "source",
+   "metiers": [
+    "optique-audio",
+    "dentaire",
+    "centre-de-sante",
+    "pharmacie",
+    "clinique-laboratoire"
+   ],
+   "codes_voisins": [
+    "noemie-0470049",
+    "noemie-0100052"
+   ],
+   "source_ids": [
+    "cpam33-infirmiers-2019",
+    "cpam33-laboratoires-2018",
+    "cpam67-dentistes",
+    "cpam44-optique-2010"
+   ],
+   "statut": "sur",
+   "note_verification": "Libellés publiés par des CPAM du régime général ; le libellé reçu dans votre propre retour fait foi et un autre régime peut employer un autre texte.",
+   "libelles_variantes": [
+    {
+     "texte": "INCOMPATIBILITE NATURE EXERCICE / DATE PRESTATION",
+     "source_id": "cpam33-laboratoires-2018"
+    },
+    {
+     "texte": "La nature d'exercice du praticien exécutant n'est pas valide à la date des soins",
+     "source_id": "cpam67-dentistes"
+    },
+    {
+     "texte": "INCOMP. NAT. EXERCICE/DATE PREST.",
+     "source_id": "cpam44-optique-2010"
+    }
+   ],
+   "professions_citees_par_les_sources": [
+    "infirmiers",
+    "laboratoires",
+    "chirurgiens-dentistes",
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0730 055",
+    "0730-055",
+    "730055"
+   ],
+   "page_conseillee": true
+  },
+  {
+   "code": "0480054",
+   "slug": "noemie-0480054",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "FACT TPC INCOM. TYPE CONTRAT",
+   "explication": "Le type de contrat de complémentaire transmis dans la facture n’est pas celui que la caisse connaît pour ce patient. Le mémo de 2019 parle de contrat CMU-C ou ACS, celui de 2023 de contrat de complémentaire santé solidaire (C2S).",
+   "cause": "Droits du patient pas à jour dans la facture ou sur la carte Vitale (contrat transmis différent de celui du référentiel).",
+   "action": "Vérifiez les droits du patient avant de refacturer (ADRi, amelipro, attestation de droits) et invitez-le à mettre à jour sa carte Vitale.",
+   "cause_action_origine": "source",
+   "metiers": [
+    "optique-audio",
+    "dentaire",
+    "centre-de-sante",
+    "pharmacie",
+    "clinique-laboratoire"
+   ],
+   "codes_voisins": [
+    "noemie-0450054",
+    "noemie-0700060"
+   ],
+   "source_ids": [
+    "cpam33-infirmiers-2019",
+    "cpam38-pharmaciens-2023"
+   ],
+   "statut": "sur",
+   "note_verification": "Libellés publiés par des CPAM du régime général ; le libellé reçu dans votre propre retour fait foi et un autre régime peut employer un autre texte.",
+   "libelles_variantes": [
+    {
+     "texte": "Contrat C2S transmis différent de celui présent au référentiel",
+     "source_id": "cpam38-pharmaciens-2023"
+    }
+   ],
+   "professions_citees_par_les_sources": [
+    "infirmiers",
+    "pharmaciens"
+   ],
+   "autres_ecritures": [
+    "0480 054",
+    "0480-054",
+    "480054"
+   ],
+   "page_conseillee": true
+  },
+  {
+   "code": "2900005",
+   "slug": "noemie-2900005",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "FACTURE DEJA PAYEE",
+   "explication": "Une facture portant le même numéro a déjà été réglée pour le même bénéficiaire : la caisse considère l’envoi comme un doublon.",
+   "cause": "Facture renvoyée alors qu’elle avait déjà été payée ; facture rectificative télétransmise ; compteur de numéros de facture revenu en arrière après restauration d’une sauvegarde (CPAM de la Loire-Atlantique).",
+   "action": "Ne retransmettez pas. Vérifiez vos ARL, vos retours NOEMIE et vos paiements sur amelipro. Si le paiement est introuvable ou s’il s’agit d’une régularisation, faites une réclamation à votre caisse : le mémo de la CPAM de la Gironde précise qu’en cas de litige la télétransmission spontanée n’est pas autorisée.",
+   "cause_action_origine": "source",
+   "metiers": [
+    "optique-audio",
+    "dentaire",
+    "centre-de-sante",
+    "pharmacie",
+    "clinique-laboratoire"
+   ],
+   "codes_voisins": [
+    "noemie-0180051",
+    "noemie-2900230",
+    "noemie-traitement-caisse"
+   ],
+   "source_ids": [
+    "cpam33-pharmaciens-2019",
+    "cpam38-pharmaciens-2023",
+    "cpam33-pharmaciens-2016",
+    "cpam67-medecins",
+    "cpam67-pharmaciens",
+    "cpam44-optique-2010",
+    "fiche-rejets-opticiens-bretagne"
+   ],
+   "statut": "sur",
+   "questions_reelles": [
+    "Après correction d’un rejet de la caisse, faut-il renvoyer la facture avec le même numéro ou un nouveau, et comment éviter de créer un doublon sur la part mutuelle ?"
+   ],
+   "note_verification": "Libellés publiés par des CPAM du régime général ; le libellé reçu dans votre propre retour fait foi et un autre régime peut employer un autre texte.",
+   "libelles_variantes": [
+    {
+     "texte": "Facture déjà payée",
+     "source_id": "cpam38-pharmaciens-2023"
+    }
+   ],
+   "professions_citees_par_les_sources": [
+    "pharmaciens",
+    "médecins",
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "2900 005",
+    "2900-005",
+    "2900005"
+   ],
+   "page_conseillee": true
+  },
+  {
+   "code": "0180051",
+   "slug": "noemie-0180051",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "FACT. DEJA EN TRAITEMENT IRIS",
+   "explication": "Une facture portant le même numéro est déjà en cours de traitement à la caisse : c’est un doublon.",
+   "cause": "Facture déjà transmise dans un autre lot ; délivrance familiale où le même bénéficiaire a été sélectionné pour plusieurs personnes (CPAM de l’Isère) ; restauration d’une sauvegarde qui a fait revenir le compteur de factures en arrière (CPAM de la Loire-Atlantique).",
+   "action": "Ne refacturez pas. En cas de doute sur la réception de vos lots, demandez à la caisse s’ils ont déjà été traités avant toute nouvelle transmission ; pour une régularisation, faites une réclamation à la caisse gestionnaire. En délivrance familiale, sélectionnez le bon bénéficiaire pour chaque délivrance. La CPAM de la Gironde (dentistes) conseille de contacter votre assistance informatique.",
+   "cause_action_origine": "source",
+   "metiers": [
+    "optique-audio",
+    "dentaire",
+    "centre-de-sante",
+    "pharmacie",
+    "clinique-laboratoire"
+   ],
+   "codes_voisins": [
+    "noemie-2900005",
+    "noemie-0172050",
+    "noemie-traitement-caisse"
+   ],
+   "source_ids": [
+    "cpam38-pharmaciens-2023",
+    "cpam33-dentistes-2019",
+    "cpam67-pharmaciens",
+    "cpam44-optique-2010",
+    "fiche-rejets-opticiens-bretagne"
+   ],
+   "statut": "sur",
+   "questions_reelles": [
+    "Après correction d’un rejet de la caisse, faut-il renvoyer la facture avec le même numéro ou un nouveau, et comment éviter de créer un doublon sur la part mutuelle ?"
+   ],
+   "note_verification": "Libellés publiés par des CPAM du régime général ; le libellé reçu dans votre propre retour fait foi et un autre régime peut employer un autre texte.",
+   "libelles_variantes": [
+    {
+     "texte": "Facture déjà en traitement IRIS",
+     "source_id": "cpam38-pharmaciens-2023"
+    },
+    {
+     "texte": "Facture déjà en cours de traitement IRIS",
+     "source_id": "cpam33-dentistes-2019"
+    }
+   ],
+   "professions_citees_par_les_sources": [
+    "pharmaciens",
+    "chirurgiens-dentistes",
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0180 051",
+    "0180-051",
+    "180051"
+   ],
+   "page_conseillee": true
+  },
+  {
+   "code": "2900230",
+   "slug": "noemie-2900230",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "Multiples facturations dentistes",
+   "explication": "Deux actes identiques ont été facturés le même jour pour le même bénéficiaire.",
+   "cause": "Erreur de saisie (même acte saisi deux fois, actes de plusieurs patients saisis sur un seul) ; ou actes réellement répétés le même jour, que la caisse vérifie.",
+   "action": "Si la feuille de soins électronique n’est pas encore partie, annulez-la (avec l’aide de votre éditeur si besoin). Si elle est déjà télétransmise, demandez son annulation à votre caisse le jour même (la CPAM de la Gironde donne une adresse dédiée). Pour la CPAM du Bas-Rhin, des actes réellement effectués peuvent donner lieu à une vérification par un agent, et une erreur de bénéficiaire se corrige par une feuille de soins rectificative.",
+   "cause_action_origine": "source",
+   "metiers": [
+    "dentaire"
+   ],
+   "codes_voisins": [
+    "noemie-2900005",
+    "noemie-2600710",
+    "noemie-0450097"
+   ],
+   "source_ids": [
+    "cpam33-dentistes-2019",
+    "cpam33-dentistes-2016",
+    "cpam67-dentistes"
+   ],
+   "statut": "sur",
+   "note_verification": "Libellés publiés par des CPAM du régime général ; le libellé reçu dans votre propre retour fait foi et un autre régime peut employer un autre texte.",
+   "libelles_variantes": [
+    {
+     "texte": "Multiple facturation dentiste à J",
+     "source_id": "cpam67-dentistes"
+    }
+   ],
+   "professions_citees_par_les_sources": [
+    "chirurgiens-dentistes"
+   ],
+   "autres_ecritures": [
+    "2900 230",
+    "2900-230",
+    "2900230"
+   ],
+   "page_conseillee": true
+  },
+  {
+   "code": "0450097",
+   "slug": "noemie-0450097",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "Soins de suite sans date d'examen valide",
+   "explication": "Des soins de suite du dispositif de prévention bucco-dentaire (M’T dents) ont été facturés hors de la période de prise en charge, ou avant que l’examen de prévention ne soit réglé et enregistré par la caisse.",
+   "cause": "Prise en charge M’T dents plus valable ; soins saisis avant la date anniversaire de l’enfant ; enfant rattaché sous un autre numéro que celui de la prise en charge ; soins de suite facturés avant que l’examen de prévention soit réglé et enregistré.",
+   "action": "Vérifiez la période de prise en charge ou l’âge de l’enfant, et le numéro de sécurité sociale sous lequel il est couvert (celui de la prise en charge M’T dents). Établissez deux factures distinctes : une pour l’examen de prévention, une seconde pour les soins de suite.",
+   "cause_action_origine": "source",
+   "metiers": [
+    "dentaire"
+   ],
+   "codes_voisins": [
+    "noemie-0600064",
+    "noemie-0600069",
+    "noemie-2900230"
+   ],
+   "source_ids": [
+    "cpam33-dentistes-2019",
+    "cpam33-dentistes-2016",
+    "cpam67-dentistes"
+   ],
+   "statut": "sur",
+   "note_verification": "Libellés publiés par des CPAM du régime général ; le libellé reçu dans votre propre retour fait foi et un autre régime peut employer un autre texte.",
+   "professions_citees_par_les_sources": [
+    "chirurgiens-dentistes"
+   ],
+   "autres_ecritures": [
+    "0450 097",
+    "0450-097",
+    "450097"
+   ],
+   "page_conseillee": true
+  },
+  {
+   "code": "0600064",
+   "slug": "noemie-0600064",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "Rubrique bucco-dentaire absente",
+   "explication": "La prise en charge de prévention bucco-dentaire du bénéficiaire n’existe pas sous le numéro d’immatriculation transmis.",
+   "cause": "Examen ou soins facturés sous un autre numéro de sécurité sociale que celui inscrit sur l’imprimé de prévention bucco-dentaire envoyé à l’assuré.",
+   "action": "Vérifiez le numéro de sécurité sociale sous lequel l’enfant est couvert et reprenez celui de l’imprimé « Examen de prévention bucco-dentaire » (M’T dents) : l’examen et les soins de suite doivent être télétransmis sous ce numéro.",
+   "cause_action_origine": "source",
+   "metiers": [
+    "dentaire"
+   ],
+   "codes_voisins": [
+    "noemie-0450097",
+    "noemie-0600069"
+   ],
+   "source_ids": [
+    "cpam33-dentistes-2019"
+   ],
+   "statut": "sur",
+   "note_verification": "Le texte extrait du mémo coupe le mot en « bucco- dentaire » (fin de ligne) ; libellé recollé. Libellés publiés par des CPAM du régime général ; le libellé reçu dans votre propre retour fait foi et un autre régime peut employer un autre texte.",
+   "professions_citees_par_les_sources": [
+    "chirurgiens-dentistes"
+   ],
+   "autres_ecritures": [
+    "0600 064",
+    "0600-064",
+    "600064"
+   ],
+   "page_conseillee": true
+  },
+  {
+   "code": "0600069",
+   "slug": "noemie-0600069",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "Rubrique Prévention absente",
+   "explication": "La rubrique prévention est absente du dossier du bénéficiaire : la caisse n’a pas de prise en charge de prévention bucco-dentaire enregistrée pour lui (le mémo cite la prévention des femmes enceintes).",
+   "cause": "Dossier de l’assuré à mettre à jour par la caisse ; aucune prise en charge délivrée sous le numéro transmis ; bénéficiaire rattaché à une autre caisse.",
+   "action": "Vérifiez sous quel numéro de sécurité sociale l’imprimé de prévention a été délivré et l’organisme d’affiliation du bénéficiaire. Quand le dossier doit être mis à jour, les CPAM de la Gironde et du Bas-Rhin indiquent prendre en charge le traitement de la facture.",
+   "cause_action_origine": "source",
+   "metiers": [
+    "dentaire"
+   ],
+   "codes_voisins": [
+    "noemie-0450097",
+    "noemie-0600064"
+   ],
+   "source_ids": [
+    "cpam33-dentistes-2019",
+    "cpam67-dentistes"
+   ],
+   "statut": "sur",
+   "note_verification": "Le mémo de 2019 précise une période de grossesse ouvrant droit à la prévention : elle n’est pas reprise ici car la règle a pu évoluer ; à vérifier sur ameli.fr avant de la citer. Libellés publiés par des CPAM du régime général ; le libellé reçu dans votre propre retour fait foi et un autre régime peut employer un autre texte.",
+   "libelles_variantes": [
+    {
+     "texte": "La rubrique prévention de type EBFE est absente au référentiel",
+     "source_id": "cpam67-dentistes"
+    }
+   ],
+   "professions_citees_par_les_sources": [
+    "chirurgiens-dentistes"
+   ],
+   "autres_ecritures": [
+    "0600 069",
+    "0600-069",
+    "600069"
+   ],
+   "page_conseillee": true
+  },
+  {
+   "code": "2600710",
+   "slug": "noemie-2600710",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "Localisation dentaire numéro de dent. transmis incompatible avec l'acte",
+   "explication": "Le numéro de dent (ou la localisation) indiqué n’est pas compatible avec l’acte CCAM facturé.",
+   "cause": "Localisation non conforme à la CCAM pour cet acte (numéro de dent, sextant, quadrant, maxillaire, mandibule) ; table des localisations du logiciel pas à jour (CPAM du Bas-Rhin).",
+   "action": "Vérifiez la compatibilité de l’acte CCAM avec la localisation dentaire (document de synthèse CCAM sur ameli.fr) et, si besoin, la mise à jour des localisations dentaires de votre logiciel, puis retransmettez.",
+   "cause_action_origine": "source",
+   "metiers": [
+    "dentaire"
+   ],
+   "codes_voisins": [
+    "noemie-2600649",
+    "noemie-2600700",
+    "noemie-0568002"
+   ],
+   "source_ids": [
+    "cpam33-dentistes-2016",
+    "cpam67-dentistes"
+   ],
+   "statut": "sur",
+   "note_verification": "Libellé recopié tel qu’il apparaît dans le texte du mémo (« dent. », coupure de ligne). Libellés publiés par des CPAM du régime général ; le libellé reçu dans votre propre retour fait foi et un autre régime peut employer un autre texte.",
+   "libelles_variantes": [
+    {
+     "texte": "Localisation dentaire numéro de dent transmis incompatible avec l'acte dentaire.",
+     "source_id": "cpam67-dentistes"
+    }
+   ],
+   "professions_citees_par_les_sources": [
+    "chirurgiens-dentistes"
+   ],
+   "autres_ecritures": [
+    "2600 710",
+    "2600-710",
+    "2600710"
+   ],
+   "page_conseillee": true
+  },
+  {
+   "code": "2600649",
+   "slug": "noemie-2600649",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "Code association transmis différent",
+   "explication": "Le code association saisi sur un acte CCAM est erroné, ou certains actes facturés ensemble ne peuvent pas être associés.",
+   "cause": "Codes association incompatibles entre eux ou mal choisis au regard des règles d’association de la CCAM.",
+   "action": "Vérifiez les codes association avec les règles de la CCAM (document de synthèse et cahier d’exemples sur ameli.fr). Le mémo rappelle notamment que le code association 4 est incompatible avec les codes 1 et 2, et qu’avec des actes en codes 1 et 2, les autres actes à taux plein prennent le code 1.",
+   "cause_action_origine": "source",
+   "metiers": [
+    "dentaire"
+   ],
+   "codes_voisins": [
+    "noemie-2600710",
+    "noemie-2600650"
+   ],
+   "source_ids": [
+    "cpam33-dentistes-2016"
+   ],
+   "statut": "sur",
+   "note_verification": "Règles d’association citées d’après le mémo de novembre 2016 ; à confronter à la version en vigueur de la CCAM. Libellés publiés par des CPAM du régime général ; le libellé reçu dans votre propre retour fait foi et un autre régime peut employer un autre texte.",
+   "professions_citees_par_les_sources": [
+    "chirurgiens-dentistes"
+   ],
+   "autres_ecritures": [
+    "2600 649",
+    "2600-649",
+    "2600649"
+   ],
+   "page_conseillee": true
+  },
+  {
+   "code": "2600650",
+   "slug": "noemie-2600650",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "CODE « ASSOCIATION NON PREVUE » NON RENSEIGNE ET PAS D'ASSOCIATION MEDICALE PREVUE",
+   "explication": "Le code association n’a pas été transmis alors qu’il est obligatoire pour l’acte CCAM facturé avec un autre acte.",
+   "cause": "Zone association laissée vide alors que l’association des deux actes n’est pas prévue par la CCAM.",
+   "action": "Saisissez le code association dès que l’association des actes n’est pas prévue par la CCAM. Inutile s’il s’agit d’un acte de la partie « Associations » ; mais si la facture contient au moins un acte qui ne peut pas être associé, un code association est à indiquer sur tous les actes.",
+   "cause_action_origine": "source",
+   "metiers": [
+    "clinique-laboratoire"
+   ],
+   "codes_voisins": [
+    "noemie-2600649",
+    "noemie-0710060"
+   ],
+   "source_ids": [
+    "cpam-ets-publics-2018"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Seule source : le mémo de 2018 rédigé pour les établissements publics de santé, qui ne font pas partie des 5 métiers de l’outil. Le rattachement aux cliniques et laboratoires était déduit : à confirmer par un mémo qui vise les cliniques privées, un centre de santé ou un cabinet dentaire avant toute publication. Libellés publiés par des CPAM du régime général ; le libellé reçu dans votre propre retour fait foi et un autre régime peut employer un autre texte.",
+   "professions_citees_par_les_sources": [
+    "établissements publics"
+   ],
+   "autres_ecritures": [
+    "2600 650",
+    "2600-650",
+    "2600650"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0710060",
+   "slug": "noemie-0710060",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "LE MONTANT DEMANDE EST SUPERIEUR AU MONTANT CALCULE EN T2A PUBLIQUE",
+   "explication": "Le montant demandé en part obligatoire est supérieur à celui que calcule la caisse. Ce rejet concerne la facturation des établissements publics (T2A publique).",
+   "cause": "Parcours de soins coordonnés mal saisi : la base de remboursement dépend de la déclaration d’un médecin traitant et du respect du parcours.",
+   "action": "Saisissez le parcours de soins (obligatoire) et ajustez le montant en conséquence, puis retransmettez en changeant le numéro de la facture, comme le demande le mémo.",
+   "cause_action_origine": "source",
+   "metiers": [
+    "clinique-laboratoire"
+   ],
+   "codes_voisins": [
+    "noemie-2600650",
+    "noemie-0700060"
+   ],
+   "source_ids": [
+    "cpam-ets-publics-2018"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Seule source : le mémo de 2018 rédigé pour les établissements publics de santé (T2A publique), qui ne font pas partie des 5 métiers de l’outil ; il ne vise pas les cliniques privées. Les taux de base cités par le mémo ne sont pas repris. Libellés publiés par des CPAM du régime général ; le libellé reçu dans votre propre retour fait foi et un autre régime peut employer un autre texte.",
+   "professions_citees_par_les_sources": [
+    "établissements publics"
+   ],
+   "autres_ecritures": [
+    "0710 060",
+    "0710-060",
+    "710060"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0650001",
+   "slug": "noemie-0650001",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "Prix unitaire absent",
+   "explication": "Pour la prestation facturée, le prix unitaire doit être renseigné et différent de zéro ; il manque dans la facture.",
+   "cause": "Acte non remboursable télétransmis à la caisse ; ou acte remboursable envoyé sans prix unitaire, souvent faute de mise à jour des tarifs du logiciel.",
+   "action": "Vérifiez le prix unitaire en vigueur à la date des actes et ne télétransmettez que les actes remboursables par la caisse. Pour un acte non remboursable, la CPAM du Bas-Rhin indique de remettre au patient une facture sur papier libre pour sa complémentaire. Mettez à jour votre logiciel lors des changements de tarifs.",
+   "cause_action_origine": "source",
+   "metiers": [
+    "dentaire",
+    "optique-audio"
+   ],
+   "codes_voisins": [
+    "noemie-1170001",
+    "noemie-2520001"
+   ],
+   "source_ids": [
+    "cpam33-dentistes-2019",
+    "cpam33-dentistes-2016",
+    "cpam67-dentistes",
+    "cpam44-optique-2010",
+    "fiche-rejets-opticiens-bretagne"
+   ],
+   "statut": "sur",
+   "note_verification": "Libellés publiés par des CPAM du régime général ; le libellé reçu dans votre propre retour fait foi et un autre régime peut employer un autre texte.",
+   "libelles_variantes": [
+    {
+     "texte": "PRIX UNITAIRE ABSENT",
+     "source_id": "cpam44-optique-2010"
+    }
+   ],
+   "professions_citees_par_les_sources": [
+    "chirurgiens-dentistes",
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0650 001",
+    "0650-001",
+    "650001"
+   ],
+   "page_conseillee": true
+  },
+  {
+   "code": "4000067",
+   "slug": "noemie-4000067",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "PU TRANSMIS > PU OPPOSABLE",
+   "explication": "Le prix unitaire transmis pour un médicament n’est plus celui en vigueur à la date de délivrance (il est supérieur au prix opposable).",
+   "cause": "Prix du médicament changé, ancien prix encore présent dans la facture ou dans la base du logiciel.",
+   "action": "Vérifiez que le prix unitaire des médicaments de la facture n’est pas supérieur à celui en vigueur à la date de délivrance (bases de codage et base des médicaments sur ameli.fr), puis retransmettez.",
+   "cause_action_origine": "source",
+   "metiers": [
+    "pharmacie"
+   ],
+   "codes_voisins": [
+    "noemie-4000055",
+    "noemie-4000057",
+    "noemie-4000072"
+   ],
+   "source_ids": [
+    "cpam33-pharmaciens-2019",
+    "cpam33-pharmaciens-2016"
+   ],
+   "statut": "sur",
+   "note_verification": "Libellés publiés par des CPAM du régime général ; le libellé reçu dans votre propre retour fait foi et un autre régime peut employer un autre texte.",
+   "professions_citees_par_les_sources": [
+    "pharmaciens"
+   ],
+   "autres_ecritures": [
+    "4000 067",
+    "4000-067",
+    "4000067"
+   ],
+   "page_conseillee": true
+  },
+  {
+   "code": "4000055",
+   "slug": "noemie-4000055",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "Le prix unitaire transmis est supérieur à celui de la base des médicaments",
+   "explication": "Le prix unitaire transmis pour un médicament dépasse celui de la base des médicaments.",
+   "cause": "Changement de tarif pas encore pris en compte ou date d’entrée en vigueur du nouveau tarif mal appliquée.",
+   "action": "En cas de changement tarifaire, vérifiez la date d’entrée en vigueur du nouveau tarif avant de retransmettre.",
+   "cause_action_origine": "source",
+   "metiers": [
+    "pharmacie"
+   ],
+   "codes_voisins": [
+    "noemie-4000067",
+    "noemie-4000057"
+   ],
+   "source_ids": [
+    "cpam38-pharmaciens-2023"
+   ],
+   "statut": "sur",
+   "note_verification": "Texte de la colonne « Motif » du mémo 2023 (le mémo ne distingue pas libellé du retour et motif). Libellés publiés par des CPAM du régime général ; le libellé reçu dans votre propre retour fait foi et un autre régime peut employer un autre texte.",
+   "professions_citees_par_les_sources": [
+    "pharmaciens"
+   ],
+   "autres_ecritures": [
+    "4000 055",
+    "4000-055",
+    "4000055"
+   ],
+   "page_conseillee": true
+  },
+  {
+   "code": "4000057",
+   "slug": "noemie-4000057",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "La quantité de conditionnement délivrée est supérieure au seuil maximal autorisé",
+   "explication": "La quantité délivrée pour un code CIP dépasse le seuil autorisé dans la base des médicaments.",
+   "cause": "Délivrance non conforme à la prescription ou au-delà de la durée autorisée (la CPAM du Bas-Rhin cite les délivrances de plus de 6 mois et les stupéfiants au-delà de 28 jours).",
+   "action": "En cas de doute sur le seuil, vérifiez la base nationale des médicaments et délivrez conformément à la prescription. Pour un départ à l’étranger hors Union européenne, la CPAM de l’Isère rappelle qu’une délivrance de plus d’un mois est soumise à l’envoi d’une attestation sur l’honneur avec la prescription.",
+   "cause_action_origine": "source",
+   "metiers": [
+    "pharmacie"
+   ],
+   "codes_voisins": [
+    "noemie-4000067",
+    "noemie-4000055"
+   ],
+   "source_ids": [
+    "cpam38-pharmaciens-2023",
+    "cpam67-pharmaciens"
+   ],
+   "statut": "sur",
+   "note_verification": "Texte de la colonne « Motif » du mémo 2023 ; libellé court du retour cité par la CPAM du Bas-Rhin en variante. Libellés publiés par des CPAM du régime général ; le libellé reçu dans votre propre retour fait foi et un autre régime peut employer un autre texte.",
+   "libelles_variantes": [
+    {
+     "texte": "QTE DELIVREE ABERRANTE POUR 1 CIP",
+     "source_id": "cpam67-pharmaciens"
+    }
+   ],
+   "professions_citees_par_les_sources": [
+    "pharmaciens"
+   ],
+   "autres_ecritures": [
+    "4000 057",
+    "4000-057",
+    "4000057"
+   ],
+   "page_conseillee": true
+  },
+  {
+   "code": "4000072",
+   "slug": "noemie-4000072",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "Le vaccin anti grippal a été transmis sans le code exonération PREVENTION (7)",
+   "explication": "Le vaccin contre la grippe a été facturé sans le code d’exonération « prévention » (7).",
+   "cause": "Vaccin antigrippal facturé au taux habituel au lieu de 100 % au titre de la prévention.",
+   "action": "Corrigez la facture et transmettez systématiquement le vaccin antigrippal à 100 % au titre de la prévention (code 7), comme l’indique la CPAM de l’Isère.",
+   "cause_action_origine": "source",
+   "metiers": [
+    "pharmacie"
+   ],
+   "codes_voisins": [
+    "noemie-4000067",
+    "noemie-0700060"
+   ],
+   "source_ids": [
+    "cpam38-pharmaciens-2023"
+   ],
+   "statut": "sur",
+   "note_verification": "Texte de la colonne « Motif » du mémo 2023. Libellés publiés par des CPAM du régime général ; le libellé reçu dans votre propre retour fait foi et un autre régime peut employer un autre texte.",
+   "professions_citees_par_les_sources": [
+    "pharmaciens"
+   ],
+   "autres_ecritures": [
+    "4000 072",
+    "4000-072",
+    "4000072"
+   ],
+   "page_conseillee": true
+  },
+  {
+   "code": "0100052",
+   "slug": "noemie-0100052",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "HABILITATION ENVOI DE MESSAGES",
+   "explication": "Vous n’êtes pas habilité à télétransmettre auprès de cette caisse.",
+   "cause": "Habilitation à transmettre absente pour cette caisse dans le fichier des options tiers (CPAM de la Loire-Atlantique).",
+   "action": "Demandez à la caisse l’habilitation à transmettre (la CPAM de la Gironde indique une adresse dédiée) et ne télétransmettez qu’une fois l’accord confirmé.",
+   "cause_action_origine": "source",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [
+    "noemie-0100056",
+    "noemie-0730055"
+   ],
+   "source_ids": [
+    "cpam33-fournisseurs-2016",
+    "cpam44-optique-2010"
+   ],
+   "statut": "sur",
+   "note_verification": "Libellés publiés par des CPAM du régime général ; le libellé reçu dans votre propre retour fait foi et un autre régime peut employer un autre texte.",
+   "professions_citees_par_les_sources": [
+    "fournisseurs",
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0100 052",
+    "0100-052",
+    "100052"
+   ],
+   "page_conseillee": true
+  },
+  {
+   "code": "TRAITEMENT CAISSE",
+   "slug": "noemie-traitement-caisse",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "Traitement Caisse",
+   "explication": "Ce n’est pas un rejet : la facture fait l’objet d’une étude particulière par la caisse. Un second retour NOEMIE indiquera le résultat (paiement ou rejet).",
+   "cause": "Facture qui demande un examen par un agent de la caisse.",
+   "action": "Attendez le retour suivant et ne renvoyez pas la facture en attendant (un nouvel envoi serait un doublon). Si le résultat tarde ou reste incompris, contactez votre caisse (téléservice « Réclamation paiements » dans amelipro).",
+   "cause_action_origine": "source",
+   "metiers": [
+    "optique-audio",
+    "dentaire",
+    "centre-de-sante",
+    "pharmacie",
+    "clinique-laboratoire"
+   ],
+   "codes_voisins": [
+    "noemie-2900005",
+    "noemie-0180051"
+   ],
+   "source_ids": [
+    "ameli-medecin-rejets-2026",
+    "ameli-pharmacien-retour-noemie-2022"
+   ],
+   "statut": "sur",
+   "note_verification": "Motif sans code numérique dans les pages ameli.fr. La mise en garde contre le renvoi découle du rejet « facture déjà payée » / « déjà en traitement » décrit par les CPAM.",
+   "professions_citees_par_les_sources": [
+    "médecins",
+    "pharmaciens"
+   ],
+   "autres_ecritures": [
+    "Traitement caisse",
+    "TRAITEMENT CAISSE"
+   ],
+   "page_conseillee": true
+  },
+  {
+   "code": "0450071",
+   "slug": "noemie-0450071",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "DIVERGENCE VITALE/EXO BDO ABSENTE",
+   "explication": "Comme 0450072 : une exonération figure sur la carte Vitale mais pas dans le fichier de la caisse à la date des soins.",
+   "cause": "Exonération absente ou différente au fichier (par exemple ALD transmise alors que seule une exonération pour stérilité existe, selon la CPAM du Bas-Rhin).",
+   "action": "Vérifiez les droits du patient (ADRi, amelipro) et le code d’exonération ; pour l’aide médicale d’État, la CPAM du Bas-Rhin indique de transmettre à 0 % part caisse et 100 % part complémentaire.",
+   "cause_action_origine": "source",
+   "metiers": [
+    "optique-audio",
+    "dentaire",
+    "centre-de-sante",
+    "pharmacie",
+    "clinique-laboratoire"
+   ],
+   "codes_voisins": [
+    "noemie-0450072",
+    "noemie-0450054"
+   ],
+   "source_ids": [
+    "cpam67-medecins"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans un mémo de la CPAM du Bas-Rhin dont la date n’apparaît pas dans le texte lu ; ouvrir le PDF dans un navigateur pour lire sa date, puis confirmer. Le mémo cite « 0450071 ou 0450072 » pour le même libellé.",
+   "professions_citees_par_les_sources": [
+    "médecins"
+   ],
+   "autres_ecritures": [
+    "0450 071",
+    "0450-071",
+    "450071"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0450057",
+   "slug": "noemie-0450057",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "MTM NON TROUVEE BDO",
+   "explication": "Une modulation du ticket modérateur (régime local d’Alsace-Moselle ou Fonds national de solidarité) a été transmise alors qu’elle ne figure pas au fichier de la caisse.",
+   "cause": "Régime local Alsace-Moselle transmis pour un assuré du régime général ; en mode dégradé, modulation indiquée à tort.",
+   "action": "Vérifiez les droits du patient (ADRi, amelipro) et la mise à jour de sa carte Vitale, puis retransmettez au bon régime.",
+   "cause_action_origine": "source",
+   "metiers": [
+    "optique-audio",
+    "dentaire",
+    "centre-de-sante",
+    "pharmacie",
+    "clinique-laboratoire"
+   ],
+   "codes_voisins": [
+    "noemie-0450058",
+    "noemie-0450054"
+   ],
+   "source_ids": [
+    "cpam67-pharmaciens",
+    "cpam67-medecins",
+    "cpam67-dentistes",
+    "cpam44-optique-2010",
+    "fiche-rejets-opticiens-bretagne"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Sources concordantes mais anciennes (2009-2015) ou non datées (Bas-Rhin). Concerne surtout l’Alsace-Moselle.",
+   "professions_citees_par_les_sources": [
+    "pharmaciens",
+    "médecins",
+    "chirurgiens-dentistes",
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0450 057",
+    "0450-057",
+    "450057"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0450058",
+   "slug": "noemie-0450058",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "INCOMP.MODULATION TRANSMISE/BDO",
+   "explication": "Le ticket modérateur transmis ne correspond pas à celui du fichier de la caisse : régime général transmis pour un assuré du régime local d’Alsace-Moselle, ou l’inverse.",
+   "cause": "Erreur de régime (général ou local) dans la fiche patient ; régime local présent à une date mais pas à l’autre ; paramétrage du logiciel.",
+   "action": "Vérifiez les droits du patient (amelipro, attestation récente), la fiche patient et le paramétrage du logiciel, puis retransmettez.",
+   "cause_action_origine": "source",
+   "metiers": [
+    "optique-audio",
+    "dentaire",
+    "centre-de-sante",
+    "pharmacie",
+    "clinique-laboratoire"
+   ],
+   "codes_voisins": [
+    "noemie-0450057",
+    "noemie-0700060"
+   ],
+   "source_ids": [
+    "cpam67-pharmaciens",
+    "cpam67-medecins",
+    "cpam67-dentistes",
+    "cpam44-optique-2010",
+    "fiche-rejets-opticiens-bretagne"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Sources concordantes mais anciennes (2009-2015) ou non datées (Bas-Rhin). Concerne surtout l’Alsace-Moselle.",
+   "professions_citees_par_les_sources": [
+    "pharmaciens",
+    "médecins",
+    "chirurgiens-dentistes",
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0450 058",
+    "0450-058",
+    "450058"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0317051",
+   "slug": "noemie-0317051",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "INCOMPATIBILITE ASU-NAT / REGIME",
+   "explication": "La nature d’assurance transmise (maladie, accident du travail…) n’est pas compatible avec le régime de l’assuré, ou ce régime est fermé à la date des soins.",
+   "cause": "Date des soins hors de la période du régime ; assuré connu sous un autre numéro ou plus affilié à la caisse ; risque professionnel non géré par la caisse.",
+   "action": "Vérifiez les droits (amelipro, attestation récente) et la nature d’assurance, puis transmettez à l’organisme compétent.",
+   "cause_action_origine": "source",
+   "metiers": [
+    "optique-audio",
+    "dentaire",
+    "centre-de-sante",
+    "pharmacie",
+    "clinique-laboratoire"
+   ],
+   "codes_voisins": [
+    "noemie-0250050",
+    "noemie-0270051"
+   ],
+   "source_ids": [
+    "cpam67-pharmaciens",
+    "cpam67-medecins",
+    "cpam44-optique-2010",
+    "fiche-rejets-opticiens-bretagne"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Sources concordantes mais anciennes (2009-2015) ou non datées (Bas-Rhin).",
+   "professions_citees_par_les_sources": [
+    "pharmaciens",
+    "médecins",
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0317 051",
+    "0317-051",
+    "317051"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "2900010",
+   "slug": "noemie-2900010",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "Acte déjà télétransmis",
+   "explication": "Ces soins ont déjà été transmis et payés.",
+   "cause": "Double envoi des mêmes soins.",
+   "action": "Consultez vos retours NOEMIE et vos paiements sur amelipro avant tout nouvel envoi.",
+   "cause_action_origine": "source",
+   "metiers": [
+    "centre-de-sante"
+   ],
+   "codes_voisins": [
+    "noemie-2900005",
+    "noemie-2900001"
+   ],
+   "source_ids": [
+    "cpam67-medecins"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans un mémo de la CPAM du Bas-Rhin dont la date n’apparaît pas dans le texte lu ; ouvrir le PDF dans un navigateur pour lire sa date, puis confirmer. Rattachement aux centres de santé déduit (actes de médecins).",
+   "professions_citees_par_les_sources": [
+    "médecins"
+   ],
+   "autres_ecritures": [
+    "2900 010",
+    "2900-010",
+    "2900010"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "2900001",
+   "slug": "noemie-2900001",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "MULTIPLES FACTURES MEDECINS A J",
+   "explication": "Doublon : même acte, même jour, même exécutant, même bénéficiaire.",
+   "cause": "Double facturation, ou soins d’une même séance facturés à la fois en maladie et en accident du travail.",
+   "action": "Si l’acte est justifié, la CPAM du Bas-Rhin demande une feuille de soins papier précisant l’heure du second passage ; une rectification se fait sur feuille papier mentionnant « rectificative de la FDS n°… ».",
+   "cause_action_origine": "source",
+   "metiers": [
+    "centre-de-sante"
+   ],
+   "codes_voisins": [
+    "noemie-2900010",
+    "noemie-2900005"
+   ],
+   "source_ids": [
+    "cpam67-medecins"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans un mémo de la CPAM du Bas-Rhin dont la date n’apparaît pas dans le texte lu ; ouvrir le PDF dans un navigateur pour lire sa date, puis confirmer. Rattachement aux centres de santé déduit (actes de médecins).",
+   "professions_citees_par_les_sources": [
+    "médecins"
+   ],
+   "autres_ecritures": [
+    "2900 001",
+    "2900-001",
+    "2900001"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0540152",
+   "slug": "noemie-0540152",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "MAJO NON AUTORISEE TP",
+   "explication": "Une majoration réservée au médecin traitant a été facturée en tiers payant par un médecin qui n’est pas le médecin traitant déclaré.",
+   "cause": "Majoration facturée par un autre médecin que le médecin traitant (ou hors de son cabinet de groupe).",
+   "action": "Vérifiez le médecin traitant déclaré (ADRi, IMTi, amelipro) avant de facturer la majoration.",
+   "cause_action_origine": "source",
+   "metiers": [
+    "centre-de-sante"
+   ],
+   "codes_voisins": [
+    "noemie-0700060"
+   ],
+   "source_ids": [
+    "cpam67-medecins"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans un mémo de la CPAM du Bas-Rhin dont la date n’apparaît pas dans le texte lu ; ouvrir le PDF dans un navigateur pour lire sa date, puis confirmer. Rattachement aux centres de santé déduit (actes de médecins).",
+   "professions_citees_par_les_sources": [
+    "médecins"
+   ],
+   "autres_ecritures": [
+    "0540 152",
+    "0540-152",
+    "540152"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0315058",
+   "slug": "noemie-0315058",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "STATUT ACCIDENT DU TRAVAIL = REJET",
+   "explication": "L’accident du travail invoqué n’est pas reconnu, ou il est consolidé.",
+   "cause": "Accident non reconnu, ou fin de prise en charge au titre de l’accident du travail.",
+   "action": "Selon la CPAM du Bas-Rhin, transmettez la facture au titre du risque maladie.",
+   "cause_action_origine": "source",
+   "metiers": [
+    "optique-audio",
+    "dentaire",
+    "centre-de-sante",
+    "pharmacie",
+    "clinique-laboratoire"
+   ],
+   "codes_voisins": [
+    "noemie-0315062",
+    "noemie-0317051"
+   ],
+   "source_ids": [
+    "cpam67-medecins"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans un mémo de la CPAM du Bas-Rhin dont la date n’apparaît pas dans le texte lu ; ouvrir le PDF dans un navigateur pour lire sa date, puis confirmer.",
+   "professions_citees_par_les_sources": [
+    "médecins"
+   ],
+   "autres_ecritures": [
+    "0315 058",
+    "0315-058",
+    "315058"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "1050060",
+   "slug": "noemie-1050060",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "JOD OU JQB ABSENT POUR MIGRANT",
+   "explication": "Les droits de frontalier (migrant) sont fermés pour le bénéficiaire des soins.",
+   "cause": "Bénéficiaire plus affilié, connu sous un autre numéro, ou sans ouverture de droits à la date des soins.",
+   "action": "Vérifiez les droits (amelipro, carte Vitale à jour) et invitez le patient à mettre à jour son dossier.",
+   "cause_action_origine": "source",
+   "metiers": [
+    "pharmacie"
+   ],
+   "codes_voisins": [
+    "noemie-0250050"
+   ],
+   "source_ids": [
+    "cpam67-pharmaciens"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans un mémo de la CPAM du Bas-Rhin dont la date n’apparaît pas dans le texte lu ; ouvrir le PDF dans un navigateur pour lire sa date, puis confirmer.",
+   "professions_citees_par_les_sources": [
+    "pharmaciens"
+   ],
+   "autres_ecritures": [
+    "1050 060",
+    "1050-060",
+    "1050060"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "2600700",
+   "slug": "noemie-2600700",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "Absence de numéro de dent",
+   "explication": "L’acte CCAM facturé exige une localisation dentaire qui n’a pas été indiquée.",
+   "cause": "Numéro de dent non saisi.",
+   "action": "Indiquez la localisation dentaire lors de la facturation.",
+   "cause_action_origine": "source",
+   "metiers": [
+    "dentaire"
+   ],
+   "codes_voisins": [
+    "noemie-2600710",
+    "noemie-0568002"
+   ],
+   "source_ids": [
+    "cpam67-dentistes"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans un mémo de la CPAM du Bas-Rhin dont la date n’apparaît pas dans le texte lu ; ouvrir le PDF dans un navigateur pour lire sa date, puis confirmer.",
+   "professions_citees_par_les_sources": [
+    "chirurgiens-dentistes"
+   ],
+   "autres_ecritures": [
+    "2600 700",
+    "2600-700",
+    "2600700"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0568002",
+   "slug": "noemie-0568002",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "Localisation dentaire",
+   "explication": "La localisation dentaire indiquée n’existe pas dans la table CCAM.",
+   "cause": "Par exemple un détartrage saisi avec la localisation « 00 » (CPAM du Bas-Rhin).",
+   "action": "Pour un détartrage, la CPAM du Bas-Rhin indique « 01 » (maxillaire), « 02 » (mandibulaire), « 01 » et « 02 » (complet).",
+   "cause_action_origine": "source",
+   "metiers": [
+    "dentaire"
+   ],
+   "codes_voisins": [
+    "noemie-2600710",
+    "noemie-2600700"
+   ],
+   "source_ids": [
+    "cpam67-dentistes"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans un mémo de la CPAM du Bas-Rhin dont la date n’apparaît pas dans le texte lu ; ouvrir le PDF dans un navigateur pour lire sa date, puis confirmer.",
+   "professions_citees_par_les_sources": [
+    "chirurgiens-dentistes"
+   ],
+   "autres_ecritures": [
+    "0568 002",
+    "0568-002",
+    "568002"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "1170001",
+   "slug": "noemie-1170001",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "Base de remboursement absente",
+   "explication": "Le prix unitaire ou la base de remboursement de l’acte n’ont pas été transmis.",
+   "cause": "Acte non remboursable télétransmis, ou acte remboursable sans base de remboursement (tarifs du logiciel pas à jour).",
+   "action": "Mettez à jour les tarifs du logiciel et ne télétransmettez que les actes remboursables.",
+   "cause_action_origine": "source",
+   "metiers": [
+    "dentaire"
+   ],
+   "codes_voisins": [
+    "noemie-0650001"
+   ],
+   "source_ids": [
+    "cpam67-dentistes"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans un mémo de la CPAM du Bas-Rhin dont la date n’apparaît pas dans le texte lu ; ouvrir le PDF dans un navigateur pour lire sa date, puis confirmer. Le mémo écrit « 117001 » : l’écriture à 7 chiffres est incertaine (0117001 ou 1170001 ; un document hospitalier de 2011 cite « 1170001 BASE REMBOURSEMENT ABSENTE »).",
+   "professions_citees_par_les_sources": [
+    "chirurgiens-dentistes"
+   ],
+   "autres_ecritures": [
+    "117001",
+    "1170 001",
+    "0117001"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "2500051",
+   "slug": "noemie-2500051",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "Code LPP inexistant",
+   "explication": "La clé du code LPP est erronée (selon la fiche).",
+   "cause": "Cause indiquée par la fiche : voir l’explication.",
+   "action": "Mettez à jour votre fichier patient ou la facture selon l’information donnée par la caisse, puis retransmettez (consigne de la fiche).",
+   "cause_action_origine": "source",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [
+    "noemie-2500052",
+    "noemie-2510002"
+   ],
+   "source_ids": [
+    "fiche-rejets-opticiens-bretagne"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu seulement dans une fiche opticiens ancienne (2009, modifiée en 2015), d’origine CPAM non nommée, hébergée par un éditeur. Conflit : le lexique de la CPAM de la Loire-Atlantique (2010) donne 2500052 « CODE LPP INEXISTANT » avec un autre sens (code absent de la base).",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "2500 051",
+    "2500-051",
+    "2500051"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "2500059",
+   "slug": "noemie-2500059",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "Incompatibilité PRS/ NAT code LPP",
+   "explication": "Le code acte (nature de prestation) ne correspond pas au code LPP ; la caisse indique le code acte attendu.",
+   "cause": "Cause indiquée par la fiche : voir l’explication.",
+   "action": "Mettez à jour votre fichier patient ou la facture selon l’information donnée par la caisse, puis retransmettez (consigne de la fiche).",
+   "cause_action_origine": "source",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [
+    "noemie-2500079"
+   ],
+   "source_ids": [
+    "fiche-rejets-opticiens-bretagne"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu seulement dans une fiche opticiens ancienne (2009, modifiée en 2015), d’origine CPAM non nommée, hébergée par un éditeur. Conflit : le lexique de la CPAM de la Loire-Atlantique (2010) donne 2500079 pour « INCOMPATIBILITE PRS-NAT/CODE LPP ».",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "2500 059",
+    "2500-059",
+    "2500059"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "2520001",
+   "slug": "noemie-2520001",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "Prix unitaire absent",
+   "explication": "Le prix unitaire est obligatoire pour cette prestation LPP.",
+   "cause": "Cause indiquée par la fiche : voir l’explication.",
+   "action": "Mettez à jour votre fichier patient ou la facture selon l’information donnée par la caisse, puis retransmettez (consigne de la fiche).",
+   "cause_action_origine": "source",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [
+    "noemie-0650001"
+   ],
+   "source_ids": [
+    "fiche-rejets-opticiens-bretagne"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu seulement dans une fiche opticiens ancienne (2009, modifiée en 2015), d’origine CPAM non nommée, hébergée par un éditeur.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "2520 001",
+    "2520-001",
+    "2520001"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0315032",
+   "slug": "noemie-0315032",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "Clé du numéro d'AT erronée",
+   "explication": "La clé du numéro d’accident du travail ou de maladie professionnelle transmis est erronée.",
+   "cause": "Cause indiquée par la fiche : voir l’explication.",
+   "action": "Mettez à jour votre fichier patient ou la facture selon l’information donnée par la caisse, puis retransmettez (consigne de la fiche).",
+   "cause_action_origine": "source",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [
+    "noemie-0315062"
+   ],
+   "source_ids": [
+    "fiche-rejets-opticiens-bretagne"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu seulement dans une fiche opticiens ancienne (2009, modifiée en 2015), d’origine CPAM non nommée, hébergée par un éditeur.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0315 032",
+    "0315-032",
+    "315032"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0480055",
+   "slug": "noemie-0480055",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "Absence contrat 8x et mut fictif",
+   "explication": "Un numéro de mutuelle fictif a été transmis pour un bénéficiaire sans contrat CMU au fichier (dispositif cité par la fiche).",
+   "cause": "Cause indiquée par la fiche : voir l’explication.",
+   "action": "Mettez à jour votre fichier patient ou la facture selon l’information donnée par la caisse, puis retransmettez (consigne de la fiche).",
+   "cause_action_origine": "source",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [
+    "noemie-0480054"
+   ],
+   "source_ids": [
+    "fiche-rejets-opticiens-bretagne"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu seulement dans une fiche opticiens ancienne (2009, modifiée en 2015), d’origine CPAM non nommée, hébergée par un éditeur. Mentionne la CMU, dispositif remplacé depuis (le mémo CPAM de 2023 parle de C2S) : probablement caduc.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0480 055",
+    "0480-055",
+    "480055"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0250053",
+   "slug": "noemie-0250053",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "Bénéficiaire erroné",
+   "explication": "Signalement (pas un rejet) : le numéro d’immatriculation a été modifié dans le fichier de la caisse ; la caisse indique le numéro à utiliser.",
+   "cause": "Cause indiquée par la fiche : voir l’explication.",
+   "action": "Mettez à jour votre fichier patient ou la facture selon l’information donnée par la caisse, puis retransmettez (consigne de la fiche).",
+   "cause_action_origine": "source",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [
+    "noemie-0250050"
+   ],
+   "source_ids": [
+    "fiche-rejets-opticiens-bretagne"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu seulement dans une fiche opticiens ancienne (2009, modifiée en 2015), d’origine CPAM non nommée, hébergée par un éditeur.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0250 053",
+    "0250-053",
+    "250053"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0270053",
+   "slug": "noemie-0270053",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "Bénéficiaire erroné",
+   "explication": "Signalement (pas un rejet) : la date de naissance a été modifiée dans le fichier de la caisse ; la caisse indique celle à transmettre.",
+   "cause": "Cause indiquée par la fiche : voir l’explication.",
+   "action": "Mettez à jour votre fichier patient ou la facture selon l’information donnée par la caisse, puis retransmettez (consigne de la fiche).",
+   "cause_action_origine": "source",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [
+    "noemie-0270051"
+   ],
+   "source_ids": [
+    "fiche-rejets-opticiens-bretagne"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu seulement dans une fiche opticiens ancienne (2009, modifiée en 2015), d’origine CPAM non nommée, hébergée par un éditeur.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0270 053",
+    "0270-053",
+    "270053"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0720051",
+   "slug": "noemie-0720051",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "Paiement incompatible CMU",
+   "explication": "Signalement : le bénéficiaire est pris en charge au titre de la CMU à la date des soins.",
+   "cause": "Cause indiquée par la fiche : voir l’explication.",
+   "action": "Mettez à jour votre fichier patient ou la facture selon l’information donnée par la caisse, puis retransmettez (consigne de la fiche).",
+   "cause_action_origine": "source",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [
+    "noemie-0480054"
+   ],
+   "source_ids": [
+    "fiche-rejets-opticiens-bretagne"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu seulement dans une fiche opticiens ancienne (2009, modifiée en 2015), d’origine CPAM non nommée, hébergée par un éditeur. Mentionne la CMU, dispositif remplacé depuis (le mémo CPAM de 2023 parle de C2S) : probablement caduc.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0720 051",
+    "0720-051",
+    "720051"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0170050",
+   "slug": "noemie-0170050",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "ASSURE NON GERE PAR LA CAISSE",
+   "explication": "Explication donnée par la CPAM : en mode dégradé, le choix de l’organisme d’affiliation de l’assuré est erroné.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 170050 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 9,0 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0170 050",
+    "170050"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "2500064",
+   "slug": "noemie-2500064",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "AGE BENEFICIAIRE > AGE MAXIMAL",
+   "explication": "Explication donnée par la CPAM : L’âge du bénéficiaire, à la date de délivrance, est supérieur au maximum autorisé dans la base LPP pour ce code référence.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [
+    "noemie-2500079",
+    "noemie-2500052",
+    "noemie-2500069",
+    "noemie-2526010"
+   ],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 2500064 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 5,0 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "2500 064",
+    "2500064"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "2500079",
+   "slug": "noemie-2500079",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "INCOMPATIBILITE PRS-NAT/CODE LPP",
+   "explication": "Explication donnée par la CPAM : nature de prestation saisie différente de celle présente dans la base LPP.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [
+    "noemie-2500064",
+    "noemie-2500052",
+    "noemie-2500069",
+    "noemie-2526010"
+   ],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 2500079 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 4,0 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "2500 079",
+    "2500079"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "2540002",
+   "slug": "noemie-2540002",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "DATE DEBUT NON NUMERIQUE",
+   "explication": "Explication donnée par la CPAM : la date doit être au format numérique et ne pas comporter d’espaces ou de lettres.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 2540002 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 2,9 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "2540 002",
+    "2540002"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0460030",
+   "slug": "noemie-0460030",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "CLE NUM. PRESCRIPTEUR INCORRECTE",
+   "explication": "Explication donnée par la CPAM : la clé du numéro prescripteur transmise est erronée.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [
+    "noemie-0460002",
+    "noemie-0460001",
+    "noemie-0460054",
+    "noemie-0465002"
+   ],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 460030 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 2,8 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0460 030",
+    "460030"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0540079",
+   "slug": "noemie-0540079",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "ABSENCE CONTRAT 8X ET FORFAIT CMU",
+   "explication": "Explication donnée par la CPAM : les forfaits CMU : FDA, FDC, FDO, FDR, FTI, OP1, OP2, OP3, OP4ne peuvent être réglés que pour des bénéficiaires de la CMU.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 540079 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 2,3 %. Cite la CMU ou ses forfaits, dispositif remplacé depuis (le mémo CPAM de 2023 parle de C2S) : probablement caduc.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0540 079",
+    "540079"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0710004",
+   "slug": "noemie-0710004",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "MONTANT PART OBLIGATOIRE ABSENT",
+   "explication": "Explication donnée par la CPAM : le montant à rembourser par l’assurance obligatoire doit être présent si le cadre de règlement de la demande de remboursement précise qu’il s’agit d’un cas de tiers payant.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 710004 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 1,0 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0710 004",
+    "710004"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0680003",
+   "slug": "noemie-0680003",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "MT DEPENSE REELLE ABSENT",
+   "explication": "Explication donnée par la CPAM : problème de paramétrage logiciel sur les tarifs.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 680003 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,9 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0680 003",
+    "680003"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "2500052",
+   "slug": "noemie-2500052",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "CODE LPP INEXISTANT",
+   "explication": "Explication donnée par la CPAM : le code référence LPP transmis doit être présent dans la base LPP.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [
+    "noemie-2500064",
+    "noemie-2500079",
+    "noemie-2500069",
+    "noemie-2526010",
+    "noemie-2510001",
+    "noemie-2510002"
+   ],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 2500052 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,7 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "2500 052",
+    "2500052"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0540030",
+   "slug": "noemie-0540030",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "NATURE DE PRESTATION ERRONEE",
+   "explication": "Explication donnée par la CPAM : le code acte transmis n’existe pas.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 540030 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,6 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0540 030",
+    "540030"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0470004",
+   "slug": "noemie-0470004",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "DATE PRESC. > DATE DES SOINS",
+   "explication": "Explication donnée par la CPAM : erreur de saisie sur la date de prescription qui doit être antérieure ou égale à la date des soins.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [
+    "noemie-0470003",
+    "noemie-0470051",
+    "noemie-0470052"
+   ],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 470004 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,6 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0470 004",
+    "470004"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0210051",
+   "slug": "noemie-0210051",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "INCOMP. ASU-NAT / QUALITE BENEF.",
+   "explication": "Explication donnée par la CPAM : transmission en accident de travail pour un patient qui n’a pas le statut d’assuré.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 210051 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,6 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0210 051",
+    "210051"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0210001",
+   "slug": "noemie-0210001",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "NATURE D'ASSURANCE ABSENTE",
+   "explication": "Explication donnée par la CPAM : cette information du type 2 de la norme est obligatoire. Elle a été omise par le tiers dans cette facture.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 210001 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,6 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0210 001",
+    "210001"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0540060",
+   "slug": "noemie-0540060",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "INCOMP. NAT. PREST./PRESCRIPTEUR",
+   "explication": "Explication donnée par la CPAM : L’identification du prescripteur n’a pas été renseignée.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 540060 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,5 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0540 060",
+    "540060"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0172050",
+   "slug": "noemie-0172050",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "LOT DEJA EN TRAITEMENT",
+   "explication": "Explication donnée par la CPAM : vous avez transmis deux lots portant le même numéro. Lorsque vous renvoyez un lot suite à son rejet, le numéro du lot corrigé doit être différent du numéro du lot d’origine.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [
+    "noemie-0172054",
+    "noemie-0180053",
+    "noemie-0180054"
+   ],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 172050 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,5 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0172 050",
+    "172050"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0540080",
+   "slug": "noemie-0540080",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "INCOMP.NAT PREST / AGE BENEF",
+   "explication": "Explication donnée par la CPAM : les prestations OP1, OP2, OP3, OP4 ne peuvent pas être réglées à des bénéficiairesde moins de 16 ans.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 540080 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,5 %. Cite la CMU ou ses forfaits, dispositif remplacé depuis (le mémo CPAM de 2023 parle de C2S) : probablement caduc.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0540 080",
+    "540080"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "2526010",
+   "slug": "noemie-2526010",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "DIF P.U. * QTE /MNT TOT LPP",
+   "explication": "Explication donnée par la CPAM : la \"base de remboursement LPP\" doit être égale au \"Tarif de référence LPP ou Prix unitaire sur devis\" multiplié par le \"nombre d’unités",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [
+    "noemie-2500064",
+    "noemie-2500079",
+    "noemie-2500052",
+    "noemie-2500069"
+   ],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 2526010 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,4 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "2526 010",
+    "2526010"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0460002",
+   "slug": "noemie-0460002",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "NUMERO PRESCRIPTEUR INCORRECT",
+   "explication": "Explication donnée par la CPAM : le numéro de prescripteur transmis comporte les 2 premières positions à zéro et les autres positions sont différentes de zéro.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [
+    "noemie-0460030",
+    "noemie-0460001",
+    "noemie-0460054",
+    "noemie-0465002"
+   ],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 460002 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,4 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0460 002",
+    "460002"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "2500069",
+   "slug": "noemie-2500069",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "TARIF TRANSMIS > TARIF REFERENCE",
+   "explication": "Explication donnée par la CPAM : si le tarif de référence transmis est supérieur au tarif de référence de la base pour un code LPP donné, la facture est rejetée. Ce rejet intervient également en cas d’application à tort d’un coefficient DOM.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [
+    "noemie-2500064",
+    "noemie-2500079",
+    "noemie-2500052",
+    "noemie-2526010"
+   ],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 2500069 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,4 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "2500 069",
+    "2500069"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0465002",
+   "slug": "noemie-0465002",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "VALEUR ERRONEE ORIGINE PRESC.",
+   "explication": "Explication donnée par la CPAM : L’origine de la prescription ne peut prendre que certaines valeurs : O,P,S,T ou blanc.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [
+    "noemie-0460030",
+    "noemie-0460002",
+    "noemie-0460001",
+    "noemie-0460054"
+   ],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 465002 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,4 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0465 002",
+    "465002"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0250031",
+   "slug": "noemie-0250031",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "CLE DU MATRICULE ERRONEE",
+   "explication": "Explication donnée par la CPAM : le système vérifie la compatibilité entre le matricule et sa clé. La clé transmise dans cette facture est incompatible avec le matricule transmis.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [
+    "noemie-0270052",
+    "noemie-0270001",
+    "noemie-0250003"
+   ],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 250031 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,3 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0250 031",
+    "250031"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0470003",
+   "slug": "noemie-0470003",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "DATE PRESC. > DATE DE TRAITEMENT",
+   "explication": "Explication donnée par la CPAM : erreur de saisie sur la date de prescription, postérieure à la date de télétransmission.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [
+    "noemie-0470004",
+    "noemie-0470051",
+    "noemie-0470052"
+   ],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 470003 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,3 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0470 003",
+    "470003"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0180054",
+   "slug": "noemie-0180054",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "FAC SAISIE INTERNE DEJA EN TRAITEMENT",
+   "explication": "Explication donnée par la CPAM : une facture en saisie interne est déjà en instance de traitement via les flux externes B2.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [
+    "noemie-0172050",
+    "noemie-0172054",
+    "noemie-0180053"
+   ],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 180054 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,3 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0180 054",
+    "180054"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0460001",
+   "slug": "noemie-0460001",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "NUM. PRESCRIPTEUR NON NUMERIQUE",
+   "explication": "Explication donnée par la CPAM : le numéro de prescripteur saisi comporte des blancs ou des lettres.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [
+    "noemie-0460030",
+    "noemie-0460002",
+    "noemie-0460054",
+    "noemie-0465002"
+   ],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 460001 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,2 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0460 001",
+    "460001"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "2526015",
+   "slug": "noemie-2526015",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "MNT TOT LPP <> BASE REMBOURSEMENT",
+   "explication": "Explication donnée par la CPAM : la somme des zones \"base de remboursement LPP\" des types 4F doit être égale à la ’base de remboursement\" du type 4A. Si le \"qualificatif de la dépense\" du type 4 est à la valeur \"N\" (non remboursable), alors la base de remboursement est à zéro et ce rejet n’est pas effectué.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [
+    "noemie-2522001",
+    "noemie-2522015",
+    "noemie-2500078"
+   ],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 2526015 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,2 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "2526 015",
+    "2526015"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0560059",
+   "slug": "noemie-0560059",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "PRESENCE OBLIGATOIRE CODAGE LPP",
+   "explication": "Explication donnée par la CPAM : le code LPP n’a pas été renseigné alors qu’il est obligatoire.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [
+    "noemie-2510001",
+    "noemie-2510002",
+    "noemie-2500052"
+   ],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 560059 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,2 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0560 059",
+    "560059"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0100056",
+   "slug": "noemie-0100056",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "INCOMP. EMETTEUR/PART. SANTE",
+   "explication": "Explication donnée par la CPAM : L’émetteur du fichier (010) n’est pas le partenaire de santé (transmission par un concentrateur ou un cabinet) et n’est pas habilité à émettre pour ce partenaire dans le fichier des options tiers.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 100056 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,1 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0100 056",
+    "100056"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0540064",
+   "slug": "noemie-0540064",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "INCOMP. NAT. PREST. SPE.EXECUTANT",
+   "explication": "Explication donnée par la CPAM : cotation d’un acte ne faisant pas partie de la nomenclature des opticiens.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 540064 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,1 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0540 064",
+    "540064"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0460054",
+   "slug": "noemie-0460054",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "INCOMP PRESCRIPTEUR/NATURE PREST.",
+   "explication": "Explication donnée par la CPAM : la spécialité du prescripteur déclaré ne l’autorise pas à prescrire cet acte ou cette prestation sanitaire.Il s’agit généralement d’une erreur de saisie sur le numéro de prescripteur.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [
+    "noemie-0460030",
+    "noemie-0460002",
+    "noemie-0460001",
+    "noemie-0465002"
+   ],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 460054 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,1 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0460 054",
+    "460054"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0270052",
+   "slug": "noemie-0270052",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "BENEF INCONNU (EXISTE JOUR = 01)",
+   "explication": "Explication donnée par la CPAM : en mode dégradé, erreur sur la date de naissance du bénéficiaire. La bonne datede naissance n’est pas obligatoirement celle du fichier de la CPAM.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [
+    "noemie-0270001",
+    "noemie-0250031",
+    "noemie-0250003"
+   ],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 270052 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,1 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0270 052",
+    "270052"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0270001",
+   "slug": "noemie-0270001",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "DATE NAISS. BENEF. ABSENTE",
+   "explication": "Explication donnée par la CPAM : la date de naissance du bénéficiaire de prestations est obligatoire dans le type 2 de la norme. Elle a été omise par le tiers dans cette facture.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [
+    "noemie-0270052",
+    "noemie-0250031",
+    "noemie-0250003"
+   ],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 270001 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,1 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0270 001",
+    "270001"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0172054",
+   "slug": "noemie-0172054",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "LOT EN DOUBLE",
+   "explication": "Explication donnée par la CPAM : deux lot comportent la même date de création et le même numéro de lot.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [
+    "noemie-0172050",
+    "noemie-0180053",
+    "noemie-0180054"
+   ],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 172054 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,1 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0172 054",
+    "172054"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0470051",
+   "slug": "noemie-0470051",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "DATE PRESC. > DATE DECES",
+   "explication": "Explication donnée par la CPAM : la date de prescription saisie est postérieure à la date de décès du patient.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [
+    "noemie-0470004",
+    "noemie-0470003",
+    "noemie-0470052"
+   ],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 470051 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,1 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0470 051",
+    "470051"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0600051",
+   "slug": "noemie-0600051",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "DATE PRESTATION > DATE DECES",
+   "explication": "Explication donnée par la CPAM : la date de soin saisie est postérieure à la date de décès du patient.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 600051 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,1 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0600 051",
+    "600051"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0760050",
+   "slug": "noemie-0760050",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "DESTINATAIRE REGLEMENT INCONNU",
+   "explication": "Explication donnée par la CPAM : le destinataire du règlement n’est pas le partenaire de santé et il ne figure pas dans la BDO Praticien, Etablissement ou Destinataire. Il s’agit généralement d’une erreur de saisie sur le numéro de prescripteur ou FINESS ou matricule du bénéficiaire.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 760050 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,1 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0760 050",
+    "760050"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0180053",
+   "slug": "noemie-0180053",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "FACTURE ABSENTE DE L'INSTANCIER",
+   "explication": "Explication donnée par la CPAM : quand un lot est renvoyé par le tiers suite à son rejet, il doit être strictement identique au lot initial. Dans le cas présent, une facture absente du lot initial a été ajoutée dans le lot retransmis et est doncrejetée.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [
+    "noemie-0172050",
+    "noemie-0172054",
+    "noemie-0180054"
+   ],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 180053 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,1 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0180 053",
+    "180053"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "1005059",
+   "slug": "noemie-1005059",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "DROITS A JUSTIFIER",
+   "explication": "Explication donnée par la CPAM : si aucune règle de gestion n’a permis l’ouverture des droits, et si les droits sont à justifier pour le régime, le dossier ou la facture est rejeté.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 1005059 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,0 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "1005 059",
+    "1005059"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0250003",
+   "slug": "noemie-0250003",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "MATRICULE DE L'ASSURE INCORRECT",
+   "explication": "Explication donnée par la CPAM : le matricule doit être numérique ou contenir un A ou un B en 7ème position mais pas d’espaces.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [
+    "noemie-0270052",
+    "noemie-0270001",
+    "noemie-0250031"
+   ],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 250003 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,0 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0250 003",
+    "250003"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "1050057",
+   "slug": "noemie-1050057",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "PAS DE CELLULE MIGRANT EN BDO",
+   "explication": "Explication donnée par la CPAM : L’assuré est un migrant qui n’a plus de droits ouverts.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 1050057 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,0 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "1050 057",
+    "1050057"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0740054",
+   "slug": "noemie-0740054",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "SPE.IMPOSSIBLE A DETERMINER",
+   "explication": "Explication donnée par la CPAM : anomalie sur le fichier des Professionnels de santé de la CPAM.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 740054 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,0 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0740 054",
+    "740054"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0340002",
+   "slug": "noemie-0340002",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "VALEUR ERRONE ORG. GESTIONNAIRE",
+   "explication": "Explication donnée par la CPAM : erreur de saisie sur le numéro de l’organisme gestionnaire.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 340002 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,0 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0340 002",
+    "340002"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "2500078",
+   "slug": "noemie-2500078",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "ARTICLE SUR DEVIS / PU A ZERO",
+   "explication": "Explication donnée par la CPAM : le prix unitaire transmis doit être différent de zéro.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [
+    "noemie-2522001",
+    "noemie-2522015",
+    "noemie-2526015"
+   ],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 2500078 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,0 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "2500 078",
+    "2500078"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0315062",
+   "slug": "noemie-0315062",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "AT INCONNU EN BDO A CETTE DATE",
+   "explication": "Explication donnée par la CPAM : la date d’accident de travail n’est pas ou pas encore connue dans notre fichier.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 315062 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,0 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0315 062",
+    "315062"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0320002",
+   "slug": "noemie-0320002",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "CODE GRAND REGIME NON AUTORISE",
+   "explication": "Explication donnée par la CPAM : le code grand régime ne peut prendre que les valeurs : 01-91-92-93-94-95-96-97-98-99. Le code transmis a une valeur différente.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 320002 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,0 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0320 002",
+    "320002"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "2510001",
+   "slug": "noemie-2510001",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "CODE REFERENCE LPP ABSENT",
+   "explication": "Explication donnée par la CPAM : la présence du Code référence LPP est obligatoire dans les types 3F et 4F. De plus dans le type 3F, si la deuxième occurrence est renseignée, la première occurrence doit également être renseignée.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [
+    "noemie-2510002",
+    "noemie-0560059",
+    "noemie-2500052"
+   ],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 2510001 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,0 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "2510 001",
+    "2510001"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0315033",
+   "slug": "noemie-0315033",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "DATE ACCIDENT OBLIG. / ASU-NAT",
+   "explication": "Explication donnée par la CPAM : transmission au risque accident de travail, sans indication de la date de l’accident.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 315033 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,0 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0315 033",
+    "315033"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0600050",
+   "slug": "noemie-0600050",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "DATE DEB.PREST. ANTER. A 2A + 3M",
+   "explication": "La date de début des prestations est trop ancienne au regard du délai de remboursement visé par le libellé (« 2A + 3M »). Reformulation prudente, le lexique de 2010 citant un délai non vérifié ici.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 600050 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,0 %. Le lexique cite un délai de remboursement : non repris ici, à vérifier avant tout usage.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0600 050",
+    "600050"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0470052",
+   "slug": "noemie-0470052",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "DATE PRESCRIPT. < DATE NAISSANCE",
+   "explication": "Explication donnée par la CPAM : la date de prescription saisie est antérieure à la date de naissance.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [
+    "noemie-0470004",
+    "noemie-0470003",
+    "noemie-0470051"
+   ],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 470052 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,0 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0470 052",
+    "470052"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0730051",
+   "slug": "noemie-0730051",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "EXECUTANT INCONNU DANS REP. NAT.",
+   "explication": "Explication donnée par la CPAM : tous les exécutants doivent être connus dans le répertoire national sinon la facture est rejetée. Il s’agit généralement d’une erreur de saisie sur le numéro exécutant.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 730051 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,0 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0730 051",
+    "730051"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "2522015",
+   "slug": "noemie-2522015",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "MNT FACT. AP REMISE> PU PUB * QTE",
+   "explication": "Explication donnée par la CPAM : le \"montant total facturé après remise éventuelle\" doit être inférieur ou égal au \"Prix unitaire de vente\" multiplié par \"nombre d’unités\".",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [
+    "noemie-2522001",
+    "noemie-2526015",
+    "noemie-2500078"
+   ],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 2522015 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,0 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "2522 015",
+    "2522015"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "2522001",
+   "slug": "noemie-2522001",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "MONTANT FACTURE ABSENT",
+   "explication": "Explication donnée par la CPAM : le \"montant facturé\" ou \"montant total facturé\" est obligatoire.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [
+    "noemie-2522015",
+    "noemie-2526015",
+    "noemie-2500078"
+   ],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 2522001 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,0 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "2522 001",
+    "2522001"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0450002",
+   "slug": "noemie-0450002",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "NAT. MODULATION TM ERRONEE",
+   "explication": "Explication donnée par la CPAM : le justificatif d’exonération transmis ne peut prendre que les valeurs : 0,1,2,3,4,5,9 (Cf. Annexe 9 Norme B2). Le justificatif transmis n’entre pas dans ces valeurs.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 450002 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,0 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0450 002",
+    "450002"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0950056",
+   "slug": "noemie-0950056",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "PROBLEME DRG DANS BDO ASSURE",
+   "explication": "Explication donnée par la CPAM : anomalie sur le fichier \"assurés\" de la CPAM.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 950056 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,0 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0950 056",
+    "950056"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "2510002",
+   "slug": "noemie-2510002",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "STRUCTURE CODE REF LPP ERRONEE",
+   "explication": "Explication donnée par la CPAM : les 7 premiers caractères du code référence doivent être numériques et ne pas comporter d’espaces ou de lettres.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [
+    "noemie-2510001",
+    "noemie-0560059",
+    "noemie-2500052"
+   ],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 2510002 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,0 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "2510 002",
+    "2510002"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "0660008",
+   "slug": "noemie-0660008",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "VALEUR QUANTITE > MAXI. AUTORISE",
+   "explication": "Explication donnée par la CPAM : la quantité ne doit pas dépasser une valeur maximum en fonction de la nature de prestation.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 660008 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,0 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "0660 008",
+    "660008"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "1545053",
+   "slug": "noemie-1545053",
+   "famille": "noemie",
+   "emetteur": "Assurance Maladie (caisse primaire, retour NOEMIE)",
+   "libelle_officiel": "VERIF CRITERE SELECTIF MODE REJET",
+   "explication": "Explication donnée par la CPAM : la facture est rejetée car elle répond à un critère de surveillance de type REJET.",
+   "cause": "Voir l’explication de la CPAM.",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé, corrigez-la puis retransmettez ; en cas de doute, demandez à votre caisse ou à votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "optique-audio"
+   ],
+   "codes_voisins": [],
+   "source_ids": [
+    "cpam44-optique-2010"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Lu uniquement dans le lexique de la CPAM de la Loire-Atlantique d’octobre 2010 (document ancien, hébergé par un éditeur) ; code écrit « 1545053 » dans le document, complété à 7 chiffres. Part des rejets optique dans ce département en 2010 : 0,0 %.",
+   "professions_citees_par_les_sources": [
+    "opticiens"
+   ],
+   "autres_ecritures": [
+    "1545 053",
+    "1545053"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "R5003",
+   "slug": "oct-resopharma-r5003",
+   "famille": "arl",
+   "emetteur": "plateforme Résopharma (organisme concentrateur technique des pharmacies)",
+   "libelle_officiel": "LOT DEJA TRANSMIS",
+   "explication": "Le lot a déjà été transmis : l’OCT refuse ce nouvel envoi. Rejet émis par l’OCT, avant transmission à l’organisme.",
+   "cause": "Voir l’explication (déduite du libellé).",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé (organisme, numéro, lot), corrigez puis renvoyez ; en cas de doute, contactez Résopharma ou votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "pharmacie"
+   ],
+   "codes_voisins": [
+    "oct-resopharma-r5021",
+    "oct-resopharma-r6030"
+   ],
+   "source_ids": [
+    "resopharma-oct-2013"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Nomenclature publiée par l’OCT Résopharma, datée du 17/04/2013 (type ERR T1) : ancienne, et propre aux pharmacies qui passent par cet OCT. Codes « R… » sans rapport avec les codes NOEMIE de même allure.",
+   "autres_ecritures": [
+    "R5003"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "R5008",
+   "slug": "oct-resopharma-r5008",
+   "famille": "arl",
+   "emetteur": "plateforme Résopharma (organisme concentrateur technique des pharmacies)",
+   "libelle_officiel": "ORGANISME DESTINATAIRE NON RENSEIGNE",
+   "explication": "L’organisme destinataire du lot n’est pas renseigné. Rejet émis par l’OCT, avant transmission à l’organisme.",
+   "cause": "Voir l’explication (déduite du libellé).",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé (organisme, numéro, lot), corrigez puis renvoyez ; en cas de doute, contactez Résopharma ou votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "pharmacie"
+   ],
+   "codes_voisins": [
+    "oct-resopharma-r5016",
+    "oct-resopharma-r5027",
+    "oct-resopharma-r5013"
+   ],
+   "source_ids": [
+    "resopharma-oct-2013"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Nomenclature publiée par l’OCT Résopharma, datée du 17/04/2013 (type ERR T1) : ancienne, et propre aux pharmacies qui passent par cet OCT. Codes « R… » sans rapport avec les codes NOEMIE de même allure.",
+   "autres_ecritures": [
+    "R5008"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "R5013",
+   "slug": "oct-resopharma-r5013",
+   "famille": "arl",
+   "emetteur": "plateforme Résopharma (organisme concentrateur technique des pharmacies)",
+   "libelle_officiel": "PLUSIEURS DEBITEURS RO POUR UN MEME LOT",
+   "explication": "Le lot contient des factures pour plusieurs organismes obligatoires (débiteurs RO) différents. Rejet émis par l’OCT, avant transmission à l’organisme.",
+   "cause": "Voir l’explication (déduite du libellé).",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé (organisme, numéro, lot), corrigez puis renvoyez ; en cas de doute, contactez Résopharma ou votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "pharmacie"
+   ],
+   "codes_voisins": [
+    "oct-resopharma-r5008",
+    "oct-resopharma-r5016",
+    "oct-resopharma-r5027"
+   ],
+   "source_ids": [
+    "resopharma-oct-2013"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Nomenclature publiée par l’OCT Résopharma, datée du 17/04/2013 (type ERR T1) : ancienne, et propre aux pharmacies qui passent par cet OCT. Codes « R… » sans rapport avec les codes NOEMIE de même allure.",
+   "autres_ecritures": [
+    "R5013"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "R5016",
+   "slug": "oct-resopharma-r5016",
+   "famille": "arl",
+   "emetteur": "plateforme Résopharma (organisme concentrateur technique des pharmacies)",
+   "libelle_officiel": "CENTRE PAYEUR INCONNU",
+   "explication": "Le centre payeur indiqué est inconnu de l’OCT. Rejet émis par l’OCT, avant transmission à l’organisme.",
+   "cause": "Voir l’explication (déduite du libellé).",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé (organisme, numéro, lot), corrigez puis renvoyez ; en cas de doute, contactez Résopharma ou votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "pharmacie"
+   ],
+   "codes_voisins": [
+    "oct-resopharma-r5008",
+    "oct-resopharma-r5027",
+    "oct-resopharma-r5013"
+   ],
+   "source_ids": [
+    "resopharma-oct-2013"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Nomenclature publiée par l’OCT Résopharma, datée du 17/04/2013 (type ERR T2) : ancienne, et propre aux pharmacies qui passent par cet OCT. Codes « R… » sans rapport avec les codes NOEMIE de même allure.",
+   "autres_ecritures": [
+    "R5016"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "R5021",
+   "slug": "oct-resopharma-r5021",
+   "famille": "arl",
+   "emetteur": "plateforme Résopharma (organisme concentrateur technique des pharmacies)",
+   "libelle_officiel": "FACTURE DEJA TRANSMISE AUPARAVANT",
+   "explication": "La facture a déjà été transmise auparavant. Rejet émis par l’OCT, avant transmission à l’organisme.",
+   "cause": "Voir l’explication (déduite du libellé).",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé (organisme, numéro, lot), corrigez puis renvoyez ; en cas de doute, contactez Résopharma ou votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "pharmacie"
+   ],
+   "codes_voisins": [
+    "oct-resopharma-r5003",
+    "oct-resopharma-r6030"
+   ],
+   "source_ids": [
+    "resopharma-oct-2013"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Nomenclature publiée par l’OCT Résopharma, datée du 17/04/2013 (type ERR T2) : ancienne, et propre aux pharmacies qui passent par cet OCT. Codes « R… » sans rapport avec les codes NOEMIE de même allure.",
+   "autres_ecritures": [
+    "R5021"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "R5027",
+   "slug": "oct-resopharma-r5027",
+   "famille": "arl",
+   "emetteur": "plateforme Résopharma (organisme concentrateur technique des pharmacies)",
+   "libelle_officiel": "ORGANISME RO \"code transmis\" INCONNU",
+   "explication": "L’organisme obligatoire (RO) indiqué est inconnu de l’OCT. Rejet émis par l’OCT, avant transmission à l’organisme.",
+   "cause": "Voir l’explication (déduite du libellé).",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé (organisme, numéro, lot), corrigez puis renvoyez ; en cas de doute, contactez Résopharma ou votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "pharmacie"
+   ],
+   "codes_voisins": [
+    "oct-resopharma-r5008",
+    "oct-resopharma-r5016",
+    "oct-resopharma-r5013"
+   ],
+   "source_ids": [
+    "resopharma-oct-2013"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Nomenclature publiée par l’OCT Résopharma, datée du 17/04/2013 (type ERR T2) : ancienne, et propre aux pharmacies qui passent par cet OCT. Codes « R… » sans rapport avec les codes NOEMIE de même allure.",
+   "autres_ecritures": [
+    "R5027"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "R5029",
+   "slug": "oct-resopharma-r5029",
+   "famille": "arl",
+   "emetteur": "plateforme Résopharma (organisme concentrateur technique des pharmacies)",
+   "libelle_officiel": "PLUSIEURS MODES DE REGLEMENT DANS LE MEME LOT",
+   "explication": "Le lot contient plusieurs modes de règlement. Rejet émis par l’OCT, avant transmission à l’organisme.",
+   "cause": "Voir l’explication (déduite du libellé).",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé (organisme, numéro, lot), corrigez puis renvoyez ; en cas de doute, contactez Résopharma ou votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "pharmacie"
+   ],
+   "codes_voisins": [],
+   "source_ids": [
+    "resopharma-oct-2013"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Nomenclature publiée par l’OCT Résopharma, datée du 17/04/2013 (type ERR T2) : ancienne, et propre aux pharmacies qui passent par cet OCT. Codes « R… » sans rapport avec les codes NOEMIE de même allure.",
+   "autres_ecritures": [
+    "R5029"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "R5080",
+   "slug": "oct-resopharma-r5080",
+   "famille": "autre",
+   "emetteur": "plateforme Résopharma (organisme concentrateur technique des pharmacies)",
+   "libelle_officiel": "ABONNEMENT SUSPENDU / CONTRAT RESILIE",
+   "explication": "L’abonnement du professionnel auprès de l’OCT est suspendu ou son contrat résilié. Rejet émis par l’OCT, avant transmission à l’organisme.",
+   "cause": "Voir l’explication (déduite du libellé).",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé (organisme, numéro, lot), corrigez puis renvoyez ; en cas de doute, contactez Résopharma ou votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "pharmacie"
+   ],
+   "codes_voisins": [],
+   "source_ids": [
+    "resopharma-oct-2013"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Nomenclature publiée par l’OCT Résopharma, datée du 17/04/2013 (type ERR T1) : ancienne, et propre aux pharmacies qui passent par cet OCT. Codes « R… » sans rapport avec les codes NOEMIE de même allure.",
+   "autres_ecritures": [
+    "R5080"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "R6030",
+   "slug": "oct-resopharma-r6030",
+   "famille": "amc-tiers-payant",
+   "emetteur": "plateforme Résopharma (organisme concentrateur technique des pharmacies)",
+   "libelle_officiel": "FACTURE RC DEJA TRANSMISE AUPARAVANT",
+   "explication": "La facture destinée à la complémentaire (RC) a déjà été transmise auparavant. Rejet émis par l’OCT, avant transmission à l’organisme.",
+   "cause": "Voir l’explication (déduite du libellé).",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé (organisme, numéro, lot), corrigez puis renvoyez ; en cas de doute, contactez Résopharma ou votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "pharmacie"
+   ],
+   "codes_voisins": [
+    "oct-resopharma-r5003",
+    "oct-resopharma-r5021"
+   ],
+   "source_ids": [
+    "resopharma-oct-2013"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Nomenclature publiée par l’OCT Résopharma, datée du 17/04/2013 (type ERR T2) : ancienne, et propre aux pharmacies qui passent par cet OCT. Codes « R… » sans rapport avec les codes NOEMIE de même allure.",
+   "autres_ecritures": [
+    "R6030"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "R6037",
+   "slug": "oct-resopharma-r6037",
+   "famille": "amc-tiers-payant",
+   "emetteur": "plateforme Résopharma (organisme concentrateur technique des pharmacies)",
+   "libelle_officiel": "ORGANISME HORS CONVENTION",
+   "explication": "L’OCT signale l’organisme complémentaire indiqué comme « hors convention ». Rejet émis par l’OCT, avant transmission à l’organisme.",
+   "cause": "Voir l’explication (déduite du libellé).",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé (organisme, numéro, lot), corrigez puis renvoyez ; en cas de doute, contactez Résopharma ou votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "pharmacie"
+   ],
+   "codes_voisins": [
+    "oct-resopharma-r6045",
+    "oct-resopharma-r6039",
+    "oct-resopharma-r6040",
+    "oct-resopharma-r6068"
+   ],
+   "source_ids": [
+    "resopharma-oct-2013"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Nomenclature publiée par l’OCT Résopharma, datée du 17/04/2013 (type ERR T2) : ancienne, et propre aux pharmacies qui passent par cet OCT. Codes « R… » sans rapport avec les codes NOEMIE de même allure.",
+   "autres_ecritures": [
+    "R6037"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "R6039",
+   "slug": "oct-resopharma-r6039",
+   "famille": "amc-tiers-payant",
+   "emetteur": "plateforme Résopharma (organisme concentrateur technique des pharmacies)",
+   "libelle_officiel": "ORGANISME RC \"code transmis\" INCONNU",
+   "explication": "L’organisme complémentaire (RC) indiqué est inconnu de l’OCT. Rejet émis par l’OCT, avant transmission à l’organisme.",
+   "cause": "Voir l’explication (déduite du libellé).",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé (organisme, numéro, lot), corrigez puis renvoyez ; en cas de doute, contactez Résopharma ou votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "pharmacie"
+   ],
+   "codes_voisins": [
+    "oct-resopharma-r6037",
+    "oct-resopharma-r6045",
+    "oct-resopharma-r6040",
+    "oct-resopharma-r6068"
+   ],
+   "source_ids": [
+    "resopharma-oct-2013"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Nomenclature publiée par l’OCT Résopharma, datée du 17/04/2013 (type ERR T2) : ancienne, et propre aux pharmacies qui passent par cet OCT. Codes « R… » sans rapport avec les codes NOEMIE de même allure.",
+   "autres_ecritures": [
+    "R6039"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "R6040",
+   "slug": "oct-resopharma-r6040",
+   "famille": "amc-tiers-payant",
+   "emetteur": "plateforme Résopharma (organisme concentrateur technique des pharmacies)",
+   "libelle_officiel": "ORGANISME RC INCORRECTE",
+   "explication": "Le code d’organisme complémentaire (RC) est incorrect. Rejet émis par l’OCT, avant transmission à l’organisme.",
+   "cause": "Voir l’explication (déduite du libellé).",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé (organisme, numéro, lot), corrigez puis renvoyez ; en cas de doute, contactez Résopharma ou votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "pharmacie"
+   ],
+   "codes_voisins": [
+    "oct-resopharma-r6037",
+    "oct-resopharma-r6045",
+    "oct-resopharma-r6039",
+    "oct-resopharma-r6068"
+   ],
+   "source_ids": [
+    "resopharma-oct-2013"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Nomenclature publiée par l’OCT Résopharma, datée du 17/04/2013 (type ERR T2) : ancienne, et propre aux pharmacies qui passent par cet OCT. Codes « R… » sans rapport avec les codes NOEMIE de même allure.",
+   "autres_ecritures": [
+    "R6040"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "R6045",
+   "slug": "oct-resopharma-r6045",
+   "famille": "amc-tiers-payant",
+   "emetteur": "plateforme Résopharma (organisme concentrateur technique des pharmacies)",
+   "libelle_officiel": "FACTURE HORS CADRE CONVENTIONNEL",
+   "explication": "L’OCT signale la facture comme « hors cadre conventionnel ». Rejet émis par l’OCT, avant transmission à l’organisme.",
+   "cause": "Voir l’explication (déduite du libellé).",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé (organisme, numéro, lot), corrigez puis renvoyez ; en cas de doute, contactez Résopharma ou votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "pharmacie"
+   ],
+   "codes_voisins": [
+    "oct-resopharma-r6037",
+    "oct-resopharma-r6039",
+    "oct-resopharma-r6040",
+    "oct-resopharma-r6068"
+   ],
+   "source_ids": [
+    "resopharma-oct-2013"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Nomenclature publiée par l’OCT Résopharma, datée du 17/04/2013 (type ERR T2) : ancienne, et propre aux pharmacies qui passent par cet OCT. Codes « R… » sans rapport avec les codes NOEMIE de même allure.",
+   "autres_ecritures": [
+    "R6045"
+   ],
+   "page_conseillee": false
+  },
+  {
+   "code": "R6068",
+   "slug": "oct-resopharma-r6068",
+   "famille": "amc-tiers-payant",
+   "emetteur": "plateforme Résopharma (organisme concentrateur technique des pharmacies)",
+   "libelle_officiel": "RC OBSOLETE UTILISER SP SANTE",
+   "explication": "Le code d’organisme complémentaire est obsolète ; l’OCT indique d’utiliser SP Santé. Rejet émis par l’OCT, avant transmission à l’organisme.",
+   "cause": "Voir l’explication (déduite du libellé).",
+   "action": "Vérifiez dans votre logiciel la donnée désignée par le libellé (organisme, numéro, lot), corrigez puis renvoyez ; en cas de doute, contactez Résopharma ou votre éditeur.",
+   "cause_action_origine": "deduit_du_libelle",
+   "metiers": [
+    "pharmacie"
+   ],
+   "codes_voisins": [
+    "oct-resopharma-r6037",
+    "oct-resopharma-r6045",
+    "oct-resopharma-r6039",
+    "oct-resopharma-r6040"
+   ],
+   "source_ids": [
+    "resopharma-oct-2013"
+   ],
+   "statut": "a_verifier",
+   "note_verification": "Nomenclature publiée par l’OCT Résopharma, datée du 17/04/2013 (type ERR T2) : ancienne, et propre aux pharmacies qui passent par cet OCT. Codes « R… » sans rapport avec les codes NOEMIE de même allure.",
+   "autres_ecritures": [
+    "R6068"
+   ],
+   "page_conseillee": false
+  }
+ ]
+}

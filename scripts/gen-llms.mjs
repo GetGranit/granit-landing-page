@@ -8,6 +8,7 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { editionsEnLigne } from "./actualites/en-ligne.mjs";
 import { articlesEnLigne } from "./ressources/en-ligne.mjs";
+import { ACCUEIL_OUTILS, decouvrirOutils } from "./outils/decouvrir.mjs";
 
 const SITE = "https://www.getgranit.ai";
 const racine = process.cwd();
@@ -100,6 +101,21 @@ const metiers = ordreMetiers
   .filter((v) => publie(`/ressources/metier/${v}`))
   .map((v) => ligne(verticales[v].nom, `/ressources/metier/${v}`, verticales[v].description));
 
+// Outils référentiels (scripts/outils/decouvrir.mjs) : /outils, puis pour chaque outil son hub et ses
+// entrées publiées. Sans dossier d'outil, la section n'existe pas.
+const outils = await decouvrirOutils(racine);
+const lignesOutils = [
+  ...(publie(ACCUEIL_OUTILS.chemin)
+    ? [ligne(ACCUEIL_OUTILS.titre, ACCUEIL_OUTILS.chemin, ACCUEIL_OUTILS.description)]
+    : []),
+  ...outils.flatMap(({ outil, pages }) => [
+    ...(publie(outil.chemin) ? [ligne(outil.nom, outil.chemin, outil.description)] : []),
+    ...pages
+      .filter((p) => p.type === "entree" && publie(p.chemin))
+      .map((p) => ligne(p.titre, p.chemin, p.description)),
+  ]),
+];
+
 const section = (titre, lignes) => (lignes.length ? `## ${titre}\n\n${lignes.join("\n")}\n` : "");
 
 const txt = `# Granit
@@ -112,6 +128,7 @@ ${section(
   "Pages principales",
   pages.map(([t, p, d]) => ligne(t, p, d)),
 )}
+${section("Outils gratuits", lignesOutils)}
 ${section("Actualités", actualites)}
 ${section("Ressources par métier", metiers)}
 ${sectionsCategories.map((s) => section(s.titre, s.lignes)).join("\n")}
@@ -122,5 +139,5 @@ ${section(
 
 writeFileSync("public/llms.txt", txt);
 console.log(
-  `llms.txt written: ${pages.length} pages + ${metiers.length} métiers + ${ressources.length} ressources + ${actualites.length} actualités + ${anciens.length} anciens articles`,
+  `llms.txt written: ${pages.length} pages + ${lignesOutils.length} outils + ${metiers.length} métiers + ${ressources.length} ressources + ${actualites.length} actualités + ${anciens.length} anciens articles`,
 );

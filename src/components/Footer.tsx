@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { usePostHog } from "posthog-js/react";
 import { useLanguage } from "@/lib/i18n";
 import { rubriqueOuverte } from "@/lib/actualites/ouverture";
+import { outilsDisponibles } from "@/lib/outils/socle/outils";
 import logoRose from "@/assets/logo-light.svg";
 import { GrandLogo } from "./GrandLogo";
 
@@ -102,6 +103,10 @@ export function Footer({ colle = false }: { colle?: boolean }) {
               { to: "/tarifs", label: t.pricing },
               { to: "/ressources", label: t.resources },
               ...(rubriqueOuverte ? [{ to: "/actualites", label: t.news }] : []),
+              // Outils référentiels (français seulement) : le lien n'existe qu'une fois un outil fusionné.
+              ...(lang === "fr" && outilsDisponibles().length
+                ? [{ to: "/outils", label: "Outils gratuits" }]
+                : []),
             ]}
           />
           <FooterCol

@@ -35,12 +35,15 @@ import { Route as EnIndexRouteImport } from './routes/en.index'
 import { Route as EnCgvRouteImport } from './routes/en.cgv'
 import { Route as MetiersIndexRouteImport } from './routes/metiers.index'
 import { Route as MetiersMetierRouteImport } from './routes/metiers.$metier'
+import { Route as OutilsIndexRouteImport } from './routes/outils.index'
 import { Route as OutilsHeuresDeDecembreRouteImport } from './routes/outils.heures-de-decembre'
 import { Route as OutilsTriDesMarquesRouteImport } from './routes/outils.tri-des-marques'
 import { Route as RessourcesIndexRouteImport } from './routes/ressources.index'
 import { Route as RessourcesSlugRouteImport } from './routes/ressources.$slug'
 import { Route as WebinarIaMagasinRouteImport } from './routes/webinar.ia-magasin'
 import { Route as EnBlogSplatRouteImport } from './routes/en.blog.$'
+import { Route as OutilsCodesRejetIndexRouteImport } from './routes/outils.codes-rejet.index'
+import { Route as OutilsCodesRejetSlugRouteImport } from './routes/outils.codes-rejet.$slug'
 import { Route as RessourcesCategorieCategoryRouteImport } from './routes/ressources.categorie.$category'
 import { Route as RessourcesMetierVerticaleRouteImport } from './routes/ressources.metier.$verticale'
 
@@ -174,6 +177,11 @@ const MetiersMetierRoute = MetiersMetierRouteImport.update({
   path: '/metiers/$metier',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OutilsIndexRoute = OutilsIndexRouteImport.update({
+  id: '/outils/',
+  path: '/outils/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OutilsHeuresDeDecembreRoute = OutilsHeuresDeDecembreRouteImport.update({
   id: '/outils/heures-de-decembre',
   path: '/outils/heures-de-decembre',
@@ -202,6 +210,16 @@ const WebinarIaMagasinRoute = WebinarIaMagasinRouteImport.update({
 const EnBlogSplatRoute = EnBlogSplatRouteImport.update({
   id: '/en/blog/$',
   path: '/en/blog/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OutilsCodesRejetIndexRoute = OutilsCodesRejetIndexRouteImport.update({
+  id: '/outils/codes-rejet/',
+  path: '/outils/codes-rejet/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OutilsCodesRejetSlugRoute = OutilsCodesRejetSlugRouteImport.update({
+  id: '/outils/codes-rejet/$slug',
+  path: '/outils/codes-rejet/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RessourcesCategorieCategoryRoute =
@@ -248,10 +266,13 @@ export interface FileRoutesByFullPath {
   '/agents/': typeof AgentsIndexRoute
   '/en/': typeof EnIndexRoute
   '/metiers/': typeof MetiersIndexRoute
+  '/outils/': typeof OutilsIndexRoute
   '/ressources/': typeof RessourcesIndexRoute
   '/en/blog/$': typeof EnBlogSplatRoute
+  '/outils/codes-rejet/$slug': typeof OutilsCodesRejetSlugRoute
   '/ressources/categorie/$category': typeof RessourcesCategorieCategoryRoute
   '/ressources/metier/$verticale': typeof RessourcesMetierVerticaleRoute
+  '/outils/codes-rejet/': typeof OutilsCodesRejetIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -282,10 +303,13 @@ export interface FileRoutesByTo {
   '/agents': typeof AgentsIndexRoute
   '/en': typeof EnIndexRoute
   '/metiers': typeof MetiersIndexRoute
+  '/outils': typeof OutilsIndexRoute
   '/ressources': typeof RessourcesIndexRoute
   '/en/blog/$': typeof EnBlogSplatRoute
+  '/outils/codes-rejet/$slug': typeof OutilsCodesRejetSlugRoute
   '/ressources/categorie/$category': typeof RessourcesCategorieCategoryRoute
   '/ressources/metier/$verticale': typeof RessourcesMetierVerticaleRoute
+  '/outils/codes-rejet': typeof OutilsCodesRejetIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -319,10 +343,13 @@ export interface FileRoutesById {
   '/agents/': typeof AgentsIndexRoute
   '/en/': typeof EnIndexRoute
   '/metiers/': typeof MetiersIndexRoute
+  '/outils/': typeof OutilsIndexRoute
   '/ressources/': typeof RessourcesIndexRoute
   '/en/blog/$': typeof EnBlogSplatRoute
+  '/outils/codes-rejet/$slug': typeof OutilsCodesRejetSlugRoute
   '/ressources/categorie/$category': typeof RessourcesCategorieCategoryRoute
   '/ressources/metier/$verticale': typeof RessourcesMetierVerticaleRoute
+  '/outils/codes-rejet/': typeof OutilsCodesRejetIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -357,10 +384,13 @@ export interface FileRouteTypes {
     | '/agents/'
     | '/en/'
     | '/metiers/'
+    | '/outils/'
     | '/ressources/'
     | '/en/blog/$'
+    | '/outils/codes-rejet/$slug'
     | '/ressources/categorie/$category'
     | '/ressources/metier/$verticale'
+    | '/outils/codes-rejet/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -391,10 +421,13 @@ export interface FileRouteTypes {
     | '/agents'
     | '/en'
     | '/metiers'
+    | '/outils'
     | '/ressources'
     | '/en/blog/$'
+    | '/outils/codes-rejet/$slug'
     | '/ressources/categorie/$category'
     | '/ressources/metier/$verticale'
+    | '/outils/codes-rejet'
   id:
     | '__root__'
     | '/'
@@ -427,10 +460,13 @@ export interface FileRouteTypes {
     | '/agents/'
     | '/en/'
     | '/metiers/'
+    | '/outils/'
     | '/ressources/'
     | '/en/blog/$'
+    | '/outils/codes-rejet/$slug'
     | '/ressources/categorie/$category'
     | '/ressources/metier/$verticale'
+    | '/outils/codes-rejet/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -461,7 +497,10 @@ export interface RootRouteChildren {
   AgentsIndexRoute: typeof AgentsIndexRoute
   EnIndexRoute: typeof EnIndexRoute
   MetiersIndexRoute: typeof MetiersIndexRoute
+  OutilsIndexRoute: typeof OutilsIndexRoute
   EnBlogSplatRoute: typeof EnBlogSplatRoute
+  OutilsCodesRejetSlugRoute: typeof OutilsCodesRejetSlugRoute
+  OutilsCodesRejetIndexRoute: typeof OutilsCodesRejetIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -648,6 +687,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MetiersMetierRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/outils/': {
+      id: '/outils/'
+      path: '/outils'
+      fullPath: '/outils/'
+      preLoaderRoute: typeof OutilsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/outils/heures-de-decembre': {
       id: '/outils/heures-de-decembre'
       path: '/outils/heures-de-decembre'
@@ -688,6 +734,20 @@ declare module '@tanstack/react-router' {
       path: '/en/blog/$'
       fullPath: '/en/blog/$'
       preLoaderRoute: typeof EnBlogSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/outils/codes-rejet/': {
+      id: '/outils/codes-rejet/'
+      path: '/outils/codes-rejet'
+      fullPath: '/outils/codes-rejet/'
+      preLoaderRoute: typeof OutilsCodesRejetIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/outils/codes-rejet/$slug': {
+      id: '/outils/codes-rejet/$slug'
+      path: '/outils/codes-rejet/$slug'
+      fullPath: '/outils/codes-rejet/$slug'
+      preLoaderRoute: typeof OutilsCodesRejetSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/ressources/categorie/$category': {
@@ -767,7 +827,10 @@ const rootRouteChildren: RootRouteChildren = {
   AgentsIndexRoute: AgentsIndexRoute,
   EnIndexRoute: EnIndexRoute,
   MetiersIndexRoute: MetiersIndexRoute,
+  OutilsIndexRoute: OutilsIndexRoute,
   EnBlogSplatRoute: EnBlogSplatRoute,
+  OutilsCodesRejetSlugRoute: OutilsCodesRejetSlugRoute,
+  OutilsCodesRejetIndexRoute: OutilsCodesRejetIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
