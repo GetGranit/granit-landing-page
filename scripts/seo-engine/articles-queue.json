@@ -1110,9 +1110,12 @@
     "id": "C3",
     "slug": "codes-rejets-noemie",
     "category": "paiements",
-    "title": "Codes rejets NOEMIE : liste, signification et action",
-    "primaryKeyword": "liste codes rejets noemie",
-    "keywordCluster": [],
+    "title": "Rejet NOEMIE : comprendre, corriger et relancer une facture",
+    "primaryKeyword": "rejet noemie",
+    "keywordCluster": [
+      "corriger rejet noemie",
+      "code rejet noemie"
+    ],
     "searchVolume": 110,
     "unsplashQuery": "bank statement accounting",
     "status": "published",
