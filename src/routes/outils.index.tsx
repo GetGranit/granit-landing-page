@@ -49,7 +49,7 @@ function PageOutils() {
       <Conteneur className="pt-6 pb-16 md:pt-8">
         <FilOutil items={[]} />
         <h1
-          className="mt-6 max-w-[22ch] font-serif text-balance"
+          className="mt-6 max-w-[1000px] font-serif text-balance"
           style={{
             fontSize: "clamp(30px, 3.6vw, 44px)",
             lineHeight: 1.08,

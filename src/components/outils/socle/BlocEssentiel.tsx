@@ -20,7 +20,7 @@ export function EnTeteEntree({ surTitre, h1, reponse, metiers }: EnTeteEntreePro
       <Conteneur className="pt-4 pb-2 md:pt-8">
         <p className="eyebrow">{surTitre}</p>
         <h1
-          className="mt-3 max-w-[24ch] break-words font-serif text-balance"
+          className="mt-3 max-w-[40ch] break-words font-serif text-balance"
           style={{
             fontSize: "clamp(28px, 3.6vw, 44px)",
             lineHeight: 1.08,
