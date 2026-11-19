@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /etudes/
 
 Sitemap: https://www.getgranit.ai/sitemap.xml
