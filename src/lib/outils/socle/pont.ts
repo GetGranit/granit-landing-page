@@ -4,7 +4,8 @@ import { metierOutil } from "./metiers.mjs";
 import type { MetierOutil, OutilId } from "./types";
 
 /**
- * Lien « Demander une démo » : Cal.com, utm_campaign=outil-<id>, utm_content=outil-<page>,
+ * Lien « Demander une démo » : Cal.com, utm_medium=lead-magnet (les outils gratuits du site, à
+ * distinguer des pages du site et du blog), utm_campaign=outil-<id>, utm_content=outil-<page>,
  * utm_term=<slug de l'entrée>.
  */
 export function lienDemoOutil(
@@ -12,7 +13,7 @@ export function lienDemoOutil(
   page: "hub" | "entree" | "introuvable",
   slug?: string,
 ): string {
-  return calcomDemoUrl(`outil-${page}`, slug, `outil-${outil}`);
+  return calcomDemoUrl(`outil-${page}`, slug, `outil-${outil}`, "lead-magnet");
 }
 
 /** Bouton « Voir ce que font les agents » : la page du métier s'il n'y en a qu'un, sinon /metiers. */
