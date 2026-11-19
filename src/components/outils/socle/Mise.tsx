@@ -2,7 +2,7 @@
 // Jetons de DESIGN.md seulement ; gouttière de 16 px (px-4) à 375 px.
 import type { ReactNode } from "react";
 
-/** Largeur du site (1120 px), gouttière de 16 px à 375 px. */
+/** Largeur du site (1120 px), gouttière de 16 px à 375 px. Paragraphes justifiés, césure française. */
 export function Conteneur({
   children,
   className = "",
@@ -10,7 +10,7 @@ export function Conteneur({
   children: ReactNode;
   className?: string;
 }) {
-  return <div className={`mx-auto max-w-[1120px] px-4 md:px-8 ${className}`}>{children}</div>;
+  return <div className={`mx-auto max-w-[1120px] px-4 md:px-8 [&_p]:text-justify [&_p]:hyphens-auto ${className}`}>{children}</div>;
 }
 
 /** Colonne de lecture d'une entrée : 65 caractères au plus. */
