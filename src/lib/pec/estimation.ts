@@ -5,8 +5,8 @@ import data from "./estimations.json" with { type: "json" };
  * Estimation indicative du remboursement de la complémentaire, par portail de
  * gestion (pas par mutuelle : plusieurs mutuelles passent par le même portail).
  *
- * Source : facturations réelles de Granit (`tp_facturation.part_tp`), agrégées
- * HORS LIGNE en fourchettes anonymes (p25–médiane–p75) et figées dans
+ * Source : facturations optique réelles de Granit (part payée par la complémentaire),
+ * agrégées HORS LIGNE en fourchettes anonymes (p25–médiane–p75) et figées dans
  * estimations.json. Aucune donnée patient n'est embarquée ni ne transite ici :
  * ce ne sont que des ordres de grandeur. Ce N'EST PAS le remboursement du
  * client (il dépend de son contrat, de l'équipement et des prix du magasin).
@@ -15,7 +15,8 @@ import data from "./estimations.json" with { type: "json" };
  * la fourchette globale (toutes PEC optique confondues), signalée comme telle.
  */
 
-export type Fourchette = { n: number; bas: number; median: number; haut: number };
+/** Pas d'effectif (n) : le fichier est public, il ne dit rien du volume traité. */
+export type Fourchette = { bas: number; median: number; haut: number };
 export type Estimation = { lunettes?: Fourchette; lentilles?: Fourchette };
 /** Fourchette lunettes retenue + `general` = repli sur la moyenne toutes PEC. */
 export type EstimationLunettes = { f: Fourchette; general: boolean };
