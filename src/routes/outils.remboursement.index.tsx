@@ -7,10 +7,10 @@ import {
   GabaritHub,
   ListeHub,
   RechercheOutil,
-  SectionOutil,
   useRechercheHub,
 } from "@/components/outils/socle";
-import { Bandeau2027, DetailsCode, RenvoisSources } from "@/components/outils/remboursement/Blocs";
+import { Bandeau2027, DetailsCode } from "@/components/outils/remboursement/Blocs";
+import { ExplicationsHub } from "@/components/outils/remboursement/ExplicationsHub";
 import { OUTIL } from "@/lib/outils/remboursement/outil.mjs";
 import { chargerHub } from "@/lib/outils/remboursement/serveur";
 import {
@@ -217,16 +217,7 @@ function Hub() {
       }
       methode={
         <>
-          {data.methode.map((s) => (
-            <SectionOutil key={s.id} id={s.id} titre={s.titre}>
-              {s.paragraphes.map((p, i) => (
-                <p key={i} className={i ? "mt-3" : ""}>
-                  {p.texte}
-                  <RenvoisSources ids={p.source_ids} sources={data.sources} />
-                </p>
-              ))}
-            </SectionOutil>
-          ))}
+          <ExplicationsHub sections={data.methode} sources={data.sources} />
           <BlocAvertissement variante="fait-foi" className="mt-10">
             <p>{data.faitFoi}</p>
           </BlocAvertissement>

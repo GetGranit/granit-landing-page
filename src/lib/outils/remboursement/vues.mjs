@@ -236,6 +236,67 @@ function paragraphes(liste, ctx) {
   });
 }
 
+/** Les sources citées par une section de méthode du hub (paragraphes, cartes, exemple). */
+const idsMethode = (s) => [
+  ...s.p.flatMap((p) => p.source_ids),
+  ...(s.exemple?.source_ids ?? []),
+  ...(s.colonnes ?? []).flatMap((c) => c.source_ids),
+  ...(s.intro?.source_ids ?? []),
+];
+
+/**
+ * Une section de méthode du hub, prête à poser : textes en typographie française, montants lus dans
+ * la base LPP du jour. L'exemple chiffré n'a pas de montant Sécu après le 01/01/2027 tant que le taux
+ * n'est pas publié (montantsAffiches renvoie alors null).
+ */
+function sectionMethode(s, ctx) {
+  const sortie = { id: s.id, titre: typo(s.titre), paragraphes: paragraphes(s.p, ctx) };
+  if (s.exemple) {
+    const e = PAR_CODE.get(s.exemple.code);
+    const mt = montantsAffiches(e, ctx.jour, ctx.taux2027, ctx.bascule);
+    sortie.exemple = {
+      code: e.code,
+      designation: designation(e),
+      base: mt.base,
+      prixLimite: mt.prixLimite,
+      secu: mt.secu,
+      ticketModerateur: mt.ticketModerateur,
+      complementaire: mt.complementaireAuPrixLimite,
+      taux: mt.regime.taux ?? null,
+      source_ids: s.exemple.source_ids,
+    };
+  }
+  if (s.colonnes)
+    sortie.colonnes = s.colonnes.map((c) => ({
+      cle: c.cle,
+      titre: typo(c.titre),
+      classes: typo(c.classes),
+      lignes: c.lignes.map((l) => ({
+        libelle: typo(l.libelle),
+        valeur: typo(l.valeur),
+        fort: Boolean(l.fort),
+      })),
+      note: c.note ? typo(c.note) : null,
+      source_ids: c.source_ids,
+    }));
+  if (s.plafonds)
+    sortie.plafonds = s.plafonds.map((x) => ({
+      montant: rendreModele(x.montant, ctx),
+      objet: typo(x.objet),
+    }));
+  if (s.sansPlafond)
+    sortie.sansPlafond = { titre: typo(s.sansPlafond.titre), texte: typo(s.sansPlafond.texte) };
+  if (s.codes)
+    sortie.codes = s.codes.map((c) => ({
+      chiffre: c.chiffre,
+      nom: typo(c.nom),
+      texte: typo(c.texte),
+    }));
+  if (s.intro) sortie.intro = { texte: typo(s.intro.texte), source_ids: s.intro.source_ids };
+  if (s.cas) sortie.cas = s.cas.map(typo);
+  return sortie;
+}
+
 /**
  * Le hub, un jour donné.
  * @param {{ site: import("../socle/types").ContexteSite, jour: string, metiers?: typeof METIERS,
@@ -273,7 +334,7 @@ export function vueHub({
   // Les sources : celles des lignes affichées et des textes du hub.
   const ids = new Set([
     ...lignes.flatMap((l) => PAR_CODE.get(l.code)?.source_ids ?? []),
-    ...METHODE.flatMap((s) => s.p.flatMap((p) => p.source_ids)),
+    ...METHODE.flatMap(idsMethode),
     ...FAQ.flatMap((f) => f.source_ids),
     ...BANDEAU_2027.source_ids,
   ]);
@@ -313,11 +374,7 @@ export function vueHub({
     lignes,
     groupes,
     facettes: { domaine: options("domaine", DOMAINES), panier: options("panier", PANIERS) },
-    methode: METHODE.map((s) => ({
-      id: s.id,
-      titre: typo(s.titre),
-      paragraphes: paragraphes(s.p, ctx),
-    })),
+    methode: METHODE.map((s) => sectionMethode(s, ctx)),
     faitFoi: typo(remplirLpp(FAIT_FOI)),
     faq,
     sources: donnees.sources.filter((s) => ids.has(s.id)).map(sourceAffichee),

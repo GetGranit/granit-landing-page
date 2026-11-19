@@ -62,61 +62,132 @@ export const BANDEAU_2027 = {
   source_ids: ["decret-2026-810", "css-r160-5-2027", "css-r871-2"],
 };
 
-/** Texte de méthode du hub (textes.md § 1.6) : un <h2> par section. */
+/**
+ * Texte de méthode du hub (textes.md § 1.6), rangé pour se lire en 30 secondes : comment se calcule
+ * un remboursement (avec l'exemple chiffré en schéma), qui paie quoi selon la classe, les plafonds du
+ * prix libre, la lecture d'un code, ce que l'outil ne calcule pas. Un <h2> par section.
+ *
+ * `p` : les phrases qui restent en paragraphe (justifiées). Les autres champs sont posés en cartes par
+ * ExplicationsHub.tsx ; ce sont les mêmes faits et les mêmes sources que l'ancien texte en pavés, aucun
+ * montant n'est écrit en dur (repères remplacés au rendu, voir groupes.mjs).
+ */
 export const METHODE = [
   {
     id: "calcul",
     titre: "Comment se calcule un remboursement",
     p: [
       {
-        p: "La Sécurité sociale rembourse un pourcentage de la base de remboursement : {taux:2263287} % pour l'optique et les aides auditives {datetaux:2263287}. Le reste de la base est le ticket modérateur. Exemple lu dans la base LPP : le verre unifocal de classe A « {desig:2263287} » (code 2263287) a une base de {base:2263287} ; la Sécurité sociale rembourse {secu:2263287}, le ticket modérateur est de {tm:2263287}.",
+        p: "La Sécurité sociale rembourse un pourcentage de la base de remboursement : {taux:2263287} % pour l'optique et les aides auditives {datetaux:2263287}. Le reste de la base est le ticket modérateur.",
         p2027:
           "La Sécurité sociale rembourse un pourcentage de la base de remboursement ; le reste de la base est le ticket modérateur. Depuis le 1er janvier 2027, ce pourcentage est compris " +
           FOURCHETTE_LPP_2027 +
-          " pour l'optique et les aides auditives (décret n° 2026-810), et le taux exact n'est pas encore publié : nous n'affichons pas de montant Sécu. Exemple lu dans la base LPP : le verre unifocal de classe A « {desig:2263287} » (code 2263287) a une base de {base:2263287}.",
-        source_ids: ["ameli-taux", "lpp-cnam-v910"],
+          " pour l'optique et les aides auditives (décret n° 2026-810), et le taux exact n'est pas encore publié : nous n'affichons pas de montant Sécu.",
+        source_ids: ["ameli-taux"],
       },
     ],
+    // Le verre 2263287 au prix limite, en barre : montants lus dans la base LPP (vues.mjs).
+    exemple: { code: CODE_EXEMPLE, source_ids: ["lpp-cnam-v910", "css-r871-2"] },
   },
   {
-    id: "cent-pour-cent-sante",
-    titre: "100 % Santé et prix limite de vente",
-    p: [
+    id: "classes",
+    titre: "Qui paie quoi : 100 % Santé ou prix libre",
+    p: [],
+    colonnes: [
       {
-        p: "En classe A (optique) et en classe I (aides auditives), le prix ne peut pas dépasser le prix limite de vente fixé par la LPP. Jusqu'à ce prix, un contrat responsable prend en charge le ticket modérateur et tout ce qui dépasse la base : le patient ne paie rien. Pour le verre 2263287 facturé {plv:2263287}, la complémentaire paie {compl:2263287}. Sans complémentaire, ou avec un contrat non responsable, ce reste à charge nul n'est pas garanti.",
-        p2027:
-          "En classe A (optique) et en classe I (aides auditives), le prix ne peut pas dépasser le prix limite de vente fixé par la LPP. Jusqu'à ce prix, un contrat responsable prend en charge le ticket modérateur et tout ce qui dépasse la base : le patient ne paie rien. Sans complémentaire, ou avec un contrat non responsable, ce reste à charge nul n'est pas garanti.",
+        cle: "100-sante",
+        titre: "100 % Santé",
+        classes: "Classe A en optique, classe I en audio",
+        lignes: [
+          { libelle: "Prix", valeur: "Plafonné au prix limite de vente fixé par la LPP" },
+          {
+            libelle: "Contrat responsable",
+            valeur:
+              "Prend en charge le ticket modérateur et tout ce qui dépasse la base, jusqu'au prix limite",
+          },
+          { libelle: "Le patient paie", valeur: "0 €", fort: true },
+        ],
+        note: "Sans complémentaire, ou avec un contrat non responsable, ce reste à charge nul n'est pas garanti.",
         source_ids: ["lpp-cnam-v910", "css-r871-2", "ameli-optique"],
       },
-    ],
-  },
-  {
-    id: "hors-100-sante",
-    titre: "Hors 100 % Santé",
-    p: [
       {
-        p: "En classe B et en classe II, le prix est libre. Un contrat responsable doit couvrir au moins le ticket modérateur ; au-delà, tout dépend du contrat, dans des plafonds fixés par l'article R871-2 du Code de la sécurité sociale : {plafond:2264861} pour une monture, {plafond:2341840} par aide auditive, Sécurité sociale comprise. Pour les verres, les plafonds dépendent de catégories (verres simples, complexes) que les textes lus ne relient pas aux codes LPP : l'outil n'en affiche pas.",
+        cle: "libre",
+        titre: "Prix libre",
+        classes: "Classe B en optique, classe II en audio",
+        lignes: [
+          { libelle: "Prix", valeur: "Libre" },
+          {
+            libelle: "Contrat responsable",
+            valeur:
+              "Couvre au moins le ticket modérateur ; au-delà, selon le contrat, dans des plafonds",
+          },
+          { libelle: "Le patient paie", valeur: "Selon le contrat", fort: true },
+        ],
+        note: null,
         source_ids: ["css-r871-2"],
       },
     ],
   },
   {
-    id: "codes-fabricant",
-    titre: "Codes génériques et codes par fabricant",
+    id: "plafonds",
+    titre: "Les plafonds du prix libre",
     p: [
       {
-        p: "Les montants de l'outil sont ceux des codes génériques de la LPP, qui commencent par 2. Un code par fabricant, qui commence par 7, reprend, souvent en abrégé, la désignation d'un code générique suivie du nom du fabricant, en général avec les mêmes montants : cherchez sa désignation pour les retrouver.",
+        p: "En classe B et en classe II, la prise en charge d'un contrat responsable est plafonnée par l'article R871-2 du Code de la sécurité sociale, Sécurité sociale comprise.",
+        source_ids: ["css-r871-2"],
+      },
+    ],
+    plafonds: [
+      { montant: "{plafond:2264861}", objet: "par monture" },
+      { montant: "{plafond:2341840}", objet: "par aide auditive" },
+    ],
+    sansPlafond: {
+      titre: "Verres : pas de plafond affiché",
+      texte:
+        "Leurs plafonds dépendent de catégories (verres simples, complexes) que les textes lus ne relient pas aux codes LPP.",
+    },
+  },
+  {
+    id: "codes-fabricant",
+    titre: "Lire un code LPP : 2 ou 7",
+    p: [
+      {
+        p: "Un code en 7 sur le devis : cherchez sa désignation pour retrouver ses montants.",
         source_ids: ["lpp-cnam-v910"],
+      },
+    ],
+    codes: [
+      {
+        chiffre: "2",
+        nom: "Code générique",
+        texte: "Les montants de l'outil sont ceux de ces codes de la LPP.",
+      },
+      {
+        chiffre: "7",
+        nom: "Code par fabricant",
+        texte:
+          "Il reprend, souvent en abrégé, la désignation d'un code générique suivie du nom du fabricant, en général avec les mêmes montants.",
       },
     ],
   },
   {
     id: "limites",
     titre: "Ce que l'outil ne calcule pas",
+    intro: {
+      texte: "Les cas où le taux de la Sécurité sociale diffère :",
+      source_ids: ["ameli-taux"],
+    },
+    cas: [
+      "Affection de longue durée",
+      "Complémentaire santé solidaire",
+      "Accident du travail ou maladie professionnelle",
+      "Maternité",
+      "Régime local d'Alsace-Moselle",
+      "Régime des Mines",
+    ],
     p: [
       {
-        p: "Les cas où le taux de la Sécurité sociale diffère : affection de longue durée, Complémentaire santé solidaire, accident du travail ou maladie professionnelle, maternité, régime local d'Alsace-Moselle, régime des Mines. Ni la part réelle d'un contrat au-delà de ces minimums : elle dépend du contrat.",
-        source_ids: ["ameli-taux", "css-r871-2"],
+        p: "L'outil ne calcule pas non plus la part réelle d'un contrat au-delà des minimums du contrat responsable : elle dépend du contrat.",
+        source_ids: ["css-r871-2"],
       },
     ],
   },

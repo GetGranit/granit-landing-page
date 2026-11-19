@@ -23,11 +23,38 @@ export function Bandeau2027({ bandeau, className }: { bandeau: Bandeau; classNam
  * Renvois d'un paragraphe vers ses sources, numérotées comme dans le bloc Sources de la page
  * (« Sources : 1, 3 »), avec l'ancre `#source-<id>`.
  */
-export function RenvoisSources({ ids, sources }: { ids: string[]; sources: SourceDonnee[] }) {
+export function RenvoisSources({
+  ids,
+  sources,
+  exposant = false,
+}: {
+  ids: string[];
+  sources: SourceDonnee[];
+  /** En exposant discret (« ¹˒⁵ ») plutôt qu'entre parenthèses : hub, sous les cartes. */
+  exposant?: boolean;
+}) {
   const numeros = ids
     .map((id) => ({ id, n: sources.findIndex((s) => s.id === id) + 1 }))
     .filter((x) => x.n > 0);
   if (!numeros.length) return null;
+  if (exposant)
+    return (
+      <sup className="ml-0.5 text-[11px] leading-none whitespace-nowrap">
+        {numeros.map((x, i) => (
+          <span key={x.id}>
+            {i > 0 && <span style={{ color: "var(--texte-secondaire)" }}>,</span>}
+            <a
+              href={`#source-${x.id}`}
+              aria-label={`Source ${x.n}`}
+              className="px-[1px] underline-offset-2 hover:underline"
+              style={{ color: "var(--profond)" }}
+            >
+              {x.n}
+            </a>
+          </span>
+        ))}
+      </sup>
+    );
   return (
     <span className="text-[14px]" style={{ color: "var(--texte-secondaire)" }}>
       {" "}

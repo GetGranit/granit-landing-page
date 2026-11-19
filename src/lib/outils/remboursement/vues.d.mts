@@ -41,6 +41,38 @@ export type CodeAffiche = {
   datation: string;
 };
 
+/** Une section de méthode du hub : ses paragraphes et, selon la section, ses cartes. */
+export type SectionMethode = {
+  id: string;
+  titre: string;
+  paragraphes: Paragraphe[];
+  /** L'exemple chiffré (montants Sécu à null après le 01/01/2027 sans taux publié). */
+  exemple?: {
+    code: string;
+    designation: string;
+    base: number;
+    prixLimite: number | null;
+    secu: number | null;
+    ticketModerateur: number | null;
+    complementaire: number | null;
+    taux: number | null;
+    source_ids: string[];
+  };
+  colonnes?: {
+    cle: string;
+    titre: string;
+    classes: string;
+    lignes: { libelle: string; valeur: string; fort: boolean }[];
+    note: string | null;
+    source_ids: string[];
+  }[];
+  plafonds?: { montant: string; objet: string }[];
+  sansPlafond?: { titre: string; texte: string };
+  codes?: { chiffre: string; nom: string; texte: string }[];
+  intro?: { texte: string; source_ids: string[] };
+  cas?: string[];
+};
+
 export type VueHub = {
   jour: string;
   hub: PageOutil;
@@ -49,7 +81,7 @@ export type VueHub = {
   lignes: LigneRemboursement[];
   groupes: GroupeHub[];
   facettes: { domaine: OptionFacette[]; panier: OptionFacette[] };
-  methode: { id: string; titre: string; paragraphes: Paragraphe[] }[];
+  methode: SectionMethode[];
   faitFoi: string;
   faq: { question: string; reponse: string }[];
   sources: SourceDonnee[];
