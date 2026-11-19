@@ -221,7 +221,7 @@ test("pont : calcomDemoUrl inchangée sans 3e paramètre ; lien de démo d'outil
   );
   assert.equal(
     lienDemoOutil("codes-rejet", "entree", "noemie-0450054"),
-    "https://cal.com/paul-pietra-granit/decouvrir-granit/?utm_source=getgranit.ai&utm_medium=site&utm_campaign=outil-codes-rejet&utm_content=outil-entree&utm_term=noemie-0450054",
+    "https://cal.com/paul-pietra-granit/decouvrir-granit/?utm_source=getgranit.ai&utm_medium=lead-magnet&utm_campaign=outil-codes-rejet&utm_content=outil-entree&utm_term=noemie-0450054",
   );
   assert.equal(cibleMetier(["dentaire"]), "/metiers/dentaire");
   assert.equal(cibleMetier(["optique", "optique"]), "/metiers/opticiens");
