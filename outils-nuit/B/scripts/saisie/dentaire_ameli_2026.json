@@ -1,0 +1,62 @@
+{
+ "_lisez_moi": "Saisie manuelle, recopiée de pages ameli.fr lues le 2026-11-18 via Linkup (ameli.fr refuse curl). Ne rien ajouter qui ne soit pas sur ces pages. Montants en euros.",
+ "hlf": {
+  "source_id": "ameli-dentiste-tarifs-hlf",
+  "date_tarif": "2026-01-01",
+  "titre_tableau": "Honoraires limites de facturation des prothèses dentaires (au 1er janvier 2026)",
+  "panier_lu_dans_la_source": {
+   "_explication": "Listes « Rappel de la facturation » données par ameli dans les libellés de HBLD090 (inlay-core sous couronne/bridge « sans reste à charge ») et HBLD745 (« à entente directe limitée »).",
+   "100-sante": ["HBLD038", "HBLD634", "HBLD350", "HBLD680", "HBLD033", "HBLD785", "HBLD090", "HBLD490"],
+   "modere": ["HBLD491", "HBLD073", "HBLD158", "HBLD040", "HBLD043", "HBLD227", "HBLD745", "HBLD724"]
+  },
+  "actes": [
+   ["HBLD680", "Pose d'une couronne dentaire dentoportée céramique monolithique autre que zircone sur incisives, canines et 1res prémolaires", "couronne", 120.00, 515.00],
+   ["HBLD634", "Pose d'une couronne dentaire dentoportée céramométallique sur une incisive, une canine ou une 1re prémolaire", "couronne", 120.00, 515.00],
+   ["HBLD350", "Pose d'une couronne dentaire dentoportée céramique monolithique (zircone) sur une dent autre qu'une molaire", "couronne", 120.00, 453.20],
+   ["HBLD038", "Pose d'une couronne dentaire dentoportée en alliage non précieux", "couronne", 120.00, 298.70],
+   ["HBLD158", "Pose d'une couronne dentaire dentoportée céramique monolithique autre que zircone sur 2es prémolaires et molaires", "couronne", 120.00, 566.50],
+   ["HBLD491", "Pose d'une couronne dentaire dentoportée céramométallique sur une 2e prémolaire", "couronne", 120.00, 566.50],
+   ["HBLD073", "Pose d'une couronne dentaire dentoportée céramique monolithique (zircone) sur une molaire", "couronne", 120.00, 453.20],
+   ["HBLD090", "Pose d'une infrastructure coronoradiculaire [Inlay core] sous une couronne ou un pilier de bridge dentoportés sans « reste à charge », avec ou sans clavette", "inlay-core", 70.00, 150.00],
+   ["HBLD745", "Pose d'une infrastructure coronoradiculaire [Inlay core] sous une couronne ou un pilier de bridge dentoportés à « entente directe limitée », avec ou sans clavette", "inlay-core", 70.00, 150.00],
+   ["HBLD490", "Pose d'une couronne dentaire transitoire pour couronne dentoportée « sans reste à charge »", "couronne transitoire", 10.00, 61.80],
+   ["HBLD724", "Pose d'une couronne dentaire transitoire pour une couronne dentoportée « à entente directe limitée »", "couronne transitoire", 10.00, 61.80],
+   ["HBLD785", "Pose d'une prothèse plurale [bridge] comportant 2 piliers d'ancrage céramométalliques et 1 élément intermédiaire céramométallique pour le remplacement d'une incisive", "bridge", 279.50, 1508.95],
+   ["HBLD033", "Pose d'une prothèse plurale [bridge] comportant 2 piliers d'ancrage métalliques et 1 élément intermédiaire métallique", "bridge", 279.50, 896.10],
+   ["HBLD040", "Pose d'une prothèse plurale [bridge] comportant 1 pilier d'ancrage métallique, 1 pilier d'ancrage céramométallique, et 1 élément intermédiaire métallique", "bridge", 279.50, 1205.10],
+   ["HBLD043", "Pose d'une prothèse plurale [bridge] comportant 1 pilier d'ancrage métallique, 1 pilier d'ancrage céramométallique, et 1 élément intermédiaire céramométallique", "bridge", 279.50, 1684.05],
+   ["HBLD099", "Pose d'une prothèse plurale [bridge] comportant 2 piliers d'ancrage céramiques monolithiques zircone et 1 élément intermédiaire céramique monolithique zircone", "bridge", 279.50, 1359.60],
+   ["HBLD227", "Pose d'une prothèse plurale [bridge] comportant 2 piliers d'ancrage céramométalliques et 1 élément intermédiaire céramométallique pour le remplacement d'une dent autre qu'une incisive", "bridge", 279.50, 1684.05],
+   ["HBMD351", "Restauration d'une dent sur 2 faces ou plus par matériau incrusté [inlay-onlay] composite ou en alliage non précieux", "inlay-onlay", 100.00, 360.50],
+   ["HBLD031", "Pose d'une prothèse amovible définitive complète unimaxillaire à plaque base résine", "prothèse amovible résine", 182.75, 1133.00],
+   ["HBLD035", "Pose d'une prothèse amovible définitive complète bimaxillaire à plaque base résine", "prothèse amovible résine", 365.50, 2369.00],
+   ["HBLD032", "Pose d'une prothèse amovible de transition unimaxillaire complète à plaque base résine", "prothèse amovible de transition", 182.75, 535.60],
+   ["HBLD259", "Pose d'une prothèse amovible de transition bimaxillaire complète à plaque base résine", "prothèse amovible de transition", 365.50, 1205.10],
+   ["HBLD364", "Pose d'une prothèse amovible de transition à plaque base résine, comportant 1 à 3 dents", "prothèse amovible de transition", 64.50, 283.25],
+   ["HBLD101", "Pose d'une prothèse amovible définitive à plaque base résine, comportant 9 dents", "prothèse amovible résine", 129.00, 700.40],
+   ["HBLD131", "Pose d'une prothèse amovible définitive à châssis métallique, comportant 1 à 3 dents", "prothèse amovible châssis métallique", 193.50, 1133.00],
+   ["HBLD047", "Pose d'une prothèse amovible définitive complète unimaxillaire à châssis métallique", "prothèse amovible châssis métallique", 311.75, 1648.00],
+   ["HBLD046", "Pose d'une prothèse amovible définitive complète bimaxillaire à châssis métallique", "prothèse amovible châssis métallique", 623.50, 3708.00],
+   ["HBMD020", "Réparation d'une prothèse dentaire amovible en résine sans renfort métallique, fêlée ou fracturée", "réparation de prothèse amovible", 21.50, 82.40],
+   ["HBMD017", "Adjonction ou changement d'1 élément d'une prothèse dentaire amovible", "réparation de prothèse amovible", 21.50, 87.55],
+   ["HBKD396", "Changement d'1 facette d'une prothèse dentaire amovible", "réparation de prothèse amovible", 17.20, 51.50],
+   ["HBLD006", "Pose d'un mainteneur d'espace interdentaire unitaire scellé", "mainteneur d'espace", 30.00, 150.00]
+  ]
+ },
+ "soins": {
+  "source_id": "ameli-assure-soins-dentaires",
+  "date_tarif": "2024-10-25",
+  "titre_tableau": "Tarifs et remboursements des soins dentaires (au 25 octobre 2024, à l'exception des soins réalisés sur les dents permanentes des enfants de moins de 13 ans)",
+  "actes": [
+   ["detartrage", "Détartrage", "soin conservateur", 28.92],
+   ["carie-une-face", "Traitement d'une carie une face", "soin conservateur", 30.74],
+   ["carie-deux-faces", "Traitement d'une carie deux faces", "soin conservateur", 52.00],
+   ["carie-trois-faces", "Traitement d'une carie trois faces ou plus", "soin conservateur", 68.12],
+   ["devitalisation-incisive-canine", "Dévitalisation d'une incisive ou d'une canine", "endodontie", 41.60],
+   ["devitalisation-premolaire", "Dévitalisation d'une prémolaire", "endodontie", 63.44],
+   ["devitalisation-molaire", "Dévitalisation d'une molaire", "endodontie", 104.00],
+   ["extraction-dent-de-lait", "Extraction d'une dent de lait", "chirurgie", 25.00],
+   ["extraction-dent-permanente", "Extraction d'une dent permanente", "chirurgie", 39.00]
+  ]
+ }
+}
