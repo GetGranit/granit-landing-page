@@ -2851,6 +2851,75 @@
     "unsplashQuery": "dental clinic"
   },
   {
+    "id": "VE1",
+    "slug": "generique-apixaban-eliquis-pharmacie-tiers-payant",
+    "category": "conformite",
+    "title": "Générique de l'Eliquis (apixaban) en officine : substitution, refus du patient et tiers payant",
+    "primaryKeyword": "générique Eliquis pharmacie",
+    "keywordCluster": [
+      "apixaban générique",
+      "substitution apixaban officine",
+      "non substituable ordonnance",
+      "tiers payant contre génériques",
+      "base de remboursement générique",
+      "rejet mutuelle générique"
+    ],
+    "searchVolume": 0,
+    "status": "pending",
+    "wave": 4,
+    "level": "Fille",
+    "parentSlug": "gestion-tiers-payant-pharmacie",
+    "reader": "Titulaire d'officine, pharmacien adjoint ou préparateur qui délivre au comptoir et suit les rejets de tiers payant",
+    "role": "Trafic",
+    "granitData": "—",
+    "cta": "Parlons de votre tiers payant",
+    "toValidate": "Actualité issue de la veille : https://app.notion.com/41dba273162f814aa67dc86e126912df — source : https://www.jechange.fr/assurance/mutuelle-sante/news/eliquis-brevet-20-novembre-generique-apixaban-58-95-euros-14-22-euros. Date d'effet : 20 novembre 2026 (fin du brevet de l'apixaban). À vérifier : source primaire (ANSM, Assurance maladie, ameli) pour la date, les prix (14,22 € la boîte de 60 pour le générique ; princeps à 58,95 € puis 28,30 € depuis le 1er novembre) et le nombre de présentations génériques, à citer comme relevés rapportés par la source et non comme faits établis ; application du dispositif « tiers payant contre génériques » (avance des frais en cas de refus de substitution) à l'apixaban ; base de remboursement du patient qui refuse sans mention « non substituable ». Aucun chiffre de remboursement annuel ni de nombre de patients sans source primaire. Ne rien promettre sur ce que Granit fait pour l'officine : offre seulement (fiche pharmacie).",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "À partir de quand peut-on substituer l'Eliquis par un générique d'apixaban ?",
+      "Que se passe-t-il pour le tiers payant si le patient refuse le générique ?",
+      "Que signifie la mention « non substituable » sur l'ordonnance ?",
+      "Pourquoi une mutuelle peut-elle rejeter une délivrance après un changement de prix ?",
+      "Comment expliquer la substitution à un patient âgé polymédiqué ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "VE1a",
+        "slug": "gestion-tiers-payant-pharmacie",
+        "anchor": "gestion du tiers payant en pharmacie",
+        "type": "parent"
+      },
+      {
+        "id": "VE1b",
+        "slug": "trois-boucles-pharmacie",
+        "anchor": "les trois boucles de la pharmacie",
+        "type": "sœur"
+      },
+      {
+        "id": "VE1c",
+        "slug": "officine-balance-agee-tiers-payant",
+        "anchor": "balance âgée du tiers payant en officine",
+        "type": "sœur"
+      },
+      {
+        "id": "VE1d",
+        "slug": "rejet-tiers-payant",
+        "anchor": "rejet de tiers payant",
+        "type": "transverse"
+      },
+      {
+        "id": "VE1e",
+        "slug": "codes-rejets-noemie",
+        "anchor": "codes rejets NOEMIE",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "pharmacie"
+    ],
+    "unsplashQuery": "pharmacist counter patient"
+  },
+  {
     "id": "Y2",
     "slug": "justificatifs-cpam-officine-reponses-indu",
     "category": "conformite",
