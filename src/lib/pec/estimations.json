@@ -1,9 +1,8 @@
 {
   "_meta": {
-    "source": "prod tp_facturation — part_tp (payé par la complémentaire), équipements optiques réels facturés via Granit",
+    "source": "facturations optique réelles de Granit : part payée par la complémentaire",
     "genere_le": "2026-10-21",
     "fenetre": "2026-10-14 → 2026-10-21",
-    "n_total": 492,
     "seuil_min": 10,
     "note": "Fourchettes indicatives (p25–p75) de facturations réelles. _global = toutes PEC optique confondues (repli quand un portail n'a pas assez de recul). Pas un montant personnalisé. Oxantis exclu du par-portail (fermeture 26/10/2026).",
     "equivalences": {
@@ -12,13 +11,11 @@
   },
   "_global": {
     "lunettes": {
-      "n": 430,
       "bas": 200,
       "median": 300,
       "haut": 400
     },
     "lentilles": {
-      "n": 62,
       "bas": 70,
       "median": 100,
       "haut": 200
@@ -27,7 +24,6 @@
   "portails": {
     "almerys": {
       "lunettes": {
-        "n": 33,
         "bas": 210,
         "median": 320,
         "haut": 510
@@ -35,7 +31,6 @@
     },
     "carte_blanche": {
       "lunettes": {
-        "n": 60,
         "bas": 200,
         "median": 290,
         "haut": 370
@@ -43,7 +38,6 @@
     },
     "isante": {
       "lunettes": {
-        "n": 43,
         "bas": 310,
         "median": 400,
         "haut": 520
@@ -51,7 +45,6 @@
     },
     "ociane_matmut": {
       "lunettes": {
-        "n": 11,
         "bas": 100,
         "median": 180,
         "haut": 260
@@ -59,7 +52,6 @@
     },
     "santeclair": {
       "lunettes": {
-        "n": 47,
         "bas": 230,
         "median": 280,
         "haut": 390
@@ -67,7 +59,6 @@
     },
     "sp_sante": {
       "lunettes": {
-        "n": 21,
         "bas": 230,
         "median": 320,
         "haut": 500
@@ -75,13 +66,11 @@
     },
     "viamedis": {
       "lunettes": {
-        "n": 84,
         "bas": 250,
         "median": 360,
         "haut": 440
       },
       "lentilles": {
-        "n": 11,
         "bas": 90,
         "median": 180,
         "haut": 200
