@@ -1,38 +1,39 @@
 import { useEffect, useMemo, useState } from "react";
 
-import { searchMutuelles } from "@/lib/pec/classify";
+import { searchPortails } from "@/lib/pec/resolve";
 import { useLanguage } from "@/lib/i18n";
 import { Kicker, Muted, Screen, TextLink, Title, focusRing } from "./ui";
 
 const copy = {
   fr: {
     kicker: "Sans photo",
-    title: "Tapez le nom de la ",
-    em: "mutuelle",
-    aide: "Telle qu'elle est écrite sur la carte : MGEN, Harmonie, Malakoff…",
-    placeholder: "Ex. Harmonie Mutuelle",
-    label: "Nom de la mutuelle",
-    inconnue: "On ne la connaît pas encore.",
-    paul: "Je ne la trouve pas : Paul me répond",
+    title: "Tapez le nom du ",
+    em: "portail",
+    aide: "Tel qu'il est écrit sur la carte, souvent sur la ligne optique : Viamédis, Almerys, Santéclair…",
+    placeholder: "Ex. Viamédis",
+    label: "Nom du portail écrit sur la carte",
+    inconnue: "Ce n'est pas un portail que l'on connaît. Paul regarde pour vous.",
+    paul: "Je ne le trouve pas : Paul me répond",
     photo: "← Reprendre une photo",
   },
   en: {
     kicker: "No photo",
     title: "Type the name of the ",
-    em: "insurer",
-    aide: "As written on the card: MGEN, Harmonie, Malakoff…",
-    placeholder: "E.g. Harmonie Mutuelle",
-    label: "Supplementary health insurer (mutuelle) name",
-    inconnue: "We don’t know this one yet.",
+    em: "portal",
+    aide: "As written on the card, often on the optical line: Viamédis, Almerys, Santéclair…",
+    placeholder: "E.g. Viamédis",
+    label: "Name of the portal written on the card",
+    inconnue: "This is not a portal we know. Paul will look into it for you.",
     paul: "I can’t find it: Paul will get back to me",
     photo: "← Take a photo again",
   },
 };
 
 /**
- * Saisie du nom de la mutuelle : secours quand la photo ne passe pas ou que
- * l'opticien n'a pas de carte sous la main. Jamais d'impasse : « je ne trouve
- * pas » mène à Paul.
+ * Saisie du portail écrit sur la carte : secours quand la photo ne passe pas ou
+ * que la carte lue ne nomme aucun portail connu. On ne cherche que parmi les
+ * portails (platforms.json), jamais dans une table mutuelle → portail. Jamais
+ * d'impasse : « je ne le trouve pas » mène à Paul avec ce qui a été tapé.
  */
 export function StepSearch({
   reason,
@@ -45,12 +46,12 @@ export function StepSearch({
   onPick: (nom: string, platforms: string[]) => void;
   onNotFound: (query: string) => void;
   onBack: () => void;
-  /** Saisie posée (après une courte pause) : un nom de mutuelle, jamais de patient. */
+  /** Saisie posée (après une courte pause) : un nom de portail ou de mutuelle, jamais de patient. */
   onRecherche?: (query: string, n: number) => void;
 }) {
   const t = copy[useLanguage().lang];
   const [q, setQ] = useState("");
-  const results = useMemo(() => (q.trim().length >= 2 ? searchMutuelles(q, 8) : []), [q]);
+  const results = useMemo(() => (q.trim().length >= 2 ? searchPortails(q, 8) : []), [q]);
   const n = results.length;
 
   useEffect(() => {

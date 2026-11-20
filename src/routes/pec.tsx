@@ -84,9 +84,9 @@ const copy = {
     } satisfies Record<CaptureErreur, string>,
     search: {
       inconnu:
-        "On n'a pas reconnu la mutuelle sur la carte. Tapez son nom, on cherche parmi plus de 200 mutuelles.",
+        "La carte ne nomme pas de portail que l'on connaît. Tapez celui qui y est écrit, sinon Paul vous répond.",
       lecture:
-        "La photo n'a pas pu être lue. Tapez le nom de la mutuelle, ou reprenez la photo bien à plat.",
+        "La photo n'a pas pu être lue. Tapez le portail écrit sur la carte, ou reprenez la photo bien à plat.",
     } satisfies Record<SearchRaison, string>,
     inconnueTitre: "On vous trouve le bon portail.",
     inconnueIntro: (m?: string) => `Paul regarde « ${m} » et vous rappelle avec la réponse.`,
@@ -119,9 +119,9 @@ const copy = {
     } satisfies Record<CaptureErreur, string>,
     search: {
       inconnu:
-        "We did not recognize the insurer on the card. Type its name, we search among more than 200 insurers.",
+        "The card does not name a portal we know. Type the one written on it, or Paul will get back to you.",
       lecture:
-        "The photo could not be read. Type the insurer’s name, or take the photo again, nice and flat.",
+        "The photo could not be read. Type the portal written on the card, or take the photo again, nice and flat.",
     } satisfies Record<SearchRaison, string>,
     inconnueTitre: "We’ll find you the right portal.",
     inconnueIntro: (m?: string) => `Paul looks into “${m}” and calls you back with the answer.`,
@@ -443,8 +443,8 @@ function PecPage() {
             setCard({
               est_carte_tp: true,
               lisible: true,
-              assureur: nom,
-              gestionnaire: null,
+              assureur: null,
+              gestionnaire: nom,
               reseau: null,
               tp_optique: null,
               amc: null,

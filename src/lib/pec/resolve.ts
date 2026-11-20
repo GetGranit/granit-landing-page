@@ -1,11 +1,14 @@
-import { candidatesForCard, fold } from "./classify.ts";
 import data from "./platforms.json" with { type: "json" };
 import type { CardRead } from "./readCard";
 
 /**
- * Passe de la carte lue (ou de la mutuelle tapée) à ce qu'on montre à
- * l'opticien : un portail sûr, plusieurs possibles, ou rien de connu.
- * Données et règles exportées du produit (voir README dans ce dossier).
+ * Passe de la carte lue (ou du portail tapé) à ce qu'on montre à l'opticien :
+ * un portail sûr, plusieurs possibles, ou rien de connu.
+ *
+ * On ne se fie qu'à ce qui est écrit sur la carte : le nom du portail ou du
+ * réseau (ligne optique, gestionnaire). Aucune table mutuelle → portail ici :
+ * ce dépôt est public, la correspondance du produit n'y a pas sa place.
+ * Une carte qui ne nomme aucun portail connu donne « inconnu », et Paul répond.
  */
 
 export type Tfa = "email" | "sms" | "totp" | "aucune" | "inconnu";
@@ -61,15 +64,24 @@ export function resolveIds(ids: string[]): Resolution {
   return { kind: "plusieurs", platforms: list.slice(0, 3) };
 }
 
+/** Minuscules, sans accents ni ponctuation, espaces réduits. */
+export function norm(s: string | null | undefined): string {
+  return (s ?? "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9+]+/g, " ")
+    .trim();
+}
+
 /**
- * Portails écrits en toutes lettres sur la carte (gestionnaire, colonne OPTI).
- * Le routage produit en ignore certains (SP Santé n'a aucun alias, une carte
- * « iSanté » sort d'abord Viamédis) : sans ce garde-fou, on annoncerait « votre
- * PEC Viamédis est prête » pour une carte gérée par SP Santé.
+ * Portails et réseaux tels qu'ils sont écrits sur les cartes (gestionnaire,
+ * colonne OPTI, réseau). Un réseau (Kalixia) se résout sur le portail qui le
+ * porte via `reseau_via` de platforms.json.
  */
 const NAMED: [string, string[]][] = [
-  ["sp_sante", ["sp sante", "spsante", "sp-sante"]],
-  ["isante", ["isante", "i-sante"]],
+  ["sp_sante", ["sp sante", "spsante"]],
+  ["isante", ["isante", "i sante"]],
   ["almerys", ["almerys"]],
   ["santeclair", ["santeclair", "tp+"]],
   ["seveane", ["seveane", "séveane"]],
@@ -78,23 +90,43 @@ const NAMED: [string, string[]][] = [
   ["carte_blanche", ["carte blanche"]],
   ["itelis", ["itelis"]],
   ["viamedis", ["viamedis"]],
+  ["kalixia", ["kalixia"]],
   ["generation", ["generation"]],
 ];
 
 function namedOnCard(card: CardRead): string[] {
-  const text = fold([card.gestionnaire, card.tp_optique, card.reseau].filter(Boolean).join(" / "));
-  return NAMED.filter(([, keys]) => keys.some((k) => text.includes(fold(k)))).map(([id]) => id);
+  const text = norm([card.gestionnaire, card.tp_optique, card.reseau].filter(Boolean).join(" / "));
+  return NAMED.filter(([, keys]) => keys.some((k) => text.includes(norm(k)))).map(([id]) => id);
 }
 
+/** Le portail que la carte nomme ; plusieurs : on demande ; aucun : inconnu. */
 export function resolveCard(card: CardRead): Resolution {
-  const fromRouting = candidatesForCard(card);
-  // CGRM : le catalogue Viamédis la connaît encore, mais Viamédis ne trouve plus
-  // ces bénéficiaires depuis 09/2026 (platforms.py:235) → portail CGRM.
-  if (fold(card.assureur).includes("cgrm")) return resolveIds(["cgrm"]);
-  const named = namedOnCard(card);
-  if (named.length === 0) return resolveIds(fromRouting);
-  // Ce que la carte nomme passe devant ; si le routage proposait autre chose, on demande.
-  return resolveIds([...named, ...fromRouting]);
+  return resolveIds(namedOnCard(card));
+}
+
+const INDEX = PLATFORMS.map((p) => ({
+  p,
+  cles: [p.label, p.id.replace(/_/g, " "), ...(NAMED.find(([id]) => id === p.id)?.[1] ?? [])].map(
+    norm,
+  ),
+}));
+
+/**
+ * Saisie manuelle : portails dont le nom contient la requête (ceux qui
+ * COMMENCENT par elle passent devant). Le nom d'une mutuelle ne trouve rien :
+ * l'écran propose alors Paul.
+ */
+export function searchPortails(query: string, limit = 8): { nom: string; platforms: string[] }[] {
+  const q = norm(query);
+  if (q.length < 2) return [];
+  const debut = (cles: string[]) => cles.some((c) => c.startsWith(q));
+  return INDEX.filter(({ cles }) => cles.some((c) => c.includes(q)))
+    .sort(
+      (a, b) =>
+        Number(!debut(a.cles)) - Number(!debut(b.cles)) || a.p.label.localeCompare(b.p.label),
+    )
+    .slice(0, limit)
+    .map(({ p }) => ({ nom: p.label, platforms: [p.id] }));
 }
 
 /** Carte fictive pour « Essayer avec une carte d'exemple » : réseau Kalixia, donc Viamédis, donc simulable. */
