@@ -54,28 +54,38 @@ export const cliniquesLaboratoiresFr: PageMetier = {
     apres: "Avec Granit",
     lignes: [
       {
+        etape: "Accueil",
+        cle: "complété dans votre logiciel",
         avant:
           "Ressaisir l'ordonnance et la mutuelle à la main, pendant que la file s'allonge à l'accueil.",
         apres: "Le dossier est complété dans votre logiciel. Votre secrétariat vérifie et valide.",
       },
       {
+        etape: "Prise en charge",
+        cle: "depuis le dossier du patient",
         avant:
           "Faire les demandes de prise en charge une par une sur le portail de chaque mutuelle.",
         apres:
           "La demande part depuis le dossier du patient. La réponse est rangée dans le dossier.",
       },
       {
+        etape: "Contrôle",
+        cle: "contrôlé avant l'envoi",
         avant:
           "Bloquer à la main les feuilles de soins sans ordonnance ou avec un prescripteur inconnu.",
         apres:
           "Chaque dossier est contrôlé avant l'envoi. Ce qui manque vous est signalé avant qu'il parte.",
       },
       {
+        etape: "Rejets",
+        cle: "corrigés et renvoyés",
         avant: "Chaque matin, reprendre les rejets de la veille et appeler les mutuelles.",
         apres:
           "Les rejets simples sont corrigés et renvoyés. Vos équipes ne gardent que les dossiers qui demandent un appel.",
       },
       {
+        etape: "Paiement",
+        cle: "rapproché de ses factures, dossier par dossier",
         avant:
           "Aller sur le site de chaque mutuelle pour savoir quels dossiers un virement a payés.",
         apres:
@@ -226,25 +236,35 @@ export const cliniquesLaboratoiresEn: PageMetier = {
     apres: "With Granit",
     lignes: [
       {
+        etape: "Front desk",
+        cle: "completed in your software",
         avant:
           "Re-entering the prescription and insurer details by hand while the queue grows at the front desk.",
         apres: "The file is completed in your software. Your front desk checks and approves.",
       },
       {
+        etape: "Coverage",
+        cle: "from the patient's file",
         avant: "Filing coverage requests one by one on each insurer's portal.",
         apres: "The request goes out from the patient's file. The answer is stored in the file.",
       },
       {
+        etape: "Checks",
+        cle: "checked before sending",
         avant: "Manually holding claims with no prescription or an unknown prescriber.",
         apres:
           "Every file is checked before sending. What is missing is flagged before it goes out.",
       },
       {
+        etape: "Rejections",
+        cle: "corrected and resubmitted",
         avant: "Every morning, picking up the previous day's rejections and calling insurers.",
         apres:
           "Simple rejections are corrected and resubmitted. Your teams keep only the files that need a call.",
       },
       {
+        etape: "Payment",
+        cle: "matched to its invoices, file by file",
         avant: "Going to each insurer's website to see which files a transfer paid.",
         apres:
           "Each transfer is matched to its invoices, file by file. Unpaid ones are followed up.",

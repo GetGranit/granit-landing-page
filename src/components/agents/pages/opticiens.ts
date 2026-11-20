@@ -47,22 +47,32 @@ export const opticiensFr: PageMetier = {
     apres: "Avec Granit",
     lignes: [
       {
+        etape: "Devis",
+        cle: "depuis le devis de votre logiciel",
         avant: "Ressaisir le devis sur le portail de chaque mutuelle.",
         apres: "La demande de prise en charge part depuis le devis de votre logiciel.",
       },
       {
+        etape: "Prise en charge",
+        cle: "en moins de 2 minutes",
         avant: "Attendre la réponse de la mutuelle, le client devant vous.",
         apres: "La prise en charge revient en moins de 2 minutes.",
       },
       {
+        etape: "Facture",
+        cle: "À la livraison",
         avant: "Envoyer les factures et vérifier qu'elles sont bien parties.",
         apres: "À la livraison, la facture part à l'Assurance Maladie et à la mutuelle.",
       },
       {
+        etape: "Rejets",
+        cle: "repéré, corrigé et renvoyé",
         avant: "Chercher pourquoi un dossier est rejeté, le corriger, le renvoyer.",
         apres: "Le rejet est repéré, corrigé et renvoyé. Les cas particuliers vous sont signalés.",
       },
       {
+        etape: "Paiement",
+        cle: "rapproché de sa facture",
         avant: "Pointer les virements des mutuelles sur le relevé, relancer les impayés.",
         apres: "Chaque virement est rapproché de sa facture. Les impayés sont relancés.",
       },
@@ -205,23 +215,33 @@ export const opticiensEn: PageMetier = {
     apres: "With Granit",
     lignes: [
       {
+        etape: "Quote",
+        cle: "from the quote in your software",
         avant: "Re-entering the quote on each insurer's portal.",
         apres: "The coverage request goes out from the quote in your software.",
       },
       {
+        etape: "Coverage",
+        cle: "in under 2 minutes",
         avant: "Waiting for the insurer's answer, customer in front of you.",
         apres: "Coverage comes back in under 2 minutes.",
       },
       {
+        etape: "Invoicing",
+        cle: "On delivery",
         avant: "Sending invoices and checking they went through.",
         apres: "On delivery, the invoice goes to the national health insurance and the insurer.",
       },
       {
+        etape: "Rejections",
+        cle: "spotted, corrected and resubmitted",
         avant: "Finding out why a file was rejected, fixing it, resubmitting it.",
         apres:
           "The rejection is spotted, corrected and resubmitted. Special cases are flagged to you.",
       },
       {
+        etape: "Payment",
+        cle: "matched to its invoice",
         avant: "Matching insurer transfers on the bank statement, chasing unpaid ones.",
         apres: "Each transfer is matched to its invoice. Unpaid ones are followed up.",
       },

@@ -53,25 +53,35 @@ export const pharmacieFr: PageMetier = {
     apres: "Avec Granit",
     lignes: [
       {
+        etape: "Récupération",
+        cle: "dès que le médecin la met en ligne",
         avant:
           "Ouvrir le logiciel de chaque EHPAD, plusieurs fois par jour, pour voir si une ordonnance est arrivée.",
         apres: "Chaque nouvelle ordonnance est récupérée dès que le médecin la met en ligne.",
       },
       {
+        etape: "Mails",
+        cle: "récupérées avec les autres",
         avant: "Chercher dans la boîte mail les ordonnances envoyées par certains EHPAD.",
         apres: "Les ordonnances reçues par mail sont récupérées avec les autres.",
       },
       {
+        etape: "Comparaison",
+        cle: "comparée au traitement en cours",
         avant: "Comparer chaque nouvelle ordonnance à l'ancienne, ligne par ligne.",
         apres:
           "Chaque ordonnance est comparée au traitement en cours : ajouts, arrêts, changements de posologie.",
       },
       {
+        etape: "Préparation",
+        cle: "prête pour la préparation des doses",
         avant: "Noter les changements à la main pour l'équipe de préparation.",
         apres:
           "La liste des changements arrive à la pharmacie, prête pour la préparation des doses.",
       },
       {
+        etape: "Alerte",
+        cle: "signalé le jour où l'ordonnance arrive",
         avant: "Découvrir un changement de traitement après la préparation des doses.",
         apres: "Le changement est signalé le jour où l'ordonnance arrive. Le pharmacien valide.",
       },
@@ -220,24 +230,34 @@ export const pharmacieEn: PageMetier = {
     apres: "With Granit",
     lignes: [
       {
+        etape: "Collection",
+        cle: "as soon as the doctor posts it",
         avant:
           "Opening each care home's software, several times a day, to see if a prescription arrived.",
         apres: "Each new prescription is collected as soon as the doctor posts it.",
       },
       {
+        etape: "Email",
+        cle: "collected with the others",
         avant: "Searching the inbox for prescriptions some care homes send by email.",
         apres: "Emailed prescriptions are collected with the others.",
       },
       {
+        etape: "Comparison",
+        cle: "compared with the current treatment",
         avant: "Comparing each new prescription with the previous one, line by line.",
         apres:
           "Each prescription is compared with the current treatment: additions, stops, dosage changes.",
       },
       {
+        etape: "Preparation",
+        cle: "ready for dose preparation",
         avant: "Writing down changes by hand for the preparation team.",
         apres: "The list of changes reaches the pharmacy, ready for dose preparation.",
       },
       {
+        etape: "Alerts",
+        cle: "flagged the day the prescription arrives",
         avant: "Finding out about a treatment change after the doses are prepared.",
         apres: "The change is flagged the day the prescription arrives. The pharmacist validates.",
       },
