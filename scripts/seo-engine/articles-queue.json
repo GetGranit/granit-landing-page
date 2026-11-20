@@ -2866,7 +2866,7 @@
       "rejet mutuelle générique"
     ],
     "searchVolume": 0,
-    "status": "pending",
+    "status": "published",
     "wave": 4,
     "level": "Fille",
     "parentSlug": "gestion-tiers-payant-pharmacie",
@@ -2918,7 +2918,8 @@
     "verticales": [
       "pharmacie"
     ],
-    "unsplashQuery": "pharmacist counter patient"
+    "unsplashQuery": "pharmacist counter patient",
+    "publishedAt": "2026-11-20"
   },
   {
     "id": "Y2",
