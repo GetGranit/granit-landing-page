@@ -54,29 +54,39 @@ export const dentaireFr: PageMetier = {
     apres: "Avec Granit",
     lignes: [
       {
+        etape: "Devis",
+        cle: "depuis le devis de votre logiciel",
         avant:
           "Envoyer chaque devis à la mutuelle du patient, par mail ou sur son portail, puis attendre l'accord.",
         apres:
           "La demande de prise en charge part depuis le devis de votre logiciel. Granit suit la réponse.",
       },
       {
+        etape: "Reste à charge",
+        cle: "dès que la mutuelle répond",
         avant:
           "Télécharger le tableau de garanties du patient et calculer son reste à charge à la main.",
         apres:
           "Granit vous donne le reste à charge dès que la mutuelle répond. Vous l'annoncez au patient.",
       },
       {
+        etape: "Orthodontie",
+        cle: "facturé et suivi",
         avant:
           "Remplir la demande d'accord préalable de l'orthodontie, puis facturer chaque semestre sans en oublier un.",
         apres:
           "La demande d'accord préalable est préparée. Chaque semestre de traitement est facturé et suivi.",
       },
       {
+        etape: "Rejets",
+        cle: "repéré, corrigé et renvoyé",
         avant:
           "Ouvrir les retours de l'Assurance Maladie et des mutuelles pour trouver les rejets, les corriger, les renvoyer.",
         apres: "Le rejet est repéré, corrigé et renvoyé. Les cas particuliers vous sont signalés.",
       },
       {
+        etape: "Paiement",
+        cle: "rapproché de sa facture",
         avant:
           "Pointer les virements des mutuelles sur le relevé, relancer les parts mutuelle impayées.",
         apres: "Chaque virement est rapproché de sa facture. Les impayés sont relancés.",
@@ -135,7 +145,16 @@ export const dentaireFr: PageMetier = {
       },
     ],
   },
-  logiciels: ["Logos_w", "Orisha", "Veasy", "Xtrem Santé", "Weclever Dental", "Visiodent", "Julie", "Effigie"],
+  logiciels: [
+    "Logos_w",
+    "Orisha",
+    "Veasy",
+    "Xtrem Santé",
+    "Weclever Dental",
+    "Visiodent",
+    "Julie",
+    "Effigie",
+  ],
   plateformes: ["Viamédis", "Almerys", "Santéclair", "Kalixia"],
   plateformesNote:
     "Granit travaille sur les portails des mutuelles, dans les logiciels que vos équipes utilisent déjà.",
@@ -225,28 +244,38 @@ export const dentaireEn: PageMetier = {
     apres: "With Granit",
     lignes: [
       {
+        etape: "Quote",
+        cle: "from the quote in your software",
         avant:
           "Sending each quote to the patient's insurer, by email or on its portal, then waiting for approval.",
         apres:
           "The coverage request goes out from the quote in your software. Granit follows the reply.",
       },
       {
+        etape: "Patient balance",
+        cle: "as soon as the insurer replies",
         avant: "Downloading the patient's benefits table and working out their balance by hand.",
         apres: "Granit gives you the balance as soon as the insurer replies. You tell the patient.",
       },
       {
+        etape: "Orthodontics",
+        cle: "billed and followed",
         avant:
           "Filling in the orthodontic prior approval request, then billing every semester without missing one.",
         apres:
           "The prior approval request is prepared. Each treatment semester is billed and followed.",
       },
       {
+        etape: "Rejections",
+        cle: "spotted, corrected and resubmitted",
         avant:
           "Going through national health insurance and insurer returns to find rejections, fix them, resubmit them.",
         apres:
           "The rejection is spotted, corrected and resubmitted. Special cases are flagged to you.",
       },
       {
+        etape: "Payment",
+        cle: "matched to its invoice",
         avant: "Matching insurer transfers on the bank statement, chasing unpaid insurer shares.",
         apres: "Each transfer is matched to its invoice. Unpaid ones are followed up.",
       },
@@ -302,7 +331,16 @@ export const dentaireEn: PageMetier = {
       },
     ],
   },
-  logiciels: ["Logos_w", "Orisha", "Veasy", "Xtrem Santé", "Weclever Dental", "Visiodent", "Julie", "Effigie"],
+  logiciels: [
+    "Logos_w",
+    "Orisha",
+    "Veasy",
+    "Xtrem Santé",
+    "Weclever Dental",
+    "Visiodent",
+    "Julie",
+    "Effigie",
+  ],
   plateformes: ["Viamédis", "Almerys", "Santéclair", "Kalixia"],
   plateformesNote: "Granit works on insurer portals, in the software your teams already use.",
   faq: [

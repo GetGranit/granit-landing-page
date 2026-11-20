@@ -56,28 +56,38 @@ export const centresSanteFr: PageMetier = {
     apres: "Avec Granit",
     lignes: [
       {
+        etape: "Facturation",
+        cle: "dès que le médecin valide sa consultation",
         avant:
           "Recopier les actes et la cotation de chaque consultation dans le logiciel de facturation.",
         apres:
           "La facture est préparée dès que le médecin valide sa consultation. L'accueil n'a plus qu'à passer la carte Vitale.",
       },
       {
+        etape: "Droits",
+        cle: "avant leur consultation",
         avant:
           "Vérifier les droits au moment où le patient arrive, quand la salle d'attente est pleine.",
         apres:
           "Les droits des patients du jour sont vérifiés avant leur consultation, auprès de l'Assurance Maladie et, si besoin, de la mutuelle.",
       },
       {
+        etape: "Rejets",
+        cle: "repéré, corrigé et renvoyé",
         avant:
           "Chercher pourquoi une facture est rejetée, appeler la caisse, refaire la feuille de soins.",
         apres: "Le rejet est repéré, corrigé et renvoyé. Les cas particuliers vous sont signalés.",
       },
       {
+        etape: "Feuilles papier",
+        cle: "suivie jusqu'à son paiement",
         avant:
           "Noter les feuilles de soins papier dans un fichier, puis vérifier un mois plus tard qu'elles ont été payées.",
         apres: "Chaque feuille de soins papier est suivie jusqu'à son paiement.",
       },
       {
+        etape: "Paiement",
+        cle: "rapproché de ses factures",
         avant:
           "Pointer les virements de l'Assurance Maladie et des mutuelles sur le relevé, relancer les impayés.",
         apres: "Chaque virement est rapproché de ses factures. Les impayés sont relancés.",
@@ -226,27 +236,37 @@ export const centresSanteEn: PageMetier = {
     apres: "With Granit",
     lignes: [
       {
+        etape: "Billing",
+        cle: "as soon as the doctor validates the visit",
         avant: "Re-entering each visit's procedures and billing codes in the billing software.",
         apres:
           "The invoice is prepared as soon as the doctor validates the visit. The front desk only has to insert the Carte Vitale.",
       },
       {
+        etape: "Eligibility",
+        cle: "before their visit",
         avant: "Checking eligibility when the patient arrives, with a full waiting room.",
         apres:
           "Today's patients' eligibility is checked before their visit, with the national health insurance and, if needed, their insurer.",
       },
       {
+        etape: "Rejections",
+        cle: "spotted, corrected and resubmitted",
         avant:
           "Finding out why an invoice was rejected, calling the health insurance fund, redoing the claim form.",
         apres:
           "The rejection is spotted, corrected and resubmitted. Special cases are flagged to you.",
       },
       {
+        etape: "Paper claims",
+        cle: "followed until it is paid",
         avant:
           "Logging paper claim forms in a file, then checking a month later that they were paid.",
         apres: "Every paper claim form is followed until it is paid.",
       },
       {
+        etape: "Payment",
+        cle: "matched to its invoices",
         avant:
           "Matching national health insurance and insurer transfers on the bank statement, chasing unpaid ones.",
         apres: "Each transfer is matched to its invoices. Unpaid ones are followed up.",

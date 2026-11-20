@@ -22,12 +22,15 @@ export type PageMetier = {
   plateformesNote: string;
   /** Témoignage d'un client du métier, avec son accord écrit (TON.md). Sans lui, le bloc disparaît. */
   temoignage?: { citation: string; auteur: string; role: string };
-  /** « Ce que vous n'avez plus à faire » : la tâche d'aujourd'hui, puis ce que fait Granit. Remplace les cartes d'agents. */
+  /**
+   * « Ce que vous n'avez plus à faire » : une ligne par étape du dossier, la tâche d'aujourd'hui, puis
+   * ce que fait Granit. `cle` est le passage de `apres` mis en gras ; il doit y figurer mot pour mot.
+   */
   avantApres?: {
     titre: [string, string];
     avant: string;
     apres: string;
-    lignes: { avant: string; apres: string }[];
+    lignes: { etape: string; cle: string; avant: string; apres: string }[];
   };
   /** « Comment on démarre » : les étapes de la mise en route, avec la personne qui accompagne. */
   demarrage?: { titre: [string, string]; etapes: { titre: string; texte: string }[] };
