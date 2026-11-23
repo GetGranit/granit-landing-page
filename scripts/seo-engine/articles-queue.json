@@ -2935,7 +2935,7 @@
       "contester un indu pharmacie"
     ],
     "searchVolume": 0,
-    "status": "pending",
+    "status": "published",
     "wave": 4,
     "level": "Fille",
     "parentSlug": "tiers-payant-professionnels-de-sante",
@@ -2987,7 +2987,8 @@
     "verticales": [
       "pharmacie"
     ],
-    "unsplashQuery": "pharmacy counter"
+    "unsplashQuery": "pharmacy counter",
+    "publishedAt": "2026-11-23"
   },
   {
     "id": "Y3",

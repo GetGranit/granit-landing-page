@@ -1,0 +1,194 @@
+{
+  "slug": "justificatifs-cpam-officine-reponses-indu",
+  "id": "Y2",
+  "category": "conformite",
+  "categoryName": "Conformité",
+  "type": "standard",
+  "plateforme": null,
+  "title": "Demande de justificatif de la CPAM en officine : répondre sans laisser naître un indu",
+  "seoTitle": "Justificatif CPAM en pharmacie : répondre sans indu",
+  "primaryKeyword": "justificatif CPAM pharmacie indu",
+  "keywordCluster": [
+    "justificatif CPAM pharmacie",
+    "indu CPAM officine",
+    "accusé de réception logique ARL",
+    "Scor ordonnance électronique pharmacie",
+    "contester un indu pharmacie"
+  ],
+  "parentSlug": "tiers-payant-professionnels-de-sante",
+  "level": "Fille",
+  "author": null,
+  "reviewer": null,
+  "datePublished": "2026-11-23",
+  "dateModified": "2026-11-23",
+  "checkedOn": null,
+  "wordCount": 1870,
+  "readTime": 8,
+  "metaDescription": "La CPAM demande un justificatif pour une ordonnance déjà transmise ? Les preuves à garder en pharmacie, la réponse à envoyer et que faire face à un indu.",
+  "contentHtml": "<p><strong>Quand la CPAM réclame un justificatif en pharmacie, répondez avant l'échéance inscrite sur la demande. Joignez la pièce et la preuve de sa transmission.</strong> Sans réponse, la caisse peut récupérer le montant sous forme d'indu. La pièce demandée peut être l'ordonnance ou l'élément qui ouvrait droit au tiers payant. La preuve, c'est l'accusé de réception logique (ARL) du lot et la trace de la numérisation de l'ordonnance.</p><div class=\"key-takeaways\"><strong>L'essentiel</strong><ul><li>L'ARL prouve que la caisse a reçu le lot de factures, pas qu'elle juge la pièce justificative suffisante : gardez les deux preuves.</li><li>Le délai de réponse est celui écrit sur la demande de la caisse : notez-le le jour même dans votre suivi.</li><li>Lisez la notification d'indu : vérifiez-y les factures, le motif et les voies et délais de recours indiqués.</li><li>Aujourd'hui : désignez une personne et une boîte de réception pour les demandes de la caisse, et vérifiez-la chaque semaine.</li></ul></div><h2 id=\"pourquoi-justificatif-cpam\">Pourquoi la CPAM redemande-t-elle une ordonnance déjà transmise ?</h2><p><strong>Parce que transmettre une facture et justifier son contenu sont deux choses différentes.</strong> L'ARL confirme que la caisse a reçu la feuille de soins électronique (FSE). Il ne dit rien de la pièce qui justifie la délivrance, ni de sa lisibilité.</p><p>Une demande de justificatif peut arriver après paiement. Dans ce cas, la caisse a réglé la part obligatoire (AMO), puis contrôle a posteriori une facture ou un ensemble de factures. Si elle n'obtient pas la pièce, le montant versé peut devenir un indu. L'indu est une somme que la caisse estime payée à tort et qu'elle réclame à l'officine.</p><h3>Les causes possibles d'une demande</h3><ul><li><strong>L'image de l'ordonnance manque ou est illisible</strong> dans le flux de numérisation : page coupée, scan flou, verso oublié.</li><li><strong>La pièce n'est pas rattachée à la bonne facture</strong> : erreur de lot, facture refaite, ordonnance renouvelée.</li><li><strong>Le tiers payant a été accordé sans carte Vitale</strong> hors des cas prévus. Selon <a href=\"https://www.ameli.fr/pharmacien/exercice-professionnel/pratique-tiers-payant/modalites-regles-facturation\">ameli.fr</a>, la carte Vitale conditionne désormais le tiers payant, avec des exceptions listées sur la même page.</li><li><strong>Le produit est soumis à des règles particulières</strong> (quantités, conditions de prescription). Le cas des <a href=\"/ressources/indus-assurance-maladie-pharmacie-protections-menstruelles\">indus liés aux protections menstruelles et aux quotas</a> en est un exemple, traité à part.</li><li><strong>Un contrôle ciblé</strong> de la caisse sur une catégorie de produits, une période ou un prescripteur.</li></ul><p>Toutes les caisses ne procèdent pas de la même façon. Selon <a href=\"https://www.lemoniteurdespharmacies.fr/profession/socio-professionnel/indus-les-justifications-abusives-de-certaines-cpam-denoncees\">Le Moniteur des pharmacies</a>, l'USPO, syndicat de pharmaciens, a dénoncé le 6 novembre 2026 des demandes de justification de certaines caisses. Dans un communiqué, il les juge abusives. C'est la position d'un syndicat, pas une règle. Une demande reçue reste à traiter dans le délai qu'elle fixe, même si vous la trouvez injustifiée.</p><h2 id=\"preuves-transmission-arl-scor\">Quelles preuves de transmission conserver (ARL, Scor) ?</h2><p><strong>Pour chaque facture en tiers payant, gardez trois traces. Ce sont la FSE, l'ARL du lot qui la contient et la trace d'envoi de l'ordonnance numérisée.</strong> Avec l'original ou la copie de l'ordonnance, ce sont elles qui répondent à une demande de la caisse.</p><p>L'article <a href=\"https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006746783\">R161-47 du Code de la sécurité sociale</a> encadre la transmission des FSE et la conservation des FSE et des ARL. Consultez sa version en vigueur pour les délais exacts. Une durée de conservation minimale ne protège pas d'une demande plus tardive. Vérifiez avec l'éditeur de votre logiciel de gestion d'officine (LGO) combien de temps vos lots, ARL et images d'ordonnance restent consultables.</p><h3>Ce qu'est un ARL</h3><p>L'accusé de réception logique (ARL) est le message que la caisse renvoie après réception d'un lot de FSE. Positif, il confirme que le lot a été reçu. Négatif, il signale que le lot n'a pas été accepté et doit être réémis. La page <a href=\"https://www.ameli.fr/pharmacien/exercice-professionnel/teletransmission/teletransmission/teletransmission-fse-mode-emploi\">ameli.fr sur la télétransmission des FSE</a> décrit cette réémission.</p><h3>Ce qu'est Scor</h3><p>Scor (scannérisation des ordonnances) est le dispositif par lequel l'officine transmet à la caisse l'image numérisée de l'ordonnance. Avec l'ordonnance électronique, la pièce peut aussi exister sous forme dématérialisée côté prescripteur. Dans les deux cas, la question à se poser est la même : la caisse peut-elle relier cette pièce à cette facture ?</p><div class=\"tbl\"><table><tr><th>Preuve</th><th>Ce qu'elle prouve</th><th>Ce qu'elle ne prouve pas</th></tr><tr><td>FSE</td><td>La facture et son contenu (bénéficiaire, produits, montants)</td><td>Que la délivrance était justifiée</td></tr><tr><td>ARL positif du lot</td><td>Que la caisse a reçu le lot à une date donnée</td><td>Que l'ordonnance est lisible ou complète</td></tr><tr><td>Trace d'envoi Scor</td><td>Que l'image de l'ordonnance est partie vers la caisse</td><td>Que la caisse juge la pièce suffisante</td></tr><tr><td>Ordonnance archivée</td><td>La pièce elle-même, avec ses mentions</td><td>La date à laquelle elle a été transmise</td></tr></table></div><div class=\"callout callout--warn\"><p><strong>Le piège :</strong> un ARL négatif laissé sans réémission. La facture n'est alors jamais arrivée en traitement, et toute demande ultérieure de la caisse part d'un dossier incomplet. Contrôlez les ARL de chaque lot, pas seulement le total des virements.</p></div><h2 id=\"repondre-demande-justificatif\">Comment répondre à une demande de justificatif CPAM en pharmacie ?</h2><p><strong>La méthode la plus sûre : identifier la facture, puis réunir la pièce et sa preuve de transmission. Répondez ensuite par le canal indiqué avant l'échéance, et gardez la preuve de votre réponse.</strong> Une réponse complète du premier coup limite le risque d'un second échange, et d'un indu.</p><ol class=\"steps\"><li><strong>Identifier la facture exacte.</strong> Retrouvez dans le LGO le numéro de facture, le lot, la date de délivrance et le bénéficiaire cités par la caisse.</li><li><strong>Contrôler l'ARL du lot.</strong> Vérifiez qu'il est positif ; s'il est négatif ou absent, notez-le, c'est un autre problème à régler.</li><li><strong>Retrouver la pièce.</strong> Image Scor, ordonnance électronique ou original archivé : vérifiez qu'elle est lisible, complète et datée.</li><li><strong>Joindre la preuve de transmission.</strong> Ajoutez la référence du lot et la date de l'ARL, pour montrer que la pièce était déjà partie.</li><li><strong>Répondre par le canal indiqué, avant l'échéance.</strong> Utilisez l'adresse, la messagerie ou le formulaire précisé sur la demande, sans en changer.</li><li><strong>Garder la preuve de votre réponse.</strong> Copie de l'envoi, accusé de réception, date et nom de la personne qui a répondu.</li><li><strong>Fermer la ligne dans votre suivi.</strong> Notez la date de réponse, et une date de vérification pour contrôler qu'aucun indu n'a été émis.</li></ol><div data-figure=\"reponse-justificatif\"></div><h3>Si la pièce a bien été transmise</h3><p>Dites-le simplement : la pièce, la référence du lot, la date de l'ARL. Joignez de nouveau l'ordonnance, même si elle figure déjà dans le flux Scor. Joindre la pièce évite à la caisse de la rechercher, et une réponse sans pièce peut relancer un échange.</p><h3>Si la pièce manque vraiment</h3><p>Répondez quand même, avec ce que vous avez et une explication factuelle (ordonnance non numérisée, verso absent). Ne reconstituez jamais une pièce après coup. Un dossier honnête et incomplet se discute ; un document refait ne se défend pas.</p><h3>Si la demande vous semble injustifiée</h3><p>Répondez dans le délai, puis exprimez votre désaccord par écrit dans la même réponse. Ne pas répondre ne suspend rien : c'est l'absence de réponse qui ouvre la voie à l'indu. Votre syndicat peut aussi vous éclairer sur les pratiques de votre caisse.</p><h2 id=\"delai-courriel-caisse\">Quel délai pour répondre, et comment ne pas laisser un courriel sans suite ?</h2><p><strong>Le délai qui compte est celui inscrit sur la demande de la caisse.</strong> Les pages consultées ne donnent pas de délai unique pour toutes les demandes de justificatif. Notez-le le jour de la réception, pas le jour où vous ouvrez le dossier.</p><p>Le risque ne tient pas seulement à la difficulté de la réponse. Il tient aussi à la demande qui dort dans une boîte de réception partagée, lue par personne, ou classée comme un message d'information. Une demande arrivée pendant des congés, un remplacement ou un changement d'adjoint peut ainsi dépasser son échéance sans que personne ne l'ait vue.</p><h3>Quatre règles simples d'organisation</h3><ul><li><strong>Une adresse connue de la caisse</strong>, à jour, consultée par au moins deux personnes.</li><li><strong>Une personne responsable</strong> des demandes de la caisse, et un remplaçant nommé pendant ses absences.</li><li><strong>Une liste des demandes ouvertes</strong>, avec la date de réception, l'échéance et l'état (à traiter, envoyé, clos).</li><li><strong>Une vérification hebdomadaire</strong> de cette liste, au même moment que le suivi des rejets et des retours.</li></ul><div class=\"callout callout--tip\"><p><strong>Le bon réflexe :</strong> créez une règle dans votre messagerie qui classe tout message de la caisse dans un dossier dédié. Traitez ce dossier comme une file d'attente, jamais comme des archives.</p></div><p>Cette liste a aussi sa place à côté du suivi des <a href=\"/ressources/officine-balance-agee-tiers-payant\">créances de tiers payant en officine</a>. Une facture sous demande de justificatif est une créance dont le paiement peut encore être remis en cause.</p><h2 id=\"contester-indu-officine\">Que faire quand un indu est notifié à l'officine ?</h2><p><strong>Lisez la notification d'indu en entier. Vérifiez-y les factures concernées, le motif, le montant réclamé et les voies et délais de recours indiqués.</strong></p><p>Un indu notifié n'est pas une fin de dossier. Il ouvre un échange où l'officine peut montrer que tout ou partie des factures étaient justifiées. Encore faut-il répondre ligne par ligne, avec les preuves.</p><h3>Comment préparer une contestation</h3><ol class=\"steps\"><li><strong>Lister les factures citées.</strong> Reportez-les dans un tableau : numéro, date, bénéficiaire, montant, motif de la caisse.</li><li><strong>Classer chaque ligne.</strong> Pièce disponible et transmise, pièce disponible mais jamais transmise, pièce absente.</li><li><strong>Réunir les preuves par ligne.</strong> Ordonnance, ARL du lot, trace Scor, copie de votre réponse à la demande de justificatif si elle existe.</li><li><strong>Répondre par écrit dans le délai indiqué.</strong> Utilisez la voie mentionnée sur la notification, en séparant les lignes contestées des lignes acceptées.</li><li><strong>Suivre la suite donnée.</strong> Notez la date d'envoi, puis contrôlez dans vos retours de caisse ce qui est maintenu ou abandonné.</li></ol><p>Contester toutes les lignes en bloc affaiblit le dossier. Reconnaître les lignes sans pièce et défendre précisément celles qui sont justifiées donne une réponse plus lisible pour la caisse. Si le désaccord persiste, vérifiez sur la notification les voies de recours indiquées et respectez leur délai.</p><p>Une fois le dossier tranché, la somme retenue doit apparaître quelque part. Suivez-la dans vos retours NOEMIE et sur vos relevés, avec la méthode décrite pour <a href=\"/ressources/rapprochement-noemie\">rapprocher les flux NOEMIE et les virements bancaires</a>. Une retenue non identifiée fausse ensuite votre lecture des impayés.</p><h2 id=\"organiser-suivi-justificatifs\">Comment organiser le suivi pour qu'aucune demande ne devienne un indu ?</h2><p><strong>Traitez les demandes de justificatif comme une boucle de travail à part entière. Il leur faut un responsable, une liste et une date de vérification.</strong> Une demande vue trop tard peut devenir un indu, même quand la pièce existe.</p><p>Trois habitudes réduisent le risque en amont. D'abord, contrôler les ARL de chaque lot dès leur arrivée et réémettre sans attendre en cas d'ARL négatif. Ensuite, vérifier la lisibilité des images d'ordonnance au moment de la numérisation, pas des mois plus tard. Enfin, appliquer au comptoir les règles de carte Vitale et de tiers payant en vigueur. Les <a href=\"/ressources/sesam-vitale-evolutions-2025\">évolutions SESAM-Vitale de 2025</a> en ont changé une partie.</p><p>Ce suivi rejoint <a href=\"/ressources/trois-boucles-pharmacie\">les trois boucles de travail d'une officine</a> : ordonnances, rejets et réassort. Une demande de justificatif touche à la fois l'ordonnance et le suivi des rejets. Elle part d'une facture déjà payée, peut créer une retenue, et doit être fermée pour que la balance âgée reste juste.</p><p>Quand les rejets et les retours s'accumulent, cette boucle peut décrocher faute de temps au back-office. <a href=\"/metiers\">Granit</a> travaille avec des pharmacies sur le suivi de leur tiers payant. L'équipe garde la main sur les cas qui demandent une décision du titulaire.</p><p>Quel que soit votre choix d'organisation, un principe reste : chaque demande de la caisse a une échéance, un responsable et une trace de réponse. Une demande sans ces trois éléments est un indu en préparation.</p>",
+  "tocItems": [
+    {
+      "id": "pourquoi-justificatif-cpam",
+      "label": "Pourquoi la CPAM redemande une ordonnance"
+    },
+    {
+      "id": "preuves-transmission-arl-scor",
+      "label": "Les preuves à conserver : ARL, Scor, FSE"
+    },
+    {
+      "id": "repondre-demande-justificatif",
+      "label": "Répondre à une demande de justificatif"
+    },
+    {
+      "id": "delai-courriel-caisse",
+      "label": "Délai de réponse et courriels de la caisse"
+    },
+    {
+      "id": "contester-indu-officine",
+      "label": "Contester un indu notifié à l'officine"
+    },
+    {
+      "id": "organiser-suivi-justificatifs",
+      "label": "Organiser le suivi pour éviter l'indu"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "Que faire quand la CPAM redemande une ordonnance déjà transmise ?",
+      "answer": "Répondez avant l'échéance inscrite sur la demande, en joignant de nouveau l'ordonnance. Ajoutez la preuve de sa transmission : référence du lot et date de l'accusé de réception logique (ARL). L'ARL prouve que la caisse a reçu la facture, pas qu'elle dispose d'une pièce lisible et rattachée. Une réponse complète limite le risque d'un second échange et d'un indu."
+    },
+    {
+      "question": "Quelles preuves de transmission conserver (ARL, flux Scor) ?",
+      "answer": "Pour chaque facture en tiers payant, conservez la feuille de soins électronique et l'ARL du lot qui la contient. Gardez aussi la trace d'envoi de l'image d'ordonnance par Scor, et l'ordonnance elle-même. Vérifiez avec l'éditeur de votre logiciel combien de temps ces éléments restent consultables."
+    },
+    {
+      "question": "Quel délai pour répondre à une demande de justificatif ?",
+      "answer": "Le délai à respecter est celui inscrit sur la demande de la caisse. Les pages consultées ne donnent pas de délai unique pour toutes les demandes de justificatif. Notez l'échéance le jour de la réception et répondez par le canal indiqué sur la demande."
+    },
+    {
+      "question": "Comment éviter qu'un courriel de la caisse reste ignoré ?",
+      "answer": "Désignez une personne responsable des demandes de la caisse et un remplaçant pendant ses absences. Classez automatiquement les messages de la caisse dans un dossier dédié. Tenez une liste des demandes ouvertes avec leur échéance, et vérifiez-la chaque semaine avec le suivi des rejets et des retours."
+    },
+    {
+      "question": "Comment contester un indu notifié à l'officine ?",
+      "answer": "Lisez la notification d'indu : vérifiez-y les factures, le motif et les voies et délais de recours indiqués. Reprenez chaque facture ligne par ligne avec ses preuves, puis séparez les lignes contestées des lignes acceptées. Répondez par écrit dans le délai indiqué, par la voie mentionnée sur la notification."
+    }
+  ],
+  "sources": [
+    {
+      "label": "ameli.fr · Modalités et règles de facturation du tiers payant (pharmacien)",
+      "url": "https://www.ameli.fr/pharmacien/exercice-professionnel/pratique-tiers-payant/modalites-regles-facturation"
+    },
+    {
+      "label": "Le Moniteur des pharmacies · Indus : les justifications abusives de certaines CPAM dénoncées",
+      "url": "https://www.lemoniteurdespharmacies.fr/profession/socio-professionnel/indus-les-justifications-abusives-de-certaines-cpam-denoncees"
+    },
+    {
+      "label": "legifrance.gouv.fr · Code de la sécurité sociale, article R161-47",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006746783"
+    },
+    {
+      "label": "ameli.fr · Télétransmission des FSE : mode d'emploi (pharmacien)",
+      "url": "https://www.ameli.fr/pharmacien/exercice-professionnel/teletransmission/teletransmission/teletransmission-fse-mode-emploi"
+    }
+  ],
+  "figures": [
+    {
+      "id": "reponse-justificatif",
+      "type": "etapes",
+      "titre": "Répondre à un justificatif avant l'indu",
+      "legende": "La réponse ne se joue pas sur la pièce seule : la preuve de transmission et la date d'échéance comptent autant.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "Identifier la facture",
+          "detail": "Numéro, lot, date, bénéficiaire dans le LGO",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Contrôler l'ARL",
+          "detail": "Positif, négatif ou absent",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Retrouver la pièce",
+          "detail": "Image Scor, e-ordonnance ou original lisible",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Répondre avant l'échéance",
+          "detail": "Par le canal indiqué, pièce et preuve jointes",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Garder la trace",
+          "detail": "Copie de l'envoi, date, auteur de la réponse",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [
+    {
+      "id": "Y2b",
+      "slug": "trois-boucles-pharmacie",
+      "anchor": "les trois boucles à automatiser en officine",
+      "type": "sœur"
+    },
+    {
+      "id": "Y2c",
+      "slug": "officine-balance-agee-tiers-payant",
+      "anchor": "créances de tiers payant en officine",
+      "type": "sœur"
+    },
+    {
+      "id": "Y2d",
+      "slug": "codes-rejets-noemie",
+      "anchor": "codes rejets NOEMIE",
+      "type": "transverse"
+    },
+    {
+      "id": "Y2e",
+      "slug": "rejet-tiers-payant",
+      "anchor": "rejet de tiers payant",
+      "type": "transverse"
+    }
+  ],
+  "liensEntrants": [],
+  "remplace": [],
+  "verticales": [
+    "pharmacie"
+  ],
+  "encart": {
+    "titre": "Vos rejets et vos prises en charge, repris pour vous",
+    "fin": "Les rejets et les demandes de prise en charge de l'officine, Granit peut s'en occuper.",
+    "texteFin": "Votre équipe garde le comptoir. Granit peut reprendre vos rejets, envoyer vos demandes de prise en charge et suivre les réponses.",
+    "etapes": [
+      "Vous nous montrez vos rejets et votre balance âgée",
+      "On regarde ensemble ce qui peut être repris",
+      "Vous décidez de ce que Granit prend en charge"
+    ],
+    "rassure": "Démo de 20 min · sans engagement"
+  },
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-11-23T18:29:34.419Z",
+    "avertissements": [
+      "aucune citation (facultative)",
+      "source non vérifiable (403) : https://www.ameli.fr/pharmacien/exercice-professionnel/pratique-tiers-payant/modalites-regles-facturation",
+      "source non vérifiable (403) : https://www.ameli.fr/pharmacien/exercice-professionnel/teletransmission/teletransmission/teletransmission-fse-mode-emploi",
+      "source non vérifiable (403) : https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006746783"
+    ],
+    "relecture": {
+      "verdict": "pret",
+      "tours": 2,
+      "model": "claude-opus-5-5",
+      "le": "2026-11-23T18:34:57.403Z"
+    }
+  }
+}

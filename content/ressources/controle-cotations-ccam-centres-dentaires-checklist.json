@@ -224,7 +224,13 @@
       "type": "transverse"
     }
   ],
-  "liensEntrants": [],
+  "liensEntrants": [
+    {
+      "slug": "justificatifs-cpam-officine-reponses-indu",
+      "anchor": "Demande de justificatif de la CPAM en officine : répondre sans laisser naître un indu",
+      "type": "soeur"
+    }
+  ],
   "remplace": [],
   "verticales": [
     "dentaire",
