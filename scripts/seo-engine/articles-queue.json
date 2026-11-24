@@ -3539,6 +3539,67 @@
     "unsplashQuery": "pharmacy counter"
   },
   {
+    "id": "Y9",
+    "slug": "aides-auditives-2027-devis-prise-en-charge",
+    "category": "guide-tiers-payant",
+    "title": "Aides auditives au 1er janvier 2027 : les points à vérifier sur vos devis et vos prises en charge",
+    "primaryKeyword": "aides auditives remboursement 2027",
+    "keywordCluster": [
+      "remboursement aides auditives 2027",
+      "taux remboursement aide auditive janvier 2027",
+      "devis audioprothèse 2027",
+      "prise en charge aide auditive mutuelle 2027"
+    ],
+    "searchVolume": 0,
+    "status": "pending",
+    "wave": 4,
+    "level": "Fille",
+    "parentSlug": "tiers-payant-audioprothesiste",
+    "reader": "Audioprothésiste, responsable de centre auditif ou assistante chargée du tiers payant",
+    "role": "Trafic",
+    "granitData": "—",
+    "cta": "Parlons de votre tiers payant",
+    "toValidate": "Actualité issue de la veille : https://app.notion.com/422ba273162f81ff8d9bfdcc6f0a8b31 — source : https://www.acuite.fr/actualites/profession/legislation/remboursement-des-aides-auditives-le-nouveau-a338578. Date d'effet : 1er janvier 2027. À vérifier : le nouveau taux de remboursement de l'Assurance maladie n'est pas connu au 23/11/2026 (le Synea demande une clarification) : n'écrire aucun taux ; revérifier la publication officielle le jour de la rédaction. Ne pas affirmer que des rejets surviendront : écrire ce qu'il faut contrôler. Ne rien promettre sur ce que Granit détecte sans validation. Relecture humaine obligatoire.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Que change le 1er janvier 2027 pour le remboursement des aides auditives ?",
+      "Le taux de remboursement de la Sécurité sociale est-il publié ?",
+      "Faut-il refaire les devis signés avant le 1er janvier pour une livraison en 2027 ?",
+      "Que dire au patient qui demande son reste à charge ?",
+      "Que contrôler dans le logiciel et sur les prises en charge dès la publication du taux ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "Y9a",
+        "slug": "tiers-payant-audioprothesiste",
+        "anchor": "tiers payant audioprothésiste",
+        "type": "parent"
+      },
+      {
+        "id": "Y9b",
+        "slug": "ticket-moderateur-2027-tiers-payant",
+        "anchor": "ticket modérateur 2027",
+        "type": "transverse"
+      },
+      {
+        "id": "Y9c",
+        "slug": "audioprothese-renouvellement-tiers-payant",
+        "anchor": "renouvellement d'appareillage",
+        "type": "transverse"
+      },
+      {
+        "id": "Y9d",
+        "slug": "aides-auditives-css-tiers-payant",
+        "anchor": "aides auditives et CSS",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ],
+    "unsplashQuery": "hearing aid audiologist"
+  },
+  {
     "id": "T0",
     "slug": "tiers-payant-professionnels-de-sante",
     "category": "guide-tiers-payant",
