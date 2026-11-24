@@ -3004,7 +3004,7 @@
       "rejets mutuelle laboratoire"
     ],
     "searchVolume": 0,
-    "status": "pending",
+    "status": "published",
     "wave": 4,
     "level": "Fille",
     "parentSlug": "tiers-payant-professionnels-de-sante",
@@ -3050,7 +3050,8 @@
     "verticales": [
       "cliniques"
     ],
-    "unsplashQuery": "medical laboratory"
+    "unsplashQuery": "medical laboratory",
+    "publishedAt": "2026-11-24"
   },
   {
     "id": "W4",

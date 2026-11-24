@@ -249,6 +249,11 @@
       "slug": "justificatifs-cpam-officine-reponses-indu",
       "anchor": "Demande de justificatif de la CPAM en officine : répondre sans laisser naître un indu",
       "type": "soeur"
+    },
+    {
+      "slug": "protocole-biologie-2027-2029-laboratoires",
+      "anchor": "Protocole biologie 2027-2029 : ce qui change pour votre laboratoire, en une page",
+      "type": "soeur"
     }
   ],
   "remplace": [],

@@ -159,7 +159,13 @@
       "type": "transverse"
     }
   ],
-  "liensEntrants": [],
+  "liensEntrants": [
+    {
+      "slug": "protocole-biologie-2027-2029-laboratoires",
+      "anchor": "Protocole biologie 2027-2029 : ce qui change pour votre laboratoire, en une page",
+      "type": "soeur"
+    }
+  ],
   "remplace": [],
   "verticales": [
     "pharmacie"
