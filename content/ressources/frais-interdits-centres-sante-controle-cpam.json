@@ -1,0 +1,235 @@
+{
+  "slug": "frais-interdits-centres-sante-controle-cpam",
+  "id": "V2",
+  "category": "conformite",
+  "categoryName": "Conformité",
+  "type": "standard",
+  "plateforme": null,
+  "title": "Frais interdits en centre de santé : la liste à vérifier avant un contrôle de l'Assurance maladie",
+  "seoTitle": "Frais interdits en centre de santé : la liste à vérifier",
+  "primaryKeyword": "frais interdits centre de santé",
+  "keywordCluster": [
+    "frais interdits professionnel conventionné",
+    "frais de dossier centre de santé",
+    "frais d'annulation de rendez-vous médecin conventionné",
+    "supplément tiers payant interdit",
+    "actions conventionnelles centres de santé",
+    "déconventionnement centre de santé"
+  ],
+  "parentSlug": "tiers-payant-professionnels-de-sante",
+  "level": "Fille",
+  "author": null,
+  "reviewer": null,
+  "datePublished": "2026-11-25",
+  "dateModified": "2026-11-25",
+  "checkedOn": null,
+  "wordCount": 2223,
+  "readTime": 10,
+  "metaDescription": "Avant un contrôle de l'Assurance maladie, repérez dans votre grille les frais interdits en centre de santé et sécurisez chaque ligne facturée au patient.",
+  "contentHtml": "<p><strong>Les frais interdits en centre de santé sont les montants demandés au patient sans base. Ils ne reposent ni sur un acte remboursable à son tarif, ni sur un texte qui les autorise.</strong> Le point de départ est simple : un centre de santé pratique le tiers payant sur la part obligatoire et ne facture pas de dépassement d'honoraires. Frais de dossier, de rendez-vous, d'envoi de résultats ou supplément pour le tiers payant : vérifiez chaque ligne avant un contrôle de l'Assurance maladie.</p><div class=\"key-takeaways\"><strong>L'essentiel</strong><ul><li>En centre de santé, le tiers payant sur la part obligatoire (AMO) et l'absence de dépassement d'honoraires sont imposés par la loi. Le texte est l'article L6323-1-7 du Code de la santé publique, en vigueur depuis le 21 mai 2023.</li><li>Un montant demandé au patient en plus du tarif d'un acte remboursable doit pouvoir être rattaché à un texte précis. Sans texte, il est difficile à justifier devant la caisse.</li><li>Les lignes à regarder en priorité : frais de dossier, de rendez-vous, d'envoi de résultats, de collecte de prélèvements et supplément lié au tiers payant.</li><li>Certains montants restent dus, comme le forfait journalier en clinique ou la participation de l'assuré non couverte par une complémentaire.</li><li>Action du jour : extrayez tout ce que votre structure facture au patient, y compris sur le site et la plateforme de rendez-vous. Puis rattachez chaque frais à un texte daté.</li></ul></div><h2 id=\"loi-frais-centre-sante\">Que dit la loi sur les frais facturés en centre de santé ?</h2><p>Un centre de santé pratique le tiers payant sur la part obligatoire et ne facture aucun dépassement d'honoraires. C'est ce que pose l'<a href=\"https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000047567936\">article L6323-1-7 du Code de la santé publique</a>, en vigueur depuis le 21 mai 2023. Ces deux obligations encadrent tout ce que le centre peut demander au patient.</p><p>La part obligatoire (AMO, assurance maladie obligatoire) est la part remboursée par la caisse. En centre de santé, elle est payée directement au centre : le patient ne l'avance pas. La part complémentaire (AMC, assurance maladie complémentaire) relève de la mutuelle du patient. Elle passe en tiers payant ou non, selon les accords du centre avec les complémentaires.</p><p>Les engagements du centre envers l'Assurance maladie sont fixés par l'<a href=\"https://www.ameli.fr/exercice-coordonne/textes-reference/accord-national/accord-national-centres-sante\">accord national des centres de santé</a>. La version actuelle a été signée le 28 août 2025, réputée approuvée le 1er octobre 2025 et publiée au <a href=\"https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000052391780\">Journal officiel du 15 octobre 2025</a>. C'est le texte de référence pour toute discussion avec la caisse sur vos pratiques de facturation.</p><p>Les activités dentaires, ophtalmologiques et d'orthoptie en centre de santé sont en outre soumises à un <a href=\"https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000047567907\">agrément de l'agence régionale de santé (ARS)</a>. La <a href=\"https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000047561943\">loi du 19 mai 2023</a> a fixé ce cadre, et les centres existants devaient être agréés avant le 21 novembre 2025.</p><p>Concrètement, la règle de lecture tient en une phrase. Tout montant demandé au patient en plus du tarif d'un acte remboursable doit pouvoir être rattaché à un texte. Si vous ne trouvez pas ce texte, la ligne n'a pas de base et ne doit plus être facturée.</p><h2 id=\"frais-annexes-a-verifier\">Quels frais annexes vérifier en priorité dans votre grille ?</h2><p>Six familles de frais sont à examiner en premier. Ce sont les frais de dossier, de rendez-vous, d'annulation, d'envoi de résultats et de collecte de prélèvements, plus le supplément tiers payant.</p><p>Vérifiez chaque ligne dans les textes en vigueur le jour de votre audit, et notez la date de cette vérification. Le tableau ci-dessous sert de point de départ, pas de verdict.</p><div class=\"tbl\"><table><tr><th>Frais</th><th>Où on le trouve</th><th>La question à poser</th></tr><tr><td>Frais de dossier</td><td>Ouverture de dossier, première visite, étude d'un devis</td><td>Correspond-il à un service hors soins prévu par un texte ?</td></tr><tr><td>Frais de prise de rendez-vous</td><td>Réservation en ligne, forfait de réservation, rendez-vous rapide</td><td>Le patient paie-t-il pour accéder à un acte remboursable ?</td></tr><tr><td>Frais d'annulation</td><td>Rendez-vous non honoré, annulation tardive</td><td>Sur quelle base ce montant est-il demandé au patient ?</td></tr><tr><td>Envoi de résultats</td><td>Laboratoire, imagerie, envoi de comptes rendus</td><td>L'envoi fait-il partie de l'acte déjà facturé ?</td></tr><tr><td>Collecte de prélèvements</td><td>Laboratoire, point de prélèvement, domicile</td><td>Un acte ou une indemnité de la nomenclature le prévoit-il ?</td></tr><tr><td>Supplément tiers payant</td><td>Accueil, encaissement</td><td>Le centre fait-il payer une obligation légale ?</td></tr></table></div><p>Une ligne n'a pas besoin de s'appeler « frais de dossier » pour en être un. Regardez en priorité les libellés vagues : « forfait administratif », « frais de gestion », « frais de service », « participation aux frais ». Ils ne renvoient à aucun acte identifiable : vérifiez leur base en premier.</p><div class=\"callout callout--warn\"><p><strong>Le piège :</strong> un frais affiché ailleurs qu'en caisse compte autant qu'un frais saisi en caisse. C'est le cas sur la plateforme de prise de rendez-vous, dans les conditions générales du site ou sur une affiche en salle d'attente. Si le patient peut le lire, le contrôle peut le lire aussi.</p></div><h2 id=\"supplement-tiers-payant\">Peut-on facturer un supplément pour le tiers payant intégral ?</h2><p>En centre de santé, un supplément pour le tiers payant n'a pas de base. Le tiers payant sur la part obligatoire est une obligation légale du centre. Lui associer un montant revient à faire payer au patient ce que la loi impose.</p><p>Le tiers payant intégral désigne la dispense d'avance de frais sur la part obligatoire et sur la part complémentaire. La part complémentaire passe par des accords avec les complémentaires, par exemple le contrat Inter-AMC. Dans son <a href=\"https://www.tpcomplementaire.fr/iamcps/telechargerDocument?filename=CSTE-SPECIMEN.pdf\">spécimen « Centre de santé »</a>, ce contrat prévoit un paiement sous 7 jours ouvrés après une demande de remboursement électronique (DRE) conforme. C'est un engagement contractuel entre le centre et les complémentaires, pas une règle légale.</p><p>En dentaire, l'examen bucco-dentaire de prévention (EBD) illustre ce mécanisme. Selon <a href=\"https://www.ameli.fr/chirurgien-dentiste/exercice-liberal/facturation-remuneration/pratique-tiers-payant/tiers-payant-examen-bucco-dentaire-soins\">ameli.fr</a>, l'EBD se fait en tiers payant intégral (AMO et AMC) depuis le 1er avril 2025, après adhésion à Inter-AMC. Le patient n'avance rien : aucun supplément ne trouve sa place dans ce schéma.</p><p>Le coût de gestion de la part complémentaire est réel : rejets, relances, rapprochement des virements avec les retours NOEMIE. Mais ce coût se traite dans l'organisation du centre, pas sur la facture du patient. Une structure qui veut le réduire travaille sur ses rejets, pas sur un frais ajouté à l'accueil.</p><h2 id=\"montants-dus-patient\">Quels montants restent dus par le patient ?</h2><p>Restent dus les montants qu'un texte prévoit. C'est le cas de la participation de l'assuré quand aucune complémentaire ne la prend en charge, et de certains forfaits réglementaires. S'y ajoute ce que prévoit le devis accepté, pour les soins qui en exigent un. Tout le reste est à justifier.</p><p>La participation de l'assuré, aussi appelée ticket modérateur, est la part du tarif qui reste à la charge du patient après le remboursement obligatoire. Le <a href=\"https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054733581\">décret n° 2026-809</a> relève la fourchette de cette participation au 1er janvier 2027. Le taux appliqué n'est pas encore fixé : vérifiez-le avant de mettre à jour vos encaissements. Le détail est dans notre article sur le <a href=\"/ressources/ticket-moderateur-2027-tiers-payant\">ticket modérateur 2027</a>.</p><p>En clinique, le forfait journalier est un exemple de montant dû et encadré. Selon <a href=\"https://www.ameli.fr/assure/remboursements/reste-charge/forfait-hospitalier\">ameli.fr</a>, il s'élève à 23 € par jour, 17 € en psychiatrie, depuis le 1er mars 2026. Il est dû aussi le jour de la sortie. Le bureau des entrées peut le demander : c'est un texte qui le fixe, pas une décision de l'établissement.</p><p>En dentaire, le devis remis avant les soins prothétiques est le document qui encadre ce que le patient paie. Les paniers du <a href=\"https://www.service-public.fr/particuliers/vosdroits/F34729\">100 % Santé</a> organisent le reste à charge sur la prothèse. Le fonctionnement côté tiers payant est détaillé dans notre page sur les <a href=\"/ressources/dentaire-paniers-100-sante-tiers-payant\">paniers 100 % Santé en dentaire</a>.</p><p>Une règle de tri simple pour votre équipe. Si personne ne retrouve le texte qui autorise un montant, la ligne passe en suspens jusqu'à ce qu'on le retrouve. Mieux vaut perdre un frais pendant quelques semaines que le défendre sans base devant la caisse.</p><h2 id=\"selon-votre-metier\">Comment la question se pose-t-elle selon votre métier ?</h2><p>La règle est la même pour tous : un frais annexe doit reposer sur un texte. Mais les lignes à risque ne sont pas les mêmes d'un métier à l'autre, parce que les irritants du quotidien diffèrent.</p><h3>Centres de santé et centres d'ophtalmologie</h3><p>La pression porte sur les rendez-vous. Consultations d'ophtalmologie, bilans d'orthoptie, délais longs : la tentation est forte de facturer la réservation d'un créneau rapide ou les rendez-vous non honorés. Les absences coûtent du temps médical, c'est un fait. La réponse passe par l'organisation (rappels avant le rendez-vous, liste d'attente, relance des créneaux libérés), pas par un frais d'annulation demandé au patient sans base. Vérifiez aussi les conditions affichées par votre outil de prise de rendez-vous : elles engagent le centre.</p><h3>Centres dentaires</h3><p>Les lignes à regarder : frais d'ouverture de dossier, d'étude de devis ou de plan de traitement, forfaits administratifs ajoutés en début d'orthodontie. Un plan de traitement se facture par ses actes cotés, semestre après semestre pour l'orthodontie. Notre article sur la <a href=\"/ressources/orthodontie-facturation-traitements-longs\">facturation des traitements longs</a> détaille ce rythme. Si un contrôle est annoncé, menez l'audit des frais en même temps que celui des cotations, avec la <a href=\"/ressources/controle-cotations-ccam-centres-dentaires-checklist\">checklist des cotations CCAM</a>.</p><h3>Cliniques</h3><p>Au bureau des entrées, la confusion vient de la coexistence de montants dus (forfait journalier) et de frais administratifs d'admission. Le premier est fixé par un texte ; un « frais de dossier d'admission » ne l'est pas forcément. Les prestations demandées par le patient pour son confort obéissent à leurs propres règles. Vérifiez-les une par une, texte en main, plutôt que de les regrouper sous un libellé générique.</p><h3>Laboratoires de biologie</h3><p>Les lignes à risque sont l'envoi des résultats, la collecte de prélèvements et les frais liés au prélèvement à domicile. Ce qui se facture en biologie est défini par la nomenclature des actes et par le protocole conventionnel. Un frais placé hors de ce cadre doit être regardé de près. Notre synthèse du <a href=\"/ressources/protocole-biologie-2027-2029-laboratoires\">protocole biologie 2027-2029</a> aide à repérer ce qui change dans ce cadre.</p><h2 id=\"risques-sanctions\">Que risque un centre de santé qui facture des frais interdits ?</h2><p>Le risque est d'abord conventionnel : un frais sans base est un manquement aux engagements pris envers l'Assurance maladie. C'est la convention ou l'accord national qui encadre la suite. Les actions conventionnelles que la caisse peut engager se lisent dans ce texte, pas dans la presse.</p><p>Si la caisse évoque une sanction, retrouvez dans l'accord national la procédure exacte, ses étapes et les droits de la structure à chaque étape. Une direction qui connaît le texte répond mieux à la caisse qu'une direction qui réagit à une rumeur.</p><p>Le risque est aussi relationnel. Un patient qui découvre qu'un frais n'avait pas lieu d'être se méfie ensuite de toute la facture, y compris des montants légitimes. C'est le contraire de ce que cherche un bon <a href=\"/ressources/recouvrement-patient-empathie\">recouvrement auprès du patient</a> : une facture claire, justifiée ligne par ligne, se règle plus facilement.</p><h2 id=\"verifier-grille-tarifaire\">Comment vérifier sa grille tarifaire avant un contrôle ?</h2><p>La méthode la plus sûre est un audit en six étapes, mené par écrit et daté. Les six étapes : extraire, séparer actes et frais annexes, rattacher chaque frais à un texte, suspendre ce qui n'en a pas, aligner l'affichage, archiver.</p><ol class=\"steps\"><li><strong>Extraire toutes les lignes facturées au patient.</strong> Logiciel de facturation, caisse, plateforme de rendez-vous, site internet, affichage en salle d'attente : une seule liste, sans tri préalable.</li><li><strong>Séparer les actes cotés des frais annexes.</strong> Les actes renvoient à une nomenclature (NGAP, CCAM, actes de biologie). Tout le reste est un frais annexe à justifier.</li><li><strong>Rattacher chaque frais annexe à un texte.</strong> Notez la référence, le lien et la date de consultation. Un frais sans référence ne passe pas à l'étape suivante.</li><li><strong>Suspendre les lignes sans texte.</strong> Retirez-les du logiciel et de la caisse, et prévenez l'accueil par écrit.</li><li><strong>Aligner l'affichage.</strong> Site, conditions générales, plateforme de rendez-vous et affiches doivent dire la même chose que la grille corrigée.</li><li><strong>Dater et archiver l'audit.</strong> Gardez la version corrigée, la liste des lignes retirées et la date de chaque changement : c'est votre preuve en cas de contrôle.</li></ol><div data-figure=\"audit-grille-tarifaire\"></div><p>Dans un groupe multi-sites, l'audit se fait site par site. Une grille définie au siège peut avoir divergé localement, par exemple sur les frais de rendez-vous ou d'annulation. Un pilotage commun des grilles, comme celui décrit dans notre article sur les <a href=\"/ressources/groupes-multi-sites-pilotage\">groupes multi-sites</a>, évite qu'un site garde une ligne retirée ailleurs.</p><div class=\"callout callout--tip\"><p><strong>Le bon réflexe :</strong> faites relire la grille par une personne qui ne l'a pas construite. Elle posera la question « sur quel texte ? » sans connaître l'histoire de chaque ligne.</p></div><p>Cet audit prend du temps à l'équipe administrative, et ce temps peut manquer au suivi des rejets. Pour le libérer, <a href=\"/metiers\">Granit peut suivre vos rejets</a> (motif, correction, nouvel envoi) pendant que l'équipe garde la main sur la grille et l'accueil des patients.</p><h2 id=\"frais-deja-factures\">Que faire si un frais sans base a déjà été facturé ?</h2><p>Arrêtez de le facturer tout de suite et documentez ce qui a été facturé. Puis décidez de la suite avec la direction et votre conseil. L'ordre compte : corriger d'abord, analyser ensuite.</p><p>Documenter veut dire retrouver depuis quand la ligne existe, sur quels sites, sous quel libellé et pour combien de patients. Cette reconstitution sert deux fois : elle cadre la décision interne et elle prépare une réponse factuelle si la caisse pose la question.</p><p>Sur la suite à donner aux patients déjà facturés, prenez conseil auprès de votre fédération ou de votre conseil juridique avant d'agir. La réponse dépend du texte applicable à votre structure, et une démarche improvisée peut créer plus de difficultés qu'elle n'en règle.</p><p>Enfin, prévenez l'accueil et la facturation par écrit : quelles lignes sont retirées, à partir de quand, et quoi répondre au patient qui demande. Une équipe qui connaît la réponse évite qu'un frais retiré du logiciel continue d'être demandé de vive voix.</p>",
+  "tocItems": [
+    {
+      "id": "loi-frais-centre-sante",
+      "label": "Ce que dit la loi en centre de santé"
+    },
+    {
+      "id": "frais-annexes-a-verifier",
+      "label": "Les frais annexes à vérifier en priorité"
+    },
+    {
+      "id": "supplement-tiers-payant",
+      "label": "Supplément pour le tiers payant intégral"
+    },
+    {
+      "id": "montants-dus-patient",
+      "label": "Les montants qui restent dus"
+    },
+    {
+      "id": "selon-votre-metier",
+      "label": "Selon votre métier"
+    },
+    {
+      "id": "risques-sanctions",
+      "label": "Risques et sanctions"
+    },
+    {
+      "id": "verifier-grille-tarifaire",
+      "label": "Vérifier sa grille avant un contrôle"
+    },
+    {
+      "id": "frais-deja-factures",
+      "label": "Un frais sans base déjà facturé"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "Quels frais un professionnel conventionné n'a-t-il pas le droit de facturer au patient ?",
+      "answer": "Tout montant demandé en plus du tarif d'un acte remboursable doit reposer sur un texte qui l'autorise. Les lignes à vérifier en priorité : frais de dossier, de rendez-vous, d'envoi de résultats, de collecte de prélèvements et supplément lié au tiers payant. Vérifiez chaque ligne dans les textes en vigueur le jour de votre audit, et notez la date de cette vérification."
+    },
+    {
+      "question": "Peut-on facturer un supplément pour le tiers payant intégral ?",
+      "answer": "En centre de santé, un supplément pour le tiers payant n'a pas de base. Le tiers payant sur la part obligatoire y est imposé par l'article L6323-1-7 du Code de la santé publique. Le coût de gestion de la part complémentaire existe, mais il se traite dans l'organisation du centre, pas sur la facture du patient."
+    },
+    {
+      "question": "Que risque un centre qui facture des frais de dossier ou d'annulation ?",
+      "answer": "Le risque est d'abord conventionnel : un frais sans base est un manquement aux engagements pris envers l'Assurance maladie. L'accord national des centres de santé encadre la suite. Lisez la procédure exacte dans l'accord national avant de conclure sur une sanction."
+    },
+    {
+      "question": "La collecte de prélèvements peut-elle être facturée en laboratoire ?",
+      "answer": "Un laboratoire facture ce que prévoient la nomenclature des actes de biologie et le protocole conventionnel. Un frais de collecte placé hors de ce cadre fait partie des lignes à regarder de près avant un contrôle. Vérifiez le libellé exact et sa base dans les textes en vigueur, puis suspendez la ligne si vous ne trouvez pas de référence."
+    },
+    {
+      "question": "Comment vérifier sa grille tarifaire avant un contrôle ?",
+      "answer": "Extrayez toutes les lignes facturées au patient, y compris sur le site et la plateforme de rendez-vous, puis séparez les actes cotés des frais annexes. Rattachez chaque frais annexe à un texte daté et suspendez ceux qui n'en ont pas. Alignez ensuite l'affichage sur la grille corrigée et archivez l'audit avec sa date."
+    }
+  ],
+  "sources": [
+    {
+      "label": "legifrance.gouv.fr · Article L6323-1-7 du Code de la santé publique",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000047567936"
+    },
+    {
+      "label": "ameli.fr · Accord national des centres de santé",
+      "url": "https://www.ameli.fr/exercice-coordonne/textes-reference/accord-national/accord-national-centres-sante"
+    },
+    {
+      "label": "legifrance.gouv.fr · Accord national des centres de santé, JO du 15 octobre 2025",
+      "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000052391780"
+    },
+    {
+      "label": "legifrance.gouv.fr · Agrément ARS des activités dentaires et ophtalmologiques en centre de santé",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000047567907"
+    },
+    {
+      "label": "legifrance.gouv.fr · Loi du 19 mai 2023 sur les centres de santé",
+      "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000047561943"
+    },
+    {
+      "label": "tpcomplementaire.fr · Contrat Inter-AMC, spécimen Centre de santé",
+      "url": "https://www.tpcomplementaire.fr/iamcps/telechargerDocument?filename=CSTE-SPECIMEN.pdf"
+    },
+    {
+      "label": "ameli.fr · Tiers payant de l'examen bucco-dentaire et des soins",
+      "url": "https://www.ameli.fr/chirurgien-dentiste/exercice-liberal/facturation-remuneration/pratique-tiers-payant/tiers-payant-examen-bucco-dentaire-soins"
+    },
+    {
+      "label": "legifrance.gouv.fr · Décret n° 2026-809",
+      "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054733581"
+    },
+    {
+      "label": "ameli.fr · Le forfait hospitalier",
+      "url": "https://www.ameli.fr/assure/remboursements/reste-charge/forfait-hospitalier"
+    },
+    {
+      "label": "service-public.fr · 100 % Santé",
+      "url": "https://www.service-public.fr/particuliers/vosdroits/F34729"
+    }
+  ],
+  "figures": [
+    {
+      "id": "audit-grille-tarifaire",
+      "type": "etapes",
+      "titre": "Auditer sa grille tarifaire en six étapes",
+      "legende": "Chaque frais annexe doit être rattaché à un texte daté, sinon il est suspendu.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "Extraire les lignes",
+          "detail": "Logiciel, caisse, rendez-vous, site, affichage",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Séparer actes et frais",
+          "detail": "Actes cotés d'un côté, frais annexes de l'autre",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Rattacher à un texte",
+          "detail": "Référence, lien et date de consultation",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Suspendre sans texte",
+          "detail": "Retirer du logiciel et prévenir l'accueil",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Aligner l'affichage",
+          "detail": "Site, conditions générales, affiches",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Dater l'audit",
+          "detail": "Garder la grille corrigée comme preuve",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [
+    {
+      "id": "R9",
+      "slug": "recouvrement-patient-empathie",
+      "anchor": "recouvrement auprès du patient",
+      "type": "transverse"
+    },
+    {
+      "id": "R4",
+      "slug": "dentaire-paniers-100-sante-tiers-payant",
+      "anchor": "paniers 100 % Santé en dentaire",
+      "type": "transverse"
+    },
+    {
+      "id": "B0",
+      "slug": "rejet-tiers-payant",
+      "anchor": "rejet de tiers payant",
+      "type": "transverse"
+    }
+  ],
+  "liensEntrants": [],
+  "remplace": [],
+  "verticales": [
+    "centres",
+    "dentaire",
+    "cliniques"
+  ],
+  "encart": {
+    "titre": "Vos rejets et vos prises en charge, repris pour vous",
+    "fin": "Les rejets et les demandes de prise en charge, Granit peut s'en occuper.",
+    "texteFin": "Vous gardez vos patients. Granit peut reprendre vos rejets, envoyer vos demandes de prise en charge et suivre les réponses.",
+    "etapes": [
+      "Vous nous montrez ce qui reste dehors",
+      "On regarde ensemble ce qui peut être repris",
+      "Vous décidez de ce que Granit prend en charge"
+    ],
+    "rassure": "Démo de 20 min · sans engagement"
+  },
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-11-25T17:28:31.872Z",
+    "avertissements": [
+      "aucune citation (facultative)",
+      "source non vérifiable (403) : https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000047567936",
+      "source non vérifiable (403) : https://www.ameli.fr/chirurgien-dentiste/exercice-liberal/facturation-remuneration/pratique-tiers-payant/tiers-payant-examen-bucco-dentaire-soins",
+      "source non vérifiable (403) : https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000047561943",
+      "source non vérifiable (403) : https://www.ameli.fr/assure/remboursements/reste-charge/forfait-hospitalier",
+      "source non vérifiable (403) : https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054733581",
+      "source non vérifiable (403) : https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000052391780",
+      "source non vérifiable (403) : https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000047567907",
+      "source non vérifiable (403) : https://www.ameli.fr/exercice-coordonne/textes-reference/accord-national/accord-national-centres-sante",
+      "source non vérifiable (TimeoutError) : https://www.tpcomplementaire.fr/iamcps/telechargerDocument?filename=CSTE-SPECIMEN.pdf"
+    ],
+    "relecture": {
+      "verdict": "pret",
+      "tours": 2,
+      "model": "claude-opus-5-5",
+      "le": "2026-11-25T17:34:42.486Z"
+    }
+  }
+}

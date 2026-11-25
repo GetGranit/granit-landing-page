@@ -3201,7 +3201,7 @@
       "déconventionnement centre de santé"
     ],
     "searchVolume": 0,
-    "status": "pending",
+    "status": "published",
     "wave": 4,
     "level": "Fille",
     "parentSlug": "tiers-payant-professionnels-de-sante",
@@ -3249,7 +3249,8 @@
       "dentaire",
       "cliniques"
     ],
-    "unsplashQuery": "medical center reception"
+    "unsplashQuery": "medical center reception",
+    "publishedAt": "2026-11-25"
   },
   {
     "id": "Y10",
