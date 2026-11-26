@@ -8,8 +8,10 @@ const EVENEMENT = "ress:lien-copie";
 const ICONE =
   '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>';
 
+// md:-mr-9 : sur ordinateur, le bouton (caché hors survol) ne compte pas dans la largeur de la
+// ligne (ml-2 + size-7 = 36 px) ; il déborde dans la marge droite au lieu de renvoyer le titre à la ligne.
 const classeBouton =
-  "ancre-lien ml-2 inline-grid size-7 translate-y-[-2px] place-items-center rounded-[6px] align-middle text-[var(--text-muted)] opacity-50 hover:text-[var(--text)] focus-visible:opacity-100 focus-visible:outline-2 focus-visible:outline-[var(--profond)] md:opacity-0 md:group-hover/titre:opacity-100";
+  "ancre-lien ml-2 md:-mr-9 inline-grid size-7 translate-y-[-2px] place-items-center rounded-[6px] align-middle text-[var(--text-muted)] opacity-50 hover:text-[var(--text)] focus-visible:opacity-100 focus-visible:outline-2 focus-visible:outline-[var(--profond)] md:opacity-0 md:group-hover/titre:opacity-100";
 
 const copy = {
   fr: { copier: (titre: string) => `Copier le lien vers « ${titre} »`, copie: "Lien copié" },
