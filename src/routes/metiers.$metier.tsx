@@ -1,4 +1,4 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
 import type { CSSProperties } from "react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { Reveal } from "@/components/Reveal";
@@ -7,6 +7,7 @@ import { AppelFinal, Dossier, FaqAgents } from "@/components/agents/Blocs";
 import { SequenceHero } from "@/components/agents/Pastilles";
 import { FondPage } from "@/components/agents/FondDegrade";
 import {
+  ANCIENS_SLUGS,
   CADRAGES,
   METIERS,
   PHOTOS,
@@ -24,9 +25,14 @@ import { SITE_URL, faqPageLd, organizationRef } from "@/lib/seo";
 /**
  * /metiers/<slug> : une page par métier, toutes sur le même gabarit (hero photo, garanties, agents,
  * un dossier de bout en bout, logiciels et plateformes, témoignage s'il existe, FAQ, appel).
- * Un slug inconnu : 404. Un métier pas encore publié : une page « bientôt », en noindex.
+ * Un ancien slug (/metiers/opticiens) : 301 vers le nouveau. Un slug inconnu : 404. Un métier pas encore publié : une page « bientôt », en noindex.
  */
 export const Route = createFileRoute("/metiers/$metier")({
+  beforeLoad: ({ params }) => {
+    const nouveau = ANCIENS_SLUGS[params.metier];
+    if (nouveau)
+      throw redirect({ to: "/metiers/$metier", params: { metier: nouveau }, statusCode: 301 });
+  },
   loader: ({ params }) => {
     if (!estSlugMetier(params.metier)) throw notFound();
     return { slug: params.metier, publie: PUBLIES.includes(params.metier) };
@@ -109,7 +115,7 @@ const PLACES = ["5% 52%", "20% 64%", "6% 76%", "18% 86%"];
 
 /** Cadrage de la photo du hero, [mobile, ordinateur] : les deux visages dans le cadre, hors du voile. */
 const CADRAGES_HERO: Partial<Record<SlugMetier, [string, string]>> = {
-  opticiens: ["45% 30%", "30% 30%"],
+  "optique-audio": ["45% 30%", "30% 30%"],
 };
 
 function PageMetierRoute() {

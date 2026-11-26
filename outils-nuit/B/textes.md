@@ -133,7 +133,7 @@ un code manquant » (`mailto:contact@getgranit.ai?subject=Code%20LPP%20manquant
 | Élément | Texte |
 |---|---|
 | `texte` | La prise en charge saisie, la facture envoyée, le virement de la mutuelle pointé : les agents Granit s’en chargent, dans les logiciels que vos équipes utilisent déjà. |
-| Bouton (socle) | Voir ce que font les agents ; option métier : « Voir ce que font les agents pour les opticiens » (cible `/metiers/opticiens`, `cadre.md` § 9) |
+| Bouton (socle) | Voir ce que font les agents ; option métier : « Voir ce que font les agents pour les opticiens » (cible `/metiers/optique-audio`, `cadre.md` § 9) |
 | Lien | Demander une démo |
 
 Écart avec `cadre.md` § 9 : mêmes verbes (« saisissent les prises en charge, facturent et pointent les virements »),

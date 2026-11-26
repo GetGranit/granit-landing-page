@@ -70,7 +70,7 @@ export const LOGOS: Record<string, string> = {
 export const LOGOS_AVEC_NOM = ["Optimum", "Xtrem Santé"];
 
 export const PAGES: Partial<Record<SlugMetier, { fr: PageMetier; en: PageMetier }>> = {
-  opticiens: { fr: opticiensFr, en: opticiensEn },
+  "optique-audio": { fr: opticiensFr, en: opticiensEn },
   dentaire: { fr: dentaireFr, en: dentaireEn },
   "centres-sante": { fr: centresSanteFr, en: centresSanteEn },
   pharmacie: { fr: pharmacieFr, en: pharmacieEn },

@@ -255,7 +255,7 @@ Dessous : « Effacer la recherche », lien vers la méthode du hub, « Signaler 
 
 `CartePont` en dernier bloc. `texte` : « Des agents font l'administratif de vos équipes dans les logiciels
 qu'elles utilisent déjà : ils saisissent les prises en charge, facturent et pointent les virements. » (verbes
-de la colonne « on dit » de `TON.md`). Cible : `/metiers/opticiens` (optique et audio ; `/metiers/dentaire` pour
+de la colonne « on dit » de `TON.md`). Cible : `/metiers/optique-audio` (optique et audio ; `/metiers/dentaire` pour
 les groupes dentaires). « Demander une démo » : `utm_campaign=outil-remboursement`.
 
 ## 10. Mesure (PostHog)

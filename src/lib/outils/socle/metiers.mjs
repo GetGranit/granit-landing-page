@@ -8,7 +8,7 @@ export const METIERS_OUTILS = Object.freeze([
     id: "optique",
     nom: "Opticiens et audioprothésistes",
     court: "Optique et audio",
-    page: "/metiers/opticiens",
+    page: "/metiers/optique-audio",
     rubrique: "/ressources/metier/optique",
   },
   {
