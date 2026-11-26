@@ -1,0 +1,189 @@
+{
+  "slug": "medicaments-radies-2-decembre-rejets-tiers-payant-officine",
+  "id": "Y10",
+  "category": "guide-tiers-payant",
+  "categoryName": "Guide du tiers payant",
+  "type": "standard",
+  "plateforme": null,
+  "title": "191 médicaments radiés au 2 décembre : la checklist anti-rejet pour votre officine",
+  "seoTitle": "Médicaments radiés : remboursement et checklist officine",
+  "primaryKeyword": "médicaments radiés remboursement officine",
+  "keywordCluster": [
+    "liste des médicaments radiés 2 décembre",
+    "radiation liste remboursable pharmacie",
+    "rejet tiers payant médicament radié",
+    "fin de stock médicament non remboursable"
+  ],
+  "parentSlug": "tiers-payant-professionnels-de-sante",
+  "level": "Fille",
+  "author": null,
+  "reviewer": null,
+  "datePublished": "2026-11-26",
+  "dateModified": "2026-11-26",
+  "checkedOn": null,
+  "wordCount": 2049,
+  "readTime": 9,
+  "metaDescription": "Médicaments radiés au 2 décembre 2026 : avant la fin du remboursement, croisez stock, LGO et retours de paiement de votre officine. La checklist anti-rejet.",
+  "contentHtml": "<p><strong>Un médicament radié de la liste des spécialités remboursables ne se facture plus à l'Assurance maladie. Après la date d'effet, la boîte délivrée en tiers payant part en rejet, ou reste à la charge du patient.</strong> Pour une officine, la vague de médicaments radiés du remboursement au 2 décembre 2026 ne se règle pas au comptoir le jour même. Elle se prépare avant, à trois endroits : le stock, la base médicaments du LGO (logiciel de gestion d'officine) et les ordonnances des patients réguliers.</p><div class=\"key-takeaways\"><strong>L'essentiel</strong><ul><li>Seul l'arrêté publié au Journal officiel fait foi pour la liste des CIP radiés et la date d'effet. Vérifiez les deux, puis contrôlez que la base de votre LGO les reprend.</li><li>Une boîte d'un CIP radié délivrée après la date d'effet ne doit plus partir en tiers payant. Prévenez le patient avant de délivrer, pas après le rejet.</li><li>Croisez la liste des CIP avec le stock et l'historique des délivrances pour repérer les patients chroniques concernés.</li><li>Début décembre 2026, lisez les ARL et les retours NOEMIE lot par lot. Une ligne rejetée parce que le produit n'est plus remboursable ne se règle pas en renvoyant la même facture.</li><li>FSE et ARL se conservent au moins 90 jours (article R161-47 du Code de la sécurité sociale) : gardez-les pour toute contestation.</li></ul></div><h2 id=\"quels-medicaments-radies\">Quels médicaments radiés perdent leur remboursement au 2 décembre 2026 ?</h2><p>La réponse exacte se trouve dans l'arrêté de radiation publié au Journal officiel. Un article de presse ou un tableau qui circule entre confrères ne suffit pas. Le chiffre de 191 médicaments a été relayé par <a href=\"https://www.sapsante.com/a-propos/3456301_191-medicaments-radies-du-remboursement-que-faire-des-boites-encore-en-stock\">SAP Santé</a>. Ce qui compte, c'est la liste des codes CIP (code identifiant de présentation) de l'arrêté, présentation par présentation.</p><p>Concrètement, une même spécialité peut exister en plusieurs présentations : un conditionnement peut être radié et un autre rester inscrit. Raisonner par nom de marque fait donc rater des cas, dans les deux sens. Raisonnez par CIP.</p><p>La date d'effet est le 2 décembre 2026. L'arrêté du 13 novembre 2026 a été publié au Journal officiel du 17 novembre. Il s'applique le 15e jour après sa publication, selon le calcul relayé par <a href=\"https://www.sapsante.com/a-propos/3456301_191-medicaments-radies-du-remboursement-que-faire-des-boites-encore-en-stock\">SAP Santé</a>. Vérifiez-la dans le texte, puis dans la base médicaments de votre LGO. Celle-ci doit afficher le produit comme non remboursable à partir de cette date. Si les deux ne concordent pas, signalez-le à l'éditeur de votre logiciel avant la date d'effet. C'est sa base qui décide de ce que la FSE (feuille de soins électronique) envoie à la caisse.</p><h3>Pourquoi la base du LGO compte autant que l'arrêté</h3><p>Au comptoir, personne ne relit le Journal officiel avant de scanner une boîte. C'est la base du logiciel qui affiche le taux de prise en charge et construit la FSE. Elle déclenche ou non la part obligatoire (AMO) et la part complémentaire (AMC). Une base pas encore à jour le 2 décembre 2026 laisse partir des lignes qui peuvent revenir en rejet.</p><h2 id=\"boite-cip-radie-apres-date\">Que devient une boîte d'un CIP radié délivrée après le 2 décembre 2026 ?</h2><p>Elle n'est plus remboursable par l'Assurance maladie. Facturée en tiers payant, elle expose l'officine à un rejet, et le patient doit en être informé avant de payer. La boîte reste un médicament que vous pouvez délivrer sur ordonnance ; c'est sa prise en charge qui disparaît.</p><p>Pour les boîtes en stock au moment de la radiation, ne supposez aucune tolérance. Si une période de transition existe, elle doit figurer dans le texte ou être confirmée par votre caisse. Sans cette confirmation écrite, considérez que toute délivrance après la date d'effet se fait sans remboursement.</p><p>Côté mutuelle, sans part obligatoire, il n'y a plus de ticket modérateur à compléter. Une prise en charge éventuelle dépend du contrat : vérifiez les droits affichés pour le patient plutôt que de la promettre au comptoir.</p><div class=\"callout callout--warn\"><p><strong>Le piège :</strong> la boîte part en tiers payant, le patient repart sans rien payer, et le rejet n'apparaît que dans un retour de paiement ultérieur. Récupérer la somme auprès du patient devient alors délicat. Le bon moment pour dire « ce médicament n'est plus remboursé », c'est avant d'encaisser.</p></div><h2 id=\"croiser-cip-stock-lgo\">Comment croiser la liste des CIP radiés avec son stock et son LGO ?</h2><p>La méthode tient en cinq gestes. Récupérer la liste des CIP, la comparer à la base du LGO, au stock, puis à l'historique des délivrances. Enfin, marquer les produits au comptoir. Elle se fait une fois, avant la date d'effet, et prend la forme d'un fichier que toute l'équipe peut consulter.</p><ol class=\"steps\"><li><strong>Récupérer la liste officielle des CIP.</strong> Partez de l'arrêté publié au Journal officiel, pas d'une liste recopiée. Notez la date d'effet en tête du fichier.</li><li><strong>Contrôler la base médicaments du LGO.</strong> Recherchez quelques CIP de la liste et vérifiez que le logiciel les affiche comme non remboursables à la bonne date. Si ce n'est pas le cas, interrogez l'éditeur.</li><li><strong>Comparer avec le stock.</strong> Sortez l'état du stock et isolez les CIP radiés encore présents : quantité, emplacement, date de péremption.</li><li><strong>Remonter l'historique des délivrances.</strong> Pour chaque CIP radié, listez les patients qui l'ont reçu ces derniers mois, surtout en renouvellement.</li><li><strong>Signaler les produits au comptoir.</strong> Une mention dans la fiche produit du LGO ou un repère physique sur l'emplacement suffit pour que le préparateur prévienne le patient.</li></ol><div data-figure=\"croisement-cip\"></div><p>L'étape 4 est celle qui vous dit à qui parler. Le stock montre ce que vous risquez de délivrer ; l'historique montre à qui. Un patient chronique qui revient tous les mois pour le même traitement peut se présenter dès les premiers jours de décembre.</p><h3>Les cas qui échappent au croisement</h3><ul><li>Les ordonnances renouvelables déjà en cours, qui reviennent sans que personne ne relise la ligne.</li><li>Les commandes passées avant la date d'effet et livrées après.</li><li>Les présentations proches d'un CIP radié (même molécule, autre conditionnement) qui restent remboursables et qu'il ne faut pas retirer par erreur.</li><li>Les délivrances en différé, quand la facturation part après la date d'effet alors que la délivrance a eu lieu avant.</li></ul><h2 id=\"fin-de-stock-non-remboursable\">Que faire des boîtes en fin de stock d'un médicament non remboursable ?</h2><p>Aucun texte officiel consulté ne fixe de règle de retour pour les boîtes en fin de stock. Avant la date d'effet, vérifiez ce que prévoit l'arrêté. Interrogez ensuite votre grossiste-répartiteur ou le laboratoire sur un éventuel retour, CIP par CIP.</p><p>Les conditions de retour ne figurent pas dans les sources consultées. Posez la question tôt, plutôt que d'attendre que les boîtes s'accumulent.</p><p>Arrêtez les réassorts automatiques sur les CIP radiés dès que la liste est confirmée. Un réassort qui tourne sur l'historique des ventes recommande un produit dont la demande peut baisser. Une partie des patients peut en effet basculer vers une autre présentation ou un autre traitement, sur décision du prescripteur.</p><div class=\"tbl\"><table><tr><th>Situation</th><th>Où vérifier</th><th>Geste</th></tr><tr><td>Boîtes en stock, demande régulière</td><td>Historique des délivrances</td><td>Informer le patient avant de délivrer, arrêter le réassort</td></tr><tr><td>Boîtes en stock, demande faible</td><td>Grossiste-répartiteur ou laboratoire</td><td>Demander si un retour est possible, avant la date d'effet</td></tr><tr><td>Commande en cours de livraison</td><td>Bons de commande</td><td>Annuler ou réduire si c'est encore possible</td></tr><tr><td>Présentation voisine restée remboursable</td><td>Base du LGO, par CIP</td><td>Ne pas retirer, vérifier que le taux reste affiché</td></tr></table></div><h2 id=\"checklist-comptoir\">Quelle checklist appliquer au comptoir dès la date d'effet ?</h2><p>À partir du 2 décembre 2026, chaque ligne d'ordonnance qui porte un CIP radié déclenche trois gestes. Vérifier l'affichage du LGO, prévenir le patient, puis facturer sans part obligatoire. Le reste de la facturation tiers payant ne change pas.</p><ul><li><strong>Le logiciel affiche-t-il le produit comme non remboursé ?</strong> Si la base indique encore un taux, ne facturez pas la ligne en tiers payant : vérifiez d'abord.</li><li><strong>Le patient est-il prévenu avant l'encaissement ?</strong> Annoncez le montant à payer et proposez de contacter le prescripteur si une alternative existe.</li><li><strong>La carte Vitale est-elle présente ?</strong> Un rejet en décembre n'est pas forcément lié à la radiation. Selon <a href=\"https://www.ameli.fr/pharmacien/exercice-professionnel/pratique-tiers-payant/modalites-regles-facturation\">ameli.fr</a>, la carte Vitale est exigée pour le tiers payant depuis juin 2025. Des exceptions existent : aide médicale de l'État, nourrissons de moins de 3 mois, résidents d'EHPAD, demandeurs d'asile.</li><li><strong>L'ordonnance porte-t-elle d'autres lignes remboursables ?</strong> Elles partent normalement en tiers payant : seule la ligne radiée change.</li></ul><p>Le préparateur n'a pas à trancher seul les cas limites. Une délivrance en différé ou une ordonnance antérieure à la date d'effet se remonte au pharmacien. Il décide de la facturation au vu de la date de délivrance et du texte.</p><h2 id=\"retours-paiement-decembre\">Que vérifier dans les retours de paiement début décembre ?</h2><p>Lisez les ARL (accusés de réception logiques) puis les retours NOEMIE des premiers lots de décembre 2026. Isolez toute ligne rejetée qui porte un CIP de la liste. C'est le signe qu'une délivrance est partie en tiers payant malgré la radiation.</p><p>L'ARL dit si la caisse a bien reçu et accepté le lot. Comme le rappelle la page <a href=\"https://www.ameli.fr/pharmacien/exercice-professionnel/teletransmission/teletransmission/teletransmission-fse-mode-emploi\">ameli.fr sur la télétransmission des FSE</a>, un ARL négatif appelle une réémission du lot. Mais une ligne rejetée parce que le produit n'est plus remboursable ne se règle pas en renvoyant la même facture. Il faut corriger la facturation. Si l'officine a avancé la somme, récupérez-la auprès du patient.</p><p>Le retour NOEMIE, lui, détaille les paiements et les rejets ligne par ligne. Rapprochez-le des virements reçus pour repérer les écarts. La méthode est décrite dans notre article pour <a href=\"/ressources/rapprochement-noemie\">rapprocher flux NOEMIE et virements bancaires chaque matin</a>. Un montant viré plus faible que prévu sur un lot de début décembre mérite une lecture détaillée.</p><h3>Les délais et les preuves à garder</h3><p>L'<a href=\"https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006746783\">article R161-47 du Code de la sécurité sociale</a> fixe un repère utile. Les FSE et les ARL doivent être conservés au moins 90 jours.</p><p>Pour chaque rejet lié à une radiation, conservez la FSE, l'ARL et la ligne du retour NOEMIE. Si vous contestez, gardez aussi la date de délivrance qui justifie la facturation. Un rejet laissé sans suite rejoint la pile des créances anciennes. Notre guide pour <a href=\"/ressources/officine-balance-agee-tiers-payant\">solder le stock de créances de tiers payant</a> explique comment éviter qu'elle devienne une perte.</p><div class=\"callout callout--tip\"><p><strong>Le bon réflexe :</strong> créez dans votre suivi des rejets un motif « produit radié » pour décembre. En fin de mois, vous savez combien de délivrances sont passées entre les mailles, et lesquelles restent à régulariser.</p></div><h2 id=\"prevenir-patients-chroniques\">Comment prévenir les patients chroniques concernés ?</h2><p>Prévenez-les avant leur prochain renouvellement, à partir de la liste tirée de l'historique des délivrances. Orientez-les vers leur prescripteur s'ils souhaitent une alternative remboursée. Le pharmacien informe ; le changement de traitement reste une décision du médecin.</p><p>Le canal dépend de votre organisation. Un mot au comptoir lors du passage précédent, une mention sur le ticket, ou un appel pour les patients fragiles ou très réguliers. L'essentiel est que le patient l'apprenne avant de se retrouver à payer une boîte qu'il croyait remboursée.</p><p>Le message tient en trois phrases. Ce médicament ne sera plus remboursé à partir du 2 décembre 2026. Vous pourrez toujours l'obtenir, mais à vos frais. Votre médecin peut, s'il le juge utile, vous prescrire une autre présentation ou un autre traitement remboursé.</p><ul><li>Ne promettez pas de remboursement par la mutuelle : il dépend du contrat.</li><li>Ne proposez pas vous-même un remplacement qui sortirait du droit de substitution.</li><li>Notez dans le dossier du patient que l'information a été donnée, avec la date.</li><li>Pour les patients en EHPAD, prévenez l'établissement en même temps que le prescripteur.</li></ul><p>Quand la substitution est possible, les règles habituelles s'appliquent, y compris celles du <a href=\"/ressources/generique-apixaban-eliquis-pharmacie-tiers-payant\">tiers payant contre génériques</a>, que nous détaillons à propos de l'apixaban.</p><h2 id=\"rejets-malgre-checklist\">Que faire si des rejets passent malgré tout ?</h2><p>Traitez-les comme les autres rejets de tiers payant : lire le motif, corriger la facturation, renvoyer ce qui peut l'être. Réclamez ensuite au patient ce qui n'est plus remboursable. Ce qui change, c'est que ces rejets peuvent se concentrer sur quelques jours de décembre.</p><p>Classez les rejets par motif avant de les traiter. Ceux liés à la radiation se règlent ensemble, avec la même correction. Les autres (carte Vitale absente, droits non ouverts, erreur de saisie) suivent leur circuit habituel. Si la caisse vous demande ensuite des pièces, consultez notre article sur les <a href=\"/ressources/justificatifs-cpam-officine-reponses-indu\">demandes de justificatif de la CPAM en officine</a>. Il détaille comment répondre sans laisser naître un indu.</p><p>Quand ces retours s'ajoutent au travail courant du back-office, réservez-leur un créneau dédié. Le traitement des rejets fait partie des <a href=\"/ressources/trois-boucles-pharmacie\">trois boucles du tiers payant en officine</a>, avec les ordonnances et le réassort.</p><p>Dans tous les cas, gardez le motif exact affiché dans le retour : c'est lui qui dit quoi corriger. C'est aussi lui qu'il faudra citer si vous contestez.</p>",
+  "tocItems": [
+    {
+      "id": "quels-medicaments-radies",
+      "label": "Quels médicaments sont radiés au 2 décembre 2026 ?"
+    },
+    {
+      "id": "boite-cip-radie-apres-date",
+      "label": "Une boîte délivrée après la radiation"
+    },
+    {
+      "id": "croiser-cip-stock-lgo",
+      "label": "Croiser les CIP avec le stock et le LGO"
+    },
+    {
+      "id": "fin-de-stock-non-remboursable",
+      "label": "Les boîtes en fin de stock"
+    },
+    {
+      "id": "checklist-comptoir",
+      "label": "La checklist au comptoir"
+    },
+    {
+      "id": "retours-paiement-decembre",
+      "label": "Les retours de paiement de décembre"
+    },
+    {
+      "id": "prevenir-patients-chroniques",
+      "label": "Prévenir les patients chroniques"
+    },
+    {
+      "id": "rejets-malgre-checklist",
+      "label": "Si des rejets passent malgré tout"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "Quels médicaments sont radiés de la liste des remboursables au 2 décembre 2026 ?",
+      "answer": "La liste exacte figure dans l'arrêté de radiation publié au Journal officiel, présentation par présentation, sous forme de codes CIP. Raisonnez par CIP et non par nom de marque, car une présentation peut être radiée alors qu'une autre reste remboursable. Vérifiez aussi que la base médicaments de votre LGO reprend la radiation à la bonne date."
+    },
+    {
+      "question": "Que devient une boîte d'un CIP radié délivrée après le 2 décembre 2026 ?",
+      "answer": "Elle n'est plus remboursable par l'Assurance maladie : facturée en tiers payant, elle expose l'officine à un rejet. Le médicament peut toujours être délivré sur ordonnance, mais à la charge du patient, qui doit être prévenu avant l'encaissement. Ne supposez aucune tolérance pour les boîtes en stock sans texte ou confirmation de votre caisse."
+    },
+    {
+      "question": "Comment croiser la liste des CIP radiés avec son stock et son logiciel ?",
+      "answer": "Partez de la liste officielle des CIP, contrôlez que le LGO les affiche comme non remboursables, puis comparez-la à l'état du stock. Remontez ensuite l'historique des délivrances pour identifier les patients concernés, surtout en renouvellement. Signalez enfin les produits dans la fiche du LGO pour que le comptoir prévienne le patient."
+    },
+    {
+      "question": "Que vérifier dans les retours de paiement début décembre ?",
+      "answer": "Lisez les ARL puis les retours NOEMIE des premiers lots de décembre 2026 et isolez les lignes rejetées qui portent un CIP radié. Une ligne rejetée parce que le produit n'est plus remboursable ne se règle pas en renvoyant la même facture : il faut corriger la facturation. Conservez la FSE et l'ARL au moins 90 jours, comme l'impose l'article R161-47 du Code de la sécurité sociale."
+    },
+    {
+      "question": "Comment prévenir les patients chroniques concernés ?",
+      "answer": "Repérez-les dans l'historique des délivrances et prévenez-les avant leur prochain renouvellement, au comptoir, sur le ticket ou par téléphone. Dites que le médicament ne sera plus remboursé, qu'il reste disponible à leurs frais et que leur médecin peut prescrire une alternative s'il le juge utile. Notez la date de l'information dans le dossier du patient."
+    }
+  ],
+  "sources": [
+    {
+      "label": "sapsante.com · 191 médicaments radiés du remboursement : que faire des boîtes encore en stock",
+      "url": "https://www.sapsante.com/a-propos/3456301_191-medicaments-radies-du-remboursement-que-faire-des-boites-encore-en-stock"
+    },
+    {
+      "label": "ameli.fr · Modalités et règles de facturation en tiers payant (pharmacien)",
+      "url": "https://www.ameli.fr/pharmacien/exercice-professionnel/pratique-tiers-payant/modalites-regles-facturation"
+    },
+    {
+      "label": "ameli.fr · Télétransmission des FSE : mode d'emploi",
+      "url": "https://www.ameli.fr/pharmacien/exercice-professionnel/teletransmission/teletransmission/teletransmission-fse-mode-emploi"
+    },
+    {
+      "label": "legifrance.gouv.fr · Article R161-47 du Code de la sécurité sociale",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006746783"
+    }
+  ],
+  "figures": [
+    {
+      "id": "croisement-cip",
+      "type": "etapes",
+      "titre": "Croiser les CIP radiés avant la date d'effet",
+      "legende": "L'historique des délivrances dit à qui parler avant la date d'effet.",
+      "colonnes": [],
+      "elements": [
+        {
+          "label": "Liste officielle",
+          "detail": "Les CIP de l'arrêté, avec la date d'effet",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Base du LGO",
+          "detail": "Produit affiché non remboursable à la bonne date",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "État du stock",
+          "detail": "Quantités, emplacements, péremption",
+          "valeurs": [],
+          "focus": false
+        },
+        {
+          "label": "Historique des délivrances",
+          "detail": "Les patients concernés, surtout en renouvellement",
+          "valeurs": [],
+          "focus": true
+        },
+        {
+          "label": "Repère au comptoir",
+          "detail": "Mention dans la fiche produit du LGO",
+          "valeurs": [],
+          "focus": false
+        }
+      ]
+    }
+  ],
+  "internalLinks": [
+    {
+      "id": "Y10b",
+      "slug": "trois-boucles-pharmacie",
+      "anchor": "les trois boucles à automatiser en officine",
+      "type": "sœur"
+    },
+    {
+      "id": "Y10c",
+      "slug": "rejet-tiers-payant",
+      "anchor": "rejet de tiers payant",
+      "type": "transverse"
+    }
+  ],
+  "liensEntrants": [],
+  "remplace": [],
+  "verticales": [
+    "pharmacie"
+  ],
+  "encart": {
+    "titre": "Vos rejets et vos prises en charge, repris pour vous",
+    "fin": "Les rejets et les demandes de prise en charge de l'officine, Granit peut s'en occuper.",
+    "texteFin": "Votre équipe garde le comptoir. Granit peut reprendre vos rejets, envoyer vos demandes de prise en charge et suivre les réponses.",
+    "etapes": [
+      "Vous nous montrez vos rejets et votre balance âgée",
+      "On regarde ensemble ce qui peut être repris",
+      "Vous décidez de ce que Granit prend en charge"
+    ],
+    "rassure": "Démo de 20 min · sans engagement"
+  },
+  "moteur": {
+    "model": "claude-opus-5-5",
+    "genereLe": "2026-11-26T17:07:16.133Z",
+    "avertissements": [
+      "aucune citation (facultative)",
+      "source non vérifiable (403) : https://www.ameli.fr/pharmacien/exercice-professionnel/teletransmission/teletransmission/teletransmission-fse-mode-emploi",
+      "source non vérifiable (403) : https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006746783",
+      "source non vérifiable (403) : https://www.ameli.fr/pharmacien/exercice-professionnel/pratique-tiers-payant/modalites-regles-facturation"
+    ],
+    "relecture": {
+      "verdict": "humain",
+      "tours": 2,
+      "model": "claude-opus-5-5",
+      "le": "2026-11-26T17:12:45.712Z"
+    }
+  }
+}

@@ -3265,7 +3265,7 @@
       "fin de stock médicament non remboursable"
     ],
     "searchVolume": 0,
-    "status": "pending",
+    "status": "published",
     "wave": 4,
     "level": "Fille",
     "parentSlug": "tiers-payant-professionnels-de-sante",
@@ -3305,7 +3305,8 @@
     "verticales": [
       "pharmacie"
     ],
-    "unsplashQuery": "pharmacy shelves medicines"
+    "unsplashQuery": "pharmacy shelves medicines",
+    "publishedAt": "2026-11-26"
   },
   {
     "id": "V3",
