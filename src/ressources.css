@@ -18,12 +18,15 @@
   .ress-html h2 {
     margin: 44px 0 12px;
     font-family: var(--font-serif);
-    font-size: 30px;
+    /* 27 px : un intertitre de ~60 signes tient sur une ligne dans la colonne de 68ch.
+       `pretty` et non `balance` : si le titre doit passer à la ligne, la 1re ligne reste pleine
+       au lieu d'être coupée en deux moitiés (effet « deux lignes alors qu'il y a la place »). */
+    font-size: 27px;
     font-weight: 400;
     line-height: 1.2;
     letter-spacing: -0.015em;
     color: var(--text);
-    text-wrap: balance;
+    text-wrap: pretty;
     scroll-margin-top: 96px;
   }
   .ress-html h3 {

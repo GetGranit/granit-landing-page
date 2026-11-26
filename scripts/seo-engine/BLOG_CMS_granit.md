@@ -237,6 +237,8 @@ L'ouverture :
 
 Chaque H2 est une question réelle, telle que le lecteur de la fiche métier la taperait dans Google ou la poserait à ChatGPT.
 
+Un H2 fait **60 signes au plus** (espaces compris), pour tenir sur une ligne à l'écran. Coupez ce qui n'aide pas la recherche : « au 2 décembre 2026 » plutôt que de répéter la date dans chaque H2, un seul complément par question.
+
 **Bons H2 :**
 - « Comment accéder à l'espace pro Almerys ? »
 - « Que veut dire "bénéficiaire inconnu" sur un rejet mutuelle ? »
