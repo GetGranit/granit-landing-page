@@ -33,7 +33,7 @@ const pages = [
   ],
   [
     "Opticiens",
-    "/metiers/opticiens",
+    "/metiers/optique-audio",
     "Le tiers payant fait à la place de l'opticien, depuis le devis de son logiciel jusqu'au virement de la mutuelle.",
   ],
   [

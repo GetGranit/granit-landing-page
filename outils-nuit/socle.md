@@ -252,7 +252,7 @@ Les 5 métiers du site (`src/lib/ressources/verticales.json`), dans cet ordre :
 
 | `MetierOutil` | `nom` (verticales.json) | `court` (pastille, filtre) | Page métier | Rubrique |
 |---|---|---|---|---|
-| `optique` | Opticiens et audioprothésistes | Optique et audio | `/metiers/opticiens` | `/ressources/metier/optique` |
+| `optique` | Opticiens et audioprothésistes | Optique et audio | `/metiers/optique-audio` | `/ressources/metier/optique` |
 | `dentaire` | Centres dentaires | Dentaire | `/metiers/dentaire` | `/ressources/metier/dentaire` |
 | `centres` | Centres de santé et ophtalmologie | Centres de santé | `/metiers/centres-sante` | `/ressources/metier/centres` |
 | `pharmacie` | Pharmacies | Pharmacie | `/metiers/pharmacie` | `/ressources/metier/pharmacie` |

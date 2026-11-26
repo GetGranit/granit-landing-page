@@ -137,7 +137,7 @@ const staticPages = [
     freq: "weekly",
   },
   {
-    path: "/metiers/opticiens",
+    path: "/metiers/optique-audio",
     files: ["src/routes/metiers.$metier.tsx", "src/components/agents"],
     priority: "0.8",
     freq: "weekly",

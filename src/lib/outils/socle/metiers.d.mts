@@ -6,7 +6,7 @@ export type MetierInfo = {
   nom: string;
   /** Libellé court des pastilles et des filtres (« Optique et audio »). */
   court: string;
-  /** Page métier du site (`/metiers/opticiens`). */
+  /** Page métier du site (`/metiers/optique-audio`). */
   page: string;
   /** Rubrique Ressources du métier (`/ressources/metier/optique`). */
   rubrique: string;

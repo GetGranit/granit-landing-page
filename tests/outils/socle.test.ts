@@ -224,7 +224,7 @@ test("pont : calcomDemoUrl inchangée sans 3e paramètre ; lien de démo d'outil
     "https://cal.com/paul-pietra-granit/decouvrir-granit/?utm_source=getgranit.ai&utm_medium=lead-magnet&utm_campaign=outil-codes-rejet&utm_content=outil-entree&utm_term=noemie-0450054",
   );
   assert.equal(cibleMetier(["dentaire"]), "/metiers/dentaire");
-  assert.equal(cibleMetier(["optique", "optique"]), "/metiers/opticiens");
+  assert.equal(cibleMetier(["optique", "optique"]), "/metiers/optique-audio");
   assert.equal(cibleMetier(["optique", "dentaire"]), "/metiers");
   assert.equal(cibleMetier(), "/metiers");
 });

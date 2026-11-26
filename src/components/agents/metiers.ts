@@ -15,7 +15,7 @@ import pharmacien from "@/assets/metiers/pharmacien.jpg";
 
 /** Slugs des pages `/metiers/<slug>`, dans l'ordre de /metiers. */
 export const SLUGS_METIERS = [
-  "opticiens",
+  "optique-audio",
   "dentaire",
   "centres-sante",
   "pharmacie",
@@ -27,7 +27,10 @@ export type SlugMetier = (typeof SLUGS_METIERS)[number];
 export const PUBLIES: readonly SlugMetier[] = SLUGS_METIERS;
 
 /** Anciens slugs, redirigés en 301 vers le nouveau (voir routes/agents.$metier.tsx). */
-export const ANCIENS_SLUGS: Record<string, SlugMetier> = { optique: "opticiens" };
+export const ANCIENS_SLUGS: Record<string, SlugMetier> = {
+  optique: "optique-audio",
+  opticiens: "optique-audio",
+};
 
 export const estSlugMetier = (v: unknown): v is SlugMetier =>
   typeof v === "string" && (SLUGS_METIERS as readonly string[]).includes(v);
@@ -59,7 +62,7 @@ export type Metier = {
 };
 
 export const PHOTOS: Record<SlugMetier, string> = {
-  opticiens: opticien,
+  "optique-audio": opticien,
   dentaire,
   "centres-sante": centreSante,
   pharmacie: pharmacien,
@@ -68,7 +71,7 @@ export const PHOTOS: Record<SlugMetier, string> = {
 
 /** Taille des photos : 1376 × 768 (paysage) pour les trois nouvelles, 520 × 780 pour les autres. */
 export const TAILLES: Record<SlugMetier, [number, number]> = {
-  opticiens: [1376, 768],
+  "optique-audio": [1376, 768],
   dentaire: [1376, 768],
   "centres-sante": [1376, 768],
   pharmacie: [520, 780],
@@ -77,7 +80,7 @@ export const TAILLES: Record<SlugMetier, [number, number]> = {
 
 /** Position de la photo dans une carte (object-position) : les visages en haut, hors du texte. */
 export const CADRAGES: Record<SlugMetier, string> = {
-  opticiens: "55% 30%",
+  "optique-audio": "55% 30%",
   dentaire: "60% 30%",
   "centres-sante": "50% 30%",
   pharmacie: "45% 40%",
@@ -85,8 +88,8 @@ export const CADRAGES: Record<SlugMetier, string> = {
 };
 
 const fr: Record<SlugMetier, Metier> = {
-  opticiens: {
-    nom: "Opticiens",
+  "optique-audio": {
+    nom: "Optique et Audition",
     accroche:
       "La prise en charge, la facture et le suivi des virements, faits à votre place, sans changer de logiciel.",
     promesse: ["Vos opticiens conseillent.", "Granit gère le reste."],
@@ -332,8 +335,8 @@ const fr: Record<SlugMetier, Metier> = {
 };
 
 const en: Record<SlugMetier, Metier> = {
-  opticiens: {
-    nom: "Opticians",
+  "optique-audio": {
+    nom: "Optics and Hearing",
     accroche:
       "Coverage requests, billing and transfer matching, done for you, without changing software.",
     promesse: ["Your opticians advise.", "Granit handles the rest."],
