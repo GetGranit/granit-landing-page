@@ -19,6 +19,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DemoRouteImport } from './routes/demo'
 import { Route as EssaiRouteImport } from './routes/essai'
 import { Route as LeveeDeFondsRouteImport } from './routes/levee-de-fonds'
+import { Route as MerciRouteImport } from './routes/merci'
 import { Route as PecRouteImport } from './routes/pec'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ProduitRouteImport } from './routes/produit'
@@ -97,6 +98,11 @@ const EssaiRoute = EssaiRouteImport.update({
 const LeveeDeFondsRoute = LeveeDeFondsRouteImport.update({
   id: '/levee-de-fonds',
   path: '/levee-de-fonds',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MerciRoute = MerciRouteImport.update({
+  id: '/merci',
+  path: '/merci',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PecRoute = PecRouteImport.update({
@@ -259,6 +265,7 @@ export interface FileRoutesByFullPath {
   '/demo': typeof DemoRoute
   '/essai': typeof EssaiRoute
   '/levee-de-fonds': typeof LeveeDeFondsRoute
+  '/merci': typeof MerciRoute
   '/pec': typeof PecRoute
   '/privacy': typeof PrivacyRoute
   '/produit': typeof ProduitRoute
@@ -299,6 +306,7 @@ export interface FileRoutesByTo {
   '/demo': typeof DemoRoute
   '/essai': typeof EssaiRoute
   '/levee-de-fonds': typeof LeveeDeFondsRoute
+  '/merci': typeof MerciRoute
   '/pec': typeof PecRoute
   '/privacy': typeof PrivacyRoute
   '/produit': typeof ProduitRoute
@@ -340,6 +348,7 @@ export interface FileRoutesById {
   '/demo': typeof DemoRoute
   '/essai': typeof EssaiRoute
   '/levee-de-fonds': typeof LeveeDeFondsRoute
+  '/merci': typeof MerciRoute
   '/pec': typeof PecRoute
   '/privacy': typeof PrivacyRoute
   '/produit': typeof ProduitRoute
@@ -383,6 +392,7 @@ export interface FileRouteTypes {
     | '/demo'
     | '/essai'
     | '/levee-de-fonds'
+    | '/merci'
     | '/pec'
     | '/privacy'
     | '/produit'
@@ -423,6 +433,7 @@ export interface FileRouteTypes {
     | '/demo'
     | '/essai'
     | '/levee-de-fonds'
+    | '/merci'
     | '/pec'
     | '/privacy'
     | '/produit'
@@ -463,6 +474,7 @@ export interface FileRouteTypes {
     | '/demo'
     | '/essai'
     | '/levee-de-fonds'
+    | '/merci'
     | '/pec'
     | '/privacy'
     | '/produit'
@@ -505,6 +517,7 @@ export interface RootRouteChildren {
   DemoRoute: typeof DemoRoute
   EssaiRoute: typeof EssaiRoute
   LeveeDeFondsRoute: typeof LeveeDeFondsRoute
+  MerciRoute: typeof MerciRoute
   PecRoute: typeof PecRoute
   PrivacyRoute: typeof PrivacyRoute
   ProduitRoute: typeof ProduitRoute
@@ -600,6 +613,13 @@ declare module '@tanstack/react-router' {
       path: '/levee-de-fonds'
       fullPath: '/levee-de-fonds'
       preLoaderRoute: typeof LeveeDeFondsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/merci': {
+      id: '/merci'
+      path: '/merci'
+      fullPath: '/merci'
+      preLoaderRoute: typeof MerciRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pec': {
@@ -851,6 +871,7 @@ const rootRouteChildren: RootRouteChildren = {
   DemoRoute: DemoRoute,
   EssaiRoute: EssaiRoute,
   LeveeDeFondsRoute: LeveeDeFondsRoute,
+  MerciRoute: MerciRoute,
   PecRoute: PecRoute,
   PrivacyRoute: PrivacyRoute,
   ProduitRoute: ProduitRoute,
