@@ -3366,6 +3366,68 @@
     "unsplashQuery": "computer security desk"
   },
   {
+    "id": "Y11",
+    "slug": "lunettes-connectees-tiers-payant-facturation-opticien",
+    "category": "guide-tiers-payant",
+    "title": "Lunettes connectées : ce que vous pouvez facturer en tiers payant, et ce que vous dites au client",
+    "primaryKeyword": "lunettes connectées remboursement opticien",
+    "keywordCluster": [
+      "lunettes connectées remboursement",
+      "monture connectée code LPP",
+      "lunettes connectées mutuelle",
+      "facturation lunettes connectées verres correcteurs",
+      "indu tiers payant optique"
+    ],
+    "searchVolume": 0,
+    "status": "pending",
+    "wave": 4,
+    "level": "Fille",
+    "parentSlug": "tiers-payant-opticien",
+    "reader": "Opticien ou gérant de magasin d'optique, et collaborateur chargé de l'accueil et de la facturation tiers payant",
+    "role": "Trafic",
+    "granitData": "—",
+    "cta": "Parlons de votre tiers payant",
+    "toValidate": "Actualité issue de la veille : https://app.notion.com/425ba273162f81349a71e234d515b9bd — source : https://opticien-lunetier.media/2026/11/25/lunettes-connectees-la-ministre-de-la-sante-remet-leur-remboursement-en-question/. Pas de date d'effet : déclaration de la ministre de la Santé du 24 novembre 2026 à l'Assemblée. À vérifier : ce que la ministre a réellement dit (montures hors LPP, hors dispositifs médicaux) et la position des complémentaires, à citer comme déclarations, pas comme règle ; selon Opticien Lunetier, une monture connectée avec code LPP et verres correcteurs peut être facturée comme une monture classe B : à confirmer sur texte officiel avant de l'écrire ; la demande d'enquête de la députée sur de possibles mauvaises applications des forfaits n'établit aucun manquement : ne rien affirmer. Aucun risque de contrôle ou d'indu à présenter comme certain. Audioprothésistes : modèles audio seulement à mentionner si sourcé. Ne rien promettre sur ce que Granit détecte sans validation. Relecture humaine obligatoire.",
+    "primaryKeywordMeasured": false,
+    "faqQuestions": [
+      "Les lunettes connectées sont-elles remboursées par l'Assurance maladie ?",
+      "Une monture connectée avec verres correcteurs peut-elle passer en tiers payant ?",
+      "Que répondre au client qui demande si sa mutuelle prend en charge ses lunettes connectées ?",
+      "Que vérifier avant de lancer la prise en charge ?",
+      "Quels risques de refus ou de demande d'indu surveiller ?"
+    ],
+    "internalLinks": [
+      {
+        "id": "Y11a",
+        "slug": "tiers-payant-opticien",
+        "anchor": "tiers payant opticien",
+        "type": "parent"
+      },
+      {
+        "id": "Y11b",
+        "slug": "100-sante-classe-a-b-opticien",
+        "anchor": "100 % Santé classe A et B",
+        "type": "transverse"
+      },
+      {
+        "id": "Y11c",
+        "slug": "rejet-tiers-payant",
+        "anchor": "rejet de tiers payant",
+        "type": "transverse"
+      },
+      {
+        "id": "Y11d",
+        "slug": "remboursement-optique-amo-amc",
+        "anchor": "remboursement des lunettes",
+        "type": "transverse"
+      }
+    ],
+    "verticales": [
+      "optique"
+    ],
+    "unsplashQuery": "smart glasses optician"
+  },
+  {
     "id": "Y5",
     "slug": "carte-blanche-reseau-optique-2027-signer",
     "category": "guide-tiers-payant",
